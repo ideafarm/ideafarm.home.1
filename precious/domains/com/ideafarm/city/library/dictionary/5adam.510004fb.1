@@ -160,7 +160,7 @@ DONE( tmWorkF )
     //grabC grabFoo1( tin0P , TAG( TAGiDnULL ) ) ;
     //etThread.traceF( tin0P , T("launching grabC deadlocker threads") ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 3 ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidFromTin , (countT)&stOsPidFromTinZombie , bConsoleP , (countT)&bKidsSuspended , (countT)&bSuspendAll , (countT)&bSlowAll ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 3 ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidFromTin , (countT)&stOsPidFromTinZombie , bConsoleP , (countT)&bKidsSuspended , (countT)&bSuspendAll , (countT)&bSlowAll , (countT)&cNewBreakNapsTaken ) ;
 
     //U::TO QUIET THE CONSOLE FOR CRAFTWORK: etThread.osThreadF( TaRG1( tmConsoleF ) , (countT)&bQuitConsole , (countT)&cLeverIdMemory , (countT)&swMemorySpace ) ;
     etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 2 ) , (countT)&bKidsSuspended ) ;
@@ -220,9 +220,10 @@ DONE( tmWorkF )
     ZE( boolT , bQuitConsole ) ;
     //etThread.traceF( tin0P , T("launching telemetry eater threads") ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmSlowAllF , CBsTACKmIN << 3 ) , (countT)&bQuitSlowingAll , (countT)&bSlowAll , (countT)&stOsPid ) ;
-    ZE( boolT , bSlowAll        ) ;
-    ZE( boolT , bQuitSlowingAll ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmSlowAllF , CBsTACKmIN << 3 ) , (countT)&bQuitSlowingAll , (countT)&bSlowAll , (countT)&stOsPid , (countT)&cNewBreakNapsTaken ) ;
+    ZE( countT , cNewBreakNapsTaken ) ;
+    ZE( boolT  , bSlowAll           ) ;
+    ZE( boolT  , bQuitSlowingAll    ) ;
 
     etThread.osThreadF( TaRG2cBsTACK( tmSuspendAllF , CBsTACKmIN << 3 ) , (countT)&bQuitSuspendingAll , (countT)&bSuspendAll , (countT)&stOsPid ) ;
     ZE( boolT , bSuspendAll        ) ;

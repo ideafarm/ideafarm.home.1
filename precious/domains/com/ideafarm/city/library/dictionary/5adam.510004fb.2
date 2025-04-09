@@ -212,61 +212,61 @@ DONE( tmHireF )
                                         ifcUnexpectedExceptionCode = info3.u.Exception.ExceptionRecord.ExceptionCode & ~( 0xf0000000 ) | 0xd0000000 ;       //A:ASSUME: 02 BITS
                                     {
                                     default                                   :
-                                    case STATUS_SXS_INVALID_DEACTIVATION     /* 0xC0150010L */ : { tEvent += T("STATUS_SXS_INVALID_DEACTIVATION     ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_SXS_EARLY_DEACTIVATION       /* 0xC015000FL */ : { tEvent += T("STATUS_SXS_EARLY_DEACTIVATION       ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_ASSERTION_FAILURE            /* 0xC0000420L */ : { tEvent += T("STATUS_ASSERTION_FAILURE            ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_INVALID_CRUNTIME_PARAMETER   /* 0xC0000417L */ : { tEvent += T("STATUS_INVALID_CRUNTIME_PARAMETER   ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_STACK_BUFFER_OVERRUN         /* 0xC0000409L */ : { tEvent += T("STATUS_STACK_BUFFER_OVERRUN         ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_REG_NAT_CONSUMPTION          /* 0xC00002C9L */ : { tEvent += T("STATUS_REG_NAT_CONSUMPTION          ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_FLOAT_MULTIPLE_TRAPS         /* 0xC00002B5L */ : { tEvent += T("STATUS_FLOAT_MULTIPLE_TRAPS         ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_FLOAT_MULTIPLE_FAULTS        /* 0xC00002B4L */ : { tEvent += T("STATUS_FLOAT_MULTIPLE_FAULTS        ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_DLL_INIT_FAILED              /* 0xC0000142L */ : { tEvent += T("STATUS_DLL_INIT_FAILED              ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_CONTROL_C_EXIT               /* 0xC000013AL */ : { tEvent += T("STATUS_CONTROL_C_EXIT               ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_ENTRYPOINT_NOT_FOUND         /* 0xC0000139L */ : { tEvent += T("STATUS_ENTRYPOINT_NOT_FOUND         ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_ORDINAL_NOT_FOUND            /* 0xC0000138L */ : { tEvent += T("STATUS_ORDINAL_NOT_FOUND            ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_DLL_NOT_FOUND                /* 0xC0000135L */ : { tEvent += T("STATUS_DLL_NOT_FOUND                ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_STACK_OVERFLOW            /* 0xC00000FDL */ : { tEvent += T("EXCEPTION_STACK_OVERFLOW            ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_PRIV_INSTRUCTION          /* 0xC0000096L */ : { tEvent += T("EXCEPTION_PRIV_INSTRUCTION          ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_INT_OVERFLOW              /* 0xC0000095L */ : { tEvent += T("EXCEPTION_INT_OVERFLOW              ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_INT_DIVIDE_BY_ZERO        /* 0xC0000094L */ : { tEvent += T("EXCEPTION_INT_DIVIDE_BY_ZERO        ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_FLT_UNDERFLOW             /* 0xC0000093L */ : { tEvent += T("EXCEPTION_FLT_UNDERFLOW             ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_FLT_STACK_CHECK           /* 0xC0000092L */ : { tEvent += T("EXCEPTION_FLT_STACK_CHECK           ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_FLT_OVERFLOW              /* 0xC0000091L */ : { tEvent += T("EXCEPTION_FLT_OVERFLOW              ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_FLT_INVALID_OPERATION     /* 0xC0000090L */ : { tEvent += T("EXCEPTION_FLT_INVALID_OPERATION     ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_FLT_INEXACT_RESULT        /* 0xC000008FL */ : { tEvent += T("EXCEPTION_FLT_INEXACT_RESULT        ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_FLT_DIVIDE_BY_ZERO        /* 0xC000008EL */ : { tEvent += T("EXCEPTION_FLT_DIVIDE_BY_ZERO        ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_FLT_DENORMAL_OPERAND      /* 0xC000008DL */ : { tEvent += T("EXCEPTION_FLT_DENORMAL_OPERAND      ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_ARRAY_BOUNDS_EXCEEDED     /* 0xC000008CL */ : { tEvent += T("EXCEPTION_ARRAY_BOUNDS_EXCEEDED     ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_INVALID_DISPOSITION       /* 0xC0000026L */ : { tEvent += T("EXCEPTION_INVALID_DISPOSITION       ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_NONCONTINUABLE_EXCEPTION  /* 0xC0000025L */ : { tEvent += T("EXCEPTION_NONCONTINUABLE_EXCEPTION  ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_ILLEGAL_INSTRUCTION       /* 0xC000001DL */ : { tEvent += T("EXCEPTION_ILLEGAL_INSTRUCTION       ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_NO_MEMORY                    /* 0xC0000017L */ : { tEvent += T("STATUS_NO_MEMORY                    ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_INVALID_PARAMETER            /* 0xC000000DL */ : { tEvent += T("STATUS_INVALID_PARAMETER            ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_INVALID_HANDLE            /* 0xC0000008L */ : { tEvent += T("EXCEPTION_INVALID_HANDLE            ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_IN_PAGE_ERROR             /* 0xC0000006L */ : { tEvent += T("EXCEPTION_IN_PAGE_ERROR             ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_ACCESS_VIOLATION          /* 0xC0000005L */ : { tEvent += T("EXCEPTION_ACCESS_VIOLATION          ")                                                                                                                                                                                      ; break ; }
-                                    case DBG_EXCEPTION_NOT_HANDLED           /* 0x80010001L */ : { tEvent += T("DBG_EXCEPTION_NOT_HANDLED           ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_UNWIND_CONSOLIDATE           /* 0x80000029L */ : { tEvent += T("STATUS_UNWIND_CONSOLIDATE           ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_LONGJMP                      /* 0x80000026L */ : { tEvent += T("STATUS_LONGJMP                      ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_SINGLE_STEP               /* 0x80000004L */ : { tEvent += T("EXCEPTION_SINGLE_STEP               ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_BREAKPOINT                /* 0x80000003L */ : { tEvent += T("EXCEPTION_BREAKPOINT                ") ; if( bSlowAllP ) { ++ s ; etThread.osSleepF( tin0P , TOCK >> 4 ) ; etThread.traceF( tin0P , T("bSlowAllP is set, so i am napping for 1/01 tock for each breakpoint exception") ) ; } break ; }
-                                    case EXCEPTION_DATATYPE_MISALIGNMENT     /* 0x80000002L */ : { tEvent += T("EXCEPTION_DATATYPE_MISALIGNMENT     ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_GUARD_PAGE                /* 0x80000001L */ : { tEvent += T("EXCEPTION_GUARD_PAGE                ")                                                                                                                                                                                      ; break ; }
-                                    case DBG_COMMAND_EXCEPTION               /* 0x40010009L */ : { tEvent += T("DBG_COMMAND_EXCEPTION               ")                                                                                                                                                                                      ; break ; }
-                                    case DBG_CONTROL_BREAK                   /* 0x40010008L */ : { tEvent += T("DBG_CONTROL_BREAK                   ")                                                                                                                                                                                      ; break ; }
-                                    case DBG_RIPEXCEPTION                    /* 0x40010007L */ : { tEvent += T("DBG_RIPEXCEPTION                    ")                                                                                                                                                                                      ; break ; }
-                                    case DBG_PRINTEXCEPTION_C                /* 0x40010006L */ : { tEvent += T("DBG_PRINTEXCEPTION_C                ")                                                                                                                                                                                      ; break ; }
-                                    case DBG_CONTROL_C                       /* 0x40010005L */ : { tEvent += T("DBG_CONTROL_C                       ")                                                                                                                                                                                      ; break ; }
-                                    case DBG_TERMINATE_PROCESS               /* 0x40010004L */ : { tEvent += T("DBG_TERMINATE_PROCESS               ")                                                                                                                                                                                      ; break ; }
-                                    case DBG_TERMINATE_THREAD                /* 0x40010003L */ : { tEvent += T("DBG_TERMINATE_THREAD                ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_SEGMENT_NOTIFICATION         /* 0x40000005L */ : { tEvent += T("STATUS_SEGMENT_NOTIFICATION         ")                                                                                                                                                                                      ; break ; }
-                                    case DBG_CONTINUE                        /* 0x00010002L */ : { tEvent += T("DBG_CONTINUE                        ")                                                                                                                                                                                      ; break ; }
-                                    case DBG_EXCEPTION_HANDLED               /* 0x00010001L */ : { tEvent += T("DBG_EXCEPTION_HANDLED               ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_PENDING                      /* 0x00000103L */ : { tEvent += T("STATUS_PENDING                      ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_TIMEOUT                      /* 0x00000102L */ : { tEvent += T("STATUS_TIMEOUT                      ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_USER_APC                     /* 0x000000C0L */ : { tEvent += T("STATUS_USER_APC                     ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_ABANDONED_WAIT_0             /* 0x00000080L */ : { tEvent += T("STATUS_ABANDONED_WAIT_0             ")                                                                                                                                                                                      ; break ; }
-                                    case STATUS_WAIT_0                       /* 0x00000000L */ : { tEvent += T("STATUS_WAIT_0                       ")                                                                                                                                                                                      ; break ; }
+                                    case STATUS_SXS_INVALID_DEACTIVATION     /* 0xC0150010L */ : { tEvent += T("STATUS_SXS_INVALID_DEACTIVATION     ")                                                                                                        ; break ; }
+                                    case STATUS_SXS_EARLY_DEACTIVATION       /* 0xC015000FL */ : { tEvent += T("STATUS_SXS_EARLY_DEACTIVATION       ")                                                                                                        ; break ; }
+                                    case STATUS_ASSERTION_FAILURE            /* 0xC0000420L */ : { tEvent += T("STATUS_ASSERTION_FAILURE            ")                                                                                                        ; break ; }
+                                    case STATUS_INVALID_CRUNTIME_PARAMETER   /* 0xC0000417L */ : { tEvent += T("STATUS_INVALID_CRUNTIME_PARAMETER   ")                                                                                                        ; break ; }
+                                    case STATUS_STACK_BUFFER_OVERRUN         /* 0xC0000409L */ : { tEvent += T("STATUS_STACK_BUFFER_OVERRUN         ")                                                                                                        ; break ; }
+                                    case STATUS_REG_NAT_CONSUMPTION          /* 0xC00002C9L */ : { tEvent += T("STATUS_REG_NAT_CONSUMPTION          ")                                                                                                        ; break ; }
+                                    case STATUS_FLOAT_MULTIPLE_TRAPS         /* 0xC00002B5L */ : { tEvent += T("STATUS_FLOAT_MULTIPLE_TRAPS         ")                                                                                                        ; break ; }
+                                    case STATUS_FLOAT_MULTIPLE_FAULTS        /* 0xC00002B4L */ : { tEvent += T("STATUS_FLOAT_MULTIPLE_FAULTS        ")                                                                                                        ; break ; }
+                                    case STATUS_DLL_INIT_FAILED              /* 0xC0000142L */ : { tEvent += T("STATUS_DLL_INIT_FAILED              ")                                                                                                        ; break ; }
+                                    case STATUS_CONTROL_C_EXIT               /* 0xC000013AL */ : { tEvent += T("STATUS_CONTROL_C_EXIT               ")                                                                                                        ; break ; }
+                                    case STATUS_ENTRYPOINT_NOT_FOUND         /* 0xC0000139L */ : { tEvent += T("STATUS_ENTRYPOINT_NOT_FOUND         ")                                                                                                        ; break ; }
+                                    case STATUS_ORDINAL_NOT_FOUND            /* 0xC0000138L */ : { tEvent += T("STATUS_ORDINAL_NOT_FOUND            ")                                                                                                        ; break ; }
+                                    case STATUS_DLL_NOT_FOUND                /* 0xC0000135L */ : { tEvent += T("STATUS_DLL_NOT_FOUND                ")                                                                                                        ; break ; }
+                                    case EXCEPTION_STACK_OVERFLOW            /* 0xC00000FDL */ : { tEvent += T("EXCEPTION_STACK_OVERFLOW            ")                                                                                                        ; break ; }
+                                    case EXCEPTION_PRIV_INSTRUCTION          /* 0xC0000096L */ : { tEvent += T("EXCEPTION_PRIV_INSTRUCTION          ")                                                                                                        ; break ; }
+                                    case EXCEPTION_INT_OVERFLOW              /* 0xC0000095L */ : { tEvent += T("EXCEPTION_INT_OVERFLOW              ")                                                                                                        ; break ; }
+                                    case EXCEPTION_INT_DIVIDE_BY_ZERO        /* 0xC0000094L */ : { tEvent += T("EXCEPTION_INT_DIVIDE_BY_ZERO        ")                                                                                                        ; break ; }
+                                    case EXCEPTION_FLT_UNDERFLOW             /* 0xC0000093L */ : { tEvent += T("EXCEPTION_FLT_UNDERFLOW             ")                                                                                                        ; break ; }
+                                    case EXCEPTION_FLT_STACK_CHECK           /* 0xC0000092L */ : { tEvent += T("EXCEPTION_FLT_STACK_CHECK           ")                                                                                                        ; break ; }
+                                    case EXCEPTION_FLT_OVERFLOW              /* 0xC0000091L */ : { tEvent += T("EXCEPTION_FLT_OVERFLOW              ")                                                                                                        ; break ; }
+                                    case EXCEPTION_FLT_INVALID_OPERATION     /* 0xC0000090L */ : { tEvent += T("EXCEPTION_FLT_INVALID_OPERATION     ")                                                                                                        ; break ; }
+                                    case EXCEPTION_FLT_INEXACT_RESULT        /* 0xC000008FL */ : { tEvent += T("EXCEPTION_FLT_INEXACT_RESULT        ")                                                                                                        ; break ; }
+                                    case EXCEPTION_FLT_DIVIDE_BY_ZERO        /* 0xC000008EL */ : { tEvent += T("EXCEPTION_FLT_DIVIDE_BY_ZERO        ")                                                                                                        ; break ; }
+                                    case EXCEPTION_FLT_DENORMAL_OPERAND      /* 0xC000008DL */ : { tEvent += T("EXCEPTION_FLT_DENORMAL_OPERAND      ")                                                                                                        ; break ; }
+                                    case EXCEPTION_ARRAY_BOUNDS_EXCEEDED     /* 0xC000008CL */ : { tEvent += T("EXCEPTION_ARRAY_BOUNDS_EXCEEDED     ")                                                                                                        ; break ; }
+                                    case EXCEPTION_INVALID_DISPOSITION       /* 0xC0000026L */ : { tEvent += T("EXCEPTION_INVALID_DISPOSITION       ")                                                                                                        ; break ; }
+                                    case EXCEPTION_NONCONTINUABLE_EXCEPTION  /* 0xC0000025L */ : { tEvent += T("EXCEPTION_NONCONTINUABLE_EXCEPTION  ")                                                                                                        ; break ; }
+                                    case EXCEPTION_ILLEGAL_INSTRUCTION       /* 0xC000001DL */ : { tEvent += T("EXCEPTION_ILLEGAL_INSTRUCTION       ")                                                                                                        ; break ; }
+                                    case STATUS_NO_MEMORY                    /* 0xC0000017L */ : { tEvent += T("STATUS_NO_MEMORY                    ")                                                                                                        ; break ; }
+                                    case STATUS_INVALID_PARAMETER            /* 0xC000000DL */ : { tEvent += T("STATUS_INVALID_PARAMETER            ")                                                                                                        ; break ; }
+                                    case EXCEPTION_INVALID_HANDLE            /* 0xC0000008L */ : { tEvent += T("EXCEPTION_INVALID_HANDLE            ")                                                                                                        ; break ; }
+                                    case EXCEPTION_IN_PAGE_ERROR             /* 0xC0000006L */ : { tEvent += T("EXCEPTION_IN_PAGE_ERROR             ")                                                                                                        ; break ; }
+                                    case EXCEPTION_ACCESS_VIOLATION          /* 0xC0000005L */ : { tEvent += T("EXCEPTION_ACCESS_VIOLATION          ")                                                                                                        ; break ; }
+                                    case DBG_EXCEPTION_NOT_HANDLED           /* 0x80010001L */ : { tEvent += T("DBG_EXCEPTION_NOT_HANDLED           ")                                                                                                        ; break ; }
+                                    case STATUS_UNWIND_CONSOLIDATE           /* 0x80000029L */ : { tEvent += T("STATUS_UNWIND_CONSOLIDATE           ")                                                                                                        ; break ; }
+                                    case STATUS_LONGJMP                      /* 0x80000026L */ : { tEvent += T("STATUS_LONGJMP                      ")                                                                                                        ; break ; }
+                                    case EXCEPTION_SINGLE_STEP               /* 0x80000004L */ : { tEvent += T("EXCEPTION_SINGLE_STEP               ")                                                                                                        ; break ; }
+                                    case EXCEPTION_BREAKPOINT                /* 0x80000003L */ : { tEvent += T("EXCEPTION_BREAKPOINT                ") ; if( bSlowAllP ) { ++ s ; etThread.osSleepF( tin0P , TOCK >> 0 ) ; inc02AM( cNewBreakNapsTakenP ) ; }   break ; }
+                                    case EXCEPTION_DATATYPE_MISALIGNMENT     /* 0x80000002L */ : { tEvent += T("EXCEPTION_DATATYPE_MISALIGNMENT     ")                                                                                                        ; break ; }
+                                    case EXCEPTION_GUARD_PAGE                /* 0x80000001L */ : { tEvent += T("EXCEPTION_GUARD_PAGE                ")                                                                                                        ; break ; }
+                                    case DBG_COMMAND_EXCEPTION               /* 0x40010009L */ : { tEvent += T("DBG_COMMAND_EXCEPTION               ")                                                                                                        ; break ; }
+                                    case DBG_CONTROL_BREAK                   /* 0x40010008L */ : { tEvent += T("DBG_CONTROL_BREAK                   ")                                                                                                        ; break ; }
+                                    case DBG_RIPEXCEPTION                    /* 0x40010007L */ : { tEvent += T("DBG_RIPEXCEPTION                    ")                                                                                                        ; break ; }
+                                    case DBG_PRINTEXCEPTION_C                /* 0x40010006L */ : { tEvent += T("DBG_PRINTEXCEPTION_C                ")                                                                                                        ; break ; }
+                                    case DBG_CONTROL_C                       /* 0x40010005L */ : { tEvent += T("DBG_CONTROL_C                       ")                                                                                                        ; break ; }
+                                    case DBG_TERMINATE_PROCESS               /* 0x40010004L */ : { tEvent += T("DBG_TERMINATE_PROCESS               ")                                                                                                        ; break ; }
+                                    case DBG_TERMINATE_THREAD                /* 0x40010003L */ : { tEvent += T("DBG_TERMINATE_THREAD                ")                                                                                                        ; break ; }
+                                    case STATUS_SEGMENT_NOTIFICATION         /* 0x40000005L */ : { tEvent += T("STATUS_SEGMENT_NOTIFICATION         ")                                                                                                        ; break ; }
+                                    case DBG_CONTINUE                        /* 0x00010002L */ : { tEvent += T("DBG_CONTINUE                        ")                                                                                                        ; break ; }
+                                    case DBG_EXCEPTION_HANDLED               /* 0x00010001L */ : { tEvent += T("DBG_EXCEPTION_HANDLED               ")                                                                                                        ; break ; }
+                                    case STATUS_PENDING                      /* 0x00000103L */ : { tEvent += T("STATUS_PENDING                      ")                                                                                                        ; break ; }
+                                    case STATUS_TIMEOUT                      /* 0x00000102L */ : { tEvent += T("STATUS_TIMEOUT                      ")                                                                                                        ; break ; }
+                                    case STATUS_USER_APC                     /* 0x000000C0L */ : { tEvent += T("STATUS_USER_APC                     ")                                                                                                        ; break ; }
+                                    case STATUS_ABANDONED_WAIT_0             /* 0x00000080L */ : { tEvent += T("STATUS_ABANDONED_WAIT_0             ")                                                                                                        ; break ; }
+                                    case STATUS_WAIT_0                       /* 0x00000000L */ : { tEvent += T("STATUS_WAIT_0                       ")                                                                                                        ; break ; }
                                 {
                                 switch( info3.u.Exception.ExceptionRecord.ExceptionCode )
                                 ZE( countT , ifcUnexpectedExceptionCode ) ;                               //CALCULATED FROM OS EXCEPTION CODE
@@ -518,6 +518,7 @@ DONE( tmHireF )
     
     //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin1S&)tin0P).glass.idThread - ifcIDtHREADlOW_tmHireF ) ; }
 
+    countT&  cNewBreakNapsTakenP        = *(countT*)pTaskP->ce ;
     boolT&   bSlowAllP                  =  *(boolT*)pTaskP->cd ;
     boolT&   bSuspendAllP               =  *(boolT*)pTaskP->cc ;
     boolT&   bKidsSuspendedP            =  *(boolT*)pTaskP->cb ;
@@ -532,7 +533,7 @@ DONE( tmHireF )
     flagsT&  fliPendingSnapShotRequestP = *(flagsT*)pTaskP->c2 ;
     countT&  cHamburgersP               = *(countT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->cb && pTaskP->cc )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->cb && pTaskP->cc && pTaskP->cd && pTaskP->ce )
 TASK( tmHireF )
 
 DONE( tmSlowAllF )
@@ -600,7 +601,7 @@ DONE( tmSlowAllF )
         else
         }
             }
-                etThread.osThreadF( TaRG2cBsTACK( tmTakeBreaksF , CBsTACKmIN << 1 ) , (countT)&bQuitTakingBreaks , (countT)&stOsPidP ) ;
+                etThread.osThreadF( TaRG2cBsTACK( tmTakeBreaksF , CBsTACKmIN << 1 ) , (countT)&bQuitTakingBreaks , (countT)&stOsPidP , (countT)&cNewBreakNapsTakenP ) ;
                 etThread.traceF( tin0P , T("slowingAll on request") ) ;
             {
             if( bSlowAllP != bSlowAllLag )
@@ -635,7 +636,7 @@ DONE( tmSlowAllF )
                 ZE( countT   , costi ) ;
                 ZE( osTextT* , posti ) ;
 
-                etThread.traceF( tin0P , T("scanning for a file named []:    ")+tLong ) ;
+                //etThread.traceF( tin0P , T("scanning for a file named []:    ")+tLong ) ;
                 TN( tLong , "" ) ; tLong = T("////")+T(psttc1)+tSlowByHostNameSuffix ;
             {
             FORsTRINGSiN1( pstt1LanRoster )
@@ -716,11 +717,12 @@ DONE( tmSlowAllF )
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 
-    stackC& stOsPidP         = *(stackC*)pTaskP->c3 ;
-    boolT&  bSlowAllP        =  *(boolT*)pTaskP->c2 ;
-    boolT&  bQuitSlowingAllP =  *(boolT*)pTaskP->c1 ;
+    countT& cNewBreakNapsTakenP = *(countT*)pTaskP->c4 ;
+    stackC& stOsPidP            = *(stackC*)pTaskP->c3 ;
+    boolT&  bSlowAllP           =  *(boolT*)pTaskP->c2 ;
+    boolT&  bQuitSlowingAllP    =  *(boolT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 TASK( tmSlowAllF )
 
 DONE( tmTakeBreaksF )
@@ -728,7 +730,26 @@ DONE( tmTakeBreaksF )
     bQuitTakingBreaksP = 0 ;
 
     }
-        ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ;
+        ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ;         // THIS DELAY MUST BE LONG ENOUGH SO THAT ALL OF THE BREAKPOINT EXCEPTIONS THAT I HAVE DEMANDED HAVE BEEN SEEN BY MY HANDLER (SEE THE PRECEDING COMMENT)
+
+        //WHEN GET HERE THEN MY HANDLER HAS REPORTED AS MANY BREAKPOINT EXCEPTIONS AS I HAVE DEMANDED ; THIS CAN BE PREMATURE IF THE TARGET PROCESS RAISES A BREAKPOINT EXCEPTION FOR SOME OTHER REASON THAT IS ERRONEOUSLY COUNTED IN cNewBreakNapsTakenP
+
+        }
+            while( ~hWalk ) ;
+            }
+                if( !ids ) stOsPidDone.extractF( 0 , tin0P ) ;                      // IF THE TARGET PROCESS IS GONE THEN REMOVE IT FROM THE "DONE" STACK
+                stOsPidP.sinkF( tin0P , ids , osPid , flSTACKsINK_QUERY ) ;
+                ZE( countT , ids ) ;
+
+                countT osPid = stOsPidDone.downF( tin0P , hWalk ) ;
+            {
+            do
+            handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            etThread.traceF( tin0P , T("removing osPid values for processes that have ended so that i don't wait to see a breakpoint exception for them") ) ;
+
+            ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
+        {
+        while( !bQuitTakingBreaksP && cNewBreakNapsTakenP < stOsPidDone ) ;      // WHILE THE EVENT HANDLER HAS NOT SEEN ENOUGH BREAKPOINT EXCEPTIONS
 
         stOsPidP.ungrabF( tin0P ) ;
         }
@@ -741,12 +762,16 @@ DONE( tmTakeBreaksF )
                         countT rc = POOP ;
                     {
                     else
-                    if( !POOP ) etThread.traceF( tin0P , T("breakpoint demand aok [osPid]:    ")+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    }
+                        stOsPidDone.sinkF( tin0P , countTC() , osPid , flSTACKsINK_null , 0 , 0 ) ;
+                        //etThread.traceF( tin0P , T("breakpoint demand aok [osPid]:    ")+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    {
+                    if( !POOP )
 
                     CloseHandle( osh ) ;
 
                     BOSpOOP
-                    BOSS( WHATsir , BOSoK , DebugBreakProcess( osh ) )
+                    BOSS( WHATsir , BOSoK , DebugBreakProcess( osh ) )                  //A:ASSUME: EITHER THE TARGET PROCESS WILL END OR MY HANDLER WILL SEE A BREAKPOINT EXCEPTION
 
                     HANDLE osh = OpenProcess( PROCESS_ALL_ACCESS , 0 , osPid ) ;
 
@@ -760,10 +785,14 @@ DONE( tmTakeBreaksF )
             do
             handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             ZE( countT , offo ) ;
+            cNewBreakNapsTakenP = 0 ;
+
             _IO_
         {
         if( stOsPidP )
         stOsPidP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+        stackC stOsPidDone( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
     {
     while( !bQuitTakingBreaksP )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -771,8 +800,9 @@ DONE( tmTakeBreaksF )
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 
-    stackC& stOsPidP           = *(stackC*)pTaskP->c2 ;
-    boolT&  bQuitTakingBreaksP =  *(boolT*)pTaskP->c1 ;
+    countT& cNewBreakNapsTakenP = *(countT*)pTaskP->c3 ;
+    stackC& stOsPidP            = *(stackC*)pTaskP->c2 ;
+    boolT&  bQuitTakingBreaksP  =  *(boolT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmTakeBreaksF )
@@ -893,7 +923,7 @@ DONE( tmSuspendAllF )
                 ZE( countT   , costi ) ;
                 ZE( osTextT* , posti ) ;
 
-                etThread.traceF( tin0P , T("scanning for a file named []:    ")+tLong ) ;
+                //etThread.traceF( tin0P , T("scanning for a file named []:    ")+tLong ) ;
                 TN( tLong , "" ) ; tLong = T("////")+T(psttc1)+tSuspendByHostNameSuffix ;
             {
             FORsTRINGSiN1( pstt1LanRoster )
