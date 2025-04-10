@@ -104,6 +104,8 @@
     "                jl     climb                                               " /* CLIMB IF TARGET IS (ODDLY) ABOVE THIS FRAME                                 */ \
     "                cmp    eax , esp                                           " /*                                                                             */ \
     "                sub    eax , offFingerVerifyLocationI                      " /*                                                                             */ \
+    "                jz     fin                                                 " /* NO MORE FRAMES TO SEARCH, SO WE'RE DONE, EMPTY HANDED                       */ \
+    "                test   eax , eax                                           " /*                                                                             */ \
     "   again:       mov    eax , ebx                                           " /* SET TARGET TO STACK FRAME                                                   */ \
                                                                                                                                                                     \
     /* ========================================================================================================================================================= */ \
@@ -122,12 +124,23 @@
     "                je     early                                               " /*                                                                             */ \
     "                cmp    bTlsEarlyLateI , 01h                                " /*                                                                             */ \
                                                                                                                                                                     \
-#pragma aux pTinAM =                                                                                                                                             \
+#pragma aux pTinAM =                                                                                                                                                \
 //PSEUDOdUPLICATEcODE THIS FILE
 
 //CODE SYNC: 0080009 001024e 0010265
 
+//   
+//   ebp ebx        POINTS HERE
+//   
+//   fingerVerify   LIVES HERE
+//   
+//   esp            POINTS HERE
+//   
+// THREAD STACK AT EXECUTION OF again: , PRESENTED IN INCREASING MEMORY ADDRESS ORDER BOTTOM (THIS LINE) TO TOP (THE END OF THIS COMMENT)
+
 //2002.12.20: finger offset from ebp: -8 -> -01 (I DO NOT KNOW WHAT IS IN THE HIGHEST 2 countT OF THE FRAME, AND WHY THIS CHANGED TO 4)
+
+//20250410@1447: NOTE THAT I RETURN A REFERENCE TO A POINTER, NOT THE ADDRESS OF A tin0S INSTANCE
 
 /*1*/ tin0S*& __export pTinAM( voidT ) ;/*1*/ 
 

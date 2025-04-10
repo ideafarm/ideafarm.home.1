@@ -19405,7 +19405,6 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000004.setifequalsam END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000005.ptinam BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -19420,6 +19419,11 @@ as i climb the stack, i look for either a tls or a frame that contains a new ebp
 if the new ebp value is 0 then i assume that my caller is an exception handler, and i return &tinExceptionHanderDfltG
 */ 
 /**/ 
+
+// WARNING: IF ExitProcess() IS CALLED, SUCH AS BY THE EXCEPTION HANDLER, THE EXCEPTING THREAD WILL SET bTlsEarlyLateI AS IT BEGINS TO DESTROY THE STATIC GLOBAL OBJECTS, WHICH WILL CAUSE ME TO RETURN A REFERENCE TO THE WRONG tin0S INSTANCE
+// 
+//   IN THIS CIRCUMSTANCE, AFTER bTlsEarlyLateI HAS BEEN SET, I, AND TINSL, WILL RETURN *pTinMainI, WHILE CODE THAT IS EXPLICITLY PASSED A tin0P PARAMETER WILL HAVE THE tin0P FOR THE EXCEPTING THREAD
+//
 
 /*
     code notes
@@ -19437,12 +19441,23 @@ if the new ebp value is 0 then i assume that my caller is an exception handler, 
 
 /*1*/ tin0S*& __export pTinAM( voidT ) ;/*1*/ 
 
+//20250410@1447: NOTE THAT I RETURN A REFERENCE TO A POINTER, NOT THE ADDRESS OF A tin0S INSTANCE
+
 //2002.12.20: finger offset from ebp: -8 -> -01 (I DO NOT KNOW WHAT IS IN THE HIGHEST 2 countT OF THE FRAME, AND WHY THIS CHANGED TO 4)
+
+// THREAD STACK AT EXECUTION OF again: , PRESENTED IN INCREASING MEMORY ADDRESS ORDER BOTTOM (THIS LINE) TO TOP (THE END OF THIS COMMENT)
+//   
+//   esp            POINTS HERE
+//   
+//   fingerVerify   LIVES HERE
+//   
+//   ebp ebx        POINTS HERE
+//   
 
 //CODE SYNC: 0080009 001024e 0010265
 
 //PSEUDOdUPLICATEcODE THIS FILE
-#pragma aux pTinAM =                                                                                                                                             \
+#pragma aux pTinAM =                                                                                                                                                \
                                                                                                                                                                     \
     "                cmp    bTlsEarlyLateI , 01h                                " /*                                                                             */ \
     "                je     early                                               " /*                                                                             */ \
@@ -19461,6 +19476,8 @@ if the new ebp value is 0 then i assume that my caller is an exception handler, 
     /* ========================================================================================================================================================= */ \
                                                                                                                                                                     \
     "   again:       mov    eax , ebx                                           " /* SET TARGET TO STACK FRAME                                                   */ \
+    "                test   eax , eax                                           " /*                                                                             */ \
+    "                jz     fin                                                 " /* NO MORE FRAMES TO SEARCH, SO WE'RE DONE, EMPTY HANDED                       */ \
     "                sub    eax , offFingerVerifyLocationI                      " /*                                                                             */ \
     "                cmp    eax , esp                                           " /*                                                                             */ \
     "                jl     climb                                               " /* CLIMB IF TARGET IS (ODDLY) ABOVE THIS FRAME                                 */ \
