@@ -140,7 +140,32 @@
 {
 extern "C" void** _export __syscall OPENSSL_Applink( void )                                 //OPENSSL REQUIRES THIS FUNCTION TO BE IN THE EXE MODULE OF ANY PROCESS THAT DOES I/O FOR PEM FILES
 
-//#define DEBUGeXCEPTIONhANDLER
+//   
+//   20250409@1728: THESE INSTRUCTIONS TESTED AOK
+//   
+//   THIS SHOULD RESULT IN EXECUTION STOPPING AT THAT BREAKPOINT SO THAT YOU CAN STEP INTO THE HANDLER   
+//   
+//   11. CLICK Run/Go (OR PRESS THE F5 KEY)
+//   01. PUT A BREAKPOINT ON rptExceptionF IN MODULE 30000
+//   f0. wdw ideafarm.00000xxx.ipdos-we 5101200f !idHome 10000008                                                        (THE "!debug" ARGUMENT IS INTENTIONALLY OMITTED SO THAT THE EXCEPTION HANDLER WILL BE CALLED)
+//   e0. dir                                                                                                             (NOTE THE FILENAME ideafarm.00000xxx.ipdos-we OF THE WO'TH *.ipdos-we FILE, WHICH IS THE COMMAND WINDOW EXECUTABLE) 
+//   d0. g 1
+//   c0. dir
+//   b0. g m
+//   a0. e                                                                                                               (THIS WILL BUILD, USING THE PREBUILT GENERATED HEADERS AND THE CURRENT BUILD SPECS IN Eve (ADAM 5adam.51000621.1)
+//   90. m
+//   80. rw elves.cpp ; IN THE EDITOR, EDIT THE WO'TH LINE TO ENABLE "#define DEBUG" ; THEN SAVE AND EXIT
+//   70. g el
+//   60. DELETE THIS FOLDER: x:\ideafarm.home.1\ephemeral\city
+//   50. g d                                                                                                             (CHANGE DIRECTORY TO THE DICTIONARY FOLDER)
+//   40. OPEN A COMMAND PROMPT WINDOW
+//   30. EDIT Eve SO THAT Eve WILL BUILD THAT SCRATCH ADAM                                                               (SCRATCH ADAM 5101200f IS USED HERE AS AN EXAMPLE)
+//   20. USING EITHER Elves OR AN EDITOR AT A COMMAND PROMPT, EDIT A SCRATCH ADAM SO THAT IT WILL THROW AN EXCEPTION.    (THE EASIEST WAY TO DO THAT IS TO ADD A "__1" LINE, WHICH WILL CALL gruntF TO THROW A "GRUNT EXCEPTION".)
+//   10. ENABLE THE "#define DEBUGeXCEPTIONhANDLER" LINE
+//   
+// INSTRUCTIONS FOR DEBUGGING THE EXCEPTION HANDLER AND FOR BUILDING AFTER ANY CHANGE OF A HEADER FILE (A FILE IN THE dictionary FOLDER WITH A NAME 1.*)
+
+#define DEBUGeXCEPTIONhANDLER
 // FOR PRODUCTION AND FOR NORMAL DEBUGGING, COMMENT OUT THE NEXT LINE ; TO USE WDW TO DEBUG THE EXCEPTION HANDLER, ENABLE THE NEXT LINE
 
 //U::O: THE DUPLICATE IMAGE IN 0100002 CAN BE ELIMINATED BY HAVING 0100002 RESOLVE REFERENCES USING 0100003W.EXE AS IF IT IS A DLL

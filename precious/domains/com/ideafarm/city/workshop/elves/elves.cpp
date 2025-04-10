@@ -1,4 +1,4 @@
-//#define DEBUG
+#define DEBUG
 
 //ENABLE THIS PREPROCESSOR IF/ENDIF IN PRODUCTION
 #if not defined( DEBUG )
@@ -3852,6 +3852,7 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 
             !strcmp( postGroupP , "36024" ) ||      // tinC (so can call VirtualQuery)
             !strcmp( postGroupP , "3603a" ) ||      // arrayC
+            !strcmp( postGroupP , "3603e" ) ||      // napkinC (TEMPORARY TO FIND A BUG)
             !strcmp( postGroupP , "36041" ) ||      // processGlobalBeginC  (Setting process affinity mask)
             !strcmp( postGroupP , "3607a" ) ||      // parameterC (calls CreateDirectory to create tmp directory so that i can get exception reports and LOGrAW)
             !strcmp( postGroupP , "360ae" ) ||      // processGlobal1S: CONTAINS THIRD PARTY SPECIFIC MEMBERS

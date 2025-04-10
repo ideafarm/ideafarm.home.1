@@ -10,27 +10,27 @@
     }
 
 //}
-//    ((tin1S&)tin0P).pc Utility[ 1 ] -- ;
+//    tin1P.pc Utility[ 1 ] -- ;
 //    }
 //        TRACEcALLnEST( "ifcTHREADpRIORITY_LAZIEST 4" ) ;
 //        LOGcALLnEST(   "ifcTHREADpRIORITY_LAZIEST 4" ) ;
 //    {
 //    if( ifcTHREADpRIORITY_LAZIEST == thirdC::dosPriorityIF( tin0P ) )
-//    ((tin1S&)tin0P).pc Utility[ 1 ] -- ;
+//    tin1P.pc Utility[ 1 ] -- ;
 //{
-//if( ((tin1S&)tin0P).pc Utility[ 0 ] )
+//if( tin1P.pc Utility[ 0 ] )
 //U:: TO FIND A BUG
 
-        ((tin1S&)tin0P).pInOutFrame = pDad ;
+        tin1P.pInOutFrame = pDad ;
 
         }
             THREADmODE4rESTORE
             }
                 THREADmODE4rESTORE
 
-                ((tin12S&)tin0P).cTimeWriteInOutTelemetry      += deltaTime5      ;
-                ((tin12S&)tin0P).cCpuCyclesWriteInOutTelemetry += deltaCpuCycles5 ;
-                ((tin1S&)tin0P).cTellsWriteInOutTelemetry ++ ;
+                tin12P.cTimeWriteInOutTelemetry      += deltaTime5      ;
+                tin12P.cCpuCyclesWriteInOutTelemetry += deltaCpuCycles5 ;
+                tin1P.cTellsWriteInOutTelemetry ++ ;
 
                 }
                     pDad->auditTime     .dTimeAuditKidBook      += deltaTime5      ;
@@ -41,8 +41,8 @@
                 deltaTime5      -= say.cTime4      ;
                 deltaCpuCycles5 -= say.cCpuCycles4 ;
 
-                ((tin12S&)tin0P).cTime2Or5Lath      = deltaTime5      ; //NOT DELTA YET
-                ((tin12S&)tin0P).cCpuCycles2Or5Lath = deltaCpuCycles5 ; //NOT DELTA YET
+                tin12P.cTime2Or5Lath      = deltaTime5      ; //NOT DELTA YET
+                tin12P.cCpuCycles2Or5Lath = deltaCpuCycles5 ; //NOT DELTA YET
 
                 QueryThreadCycleTime( (HANDLE)(-2) ,  (ULONG64*)&deltaCpuCycles5 ) ;
                 QueryPerformanceCounter( (LARGE_INTEGER*)&deltaTime5 ) ;
@@ -94,7 +94,7 @@
                             //THREADmODE4rESTORE
                             }
                                 thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_APP ) ;
-                                tellC tell( tin0P , idLineCt , idiFileCt , 0 , ifcIDtYPEtELLaPP_INoUTaRRAY , ((tin1S&)tin0P).pbPendingInOutFramePackets , sizeof( countT ) + cPending * sizeof( tellInfoAppInOutFrameS ) ) ;
+                                tellC tell( tin0P , idLineCt , idiFileCt , 0 , ifcIDtYPEtELLaPP_INoUTaRRAY , tin1P.pbPendingInOutFramePackets , sizeof( countT ) + cPending * sizeof( tellInfoAppInOutFrameS ) ) ;
                             {
                             if( !bNoTelemetry )
                             //THREADmODE4oN( flTHREADmODE4_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY | flTHREADmODE4_DOnOTfLUSHpENDINGaPPtELEMETRY ) ;
@@ -112,10 +112,10 @@
                     {
                     if( !( F(flagsCt) & flINoUTfRAMEc_DEFERwRITINGaPPtELEMETRY ) )        // EMIT THE PENDING PACKETS IF I CAN
 
-                    tellInfoAppInOutFrameS* pPending = (tellInfoAppInOutFrameS*)( ((tin1S&)tin0P).pbPendingInOutFramePackets + sizeof( countT ) ) ;
-                    countT&                 cPending =                *(countT*)  ((tin1S&)tin0P).pbPendingInOutFramePackets                      ;
+                    tellInfoAppInOutFrameS* pPending = (tellInfoAppInOutFrameS*)( tin1P.pbPendingInOutFramePackets + sizeof( countT ) ) ;
+                    countT&                 cPending =                *(countT*)  tin1P.pbPendingInOutFramePackets                      ;
                 {
-                if( ((tin1S&)tin0P).pbPendingInOutFramePackets )
+                if( tin1P.pbPendingInOutFramePackets )
                 ZE( boolT , bDone ) ;
 
                 THREADmODE4oN( flTHREADmODE4_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY | flTHREADmODE4_DOnOTfLUSHpENDINGaPPtELEMETRY ) ;
@@ -151,16 +151,16 @@
         {
         if( F(flagsCt) & flINoUTfRAMEc_DOnOTcOLLECTaPPtELEMETRY )
 
-        ((tin123S&)tin0P).where.idWhat1 = idWhat1Save ;_
+        tin123P.where.idWhat1 = idWhat1Save ;_
 
         }
             _MOLE
-            ((tin123S&)tin0P).where.idWhat2 = idWhat2Save ;_
+            tin123P.where.idWhat2 = idWhat2Save ;_
             }
                 thirdC::inOutChatterIfIF( tin0P ) ;_
 
                 }
-                    ((tin1S&)tin0P).bSuppressInOutTrace -- ;_
+                    tin1P.bSuppressInOutTrace -- ;_
                     }
                         //U::SUSPECTED DEADLOCK: ((etherC*)0)->traceF( tin0P , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;_
 
@@ -175,33 +175,33 @@
                         OStEXTC(  ostoSay , idiFileCt , 0 ) ;_
                         OStEXT(   ostoSay , TUCK << 2 ) ;_
                     {
-                    if( !( ((tin1S&)tin0P).bSuppressInOutTrace ++ ) && ((tin1S&)tin0P).glass.idThread != ifcIDtHREADlOW_tmHeartF && ((tin1S&)tin0P).glass.idThread != ifcIDtHREADlOW_break && ((tin1S&)tin0P).glass.idThread != ifcIDtHREADlOW_tmKillSocketF && ((tin1S&)tin0P).glass.idThread != ifcIDtHREADlOW_tmWatchF && ((tin1S&)tin0P).glass.idThread != ifcIDtHREADlOW_tmTimeNowF )
+                    if( !( tin1P.bSuppressInOutTrace ++ ) && tin1P.glass.idThread != ifcIDtHREADlOW_tmHeartF && tin1P.glass.idThread != ifcIDtHREADlOW_break && tin1P.glass.idThread != ifcIDtHREADlOW_tmKillSocketF && tin1P.glass.idThread != ifcIDtHREADlOW_tmWatchF && tin1P.glass.idThread != ifcIDtHREADlOW_tmTimeNowF )
                 {
                 if( ph && ph->flags & F(flHOMEs_INoUTtRACE) )
                 homeS* ph = &homeS::homeIF() ;_
 
-                ((tin123S&)tin0P).where.idDirty ++ ;_
+                tin123P.where.idDirty ++ ;_
 
-                ((tin123S&)tin0P).pLFstep[ offos2New + 1 ] = idiFileCt ;_
-                ((tin123S&)tin0P).pLFstep[ offos2New     ] = idLineCt & ~fliSTEP_FLAGmASK | fliSTEP_NESTcHANGE | fliSTEP_NESToUT ;_
+                tin123P.pLFstep[ offos2New + 1 ] = idiFileCt ;_
+                tin123P.pLFstep[ offos2New     ] = idLineCt & ~fliSTEP_FLAGmASK | fliSTEP_NESTcHANGE | fliSTEP_NESToUT ;_
 
-                const countT offosNew  =   ((tin1S&)tin0P).glass.idStep        & OFFsLOTtINsTEPmAX ; const countT offos2New = offosNew << 1 ;_
-                ((tin123S&)tin0P).where.cInNest -- ;_
-                ((tin1S&)tin0P).glass.idStep ++ ;_
+                const countT offosNew  =   tin1P.glass.idStep        & OFFsLOTtINsTEPmAX ; const countT offos2New = offosNew << 1 ;_
+                tin123P.where.cInNest -- ;_
+                tin1P.glass.idStep ++ ;_
 
-                ((tin123S&)tin0P).pFlagsThreadLevelMode[ offon      ] = pFlagsThreadLevelModeSave ;_
-                ((tin123S&)tin0P).pIdProgressNest[       offon      ] = idProgressNestSave ;_
-                ((tin123S&)tin0P).pEIPInNest[            offon      ] = eipInNestSave ;_
-                ((tin123S&)tin0P).pIdInNest[             offonk     ] = 0 ;_
-                ((tin123S&)tin0P).where.pLFnest[       offon2 + 1 ] = idFileNestSave ;_
-                ((tin123S&)tin0P).where.pLFnest[       offon2     ] = idLineNestSave ;_
+                tin123P.pFlagsThreadLevelMode[ offon      ] = pFlagsThreadLevelModeSave ;_
+                tin123P.pIdProgressNest[       offon      ] = idProgressNestSave ;_
+                tin123P.pEIPInNest[            offon      ] = eipInNestSave ;_
+                tin123P.pIdInNest[             offonk     ] = 0 ;_
+                tin123P.where.pLFnest[       offon2 + 1 ] = idFileNestSave ;_
+                tin123P.where.pLFnest[       offon2     ] = idLineNestSave ;_
 
                 }
                     }
-                        if( was == - 1 ) incv02AM( ( (countT*)&((tin1S&)tin0P).pcExitsWhere[ off ] )[ 1 ] ) ;_                 // THIS IS NOT ATOMIC, BUT THE CORRECT VALUE WILL RESULT EVEN IF RACE (WHICH IS PRACTICALLY BUT NOT THEORETICALLY IMPOSSIBLE) (CODE CAN BE WRITTEN TO "BREAK" THIS ASSUMPTION)
-                        countT was = incv02AM( *(countT*)&((tin1S&)tin0P).pcExitsWhere[ off ] ) ;_ 
+                        if( was == - 1 ) incv02AM( ( (countT*)&tin1P.pcExitsWhere[ off ] )[ 1 ] ) ;_                 // THIS IS NOT ATOMIC, BUT THE CORRECT VALUE WILL RESULT EVEN IF RACE (WHICH IS PRACTICALLY BUT NOT THEORETICALLY IMPOSSIBLE) (CODE CAN BE WRITTEN TO "BREAK" THIS ASSUMPTION)
+                        countT was = incv02AM( *(countT*)&tin1P.pcExitsWhere[ off ] ) ;_ 
                     {
-                    if( off && off < ((tin1S&)tin0P).ccExitsWhere )
+                    if( off && off < tin1P.ccExitsWhere )
                     countT off = idFileRankCt ;_
 
                     //}
@@ -211,15 +211,15 @@
                 {
                 IFwHEREiSwATCHING
 
-                if( ((tin123S&)tin0P).tally.bTally ) ((tin123S&)tin0P).tally.pcExits[ IDFILE ] ++ ;_
+                if( tin123P.tally.bTally ) tin123P.tally.pcExits[ IDFILE ] ++ ;_
 
-                const countT offonk = ( ((tin123S&)tin0P).where.cInNest + 1 ) & OFFsLOTtINnESTmAX ; // "k" IS FOR "KID"
-                const countT offon  =   ((tin123S&)tin0P).where.cInNest       & OFFsLOTtINnESTmAX ; const countT offon2 = offon << 1 ;_
-                const countT offos  =   ((tin1S&)tin0P).glass.idStep        & OFFsLOTtINsTEPmAX ; const countT offos2 = offos << 1 ;_
+                const countT offonk = ( tin123P.where.cInNest + 1 ) & OFFsLOTtINnESTmAX ; // "k" IS FOR "KID"
+                const countT offon  =   tin123P.where.cInNest       & OFFsLOTtINnESTmAX ; const countT offon2 = offon << 1 ;_
+                const countT offos  =   tin1P.glass.idStep        & OFFsLOTtINsTEPmAX ; const countT offos2 = offos << 1 ;_
 
-                ((tin123S&)tin0P).where.idDirty ++ ;_
+                tin123P.where.idDirty ++ ;_
             {
-            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( ((tin123S&)tin0P).where.idDirty % 2 ) )
+            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(tin1P.flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( tin123P.where.idDirty % 2 ) )
 
             //}
             //    }
@@ -232,13 +232,13 @@
             //
             //}
             //    BLAMMO ;_
-            //    LOGrAW5( "tin0P [valueExpectedByInOut,*pcWatchedByInOut]: " , ((tin1S&)tin0P).valueExpectedByInOut , " != " , *((tin1S&)tin0P).pcWatchedByInOut , "\r\n" ) ;_
+            //    LOGrAW5( "tin0P [valueExpectedByInOut,*pcWatchedByInOut]: " , tin1P.valueExpectedByInOut , " != " , *tin1P.pcWatchedByInOut , "\r\n" ) ;_
             //{
-            //if( ((tin1S&)tin0P).pcWatchedByInOut && *((tin1S&)tin0P).pcWatchedByInOut != ((tin1S&)tin0P).valueExpectedByInOut )
+            //if( tin1P.pcWatchedByInOut && *tin1P.pcWatchedByInOut != tin1P.valueExpectedByInOut )
         {
         if( F(flagsCt) & flINoUTfRAMEc_REGISTERcALLnEST )
 
-        ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GOiNoUTdT ;_
+        tin123P.where.idWhat1 = ifcIDwHAT_GOiNoUTdT ;_
 
 //    #endif
 //
@@ -247,7 +247,7 @@
 //            PUSE.testDropHeadersF( tin0P ) ;
 //            THREADmODE4oN( flTHREADmODE4_DOnOTtESTdROPhEADERS )
 //        {
-//        if( ((tin1S&)tin0P).pag1->idAdam == ifcIDaDAM_ROOThTTPsERVER && !( F(((tin1S&)tin0P).flagsThreadMode4) & flTHREADmODE4_DOnOTtESTdROPhEADERS ) && ((tin1S&)tin0P).pPoolUse )
+//        if( tin1P.pag1->idAdam == ifcIDaDAM_ROOThTTPsERVER && !( F(tin1P.flagsThreadMode4) & flTHREADmODE4_DOnOTtESTdROPhEADERS ) && tin1P.pPoolUse )
 //
 //    #if defined( ENABLEdROPnOTES )
 
@@ -326,14 +326,14 @@
             say.dCpuCyclesIn = say.cCpuCycles3 - say.cCpuCycles2 ;
 
             ;
-                : say.cTime3 - ((tin12S&)tin0P).cTime2Or5Lath
+                : say.cTime3 - tin12P.cTime2Or5Lath
                 ? deltaTimeIn
-            auditTime.dTimeAuditKidBetween += ((tin12S&)tin0P).cTime2Or5Lath == say.cTime2
+            auditTime.dTimeAuditKidBetween += tin12P.cTime2Or5Lath == say.cTime2
 
             ;
-                : say.cCpuCycles3 - ((tin12S&)tin0P).cCpuCycles2Or5Lath
+                : say.cCpuCycles3 - tin12P.cCpuCycles2Or5Lath
                 ? deltaCpuCyclesIn
-            auditCpuCycles.dCpuCyclesAuditKidBetween += ((tin12S&)tin0P).cCpuCycles2Or5Lath == say.cCpuCycles2
+            auditCpuCycles.dCpuCyclesAuditKidBetween += tin12P.cCpuCycles2Or5Lath == say.cCpuCycles2
 
             }
                 pDad->auditTime     .dTimeAuditKidIn      += deltaTimeIn      ;
@@ -349,22 +349,25 @@
         {
         if( !( F(flagsCt) & flINoUTfRAMEc_DOnOTcOLLECTaPPtELEMETRY ) )
 
-        //if( processGlobal1I.pHome && ((tin1S&)tin0P).pc Utility[ 0 ] ) { *(countT*)0 = 0x1234 ; }
+        //if( processGlobal1I.pHome && tin1P.pc Utility[ 0 ] ) { *(countT*)0 = 0x1234 ; }
 
-        const boolT bNoTelemetry = tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).idGrabLayerGrabbedMax > ifcIDgRABlAYER_bBOOKSc ;
+        const boolT bNoTelemetry = tin0P.idTypeTin == ifcIDtYPEtIN_123 && tin123P.idGrabLayerGrabbedMax > ifcIDgRABlAYER_bBOOKSc ;
 
 //}
-//    ((tin1S&)tin0P).pc Utility[ 1 ] -- ;
+//    tin1P.pc Utility[ 1 ] -- ;
 //    }
 //        TRACEcALLnEST( "ifcTHREADpRIORITY_LAZIEST 3" ) ;
 //        LOGcALLnEST(   "ifcTHREADpRIORITY_LAZIEST 3" ) ;
 //    {
 //    if( ifcTHREADpRIORITY_LAZIEST == thirdC::dosPriorityIF( tin0P ) )
-//    ((tin1S&)tin0P).pc Utility[ 1 ] -- ;
+//    tin1P.pc Utility[ 1 ] -- ;
 //{
-//if( ((tin1S&)tin0P).pc Utility[ 0 ] )
+//if( tin1P.pc Utility[ 0 ] )
 //U:: TO FIND A BUG
 
+        tin123S& tin123P = (tin123S&)tin0P ;
+        tin12S&  tin12P  =  (tin12S&)tin0P ;
+        tin1S&   tin1P   =   (tin1S&)tin0P ;
         tin0S& tin0P = tin0Ct ; _MILE  _
     {
     if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ) )
