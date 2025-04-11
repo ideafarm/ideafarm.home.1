@@ -730,7 +730,9 @@ DONE( tmTakeBreaksF )
     bQuitTakingBreaksP = 0 ;
 
     }
+        etRock.traceF( tin0P , T("U:: / 0") ) ;
         ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ;         // THIS DELAY MUST BE LONG ENOUGH SO THAT ALL OF THE BREAKPOINT EXCEPTIONS THAT I HAVE DEMANDED HAVE BEEN SEEN BY MY HANDLER (SEE THE PRECEDING COMMENT)
+        etRock.traceF( tin0P , T("U:: / 1") ) ;
 
         //WHEN GET HERE THEN MY HANDLER HAS REPORTED AS MANY BREAKPOINT EXCEPTIONS AS I HAVE DEMANDED ; THIS CAN BE PREMATURE IF THE TARGET PROCESS RAISES A BREAKPOINT EXCEPTION FOR SOME OTHER REASON THAT IS ERRONEOUSLY COUNTED IN cNewBreakNapsTakenP
 
@@ -745,11 +747,12 @@ DONE( tmTakeBreaksF )
             {
             do
             handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-            etThread.traceF( tin0P , T("removing osPid values for processes that have ended so that i don't wait to see a breakpoint exception for them") ) ;
+            etRock.traceF( tin0P , T("removing osPid values for processes that have ended so that i don't wait to see a breakpoint exception for them") ) ;
 
             ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
         {
         while( !bQuitTakingBreaksP && cNewBreakNapsTakenP < stOsPidDone ) ;      // WHILE THE EVENT HANDLER HAS NOT SEEN ENOUGH BREAKPOINT EXCEPTIONS
+        etRock.traceF( tin0P , T("U:: / 2") ) ;
 
         stOsPidP.ungrabF( tin0P ) ;
         }
@@ -757,14 +760,14 @@ DONE( tmTakeBreaksF )
             }
                 }
                     }
-                        etThread.traceF( tin0P , T("!exception / breakpoint demand failed [rc,osPid]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        etRock.traceF( tin0P , T("!exception / breakpoint demand failed [rc,osPid]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
                     else
                     }
                         stOsPidDone.sinkF( tin0P , countTC() , osPid , flSTACKsINK_null , 0 , 0 ) ;
-                        //etThread.traceF( tin0P , T("breakpoint demand aok [osPid]:    ")+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //etRock.traceF( tin0P , T("breakpoint demand aok [osPid]:    ")+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     if( !POOP )
 
@@ -779,7 +782,7 @@ DONE( tmTakeBreaksF )
                 {
                 IFsCRATCHoK
 
-                //etThread.traceF( tin0P , T("demanding breakpointi for [osPid]:    ")+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //etRock.traceF( tin0P , T("demanding breakpointi for [osPid]:    ")+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 countT osPid = stOsPidP.downF( tin0P , hWalk ) ;
             {
             do
@@ -791,10 +794,13 @@ DONE( tmTakeBreaksF )
         {
         if( stOsPidP )
         stOsPidP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        etRock.traceF( tin0P , T("U:: / 3") ) ;
 
         stackC stOsPidDone( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
+        etRock.traceF( tin0P , T("U:: / 4") ) ;
     {
     while( !bQuitTakingBreaksP )
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tb4    , "    " ) ;
 
