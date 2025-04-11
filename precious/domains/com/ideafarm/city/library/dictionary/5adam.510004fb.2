@@ -737,36 +737,36 @@ DONE( tmTakeBreaksF )
         //WHEN GET HERE THEN MY HANDLER HAS REPORTED AS MANY BREAKPOINT EXCEPTIONS AS I HAVE DEMANDED ; THIS CAN BE PREMATURE IF THE TARGET PROCESS RAISES A BREAKPOINT EXCEPTION FOR SOME OTHER REASON THAT IS ERRONEOUSLY COUNTED IN cNewBreakNapsTakenP
 
         }
-            etRock.traceF( tin0P , T("U:: / 1.0") ) ;
+            //etRock.traceF( tin0P , T("U:: / 1.0") ) ;
             while( ~hWalk ) ;
             }
-                etRock.traceF( tin0P , T("U:: / 1.1") ) ;
+                //etRock.traceF( tin0P , T("U:: / 1.1") ) ;
                 if( !ids ) stOsPidDone.extractF( 0 , tin0P ) ;                      // IF THE TARGET PROCESS IS GONE THEN REMOVE IT FROM THE "DONE" STACK
-                etRock.traceF( tin0P , T("U:: / 1.2") ) ;
+                //etRock.traceF( tin0P , T("U:: / 1.2") ) ;
                 stOsPidP.sinkF( tin0P , ids , osPid , flSTACKsINK_QUERY ) ;
-                etRock.traceF( tin0P , T("U:: / 1.3") ) ;
+                //etRock.traceF( tin0P , T("U:: / 1.3") ) ;
                 ZE( countT , ids ) ;
-                etRock.traceF( tin0P , T("U:: / 1.4") ) ;
+                //etRock.traceF( tin0P , T("U:: / 1.4") ) ;
 
                 countT osPid = stOsPidDone.downF( tin0P , hWalk ) ;
-                etRock.traceF( tin0P , T("U:: / 1.5") ) ;
+                //etRock.traceF( tin0P , T("U:: / 1.5") ) ;
             {
             do
             handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-            etRock.traceF( tin0P , T("U:: / 1.6") ) ;
+            //etRock.traceF( tin0P , T("U:: / 1.6") ) ;
             //etRock.traceF( tin0P , T("removing osPid values for processes that have ended so that i don't wait to see a breakpoint exception for them") ) ;
 
-            etThread.osSleepF( tin0P , TOCK >> 2 ) ;
-            etRock.traceF( tin0P , T("U:: / 1.7") ) ;
+            etThread.osSleepF( tin0P , TOCK << 2 ) ;
+            //etRock.traceF( tin0P , T("U:: / 1.7") ) ;
             ++ s ;
-            etRock.traceF( tin0P , T("U:: / 1.8") ) ;
+            //etRock.traceF( tin0P , T("U:: / 1.8") ) ;
 
             if( bOutahere ) break ;
-            etRock.traceF( tin0P , T("U:: / 1.9") ) ;
+            //etRock.traceF( tin0P , T("U:: / 1.9") ) ;
             boolT bOutahere = bQuitTakingBreaksP || cNewBreakNapsTakenP == cDone ;
-            etRock.traceF( tin0P , T("U:: / 1.a") ) ;
+            //etRock.traceF( tin0P , T("U:: / 1.a") ) ;
             countT cDone = stOsPidDone ;
-            etRock.traceF( tin0P , T("U:: / 1.b") ) ;
+            //etRock.traceF( tin0P , T("U:: / 1.b") ) ;
         {
         //while( !bQuitTakingBreaksP && cNewBreakNapsTakenP < stOsPidDone ) ;      // WHILE THE EVENT HANDLER HAS NOT SEEN ENOUGH BREAKPOINT EXCEPTIONS
         for(;;)
