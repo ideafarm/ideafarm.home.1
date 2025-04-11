@@ -13,6 +13,7 @@ DONE( tmHireF )
 
     }
         etThread.traceF( tin0P , T("event capture ended [cEnded,cBegun,cIgnored1,cIgnored2]:    ")+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIgnored1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIgnored2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.osThreadSwitchingDesireF( tin0P , idDesireSave ) ;
         }
             bKidsSuspendedP = 0 ;
             }
@@ -343,8 +344,7 @@ DONE( tmHireF )
         DEBUG_EVENT info3 ;
         ZE( countT , rc ) ;
         ZE( boolT , bOk ) ;
-
-        //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
+        countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
     {
     else
     else if( !cHired   ) { FIREmYSELF ; }
@@ -550,6 +550,8 @@ DONE( tmSlowAllF )
     {
     IFsCRATCHoK
 
+    etThread.osThreadSwitchingDesireF( tin0P , idDesireSave ) ;
+
     }
         }
             ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
@@ -653,6 +655,8 @@ DONE( tmSlowAllF )
     ZE( boolT , bSlowingAllLag ) ;
     ZE( boolT , bSlowAllLag ) ;
 
+    countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
+
     }
         etThread.delF( tin0P , psttn ) ;
         tMyLanName = T(psttn) ;
@@ -715,8 +719,6 @@ DONE( tmSlowAllF )
 
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
-
     boolT&  bTakeBreakP      =  *(boolT*)pTaskP->c4 ;
     stackC& stOsPidP         = *(stackC*)pTaskP->c3 ;
     boolT&  bSlowAllP        =  *(boolT*)pTaskP->c2 ;
@@ -728,6 +730,8 @@ TASK( tmSlowAllF )
 DONE( tmTakeBreaksF )
 }
     bQuitTakingBreaksP = 0 ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , idDesireSave ) ;
 
     }
         ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ;
@@ -780,7 +784,7 @@ DONE( tmTakeBreaksF )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tb4    , "    " ) ;
 
-    //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
+    countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 
     boolT&  bTakeBreakP        =  *(boolT*)pTaskP->c3 ;
     stackC& stOsPidP           = *(stackC*)pTaskP->c2 ;
@@ -802,6 +806,8 @@ DONE( tmSuspendAllF )
         SCOOPS
     {
     IFsCRATCHoK
+
+    etThread.osThreadSwitchingDesireF( tin0P , idDesireSave ) ;
 
     etThread.delF( tin0P , pstt1LanRoster ) ;
     }
@@ -921,6 +927,8 @@ DONE( tmSuspendAllF )
     ZE( boolT , bSuspendingAllLag ) ;
     ZE( boolT , bSuspendAllLag ) ;
 
+    countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
+
     }
         etThread.delF( tin0P , psttn ) ;
         tMyLanName = T(psttn) ;
@@ -982,8 +990,6 @@ DONE( tmSuspendAllF )
     TN( tb4    , "    " ) ;
 
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-
-    //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 
     stackC& stOsPidP            = *(stackC*)pTaskP->c3 ;
     boolT&  bSuspendAllP        =  *(boolT*)pTaskP->c2 ;
@@ -1155,8 +1161,6 @@ countT cDo = 8 ;
 
 homeS& home = homeS::homeIF() ;
 
-//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
-
 TASK( tmKillYourselfImmediatelyF )
     
 DONE( tmTestImpotenceF )
@@ -1187,7 +1191,6 @@ YELL( "firing myself")
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
 YELL( "napping before firing myself")
-//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
 TASK( tmFireMyselfF )
 
 DONE( tmFireAllF )
@@ -2049,7 +2052,6 @@ TELL( "cleaning up 0" )
     swMemorySpaceP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     TELL( "getting memory space structure" )
 
-    //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
     TELL( "setting rush" )
 
     //if( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ) etThread.osThreadF( TaRG1( tmYellF ) ) ;
@@ -2067,9 +2069,8 @@ TELL( "cleaning up 0" )
     TN( tb4 , "    " ) ;
 
     etThread.delF( tin0P , pcArgP ) ;
-    stackC&      stOsPidFromTinZombieP      =  *(stackC*)pcArgP[ 0x0f ] ;
-    stackC&      stOsPidFromTinP            =  *(stackC*)pcArgP[ 0x0e ] ;
-    stackC&      stOsPidP                   =  *(stackC*)pcArgP[ 0x0d ] ;
+    stackC&      stOsPidFromTinZombieP      =  *(stackC*)pcArgP[ 0x0e ] ;
+    stackC&      stOsPidFromTinP            =  *(stackC*)pcArgP[ 0x0d ] ;
     boolT&       bChatterP                  =   *(boolT*)pcArgP[ 0x0c ] ;
     textC&       tEventP                    =   *(textC*)pcArgP[ 0x0b ] ;
     countT&      osTidEventP                =  *(countT*)pcArgP[ 0x0a ] ;
@@ -3354,8 +3355,6 @@ DONE( tmReportF )
     tBooks = T("minute.reports.memoryspace.")+TF3(idMemorySpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,3) ;
     TN( tBooks , "" ) ;
     TN( tb4 , "    " ) ;
-
-    //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ; //CHANGE TO RUSH IF NEED TO ANALYZE BEHAVIOR INVOLVING CPU PEGGING
 
     ((tin12S&)tin0P).c4Tell.c1 = idMemorySpaceP ;
 

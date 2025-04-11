@@ -175,9 +175,8 @@ DONE( tmWorkF )
             etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmEatTelemetrySysF , memorySpace.sgnDone_tmEatTelemetrySysF_ , CBsTACKmIN << 3 ) , (countT)pcArg ) ;
 
             //CS:CODEsYNC: 510004fb.1 510004fb.1
-            pcArg[ 0x0f ] = (countT)&stOsPidFromTinZombie ;
-            pcArg[ 0x0e ] = (countT)&stOsPidFromTin ;
-            pcArg[ 0x0d ] = (countT)&stOsPid ;
+            pcArg[ 0x0e ] = (countT)&stOsPidFromTinZombie ;
+            pcArg[ 0x0d ] = (countT)&stOsPidFromTin ;
             pcArg[ 0x0c ] = (countT)&bChatter ;
             pcArg[ 0x0b ] = (countT)&tEvent ;
             pcArg[ 0x0a ] = (countT)&osTidEvent ;
@@ -338,8 +337,8 @@ strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
     TN( tHeyConsole , "!console" ) ;
     ZE( boolT , bConsoleP ) ;
 
-//    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
-//    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;    // THIS IS SO tmSuspendAllF AND tmSlowAllF AND tmHireF WILL ALWAYS BE ABLE TO SUSPEND AND TO SLOW ALL PROCESSES, EVEN IF ALL CPU RESOURCES ARE PEGGED BY RUDE PROCESSES AND THREADS
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;    // THIS IS SO tmSuspendAllF AND tmSlowAllF AND tmHireF WILL ALWAYS BE ABLE TO SUSPEND AND TO SLOW ALL PROCESSES, EVEN IF ALL CPU RESOURCES ARE PEGGED BY RUDE PROCESSES AND THREADS
 {
 if( pTaskP )
 TASK( tmWorkF )
