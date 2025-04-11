@@ -760,8 +760,16 @@ DONE( tmTakeBreaksF )
             etRock.traceF( tin0P , T("U:: / 1.7") ) ;
             ++ s ;
             etRock.traceF( tin0P , T("U:: / 1.8") ) ;
+
+            if( bOutahere ) break ;
+            etRock.traceF( tin0P , T("U:: / 1.9") ) ;
+            boolT bOutahere = bQuitTakingBreaksP || cNewBreakNapsTakenP == cDone ;
+            etRock.traceF( tin0P , T("U:: / 1.a") ) ;
+            countT cDone = stOsPidDone ;
+            etRock.traceF( tin0P , T("U:: / 1.b") ) ;
         {
-        while( !bQuitTakingBreaksP && cNewBreakNapsTakenP < stOsPidDone ) ;      // WHILE THE EVENT HANDLER HAS NOT SEEN ENOUGH BREAKPOINT EXCEPTIONS
+        //while( !bQuitTakingBreaksP && cNewBreakNapsTakenP < stOsPidDone ) ;      // WHILE THE EVENT HANDLER HAS NOT SEEN ENOUGH BREAKPOINT EXCEPTIONS
+        for(;;)
         etRock.traceF( tin0P , T("U:: / 2") ) ;
 
         stOsPidP.ungrabF( tin0P ) ;
