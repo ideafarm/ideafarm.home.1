@@ -351,6 +351,11 @@
         const byteT* pbEbp = (const byteT*)ebpAM() ;
     {                                                                                                                                                                   // I MUST AVOID DOING THIS BLOCK IF MY tin0P PARAMETER IS NOT FOR THE CURRENT THREAD
     if( tin1P.idTinNamed != ifcIDtINnAMED_tinHeartI && tin1P.idTinNamed != ifcIDtINnAMED_tinBreakI && tin1P.osTid == GetCurrentThreadId() )         // WHEN THE EXCEPTION HANDLER CALLS ExitProcess(), THE DT'OR FOR processGlobal8I.processGloEnd WILL SET bTlsEarlyLateI, WHICH WILL CAUSE TINSL TO POINT TO THE WRONG tin0S INSTANCE
+
+//    if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZE && !( ++ tin1P.idDozeMaybe % MODULOdOZE ) ) thirdC::dosSleepWinkIF( tin0P , 0 ) ;
+
+if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZE && !( ++ tin1P.idDozeMaybe % ( TOCK >> 2 ) ) ) thirdC::dosSleepWinkIF( tin0P , 0 ) ;
+
     tin123S& tin123P = (tin123S&)tin0P ;
     tin12S&  tin12P  =  (tin12S&)tin0P ;
     tin1S&   tin1P   =   (tin1S&)tin0P ;

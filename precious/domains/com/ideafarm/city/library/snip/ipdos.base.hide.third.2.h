@@ -27749,6 +27749,7 @@ struct bookMarkOldS
     countT                  cOsHandles ;                            // TALLY OF BASE O.S. HANDLES OPENED AND CLOSED BY THIS THREAD, ACCORDING TO THE handleC MEMBER FUNCTIONS
     tlsHeaderS*             pTlsHeader ;                            //U:: REMOVE IN PRODUCTION ; THIS IS TO FIND A BUG
     glassS                  glass ;
+    countT                  idDozeMaybe ;
 
     tin_part1_S( tin0S& tin0P , tin0S* const pTin0DadP , const countT idTinNamedP , countT idThreadP , byteT* const pbTlsP , const countT cbTlsP ) ;
 

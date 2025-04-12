@@ -1,4 +1,6 @@
 
+#define MODULOdOZE ( TUCK << 2 )
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -16808,6 +16810,7 @@ after i return, that countT object will contain 1
 #define flMODEpROCESS2_CHATTERtHREADcTdT               0xe0002044
 #define flMODEpROCESS2_CHATTERtHREADsTACK              0xe0004044
 #define flMODEpROCESS2_FANCY                           0xe0008044
+#define flMODEpROCESS2_DOZE                            0xe0010044
 /*3*/
 #define flMODEpROCESS2_null    0xe0000044
 
