@@ -9,7 +9,7 @@
 
 }
     #endif
-        BOSnOvALUE( WHATsn , OSsLEEPf( TUCK << shiftP ) )
+        BOSnOvALUE( WHATsn , OSsLEEPf( ( TUCK >> 4 ) << shiftP ) )
     #elif defined( __NT__ )
         BOSpOOP
         BOSS( WHATsn , BOSfAIL , DosSleep( 50 ) )
@@ -32,7 +32,36 @@
 {
 /*1*/voidT thirdC::dosSleepWinkIF( tin0S& tin0P , const countT shiftP )/*1*/
 
-// 20250411@1552: 32_9 <- TUCK BECAUSE DEFAULT TIMER RESOLUTION IN WINDOWS 10 IS REPORTEDLY 15.6 MS AND I NEED TO USE A VALUE THAT IS ABOVE THE SYSTEM MINIMUM
+
+
+//      
+//          windows 11 laptop:      0.5          1.0        15.6
+//      
+//          windows server 2019:    0.5         15.6        15.6
+//      
+//                                  min         now         max
+//                                  --------- PERIOD ----------
+//                             units: milliseconds, foreign notation
+//      
+//      }
+//          if( nowPeriod ) ;
+//      
+//          static NTSTATUS status = ntQueryTimerResolution( &maxPeriod , &minPeriod , &nowPeriod ) ;
+//          static ULONG nowPeriod ;
+//          static ULONG maxPeriod ;
+//          static ULONG minPeriod ;
+//      
+//          fooFT ntQueryTimerResolution = (fooFT)GetProcAddress( osh , "NtQueryTimerResolution" ) ;
+//      
+//          HMODULE osh = GetModuleHandle( "ntdll.dll" ) ;
+//      {
+//      
+//      
+// VALUES RETURNED BY ntQueryTimerResolution
+
+// 20250411@1813: PS:PERSONALITY: I NOW SLEEP FOR 16_9 MILLISECONDS (IF !shiftP), WHICH APPEARS TO BE GUARANTEED TO WORK ON ALL WINDOWS PLATFORMS
+
+// 20250411@1552: ( TUCK >> 4 ) <- TUCK BECAUSE DEFAULT TIMER RESOLUTION IN WINDOWS 10 IS REPORTEDLY 15.6 MS AND I NEED TO USE A VALUE THAT IS ABOVE THE SYSTEM MINIMUM
 
 /**/
 */
