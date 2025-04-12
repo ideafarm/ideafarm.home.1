@@ -352,9 +352,21 @@
     {                                                                                                                                                                   // I MUST AVOID DOING THIS BLOCK IF MY tin0P PARAMETER IS NOT FOR THE CURRENT THREAD
     if( tin1P.idTinNamed != ifcIDtINnAMED_tinHeartI && tin1P.idTinNamed != ifcIDtINnAMED_tinBreakI && tin1P.osTid == GetCurrentThreadId() )         // WHEN THE EXCEPTION HANDLER CALLS ExitProcess(), THE DT'OR FOR processGlobal8I.processGloEnd WILL SET bTlsEarlyLateI, WHICH WILL CAUSE TINSL TO POINT TO THE WRONG tin0S INSTANCE
 
-//    if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZE && !( ++ tin1P.idDozeMaybe % MODULOdOZE ) ) thirdC::dosSleepWinkIF( tin0P , 0 ) ;
+    //}
+    //    else                                                                      { CONoUTrAW3( "\r\n||||||||||||||||||||||||||||||||||||||||||||" , ++ tin1P.idDozeMaybe           , "" ) ; }
+    //    if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE ) { CONoUTrAW3( "\r\n____________________________________________" , ++ tin1P.idDozeMaybe | BM_HIGH , "" ) ; }
+    //{
+    //if( !( ++ tin1P.idDozeMaybe % TICK << 4  ) )
 
-if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZE && !( ++ tin1P.idDozeMaybe % ( TOCK >> 2 ) ) ) thirdC::dosSleepWinkIF( tin0P , 0 ) ;
+    if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE && !( ++ tin1P.idDozeMaybe % MODULOdOZE ) && tin123P.pcUtility[ 0 ] ) { CONoUTrAW( "\r\n----------------------------------------------" ) ; thirdC::dosSleepWinkIF( tin0P , 4 ) ; }
+
+    if( tin1P.idDozeMaybe != - 1 && !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE ) ) tin1P.idDozeMaybe = - 1 ;
+
+    // 
+    //   THIS IS DONE BY ENSURING THAT tin1P.idDozeMaybe == - 1 FOR EVERY THREAD
+    //   THE ULTIMATE GOAL IS TO ENSURE THAT, WHEN AN UP TRANSITION IN flMODEpROCESS2_DOZEmAYBE OCCURS, EVERY THREAD WILL IMMEDIATELY WINK
+    //
+    // RECIPE FOR USING tin1P.idDozeMaybe: THE GOAL IS TO DETECT AN "UP TRANSITION" IN flMODEpROCESS2_DOZEmAYBE WITHOUT USING A DEDICATED flagsT TO STORE THE LAGGED VALUE OF flagsModeProcess2I
 
     tin123S& tin123P = (tin123S&)tin0P ;
     tin12S&  tin12P  =  (tin12S&)tin0P ;

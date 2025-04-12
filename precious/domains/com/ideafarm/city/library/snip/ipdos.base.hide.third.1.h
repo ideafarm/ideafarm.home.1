@@ -1,5 +1,5 @@
 
-#define MODULOdOZE ( TUCK << 2 )
+#define MODULOdOZE ( TUCK >> 0 )
 
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
@@ -16810,7 +16810,8 @@ after i return, that countT object will contain 1
 #define flMODEpROCESS2_CHATTERtHREADcTdT               0xe0002044
 #define flMODEpROCESS2_CHATTERtHREADsTACK              0xe0004044
 #define flMODEpROCESS2_FANCY                           0xe0008044
-#define flMODEpROCESS2_DOZE                            0xe0010044
+#define flMODEpROCESS2_ENABLEdOZING                    0xe0010044
+#define flMODEpROCESS2_DOZEmAYBE                            0xe0020044
 /*3*/
 #define flMODEpROCESS2_null    0xe0000044
 
