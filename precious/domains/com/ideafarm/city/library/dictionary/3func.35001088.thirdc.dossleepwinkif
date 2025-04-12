@@ -15,10 +15,11 @@
         BOSS( WHATsn , BOSfAIL , DosSleep( 50 ) )
     #ifdef __OS2__
 
-    }
-        sleepC::blammoIfIF( tin0P ) ;
-        _IO_
-    {
+    //}
+    //    sleepC::blammoIfIF( tin0P ) ;
+    //    _IO_
+    //{
+    // 20250411@1552: THIS IS COMMENTED OUT TO MINIMIZE OVERHEAD
 
     //}
     //    BLAMMO ;
@@ -26,9 +27,12 @@
     //{
     //if( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_WHEREiSwATCHING )
 
-    _IO_
+    //_IO_
+    // 20250411@1552: THIS IS COMMENTED OUT BECAUSE inOutFrameC CT'OR CALLS ME
 {
 /*1*/voidT thirdC::dosSleepWinkIF( tin0S& tin0P , const countT shiftP )/*1*/
+
+// 20250411@1552: 32_9 <- TUCK BECAUSE DEFAULT TIMER RESOLUTION IN WINDOWS 10 IS REPORTEDLY 15.6 MS AND I NEED TO USE A VALUE THAT IS ABOVE THE SYSTEM MINIMUM
 
 /**/
 */

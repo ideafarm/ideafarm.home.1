@@ -30,12 +30,67 @@ postDec[ 0xa ] = 0 ;
 
 __1
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+    if( nowPeriod ) ;
+
+    static NTSTATUS status = ntQueryTimerResolution( &maxPeriod , &minPeriod , &nowPeriod ) ;
+    static ULONG nowPeriod ;
+    static ULONG maxPeriod ;
+    static ULONG minPeriod ;
+
+    fooFT ntQueryTimerResolution = (fooFT)GetProcAddress( osh , "NtQueryTimerResolution" ) ;
+
+    HMODULE osh = GetModuleHandle( "ntdll.dll" ) ;
+{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TODO
+
+
+extern "C" typedef UINT (OSF *fooFT)( ULONG* , ULONG* , ULONG* ) ;
+
+
+// = UINT (WINAPI *) (ULONG* , ULONG* , ULONG* ) ;
+
+
+
+
+
+
 
 countT costaDec = sizeof postDec ;
 
 osTextT postAfter[ TUCK ] ;
 osTextT postDec[ SB * sizeof( countT ) + 1 ] ;
+
 
 /*1*/WAKEsHOWtEXT( "scratch" )/*1*/
 /**/
