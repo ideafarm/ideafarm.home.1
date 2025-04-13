@@ -520,19 +520,23 @@ DONE( tmWatchF )
 
             poolC::deleteEmptiesIfIF( tin0P ) ;
         {
-        if( idCycle && !( idCycle % ( TUCK >> 4 ) ) )                                                                   // SUPPRESSED FOR WOTH 01 TOCK TO ALLOW adamMainF TO CALL pMainF AND pMainF TO DO ITS INITIALIZATION ; THIS IS AN OPTIMIZATION TO AVOID UNNECESSARY DT/CT OF sexC INSTANCES WITH SAME SPECIFICATIONS
+        if( idCycle && !( idCycle % ( TUCK >> 4 ) ) )                                                                                                                           // SUPPRESSED FOR WOTH 01 TOCK TO ALLOW adamMainF TO CALL pMainF AND pMainF TO DO ITS INITIALIZATION ; THIS IS AN OPTIMIZATION TO AVOID UNNECESSARY DT/CT OF sexC INSTANCES WITH SAME SPECIFICATIONS
 
         }
-            else if( !( idCycle % 4 ) ) thirdC::third_flagsModeProcess2I_IF()  |=    flMODEpROCESS2_DOZEmAYBE  ;        // ELSE IF EVERY FO'TH CYCLE THEN SET DOZEmAYBE
-                                        thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;        // RESET DOZEmAYBE
-            )
-                                      F(thirdC::third_flagsModeProcess2I_IF())  &    flMODEpROCESS2_DOZEmAYBE           // IF ENABLEdOZING IS NOT SET OR DOZEmAYBE IS SET
-                ||
-                !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_ENABLEdOZING )
-            (
-            if
+            }
+                                                                                                   thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;
+                idCycleDoze = 0 ;
+            {
+            else if( ++ idCycleDoze == 3 )                                                                                                                                      // DOZES FOR 2 CYCLES OUT OF EVERY 4
+            }
+                                                                                                   thirdC::third_flagsModeProcess2I_IF()  |=    flMODEpROCESS2_DOZEmAYBE  ;
+                idCycleDoze = 1 ;
+            {
+            else if( !( idCycle % 4 ) )
+                 if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_ENABLEdOZING ) ) thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;
         {
-        if( idCycle )       // OBJECTIVE: SET flMODEpROCESS2_DOZEmAYBE ONLY EVERY FO CYCLES AND LEAVE THE FLAG SET FOR ONLY WO CYCLE
+
+        ++ idCycle ;
 
         }
             BLAMMO ;
@@ -565,6 +569,7 @@ DONE( tmWatchF )
         !etThread
     (
     while
+    ZE( countT , idCycleDoze ) ;
     TN( tSayTick , "tick" ) ;
     TN( tDirBlammo , "" ) ; tDirBlammo = T("///ideafarm/controls/")+tUser+T("/blammo/") ;
     TN( tUser , thirdC::postUserNameIF() ) ;
