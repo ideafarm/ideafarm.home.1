@@ -527,12 +527,12 @@ DONE( tmWatchF )
                                                                                                    thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;
                 idCycleDoze = 0 ;
             {
-            else if( ++ idCycleDoze == 2 )                                                                                                                                      // DOZES FOR 1 CYCLES OUT OF EVERY 4
+            else if( ++ idCycleDoze == 9 )
             }
                                                                                                    thirdC::third_flagsModeProcess2I_IF()  |=    flMODEpROCESS2_DOZEmAYBE  ;
                 idCycleDoze = 1 ;
             {
-            else if( !( idCycle % 4 ) )
+            else if( !( idCycle % 0x10 ) )
                  if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_ENABLEdOZING ) ) thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;
         {
 
