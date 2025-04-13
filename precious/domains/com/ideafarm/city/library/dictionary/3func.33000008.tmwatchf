@@ -520,25 +520,7 @@ DONE( tmWatchF )
 
             poolC::deleteEmptiesIfIF( tin0P ) ;
         {
-        if( idCycle && !( idCycle % ( TUCK >> 4 ) ) )                                                                                                                           // SUPPRESSED FOR WOTH 01 TOCK TO ALLOW adamMainF TO CALL pMainF AND pMainF TO DO ITS INITIALIZATION ; THIS IS AN OPTIMIZATION TO AVOID UNNECESSARY DT/CT OF sexC INSTANCES WITH SAME SPECIFICATIONS
-
-        }
-            }
-                                                                                                   thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;
-                idCycleDoze = 0 ;
-                etRock.traceF( tin0P , T("---- DOZEmAYBE off ----") ) ;
-            {
-            else if( ++ idCycleDoze == 9 )
-            }
-                                                                                                   thirdC::third_flagsModeProcess2I_IF()  |=    flMODEpROCESS2_DOZEmAYBE  ;
-                idCycleDoze = 1 ;
-                etRock.traceF( tin0P , T("++++ DOZEmAYBE ON ++++") ) ;
-            {
-            else if( !( idCycle % 0x10 ) )
-                 if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_ENABLEdOZING ) ) thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;
-        {
-
-        ++ idCycle ;
+        if( ++ idCycle && !( idCycle % ( TUCK >> 4 ) ) )                                                                                                                           // SUPPRESSED FOR WOTH 01 TOCK TO ALLOW adamMainF TO CALL pMainF AND pMainF TO DO ITS INITIALIZATION ; THIS IS AN OPTIMIZATION TO AVOID UNNECESSARY DT/CT OF sexC INSTANCES WITH SAME SPECIFICATIONS
 
         }
             BLAMMO ;
@@ -571,7 +553,6 @@ DONE( tmWatchF )
         !etThread
     (
     while
-    ZE( countT , idCycleDoze ) ;
     TN( tSayTick , "tick" ) ;
     TN( tDirBlammo , "" ) ; tDirBlammo = T("///ideafarm/controls/")+tUser+T("/blammo/") ;
     TN( tUser , thirdC::postUserNameIF() ) ;
