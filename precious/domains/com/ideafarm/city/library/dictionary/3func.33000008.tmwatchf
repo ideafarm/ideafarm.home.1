@@ -103,7 +103,7 @@ DONE( tmWatchF )
         BLAMMO ;
         //homeS::homeIF().flags |= flHOMEs_KILLsELFiMMEDIATELY ;
         //thirdC::osFireIF( tin0P ) ;
-        //etThread.traceF( tin0P , T("calling osFireIF, setting flHOMEs_KILLsELFiMMEDIATELY, and then calling BLAMMO because a file existed in ")+tDirBlammo ) ;
+        //etRock.traceF( tin0P , T("calling osFireIF, setting flHOMEs_KILLsELFiMMEDIATELY, and then calling BLAMMO because a file existed in ")+tDirBlammo ) ;
         etThread.diskFileOrDirDeleteF( tin0P , tDirBlammo , flFILEoRdIRdELETE_RECURSE , 1 ) ;
         _IO_
     {
@@ -228,13 +228,13 @@ DONE( tmWatchF )
                                 if( POOP ) POOPR
                                 sock.writeF( tin0P , (countT)*pso , nicNameC( 1 ) , ifcIDtYPEdATAGRAM_LETSaLLqUIT ) ;
 
-                                //etThread.traceF( tin0P , T("[&sCatcher,idPortHe]:    ")+TfORsTRING((countT)pso)+tb4+TF4(idPortHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+                                //etRock.traceF( tin0P , T("[&sCatcher,idPortHe]:    ")+TfORsTRING((countT)pso)+tb4+TF4(idPortHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
                                 countT idPortHe = (countT)*pso ;
                                 socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
                             {
                             SCOOPS
                             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) //LEGACYwORKAROUND
-                            //etThread.traceF( tin0P , T("[&sCatcher]:    ")+TfORsTRING((countT)pso) ) ;
+                            //etRock.traceF( tin0P , T("[&sCatcher]:    ")+TfORsTRING((countT)pso) ) ;
                         {
                         if( pso ) 
                         __Z( pso ) ;
@@ -303,16 +303,16 @@ DONE( tmWatchF )
         }
             }
                 home.flags &= ~( F(flHOMEs_INoUTtRACE) ) ;
-                if( F(home.flags) & flHOMEs_INoUTtRACE ) etThread.traceF( tin0P , T("flHOMEs_INoUTtRACE turned off") ) ;
+                if( F(home.flags) & flHOMEs_INoUTtRACE ) etRock.traceF( tin0P , T("flHOMEs_INoUTtRACE turned off") ) ;
             {
             else
             }
                 home.flags |= flHOMEs_INoUTtRACE ;
-                if( !( F(home.flags) & flHOMEs_INoUTtRACE ) ) etThread.traceF( tin0P , T("flHOMEs_INoUTtRACE turned on") ) ;
+                if( !( F(home.flags) & flHOMEs_INoUTtRACE ) ) etRock.traceF( tin0P , T("flHOMEs_INoUTtRACE turned on") ) ;
             {
             else if( etThread.diskFileExistsF( tin0P , tOn ) )
             }
-                etThread.traceF( tin0P , T("flHOMEs_INoUTtRACE off (control file created)") ) ;
+                etRock.traceF( tin0P , T("flHOMEs_INoUTtRACE off (control file created)") ) ;
                 etThread.boxPutF( tin0P , tOff , "The contents of this file do not matter.\r\nTo save space, use any plain text editor to make this an empty file.\r\nIf you delete this file, it wll be recreated in its default control directory.\r\nTo turn this control on or off, move this file to the \"on\" or the \"off\" folder." ) ;
             {
             if( !etThread.diskFileExistsF( tin0P , tOff ) && !etThread.diskFileExistsF( tin0P , tOn ) )
@@ -353,7 +353,7 @@ DONE( tmWatchF )
         windowOldC* pRootI = windowOldC::getRefIF( tin0P ) ;
 
         ((tin1S&)tin0P).pag5->grabGrabWatch.ungrabF( tin0P ) ;
-        if( ((tin1S&)tin0P).pag1->pGrabWatch ) etThread.traceF( tin0P , T("U:: 20240706@1136: WHY WAS I B" "EEPING HERE?") ) ;
+        if( ((tin1S&)tin0P).pag1->pGrabWatch ) etRock.traceF( tin0P , T("U:: 20240706@1136: WHY WAS I B" "EEPING HERE?") ) ;
         ((tin1S&)tin0P).pag5->grabGrabWatch.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
         }
@@ -395,7 +395,7 @@ DONE( tmWatchF )
         }
             if( ether ) ;
             FIREmYSELF ;
-            etThread.traceF( tin0P , T("my fireAll group has been fired") ) ;
+            etRock.traceF( tin0P , T("my fireAll group has been fired") ) ;
         {
         if( ((tin1S&)tin0P).pag1->idGroupFireAll && ((tin1S&)tin0P).pag1->idGroupFireAll <= CfIREaLLrANKS && home.pFireAll[ ((tin1S&)tin0P).pag1->idGroupFireAll - 1 ].bFire )
         thirdC::dosPriorityProcessIF( tin0P ) ; //THIS ENFORCES RULE THAT USER CANNOT CHANGE THE PRIORITY CLASS OF AN IFC PROCESS; (IFC MAKES THIS ASSUMPTION SO THAT IT CAN USE YIELD WITHOUT HAVING CPU SPINS)
@@ -439,7 +439,7 @@ DONE( tmWatchF )
 
         }
             FIREmYSELF ;
-            etThread.traceF( tin0P , T("firing myself since keys not found") ) ;
+            etRock.traceF( tin0P , T("firing myself since keys not found") ) ;
         {
         if( bFireSelf )
 
@@ -448,11 +448,11 @@ DONE( tmWatchF )
                 }
                     }
                         bFireSelf = 1 ;
-                        etThread.traceF( tin0P , T("!exception: IdeaFarm (tm) keys not found") ) ;
+                        etRock.traceF( tin0P , T("!exception: IdeaFarm (tm) keys not found") ) ;
                     {
                     else if( !idKeys )
                     }
-                        etThread.traceF( tin0P , T("!exception: could not obtain idIdeaFarmKeys [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc) ) ;
+                        etRock.traceF( tin0P , T("!exception: could not obtain idIdeaFarmKeys [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc) ) ;
                         const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                         POOPRqUIET
                         countT rc = POOP ;
@@ -503,7 +503,7 @@ DONE( tmWatchF )
                         poolRegistrationS* pRegs = (poolRegistrationS*)home.pb_pPoolReg ;
                         homeS& home = homeS::homeIF() ;
 
-                        //etThread.traceF( tin0P , T(postName) ) ;
+                        //etRock.traceF( tin0P , T(postName) ) ;
                         const osTextT* postName = (osTextT*)stPoolNames.downF( tin0P , hWalk ) ;
                     {
                     do
@@ -526,11 +526,13 @@ DONE( tmWatchF )
             }
                                                                                                    thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;
                 idCycleDoze = 0 ;
+                etRock.traceF( tin0P , T("---- DOZEmAYBE off ----") ) ;
             {
             else if( ++ idCycleDoze == 9 )
             }
                                                                                                    thirdC::third_flagsModeProcess2I_IF()  |=    flMODEpROCESS2_DOZEmAYBE  ;
                 idCycleDoze = 1 ;
+                etRock.traceF( tin0P , T("++++ DOZEmAYBE ON ++++") ) ;
             {
             else if( !( idCycle % 0x10 ) )
                  if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_ENABLEdOZING ) ) thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;
@@ -542,7 +544,7 @@ DONE( tmWatchF )
             BLAMMO ;
             //homeS::homeIF().flags |= flHOMEs_KILLsELFiMMEDIATELY ;
             //thirdC::osFireIF( tin0P ) ;
-            //etThread.traceF( tin0P , T("calling osFireIF, setting flHOMEs_KILLsELFiMMEDIATELY, and then calling BLAMMO because a file existed in ")+tDirBlammo ) ;
+            //etRock.traceF( tin0P , T("calling osFireIF, setting flHOMEs_KILLsELFiMMEDIATELY, and then calling BLAMMO because a file existed in ")+tDirBlammo ) ;
             etThread.diskFileOrDirDeleteF( tin0P , tDirBlammo , flFILEoRdIRdELETE_RECURSE , 1 ) ;
             _IO_
         {
@@ -551,11 +553,11 @@ DONE( tmWatchF )
 
         }
             BLAMMO ;
-            etThread.traceF( tin0P , T("etRock is impotent") ) ;
+            etRock.traceF( tin0P , T("etRock is impotent") ) ;
         {
         if( etRock )
 
-        //etThread.traceF( tin0P , T("tmWatchF / loop ++ [((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tin0P , T("tmWatchF / loop ++ [((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         _IO_
     {
@@ -647,6 +649,8 @@ DONE( tmWatchF )
     {
     //I CANNOT JUST LAUNCH tmWatchF LATER BECAUSE THAT WOULD CHANGE idThread VALUES FOR SYSTEM THREADS (MY idThread WOULD DEPEND UPON WINDOWING AND PROBABLY ALSO ON A RACE CONDITION INVOLVING THREAD STARTUP)
     //THIS BLOCK IS TO ENSURE THAT tmWindowsF AND tmAnimateSadamsF GET STARTED BEFORE I CHECK FOR THEIR PRESENCE
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 
     _IO_
 {
