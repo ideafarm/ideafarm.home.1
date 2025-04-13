@@ -7805,6 +7805,7 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*tmWatchF*//*1*/
 
 TASKpART0PROTO( tmWatchF ) ;
+TASKpART0PROTO( tmWatchRudeF ) ;
 
 
 //

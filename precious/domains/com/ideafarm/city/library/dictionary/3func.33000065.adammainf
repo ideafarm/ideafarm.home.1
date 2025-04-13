@@ -212,7 +212,7 @@
                                                                 }
                                                                     etThread.traceF( tin0P , (strokeS*)"--------------------------------------------------------------------------------------------------------------------------------------- adamDll ----" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
                                                                     }
-                                                                        (*pMainF)( &main ) ; // ASSUME: WILL NOT RETURN UNTIL ALL KID THREADS HAVE ENDED, INCLUDING tmWatchF
+                                                                        (*pMainF)( &main ) ; // ASSUME: WILL NOT RETURN UNTIL ALL KID THREADS HAVE ENDED, INCLUDING tmWatchF AND tmWatchRudeF
                                                                         _IO_
                                                                     {
                                                                     etThread.traceF( tin0P , (strokeS*)"--------------------------------------------------------------------------------------------------------------------------------------- adamDll ++++" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
@@ -398,17 +398,23 @@
                 
                                                     }
                                                         ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN22 ) ;
-                                                        sgnWatchReady.waitF( tin0P ) ;
+                                                        sgnWatchReady2.waitF( tin0P ) ;
+                                                        sgnWatchReady1.waitF( tin0P ) ;
                                                         ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN12 ) ;
 
                                                         }
-                                                            sgnWatchReady.giveF( tin0P ) ;
-                                                            if( idTypeP == ifcIDtYPEtLS_WINDOW ) sgnWindowsReady.waitF( tin0P ) ;
+                                                            sgnWatchReady2.giveF( tin0P ) ;
+                                                            sgnWatchReady1.giveF( tin0P ) ;
+                                                            }
+                                                                sgnWindowsReady2.waitF( tin0P ) ;
+                                                                sgnWindowsReady1.waitF( tin0P ) ;
+                                                            {
+                                                            if( idTypeP == ifcIDtYPEtLS_WINDOW )
                                                         {
                                                         if( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS )
 
                                                         }
-                                                            etThread.osThreadF( TaRG1( tmWindowsF ) , (countT)&sgnWindowsReady , (countT)&psttTitle ) ;
+                                                            etThread.osThreadF( TaRG1( tmWindowsF ) , (countT)&sgnWindowsReady1 , (countT)&sgnWindowsReady2 , (countT)&psttTitle ) ;
                                                             thirdC::third_flagsModeAdam1I_IF( tin0P ) |= flADAMmODE1_tmWindows ;
                                                             etThread.traceF( tin0P , T("launching tmWindowsF") ) ;
                                                         {
@@ -419,7 +425,8 @@
                                                                 etThread.winSetTitleF( tin0P , psttTitle ) ;
                                                             {
                                                             if( ((tin1S&)tin0P).idTinNamed == ifcIDtINnAMED_tinInPoolMain )
-                                                            sgnWindowsReady.giveF( tin0P ) ;
+                                                            sgnWindowsReady2.giveF( tin0P ) ;
+                                                            sgnWindowsReady1.giveF( tin0P ) ;
                                                         {
                                                         if( idTypeP != ifcIDtYPEtLS_WINDOW )
                                                         ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN02 ) ;
@@ -433,16 +440,19 @@
 
                                                         else etThread.traceF( tin0P , T("warning: build is configured for \"no system threads\"") ) ;
                                                         }
-                                                            etThread.osThreadF( tin0P , countTC() , tmWatchF , 0 , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 2 , 0 , (countT)&sgnWatchReady , (countT)&sgnWindowsReady ) ;
-                                                            //etThread.traceF( tin0P , T("launching tmWatchF") ) ;
+                                                            etThread.osThreadF( tin0P , countTC() , tmWatchRudeF , 0 , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 2 , 0 , (countT)&sgnWatchReady2 , (countT)&sgnWindowsReady2 ) ;
+                                                            etThread.osThreadF( tin0P , countTC() , tmWatchF     , 0 , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 2 , 0 , (countT)&sgnWatchReady1 , (countT)&sgnWindowsReady1 ) ;
+                                                            //etThread.traceF( tin0P , T("launching tmWatchF and tmWatchRudeF") ) ;
                                                         {
                                                         if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) )
                                                         ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf1 ) ;
 
                                                         //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
             
-                                                        signC sgnWindowsReady( tin0P , TAG( TAGiDnULL ) ) ;
-                                                        signC sgnWatchReady(   tin0P , TAG( TAGiDnULL ) ) ;
+                                                        signC sgnWindowsReady2( tin0P , TAG( TAGiDnULL ) ) ;
+                                                        signC sgnWindowsReady1( tin0P , TAG( TAGiDnULL ) ) ;
+                                                        signC sgnWatchReady2(   tin0P , TAG( TAGiDnULL ) ) ;
+                                                        signC sgnWatchReady1(   tin0P , TAG( TAGiDnULL ) ) ;
                                                         ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAINe1 ) ;
                                                         _IO_
                                                     {

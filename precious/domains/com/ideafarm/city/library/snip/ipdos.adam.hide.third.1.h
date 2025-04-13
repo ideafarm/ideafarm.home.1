@@ -22516,11 +22516,12 @@ it is illegal to refer to this symbol anywhere but in the exception handler code
 //#define ifcIDtHREADlOW_tmWhereF                         0x5
 #define ifcIDtHREADlOW_tmTimeNowF                       0x5
 #define ifcIDtHREADlOW_tmWatchF                         0x6
-#define ifcIDtHREADlOW_tmWindowsOrServiceMainF          0x7
-#define ifcIDtHREADlOW_tmCyrcleOldMonitorGlass2F        0x8
-#define ifcIDtHREADlOW_tmCyrcleOldMonitorApplicationsF  0x9
-#define ifcIDtHREADlOW_tmFireAllF                       0xa
-#define ifcIDtHREADlOW_tmHireF                          0xb
+#define ifcIDtHREADlOW_tmWatchRudeF                     0x7
+#define ifcIDtHREADlOW_tmWindowsOrServiceMainF          0x8
+#define ifcIDtHREADlOW_tmCyrcleOldMonitorGlass2F        0x9
+#define ifcIDtHREADlOW_tmCyrcleOldMonitorApplicationsF  0xa
+#define ifcIDtHREADlOW_tmFireAllF                       0xb
+#define ifcIDtHREADlOW_tmHireF                          0xc
 /*3*/
 
 
@@ -32673,7 +32674,7 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
         {                                                                                                                                                   \
             SCOOPS                                                                                                                                          \
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                           \
-            while( cAllKidThreadsI + cAllOrphanThreadsI > bService + b_tmWindows * 2 + ((tin1S&)tin0P).pag1->_deviceC_cHelper + bSysThreads * 2 /*tmWatchF,tmKillSocketF*/ + (cKidsOrphansAllowP) )  \
+            while( cAllKidThreadsI + cAllOrphanThreadsI > bService + b_tmWindows * 2 + ((tin1S&)tin0P).pag1->_deviceC_cHelper + bSysThreads * 3 /*tmWatchF,tmWatchRudeF,tmKillSocketF*/ + (cKidsOrphansAllowP) )  \
             {                                                                                                                                               \
                 /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/waiting for " , ( cAllKidThreadsI + cAllOrphanThreadsI - bService - b_tmWindows * 2 - 2 - (cKidsOrphansAllowP) ) , " kid threads to end\r\n" ) ;*/ \
                 ++ s ; thirdC::dosSleepWinkIF( tin0P , 1 ) ;                                                                                                 \
@@ -32682,7 +32683,7 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
             if( POOP ) POOPR                                                                                                                                \
         }                                                                                                                                                   \
         /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/ending wait\r\n" ) ;*/                            \
-        /* ONLY main,tmWindowsF,tmWatchF,tmKillSocketF REMAIN */                                                                                            \
+        /* ONLY main,tmWindowsF,tmWatchF,tmWatchRudeF,tmKillSocketF REMAIN */                                                                                            \
     }                                                                                                                                                       \
 
 
