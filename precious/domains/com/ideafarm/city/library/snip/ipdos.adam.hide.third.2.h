@@ -16557,7 +16557,7 @@ instructions for editing a class aC to use upDnC
 
     ~baseGrabC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.baseGrabC.dt_baseGrabC!||
-    baseGrabC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const countT idTypeP , const flagsT flagsP = flBASEgRABc_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    baseGrabC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const countT idTypeP , const flagsT flagsP = flBASEgRABc_NOTjEALOUS , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.baseGrabC.baseGrabC!||
     voidT formatF( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const countT idTypeP , const flagsT flagsP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.baseGrabC.formatF!||
@@ -16632,7 +16632,7 @@ instructions for editing a class aC to use upDnC
     NEWdELcLASSpROTOS
     ~grabC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.grabC.dt_grabC!||
-    grabC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , flagsT flagsP = flGRABc_null , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    grabC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , flagsT flagsP = flGRABc_NOTjEALOUS , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.grabC.grabC!||
     voidT formatF( tin0S& tin0P , flagsT flagsP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.grabC.formatF!||
@@ -16820,13 +16820,13 @@ examples
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.grabitC.dt_grabitC!||
     //U::20140420@1137: grabitC( const countT idLineCtP , const countT idiFileCtP , const flagsT flagsP = flGRABITc_null , const countT msNapP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.grabitC.grabitC!||
-    grabitC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , byteT* pbP = 0 , const countT ifcIdBitP = ifcIDgRABITbIT_00 , grabitC& grabitNUP = *(grabitC*)0 , countT* const pcKeyP = 0 , countT* const pcGrabberOsTidP = 0 , countT* const pcGrabberRecurseP = 0 , const flagsT flagsP = flGRABITc_null , const countT msNapP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    grabitC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , byteT* pbP = 0 , const countT ifcIdBitP = ifcIDgRABITbIT_00 , grabitC& grabitNUP = *(grabitC*)0 , countT* const pcKeyP = 0 , countT* const pcGrabberOsTidP = 0 , countT* const pcGrabberRecurseP = 0 , const flagsT flagsP = flGRABITc_NOTjEALOUS , const countT msNapP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.grabitC.grabitC!||
-    grabitC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , byteT& bP      , const countT ifcIdBitP = ifcIDgRABITbIT_00 , grabitC& grabitNUP = *(grabitC*)0 , countT* const pcKeyP = 0 , countT* const pcGrabberOsTidP = 0 , countT* const pcGrabberRecurseP = 0 , const flagsT flagsP = flGRABITc_null , const countT msNapP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    grabitC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , byteT& bP      , const countT ifcIdBitP = ifcIDgRABITbIT_00 , grabitC& grabitNUP = *(grabitC*)0 , countT* const pcKeyP = 0 , countT* const pcGrabberOsTidP = 0 , countT* const pcGrabberRecurseP = 0 , const flagsT flagsP = flGRABITc_NOTjEALOUS , const countT msNapP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.grabitC.grabitC!||
-    grabitC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , countT& cP     , const countT ifcIdBitP = ifcIDgRABITbIT_00 , grabitC& grabitNUP = *(grabitC*)0 , countT* const pcKeyP = 0 , countT* const pcGrabberOsTidP = 0 , countT* const pcGrabberRecurseP = 0 , const flagsT flagsP = flGRABITc_null , const countT msNapP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    grabitC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , countT& cP     , const countT ifcIdBitP = ifcIDgRABITbIT_00 , grabitC& grabitNUP = *(grabitC*)0 , countT* const pcKeyP = 0 , countT* const pcGrabberOsTidP = 0 , countT* const pcGrabberRecurseP = 0 , const flagsT flagsP = flGRABITc_NOTjEALOUS , const countT msNapP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.grabitC.grabitC!||
-    grabitC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , listingC& aptP                                              , grabitC& grabitNUP = *(grabitC*)0 , countT* const pcKeyP = 0 , countT* const pcGrabberOsTidP = 0 , countT* const pcGrabberRecurseP = 0 , const flagsT flagsP = flGRABITc_null , const countT msNapP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    grabitC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , listingC& aptP                                              , grabitC& grabitNUP = *(grabitC*)0 , countT* const pcKeyP = 0 , countT* const pcGrabberOsTidP = 0 , countT* const pcGrabberRecurseP = 0 , const flagsT flagsP = flGRABITc_NOTjEALOUS , const countT msNapP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.grabitC.grabitC!||
     voidT grabF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.grabitC.grabF!||
@@ -29397,7 +29397,7 @@ examples
 /* birth , death */
  NEWdELcLASSpROTOS
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.batonC.NEWdELcLASSuSEpRIMARYpOOLoLDiF!||
- batonC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , const flagsT flagsP = flBATONc_null , byteT* const pbZombieP = 0 , const countT cbZombieP = 0 , const countT idMemorySpaceP = 0 ) ;
+ batonC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , const flagsT flagsP = flBATONc_NOTjEALOUS , byteT* const pbZombieP = 0 , const countT cbZombieP = 0 , const countT idMemorySpaceP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.batonC.batonC!||
  ~batonC( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.batonC.dt_batonC!||
