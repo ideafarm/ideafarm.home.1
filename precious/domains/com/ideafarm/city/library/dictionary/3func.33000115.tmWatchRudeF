@@ -11,26 +11,32 @@ DONE( tmWatchRudeF )
 
 }
     }
-        ++ s ; etThread.osSleepF( tin0P , !ether ? TOCK : TOCK >> 3 ) ;
-        TELL( "napping for a tock" ) ;
+        ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
 
         }
-            }
-                                                                                                   thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;
-                idCycleDoze = 0 ;
-                etRock.traceF( tin0P , T("---- DOZEmAYBE off ----") ) ;
-            {
-            else if( ++ idCycleDoze == 9 )
-            }
-                                                                                                   thirdC::third_flagsModeProcess2I_IF()  |=    flMODEpROCESS2_DOZEmAYBE  ;
-                idCycleDoze = 1 ;
-                etRock.traceF( tin0P , T("++++ DOZEmAYBE ON ++++") ) ;
-            {
-            else if( !( idCycle % 0x10 ) )
-                 if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_ENABLEdOZING ) ) thirdC::third_flagsModeProcess2I_IF()  &= ~F(flMODEpROCESS2_DOZEmAYBE) ;
-        {
+            else if( scDozeChange < 0 ) { etRock.traceF( tin0P , T("---- DOZEmAYBE off ----") ) ; thirdC::third_flagsModeProcess2I_IF() &= ~F(flMODEpROCESS2_DOZEmAYBE) ; }
+                 if( scDozeChange > 0 ) { etRock.traceF( tin0P , T("++++ DOZEmAYBE ON  ++++") ) ; thirdC::third_flagsModeProcess2I_IF() |=    flMODEpROCESS2_DOZEmAYBE  ; }
 
-        ++ idCycle ;
+            }
+                }                                                                                                                                               //
+                    if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE ) ) scDozeChange = 1 ;                                           //     IF CLEAR THEN SET
+                {                                                                                                                                               //
+                else if( offPeriodModulo == processGlobal2I.cDozeSprint )                                                                                       //  IF END OF SPRINT
+                }                                                                                                                                               //
+                    else if(  processGlobal2I.cDozeSprint &&    F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE   ) scDozeChange = - 1 ;    //     ELSE IF     SPRINT AND SET   THEN CLEAR
+                         if( !processGlobal2I.cDozeSprint && !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE ) ) scDozeChange =   1 ;    //          IF NOT SPRINT AND CLEAR THEN SET
+                {                                                                                                                                               //
+                if( !offPeriodModulo )                                                                                                                          //  IF ZE'TH PERIOD
+            {                                                                                                                                                   //
+            else                                                                                                                                                // ELSE (ENABLED)
+            }                                                                                                                                                   //
+                if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE ) scDozeChange = - 1 ;                                                  //   IF SET THEN CLEAR
+            {                                                                                                                                                   //
+            if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_ENABLEdOZING ) )                                                                   // IF NOT ENABLED
+                                                                                                                                                                //
+            ZE( sCountT , scDozeChange ) ;
+            countT offPeriodModulo = ++ idPeriod % PERIODSpERdOZEcYCLE ;
+        {
 
         _IO_
     {
@@ -45,8 +51,31 @@ DONE( tmWatchRudeF )
     (
     while
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-    ZE( countT , idCycleDoze ) ;
-    ZE( countT , idCycle     ) ;
+    ZE( countT , idPeriod ) ;
+
+    //   
+    //   
+    //   
+    //   
+    //     ELSE IF OFFSET == cDozeSprint THEN   SET DOZEmAYBE
+    // 
+    //       IF cDozeSprint THEN                CLEAR DOZEMAYBE
+    //   
+    //     ELSE IF !OFFSET
+    //   
+    //     IF NOT ENABLED THEN                  CLEAR DOZEmAYBE
+    //   
+    //   FOR EACH PERIOD
+    //   
+    // RECIPE
+    //   
+    //   IF !processGlobal2I.cDozeSprint THEN DOZEmAYBE IS ON FOR EVERY PERIOD
+    //   
+    //   01 PERIODS PER "CYCLE" (4 PERIODS PER TOCK)
+    //   
+    //   A CYCLE IS 4 TOCK
+    //   
+    // OBJECTIVE
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 
@@ -64,6 +93,7 @@ DONE( tmWatchRudeF )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 /*1*/TASK( tmWatchRudeF )/*1*/
+
 /**/
 */
 /*

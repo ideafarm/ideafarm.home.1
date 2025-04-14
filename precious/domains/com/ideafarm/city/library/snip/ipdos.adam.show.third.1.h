@@ -1,4 +1,6 @@
 
+#define PERIODSpERdOZEcYCLE 0x10
+
 #define MODULOdOZE ( TUCK << 4 )
 
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System

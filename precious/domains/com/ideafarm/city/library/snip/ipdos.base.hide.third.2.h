@@ -41478,6 +41478,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     byteT                           pbUtility[ TUCK * 5 ] ;                            // THIS MAY BE USED TEMPORARILY FOR ANY PURPOSE BUT ONLY ON MAIN THREAD (TO PREVENT COLLISIONS BY MULTIPLE THREADS) ; INITIALLY, IT EXISTS TO FACILITATE TEMPORARY CONSTRUCTION OF tlsAllocStackExp_8_C INSTANCES
     countT                          cAddressRangeCodeBase ;
     addressRangeS                   pAddressRangeCodeBase[ CmODULESbASE ] ;
+    countT                          cDozeSprint ;
 
     //PUT PLATFORM DEPENDENT MEMBERS HERE SO THAT OFFSETS TO THE OTHER MEMBERS ARE INVARIANT
     #if defined( ifcENABLEtHIRDpARTIES )
