@@ -995,7 +995,7 @@ DONE( tmSuspendAllF )
         {
         IFsCRATCHoK
     {
-    //PERSONALITY: I ALWAYS DELETE THE ON SUSPENDaLL FILE TO MINIMIZE POWER AND SSD UTILIZATION ; TO GET MINUTE REPORTS, THE OPERATOR MUST MOVE THE SUSPENDaLL FILE TO THE "ON" FOLDER EACH TIME I AM HIRED
+    //PERSONALITY: I ALWAYS DELETE THE ON SUSPENDaLL FILE TO MINIMIZE POWER AND SSD UTILIZATION ; TO GET TICK REPORTS, THE OPERATOR MUST MOVE THE SUSPENDaLL FILE TO THE "ON" FOLDER EACH TIME I AM HIRED
 
     etThread.diskMakeDirIfNeededF( tin0P , tFileSuspendAllOn  ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tFileSuspendAllOff ) ;
@@ -1098,7 +1098,7 @@ DONE( tmChatterF )
         {
         IFsCRATCHoK
     {
-    //PERSONALITY: I ALWAYS DELETE THE ON CHATTER FILE TO MINIMIZE POWER AND SSD UTILIZATION ; TO GET MINUTE REPORTS, THE OPERATOR MUST MOVE THE CHATTER FILE TO THE "ON" FOLDER EACH TIME I AM HIRED
+    //PERSONALITY: I ALWAYS DELETE THE ON CHATTER FILE TO MINIMIZE POWER AND SSD UTILIZATION ; TO GET TICK REPORTS, THE OPERATOR MUST MOVE THE CHATTER FILE TO THE "ON" FOLDER EACH TIME I AM HIRED
 
     etThread.diskMakeDirIfNeededF( tin0P , tFileChatterOn  ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tFileChatterOff ) ;
@@ -2043,6 +2043,8 @@ TELL( "cleaning up 0" )
 
         //etRock.traceF( tin0P , T("launching tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((tin1S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
+        pcArg[ 0xd ] = (countT)&idReportP ;
+        pcArg[ 0xc ] = (countT)&stIdMemorySpaceP ;
         pcArg[ 0xb ] = (countT)&bChatterP ;
         pcArg[ 0xa ] = (countT)&tEventP ;
         pcArg[ 0x9 ] = (countT)&osTidEventP ;
@@ -2092,6 +2094,8 @@ TELL( "cleaning up 0" )
     TN( tb4 , "    " ) ;
 
     etThread.delF( tin0P , pcArgP ) ;
+    countT&      idReportP                  =  *(countT*)pcArgP[ 0x10 ] ;
+    stackC&      stIdMemorySpaceP           =  *(stackC*)pcArgP[ 0x0f ] ;
     stackC&      stOsPidFromTinZombieP      =  *(stackC*)pcArgP[ 0x0e ] ;
     stackC&      stOsPidFromTinP            =  *(stackC*)pcArgP[ 0x0d ] ;
     boolT&       bChatterP                  =   *(boolT*)pcArgP[ 0x0c ] ;
@@ -2207,7 +2211,7 @@ DONE( tmReportF )
     }
 //#endif
         }
-            if( bSerialize ) bCompileReportP.ungrabF( tin0P ) ;
+            bCompileReportP.ungrabF( tin0P ) ;
 
             }
                 }
@@ -3297,10 +3301,23 @@ DONE( tmReportF )
             {
             if( !bQuitEatingP )
 
-            if( bSerialize ) bCompileReportP.grabF( tin0P , TAG( TAGiDnULL ) ) ;  // AN OPTIMIZATION TO SERIALIZE USE OF CPU AND ADDRESS SPACE ; 20210707@1737: CONDITIONALLY DISABLED SERIALIZATION SO CAN GET QUICK REPORTS DURING TERMINATION
+            etThread.traceF( tin0P , T("[idReport,idMemorySpace]:    ")+TF2(++idReportP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-            bSerialize = 0 ; //20240707@1046: SUPPRESS SERIALIZATION BECAUSE WITH CURRENT Intel i3 CHIPS THERE IS PLENTY OF CPU HORSEPOWER
-            boolT bSerialize = !ether ;
+            }
+                ++ s ; etThread.osSleepF( tin0P , TUCK >> 2 ) ;
+
+                }
+                    break ;
+                    bCompileReportP.grabF( tin0P , TAG( TAGiDnULL ) ) ;  // AN OPTIMIZATION TO SERIALIZE USE OF CPU AND ADDRESS SPACE ; 20210707@1737: CONDITIONALLY DISABLED SERIALIZATION SO CAN GET QUICK REPORTS DURING TERMINATION
+                {
+                if( idSpaceGo == idMemorySpaceP )
+
+                stIdMemorySpaceP.ungrabF( tin0P ) ;
+                countT idSpaceGo = stIdMemorySpaceP[ idCursor ]  ;
+                countT idCursor  = 1 + idReportP % stIdMemorySpaceP ;
+                stIdMemorySpaceP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+            {
+            while( !bQuitEatingP )
 
             _IO_
         {
@@ -3324,11 +3341,11 @@ DONE( tmReportF )
                     break ;
                     timeR2 = timeN2 ;
                     timeR1 = timeN1 ;
-                    idMinute = idMinuteTry ;
+                    idMinute = idTickTry ;
                 {
                 if( bDo )
 
-                if( !bDo && ( /*ether ||*/ idMinute != idMinuteTry ) ) bDo = 1 ;    //20221027@1544: NAWWH: 20210706@1608: IF ether THEN DO REPEATEDLY WITHOUT NAPPING, TO REVEAL WHICH THREADS TAKE THE LONGEST TO SHUT DOWN
+                if( !bDo && ( /*ether ||*/ idMinute != idTickTry ) ) bDo = 1 ;    //20221027@1544: NAWWH: 20210706@1608: IF ether THEN DO REPEATEDLY WITHOUT NAPPING, TO REVEAL WHICH THREADS TAKE THE LONGEST TO SHUT DOWN
 
                 else if( idFoTock ) idFoTock = 0 ;
                 }
@@ -3342,7 +3359,7 @@ DONE( tmReportF )
                 ZE( boolT , bDo ) ;
 
                 countT idFoTockTry = timeN1 >> 0x12 ;        
-                countT idMinuteTry = timeN1 >> 0x16 ;    // 8:TUCK 01:TOCK 81:TICK 61:MINUTE(QUARTERTICK)
+                countT idTickTry = timeN1 >> 0x18 ;    // 8:TUCK 01:TOCK 81:TICK 61:MINUTE(QUARTERTICK)
                 // 8:TUCK 01:TOCK 81:TICK 61:MINUTE(QUARTERTICK)
 
                 etThread.osTimeNowF( tin0P ,  timeN1 , timeN2 ) ;
@@ -3350,8 +3367,6 @@ DONE( tmReportF )
                 ZE( countT  , timeN1 ) ;
             {
             while( !bQuitEatingP && !etThread && !( fliPendingSnapShotRequestP & fliMyBit ) ) // SNAPsHOT REQUEST IS OBEYED IMMEDIATELY
-
-            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
         ZE( boolT   , bSnapShot ) ;
         ZE( sCountT , timeR2 ) ;
@@ -3363,6 +3378,8 @@ DONE( tmReportF )
         _IO_
     {
     while( !bQuitEatingP )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
     THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) //bCompileReportP ADDED 20180108@1021
     //etRock.traceF( tin0P , T("f/ ") ) ; //U:: TO FIND A BUG
     ZE( countT , idFoTock ) ; // THIS IS USED ONLY IF flHOMEsuTILITY_SNAPsHOT
@@ -3402,6 +3419,8 @@ DONE( tmReportF )
     //if( idMemorySpaceP == 2 )
 
     etThread.delF( tin0P , pcArgP ) ;
+    countT&       idReportP                  =       *(countT*)pcArgP[ 0xd ] ;
+    stackC&       stIdMemorySpaceP           =       *(stackC*)pcArgP[ 0xc ] ;
     boolT&        bChatterP                  =        *(boolT*)pcArgP[ 0xb ] ;
     textC&        tEventP                    =        *(textC*)pcArgP[ 0xa ] ;
     countT&       osTidEventP                =       *(countT*)pcArgP[ 0x9 ] ;
@@ -3707,7 +3726,7 @@ TASK( tmcMonitorServerF ) //REN tmServerF
 
 //20250406@1959: ADDED bSlowAllP AND tmSlowAllF SO CAN SLOW DOWN ALL PROCESSES THAT I AM DEBUGGING
 //20250404@1728: ADDED bSuspendAllP AND tmSuspendAllF SO CAN SUSPEND ALL PROCESSES THAT I AM DEBUGGING
-//20230315@1040: ADDED bChatterP AND tmChatterF SO CAN ENABLE THE GENERATION OF MINUTE REPORTS BY CREATING A SEMAPPHORE FILE
+//20230315@1040: ADDED bChatterP AND tmChatterF SO CAN ENABLE THE GENERATION OF TICK REPORTS BY CREATING A SEMAPPHORE FILE
 //20230306@0731: DISABLED TO REDUCE BATTERY AND SSD USAGE
 //20230306@0731: ENABLED TO GLASS PRODUCTION
 //20230212@1503: DISABLED TO REDUCE BATTERY AND SSD USAGE (U::ENHANCE TO USE A SEMAPHORE FILE TO REQUEST REPORTS)
@@ -3717,7 +3736,7 @@ TASK( tmcMonitorServerF ) //REN tmServerF
 //U:: IN PRODUCTION, THE IFDEF SHOULD BE COMMENTED OUT SO THAT THE CODE IS TESTED BY PRODUCTION
 //U:: 20190129: USING THE BATON MIGHT ALSO IMPACT QUIT QUALITY SO AT THIS TIME THE IFDEF IS BEING UNCOMMENTED
 //U::WORKAROUND: THE USE OF THE BATON IN THE NEXT LINE REQUIRES REGRESSION DEBUGGING.  THE GOAL IS TO REDUCE ADDRESS SPACE FOOTPRINT TO HOPEVULLY ELIMMINATE THE ADDRESS SPACE EXHAUSTION BLAMMO ON FACTORY3
-//CHATTER (MINUTE REPORTS)
+//CHATTER (TICK REPORTS)
 
 #include postADAMhEADER
 

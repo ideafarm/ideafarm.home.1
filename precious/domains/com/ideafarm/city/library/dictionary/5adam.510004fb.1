@@ -175,6 +175,8 @@ DONE( tmWorkF )
             etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmEatTelemetrySysF , memorySpace.sgnDone_tmEatTelemetrySysF_ , CBsTACKmIN << 3 ) , (countT)pcArg ) ;
 
             //CS:CODEsYNC: 510004fb.1 510004fb.1
+            pcArg[ 0x10 ] = (countT)&idReport ;
+            pcArg[ 0x0f ] = (countT)&stIdMemorySpace ;
             pcArg[ 0x0e ] = (countT)&stOsPidFromTinZombie ;
             pcArg[ 0x0d ] = (countT)&stOsPidFromTin ;
             pcArg[ 0x0c ] = (countT)&bChatter ;
@@ -190,7 +192,7 @@ DONE( tmWorkF )
             pcArg[ 0x02 ] = (countT)&cLeverIdMemory ;
             pcArg[ 0x01 ] = idMemory ;
             pcArg[ 0x00 ] = (countT)&memorySpace.bQuitEating ;
-            etThread.newF( tin0P , LF , pcArg , 0xf ) ; ___( pcArg ) ;   //CS:CODEsYNC: 510004fb.1 510004fb.1
+            etThread.newF( tin0P , LF , pcArg , 0x11 ) ; ___( pcArg ) ;   //CS:CODEsYNC: 510004fb.1 510004fb.1
             ZE( countT* , pcArg ) ;
 
             swMemorySpace.ungrabF( tin0P ) ;
@@ -198,6 +200,8 @@ DONE( tmWorkF )
             byteT* pbms = (byteT*)&(countT&)swMemorySpace ;
             cLeverIdMemory = idMemory ;
             swMemorySpace.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+            stIdMemorySpace.sinkF( tin0P , countTC() , idMemory ) ;
 
             if( idMemory >= ifcIDmEMORYsPACE_RESERVEDmIN && idMemory <= ifcIDmEMORYsPACE_RESERVEDmAX ) continue ;   //CS:CODEsYNC: 510004fb 510004fb
         {
@@ -231,6 +235,8 @@ DONE( tmWorkF )
     stackC stOsPidFromTinZombie( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
     stackC stOsPidFromTin(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
     stackC stOsPid(              tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
+    stackC stIdMemorySpace(      tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
+    ZE( countT , idReport ) ;
 
     etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 3 ) , (countT)&bQuitChattering , (countT)&bChatter ) ;
     ZE( boolT , bChatter ) ;
