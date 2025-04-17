@@ -7,8 +7,9 @@ rem // This proprietary software was crafted at great expense and with great har
 rem // Respecting the rights of other people is an important part of empowering one another.
 rem //
 
-rem param 1: if "path" then "just set the path"
-rem param 1: if "ss"   then "skip drive search"
+rem param 1: if "path"    then "just set the path"
+rem param 1: if "ss"      then "skip drive search"
+rem param 1: if "nopause" then "don't pause for keypress"
 
 if %1z == pathz echo just setting path
 if %1z == pathz goto :SETpATH
@@ -27,7 +28,7 @@ if exist c:\rimstar\* goto :SKIPRIMSTAR
 echo .
 echo I am about to install the Rimstar Programmers Editor into c:\rimstar
 echo .
-pause
+if not %1z == nopausez pause
 
 md c:\rimstar
 cd c:\rimstar
@@ -41,7 +42,7 @@ goto :AFTERrIMSTAR
 echo .
 echo I did not install Rimstar because c:\rimstar already exists.
 echo .
-pause
+if not %1z == nopausez pause
 
 :AFTERrIMSTAR
 
@@ -55,7 +56,7 @@ if not exist %idrive%\tmp.ideafarm\vc.installed.txt goto :DOvc
 echo .
 echo I did not install the Visual Studio runtimes because they appear to already be installed.
 echo .
-pause
+if not %1z == nopausez pause
 goto :AFTERvc
 
 
@@ -68,7 +69,7 @@ echo I am about to install the Visual Studio runtimes.
 echo If they are both (64-bit and 32-bit) are already installed, just click "Close" in each popup window.
 echo Else click "I agree", "Install", and then "Close" for each of these two programs.
 echo .
-pause
+if not %1z == nopausez pause
 
 rem %iworkshop%\visualstudio\VC_redist.x64.exe
 %iworkshop%\visualstudio\VC_redist.x86.exe
@@ -83,7 +84,7 @@ if %1z == ssz goto :SETpATH
 echo .
 echo I am about to look for IdeaFarm (tm) home folders on all drives...
 echo .
-pause
+if not %1z == nopausez pause
 echo .
 
 set isay1=ideafarm.home.* exists on drive
@@ -174,7 +175,7 @@ echo If execution fails, this is the first thing to check for.
 echo Do not proceed with this build if there is more than one drive reported above.
 echo (To fix that problem, just move all ideafarm.home.* folders to the same local drive.)
 echo .
-pause
+if not %1z == nopausez pause
 
 :SETpATH
 
