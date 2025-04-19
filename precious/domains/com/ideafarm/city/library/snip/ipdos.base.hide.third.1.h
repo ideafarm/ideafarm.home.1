@@ -1,8 +1,4 @@
 
-#define PERIODSpERdOZEcYCLE 0x10
-
-#define MODULOdOZE ( TUCK << 4 )
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -3386,6 +3382,10 @@ examples
 */
 
 //CODEsYNC: 001007f 0b2001c : MUST BE IN INCREASING ORDER (RUDE MUST HAVE A HIGHER VALUE THAN RUSH, ETC).
+
+
+// THE ifcTHREADpRIORITY_LAZIERmINUS* AND ifcTHREADpRIORITY_PUSHYpLUS* VALUES ARE ONLY LEGAL FOR THE RUDE PROCESS PRIORITY CLASS
+//   CS:CODEsTYLE RULE: NEVER SPECIFY THESE CONSTANTS ; EXPECT THEM TO BE RETURNED IN RESPONSE TO QUERIES, BUT NEVER SPECIFY THEM IN SETTING THREAD PRIORITY
 
 /**/
 /*1*//*ifcTHREADpRIORITY*//*1*/
@@ -11885,6 +11885,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_WEBhOOKnOTICEfILER                                   0x5100088f
 #define ifcIDaDAM_ADMINISTRATOR                                        0x51000892
 #define ifcIDaDAM_WELCOMER                                             0x51000893
+#define ifcIDaDAM_SHELL                                                0x5100089f
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
@@ -12505,7 +12506,7 @@ these values are used in the foreign domain name system
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200134.ifcidtypenews END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200135.ifcIDeRRORdNS BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200135.ifciderrordns BEGIN
 
 
 //
@@ -12543,7 +12544,7 @@ these values are used in the foreign domain name system
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200135.ifcIDeRRORdNS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200135.ifciderrordns END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200136.fallset BEGIN
 
 
@@ -32662,31 +32663,31 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
 /**/
 /*1*//*WAITuNTILaLMOSTaLONE*//*1*/
 
-#define WAITuNTILaLMOSTaLONE(cKidsOrphansAllowP)                                                                                                            \
-                                                                                                                                                            \
-    TELL( "waiting for all child threads except tmWindowsF tmAnimateSadamsOnPaperF to end" ) ;                                                              \
-    {                                                                                                                                                       \
-        const boolT b_tmWindows    = !!( F(thirdC::third_flagsModeAdam1I_IF(tin0P))    & flADAMmODE1_tmWindows          ) ;                                  \
-        const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                  \
-        const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ;                                  \
-        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */             \
-        countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tin0P ) ;                                                                                \
-        countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tin0P ) ;                                                                             \
-        IFsCRATCHoK                                                                                                                                           \
-        {                                                                                                                                                   \
-            SCOOPS                                                                                                                                          \
-            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                           \
-            while( cAllKidThreadsI + cAllOrphanThreadsI > bService + b_tmWindows * 2 + ((tin1S&)tin0P).pag1->_deviceC_cHelper + bSysThreads * 3 /*tmWatchF,tmWatchRudeF,tmKillSocketF*/ + (cKidsOrphansAllowP) )  \
-            {                                                                                                                                               \
-                /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/waiting for " , ( cAllKidThreadsI + cAllOrphanThreadsI - bService - b_tmWindows * 2 - 2 - (cKidsOrphansAllowP) ) , " kid threads to end\r\n" ) ;*/ \
-                ++ s ; thirdC::dosSleepWinkIF( tin0P , 1 ) ;                                                                                                 \
-            }                                                                                                                                               \
-                                                                                                                                                            \
-            if( POOP ) POOPR                                                                                                                                \
-        }                                                                                                                                                   \
-        /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/ending wait\r\n" ) ;*/                            \
-        /* ONLY main,tmWindowsF,tmWatchF,tmWatchRudeF,tmKillSocketF REMAIN */                                                                                            \
-    }                                                                                                                                                       \
+#define WAITuNTILaLMOSTaLONE(cKidsOrphansAllowP)                                                                                                                                                                                                                        \
+                                                                                                                                                                                                                                                                        \
+    TELL( "waiting for all child threads except tmWindowsF tmAnimateSadamsOnPaperF to end" ) ;                                                                                                                                                                          \
+    {                                                                                                                                                                                                                                                                   \
+        const boolT b_tmWindows    = !!( F(thirdC::third_flagsModeAdam1I_IF(tin0P))    & flADAMmODE1_tmWindows          ) ;                                                                                                                                             \
+        const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                                                                                                                                  \
+        const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ;                                                                                                                                                  \
+        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */                                                                                                                      \
+        countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tin0P ) ;                                                                                                                                                                                           \
+        countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tin0P ) ;                                                                                                                                                                                        \
+        IFsCRATCHoK                                                                                                                                                                                                                                                     \
+        {                                                                                                                                                                                                                                                               \
+            SCOOPS                                                                                                                                                                                                                                                      \
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                      \
+            while( cAllKidThreadsI + cAllOrphanThreadsI > bService + b_tmWindows * 2 + ((tin1S&)tin0P).pag1->_deviceC_cHelper + bSysThreads * 3 /*tmWatchF,tmWatchRudeF,tmKillSocketF*/ + (cKidsOrphansAllowP) )                                                        \
+            {                                                                                                                                                                                                                                                           \
+                /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/waiting for " , ( cAllKidThreadsI + cAllOrphanThreadsI - bService - b_tmWindows * 2 - 3 - (cKidsOrphansAllowP) ) , " kid threads to end\r\n" ) ;*/ \
+                ++ s ; thirdC::dosSleepWinkIF( tin0P , 1 ) ;                                                                                                                                                                                                            \
+            }                                                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                        \
+            if( POOP ) POOPR                                                                                                                                                                                                                                            \
+        }                                                                                                                                                                                                                                                               \
+        /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/ending wait\r\n" ) ;*/                                                                                                                                     \
+        /* ONLY main,tmWindowsF,tmWatchF,tmWatchRudeF,tmKillSocketF REMAIN */                                                                                                                                                                                           \
+    }                                                                                                                                                                                                                                                                   \
 
 
 
@@ -42470,6 +42471,7 @@ this value controls the size of the pieces of text that are allocated in the poo
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200487.csttsoulfusedefault END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200488.forstringsinspannedhead BEGIN
+
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.

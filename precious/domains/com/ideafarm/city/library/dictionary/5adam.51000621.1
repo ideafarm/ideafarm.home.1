@@ -862,7 +862,7 @@ DONE( tmWorkF )
 
             //, ifcIDaDAM_SCRATCH07       //U:: TO FIND A BUG
 
-            ifcIDaDAM_CLOAK , ifcIDaDAM_GLASS1 , ifcIDaDAM_2GLASS2 , ifcIDaDAM_MEMBRANEgLASS , ifcIDaDAM_PREPARElISTS , ifcIDaDAM_WATCH , ifcIDaDAM_UDPeCHO , ifcIDaDAM_CONSOLE , ifcIDaDAM_HOMEfLAGS , ifcIDaDAM_WATCHiDLEcPU , ifcIDaDAM_PISS , ifcIDaDAM_CLOUD , ifcIDaDAM_SNAPwORDS , ifcIDaDAM_TIME , ifcIDaDAM_ROOTmAILoUT , ifcIDaDAM_ROOThTTPsERVER , ifcIDaDAM_GORILLAwEBHOOKS , ifcIDaDAM_WEBhOOKnOTICEfILER , ifcIDaDAM_ADMINISTRATOR , ifcIDaDAM_WELCOMER , ifcIDaDAM_DNS , ifcIDaDAM_ICISbOT , ifcIDaDAM_HEALaRCHIVES , ifcIDaDAM_HIREwITHOUTdEBUGGING , ifcIDaDAM_UDPfILEcATCHER , ifcIDaDAM_UDPfILErECEIVER
+            ifcIDaDAM_CLOAK , ifcIDaDAM_GLASS1 , ifcIDaDAM_2GLASS2 , ifcIDaDAM_MEMBRANEgLASS , ifcIDaDAM_PREPARElISTS , ifcIDaDAM_WATCH , ifcIDaDAM_UDPeCHO , ifcIDaDAM_CONSOLE , ifcIDaDAM_HOMEfLAGS , ifcIDaDAM_WATCHiDLEcPU , ifcIDaDAM_PISS , ifcIDaDAM_CLOUD , ifcIDaDAM_SNAPwORDS , ifcIDaDAM_TIME , ifcIDaDAM_ROOTmAILoUT , ifcIDaDAM_ROOThTTPsERVER , ifcIDaDAM_GORILLAwEBHOOKS , ifcIDaDAM_WEBhOOKnOTICEfILER , ifcIDaDAM_ADMINISTRATOR , ifcIDaDAM_WELCOMER , ifcIDaDAM_DNS , ifcIDaDAM_ICISbOT , ifcIDaDAM_HEALaRCHIVES , ifcIDaDAM_HIREwITHOUTdEBUGGING , ifcIDaDAM_UDPfILEcATCHER , ifcIDaDAM_UDPfILErECEIVER , ifcIDaDAM_SHELL /* MUST BE LATH SO THAT Eve HIRES SHELL AT THE END OF BUILDING ALL PRODUCTION ADAMS*/
 
             //20221105@1533: RETIRED: ifcIDaDAM_ELF , ifcIDaDAM_TOOLiNoUTfRAMEctELEMETRYrEPORTER , ifcIDaDAM_CLOAK , ifcIDaDAM_2GLASS2 , ifcIDaDAM_PATCHaLLmASTERS , ifcIDaDAM_HOMEfLAGS , ifcIDaDAM_3BANG , ifcIDaDAM_GORILLAbANG , ifcIDaDAM_MEMBRANEgLASS , ifcIDaDAM_PREPARElISTS , ifcIDaDAM_WATCH , ifcIDaDAM_WATCHiDLEcPU , ifcIDaDAM_PISS , ifcIDaDAM_CLOUD /*, ifcIDaDAM_CONSOLE*/ , ifcIDaDAM_SNAPwORDS , ifcIDaDAM_TIME*/ , ifcIDaDAM_ROOTmAILoUT , ifcIDaDAM_ROOThTTPsERVER /*, ifcIDaDAM_UDPfILEcATCHER , ifcIDaDAM_UDPfILErECEIVER , ifcIDaDAM_REMOTEdESKTOPoPENhOUSE , ifcIDaDAM_HEALaRCHIVES , ifcIDaDAM_GORILLAhTTPiDEAFARMcOM , ifcIDaDAM_GORILLAhTTPiDEAFARMcOMrEPORTER , ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK , ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER , ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 , ifcIDaDAM_ACCESSeVENTS4bOOKbYhASHbYTE2 , ifcIDaDAM_ACCESSeVENTS5bOOKbYhASHbYTE3 , ifcIDaDAM_ACCESSeVENTS6bOOKbYcONTAINERuRI , ifcIDaDAM_ACCESSeVENTS7rEPORTbYcONTAINERuRI , ifcIDaDAM_ACCESSeVENTS8aUDITbOOKS , ifcIDaDAM_TOOLwALKsEARCH*/
 
@@ -1053,7 +1053,7 @@ TASK( tmWorkF )
                 }
                     break ;
                     }
-                        ether.ifcHireF( tin0P , T("621") , idAdam , T("!noTells") , flagsHire ) ;
+                        ether.ifcHireF( tin0P , T("621") , idAdam , T("!noTells !hiredByEve") , flagsHire ) ;
                         //ether.traceF( tin0P , T("hiring ")+tAdam ) ;
                     {
                     if( idAdam < ifcIDaDAM_SCRATCH01 )
@@ -1067,7 +1067,7 @@ TASK( tmWorkF )
                     ether.osSuspendF( tin0P ) ;
                     //ether.traceF( tin0P , T("firing base operating system (hibernate)") ) ;
 
-                    ether.ifcHireF( tin0P , T("621") , idAdam , T("!faceHear \"\" !noTells") , flagsHire ) ;
+                    ether.ifcHireF( tin0P , T("621") , idAdam , T("!faceHear \"\" !noTells !hiredByEve") , flagsHire ) ;
                     //ether.traceF( tin0P , T("hiring ")+tAdam ) ;
                 {
                 case ifcIDaDAM_CODEmEASUREMENTS :           //U:: ENABLE THIS CASE IN PRODUCTION
@@ -1075,7 +1075,7 @@ TASK( tmWorkF )
 
                 }
                     break ;
-                    ether.ifcHireF( tin0P , T("621") , idAdam , T("!faceHear \"\" !noTells") , flagsHire ) ;
+                    ether.ifcHireF( tin0P , T("621") , idAdam , T("!faceHear \"\" !noTells !hiredByEve") , flagsHire ) ;
                     //ether.traceF( tin0P , T("hiring ")+tAdam ) ;
                 {
                 case ifcIDaDAM_DEFlINES :
@@ -1084,7 +1084,7 @@ TASK( tmWorkF )
                     break ;
 
                     }
-                        ether.ifcHireF( tin0P , T("621") , idAdam , T(ppostDef[offd])+T(" !noTells") , flagsHire | flHIRE_WAIT |  flHIRE_DEBUG ) ;
+                        ether.ifcHireF( tin0P , T("621") , idAdam , T(ppostDef[offd])+T(" !noTells !hiredByEve") , flagsHire | flHIRE_WAIT |  flHIRE_DEBUG ) ;
                         //ether.traceF( tin0P , T("hiring ")+tAdam+T(" to make from ")+T(ppostDef[offd]) ) ;
                     {
                     for( countT offd = 0 ; !ether && offd < sizeof ppostDef / sizeof ppostDef[ 0 ] ; offd ++ )
@@ -1160,6 +1160,7 @@ TASK( tmWorkF )
                 case 0x51000761                                      :
                 case 0x51000760                                      :
 
+              //case ifcIDaDAM_SHELL                                 :      (INTENTIONALLY COMMENTED OUT SO THAT SHELL RUNS AT THE END OF A PRODUCTION BUILD)
                 case ifcIDaDAM_DNS                                   :
                 case ifcIDaDAM_WELCOMER                              :
                 case ifcIDaDAM_ADMINISTRATOR                         :

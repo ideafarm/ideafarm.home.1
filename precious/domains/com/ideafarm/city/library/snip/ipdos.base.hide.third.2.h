@@ -4228,6 +4228,58 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120061b.fliWEBhOOKnOTICE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120061c.MODULOdOZE BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*MODULOdOZE*//*1*/
+
+// TUCK << 0: TOO LOW
+
+#define MODULOdOZE ( TUCK << 4 )
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120061c.MODULOdOZE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120061d.PERIODSpERdOZEcYCLE BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*PERIODSpERdOZEcYCLE*//*1*/
+
+#define PERIODSpERdOZEcYCLE 0x10
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120061d.PERIODSpERdOZEcYCLE END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -7805,7 +7857,6 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*tmWatchF*//*1*/
 
 TASKpART0PROTO( tmWatchF ) ;
-TASKpART0PROTO( tmWatchRudeF ) ;
 
 
 //
@@ -15348,6 +15399,32 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000241.tmConnectionAcceptorF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000242.tmWatchRudeF BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.004002a.1.0.html\"\>definition\</A\>
+*/
+/*1*//*tmWatchRudeF*//*1*/
+
+TASKpART0PROTO( tmWatchRudeF ) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000242.tmWatchRudeF END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tellInfoAppInOutFrameS : 1snip.15000188.tellinfoappinoutframes BEGIN
 
 
@@ -15531,7 +15608,7 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 /*1*/class _export inOutFrameC/*1*/
 {
     inOutFrameC* const        pDad                      ;
-    tin0S&                 tin0Ct                 ;
+    tin0S&                    tin0Ct                    ;
     const countT              idLineCt                  ;
     const countT              idiFileCt                 ;
     inOutFrameAuditCpuCyclesS auditCpuCycles            ;
@@ -19405,6 +19482,7 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000004.setifequalsam END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000005.ptinam BEGIN
+
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -24347,6 +24425,7 @@ this class was a precursor to the arrayC class
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ag1_soulC_C : 1snip.150000d3.ag1_soulc_c END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.soulC : 1snip.15000039.soulc BEGIN
 
+
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -27786,8 +27865,8 @@ struct bookMarkOldS
     count04T    cCpuCycles2Or5Lath ;
     count04T    cTime2Or5Lath ;
     measure04T  brcm04Raw ;
-    timeS       ptTraceWoth[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
-    timeS       ptTraceLath[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    timeS       ptTraceWoth[      1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    timeS       ptTraceLath[      1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     count04T    pCyclesTraceWoth[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     count04T    pCyclesTraceLath[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
 
@@ -43848,7 +43927,7 @@ parameters
 
 /*1*/struct _export depositS/*1*/
 {
-    etherC&         ether ;
+    etherC&         ether ;                         //20250402@1050: ADDED BECAUSE soulC::soulC NOW REQUIRES etherC& ARGUMENT
     const flagsT    flagsThis ;
 
     countT          idAccBucketOwner ;
