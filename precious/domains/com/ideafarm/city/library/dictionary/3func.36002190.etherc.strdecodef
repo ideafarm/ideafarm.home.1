@@ -24,6 +24,7 @@
                 }
                     bFail = 1 ;
                     etherC::etRockIF( tin0P ).traceF( tin0P , T("strDecodeF / caught an exception") ) ;
+                    _IO_
                 {
                 else
                 }
@@ -124,12 +125,15 @@
                 if( !_restart )
                 _restart.flags |= flRESTARTc_QUIET ;
                 RESTART
+                _IO_
             {
             ZE( boolT , bFail ) ;
 
-            SCOOPS
+            //SCOOPS
+            _IO_
         {
-        IFsCRATCHoK
+        //IFsCRATCHoK
+        //20250427@1602: COMMENTED OUT IFsCRATCHoK AND SCOOPS BECAUSE I APPARENTLY DON'T CONTAIN ANY CODE THAT USES pEtScratch
         _IO_
     {
     ZE( countT , offbi ) ; //BIT OFFSET OF NEXT READ
