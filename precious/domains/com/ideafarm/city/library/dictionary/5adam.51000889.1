@@ -31,6 +31,9 @@ cDo = 1 ;
     TN( tWoTimePassword , "" ) ;
     grabC grab_tWoTimePassword( tin0P , TAG( TAGiDnULL ) ) ;
 
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;        // THIS IS SO PASSWORD (WEBHOOK SUFFIX) UPDATES ARE RECEIVED TIMELY
+
     _IO_
 {
 if( pTaskP )
@@ -234,6 +237,8 @@ DONE( tmGetWebHookRandomSuffixF )
 
     grabC& grab_tWoTimePasswordP = *(grabC*)pTaskP->c2 ;
     textC& tWoTimePasswordP      = *(textC*)pTaskP->c1 ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 
     _IO_
 {

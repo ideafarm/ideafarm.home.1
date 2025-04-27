@@ -474,6 +474,9 @@ DONE( tmWorkF )
     signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
     mySettingsS mySettings( tin0P , etThread ) ;
 
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;    // RUDE WOULD BE AN ATTACK SURFACE
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;    // THIS IS SO PASSWORD (WEBHOOK SUFFIX) UPDATES ARE NOTICED TIMELY
+
     _IO_
 {
 if( pTaskP )
@@ -640,6 +643,8 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
 
     nicNameC nnHe = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
     nicNameC nnMe = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 
     grabC& grab_tWoTimePasswordP = *(grabC*)pTaskP->c2 ;
     textC& tWoTimePasswordP      = *(textC*)pTaskP->c1 ;
