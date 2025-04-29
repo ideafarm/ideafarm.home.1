@@ -21,45 +21,60 @@
             //if( pbo || F(flagsP) & flSLOTScnEW_DOnOTbLOCK ) break ;       //IF !flSLOTScnEW_DOnOTbLOCK, WILL BLOCK UNTIL SUCCEED IN GETTING A DROP ALLOCATED
             //20250429@1316: P:PERSONALITY: CHANGED SO NOW I ONLY TRY WO TIME AND ALWAYS RETURN, SO CALLER MUST CHECK TO SEE WHETHER I RETURN A NULL VALUE
 
-            if( pbo || !pbo ) break ;
+            break ;
 
             }
                 }
-                    inc02AM( pcTallyOut[ offs ] ) ;
-                    pGrabNewElt[ offs ].ungrabF( tin0P ) ; // -------------------------------------------------------------------------------------------------
+                    }
+                        }
+                            inc02AM( pcTallyOut[ offs ] ) ;
+                            pGrabNewElt[ offs ].ungrabF( tin0P ) ; // -------------------------------------------------------------------------------------------------
 
-                    ppSex[ offs ] = pSexNew ;
+                            }
+                                ppSex[ offs ] = pSexNew ;
 
-                                                   pPoolContainsMe->pSexLifoConstructed = pSexNew ;
-                    pSexNew->pSexLifoConstructed = pPoolContainsMe->pSexLifoConstructed           ;
+                                                               pPoolContainsMe->pSexLifoConstructed = pSexNew ;
+                                pSexNew->pSexLifoConstructed = pPoolContainsMe->pSexLifoConstructed           ;
+                            {
+                            else
+                            if( POOP ) { DELzOMBIE( pSexNew ) ; }
+
+                            }
+                                if( !POOP ) dropHeader = dropHeader << CbITSeXPsLOTS | ( offs - expSlotsMin ) ;
+                                IMPOTENCEiFsHIFTlEFTwOULDlOSEbITS( dropHeader , CbITSeXPsLOTS ) ;
+                                countT& dropHeader = ((countT*)pbo)[ - 1 ] ;
+                            {
+                            if( pbo && cbDropHeader )
+
+                            //20180509@1131:  WHEN sexC NESTING IS DISABLED, sexC INSTANCES CAN BE CONSTRUCTED WITH NO SLOTS AVAILABLE, SO CANNOT DO THIS:  if( !pbo ) { B LAMMO ; } // TO MAKE SURE THAT sexC::sexC SETS IMPOTENCE IF IT FAILS FOR EITHER REASON (RECURSION OR INSUFFICIENT CONTIGUOUS MEMORY)
+                            pbo = pSexNew->newF( tin0P , idLineP , idiFileP ) ;
+                            _IO_
+                        {
+                        else
+                        }
+                            inc02AM( pcTallyOut[ offs ] ) ;
+                            pGrabNewElt[ offs ].ungrabF( tin0P ) ; // -------------------------------------------------------------------------------------------------
+                            DELzOMBIE( pSexNew ) ;
+                            _IO_
+                        {
+                        if( (const poopC&)*pSexNew ) // *pSexNew CT FAILED, EITHER BECAUSE IT DETECTED THAT IT CT'D ITSELF RECURSIVELY OR BECAUSE INSUFFICIENT CONTIGUOUS MEMORY IS AVAILABLE
+                    {
+                    else
+                    }
+                        inc02AM( pcTallyOut[ offs ] ) ;
+                        pGrabNewElt[ offs ].ungrabF( tin0P ) ; // --------------------------------------------------------------------------------------------
+                    {
+                    if( !pSexNew )
 
                     }
-                        dropHeader = dropHeader << CbITSeXPsLOTS | ( offs - expSlotsMin ) ;
-                        BLAMMOiFsHIFTlEFTwOULDlOSEbITS( dropHeader , CbITSeXPsLOTS ) ;
-                        countT& dropHeader = ((countT*)pbo)[ - 1 ] ;
+                        pSexNew = new( 0 , tin0P , pbzaUse , sizeof( sexC ) ) sexC( tin0P , TAG( TAGiDnULL ) , idLineP , idiFileP , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
+                        tlsAllocStackExp_a_C tls( tin0P ) ;
                     {
-                    if( pbo && cbDropHeader )
-
-                    //20180509@1131:  WHEN sexC NESTING IS DISABLED, sexC INSTANCES CAN BE CONSTRUCTED WITH NO SLOTS AVAILABLE, SO CANNOT DO THIS:  if( !pbo ) { BLAMMO ; } // TO MAKE SURE THAT sexC::sexC SETS IMPOTENCE IF IT FAILS FOR EITHER REASON (RECURSION OR INSUFFICIENT CONTIGUOUS MEMORY)
-                    pbo = pSexNew->newF( tin0P , idLineP , idiFileP ) ;
-                    _IO_
+                    ZE( sexC* , pSexNew ) ;
                 {
-                else //U::BUG: SHOULD BE "else if( pSexNew )"
-                }
-                    inc02AM( pcTallyOut[ offs ] ) ;
-                    pGrabNewElt[ offs ].ungrabF( tin0P ) ; // -------------------------------------------------------------------------------------------------
-                    DELzOMBIE( pSexNew ) ;
-                    _IO_
-                {
-                if( pSexNew && (const poopC&)*pSexNew ) // *pSexNew CT FAILED, EITHER BECAUSE IT DETECTED THAT IT CT'D ITSELF RECURSIVELY OR BECAUSE INSUFFICIENT CONTIGUOUS MEMORY IS AVAILABLE
+                if( !POOP )
 
-                }
-                    pSexNew = new( 0 , tin0P , pbzaUse , sizeof( sexC ) ) sexC( tin0P , TAG( TAGiDnULL ) , idLineP , idiFileP , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
-                    tlsAllocStackExp_a_C tls( tin0P ) ;
-                {
-                ZE( sexC* , pSexNew ) ;
-
-                if( pbzaUse == (byteT*)ppSex[ offs ] ) { BLAMMO ; }
+                __( pbzaUse == (byteT*)ppSex[ offs ] ) ;
                 byteT* pbzaUse = pbza + offs * sizeof( sexC ) ;
 
                 OStEXTCF( ostoName , offs , '0' ) ;
@@ -122,7 +137,7 @@
             {
             if( !( F(flagsP) & flSLOTScnEW_DOnOTcTsEXc ) )
 
-            if( pbo ) break ;
+            if( POOP || pbo ) break ;
 
             }
                 inc02AM( pcTallyOut[ offs ] ) ;
@@ -132,24 +147,28 @@
                         inc02AM( pcTallyOut[ offs ] ) ;
 
                         }
-#endif
                             }
-                                putNegAM( pDropNote->finger , FINGERnEG_dropNoteSlotsHasAdjustedDropHeader ) ;
-                                pDropNote->dropHeaderCopy = dropHeader ;
-                            {
-                            if( pDropNote )
-#if defined( ENABLEdROPnOTES )
+                                #endif
+                                    }
+                                        putNegAM( pDropNote->finger , FINGERnEG_dropNoteSlotsHasAdjustedDropHeader ) ;
+                                        pDropNote->dropHeaderCopy = dropHeader ;
+                                    {
+                                    if( pDropNote )
+                                #if defined( ENABLEdROPnOTES )
 
-                            dropHeader = dropHeader << CbITSeXPsLOTS | ( offs - expSlotsMin ) ;
-                            BLAMMOiFsHIFTlEFTwOULDlOSEbITS( dropHeader , CbITSeXPsLOTS ) ;
+                                dropHeader = dropHeader << CbITSeXPsLOTS | ( offs - expSlotsMin ) ;
+                            {
+                            if( !POOP )
+
+                            IMPOTENCEiFsHIFTlEFTwOULDlOSEbITS( dropHeader , CbITSeXPsLOTS ) ;
                             countT& dropHeader = ((countT*)pbo)[ - 1 ] ;
                         {
                         if( cbDropHeader )
 
-#endif
-                        if( pDropNote ) putNegAM( pDropNote->finger , FINGERnEG_dropNoteSlotsIsAdjustingDropHeader ) ;
-                        dropNoteS* pDropNote = ppSex[ offs ]->pDropNoteF( tin0P , pbo ) ;
-#if defined( ENABLEdROPnOTES )
+                        #endif
+                            if( pDropNote ) putNegAM( pDropNote->finger , FINGERnEG_dropNoteSlotsIsAdjustingDropHeader ) ;
+                            dropNoteS* pDropNote = ppSex[ offs ]->pDropNoteF( tin0P , pbo ) ;
+                        #if defined( ENABLEdROPnOTES )
 
                         _IO_
                     {
@@ -181,19 +200,14 @@
                 _IO_
             {
             for( sCountT offs = sizeof ppSex / sizeof ppSex[ 0 ] - 1 ; - 1 + (sCountT)expSlotsMin < offs ; offs -- )
-            // TRYING TO ALLOCATE FROM EXISTING sexC INSTANCES, LARGEST WOTH
+            // TRYING TO ALLOCATE FROM EXISTING sexC INSTANCES, LARGEST WOTH ; USE THE LARGEST AVAILABLE SEX TO ALLOW SMALLER EXTENTS TO BECOME EMPTY AND BE DELETED ; THIS ENCOURAGES DENSITY SO REDUCES PAGING
 
-            if( offPass > 1 ) { BLAMMO ; }
             _IO_
         {
-        for( countT offPass = 0 ; ; offPass ++ )
+        for( countT offPass = 0 ; !offPass ; offPass ++ )           // SEE THE continue STATEMENT ; DONE THIS WAY FOR SPEED, TO AVOID SERIALIZATION
 
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
-        //THIS ENCOURAGES DENSITY SO REDUCES PAGING
-        //USE THE LARGEST AVAILABLE SEX TO ALLOW SMALLER EXTENTS TO BECOME EMPTY AND BE DELETED
-        if( F(flagsCt) & flSLOTSc_READoNLY ) { BLAMMO ; }
-        if( F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DISALLOWpUSE ) { BLAMMO ; }
         _IO_
     {
     ZE( byteT* , pbo ) ;
@@ -213,10 +227,14 @@
 
     }
         if( POOP ) return 0 ;
+        __( F(flagsCt) & flSLOTSc_READoNLY ) ;
+        __( F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DISALLOWpUSE ) ;
         FV( flSLOTScnEW , flagsP ) ;
         if( POOP ) return 0 ;
     {
     IFbEcAREFUL                 //20131223@1504: ADDED WITHOUT ANALYSIS; BEFORE, I WOULD DO WORK EVEN IF POOP
+
+    POOPIE                      //P:PERSONALITY: I FAIL SILENTLY ; CALLER MUST INSPECT MY RETURN VALUE TO DETECT NULL
 {
 /*1*/byteT* slotsC::newF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const flagsT flagsP )/*1*/
 
