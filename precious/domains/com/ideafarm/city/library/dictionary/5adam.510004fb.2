@@ -618,12 +618,12 @@ DONE( tmSlowAllF )
                 }
                     }
                         }
-                            etThread.traceF( tin0P , T("!exception / i could not leave a dropping [tLongDropping]:    ")+tLongDropping ) ;
+                            etThread.traceF( tin0P , T("!exception / i could not leave a seen by [tLongSeenBy]:    ")+tLongSeenBy ) ;
                             POOPRqUIET
                         {
                         if( POOP )
 
-                        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLongDropping , tSay , tSay.csF( tin0P ) , 1 ) ; ___( posti ) ;
+                        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLongSeenBy , tSay , tSay.csF( tin0P ) , 1 ) ; ___( posti ) ;
 
                         SCOOPS
                     {
@@ -660,8 +660,8 @@ DONE( tmSlowAllF )
                 TN( tSay , "" ) ;
 
                 //etThread.traceF( tin0P , T("scanning for a file named []:    ")+tLong ) ;
-                TN( tLongDropping , "" ) ; tLongDropping = T("////")+T(psttc1)+tSlowByHostNameSuffixDropping ;
-                TN( tLong         , "" ) ; tLong         = T("////")+T(psttc1)+tSlowByHostNameSuffix         ;
+                TN( tLongSeenBy , "" ) ; tLongSeenBy = T("////")+T(psttc1)+tSlowByHostNameSuffixSeenBy ;
+                TN( tLong       , "" ) ; tLong       = T("////")+T(psttc1)+tSlowByHostNameSuffix         ;
             {
             FORsTRINGSiN1( pstt1LanRoster )
         {
@@ -678,14 +678,6 @@ DONE( tmSlowAllF )
     ZE( boolT , bSlowAllLag ) ;
 
     countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
-
-    }
-        etThread.delF( tin0P , psttn ) ;
-        tMyLanName = T(psttn) ;
-        etThread.computerLanNameF( tin0P , psttn ) ; ___( psttn ) ;
-        ZE( strokeS* , psttn ) ;
-    {
-    TN( tMyLanName , "" ) ;
 
     }
         etThread.delF( tin0P , pstts ) ;
@@ -730,8 +722,8 @@ DONE( tmSlowAllF )
     TN( tFileSlowAllOn        , ""  ) ; tFileSlowAllOn        = tFolderControlsOn+T("/slowAll.txt") ;
     TN( tFileSlowAllOff       , ""  ) ; tFileSlowAllOff       = tFolderControlsOff+T("/slowAll.txt") ;
 
-    TN( tSlowByHostNameSuffixDropping , "/d/ideafarm.home.101/controls/slowByHostNameDropping.txt" ) ;
-    TN( tSlowByHostNameSuffix         , "/d/ideafarm.home.101/controls/slowByHostName.txt"         ) ;
+    TN( tSlowByHostNameSuffixSeenBy , ""                                                    ) ; tSlowByHostNameSuffixSeenBy = T("/d/ideafarm.home.101/controls/slowByHostNameSeenBy.")+tMyLanName+T(".txt" ) ;
+    TN( tSlowByHostNameSuffix       , "/d/ideafarm.home.101/controls/slowByHostName.txt"    ) ;
 
     TN( tFolderControlsOn        , ""  ) ; tFolderControlsOn        = T("///ideafarm/controls/")+tUser+T("/on/") ;
     TN( tFolderControlsOff       , ""  ) ; tFolderControlsOff       = T("///ideafarm/controls/")+tUser+T("/off/") ;
@@ -739,6 +731,14 @@ DONE( tmSlowAllF )
     TN( tUser , thirdC::postUserNameIF() ) ;
     TN( tSlash , "/" ) ;
     TN( tb4    , "    " ) ;
+
+    }
+        etThread.delF( tin0P , psttn ) ;
+        tMyLanName = T(psttn) ;
+        etThread.computerLanNameF( tin0P , psttn ) ; ___( psttn ) ;
+        ZE( strokeS* , psttn ) ;
+    {
+    TN( tMyLanName , "" ) ;
 
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
@@ -911,6 +911,22 @@ DONE( tmSuspendAllF )
             bFarCommandToSuspendLathUpdate = bFarCommandToSuspend ;
 
             }
+                }
+                    }
+                        }
+                            etThread.traceF( tin0P , T("!exception / i could not leave a seen by [tLongSeenBy]:    ")+tLongSeenBy ) ;
+                            POOPRqUIET
+                        {
+                        if( POOP )
+
+                        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLongSeenBy , tSay , tSay.csF( tin0P ) , 1 ) ; ___( posti ) ;
+
+                        SCOOPS
+                    {
+                    IFsCRATCHoK
+                {
+                if( bScannedOk )
+
                 etThread.delF( tin0P , posti ) ;
                 }
                     }
@@ -919,9 +935,11 @@ DONE( tmSuspendAllF )
                             etThread.traceF( tin0P , T("!exception / suspending all of the processes that i am debugging") ) ;
                         {
                         if( !etThread.strCompareF( tin0P , tMyLanName , tHisName ) || !etThread.strCompareF( tin0P , tHisName , tHisNameAll ) )
-                        etThread.traceF( tin0P , T("!exception / i see a command to suspend a host [tMyLanName,tHisName]:    ")+tMyLanName+tb4+tHisName ) ;
 
+                        etThread.traceF( tin0P , tSay ) ;
+                        tSay = T("!exception / i see a command to suspend a host [idScan,tMyLanName,tHisName]:    ")+TF2(idScan,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tMyLanName+tb4+tHisName ;
                         TN( tHisName , posti ) ;
+                        bScannedOk = 1 ;
                     {
                     else
                     if( POOP ) POOPRqUIET
@@ -931,11 +949,15 @@ DONE( tmSuspendAllF )
                     SCOOPS
                 {
                 IFsCRATCHoK
-                ZE( countT   , costi ) ;
-                ZE( osTextT* , posti ) ;
+                ZE( boolT    , bScannedOk ) ;
+                ZE( countT   , costi      ) ;
+                ZE( osTextT* , posti      ) ;
+
+                TN( tSay , "" ) ;
 
                 //etThread.traceF( tin0P , T("scanning for a file named []:    ")+tLong ) ;
-                TN( tLong , "" ) ; tLong = T("////")+T(psttc1)+tSuspendByHostNameSuffix ;
+                TN( tLongSeenBy , "" ) ; tLongSeenBy = T("////")+T(psttc1)+tSuspendByHostNameSuffixSeenBy ;
+                TN( tLong       , "" ) ; tLong       = T("////")+T(psttc1)+tSuspendByHostNameSuffix         ;
             {
             FORsTRINGSiN1( pstt1LanRoster )
         {
@@ -951,14 +973,6 @@ DONE( tmSuspendAllF )
     ZE( boolT , bSuspendAllLag ) ;
 
     countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
-
-    }
-        etThread.delF( tin0P , psttn ) ;
-        tMyLanName = T(psttn) ;
-        etThread.computerLanNameF( tin0P , psttn ) ; ___( psttn ) ;
-        ZE( strokeS* , psttn ) ;
-    {
-    TN( tMyLanName , "" ) ;
 
     }
         etThread.delF( tin0P , pstts ) ;
@@ -1003,7 +1017,8 @@ DONE( tmSuspendAllF )
     TN( tFileSuspendAllOn        , ""  ) ; tFileSuspendAllOn        = tFolderControlsOn+T("/suspendAll.txt") ;
     TN( tFileSuspendAllOff       , ""  ) ; tFileSuspendAllOff       = tFolderControlsOff+T("/suspendAll.txt") ;
 
-    TN( tSuspendByHostNameSuffix , "/d/ideafarm.home.101/controls/suspendByHostName.txt" ) ;
+    TN( tSuspendByHostNameSuffixSeenBy , ""                                                    ) ; tSuspendByHostNameSuffixSeenBy = T("/d/ideafarm.home.101/controls/suspendByHostNameSeenBy.")+tMyLanName+T(".txt" ) ;
+    TN( tSuspendByHostNameSuffix       , "/d/ideafarm.home.101/controls/suspendByHostName.txt" ) ;
 
     TN( tFolderControlsOn        , ""  ) ; tFolderControlsOn        = T("///ideafarm/controls/")+tUser+T("/on/") ;
     TN( tFolderControlsOff       , ""  ) ; tFolderControlsOff       = T("///ideafarm/controls/")+tUser+T("/off/") ;
@@ -1011,6 +1026,14 @@ DONE( tmSuspendAllF )
     TN( tUser , thirdC::postUserNameIF() ) ;
     TN( tSlash , "/" ) ;
     TN( tb4    , "    " ) ;
+
+    }
+        etThread.delF( tin0P , psttn ) ;
+        tMyLanName = T(psttn) ;
+        etThread.computerLanNameF( tin0P , psttn ) ; ___( psttn ) ;
+        ZE( strokeS* , psttn ) ;
+    {
+    TN( tMyLanName , "" ) ;
 
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
