@@ -9,12 +9,8 @@
 
 }
     }
-        countT foo = 2 ;
-        CONoUTrAW( "=======================================\r\n" ) ;
-    {
-    if( (countT)pbP == 0x20950808 )
+        thirdC::dosSleepWinkIF( tin0P , 0 ) ;
 
-    }
         //}
         //    }
         //        }
@@ -48,22 +44,24 @@
 
             }
                 }
+                    break ;
                     __1
                     __( cbP ) ;
                 {
-                if( !pbP /*&& !bDoNotBlock*/ )      //20221228@1503: PERSONALITY CHANGE: NOW ADAM TEMP POOL DOES NOT BLOCK, AND HERE I ALWAYS CAUSE IMPOTENCE IF ALLOCATION FAILED, SO CALLING CODE CAN HANDLE GRACEFULLY
+                if( bDoNotBlock )
 
                 THREADmODE4rESTORE
 
                 }
+                    break ;
                     }
-#endif
-                        }
-                            putNegAM( pDropNote->finger , FINGERnEG_dropNotePoolHasAdjustedDropHeader ) ;
-                            pDropNote->dropHeaderCopy = dropHeader ;
-                        {
-                        if( pDropNote )
-#if defined( ENABLEdROPnOTES )
+                        #endif
+                            }
+                                putNegAM( pDropNote->finger , FINGERnEG_dropNotePoolHasAdjustedDropHeader ) ;
+                                pDropNote->dropHeaderCopy = dropHeader ;
+                            {
+                            if( pDropNote )
+                        #if defined( ENABLEdROPnOTES )
 
                         dropHeader = dropHeader << guts.cBitsExpCbDrop | offs - guts.expCbDropMin ;
                         BLAMMOiFsHIFTlEFTwOULDlOSEbITS( dropHeader , guts.cBitsExpCbDrop ) ;
@@ -71,10 +69,10 @@
                     {
                     if( face.cbDropHeader == CBsEXdROPhEADER )
 
-#endif
-                    if( pDropNote ) putNegAM( pDropNote->finger , FINGERnEG_dropNotePoolIsAdjustingDropHeader ) ;
-                    dropNoteS* pDropNote = guts.ppSlots[ offs ]->pDropNoteF( tin0P , pbP ) ;
-#if defined( ENABLEdROPnOTES )
+                    #endif
+                        if( pDropNote ) putNegAM( pDropNote->finger , FINGERnEG_dropNotePoolIsAdjustingDropHeader ) ;
+                        dropNoteS* pDropNote = guts.ppSlots[ offs ]->pDropNoteF( tin0P , pbP ) ;
+                    #if defined( ENABLEdROPnOTES )
                 {
                 else
                 }
@@ -137,8 +135,13 @@
             if( F(guts.flagsCt) & flPOOLc_READoNLY ) { BLAMMO ; }
         {
         else
-        else if( F(((tin1S&)tin0P).flagsThreadMode3) & flTHREADmODE3_POOLaLLOCATEfROMhEAP ) pbP = processGlobal4I.heap.newF( tin0P , idLineP , idiFileP , cbP ) ;
         }
+            break ;
+            pbP = processGlobal4I.heap.newF( tin0P , idLineP , idiFileP , cbP ) ;
+        {
+        else if( F(((tin1S&)tin0P).flagsThreadMode3) & flTHREADmODE3_POOLaLLOCATEfROMhEAP )
+        }
+            break ;
             pbP          = (byteT*)idJot ;
             countT idJot = juse.writeF( tin0P , 0 , cbP ) ;
             jotC&  juse  = *((tin123S&)tin0P).ppJot[ (countT)pbP - JrEQUEST_min ] ;
@@ -160,6 +163,7 @@
 
         _IO_
     {
+    for(;;)         //20250430@1504: ADDED LOOP SO DEFAULT BEHAVIOR IS TO BLOCK UNTIL I SUCCEED
 
     //}
     //    ((tin1S&)tin0P).pEther->traceF( tin0P , T("poolC::newF called for wo of these suckas") ) ;
