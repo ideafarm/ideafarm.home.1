@@ -313,14 +313,17 @@
         }
             //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
             }
-//                if( !( ++ idLoop % ( TOCK >> 0 ) ) ) thirdC::dosSleepRawIF( tin0P , 50 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
+                thirdC::dosSleepWinkIF( tin0P , 0 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
 
-                //}
-                //    break ;
-                //    //ether.traceF( tin0P , T("readRequestF / woth mouthful did not contain a complete request") ) ;
-                //    bFailP = 1 ;    //P:PERSONALITY: TO PREVENT STALL ATTACK, I REQUIRE THAT THE WOTH MOUTHFUL CONTAIN A COMPLETE REQUEST
-                //{
-                //if( !bEnd && !( -- cMouthfulsAllowed ) )
+                }
+                    break ;
+                    ether.traceF( tin0P , T("readRequestF / cMouthfulsAllowed mouthfuls did not contain a complete request") ) ;
+                    bFailP = 1 ;    //P:PERSONALITY: TO PREVENT STALL ATTACK, I REQUIRE THAT THE cMouthfulsAllowed MOUTHFULS CONTAIN A COMPLETE REQUEST
+                {
+                if( !bEnd && !( -- cMouthfulsAllowed ) )
+
+                //20250430@1339: ENABLE THIS DEFENSE AFTER ADDING SLEEP WINK ; ALL PEERS ARE NOW REQUIRED TO SEND A COMPLETE REQUEST WITHIN cMouthfulsAllowed CYCLES
+
                 //BROWSERS TRIGGER THIS (FIREFOX EDGE SAMSUNG)
                 //20250115@2035: DISABLE THIS DEFENSE TO PREVENT FAILURE WHEN PEER IS POORLY BEHAVED BUT NOT MALICIOUS
 
@@ -362,7 +365,7 @@
             {
             while( !bEnd && costRemain )
             ZE( countT , idLoop ) ;
-            countT cMouthfulsAllowed = 2 ;
+            countT cMouthfulsAllowed = TUCK >> 2 ;
             ZE( boolT , bEnd ) ;
             countT   costRemain = costaHeadPlus ;        
             osTextT* postc      = postHeadPlus  ;
