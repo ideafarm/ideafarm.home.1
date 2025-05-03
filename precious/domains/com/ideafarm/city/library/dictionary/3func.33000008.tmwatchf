@@ -153,7 +153,7 @@ DONE( tmWatchF )
 #if defined( NEVERdEFINED )
 //U:: 20210220@1114: REMOVE THIS OLD CODE, WHICH IS REPLACED WITH THE PRECEDING (OLD: ALL poolC INSTANCES.  NEW: ONLY THE CURRENT poolC INSTANCE
 
-#endif
+//#endif
         }
             etRock.traceF( tin0P , T("tmWatchF: traced pool tallies") ) ;
             etRock.tracePoolTalliesF( tin0P ) ;
@@ -161,9 +161,10 @@ DONE( tmWatchF )
             etherC& etRock = etherC::etRockIF( tin0P ) ;
             _IO_
         {
-        //U::if( !( idCycle % ( TUCK << 4 ) ) ) //APPROXIMATELY ONCE PER HOUR
-        if( !( idCycle % ( TUCK >> 6 ) ) )
-#if defined( NEVERdEFINED )
+        if( !( idCycle % ( TUCK << 4 ) ) ) //APPROXIMATELY ONCE PER HOUR
+        //if( !( idCycle % ( TUCK >> 6 ) ) )
+//#if defined( NEVERdEFINED )
+//20250503@1531: ENABLED TO STUDY WHETHER DNS IS LEAKING
 //U:: COMMENTED OUT TO CONSERVE MEMORY WHILE STUDYING MEMORY USAGE
 
         //20210310@1246: ENABLED TO STUDY CHANNEL I/O BURN-IN TEST
