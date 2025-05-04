@@ -518,7 +518,7 @@ struct  /*ff*/s_acceptF_parametersS/*ff*/                               ; /*ff*/
 //20250101@2141: DISABLED DROP NOTES AS A SPEED OPTIMIZATION AFTER SEEING THAT DROPNOTE ACTIVITY IS AT THE TOP OF THE etherWhereF REPORT FOR putFileIF
 //20250101@2248: ENABLED BECAUSE WON'T RUN
 
-//#define ENABLEdROPnOTES
+#define ENABLEdROPnOTES
 
 
 //
