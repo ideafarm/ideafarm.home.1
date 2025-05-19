@@ -1,42 +1,4 @@
 
-
-
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.00101cf.1.0.html\"\>definition\</A\>
-*/
-/**/
-
-/*1*//*IMPOTENCEiFsHIFTlEFTwOULDlOSEbITS(cP,cBitsLeftP)*//*1*/
-
-#define IMPOTENCEiFsHIFTlEFTwOULDlOSEbITS(cP,cBitsLeftP)    \
-                                                            \
-{                                                           \
-    ZE( countT , mask ) ;                                   \
-    countT cDo = (cBitsLeftP) ;                             \
-    while( cDo -- )                                         \
-    {                                                       \
-        mask |= BM_HIGH ;                                   \
-        if( cDo ) mask >>= 1 ;                              \
-    }                                                       \
-                                                            \
-    __( (cP) & mask ) ;                                     \
-}
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -517,6 +479,7 @@ struct  /*ff*/s_acceptF_parametersS/*ff*/                               ; /*ff*/
 
 //20250101@2141: DISABLED DROP NOTES AS A SPEED OPTIMIZATION AFTER SEEING THAT DROPNOTE ACTIVITY IS AT THE TOP OF THE etherWhereF REPORT FOR putFileIF
 //20250101@2248: ENABLED BECAUSE WON'T RUN
+//20250504@1212: ENABLED SO CAN GET poolC REPORTS
 
 #define ENABLEdROPnOTES
 

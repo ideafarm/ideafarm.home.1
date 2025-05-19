@@ -4280,6 +4280,47 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120061d.PERIODSpERdOZEcYCLE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120061e.IMPOTENCEiFsHIFTlEFTwOULDlOSEbITS BEGIN
+
+
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.00101cf.1.0.html\"\>definition\</A\>
+*/
+/**/
+
+/*1*//*IMPOTENCEiFsHIFTlEFTwOULDlOSEbITS(cP,cBitsLeftP)*//*1*/
+
+#define IMPOTENCEiFsHIFTlEFTwOULDlOSEbITS(cP,cBitsLeftP)    \
+                                                            \
+{                                                           \
+    ZE( countT , mask ) ;                                   \
+    countT cDo = (cBitsLeftP) ;                             \
+    while( cDo -- )                                         \
+    {                                                       \
+        mask |= BM_HIGH ;                                   \
+        if( cDo ) mask >>= 1 ;                              \
+    }                                                       \
+                                                            \
+    __( (cP) & mask ) ;                                     \
+}
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120061e.IMPOTENCEiFsHIFTlEFTwOULDlOSEbITS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
