@@ -444,7 +444,7 @@ expCbDropMin( expCbDropMinP != - 1 ? expCbDropMinP : 0                          
 pGrabNewElt( (grabC*)pbzaGrab ) ,
 idMemorySpace( idMemorySpaceP ) ,
 idStateSpace( idStateSpaceP ) ,
-flagsCt( flagsP ) ,
+flagsCt( flagsP | flPOOLc_NOsEXiNpOOL ) ,       //20250522@1230: flPOOLc_NOsEXiNpOOL BECAUSE RECENT EDITS TO poolC slotsC sexC MIGHT HAVE BROKEN THE CODE, CAUSING SLOW POOL ALLOCATIONS AND ALLOCATIONS THAT BLOCK
 poolC::guts_poolC_S::guts_poolC_S( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postNameP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , countT idMemorySpaceP ) :
 
 //     | 
