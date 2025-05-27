@@ -344,7 +344,9 @@ strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
     ZE( boolT , bConsoleP ) ;
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
-    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;    // THIS IS SO tmSuspendAllF AND tmSlowAllF AND tmHireF WILL ALWAYS BE ABLE TO SUSPEND AND TO SLOW ALL PROCESSES, EVEN IF ALL CPU RESOURCES ARE PEGGED BY RUDE PROCESSES AND THREADS
+
+    //U::thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;    // THIS IS SO tmSuspendAllF AND tmSlowAllF AND tmHireF WILL ALWAYS BE ABLE TO SUSPEND AND TO SLOW ALL PROCESSES, EVEN IF ALL CPU RESOURCES ARE PEGGED BY RUDE PROCESSES AND THREADS
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_PUSHY    ) ; //U:: 20250527@1422: WORKAROUND TO DEBUG RUDE CPU PEGGING
 {
 if( pTaskP )
 TASK( tmWorkF )
