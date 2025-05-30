@@ -88,9 +88,15 @@
                             BOSpOOP
                             BOS( WHATsfr , BOSoK , CreateProcess( 0 , postAll , &sa , &sa , bInherit , flags1 , 0 , 0 , (STARTUPINFO*)&sinfo , &pinfo ) )
 
-                            boolT bInherit = processGlobal1I.idAdamRoot != ifcIDaDAM_CLOAK ;   //20240731@1430: INHERIT UNLESS I AM CLOAK (W/O ANALYSIS)
+                            boolT bInherit = 0 ;                                               //20250530@1521: THIS IS PROBLEMATIC DUE TO INHERITANCE OF HANDLES THAT HAPPEN TO BE OPEN WHEN I AM CALLED ; IF HANDLE INHERITANCE IS EVER NEEDED, EDIT ME TO OBEY A FLAG THAT TURNS ON INHERITANCE FOR A CALL
+                                                                                               //20240731@1430: INHERIT UNLESS I AM CLOAK (W/O ANALYSIS)
                                                                                                //20200522@1422: AGAIN WITHOUT ANALYSIS, CHANGED "1" BACK TO "0" FOR bInherit BECAUSE WHEN CLOAK CALLS ifcHireF, ALL OF ITS HANDLE APPEAR TO BE DUPLICATED INTO THE CHILD PROCESS, WHICH DEFEATS CLOAK'S ATTEMPT TO CLOSE AND THEN REOPEN ITS HANDLE TO A CLOAKED DIRECTORY
-                            //CONoUTrAW( "\r\n" ) ;                                            //20200423@1807: WITHOUT ANALYSIS, CHANGED "0" TO "1" FOR bInherit
+                                                                                               //20200423@1807: WITHOUT ANALYSIS, CHANGED "0" TO "1" FOR bInherit
+
+                                                                                               //20250530@1523: I DO NOT REMEMBER WHY I TURNED ON INHERITANCE 5 YEARS AGO
+
+
+                            //CONoUTrAW( "\r\n" ) ;
                             //CONoUTrAW( postAll ) ;
                             //CONoUTrAW( "CreateProcess: " ) ;
                         {
