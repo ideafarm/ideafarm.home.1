@@ -256,10 +256,22 @@ DONE( tmWorkF )
                     _IO_
                 {
 
-                if( bDivert && ( timeLetsEncryptLath2 || timeLetsEncryptLath1 ) ) bDivert = 0 ;                    //P:PERSONALITY: SUPPRESS DIVERSION IF RECENT QUERY FROM LETSENCRYPT
+                }
+                    }
+                        etRock.traceF( tin0P , T("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: not diverting") ) ;
+                        bDivert = 0 ;                                                                                                                                   //P:PERSONALITY: SUPPRESS DIVERSION IF RECENT QUERY FROM LETSENCRYPT
+                    {
+                    else
+                    if( !timeLetsEncryptLath2 && !timeLetsEncryptLath1 ) etRock.traceF( tin0P , T("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| * * * * D I V E R T I N G * * * *") ) ;
+                {
+                if( bDivert )
 
                 }
-                    if( timeE2 || timeE1 > TICK >> 2 ) timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
+                    }
+                        etRock.traceF( tin0P , T("----------------------------------------------------------------------------------- DIVERSION ENABLED") ) ;
+                        timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
+                    {
+                    if( timeE2 || timeE1 > TICK >> 2 )
 
                     etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeLetsEncryptLath1 , timeLetsEncryptLath2 ) ;
                     etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
@@ -268,8 +280,10 @@ DONE( tmWorkF )
                 {
                 else if( timeLetsEncryptLath2 || timeLetsEncryptLath1 )
                 }
+                    etRock.traceF( tin0P , T(bSuppressed?"+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSION REFRESHED":"+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSED") ) ;
                     etThread.osTimeNowF( tin0P , timeLetsEncryptLath1 , timeLetsEncryptLath2 ) ;
                     timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
+                    countT bSuppressed = timeLetsEncryptLath2 || timeLetsEncryptLath1 ;
                 {
                 if( 1 + tDomainPeer.csF( tin0P ) - tDotLetsEncryptDotOrg.csF( tin0P ) == etThread.strIdF( tin0P , tDotLetsEncryptDotOrg , tDomainPeer ) )
 
