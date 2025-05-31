@@ -59,7 +59,7 @@ DONE( tmWorkF )
                             if( postError && *postError ) /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
                             const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
                         {
-                        if( !bSilent )
+                        if( !bSilent || bForceReply )
 
                         }
                             }
@@ -269,7 +269,7 @@ DONE( tmWorkF )
                 }
                     }
                         etRock.traceF( tin0P , T("----------------------------------------------------------------------------------- DIVERSION ENABLED") ) ;
-                        timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
+                        bForceReply = timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
                     {
                     if( timeE2 || timeE1 > TICK << 0 )
 
@@ -284,6 +284,7 @@ DONE( tmWorkF )
                     etThread.osTimeNowF( tin0P , timeLetsEncryptLath1 , timeLetsEncryptLath2 ) ;
                     timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
                     countT bSuppressed = timeLetsEncryptLath2 || timeLetsEncryptLath1 ;
+                    bForceReply = 1 ;
                 {
                 if( 1 + tDomainPeer.csF( tin0P ) - tDotLetsEncryptDotOrg.csF( tin0P ) == etThread.strIdF( tin0P , tDotLetsEncryptDotOrg , tDomainPeer ) )
 
@@ -398,6 +399,7 @@ DONE( tmWorkF )
                 _IO_
             {
             while( !POOP && !ether )
+            ZE( boolT   , bForceReply          ) ;
             ZE( sCountT , timeLetsEncryptLath2 ) ;
             ZE( countT  , timeLetsEncryptLath1 ) ;
             TN( tDotLetsEncryptDotOrg , ".letsencrypt.org"                     ) ;
