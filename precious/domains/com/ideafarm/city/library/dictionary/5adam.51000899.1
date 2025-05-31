@@ -255,7 +255,23 @@ DONE( tmWorkF )
                     if( pbq && cbq )
                     _IO_
                 {
-                //if( etThread.strIdF( tin0P , T(".letsencrypt.org") , tDomainPeer ) )    //TO FIND A BUG (PROD: COMMENT OUT THIS if() CONDITION SO THAT THE BLOCK IS ALWAYS EXECUTED
+
+                if( bDivert && ( timeLetsEncryptLath2 || timeLetsEncryptLath1 ) ) bDivert = 0 ;                    //P:PERSONALITY: SUPPRESS DIVERSION IF RECENT QUERY FROM LETSENCRYPT
+
+                }
+                    if( timeE2 || timeE1 > TICK >> 2 ) timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
+
+                    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeLetsEncryptLath1 , timeLetsEncryptLath2 ) ;
+                    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
+                    ZE( sCountT , timeE2 ) ;
+                    ZE( countT  , timeE1 ) ;
+                {
+                else if( timeLetsEncryptLath2 || timeLetsEncryptLath1 )
+                }
+                    etThread.osTimeNowF( tin0P , timeLetsEncryptLath1 , timeLetsEncryptLath2 ) ;
+                    timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
+                {
+                if( 1 + tDomainPeer.csF( tin0P ) - tDotLetsEncryptDotOrg.csF( tin0P ) == etThread.strIdF( tin0P , tDotLetsEncryptDotOrg , tDomainPeer ) )
 
                 }
                     }
@@ -368,10 +384,13 @@ DONE( tmWorkF )
                 _IO_
             {
             while( !POOP && !ether )
-            TN( tSayGranting  , "    granting information    " ) ;
-            TN( tSayDiverting , "    diverting information    " ) ;
-            TN( tSayUnknownDomain , "    !exception / unknown peer domain" ) ;
-            TN( tSayPrefix  , "[nnPeer]:    " ) ;
+            ZE( sCountT , timeLetsEncryptLath2 ) ;
+            ZE( countT  , timeLetsEncryptLath1 ) ;
+            TN( tDotLetsEncryptDotOrg , ".letsencrypt.org"                     ) ;
+            TN( tSayGranting          , "    granting information    "         ) ;
+            TN( tSayDiverting         , "    diverting information    "        ) ;
+            TN( tSayUnknownDomain     , "    !exception / unknown peer domain" ) ;
+            TN( tSayPrefix            , "[nnPeer]:    "                        ) ;
 
             }
                 }
