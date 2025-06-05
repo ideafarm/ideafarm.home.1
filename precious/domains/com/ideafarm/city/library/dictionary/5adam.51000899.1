@@ -631,7 +631,8 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
                     etThread.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry") ) ;
                     POOPRqUIET
                 {
-                if( POOP )
+                else
+                if( !POOP ) /*;*/etThread.traceF( tin0P , T("[idpListen]:    ")+TF2(idpListen,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 idpListen = sListen.bindF( tin0P ) ;
                 SCOOPS
             {
