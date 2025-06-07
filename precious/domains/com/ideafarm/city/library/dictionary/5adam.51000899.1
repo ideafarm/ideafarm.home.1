@@ -1048,7 +1048,7 @@ TASK( tmFreshSettingsF )
             {
             FORsTRINGSiN1( pstt1Nn )
 
-            countT cNn = etherMe.strWordsF( tin0P , pstt1Nn , tNnTrusted+T(" , ")+tNnGorillaOuter , sttq , T(" ,") ) ; ___( pstt1Nn ) ;
+            countT cNn = etherMe.strWordsF( tin0P , pstt1Nn , tNnTrusted , sttq , T(" ,") ) ; ___( pstt1Nn ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , pstt1Nn ) ;
             _IO_
@@ -1069,8 +1069,6 @@ TASK( tmFreshSettingsF )
     /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
 
     /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
-
-    /**/etRock.traceF( tin0P , T("[tNnGorillaOuter]:    ")+tNnGorillaOuter ) ;
 
     /**/etRock.traceF( tin0P , T("[tNnTrusted]:    ")+tNnTrusted ) ;
     }
@@ -1321,18 +1319,6 @@ voidT mySettingsS::zapF( tin0S& tin0P )
 boolT mySettingsS::operator !( voidT )
 
 }
-    }
-       etherMe.delF( tin0P , psttEat ) ;
-        }
-            tNnGorillaOuter = T(psttEat) ;
-            etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
-        {
-        else
-        if( !psttEat ) etherMe.traceF( tin0P , T("!exception / missing setting [key]:    ")+tSettingKey ) ;
-        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , tSettingKey  ) ; ___( psttEat ) ;
-        TN( tSettingKey , "!ipdos.dns.gorilla.go1" ) ;
-    {
-
     *(textC**)&pptListedDomain[ 7 ] = &tDomainRootAllowed8 ;
     *(textC**)&pptListedDomain[ 6 ] = &tDomainRootAllowed7 ;
     *(textC**)&pptListedDomain[ 5 ] = &tDomainRootAllowed6 ;
@@ -1345,7 +1331,6 @@ boolT mySettingsS::operator !( voidT )
 cListedDomain(               0                                                                  )
 cnnSubnetAllowedStripe(      0                                                                  ) ,
 pnnSubnetAllowedStripe(      0                                                                  ) ,
-tNnGorillaOuter(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "10.0.9.9"               ) ,    // A LEGAL VALUE THAT IS A "DON'T CARE" AS IT WILL LIKELY NEVER BE USED
 tNnTrusted(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed8(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed7(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
@@ -1385,7 +1370,6 @@ mySettingsS::~mySettingsS( voidT )
     countT       cListedDomain               ;
     textC* const pptListedDomain[ 8 ]        ;
 
-    textC        tNnGorillaOuter             ;
     textC        tNnTrusted                  ;
     textC        tIpWebHook2                 ;
     textC        tIpWebHook1                 ;
