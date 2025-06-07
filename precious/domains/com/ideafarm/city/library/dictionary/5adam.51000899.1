@@ -156,7 +156,7 @@ DONE( tmWorkF )
                                                     {
                                                     else if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffix ) )
                                                     }
-                                                        if( ++ cUsed > 0x8 || timeE2 || timeE1 > TOCK ) bNewPassword = 1 ;
+                                                        if( ++ cUsed > 0x20 || timeE2 || timeE1 > TOCK << 2 ) bNewPassword = 1 ;                 //20250607@1542: "0x20 <- 0x8" AND "<< 2" <- "<< 0" W/O ANALYSIS TO FIX STUTTER (MULTIPLE UPDATES TO A SINGLE USE)
 
                                                         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeUsed1 , timeUsed2 ) ;
                                                         etThread.osTimeNowF(      tin0P , timeE1 , timeE2 ) ;
