@@ -58,13 +58,13 @@ DONE( tmGetWebHookRandomSuffixF )
         }
             break ;
             }
-                ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
-
                 }
                     etThread.traceF( tin0P , T("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------[woTimePassword]:    ")+tWoTimePasswordP ) ;
                     tWoTimePasswordLag = tWoTimePasswordP ;
                 {
                 if( etThread.strCompareF( tin0P , tWoTimePasswordLag , tWoTimePasswordP ) )
+
+                ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;        // DELAY THE "---" TRACE SO THAT IT APPEARS AFTER THE STOMP THAT ELICITED IT (THAT'S WHY I SLEEP HERE RATHER THAN AT THE END OF MY LOOP, WHICH IS AFTER THE TRACE)
 
                 etThread.delF( tin0P , psttw ) ;
                 grab_tWoTimePasswordP.ungrabF( tin0P ) ;
