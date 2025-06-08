@@ -29,8 +29,9 @@ DONE( tmWorkF )
                             }
                                 }
                                     }
-                                        etRock.traceF( tin0P , T("!exception / could not write reply") ) ;
+                                        etRock.traceF( tin0P , T("!exception / could not write reply [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         POOPRqUIET
+                                        countT rc = POOP ;
                                     {
                                     else
                                     if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote reply") ) ;
@@ -216,8 +217,9 @@ DONE( tmWorkF )
                                 else
                                 }
                                     idError = ifcIDeRRORdNS_CANNOTpARSEqUERY ;
-                                    etRock.traceF( tin0P , T("!exception / could not parse query") ) ;
+                                    etRock.traceF( tin0P , T("!exception / could not parse query [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     POOPRqUIET
+                                    countT rc = POOP ;
                                 {
                                 if( POOP )
                                 etThread.delF( tin0P , pbNU ) ;
@@ -392,8 +394,9 @@ DONE( tmWorkF )
                     }
                         break ;
                         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                        etRock.traceF( tin0P , T("!exception / socket read failed") ) ;
+                        etRock.traceF( tin0P , T("!exception / socket read failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         POOPRqUIET
+                        countT rc = POOP ;
                     {
                     if( POOP )
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
@@ -424,8 +427,9 @@ DONE( tmWorkF )
                 }
                     continue ;
                     ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                    etRock.traceF( tin0P , T("!exception / could not bind socket to the dns port") ) ;
+                    etRock.traceF( tin0P , T("!exception / could not bind socket to the dns port [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
+                    countT rc = POOP ;
                 {
                 if( POOP )
                 sockd.bindF( tin0P , ifcPORToLD2_DNS ) ;
@@ -438,8 +442,9 @@ DONE( tmWorkF )
                 }
                     continue ;
                     ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                    etRock.traceF( tin0P , T("!exception / could not construct socket") ) ;
+                    etRock.traceF( tin0P , T("!exception / could not construct socket [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
+                    countT rc = POOP ;
                 {
                 if( POOP )
 
@@ -539,8 +544,9 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
 
         }
             }
-                etThread.traceF( tin0P , T("!exception / could not destroy sListen") ) ;
+                etThread.traceF( tin0P , T("!exception / could not destroy sListen [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 POOPRqUIET
+                countT rc = POOP ;
             {
             if( POOP )
             DELzOMBIE( psDoomed ) ;
@@ -555,7 +561,7 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
                 break ;
                 }
                     ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
-                    etThread.traceF( tin0P , T("wrote [tWoTimePassword]:    ")+tSnap ) ;
+                    etThread.traceF( tin0P , T("wrote      [tWoTimePassword]:    ")+tSnap ) ;
 
                     }
                         }
@@ -588,8 +594,9 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
                 }
                     break ;
                     ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                    etThread.traceF( tin0P , T("!exception / could not accept a client connection ; will replace sListen and retry") ) ;
+                    etThread.traceF( tin0P , T("!exception / could not accept a client connection ; will replace sListen and retry [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
+                    countT rc = POOP ;
                 {
                 if( POOP )
                 sListen.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
@@ -613,8 +620,9 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
         }
             }
                 bFail = 1 ;
-                etThread.traceF( tin0P , T("!exception / could not listen ; will retry") ) ;
+                etThread.traceF( tin0P , T("!exception / could not listen ; will retry [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 POOPRqUIET
+                countT rc = POOP ;
             {
             if( POOP )
             sListen.listenF( tin0P ) ;
@@ -627,8 +635,9 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
 
             }
                 }
-                    etThread.traceF( tin0P , T("!exception / could not destroy sListen") ) ;
+                    etThread.traceF( tin0P , T("!exception / could not destroy sListen [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
+                    countT rc = POOP ;
                 {
                 if( POOP )
                 DELzOMBIE( psDoomed ) ;
@@ -647,8 +656,9 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
             }
                 }
                     bFail = 1 ;
-                    etThread.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry") ) ;
+                    etThread.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
+                    countT rc = POOP ;
                 {
                 else
                 if( !POOP ) /*;*/etThread.traceF( tin0P , T("[idpListen]:    ")+TF2(idpListen,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -664,8 +674,9 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
 
             }
                 }
-                    etThread.traceF( tin0P , T("!exception / could not destroy sListen") ) ;
+                    etThread.traceF( tin0P , T("!exception / could not destroy sListen [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
+                    countT rc = POOP ;
                 {
                 if( POOP )
                 DELzOMBIE( psDoomed ) ;
@@ -682,8 +693,9 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
         }
             }
                 bFail = 1 ;
-                etThread.traceF( tin0P , T("!exception / could not construct sListen ; will retry") ) ;
+                etThread.traceF( tin0P , T("!exception / could not construct sListen ; will retry [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 POOPRqUIET
+                countT rc = POOP ;
             {
             if( POOP )
             new( 0 , tin0P , pb_sListen , sizeof pb_sListen ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_DOnOTrEGISTERtIMEoUT ) ;
@@ -714,8 +726,9 @@ DONE( tmUpdateNnHostsF )
 
         }
             }
-                etRock.traceF( tin0P , T("!exception / could not write batch file [tLong]:    ")+tLong ) ;
+                etRock.traceF( tin0P , T("!exception / could not write batch file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
                 POOPRqUIET
+                countT rc = POOP ;
             {
             else
             if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
@@ -739,8 +752,9 @@ DONE( tmUpdateNnHostsF )
         }
             }
                 }
-                    etRock.traceF( tin0P , T("!exception / could not write batch file [tLong]:    ")+tLong ) ;
+                    etRock.traceF( tin0P , T("!exception / could not write batch file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
                     POOPRqUIET
+                    countT rc = POOP ;
                 {
                 else
                 if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
@@ -762,6 +776,7 @@ DONE( tmUpdateNnHostsF )
     ZE( countT , idFileOut ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
+    TN( tb4      , "    " ) ;
     TN( tAfter2  , "/64\"" ) ;
     TN( tAfter1  , "\"" ) ;
     TN( tBefore2 , "netsh interface ipv6 add    address interface=\"outer\" address=\"" ) ;
@@ -1242,8 +1257,9 @@ TASK( tmFreshSettingsF )
         }
             }
                 }
-                    /**/etRock.traceF( tin0P , T("!exception / could not write batch file [tLong]:    ")+tLong ) ;
+                    /**/etRock.traceF( tin0P , T("!exception / could not write batch file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
                     POOPRqUIET
+                    countT rc = POOP ;
                 {
                 else
                 if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
@@ -1278,6 +1294,7 @@ TASK( tmFreshSettingsF )
     countT idFreshen = 1 + incv02AM( idFreshenLath ) ;
     static countT idFreshenLath ;
 
+    TN( tb4     , "    " ) ;
     TN( tDash   , "-" ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
     _IO_
@@ -1442,4 +1459,3 @@ i do not use the canonical name concept
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
