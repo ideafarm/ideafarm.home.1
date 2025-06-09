@@ -603,6 +603,7 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
                 SCOOPS
             {
             IFsCRATCHoK
+            etThread.traceF( tin0P , T("calling acceptF") ) ;
             ZE( countT , idPortPeer ) ;
             nicNameC nnPeer ;
             ZE( socketC* , pso ) ;
@@ -651,7 +652,10 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
         if( bFail )
 
         }
-            etThread.boxPutF( tin0P , T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/idpListen") , (byteT*)&idpListen , sizeof idpListen ) ;
+            etThread.traceF( tin0P , T("wrote   file [tLong]:    ")+tLong ) ;
+            etThread.boxPutF( tin0P , tLong , (byteT*)&idpListen , sizeof idpListen ) ;
+            etThread.traceF( tin0P , T("writing file [tLong]:    ")+tLong ) ;
+            TN( tLong , "" ) ; tLong = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/idpListen") ;
 
             }
                 }

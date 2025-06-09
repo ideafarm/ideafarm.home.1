@@ -158,7 +158,19 @@ DONE( tmGetWebHookRandomSuffixF )
 
                 etThread.delF( tin0P , pbi ) ;
                 if( pbi && cbi == sizeof idpDnsSuffix ) idpDnsSuffix = *(countT*)pbi ;
-                etThread.boxGetShadowF( tin0P , pbi , cbi , T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/idpListen") ) ; ___( pbi ) ;
+
+                }
+                    }
+                        etThread.traceF( tin0P , T("!exception / could not read file idpListen [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    if( POOP )
+                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbi , cbi , T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/idpListen") , 1 ) ; ___( pbi ) ;
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
                 ZE( countT , cbi ) ;
                 ZE( byteT* , pbi ) ;
                 _IO_

@@ -35045,6 +35045,9 @@ examples
  voidT nameF( tin0S& tin0P , const strokeS* const psttP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3402b.socketC.nameF!||
 
+ inline countT idiFileCtF( voidT ) const { return idiFileCt ; }
+ inline countT idLineCtF(  voidT ) const { return  idLineCt ; }
+
  FRIENDS_socketC
 }
 ;
