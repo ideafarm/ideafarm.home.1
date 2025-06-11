@@ -30,29 +30,32 @@
                 }
                     TELL( "U:: 0" ) ;
                     }
-                        TELL( "U:: 1" ) ;
-                        //}
-                        //    delF( tin0P , psttdStrokes ) ;
-                        //    LOGrAW( td ) ;
-                        //    TN( td , "" ) ; td = T("  to strokes: ")+T(psttdStrokes)+T("\r\n") ;
-                        //    strDumpIF( tin0P , psttdStrokes , (byteT*)psttP , ( CSpREFIX + psttP->idAdam ) * sizeof( strokeS ) ) ; ___( psttdStrokes ) ;
-                        //    ZE( strokeS* , psttdStrokes ) ;
-                        //{
-                        //if( ((tin1S&)tin0P).pc Utility[ 0 ] )
-                        //COMMENT OUT IN PRODUCTION
-                        
-                        //}
-                        //    delF( tin0P , psttdCodes ) ;
-                        //    LOGrAW( td ) ;
-                        //    TN( td , "" ) ; td = T("\r\nfrom codes  : ")+T(psttdCodes)+T("\r\n") ;
-                        //    strDumpIF( tin0P , psttdCodes , pbP , ((countT*)pbP)[ 1 ] + 2 * sizeof( countT ) ) ; ___( psttdCodes ) ;
-                        //    ZE( strokeS* , psttdCodes ) ;
-                        //{
-                        //if( ((tin1S&)tin0P).pc Utility[ 0 ] )
-                        //COMMENT OUT IN PRODUCTION
+                        }
+                            TELL( "U:: 1" ) ;
+                            //}
+                            //    delF( tin0P , psttdStrokes ) ;
+                            //    LOGrAW( td ) ;
+                            //    TN( td , "" ) ; td = T("  to strokes: ")+T(psttdStrokes)+T("\r\n") ;
+                            //    strDumpIF( tin0P , psttdStrokes , (byteT*)psttP , ( CSpREFIX + psttP->idAdam ) * sizeof( strokeS ) ) ; ___( psttdStrokes ) ;
+                            //    ZE( strokeS* , psttdStrokes ) ;
+                            //{
+                            //if( ((tin1S&)tin0P).pc Utility[ 0 ] )
+                            //COMMENT OUT IN PRODUCTION
+                            
+                            //}
+                            //    delF( tin0P , psttdCodes ) ;
+                            //    LOGrAW( td ) ;
+                            //    TN( td , "" ) ; td = T("\r\nfrom codes  : ")+T(psttdCodes)+T("\r\n") ;
+                            //    strDumpIF( tin0P , psttdCodes , pbP , ((countT*)pbP)[ 1 ] + 2 * sizeof( countT ) ) ; ___( psttdCodes ) ;
+                            //    ZE( strokeS* , psttdCodes ) ;
+                            //{
+                            //if( ((tin1S&)tin0P).pc Utility[ 0 ] )
+                            //COMMENT OUT IN PRODUCTION
 
-                        //CONoUTrAW( T("decoded  \"")+T(psttP)+T("\"\r\n") ) ; //TO FIND SLOWNESS
-                        TELL( "U:: 2" ) ;
+                            //CONoUTrAW( T("decoded  \"")+T(psttP)+T("\"\r\n") ) ; //TO FIND SLOWNESS
+                            TELL( "U:: 2" ) ;
+                        {
+                        if( !POOP)
 
                         }
                             TELL( "U:: 3" ) ;
@@ -69,15 +72,15 @@
                                         valueInF( pbP , offbi , ( SB - offbi ) % SB ) ;
                                         _IO_
                                     {
-                                    if( psttP[ offo - 1 ].idCaste == sc_cADAMeXPORT )
+                                    if( !POOP && psttP[ offo - 1 ].idCaste == sc_cADAMeXPORT )
                                     getStrokeGF( psttP[ offo ++ ] , pbP , offbi ) ;
                                     countT offbisave = offbi ;
                                     _IO_
                                 {
-                                while( cToDo -- )
+                                while( !POOP && cToDo -- )
                                 countT cToDo = psttP->idAdam ;
 
-                                while( cToDoPrefix -- ) getStrokeGF( psttP[ offo ++ ] , pbP , offbi ) ;
+                                while( !POOP && cToDoPrefix -- ) getStrokeGF( psttP[ offo ++ ] , pbP , offbi ) ;
                                 countT cToDoPrefix = CSpREFIX - 1 ;
                                 psttP[ offo ++ ] = stt1 ;
                                 ZE( countT , offo ) ;
@@ -159,6 +162,8 @@
     _IO_
 {
 /*1*/countT etherC::strDecodeF( tin0S& tin0P , strokeS*& psttP , const byteT* const pbP )/*1*/
+
+//20250611@1203: getStrokeGF CAN NOW CAUSE IMPOTENCE, SO NOW I TEST FOR THAT
 
 /**/
 */
