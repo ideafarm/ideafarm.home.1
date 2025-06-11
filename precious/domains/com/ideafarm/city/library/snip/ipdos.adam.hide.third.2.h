@@ -12861,7 +12861,7 @@ parameters
 */
 /**/
 
-/*1*/voidT _export getStrokeS( strokeS& sttP , const byteT* const pbP , countT& offbiP ) ;/*1*/
+/*1*/voidT _export getStrokeGF( strokeS& sttP , const byteT* const pbP , countT& offbiP ) ;/*1*/
 
 
 //
