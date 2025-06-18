@@ -94,13 +94,13 @@ DONE( tmGetWebHookRandomSuffixF )
             break ;
             }
                 }
-                    etThread.traceF( tin0P , T("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------[woTimePassword]:    ")+tWoTimePasswordGottenP ) ;
+                    //etThread.traceF( tin0P , T("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------[woTimePassword]:    ")+tWoTimePasswordGottenP ) ;
                     tWoTimePasswordGottenLag = tWoTimePasswordGottenP ;         //A:ASSUME: EVEN WITH THIS DELAY, THERE IS STILL PLENTY OF TIME BEFORE THE NEXT OUTER QUERY OCCURS
-                    ++ s ; ether.osSleepF( tin0P , TOCK << 1 ) ;    // MORE DELAY SO THAT THE TRACE APPEARS AFTER THE STOMP THAT ELICITED IT
+                    //++ s ; ether.osSleepF( tin0P , TOCK << 1 ) ;    // MORE DELAY SO THAT THE TRACE APPEARS AFTER THE STOMP THAT ELICITED IT
                 {
                 if( etThread.strCompareF( tin0P , tWoTimePasswordGottenLag , tWoTimePasswordGottenP ) )
 
-                ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;        // DELAY THE "---" TRACE SO THAT IT APPEARS AFTER THE STOMP THAT ELICITED IT (THAT'S WHY I SLEEP HERE RATHER THAN AT THE END OF MY LOOP, WHICH IS AFTER THE TRACE)
+                //++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;        // DELAY THE "---" TRACE SO THAT IT APPEARS AFTER THE STOMP THAT ELICITED IT (THAT'S WHY I SLEEP HERE RATHER THAN AT THE END OF MY LOOP, WHICH IS AFTER THE TRACE)
 
                 etThread.delF( tin0P , psttw ) ;
                 grab_tWoTimePasswordGottenP.ungrabF( tin0P ) ;
@@ -329,8 +329,8 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
             }
                 break ;
                 }
-                    ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
-                    etThread.traceF( tin0P , T("wrote      [tWoTimePassword]:    ")+tSnap ) ;
+                    //++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
+                    //etThread.traceF( tin0P , T("wrote      [tWoTimePassword]:    ")+tSnap ) ;
 
                     }
                         }
@@ -344,7 +344,7 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
                     {
                     IFsCRATCHoK
 
-                    etThread.traceF( tin0P , T("will write [tWoTimePassword]:    ")+tSnap ) ;
+                    //etThread.traceF( tin0P , T("will write [tWoTimePassword]:    ")+tSnap ) ;
                     sOut << (strokeS*)tSnap ;
                     soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
