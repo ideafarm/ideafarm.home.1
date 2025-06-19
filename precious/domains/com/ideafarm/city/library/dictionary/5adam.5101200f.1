@@ -76,10 +76,12 @@ TODO
 
 DONE( tmGetWebHookRandomSuffixF )
 }
+    etRock.traceF( tin0P , T("U:: 0") ) ;
     }
+        etRock.traceF( tin0P , T("U:: 1") ) ;
         }
             }
-                etThread.traceF( tin0P , T("!exception / could not destroy sConnect") ) ;
+                etRock.traceF( tin0P , T("!exception / could not destroy sConnect") ) ;
                 POOPRqUIET
             {
             if( POOP )
@@ -89,6 +91,7 @@ DONE( tmGetWebHookRandomSuffixF )
             _IO_
         {
         IFsCRATCHoK
+        etRock.traceF( tin0P , T("U:: 2") ) ;
 
         }
             break ;
@@ -97,7 +100,7 @@ DONE( tmGetWebHookRandomSuffixF )
 
                 }
                     }
-                        etThread.traceF( tin0P , T("!exception / could not destroy sIn") ) ;
+                        etRock.traceF( tin0P , T("!exception / could not destroy sIn") ) ;
                         POOPRqUIET
                     {
                     if( POOP )
@@ -107,13 +110,14 @@ DONE( tmGetWebHookRandomSuffixF )
                     _IO_
                 {
                 IFsCRATCHoK
+                etRock.traceF( tin0P , T("U:: 3") ) ;
 
                 }
                     }
                         }
                             }
                                 }
-                                    //etThread.traceF( tin0P , T("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------[woTimePassword]:    ")+tWoTimePasswordGottenP ) ;
+                                    //etRock.traceF( tin0P , T("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------[woTimePassword]:    ")+tWoTimePasswordGottenP ) ;
                                     tWoTimePasswordGottenLag = tWoTimePasswordGottenP ;         //A:ASSUME: EVEN WITH THIS DELAY, THERE IS STILL PLENTY OF TIME BEFORE THE NEXT OUTER QUERY OCCURS
                                 {
                                 if( etThread.strCompareF( tin0P , tWoTimePasswordGottenLag , tWoTimePasswordGottenP ) )
@@ -123,26 +127,26 @@ DONE( tmGetWebHookRandomSuffixF )
                                 tWoTimePasswordGottenP = T(psttw) ;                                   // I UPDATE IMMEDIATELY ; THE DELAY IN MY TRACING OF THE NEW VALUE IS JUST COSMETIC, TO MAKE THE TRACE EASIER TO READ BY ENSURING THAT THE UPDATE IS TRACED AFTER THE STOMP THAT ELICITED IT
                                 grab_tWoTimePasswordGottenP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-                                etThread.traceF( tin0P , T("[psttw]:    ")+T(psttw) ) ;
+                                etRock.traceF( tin0P , T("[psttw]:    ")+T(psttw) ) ;
                             {
                             if( !bFail )
 
                             }
                                 }
                                     ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                                    etThread.traceF( tin0P , T("!exception / pulled null length psttw from sIn") ) ;
+                                    etRock.traceF( tin0P , T("!exception / pulled null length psttw from sIn") ) ;
                                     bFail = 1 ;
                                 {
                                 else if( !psttw->idAdam )
                                 }
                                     ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                                    etThread.traceF( tin0P , T("!exception / pulled null psttw from sIn") ) ;
+                                    etRock.traceF( tin0P , T("!exception / pulled null psttw from sIn") ) ;
                                     bFail = 1 ;
                                 {
                                 else if( !psttw )
                                 }
                                     ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                                    etThread.traceF( tin0P , T("!exception / could not pull psttw from sIn") ) ;
+                                    etRock.traceF( tin0P , T("!exception / could not pull psttw from sIn") ) ;
                                     POOPRqUIET
                                     bFail = 1 ;
                                 {
@@ -158,7 +162,7 @@ DONE( tmGetWebHookRandomSuffixF )
 
                         }
                             ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                            etThread.traceF( tin0P , T("!exception / sIn is empty") ) ;
+                            etRock.traceF( tin0P , T("!exception / sIn is empty") ) ;
                             bFail = 1 ;
                         {
                         if( !sIn.cFieldsF() )
@@ -168,7 +172,7 @@ DONE( tmGetWebHookRandomSuffixF )
                     }
                         }
                             ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                            etThread.traceF( tin0P , T("!exception / could not read into sIn") ) ;
+                            etRock.traceF( tin0P , T("!exception / could not read into sIn") ) ;
                             POOPRqUIET
                             bFail = 1 ;
                         {
@@ -180,11 +184,12 @@ DONE( tmGetWebHookRandomSuffixF )
                     IFsCRATCHoK
                 {
                 if( !bFail )
+                etRock.traceF( tin0P , T("U:: 4") ) ;
 
                 }
                     }
                         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                        etThread.traceF( tin0P , T("!exception / could not ct soulC sIn") ) ;
+                        etRock.traceF( tin0P , T("!exception / could not ct soulC sIn") ) ;
                         POOPRqUIET
                         bFail = 1 ;
                     {
@@ -194,20 +199,23 @@ DONE( tmGetWebHookRandomSuffixF )
                     _IO_
                 {
                 IFsCRATCHoK
+                etRock.traceF( tin0P , T("U:: 5") ) ;
 
                 soulC& sIn = *(soulC*)pb_sIn ;
                 byteT pb_sIn[ sizeof( soulC ) ] ;
                 ZE( boolT , bFail ) ;
+                etRock.traceF( tin0P , T("U:: 6") ) ;
 
                 _IO_
             {
             while( !ether )
+            etRock.traceF( tin0P , T("U:: 7") ) ;
 
             }
                 }
                     break ;
                     ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                    etThread.traceF( tin0P , T("!exception / could not connect ; will replace sConnect and retry [idpDnsSuffix]:    ")+TF2(idpDnsSuffix,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etRock.traceF( tin0P , T("!exception / could not connect ; will replace sConnect and retry [idpDnsSuffix]:    ")+TF2(idpDnsSuffix,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
                 {
                 if( POOP )
@@ -216,6 +224,7 @@ DONE( tmGetWebHookRandomSuffixF )
                 _IO_
             {
             IFsCRATCHoK
+            etRock.traceF( tin0P , T("U:: 8") ) ;
 
             }
                 if( !idpDnsSuffix ) { ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ; }
@@ -225,7 +234,7 @@ DONE( tmGetWebHookRandomSuffixF )
 
                 }
                     }
-                        etThread.traceF( tin0P , T("!exception / could not read file idpListenDut [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        etRock.traceF( tin0P , T("!exception / could not read file idpListenDut [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
@@ -238,20 +247,23 @@ DONE( tmGetWebHookRandomSuffixF )
                 ZE( countT , cbi ) ;
                 ZE( byteT* , pbi ) ;
                 TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/idpListenDut") ;
+                etRock.traceF( tin0P , T("U:: 9") ) ;
                 _IO_
             {
             while( !ether && !idpDnsSuffix )
+            etRock.traceF( tin0P , T("U:: a") ) ;
             ZE( countT , idpDnsSuffix ) ;
             _IO_
         {
         while( !ether )
+        etRock.traceF( tin0P , T("U:: b") ) ;
 
         }
             continue ;
 
             }
                 }
-                    etThread.traceF( tin0P , T("!exception / could not destroy sConnect") ) ;
+                    etRock.traceF( tin0P , T("!exception / could not destroy sConnect") ) ;
                     POOPRqUIET
                 {
                 if( POOP )
@@ -266,11 +278,12 @@ DONE( tmGetWebHookRandomSuffixF )
             _IO_
         {
         if( bFail )
+        etRock.traceF( tin0P , T("U:: c") ) ;
 
         }
             }
                 bFail = 1 ;
-                etThread.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry") ) ;
+                etRock.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry") ) ;
                 POOPRqUIET
             {
             if( POOP )
@@ -279,13 +292,14 @@ DONE( tmGetWebHookRandomSuffixF )
             _IO_
         {
         IFsCRATCHoK
+        etRock.traceF( tin0P , T("U:: d") ) ;
 
         }
             continue ;
 
             }
                 }
-                    etThread.traceF( tin0P , T("!exception / could not destroy sConnect") ) ;
+                    etRock.traceF( tin0P , T("!exception / could not destroy sConnect") ) ;
                     POOPRqUIET
                 {
                 if( POOP )
@@ -301,11 +315,12 @@ DONE( tmGetWebHookRandomSuffixF )
         {
         if( bFail )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        etRock.traceF( tin0P , T("U:: e") ) ;
 
         }
             }
                 bFail = 1 ;
-                etThread.traceF( tin0P , T("!exception / could not construct sConnect ; will retry") ) ;
+                etRock.traceF( tin0P , T("!exception / could not construct sConnect ; will retry") ) ;
                 POOPRqUIET
             {
             if( POOP )
@@ -317,6 +332,8 @@ DONE( tmGetWebHookRandomSuffixF )
         ZE( boolT , bFail ) ;
         socketC& sConnect = *(socketC*)pb_sConnect ;
         byteT pb_sConnect[ sizeof( socketC ) ] ;
+
+        etRock.traceF( tin0P , T("U:: f") ) ;
         _IO_
     {
     while( !ether )
@@ -329,6 +346,7 @@ DONE( tmGetWebHookRandomSuffixF )
     textC& tWoTimePasswordGottenP      = *(textC*)pTaskP->c1 ;
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     _IO_
 {
