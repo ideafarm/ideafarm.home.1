@@ -166,8 +166,9 @@
     c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;
     sockaddr_in6 info ;
 
-    if( !time1P && !time2P ) time1P = nicNameP ? TOCK << 4 : TOCK << 2 ;    //20250115@2351: INCREASED TO PROVIDE ENOUGH TIME SO THAT HTTPS GORILLA NEVER TIMES OUT
-  //if( !time1P && !time2P ) time1P = nicNameP ? TOCK * 2 : TUCK * 0x80 ;
+    //if( !time1P && !time2P ) time1P = nicNameP ? TOCK << 4 : TOCK << 2 ;    //20250115@2351: INCREASED TO PROVIDE ENOUGH TIME SO THAT HTTPS GORILLA NEVER TIMES OUT
+    //if( !time1P && !time2P ) time1P = nicNameP ? TOCK * 2 : TUCK * 0x80 ;
+    //20250619@1145: REQUIRE CALLER TO EXPLICITLY REQUEST TIMEOUT ENFORCEMENT ; THIS WAS DONE TO ACCOMMODATE ifcIDaDAM_GORILLAwEBHOOKS
 
     const nicNameC nicName = nicNameP ? nicNameP : nicNameC( NICnAMElOCAL ) ;
     //if( pEtherContainsMe ) pEtherContainsMe->ifcSayIF( tNNP+T(" connecting") , flSAY_APPEND | flSAY_LOG ) ;
