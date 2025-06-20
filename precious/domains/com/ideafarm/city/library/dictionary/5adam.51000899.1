@@ -140,21 +140,17 @@ DONE( tmWorkF )
                                                         timeUsed2 = timeUsed1 = 0 ;
                                                         cUsed = 1 ;
 
-                                                        etThread.boxPutF( tin0P , tLong , (osTextT*)tWoTimePassword , tWoTimePassword.csF( tin0P ) ) ;
-                                                        TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePassword") ;
+                                                        etThread.boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
+                                                        TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
 
-                                                        grab_tWoTimePassword.ungrabF( tin0P ) ;
+                                                        etRock.traceF( tin0P , T("new         [tWoTimePasswordUrlSuffix]:    ")+tWoTimePasswordUrlSuffix ) ;
 
-                                                        etRock.traceF( tin0P , T("new         [tWoTimePassword]:    ")+tWoTimePassword ) ;
-
-                                                                              tGorillaSuffix = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
+                                                                              tGorillaSuffix = tWoTimePasswordUrlSuffix+tDotHiddenDotIdeafarmDotCom ;
                                                         tGorillaSuffixUsed  = tGorillaSuffix ; 
-                                                                              tWoTimePassword = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
-                                                        tWoTimePasswordUsed = tWoTimePassword ;
+                                                                              tWoTimePasswordUrlSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
+                                                        tWoTimePasswordUrlSuffixUsed = tWoTimePasswordUrlSuffix ;
 
-                                                        etRock.traceF( tin0P , T("old         [tWoTimePassword]:    ")+tWoTimePassword ) ;
-
-                                                        grab_tWoTimePassword.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                                                        etRock.traceF( tin0P , T("old         [tWoTimePasswordUrlSuffix]:    ")+tWoTimePasswordUrlSuffix ) ;
 
                                                         cUsed = 0 ;
                                                     {
@@ -507,28 +503,23 @@ DONE( tmWorkF )
 
     nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
 
-    etThread.osThreadF( TaRG2cBsTACK( tmDispenseWoTimeWebHookSuffixF , CBsTACKmIN << 1 ) , (countT)&tWoTimePassword , (countT)&grab_tWoTimePassword ) ;
     etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF               , CBsTACKmIN << 1 ) , (countT)&mySettings      , (countT)&sgnSettingsReady     ) ;
 
-    etRock.traceF( tin0P , T("initialized [tWoTimePassword]:    ")+tWoTimePassword ) ;
+    etRock.traceF( tin0P , T("initialized [tWoTimePasswordUrlSuffix]:    ")+tWoTimePasswordUrlSuffix ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-    etThread.boxPutF( tin0P , tLong , (osTextT*)tWoTimePassword , tWoTimePassword.csF( tin0P ) ) ;
-    TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePassword") ;
-
-    grab_tWoTimePassword.ungrabF( tin0P ) ;
+    etThread.boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
+    TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
 
     ZE( sCountT , timeUsed2 ) ;
     ZE( countT  , timeUsed1 ) ;
     ZE( countT  , cUsed ) ;
-    TN( tGorillaSuffixUsed          , ""                     ) ;
-    TN( tWoTimePasswordUsed         , ""                     ) ;
-    TN( tGorillaSuffix              , ""                     ) ; tGorillaSuffix  = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
-    TN( tWoTimePassword             , ""                     ) ; tWoTimePassword = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;  //0x24: [0-9,a-z]
-    TN( tPasswordPrefix             , "password"             ) ;            // THIS PREFIX IS FOR CONVENIENCE WHEN SEARCHING TRACE LOGS 
-    TN( tDotHiddenDotIdeafarmDotCom , ".hidden.ideafarm.com" ) ;
-    grab_tWoTimePassword.grabF( tin0P , TAG( TAGiDnULL )     ) ;
-    grabC grab_tWoTimePassword( tin0P , TAG( TAGiDnULL )     ) ;
+    TN( tGorillaSuffixUsed            , ""                     ) ;
+    TN( tWoTimePasswordUrlSuffixUsed  , ""                     ) ;
+    TN( tGorillaSuffix                , ""                     ) ; tGorillaSuffix  = tWoTimePasswordUrlSuffix+tDotHiddenDotIdeafarmDotCom ;
+    TN( tWoTimePasswordUrlSuffix      , ""                     ) ; tWoTimePasswordUrlSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;  //0x24: [0-9,a-z]
+    TN( tPasswordPrefix               , "psw_"                 ) ;            // THIS PREFIX IS FOR CONVENIENCE WHEN SEARCHING TRACE LOGS 
+    TN( tDotHiddenDotIdeafarmDotCom   , ".hidden.ideafarm.com" ) ;
 
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
@@ -542,193 +533,6 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
-
-DONE( tmDispenseWoTimeWebHookSuffixF )
-}
-    }
-        etThread.boxPutF( tin0P , T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/idpListen") , (byteT*)&nu , sizeof nu ) ;
-        ZE( countT , nu ) ;
-
-        }
-            }
-                etThread.traceF( tin0P , T("!exception / could not destroy sListen [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                POOPRqUIET
-                countT rc = POOP ;
-            {
-            if( POOP )
-            DELzOMBIE( psDoomed ) ;
-            socketC* psDoomed = (socketC*)pb_sListen ;
-            SCOOPS
-        {
-        IFsCRATCHoK
-
-        }
-            DEL( pso ) ;
-            }
-                break ;
-                }
-                    ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
-                    etThread.traceF( tin0P , T("wrote      [tWoTimePassword]:    ")+tSnap ) ;
-
-                    }
-                        }
-                            break ;
-                            etThread.traceF( tin0P , T("could not write to client so closing the connection [tWoTimePassword]:    ")+tWoTimePasswordP ) ;
-                            POOPRqUIET
-                        {
-                        if( POOP )
-                        pso->writeF( tin0P , sOut ) ;
-                        SCOOPS
-                    {
-                    IFsCRATCHoK
-
-                    etThread.traceF( tin0P , T("will write [tWoTimePassword]:    ")+tSnap ) ;
-                    sOut << (strokeS*)tSnap ;
-                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
-
-                    grab_tWoTimePasswordP.ungrabF( tin0P ) ;
-                    tSnap = tWoTimePasswordP ;
-                    grab_tWoTimePasswordP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-
-                    TN( tSnap , "" ) ;
-                {
-                while( !ether )
-            {
-            if( pso && nnPeer == nnHe )
-            etThread.traceF( tin0P , T("client accepted") ) ;
-
-            }
-                }
-                    break ;
-                    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                    etThread.traceF( tin0P , T("!exception / could not accept a client connection ; will replace sListen and retry [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    POOPRqUIET
-                    countT rc = POOP ;
-                {
-                if( POOP )
-                sListen.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
-                SCOOPS
-            {
-            IFsCRATCHoK
-            etThread.traceF( tin0P , T("calling acceptF") ) ;
-            ZE( countT , idPortPeer ) ;
-            nicNameC nnPeer ;
-            ZE( socketC* , pso ) ;
-        {
-        while( !ether )
-
-        }
-            continue ;
-            DELzOMBIE( psDoomed ) ;
-            socketC* psDoomed = (socketC*)pb_sListen ;
-            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-        {
-        if( bFail )
-
-        }
-            }
-                bFail = 1 ;
-                etThread.traceF( tin0P , T("!exception / could not listen ; will retry [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                POOPRqUIET
-                countT rc = POOP ;
-            {
-            if( POOP )
-            sListen.listenF( tin0P ) ;
-            SCOOPS
-        {
-        IFsCRATCHoK
-
-        }
-            continue ;
-
-            }
-                }
-                    etThread.traceF( tin0P , T("!exception / could not destroy sListen [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    POOPRqUIET
-                    countT rc = POOP ;
-                {
-                if( POOP )
-                DELzOMBIE( psDoomed ) ;
-                socketC* psDoomed = (socketC*)pb_sListen ;
-                SCOOPS
-            {
-            IFsCRATCHoK
-
-            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-        {
-        if( bFail )
-
-        }
-            etThread.traceF( tin0P , T("wrote   file [tLong]:    ")+tLong ) ;
-            etThread.boxPutF( tin0P , tLong , (byteT*)&idpListen , sizeof idpListen ) ;
-            etThread.traceF( tin0P , T("writing file [tLong]:    ")+tLong ) ;
-            TN( tLong , "" ) ; tLong = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/idpListen") ;
-
-            }
-                }
-                    bFail = 1 ;
-                    etThread.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    POOPRqUIET
-                    countT rc = POOP ;
-                {
-                else
-                if( !POOP ) /*;*/etThread.traceF( tin0P , T("[idpListen]:    ")+TF2(idpListen,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                idpListen = sListen.bindF( tin0P ) ;
-                SCOOPS
-            {
-            IFsCRATCHoK
-            ZE( countT , idpListen ) ;
-        {
-
-        }
-            continue ;
-
-            }
-                }
-                    etThread.traceF( tin0P , T("!exception / could not destroy sListen [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    POOPRqUIET
-                    countT rc = POOP ;
-                {
-                if( POOP )
-                DELzOMBIE( psDoomed ) ;
-                socketC* psDoomed = (socketC*)pb_sListen ;
-                SCOOPS
-            {
-            IFsCRATCHoK
-
-            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-        {
-        if( bFail )
-        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-
-        }
-            }
-                bFail = 1 ;
-                etThread.traceF( tin0P , T("!exception / could not construct sListen ; will retry [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                POOPRqUIET
-                countT rc = POOP ;
-            {
-            if( POOP )
-            new( 0 , tin0P , pb_sListen , sizeof pb_sListen ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_DOnOTrEGISTERtIMEoUT ) ;
-            SCOOPS
-        {
-        IFsCRATCHoK
-        ZE( boolT , bFail ) ;
-        socketC& sListen = *(socketC*)pb_sListen ;
-        byteT pb_sListen[ sizeof( socketC ) ] ;
-    {
-    while( !ether )
-
-    nicNameC nnHe = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
-    nicNameC nnMe = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
-
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
-
-    grabC& grab_tWoTimePasswordP = *(grabC*)pTaskP->c2 ;
-    textC& tWoTimePasswordP      = *(textC*)pTaskP->c1 ;
-{
-if( pTaskP && pTaskP->c1 && pTaskP->c2 )
-TASK( tmDispenseWoTimeWebHookSuffixF )
 
 DONE( tmUpdateNnHostsF )
 }
