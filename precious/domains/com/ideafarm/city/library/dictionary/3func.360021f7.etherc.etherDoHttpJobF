@@ -176,6 +176,7 @@
                             if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / 7") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                           traceF( tin0P , T("U:: etherDoHttpJobF / 7") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
+                            traceF( tin0P , T("wrote   from snips") ) ;
                             }
                                 }
                                     bClose = 1 ;
@@ -187,6 +188,7 @@
                                 SCOOPS
                             {
                             IFsCRATCHoK
+                            traceF( tin0P , T("writing from snips") ) ;
                             TELL( "writing reply 2" ) ;
 
                             traceF( tin0P , T(POSTS(postsReply)) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -1173,6 +1175,7 @@
 
                                     traceF( tin0P , TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    wrote   file window [cbw]:    ")+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
+                                    traceF( tin0P , T("wrote   from archive (wo file window)") ) ;
                                     }
                                         }
                                             bClose = 1 ;
@@ -1184,6 +1187,7 @@
                                         SCOOPS
                                     {
                                     IFsCRATCHoK
+                                    traceF( tin0P , T("writing from archive (wo file window)") ) ;
 
                                     traceF( tin0P , TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    writing file window [cbw]:    ")+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                                 {
@@ -1200,6 +1204,7 @@
                             {
                             while( !POOP )
 
+                            traceF( tin0P , T("wrote   from archive (header)") ) ;
                             }
                                 }
                                     bClose = 1 ;
@@ -1211,6 +1216,7 @@
                                 SCOOPS
                             {
                             IFsCRATCHoK
+                            traceF( tin0P , T("writing from archive (header)") ) ;
 
                             TN( tReply , "" ) ; tReply = T("HTTP/1.1 200 OK\r\nServer: IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System (tm)\r\nContent-Type: ")+tContentType+T("\r\nContent-Length: ")+TF4(cbBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
 
@@ -1240,6 +1246,7 @@
                         {
                         else
                         }
+                            traceF( tin0P , T("wrote   from archive (not found)") ) ;
                             }
                                 }
                                     traceF( tin0P , T("etherDoHttpJobF: could not write to socket 1004") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
@@ -1250,6 +1257,7 @@
                                 SCOOPS
                             {
                             IFsCRATCHoK
+                            traceF( tin0P , T("writing from archive (not found)") ) ;
 
                             TN( tReply , "" ) ; tReply = T("HTTP/1.1 404 Not Found\r\nServer: IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System (tm)\r\nContent-Type: text")+T("\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
 
@@ -1308,6 +1316,7 @@
                         if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / y") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                       traceF( tin0P , T("U:: etherDoHttpJobF / y") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                         delF( tin0P , pbIn ) ;
+                        traceF( tin0P , T("wrote   from challenge") ) ;
                         }
                             }
                                 bClose = 1 ;
@@ -1320,6 +1329,7 @@
                             SCOOPS
                         {
                         IFsCRATCHoK
+                        traceF( tin0P , T("writing from challenge") ) ;
 
                         TN( tReply , "" ) ; tReply = T("HTTP/1.1 200 OK\r\nServer: IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System (tm)\r\nContent-Type: text/plain\r\nContent-Length: ")+TF4(cbIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
 
@@ -1378,6 +1388,7 @@
                         if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / B") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                       traceF( tin0P , T("U:: etherDoHttpJobF / B") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
+                        traceF( tin0P , T("wrote   from favicon") ) ;
                         }
                             }
                                 bClose = 1 ;
@@ -1390,6 +1401,7 @@
                             SCOOPS
                         {
                         IFsCRATCHoK
+                        traceF( tin0P , T("writing from favicon") ) ;
                         if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / C") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                       traceF( tin0P , T("U:: etherDoHttpJobF / C") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
@@ -1416,6 +1428,7 @@
                 }
                     if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / F") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                   traceF( tin0P , T("U:: etherDoHttpJobF / F") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                    traceF( tin0P , T("wrote   from cache") ) ;
                     }
                         }
                             bClose = 1 ;
@@ -1431,6 +1444,7 @@
                         SCOOPS
                     {
                     IFsCRATCHoK
+                    traceF( tin0P , T("writing from cache") ) ;
                     TELL( "writing reply 1" ) ;
 
                     pzCache->ungrabF( tin0P ) ;
@@ -1793,6 +1807,7 @@
             //LOGrAW( T("------------------------- B E G I N   S E S S I O N -------------------------------------------------------\r\n") ) ;
             //CONoUTrAW( T("------------------------- B E G I N   S E S S I O N -------------------------------------------------------\r\n") ) ;
 
+            traceF( tin0P , T("wrote   from ifcIDsNIPpREDEFINED_HTTPcONTINUEwELCOME") ) ;
             }
                 DEL( prPosts ) ;
                 if( prPosts && COSTS( *prPosts ) ) psoP->writeF( tin0P , POSTS( *prPosts ) , COSTS( *prPosts ) ) ;
@@ -1800,6 +1815,7 @@
                 ZE( pbRefC* , prPosts ) ;
             {
             if( pHttpRawCommandServerCBFP )
+            traceF( tin0P , T("writing from ifcIDsNIPpREDEFINED_HTTPcONTINUEwELCOME") ) ;
 
             cacheC* pzCache = meP.pzCacheF() ;
 
