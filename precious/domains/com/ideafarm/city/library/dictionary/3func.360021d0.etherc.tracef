@@ -186,29 +186,39 @@
 
                 }
                     OStEXTAK( ostoSay , " | " ) ;
-                    while( costPad -- ) { OStEXTAK( ostoSay , " " ) ; }
+                    while( costPad1 -- ) { OStEXTAK( ostoSay , " " ) ; }
                     if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA(  ostoSay , ((tin123S&)tin0P).postThreadName ) ;
-                    OStEXTAK( ostoSay , " * " ) ;
-                    OStEXTC(  ostoSay , ((tin1S&)tin0P).glass.idThread , ' ' ) ;
                     OStEXTAK( ostoSay , " & " ) ;
-                    OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idCell , ' ' ) ;
+                    OStEXTC(  ostoSay , ((tin1S&)tin0P).glass.idThread , ' ' ) ;
                     OStEXTAK( ostoSay , " ^ " ) ;
-                    OStEXTA(  ostoSay , ostoTimeDelta ) ;
+                    OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idCell , ' ' ) ;
                     OStEXTAK( ostoSay , " % " ) ;
-                    OStEXTA(  ostoSay , ostoTimeNet ) ;
-                    OStEXTAK( ostoSay , " $ " ) ;
-                    OStEXTA(  ostoSay , ostoTimeNow ) ;
-                    OStEXTAK( ostoSay , " # " ) ;
                     OStEXTA(  ostoSay , ostoCyclesDelta ) ;
-                    OStEXTAK( ostoSay , " @ " ) ;
+                    OStEXTAK( ostoSay , " $ " ) ;
                     OStEXTA(  ostoSay , ostoCyclesNet ) ;
+                    OStEXTAK( ostoSay , " # " ) ;
+                    while( costPad2 -- ) { OStEXTAK( ostoSay , " " ) ; }
+                    OStEXTA(  ostoSay , postComputerLanName ) ;
+                    OStEXTAK( ostoSay , " @ " ) ;
+                    OStEXTA(  ostoSay , ostoTimeDelta ) ;
+                    OStEXTAK( ostoSay , " ! " ) ;
+                    OStEXTA(  ostoSay , ostoTimeNet ) ;
+                    OStEXTAK( ostoSay , " ~ " ) ;
+                    OStEXTA(  ostoSay , ostoTimeNow ) ;
 
                     //OStEXTAK( ostoSay , " ! " ) ;
                     //OStEXTA(  ostoSay , ostoCyclesNow ) ;
                     // THIS IS NOT USEFULL AND IT OCCUPIES VALUABLE REAL ESTATE IN THE LINE ; ostoCyclesNow - ostoCyclesNet IS THE NUMBER OF CYCLES CONSUMED BY THE THREAD AT THE WO'TH CALL TO traceF
 
-                    if( costPad < 0 ) costPad = 0 ;
-                    sCountT costPad = tin0P.idTypeTin != ifcIDtYPEtIN_123 ? 0 : ( TUCK >> 3 ) - thirdC::c_strlenIF( ((tin123S&)tin0P).postThreadName ) ;       //20221204@092: DOUBLED FIELD WIDTH TO ( TUCK >> 3 ) TO IMPROVE TRACE READABILITY
+                    if( costPad2 < 0 ) costPad2 = 0 ;
+                    sCountT costPad2 = ( TUCK >> 4 ) - thirdC::c_strlenIF( postComputerLanName ) ;
+
+                    thirdC::computerLanNameIF( tin0P , postComputerLanName , costComputerLanName ) ;
+                    countT costComputerLanName = sizeof postComputerLanName ;
+                    osTextT postComputerLanName[ TUCK >> 3 ] ;
+
+                    if( costPad1 < 0 ) costPad1 = 0 ;
+                    sCountT costPad1 = tin0P.idTypeTin != ifcIDtYPEtIN_123 ? 0 : ( TUCK >> 3 ) - thirdC::c_strlenIF( ((tin123S&)tin0P).postThreadName ) ;       //20221204@092: DOUBLED FIELD WIDTH TO ( TUCK >> 3 ) TO IMPROVE TRACE READABILITY
 
                     }
                         OStEXTCF( ostoCyclesNet   , pcCyclesNet[   0 ] , '0' ) ;
