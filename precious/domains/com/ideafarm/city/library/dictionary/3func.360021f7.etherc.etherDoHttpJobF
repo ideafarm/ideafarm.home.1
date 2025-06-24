@@ -191,7 +191,7 @@
                             traceF( tin0P , T("writing from snips") ) ;
                             TELL( "writing reply 2" ) ;
 
-                            traceF( tin0P , T(POSTS(postsReply)) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            //traceF( tin0P , T(POSTS(postsReply)) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
                             if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / 8") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                             traceF( tin0P , T("U:: etherDoHttpJobF / 8") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
@@ -1807,15 +1807,18 @@
             //LOGrAW( T("------------------------- B E G I N   S E S S I O N -------------------------------------------------------\r\n") ) ;
             //CONoUTrAW( T("------------------------- B E G I N   S E S S I O N -------------------------------------------------------\r\n") ) ;
 
-            traceF( tin0P , T("wrote   from ifcIDsNIPpREDEFINED_HTTPcONTINUEwELCOME") ) ;
             }
                 DEL( prPosts ) ;
-                if( prPosts && COSTS( *prPosts ) ) psoP->writeF( tin0P , POSTS( *prPosts ) , COSTS( *prPosts ) ) ;
+                }
+                    traceF( tin0P , T("wrote   from ifcIDsNIPpREDEFINED_HTTPcONTINUEwELCOME") ) ;
+                    psoP->writeF( tin0P , POSTS( *prPosts ) , COSTS( *prPosts ) ) ;
+                    traceF( tin0P , T("writing from ifcIDsNIPpREDEFINED_HTTPcONTINUEwELCOME") ) ;
+                {
+                if( prPosts && COSTS( *prPosts ) )
                 meP.getSnipF( tin0P , prPosts , ifcIDsNIPpREDEFINED_HTTPcONTINUEwELCOME ) ; ___( prPosts ) ;
                 ZE( pbRefC* , prPosts ) ;
             {
             if( pHttpRawCommandServerCBFP )
-            traceF( tin0P , T("writing from ifcIDsNIPpREDEFINED_HTTPcONTINUEwELCOME") ) ;
 
             cacheC* pzCache = meP.pzCacheF() ;
 
