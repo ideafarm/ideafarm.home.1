@@ -315,12 +315,14 @@
             }
                 thirdC::dosSleepWinkIF( tin0P , 0 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
 
-                }
-                    break ;
-                    ether.traceF( tin0P , T("readRequestF / cMouthfulsAllowed mouthfuls did not contain a complete request") ) ;
-                    bFailP = 1 ;    //P:PERSONALITY: TO PREVENT STALL ATTACK, I REQUIRE THAT THE cMouthfulsAllowed MOUTHFULS CONTAIN A COMPLETE REQUEST
-                {
-                if( !bEnd && !( -- cMouthfulsAllowed ) )
+                //}
+                //    break ;
+                //    ether.traceF( tin0P , T("readRequestF / cMouthfulsAllowed mouthfuls did not contain a complete request") ) ;
+                //    bFailP = 1 ;    //P:PERSONALITY: TO PREVENT STALL ATTACK, I REQUIRE THAT THE cMouthfulsAllowed MOUTHFULS CONTAIN A COMPLETE REQUEST
+                //{
+                //if( !bEnd && !( -- cMouthfulsAllowed ) )
+
+                //20250626@0808: DISABLE THIS DEFENSE SINCE inner GORILLA TRIGGERS IT WHEN STOMPS ARE FREQUENT
 
                 //20250430@1339: ENABLE THIS DEFENSE AFTER ADDING SLEEP WINK ; ALL PEERS ARE NOW REQUIRED TO SEND A COMPLETE REQUEST WITHIN cMouthfulsAllowed CYCLES
 
