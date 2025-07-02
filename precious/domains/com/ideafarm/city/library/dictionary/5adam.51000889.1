@@ -90,15 +90,15 @@ DONE( tmGorillaF )
 
         ;
 
-            : timeE1 > ( TOCK << 0 )                                    //P:PERSONALITY: I AM STRICTER                    FOR INNER
-            ? timeE1 > ( TOCK << 1 ) && idNewFailUse                    //P:PERSONALITY: I IGNORE ISOLATED SLOW INCIDENTS FOR OUTER
+            : timeE1 > ( TOCK * 5 )                                    //P:PERSONALITY: I AM STRICTER                    FOR INNER
+            ? timeE1 > ( TOCK * 5 ) && idNewFailUse                    //P:PERSONALITY: I IGNORE ISOLATED SLOW INCIDENTS FOR OUTER
 
         const boolT bSlowLenient = bOuter
 
         ;
 
-            : timeE1 > ( TOCK << 0 )
-            ? timeE1 > ( TOCK << 0 )
+            : timeE1 > ( TOCK * 5 )
+            ? timeE1 > ( TOCK * 5 )
 
         const boolT bSlowStrict = bOuter
 
