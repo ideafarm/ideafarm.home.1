@@ -593,15 +593,18 @@ DONE( tmWatchF )
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
 
-        /**/etRock.traceF( tin0P , T("maybe fired  self (if my fireall group has been fired)") ) ;
         }
-            if( ether ) ;
-            FIREmYSELF ;
-            etRock.traceF( tin0P , T("my fireAll group has been fired") ) ;
+            /**/etRock.traceF( tin0P , T("maybe fired  self (if my fireall group has been fired)") ) ;
+            }
+                if( ether ) ;
+                FIREmYSELF ;
+                etRock.traceF( tin0P , T("my fireAll group has been fired") ) ;
+            {
+            if( ((tin1S&)tin0P).pag1->idGroupFireAll && ((tin1S&)tin0P).pag1->idGroupFireAll <= CfIREaLLrANKS && home.pFireAll[ ((tin1S&)tin0P).pag1->idGroupFireAll - 1 ].bFire )
+            thirdC::dosPriorityProcessIF( tin0P ) ; //THIS ENFORCES RULE THAT USER CANNOT CHANGE THE PRIORITY CLASS OF AN IFC PROCESS; (IFC MAKES THIS ASSUMPTION SO THAT IT CAN USE YIELD WITHOUT HAVING CPU SPINS)
+            /**/etRock.traceF( tin0P , T("maybe firing self (if my fireall group has been fired)") ) ;
         {
-        if( ((tin1S&)tin0P).pag1->idGroupFireAll && ((tin1S&)tin0P).pag1->idGroupFireAll <= CfIREaLLrANKS && home.pFireAll[ ((tin1S&)tin0P).pag1->idGroupFireAll - 1 ].bFire )
-        thirdC::dosPriorityProcessIF( tin0P ) ; //THIS ENFORCES RULE THAT USER CANNOT CHANGE THE PRIORITY CLASS OF AN IFC PROCESS; (IFC MAKES THIS ASSUMPTION SO THAT IT CAN USE YIELD WITHOUT HAVING CPU SPINS)
-        /**/etRock.traceF( tin0P , T("maybe firing self (if my fireall group has been fired)") ) ;
+        if( !( idCycle % ( TUCK >> 2 ) ) )
 
         //CONoUTrAW5( "tmWatchF [ether,cThreadsFor _tmWatchF_toWatch]: " , ether , " " , ((tin1S&)tin0P).pag1->cThreadsFor _tmWatchF_toWatch , "\r\n" ) ;
 
