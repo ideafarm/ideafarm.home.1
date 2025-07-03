@@ -470,8 +470,8 @@ DONE( tmWatchF )
 //20250617@1512: ENABLED TO FIND ANOTHER BUG (DUT: SCRATCH f ON DNS1 AND GO1 SERVERS)
 //U::20241124@1205: TO FIND A BUG ; ENABLE IN PRODUCTION
 
-        /**/etRock.traceF( tin0P , T("setted /resetted  control flags") ) ;
         }
+            /**/etRock.traceF( tin0P , T("setted /resetted  control flags") ) ;
             }
                 home.flags &= ~( F(flHOMEs_INoUTtRACE) ) ;
                 if( F(home.flags) & flHOMEs_INoUTtRACE ) etRock.traceF( tin0P , T("flHOMEs_INoUTtRACE turned off") ) ;
@@ -488,10 +488,10 @@ DONE( tmWatchF )
                 _IO_
             {
             if( !etThread.diskFileExistsF( tin0P , tFileControlTraceOff ) && !etThread.diskFileExistsF( tin0P , tFileControlTraceOn ) )
+            /**/etRock.traceF( tin0P , T("setting/resetting control flags") ) ;
             _IO_
         {
-        TELL( "setting/resetting control flags" ) ;
-        /**/etRock.traceF( tin0P , T("setting/resetting control flags") ) ;
+        if( !( idCycle % ( TUCK >> 3 ) ) )
         
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -547,8 +547,8 @@ DONE( tmWatchF )
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
 
-        /**/etRock.traceF( tin0P , T("maybe fired  self (if version refused or cannot see driver or glass1 or glass2)") ) ;
         }
+            /**/etRock.traceF( tin0P , T("maybe fired  self (if version refused or cannot see driver or glass1 or glass2)") ) ;
             }
                 }
                     }
@@ -581,9 +581,10 @@ DONE( tmWatchF )
 
             //if( cSkip && cSkip -- ) ; //GIVES THIS PROCESS TIME TO GET STARTED AOK (SOME PROCESSES FAIL IF FIRED VERY EARLY DURING STARTUP)
             //S: SECURITY HOLE: SKIPPING LIKE THIS WILL ALLOW CODE TO DO LOTS OF WORK IN THE 02 TOCKS BEFORE THE VERSION REFUSAL BECOMES EFFECTIVE
+            /**/etRock.traceF( tin0P , T("maybe firing self (if version refused or cannot see driver or glass1 or glass2)") ) ;
             _IO_
         {
-        /**/etRock.traceF( tin0P , T("maybe firing self (if version refused or cannot see driver or glass1 or glass2)") ) ;
+        if( !( idCycle % ( TUCK >> 0 ) ) )
 
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -713,61 +714,61 @@ DONE( tmWatchF )
         //**********************************************************************************************************************************************************************************************************************************************************************************
 
         }
+            /**/etRock.traceF( tin0P , T("cleared  sexC deleted bits") ) ;
+            stPoolNames.ungrabF( tin0P ) ;
             }
-                /**/etRock.traceF( tin0P , T("cleared  sexC deleted bits") ) ;
-                stPoolNames.ungrabF( tin0P ) ;
+                while( ~hWalk ) ;
                 }
-                    while( ~hWalk ) ;
                     }
                         }
                             }
-                                }
-                                    reg.timeDeletedBitsClearedC2 = timeN2 ;
-                                    reg.timeDeletedBitsClearedC1 = timeN1 ;
+                                reg.timeDeletedBitsClearedC2 = timeN2 ;
+                                reg.timeDeletedBitsClearedC1 = timeN1 ;
 
-                                    thirdC::c_memsetIF( tin0P , reg.pbSexDeletedBits , sizeof reg.pbSexDeletedBits ) ;                               //ALL OF THIS RACES WITH OTHER PROCESSES BUT THAT DOES NOT MATTER
-                                {
-                                if( timeE2 || ( timeE1 > TICK ) )
-
-                                etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , reg.timeDeletedBitsClearedC1 , reg.timeDeletedBitsClearedC2 ) ;
-                                sCountT timeE2 = timeN2 ;
-                                countT  timeE1 = timeN1 ;
-                                _IO_
+                                thirdC::c_memsetIF( tin0P , reg.pbSexDeletedBits , sizeof reg.pbSexDeletedBits ) ;                               //ALL OF THIS RACES WITH OTHER PROCESSES BUT THAT DOES NOT MATTER
                             {
-                            if( !thirdC::c_strcmpIF( tin0P , postName , reg.postPoolName ) )
-                            
-                            poolRegistrationS& reg = pRegs[ offr ] ;
+                            if( timeE2 || ( timeE1 > TICK ) )
+
+                            etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , reg.timeDeletedBitsClearedC1 , reg.timeDeletedBitsClearedC2 ) ;
+                            sCountT timeE2 = timeN2 ;
+                            countT  timeE1 = timeN1 ;
                             _IO_
                         {
-                        for( countT offr = 0 ; offr < CpOOLrEGISTRATIONSmAX ; offr ++ )
-                        poolRegistrationS* pRegs = (poolRegistrationS*)home.pb_pPoolReg ;
-
-                        /**/etRock.traceF( tin0P , T(postName) ) ;
-                        const osTextT* postName = (osTextT*)stPoolNames.downF( tin0P , hWalk ) ;
+                        if( !thirdC::c_strcmpIF( tin0P , postName , reg.postPoolName ) )
+                        
+                        poolRegistrationS& reg = pRegs[ offr ] ;
                         _IO_
                     {
-                    do
-                    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    for( countT offr = 0 ; offr < CpOOLrEGISTRATIONSmAX ; offr ++ )
+                    poolRegistrationS* pRegs = (poolRegistrationS*)home.pb_pPoolReg ;
+
+                    /**/etRock.traceF( tin0P , T(postName) ) ;
+                    const osTextT* postName = (osTextT*)stPoolNames.downF( tin0P , hWalk ) ;
                     _IO_
                 {
-                if( stPoolNames )
-                stPoolNames.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-
-                etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
-                ZE( sCountT , timeN2 ) ;
-                ZE( countT  , timeN1 ) ;
-
-                /**/etRock.traceF( tin0P , T("clearing sexC deleted bits") ) ;
+                do
+                handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 _IO_
             {
-            if( !( idCycle % TUCK ) )
+            if( stPoolNames )
+            stPoolNames.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
+            etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+            ZE( sCountT , timeN2 ) ;
+            ZE( countT  , timeN1 ) ;
+
+            /**/etRock.traceF( tin0P , T("clearing sexC deleted bits") ) ;
+            _IO_
+        {
+        if( !( idCycle % TUCK ) )
+
+        }
             /**/etRock.traceF( tin0P , T("deleted  poolC empties") ) ;
             poolC::deleteEmptiesIfIF( tin0P ) ;
             /**/etRock.traceF( tin0P , T("deleting poolC empties") ) ;
             _IO_
         {
-        if( ++ idCycle && !( idCycle % ( TUCK >> 4 ) ) )                                                                                                                           // SUPPRESSED FOR WOTH 01 TOCK TO ALLOW adamMainF TO CALL pMainF AND pMainF TO DO ITS INITIALIZATION ; THIS IS AN OPTIMIZATION TO AVOID UNNECESSARY DT/CT OF sexC INSTANCES WITH SAME SPECIFICATIONS
+        if( !( idCycle % TUCK ) )
 
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
