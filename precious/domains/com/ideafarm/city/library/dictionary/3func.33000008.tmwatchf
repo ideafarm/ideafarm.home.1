@@ -177,9 +177,9 @@ DONE( tmWatchF )
     //**********************************************************************************************************************************************************************************************************************************************************************************
 
     }
-        /**/etRock.traceF( tin0P , T("tmWatchF / loop -- [((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        /**/etRock.traceF( tin0P , T("tmWatchF / loop -- [((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         }
-            ++ s ; etThread.osSleepF( tin0P , !ether ? TOCK : TOCK >> 3 ) ;
+            ++ s ; etThread.osSleepF( tin0P , !ether ? TOCK : TOCK >> 1 ) ;
             _IO_
         {
         TELL( "napping for a tock" ) ;
@@ -190,7 +190,7 @@ DONE( tmWatchF )
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //********                                              ****************************************************************************************************************************************************************************************************************************
-        //********    NAP FOR A TOCK (OR 1/8 TOCK IF FIRED)     ****************************************************************************************************************************************************************************************************************************
+        //********    NAP FOR A TOCK (OR 1/2 TOCK IF FIRED)     ****************************************************************************************************************************************************************************************************************************
         //********                                              ****************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -198,14 +198,14 @@ DONE( tmWatchF )
 #endif
         }
             etRock.traceF( tin0P , T("tmWatchF: traced  pool tallies 2") ) ;
-            LOGrAW( T("[time,idAdam,tallyAll]: ")+TT(timeN1,timeN2)+T("    ")+TF2(((tin1S&)tin0P).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tallyAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") ) ;
+            LOGrAW( T("[time,idAdam,tallyAll]: ")+TT(timeN1,timeN2)+tb4+TF2(((tin1S&)tin0P).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(tallyAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") ) ;
         
             etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
         
             }
-                LOGrAW( T("    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tally,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(pczLever,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") ) ;
+                LOGrAW( tb4+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(tally,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pczLever,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") ) ;
             
                 tallyAll += tally ;
                 countT tally = swTally ;
@@ -786,7 +786,7 @@ DONE( tmWatchF )
             etThread.diskFileOrDirDeleteF( tin0P , tDirBlammo , flFILEoRdIRdELETE_RECURSE , 1 ) ;
             _IO_
         {
-        if( etThread.diskFileExistsF( tin0P , tDirBlammo+T("*") ) )
+        if( !( idCycle % ( TUCK >> 4 ) ) && etThread.diskFileExistsF( tin0P , tDirBlammo+T("*") ) )
         //DUPLICATE CODE: 33000008 33000008
 
         //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -803,7 +803,9 @@ DONE( tmWatchF )
         {
         if( etRock )
 
-        /**/etRock.traceF( tin0P , T("tmWatchF / loop ++ [((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        /**/etRock.traceF( tin0P , T("tmWatchF / loop ++ [idCycle,((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+        ++ idCycle ;
 
         _IO_
     {
