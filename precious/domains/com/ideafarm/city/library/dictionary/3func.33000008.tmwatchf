@@ -177,11 +177,13 @@ DONE( tmWatchF )
     //**********************************************************************************************************************************************************************************************************************************************************************************
 
     }
+        /**/etRock.traceF( tin0P , T("tmWatchF / loop -- [((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         }
             ++ s ; etThread.osSleepF( tin0P , !ether ? TOCK : TOCK >> 3 ) ;
             _IO_
         {
         TELL( "napping for a tock" ) ;
+        /**/etRock.traceF( tin0P , T("napping") ) ;
 
         //thirdC::osLogWrongNodeIF( tin0P ) ;
 
@@ -479,19 +481,13 @@ DONE( tmWatchF )
                 home.flags |= flHOMEs_INoUTtRACE ;
                 if( !( F(home.flags) & flHOMEs_INoUTtRACE ) ) etRock.traceF( tin0P , T("flHOMEs_INoUTtRACE turned on") ) ;
             {
-            else if( etThread.diskFileExistsF( tin0P , tOn ) )
+            else if( etThread.diskFileExistsF( tin0P , tFileControlTraceOn ) )
             }
                 etRock.traceF( tin0P , T("flHOMEs_INoUTtRACE off (control file created)") ) ;
-                etThread.boxPutF( tin0P , tOff , "The contents of this file do not matter.\r\nTo save space, use any plain text editor to make this an empty file.\r\nIf you delete this file, it wll be recreated in its default control directory.\r\nTo turn this control on or off, move this file to the \"on\" or the \"off\" folder." ) ;
+                etThread.boxPutF( tin0P , tFileControlTraceOff , "The contents of this file do not matter.\r\nTo save space, use any plain text editor to make this an empty file.\r\nIf you delete this file, it wll be recreated in its default control directory.\r\nTo turn this control on or off, move this file to the \"on\" or the \"off\" folder." ) ;
                 _IO_
             {
-            if( !etThread.diskFileExistsF( tin0P , tOff ) && !etThread.diskFileExistsF( tin0P , tOn ) )
-
-            etThread.diskMakeDirIfNeededF( tin0P , tOn  ) ;
-            etThread.diskMakeDirIfNeededF( tin0P , tOff ) ;
-            TN( tOn  , ""  ) ; tOn  = T("///ideafarm/controls/")+tUser+T("/on"  "/in.out.trace.txt") ;
-            TN( tOff , ""  ) ; tOff = T("///ideafarm/controls/")+tUser+T("/off" "/in.out.trace.txt") ;
-            TN( tUser , thirdC::postUserNameIF() ) ;
+            if( !etThread.diskFileExistsF( tin0P , tFileControlTraceOff ) && !etThread.diskFileExistsF( tin0P , tFileControlTraceOn ) )
             _IO_
         {
         TELL( "setting/resetting control flags" ) ;
@@ -692,8 +688,6 @@ DONE( tmWatchF )
                 if( !ether && !home.idIdeaFarmKeys )
 
                 if( ((tin1S&)tin0P).pag1->idAdam == ifcIDaDAM_2GLASS2 ) home.idIdeaFarmKeys = etThread.idIdeaFarmKeysF( tin0P ) ;   //O: THIS OPTIMIZATION REDUCES CALLS TO WO PER TOCK WHEN GLASS2 IS RUNNING IN THE CURRENT HOME
-
-                homeS& home = homeS::homeIF() ;
                 _IO_
             {
 
@@ -741,7 +735,6 @@ DONE( tmWatchF )
                         {
                         for( countT offr = 0 ; offr < CpOOLrEGISTRATIONSmAX ; offr ++ )
                         poolRegistrationS* pRegs = (poolRegistrationS*)home.pb_pPoolReg ;
-                        homeS& home = homeS::homeIF() ;
 
                         /**/etRock.traceF( tin0P , T(postName) ) ;
                         const osTextT* postName = (osTextT*)stPoolNames.downF( tin0P , hWalk ) ;
@@ -819,7 +812,6 @@ DONE( tmWatchF )
     while
     TN( tSayTick , "tick" ) ;
     TN( tDirBlammo , "" ) ; tDirBlammo = T("///ideafarm/controls/")+tUser+T("/blammo/") ;
-    TN( tUser , thirdC::postUserNameIF() ) ;
 
     //**********************************************************************************************************************************************************************************************************************************************************************************
     //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -858,6 +850,12 @@ DONE( tmWatchF )
 
     countT desireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZY ) ;
 
+    etThread.diskMakeDirIfNeededF( tin0P , tFileControlTraceOn  ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFileControlTraceOff ) ;
+    TN( tFileControlTraceOn  , ""  ) ; tFileControlTraceOn  = T("///ideafarm/controls/")+tUser+T("/on"  "/in.out.trace.txt") ;
+    TN( tFileControlTraceOff , ""  ) ; tFileControlTraceOff = T("///ideafarm/controls/")+tUser+T("/off" "/in.out.trace.txt") ;
+    TN( tUser , thirdC::postUserNameIF() ) ;
+
     const boolT b_tmWindows = !!( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_tmWindows ) ;
     //if( stQuitters.third          ) stQuitters.third          = 0 ;
     //if( stCatchers.third          ) stCatchers.third          = 0 ;
@@ -874,7 +872,6 @@ DONE( tmWatchF )
 
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , idLook ) ;
-    homeS& home = homeS::homeIF() ;
 
     ((tin123S&)tin0P).tell_tmWatchF_toIgnoreMeF() ;
 
@@ -899,6 +896,8 @@ DONE( tmWatchF )
     //U::    /*CODE SYNCH: 1610009 0010262*/
     //U::
     //U:://--------------------------------------------------------------------------
+
+    homeS& home = homeS::homeIF() ;
 
     TELL( "waiting for asynch impotence" ) ;
     //__( ((tin1S&)tin0P).glass.idThread - ifcIDtHREADlOW_tmWatchF ) ;
