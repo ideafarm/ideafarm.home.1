@@ -145,7 +145,7 @@ DONE( tmWatchF )
         BLAMMO ;
         //homeS::homeIF().flags |= flHOMEs_KILLsELFiMMEDIATELY ;
         //thirdC::osFireIF( tin0P ) ;
-        /**/etRock.traceF( tin0P , T("calling osFireIF, setting flHOMEs_KILLsELFiMMEDIATELY, and then calling BLAMMO because a file existed in ")+tDirBlammo ) ;
+        //etRock.traceF( tin0P , T("calling osFireIF, setting flHOMEs_KILLsELFiMMEDIATELY, and then calling BLAMMO because a file existed in ")+tDirBlammo ) ;
         etThread.diskFileOrDirDeleteF( tin0P , tDirBlammo , flFILEoRdIRdELETE_RECURSE , 1 ) ;
         _IO_
     {
@@ -177,13 +177,13 @@ DONE( tmWatchF )
     //**********************************************************************************************************************************************************************************************************************************************************************************
 
     }
-        /**/etRock.traceF( tin0P , T("tmWatchF / loop -- [((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tin0P , T("tmWatchF / loop -- [((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         }
             ++ s ; etThread.osSleepF( tin0P , !ether ? TOCK : TOCK >> 1 ) ;
             _IO_
         {
         TELL( "napping for a tock" ) ;
-        /**/etRock.traceF( tin0P , T("napping") ) ;
+        //etRock.traceF( tin0P , T("napping") ) ;
 
         //thirdC::osLogWrongNodeIF( tin0P ) ;
 
@@ -294,7 +294,7 @@ DONE( tmWatchF )
 #endif
 
         }
-            /**/etRock.traceF( tin0P , T("cancelled  quitter sockets") ) ;
+            //etRock.traceF( tin0P , T("cancelled  quitter sockets") ) ;
             }
                 }
                     ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
@@ -330,7 +330,7 @@ DONE( tmWatchF )
             {
             while( !etThread && !stQuitters.third && stQuitters )
             TELL( "canceling quitter sockets/+" ) ;
-            /**/etRock.traceF( tin0P , T("cancelling quitter sockets") ) ;
+            //etRock.traceF( tin0P , T("cancelling quitter sockets") ) ;
                 
             //**********************************************************************************************************************************************************************************************************************************************************************************
             //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -340,7 +340,7 @@ DONE( tmWatchF )
             //**********************************************************************************************************************************************************************************************************************************************************************************
             //**********************************************************************************************************************************************************************************************************************************************************************************
 
-            /**/etRock.traceF( tin0P , T("released  threads blocked catching socket datagrams") ) ;
+            //etRock.traceF( tin0P , T("released  threads blocked catching socket datagrams") ) ;
             }
                 stCatchers.ungrabF( tin0P ) ;
                 }
@@ -352,14 +352,14 @@ DONE( tmWatchF )
                                 if( POOP ) POOPR
                                 sock.writeF( tin0P , (countT)*pso , nicNameC( 1 ) , ifcIDtYPEdATAGRAM_LETSaLLqUIT ) ;
 
-                                /**/etRock.traceF( tin0P , T("[&sCatcher,idPortHe]:    ")+TfORsTRING((countT)pso)+tb4+TF4(idPortHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+                                //etRock.traceF( tin0P , T("[&sCatcher,idPortHe]:    ")+TfORsTRING((countT)pso)+tb4+TF4(idPortHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
                                 countT idPortHe = (countT)*pso ;
                                 socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
                                 _IO_
                             {
                             SCOOPS
                             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) //LEGACYwORKAROUND
-                            /**/etRock.traceF( tin0P , T("[&sCatcher]:    ")+TfORsTRING((countT)pso) ) ;
+                            //etRock.traceF( tin0P , T("[&sCatcher]:    ")+TfORsTRING((countT)pso) ) ;
                             _IO_
                         {
                         if( pso ) 
@@ -378,7 +378,7 @@ DONE( tmWatchF )
             {
             IFsCRATCHoK
             TELL( "releasing threads blocked catching socket datagrams" ) ;
-            /**/etRock.traceF( tin0P , T("releasing threads blocked catching socket datagrams") ) ;
+            //etRock.traceF( tin0P , T("releasing threads blocked catching socket datagrams") ) ;
                 
             //**********************************************************************************************************************************************************************************************************************************************************************************
             //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -388,7 +388,7 @@ DONE( tmWatchF )
             //**********************************************************************************************************************************************************************************************************************************************************************************
             //**********************************************************************************************************************************************************************************************************************************************************************************
 
-            /**/etRock.traceF( tin0P , T("released  threads blocked listening for new socket client connections") ) ;
+            //etRock.traceF( tin0P , T("released  threads blocked listening for new socket client connections") ) ;
             stAcceptors.ungrabF( tin0P ) ;
             }
                 while( !etThread && !stAcceptors.third && ~handle ) ;
@@ -417,7 +417,7 @@ DONE( tmWatchF )
             {
             if( !etThread && stAcceptors )
             stAcceptors.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-            /**/etRock.traceF( tin0P , T("releasing threads blocked listening for new socket client connections") ) ;
+            //etRock.traceF( tin0P , T("releasing threads blocked listening for new socket client connections") ) ;
             TELL( "releasing threads blocked listening for new socket client connections" ) ;
             _IO_
 
@@ -439,7 +439,7 @@ DONE( tmWatchF )
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
 
-        /**/etRock.traceF( tin0P , T("cancelled  sockets that are timed out idle") ) ;
+        //etRock.traceF( tin0P , T("cancelled  sockets that are timed out idle") ) ;
         stIdleTimeouters.ungrabF( tin0P ) ;
         }
             while( !etThread && !stIdleTimeouters.third && ~handle ) ;
@@ -456,7 +456,7 @@ DONE( tmWatchF )
         stIdleTimeouters.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         if( stIdleTimeouters.third    ) stIdleTimeouters.third    = 0 ;
         TELL( "canceling sockets that are timed out" ) ;
-        /**/etRock.traceF( tin0P , T("cancelling sockets that are timed out idle") ) ;
+        //etRock.traceF( tin0P , T("cancelling sockets that are timed out idle") ) ;
 
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -471,7 +471,7 @@ DONE( tmWatchF )
 //U::20241124@1205: TO FIND A BUG ; ENABLE IN PRODUCTION
 
         }
-            /**/etRock.traceF( tin0P , T("setted /resetted  control flags") ) ;
+            //etRock.traceF( tin0P , T("setted /resetted  control flags") ) ;
             }
                 home.flags &= ~( F(flHOMEs_INoUTtRACE) ) ;
                 if( F(home.flags) & flHOMEs_INoUTtRACE ) etRock.traceF( tin0P , T("flHOMEs_INoUTtRACE turned off") ) ;
@@ -488,7 +488,7 @@ DONE( tmWatchF )
                 _IO_
             {
             if( !etThread.diskFileExistsF( tin0P , tFileControlTraceOff ) && !etThread.diskFileExistsF( tin0P , tFileControlTraceOn ) )
-            /**/etRock.traceF( tin0P , T("setting/resetting control flags") ) ;
+            //etRock.traceF( tin0P , T("setting/resetting control flags") ) ;
             _IO_
         {
         if( !( idCycle % ( TUCK >> 3 ) ) )
@@ -548,7 +548,7 @@ DONE( tmWatchF )
         //**********************************************************************************************************************************************************************************************************************************************************************************
 
         }
-            /**/etRock.traceF( tin0P , T("maybe fired  self (if version refused or cannot see driver or glass1 or glass2)") ) ;
+            //etRock.traceF( tin0P , T("maybe fired  self (if version refused or cannot see driver or glass1 or glass2)") ) ;
             }
                 }
                     }
@@ -581,7 +581,7 @@ DONE( tmWatchF )
 
             //if( cSkip && cSkip -- ) ; //GIVES THIS PROCESS TIME TO GET STARTED AOK (SOME PROCESSES FAIL IF FIRED VERY EARLY DURING STARTUP)
             //S: SECURITY HOLE: SKIPPING LIKE THIS WILL ALLOW CODE TO DO LOTS OF WORK IN THE 02 TOCKS BEFORE THE VERSION REFUSAL BECOMES EFFECTIVE
-            /**/etRock.traceF( tin0P , T("maybe firing self (if version refused or cannot see driver or glass1 or glass2)") ) ;
+            //etRock.traceF( tin0P , T("maybe firing self (if version refused or cannot see driver or glass1 or glass2)") ) ;
             _IO_
         {
         if( !( idCycle % ( TUCK >> 0 ) ) )
@@ -595,7 +595,7 @@ DONE( tmWatchF )
         //**********************************************************************************************************************************************************************************************************************************************************************************
 
         }
-            /**/etRock.traceF( tin0P , T("maybe fired  self (if my fireall group has been fired)") ) ;
+            //etRock.traceF( tin0P , T("maybe fired  self (if my fireall group has been fired)") ) ;
             }
                 if( ether ) ;
                 FIREmYSELF ;
@@ -603,7 +603,7 @@ DONE( tmWatchF )
             {
             if( ((tin1S&)tin0P).pag1->idGroupFireAll && ((tin1S&)tin0P).pag1->idGroupFireAll <= CfIREaLLrANKS && home.pFireAll[ ((tin1S&)tin0P).pag1->idGroupFireAll - 1 ].bFire )
             thirdC::dosPriorityProcessIF( tin0P ) ; //THIS ENFORCES RULE THAT USER CANNOT CHANGE THE PRIORITY CLASS OF AN IFC PROCESS; (IFC MAKES THIS ASSUMPTION SO THAT IT CAN USE YIELD WITHOUT HAVING CPU SPINS)
-            /**/etRock.traceF( tin0P , T("maybe firing self (if my fireall group has been fired)") ) ;
+            //etRock.traceF( tin0P , T("maybe firing self (if my fireall group has been fired)") ) ;
         {
         if( !( idCycle % ( TUCK >> 2 ) ) )
 
@@ -619,7 +619,7 @@ DONE( tmWatchF )
 
 #endif
         }
-            /**/etRock.traceF( tin0P , T("traced  a memory readability map") ) ;
+            //etRock.traceF( tin0P , T("traced  a memory readability map") ) ;
             }
                 }
                     }
@@ -648,9 +648,9 @@ DONE( tmWatchF )
                 _IO_
             {
             else
-            if( !bTraceMemoryReadability ) /*;*/ etRock.traceF( tin0P , T("not tracing memory usage [idAdam]:    ")+TF2(((tin1S&)tin0P).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            if( !bTraceMemoryReadability ) ; //etRock.traceF( tin0P , T("not tracing memory usage [idAdam]:    ")+TF2(((tin1S&)tin0P).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             _IO_
-            /**/etRock.traceF( tin0P , T("tracing a memory readability map") ) ;
+            //etRock.traceF( tin0P , T("tracing a memory readability map") ) ;
         {
         if( !( idCycle % ( TUCK >> 1 ) ) )
 
@@ -665,7 +665,7 @@ DONE( tmWatchF )
 //U::TO FIND A BUG (COMMENTED OUT TO STFU
 
         }
-            /**/etRock.traceF( tin0P , T("maybe fired  self (if key does not exist)") ) ;
+            //etRock.traceF( tin0P , T("maybe fired  self (if key does not exist)") ) ;
             }
                 FIREmYSELF ;
                 etRock.traceF( tin0P , T("firing myself since keys not found") ) ;
@@ -701,7 +701,7 @@ DONE( tmWatchF )
             {
             IFsCRATCHoK
             ZE( boolT , bFireSelf ) ;
-            /**/etRock.traceF( tin0P , T("maybe firing self (if key does not exist)") ) ;
+            //etRock.traceF( tin0P , T("maybe firing self (if key does not exist)") ) ;
         {
         if( !( idCycle % ( TUCK >> 3 ) ) )
 
@@ -714,7 +714,7 @@ DONE( tmWatchF )
         //**********************************************************************************************************************************************************************************************************************************************************************************
 
         }
-            /**/etRock.traceF( tin0P , T("cleared  sexC deleted bits") ) ;
+            //etRock.traceF( tin0P , T("cleared  sexC deleted bits") ) ;
             stPoolNames.ungrabF( tin0P ) ;
             }
                 while( ~hWalk ) ;
@@ -742,7 +742,7 @@ DONE( tmWatchF )
                     for( countT offr = 0 ; offr < CpOOLrEGISTRATIONSmAX ; offr ++ )
                     poolRegistrationS* pRegs = (poolRegistrationS*)home.pb_pPoolReg ;
 
-                    /**/etRock.traceF( tin0P , T(postName) ) ;
+                    //etRock.traceF( tin0P , T(postName) ) ;
                     const osTextT* postName = (osTextT*)stPoolNames.downF( tin0P , hWalk ) ;
                     _IO_
                 {
@@ -757,15 +757,15 @@ DONE( tmWatchF )
             ZE( sCountT , timeN2 ) ;
             ZE( countT  , timeN1 ) ;
 
-            /**/etRock.traceF( tin0P , T("clearing sexC deleted bits") ) ;
+            //etRock.traceF( tin0P , T("clearing sexC deleted bits") ) ;
             _IO_
         {
         if( !( idCycle % TUCK ) )
 
         }
-            /**/etRock.traceF( tin0P , T("deleted  poolC empties") ) ;
+            //etRock.traceF( tin0P , T("deleted  poolC empties") ) ;
             poolC::deleteEmptiesIfIF( tin0P ) ;
-            /**/etRock.traceF( tin0P , T("deleting poolC empties") ) ;
+            //etRock.traceF( tin0P , T("deleting poolC empties") ) ;
             _IO_
         {
         if( !( idCycle % TUCK ) )
@@ -782,7 +782,7 @@ DONE( tmWatchF )
             BLAMMO ;
             //homeS::homeIF().flags |= flHOMEs_KILLsELFiMMEDIATELY ;
             //thirdC::osFireIF( tin0P ) ;
-            /**/etRock.traceF( tin0P , T("calling osFireIF, setting flHOMEs_KILLsELFiMMEDIATELY, and then calling BLAMMO because a file existed in ")+tDirBlammo ) ;
+            //etRock.traceF( tin0P , T("calling osFireIF, setting flHOMEs_KILLsELFiMMEDIATELY, and then calling BLAMMO because a file existed in ")+tDirBlammo ) ;
             etThread.diskFileOrDirDeleteF( tin0P , tDirBlammo , flFILEoRdIRdELETE_RECURSE , 1 ) ;
             _IO_
         {
@@ -803,7 +803,7 @@ DONE( tmWatchF )
         {
         if( etRock )
 
-        /**/etRock.traceF( tin0P , T("tmWatchF / loop ++ [idCycle,((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tin0P , T("tmWatchF / loop ++ [idCycle,((tin1S&)tin0P).pag1,((tin1S&)tin0P).pag1->ctWatch]:    ")+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)((tin1S&)tin0P).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((tin1S&)tin0P).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         ++ idCycle ;
 
