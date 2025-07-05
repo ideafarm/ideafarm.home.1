@@ -4393,6 +4393,7 @@ it is illegal to refer to this symbol in the definition of an adam
         #include <ws2tcpip.h>
         #include <winsock2.h>
         #include <windows.h>
+        #include <lm.h>
         #include <powrprof.h>
         #include <psapi.h>
         //#include <conio.h>
