@@ -10,12 +10,16 @@
 REST
 
 etherC::loafIF( tin0P ) ;
-etThread.traceF( tin0P , T("fooey") ) ;
 
-countT rc = NetServerEnum( 0 , 101 , &pbBuffer , MAX_PREFERRED_LENGTH , &cEntriesListed , &cEntriesVisible , SV_TYPE_ALL , 0 , 0 ) ;
-ZE( countT , cEntriesVisible ) ;
-ZE( countT , cEntriesListed ) ;
-ZE( byteT* , pbBuffer ) ;
+etThread.traceF( tin0P , T("queried") ) ;
+//static countT rc = NetServerEnum( 0 , 101 , (unsigned char**)&pbBuffer , MAX_PREFERRED_LENGTH , (unsigned long*)&cEntriesListed , (unsigned long*)&cEntriesVisible , SV_TYPE_ALL , 0 , 0 ) ;
+static countT rc = NetServerEnum( 0 , 100 , (unsigned char**)&pbBuffer , MAX_PREFERRED_LENGTH , (unsigned long*)&cEntriesListed , (unsigned long*)&cEntriesVisible , SV_TYPE_ALL , 0 , 0 ) ;
+etThread.traceF( tin0P , T("querying") ) ;
+static ZE( countT , cEntriesVisible ) ;
+static ZE( countT , cEntriesListed ) ;
+static ZE( byteT* , pbBuffer ) ;
+
+// ERROR_NO_BROWSER_SERVERS_FOUND: THIS API REQUIRES THE WINDOWS BROWSER SERVICE, WHICH IS LEGACY AND NO LONGER LISTED IN THE SERVICES MANAGER
 
 TODO
 
