@@ -11471,7 +11471,7 @@ this is the name of the host that the ifc system uses to map names to nicNameC v
 /**/
 /*1*//*postIFCnAMEsERVER*//*1*/
 
-#define postIFCnAMEsERVER "NS4.BAYAREA.NET"
+#define postIFCnAMEsERVER "hidden.ideafarm.com"
 
 
 //
