@@ -16,10 +16,13 @@ DONE( tmAskDnsF )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
         TELL( "sleeping for 2 tock" )
-        sockd.writeF( tin0P , 0x35 , socketC::nicNameIF( tin0P , ether , T(postIFCnAMEsERVER) ) , pbQuery , cbQuery ) ;
-        TELL( "writing query datagram to the IdeaFarm " "(tm) City name server" )
+        sockd.writeF( tin0P , 0x35 , nnServer ) , pbQuery , cbQuery ) ;
+        TELL( "writing query datagram" )
     {
     while( !ether && !etThread && !bGoItIt && !bTimeout )
+
+    //nicNameC nnServer = etThread.sockNicNameF( tin0P , T(postIFCnAMEsERVER) ) ;
+    nicNameC nnServer = etThread.sockNicNameF( tin0P , T("127.0.0.1") ) ;               //U::20250706@1645: FOR TESTING ONLY; NOT FOR PRODUCTION
 
     countT    cbQuery    =            pTaskP->c5 ;
     byteT*    pbQuery    =    (byteT*)pTaskP->c4 ;
