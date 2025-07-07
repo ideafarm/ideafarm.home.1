@@ -27,7 +27,7 @@ REST
                 }
                     break ;
     
-                    if( idTypeAnswer == ifcIDtYPEdNSrEPLY_ANSWER ) etThread.strokeF( tin0P , tMyDomainName+T(" is registered as being at ")+T(nnSingularity)+T("\r\n") ) ;
+                    if( idTypeAnswer == ifcIDtYPEdNSrEPLY_ANSWER ) etThread.traceF( tin0P , tMyDomainName+T(": ")+T(nnSingularity) ) ;
     
                     soul >> nnSingularity ;
                     nicNameC nnSingularity ;
@@ -66,7 +66,7 @@ REST
     {
     while( !etThread && stSoul )
     
-    if( !stSoul ) etThread.strokeF( tin0P , tMyDomainName+T(" is not registered\r\n") ) ;
+    if( !stSoul ) etThread.traceF( tin0P , tMyDomainName+T(" is not registered") ) ;
     
     etThread.dnsQueryF( tin0P , stSoul , tMyDomainName , ifcIDtYPEdNSqUERY_A ) ;
     stackC stSoul( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
