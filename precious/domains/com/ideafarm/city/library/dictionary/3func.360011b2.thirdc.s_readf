@@ -34,9 +34,9 @@
         boolT bFail2 = cbData < sizeof( countT ) ? 1 : cbData != cbGram ;        // I REQUIRE PACKETS TO BE LENGTH PREFIXED (WITH LENGTH THAT INCLUDES THE PREFIX) ; THIS TEST ALSO REJECTS NULL LENGTH PACKETS
         boolT bFail1 = cbFrom != sizeof from ;
 
-        //((tin1S&)tin0P).pEther->traceF( tin0P , T("s_readF / recvfrom returned [cbData]:    ")+TF2(cbData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        ((tin1S&)tin0P).pEther->traceF( tin0P , T("s_readF / recvfrom returned [cbData]:    ")+TF2(cbData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         cbData = recvfrom( oshSock , pbc , ifcCBdATAGRAMmAX , 0 , (sockaddr*)&from , &cbFrom ) ;
-        //((tin1S&)tin0P).pEther->traceF( tin0P , T("s_readF / calling recvfrom") ) ;
+        ((tin1S&)tin0P).pEther->traceF( tin0P , T("s_readF / calling recvfrom") ) ;
         sCountT cbFrom = sizeof from ;
 
         idGram = offNext = 0 ;
