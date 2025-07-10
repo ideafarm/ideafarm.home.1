@@ -29,19 +29,19 @@ DONE( tmWorkF )
                             }
                                 }
                                     }
-                                        etRock.traceF( tin0P , T("!exception / could not write reply [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        etRock.traceF( tin0P , tSayExCouldNotWriteReply+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         POOPRqUIET
                                         countT rc = POOP ;
                                     {
                                     else
-                                    if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote reply") ) ;
+                                    if( !POOP ) /*;*/etRock.traceF( tin0P , tSayWroteReply ) ;
                                     sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
-                                    /**/etRock.traceF( tin0P , T("replying / 1 [cbr]:    ")+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    /**/etRock.traceF( tin0P , tSayReplying1/*+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
                                     _IO_
                                 {
                                 else
                                 }
-                                    etRock.traceF( tin0P , T("!exception / could not build reply [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    etRock.traceF( tin0P , tSayExCouldNotBuildReply+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     POOPRqUIET
                                     countT rc = POOP ;
                                     _IO_
@@ -54,7 +54,7 @@ DONE( tmWorkF )
                             IFsCRATCHoK
                             ZE( countT , cbr ) ;
                             ZE( byteT* , pbr ) ;
-                            /**/etRock.traceF( tin0P , T("replying / 2") ) ;
+                            /**/etRock.traceF( tin0P , tSayReplying2 ) ;
 
                             else                          /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             if( postError && *postError ) /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
@@ -88,7 +88,7 @@ DONE( tmWorkF )
                                                     //etRock.traceF( tin0P , T("U:: debug [tDomainNet]:    \"")+tDomainNet+T("\"") ) ;
                                                 
                                                     nicNameC nnOut ;
-                                                    /**/etRock.traceF( tin0P , T("AAAA request [tDomainNet]:    ")+tDomainNet ) ;
+                                                    /**/etRock.traceF( tin0P , tSayAAAARequest/*+tDomainNet*/ ) ;
                                                     _IO_
                                                 {
                                                 case ifcIDtYPEdNSqUERY_AAAA :
@@ -112,7 +112,7 @@ DONE( tmWorkF )
                                                     if( bDivert )
 
                                                     nicNameC nnOut ;
-                                                    /**/etRock.traceF( tin0P , T("A request [tDomainNet]:    ")+tDomainNet ) ;
+                                                    /**/etRock.traceF( tin0P , tSayARequest/*+tDomainNet*/ ) ;
                                                     _IO_
                                                 {
                                                 case ifcIDtYPEdNSqUERY_A :
@@ -142,12 +142,12 @@ DONE( tmWorkF )
 
                                                         }
                                                             }
-                                                                etRock.traceF( tin0P , T("!exception / could not write password suffix shared file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                                                                etRock.traceF( tin0P , tSayExCouldNotWritePasswordFile+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
                                                                 POOPRqUIET
                                                                 countT rc = POOP ;
                                                             {
                                                             else
-                                                            if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote password suffix shared file aok [tLong]:    ")+tLong ) ;
+                                                            if( !POOP ) /*;*/etRock.traceF( tin0P , tSayWrotePasswordFile/*+tLong*/ ) ;
                                                             ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
                                                             SCOOPS
                                                             _IO_
@@ -155,14 +155,14 @@ DONE( tmWorkF )
                                                         IFsCRATCHoK
                                                         TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
 
-                                                        etRock.traceF( tin0P , T("new         [tWoTimePasswordUrlSuffix]:    ")+tWoTimePasswordUrlSuffix ) ;
+                                                        etRock.traceF( tin0P , tSayNewPassword/*+tWoTimePasswordUrlSuffix*/ ) ;
 
                                                                               tGorillaSuffix = tWoTimePasswordUrlSuffix+tDotHiddenDotIdeafarmDotCom ;
                                                         tGorillaSuffixUsed  = tGorillaSuffix ; 
                                                                               tWoTimePasswordUrlSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
                                                         tWoTimePasswordUrlSuffixUsed = tWoTimePasswordUrlSuffix ;
 
-                                                        etRock.traceF( tin0P , T("old         [tWoTimePasswordUrlSuffix]:    ")+tWoTimePasswordUrlSuffix ) ;
+                                                        etRock.traceF( tin0P , tSayOldPassword/*+tWoTimePasswordUrlSuffix*/ ) ;
 
                                                         cUsed = 0 ;
                                                     {
@@ -171,13 +171,13 @@ DONE( tmWorkF )
                                                     }
                                                         bNewPassword = 1 ;
                                                         bDivert = 0 ;
-                                                        etRock.traceF( tin0P , T("resetting bDivert because suffix is the current expected value [tGorillaSuffix]:    ")+tGorillaSuffix ) ;
+                                                        etRock.traceF( tin0P , tSayResettingDivert2/*+tGorillaSuffix*/ ) ;
                                                     {
                                                     else if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffix ) )
                                                     }
                                                         }
                                                             bNewPassword = 1 ;
-                                                            etRock.traceF( tin0P , T("setting bNewPassword because suffix has already been used too many times or for too long [tGorillaSuffixUsed]:    ")+tGorillaSuffixUsed ) ;
+                                                            etRock.traceF( tin0P , tSaySettingNewPassword/*+tGorillaSuffixUsed*/ ) ;
                                                         {                                                                                            
                                                         if( ++ cUsed > 0x80 || timeE2 || timeE1 > TOCK << 4 )                                   //20250608@0853: "0x80 <- 0x20" AND "<< 4" <- "<< 2" W/O ANALYSIS (THE PRECEDING CHANGE SEEMED TO REDUCED STUTTER BY A LOT)
                                                                                                                                                 //20250607@1542: "0x20 <- 0x8" AND "<< 2" <- "<< 0" W/O ANALYSIS TO FIX STUTTER (MULTIPLE UPDATES TO A SINGLE USE)
@@ -187,14 +187,14 @@ DONE( tmWorkF )
                                                         ZE( countT  , timeE1 ) ;
 
                                                         bDivert = 0 ;                                                                       //PS:PERSONALITY: THE DUPLICATE USAGE IS ALWAYS HONORED, BUT THEN WILL BE RETIRED IF USED TOO MANY TIMES OR TOO MUCH TIME HAS ELAPSED SINCE WOTH USE
-                                                        etRock.traceF( tin0P , T("resetting bDivert because suffix has already been used [tGorillaSuffixUsed]:    ")+tGorillaSuffixUsed ) ;
+                                                        etRock.traceF( tin0P , tSayResettingDivert/*+tGorillaSuffixUsed*/ ) ;
                                                     {
                                                     if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffixUsed ) )
                                                     ZE( boolT , bNewPassword ) ;
                                                 {
                                                 if( bDivert )                                                                               //PS:PERSONALITY: HONOR THE USED SUFFIX SO THAT DUPLICATE QUERIES ALL RECEIVE THE SAME wh1 ANSWER UNTIL THE CURRENT PASSWORD IS USED
 
-                                                /**/etRock.traceF( tin0P , T("[domainNet,suffix,peer]:      \"")+T(psttw)+T("\"    \"")+T(psttSuffix)+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                                /**/etRock.traceF( tin0P , tSayDomainNetSuffixPeer/*+T(psttw)+T("\"    \"")+T(psttSuffix)+T("\"    \"")+tDomainPeer+T("\"")*/ ) ;
 
                                                 etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
                                                 TN( tDomainNet , "" ) ; tDomainNet = T(psttNet)+T(".hidden.ideafarm.com") ;
@@ -210,9 +210,10 @@ DONE( tmWorkF )
                                             {
                                             if( psttw && etThread.strIdF( tin0P , tHidden , psttw , 1 ) && etThread.strIdF( tin0P , tDash , psttw , 1 ) )
 
-                                            /**/etRock.traceF( tin0P , T("[domainGross,peer]:    \"")+tDomainGross+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                            /**/etRock.traceF( tin0P , tSayDomainGrossPeer/*+tDomainGross+tqb4q+tDomainPeer+tq*/ ) ;
                                             TN( tDomainGross , psttw ) ;
                                             if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
+                                            /**/etRock.traceF( tin0P , tSayLoweringCase ) ;
                                             *ps >> psttw ;
                                             ZE( strokeS* , psttw ) ;
                                             _IO_
@@ -220,6 +221,7 @@ DONE( tmWorkF )
                                         if( ps )
                                         stsQueries >> ps ;
                                         ZE( soulC* , ps ) ;
+                                        /**/etRock.traceF( tin0P , tSayPoppingQuery ) ;
                                         _IO_
                                     {
                                     while( stsQueries )
@@ -228,21 +230,25 @@ DONE( tmWorkF )
                                 else
                                 }
                                     idError = ifcIDeRRORdNS_CANNOTpARSEqUERY ;
-                                    etRock.traceF( tin0P , T("!exception / could not parse query [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    etRock.traceF( tin0P , tSayExCouldNotParse+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     POOPRqUIET
-                                    countT rc = POOP ;
                                 {
-                                if( POOP )
+                                if( rc )
                                 etThread.delF( tin0P , pbNU ) ;
+                                /**/etRock.traceF( tin0P , tSayCalledDnsParse ) ;
+                                countT rc = POOP ;
                                 ((tin1S&)tin0P).pEtScratch->dnsParseF( tin0P , pbNU , countTC() , stsQueries , stsRepliesNU , pbq , cbq ) ;
                                 SCOOPS
+                                /**/etRock.traceF( tin0P , tSayCallingDnsParse ) ;
                                 _IO_
                             {
                             IFsCRATCHoK
                             ZE( byteT* , pbNU ) ;
 
+                            /**/etRock.traceF( tin0P , tSayPurgedStacks ) ;
                             stsRepliesNU.purgeF( tin0P ) ;
                             stsQueries.purgeF( tin0P ) ;
+                            /**/etRock.traceF( tin0P , tSayPurgingStacks ) ;
                             _IO_
                         {
 
@@ -283,17 +289,17 @@ DONE( tmWorkF )
 
                 }
                     }
-                        etRock.traceF( tin0P , T("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: not diverting") ) ;
+                        etRock.traceF( tin0P , tSayNotDiverting ) ;
                         bDivert = 0 ;                                                                                                                                   //P:PERSONALITY: SUPPRESS DIVERSION IF RECENT QUERY FROM LETSENCRYPT
                     {
                     else
-                    if( !timeLetsEncryptLath2 && !timeLetsEncryptLath1 ) etRock.traceF( tin0P , T("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| * * * * D I V E R T I N G * * * *") ) ;
+                    if( !timeLetsEncryptLath2 && !timeLetsEncryptLath1 ) etRock.traceF( tin0P , tSayDiverting2 ) ;
                 {
                 if( bDivert )
 
                 }
                     }
-                        etRock.traceF( tin0P , T("----------------------------------------------------------------------------------- DIVERSION ENABLED") ) ;
+                        etRock.traceF( tin0P , tSayDiversionEnabled ) ;
                         bForceReply = timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
                     {
                     if( timeE2 || timeE1 > TICK << 0 )
@@ -305,7 +311,7 @@ DONE( tmWorkF )
                 {
                 else if( timeLetsEncryptLath2 || timeLetsEncryptLath1 )
                 }
-                    etRock.traceF( tin0P , T(bSuppressed?"+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSION REFRESHED":"+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSED") ) ;
+                    etRock.traceF( tin0P , bSuppressed ? tSayDiversionSupRefreshed : tSayDiversionSuppressed ) ;
                     etThread.osTimeNowF( tin0P , timeLetsEncryptLath1 , timeLetsEncryptLath2 ) ;
                     timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
                     countT bSuppressed = timeLetsEncryptLath2 || timeLetsEncryptLath1 ;
@@ -315,7 +321,8 @@ DONE( tmWorkF )
 
                 }
                     }
-                        /**/etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
+                        //U::PROD: /**/etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
+                        /**/etRock.traceF( tin0P , tSayUnknownDomain ) ;
                         bDivert = 1 ;
                     {
                     if( !bStripeWebHookNotifier && !bListedDomain )         //P:PERSONALITY: TRUSTED PEERS ARE DIRECTED TO wh1 ; UNTRUSTED PEERS ARE DIRECTED TO wh2
@@ -363,13 +370,14 @@ DONE( tmWorkF )
                             for( countT offt = 0 ; offt < mySettings.cListedDomain ; offt ++ )
                             mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-                            /**/etRock.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
+                            /**/etRock.traceF( tin0P , tSayPeer/*+T(psttPeer)*/ ) ;
                             tDomainPeer = T(psttPeer) ;
                             _IO_
                         {
                         else
-                        if( !psttPeer ) /*;*/etRock.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
+                        if( !psttPeer ) /*;*/etRock.traceF( tin0P , tSayExReverseLookupFailed ) ;
                         etThread.sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
+                        /**/etRock.traceF( tin0P , tSayDoingReverseLookup ) ;
                         ZE( strokeS* , psttPeer ) ;
                     {
                     ZE( boolT , bListedDomain ) ;
@@ -379,60 +387,93 @@ DONE( tmWorkF )
                 ZE( boolT , bDivert ) ;
                 boolT bSilent = 1 ;         //PS:PERSONALITY: I DO NOT RESPOND UNLESS I KNOW THE ANSWER TO THE QUERY ; THIS IS INTENDED TO CAUSE THE REQUESTING PEER TO FAILOVER TO MAKE THE REQUEST FROM ITS ALTERNATE DNS SERVER
 
-                mySettings.grabMe.ungrabF( tin0P ) ;
+                #endif
+                    }
+                        etThread.traceF( tin0P , tSayIncomingSample+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TT(timeE1,timeE2) ) ;
+                        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeStart1 , timeStart2 ) ;
+                        etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
+                        ZE( sCountT , timeE2 ) ;
+                        ZE( countT  , timeE1 ) ;
+                    {
+                    if( !( ++ idIn % ( TUCK >> 4 ) ) )
+                #if defined( NEVERdEFINED )
 
-                nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
-                nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook1 ) ;
-
-                TN( tb4            , "    "                          ) ;
-                TN( tTarget        , "target.ipv6-only.ideafarm.com" ) ;
-                TN( tWebHook1      , ""                              ) ; tWebHook1 = mySettings.tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
-                TN( tWebHooks      , ""                              ) ; tWebHooks = mySettings.tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
-
-                mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-
-                }
-                    etThread.traceF( tin0P , T("incoming [idIn,timeE]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TT(timeE1,timeE2) ) ;
-                    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeStart1 , timeStart2 ) ;
-                    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
-                    ZE( sCountT , timeE2 ) ;
-                    ZE( countT  , timeE1 ) ;
-                {
-                if( !( ++ idIn % ( TUCK >> 4 ) ) )
-
-                /**/etRock.traceF( tin0P , T("waited for a packet [nnPeer,cbq]:    ")+T(nnPeer)+tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                /**/etRock.traceF( tin0P , tSayWaitedForPacket/*+T(nnPeer)+tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
                 }
                     }
                         break ;
                         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                        etRock.traceF( tin0P , T("!exception / socket read failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        etRock.traceF( tin0P , tSayExReadFailed+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
                     if( POOP )
+                    etRock.traceF( tin0P , tSayCalledRead ) ;
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
                     SCOOPS
                     _IO_
                 {
                 IFsCRATCHoK
-                /**/etRock.traceF( tin0P , T("waiting for a packet") ) ;
+                /**/etRock.traceF( tin0P , tSayWaitingForPacket ) ;
                 nicNameC nnPeer ;
                 ZE( countT , idp ) ;
                 ZE( countT , cbq ) ;
                 ZE( byteT* , pbq ) ;
 
-                etRock.traceF( tin0P , T("inner loop begun") ) ;
+                etRock.traceF( tin0P , tSayInnerLoopBegun ) ;
                 _IO_
             {
             while( !POOP && !ether )
             ZE( boolT   , bForceReply          ) ;
             ZE( sCountT , timeLetsEncryptLath2 ) ;
             ZE( countT  , timeLetsEncryptLath1 ) ;
-            TN( tDotLetsEncryptDotOrg , ".letsencrypt.org"                     ) ;
-            TN( tSayGranting          , "    granting information    "         ) ;
-            TN( tSayDiverting         , "    diverting information    "        ) ;
-            TN( tSayUnknownDomain     , "    !exception / unknown peer domain" ) ;
-            TN( tSayPrefix            , "[nnPeer]:    "                        ) ;
+
+            TN( tDotLetsEncryptDotOrg           , ".letsencrypt.org"                         ) ;
+            TN( tSayGranting                    , "    granting information    "             ) ;
+            TN( tSayDiverting                   , "    diverting information    "            ) ;
+            TN( tSayUnknownDomain               , "    !exception / unknown peer domain"     ) ;
+            TN( tSayPrefix                      , "[nnPeer]:    "                            ) ;
+
+            TN( tSayPurgedStacks                , "purged  stacks"                                                                                                        ) ;
+            TN( tSayPurgingStacks               , "purging stacks"                                                                                                        ) ;
+            TN( tSayExCouldNotWriteReply        , "!exception / could not write reply [rc]:    "                                                                          ) ;
+            TN( tSayWroteReply                  , "wrote reply"                                                                                                           ) ;
+            TN( tSayReplying1                   , "replying / 1 [cbr]:    "                                                                                               ) ;
+            TN( tSayExCouldNotBuildReply        , "!exception / could not build reply [rc]:    "                                                                          ) ;
+            TN( tSayReplying2                   , "replying / 2"                                                                                                          ) ;
+            TN( tSayAAAARequest                 , "AAAA request [tDomainNet]:    "                                                                                        ) ;
+            TN( tSayARequest                    , "A request [tDomainNet]:    "                                                                                           ) ;
+            TN( tSayExCouldNotWritePasswordFile , "!exception / could not write password suffix shared file [rc,tLong]:    "                                              ) ;
+            TN( tSayWrotePasswordFile           , "wrote password suffix shared file aok [tLong]:    "                                                                    ) ;
+            TN( tSayNewPassword                 , "new         [tWoTimePasswordUrlSuffix]:    "                                                                           ) ;
+            TN( tSayOldPassword                 , "old         [tWoTimePasswordUrlSuffix]:    "                                                                           ) ;
+            TN( tSayResettingDivert2            , "resetting bDivert because suffix is the current expected value [tGorillaSuffix]:    "                                  ) ;
+            TN( tSaySettingNewPassword          , "setting bNewPassword because suffix has already been used too many times or for too long [tGorillaSuffixUsed]:    "    ) ;
+            TN( tSayResettingDivert             , "resetting bDivert because suffix has already been used [tGorillaSuffixUsed]:    "                                      ) ;
+            TN( tSayDomainNetSuffixPeer         , "[domainNet,suffix,peer]:      \""                                                                                      ) ;
+            TN( tSayDomainGrossPeer             , "[domainGross,peer]:    \""                                                                                             ) ;
+            TN( tSayLoweringCase                , "lowering case"                                                                                                         ) ;
+            TN( tSayPoppingQuery                , "popping a query"                                                                                                       ) ;
+            TN( tSayExCouldNotParse             , "!exception / could not parse query [rc]:    "                                                                          ) ;
+            TN( tSayCalledDnsParse              , "called  dnsParseF"                                                                                                     ) ;
+            TN( tSayCallingDnsParse             , "calling dnsParseF"                                                                                                     ) ;
+            TN( tSayNotDiverting                , "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: not diverting"                     ) ;
+            TN( tSayDiverting2                  , "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| * * * * D I V E R T I N G * * * *" ) ;
+            TN( tSayDiversionEnabled            , "----------------------------------------------------------------------------------- DIVERSION ENABLED"                 ) ;
+            TN( tSayDiversionSuppressed         , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSED"              ) ;
+            TN( tSayDiversionSupRefreshed       , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSION REFRESHED"   ) ;
+            TN( tSayPeer                        , "[tPeer]:    "                                                                                                          ) ;
+            TN( tSayExReverseLookupFailed       , "!exception / reverse DNS lookup failed"                                                                                ) ;
+            TN( tSayDoingReverseLookup          , "doing reverse DNS lookup"                                                                                              ) ;
+            TN( tSayIncomingSample              , "incoming [idIn,timeE]:    "                                                                                            ) ;
+            TN( tSayExReadFailed                , "!exception / socket read failed [rc]:    "                                                                             ) ;
+            TN( tSayCalledRead                  , "called readF"                                                                                                          ) ;
+            TN( tSayWaitedForPacket             , "waited for a packet [nnPeer,cbq]:    "                                                                                 ) ;
+            TN( tSayWaitingForPacket            , "waiting for a packet"                                                                                                  ) ;
+            TN( tSayInnerLoopBegun              , "inner loop begun"                                                                                                      ) ;
+
+            TN( tq    , "\""      ) ;
+            TN( tqb4q , "\"    \"") ;
 
             }
                 }
@@ -488,6 +529,14 @@ DONE( tmWorkF )
         ZE( countT , idClient ) ;
 
         mySettings.grabMe.ungrabF( tin0P ) ;
+
+        nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
+        nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook1 ) ;
+
+        TN( tTarget        , "target.ipv6-only.ideafarm.com" ) ;
+        TN( tWebHook1      , ""                              ) ; tWebHook1 = mySettings.tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
+        TN( tWebHooks      , ""                              ) ; tWebHooks = mySettings.tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
+
         _IO_
     {
     else

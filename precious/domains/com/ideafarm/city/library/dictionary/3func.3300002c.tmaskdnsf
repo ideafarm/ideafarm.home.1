@@ -9,17 +9,14 @@
 
 DONE( tmAskDnsF )
 }
-    TELL( "tmAskDnsF: cleaning up" )
     }
-        }
-            ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
-            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-        {
-        TELL( "sleeping for 2 tock" )
-        sockd.writeF( tin0P , 0x35 , nnServer , pbQuery , cbQuery ) ;
-        TELL( "writing query datagram" )
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 3 ) ;
+
+        if( !( ++ idLoop % 0x10 ) ) sockd.writeF( tin0P , 0x35 , nnServer , pbQuery , cbQuery ) ;
     {
     while( !ether && !etThread && !bGoItIt && !bTimeout )
+    ZE( countT , idLoop ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     //nicNameC nnServer = etThread.sockNicNameF( tin0P , T(postIFCnAMEsERVER) ) ;
     nicNameC nnServer = etThread.sockNicNameF( tin0P , T("127.0.0.1") ) ;               //U::20250706@1645: FOR TESTING ONLY; NOT FOR PRODUCTION
@@ -29,7 +26,6 @@ DONE( tmAskDnsF )
     boolT&    bTimeout   =   *(boolT*)pTaskP->c3 ;
     boolT&    bGoItIt     =   *(boolT*)pTaskP->c2 ;
     socketC&  sockd      = *(socketC*)pTaskP->c1 ;
-    TELL( "setting up" )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 )
 /*1*/TASK( tmAskDnsF )/*1*/
