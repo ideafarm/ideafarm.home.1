@@ -51990,7 +51990,7 @@ values at and above 00ff are used by spouseC to encode literal byte values
 /**/
 /*1*//*CiDtHREADtRACE*//*1*/
 
-#define CiDtHREADtRACE 0x40
+#define CiDtHREADtRACE 0x2
 
 
 //

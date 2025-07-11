@@ -249,7 +249,9 @@ DONE( tmWorkF )
                             stsRepliesNU.purgeF( tin0P ) ;
                             stsQueries.purgeF( tin0P ) ;
                             /**/etRock.traceF( tin0P , tSayPurgingStacks ) ;
+                            etRock.traceF( tin0P , tSayU0 ) ;
                             _IO_
+                            etRock.traceF( tin0P , tSayU1 ) ;
                         {
 
                         ++ idClient ;
@@ -281,10 +283,16 @@ DONE( tmWorkF )
                         //{
 
                         countT idError = ifcIDeRRORdNS_AOK ;
+                        etRock.traceF( tin0P , tSayU2 ) ;
                         _IO_
+                        ((tin123S&)tin0P).pcUtility[ 0 ] -- ;
+                        etRock.traceF( tin0P , tSayU3 ) ;
+                        ((tin123S&)tin0P).pcUtility[ 0 ] ++ ;
                     {
                     if( pbq && cbq )
+                    etRock.traceF( tin0P , tSayU4 ) ;
                     _IO_
+                    etRock.traceF( tin0P , tSayU5 ) ;
                 {
 
                 }
@@ -293,7 +301,20 @@ DONE( tmWorkF )
                         bDivert = 0 ;                                                                                                                                   //P:PERSONALITY: SUPPRESS DIVERSION IF RECENT QUERY FROM LETSENCRYPT
                     {
                     else
-                    if( !timeLetsEncryptLath2 && !timeLetsEncryptLath1 ) etRock.traceF( tin0P , tSayDiverting2 ) ;
+                    }
+                        etRock.traceF( tin0P , tSayU6 ) ;
+                        //etRock.traceF( tin0P , tSayDiverting2 ) ;
+                        etRock.traceF( tin0P , tSayU7 ) ;
+                        etRock.traceF( tin0P , tSayU8 ) ;
+                        etRock.traceF( tin0P , tSayU9 ) ;
+                        etRock.traceF( tin0P , tSayUa ) ;
+                        etRock.traceF( tin0P , tSayUb ) ;
+                        etRock.traceF( tin0P , tSayUc ) ;
+                        etRock.traceF( tin0P , tSayUd ) ;
+                        etRock.traceF( tin0P , tSayUe ) ;
+                        etRock.traceF( tin0P , tSayUf ) ;
+                    {
+                    if( !timeLetsEncryptLath2 && !timeLetsEncryptLath1 )
                 {
                 if( bDivert )
 
@@ -434,6 +455,22 @@ DONE( tmWorkF )
             TN( tSayUnknownDomain               , "    !exception / unknown peer domain"     ) ;
             TN( tSayPrefix                      , "[nnPeer]:    "                            ) ;
 
+            TN( tSayUf                          , "U::f"                                                                                                                  ) ;
+            TN( tSayUe                          , "U::e"                                                                                                                  ) ;
+            TN( tSayUd                          , "U::d"                                                                                                                  ) ;
+            TN( tSayUc                          , "U::c"                                                                                                                  ) ;
+            TN( tSayUb                          , "U::b"                                                                                                                  ) ;
+            TN( tSayUa                          , "U::a"                                                                                                                  ) ;
+            TN( tSayU9                          , "U::9"                                                                                                                  ) ;
+            TN( tSayU8                          , "U::8"                                                                                                                  ) ;
+            TN( tSayU7                          , "U::7"                                                                                                                  ) ;
+            TN( tSayU6                          , "U::6"                                                                                                                  ) ;
+            TN( tSayU5                          , "U::5"                                                                                                                  ) ;
+            TN( tSayU4                          , "U::4"                                                                                                                  ) ;
+            TN( tSayU3                          , "U::3"                                                                                                                  ) ;
+            TN( tSayU2                          , "U::2"                                                                                                                  ) ;
+            TN( tSayU1                          , "U::1"                                                                                                                  ) ;
+            TN( tSayU0                          , "U::0"                                                                                                                  ) ;
             TN( tSayPurgedStacks                , "purged  stacks"                                                                                                        ) ;
             TN( tSayPurgingStacks               , "purging stacks"                                                                                                        ) ;
             TN( tSayExCouldNotWriteReply        , "!exception / could not write reply [rc]:    "                                                                          ) ;
@@ -458,7 +495,10 @@ DONE( tmWorkF )
             TN( tSayCalledDnsParse              , "called  dnsParseF"                                                                                                     ) ;
             TN( tSayCallingDnsParse             , "calling dnsParseF"                                                                                                     ) ;
             TN( tSayNotDiverting                , "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: not diverting"                     ) ;
-            TN( tSayDiverting2                  , "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| * * * * D I V E R T I N G * * * *" ) ;
+
+            //U::PROD: TN( tSayDiverting2                  , "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| * * * * D I V E R T I N G * * * *" ) ;
+            TN( tSayDiverting2                  , "D I V E R T I N G" ) ;
+
             TN( tSayDiversionEnabled            , "----------------------------------------------------------------------------------- DIVERSION ENABLED"                 ) ;
             TN( tSayDiversionSuppressed         , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSED"              ) ;
             TN( tSayDiversionSupRefreshed       , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSION REFRESHED"   ) ;
@@ -600,7 +640,8 @@ DONE( tmWorkF )
     signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
     mySettingsS mySettings( tin0P , etThread ) ;
 
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;    // RUDE WOULD BE AN ATTACK SURFACE
+    //U::PROD: etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;    // RUDE WOULD BE AN ATTACK SURFACE
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;    // THIS IS SO PASSWORD (WEBHOOK SUFFIX) UPDATES ARE NOTICED TIMELY
 
     _IO_
