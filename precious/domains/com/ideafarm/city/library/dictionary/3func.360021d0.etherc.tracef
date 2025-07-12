@@ -13,7 +13,7 @@
     }
         }
             }
-                count04T cyclesNow = thirdC::cpuCyclesIF() ;
+                ((tin12S&)tin0P).pCyclesTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ] = thirdC::cpuCyclesIF() ;
 
                 osTimeSubtractF( tin0P , timeMe1 , timeMe2 , timeStart1 , timeStart2 ) ;
                 timeMe2 = timeEnd2 ;
@@ -229,8 +229,8 @@
                     OStEXTA(  ostoSay , ostoTimeNow ) ;
 
                     //OStEXTAK( ostoSay , " ! " ) ;
-                    //OStEXTA(  ostoSay , ostoCyclesNow ) ;
-                    // THIS IS NOT USEFULL AND IT OCCUPIES VALUABLE REAL ESTATE IN THE LINE ; ostoCyclesNow - ostoCyclesThread IS THE NUMBER OF CYCLES CONSUMED BY THE THREAD AT THE WO'TH CALL TO traceF
+                    //OStEXTA(  ostoSay , ostoCyclesStart ) ;
+                    // THIS IS NOT USEFULL AND IT OCCUPIES VALUABLE REAL ESTATE IN THE LINE ; ostoCyclesStart - ostoCyclesThread IS THE NUMBER OF CYCLES CONSUMED BY THE THREAD AT THE WO'TH CALL TO traceF
 
                     if( costPad2 < 0 ) costPad2 = 0 ;
                     sCountT costPad2 = ( TUCK >> 4 ) - thirdC::c_strlenIF( postComputerLanName ) ;
@@ -255,50 +255,48 @@
                         OStEXTAK( ostoCyclesThread     , "," ) ;
                         OStEXTCF( ostoCyclesThread     , pcCyclesThread[ 1 ] , '0' ) ;
 
-                      //OStEXTCF( ostoCyclesNow        , pcCyclesNow[    0 ] , '0' ) ;
-                      //OStEXTAK( ostoCyclesNow        , "," ) ;
-                      //OStEXTCF( ostoCyclesNow        , pcCyclesNow[    1 ] , '0' ) ;
+                      //OStEXTCF( ostoCyclesStart        , pcCyclesStart[    0 ] , '0' ) ;
+                      //OStEXTAK( ostoCyclesStart        , "," ) ;
+                      //OStEXTCF( ostoCyclesStart        , pcCyclesStart[    1 ] , '0' ) ;
 
-                        ((tin12S&)tin0P).pCyclesTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = cyclesNow ;
+                        ((tin12S&)tin0P).pCyclesTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = cyclesStart ;
 
                         countT* pcCyclesThread     = (countT*)&cyclesThread     ;
                         countT* pcCyclesDeltaNet   = (countT*)&cyclesDeltaNet   ;
                         countT* pcCyclesDeltaGross = (countT*)&cyclesDeltaGross ;
                         countT* pcCyclesLath       = (countT*)&cyclesLath       ;
                         countT* pcCyclesWoth       = (countT*)&cyclesWoth       ;
-                        countT* pcCyclesNow        = (countT*)&cyclesNow        ;
+                        countT* pcCyclesStart        = (countT*)&cyclesStart        ;
 
-                        count04T cyclesDeltaNet    = cyclesNow - cyclesEndLath  ;
-                        count04T cyclesDeltaGross  = cyclesNow - cyclesLath     ;
-                        count04T cyclesThread      = cyclesNow - cyclesWoth     ;
+                        count04T cyclesDeltaNet    = cyclesStart - cyclesEndLath  ;
+                        count04T cyclesDeltaGross  = cyclesStart - cyclesLath     ;
+                        count04T cyclesThread      = cyclesStart - cyclesWoth     ;
 
                         count04T cyclesEndLath     = ((tin12S&)tin0P).pCyclesTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ] ;
                         count04T cyclesLath        = ((tin12S&)tin0P).pCyclesTraceLath[    idDivertP - ifcIDtRACEdIVERT_min ] ;
                         count04T cyclesWoth        = ((tin12S&)tin0P).pCyclesTraceWoth[    idDivertP - ifcIDtRACEdIVERT_min ] ;
 
-                        ((tin12S&)tin0P).pCyclesTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ] = ((tin12S&)tin0P).pCyclesTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = cyclesNow ;
+                        ((tin12S&)tin0P).pCyclesTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ] = ((tin12S&)tin0P).pCyclesTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = cyclesStart ;
                         )
                             F(flagsP) & flTRACE_RESET
                             ||
                             !((tin12S&)tin0P).pCyclesTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ]
                         (
                         if
-
-                        count04T cyclesNow = thirdC::cpuCyclesIF() ;
                     {
                     else
                     }
                         OStEXTAK( ostoCyclesDeltaNet   , "--------,--------" ) ;
                         OStEXTAK( ostoCyclesDeltaGross , "--------,--------" ) ;
                         OStEXTAK( ostoCyclesThread     , "--------,--------" ) ;
-                      //OStEXTAK( ostoCyclesNow        , "--------,--------" ) ;
+                      //OStEXTAK( ostoCyclesStart        , "--------,--------" ) ;
                     {
                     if( !c_this )
 
                     OStEXT( ostoCyclesDeltaNet   , TUCK >> 3 ) ;
                     OStEXT( ostoCyclesDeltaGross , TUCK >> 3 ) ;
                     OStEXT( ostoCyclesThread     , TUCK >> 3 ) ;
-                  //OStEXT( ostoCyclesNow        , TUCK >> 3 ) ;
+                  //OStEXT( ostoCyclesStart        , TUCK >> 3 ) ;
 
                     }
                         OStEXTCF( ostoTimeDeltaNet , timeDeltaNet1 , '0' ) ;
@@ -321,12 +319,12 @@
                         sCountT timeT2 = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ;
                         countT  timeT1 = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 ;
 
-                        osTimeSubtractF( tin0P , timeDeltaNet1 , timeDeltaNet2 , ((tin12S&)tin0P).ptTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
+                                                                                     ((tin12S&)tin0P).ptTraceLath[    idDivertP - ifcIDtRACEdIVERT_min ] = start ;
 
-                        ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = now ;
-                        osTimeSubtractF( tin0P , timeDeltaGross1 , timeDeltaGross2 , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
+                        osTimeSubtractF( tin0P , timeDeltaGross1 , timeDeltaGross2 , ((tin12S&)tin0P).ptTraceLath[    idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceLath[    idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
+                        osTimeSubtractF( tin0P , timeDeltaNet1   , timeDeltaNet2   , ((tin12S&)tin0P).ptTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
 
-                        ((tin12S&)tin0P).ptTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ] = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = now ;
+                        ((tin12S&)tin0P).ptTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ] = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = start ;
                         )
                             F(flagsP) & flTRACE_RESET
                             ||
@@ -338,16 +336,13 @@
                         (
                         if
 
-                        sCountT timeDeltaNet2 = timeDeltaGross2 ;
-                        countT  timeDeltaNet1 = timeDeltaGross1 ;
+                        sCountT timeDeltaNet2   = timeStart2 ;
+                        countT  timeDeltaNet1   = timeStart1 ;
 
-                        timeStart2 = timeDeltaGross2 ;
-                        timeStart1 = timeDeltaGross1 ;
+                        sCountT timeDeltaGross2 = timeStart2 ;
+                        countT  timeDeltaGross1 = timeStart1 ;
 
-                        timeS now( timeDeltaGross1 , timeDeltaGross2 ) ;
-                        osTimeNowF( tin0P , timeDeltaGross1 , timeDeltaGross2 ) ;
-                        ZE( sCountT , timeDeltaGross2 ) ;
-                        ZE( countT  , timeDeltaGross1 ) ;
+                        timeS start( timeStart1 , timeStart2 ) ;
                     {
                     else
                     }
@@ -380,14 +375,11 @@
                 {
                 IFbEcAREFUL
             {
-            ZE( sCountT , timeStart2 ) ;
-            ZE( countT  , timeStart1 ) ;
 
             if( c_this ) pScoop = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , poop ) ; 
             byteT pbScoop[ sizeof( scoopC ) ] ;
             ZE( scoopC* , pScoop ) ;
 
-            countT c_this = (countT)this ;
             _IO_
         {
         else
@@ -476,6 +468,13 @@
     if( idDivertP < ifcIDtRACEdIVERT_min || idDivertP > ifcIDtRACEdIVERT_max ) { BLAMMOiD( idDivertP ) ; }
 
     _IO_
+
+    if( c_this ) osTimeNowF( tin0P , timeStart1 , timeStart2 ) ;
+    ZE( sCountT , timeStart2 ) ;
+    ZE( countT  , timeStart1 ) ;
+    const countT c_this = (countT)this ;
+
+    const count04T cyclesStart = thirdC::cpuCyclesIF() ;
 {
 /*1*/countT etherC::traceF( tin0S& tin0P , const strokeS* const psttP , const flagsT flagsP , const countT idDivertP )/*1*/
 
