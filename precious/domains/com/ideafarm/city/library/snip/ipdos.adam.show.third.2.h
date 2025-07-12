@@ -27907,10 +27907,13 @@ struct bookMarkOldS
     count04T    cCpuCycles2Or5Lath ;
     count04T    cTime2Or5Lath ;
     measure04T  brcm04Raw ;
-    timeS       ptTraceWoth[      1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
-    timeS       ptTraceLath[      1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
-    count04T    pCyclesTraceWoth[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
-    count04T    pCyclesTraceLath[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+
+    timeS       ptTraceWoth[         1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    timeS       ptTraceLath[         1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    timeS       ptTraceEndLath[      1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    count04T    pCyclesTraceWoth[    1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    count04T    pCyclesTraceLath[    1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    count04T    pCyclesTraceEndLath[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
 
     count4S     c4Tell ;
     strokeModeS strokeMode ;
@@ -34374,7 +34377,7 @@ examples
  voidT operator =( const countT rcP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.etherC.operator_assign!||
 
- voidT traceF( tin0S& tin0P , const strokeS* const psttP = 0 , const flagsT flagsP = flTRACE_null , const countT idDivertP = ifcIDtRACEdIVERT_0 ) ;
+ countT traceF( tin0S& tin0P , const strokeS* const psttP = 0 , const flagsT flagsP = flTRACE_null , const countT idDivertP = ifcIDtRACEdIVERT_0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021d0.etherC.traceF!||
  countT snapWordF( tin0S& tin0P , countT*& pcWordP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021e0.etherc.snapwordf!||

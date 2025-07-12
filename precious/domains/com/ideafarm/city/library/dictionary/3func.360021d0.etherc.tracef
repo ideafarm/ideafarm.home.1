@@ -8,14 +8,25 @@
 
 
 }
+    return timeMe1 ;
+
     }
         }
             }
-                osTimeNowF( tin0P , timeDeltaGrossMe1 , timeDeltaGrossMe2 ) ;
-                ZE( sCountT , timeDeltaGrossMe2 ) ;
-                ZE( countT  , timeDeltaGrossMe1 ) ;
+                count04T cyclesNow = thirdC::cpuCyclesIF() ;
+
+                osTimeSubtractF( tin0P , timeMe1 , timeMe2 , timeStart1 , timeStart2 ) ;
+                timeMe2 = timeEnd2 ;
+                timeMe1 = timeEnd1 ;
+
+                ((tin12S&)tin0P).ptTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ] = end ;
+
+                timeS end( timeEnd1 , timeEnd2 ) ;
+                osTimeNowF( tin0P , timeEnd1 , timeEnd2 ) ;
+                ZE( sCountT , timeEnd2 ) ;
+                ZE( countT  , timeEnd1 ) ;
             {
-            if( c_this && !( F(flagsP) & flTRACE_NOpREFIX ) ) //U:: CRAFT THIS BLOCK SO THAT TIME WITHIN ME IS NOT INCLUDED IN THE DELTA VALUE THAT IS IN THE PREFIX
+            if( c_this && !( F(flagsP) & flTRACE_NOpREFIX ) )
 
             DELzOMBIE( pScoop ) ;
             }
@@ -195,17 +206,21 @@
                     OStEXTAK( ostoSay , " | " ) ;
                     while( costPad1 -- ) { OStEXTAK( ostoSay , " " ) ; }
                     if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA(  ostoSay , ((tin123S&)tin0P).postThreadName ) ;
-                    OStEXTAK( ostoSay , " & " ) ;
+                    OStEXTAK( ostoSay , " + " ) ;
                     OStEXTC(  ostoSay , ((tin1S&)tin0P).glass.idThread , ' ' ) ;
-                    OStEXTAK( ostoSay , " ^ " ) ;
+                    OStEXTAK( ostoSay , " * " ) ;
                     OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idCell , ' ' ) ;
-                    OStEXTAK( ostoSay , " % " ) ;
+                    OStEXTAK( ostoSay , " & " ) ;
+                    OStEXTA(  ostoSay , ostoCyclesDeltaNet ) ;
+                    OStEXTAK( ostoSay , " ^ " ) ;
                     OStEXTA(  ostoSay , ostoCyclesDeltaGross ) ;
-                    OStEXTAK( ostoSay , " $ " ) ;
+                    OStEXTAK( ostoSay , " % " ) ;
                     OStEXTA(  ostoSay , ostoCyclesThread ) ;
-                    OStEXTAK( ostoSay , " # " ) ;
+                    OStEXTAK( ostoSay , " $ " ) ;
                     while( costPad2 -- ) { OStEXTAK( ostoSay , " " ) ; }
                     OStEXTA(  ostoSay , postComputerLanName ) ;
+                    OStEXTAK( ostoSay , " # " ) ;
+                    OStEXTA(  ostoSay , ostoTimeDeltaNet ) ;
                     OStEXTAK( ostoSay , " @ " ) ;
                     OStEXTA(  ostoSay , ostoTimeDeltaGross ) ;
                     OStEXTAK( ostoSay , " ! " ) ;
@@ -228,6 +243,10 @@
                     sCountT costPad1 = tin0P.idTypeTin != ifcIDtYPEtIN_123 ? 0 : ( TUCK >> 3 ) - thirdC::c_strlenIF( ((tin123S&)tin0P).postThreadName ) ;       //20221204@092: DOUBLED FIELD WIDTH TO ( TUCK >> 3 ) TO IMPROVE TRACE READABILITY
 
                     }
+                        OStEXTCF( ostoCyclesDeltaNet   , pcCyclesDeltaNet[  0 ] , '0' ) ;
+                        OStEXTAK( ostoCyclesDeltaNet   , "," ) ;
+                        OStEXTCF( ostoCyclesDeltaNet   , pcCyclesDeltaNet[  1 ] , '0' ) ;
+
                         OStEXTCF( ostoCyclesDeltaGross , pcCyclesDeltaGross[  0 ] , '0' ) ;
                         OStEXTAK( ostoCyclesDeltaGross , "," ) ;
                         OStEXTCF( ostoCyclesDeltaGross , pcCyclesDeltaGross[  1 ] , '0' ) ;
@@ -243,16 +262,19 @@
                         ((tin12S&)tin0P).pCyclesTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = cyclesNow ;
 
                         countT* pcCyclesThread     = (countT*)&cyclesThread     ;
+                        countT* pcCyclesDeltaNet   = (countT*)&cyclesDeltaNet   ;
                         countT* pcCyclesDeltaGross = (countT*)&cyclesDeltaGross ;
                         countT* pcCyclesLath       = (countT*)&cyclesLath       ;
                         countT* pcCyclesWoth       = (countT*)&cyclesWoth       ;
                         countT* pcCyclesNow        = (countT*)&cyclesNow        ;
 
+                        count04T cyclesDeltaNet    = cyclesNow - cyclesEndLath  ;
                         count04T cyclesDeltaGross  = cyclesNow - cyclesLath     ;
                         count04T cyclesThread      = cyclesNow - cyclesWoth     ;
 
-                        count04T cyclesLath        = ((tin12S&)tin0P).pCyclesTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] ;
-                        count04T cyclesWoth        = ((tin12S&)tin0P).pCyclesTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ] ;
+                        count04T cyclesEndLath     = ((tin12S&)tin0P).pCyclesTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ] ;
+                        count04T cyclesLath        = ((tin12S&)tin0P).pCyclesTraceLath[    idDivertP - ifcIDtRACEdIVERT_min ] ;
+                        count04T cyclesWoth        = ((tin12S&)tin0P).pCyclesTraceWoth[    idDivertP - ifcIDtRACEdIVERT_min ] ;
 
                         ((tin12S&)tin0P).pCyclesTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ] = ((tin12S&)tin0P).pCyclesTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = cyclesNow ;
                         )
@@ -266,17 +288,23 @@
                     {
                     else
                     }
+                        OStEXTAK( ostoCyclesDeltaNet   , "--------,--------" ) ;
                         OStEXTAK( ostoCyclesDeltaGross , "--------,--------" ) ;
                         OStEXTAK( ostoCyclesThread     , "--------,--------" ) ;
                       //OStEXTAK( ostoCyclesNow        , "--------,--------" ) ;
                     {
                     if( !c_this )
 
+                    OStEXT( ostoCyclesDeltaNet   , TUCK >> 3 ) ;
                     OStEXT( ostoCyclesDeltaGross , TUCK >> 3 ) ;
                     OStEXT( ostoCyclesThread     , TUCK >> 3 ) ;
                   //OStEXT( ostoCyclesNow        , TUCK >> 3 ) ;
 
                     }
+                        OStEXTCF( ostoTimeDeltaNet , timeDeltaNet1 , '0' ) ;
+                        OStEXTAK( ostoTimeDeltaNet , "." ) ;
+                        OStEXTCF( ostoTimeDeltaNet , timeDeltaNet2 , '0' ) ;
+
                         OStEXTCF( ostoTimeDeltaGross , timeDeltaGross1 , '0' ) ;
                         OStEXTAK( ostoTimeDeltaGross , "." ) ;
                         OStEXTCF( ostoTimeDeltaGross , timeDeltaGross2 , '0' ) ;
@@ -293,6 +321,8 @@
                         sCountT timeT2 = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ;
                         countT  timeT1 = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 ;
 
+                        osTimeSubtractF( tin0P , timeDeltaNet1 , timeDeltaNet2 , ((tin12S&)tin0P).ptTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
+
                         ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = now ;
                         osTimeSubtractF( tin0P , timeDeltaGross1 , timeDeltaGross2 , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
 
@@ -308,6 +338,12 @@
                         (
                         if
 
+                        sCountT timeDeltaNet2 = timeDeltaGross2 ;
+                        countT  timeDeltaNet1 = timeDeltaGross1 ;
+
+                        timeStart2 = timeDeltaGross2 ;
+                        timeStart1 = timeDeltaGross1 ;
+
                         timeS now( timeDeltaGross1 , timeDeltaGross2 ) ;
                         osTimeNowF( tin0P , timeDeltaGross1 , timeDeltaGross2 ) ;
                         ZE( sCountT , timeDeltaGross2 ) ;
@@ -315,12 +351,14 @@
                     {
                     else
                     }
+                        OStEXTAK( ostoTimeDeltaNet   , "--------.--------" ) ;
                         OStEXTAK( ostoTimeDeltaGross , "--------.--------" ) ;
                         OStEXTAK( ostoTimeThread     , "--------.--------" ) ;
                         OStEXTAK( ostoTimeNow        , "--------.--------" ) ;
                     {
                     if( !c_this )
 
+                    OStEXT( ostoTimeDeltaNet   , TUCK >> 3 ) ;
                     OStEXT( ostoTimeDeltaGross , TUCK >> 3 ) ;
                     OStEXT( ostoTimeThread     , TUCK >> 3 ) ;
                     OStEXT( ostoTimeNow        , TUCK >> 3 ) ;
@@ -328,20 +366,22 @@
                     _IO_
                 {
                 if( !( F(flagsP) & flTRACE_NOpREFIX ) )
-
+                                                                         //20250711@1713: ADDED "0x30" FOR DELTA NET TIME AND CYCLES
                 OStEXTAK( ostoSay , "\r\n" ) ;                           //20250622@1742: ADDED "0x20" FOR THE COMPUTER LAN NAME ADDED TODAY TO THE PREFIX
-                OStEXT( ostoSay , TUCK + 0x20 + CBrEADABILITYmAPdUMP ) ; //CS:CODEsYNC: 360020 360020 ; 20171225@1122: INCREASED TO BE BIG ENOUGH FOR MEMORY READABILITY MAP DUMP
+                OStEXT( ostoSay , TUCK + 0x50 + CBrEADABILITYmAPdUMP ) ; //CS:CODEsYNC: 360020 360020 ; 20171225@1122: INCREASED TO BE BIG ENOUGH FOR MEMORY READABILITY MAP DUMP
 
                 THREADmODE3oN( flTHREADmODE3_POOLaLLOCATEfROMhEAP )                         // MY CALLER MIGHT HAVE GRABBED LISTnAMEsYS_ROOT, WHICH COULD DEADLOCK sexC::sexC
 
                 }
-                    //if( POOP ) return ;
+                    //if( POOP ) return 0 ;
                     FV( flTRACE , flagsP ) ;
-                    //if( POOP ) return ;
+                    //if( POOP ) return 0 ;
                     //20160530@1034: I AM NOW CALLED BY poopC::gruntF SO MUST DO MY JOB EVEN IF IMPOTENCE
                 {
                 IFbEcAREFUL
             {
+            ZE( sCountT , timeStart2 ) ;
+            ZE( countT  , timeStart1 ) ;
 
             if( c_this ) pScoop = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , poop ) ; 
             byteT pbScoop[ sizeof( scoopC ) ] ;
@@ -397,6 +437,8 @@
         _IO_
     {
     if( bTrace )
+    ZE( sCountT , timeMe2 ) ;
+    ZE( countT  , timeMe1 ) ;
 
     }
         if( bAll ) bTrace ++ ;
@@ -435,7 +477,7 @@
 
     _IO_
 {
-/*1*/voidT etherC::traceF( tin0S& tin0P , const strokeS* const psttP , const flagsT flagsP , const countT idDivertP )/*1*/
+/*1*/countT etherC::traceF( tin0S& tin0P , const strokeS* const psttP , const flagsT flagsP , const countT idDivertP )/*1*/
 
 //DON'T USE _ IN HERE (WILL BLOW STACK)
 
