@@ -170,15 +170,18 @@ DONE( tmWhereF )
 
     stackC stSorter( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count3S ) ) ;
 
+    processGlobal2S::_processGlobal2I_IF().cDozeSprint = cDozeSprintWas ;
+
     }
-        thirdC::dosSleepWinkIF( tin0P ) ;
+        if( bNap ) thirdC::dosSleepWinkIF( tin0P ) ;
 
         }
             grabWhere.ungrabF( tin0P ) ;
-            //etThread.traceF( tin0P , tSay0 ) ; //U:: COMMENT OUT IN PRODUCTION
+            //etRock.traceF( tin0P , tSay0 ) ; //U:: COMMENT OUT IN PRODUCTION
             }
                 }
                     }
+                        //CONoUTrAW( ">" ) ;
                         }
                             }
                                 }
@@ -221,6 +224,8 @@ DONE( tmWhereF )
                             {
                             if( !cFoci )
 
+                            if( !( ++ cSamples % ( TICK >> 4 ) ) ) etRock.traceF( tin0P , tSaySamples+TF2(cSamples,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
                             //++ ( (countT&)swTallyWhat1 ) ;
                             _IO_
                         {
@@ -232,6 +237,7 @@ DONE( tmWhereF )
 
                         ++ ( (countT&)swTallyWhat1 ) ;
                         idWhat1 = where.idWhat1 ;
+                        //CONoUTrAW( "<" ) ;
                         _IO_
                     {
                     if( F(where.flagsThreadModeWhere) & flTHREADmODEwHERE_WHEREiSwATCHING )
@@ -253,15 +259,20 @@ DONE( tmWhereF )
                 _IO_
             {
             for( countT off = 0 ; off < cThreadsMaxWhereI ; off ++ )
-            //etThread.traceF( tin0P , tSay1 ) ; //U:: COMMENT OUT IN PRODUCTION
+            //etRock.traceF( tin0P , tSay1 ) ; //U:: COMMENT OUT IN PRODUCTION
             grabWhere.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-            //etThread.traceF( tin0P , tSay2 ) ; //U:: COMMENT OUT IN PRODUCTION
+            //etRock.traceF( tin0P , tSay2 ) ; //U:: COMMENT OUT IN PRODUCTION
             _IO_
         {
         if( cEnabledWhereI )
         _IO_
     {
     while( !etThread && !bQuitWhereI && !ether ) //COMMENT OUT !ether IF WANT TO LOOK AT QUIT BEHAVIOR
+    TN( tSaySamples , "[cSamples]:    " ) ;
+    ZE( countT , cSamples ) ;
+    /**/etRock.traceF( tin0P , T(bNap?"i will nap between samples to avoid pegging cpu [cProcessors]:    ":"i will not nap between samples since there are multiple cpus [cProcessors]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    const boolT  bNap = !!( cProcessors < 2 ) ;
+    const countT cProcessors = thirdC::osProcessorsIF( tin0P ) ;
     //TN( tSay0 , "where is looking 0 napping " ) ; //U:: COMMENT OUT IN PRODUCTION
     //TN( tSay1 , "where is looking 1 got" ) ; //U:: COMMENT OUT IN PRODUCTION
     //TN( tSay2 , "where is looking 2 grabbing" ) ; //U:: COMMENT OUT IN PRODUCTION
@@ -278,6 +289,11 @@ DONE( tmWhereF )
     //count8S c8idiFileFocus( 0x4000611 ) ;
     //count8S c8idiFileFocus( 0x6000f71 , 0x5000a01 , 0x6000021 , 0x5000511 ) ;
 
+                                  processGlobal2S::_processGlobal2I_IF().cDozeSprint = PERIODSpERdOZEcYCLE ;        // SPRINT EVERY PERIOD (THIS DISABLES DOZING COMPLETELY)
+    const countT cDozeSprintWas = processGlobal2S::_processGlobal2I_IF().cDozeSprint ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
     grabC&  grabWhere          =  *(grabC*)pTaskP->c7 ;
     countT& cThreadsMaxWhereI  = *(countT*)pTaskP->c6 ;
     tin0S** ppTin0WhereI       =  (tin0S**)pTaskP->c5 ;
@@ -288,7 +304,7 @@ DONE( tmWhereF )
     _IO_
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
-etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
+etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;   //20250712@1550: ifcTHREADpRIORITY_RUDE <- ifcTHREADpRIORITY_SPINLOCK
 /*1*/TASK( tmWhereF )/*1*/
 
 }
