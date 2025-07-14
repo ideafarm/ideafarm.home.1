@@ -16,12 +16,152 @@ TODO
 
 DONE( tmWorkF )
 }
-    //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_SHUTDOWN ) ;
-    //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
+    }
+        }
+            }
+                }
+                    etRock.traceF( tin0P , T("!exception / could not destruct socket [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    POOPRqUIET
+                    countT rc = POOP ;
+                {
+                if( POOP )
+
+                DELzOMBIE( psoDoomed ) ;
+                socketC* psoDoomed = (socketC*)pbSocket ;
+
+                SCOOPS
+            {
+            IFsCRATCHoK
+
+            }
+                }
+                    st_pbq << pbq ;
+
+                    }
+                        }
+                            bFail = 1 ;
+                            etRock.traceF( tin0P , tSayExReadFailed+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            POOPRqUIET
+                            countT rc = POOP ;
+                        {
+                        if( POOP )
+                        /**/etRock.traceF( tin0P , tSayCalledRead ) ;
+                        sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
+                        /**/etRock.traceF( tin0P , tSayCallingRead ) ;
+                        SCOOPS
+                    {
+                    IFsCRATCHoK
+                    nicNameC nnPeer ;
+                    ZE( countT , idp ) ;
+                    ZE( countT , cbq ) ;
+                    ZE( byteT* , pbq ) ;
+                {
+                while( !bFail && !ether && !POOP )
+
+                }
+                    }
+                        bFail = 1 ;
+                        etRock.traceF( tin0P , T("!exception / could not bind socket to the dns port [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    if( POOP )
+                    sockd.bindF( tin0P , ifcPORToLD2_DNS ) ;
+                    SCOOPS
+                {
+                IFsCRATCHoK
+            {
+            if( !bFail )
+
+            }
+                }
+                    bFail = 1 ;
+                    etRock.traceF( tin0P , T("!exception / could not construct socket [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    POOPRqUIET
+                    countT rc = POOP ;
+                {
+                if( POOP )
+
+                new( 0 , tin0P , pbSocket , sizeof pbSocket ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+
+                SCOOPS
+            {
+            IFsCRATCHoK
+            ZE( boolT , bFail ) ;
+            socketC& sockd = *(socketC*)pbSocket ;
+            byteT pbSocket[ sizeof( socketC ) ] ;
+        {
+        while( !POOP && !ether )
+        TN( tSayExReadFailed                , "!exception / socket read failed [rc]:    ") ;
+        TN( tSayCalledRead                  , "called readF"                             ) ;
+        TN( tSayCallingRead                 , "calling readF"                            ) ;
+
+        stackC st_pbq( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
+
+        mySettings.grabMe.ungrabF( tin0P ) ;
+    {
+    else
+    }
+        /**/etRock.traceF( tin0P , T("!exception / a required setting is missing") ) ;
+        mySettings.grabMe.ungrabF( tin0P ) ;
+    {
+    if( !mySettings )
+    mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+    etThread.traceF( tin0P , T("the settings are ready") ) ;
+    sgnSettingsReady.waitF( tin0P ) ;
+
+//    etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
+//    nicNameC nnHostWebLag3 ;
+//    nicNameC nnHostWebLag2 ;
+//    nicNameC nnHostWebLag1 ;
+//U::PROD: nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0000:7077:5400:05ff:fe59:278d") ) ;        //U:: PUT THIS INTO A SETTING ; THIS IS THE IPv6 ASSIGNED TO web1
+//    nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::1") ) ;        //U:: FOR TESTING
+//    nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
+
+    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF               , CBsTACKmIN << 1 ) , (countT)&mySettings      , (countT)&sgnSettingsReady     ) ;
+
+    etRock.traceF( tin0P , T("initialized [tWoTimePasswordUrlSuffix]:    ")+tWoTimePasswordUrlSuffix ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     }
         }
-            //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;
+            etRock.traceF( tin0P , T("!exception / could not write password suffix shared file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+            POOPRqUIET
+            countT rc = POOP ;
+        {
+        else
+        if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote password suffix shared file aok [tLong]:    ")+tLong ) ;
+        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
+        SCOOPS
+        _IO_
+    {
+    IFsCRATCHoK
+    TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
+
+    TN( tb4      , "    " ) ;
+    TN( tWoTimePasswordUrlSuffix      , ""                     ) ; tWoTimePasswordUrlSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;  //0x24: [0-9,a-z]
+    TN( tPasswordPrefix               , "psw_"                 ) ;            // THIS PREFIX IS FOR CONVENIENCE WHEN SEARCHING TRACE LOGS 
+
+    ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
+
+    signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
+    mySettingsS mySettings( tin0P , etThread ) ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;    // RUDE WOULD BE AN ATTACK SURFACE
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ;    // THIS IS SO PASSWORD (WEBHOOK SUFFIX) UPDATES ARE NOTICED TIMELY
+
+    tin123S& tinMe = (tin123S&)tin0P ;
+
+    _IO_
+{
+if( pTaskP )
+TASK( tmWorkF )
+
+DONE( tmWorkOldF )
+}
+    }
+        }
             }
                 DELzOMBIE( psoDoomed ) ;
                 socketC* psoDoomed = (socketC*)pbSocket ;
@@ -445,7 +585,6 @@ DONE( tmWorkF )
                 _IO_
             {
             while( !POOP && !ether )
-            //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;
             ZE( boolT   , bForceReply          ) ;
             ZE( sCountT , timeLetsEncryptLath2 ) ;
             ZE( countT  , timeLetsEncryptLath1 ) ;
@@ -626,9 +765,6 @@ DONE( tmWorkF )
     signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
     mySettingsS mySettings( tin0P , etThread ) ;
 
-    //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
-    //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , 1 ) ;
-
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;    // RUDE WOULD BE AN ATTACK SURFACE
     //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;    // PEER OF tmWhereF
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ;    // THIS IS SO PASSWORD (WEBHOOK SUFFIX) UPDATES ARE NOTICED TIMELY
@@ -638,7 +774,7 @@ DONE( tmWorkF )
     _IO_
 {
 if( pTaskP )
-TASK( tmWorkF )
+TASK( tmWorkOldF )
 
 DONE( tmUpdateNnHostsF )
 }
@@ -1364,7 +1500,7 @@ struct mySettingsS
 //  
 //P:PERSONALITY: I KEEP IP ADDRESSES CONFIDENTIAL, BY TREATING THE REQUESTED DOMAIN NAME LEAF AS A PASSWORD, AND BY APPLYING AN ALLOWLIST TO nnPeer
 
-// OBSOLETES 899_ (LIKE 899 BUT STFU TO BE FASTER)
+// OBSOLETES 8a5_ (LIKE 8a5 BUT MULTITHREADED)
 
 // OBSOLETED BY 
 
