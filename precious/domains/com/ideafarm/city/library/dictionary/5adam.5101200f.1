@@ -35,6 +35,14 @@ DONE( tmWorkF )
 
             }
                 }
+                    ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
+                    etRock.traceF( tin0P , T("waiting for all workers to go away [cWorkers]:    ")+TF2(cWorkers,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                {
+                while( cWorkers )
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+                bQuit ++ ;
+
+                }
                     st_pbq << pbq ;
 
                     }
@@ -57,6 +65,15 @@ DONE( tmWorkF )
                     ZE( byteT* , pbq ) ;
                 {
                 while( !bFail && !ether && !POOP )
+
+                }
+                    etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKMIN << 0 ) , (countT)&bQuit , (countT)&cWorkers , (countT)&st_pbq ) ;
+                    inc02AM( cWorkers ) ;
+                {
+                while( cDo -- )
+                countT cDo = 1 ;
+                ZE( boolT  , bQuit    ) ;
+                ZE( countT , cWorkers ) ;
 
                 }
                     }
@@ -157,6 +174,37 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+DONE( tmWorkerF )
+}
+    dec02AM( cWorkersP ) ;
+
+    }
+        }
+            }
+                etThread.delF( tin0P ) ;
+            {
+            if( pbq )
+
+            st_pbqP.ungrabF( tin0P ) ;
+            st_pbqP >> pbq ;
+            ZE( byteT* , pbq ) ;
+        {
+        else
+        if( !st_pbqP || bQuitP ) st_pbqP.ungrabF( tin0P ) ;
+
+        st_pbqP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        st_pbqP.waitF( tin0P ) ;
+    {
+    while( !bQuitP )
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    stackC& st_pbqP    = *(stackC*)pTaskP->c3 ;
+    countT& cWorkeersP = *(countT*)pTaskP->c2 ;
+    boolT&  bQuitP     =  *(boolT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
+TASK( tmWorkerF )
 
 DONE( tmWorkOldF )
 }
