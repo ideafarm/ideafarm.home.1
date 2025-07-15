@@ -1254,7 +1254,6 @@ DONE( tmWorkF )
                                                                 if( bStudent ) tName = tSharedFolderWorking+T(bLive?"idNewUserLiveStudentLath":"idNewUserTestStudentLath") ;
                                                                 TN( tName , "" ) ; 
 
-                                                                const boolT bLive = !etThread.strCompareF( tin0P , psttValueLive , tTrue ) ;
                                                                 _IO_
                                                             {
                                                             TN( tBodyInvite , "" ) ;
@@ -1278,8 +1277,10 @@ DONE( tmWorkF )
                                                         {
                                                         while( !ether && !POOP && !bRegistered )     //WILL continue UNTIL SUCCESSFULLY REGISTER A NEW USERNAME ; THIS CAUSES idNewUser TO INCREMENT UNTIL IT IS A VALUE THAT HAS NOT BEEN REGISTERED
 {
-if( !bStudent )
+if( !bStudent || !bLive )
 //THIS IS SUPPRESSED FOR STUDENTS SO THAT I CAN MANUALLY DISPENSE PREEXISTING CREDENTIALS (a.3 a.4 a.5 a.6 a.52) UNTIL ALL OF THESE PREEXISTING CREDENTIALS ARE DISPENSED TO REAL *STUDENT* SUBSCRIBERS
+
+                                                        const boolT bLive = !etThread.strCompareF( tin0P , psttValueLive , tTrue ) ;
 
                                                         ZE( boolT , bRetrySameUsername ) ;
                                                         TN( tNewPassword         , "" ) ;
