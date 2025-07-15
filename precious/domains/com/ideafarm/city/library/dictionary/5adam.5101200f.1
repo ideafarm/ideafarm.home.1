@@ -182,18 +182,26 @@ DONE( tmWorkerF )
     }
         }
             }
-                etThread.delF( tin0P ) ;
+                }
+                    etThread.delF( tin0P ) ;
+                {
+                if( pbq )
+
+                st_pbqP.ungrabF( tin0P ) ;
+                st_pbqP >> pbq ;
+                ZE( byteT* , pbq ) ;
             {
-            if( pbq )
+            else
+            }
+                break ;
+                st_pbqP.ungrabF( tin0P ) ;
+            {
+            if( !st_pbqP || bQuitP )
 
-            st_pbqP.ungrabF( tin0P ) ;
-            st_pbqP >> pbq ;
-            ZE( byteT* , pbq ) ;
+            st_pbqP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
-        else
-        if( !st_pbqP || bQuitP ) st_pbqP.ungrabF( tin0P ) ;
+        while( !bQuitP )
 
-        st_pbqP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         st_pbqP.waitF( tin0P ) ;
     {
     while( !bQuitP )
