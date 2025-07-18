@@ -67,7 +67,7 @@ DONE( tmWorkF )
                 while( !bFail && !ether && !POOP )
 
                 }
-                    etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKMIN << 0 ) , (countT)&bQuit , (countT)&cWorkers , (countT)&st_pbq ) ;
+                    etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 0 ) , (countT)&bQuit , (countT)&cWorkers , (countT)&st_pbq ) ;
                     inc02AM( cWorkers ) ;
                 {
                 while( cDo -- )
@@ -183,7 +183,7 @@ DONE( tmWorkerF )
         }
             }
                 }
-                    etThread.delF( tin0P ) ;
+                    etThread.delF( tin0P , pbq ) ;
                 {
                 if( pbq )
 
@@ -207,9 +207,9 @@ DONE( tmWorkerF )
     while( !bQuitP )
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-    stackC& st_pbqP    = *(stackC*)pTaskP->c3 ;
-    countT& cWorkeersP = *(countT*)pTaskP->c2 ;
-    boolT&  bQuitP     =  *(boolT*)pTaskP->c1 ;
+    stackC& st_pbqP   = *(stackC*)pTaskP->c3 ;
+    countT& cWorkersP = *(countT*)pTaskP->c2 ;
+    boolT&  bQuitP    =  *(boolT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 TASK( tmWorkerF )
