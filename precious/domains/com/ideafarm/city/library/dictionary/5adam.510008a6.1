@@ -1,0 +1,1528 @@
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+REST
+
+sgnDone_tmWorkF.waitF( tin0P ) ;
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
+
+TODO
+
+DONE( tmWorkF )
+}
+    }
+        }
+            }
+                }
+                    etRock.traceF( tin0P , T("!exception / could not destruct socket [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    POOPRqUIET
+                    countT rc = POOP ;
+                {
+                if( POOP )
+
+                DELzOMBIE( psoDoomed ) ;
+                socketC* psoDoomed = (socketC*)pbSocket ;
+
+                SCOOPS
+            {
+            IFsCRATCHoK
+
+            }
+                }
+                    ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
+                    etRock.traceF( tin0P , T("waiting for all workers to go away [cWorkers]:    ")+TF2(cWorkers,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                {
+                while( cWorkers )
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+                bQuit ++ ;
+
+                }
+                    st_pJob << (countT)pJob ;
+
+                    jobS* pJob = new( 0 , tin0P ) jobS( pbq , cbq , idp , nnPeer ) ; ___( pJob ) ;
+
+                    }
+                        }
+                            bFail = 1 ;
+                            etRock.traceF( tin0P , tSayExReadFailed+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            POOPRqUIET
+                            countT rc = POOP ;
+                        {
+                        if( POOP )
+                        /**/etRock.traceF( tin0P , tSayCalledRead ) ;
+                        sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
+                        /**/etRock.traceF( tin0P , tSayCallingRead ) ;
+                        SCOOPS
+                    {
+                    IFsCRATCHoK
+                    nicNameC nnPeer ;
+                    ZE( countT , idp ) ;
+                    ZE( countT , cbq ) ;
+                    ZE( byteT* , pbq ) ;
+                {
+                while( !bFail && !ether && !POOP )
+
+                }
+                    etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 0 ) , (countT)&bQuit , (countT)&bFail , (countT)&cWorkers , (countT)&mySettings , (countT)&sockd , (countT)&st_pJob ) ;
+                    inc02AM( cWorkers ) ;
+                {
+                while( cDo -- )
+                countT cDo = 1 ;
+                ZE( boolT  , bQuit    ) ;
+                ZE( countT , cWorkers ) ;
+
+                }
+                    }
+                        bFail = 1 ;
+                        etRock.traceF( tin0P , T("!exception / could not bind socket to the dns port [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    if( POOP )
+                    sockd.bindF( tin0P , ifcPORToLD2_DNS ) ;
+                    SCOOPS
+                {
+                IFsCRATCHoK
+            {
+            if( !bFail )
+
+            }
+                }
+                    bFail = 1 ;
+                    etRock.traceF( tin0P , T("!exception / could not construct socket [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    POOPRqUIET
+                    countT rc = POOP ;
+                {
+                if( POOP )
+
+                new( 0 , tin0P , pbSocket , sizeof pbSocket ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+
+                SCOOPS
+            {
+            IFsCRATCHoK
+            ZE( boolT , bFail ) ;
+            socketC& sockd = *(socketC*)pbSocket ;
+            byteT pbSocket[ sizeof( socketC ) ] ;
+        {
+        while( !POOP && !ether )
+        TN( tSayExReadFailed                , "!exception / socket read failed [rc]:    ") ;
+        TN( tSayCalledRead                  , "called readF"                             ) ;
+        TN( tSayCallingRead                 , "calling readF"                            ) ;
+
+        stackC st_pJob( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_countT ) ;
+
+        mySettings.grabMe.ungrabF( tin0P ) ;
+    {
+    else
+    }
+        /**/etRock.traceF( tin0P , T("!exception / a required setting is missing") ) ;
+        mySettings.grabMe.ungrabF( tin0P ) ;
+    {
+    if( !mySettings )
+    mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+    etThread.traceF( tin0P , T("the settings are ready") ) ;
+    sgnSettingsReady.waitF( tin0P ) ;
+
+//    etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
+//    nicNameC nnHostWebLag3 ;
+//    nicNameC nnHostWebLag2 ;
+//    nicNameC nnHostWebLag1 ;
+//U::PROD: nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0000:7077:5400:05ff:fe59:278d") ) ;        //U:: PUT THIS INTO A SETTING ; THIS IS THE IPv6 ASSIGNED TO web1
+//    nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::1") ) ;        //U:: FOR TESTING
+//    nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
+
+    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF               , CBsTACKmIN << 1 ) , (countT)&mySettings      , (countT)&sgnSettingsReady     ) ;
+
+    etRock.traceF( tin0P , T("initialized [tWoTimePasswordUrlSuffix]:    ")+tWoTimePasswordUrlSuffix ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    }
+        }
+            etRock.traceF( tin0P , T("!exception / could not write password suffix shared file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+            POOPRqUIET
+            countT rc = POOP ;
+        {
+        else
+        if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote password suffix shared file aok [tLong]:    ")+tLong ) ;
+        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
+        SCOOPS
+        _IO_
+    {
+    IFsCRATCHoK
+    TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
+
+    TN( tb4      , "    " ) ;
+    TN( tWoTimePasswordUrlSuffix      , ""                     ) ; tWoTimePasswordUrlSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;  //0x24: [0-9,a-z]
+    TN( tPasswordPrefix               , "psw_"                 ) ;            // THIS PREFIX IS FOR CONVENIENCE WHEN SEARCHING TRACE LOGS 
+
+    ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
+
+    signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
+    mySettingsS mySettings( tin0P , etThread ) ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;    // RUDE WOULD BE AN ATTACK SURFACE
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ;    // THIS IS SO PASSWORD (WEBHOOK SUFFIX) UPDATES ARE NOTICED TIMELY
+
+    tin123S& tinMe = (tin123S&)tin0P ;
+
+    _IO_
+{
+if( pTaskP )
+TASK( tmWorkF )
+
+DONE( tmWorkerF )
+}
+    dec02AM( cWorkersP ) ;
+
+    }
+        }
+            }
+                }
+                    IFsCRATCHoK{}
+
+                    etThread.delF( tin0P , pJob->pbq ) ;
+                    }
+                        }
+                            }
+                                etThread.delF( tin0P , pbr ) ;
+                                }
+                                    }
+                                        }
+                                            /**/etRock.traceF( tin0P , tSayExCouldNotWriteReply+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            POOPRqUIET
+                                            countT rc = POOP ;
+                                        {
+                                        else
+                                        if( !POOP ) ;//etRock.traceF( tin0P , tSayWroteReply ) ;
+                                        sockdP.writeF( tin0P , pJob->idp , pJob->nnPeer , pbr , cbr ) ;
+                                        //etRock.traceF( tin0P , tSayReplying1/*+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
+                                        _IO_
+                                    {
+                                    else
+                                    }
+                                        /**/etRock.traceF( tin0P , tSayExCouldNotBuildReply+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        POOPRqUIET
+                                        countT rc = POOP ;
+                                        _IO_
+                                    {
+                                    if( POOP )
+                                    ((tin1S&)tin0P).pEtScratch->dnsReplyF( tin0P , pbr , cbr , pJob->pbq , stsReplies , 1 , idError ) ;
+                                    SCOOPS
+                                    _IO_
+                                {
+                                IFsCRATCHoK
+                                ZE( countT , cbr ) ;
+                                ZE( byteT* , pbr ) ;
+                                //etRock.traceF( tin0P , tSayReplying2 ) ;
+
+                                else                          ;//etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                if( postError && *postError ) ;//etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
+                                const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
+                            {
+                            if( !bSilent || bForceReply )
+
+                            }
+                                }
+                                    }
+                                        if( !stsReplies ) idError = ifcIDeRRORdNS_NAMEnOTdEFINED ;
+
+                                        }
+                                            DEL( ps ) ;
+                                            }
+                                                }
+                                                    }
+                                                        break ;
+                                                    
+                                                        }
+                                                            rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                            bSilent = 0 ;
+                                                        {
+                                                        if( ~nnOut )
+                                                    
+                                                               if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tTarget      ) ) nnOut = nnHostWebLag0 ;
+                                                        //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1    ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                                        //     if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1    ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+
+                                                        //etRock.traceF( tin0P , T("U:: debug    [tTarget]:    \"")+tTarget+T("\"") ) ;
+                                                        //etRock.traceF( tin0P , T("U:: debug [tDomainNet]:    \"")+tDomainNet+T("\"") ) ;
+                                                    
+                                                        nicNameC nnOut ;
+                                                        //etRock.traceF( tin0P , tSayAAAARequest/*+tDomainNet*/ ) ;
+                                                        _IO_
+                                                    {
+                                                    case ifcIDtYPEdNSqUERY_AAAA :
+                                                    }
+                                                        break ;
+
+                                                        }
+                                                            rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                            bSilent = 0 ;
+                                                        {
+                                                        if( ~nnOut )
+
+                                                        }
+                                                            else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                                                 if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+                                                        {
+                                                        else
+                                                        }
+                                                                 if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook2 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+                                                        {
+                                                        if( bDivert )
+
+                                                        nicNameC nnOut ;
+                                                        //etRock.traceF( tin0P , tSayARequest/*+tDomainNet*/ ) ;
+                                                        _IO_
+                                                    {
+                                                    case ifcIDtYPEdNSqUERY_A :
+                                                    }
+                                                        break ;
+                                                    {
+                                                    case ifcIDtYPEdNSqUERY_CAA :
+                                                {
+                                                if( idClass == 1 ) switch( idType )
+
+                                                *ps >> idClass ;
+                                                ZE( countT , idClass ) ;
+
+                                                *ps >> idType ;
+                                                ZE( countT , idType ) ;
+
+                                                etThread.delF( tin0P , psttw ) ;
+                                                TN( tDomainNet , psttw ) ;
+                                                }
+                                                    etThread.delF( tin0P , psttSuffix ) ;
+
+                                                    }
+                                                        }
+                                                            etThread.osTimeNowF( tin0P , timeUsed1 , timeUsed2 ) ;
+                                                            timeUsed2 = timeUsed1 = 0 ;
+                                                            cUsed = 1 ;
+
+                                                            }
+                                                                }
+                                                                    /**/etRock.traceF( tin0P , tSayExCouldNotWritePasswordFile+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                                                                    POOPRqUIET
+                                                                    countT rc = POOP ;
+                                                                {
+                                                                else
+                                                                if( !POOP ) ;//etRock.traceF( tin0P , tSayWrotePasswordFile/*+tLong*/ ) ;
+                                                                ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
+                                                                SCOOPS
+                                                                _IO_
+                                                            {
+                                                            IFsCRATCHoK
+                                                            TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
+
+                                                            //etRock.traceF( tin0P , tSayNewPassword/*+tWoTimePasswordUrlSuffix*/ ) ;
+
+                                                                                  tGorillaSuffix = tWoTimePasswordUrlSuffix+tDotHiddenDotIdeafarmDotCom ;
+                                                            tGorillaSuffixUsed  = tGorillaSuffix ; 
+                                                                                  tWoTimePasswordUrlSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
+                                                            tWoTimePasswordUrlSuffixUsed = tWoTimePasswordUrlSuffix ;
+
+                                                            //etRock.traceF( tin0P , tSayOldPassword/*+tWoTimePasswordUrlSuffix*/ ) ;
+
+                                                            cUsed = 0 ;
+                                                        {
+                                                        if( bNewPassword )
+
+                                                        }
+                                                            }
+                                                                bNewPassword = 1 ;
+                                                                bDivert = 0 ;
+                                                                //etRock.traceF( tin0P , tSayResettingDivert2/*+tGorillaSuffix*/ ) ;
+                                                                _IO_
+                                                            {
+                                                            else if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffix ) )
+                                                            }
+                                                                }
+                                                                    bNewPassword = 1 ;
+                                                                    //etRock.traceF( tin0P , tSaySettingNewPassword/*+tGorillaSuffixUsed*/ ) ;
+                                                                    _IO_
+                                                                {                                                                                            
+                                                                if( ++ cUsed > 0x80 || timeE2 || timeE1 > TOCK << 4 )                                   //20250608@0853: "0x80 <- 0x20" AND "<< 4" <- "<< 2" W/O ANALYSIS (THE PRECEDING CHANGE SEEMED TO REDUCED STUTTER BY A LOT)
+                                                                                                                                                        //20250607@1542: "0x20 <- 0x8" AND "<< 2" <- "<< 0" W/O ANALYSIS TO FIX STUTTER (MULTIPLE UPDATES TO A SINGLE USE)
+                                                                etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeUsed1 , timeUsed2 ) ;
+                                                                etThread.osTimeNowF(      tin0P , timeE1 , timeE2 ) ;
+                                                                ZE( sCountT , timeE2 ) ;
+                                                                ZE( countT  , timeE1 ) ;
+
+                                                                bDivert = 0 ;                                                                       //PS:PERSONALITY: THE DUPLICATE USAGE IS ALWAYS HONORED, BUT THEN WILL BE RETIRED IF USED TOO MANY TIMES OR TOO MUCH TIME HAS ELAPSED SINCE WOTH USE
+                                                                //etRock.traceF( tin0P , tSayResettingDivert/*+tGorillaSuffixUsed*/ ) ;
+                                                                _IO_
+                                                            {
+                                                            if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffixUsed ) )
+
+                                                            _IO_
+                                                        {
+                                                        ZE( boolT , bNewPassword ) ;
+                                                    {
+                                                    if( bDivert )                                                                               //PS:PERSONALITY: HONOR THE USED SUFFIX SO THAT DUPLICATE QUERIES ALL RECEIVE THE SAME wh1 ANSWER UNTIL THE CURRENT PASSWORD IS USED
+
+                                                    //etRock.traceF( tin0P , tSayDomainNetSuffixPeer/*+T(psttw)+T("\"    \"")+T(psttSuffix)+T("\"    \"")+tDomainPeer+T("\"")*/ ) ;
+
+                                                    etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
+                                                    etThread.delF( tin0P , psttNet ) ;
+                                                    TN( tDomainNet , "" ) ; tDomainNet = T(psttNet)+T(".hidden.ideafarm.com") ;
+
+                                                    etThread.delF( tin0P , psttw ) ;
+                                                    if( bDivert ) { etThread.strSubstringF( tin0P , psttSuffix , idf , countTC()    , psttw , 0     ) ; ___( psttSuffix ) ; }
+                                                                    etThread.strSubstringF( tin0P , psttNet    , idf , sttq , tDash , psttw , 0 , 0 ) ; ___( psttNet    ) ;
+                                                    strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                                                    countT idf = 1 ;
+                                                    ZE( strokeS* , psttSuffix ) ;
+                                                    ZE( strokeS* , psttNet ) ;
+                                                    _IO_
+                                                {
+                                                if( psttw && etThread.strIdF( tin0P , tHidden , psttw , 1 ) && etThread.strIdF( tin0P , tDash , psttw , 1 ) )
+
+                                                //etRock.traceF( tin0P , tSayDomainGrossPeer/*+tDomainGross+tqb4q+tDomainPeer+tq*/ ) ;
+                                                TN( tDomainGross , psttw ) ;
+                                                if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
+                                                //etRock.traceF( tin0P , tSayLoweringCase ) ;
+                                                *ps >> psttw ;
+                                                ZE( strokeS* , psttw ) ;
+                                                _IO_
+                                            {
+                                            if( ps )
+                                            stsQueries >> ps ;
+                                            ZE( soulC* , ps ) ;
+                                            //etRock.traceF( tin0P , tSayPoppingQuery ) ;
+                                            _IO_
+                                        {
+                                        while( stsQueries )
+                                        _IO_
+                                    {
+                                    else
+                                    }
+                                        idError = ifcIDeRRORdNS_CANNOTpARSEqUERY ;
+                                        /**/etRock.traceF( tin0P , tSayExCouldNotParse+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        POOPRqUIET
+                                    {
+                                    if( rc )
+                                    etThread.delF( tin0P , pbNU ) ;
+                                    //etRock.traceF( tin0P , tSayCalledDnsParse ) ;
+                                    countT rc = POOP ;
+                                    ((tin1S&)tin0P).pEtScratch->dnsParseF( tin0P , pbNU , countTC() , stsQueries , stsRepliesNU , pJob->pbq , pJob->cbq ) ;
+                                    SCOOPS
+                                    //etRock.traceF( tin0P , tSayCallingDnsParse ) ;
+                                    _IO_
+                                {
+                                IFsCRATCHoK
+                                ZE( byteT* , pbNU ) ;
+
+                                //etRock.traceF( tin0P , tSayPurgedStacks ) ;
+                                stsRepliesNU.purgeF( tin0P ) ;
+                                stsQueries.purgeF( tin0P ) ;
+                                //etRock.traceF( tin0P , tSayPurgingStacks ) ;
+                                _IO_
+                            {
+
+                            ++ idClient ;
+
+                            //}
+                            //    //etRock.traceF( tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(pJob->nnPeer)+(bDivert?tSayDiverting:tSayGranting)+tDomainPeer ) ;
+                            //
+                            //    }
+                            //        etThread.delF( tin0P , psttSay ) ;
+                            //        tTimeOld = T(psttSay) ;
+                            //        etThread.strFromOldTimeF( tin0P , psttSay , mm , hh , d , m , y , dow , 0 ) ; ___( psttSay ) ;
+                            //        ZE( strokeS* , psttSay ) ;
+                            //    {
+                            //    TN( tTimeOld , "" ) ;
+                            //
+                            //    etThread.osTimeToOldTimeF( tin0P , ms , ss , mm , hh , d , m , y , dow , timeN1 , timeN2 , flOStIMEtOoLDtIME_null ) ;
+                            //    ZE(  countT , dow ) ;
+                            //    ZE( sCountT , y   ) ;
+                            //    ZE(  countT , m   ) ;
+                            //    ZE(  countT , d   ) ;
+                            //    ZE(  countT , hh  ) ;
+                            //    ZE(  countT , mm  ) ;
+                            //    ZE(  countT , ss  ) ;
+                            //    ZE(  countT , ms  ) ;
+                            //
+                            //    etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+                            //    ZE( sCountT , timeN2 ) ;
+                            //    ZE( countT  , timeN1 ) ;
+                            //{
+
+                            countT idError = ifcIDeRRORdNS_AOK ;
+                            _IO_
+                        {
+                        if( pJob->pbq && pJob->cbq )
+                        _IO_
+                    {
+
+                    }
+                        }
+                            //etRock.traceF( tin0P , tSayNotDiverting ) ;
+                            bDivert = 0 ;                                                                                                                                   //P:PERSONALITY: SUPPRESS DIVERSION IF RECENT QUERY FROM LETSENCRYPT
+                        {
+                        else
+                        }
+                            //etRock.traceF( tin0P , tSayDiverting2 ) ;
+                        {
+                        if( !timeLetsEncryptLath2 && !timeLetsEncryptLath1 )
+                    {
+                    if( bDivert )
+
+                    }
+                        }
+                            //etRock.traceF( tin0P , tSayDiversionEnabled ) ;
+                            bForceReply = timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
+                        {
+                        if( timeE2 || timeE1 > TICK << 0 )
+
+                        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeLetsEncryptLath1 , timeLetsEncryptLath2 ) ;
+                        etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
+                        ZE( sCountT , timeE2 ) ;
+                        ZE( countT  , timeE1 ) ;
+                    {
+                    else if( timeLetsEncryptLath2 || timeLetsEncryptLath1 )
+                    }
+                        //etRock.traceF( tin0P , bSuppressed ? tSayDiversionSupRefreshed : tSayDiversionSuppressed ) ;
+                        etThread.osTimeNowF( tin0P , timeLetsEncryptLath1 , timeLetsEncryptLath2 ) ;
+                        timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
+                        countT bSuppressed = timeLetsEncryptLath2 || timeLetsEncryptLath1 ;
+                        bForceReply = 1 ;
+                    {
+                    if( 1 + tDomainPeer.csF( tin0P ) - tDotLetsEncryptDotOrg.csF( tin0P ) == etThread.strIdF( tin0P , tDotLetsEncryptDotOrg , tDomainPeer ) )
+
+                    }
+                        }
+                            //U::PROD: //etRock.traceF( tin0P , tSayPrefix+T(pJob->nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
+                            //etRock.traceF( tin0P , tSayUnknownDomain ) ;
+                            bDivert = 1 ;
+                        {
+                        if( !bStripeWebHookNotifier && !bListedDomain )         //P:PERSONALITY: TRUSTED PEERS ARE DIRECTED TO wh1 ; UNTRUSTED PEERS ARE DIRECTED TO wh2
+
+                        }
+                            mySettingsP.grabMe.ungrabF( tin0P ) ;
+                            }
+                                }
+                                    }
+                                        break ;
+                                        bStripeWebHookNotifier = 1 ;
+                                    {
+                                    if( mySettingsP.pnnSubnetAllowedStripe[ offn ] == pJob->nnPeer( 0x40 ) )
+                                {
+                                else
+                                }
+                                    }
+                                        break ;
+                                        bStripeWebHookNotifier = 1 ;
+                                    {
+                                    if( mySettingsP.pnnSubnetAllowedStripe[ offn ] == pJob->nnPeer( 0x18 ) )
+                                {
+                                if( pJob->nnPeer.isIPv4F() )
+                                _IO_
+                            {
+                            for( countT offn = 0 ; offn < mySettingsP.cnnSubnetAllowedStripe ; offn ++ )
+                            mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                            _IO_
+                        {
+                        if( !bListedDomain )
+                        ZE( boolT , bStripeWebHookNotifier ) ;
+
+                        }
+                            etThread.delF( tin0P , psttPeer ) ;
+                            }
+                                mySettingsP.grabMe.ungrabF( tin0P ) ;
+                                }
+                                    }
+                                        break ;
+                                        bListedDomain ++ ;
+                                    {
+                                    if( idHit && idHit == 1 + psttPeer->idAdam - mySettingsP.pptListedDomain[ offt ]->csF( tin0P ) )
+                                    countT idHit  = etThread.strIdF( tin0P , *mySettingsP.pptListedDomain[ offt ] , psttPeer , 1 ) ;
+                                {
+                                for( countT offt = 0 ; offt < mySettingsP.cListedDomain ; offt ++ )
+                                mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                                //etRock.traceF( tin0P , tSayPeer/*+T(psttPeer)*/ ) ;
+                                tDomainPeer = T(psttPeer) ;
+                                _IO_
+                            {
+                            else
+                            if( !psttPeer ) ;//etRock.traceF( tin0P , tSayExReverseLookupFailed ) ;
+                            etThread.sockPsttHostF( tin0P , psttPeer , pJob->nnPeer ) ; ___( psttPeer ) ;
+                            //etRock.traceF( tin0P , tSayDoingReverseLookup ) ;
+                            ZE( strokeS* , psttPeer ) ;
+                        {
+                        ZE( boolT , bListedDomain ) ;
+                        _IO_
+                    {
+                    TN( tDomainPeer , "" ) ;
+                    ZE( boolT , bDivert ) ;
+                    boolT bSilent = 1 ;         //PS:PERSONALITY: I DO NOT RESPOND UNLESS I KNOW THE ANSWER TO THE QUERY ; THIS IS INTENDED TO CAUSE THE REQUESTING PEER TO FAILOVER TO MAKE THE REQUEST FROM ITS ALTERNATE DNS SERVER
+                {
+                if( pJob )
+
+                st_pJobP.ungrabF( tin0P ) ;
+                st_pJobP >> (countT&)pJob ;
+                jobS* pJob ;
+            {
+            else
+            }
+                break ;
+                st_pJobP.ungrabF( tin0P ) ;
+            {
+            if( !st_pJobP || bQuitP || bFailP )
+
+            st_pJobP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        {
+        while( !bQuitP )
+        ZE( boolT   , bForceReply          ) ;
+        ZE( sCountT , timeLetsEncryptLath2 ) ;
+        ZE( countT  , timeLetsEncryptLath1 ) ;
+
+        TN( tDotLetsEncryptDotOrg           , ".letsencrypt.org"                         ) ;
+        TN( tSayGranting                    , "    granting information    "             ) ;
+        TN( tSayDiverting                   , "    diverting information    "            ) ;
+        TN( tSayUnknownDomain               , "    !exception / unknown peer domain"     ) ;
+        TN( tSayPrefix                      , "[nnPeer]:    "                            ) ;
+
+        TN( tSayPurgedStacks                , "purged  stacks"                                                                                                        ) ;
+        TN( tSayPurgingStacks               , "purging stacks"                                                                                                        ) ;
+        TN( tSayExCouldNotWriteReply        , "!exception / could not write reply [rc]:    "                                                                          ) ;
+        TN( tSayWroteReply                  , "wrote reply"                                                                                                           ) ;
+        TN( tSayReplying1                   , "replying / 1 [cbr]:    "                                                                                               ) ;
+        TN( tSayExCouldNotBuildReply        , "!exception / could not build reply [rc]:    "                                                                          ) ;
+        TN( tSayReplying2                   , "replying / 2"                                                                                                          ) ;
+        TN( tSayAAAARequest                 , "AAAA request [tDomainNet]:    "                                                                                        ) ;
+        TN( tSayARequest                    , "A request [tDomainNet]:    "                                                                                           ) ;
+        TN( tSayExCouldNotWritePasswordFile , "!exception / could not write password suffix shared file [rc,tLong]:    "                                              ) ;
+        TN( tSayWrotePasswordFile           , "wrote password suffix shared file aok [tLong]:    "                                                                    ) ;
+        TN( tSayNewPassword                 , "new         [tWoTimePasswordUrlSuffix]:    "                                                                           ) ;
+        TN( tSayOldPassword                 , "old         [tWoTimePasswordUrlSuffix]:    "                                                                           ) ;
+        TN( tSayResettingDivert2            , "resetting bDivert because suffix is the current expected value [tGorillaSuffix]:    "                                  ) ;
+        TN( tSaySettingNewPassword          , "setting bNewPassword because suffix has already been used too many times or for too long [tGorillaSuffixUsed]:    "    ) ;
+        TN( tSayResettingDivert             , "resetting bDivert because suffix has already been used [tGorillaSuffixUsed]:    "                                      ) ;
+        TN( tSayDomainNetSuffixPeer         , "[domainNet,suffix,peer]:      \""                                                                                      ) ;
+        TN( tSayDomainGrossPeer             , "[domainGross,peer]:    \""                                                                                             ) ;
+        TN( tSayLoweringCase                , "lowering case"                                                                                                         ) ;
+        TN( tSayPoppingQuery                , "popping a query"                                                                                                       ) ;
+        TN( tSayExCouldNotParse             , "!exception / could not parse query [rc]:    "                                                                          ) ;
+        TN( tSayCalledDnsParse              , "called  dnsParseF"                                                                                                     ) ;
+        TN( tSayCallingDnsParse             , "calling dnsParseF"                                                                                                     ) ;
+        TN( tSayNotDiverting                , "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: not diverting"                     ) ;
+
+        //U::PROD: TN( tSayDiverting2                  , "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| * * * * D I V E R T I N G * * * *" ) ;
+        TN( tSayDiverting2                  , "D I V E R T I N G" ) ;
+
+        TN( tSayDiversionEnabled            , "----------------------------------------------------------------------------------- DIVERSION ENABLED"                 ) ;
+        TN( tSayDiversionSuppressed         , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSED"              ) ;
+        TN( tSayDiversionSupRefreshed       , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSION REFRESHED"   ) ;
+        TN( tSayPeer                        , "[tPeer]:    "                                                                                                          ) ;
+        TN( tSayExReverseLookupFailed       , "!exception / reverse DNS lookup failed"                                                                                ) ;
+        TN( tSayDoingReverseLookup          , "doing reverse DNS lookup"                                                                                              ) ;
+        TN( tSayIncomingSample              , "incoming [idIn,timeE]:    "                                                                                            ) ;
+        TN( tSayExReadFailed                , "!exception / socket read failed [rc]:    "                                                                             ) ;
+        TN( tSayCalledRead                  , "called readF"                                                                                                          ) ;
+        TN( tSayCallingRead                 , "calling readF"                                                                                                         ) ;
+        TN( tSayWaitedForPacket             , "waited for a packet [nnPeer,cbq]:    "                                                                                 ) ;
+        TN( tSayWaitingForPacket            , "waiting for a packet"                                                                                                  ) ;
+        TN( tSayInnerLoopBegun              , "inner loop begun"                                                                                                      ) ;
+
+        TN( tq    , "\""      ) ;
+        TN( tqb4q , "\"    \"") ;
+
+        stsReplies.purgeF( tin0P ) ;
+        stsQueries.purgeF( tin0P ) ;
+        st_pJobP.waitF( tin0P ) ;
+    {
+    while( !bQuitP )
+    etThread.osTimeNowF( tin0P , timeStart1 , timeStart2 ) ;
+    ZE( sCountT , timeStart2 ) ;
+    ZE( countT  , timeStart1 ) ;
+    ZE( countT , idIn ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    TN( tHidden , ".hidden.ideafarm.com" ) ;
+    TN( tb4 , "    " ) ;
+    stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stsReplies(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stsRepliesNU( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    ZE( countT , idClient ) ;
+
+    mySettingsP.grabMe.ungrabF( tin0P ) ;
+
+    nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettingsP.tIpWebHook2 ) ;
+    nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettingsP.tIpWebHook1 ) ;
+
+    TN( tTarget        , "target.ipv6-only.ideafarm.com" ) ;
+    TN( tWebHook1      , ""                              ) ; tWebHook1 = mySettingsP.tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
+    TN( tWebHooks      , ""                              ) ; tWebHooks = mySettingsP.tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    stackC&      st_pJobP    =      *(stackC*)pTaskP->c6 ;
+    socketC&     sockdP      =     *(socketC*)pTaskP->c5 ;
+    mySettingsS& mySettingsP = *(mySettingsS*)pTaskP->c4 ;
+    countT&      cWorkersP   =      *(countT*)pTaskP->c3 ;
+    boolT&       bFailP      =       *(boolT*)pTaskP->c2 ;
+    boolT&       bQuitP      =       *(boolT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
+TASK( tmWorkerF )
+
+DONE( tmWorkOldF )
+}
+    }
+        }
+
+
+            //etRock.traceF( tin0P , T("outer loop begun") ) ;
+            _IO_
+        {
+        while( !POOP && !ether )
+
+        _IO_
+    {
+    else
+    }
+        /**/etRock.traceF( tin0P , T("!exception / a required setting is missing") ) ;
+        mySettings.grabMe.ungrabF( tin0P ) ;
+        _IO_
+    {
+    if( !mySettings )
+    mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+    TN( tDash , "-" ) ;
+
+    etThread.traceF( tin0P , T("the settings are ready") ) ;
+    sgnSettingsReady.waitF( tin0P ) ;
+
+//    etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
+
+    nicNameC nnHostWebLag3 ;
+    nicNameC nnHostWebLag2 ;
+    nicNameC nnHostWebLag1 ;
+
+//U::PROD: nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0000:7077:5400:05ff:fe59:278d") ) ;        //U:: PUT THIS INTO A SETTING ; THIS IS THE IPv6 ASSIGNED TO web1
+    nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::1") ) ;        //U:: FOR TESTING
+
+    nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
+
+    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF               , CBsTACKmIN << 1 ) , (countT)&mySettings      , (countT)&sgnSettingsReady     ) ;
+
+    etRock.traceF( tin0P , T("initialized [tWoTimePasswordUrlSuffix]:    ")+tWoTimePasswordUrlSuffix ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    }
+        }
+            etRock.traceF( tin0P , T("!exception / could not write password suffix shared file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+            POOPRqUIET
+            countT rc = POOP ;
+        {
+        else
+        if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote password suffix shared file aok [tLong]:    ")+tLong ) ;
+        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
+        SCOOPS
+        _IO_
+    {
+    IFsCRATCHoK
+    TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
+
+    TN( tb4      , "    " ) ;
+    ZE( sCountT , timeUsed2 ) ;
+    ZE( countT  , timeUsed1 ) ;
+    ZE( countT  , cUsed ) ;
+    TN( tGorillaSuffixUsed            , ""                     ) ;
+    TN( tWoTimePasswordUrlSuffixUsed  , ""                     ) ;
+    TN( tGorillaSuffix                , ""                     ) ; tGorillaSuffix  = tWoTimePasswordUrlSuffix+tDotHiddenDotIdeafarmDotCom ;
+    TN( tWoTimePasswordUrlSuffix      , ""                     ) ; tWoTimePasswordUrlSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;  //0x24: [0-9,a-z]
+    TN( tPasswordPrefix               , "psw_"                 ) ;            // THIS PREFIX IS FOR CONVENIENCE WHEN SEARCHING TRACE LOGS 
+    TN( tDotHiddenDotIdeafarmDotCom   , ".hidden.ideafarm.com" ) ;
+
+    ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
+
+    signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
+    mySettingsS mySettings( tin0P , etThread ) ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;    // RUDE WOULD BE AN ATTACK SURFACE
+    //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;    // PEER OF tmWhereF
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ;    // THIS IS SO PASSWORD (WEBHOOK SUFFIX) UPDATES ARE NOTICED TIMELY
+
+    tin123S& tinMe = (tin123S&)tin0P ;
+
+    _IO_
+{
+if( pTaskP )
+TASK( tmWorkOldF )
+
+DONE( tmUpdateNnHostsF )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
+
+        }
+            }
+                etRock.traceF( tin0P , T("!exception / could not write batch file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                POOPRqUIET
+                countT rc = POOP ;
+            {
+            else
+            if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+            ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
+            SCOOPS
+            _IO_
+        {
+        IFsCRATCHoK
+        TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore2+tNnHostWeb+tAfter2+T("\r\n") ;
+        tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
+        //etThread.traceF( tin0P , T("new  [nnHostWebLag0]:    ")+tNnHostWeb ) ;
+        TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag0P) ;
+
+                                                           nnHostWebLag0P = nnHostWebLathP ;
+                                          nnHostWebLag1P = nnHostWebLag0P ;
+                         nnHostWebLag2P = nnHostWebLag1P ;
+        nnHostWebLag3P = nnHostWebLag2P ;
+
+        ( *(count04T*)&nnHostWebLathP ) ++ ;
+
+        }
+            }
+                }
+                    etRock.traceF( tin0P , T("!exception / could not write batch file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                    POOPRqUIET
+                    countT rc = POOP ;
+                {
+                else
+                if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+                ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
+                SCOOPS
+                _IO_
+            {
+            IFsCRATCHoK
+            TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore1+tNnHostWeb+tAfter1+T("\r\n") ;
+            tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
+
+            //etThread.traceF( tin0P , T("doomed [nnHostWebLag3]:    ")+tNnHostWeb ) ;
+            TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag3P) ;
+        {
+        if( ~nnHostWebLag3P )
+        TN( tLong , "" ) ; 
+    {
+    while( !ether )
+    ZE( countT , idFileOut ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    TN( tb4      , "    " ) ;
+    TN( tAfter2  , "/64\"" ) ;
+    TN( tAfter1  , "\"" ) ;
+    TN( tBefore2 , "netsh interface ipv6 add    address interface=\"outer\" address=\"" ) ;
+
+    ) ;
+
+        "netsh interface ipv6 delete address interface=\"outer\" address=\""
+        "netsh interface ipv6 delete address interface=\"outer\" address=\"2001:19f0:0:7077:5400:5ff:fe59:278d\"\r\n"            //U:: PUT THIS INTO A SETTING
+
+    TN( tBefore1 ,
+
+    //
+    // ADD    THE YOUNGEST ADDRESS (LAG 0)
+    // SET    THE YOUNGEST ADDRESS (LAG 0)
+    // SHIFT  THE DATA TO LAG
+    // DELETE THE OLDEST   ADDRESS (LAG 3)
+    //
+    // RECIPE
+
+    nicNameC& nnHostWebLag3P = *(nicNameC*)pTaskP->c5 ;
+    nicNameC& nnHostWebLag2P = *(nicNameC*)pTaskP->c4 ;
+    nicNameC& nnHostWebLag1P = *(nicNameC*)pTaskP->c3 ;
+    nicNameC& nnHostWebLag0P = *(nicNameC*)pTaskP->c2 ;
+
+    nicNameC& nnHostWebLathP = *(nicNameC*)pTaskP->c1 ;     // WILL ALWAYS BE THE SAME AS nnHostWebLag0P ; IS USED TO MAKE THE CODE EASIER TO UNDERSTAND
+
+    _IO_
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 )
+TASK( tmUpdateNnHostsF )
+
+}
+    }
+        stsRepliesP << ps ;
+
+        *ps << (countT)0 ; // sTTLMinimum
+        *ps << (countT)0 ; // sTTLMinimum
+        *ps << (countT)0 ; // sExpire
+        *ps << (countT)0 ; // sExpire
+        *ps << (countT)0 ; // sRetry
+        *ps << (countT)0 ; // sRetry
+        *ps << (countT)0 ; // sRefresh
+        *ps << (countT)0 ; // sRefresh
+        *ps << (countT)0 ; // cSerial
+        *ps << (countT)0 ; // cSerial
+        *ps << psttEmailP ;
+        *ps << psttNsP ;
+
+        *ps << (countT&)time2 ;
+        *ps << time1 ;
+        ZE( sCountT , time2 ) ;
+        ZE( countT  , time1 ) ;
+        *ps << (countT)1 ;
+        *ps << (countT)ifcIDtYPEdNSqUERY_SOA ;
+        *ps << psttP ;
+    {
+    if( ps )
+    soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
+{
+voidT rec_SOA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const strokeS* const psttNsP , const strokeS* const psttEmailP )
+
+}
+    }
+        stsRepliesP << ps ;
+
+        *ps << psttDataP ;
+
+        *ps << (countT&)time2 ;
+        *ps << time1 ;
+        ZE( sCountT , time2 ) ;
+        ZE( countT  , time1 ) ;
+        *ps << (countT)1 ;
+        *ps << (countT)ifcIDtYPEdNSqUERY_NS ;
+        *ps << psttP ;
+    {
+    if( ps )
+    soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
+{
+voidT rec_NS_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const strokeS* const psttDataP )
+
+}
+    }
+        stsRepliesP << ps ;
+
+        *ps << psttDataP ;
+        *ps << (countT)0 ;
+
+        *ps << (countT&)time2 ;
+        *ps << time1 ;
+        ZE( sCountT , time2 ) ;
+        ZE( countT  , time1 ) ;
+        *ps << (countT)1 ;
+        *ps << (countT)ifcIDtYPEdNSqUERY_MX ;
+        *ps << psttP ;
+    {
+    if( ps )
+    soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
+{
+voidT rec_MX_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const strokeS* const psttDataP )
+
+}
+    }
+        stsRepliesP << ps ;
+
+        nicNameP >> *ps ;
+
+        *ps << (countT&)time2 ;
+        *ps << time1 ;
+        ZE( sCountT , time2 ) ;
+        ZE( countT  , time1 ) ;
+        *ps << (countT)1 ;
+        *ps << (countT)ifcIDtYPEdNSqUERY_AAAA ;
+        *ps << psttP ;
+
+        //etherP.traceF( tin0P , T("rec_AAAA_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+    {
+    if( ps )
+    soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
+{
+voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
+
+}
+    }
+        stsRepliesP << ps ;
+
+        nicNameP >> *ps ;
+
+        *ps << (countT&)time2 ;
+        *ps << time1 ;
+        ZE( sCountT , time2 ) ;
+        ZE( countT  , time1 ) ;
+        *ps << (countT)1 ;
+        *ps << (countT)ifcIDtYPEdNSqUERY_A ;
+        *ps << psttP ;
+
+        //etherP.traceF( tin0P , T("rec_A_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+    {
+    if( ps )
+    soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
+{
+voidT rec_A_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
+
+DONE( tmFreshSettingsF )
+}
+    }
+        }
+            }
+                sgnSettingsReadyP.giveF( tin0P , ifcIDmODEsIGNgIVE_ON ) ;       //U::ifcIDmODEsIGNgIVE_ON IS A WORKAROUND TO AN APPARENT RACE CONDITION IN WHICH I HANG TRYING FUTILELY TO grabF()
+                bWoth = 0 ;
+                _IO_
+            {
+            if( bWoth )
+
+            }
+                __NZ( !mySettingsP ) ;
+
+                }
+                    if( ~mySettingsP ) break ;
+
+                    mySettingsP.grabMe.ungrabF( tin0P ) ;
+                    /**/etThread.traceF( tin0P , T(!mySettingsP?"the new settings are incomplete":"the new settings are aok")+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    mySettingsP.freshenF( tin0P ) ;
+                    /**/etThread.traceF( tin0P , T(!mySettingsP?"the stale settings are incomplete":"the stale settings are aok")+tb4+TF2(++idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                    ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ; // TIME FOR PISS TO FINISH UPDATING SETTINGS
+                {
+                while( !POOP )
+                ZE( countT , idTry ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+                /**/etThread.traceF( tin0P , T("the timestamp of the settings files has changed ; napping and then calling freshenF") ) ;
+                timeWrittenLath = timeWritten ;
+                _IO_
+            {
+            if( timeWrittenLath.time1 != timeWritten.time1 || timeWrittenLath.time2 != timeWritten.time2 )
+
+            }
+                }
+                    }
+                        }
+                            continue ;
+                            /**/etThread.traceF( tin0P , T("!exception / could not get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
+                            POOPRqUIET
+                            countT rc = POOP ;
+                        {
+                        else
+                        }
+                            break ;
+                            //etThread.traceF( tin0P , T(" [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
+                        {
+                        if( !POOP )
+
+                        thirdC::getFileTimeIF( tin0P , fir , &timeWritten , 0 , 0 ) ;
+                    {
+                    else
+                    }
+                        continue ;
+                        /**/etThread.traceF( tin0P , T("!exception / could not open settings file to get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    if( POOP )
+
+                    fileC fir( tin0P , (strokeS*)tLongFile , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+
+                    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
+                _IO_
+            {
+            while( !ether )
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+            timeS timeWritten ;
+            _IO_
+        {
+        if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tLongPath , flWAITdIR_ATTRIBUTE | flWAITdIR_SIZE | flWAITdIR_WRITE ) )
+        _IO_
+    {
+    while( !ether && !POOP )
+    timeS timeWrittenLath ;
+    handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
+    TN( tb4 , "    " ) ;
+    boolT bWoth = 1 ;
+
+    TN( tLongFile , "" ) ; tLongFile = tLongPath + T("kv.settings.ipdos.jotC.data.booksC.1.book.00000001.00000001.bookC") ;
+
+    }
+        tLongPath = T(ifFile) ;
+        ifFileNameC ifFile( tin0P , etThread , postPath ) ;
+
+        __Z( *postPath ) ;
+        thirdC::postPathStateSpaceIF( tin0P , postPath , sizeof postPath , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
+        osTextT postPath[ TUCK << 1 ] ;
+        _IO_
+    {
+    TN( tLongPath , "" ) ;
+
+    signC&       sgnSettingsReadyP =       *(signC*)pTaskP->c2 ;
+    mySettingsS& mySettingsP       = *(mySettingsS*)pTaskP->c1 ;
+    _IO_
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 )
+TASK( tmFreshSettingsF )
+
+;
+}
+    {}
+    idp( 0 )
+    cbq( 0 ) ,
+    pbq( 0 ) ,
+    inline jobS( voidT ) :
+
+    {}
+    nnPeer( nnPeerP )
+    idp( idpP ) ,
+    cbq( cbqP ) ,
+    pbq( pbqP ) ,
+    inline jobS( byteT* pbqP , countT cbqP , countT idpP , nicNameC& nnPeerP ) :
+
+    nicNameC nnPeer ;
+    countT   idp    ;
+    countT   cbq    ;
+    byteT*   pbq    ;
+{
+struct jobS
+
+
+
+}
+    THREADmODE1rESTORE
+    grabMe.ungrabF( tin0P ) ;
+
+    }
+        }
+            else                                                                break ;
+            if( etherMe.strCompareF( tin0P , *pptListedDomain[ offt ] , tnu ) ) cListedDomain ++ ;
+        {
+        for( countT offt = 0 ; offt < sizeof pptListedDomain / sizeof pptListedDomain[ 0 ] ; offt ++ )
+        cListedDomain = 0 ;
+        TN( tnu , ".not.used.ideafarm.com" ) ;                                                          //P:PERSONALITY: I IGNORE ALL ELEMENTS NOT BEFORE THE WO'TH ELEMENT THAT CONTAINS THE "NOT USED" VALUE ; THIS IS FOR SPEED
+        _IO_
+    {
+
+    }
+        /**/etRock.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetAllowedStripe[offn]) ) ;
+    {
+    for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
+
+    }
+        }
+            }
+                while( ~hWalk ) ;
+                }
+                    pnnSubnetAllowedStripe[ offo ++ ] = nnSubnet ;
+                    nicNameC& nnSubnet = (nicNameC&)stNnSubnet.downF( tin0P , hWalk ) ;
+                {
+                do
+                handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                ZE( countT , offo ) ;
+                _IO_
+            {
+            if( pnnSubnetAllowedStripe )
+            etherMe.newF( tin0P , LF , pnnSubnetAllowedStripe , cnnSubnetAllowedStripe ) ; ___( pnnSubnetAllowedStripe ) ;
+        {
+        if( cnnSubnetAllowedStripe )
+        cnnSubnetAllowedStripe = stNnSubnet ;
+
+        }
+            etherMe.delF( tin0P , pstt1Nn ) ;
+            }
+                stNnSubnet.sinkF( tin0P , countTC() , nnSubnet , flSTACKsINK_UNIQUE ) ;
+
+                ;
+                    : nnIPv46( 0x40 )
+                    ? nnIPv46( 0x18 )
+                nicNameC nnSubnet = nnIPv46.isIPv4F()
+                nicNameC nnIPv46  = etherMe.sockNicNameF( tin0P , psttc1 ) ;
+
+                /**/etRock.traceF( tin0P , psttc1 ) ;
+                _IO_
+            {
+            FORsTRINGSiN1( pstt1Nn )
+
+            countT cNn = etherMe.strWordsF( tin0P , pstt1Nn , tNnTrusted , sttq , T(" ,") ) ; ___( pstt1Nn ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            ZE( strokeS* , pstt1Nn ) ;
+            _IO_
+        {
+        stackC stNnSubnet( tin0P , etherMe , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_nicNameC ) ;
+        _IO_
+    {
+
+    zapF( tin0P ) ;
+
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
+
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
+
+    /**/etRock.traceF( tin0P , T("[tNnTrusted]:    ")+tNnTrusted ) ;
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tNnTrusted = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.nn.trusted")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed8 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.8")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed7 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.7")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed6 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.6")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed5 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.5")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed4 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.4")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed3 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.3")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed2 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.2")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed1 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.1")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tIpWebHook2 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh2")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tIpWebHook1 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh1")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    //}
+    //    etherMe.delF( tin0P , pstt1w ) ;
+    //    }
+    //        }
+    //            break ;
+    //            tIpWebHook1 = T(psttc1) ;
+    //        {
+    //        else if( bArmed )
+    //        if( !etherMe.strCompareF( tin0P , tStatic , psttc1 ) ) bArmed = 1 ;
+    //    {
+    //    FORsTRINGSiN1( pstt1w )
+    //    ZE( boolT , bArmed ) ;
+    //    etherMe.strWordsF( tin0P , pstt1w , tNetshCommandIpv4 , sttq ) ; ___( pstt1w ) ;
+    //    strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+    //    TN( tStatic , "static" ) ;
+    //    ZE( strokeS* , pstt1w ) ;
+    //
+    //    // {kv: dns.wh1.netsh.command.ipv4.1 "netsh interface ip set address "outer" static 1.2.3.4 255.255.254.0 1.2.3.1"     }
+    //
+    //    _IO_
+    //{
+    //20250530@1618: NOW THAT dhcp IS USED, tIpWebHook1 MUST BE INCLUDED AS A SETTING RATHER THAN EXTRACTED BY PARSING ANOTHER SETTING dns.wh1.netsh.command.ipv4.1
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        }
+            etherMe.delF( tin0P , psttNet ) ;
+            tDomainLeafWebHook1Net = T(psttNet) ;
+            etherMe.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            countT idf = 1 ;
+            ZE( strokeS* , psttNet ) ;
+
+            etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+            _IO_
+        {
+        if( psttEat )
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.wh1")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        }
+            etherMe.delF( tin0P , psttNet ) ;
+            tDomainLeafWebHooksNet = T(psttNet) ;
+            etherMe.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            countT idf = 1 ;
+            ZE( strokeS* , psttNet ) ;
+
+            etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+            _IO_
+        {
+        if( psttEat )
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.webhooks")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        }
+            }
+                }
+                    /**/etRock.traceF( tin0P , T("!exception / could not write batch file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                    POOPRqUIET
+                    countT rc = POOP ;
+                {
+                else
+                if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+                ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
+                SCOOPS
+                _IO_
+            {
+            IFsCRATCHoK
+
+            TN( tLong , "" ) ; tLong = T("////wh1/d/ideafarm.home.101/controls/drop.executables/new.ipv4.netsh.from.dns.")+TfORsTRING(idFreshen)+T(".bat" ) ;
+            TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tNetshCommandIpv4+T("\r\n") ;
+
+            tNetshCommandIpv4 = T(psttEat) ;
+            etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        {
+        if( psttEat )
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.")+tNetshCommandIpv4SettingKey  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tNetshCommandIpv4SettingKey = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh1.netsh.command.ipv4.settingkey")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
+
+    countT idFreshen = 1 + incv02AM( idFreshenLath ) ;
+    static countT idFreshenLath ;
+
+    TN( tb4     , "    " ) ;
+    TN( tDash   , "-" ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+    _IO_
+{
+voidT mySettingsS::freshenF( tin0S& tin0P )
+
+}
+    cnnSubnetAllowedStripe = 0 ;
+
+    }
+        etherMe.delF( tin0P , pnnSubnetAllowedStripe ) ;
+        }
+            DELzOMBIE( pDoomed ) ;
+            nicNameC* pDoomed = pnnSubnetAllowedStripe + offn ;
+        {
+        for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
+    {
+    if( pnnSubnetAllowedStripe )
+    _IO_
+{
+voidT mySettingsS::zapF( tin0S& tin0P )
+
+}
+    return bMissing ;
+
+    ) ;
+        !tDomainRootAllowed8.csF( tin0P )
+        ||
+        !tDomainRootAllowed7.csF( tin0P )
+        ||
+        !tDomainRootAllowed6.csF( tin0P )
+        ||
+        !tDomainRootAllowed5.csF( tin0P )
+        ||
+        !tDomainRootAllowed4.csF( tin0P )
+        ||
+        !tDomainRootAllowed3.csF( tin0P )
+        ||
+        !tDomainRootAllowed2.csF( tin0P )
+        ||
+        !tDomainRootAllowed1.csF( tin0P )
+        ||
+        !tDomainLeafWebHook1Net.csF( tin0P )
+        ||
+        !tDomainLeafWebHooksNet.csF( tin0P )
+        ||
+        !tIpWebHook2.csF( tin0P )
+        ||
+        !tIpWebHook1.csF( tin0P )
+        ||
+        !tNetshCommandIpv4.csF( tin0P )
+        ||
+        !tNetshCommandIpv4SettingKey.csF( tin0P )
+    (
+    boolT bMissing =
+    TINSL
+{
+boolT mySettingsS::operator !( voidT )
+
+}
+    *(textC**)&pptListedDomain[ 7 ] = &tDomainRootAllowed8 ;
+    *(textC**)&pptListedDomain[ 6 ] = &tDomainRootAllowed7 ;
+    *(textC**)&pptListedDomain[ 5 ] = &tDomainRootAllowed6 ;
+    *(textC**)&pptListedDomain[ 4 ] = &tDomainRootAllowed5 ;
+    *(textC**)&pptListedDomain[ 3 ] = &tDomainRootAllowed4 ;
+    *(textC**)&pptListedDomain[ 2 ] = &tDomainRootAllowed3 ;
+    *(textC**)&pptListedDomain[ 1 ] = &tDomainRootAllowed2 ;
+    *(textC**)&pptListedDomain[ 0 ] = &tDomainRootAllowed1 ;
+{
+cListedDomain(               0                                                                  )
+cnnSubnetAllowedStripe(      0                                                                  ) ,
+pnnSubnetAllowedStripe(      0                                                                  ) ,
+tNnTrusted(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed8(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed7(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed6(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed5(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed4(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed3(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed2(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed1(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tIpWebHook2(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tIpWebHook1(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainLeafWebHook1Net(      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainLeafWebHooksNet(      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tNetshCommandIpv4(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tNetshCommandIpv4SettingKey( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+grabMe(                      tin0P , TAG( TAGiDnULL ) , flGRABc_SHARElAYER | flGRABc_NOTjEALOUS ) ,
+etherMe(                     etherP                                                             ) ,
+mySettingsS::mySettingsS( tin0S& tin0P , etherC& etherP ) :
+
+}
+    zapF( tin0P ) ;
+    TINSL
+{
+mySettingsS::~mySettingsS( voidT )
+
+;
+}
+    inline boolT operator ~( voidT ) { return !!*this ; }
+    boolT operator !( voidT                         ) ;
+    voidT freshenF(   tin0S& tin0P                  ) ;
+    mySettingsS(      tin0S& tin0P , etherC& etherP ) ;
+    ~mySettingsS(     voidT                         ) ;
+
+    countT       cnnSubnetAllowedStripe      ;
+    nicNameC*    pnnSubnetAllowedStripe      ;
+
+    countT       cListedDomain               ;
+    textC* const pptListedDomain[ 8 ]        ;
+
+    textC        tNnTrusted                  ;
+    textC        tIpWebHook2                 ;
+    textC        tIpWebHook1                 ;
+    textC        tDomainLeafWebHook1Net      ;
+    textC        tDomainLeafWebHooksNet      ;
+
+    textC        tNetshCommandIpv4           ;
+
+    grabC        grabMe                      ;
+
+    public :
+
+    voidT zapF( tin0S& tin0P ) ;
+
+    textC        tDomainRootAllowed8         ;
+    textC        tDomainRootAllowed7         ;
+    textC        tDomainRootAllowed6         ;
+    textC        tDomainRootAllowed5         ;
+    textC        tDomainRootAllowed4         ;
+    textC        tDomainRootAllowed3         ;
+    textC        tDomainRootAllowed2         ;
+    textC        tDomainRootAllowed1         ;
+
+    textC        tNetshCommandIpv4SettingKey ;
+
+    etherC&      etherMe                     ;
+
+    private :
+{
+struct mySettingsS
+
+//  
+// CERTBOT CANNOT BE USED TO RENEW A CERTIFICATE FOR THE LEAF DOMAIN, BECAUSE I DO NOT HAVE CERTBOT'S SERVERS ON MY ALLOWLIST
+// I ASSUME THAT A "SHIELDS DOWN" FUNCTION IS NOT NEEDED BECAUSE THE DOMAIN NAME LEAF IS CHANGED FREQUENTLY
+//  
+//P:PERSONALITY: I KEEP IP ADDRESSES CONFIDENTIAL, BY TREATING THE REQUESTED DOMAIN NAME LEAF AS A PASSWORD, AND BY APPLYING AN ALLOWLIST TO nnPeer
+
+// OBSOLETES 8a5_ (LIKE 8a5 BUT MULTITHREADED)
+
+// OBSOLETED BY 
+
+/*1*/WAKEhIDE( "ifcIDaDAM_DNS.multithreaded.aborted.draft" )/*1*/
+
+/**/
+*/
+ i simply map names (many to 1 and 1 to many) into ip addresses and tell the client to not cache
+i do not use the canonical name concept
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
