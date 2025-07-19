@@ -402,17 +402,6 @@ DONE( tmWorkF )
             ZE( boolT , bDivert ) ;
             boolT bSilent = 1 ;         //PS:PERSONALITY: I DO NOT RESPOND UNLESS I KNOW THE ANSWER TO THE QUERY ; THIS IS INTENDED TO CAUSE THE REQUESTING PEER TO FAILOVER TO MAKE THE REQUEST FROM ITS ALTERNATE DNS SERVER
 
-            #endif
-                }
-                    /**/etThread.traceF( tin0P , tSayIncomingSample+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TT(timeE1,timeE2) ) ;
-                    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeStart1 , timeStart2 ) ;
-                    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
-                    ZE( sCountT , timeE2 ) ;
-                    ZE( countT  , timeE1 ) ;
-                {
-                if( !( ++ idIn % ( TUCK >> 4 ) ) )
-            #if defined( NEVERdEFINED )
-
             //etRock.traceF( tin0P , tSayWaitedForPacket/*+T(nnPeer)+tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
             }
                 }
@@ -484,7 +473,6 @@ DONE( tmWorkF )
         TN( tSayPeer                        , "[tPeer]:    "                                                                                                          ) ;
         TN( tSayExReverseLookupFailed       , "!exception / reverse DNS lookup failed"                                                                                ) ;
         TN( tSayDoingReverseLookup          , "doing reverse DNS lookup"                                                                                              ) ;
-        TN( tSayIncomingSample              , "incoming [idIn,timeE]:    "                                                                                            ) ;
         TN( tSayExReadFailed                , "!exception / socket read failed [rc]:    "                                                                             ) ;
         TN( tSayCalledRead                  , "called readF"                                                                                                          ) ;
         TN( tSayCallingRead                 , "calling readF"                                                                                                         ) ;
@@ -536,47 +524,30 @@ DONE( tmWorkF )
         _IO_
     {
     while( !POOP && !ether )
-    etThread.osTimeNowF( tin0P , timeStart1 , timeStart2 ) ;
-    ZE( sCountT , timeStart2 ) ;
-    ZE( countT  , timeStart1 ) ;
-    ZE( countT , idIn ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-    TN( tHidden , ".hidden.ideafarm.com" ) ;
-    stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
-    stackC stsReplies(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
-    stackC stsRepliesNU( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
-    ZE( countT , idClient ) ;
+
+    //U::6: etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
 
     mySettings.grabMe.ungrabF( tin0P ) ;
 
-    nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
-    nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook1 ) ;
-
-    //U::A: etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
-    //U::A: nicNameC nnHostWebLag3 ;
-    //U::A: nicNameC nnHostWebLag2 ;
-    //U::A: nicNameC nnHostWebLag1 ;
-    //U::A: nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0000:7077:5400:05ff:fe59:278d") ) ;        //U:: PUT THIS INTO A SETTING ; THIS IS THE IPv6 ASSIGNED TO web1
-    //U::A: nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::1") ) ;        //U:: FOR TESTING
-    //U::A: nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
-
     }
         }
-            etRock.traceF( tin0P , T("!exception / could not write password suffix shared file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
-            POOPRqUIET
-            countT rc = POOP ;
+            }
+                etRock.traceF( tin0P , T("!exception / could not write password suffix shared file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                POOPRqUIET
+                countT rc = POOP ;
+            {
+            else
+            if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote password suffix shared file aok [tLong]:    ")+tLong ) ;
+            ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
+            SCOOPS
+            _IO_
         {
-        else
-        if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote password suffix shared file aok [tLong]:    ")+tLong ) ;
-        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
-        SCOOPS
-        _IO_
+        IFsCRATCHoK
+        TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
     {
-    IFsCRATCHoK
-    TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
 
     etRock.traceF( tin0P , T("initialized [tWoTimePasswordUrlSuffix]:    ")+tWoTimePasswordUrlSuffix ) ;
-
 
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
@@ -591,11 +562,6 @@ DONE( tmWorkF )
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
 
 
-
-
-
-
-
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
@@ -608,7 +574,11 @@ DONE( tmWorkF )
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
 
-
+    stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stsReplies(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stsRepliesNU( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
+    nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook1 ) ;
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
@@ -623,6 +593,14 @@ DONE( tmWorkF )
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
 
+    //U::6: nicNameC nnHostWebLag3 ;
+    //U::6: nicNameC nnHostWebLag2 ;
+    //U::6: nicNameC nnHostWebLag1 ;
+    //U::6: nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0000:7077:5400:05ff:fe59:278d") ) ;        //U:: PUT THIS INTO A SETTING ; THIS IS THE IPv6 ASSIGNED TO web1
+    //U::6: nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::1") ) ;        //U:: FOR TESTING
+    //U::6: nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
+
+    ZE( countT , idClient ) ;
     ZE( sCountT , timeUsed2 ) ;
     ZE( countT  , timeUsed1 ) ;
     ZE( countT  , cUsed ) ;
@@ -647,8 +625,9 @@ DONE( tmWorkF )
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
 
-    //U::A: TN( tTarget        , "target.ipv6-only.ideafarm.com" ) ;
+    //U::6: TN( tTarget , "target.ipv6-only.ideafarm.com" ) ;
 
+    TN( tHidden , ".hidden.ideafarm.com" ) ;
     TN( tWebHook1 , "" ) ; tWebHook1 = mySettings.tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
     TN( tWebHooks , "" ) ; tWebHooks = mySettings.tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
     TN( tDash , "-" ) ;
@@ -707,94 +686,94 @@ tin123S& tinMe = (tin123S&)tin0P ;
 if( pTaskP )
 TASK( tmWorkF )
 
-//U::A: DONE( tmUpdateNnHostsF )
-//U::A: }
-//U::A:     }
-//U::A:         ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
-//U::A: 
-//U::A:         }
-//U::A:             }
-//U::A:                 etRock.traceF( tin0P , T("!exception / could not write batch file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
-//U::A:                 POOPRqUIET
-//U::A:                 countT rc = POOP ;
-//U::A:             {
-//U::A:             else
-//U::A:             if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
-//U::A:             ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
-//U::A:             SCOOPS
-//U::A:             _IO_
-//U::A:         {
-//U::A:         IFsCRATCHoK
-//U::A:         TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore2+tNnHostWeb+tAfter2+T("\r\n") ;
-//U::A:         tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
-//U::A:         //etThread.traceF( tin0P , T("new  [nnHostWebLag0]:    ")+tNnHostWeb ) ;
-//U::A:         TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag0P) ;
-//U::A: 
-//U::A:                                                            nnHostWebLag0P = nnHostWebLathP ;
-//U::A:                                           nnHostWebLag1P = nnHostWebLag0P ;
-//U::A:                          nnHostWebLag2P = nnHostWebLag1P ;
-//U::A:         nnHostWebLag3P = nnHostWebLag2P ;
-//U::A: 
-//U::A:         ( *(count04T*)&nnHostWebLathP ) ++ ;
-//U::A: 
-//U::A:         }
-//U::A:             }
-//U::A:                 }
-//U::A:                     etRock.traceF( tin0P , T("!exception / could not write batch file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
-//U::A:                     POOPRqUIET
-//U::A:                     countT rc = POOP ;
-//U::A:                 {
-//U::A:                 else
-//U::A:                 if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
-//U::A:                 ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
-//U::A:                 SCOOPS
-//U::A:                 _IO_
-//U::A:             {
-//U::A:             IFsCRATCHoK
-//U::A:             TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore1+tNnHostWeb+tAfter1+T("\r\n") ;
-//U::A:             tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
-//U::A: 
-//U::A:             //etThread.traceF( tin0P , T("doomed [nnHostWebLag3]:    ")+tNnHostWeb ) ;
-//U::A:             TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag3P) ;
-//U::A:         {
-//U::A:         if( ~nnHostWebLag3P )
-//U::A:         TN( tLong , "" ) ; 
-//U::A:     {
-//U::A:     while( !ether )
-//U::A:     ZE( countT , idFileOut ) ;
-//U::A:     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-//U::A: 
-//U::A:     TN( tb4      , "    " ) ;
-//U::A:     TN( tAfter2  , "/64\"" ) ;
-//U::A:     TN( tAfter1  , "\"" ) ;
-//U::A:     TN( tBefore2 , "netsh interface ipv6 add    address interface=\"outer\" address=\"" ) ;
-//U::A: 
-//U::A:     ) ;
-//U::A: 
-//U::A:         "netsh interface ipv6 delete address interface=\"outer\" address=\""
-//U::A:         "netsh interface ipv6 delete address interface=\"outer\" address=\"2001:19f0:0:7077:5400:5ff:fe59:278d\"\r\n"            //U:: PUT THIS INTO A SETTING
-//U::A: 
-//U::A:     TN( tBefore1 ,
-//U::A: 
-//U::A:     //
-//U::A:     // ADD    THE YOUNGEST ADDRESS (LAG 0)
-//U::A:     // SET    THE YOUNGEST ADDRESS (LAG 0)
-//U::A:     // SHIFT  THE DATA TO LAG
-//U::A:     // DELETE THE OLDEST   ADDRESS (LAG 3)
-//U::A:     //
-//U::A:     // RECIPE
-//U::A: 
-//U::A:     nicNameC& nnHostWebLag3P = *(nicNameC*)pTaskP->c5 ;
-//U::A:     nicNameC& nnHostWebLag2P = *(nicNameC*)pTaskP->c4 ;
-//U::A:     nicNameC& nnHostWebLag1P = *(nicNameC*)pTaskP->c3 ;
-//U::A:     nicNameC& nnHostWebLag0P = *(nicNameC*)pTaskP->c2 ;
-//U::A: 
-//U::A:     nicNameC& nnHostWebLathP = *(nicNameC*)pTaskP->c1 ;     // WILL ALWAYS BE THE SAME AS nnHostWebLag0P ; IS USED TO MAKE THE CODE EASIER TO UNDERSTAND
-//U::A: 
-//U::A:     _IO_
-//U::A: {
-//U::A: if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 )
-//U::A: TASK( tmUpdateNnHostsF )
+//U::6: DONE( tmUpdateNnHostsF )
+//U::6: }
+//U::6:     }
+//U::6:         ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
+//U::6: 
+//U::6:         }
+//U::6:             }
+//U::6:                 etRock.traceF( tin0P , T("!exception / could not write batch file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+//U::6:                 POOPRqUIET
+//U::6:                 countT rc = POOP ;
+//U::6:             {
+//U::6:             else
+//U::6:             if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+//U::6:             ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
+//U::6:             SCOOPS
+//U::6:             _IO_
+//U::6:         {
+//U::6:         IFsCRATCHoK
+//U::6:         TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore2+tNnHostWeb+tAfter2+T("\r\n") ;
+//U::6:         tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
+//U::6:         //etThread.traceF( tin0P , T("new  [nnHostWebLag0]:    ")+tNnHostWeb ) ;
+//U::6:         TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag0P) ;
+//U::6: 
+//U::6:                                                            nnHostWebLag0P = nnHostWebLathP ;
+//U::6:                                           nnHostWebLag1P = nnHostWebLag0P ;
+//U::6:                          nnHostWebLag2P = nnHostWebLag1P ;
+//U::6:         nnHostWebLag3P = nnHostWebLag2P ;
+//U::6: 
+//U::6:         ( *(count04T*)&nnHostWebLathP ) ++ ;
+//U::6: 
+//U::6:         }
+//U::6:             }
+//U::6:                 }
+//U::6:                     etRock.traceF( tin0P , T("!exception / could not write batch file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+//U::6:                     POOPRqUIET
+//U::6:                     countT rc = POOP ;
+//U::6:                 {
+//U::6:                 else
+//U::6:                 if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+//U::6:                 ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
+//U::6:                 SCOOPS
+//U::6:                 _IO_
+//U::6:             {
+//U::6:             IFsCRATCHoK
+//U::6:             TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore1+tNnHostWeb+tAfter1+T("\r\n") ;
+//U::6:             tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
+//U::6: 
+//U::6:             //etThread.traceF( tin0P , T("doomed [nnHostWebLag3]:    ")+tNnHostWeb ) ;
+//U::6:             TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag3P) ;
+//U::6:         {
+//U::6:         if( ~nnHostWebLag3P )
+//U::6:         TN( tLong , "" ) ; 
+//U::6:     {
+//U::6:     while( !ether )
+//U::6:     ZE( countT , idFileOut ) ;
+//U::6:     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+//U::6: 
+//U::6:     TN( tb4      , "    " ) ;
+//U::6:     TN( tAfter2  , "/64\"" ) ;
+//U::6:     TN( tAfter1  , "\"" ) ;
+//U::6:     TN( tBefore2 , "netsh interface ipv6 add    address interface=\"outer\" address=\"" ) ;
+//U::6: 
+//U::6:     ) ;
+//U::6: 
+//U::6:         "netsh interface ipv6 delete address interface=\"outer\" address=\""
+//U::6:         "netsh interface ipv6 delete address interface=\"outer\" address=\"2001:19f0:0:7077:5400:5ff:fe59:278d\"\r\n"            //U:: PUT THIS INTO A SETTING
+//U::6: 
+//U::6:     TN( tBefore1 ,
+//U::6: 
+//U::6:     //
+//U::6:     // ADD    THE YOUNGEST ADDRESS (LAG 0)
+//U::6:     // SET    THE YOUNGEST ADDRESS (LAG 0)
+//U::6:     // SHIFT  THE DATA TO LAG
+//U::6:     // DELETE THE OLDEST   ADDRESS (LAG 3)
+//U::6:     //
+//U::6:     // RECIPE
+//U::6: 
+//U::6:     nicNameC& nnHostWebLag3P = *(nicNameC*)pTaskP->c5 ;
+//U::6:     nicNameC& nnHostWebLag2P = *(nicNameC*)pTaskP->c4 ;
+//U::6:     nicNameC& nnHostWebLag1P = *(nicNameC*)pTaskP->c3 ;
+//U::6:     nicNameC& nnHostWebLag0P = *(nicNameC*)pTaskP->c2 ;
+//U::6: 
+//U::6:     nicNameC& nnHostWebLathP = *(nicNameC*)pTaskP->c1 ;     // WILL ALWAYS BE THE SAME AS nnHostWebLag0P ; IS USED TO MAKE THE CODE EASIER TO UNDERSTAND
+//U::6: 
+//U::6:     _IO_
+//U::6: {
+//U::6: if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 )
+//U::6: TASK( tmUpdateNnHostsF )
 
 }
     }
@@ -1425,7 +1404,7 @@ mySettingsS::~mySettingsS( voidT )
 {
 struct mySettingsS
 
-//U::A: CODE COMMENTED OUT THAT SUPPORTS AAAA (IPV6) REQUESTS
+//U::6: CODE COMMENTED OUT THAT SUPPORTS AAAA (IPV6) REQUESTS
 
 //  
 // CERTBOT CANNOT BE USED TO RENEW A CERTIFICATE FOR THE LEAF DOMAIN, BECAUSE I DO NOT HAVE CERTBOT'S SERVERS ON MY ALLOWLIST
