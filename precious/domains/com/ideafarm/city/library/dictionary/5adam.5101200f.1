@@ -84,11 +84,11 @@ DONE( tmWorkF )
                                             //    {
                                             //    if( ~nnOut )
                                             //
-                                            //           if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tTarget      ) ) nnOut = nnHostWebLag0 ;
-                                            //    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1    ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
-                                            //    //     if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1    ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+                                            //           if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gc.tTarget      ) ) nnOut = gv.nnHostWebLag0 ;
+                                            //    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gc.tWebHook1    ) ) nnOut = nnWebHook1    ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                            //    //     if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gc.tWebHooks    ) ) nnOut = nnWebHook1    ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
                                             //
-                                            //    //etRock.traceF( tin0P , T("U:: debug    [tTarget]:    \"")+tTarget+T("\"") ) ;
+                                            //    //etRock.traceF( tin0P , T("U:: debug    [gc.tTarget]:    \"")+gc.tTarget+T("\"") ) ;
                                             //    //etRock.traceF( tin0P , T("U:: debug [tDomainNet]:    \"")+tDomainNet+T("\"") ) ;
                                             //
                                             //    nicNameC nnOut ;
@@ -106,12 +106,12 @@ DONE( tmWorkF )
                                                 if( ~nnOut )
 
                                                 }
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
-                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gc.tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gc.tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
                                                 {
                                                 else
                                                 }
-                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook2 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gc.tWebHooks    ) ) nnOut = nnWebHook2 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
                                                 {
                                                 if( bDivert )
 
@@ -140,35 +140,35 @@ DONE( tmWorkF )
 
                                             }
                                                 }
-                                                    etThread.osTimeNowF( tin0P , timeUsed1 , timeUsed2 ) ;
-                                                    timeUsed2 = timeUsed1 = 0 ;
-                                                    cUsed = 1 ;
+                                                    etThread.osTimeNowF( tin0P , gv.timeUsed1 , gv.timeUsed2 ) ;
+                                                    gv.timeUsed2 = gv.timeUsed1 = 0 ;
+                                                    gv.cUsed = 1 ;
 
                                                     }
                                                         }
-                                                            /**/etRock.traceF( tin0P , tSayExCouldNotWritePasswordFile+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                                                            /**/etRock.traceF( tin0P , tSayExCouldNotWritePasswordFile+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gc.tb4+tLong ) ;
                                                             POOPRqUIET
                                                             countT rc = POOP ;
                                                         {
                                                         else
                                                         if( !POOP ) ;//etRock.traceF( tin0P , tSayWrotePasswordFile/*+tLong*/ ) ;
-                                                        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
+                                                        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)gv.tWoTimePasswordUrlSuffix , gv.tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
                                                         SCOOPS
                                                         _IO_
                                                     {
                                                     IFsCRATCHoK
                                                     TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
 
-                                                    //etRock.traceF( tin0P , tSayNewPassword/*+tWoTimePasswordUrlSuffix*/ ) ;
+                                                    //etRock.traceF( tin0P , tSayNewPassword/*+gv.tWoTimePasswordUrlSuffix*/ ) ;
 
-                                                                          tGorillaSuffix = tWoTimePasswordUrlSuffix+tDotHiddenDotIdeafarmDotCom ;
-                                                    tGorillaSuffixUsed  = tGorillaSuffix ; 
-                                                                          tWoTimePasswordUrlSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
-                                                    tWoTimePasswordUrlSuffixUsed = tWoTimePasswordUrlSuffix ;
+                                                                          gv.tGorillaSuffix = gv.tWoTimePasswordUrlSuffix+gc.tDotHiddenDotIdeafarmDotCom ;
+                                                    gv.tGorillaSuffixUsed  = gv.tGorillaSuffix ; 
+                                                                          gv.tWoTimePasswordUrlSuffix = gc.tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
+                                                    gv.tWoTimePasswordUrlSuffixUsed = gv.tWoTimePasswordUrlSuffix ;
 
-                                                    //etRock.traceF( tin0P , tSayOldPassword/*+tWoTimePasswordUrlSuffix*/ ) ;
+                                                    //etRock.traceF( tin0P , tSayOldPassword/*+gv.tWoTimePasswordUrlSuffix*/ ) ;
 
-                                                    cUsed = 0 ;
+                                                    gv.cUsed = 0 ;
                                                 {
                                                 if( bNewPassword )
 
@@ -176,28 +176,28 @@ DONE( tmWorkF )
                                                     }
                                                         bNewPassword = 1 ;
                                                         bDivert = 0 ;
-                                                        //etRock.traceF( tin0P , tSayResettingDivert2/*+tGorillaSuffix*/ ) ;
+                                                        //etRock.traceF( tin0P , tSayResettingDivert2/*+gv.tGorillaSuffix*/ ) ;
                                                         _IO_
                                                     {
-                                                    else if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffix ) )
+                                                    else if( !etThread.strCompareF( tin0P , psttSuffix , gv.tGorillaSuffix ) )
                                                     }
                                                         }
                                                             bNewPassword = 1 ;
-                                                            //etRock.traceF( tin0P , tSaySettingNewPassword/*+tGorillaSuffixUsed*/ ) ;
+                                                            //etRock.traceF( tin0P , tSaySettingNewPassword/*+gv.tGorillaSuffixUsed*/ ) ;
                                                             _IO_
                                                         {                                                                                            
-                                                        if( ++ cUsed > 0x80 || timeE2 || timeE1 > TOCK << 4 )                                   //20250608@0853: "0x80 <- 0x20" AND "<< 4" <- "<< 2" W/O ANALYSIS (THE PRECEDING CHANGE SEEMED TO REDUCED STUTTER BY A LOT)
+                                                        if( ++ gv.cUsed > 0x80 || timeE2 || timeE1 > TOCK << 4 )                                   //20250608@0853: "0x80 <- 0x20" AND "<< 4" <- "<< 2" W/O ANALYSIS (THE PRECEDING CHANGE SEEMED TO REDUCED STUTTER BY A LOT)
                                                                                                                                                 //20250607@1542: "0x20 <- 0x8" AND "<< 2" <- "<< 0" W/O ANALYSIS TO FIX STUTTER (MULTIPLE UPDATES TO A SINGLE USE)
-                                                        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeUsed1 , timeUsed2 ) ;
+                                                        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , gv.timeUsed1 , gv.timeUsed2 ) ;
                                                         etThread.osTimeNowF(      tin0P , timeE1 , timeE2 ) ;
                                                         ZE( sCountT , timeE2 ) ;
                                                         ZE( countT  , timeE1 ) ;
 
                                                         bDivert = 0 ;                                                                       //PS:PERSONALITY: THE DUPLICATE USAGE IS ALWAYS HONORED, BUT THEN WILL BE RETIRED IF USED TOO MANY TIMES OR TOO MUCH TIME HAS ELAPSED SINCE WOTH USE
-                                                        //etRock.traceF( tin0P , tSayResettingDivert/*+tGorillaSuffixUsed*/ ) ;
+                                                        //etRock.traceF( tin0P , tSayResettingDivert/*+gv.tGorillaSuffixUsed*/ ) ;
                                                         _IO_
                                                     {
-                                                    if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffixUsed ) )
+                                                    if( !etThread.strCompareF( tin0P , psttSuffix , gv.tGorillaSuffixUsed ) )
 
                                                     _IO_
                                                 {
@@ -213,14 +213,14 @@ DONE( tmWorkF )
 
                                             etThread.delF( tin0P , psttw ) ;
                                             if( bDivert ) { etThread.strSubstringF( tin0P , psttSuffix , idf , countTC()    , psttw , 0     ) ; ___( psttSuffix ) ; }
-                                                            etThread.strSubstringF( tin0P , psttNet    , idf , sttq , tDash , psttw , 0 , 0 ) ; ___( psttNet    ) ;
+                                                            etThread.strSubstringF( tin0P , psttNet    , idf , sttq , gc.tDash , psttw , 0 , 0 ) ; ___( psttNet    ) ;
                                             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                             countT idf = 1 ;
                                             ZE( strokeS* , psttSuffix ) ;
                                             ZE( strokeS* , psttNet ) ;
                                             _IO_
                                         {
-                                        if( psttw && etThread.strIdF( tin0P , tHidden , psttw , 1 ) && etThread.strIdF( tin0P , tDash , psttw , 1 ) )
+                                        if( psttw && etThread.strIdF( tin0P , gc.tHidden , psttw , 1 ) && etThread.strIdF( tin0P , gc.tDash , psttw , 1 ) )
 
                                         //etRock.traceF( tin0P , tSayDomainGrossPeer/*+tDomainGross+tqb4q+tDomainPeer+tq*/ ) ;
                                         TN( tDomainGross , psttw ) ;
@@ -264,10 +264,10 @@ DONE( tmWorkF )
                         _IO_
                     {
 
-                    ++ idClient ;
+                    ++ gv.idClient ;
 
                     //}
-                    //    //etRock.traceF( tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(nnPeer)+(bDivert?tSayDiverting:tSayGranting)+tDomainPeer ) ;
+                    //    //etRock.traceF( tin0P , TT(timeN1,timeN2)+gc.tb4+tTimeOld+gc.tb4+T(nnPeer)+(bDivert?tSayDiverting:tSayGranting)+tDomainPeer ) ;
                     //
                     //    }
                     //        etThread.delF( tin0P , psttSay ) ;
@@ -336,7 +336,7 @@ DONE( tmWorkF )
 
             }
                 }
-                    //U::PROD: //etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
+                    //U::PROD: //etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+gc.tb4+tDomainPeer ) ;
                     //etRock.traceF( tin0P , tSayUnknownDomain ) ;
                     bDivert = 1 ;
                 {
@@ -402,7 +402,7 @@ DONE( tmWorkF )
             ZE( boolT , bDivert ) ;
             boolT bSilent = 1 ;         //PS:PERSONALITY: I DO NOT RESPOND UNLESS I KNOW THE ANSWER TO THE QUERY ; THIS IS INTENDED TO CAUSE THE REQUESTING PEER TO FAILOVER TO MAKE THE REQUEST FROM ITS ALTERNATE DNS SERVER
 
-            //etRock.traceF( tin0P , tSayWaitedForPacket/*+T(nnPeer)+tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
+            //etRock.traceF( tin0P , tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
             }
                 }
                     break ;
@@ -450,11 +450,11 @@ DONE( tmWorkF )
         TN( tSayARequest                    , "A request [tDomainNet]:    "                                                                                           ) ;
         TN( tSayExCouldNotWritePasswordFile , "!exception / could not write password suffix shared file [rc,tLong]:    "                                              ) ;
         TN( tSayWrotePasswordFile           , "wrote password suffix shared file aok [tLong]:    "                                                                    ) ;
-        TN( tSayNewPassword                 , "new         [tWoTimePasswordUrlSuffix]:    "                                                                           ) ;
-        TN( tSayOldPassword                 , "old         [tWoTimePasswordUrlSuffix]:    "                                                                           ) ;
-        TN( tSayResettingDivert2            , "resetting bDivert because suffix is the current expected value [tGorillaSuffix]:    "                                  ) ;
-        TN( tSaySettingNewPassword          , "setting bNewPassword because suffix has already been used too many times or for too long [tGorillaSuffixUsed]:    "    ) ;
-        TN( tSayResettingDivert             , "resetting bDivert because suffix has already been used [tGorillaSuffixUsed]:    "                                      ) ;
+        TN( tSayNewPassword                 , "new         [gv.tWoTimePasswordUrlSuffix]:    "                                                                           ) ;
+        TN( tSayOldPassword                 , "old         [gv.tWoTimePasswordUrlSuffix]:    "                                                                           ) ;
+        TN( tSayResettingDivert2            , "resetting bDivert because suffix is the current expected value [gv.tGorillaSuffix]:    "                                  ) ;
+        TN( tSaySettingNewPassword          , "setting bNewPassword because suffix has already been used too many times or for too long [gv.tGorillaSuffixUsed]:    "    ) ;
+        TN( tSayResettingDivert             , "resetting bDivert because suffix has already been used [gv.tGorillaSuffixUsed]:    "                                      ) ;
         TN( tSayDomainNetSuffixPeer         , "[domainNet,suffix,peer]:      \""                                                                                      ) ;
         TN( tSayDomainGrossPeer             , "[domainGross,peer]:    \""                                                                                             ) ;
         TN( tSayLoweringCase                , "lowering case"                                                                                                         ) ;
@@ -526,20 +526,20 @@ DONE( tmWorkF )
     while( !POOP && !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    //U::6: etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
+    //U::6: etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&gv.nnHostWebLath , (countT)&gv.nnHostWebLag0 , (countT)&gv.nnHostWebLag1 , (countT)&gv.nnHostWebLag2 , (countT)&gv.nnHostWebLag3 ) ;
 
     mySettings.grabMe.ungrabF( tin0P ) ;
 
     }
         }
             }
-                etRock.traceF( tin0P , T("!exception / could not write password suffix shared file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                etRock.traceF( tin0P , T("!exception / could not write password suffix shared file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gc.tb4+tLong ) ;
                 POOPRqUIET
                 countT rc = POOP ;
             {
             else
             if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote password suffix shared file aok [tLong]:    ")+tLong ) ;
-            ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)tWoTimePasswordUrlSuffix , tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
+            ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)gv.tWoTimePasswordUrlSuffix , gv.tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
             SCOOPS
             _IO_
         {
@@ -547,7 +547,7 @@ DONE( tmWorkF )
         TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
     {
 
-    etRock.traceF( tin0P , T("initialized [tWoTimePasswordUrlSuffix]:    ")+tWoTimePasswordUrlSuffix ) ;
+    etRock.traceF( tin0P , T("initialized [gv.tWoTimePasswordUrlSuffix]:    ")+gv.tWoTimePasswordUrlSuffix ) ;
 
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
@@ -580,6 +580,7 @@ DONE( tmWorkF )
     nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
     nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook1 ) ;
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
@@ -593,25 +594,7 @@ DONE( tmWorkF )
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
 
-    //U::6: nicNameC nnHostWebLag3 ;
-    //U::6: nicNameC nnHostWebLag2 ;
-    //U::6: nicNameC nnHostWebLag1 ;
-    //U::6: nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0000:7077:5400:05ff:fe59:278d") ) ;        //U:: PUT THIS INTO A SETTING ; THIS IS THE IPv6 ASSIGNED TO web1
-    //U::6: nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::1") ) ;        //U:: FOR TESTING
-    //U::6: nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
-
-    ZE( countT , idClient ) ;
-    ZE( sCountT , timeUsed2 ) ;
-    ZE( countT  , timeUsed1 ) ;
-    ZE( countT  , cUsed ) ;
-    TN( tGorillaSuffixUsed           , "" ) ;
-    TN( tWoTimePasswordUrlSuffixUsed , "" ) ;
-    TN( tGorillaSuffix               , "" ) ; tGorillaSuffix  = tWoTimePasswordUrlSuffix+tDotHiddenDotIdeafarmDotCom ;
-    }
-        tWoTimePasswordUrlSuffix = tPasswordPrefix+TF4((countT)ru,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;  //0x24: [0-9,a-z]
-        ranUniC ru( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
-    {
-    TN( tWoTimePasswordUrlSuffix     , "" ) ;
+    gVarS gv( tin0P , gc ) ;
 
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
@@ -625,16 +608,7 @@ DONE( tmWorkF )
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
 
-    //U::6: TN( tTarget , "target.ipv6-only.ideafarm.com" ) ;
-
-    TN( tHidden , ".hidden.ideafarm.com" ) ;
-    TN( tWebHook1 , "" ) ; tWebHook1 = mySettings.tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
-    TN( tWebHooks , "" ) ; tWebHooks = mySettings.tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
-    TN( tDash , "-" ) ;
-    TN( tb4                           , "    "                 ) ;
-    TN( tPasswordPrefix               , "psw_"                 ) ;            // THIS PREFIX IS FOR CONVENIENCE WHEN SEARCHING TRACE LOGS 
-    TN( tDotHiddenDotIdeafarmDotCom   , ".hidden.ideafarm.com" ) ;
-    etherC& etRock = etherC::etRockIF( tin0P ) ;
+    gConstS gc( tin0P , mySettings ) ;
 
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
@@ -685,6 +659,74 @@ tin123S& tinMe = (tin123S&)tin0P ;
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+;
+}
+    }
+        //U::6: nnHostWebLag0 = etherP.sockNicNameF( tin0P , T("2001:19f0:0000:7077:5400:05ff:fe59:278d") ) ;        //U:: PUT THIS INTO A SETTING ; THIS IS THE IPv6 ASSIGNED TO web1
+        //U::6: nnHostWebLag0 = etherP.sockNicNameF( tin0P , T("2001:19f0:0:7077::1") ) ;        //U:: FOR TESTING
+        //U::6: nnHostWebLath = etherP.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
+
+        tWoTimePasswordUrlSuffix = gcP.tPasswordPrefix+TF4((countT)ru,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;  //0x24: [0-9,a-z]
+        ranUniC ru( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
+
+        tGorillaSuffix = tWoTimePasswordUrlSuffix+gcP.tDotHiddenDotIdeafarmDotCom ;
+    {
+    idClient( 0 )
+    timeUsed2( 0 ) ,
+    timeUsed1( 0 ) ,
+    cUsed( 0 ) ,
+    tGorillaSuffixUsed           ( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
+    tWoTimePasswordUrlSuffixUsed ( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
+    tGorillaSuffix               ( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
+    tWoTimePasswordUrlSuffix     ( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
+    inline gVarS( tin0S& tin0P /*, etherP*/ , gConstS& gcP ) :
+
+    //U::6: nicNameC nnHostWebLag3 ;
+    //U::6: nicNameC nnHostWebLag2 ;
+    //U::6: nicNameC nnHostWebLag1 ;
+    //U::6: nicNameC nnHostWebLag0 ;
+    //U::6: nicNameC nnHostWebLag0 ;
+    //U::6: nicNameC nnHostWebLath ;
+
+    countT  idClient                     ;
+    sCountT timeUsed2                    ;
+    countT  timeUsed1                    ;
+    countT  cUsed                        ;
+    textC   tGorillaSuffixUsed           ;
+    textC   tWoTimePasswordUrlSuffixUsed ;
+    textC   tGorillaSuffix               ;
+    textC   tWoTimePasswordUrlSuffix     ;
+{
+struct gVarS
+
+;
+}
+    }
+        tWebHook1 = mySettingsP.tDomainLeafWebHook1Net+tHidden ;
+        tWebHooks = mySettingsP.tDomainLeafWebHooksNet+tHidden ;
+    {
+    //U::6: , tTarget(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "target.ipv6-only.ideafarm.com" )
+    tHidden(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".hidden.ideafarm.com"          )
+    tWebHook1(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                              ) ,
+    tWebHooks(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                              ) ,
+    tDash(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "-"                             ) ,
+    tb4(                         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    "                          ) ,
+    tPasswordPrefix(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "psw_"                          ) ,
+    tDotHiddenDotIdeafarmDotCom( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".hidden.ideafarm.com"          ) ,
+    inline gConstS( tin0S& tin0P , mySettingsS& mySettingsP ) :
+
+    //U::6: textC tTarget             ;
+
+    textC tHidden                     ;
+    textC tWebHook1                   ;
+    textC tWebHooks                   ;
+    textC tDash                       ;
+    textC tb4                         ;
+    textC tPasswordPrefix             ;
+    textC tDotHiddenDotIdeafarmDotCom ;
+{
+struct gConstS
 
 //U::6: DONE( tmUpdateNnHostsF )
 //U::6: }
