@@ -908,7 +908,7 @@ DONE( tmWorkF )
 
                                                                                     etThread.delF( tin0P , psttu ) ;
 
-                                                                                    TN( tLong , "" ) ; tLong = T("////go1/d/ideafarm.shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/json/usernames/")+T("json.username.")+T(psttu)+T(".json") ;
+                                                                                    TN( tLong , "" ) ; tLong = T("///" /*"/go1/"*/ "d/ideafarm.shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/json/usernames/")+T("json.username.")+T(psttu)+T(".json") ;
 
                                                                                     etThread.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
                                                                                     ZE( strokeS* , psttu ) ;
@@ -1323,6 +1323,7 @@ DONE( tmWorkF )
                                                             {
                                                             if( idf )
                                                             countT idf = swExistingCredentials.idSlotOfLeverF( tin0P , (countT)(const strokeS*)tIdUser ) ;
+                                                            etRock.traceF( tin0P , T("looking for preexisting credentials for [tIdUser]:    ")+tIdUser ) ;
                                                             TN( tPreexistingPassword , "" ) ;                                                           // ALSO USED AS BOOLEAN TO SUPPRESS REGISTRATION OF A NEW USER
 
                                                             }
@@ -1359,8 +1360,7 @@ DONE( tmWorkF )
                                                                         countT cbr = sizeof idOld ;
                                                                     {
                                                                     if( !bNewFile )
-//U::PROD: countT idOld = bStudent ? 0 : TOCK ;    // STUDENTS GET LOW VALUES, DISPENSED IN SERIAL ORDER 1 2 3 4 ... ; OTHERWISE INITIALIZE TO A HIGH VALUE THAT WILL BE USED IF THE FILE DOES NOT EXIST OR IS INVALID
-countT idOld = 0 ;
+                                                                    countT idOld = bStudent ? 0 : TOCK ;    // STUDENTS GET LOW VALUES, DISPENSED IN SERIAL ORDER 1 2 3 4 ... ; OTHERWISE INITIALIZE TO A HIGH VALUE THAT WILL BE USED IF THE FILE DOES NOT EXIST OR IS INVALID
 
                                                                     const boolT bNewFile = ifcOPENrESULT_CREATED == fileCount.idOpenResultF( tin0P  ) ;
                                                                     fileC fileCount( tin0P , (strokeS*)tName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
@@ -1806,12 +1806,12 @@ countT idOld = 0 ;
     TN( tSharedFolderEventGorilla01  , "" ) ; tSharedFolderEventGorilla01  = tSharedFolderFinal+T("events.3.gorilla01/"                ) ;
     TN( tSharedFolderEventRetryLater , "" ) ; tSharedFolderEventRetryLater = tSharedFolderFinal+T("events.2.retry.later/"              ) ;
 
-    TN( tSharedFolderWorking         , "" ) ; tSharedFolderWorking         = T("////go1/d/ideafarm.shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
-    TN( tSharedFolderFinal           , "" ) ; tSharedFolderFinal           = T("////go1/d/ideafarm.shared/") ;
+    TN( tSharedFolderWorking         , "" ) ; tSharedFolderWorking         = T("///" /*"/go1/"*/ "d/ideafarm.shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderFinal           , "" ) ; tSharedFolderFinal           = T("///" /*"/go1/"*/ "d/ideafarm.shared/") ;
 
     textC* pptFolderEventsIncoming[] = { &tFolderEventsIncoming } ;
 
-    TN( tFolderEventsIncoming , "////go1/d/ideafarm.shared/5100088f/events.incoming/" ) ;
+    TN( tFolderEventsIncoming , "///" /*"/go1/"*/ "d/ideafarm.shared/5100088f/events.incoming/" ) ;
 
     patternC patMyEvents( tin0P , etThread , tPatternMyEvents , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tPatternMyEvents , "" ) ; tPatternMyEvents = T("event.*.")+tLanName+T(".*.soulC") ;
