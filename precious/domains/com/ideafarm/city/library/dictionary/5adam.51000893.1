@@ -1276,7 +1276,8 @@ DONE( tmWorkF )
                                                                         IFsCRATCHoK
                                                                         TN( tValueNonce , "" ) ;
                                                                     {
-                                                                    if( !tPreexistingPassword.csF( tin0P ) )
+                                                                    else
+                                                                    if( tPreexistingPassword.csF( tin0P ) ) bRegistered = 1 ;
 
                                                                     _IO_
                                                                 {
@@ -1591,7 +1592,7 @@ countT idOld = 0 ;
                                 {
                                 if( !( F(flagsFail) ) )
                                 ZE( boolT , bGorilla01  ) ;
-                                ZE( boolT , bRegistered ) ;
+                                ZE( boolT , bRegistered ) ;     // WILL ALSO BE SET IF I USE A PREEXISTING CREDENTIALS SETTING
 
                                 }
                                     }
