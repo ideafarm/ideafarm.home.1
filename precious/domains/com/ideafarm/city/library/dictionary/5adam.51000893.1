@@ -1299,12 +1299,14 @@ DONE( tmWorkF )
                                                                     if( psttSharedSecret && psttSharedSecret->idAdam ) tValueSharedSecret = T(psttSharedSecret) ;
 
                                                                     ZE( strokeS* , psttSharedSecret ) ; etThread.querySettingF( tin0P , psttSharedSecret , T("!ipdos.password.matrix.ideafarm.com.shared.secret")  ) ; ___( psttSharedSecret ) ;
+
+                                                                    tNewPassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x3e) ;
+                                                                    countT idNewPassword = ruPassword ;
                                                                 {
-                                                                if( !tPreexistingPassword.csF( tin0P ) )
+                                                                else
+                                                                if( tPreexistingPassword.csF( tin0P ) ) tNewPassword = tPreexistingPassword ;
                                                                 TN( tValueSharedSecret , "" ) ;
 
-                                                                tNewPassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x3e) ;
-                                                                countT idNewPassword = ruPassword ;
                                                                 _IO_
 
                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
