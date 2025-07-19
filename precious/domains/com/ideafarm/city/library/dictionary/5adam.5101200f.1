@@ -23,6 +23,14 @@ DONE( tmWorkF )
         {
 
         }
+            ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
+            etRock.traceF( tin0P , T("waiting for all workers to go away [cWorkers]:    ")+TF2(cWorkers,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        {
+        while( cWorkers )
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        bQuit ++ ;
+
+        }
             IFsCRATCHoK{}
 
             etThread.delF( tin0P , pbq ) ;
@@ -402,6 +410,9 @@ DONE( tmWorkF )
             ZE( boolT , bDivert ) ;
             boolT bSilent = 1 ;         //PS:PERSONALITY: I DO NOT RESPOND UNLESS I KNOW THE ANSWER TO THE QUERY ; THIS IS INTENDED TO CAUSE THE REQUESTING PEER TO FAILOVER TO MAKE THE REQUEST FROM ITS ALTERNATE DNS SERVER
 
+            gv.st_pJob << (countT)pJob ;
+            jobS* pJob = new( 0 , tin0P , LF ) jobS( pbq , cbq , idp , nnPeer ) ; ___( pJob ) ;
+
             //etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
             }
                 }
@@ -432,6 +443,16 @@ DONE( tmWorkF )
         ZE( boolT   , bForceReply          ) ;
         ZE( sCountT , timeLetsEncryptLath2 ) ;
         ZE( countT  , timeLetsEncryptLath1 ) ;
+
+        }
+            etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 1 ) , (countT)&bQuit , (countT)&bFail , (countT)&cWorkers , (countT)&mySettings , (countT)&sockd , (countT)&gv.st_pJob ) ;
+            inc02AM( cWorkers ) ;
+        {
+        while( cDo -- )
+        countT cDo = 1 ;
+        ZE( boolT  , bFail    ) ;
+        ZE( boolT  , bQuit    ) ;
+        ZE( countT , cWorkers ) ;
 
         }
             }
@@ -544,7 +565,7 @@ DONE( tmWorkF )
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
 
-    gVarS gv( tin0P , gc ) ;
+    gVarS gv( tin0P , etThread , gc ) ;
 
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
@@ -610,6 +631,46 @@ tin123S& tinMe = (tin123S&)tin0P ;
 if( pTaskP )
 TASK( tmWorkF )
 
+
+DONE( tmWorkerF )
+}
+    dec02AM( cWorkersP ) ;
+
+    }
+        }
+            }
+                }
+                    etThread.traceF( tin0P , T("pulled a job") ) ;
+                {
+                if( pJob )
+
+                st_pJobP.ungrabF( tin0P ) ;
+                st_pJobP >> (countT&)pJob ;
+                ZE( jobS* , pJob ) ;
+            {
+            else
+            }
+                break ;
+                st_pJobP.ungrabF( tin0P ) ;
+            {
+            if( !st_pJobP || bQuitP || bFailP )
+
+            st_pJobP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        {
+        while( !bQuitP )
+        st_pJobP.waitF( tin0P ) ;
+    {
+    while( !bQuitP )
+    stackC&      st_pJobP    =      *(stackC*)pTaskP->c6 ;
+    socketC&     sockdP      =     *(socketC*)pTaskP->c5 ;
+    mySettingsS& mySettingsP = *(mySettingsS*)pTaskP->c4 ;
+    countT&      cWorkersP   =      *(countT*)pTaskP->c3 ;
+    boolT&       bFailP      =       *(boolT*)pTaskP->c2 ;
+    boolT&       bQuitP      =       *(boolT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
+TASK( tmWorkerF )
+
 ;
 }
     }
@@ -622,7 +683,8 @@ TASK( tmWorkF )
 
         tGorillaSuffix = tWoTimePasswordUrlSuffix+gcP.tDotHiddenDotIdeafarmDotCom ;
     {
-    idClient( 0 )
+    st_pJob( tin0P , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_countT )
+    idClient( 0 ) ,
     timeUsed2( 0 ) ,
     timeUsed1( 0 ) ,
     cUsed( 0 ) ,
@@ -630,7 +692,7 @@ TASK( tmWorkF )
     tWoTimePasswordUrlSuffixUsed ( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
     tGorillaSuffix               ( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
     tWoTimePasswordUrlSuffix     ( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-    inline gVarS( tin0S& tin0P /*, etherP*/ , gConstS& gcP ) :
+    inline gVarS( tin0S& tin0P , etherC& etherP , gConstS& gcP ) :
 
     //U::6: nicNameC nnHostWebLag3 ;
     //U::6: nicNameC nnHostWebLag2 ;
@@ -639,6 +701,7 @@ TASK( tmWorkF )
     //U::6: nicNameC nnHostWebLag0 ;
     //U::6: nicNameC nnHostWebLath ;
 
+    stackC  st_pJob                      ;
     countT  idClient                     ;
     sCountT timeUsed2                    ;
     countT  timeUsed1                    ;
@@ -1449,6 +1512,31 @@ mySettingsS::mySettingsS( tin0S& tin0P , etherC& etherP ) :
     TINSL
 {
 mySettingsS::~mySettingsS( voidT )
+
+NEWdELcLASS( 1 , jobS ) ;
+
+;
+}
+    {}
+    idp( 0 )
+    cbq( 0 ) ,
+    pbq( 0 ) ,
+    inline jobS( voidT ) :
+
+    {}
+    nnPeer( nnPeerP )
+    idp( idpP ) ,
+    cbq( cbqP ) ,
+    pbq( pbqP ) ,
+    inline jobS( byteT* pbqP , countT cbqP , countT idpP , nicNameC& nnPeerP ) :
+    NEWdELcLASSpROTOS
+
+    nicNameC nnPeer ;
+    countT   idp    ;
+    countT   cbq    ;
+    byteT*   pbq    ;
+{
+struct jobS
 
 ;
 }
