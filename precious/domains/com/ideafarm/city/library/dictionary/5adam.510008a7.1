@@ -31,8 +31,10 @@ DONE( tmWorkF )
         bQuit ++ ;
 
         }
+            /**/etRock.traceF( tin0P , gc.tSayPushedJob ) ;
             gv.st_pJob << (countT)pJob ;
             jobS* pJob = new( 0 , tin0P , LF ) jobS( pbq , cbq , idp , nnPeer ) ; ___( pJob ) ;
+            /**/etRock.traceF( tin0P , gc.tSayPushingJob ) ;
 
             //etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
             }
@@ -46,7 +48,7 @@ DONE( tmWorkF )
                 if( POOP )
                 /**/etRock.traceF( tin0P , gc.tSayCalledRead ) ;
                 sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
-                /**/etRock.traceF( tin0P , gc.tSayCallingRead ) ;
+                //etRock.traceF( tin0P , gc.tSayCallingRead ) ;
                 SCOOPS
                 _IO_
             {
@@ -625,7 +627,7 @@ DONE( tmWorkerF )
                     ZE( boolT , bDivert ) ;
                     boolT bSilent = 1 ;         //PS:PERSONALITY: I DO NOT RESPOND UNLESS I KNOW THE ANSWER TO THE QUERY ; THIS IS INTENDED TO CAUSE THE REQUESTING PEER TO FAILOVER TO MAKE THE REQUEST FROM ITS ALTERNATE DNS SERVER
 
-                    etThread.traceF( tin0P , T("pulled a job") ) ;
+                    //etThread.traceF( tin0P , T("pulled a job") ) ;
                 {
                 if( pJob )
 
@@ -681,7 +683,7 @@ TASK( tmWorkerF )
 
         tGorillaSuffix = tWoTimePasswordUrlSuffix+gcP.tDotHiddenDotIdeafarmDotCom ;
     {
-    st_pJob( tin0P , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_countT )
+    st_pJob( tin0P , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE | flSTACKc_XRAY , ifcSTACKtYPE_countT )
     idClient( 0 ) ,
     timeUsed2( 0 ) ,
     timeUsed1( 0 ) ,
@@ -719,13 +721,14 @@ struct gVarS
     {
     //U::6: , tTarget(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "target.ipv6-only.ideafarm.com" )
 
-
     tDotLetsEncryptDotOrg(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".letsencrypt.org"                                                                                                      )
     tSayGranting(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    granting information    "                                                                                          ) ,
     tSayDiverting(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    diverting information    "                                                                                         ) ,
     tSayUnknownDomain(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    !exception / unknown peer domain"                                                                                  ) ,
     tSayPrefix(                      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[nnPeer]:    "                                                                                                         ) ,
 
+    tSayPushedJob(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed job"                                                                                                            ) ,
+    tSayPushingJob(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing job"                                                                                                           ) ,
     tSayPurgedStacks(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "purged  stacks"                                                                                                        ) ,
     tSayPurgingStacks(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "purging stacks"                                                                                                        ) ,
     tSayExCouldNotWriteReply(        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not write reply [rc]:    "                                                                          ) ,
@@ -787,6 +790,8 @@ struct gVarS
     textC tSayUnknownDomain               ;
     textC tSayPrefix                      ;
 
+    textC tSayPushedJob                   ;
+    textC tSayPushingJob                  ;
     textC tSayPurgedStacks                ;
     textC tSayPurgingStacks               ;
     textC tSayExCouldNotWriteReply        ;
