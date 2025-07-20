@@ -34615,7 +34615,7 @@ each textC object contains an unmodifiable string of strokes
 
     ~circleOfByteC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3614b002.circleOfByteC.dt_circleOfByteC!||
-    circleOfByteC( tin0S& tin0P , etherC& etherP , const countT cbCircleP = CBcIRCLEdFLT ) ;
+    circleOfByteC( tin0S& tin0P , etherC& etherP , const countT cbCircleP = CBcIRCLEoFbYTEdFLT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3614b003.circleOfByteC.circleOfByteC!||
     inline voidT operator << ( byteT bP ) { pbCircle[ ( cIn ++ ) % cbCircle ] = bP ; }        // "cIn % cbCircle" IS REFERRED TO AS THE "CURSOR"
     byteT operator []( countT offrP ) const ;
@@ -48464,3 +48464,112 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.s_acceptF_parametersS : 1snip.150001d0.s_acceptF_parametersS END
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class circleC/*1*/
+{
+    etherC&      ether       ;
+    const boolT& bQuit       ;
+    const countT cbElement   ;
+    const countT cElements   ;
+    const countT cbCircle    ;
+    byteT*       pbCircle    ;
+
+    countT       cIn         ;
+    countT       cOut        ;
+    countT       bGrabToPush ;
+    countT       bGrabToPull ;
+
+    public :
+
+    inline ~circleC( voidT )
+    {
+        TINSL
+        ether.delF( tin0P , pbCircle ) ;
+    }
+
+    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK ) :
+    ether( etherP ) ,
+    bQuit( bQuitP ) ,
+    cbElement( cbElementP ) ,
+    cElements( cElementsP ) ,
+    cbCircle( cbElementP * cElementsP ) ,
+    pbCircle( 0 ) ,
+    cIn( 0 ) ,
+    cOut( 0 ) ,
+    bGrabToPush( 0 ) ,
+    bGrabToPull( 0 )
+    {
+        ether.newF( tin0P , LF , pbCircle , cbCircle ) ; ___( pbCircle ) ;
+    }
+
+    inline operator countT( voidT ) const { return cIn - cOut ; }
+
+    inline voidT operator <<( voidT* pP )
+    {
+        TINSL
+
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        while( setIfZeAM( bGrabToPush , 1 ) ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ; }
+
+        while( !bQuit )
+        {
+            countT cBacklog = *this ;
+            if( cBacklog < cElements ) break ;
+
+            ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ;
+        }
+
+        if( !bQuit )
+        {
+            countT cInBefore = incv02AM( cIn ) ;
+            countT offbo     = ( cInBefore % cElements ) * cbElement ;
+            thirdC::c_memcpyIF( pbCircle + offbo , (const byteT*)pP , cbElement ) ;
+        }
+
+        bGrabToPush -- ;
+    }
+
+    inline voidT operator >>( voidT* pP )
+    {
+        TINSL
+
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        while( setIfZeAM( bGrabToPull , 1 ) ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ; }
+
+        while( !bQuit )
+        {
+            countT cBacklog = *this ;
+            if( cBacklog ) break ;
+
+            ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ;
+        }
+
+        if( !bQuit )
+        {
+            countT cOutBefore = incv02AM( cOut ) ;
+            countT offbi      = ( cOutBefore % cElements ) * cbElement ;
+            thirdC::c_memcpyIF( (byteT*)pP , pbCircle + offbi , cbElement ) ;
+        }
+
+        bGrabToPull -- ;
+    }
+}
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

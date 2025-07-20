@@ -51485,7 +51485,7 @@ enable it to set bits in processGlobal2S::pbAddressBits*
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEoFbYTEdFLT BEGIN
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -51499,9 +51499,9 @@ this default value is ffef, chosen because spouseC::circle will thus contain at 
 values at and above 00ff are used by spouseC to encode literal byte values
 */
 /**/
-/*1*//*CBcIRCLEdFLT*//*1*/
+/*1*//*CBcIRCLEoFbYTEdFLT*//*1*/
 
-#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
+#define CBcIRCLEoFbYTEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
 
 
 //
@@ -51511,7 +51511,7 @@ values at and above 00ff are used by spouseC to encode literal byte values
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEoFbYTEdFLT END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
 
 //
