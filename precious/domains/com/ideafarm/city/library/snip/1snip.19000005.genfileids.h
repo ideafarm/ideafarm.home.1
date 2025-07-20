@@ -1973,7 +1973,7 @@
 0x1500018e , 0x000007b5 ,   // 1snip.1500018e.nodeEntryS
 0x1500018f , 0x000007b6 ,   // 1snip.1500018f.nodeListS
 0x15000190 , 0x000007b7 ,   // 1snip.15000190.tlsHeaderS
-0x15000191 , 0x000007b8 ,   // 1snip.15000191.circleC
+0x15000191 , 0x000007b8 ,   // 1snip.15000191.circleOfByteC
 0x15000192 , 0x000007b9 ,   // 1snip.15000192.udpFileNameS
 0x15000193 , 0x000007ba ,   // 1snip.15000193.udpFileGramHeadS
 0x15000194 , 0x000007bb ,   // 1snip.15000194.udpFileGramHeadSecretS
@@ -5892,10 +5892,10 @@
 0x36149003 , 0x00001704 ,   // 3func.36149003.taskDrivenServerJobS.taskDrivenServerJobS
 0x36149004 , 0x00001705 ,   // 3func.36149004.taskDrivenServerJobS.taskDrivenServerJobS
 0x3614a004 , 0x00001706 ,   // 3func.3614a004.tlsHeaderS.traceF
-0x3614b002 , 0x00001707 ,   // 3func.3614b002.circleC.dt_circleC
-0x3614b003 , 0x00001708 ,   // 3func.3614b003.circleC.circleC
-0x3614b004 , 0x00001709 ,   // 3func.3614b004.circleC.operator_element
-0x3614b005 , 0x0000170a ,   // 3func.3614b005.circleC.findF
+0x3614b002 , 0x00001707 ,   // 3func.3614b002.circleOfByteC.dt_circleOfByteC
+0x3614b003 , 0x00001708 ,   // 3func.3614b003.circleOfByteC.circleOfByteC
+0x3614b004 , 0x00001709 ,   // 3func.3614b004.circleOfByteC.operator_element
+0x3614b005 , 0x0000170a ,   // 3func.3614b005.circleOfByteC.findF
 0x3614c003 , 0x0000170b ,   // 3func.3614c003.sorterC.sorterC
 0x3614d004 , 0x0000170c ,   // 3func.3614d004.recursionSimulatorC.recursionStepF
 0x3614d005 , 0x0000170d ,   // 3func.3614d005.recursionSimulatorC.recursionSimulatorF

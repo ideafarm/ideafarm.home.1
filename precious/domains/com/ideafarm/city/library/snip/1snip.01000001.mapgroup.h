@@ -379,7 +379,7 @@
     ((countT)0x36148) , "cacheC" ,
     ((countT)0x36149) , "taskDrivenServerJobS" ,
     ((countT)0x3614a) , "tlsHeaderS" ,
-    ((countT)0x3614b) , "circleC" ,
+    ((countT)0x3614b) , "circleOfByteC" ,
     ((countT)0x3614c) , "sorterC" ,
     ((countT)0x3614d) , "recursionSimulatorC" ,
     ((countT)0x3614e) , "sortaC" ,
