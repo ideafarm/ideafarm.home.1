@@ -1073,7 +1073,7 @@ TASK( tmWorkF )
                     break ;
                     }
                         ether.ifcHireF( tin0P , T("621") , idAdam , T("!noTells !hiredByEve") , flagsHire ) ;
-                        //ether.traceF( tin0P , T("hiring ")+tAdam ) ;
+                        ether.traceF( tin0P , T("hiring ")+tAdam ) ;
                     {
                     if( idAdam < ifcIDaDAM_SCRATCH01 )
                 {
@@ -1087,7 +1087,7 @@ TASK( tmWorkF )
                     //ether.traceF( tin0P , T("firing base operating system (hibernate)") ) ;
 
                     ether.ifcHireF( tin0P , T("621") , idAdam , T("!faceHear \"\" !noTells !hiredByEve") , flagsHire ) ;
-                    //ether.traceF( tin0P , T("hiring ")+tAdam ) ;
+                    ether.traceF( tin0P , T("hiring ")+tAdam ) ;
                 {
                 case ifcIDaDAM_CODEmEASUREMENTS :           //U:: ENABLE THIS CASE IN PRODUCTION
 #if defined( NEVERdEFINED )
@@ -1095,7 +1095,7 @@ TASK( tmWorkF )
                 }
                     break ;
                     ether.ifcHireF( tin0P , T("621") , idAdam , T("!faceHear \"\" !noTells !hiredByEve") , flagsHire ) ;
-                    //ether.traceF( tin0P , T("hiring ")+tAdam ) ;
+                    ether.traceF( tin0P , T("hiring ")+tAdam ) ;
                 {
                 case ifcIDaDAM_DEFlINES :
 
@@ -1104,7 +1104,7 @@ TASK( tmWorkF )
 
                     }
                         ether.ifcHireF( tin0P , T("621") , idAdam , T(ppostDef[offd])+T(" !noTells !hiredByEve") , flagsHire | flHIRE_WAIT |  flHIRE_DEBUG ) ;
-                        //ether.traceF( tin0P , T("hiring ")+tAdam+T(" to make from ")+T(ppostDef[offd]) ) ;
+                        ether.traceF( tin0P , T("hiring ")+tAdam+T(" to make from ")+T(ppostDef[offd]) ) ;
                     {
                     for( countT offd = 0 ; !ether && offd < sizeof ppostDef / sizeof ppostDef[ 0 ] ; offd ++ )
 

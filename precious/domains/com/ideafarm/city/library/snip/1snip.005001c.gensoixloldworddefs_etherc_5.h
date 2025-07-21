@@ -3225,8 +3225,12 @@ voidT traceF_o4P73_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const stroke
             }
         }
     }
-    if( !POOP ) etherP.traceF( tin0P , psttP , flagsP , idDivertP ) ;
+
+    ZE( countT , noName ) ;
+    if( !POOP ) noName = etherP.traceF( tin0P , psttP , flagsP , idDivertP ) ;
     etherP.delF( tin0P , psttP ) ;
+
+    slP << noName ;
 }
 
 voidT tracePoolTalliesF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )

@@ -3324,6 +3324,7 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.momC"                                        ,
                     "1snip.15*.spouseC"                                     ,
                     "1snip.15*.circleC"                                     ,
+                    "1snip.15*.circleOfByteC"                               ,
                     "1snip.15*.textC"                                       ,
                     "1snip.15*.htmlS"                                       ,
                     "1snip.15*.etherC"                                      ,

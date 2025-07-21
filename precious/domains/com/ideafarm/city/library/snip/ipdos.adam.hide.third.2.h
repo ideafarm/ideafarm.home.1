@@ -4393,7 +4393,7 @@ it is illegal to refer to this symbol in the definition of an adam
         #include <ws2tcpip.h>
         #include <winsock2.h>
         #include <windows.h>
-        #include <lm.h>
+        //#include <lm.h>
         #include <powrprof.h>
         #include <psapi.h>
         //#include <conio.h>
@@ -27907,7 +27907,6 @@ struct bookMarkOldS
     count04T    cCpuCycles2Or5Lath ;
     count04T    cTime2Or5Lath ;
     measure04T  brcm04Raw ;
-
     timeS       ptTraceWoth[         1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     timeS       ptTraceLath[         1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     timeS       ptTraceEndLath[      1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
@@ -34590,8 +34589,124 @@ each textC object contains an unmodifiable string of strokes
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.textC : 1snip.1500000e.textc END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleOfByteC : 1snip.15000191.circleOfByteC BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleC : 1snip.150001d1.circleC BEGIN
 
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class circleC/*1*/
+{
+    etherC&      ether       ;
+    const boolT& bQuit       ;
+    const countT cbElement   ;
+    const countT cElements   ;
+    const countT cbCircle    ;
+    byteT*       pbCircle    ;
+    ifc2FT       pDeleteCBF  ;
+    countT       cnu         ;
+    countT&      cArgDelete  ;
+
+    countT       cIn         ;
+    countT       cOut        ;
+    countT       bGrabToPush ;
+    countT       bGrabToPull ;
+
+    public :
+
+    inline ~circleC( voidT )
+    {
+        TINSL
+        ether.delF( tin0P , pbCircle ) ;
+    }
+
+    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK , ifc2FT pDeleteCBFP = 0 , countT* pcArgDeleteP = 0 ) :
+    ether( etherP ) ,
+    bQuit( bQuitP ) ,
+    cbElement( cbElementP ) ,
+    cElements( cElementsP ) ,
+    cbCircle( cbElementP * cElementsP ) ,
+    pbCircle( 0 ) ,
+    pDeleteCBF( pDeleteCBFP ) ,
+    cnu( 0 ) ,
+    cArgDelete( pcArgDeleteP ? *pcArgDeleteP : cnu ) ,
+    cIn(  0 ) ,
+    cOut( 0 ) ,
+    bGrabToPush( 0 ) ,
+    bGrabToPull( 0 )
+    {
+        ether.newF( tin0P , LF , pbCircle , cbCircle ) ; ___( pbCircle ) ;
+    }
+
+    inline operator countT( voidT ) const { return cIn - cOut ; }                               // WILL HANDLE WRAP AOK
+
+    inline voidT operator <<( voidT* pP )
+    {
+        while( setIfZeAM( bGrabToPush , 1 ) ) thirdC::dosSleepRawNoTinIF( 0 ) ;
+
+        while( !bQuit )
+        {
+            countT cBacklog = *this ;
+            if( cBacklog < cElements ) break ;
+
+            thirdC::dosSleepRawNoTinIF( 0 ) ;
+        }
+
+        if( !bQuit )
+        {
+            countT cInBefore = incv02AM( cIn ) ;
+            countT offbo     = ( cInBefore % cElements ) * cbElement ;
+            if( pDeleteCBF && cInBefore >= cElements )
+            {
+                TINSL
+                countT cAt = (countT)( pbCircle + offbo ) ;
+                (*pDeleteCBF)( tin0P , cAt , cArgDelete ) ;
+            }
+            thirdC::c_memcpyIF( pbCircle + offbo , (const byteT*)pP , cbElement ) ;
+        }
+
+        bGrabToPush -- ;
+    }
+
+    inline voidT operator >>( voidT* pP )
+    {
+        while( setIfZeAM( bGrabToPull , 1 ) ) thirdC::dosSleepRawNoTinIF( 0 ) ;
+
+        while( !bQuit )
+        {
+            countT cBacklog = *this ;
+            if( cBacklog ) break ;
+
+            thirdC::dosSleepRawNoTinIF( 0 ) ;
+        }
+
+        if( !bQuit )
+        {
+            countT cOutBefore = incv02AM( cOut ) ;
+            countT offbi      = ( cOutBefore % cElements ) * cbElement ;
+            thirdC::c_memcpyIF( (byteT*)pP , pbCircle + offbi , cbElement ) ;
+        }
+
+        bGrabToPull -- ;
+    }
+}
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleC : 1snip.150001d1.circleC END
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -34633,7 +34748,6 @@ each textC object contains an unmodifiable string of strokes
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleOfByteC : 1snip.15000191.circleOfByteC END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.spouseC : 1snip.15000083.spousec BEGIN
 
 
@@ -35050,8 +35164,8 @@ examples
  voidT nameF( tin0S& tin0P , const strokeS* const psttP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3402b.socketC.nameF!||
 
- inline countT idiFileCtF( voidT ) const { return idiFileCt ; }
  inline countT idLineCtF(  voidT ) const { return  idLineCt ; }
+ inline countT idiFileCtF( voidT ) const { return idiFileCt ; }
 
  FRIENDS_socketC
 }
@@ -48463,118 +48577,4 @@ i am nonconformant in that all of my member function definitions are in a single
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class circleC/*1*/
-{
-    etherC&      ether       ;
-    const boolT& bQuit       ;
-    const countT cbElement   ;
-    const countT cElements   ;
-    const countT cbCircle    ;
-    byteT*       pbCircle    ;
-    ifc2FT       pDeleteCBF  ;
-    countT       cnu         ;
-    countT&      cArgDelete  ;
-
-    countT       cIn         ;
-    countT       cOut        ;
-    countT       bGrabToPush ;
-    countT       bGrabToPull ;
-
-    public :
-
-    inline ~circleC( voidT )
-    {
-        TINSL
-        ether.delF( tin0P , pbCircle ) ;
-    }
-
-    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK , ifc2FT pDeleteCBFP = 0 , countT* pcArgDeleteP = 0 ) :
-    ether( etherP ) ,
-    bQuit( bQuitP ) ,
-    cbElement( cbElementP ) ,
-    cElements( cElementsP ) ,
-    cbCircle( cbElementP * cElementsP ) ,
-    pbCircle( 0 ) ,
-    pDeleteCBF( pDeleteCBFP ) ,
-    cnu( 0 ) ,
-    cArgDelete( pcArgDeleteP ? *pcArgDeleteP : cnu ) ,
-    cIn(  0 ) ,
-    cOut( 0 ) ,
-    bGrabToPush( 0 ) ,
-    bGrabToPull( 0 )
-    {
-        ether.newF( tin0P , LF , pbCircle , cbCircle ) ; ___( pbCircle ) ;
-    }
-
-    inline operator countT( voidT ) const { return cIn - cOut ; }                               // WILL HANDLE WRAP AOK
-
-    inline voidT operator <<( voidT* pP )
-    {
-        while( setIfZeAM( bGrabToPush , 1 ) ) thirdC::dosSleepRawNoTinIF( 0 ) ;
-
-        while( !bQuit )
-        {
-            countT cBacklog = *this ;
-            if( cBacklog < cElements ) break ;
-
-            thirdC::dosSleepRawNoTinIF( 0 ) ;
-        }
-
-        if( !bQuit )
-        {
-            countT cInBefore = incv02AM( cIn ) ;
-            countT offbo     = ( cInBefore % cElements ) * cbElement ;
-            if( pDeleteCBF && cInBefore >= cElements )
-            {
-                TINSL
-                countT cAt = (countT)( pbCircle + offbo ) ;
-                (*pDeleteCBF)( tin0P , cAt , cArgDelete ) ;
-            }
-            thirdC::c_memcpyIF( pbCircle + offbo , (const byteT*)pP , cbElement ) ;
-        }
-
-        bGrabToPush -- ;
-    }
-
-    inline voidT operator >>( voidT* pP )
-    {
-        while( setIfZeAM( bGrabToPull , 1 ) ) thirdC::dosSleepRawNoTinIF( 0 ) ;
-
-        while( !bQuit )
-        {
-            countT cBacklog = *this ;
-            if( cBacklog ) break ;
-
-            thirdC::dosSleepRawNoTinIF( 0 ) ;
-        }
-
-        if( !bQuit )
-        {
-            countT cOutBefore = incv02AM( cOut ) ;
-            countT offbi      = ( cOutBefore % cElements ) * cbElement ;
-            thirdC::c_memcpyIF( (byteT*)pP , pbCircle + offbi , cbElement ) ;
-        }
-
-        bGrabToPull -- ;
-    }
-}
-;
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.s_acceptF_parametersS : 1snip.150001d0.s_acceptF_parametersS END

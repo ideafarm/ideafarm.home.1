@@ -480,6 +480,7 @@ struct  /*ff*/s_acceptF_parametersS/*ff*/                               ; /*ff*/
 //20250101@2141: DISABLED DROP NOTES AS A SPEED OPTIMIZATION AFTER SEEING THAT DROPNOTE ACTIVITY IS AT THE TOP OF THE etherWhereF REPORT FOR putFileIF
 //20250101@2248: ENABLED BECAUSE WON'T RUN
 //20250504@1212: ENABLED SO CAN GET poolC REPORTS
+//20250713@1041: DISABLED SO CAN OPTIMIZE DNS SERVER CODE
 
 //#define ENABLEdROPnOTES
 
@@ -11470,6 +11471,9 @@ this is the name of the host that the ifc system uses to map names to nicNameC v
 */
 /**/
 /*1*//*postIFCnAMEsERVER*//*1*/
+
+//#define postIFCnAMEsERVER "NS4.BAYAREA.NET"
+//20250706@1555: "hidden.ideafarm.com"
 
 #define postIFCnAMEsERVER "hidden.ideafarm.com"
 
@@ -51485,7 +51489,7 @@ enable it to set bits in processGlobal2S::pbAddressBits*
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEoFbYTEdFLT BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -51511,7 +51515,7 @@ values at and above 00ff are used by spouseC to encode literal byte values
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEoFbYTEdFLT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
 
 //
@@ -51989,6 +51993,8 @@ values at and above 00ff are used by spouseC to encode literal byte values
 */
 /**/
 /*1*//*CiDtHREADtRACE*//*1*/
+
+//20250710@1643: 0x2 <-- 0x40 IN ORDER TO SPEED UP etherC::traceF
 
 #define CiDtHREADtRACE 0x2
 
