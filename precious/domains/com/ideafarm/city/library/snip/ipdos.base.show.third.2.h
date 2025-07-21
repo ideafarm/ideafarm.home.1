@@ -34590,7 +34590,6 @@ each textC object contains an unmodifiable string of strokes
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.textC : 1snip.1500000e.textc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleC : 1snip.150001d1.circleC BEGIN
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -34695,6 +34694,51 @@ each textC object contains an unmodifiable string of strokes
         }
 
         bGrabToPull -- ;
+    }
+
+    inline voidT* operator []( count3S& handleP )
+    {
+        // HOW I WORK
+        //   WISH
+        //     SUPPORT A VOLATILE INSTANCE (cIn INCREASES DURING THE WALK)
+        //   APPROACH
+        //     WHEN cIn >= cElements THE CIRCLE IS FULL AND THE WALK SIMPLY GOES BACKWARD COMPLETELY AROUND THE CIRCLE UNTIL THE WOTH ELEMENT PUSHED HAS BEEN RETURNED
+        //     WHEN THE CIRCLE IS NOT FULL, THE WALK GOES BACKWARD AROUND THE CIRCLE, SKIPPING SLOTS TO WHICH NO ELEMENT HAS YET BEEN PUSHED, RETURNING PUSHED ELEMENTS UNTIL THE WOTH ELEMENT PUSHED HAS BEEN RETURNED
+
+        // HANDLE COMPONENTS WHEN cIn IS NOT ZE
+        //   c1: cIn AT THE BEGINNING OF THE WALK
+        //   c2: OFFSET OF THE NEWEST ELEMENT, WHICH IS NEVER EMPTY AND WHICH IS THE WOTH ELEMENT RETURNED IN THE WALK
+        //   c3: OFFSET OF THE NEXT ELEMENT TO INSPECT, WHICH MIGHT BE EMPTY
+
+
+        ZE( voidT* , pvThisElement ) ;
+        if( !handleP.c1 )                            // IF BEGINNING OF NEW WALK
+        {
+            if( cIn )
+            {
+                handleP.c1 = cIn ;                                                                                                  // USED ONLY AS BOOLEAN
+                handleP.c2 = ( cIn - 1 ) % cElements ;  pvThisElement = pbCircle + handleP.c2 * cbElement ;                         // CURRENTLY THE NEWEST ELEMENT ; I WILL RETURN IT SINCE THIS IS THE WOTH CALL TO ME FOR THIS WALK ; THIS IS THE "OFFeND" VALUE THAT TELLS ME WHEN I HAVE COMPLETED THE WALK
+                handleP.c3 = ( cIn - 2 ) % cElements ;                                                                              // THE OFFSET OF THE ELEMENT TO INSPECT ON THE NEXT CALL
+            }
+        }
+        else
+        {
+            const countT cInSnap = cIn ;
+            const countT offMax  = cElements <= cInSnap ? cElements - 1 : cInSnap - 1 ; 
+
+            {
+                countT offEnd = handleP.c2 ;
+                countT offMe  = handleP.c3 > offMax ? offMax : handleP.c3 ;
+                if( offMe == offEnd ) handleP.c3 = handleP.c2 = handleP.c1 = 0 ;                                                    // THE WALK IS DONE, SO RESET THE HANDLE AND RETURN NULL
+                else
+                {
+                    pvThisElement = pbCircle + offMe * cbElement ;
+                    handleP.c3    = ( offMe - 1 ) % cElements ;                                                                     // THE OFFSET OF THE ELEMENT TO INSPECT ON THE NEXT CALL
+                }
+            }
+        }
+
+        return pvThisElement ;
     }
 }
 ;
