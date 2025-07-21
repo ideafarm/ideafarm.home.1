@@ -19,17 +19,14 @@
         if( !bQuit )
 
         }
-            ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ;
+            thirdC::dosSleepRawNoTinIF( 0 ) ;
 
             if( cBacklog ) break ;
             countT cBacklog = *this ;
         {
         while( !bQuit )
 
-        while( setIfZeAM( bGrabToPull , 1 ) ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ; }
-        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-
-        TINSL
+        while( setIfZeAM( bGrabToPull , 1 ) ) thirdC::dosSleepRawNoTinIF( 0 ) ;
     {
     inline voidT operator >>( voidT* pP )
 
@@ -38,27 +35,30 @@
 
         }
             thirdC::c_memcpyIF( pbCircle + offbo , (const byteT*)pP , cbElement ) ;
+            }
+                (*pDeleteCBF)( tin0P , cAt , cArgDelete ) ;
+                countT cAt = (countT)( pbCircle + offbo ) ;
+                TINSL
+            {
+            if( pDeleteCBF && cInBefore >= cElements )
             countT offbo     = ( cInBefore % cElements ) * cbElement ;
             countT cInBefore = incv02AM( cIn ) ;
         {
         if( !bQuit )
 
         }
-            ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ;
+            thirdC::dosSleepRawNoTinIF( 0 ) ;
 
             if( cBacklog < cElements ) break ;
             countT cBacklog = *this ;
         {
         while( !bQuit )
 
-        while( setIfZeAM( bGrabToPush , 1 ) ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ; }
-        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-
-        TINSL
+        while( setIfZeAM( bGrabToPush , 1 ) ) thirdC::dosSleepRawNoTinIF( 0 ) ;
     {
     inline voidT operator <<( voidT* pP )
 
-    inline operator countT( voidT ) const { return cIn - cOut ; }
+    inline operator countT( voidT ) const { return cIn - cOut ; }                               // WILL HANDLE WRAP AOK
 
     }
         ether.newF( tin0P , LF , pbCircle , cbCircle ) ; ___( pbCircle ) ;
@@ -66,14 +66,17 @@
     bGrabToPull( 0 )
     bGrabToPush( 0 ) ,
     cOut( 0 ) ,
-    cIn( 0 ) ,
+    cIn(  0 ) ,
+    cArgDelete( pcArgDeleteP ? *pcArgDeleteP : cnu ) ,
+    cnu( 0 ) ,
+    pDeleteCBF( pDeleteCBFP ) ,
     pbCircle( 0 ) ,
     cbCircle( cbElementP * cElementsP ) ,
     cElements( cElementsP ) ,
     cbElement( cbElementP ) ,
     bQuit( bQuitP ) ,
     ether( etherP ) ,
-    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK ) :
+    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK , ifc2FT pDeleteCBFP = 0 , countT* pcArgDeleteP = 0 ) :
 
     }
         ether.delF( tin0P , pbCircle ) ;
@@ -88,6 +91,9 @@
     countT       cOut        ;
     countT       cIn         ;
 
+    countT&      cArgDelete  ;
+    countT       cnu         ;
+    ifc2FT       pDeleteCBF  ;
     byteT*       pbCircle    ;
     const countT cbCircle    ;
     const countT cElements   ;

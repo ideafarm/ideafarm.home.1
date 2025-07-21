@@ -48463,7 +48463,6 @@ i am nonconformant in that all of my member function definitions are in a single
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.s_acceptF_parametersS : 1snip.150001d0.s_acceptF_parametersS END
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -48483,6 +48482,9 @@ i am nonconformant in that all of my member function definitions are in a single
     const countT cElements   ;
     const countT cbCircle    ;
     byteT*       pbCircle    ;
+    ifc2FT       pDeleteCBF  ;
+    countT       cnu         ;
+    countT&      cArgDelete  ;
 
     countT       cIn         ;
     countT       cOut        ;
@@ -48497,14 +48499,17 @@ i am nonconformant in that all of my member function definitions are in a single
         ether.delF( tin0P , pbCircle ) ;
     }
 
-    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK ) :
+    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK , ifc2FT pDeleteCBFP = 0 , countT* pcArgDeleteP = 0 ) :
     ether( etherP ) ,
     bQuit( bQuitP ) ,
     cbElement( cbElementP ) ,
     cElements( cElementsP ) ,
     cbCircle( cbElementP * cElementsP ) ,
     pbCircle( 0 ) ,
-    cIn( 0 ) ,
+    pDeleteCBF( pDeleteCBFP ) ,
+    cnu( 0 ) ,
+    cArgDelete( pcArgDeleteP ? *pcArgDeleteP : cnu ) ,
+    cIn(  0 ) ,
     cOut( 0 ) ,
     bGrabToPush( 0 ) ,
     bGrabToPull( 0 )
@@ -48512,27 +48517,30 @@ i am nonconformant in that all of my member function definitions are in a single
         ether.newF( tin0P , LF , pbCircle , cbCircle ) ; ___( pbCircle ) ;
     }
 
-    inline operator countT( voidT ) const { return cIn - cOut ; }
+    inline operator countT( voidT ) const { return cIn - cOut ; }                               // WILL HANDLE WRAP AOK
 
     inline voidT operator <<( voidT* pP )
     {
-        TINSL
-
-        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-        while( setIfZeAM( bGrabToPush , 1 ) ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ; }
+        while( setIfZeAM( bGrabToPush , 1 ) ) thirdC::dosSleepRawNoTinIF( 0 ) ;
 
         while( !bQuit )
         {
             countT cBacklog = *this ;
             if( cBacklog < cElements ) break ;
 
-            ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ;
+            thirdC::dosSleepRawNoTinIF( 0 ) ;
         }
 
         if( !bQuit )
         {
             countT cInBefore = incv02AM( cIn ) ;
             countT offbo     = ( cInBefore % cElements ) * cbElement ;
+            if( pDeleteCBF && cInBefore >= cElements )
+            {
+                TINSL
+                countT cAt = (countT)( pbCircle + offbo ) ;
+                (*pDeleteCBF)( tin0P , cAt , cArgDelete ) ;
+            }
             thirdC::c_memcpyIF( pbCircle + offbo , (const byteT*)pP , cbElement ) ;
         }
 
@@ -48541,17 +48549,14 @@ i am nonconformant in that all of my member function definitions are in a single
 
     inline voidT operator >>( voidT* pP )
     {
-        TINSL
-
-        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-        while( setIfZeAM( bGrabToPull , 1 ) ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ; }
+        while( setIfZeAM( bGrabToPull , 1 ) ) thirdC::dosSleepRawNoTinIF( 0 ) ;
 
         while( !bQuit )
         {
             countT cBacklog = *this ;
             if( cBacklog ) break ;
 
-            ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ;
+            thirdC::dosSleepRawNoTinIF( 0 ) ;
         }
 
         if( !bQuit )
