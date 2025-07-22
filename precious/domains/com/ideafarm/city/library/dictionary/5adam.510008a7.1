@@ -449,7 +449,17 @@ DONE( tmWorkerF )
                                             ZE( strokeS* , psttNet ) ;
                                             _IO_
                                         {
-                                        if( psttw && etThread.strIdF( tin0P , gcP.tHidden , psttw , 1 ) && etThread.strIdF( tin0P , gcP.tDash , psttw , 1 ) )
+                                        else if( psttw && etThread.strIdF( tin0P , gcP.tHidden , psttw , 1 ) && etThread.strIdF( tin0P , gcP.tDash , psttw , 1 ) )
+                                        }
+                                            while( cDo -- ) /*;*/etRock.traceF( tin0P , gcP.tSayTraceMarkEnd , flTRACE_NOpREFIX ) ;
+                                            countT cDo = 8 ;
+                                        {
+                                        else if( !etThread.strCompareF( tin0P , tDomainGross , gcP.tDomainGrossTraceMarkEnd ) )
+                                        }
+                                            while( cDo -- ) /*;*/etRock.traceF( tin0P , gcP.tSayTraceMarkBegin , flTRACE_NOpREFIX ) ;
+                                            countT cDo = 8 ;
+                                        {
+                                        if( !etThread.strCompareF( tin0P , tDomainGross , gcP.tDomainGrossTraceMarkBegin ) )
 
                                         /**/etRock.traceF( tin0P , gcP.tSayDomainGrossPeer+tDomainGross+gcP.tqb4q+tDomainPeer+gcP.tq ) ;
                                         TN( tDomainGross , psttw ) ;
@@ -1415,6 +1425,12 @@ struct gVarS
     //U::6: , tTarget(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "target.ipv6-only.ideafarm.com" )
 
     tDotLetsEncryptDotOrg(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".letsencrypt.org"                                                                                                      )
+
+    tSayTraceMarkEnd(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" ) ,
+    tSayTraceMarkBegin(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ) ,
+    tDomainGrossTraceMarkEnd(        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "traceend.hidden.ideafarm.com"                                                                                          ) ,
+    tDomainGrossTraceMarkBegin(      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "tracebegin.hidden.ideafarm.com"                                                                                        ) ,
+
     tSayGranting(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    granting information    "                                                                                          ) ,
     tSayDiverting(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    diverting information    "                                                                                         ) ,
     tSayUnknownDomain(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    !exception / unknown peer domain"                                                                                  ) ,
@@ -1463,8 +1479,8 @@ struct gVarS
     tSayWaitingForPacket(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "waiting for a packet"                                                                                                  ) ,
     tSayInnerLoopBegun(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "inner loop begun"                                                                                                      ) ,
 
-    tq(                              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
-    tqb4q(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
+    tq(                              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\""                                                                                                                    ) ,
+    tqb4q(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\"    \""                                                                                                              ) ,
 
     tHidden(                         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".hidden.ideafarm.com"                                                                                                  ) ,
     tWebHook1(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
@@ -1478,6 +1494,12 @@ struct gVarS
     //U::6: textC tTarget                 ;
 
     textC tDotLetsEncryptDotOrg           ;
+
+    textC tSayTraceMarkEnd                ;
+    textC tSayTraceMarkBegin              ;
+    textC tDomainGrossTraceMarkEnd        ;
+    textC tDomainGrossTraceMarkBegin      ;
+
     textC tSayGranting                    ;
     textC tSayDiverting                   ;
     textC tSayUnknownDomain               ;
