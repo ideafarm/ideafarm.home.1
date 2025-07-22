@@ -23,56 +23,60 @@ DONE( tmWorkF )
         {
 
         }
-            ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
-            etRock.traceF( tin0P , T("waiting for all workers to go away [cIn,cWorkers]:    ")+TF2(++cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gc.tb4+TF2(cWorkers,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        {
-        while( cWorkers )
-        ZE( countT , cIn ) ;
-        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-        gv.bQuit ++ ;
-
-        }
-            /**/etRock.traceF( tin0P , gc.tSayPushedJob ) ;
-
-            gv.cirJob << &job ;
-            jobS job( pbq , cbq , idp , nnPeer ) ;
-
-            /**/etRock.traceF( tin0P , gc.tSayPushingJob ) ;
-
-            //etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
             }
+                ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
+                etRock.traceF( tin0P , T("waiting for all workers to go away [cIn,cWorkers]:    ")+TF2(++cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gc.tb4+TF2(cWorkers,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            {
+            while( cWorkers )
+            ZE( countT , cIn ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+            gv.bQuit ++ ;
+
+            }
+                /**/etRock.traceF( tin0P , gc.tSayPushedJob ) ;
+
+                gv.cirJob << &job ;
+                jobS job( pbq , cbq , idp , nnPeer ) ;
+
+                /**/etRock.traceF( tin0P , gc.tSayPushingJob ) ;
+
+                //etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
                 }
-                    break ;
-                    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                    etRock.traceF( tin0P , gc.tSayExReadFailed+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    POOPRqUIET
-                    countT rc = POOP ;
+                    }
+                        break ;
+                        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+                        etRock.traceF( tin0P , gc.tSayExReadFailed+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    if( POOP )
+                    /**/etRock.traceF( tin0P , gc.tSayCalledRead ) ;
+                    sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
+                    //etRock.traceF( tin0P , gc.tSayCallingRead ) ;
+                    SCOOPS
+                    _IO_
                 {
-                if( POOP )
-                /**/etRock.traceF( tin0P , gc.tSayCalledRead ) ;
-                sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
-                //etRock.traceF( tin0P , gc.tSayCallingRead ) ;
-                SCOOPS
+                IFsCRATCHoK
+                //etRock.traceF( tin0P , gc.tSayWaitingForPacket ) ;
+                nicNameC nnPeer ;
+                ZE( countT , idp ) ;
+                ZE( countT , cbq ) ;
+                ZE( byteT* , pbq ) ;
+
+                //etRock.traceF( tin0P , gc.tSayInnerLoopBegun ) ;
                 _IO_
             {
-            IFsCRATCHoK
-            //etRock.traceF( tin0P , gc.tSayWaitingForPacket ) ;
-            nicNameC nnPeer ;
-            ZE( countT , idp ) ;
-            ZE( countT , cbq ) ;
-            ZE( byteT* , pbq ) ;
+            while( !POOP && !ether )
 
-            //etRock.traceF( tin0P , gc.tSayInnerLoopBegun ) ;
-            _IO_
-        {
-        while( !POOP && !ether )
+            }
+                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 1 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&mySettings , (countT)&sockd , (countT)&gc , (countT)&gv ) ;
+                inc02AM( cWorkers ) ;
+            {
+            while( cDo -- )
+            countT cDo = thirdC::osProcessorsIF( tin0P ) << 3 ;
 
-        }
-            etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 1 ) , (countT)&bFail , (countT)&cWorkers , (countT)&mySettings , (countT)&sockd , (countT)&gc , (countT)&gv ) ;
-            inc02AM( cWorkers ) ;
+            circleC cirNnPeerDoNotDivert( tin0P , etThread , gv.bQuit , sizeof( nicNameC ) , TUCK >> 2 ) ;
         {
-        while( cDo -- )
-        countT cDo = thirdC::osProcessorsIF( tin0P ) << 3 ;
 
         ZE( boolT  , bFail    ) ;
         ZE( countT , cWorkers ) ;
@@ -565,62 +569,87 @@ DONE( tmWorkerF )
                     //etRock.traceF( tin0P , gcP.tSayUnknownDomain ) ;
                     bDivert = 1 ;
                 {
-                if( !bStripeWebHookNotifier && !bListedDomain )         //P:PERSONALITY: TRUSTED PEERS ARE DIRECTED TO wh1 ; UNTRUSTED PEERS ARE DIRECTED TO wh2
-
+                else
                 }
-                    mySettingsP.grabMe.ungrabF( tin0P ) ;
-                    }
-                        }
-                            }
-                                break ;
-                                bStripeWebHookNotifier = 1 ;
-                            {
-                            if( mySettingsP.pnnSubnetAllowedStripe[ offn ] == job.nnPeer( 0x40 ) )
-                        {
-                        else
-                        }
-                            }
-                                break ;
-                                bStripeWebHookNotifier = 1 ;
-                            {
-                            if( mySettingsP.pnnSubnetAllowedStripe[ offn ] == job.nnPeer( 0x18 ) )
-                        {
-                        if( job.nnPeer.isIPv4F() )
-                        _IO_
-                    {
-                    for( countT offn = 0 ; offn < mySettingsP.cnnSubnetAllowedStripe ; offn ++ )
-                    mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                    _IO_
+                    etRock.traceF( tin0P , T("pushed into cirNnPeerDoNotDivertP [nnPeer]:    ")+T(job.nnPeer) ) ;
+                    cirNnPeerDoNotDivertP << &job.nnPeer ;
                 {
-                if( !bListedDomain )
-                ZE( boolT , bStripeWebHookNotifier ) ;
+                if( bDoNotDivert || bDomainRootAllowed || bSubnetTrusted )         //P:PERSONALITY: TRUSTED PEERS ARE DIRECTED TO wh1 ; UNTRUSTED PEERS ARE DIRECTED TO wh2
 
                 }
-                    etThread.delF( tin0P , psttPeer ) ;
                     }
                         mySettingsP.grabMe.ungrabF( tin0P ) ;
                         }
                             }
-                                break ;
-                                bListedDomain ++ ;
+                                }
+                                    break ;
+                                    bSubnetTrusted = 1 ;
+                                {
+                                if( mySettingsP.pnnSubnetTrusted[ offn ] == job.nnPeer( 0x40 ) )
                             {
-                            if( idHit && idHit == 1 + psttPeer->idAdam - mySettingsP.pptListedDomain[ offt ]->csF( tin0P ) )
-                            countT idHit  = etThread.strIdF( tin0P , *mySettingsP.pptListedDomain[ offt ] , psttPeer , 1 ) ;
+                            else
+                            }
+                                }
+                                    break ;
+                                    bSubnetTrusted = 1 ;
+                                {
+                                if( mySettingsP.pnnSubnetTrusted[ offn ] == job.nnPeer( 0x18 ) )
+                            {
+                            if( job.nnPeer.isIPv4F() )
+                            _IO_
                         {
-                        for( countT offt = 0 ; offt < mySettingsP.cListedDomain ; offt ++ )
+                        for( countT offn = 0 ; offn < mySettingsP.cnnSubnetTrusted ; offn ++ )
                         mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-
-                        //etRock.traceF( tin0P , gcP.tSayPeer/*+T(psttPeer)*/ ) ;
-                        tDomainPeer = T(psttPeer) ;
                         _IO_
                     {
-                    else
-                    if( !psttPeer ) ;//etRock.traceF( tin0P , gcP.tSayExReverseLookupFailed ) ;
-                    etThread.sockPsttHostF( tin0P , psttPeer , job.nnPeer ) ; ___( psttPeer ) ;
-                    //etRock.traceF( tin0P , gcP.tSayDoingReverseLookup ) ;
-                    ZE( strokeS* , psttPeer ) ;
+                    if( !bDomainRootAllowed )
+
+                    }
+                        etThread.delF( tin0P , psttPeer ) ;
+                        }
+                            mySettingsP.grabMe.ungrabF( tin0P ) ;
+                            }
+                                }
+                                    break ;
+                                    bDomainRootAllowed ++ ;
+                                {
+                                if( idHit && idHit == 1 + psttPeer->idAdam - mySettingsP.pptDomainRootAllowed[ offt ]->csF( tin0P ) )
+                                countT idHit  = etThread.strIdF( tin0P , *mySettingsP.pptDomainRootAllowed[ offt ] , psttPeer , 1 ) ;
+                            {
+                            for( countT offt = 0 ; offt < mySettingsP.cDomainRootAllowed ; offt ++ )
+                            mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                            /**/etRock.traceF( tin0P , gcP.tSayPeer/*+T(psttPeer)*/ ) ;
+                            tDomainPeer = T(psttPeer) ;
+                            _IO_
+                        {
+                        else
+                        if( !psttPeer ) /*;*/etRock.traceF( tin0P , gcP.tSayExReverseLookupFailed ) ;
+                        etThread.sockPsttHostF( tin0P , psttPeer , job.nnPeer ) ; ___( psttPeer ) ;
+                        /**/etRock.traceF( tin0P , gcP.tSayDoingReverseLookup ) ;
+                        ZE( strokeS* , psttPeer ) ;
+                    {
                 {
-                ZE( boolT , bListedDomain ) ;
+                if( !bDoNotDivert )
+                ZE( boolT , bSubnetTrusted     ) ;
+                ZE( boolT , bDomainRootAllowed ) ;
+
+                }
+                    while( c3Handle.c1 ) ;
+                    }
+                        }
+                            break ;
+                            etRock.traceF( tin0P , T("found in cirNnPeerDoNotDivertP [nnPeer]:    ")+T(job.nnPeer) ) ;
+                            bDoNotDivert = 1 ;
+                        {
+                        if( pnn && *pnn == job.nnPeer )
+                        nicNameC* pnn = (nicNameC*)cirNnPeerDoNotDivertP[ c3Handle ] ;
+                    {
+                    do
+                    count3S c3Handle ;
+                {
+                ZE( boolT , bDoNotDivert ) ;
+
                 _IO_
             {
             TN( tDomainPeer , "" ) ;
@@ -647,12 +676,13 @@ DONE( tmWorkerF )
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-    gVarS&       gvP         =       *(gVarS*)pTaskP->c6 ;
-    gConstS&     gcP         =     *(gConstS*)pTaskP->c5 ;
-    socketC&     sockdP      =     *(socketC*)pTaskP->c4 ;
-    mySettingsS& mySettingsP = *(mySettingsS*)pTaskP->c3 ;
-    countT&      cWorkersP   =      *(countT*)pTaskP->c2 ;
-    boolT&       bFailP      =       *(boolT*)pTaskP->c1 ;
+    gVarS&       gvP                   =       *(gVarS*)pTaskP->c7 ;
+    gConstS&     gcP                   =     *(gConstS*)pTaskP->c6 ;
+    socketC&     sockdP                =     *(socketC*)pTaskP->c5 ;
+    mySettingsS& mySettingsP           = *(mySettingsS*)pTaskP->c4 ;
+    circleC&     cirNnPeerDoNotDivertP =     *(circleC*)pTaskP->c3 ;
+    countT&      cWorkersP             =      *(countT*)pTaskP->c2 ;
+    boolT&       bFailP                =       *(boolT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 )
 TASK( tmWorkerF )
@@ -975,39 +1005,39 @@ TASK( tmFreshSettingsF )
     }
         }
             else                                                                break ;
-            if( etherMe.strCompareF( tin0P , *pptListedDomain[ offt ] , tnu ) ) cListedDomain ++ ;
+            if( etherMe.strCompareF( tin0P , *pptDomainRootAllowed[ offt ] , tnu ) ) cDomainRootAllowed ++ ;
         {
-        for( countT offt = 0 ; offt < sizeof pptListedDomain / sizeof pptListedDomain[ 0 ] ; offt ++ )
-        cListedDomain = 0 ;
+        for( countT offt = 0 ; offt < sizeof pptDomainRootAllowed / sizeof pptDomainRootAllowed[ 0 ] ; offt ++ )
+        cDomainRootAllowed = 0 ;
         TN( tnu , ".not.used.ideafarm.com" ) ;                                                          //P:PERSONALITY: I IGNORE ALL ELEMENTS NOT BEFORE THE WO'TH ELEMENT THAT CONTAINS THE "NOT USED" VALUE ; THIS IS FOR SPEED
         _IO_
     {
 
     }
-        /**/etRock.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetAllowedStripe[offn]) ) ;
+        /**/etRock.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetTrusted[offn]) ) ;
     {
-    for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
+    for( countT offn = 0 ; offn < cnnSubnetTrusted ; offn ++ )
 
     }
         }
             while( ~hWalk ) ;
             }
-                pnnSubnetAllowedStripe[ offo ++ ] = nnSubnet ;
-                nicNameC& nnSubnet = (nicNameC&)stNnSubnet.downF( tin0P , hWalk ) ;
+                pnnSubnetTrusted[ offo ++ ] = nnSubnet ;
+                nicNameC& nnSubnet = (nicNameC&)stNnSubnetTrusted.downF( tin0P , hWalk ) ;
             {
             do
             handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             ZE( countT , offo ) ;
             _IO_
         {
-        if( pnnSubnetAllowedStripe )
-        etherMe.newF( tin0P , LF , pnnSubnetAllowedStripe , cnnSubnetAllowedStripe ) ; ___( pnnSubnetAllowedStripe ) ;
-        cnnSubnetAllowedStripe = stNnSubnet ;
+        if( pnnSubnetTrusted )
+        etherMe.newF( tin0P , LF , pnnSubnetTrusted , cnnSubnetTrusted ) ; ___( pnnSubnetTrusted ) ;
+        cnnSubnetTrusted = stNnSubnetTrusted ;
 
         }
             etherMe.delF( tin0P , pstt1Nn ) ;
             }
-                stNnSubnet.sinkF( tin0P , countTC() , nnSubnet , flSTACKsINK_UNIQUE ) ;
+                stNnSubnetTrusted.sinkF( tin0P , countTC() , nnSubnet , flSTACKsINK_UNIQUE ) ;
 
                 ;
                     : nnIPv46( 0x40 )
@@ -1025,7 +1055,7 @@ TASK( tmFreshSettingsF )
             ZE( strokeS* , pstt1Nn ) ;
             _IO_
         {
-        stackC stNnSubnet( tin0P , etherMe , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_nicNameC ) ;
+        stackC stNnSubnetTrusted( tin0P , etherMe , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_nicNameC ) ;
         _IO_
     {
 
@@ -1240,17 +1270,17 @@ TASK( tmFreshSettingsF )
 voidT mySettingsS::freshenF( tin0S& tin0P )
 
 }
-    cnnSubnetAllowedStripe = 0 ;
+    cnnSubnetTrusted = 0 ;
 
     }
-        etherMe.delF( tin0P , pnnSubnetAllowedStripe ) ;
+        etherMe.delF( tin0P , pnnSubnetTrusted ) ;
         }
             DELzOMBIE( pDoomed ) ;
-            nicNameC* pDoomed = pnnSubnetAllowedStripe + offn ;
+            nicNameC* pDoomed = pnnSubnetTrusted + offn ;
         {
-        for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
+        for( countT offn = 0 ; offn < cnnSubnetTrusted ; offn ++ )
     {
-    if( pnnSubnetAllowedStripe )
+    if( pnnSubnetTrusted )
     _IO_
 {
 voidT mySettingsS::zapF( tin0S& tin0P )
@@ -1293,18 +1323,18 @@ voidT mySettingsS::zapF( tin0S& tin0P )
 boolT mySettingsS::operator !( voidT )
 
 }
-    *(textC**)&pptListedDomain[ 7 ] = &tDomainRootAllowed8 ;
-    *(textC**)&pptListedDomain[ 6 ] = &tDomainRootAllowed7 ;
-    *(textC**)&pptListedDomain[ 5 ] = &tDomainRootAllowed6 ;
-    *(textC**)&pptListedDomain[ 4 ] = &tDomainRootAllowed5 ;
-    *(textC**)&pptListedDomain[ 3 ] = &tDomainRootAllowed4 ;
-    *(textC**)&pptListedDomain[ 2 ] = &tDomainRootAllowed3 ;
-    *(textC**)&pptListedDomain[ 1 ] = &tDomainRootAllowed2 ;
-    *(textC**)&pptListedDomain[ 0 ] = &tDomainRootAllowed1 ;
+    *(textC**)&pptDomainRootAllowed[ 7 ] = &tDomainRootAllowed8 ;
+    *(textC**)&pptDomainRootAllowed[ 6 ] = &tDomainRootAllowed7 ;
+    *(textC**)&pptDomainRootAllowed[ 5 ] = &tDomainRootAllowed6 ;
+    *(textC**)&pptDomainRootAllowed[ 4 ] = &tDomainRootAllowed5 ;
+    *(textC**)&pptDomainRootAllowed[ 3 ] = &tDomainRootAllowed4 ;
+    *(textC**)&pptDomainRootAllowed[ 2 ] = &tDomainRootAllowed3 ;
+    *(textC**)&pptDomainRootAllowed[ 1 ] = &tDomainRootAllowed2 ;
+    *(textC**)&pptDomainRootAllowed[ 0 ] = &tDomainRootAllowed1 ;
 {
-cListedDomain(               0                                                                  )
-cnnSubnetAllowedStripe(      0                                                                  ) ,
-pnnSubnetAllowedStripe(      0                                                                  ) ,
+cDomainRootAllowed(          0                                                                  )
+cnnSubnetTrusted(            0                                                                  ) ,
+pnnSubnetTrusted(            0                                                                  ) ,
 tNnTrusted(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed8(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed7(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
@@ -1514,11 +1544,11 @@ struct gConstS
     mySettingsS(      tin0S& tin0P , etherC& etherP ) ;
     ~mySettingsS(     voidT                         ) ;
 
-    countT       cnnSubnetAllowedStripe      ;
-    nicNameC*    pnnSubnetAllowedStripe      ;
+    countT       cnnSubnetTrusted            ;
+    nicNameC*    pnnSubnetTrusted            ;
 
-    countT       cListedDomain               ;
-    textC* const pptListedDomain[ 8 ]        ;
+    countT       cDomainRootAllowed          ;
+    textC* const pptDomainRootAllowed[ 8 ]   ;
 
     textC        tNnTrusted                  ;
     textC        tIpWebHook2                 ;
