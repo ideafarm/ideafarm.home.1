@@ -1,0 +1,42 @@
+
+Builder's Guide: IdeaFarm (tm) Bundle a.k.a. IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System
+
+The build tree (of folders) is stored on Github.com.  It is self contained and can be built on any computer running MS Windows.
+Build instructions are presented in the Github web page for the repository.  The file that you are reading supplements those 
+instructions.
+
+
+As of this writing (20250722@1709), a full build, which includes rebuilding the generated header files, has the following problem.
+One or more of the source modules will compile with errors.  Here is an example of such an error report:
+
+---------------------------------------------
+
+File: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\1snip.005001c.genSoixlOldWordDefs_etherC_4.h
+  included from \ideafarm.home.1\ephemeral\city\workshop\2source\3606e.cpp(94)
+(380,35): Error! E157: left expression must be integral
+  left operand type is 'soulC (lvalue)'
+  right operand type is 's_acceptF_parametersS * (lvalue)'
+(385,16): Error! E189: overloaded function cannot be selected for arguments used in call
+  rejected function: void (__export etherC::delF)( tin0S &, char * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33345,8)
+  rejected function: void (__export etherC::delF)( tin0S &, unsigned short * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33347,8)
+  rejected function: void (__export etherC::delF)( tin0S &, unsigned * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33349,8)
+  rejected function: void (__export etherC::delF)( tin0S &, int * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33351,8)
+  rejected function: void (__export etherC::delF)( tin0S &, float * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33353,8)
+  rejected function: void (__export etherC::delF)( tin0S &, strokeS * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33355,8)
+  rejected function: void (__export etherC::delF)( tin0S &, count2S * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33357,8)
+  rejected function: void (__export etherC::delF)( tin0S &, count3S * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33359,8)
+  rejected function: void (__export etherC::delF)( tin0S &, count4S * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33361,8)
+  rejected function: void (__export etherC::delF)( tin0S &, count5S * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33363,8)
+  rejected function: void (__export etherC::delF)( tin0S &, count6S * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33365,8)
+  rejected function: void (__export etherC::delF)( tin0S &, count7S * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33367,8)
+  rejected function: void (__export etherC::delF)( tin0S &, count8S * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33369,8)
+  rejected function: void (__export etherC::delF)( tin0S &, count9S * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33371,8)
+  rejected function: void (__export etherC::delF)( tin0S &, nicNameC * & ) defined in: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.base.hide.third.2.h(33373,8)
+
+---------------------------------------------
+
+To fix this problem, edit the file 1snip.005001c.genSoixlOldWordDefs_etherC_4.h to just delete every line that won't compile.  None of this generated code
+is used, so deleting lines from the file to get it to compile won't affect anything.  This code is for a subsystem intended to provide the functionality of an interpreter,
+but that subsystem was never completed and never used.
+
+This manual workaround is only needed when you enable the "//#define DOaLL" line in Eve (adam 5000621), which is how a full build is requested.

@@ -34589,7 +34589,52 @@ each textC object contains an unmodifiable string of strokes
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.textC : 1snip.1500000e.textc END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleOfByteC : 1snip.15000191.circleOfByteC BEGIN
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export circleOfByteC/*1*/
+{
+    etherC&      ether ;
+    const countT cbCircle ;
+    countT       cIn ;    
+    byteT*       pbCircle ;
+
+    public :
+
+    ~circleOfByteC( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3614b002.circleOfByteC.dt_circleOfByteC!||
+    circleOfByteC( tin0S& tin0P , etherC& etherP , const countT cbCircleP = CBcIRCLEoFbYTEdFLT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3614b003.circleOfByteC.circleOfByteC!||
+    inline voidT operator << ( byteT bP ) { pbCircle[ ( cIn ++ ) % cbCircle ] = bP ; }        // "cIn % cbCircle" IS REFERRED TO AS THE "CURSOR"
+    byteT operator []( countT offrP ) const ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3614b004.circleOfByteC.operator_element!||
+    countT findF( byteT bP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3614b005.circleOfByteC.findF!||
+}
+;
+                            
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleOfByteC : 1snip.15000191.circleOfByteC END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleC : 1snip.150001d1.circleC BEGIN
+
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -34751,47 +34796,6 @@ each textC object contains an unmodifiable string of strokes
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleC : 1snip.150001d1.circleC END
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-
-/**/
-
-/*1*/class _export circleOfByteC/*1*/
-{
-    etherC&      ether ;
-    const countT cbCircle ;
-    countT       cIn ;    
-    byteT*       pbCircle ;
-
-    public :
-
-    ~circleOfByteC( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3614b002.circleOfByteC.dt_circleOfByteC!||
-    circleOfByteC( tin0S& tin0P , etherC& etherP , const countT cbCircleP = CBcIRCLEoFbYTEdFLT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3614b003.circleOfByteC.circleOfByteC!||
-    inline voidT operator << ( byteT bP ) { pbCircle[ ( cIn ++ ) % cbCircle ] = bP ; }        // "cIn % cbCircle" IS REFERRED TO AS THE "CURSOR"
-    byteT operator []( countT offrP ) const ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3614b004.circleOfByteC.operator_element!||
-    countT findF( byteT bP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3614b005.circleOfByteC.findF!||
-}
-;
-                            
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.spouseC : 1snip.15000083.spousec BEGIN
 
 

@@ -376,6 +376,7 @@ voidT sockAcceptF_ob3db6bPs_acceptF_parametersSP_GF( tin0S& tin0P , etherC& ethe
             }
             else
             {
+                SOIXLoLDtESTtYPE( 0x0 , etherC )
             }
         }
     }
