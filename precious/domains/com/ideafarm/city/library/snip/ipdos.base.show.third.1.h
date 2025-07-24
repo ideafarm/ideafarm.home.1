@@ -9025,7 +9025,7 @@ pso not 0 is guaranteed for code between me and DONEdRIVENsERVER
         sessionC& sessionP = jobP.sessions.registerConnectionF( tin0P , jobP.nnPeer , /*psttPeerP*/T("notQueried") ) ;                          \
         if( !etThread )                                                                                                                         \
         {                                                                                                                                       \
-            etThread.traceF( tin0P , T("TASKdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;      \
+            /*etThread.traceF( tin0P , T("TASKdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;*/  \
             psoP->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;                                                                             \
                                                                                                                                                 \
             ZE( countT , idPortMeP ) ;                                                                                                          \
