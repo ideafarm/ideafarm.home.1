@@ -288,7 +288,7 @@ DONE( tmWorkerF )
                         IFsCRATCHoK
                         ZE( countT , cbr ) ;
                         ZE( byteT* , pbr ) ;
-                        //etRock.traceF( tin0P , gcP.tSayReplying2 ) ;
+                        if( stsReplies ) etRock.traceF( tin0P , gcP.tSayReplying2+tDomainGross ) ;
 
                         else                          ;//etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         if( postError && *postError ) ;//etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
@@ -1500,7 +1500,7 @@ struct gVarS
     tSayWroteReply(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "wrote reply"                                                                                                           ) ,
     tSayReplying1(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "replying / 1 [cbr]:    "                                                                                               ) ,
     tSayExCouldNotBuildReply(        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not build reply [rc]:    "                                                                          ) ,
-    tSayReplying2(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "replying / 2"                                                                                                          ) ,
+    tSayReplying2(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "replying / 2 [tDomainGross]:    "                                                                                      ) ,
     tSayAAAARequest(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "AAAA request [tDomainNet]:    "                                                                                        ) ,
     tSayARequest(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "A request [tDomainNet]:    "                                                                                           ) ,
     tSayExCouldNotWritePasswordFile( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not write password suffix shared file [rc,tLong]:    "                                              ) ,
