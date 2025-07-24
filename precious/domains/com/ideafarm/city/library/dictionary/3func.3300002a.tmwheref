@@ -270,7 +270,7 @@ DONE( tmWhereF )
     while( !etThread && !bQuitWhereI && !ether ) //COMMENT OUT !ether IF WANT TO LOOK AT QUIT BEHAVIOR
     TN( tSaySamples , "[cSamples]:    " ) ;
     ZE( countT , cSamples ) ;
-    /**/etRock.traceF( tin0P , T(bNap?"i will nap between samples to avoid pegging cpu [cProcessors]:    ":"i will not nap between samples since there are multiple cpus [cProcessors]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tin0P , T(bNap?"i will nap between samples to avoid pegging cpu [cProcessors]:    ":"i will not nap between samples since there are multiple cpus [cProcessors]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const boolT  bNap = !!( cProcessors < 2 ) ;
     const countT cProcessors = thirdC::osProcessorsIF( tin0P ) ;
     //TN( tSay0 , "where is looking 0 napping " ) ; //U:: COMMENT OUT IN PRODUCTION

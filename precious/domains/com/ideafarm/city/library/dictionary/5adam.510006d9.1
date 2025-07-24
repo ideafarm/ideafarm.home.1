@@ -32,16 +32,16 @@ DONE( tmWorkF )
                 }
                     }
                         }
-                            etThread.traceF( tin0P , T("cloud: step: [idStepSoil]:    ")+TF2(idStep,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            countT idStep = 1 + incv02AM( home.idStepSoil ) ;
+                            //etThread.traceF( tin0P , T("cloud: step: [idStepSoil]:    ")+TF2(idStep,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            //countT idStep = 1 + incv02AM( home.idStepSoil ) ;
                         {
                         if( waitStepModulo >= 2 )
 
                         }
-                            etThread.traceF( tin0P , T("cloud: napped  [time1Nap]:    ")+TF2(time1Nap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            //etThread.traceF( tin0P , T("cloud: napped  [time1Nap]:    ")+TF2(time1Nap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             ether.osSleepF( tin0P , time1Nap ) ;
                             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-                            etThread.traceF( tin0P , T("cloud: napping [time1Nap]:    ")+TF2(time1Nap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            //etThread.traceF( tin0P , T("cloud: napping [time1Nap]:    ")+TF2(time1Nap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
                         if( time1Nap && !ether )
 
@@ -128,8 +128,8 @@ DONE( tmWorkF )
 
                     }
                         }
-                            etThread.traceF( tin0P , T("cloud: step: [idStepSoil]:    ")+TF2(idStep,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            countT idStep = 1 + incv02AM( home.idStepSoil ) ;
+                            //etThread.traceF( tin0P , T("cloud: step: [idStepSoil]:    ")+TF2(idStep,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            //countT idStep = 1 + incv02AM( home.idStepSoil ) ;
 
                             //ether.traceF( tin0P , T(bNapped?"cloudC: waitstep: waiting ended [idStepSoil,waitStepModulo,waitStepRemainder]:    ":"cloudC: waitstep: did not wait  [idStepSoil,waitStepModulo,waitStepRemainder]:    ")+TF2(home.idStepSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(waitStepModulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(waitStepRemainder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
@@ -175,8 +175,8 @@ DONE( tmWorkF )
             etherC& etPrime = etherC::etPrimeIF( tin0P ) ;
             homeS& home = homeS::homeIF() ;
 
-            else                      etThread.traceF( tin0P , T("after each successful cloud administration cycle, i will nap for ")+TF2(time1Nap>>0x10,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tock before beginning a new cycle") ) ;
-            if( waitStepModulo >= 2 ) etThread.traceF( tin0P , T("before beginning each cloud administration cycle, i will wait for home.idStepSoil % ")+TF2(waitStepModulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to be ")+TF2(waitStepRemainder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" and i will increment home.idStepSoil before and after each cycle") ) ;
+            //else                      etThread.traceF( tin0P , T("after each successful cloud administration cycle, i will nap for ")+TF2(time1Nap>>0x10,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tock before beginning a new cycle") ) ;
+            //if( waitStepModulo >= 2 ) etThread.traceF( tin0P , T("before beginning each cloud administration cycle, i will wait for home.idStepSoil % ")+TF2(waitStepModulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to be ")+TF2(waitStepRemainder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" and i will increment home.idStepSoil before and after each cycle") ) ;
 
             TN( tEnded   , "" ) ; tEnded = T("cloud administration cycle ended ; napping for ")+TF2(time1Nap>>0x10,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tock") ;
             TN( tAborted , "cloud administration cycle aborted ; napping for 01 tock" ) ;
@@ -224,7 +224,7 @@ DONE( tmWorkF )
 
         napkinC napSpec( tin0P , TAG( TAGiDnULL ) , T(psttNapCommand) , 0 , sizeof( cloudSpecsS ) , ifcOPENsHAREDmEMORYhOW_nFeO ) ;
 
-        etThread.traceF( tin0P , T("command received: ")+T(psttNapCommand) ) ;
+        //etThread.traceF( tin0P , T("command received: ")+T(psttNapCommand) ) ;
     {
     else
     }
@@ -238,9 +238,9 @@ DONE( tmWorkF )
             while( !ether && napSpec.cRefF() == 1 ) { ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ; }
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            etThread.traceF( tin0P , T("hired  myself 3") ) ;
+            //etThread.traceF( tin0P , T("hired  myself 3") ) ;
             etThread.ifcHireF( tin0P , T("ifcIDaDAM_CLOUD") , 0 , tArgKeyName+T(" \"")+T(pSpec->postName)+T("\" ")+tArgKeyCloudSpec+tb+tNapSpecName , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-            etThread.traceF( tin0P , T("hiring myself 3") ) ;
+            //etThread.traceF( tin0P , T("hiring myself 3") ) ;
             cClouds ++ ;
 
             pSpec->sayF( tin0P , etThread ) ;
@@ -254,7 +254,7 @@ DONE( tmWorkF )
             TN( tUser , "public.precious.reader" ) ;
 
             napkinC napSpec( tin0P , TAG( TAGiDnULL ) , tNapSpecName , 0 , sizeof( cloudSpecsS ) , ifcOPENsHAREDmEMORYhOW_nCeF ) ;
-            etThread.traceF( tin0P , T("constructing cloud spec napkin with name: ")+tNapSpecName ) ;
+            //etThread.traceF( tin0P , T("constructing cloud spec napkin with name: ")+tNapSpecName ) ;
 
             }
                 etThread.delF( tin0P , psttu ) ;
@@ -264,17 +264,17 @@ DONE( tmWorkF )
             {
             TN( tNapSpecName , "" ) ;
 
-            etThread.traceF( tin0P , T("cloud: IdeaFarm (tm) Precious Disclosure (c) Wo'O Ideafarm") ) ;
-            if( bForcePrecious ) etThread.traceF( tin0P , T("cloud: settings indicate that precious is to be forced") ) ;
+            //etThread.traceF( tin0P , T("cloud: IdeaFarm (tm) Precious Disclosure (c) Wo'O Ideafarm") ) ;
+            //if( bForcePrecious ) etThread.traceF( tin0P , T("cloud: settings indicate that precious is to be forced") ) ;
         {
         else
         }
-            etThread.traceF( tin0P , T("cloud: IdeaFarm (tm) Precious (source code) will be suppressed [reasons]:    ")+tReasons ) ;
+            //etThread.traceF( tin0P , T("cloud: IdeaFarm (tm) Precious (source code) will be suppressed [reasons]:    ")+tReasons ) ;
 
-            if( bExeDllPublisher                               ) tReasons += T("\"this home publishes exedll.1\"") ;
-            if( idComputer == idComputerCraftworkMaster        ) tReasons += T(tReasons.csF(tin0P)?"    \"this home is on a development computer\"":"\"this home is on a development computer\"") ;
-            if( bSuppressPrecious                              ) tReasons += T("\"settings indicate that precious is to be suppressed\"") ;
-            TN( tReasons , "" ) ;
+            //if( bExeDllPublisher                               ) tReasons += T("\"this home publishes exedll.1\"") ;
+            //if( idComputer == idComputerCraftworkMaster        ) tReasons += T(tReasons.csF(tin0P)?"    \"this home is on a development computer\"":"\"this home is on a development computer\"") ;
+            //if( bSuppressPrecious                              ) tReasons += T("\"settings indicate that precious is to be suppressed\"") ;
+            //TN( tReasons , "" ) ;
         {
         if( bSuppressPrecious || ( !bForcePrecious && ( bExeDllPublisher || idComputer == idComputerCraftworkMaster ) ) ) // DISABLE PRECIOUS IF DEVELOPMENT MACHINE
         // PRECIOUS (SOURCE AND BUILD) DISCLOSURE: COPYRIGHTED OPEN SOURCE
@@ -283,9 +283,9 @@ DONE( tmWorkF )
             while( !ether && napSpec.cRefF() == 1 ) { ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ; }
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            etThread.traceF( tin0P , T("hired  myself 2") ) ;
+            //etThread.traceF( tin0P , T("hired  myself 2") ) ;
             etThread.ifcHireF( tin0P , T("ifcIDaDAM_CLOUD") , 0 , tArgKeyName+T(" \"")+T(pSpec->postName)+T("\" ")+tArgKeyCloudSpec+tb+tNapSpecName , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-            etThread.traceF( tin0P , T("hiring myself 2") ) ;
+            //etThread.traceF( tin0P , T("hiring myself 2") ) ;
             cClouds ++ ;
 
             pSpec->sayF( tin0P , etThread ) ;
@@ -299,7 +299,7 @@ DONE( tmWorkF )
             TN( tUser , "ipdos.update.client" ) ;   //A:ASSUME: THIS USER ACCOUNT ONLY HAS READ-ONLY ACCESS TO RACKSPACE CLOUD FILES
 
             napkinC napSpec( tin0P , TAG( TAGiDnULL ) , tNapSpecName , 0 , sizeof( cloudSpecsS ) , ifcOPENsHAREDmEMORYhOW_nCeF ) ;
-            etThread.traceF( tin0P , T("constructing cloud spec napkin with name: ")+tNapSpecName ) ;
+            //etThread.traceF( tin0P , T("constructing cloud spec napkin with name: ")+tNapSpecName ) ;
 
             }
                 etThread.delF( tin0P , psttu ) ;
@@ -314,17 +314,17 @@ DONE( tmWorkF )
             // THIS IS ASSURED AS LONG AS THE BASE OPERATING SYSTEM COLLATES "hover" BEFORE "master"
             // IT IS CRITICAL THAT THE "hover" DIRECTORY BE PROCESSED BEFORE THE "master" DIRECTORY, BOTH WHEN THE DEVELOPMENT COMPUTER PUBLISHES AND WHEN A CLIENT UPDATES ITSELF
 
-            etThread.traceF( tin0P , T("cloud: IPDOS (tm) automatic update") ) ;
-            if( bForceAutoUpdate ) etThread.traceF( tin0P , T("cloud: settings indicate that automatic update is to be forced") ) ;
+            //etThread.traceF( tin0P , T("cloud: IPDOS (tm) automatic update") ) ;
+            //if( bForceAutoUpdate ) etThread.traceF( tin0P , T("cloud: settings indicate that automatic update is to be forced") ) ;
         {
         else
         }
-            etThread.traceF( tin0P , T("cloud: IPDOS (tm) automatic update will be suppressed [reasons]:    ")+tReasons ) ;
+            //etThread.traceF( tin0P , T("cloud: IPDOS (tm) automatic update will be suppressed [reasons]:    ")+tReasons ) ;
 
-            if( bSuppressAutoUpdate                            ) tReasons += T(tReasons.csF(tin0P)?"    \"this home is configured to suppress automatic update\"":"\"this home is configured to suppress automatic update\"") ;
-            if( idComputer == idComputerCraftworkMaster        ) tReasons += T(tReasons.csF(tin0P)?"    \"this home is on a development computer\"":"\"this home is on a development computer\"") ;
-            if( bExeDllPublisher                               ) tReasons += T("\"this home publishes exedll.1\"") ;
-            TN( tReasons , "" ) ;
+            //if( bSuppressAutoUpdate                            ) tReasons += T(tReasons.csF(tin0P)?"    \"this home is configured to suppress automatic update\"":"\"this home is configured to suppress automatic update\"") ;
+            //if( idComputer == idComputerCraftworkMaster        ) tReasons += T(tReasons.csF(tin0P)?"    \"this home is on a development computer\"":"\"this home is on a development computer\"") ;
+            //if( bExeDllPublisher                               ) tReasons += T("\"this home publishes exedll.1\"") ;
+            //TN( tReasons , "" ) ;
         {
         if( bSuppressAutoUpdate || ( !bForceAutoUpdate && ( bExeDllPublisher || idComputer == idComputerCraftworkMaster ) ) ) // DISABLE AUTO UPDATE IF DEVELOPMENT MACHINE
 
@@ -365,9 +365,9 @@ DONE( tmWorkF )
             while( !ether && napSpec.cRefF() == 1 ) { ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ; }
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            etThread.traceF( tin0P , T("hired  myself 1") ) ;
+            //etThread.traceF( tin0P , T("hired  myself 1") ) ;
             etThread.ifcHireF( tin0P , T("ifcIDaDAM_CLOUD") , 0 , tArgKeyName+T(" \"")+T(pSpec->postName)+T("\" ")+tArgKeyCloudSpec+tb+tNapSpecName , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-            etThread.traceF( tin0P , T("hiring myself 1") ) ;
+            //etThread.traceF( tin0P , T("hiring myself 1") ) ;
             cClouds ++ ;
 
             pSpec->sayF( tin0P , etThread ) ;
@@ -389,7 +389,7 @@ DONE( tmWorkF )
             cloudSpecsS* pSpec = new( 0 , tin0P , &napSpec ) cloudSpecsS( tin0P , etThread , psttzLeverCloud ) ; ___( pSpec ) ;
 
             napkinC napSpec( tin0P , TAG( TAGiDnULL ) , tNapSpecName , 0 , sizeof( cloudSpecsS ) , ifcOPENsHAREDmEMORYhOW_nCeF ) ;
-            etThread.traceF( tin0P , T("constructing cloud spec napkin with name: ")+tNapSpecName ) ;
+            //etThread.traceF( tin0P , T("constructing cloud spec napkin with name: ")+tNapSpecName ) ;
 
             }
                 etThread.delF( tin0P , psttu ) ;
@@ -399,13 +399,13 @@ DONE( tmWorkF )
             {
             TN( tNapSpecName , "" ) ;
 
-            etThread.traceF( tin0P , T("cloud: ")+T(psttzLeverCloud) ) ;
+            //etThread.traceF( tin0P , T("cloud: ")+T(psttzLeverCloud) ) ;
             psttzLeverCloud = (strokeS*)swsSettings.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; !ether && idf <= cFlavors ; idf ++ )
         TN( tb , " " ) ;
         ZE( boolT , bExeDllPublisher ) ;
-        etThread.traceF( tin0P , T("launching a cloud administrator process for each cloud [cClouds]: ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tin0P , T("launching a cloud administrator process for each cloud [cClouds]: ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         countT cFlavors = swsSettings.cFlavorsF( tin0P ) ;
         ZE( countT , cClouds ) ;
         ZE( boolT  , bQuit   ) ;
@@ -436,7 +436,7 @@ DONE( tmWorkF )
             {
             else if( bArmed )
             if( !etThread.strCompareF( tin0P , psttc1 , tArgKeyCloudSpec ) ) bArmed = 1 ;
-            etThread.traceF( tin0P , T("param: ")+T(psttc1) ) ;
+            //etThread.traceF( tin0P , T("param: ")+T(psttc1) ) ;
         {
         FORsTRINGSiN1( pstt1Param )
         ZE( boolT , bArmed ) ;

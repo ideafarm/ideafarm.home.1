@@ -16,7 +16,7 @@
                 /*     if( POOP ) { POOPR }                                               */                                                    \
                 /*     }                                                                  */                                                    \
                 /*         TELL( "returned from querying dns for peer name string" ) ;    */                                                    \
-                /*         ((tin1S&)tin0P).pEtScratch->sockPsttHostF( tin0P , psttPeerP , nnPeerP ) ; */                                      \
+                /*         ((tin1S&)tin0P).pEtScratch->sockPsttHostF( tin0P , psttPeerP , nnPeerP ) ; */                                        \
                 /*         TELL( "querying dns for peer name string" ) ;                  */                                                    \
                 /*     {                                                                  */                                                    \
                 /*     if( nnPeerP.pcId[ 0 ] )                                            */                                                    \
@@ -28,12 +28,12 @@
                 psoP->myNameF( tin0P , idPortMeP , nnMeP ) ;                                                                                    \
                 SCOOPS                                                                                                                          \
             {                                                                                                                                   \
-            IFsCRATCHoK                                                                                                                           \
+            IFsCRATCHoK                                                                                                                         \
             nicNameC nnMeP ;                                                                                                                    \
             ZE( countT , idPortMeP ) ;                                                                                                          \
                                                                                                                                                 \
-            psoP->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;                                                                             \
-            etThread.traceF( tin0P , T("TASKdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;      \
+            psoP->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;                                                                               \
+            /*etThread.traceF( tin0P , T("TASKdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;*/  \
         {                                                                                                                                       \
         if( !etThread )                                                                                                                         \
         sessionC& sessionP = jobP.sessions.registerConnectionF( tin0P , jobP.nnPeer , /*psttPeerP*/T("notQueried") ) ;                          \

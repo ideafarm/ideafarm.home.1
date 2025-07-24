@@ -127,7 +127,7 @@ DONE( tmWorkF )
     if( !mySettings )
     mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etThread.traceF( tin0P , T("the settings are ready") ) ;
+    //etThread.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
 
 //    etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
@@ -696,7 +696,7 @@ DONE( tmWorkOldF )
 
     TN( tDash , "-" ) ;
 
-    etThread.traceF( tin0P , T("the settings are ready") ) ;
+    //etThread.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
 
 //    etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
@@ -980,9 +980,9 @@ DONE( tmFreshSettingsF )
                     if( ~mySettingsP ) break ;
 
                     mySettingsP.grabMe.ungrabF( tin0P ) ;
-                    /**/etThread.traceF( tin0P , T(!mySettingsP?"the new settings are incomplete":"the new settings are aok")+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //etThread.traceF( tin0P , T(!mySettingsP?"the new settings are incomplete":"the new settings are aok")+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     mySettingsP.freshenF( tin0P ) ;
-                    /**/etThread.traceF( tin0P , T(!mySettingsP?"the stale settings are incomplete":"the stale settings are aok")+tb4+TF2(++idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //etThread.traceF( tin0P , T(!mySettingsP?"the stale settings are incomplete":"the stale settings are aok")+tb4+TF2(++idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                     ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ; // TIME FOR PISS TO FINISH UPDATING SETTINGS
@@ -991,7 +991,7 @@ DONE( tmFreshSettingsF )
                 ZE( countT , idTry ) ;
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                /**/etThread.traceF( tin0P , T("the timestamp of the settings files has changed ; napping and then calling freshenF") ) ;
+                //etThread.traceF( tin0P , T("the timestamp of the settings files has changed ; napping and then calling freshenF") ) ;
                 timeWrittenLath = timeWritten ;
                 _IO_
             {

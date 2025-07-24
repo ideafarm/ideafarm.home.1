@@ -23,14 +23,14 @@ DONE( tmStripeWebHookIpListF )
 
             }
                 grab_pnnAllowP.ungrabF( tin0P ) ;                
-                etThread.traceF( tin0P , T("updated  whitelist") ) ;
+                //etThread.traceF( tin0P , T("updated  whitelist") ) ;
                 }
                     etThread.delF( tin0P , psttValue ) ;
 
                     }
                         }
                             pnnAllowP[ cnnAllowP ++ ] = nn ;
-                            etThread.traceF( tin0P , T("[off,nn,isIPv4F()]:    ")+TF2(cnnAllowP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nn)+tb4+TF2(nn.isIPv4F(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            //etThread.traceF( tin0P , T("[off,nn,isIPv4F()]:    ")+TF2(cnnAllowP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nn)+tb4+TF2(nn.isIPv4F(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
                         if( ~nn )
                         nicNameC nn = socketC::nicNameIF( tin0P , etThread , psttValue ) ;
@@ -57,7 +57,7 @@ DONE( tmStripeWebHookIpListF )
                 etThread.newF( tin0P , LF , pnnAllowP , cFlavors ) ; ___( pnnAllowP ) ;      //LARGER THAN NECESSARY BECAUSE SOME FLAVORS ARE NOT IP ADDRESSES
                 etThread.delF( tin0P , pnnAllowP ) ;
                 cnnAllowP = 0 ;
-                etThread.traceF( tin0P , T("updating whitelist") ) ;
+                //etThread.traceF( tin0P , T("updating whitelist") ) ;
                 grab_pnnAllowP.grabF( tin0P , TAG( TAGiDnULL ) ) ;                
 
                 countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
@@ -96,7 +96,7 @@ DONE( tmStripeWebHookIpListF )
             ZE( countT , costIn ) ;
             ZE( byteT* , postIn ) ;
 
-            etThread.traceF( tin0P , T("querying Stripe for the current Stripe Webhook client IP list") ) ;
+            //etThread.traceF( tin0P , T("querying Stripe for the current Stripe Webhook client IP list") ) ;
         {
         while( !ether )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;

@@ -35,7 +35,7 @@ static ZE(  countT , ms  ) ;
 //etThread.strFromTimeF( tin0P , psttNow , timeN1 , timeN2 , 0 , 0 , S1C('.') , 0 , ifcIDfORMATtIME_TEXT    , flFORMAT_null ) ; ___( psttNow ) ;
 
 etThread.delF( tin0P , psttNow ) ;
-etThread.traceF( tin0P , T("the time now is:    ")+T(psttNow) ) ;
+//etThread.traceF( tin0P , T("the time now is:    ")+T(psttNow) ) ;
 etThread.strFromTimeF( tin0P , psttNow , timeN1 , timeN2 , 0 , 0 , S1C('.') , 0 , ifcIDfORMATtIME_NUMERIC , flFORMAT_null ) ; ___( psttNow ) ;
 ZE( strokeS* , psttNow ) ;
 
@@ -234,7 +234,7 @@ DONE( tmWorkF )
                                                     etThread.strMakeF( tin0P , LF , pstte , tEntry ) ; ___( pstte ) ;
                                                     ZE( strokeS* , pstte ) ;
 
-                                                    etThread.traceF( tin0P , T("[post]:    ")+tEntry ) ;
+                                                    //etThread.traceF( tin0P , T("[post]:    ")+tEntry ) ;
                                                     TN( tEntry , "" ) ; tEntry = tMessage+T("\r\n")+tbIndentTopic+tTime+tbOpen+tSender+tCloseColonCRLF ;
 
                                                     tTime = tDayOfWeek+tCommaBlank+tMonth+tb+TF4(++mDay,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+tCommaBlank+TF4(++year,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T(" at ")+TF4(hour,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE|flFORMAT_FILLzE,2,0xa)+tColon+TF4(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE|flFORMAT_FILLzE,2,0xa) ;
