@@ -288,7 +288,6 @@ DONE( tmWorkerF )
                         IFsCRATCHoK
                         ZE( countT , cbr ) ;
                         ZE( byteT* , pbr ) ;
-                        if( stsReplies ) etRock.traceF( tin0P , gcP.tSayReplying2+tDomainGross ) ;
 
                         else                          ;//etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         if( postError && *postError ) ;//etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
@@ -304,6 +303,7 @@ DONE( tmWorkerF )
                                 }
                                     DEL( ps ) ;
                                     }
+                                        if( !bSilent ) etRock.traceF( tin0P , gcP.tSayReplying2+tDomainGross ) ;
                                         }
                                             //}
                                             //    break ;
