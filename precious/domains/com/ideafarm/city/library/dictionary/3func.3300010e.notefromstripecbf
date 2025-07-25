@@ -20,6 +20,34 @@
             //etThread.traceF( tin0P , T("noteFromStripeCBF / booking [nnPeer,costaBody]:    ")+T(nnPeerP)+T("    ")+TF2(costaBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
+                }
+                    }
+                        etThread.traceF( tin0P , T("noteFromStripeCBF / [webHookNoticeType]:    ")+tType ) ;
+
+                        *poste = ostSave ;
+                        TN( tType , postv ) ;
+                        *poste = 0 ;
+                        osTextT ostSave = *poste ;
+                    {
+                    if( poste )
+                    osTextT* poste = thirdC::c_strstrIF( tin0P , postv , "\"" ) ;
+                    osTextT* postv = ++ postc ;                                                                         // THE 'c' AT THE BEGINNING OF "checkout.session.completed\""
+                {
+                if( postc = thirdC::c_strstrIF( tin0P , ++ postc , "\"" ) , postc )                                     // THE '"' AT THE BEGINNING OF "\"checkout.session.completed\""
+            {
+            if( postc = thirdC::c_strstrIF( tin0P , postc , "\"" ) , postc )                                            // THE '"' AT THE END OF "\"type\""
+            postc = postTypeKeyLath ;
+
+            // postTypeKeyLath NOW POINTS TO THE 't' IN THE LATH OCCURRANCE OF "\"type\":"
+            while( postc = thirdC::c_strstrIF( tin0P , postc , "\"type\":" ) , postc ) postTypeKeyLath = ++ postc ;
+            postc = postBodyP ;
+            ZE( osTextT* , postTypeKeyLath ) ;
+
+            //   |   },
+            //   |   "type": "checkout.session.completed"
+            //   | }
+
+            }
                 etThread.traceF( tin0P , T("noteFromStripeCBF / found an invoice number [nnPeer,costaBody,tInvoice]:    ")+T(nnPeerP)+tb4+TF2(costaBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tInvoice ) ;
                 }
                     }
