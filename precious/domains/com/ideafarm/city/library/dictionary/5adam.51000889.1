@@ -39,7 +39,7 @@ DONE( tmGorillaF )
 }
     etherC::loafIF( tin0P ) ;
     }
-        ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ; //20250625@1525: "<< 3" FROM "<< 0" TO GIVE WH1 WORKER PLENTY OF TIME TO KEEP UP
+//        ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ; //20250625@1525: "<< 3" FROM "<< 0" TO GIVE WH1 WORKER PLENTY OF TIME TO KEEP UP
 
         }
             idNewSuccessUse = 0 ;
@@ -185,7 +185,8 @@ DONE( tmGorillaF )
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
 
-        const boolT bOuter = !( idStomp % ( TUCK >> 2 ) ) ;                 //20250608@1346: ">> 2" <- ">> 4" ; THIS IS TO SPREAD OUT OUTER QUERIES IN TIME SO THAT DEBUGGING THE SYSTEM IS EASIER
+bOuter = 0 ;
+/*        const*/ boolT bOuter = !( idStomp % ( TUCK >> 2 ) ) ;                 //20250608@1346: ">> 2" <- ">> 4" ; THIS IS TO SPREAD OUT OUTER QUERIES IN TIME SO THAT DEBUGGING THE SYSTEM IS EASIER
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
 
         ZE( countT   , costi ) ;
