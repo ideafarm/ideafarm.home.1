@@ -243,7 +243,7 @@ bOuter = 0 ;
     const countT costInvoiceRequired = tInvoice.csF( tin0P ) ;
     TN( tInvoice , "" ) ; tInvoice = TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;   //A:ASSUME: UPDATES TO tInvoice DO NOT CHANGE ITS LENGTH
 
-    dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , 0 , idGorilla ) ;
+    if( idGorilla == 1 ) dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , 0 , idGorilla ) ;
 
     }
         etThread.delF( tin0P , posti ) ;
@@ -262,7 +262,7 @@ bOuter = 0 ;
     const countT idGorilla = 1 + incv02AM( idGorillaLath ) ;
     static countT idGorillaLath ;
 
-    countT& idStompLathP          = *(countT*)pTaskP->c1 ;
+    countT& idStompLathP = *(countT*)pTaskP->c1 ;
 
     _IO_
 {
