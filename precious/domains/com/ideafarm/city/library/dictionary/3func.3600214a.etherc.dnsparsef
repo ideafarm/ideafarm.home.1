@@ -33,6 +33,7 @@
                         if( !POOP )
 
                         __( rMiddle.cbData < 5 ) ;
+                        _IO_
                     {
                     case ifcIDtYPEdNSqUERY_WKS :
                     }
@@ -51,6 +52,7 @@
                             ZE( countT  , time1 ) ;
 
                             soul << (countT)SWABnET4( *(count02T*)pbData ) ; pbData += sizeof( count02T ) ; // SERIAL
+                            _IO_
                         {
                         if( !POOP )
 
@@ -64,11 +66,13 @@
                         soul << psttName ;
                         header.nameF( tin0P , *this , psttName , pbData , pbe - pbData ) ; ___( psttName ) ;
                         ZE( strokeS* , psttName ) ;
+                        _IO_
                     {
                     case ifcIDtYPEdNSqUERY_SOA :
                     }
                         break ;
                         soul.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_byteTptr , pbData , rMiddle.cbData ) ;
+                        _IO_
                     {
                     case ifcIDtYPEdNSqUERY_OPTION :
                     case ifcIDtYPEdNSqUERY_NULL :
@@ -83,10 +87,12 @@
 
                             pbData += sizeof( count01T ) ;
                             soul << (countT)*(count01T*)pbData ; // cRank
+                            _IO_
                         {
                         if( !POOP )
 
                         __( rMiddle.cbData < sizeof( count01T ) )
+                        _IO_
                     {
                     case ifcIDtYPEdNSqUERY_MX :
                     }
@@ -101,6 +107,7 @@
                             memCopyF( tin0P , postb , pbData + 1 , *pbData ) ;
                             byteT  postb[ 0x100 ] ;
                             cText -- ;
+                            _IO_
                         {
                         while( pbData < pbc + rMiddle.cbData )
 
@@ -115,6 +122,7 @@
                             const byteT* pbdSave = pbData ;
                         {
                         ZE( countT , cText ) ;
+                        _IO_
                     {
                     case ifcIDtYPEdNSqUERY_TXT :
                     case ifcIDtYPEdNSqUERY_HINFO :
@@ -124,6 +132,7 @@
                         soul << psttName ;
                         header.nameF( tin0P , *this , psttName , pbData , pbe - pbData ) ; ___( psttName ) ;
                         ZE( strokeS* , psttName ) ;
+                        _IO_
                     {
                     case ifcIDtYPEdNSqUERY_PTR :
                     case ifcIDtYPEdNSqUERY_MR :
@@ -136,6 +145,7 @@
                         soul << psttName ;
                         header.nameF( tin0P , *this , psttName , pbData , pbe - pbData ) ; ___( psttName ) ;
                         ZE( strokeS* , psttName ) ;
+                        _IO_
                     {
                     case ifcIDtYPEdNSqUERY_MINFO :
                     }
@@ -148,6 +158,7 @@
                         if( !POOP )
 
                         __( rMiddle.cbData < sizeof( countT ) )
+                        _IO_
                     {
                     case ifcIDtYPEdNSqUERY_A :
                 {
@@ -170,16 +181,19 @@
                         third.timeFromSecondsIF( tin0P , time1 , time2 , rMiddle.secondsToLive ) ;
                         ZE( sCountT , time2 ) ;
                         ZE( countT  , time1 ) ;
+                        _IO_
                     {
                     soul << (countT)rMiddle.idClass ;
                     soul << (countT)rMiddle.idType ;
                     rMiddle.swabF() ;
+                    _IO_
                 {
                 else
                 }
                     break ;
                     __1
                     DEL( pSoul ) ;
+                    _IO_
                 {
                 if( pbe - pbc < sizeof rMiddle )
                 dnsResourceMiddleS& rMiddle = *(dnsResourceMiddleS*)pbc ;
@@ -189,8 +203,10 @@
                     soul << psttName ;
                     header.nameF( tin0P , *this , psttName , pbc , pbe - pbc ) ; ___( psttName ) ;
                     ZE( strokeS* , psttName ) ;
+                    _IO_
                 {
                 soulC& soul = *pSoul ;
+                _IO_
             {
             if( pSoul )
             soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , idTypeAnswer ) ; ___( pSoul ) ;
@@ -200,6 +216,7 @@
             else if( cAuth && cAuth -- ) idTypeAnswer = ifcIDtYPEdNSrEPLY_AUTHORITY ;
                  if( cAnsw && cAnsw -- ) idTypeAnswer = ifcIDtYPEdNSrEPLY_ANSWER ;
             ZE( countT , idTypeAnswer ) ;
+            _IO_
         {
         while( pbc < pbe && cResources -- && !POOP )
 
@@ -211,6 +228,7 @@
         memCopyF( tin0P , pbHeaderAndQueriesP , pbReplyP , cbHeaderAndQueriesP ) ;
         newF( tin0P , LF , pbHeaderAndQueriesP , cbHeaderAndQueriesP ) ; ___( pbHeaderAndQueriesP ) ;
         cbHeaderAndQueriesP = pbc - pbReplyP ;
+        _IO_
     {
     if( !POOP )
 
@@ -238,6 +256,7 @@
 
                 countT v2 = SWABnET2( *(count01T*)pbc ) ; pbc += sizeof( count01T ) ;
                 countT v1 = SWABnET2( *(count01T*)pbc ) ; pbc += sizeof( count01T ) ;
+                _IO_
             {
             else
             }
@@ -249,14 +268,16 @@
 
             header.nameF( tin0P , *this , psttName , pbc , pbe - pbc ) ; ___( psttName ) ;
             ZE( strokeS* , psttName ) ;
+            _IO_
         {
         while( pbc < pbe && cq -- )
         countT cq = header.cQuerys ;
+        _IO_
     {
     // LOAD stsQueriesP AND SET pbc TO THE END OF THE QUERIES PORTION OF pbReplyP
 
     const byteT* const pbe = pbReplyP + cbReplyP ;
-    const byteT* pbc = pbReplyP + sizeof( dnsMsgHeaderS ) ; // QNAME
+    const byteT*       pbc = pbReplyP + sizeof( dnsMsgHeaderS ) ; // QNAME
     header.swabF() ;
     dnsMsgHeaderS& header = *(dnsMsgHeaderS*)pbReplyP ;
 

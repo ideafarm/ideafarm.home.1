@@ -28,7 +28,7 @@
             {
             if( !POOP )
 
-            __( pbe < pbP + cbLabel ) ;
+            __( pbe < pbP + cbLabel ) ;                                                         // POOP IF LABEL LITERAL EXTENDS BEYOND END
             countT cbLabel = *pbP ; pbP += 1 ;
             _IO_
         {
@@ -37,26 +37,29 @@
             break ;
             __1
             //TELLsYSc1( ifcIDtYPEtELLsYS_ERRORlABELiStOOlONG )
+            // ILLEGAL LENGTH PREFIX VALUE
             _IO_
         {
         else if( *pbP & 0xc0 )
         }
             break ;
-            nameF( tin0P , etThread , st_psttP , pbr , pbe - pbr ) ;
+            pbP += 2 ;                                                                          // ADVANCE pbP TO THE END OF THIS NAME, AND RETURN
+
+            nameF( tin0P , etThread , st_psttP , pbr , pbP - pbr ) ;                            // CALL MYSELF, LIMITING PARSING TO BYTES BELOW CURRENT pbP
 
             if( POOP ) break ;
-            __( pbe <= pbr ) ;
+            __( pbP <= pbr ) ;                                                                  // POOP IF OFFSET DOES NOT POINT BACKWARD
 
-            pbP += 2 ;
-            const byteT* pbr = (byteT*)this + ( SWAB2( *(count01T*)pbP ) & ~0xc000 ) ;
+            const byteT* pbr = (byteT*)this + offr ;
+            countT offr = SWAB2( *(count01T*)pbP ) & ~0xc000 ;
 
             if( POOP ) break ;
-            __( pbe < pbP + sizeof( count01T ) ) ;
+            __( pbe < pbP + sizeof( count01T ) ) ;                                              // POOP IF OFFSET VALUE IS STORED BEYOND END
 
-            // USE THE SPECIFIED OFFSET TO OBTAIN THE VALUE OF THIS LABEL FROM ELSEWHERE IN THE MESSAGE
+                                                                                                // USE THE SPECIFIED OFFSET TO OBTAIN THE VALUE OF THIS LABEL FROM ELSEWHERE IN THE MESSAGE
             _IO_
         {
-        if( ( *pbP & 0xc0 ) == 0xc0 ) // IF pbP POINTS TO AN OFFSET RATHER THAN TO A LABEL LITERAL
+        if( ( *pbP & 0xc0 ) == 0xc0 )                                                           // IF pbP POINTS TO AN OFFSET RATHER THAN TO A LABEL LITERAL
         _IO_
     {
     for(;;)
@@ -75,6 +78,29 @@
     IFbEcAREFUL
 {
 /*1*/voidT dnsMsgHeaderS::nameF( tin0S& tin0P , etherC& etThread , stackC& st_psttP , const byteT*& pbP , const countT cbP )/*1*/
+
+
+// HIGH ORDER BITS [ 1 , 0 ] AND [ 0 , 1 ] ARE ILLEGAL
+// A POINTER MUST BEGIN WITH HIGH ORDER BITS [ 1 , 1 ]
+// A LITERAL LABEL MUST BEGIN WITH HIGH ORDER BITS [ 0 , 0 ]
+// A DOMAIN NAME VALUE CAN BE STORED EITHER AS A LITERAL OR PARTIALLY OR WHOLLY USING OFFSET VALUES THAT POINT TO PRIOR LOCATIONS IN THE MESSAGE
+//
+//    |    
+//    |       - a sequence of labels ending with a pointer"
+//    |    
+//    |       - a pointer
+//    |    
+//    |       - a sequence of labels ending in a zero octet
+//    |    
+//    |    represented as either:
+//    |    "The compression scheme allows a domain name in a message to be
+//    |    
+//
+// EACH LABEL IS LENGTH 0-3F_ (0-63_9)
+// EACH LENGTH PREFIX IS 1 BYTE
+// A DOMAIN NAME VALUE IS A SEQUENCE OF LENGTH PREFIXED LABELS
+//
+// REF: SECTION 4.1.4. "Message compression" OF https://datatracker.ietf.org/doc/html/rfc1035
 
 /**/
 */
