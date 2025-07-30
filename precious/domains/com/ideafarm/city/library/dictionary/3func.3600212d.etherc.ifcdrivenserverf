@@ -240,8 +240,8 @@
 
                                                                     ZE( countT , tid ) ; ((tin1S&)tin0P).pEtScratch->osThreadF( tin0P , tid , info1P.tmF , 0 , 0  , flTHREADlAUNCH_SHOWpONY , 0 , 0 , (countT)&info1P.bQuit , (countT)&stJob , (countT)pJob , (countT)&cWorker ) ;
                                                                     inc02AM( cWorker ) ;
-                                                                    /*if( !bPeerIsGorilla )*/ ;//etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / launching server thread for this client") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
-                                                                    /*if( !bPeerIsGorilla )*/ ;//etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / launching server thread for this client") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                                    /*if( !bPeerIsGorilla )*/ ;//etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / launching server thread for this client") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                                    /*if( !bPeerIsGorilla )*/ ;//etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / launching server thread for this client") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                                     TELL( "server: launching server thread for this client" )
                                                                     _IO_
                                                                 {
@@ -305,16 +305,16 @@
                                                         lever_idSession = ++ idSessionLath ;
                                                         sw_pso.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                                                         TELL( "server: preparing to serve the accepted socket" )
-                                                        /*if( !bPeerIsGorilla )*/ ;//etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / preparing to serve this client") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
-                                                        /*if( !bPeerIsGorilla )*/ ;//etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / preparing to serve this client") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                        /*if( !bPeerIsGorilla )*/ ;//etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / preparing to serve this client") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                        /*if( !bPeerIsGorilla )*/ ;//etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / preparing to serve this client") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                         /*if( !bPeerIsGorilla )*/ ;//etRock.traceF( tin0P , T("ifcDrivenServerF / counting this new session"), flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
                                                         stRecentPeer.sinkF( tin0P , countTC() , nnPeer , flSTACKsINK_UNIQUE ) ;
 
                                                         if( bExplicitHandshake ) pso->shakeHandsAsServerF( tin0P ) ;
 
-                                                        traceF( tin0P , tSayStarting ) ;
-                                                        traceF( tin0P , tSayStarting , flTRACE_null , ifcIDtRACEdIVERT_9 ) ;
+                                                        traceF( tin0P , tSayWillServeTo+tNnPeer ) ;
+                                                        traceF( tin0P , tSayWillServeTo+tNnPeer , flTRACE_null , ifcIDtRACEdIVERT_9 ) ;
 
                                                         _IO_
                                                     {
@@ -326,16 +326,16 @@
                                                         {
                                                         TELL( "server: deleting the accepted socket without serving it" )
 
-                                                        //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null     , ifcIDtRACEdIVERT_7 ) ;
-                                                        //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null     , ifcIDtRACEdIVERT_6 ) ;
-                                                        //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null     , ifcIDtRACEdIVERT_5 ) ;
-                                                        //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null     , ifcIDtRACEdIVERT_4 ) ;
-                                                        //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null     , ifcIDtRACEdIVERT_3 ) ;
-                                                        //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHO , ifcIDtRACEdIVERT_2 ) ;
+                                                        //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null     , ifcIDtRACEdIVERT_7 ) ;
+                                                        //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null     , ifcIDtRACEdIVERT_6 ) ;
+                                                        //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null     , ifcIDtRACEdIVERT_5 ) ;
+                                                        //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null     , ifcIDtRACEdIVERT_4 ) ;
+                                                        //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null     , ifcIDtRACEdIVERT_3 ) ;
+                                                        //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHO , ifcIDtRACEdIVERT_2 ) ;
                                                         //CS:CODEsYNC: 360021f7 3600212d
 
-                                                        //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                                        //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                        //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                        //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / deleting accepted socket without serving it [bSilent,POOP,third,bQuit]:    ")+TF2(bSilent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(third,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(info1P.bQuit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                         _IO_
                                                     {
                                                     if( info1P.bQuit || third || bSilent || POOP )
@@ -348,11 +348,11 @@
                                                     }
                                                         }
                                                             //stBadPeer.sinkF( tin0P , countTC() , nnPeer , flSTACKsINK_UNIQUE ) ;
-                                                            //etRock.traceF( tin0P , T("ifcDrivenServerF / remembering bad peer [cBadPeer,nnPeer]:    ")+TF2((countT)stBadPeer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnPeer) ) ;
+                                                            //etRock.traceF( tin0P , T("ifcDrivenServerF / remembering bad peer [cBadPeer,nnPeer]:    ")+TF2((countT)stBadPeer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tNnPeer ) ;
                                                             //U:: STUTTERING SHOULD NOT RESULT IN PERMANENT "BAD PEER" DESIGNATION ; THAT IS TOO SEVERE ; IMPOSE PERMANENT BANISHMENT ONLY FOR E.G. REPEAT OFFENDERS
 
                                                             bSilent |= 1 ; //TO PREVENT WO PEER FROM OPENING MANY SESSIONS TO DOS ATTACK
-                                                            if( stRecentPeer( nnPeer ) ) ;//etRock.traceF( tin0P , T("ifcDrivenServerF / too recently connected [nnPeer]:    ")+T(nnPeer) ) ;
+                                                            if( stRecentPeer( nnPeer ) ) ;//etRock.traceF( tin0P , T("ifcDrivenServerF / too recently connected [nnPeer]:    ")+tNnPeer ) ;
                                                             //etRock.traceF( tin0P , T("ifcDrivenServerF / setting bSilent (too many sessions with this nnPeer)") ) ;
                                                             _IO_
                                                         {
@@ -375,7 +375,7 @@
                                                         (
                                                         if
 
-                                                        //if( !bHeIsWatchDeadman1 && !bHeIsWatchDeadman2 ) ;//etRock.traceF( tin0P , T("ifcDrivenServerF / checking session count and recents and baddies with this nnPeer [cSessionMax,cSession,nnPeer]:    ")+TF2(info2P.cSessionMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnPeer) ) ;
+                                                        //if( !bHeIsWatchDeadman1 && !bHeIsWatchDeadman2 ) ;//etRock.traceF( tin0P , T("ifcDrivenServerF / checking session count and recents and baddies with this nnPeer [cSessionMax,cSession,nnPeer]:    ")+TF2(info2P.cSessionMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tNnPeer ) ;
 
                                                         countT cSession = sw_cSessionWithPeer ;
                                                         _IO_
@@ -478,24 +478,24 @@
                                                         boolT bWhite = diskFileExistsF( tin0P , tListWhite ) ;
                                                         boolT bHuman = diskFileExistsF( tin0P , tListHuman ) ;
 
-                                                        tListWhite += T("////factory6/d/ideafarm.home.101/ephemeral/ipdos/attackers/white/")+T(nnPeer) ;
-                                                        tListWhite += T("////factory4/d/ideafarm.home.101/ephemeral/ipdos/attackers/white/")+T(nnPeer) ;
-                                                        tListWhite += T("////factory2/d/ideafarm.home.101/ephemeral/ipdos/attackers/white/")+T(nnPeer) ;
+                                                        tListWhite += T("////factory6/d/ideafarm.home.101/ephemeral/ipdos/attackers/white/")+tNnPeer ;
+                                                        tListWhite += T("////factory4/d/ideafarm.home.101/ephemeral/ipdos/attackers/white/")+tNnPeer ;
+                                                        tListWhite += T("////factory2/d/ideafarm.home.101/ephemeral/ipdos/attackers/white/")+tNnPeer ;
                                                         TlIST( tListWhite ) ;
 
-                                                        tListBlock += T("////factory6/d/ideafarm.home.101/ephemeral/ipdos/attackers/block/")+T(nnPeer) ;
-                                                        tListBlock += T("////factory4/d/ideafarm.home.101/ephemeral/ipdos/attackers/block/")+T(nnPeer) ;
-                                                        tListBlock += T("////factory2/d/ideafarm.home.101/ephemeral/ipdos/attackers/block/")+T(nnPeer) ;
+                                                        tListBlock += T("////factory6/d/ideafarm.home.101/ephemeral/ipdos/attackers/block/")+tNnPeer ;
+                                                        tListBlock += T("////factory4/d/ideafarm.home.101/ephemeral/ipdos/attackers/block/")+tNnPeer ;
+                                                        tListBlock += T("////factory2/d/ideafarm.home.101/ephemeral/ipdos/attackers/block/")+tNnPeer ;
                                                         TlIST( tListBlock ) ;
 
-                                                        tListAllowWoMore += T("////factory6/d/ideafarm.home.101/ephemeral/ipdos/attackers/allowWoMore/")+T(nnPeer) ;
-                                                        tListAllowWoMore += T("////factory4/d/ideafarm.home.101/ephemeral/ipdos/attackers/allowWoMore/")+T(nnPeer) ;
-                                                        tListAllowWoMore += T("////factory2/d/ideafarm.home.101/ephemeral/ipdos/attackers/allowWoMore/")+T(nnPeer) ;
+                                                        tListAllowWoMore += T("////factory6/d/ideafarm.home.101/ephemeral/ipdos/attackers/allowWoMore/")+tNnPeer ;
+                                                        tListAllowWoMore += T("////factory4/d/ideafarm.home.101/ephemeral/ipdos/attackers/allowWoMore/")+tNnPeer ;
+                                                        tListAllowWoMore += T("////factory2/d/ideafarm.home.101/ephemeral/ipdos/attackers/allowWoMore/")+tNnPeer ;
                                                         TlIST( tListAllowWoMore ) ;
 
-                                                        tListHuman += T("////factory6/d/ideafarm.home.101/ephemeral/ipdos/attackers/human/")+T(nnPeer) ;
-                                                        tListHuman += T("////factory4/d/ideafarm.home.101/ephemeral/ipdos/attackers/human/")+T(nnPeer) ;
-                                                        tListHuman += T("////factory2/d/ideafarm.home.101/ephemeral/ipdos/attackers/human/")+T(nnPeer) ;
+                                                        tListHuman += T("////factory6/d/ideafarm.home.101/ephemeral/ipdos/attackers/human/")+tNnPeer ;
+                                                        tListHuman += T("////factory4/d/ideafarm.home.101/ephemeral/ipdos/attackers/human/")+tNnPeer ;
+                                                        tListHuman += T("////factory2/d/ideafarm.home.101/ephemeral/ipdos/attackers/human/")+tNnPeer ;
                                                         TlIST( tListHuman ) ;
                                                         _IO_
                                                     {
@@ -511,15 +511,15 @@
                                                                 break ;
                                                                 LOGrAW3( "peer is on the silence list [nnPeer]: " , nnPeer , "\r\n" ) ;
 
-                                                                //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
-                                                                //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_6 ) ;
-                                                                //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_5 ) ;
-                                                                //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_4 ) ;
-                                                                //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_3 ) ;
-                                                                //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_2 ) ;
+                                                                //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                                //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_6 ) ;
+                                                                //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_5 ) ;
+                                                                //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_4 ) ;
+                                                                //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_3 ) ;
+                                                                //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_null , ifcIDtRACEdIVERT_2 ) ;
                                                                 //CS:CODEsYNC: 360021f7 3600212d
 
-                                                                //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                                //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
                                                                 bSilent = 1 ;
                                                                 _IO_
@@ -534,9 +534,9 @@
                                                     if( !bHeIsMe && !bSilent )
                                                     boolT bSilent = bHeIsSpoofingMe || !bPeerAllowed ;
 
-                                                    //if( 0x401043a == processGlobal1I.idAdamRoot ) ifcSayIF( T("acceptF returned (1); nnPeer: ")+T(nnPeer)+T("; bRefuseTooManyOrBlackListed: ")+TF1(bRefuseTooManyOrBlackListed) , flSAY_APPEND | flSAY_LOG ) ;
+                                                    //if( 0x401043a == processGlobal1I.idAdamRoot ) ifcSayIF( T("acceptF returned (1); nnPeer: ")+tNnPeer+T("; bRefuseTooManyOrBlackListed: ")+TF1(bRefuseTooManyOrBlackListed) , flSAY_APPEND | flSAY_LOG ) ;
                                                     TELL( "server: a client has connected" )
-                                                    if( !bPeerIsGorilla ) ;//etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / a client has connected") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                    if( !bPeerIsGorilla ) ;//etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / a client has connected") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
                                                     //if( bHeIsWatchDeadman1 ) etRock.traceF( tin0P , T("ifcDrivenServerF / a client has connected") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
                                                     }
@@ -553,7 +553,7 @@
                                                     {
                                                     if( bHeIsSpoofingMe )
 
-                                                    else                           ;//etRock.traceF( tin0P , T("ifcDrivenServerF / accepted from a host other than me [idAccept,nnPeer]:    "                                                    )+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnPeer)                                                                                                                                                                                                        , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                    else                           ;//etRock.traceF( tin0P , T("ifcDrivenServerF / accepted from a host other than me [idAccept,nnPeer]:    "                                                    )+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tNnPeer                                                                                                                                                                                                        , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                     else if(  bLoopback          ) ;//etRock.traceF( tin0P , T("ifcDrivenServerF / accepted from loopback [idAccept]:    "                                                                       )+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)                                                                                                                                                                                                                      , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                     else if(  bHeIsMe            ) ;//etRock.traceF( tin0P , T("ifcDrivenServerF / accepted from me host [idAccept]:    "                                                                        )+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)                                                                                                                                                                                                                      , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                     else if(  bHeIsWatchDeadman2 ) ;//etRock.traceF( tin0P , T("ifcDrivenServerF / accepted from watch deadman2 [idAccept]:    "                                                                 )+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)                                                                                                                                                                                                                      , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
@@ -592,32 +592,32 @@
                                                         }
                                                             break ;
 
-                                                            etRock.traceF( tin0P , T("!exception / ")+T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
-                                                            etRock.traceF( tin0P , T("!exception / ")+T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_6 ) ;
-                                                            etRock.traceF( tin0P , T("!exception / ")+T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_5 ) ;
-                                                            etRock.traceF( tin0P , T("!exception / ")+T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_4 ) ;
-                                                            etRock.traceF( tin0P , T("!exception / ")+T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_3 ) ;
-                                                            etRock.traceF( tin0P , T("!exception / ")+T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_2 ) ;
+                                                            etRock.traceF( tin0P , T("!exception / ")+tNnPeer+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                            etRock.traceF( tin0P , T("!exception / ")+tNnPeer+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_6 ) ;
+                                                            etRock.traceF( tin0P , T("!exception / ")+tNnPeer+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_5 ) ;
+                                                            etRock.traceF( tin0P , T("!exception / ")+tNnPeer+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_4 ) ;
+                                                            etRock.traceF( tin0P , T("!exception / ")+tNnPeer+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_3 ) ;
+                                                            etRock.traceF( tin0P , T("!exception / ")+tNnPeer+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_2 ) ;
                                                             //CS:CODEsYNC: 360021f7 3600212d
 
-                                                            etRock.traceF( tin0P , T("!exception / ")+T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                            etRock.traceF( tin0P , T("!exception / ")+tNnPeer+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
                                                             }
                                                                 POOPRqUIET
 
-                                                                //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleted pso") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
+                                                                //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / deleted pso") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
                                                                 }
                                                                     POOPRqUIET
                                                                     DEL( pso ) ;                        // THIS IS THE OFFENDING LINE IN WHICH OpenSSL NEVER RETURNS (HAPPENS SOMETIMES BUT NOT ALWAYS HERE)
                                                                     _IO_
                                                                 {                                       // DONE SEPARATELY SO CALL NEST WILL SHOW WHICH IS HUNG IF HANG IS EVER OBSERVED AGAIN
-                                                                //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting pso") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
+                                                                //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / deleting pso") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
 
                                                                 _IO_
                                                             {
 
-                                                            etRock.traceF( tin0P , T("!exception / ")+T(nnPeer)+T("    ifcDrivenServerF / accept failed") ) ;
-                                                            etRock.traceF( tin0P , T("!exception / ")+T(nnPeer)+T("    ifcDrivenServerF / accept failed") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                            etRock.traceF( tin0P , T("!exception / ")+tNnPeer+T("    ifcDrivenServerF / accept failed") ) ;
+                                                            etRock.traceF( tin0P , T("!exception / ")+tNnPeer+T("    ifcDrivenServerF / accept failed") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                             POOPRqUIET
                                                             _IO_
                                                         {
@@ -627,8 +627,10 @@
 
                                                         //CONoUTrAW( "." ) ; //U:: TO FIND A BUG
                                                         osTimeNowF( tin0P , timeAccepted1 , timeAccepted2 ) ;
-                                                        /*if( !bPeerIsGorilla )*/ //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / called  acceptF [idSubType,cQueued,cQueuedMax]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                                        /*if( !bPeerIsGorilla )*/ //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / called  acceptF [idSubType,cQueued,cQueuedMax]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                        /*if( !bPeerIsGorilla )*/ //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / called  acceptF [idSubType,cQueued,cQueuedMax]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                        /*if( !bPeerIsGorilla )*/ //etRock.traceF( tin0P , tNnPeer+T("    ifcDrivenServerF / called  acceptF [idSubType,cQueued,cQueuedMax]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+
+                                                        tNnPeer = T(nnPeer) ;
 
                                                         ) ;
                                                           //|| nnPeer == nnGorillaInnerOk8
@@ -658,6 +660,7 @@
                                                         _IO_
                                                     {
                                                     IFsCRATCHoK
+                                                    TN( tNnPeer , "" ) ;
                                                     ZE( boolT , bPeerAllowed   ) ;
                                                     ZE( boolT , bPeerIsGorilla ) ;
                                                     ZE( socketC* , pso ) ;
@@ -671,7 +674,6 @@
                                                     ZE( countT  , timeAccepted1 ) ;
                                                     nicNameC nnPeer ;
                                                     ZE( countT , idpPeer ) ;
-
 #endif
                                                     }
                                                         //etRock.traceF( tin0P , T("ifcDrivenServerF / too many sessions, so refusing this wo [cSession]:    ")+TF2(cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
@@ -980,7 +982,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
         byteT pbSessions[ sizeof( sessionsC ) ] ;
         TELL( "server: setting up" )
 
-        TN( tSayStarting , "++++" ) ;
+        TN( tSayWillServeTo , "ifcDrivenServerF / will serve to [nnPeer]:    " ) ;
 
       //nicNameC nnGorillaInnerOk8 = socketC::nicNameIF( tin0P , *this , T("10.0.3.8") ) ;
       //nicNameC nnGorillaInnerOk7 = socketC::nicNameIF( tin0P , *this , T("10.0.3.7") ) ;
