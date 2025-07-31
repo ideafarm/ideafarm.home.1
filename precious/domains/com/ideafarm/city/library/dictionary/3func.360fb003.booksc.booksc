@@ -102,7 +102,7 @@
                 ((tin1S&)tin0P).pEther->strMakeF( tin0P , LF , psttFindLike , tLike ) ; ___( psttFindLike ) ;
 
                 ;
-                    :                                                                                                                                                                                                                                                           T(postShort)+T(".booksC.1.book.*.bookC")
+                    :                                                                                                                                                                                                                                                              T(postShort)+T(".booksC.1.book.*.bookC")
                     ? T(thirdC::postUserNameIF())+T(".")+TF3(idMemorySpace?idMemorySpace:((tin1S&)tin0P).pag1->idMemorySpace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".")+TF2(idStateSpace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".")+T(postShort)+T(".booksC.1.book.*.bookC")
                 tLike += !( F(flagsCt) & flBOOKSc_NOsHORTfILENAMEpREFIX )
 
@@ -254,7 +254,8 @@ idStateSpace( idStateSpaceP ) ,
 cbBodyNew( cbP ) ,
 postBookNameScratch( 0 ) ,
 ) ,
-    ( F(flagsP) & flBOOKSc_NOsHORTfILENAMEpREFIX      ? flBOOKc_NOsHORTfILENAMEpREFIX      : flBOOKc_null )
+    ( F(flagsP) & flBOOKSc_UNIQUEsHAREDmEMORY         ? flBOOKc_UNIQUEsHAREDmEMORY         : flBOOKc_null )
+    ( F(flagsP) & flBOOKSc_NOsHORTfILENAMEpREFIX      ? flBOOKc_NOsHORTfILENAMEpREFIX      : flBOOKc_null ) |
     ( F(flagsP) & flBOOKSc_RESETcREFoNcT              ? flBOOKc_RESETcREFoNcT              : flBOOKc_null ) |
     ( F(flagsP) & flBOOKSc_DOnOTsERIALIZEnAPKINS      ? flBOOKc_DOnOTsERIALIZEnAPKIN       : flBOOKc_null ) |
     ( F(flagsP) & flBOOKSc_LOCK                       ? flBOOKc_LOCK                       : flBOOKc_null ) |
