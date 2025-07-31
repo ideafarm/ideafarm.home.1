@@ -7,5 +7,5 @@ for %%s in (wh1 wh2 dns1 go1) do copy \\%%s\d\ideafarm.home.101\ephemeral\ipdos\
 echo in the editor, remove the trailing white space at the end of each file
 for %%f in (bkstrace.all.*) do rw %%f
 copy bkstrace.all.* bkstrace.all.all.ttt
-sort < bkstrace.all.all.ttt /o bkstrace.all.sorted.ttt
+sort bkstrace.all.all.ttt /o bkstrace.all.sorted.ttt
 dir bkstrace.all.*
