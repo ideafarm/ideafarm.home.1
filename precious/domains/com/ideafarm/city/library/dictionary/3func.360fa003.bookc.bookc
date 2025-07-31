@@ -150,13 +150,23 @@
         postShort = thirdC::c_strrchrIF( tin0P , postShort , '\\' ) ;
     {
     )
-        postShort[ 2 ] == '\\'
-        &&
-        postShort[ 0 ] <= 'z'
-        &&
-        postShort[ 0 ] >= 'a'
-        &&
-        postShort[ 1 ] == ':'
+        )
+            )
+                postShort[ 1 ] == '\\'
+                &&                                  // NETWORK FILE NAME
+                postShort[ 0 ] == '\\'
+            (
+            ||
+            )
+                postShort[ 2 ] == '\\'
+                &&
+                postShort[ 0 ] <= 'z'
+                &&                                  // LOCAL FILE NAME
+                postShort[ 0 ] >= 'a'
+                &&
+                postShort[ 1 ] == ':'
+            (
+        (
         &&
         postShort
     (

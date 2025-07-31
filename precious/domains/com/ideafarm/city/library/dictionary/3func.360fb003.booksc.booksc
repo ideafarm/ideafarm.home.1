@@ -186,13 +186,23 @@
             osTextT* postc = thirdC::c_strrchrIF( tin0P , postShortOrLongP , '\\' ) ;
         {
         )
-            postShortOrLongP[ 2 ] == '\\'
-            &&
-            postShortOrLongP[ 0 ] <= 'z'
-            &&
-            postShortOrLongP[ 0 ] >= 'a'
-            &&
-            postShortOrLongP[ 1 ] == ':'
+            )
+                )
+                    postShortOrLongP[ 1 ] == '\\'
+                    &&                                  // NETWORK FILE NAME
+                    postShortOrLongP[ 0 ] == '\\'
+                (
+                ||
+                )
+                    postShortOrLongP[ 2 ] == '\\'
+                    &&
+                    postShortOrLongP[ 0 ] <= 'z'
+                    &&                                  // LOCAL FILE NAME
+                    postShortOrLongP[ 0 ] >= 'a'
+                    &&
+                    postShortOrLongP[ 1 ] == ':'
+                (
+            (
             &&
             postShortOrLongP
         (
