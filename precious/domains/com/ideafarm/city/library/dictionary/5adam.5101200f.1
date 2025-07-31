@@ -23,7 +23,7 @@ REST
                 bDone ++ ;
             {
             if( !pbi || !cbi )
-            boolT bDelete = bksDo[ offi ].readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
+            boolT bDelete = ppBksDo[ offi ]->readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
             countT cbi = - 1 ;
             ZE( const byteT* , pbi ) ;
         {
@@ -38,7 +38,7 @@ REST
     {
     for( countT offi = 0 ; offi < 4 ; offi ++ )
 
-    booksC& bksDo[ 4 ] = { bksTrace1 , bksTrace2 , bksTrace3 , bksTrace4 } ;
+    booksC* ppBksDo[ 4 ] = { &bksTrace1 , &bksTrace2 , &bksTrace3 , &bksTrace4 } ;
 
     booksC bksTrace4( tin0P , TAG( TAGiDnULL ) , "\\\\" "go1"  "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\SYSTEM\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
     booksC bksTrace3( tin0P , TAG( TAGiDnULL ) , "\\\\" "dns1" "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\SYSTEM\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
