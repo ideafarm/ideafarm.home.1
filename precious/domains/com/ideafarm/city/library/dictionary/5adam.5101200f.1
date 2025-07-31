@@ -11,33 +11,45 @@ REST
 
 }
     }
-        if( bDelete ) PUSE( tin0P , *(byteT**)&pbi ) ;
         }
-            etThread.fileWriteF( tin0P , fiAll , pbi , cbi ) ;
-            etThread.traceF( tin0P , T("wrote from wo bookC instance [idFileIn,cbi]:    ")+TF2(++idFileIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
+            if( bDelete ) PUSE( tin0P , *(byteT**)&pbi ) ;
+            }
+                etThread.fileWriteF( tin0P , fiAll , pbi , cbi ) ;
+                etThread.traceF( tin0P , T("wrote from wo bookC instance [idFileIn,cbi]:    ")+TF2(++idFileIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
+            {
+            else
+            }
+                etThread.traceF( tin0P , T("no more") , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
+                bDone ++ ;
+            {
+            if( !pbi || !cbi )
+            boolT bDelete = bksDo[ offi ].readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
+            countT cbi = - 1 ;
+            ZE( const byteT* , pbi ) ;
         {
-        else
-        }
-            etThread.traceF( tin0P , T("no more") , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
-            bDone ++ ;
-        {
-        if( !pbi || !cbi )
-        boolT bDelete = bksTrace.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
-        countT cbi = - 1 ;
-        ZE( const byteT* , pbi ) ;
+        while( !ether && !bDone )
+        ZE( boolT , bDone ) ;
+        TN( tb4 , "    " ) ;
+        ZE( countT , idFileIn ) ;
+        handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+
+        fileC fiAll( tin0P , (strokeS*)tOut , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+        TN( tOut , "" ) ; tOut = T("///ideafarm/tmp/tracecopy.")+T(ppostLan[offi])+T(".ttt") ;
     {
-    while( !ether && !bDone )
-    ZE( boolT , bDone ) ;
-    TN( tb4 , "    " ) ;
-    ZE( countT , idFileIn ) ;
-    handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+    for( countT offi = 0 ; offi < 4 ; offi ++ )
 
-    booksC bksTrace( tin0P , TAG( TAGiDnULL ) , "\\\\lap-silver-1\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\SYSTEM\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
+    booksC& bksDo[ 4 ] = { bksTrace1 , bksTrace2 , bksTrace3 , bksTrace4 } ;
 
+    booksC bksTrace4( tin0P , TAG( TAGiDnULL ) , "\\\\" "go1"  "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\SYSTEM\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
+    booksC bksTrace3( tin0P , TAG( TAGiDnULL ) , "\\\\" "dns1" "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\SYSTEM\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
+    booksC bksTrace2( tin0P , TAG( TAGiDnULL ) , "\\\\" "wh2"  "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\SYSTEM\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
+    booksC bksTrace1( tin0P , TAG( TAGiDnULL ) , "\\\\" "wh1"  "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\SYSTEM\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
+
+    osTextT* ppostLan[ 4 ] = { "wh1" , "wh2" , "dns1" , "go1" } ;
+
+    //G:booksC bksTrace( tin0P , TAG( TAGiDnULL ) , "\\\\lap-silver-1\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\SYSTEM\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
     //G:booksC bksTrace( tin0P , TAG( TAGiDnULL ) , "d:\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\SYSTEM\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
     //G:booksC bksTrace( tin0P , TAG( TAGiDnULL ) , "bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
-
-    fileC fiAll( tin0P , (strokeS*)T("///ideafarm/tmp/tracecopy.ttt") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
 {
 
 TODO
