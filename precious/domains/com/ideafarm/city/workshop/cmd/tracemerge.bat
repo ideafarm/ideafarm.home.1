@@ -1,5 +1,8 @@
 @echo off
 
+adam 51000622 !idHome 10000008 !make ba8
+adam 510008ab !idHome 10000008
+
 d:
 cd \ideafarm.home.1\tmp
 
