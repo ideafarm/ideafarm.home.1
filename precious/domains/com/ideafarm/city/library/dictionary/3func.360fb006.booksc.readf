@@ -259,11 +259,11 @@
                     THREADmODE1rESTORE ;
                     }
                         NEWbOOK2sETfLAG
-                        new( 0 , tin0P , PBbOOKbACKnOW , SIZEOF_bookC ) bookC( tin0P , TAG( TAGiDnULL ) , tName , idStateSpace , flagsCtBook & ~( F(flBOOKSc_WRITER) ) , 0 , bFill , idMemorySpace ) ; // A:ASSUME: CALLER ALWAYS WANTS TO READ THE NEW BOOK ; TO SUPPORT A WRITER, A FLAG CAN BE DEFINED TO CHANGE THIS BEHAVIOR
+                        new( 0 , tin0P , PBbOOKbACKnOW , SIZEOF_bookC ) bookC( tin0P , TAG( TAGiDnULL ) , tShortOrLong , idStateSpace , flagsCtBook & ~( F(flBOOKSc_WRITER) ) , 0 , bFill , idMemorySpace ) ; // A:ASSUME: CALLER ALWAYS WANTS TO READ THE NEW BOOK ; TO SUPPORT A WRITER, A FLAG CAN BE DEFINED TO CHANGE THIS BEHAVIOR
                         NEWbOOK1bLAMMOiFcT
 
                         //CONoUTrAW( "\r\n" ) ;
-                        //CONoUTrAW( tName ) ;
+                        //CONoUTrAW( tShortOrLong ) ;
                         //CONoUTrAW( "opening " ) ;
                     {
                     else
@@ -272,7 +272,7 @@
                         PUSE( tin0P , *(byteT**)&PCPiDbOOKnOW ) ; //AT THE BEGINNING OF THIS BLOCK, I DELETED THIS BOOK.  CODE THAT LOOKS AT THE BOOK INSTANCES MUST CHECK FOR !PCPiDbOOKnOW TO AVOID ACCESSING A DELETED INSTANCE.  RACE CONDITION EXIST IF MULTIPLE THREADS ARE READING, BUT MULTITHREADED READING PROBABLY IS UNSUPPORTABLE ANYWAY
                         cbToDo = 0 ;
                     {
-                    if( F(flagsP) & flBOOKScrEAD_STILLhUNGRYiSoK && !bookC::bFileExistsIF( tin0P , *((tin1S&)tin0P).pEther , tName , 0 , idStateSpace , idMemorySpace , flagsCtBook ) )
+                    if( F(flagsP) & flBOOKScrEAD_STILLhUNGRYiSoK && !bookC::bFileExistsIF( tin0P , *((tin1S&)tin0P).pEther , tShortAndId+T(".bookC") , tPath , idStateSpace , idMemorySpace , flagsCtBook ) )
                     THREADmODE3oN( flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE )
 
                     //20181107@1116: THIS BUG WAS WORKED AROUND BY EDITING OTHER CODE SO THAT THIS CODE ISN'T EXERCIZED.  THIS CODE IS INCORRECT.  CORRECT CODE WILL AVOID DELETING A bookC AND THEN ATTEMPTING TO UNDO THAT DELETION
@@ -280,10 +280,10 @@
 
                     THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) ;
 
-                    ;
-                        : T(postPath)+T(postShort)+T(".booksC.1.book.")+tIdBook
-                        ? T(postShort)+T(".booksC.1.book.")+tIdBook
-                    TN( tName , "" ) ; tName = !*postPath
+                    TN( tShortOrLong , "" ) ; tShortOrLong = tPath+tShortAndId ;
+
+                    TN( tShortAndId , ""       ) ; tShortAndId = T(postShort)+T(".booksC.1.book.")+tIdBook ;
+                    TN( tPath       , postPath ) ;
 
                     }
                         for( countT offi = *PCPiDbOOKnOW ; offi ; offi -- ) tIdBook += tDot+TF3(PCPiDbOOKnOW[offi],flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE|flFORMAT_NObIGITvALUES,8) ;
