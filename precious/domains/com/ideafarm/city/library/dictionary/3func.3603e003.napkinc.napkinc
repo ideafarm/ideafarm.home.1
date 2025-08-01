@@ -56,7 +56,7 @@
     {
     else if( bWord )
     }
-        if( bNew ) processGlobal8I._socketC_napIpMapHome.formattingIsDoneF( tin0P ) ;
+        if( bNewMemory && bNewFile ) processGlobal8I._socketC_napIpMapHome.formattingIsDoneF( tin0P ) ;                                      //20250801@1016: IF !bNewFile THEN SUPPRESS FORMATTING
 
         }
             }
@@ -159,17 +159,17 @@
         
             ipMapHomeS* const pMapArray = (ipMapHomeS*)(byteT*)processGlobal8I._socketC_napIpMapHome ;
         {
-        if( bNew )
+        if( bNewMemory && bNewFile )                                                                                     //20250801@1016: IF !bNewFile THEN SUPPRESS FORMATTING
         ZE( ipMapHomeS* , pMap ) ;
                 
         }
             while( cToDo -- ) new( 0 , tin0P , (byteT*)( pCursor ++ ) , sizeof( ipMapHomeS ) ) ipMapHomeS( tin0P ) ;
             countT cToDo = CiPmAPhOME ;
             ipMapHomeS* pCursor = (ipMapHomeS*)(byteT*)*this ;
-            bNew = 1 ;
+            bNewMemory = 1 ;
         {
         if( !( F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
-        ZE( boolT , bNew ) ;
+        ZE( boolT , bNewMemory ) ;
     {
     else if( this == &processGlobal8I._socketC_napIpMapHome )
     }
@@ -754,6 +754,13 @@
     OStEXT(   ostoNapkinName , COSTnAPKINnAMEmAX )
 
     }
+        if( c2AppNote.c1 == ifcOPENrESULT_EXISTED ) bNewFile = 0 ;
+        const HANDLEaPPnOTEScOUNTcLASS& c2AppNote = *phFileP ;
+    {
+    if( phFileP )
+    boolT bNewFile = 1 ;
+
+    }
         if( POOP ) BLAMMO ;
         __( idMemorySpaceP && !( F(((tin1S&)tin0P).flagsThreadMode3) & flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tin0P ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         if( POOP ) BLAMMO ; //U:: TO FIND A BUG
@@ -848,4 +855,3 @@ the calling code -must- call formattingIsDoneF after constructing me to indicate
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
