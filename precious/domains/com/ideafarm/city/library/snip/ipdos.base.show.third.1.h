@@ -45367,6 +45367,7 @@ this macro detects an invalid jPointer value and, if valid, evaluates to the (co
 #define flBOOKScrEAD_CURRENTbOOKoNLY                                          0xe00001f1
 #define flBOOKScrEAD_STILLhUNGRYiSoK                                          0xe00002f1
 #define flBOOKScrEAD_INCREMENTrEFERENCEcOUNTiF                                0xe00004f1
+#define flBOOKScrEAD_CURSORnEXTbOOK                                           0xe00008f1
 /*3*/
 #define flBOOKScrEAD_null    0xe00000f1
 

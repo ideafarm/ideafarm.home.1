@@ -122,7 +122,7 @@
             if( bNullRead ) break ;
 
             }
-                if( !cbToDo && !bNullRead ) bFinalAdjust = 1 ;
+                if( !cbToDo && F(flagsP) & flBOOKScrEAD_CURSORnEXTbOOK ) bNowCursorNextBook = 1 ;
 
                 }
                     //if( ((tin123S&)tin0P).pc Utility[ 0 ] ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("booksC::readF / U:: 6 [pbP,cbP]:    ")+tb4+TF2((countT)pbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -191,12 +191,13 @@
 
                 bookHeadS& head = BOOKnOW ;
             {
-            else
-            if( !cbToDo && !bNullRead ) bFinalAdjust = 1 ;
+            if( cbToDo || bNullRead )
 
             //if( ((tin123S&)tin0P).pc Utility[ 0 ] ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("booksC::readF / U:: a [pbP,cbP]:    ")+tb4+TF2((countT)pbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             if( bHandleAdjusted ) continue ;
+
+            if( bNowCursorNextBook ) bNowCursorNextBook = 0 ;
 
             }
                 }
@@ -239,7 +240,7 @@
                         break ;
                         cbToDo = 0 ;
                     {
-                    if( head.cbUsed < head.cbBody )
+                    if( !bNowCursorNextBook && head.cbUsed < head.cbBody )
                 {
                 else if( c2AppNote.c1 == offe )
                 if( POOP ) break ;
@@ -396,12 +397,10 @@
             countT pcpOffIdBookWant[] = { 2 , c2AppNote.c1 , c2AppNote.c2 } ;
             HANDLEaPPnOTEScOUNTcLASS& c2AppNote = handleP ;
 
-            if( bFinalAdjust ) bFinalAdjust = 0 ;
-
             //if( ((tin123S&)tin0P).pc Utility[ 0 ] ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("booksC::readF / U:: c [pbP,cbP]:    ")+tb4+TF2((countT)pbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {                                                                                                                                       //20140508@1952: LOOP NOW ALSO IS USED TO BLOCK IF I WANT TO CHANGE BOOKS AND THE CURRENT BOOK HAS A PENDING SMART POINTER
-        while( ( cbToDo || bNullRead || bFinalAdjust ) && ~handleP )                                                                                            // THE ONLY PURPOSE OF LOOPING IS TO OBTAIN A BLOB SPANNED OVER MULTIPLE BOOKS; WILL BREAK OUT OF LOOP IF F(flagsP) & flBOOKScrEAD_CURRENTbOOKoNLY
-        ZE( boolT , bFinalAdjust ) ;
+        while( ( cbToDo || bNullRead || bNowCursorNextBook ) && ~handleP )                                                                                            // THE ONLY PURPOSE OF LOOPING IS TO OBTAIN A BLOB SPANNED OVER MULTIPLE BOOKS; WILL BREAK OUT OF LOOP IF F(flagsP) & flBOOKScrEAD_CURRENTbOOKoNLY
+        ZE( boolT , bNowCursorNextBook ) ;
         ZE( boolT , bBecameMaster ) ;
         ZE( boolT , bStackUsed ) ;
         stackC stSnip( tin0P , *((tin1S&)tin0P).pEther , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY , ifcSTACKtYPE_PTR_byteT ) ;
