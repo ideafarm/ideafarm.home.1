@@ -56,7 +56,7 @@
     {
     else if( bWord )
     }
-        if( bNewMemory && bNewFile ) processGlobal8I._socketC_napIpMapHome.formattingIsDoneF( tin0P ) ;                                      //20250801@1016: IF !bNewFile THEN SUPPRESS FORMATTING
+        if( bNewMemory ) processGlobal8I._socketC_napIpMapHome.formattingIsDoneF( tin0P ) ;
 
         }
             }
@@ -423,33 +423,43 @@
         else                                                                                                    // THE SHARED MEMORY ALREADY EXISTED
         }
             }
-                //THREADmODE3oFF( flTHREADmODE3_SUPPRESStRACING )
-
                 }
-                    //20240813@1644: UNGRAB MOVED TO HERE
-                {
-                if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )                                              //20201030@1142: BUG?: CONJ: SHOULD NOT BE UNGRABBING HERE (MUST REMAIN GRABBED UNTIL formattingIsDoneF IS CALLED)
-            {
-            else
-            }
-                //LOGrAW(   ostoSay ) ;
-                //OStEXTAK( ostoSay , "\r\n" ) ;
-                //OStEXTA(  ostoSay , postName ) ;
-                //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace , '0' ) ;
-                //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idAdam , '0' ) ;
-                //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , ((napkinHeaderS*)pbNapkin)->cRef , '0' ) ;
-                //OStEXTAK( ostoSay , "napkinC 1: +**+ [cRef after set to 1,idAdam,postP]:    " ) ;
-                //OStEXT(   ostoSay , TUCK ) ;
-                //TO FIND A BUG
+                    //THREADmODE3oFF( flTHREADmODE3_SUPPRESStRACING )
 
-                ((napkinHeaderS*)pbNapkin)->bFormatted = 0   ;
-                ((napkinHeaderS*)pbNapkin)->cRef       = 1   ;
-                ((napkinHeaderS*)pbNapkin)->cbData     = cbP ;
+                    }
+                        //20240813@1644: UNGRAB MOVED TO HERE
+                    {
+                    if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )                                              //20201030@1142: BUG?: CONJ: SHOULD NOT BE UNGRABBING HERE (MUST REMAIN GRABBED UNTIL formattingIsDoneF IS CALLED)
+                {
+                else
+                }
+                    //LOGrAW(   ostoSay ) ;
+                    //OStEXTAK( ostoSay , "\r\n" ) ;
+                    //OStEXTA(  ostoSay , postName ) ;
+                    //OStEXTAK( ostoSay , "    " ) ;
+                    //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace , '0' ) ;
+                    //OStEXTAK( ostoSay , "    " ) ;
+                    //OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idAdam , '0' ) ;
+                    //OStEXTAK( ostoSay , "    " ) ;
+                    //OStEXTC(  ostoSay , ((napkinHeaderS*)pbNapkin)->cRef , '0' ) ;
+                    //OStEXTAK( ostoSay , "napkinC 1: +**+ [cRef after set to 1,idAdam,postP]:    " ) ;
+                    //OStEXT(   ostoSay , TUCK ) ;
+                    //TO FIND A BUG
+
+                    ((napkinHeaderS*)pbNapkin)->bFormatted = 0   ;
+                    ((napkinHeaderS*)pbNapkin)->cRef       = 1   ;
+                    ((napkinHeaderS*)pbNapkin)->cbData     = cbP ;
+                {
+                if( !( F(flagsCt) & flNAPKINc_DOnOTcOMMIT ) )
             {
-            if( !( F(flagsCt) & flNAPKINc_DOnOTcOMMIT ) )
+
+            //else
+            //}
+            //    THREADmODE4rESTORE0( flThreadMode4Save )
+            //    pzbMemorySpaceUse->ungrabF( tin0P ) ;                                                           // UNGRAB BECAUSE FILE EXISTED EVEN THOUGH MEMORY IS NEW (SEE ifcIDaDAM_TOOLtRACEcOPY FOR AN EXAMPLE OF HOW THIS CAN HAPPEN)
+            //{
+            //if( !bNewFile )
+            //U::20250801@1352: ADD SUPPORT FOR NONDEFAULT BEHAVIOR.  DEFAULT BEHAVIOR IS TO FORMAT THE MEMORY IF NEW, REGARDLESS OF WHETHER FILE EXISTS, WHICH ZAPS THE CONTENTS OF THE FILE
 
             //}
             //    CONoUTrAW( "\r\n" ) ;
