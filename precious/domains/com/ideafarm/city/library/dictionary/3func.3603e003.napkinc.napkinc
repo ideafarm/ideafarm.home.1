@@ -159,7 +159,7 @@
         
             ipMapHomeS* const pMapArray = (ipMapHomeS*)(byteT*)processGlobal8I._socketC_napIpMapHome ;
         {
-        if( bNewMemory && bNewFile )                                                                                     //20250801@1016: IF !bNewFile THEN SUPPRESS FORMATTING
+        if( bNewMemory )
         ZE( ipMapHomeS* , pMap ) ;
                 
         }
@@ -420,18 +420,9 @@
             //{
             //if( thirdC::c_strstrIF( tin0P , postP , "home.temp." ) )
         {
-        else                                                                                                    // THE SHARED MEMORY ALREADY EXISTED
+        else                                                                                                                        // THE SHARED MEMORY ALREADY EXISTED
         }
             }
-                }
-                    //THREADmODE3oFF( flTHREADmODE3_SUPPRESStRACING )
-
-                    }
-                        //20240813@1644: UNGRAB MOVED TO HERE
-                    {
-                    if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )                                              //20201030@1142: BUG?: CONJ: SHOULD NOT BE UNGRABBING HERE (MUST REMAIN GRABBED UNTIL formattingIsDoneF IS CALLED)
-                {
-                else
                 }
                     //LOGrAW(   ostoSay ) ;
                     //OStEXTAK( ostoSay , "\r\n" ) ;
@@ -452,14 +443,12 @@
                 {
                 if( !( F(flagsCt) & flNAPKINc_DOnOTcOMMIT ) )
             {
-
-            //else
-            //}
-            //    THREADmODE4rESTORE0( flThreadMode4Save )
-            //    pzbMemorySpaceUse->ungrabF( tin0P ) ;                                                           // UNGRAB BECAUSE FILE EXISTED EVEN THOUGH MEMORY IS NEW (SEE ifcIDaDAM_TOOLtRACEcOPY FOR AN EXAMPLE OF HOW THIS CAN HAPPEN)
-            //{
-            //if( !bNewFile )
-            //U::20250801@1352: ADD SUPPORT FOR NONDEFAULT BEHAVIOR.  DEFAULT BEHAVIOR IS TO FORMAT THE MEMORY IF NEW, REGARDLESS OF WHETHER FILE EXISTS, WHICH ZAPS THE CONTENTS OF THE FILE
+            else
+            }
+                THREADmODE4rESTORE0( flThreadMode4Save )                                                                            // CALLER MUST NOT CALL formattingIsDoneF
+                pzbMemorySpaceUse->ungrabF( tin0P ) ;                                                                               // NONDEFAULT BEHAVIOR: UNGRAB BECAUSE FILE EXISTED EVEN THOUGH MEMORY IS NEW (SEE ifcIDaDAM_TOOLtRACEcOPY FOR AN EXAMPLE OF HOW THIS CAN HAPPEN)
+            {
+            if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) && !bNewFile && F(flagsCt) & flNAPKINc_UNGRABmEMORYiFfILEeXISTED )
 
             //}
             //    CONoUTrAW( "\r\n" ) ;
@@ -468,7 +457,7 @@
             //{
             //if( thirdC::c_strstrIF( tin0P , postP , "home.temp." ) )
         {
-        if( !( F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )                               // I CREATED THE SHARED MEMORY
+        if( !( F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )                                                   // I CREATED THE SHARED MEMORY
         //CS:CODEsYNC: 3603e003 3603e007
     {
     else
@@ -485,12 +474,12 @@
             pzbMemorySpaceUse->ungrabF( tin0P ) ;
             //NO CAN DO BECAUSE CAN RECURSE AND BLOW THREAD STACK: if( ((tin123S&)tin0P).pc Utility[ 0 ] ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("napkinC ct'or / ungrabbing [pzbMemorySpaceUse]:    ")+TF2((countT)pzbMemorySpaceUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
-        if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )                                                      // IF pbNapkin THEN CALLER MUST CALL formattingIsDoneF, WHICH WILL UNGRAB, UNLESS I HAVE ALREADY MADE THAT CALL
+        if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )                                                                          // IF pbNapkin THEN CALLER MUST CALL formattingIsDoneF, WHICH WILL UNGRAB, UNLESS I HAVE ALREADY MADE THAT CALL
         POOPIE
     {
     if( POOP )
 
-    __Z( pbNapkin ) ;                                                                                           // WHEN GET HERE, MEMORYSPACE IS GRABBED ; IF pbNapkin THEN CALLER MUST CALL formattingIsDoneF, WHICH WILL UNGRAB, UNLESS I HAVE ALREADY MADE THAT CALL
+    __Z( pbNapkin ) ;                                                                                                               // WHEN GET HERE, MEMORYSPACE IS GRABBED ; IF pbNapkin THEN CALLER MUST CALL formattingIsDoneF, WHICH WILL UNGRAB, UNLESS I HAVE ALREADY MADE THAT CALL
     }
         }
             THREADmODE1rESTORE ;
