@@ -14712,7 +14712,6 @@ can be used anywhere
 #define flNAPKINc_LOCK                        0xe000803e
 #define flNAPKINc_DOnOTcOMMIT                 0xe001003e
 #define flNAPKINc_DOnOTsERIALIZEcT            0xe002003e
-#define flNAPKINc_UNGRABmEMORYiFfILEeXISTED   0xe004003e
 /*3*/
 #define flNAPKINc_null    0xe000003e
 
@@ -37121,7 +37120,6 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 #define flBOOKc_FILEeXISTED                     0xe08000b6
 #define flBOOKc_NOsHORTfILENAMEpREFIX           0xe10000b6
 #define flBOOKc_UNIQUEsHAREDmEMORY              0xe20000b6
-#define flBOOKc_DOnOTfORMATeXISTINGfILE         0xe40000b6
 /*3*/
 #define flBOOKc_null    0xe00000b6
 
@@ -37212,7 +37210,6 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 #define flBOOKSc_RESETcREFoNcT                      0xe04000b8
 #define flBOOKSc_NOsHORTfILENAMEpREFIX              0xe08000b8
 #define flBOOKSc_UNIQUEsHAREDmEMORY                 0xe10000b8
-#define flBOOKSc_DOnOTfORMATeXISTINGfILE            0xe20000b8
 /*3*/
 #define flBOOKSc_null    0xe00000b8
 
