@@ -272,7 +272,7 @@
                         PUSE( tin0P , *(byteT**)&PCPiDbOOKnOW ) ; //AT THE BEGINNING OF THIS BLOCK, I DELETED THIS BOOK.  CODE THAT LOOKS AT THE BOOK INSTANCES MUST CHECK FOR !PCPiDbOOKnOW TO AVOID ACCESSING A DELETED INSTANCE.  RACE CONDITION EXIST IF MULTIPLE THREADS ARE READING, BUT MULTITHREADED READING PROBABLY IS UNSUPPORTABLE ANYWAY
                         cbToDo = 0 ;
                     {
-                    if( F(flagsP) & flBOOKScrEAD_STILLhUNGRYiSoK && !bookC::bFileExistsIF( tin0P , *((tin1S&)tin0P).pEther , tShortAndId , tPath.csF( tin0P ) ? (osTextT*)tPath : 0 , idStateSpace , idMemorySpace , flagsCtBook ) )
+                    if( F(flagsP) & flBOOKScrEAD_STILLhUNGRYiSoK && !bookC::bFileExistsIF( tin0P , *((tin1S&)tin0P).pEther , tShortAndId , tPath.csF( tin0P ) ? tPath : 0 , idStateSpace , idMemorySpace , flagsCtBook ) )
                     THREADmODE3oN( flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE )
 
                     //20181107@1116: THIS BUG WAS WORKED AROUND BY EDITING OTHER CODE SO THAT THIS CODE ISN'T EXERCIZED.  THIS CODE IS INCORRECT.  CORRECT CODE WILL AVOID DELETING A bookC AND THEN ATTEMPTING TO UNDO THAT DELETION
