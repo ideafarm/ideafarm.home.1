@@ -423,15 +423,6 @@
         else                                                                                                    // THE SHARED MEMORY ALREADY EXISTED
         }
             }
-                //THREADmODE3oFF( flTHREADmODE3_SUPPRESStRACING )
-
-                }
-                    //20240813@1644: UNGRAB MOVED TO HERE
-                {
-                if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )                                              //20201030@1142: BUG?: CONJ: SHOULD NOT BE UNGRABBING HERE (MUST REMAIN GRABBED UNTIL formattingIsDoneF IS CALLED)
-            {
-            else
-            }
                 //LOGrAW(   ostoSay ) ;
                 //OStEXTAK( ostoSay , "\r\n" ) ;
                 //OStEXTA(  ostoSay , postName ) ;
@@ -450,6 +441,16 @@
                 ((napkinHeaderS*)pbNapkin)->cbData     = cbP ;
             {
             if( !( F(flagsCt) & flNAPKINc_DOnOTcOMMIT ) )
+
+            }
+                etRock.traceF( tin0P , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+                OStEXTA(  ostoSay , postName ) ;
+                OStEXTAK( ostoSay , "napkinC::napkinC / !exception / formatting new shared memory backed by an old file [postName]:    " ) ;
+                OStEXT(   ostoSay , TUCK << 2 ) ;
+            {
+            if( bFileIsOld )
 
             //}
             //    CONoUTrAW( "\r\n" ) ;
@@ -752,6 +753,13 @@
     OStEXTA(  ostoNapkinName , postP ) ;
     OStEXTAK( ostoNapkinName , "//napkinC/" ) ;
     OStEXT(   ostoNapkinName , COSTnAPKINnAMEmAX )
+
+    }
+        if( c2AppNote.c1 == ifcOPENrESULT_EXISTED ) bFileIsOld = 1 ;
+        const HANDLEaPPnOTEScOUNTcLASS& c2AppNote = *phFileP ;
+    {
+    if( phFileP )
+    ZE( boolT , bFileIsOld ) ;
 
     }
         if( POOP ) BLAMMO ;
