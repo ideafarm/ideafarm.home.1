@@ -22,11 +22,11 @@
         // if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->trace F( tin0P , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": bookC constructed") ) ; //U:: TO FIND A BUG
 
         }
-            if( !bMemoryExisted ) napkin.formattingIsDoneF( tin0P ) ;
+            if( !bMemoryExisted && !bFileExisted ) napkin.formattingIsDoneF( tin0P ) ;
 
             provisionF( tin0P , napkin , napkin , flagsProvision , bFillP ) ;
 
-            if( bMemoryExisted ) flagsProvision &= ~( F(flBOOK0pROVISION_FORMAT) ) ; //U::20201124@1544: POSSIBLE BUG: HOW CAN FILE PREEXIST WITHOUT MEMORY ALSO PREEXISTING?
+            if( bMemoryExisted || bFileExisted ) flagsProvision &= ~( F(flBOOK0pROVISION_FORMAT) ) ; //U::20201124@1544: POSSIBLE BUG: HOW CAN FILE PREEXIST WITHOUT MEMORY ALSO PREEXISTING?
 
             boolT bMemoryExisted = F(napkin.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ;
 
