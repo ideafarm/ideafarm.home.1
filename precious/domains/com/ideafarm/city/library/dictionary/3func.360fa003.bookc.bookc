@@ -21,12 +21,13 @@
 
         // if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->trace F( tin0P , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": bookC constructed") ) ; //U:: TO FIND A BUG
 
-        }
-            if( !bMemoryExisted ) napkin.formattingIsDoneF( tin0P ) ;
+        }                                                                                                           //SO THIS CALL TO formattingIsDoneF JUST RESTORES THE FINGERPRINT VALUE IN bFormatted
+            if( !bMemoryExisted ) napkin.formattingIsDoneF( tin0P ) ;                                               //IF !bMemoryExisted, THE napkinC CT'OR OVERWROTE napkinHeaderS::cbData WITH THE SAME VALUE, napkinHeaderS::cRef WITH 1, AND napkinHeaderS::bFormatted WITH 0
 
-            provisionF( tin0P , napkin , napkin , flagsProvision , bFillP ) ;
 
-            if( bMemoryExisted || bFileExisted ) flagsProvision &= ~( F(flBOOK0pROVISION_FORMAT) ) ; //U::20201124@1544: POSSIBLE BUG: HOW CAN FILE PREEXIST WITHOUT MEMORY ALSO PREEXISTING?
+            provisionF( tin0P , napkin , napkin , flagsProvision , bFillP ) ;                                       //P:PERSONALITY: IF THE BACKING FILE EXISTED, I WILL NOT FORMAT THE PORTION OF THE napkinC IMAGE THAT I USE (HEADER + DATA)
+
+            if( bMemoryExisted || bFileExisted ) flagsProvision &= ~( F(flBOOK0pROVISION_FORMAT) ) ;                // bFileExisted WILL BE TRUE FOR, FOR EXAMPLE, THE bookC BACKING FILES FOR THE jotC PORTION OF THE SETTINGS FILES
 
             boolT bMemoryExisted = F(napkin.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ;
 
