@@ -47013,7 +47013,6 @@ i am nonconformant in that all of my member function definitions are in a single
 
 /*1*/struct _export taskDrivenServerJobS/*1*/
 {
-    etherC*    pzEther ;
     strokeS*   psttSayIdClient ;
     countT     idSession ;
     countT&    lever_idSession ;
