@@ -47000,7 +47000,6 @@ i am nonconformant in that all of my member function definitions are in a single
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.cacheC : 1snip.15000187.cacheC END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.taskDrivenServerJobS : 1snip.1500018b.taskDrivenServerJobS BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -47014,6 +47013,8 @@ i am nonconformant in that all of my member function definitions are in a single
 
 /*1*/struct _export taskDrivenServerJobS/*1*/
 {
+    etherC*    pzEther ;
+    strokeS*   psttSayIdClient ;
     countT     idSession ;
     countT&    lever_idSession ;
     switchC&   sw_pso ;
@@ -47033,7 +47034,8 @@ i am nonconformant in that all of my member function definitions are in a single
     sCountT    timeDoJob2 ;
 
     NEWdELcLASSpROTOS
-    taskDrivenServerJobS( countT idSessionP , countT& lever_idSessionP , switchC& sw_psoP , countT& cSessionP , countT cArgP , nicNameC& lever_nnPeerP , switchC& sw_cSessionWithPeerP , sessionsC& sessionsP , nicNameC& nnPeerP , countT timeAccepted1P , sCountT timeAccepted2P , countT timeJobCreated1P , sCountT timeJobCreated2P ) ;
+    ~taskDrivenServerJobS( voidT ) ;
+    taskDrivenServerJobS( tin0S& tin0P , etherC& etherP , const strokeS* const psttSayIdClientP , countT idSessionP , countT& lever_idSessionP , switchC& sw_psoP , countT& cSessionP , countT cArgP , nicNameC& lever_nnPeerP , switchC& sw_cSessionWithPeerP , sessionsC& sessionsP , nicNameC& nnPeerP , countT timeAccepted1P , sCountT timeAccepted2P , countT timeJobCreated1P , sCountT timeJobCreated2P ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36149003.taskDrivenServerJobS.taskDrivenServerJobS!||
     taskDrivenServerJobS( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36149004.taskDrivenServerJobS.taskDrivenServerJobS!||
