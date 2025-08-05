@@ -14,6 +14,10 @@ if not exist tracecopy.all.ttt goto :FIN
 
 if     %1z == z sort tracecopy.all.ttt /o tracecopy.all.sorted.ttt
 if not %1z == z sort tracecopy.all.ttt /o %1\tracecopy.all.sorted.ttt
+
+if     %1z == z call filesplit ///c/tmp/tracecopy.all.sorted.ttt
+if not %1z == z call filesplit %1\tracecopy.all.sorted.ttt
+
 dir tracecopy.*
 
 :FIN
