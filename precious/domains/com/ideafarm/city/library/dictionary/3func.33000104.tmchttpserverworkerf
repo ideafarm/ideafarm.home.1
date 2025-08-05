@@ -112,9 +112,6 @@ DONE( tmcHttpServerWorkerF )
                     jobP.sw_pso.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     /**/etRock.traceF( tin0P , tSayPrefix+T("grabbing jobP.sw_pso") ) ;
 
-                    //((tin1S&)tin0P).pc Utility[ 3 ] = ((countT*)&jobCopy)[ 2 ] ;
-                    //((tin1S&)tin0P).pc Utility[ 2 ] = ((countT*)&jobP)[ 2 ] ;
-                    //((tin1S&)tin0P).pc Utility[ 0 ] = 0x12345678 ;
                     // /**/etRock.traceF( tin0P , tSayPrefix+T("before grabbing") ) ;
 
                     TELL( "TASKdRIVENsERVER: setting up" )
@@ -142,9 +139,6 @@ DONE( tmcHttpServerWorkerF )
                 stJobP >> pbJob ;
                 byteT* pbJob = _pbaJob ;
                 byteT _pbaJob[ sizeof( taskDrivenServerJobS ) ] ;
-
-                /**/etRock.traceF( tin0P , T("tmcHttpServerWorkerF popping a job [jobCopy[2]]:    ")+TF2(((countT*)&jobCopy)[2],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                /**/taskDrivenServerJobS jobCopy = *(taskDrivenServerJobS*)&(countT&)stJobP[ 1 ] ; //U:: TO FIND A BUG
             {
             else
             }
