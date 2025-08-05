@@ -2,6 +2,7 @@
 
 rem param 1 (optional): path for output file
 
+d:
 adam 51000622 !idHome 10000008 !make ba8
 adam 510008ab !idHome 10000008
 
@@ -18,6 +19,7 @@ if not %1z == z sort tracecopy.all.ttt /o %1\tracecopy.all.sorted.ttt
 if     %1z == z call filesplit ///c/tmp/tracecopy.all.sorted.ttt
 if not %1z == z call filesplit %1\tracecopy.all.sorted.ttt
 
+c:
 dir tracecopy.*
 
 :FIN
