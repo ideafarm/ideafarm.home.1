@@ -22,17 +22,17 @@ DONE( tmcHttpServerWorkerF )
                         dec02AM( jobP.cSession ) ;
                         taskDrivenServerJobS* pDoomed = &jobP ;
 
-                        /**/etRock.traceF( tin0P , tSayPrefix+T("DONE [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        /**/etRock.traceF( tin0P , tSayClientPrefix+T("DONE [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                         /*etThread.delF( tin0P , psttPeerP ) ;*/
 
-                        /**/etRock.traceF( tin0P , tSayPrefix+T("decremented cSession") ) ;
+                        /**/etRock.traceF( tin0P , tSayClientPrefix+T("decremented cSession") ) ;
                         jobP.sw_cSessionWithPeer.ungrabF( tin0P ) ;
                         -- jobP.sw_cSessionWithPeer ;
                         jobP.lever_nnPeer = jobP.nnPeer ;
                         jobP.sw_cSessionWithPeer.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                         jobP.sessions.unregisterConnectionF( tin0P , jobP.nnPeer ) ;
-                        /**/etRock.traceF( tin0P , tSayPrefix+T("decrementing cSession") ) ;
+                        /**/etRock.traceF( tin0P , tSayClientPrefix+T("decrementing cSession") ) ;
 
                         }
                             jobP.sw_pso.ungrabF( tin0P ) ;
@@ -55,9 +55,9 @@ DONE( tmcHttpServerWorkerF )
                             {
 
                             }
-                                /**/etRock.traceF( tin0P , tSayPrefix+T("called etherDoHttpJobF") ) ;
+                                /**/etRock.traceF( tin0P , tSayClientPrefix+T("called etherDoHttpJobF") ) ;
                                 etThread.etherDoHttpJobF( tin0P , jobP , psoP , sessionP , idPortMeP , nnMeP ) ;
-                                /**/etRock.traceF( tin0P , tSayPrefix+T("calling etherDoHttpJobF") ) ;
+                                /**/etRock.traceF( tin0P , tSayClientPrefix+T("calling etherDoHttpJobF") ) ;
                                 _IO_
                             {
                             etThread.osTimeNowF( tin0P , jobP.timeDoJob1 , jobP.timeDoJob2 ) ;
@@ -89,15 +89,15 @@ DONE( tmcHttpServerWorkerF )
                         ZE( countT , idPortMeP ) ;
 
                         psoP->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;
-                        /**/etRock.traceF( tin0P , tSayPrefix+T("TASKdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        /**/etRock.traceF( tin0P , tSayPrefix+T("preparing to service psoP") ) ;
+                        /**/etRock.traceF( tin0P , tSayClientPrefix+T("TASKdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        /**/etRock.traceF( tin0P , tSayClientPrefix+T("preparing to service psoP") ) ;
                     {
                     else
                     if( etThread ) { BLAMMO ; }
                     sessionC& sessionP = jobP.sessions.registerConnectionF( tin0P , jobP.nnPeer , /*psttPeerP*/T("notQueried") ) ;
 
                     __Z( psoP ) ;
-                    /**/etRock.traceF( tin0P , tSayPrefix+T("U:: tmcHttpServerWorkerF / after ungrab") ) ;
+                    /**/etRock.traceF( tin0P , tSayClientPrefix+T("U:: tmcHttpServerWorkerF / after ungrab") ) ;
 
                     jobP.sw_pso.ungrabF( tin0P ) ;
                     socketC*& psoP = (socketC*&)(countT&)jobP.sw_pso ;
@@ -108,23 +108,22 @@ DONE( tmcHttpServerWorkerF )
                     //((tin1S&)tin0P).pc Utility[ 2 ] = 0 ;
                     //((tin1S&)tin0P).pc Utility[ 3 ] = 0 ;
 
-                    /**/etRock.traceF( tin0P , tSayPrefix+T("grabbed jobP.sw_pso") ) ;
+                    /**/etRock.traceF( tin0P , tSayClientPrefix+T("grabbed jobP.sw_pso") ) ;
                     jobP.sw_pso.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                    /**/etRock.traceF( tin0P , tSayPrefix+T("grabbing jobP.sw_pso") ) ;
+                    /**/etRock.traceF( tin0P , tSayClientPrefix+T("grabbing jobP.sw_pso") ) ;
 
-                    // /**/etRock.traceF( tin0P , tSayPrefix+T("before grabbing") ) ;
+                    // /**/etRock.traceF( tin0P , tSayClientPrefix+T("before grabbing") ) ;
 
                     TELL( "TASKdRIVENsERVER: setting up" )
                     TESTsCRATCH ;
 
                     etThread.osTimeNowF( tin0P , jobP.timeJobPopped1 , jobP.timeJobPopped2 ) ;
 
-                    /**/etRock.traceF( tin0P , tSayPrefix+T("beginning to do a job") ) ;
+                    /**/etRock.traceF( tin0P , tSayClientPrefix+T("beginning to do a job") ) ;
 
-                    TN( tSayPrefix , "" ) ; tSayPrefix = T(jobP.nnPeer)+T(":    ") ;
+                    //CONoUTrAW5( "\r\n||PULL||:  [idThread,pstt]:    " , ((tin1S&)tin0P).glass.idThread , "    " , jobP.psttSayClientPrefix , "" ) ;
 
-                    //CONoUTrAW5( "\r\n||PULL||:  [idThread,pstt]:    " , ((tin1S&)tin0P).glass.idThread , "    " , jobP.psttSayIdClient , "" ) ;
-
+                    TN( tSayClientPrefix , jobP.psttSayClientPrefix ) ;
                     taskDrivenServerJobS& jobP = *(taskDrivenServerJobS*)_pbaJob ;
                 {
                 else

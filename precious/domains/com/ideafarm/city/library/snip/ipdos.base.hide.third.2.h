@@ -47013,7 +47013,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
 /*1*/struct _export taskDrivenServerJobS/*1*/
 {
-    strokeS*   psttSayIdClient ;
+    strokeS*   psttSayClientPrefix ;
     countT     idSession ;
     countT&    lever_idSession ;
     switchC&   sw_pso ;
@@ -47034,7 +47034,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     NEWdELcLASSpROTOS
     ~taskDrivenServerJobS( voidT ) ;
-    taskDrivenServerJobS( tin0S& tin0P , etherC& etherP , const strokeS* const psttSayIdClientP , countT idSessionP , countT& lever_idSessionP , switchC& sw_psoP , countT& cSessionP , countT cArgP , nicNameC& lever_nnPeerP , switchC& sw_cSessionWithPeerP , sessionsC& sessionsP , nicNameC& nnPeerP , countT timeAccepted1P , sCountT timeAccepted2P , countT timeJobCreated1P , sCountT timeJobCreated2P ) ;
+    taskDrivenServerJobS( tin0S& tin0P , etherC& etherP , const strokeS* const psttSayClientPrefixP , countT idSessionP , countT& lever_idSessionP , switchC& sw_psoP , countT& cSessionP , countT cArgP , nicNameC& lever_nnPeerP , switchC& sw_cSessionWithPeerP , sessionsC& sessionsP , nicNameC& nnPeerP , countT timeAccepted1P , sCountT timeAccepted2P , countT timeJobCreated1P , sCountT timeJobCreated2P ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36149003.taskDrivenServerJobS.taskDrivenServerJobS!||
     taskDrivenServerJobS( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36149004.taskDrivenServerJobS.taskDrivenServerJobS!||
