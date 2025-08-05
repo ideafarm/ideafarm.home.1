@@ -315,8 +315,8 @@
 
                                                         if( bExplicitHandshake ) pso->shakeHandsAsServerF( tin0P ) ;
 
-                                                        traceF( tin0P , tSayWillServeTo+tNnPeer ) ;
-                                                        traceF( tin0P , tSayWillServeTo+tNnPeer , flTRACE_null , ifcIDtRACEdIVERT_9 ) ;
+                                                        traceF( tin0P , tSayWillServeTo+tNnPeer+T("(")+TF2(idpPeer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(")") ) ;
+                                                        //traceF( tin0P , tSayWillServeTo+tNnPeer , flTRACE_null , ifcIDtRACEdIVERT_9 ) ;
 
                                                         _IO_
                                                     {
@@ -1022,7 +1022,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
         byteT pbSessions[ sizeof( sessionsC ) ] ;
         TELL( "server: setting up" )
 
-        TN( tSayWillServeTo , "ifcDrivenServerF / will serve to [nnPeer]:    " ) ;
+        TN( tSayWillServeTo , "ifcDrivenServerF / will serve to [nnPeer,idpPeer]:    " ) ;
 
       //nicNameC nnGorillaInnerOk8 = socketC::nicNameIF( tin0P , *this , T("10.0.3.8") ) ;
       //nicNameC nnGorillaInnerOk7 = socketC::nicNameIF( tin0P , *this , T("10.0.3.7") ) ;
