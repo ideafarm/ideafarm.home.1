@@ -25,7 +25,7 @@
         if( bFailP )
 
         }
-            //ether.traceF( tin0P , T("!exception / readRequestF / psttNameP is null") ) ;
+            //ether.traceF( tin0P , tSayClientPrefix+T("!exception / readRequestF / psttNameP is null") ) ;
             bFailP = 1 ;
         {
         if( !psttNameP )
@@ -128,7 +128,7 @@
                                 }
                                     bFailP = 1 ;
                                     ether.delF( tin0P , postBodyP ) ;
-                                    //ether.traceF( tin0P , T("readRequestF: could not read socket 175 2") ) ;
+                                    //ether.traceF( tin0P , tSayClientPrefix+T("readRequestF: could not read socket 175 2") ) ;
                                     POOPRqUIET
                                 {
                                 if( POOP )
@@ -151,7 +151,7 @@
 
                 }
                     costBody = costzBodySome ;
-                    //ether.traceF( tin0P , T("readRequestF / apparent memory corruption attack (incorrect content length declaration) / costBody < costzBodySome [costBody,costzBodySome]:    ")+TF2(costBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(costzBodySome,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / apparent memory corruption attack (incorrect content length declaration) / costBody < costzBodySome [costBody,costzBodySome]:    ")+TF2(costBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(costzBodySome,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 if( costBody < costzBodySome )
 
@@ -217,8 +217,8 @@
                             {
                             if( psttUrlNew && psttUrlNew->idAdam )
 
-                            //ether.traceF( tin0P , T("readRequestF / overriding Url [new]:    ")+T(psttUrlNew) ) ;
-                            //ether.traceF( tin0P , T("readRequestF / overriding Url [old]:    ")+tUrlOld       ) ;
+                            //ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / overriding Url [new]:    ")+T(psttUrlNew) ) ;
+                            //ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / overriding Url [old]:    ")+tUrlOld       ) ;
                             strokeS*& psttUrlNew = *(strokeS**)&(countT&)swMapUrl ;
                         {
                         if( swMapUrl.idSlotOfLeverF( tin0P , (countT)psttLeverUrlMap ) )
@@ -244,7 +244,7 @@
                     else if( ether.strIdF( tin0P , sttQuest , psttNameP ) ) // HTTP/1.0 KEYvALUE PAIRS
                     }
                         bFailP = 1 ;
-                        //ether.traceF( tin0P , T("!exception / readRequestF / psttNameP is null or null length") ) ;
+                        //ether.traceF( tin0P , tSayClientPrefix+T("!exception / readRequestF / psttNameP is null or null length") ) ;
                     {
                     if( !psttNameP || !psttNameP->idAdam )
                     strokeS sttQuest( '?' ) ;
@@ -278,7 +278,7 @@
                 {
                 if( !psttAction ) // IF WO'TH LINE
 
-                //ether.traceF( tin0P , T("input line: >>>>")+T(psttc1)+T("<<<<") ) ;
+                //ether.traceF( tin0P , tSayClientPrefix+T("input line: >>>>")+T(psttc1)+T("<<<<") ) ;
             {
             FORsTRINGSiN1( pstt1Line )
 
@@ -296,7 +296,7 @@
         ZE( strokeS* , psttAction ) ;
         ZE( countT , costBody ) ;
 
-//ether.traceF( tin0P , T(postHeadPlus) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; //U:: TO FIND A BUG
+//ether.traceF( tin0P , tSayClientPrefix+T(postHeadPlus) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; //U:: TO FIND A BUG
 
         }
             costzBodySome = costHeadPlus - costHead - 4 ;
@@ -317,7 +317,7 @@
 
                 //}
                 //    break ;
-                //    ether.traceF( tin0P , T("readRequestF / cMouthfulsAllowed mouthfuls did not contain a complete request") ) ;
+                //    ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / cMouthfulsAllowed mouthfuls did not contain a complete request") ) ;
                 //    bFailP = 1 ;    //P:PERSONALITY: TO PREVENT STALL ATTACK, I REQUIRE THAT THE cMouthfulsAllowed MOUTHFULS CONTAIN A COMPLETE REQUEST
                 //{
                 //if( !bEnd && !( -- cMouthfulsAllowed ) )
@@ -355,7 +355,7 @@
                     }
                         break ;
                         bFailP = 1 ;
-                        //ether.traceF( tin0P , T("readRequestF: could not read socket 175") ) ;
+                        //ether.traceF( tin0P , tSayClientPrefix+T("readRequestF: could not read socket 175") ) ;
                         POOPRqUIET
                     {
                     if( POOP )
@@ -386,6 +386,8 @@
     _IO_
 
     __( bCloseP ) ;
+
+    TN( tSayClientPrefix , jobP.psttSayClientPrefix ) ;
 
     TESTsCRATCH //U:: TO FIND A BUG
     scoopC scoop( tin0P , LF , ether ) ;  //U:: 20201021@1350: ADDED WITHOUT ANALYSIS.  ALL MEMBER FUNCTIONS OF CLASSES WITH AN ether MEMBER SHOULD DO THIS
