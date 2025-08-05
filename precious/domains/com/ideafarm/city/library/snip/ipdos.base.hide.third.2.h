@@ -41769,6 +41769,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     countT                          cAddressRangeCodeBase ;
     addressRangeS                   pAddressRangeCodeBase[ CmODULESbASE ] ;
     countT                          cDozeSprint ;
+    osTextT                         postSuppressTraceIf[ TUCK >> 3 ] ;
 
     //PUT PLATFORM DEPENDENT MEMBERS HERE SO THAT OFFSETS TO THE OTHER MEMBERS ARE INVARIANT
     #if defined( ifcENABLEtHIRDpARTIES )
