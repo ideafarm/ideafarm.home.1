@@ -82,7 +82,73 @@ DONE( tmWorkF )
             !etThread.strCompareF( tin0P , psttc1 , tCmdPrecious )
         (
         else if
-        else if( !etThread.strCompareF( tin0P , psttc1 , tCmdMake ) ) bArmMake = 1 ;
+        else if( !etThread.strCompareF( tin0P , psttc1 , tCmdMakeIf ) ) bArmMakeIf = 1 ;
+        else if( !etThread.strCompareF( tin0P , psttc1 , tCmdMake   ) ) bArmMake   = 1 ;
+        }
+            }
+                }
+                    DEL( ps ) ;
+
+                    etThread.delF( tin0P , psttNote ) ;
+                    etThread.delF( tin0P , psttLine ) ;
+
+                    etThread.strokeF( tin0P , TF2(idLine,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("(")+TF2(idCol,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("): ")+T(psttLine)+tcri2+T(psttNote)+tcr ) ;
+                    *ps >> psttNote ; ___( psttNote ) ;
+                    ZE( strokeS* , psttNote ) ;
+
+                    *ps >> psttLine ; ___( psttLine ) ;
+                    ZE( strokeS* , psttLine ) ;
+
+                    *ps >> idCol ;
+                    ZE( countT , idCol ) ;    
+
+                    *ps >> idLine ;
+                    ZE( countT , idLine ) ;    
+
+                    stErrors >> ps ; ___( ps ) ;
+                    ZE( soulC* , ps ) ;
+
+                    cErrors ++ ;
+                {
+                while( stErrors )
+
+                etThread.osMakeF( tin0P , stErrors , idAdam , flMAKE_DEBUG | flMAKE_ENABLEtHIRDpARTIES ) ; //U::ELIMINATE flMAKE_ENABLEtHIRDpARTIES
+                stackC stErrors( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_soulC ) ;
+
+                CONoUTrAW3( "[idAdam]: " , idAdam , "\r\n" ) ;
+
+                countT idAdam = etThread.strDigitsToSCountF( tin0P , psttc1 ) | 0x51000000 ;
+            {
+            if( !bFound )
+
+            }
+                }
+                    }
+                        /**/etRock.traceF( tin0P , T("dll could not be opened [rc,tIdAdam]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdAdam ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    else
+                    }
+                        /**/etRock.traceF( tin0P , T("dll opened aok [tIdAdam]:    ")+tIdAdam ) ;
+                        bFound = 1 ;
+                    {
+                    if( !POOP )
+                    ((tin1S&)tin0P).pEtScratch->dllOpenF( tin0P , hDll , tDll ) ;
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
+                handleC hDll( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ;
+                TN( tDll , "" ) ; tDll = T("///ideafarm/ephemeral/city/park/exedll/1/hover/ideafarm.")+tIdAdam+T(".ipdos-wd") ;
+                TN( tb4 , "    " ) ;
+            {
+            ZE( boolT , bFound ) ;
+
+            TN( tIdAdam , psttc1 ) ;
+            bArmMakeIf = 0 ;
+        {
+        else if( bArmMakeIf )
         }
             }
                 DEL( ps ) ;
@@ -128,10 +194,12 @@ DONE( tmWorkF )
     FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tin0P ) )
     strokeS sttExclaim('!') ;
     countT cSkip = 1 ;
-    ZE( boolT , bArmMake ) ;
+    ZE( boolT , bArmMakeIf ) ;
+    ZE( boolT , bArmMake   ) ;
     TN( tCmdTool     , "!tool" ) ;
     TN( tCmdPrecious , "!precious" ) ;
-    TN( tCmdMake , "!make" ) ;
+    TN( tCmdMakeIf , "!makeIf" ) ;
+    TN( tCmdMake   , "!make" ) ;
     TN( tcri2 , "\r\n  " ) ;
     TN( tcr , "\r\n" ) ;
     ZE( countT , cErrors ) ;

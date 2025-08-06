@@ -3,7 +3,7 @@
 rem param 1 (optional): path for output file
 
 d:
-adam 51000622 !idHome 10000008 !make ba8
+adam 51000622 !idHome 10000008 !makeIf ba8
 adam 510008ab !idHome 10000008
 
 c:
