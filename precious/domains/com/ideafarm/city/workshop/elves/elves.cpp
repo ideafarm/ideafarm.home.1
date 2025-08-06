@@ -2136,6 +2136,7 @@ void elf_obey_C::liveF( void )
                 else if( bPrecious ) strcat( postCmd , " !precious" ) ;
                 else if( bTool     ) strcat( postCmd , " !tool" ) ;
 
+ether.sayF( 0 , postCmd , flSAY_NOwRAP | flSAY_NOgRAB | flSAY_NOuNGRAB ) ;
                 system( postCmd ) ;
             }
         }
