@@ -33,14 +33,14 @@ DONE( tmWorkF )
             gv.bQuit ++ ;
 
             }
-                //etRock.traceF( tin0P , gc.tSayPushedJob ) ;
+                /**/etRock.traceF( tin0P , gc.tSayPushedJob ) ;
 
                 gv.cirJob << &job ;
                 jobS job( pbq , cbq , idp , nnPeer ) ;
 
-                //etRock.traceF( tin0P , gc.tSayPushingJob ) ;
+                /**/etRock.traceF( tin0P , gc.tSayPushingJob ) ;
 
-                //etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
+                /**/etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
                 }
                     }
                         break ;
@@ -50,20 +50,20 @@ DONE( tmWorkF )
                         countT rc = POOP ;
                     {
                     if( POOP )
-                    //etRock.traceF( tin0P , gc.tSayCalledRead ) ;
+                    /**/etRock.traceF( tin0P , gc.tSayCalledRead ) ;
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
-                    //etRock.traceF( tin0P , gc.tSayCallingRead ) ;
+                    /**/etRock.traceF( tin0P , gc.tSayCallingRead ) ;
                     SCOOPS
                     _IO_
                 {
                 IFsCRATCHoK
-                //etRock.traceF( tin0P , gc.tSayWaitingForPacket ) ;
+                /**/etRock.traceF( tin0P , gc.tSayWaitingForPacket ) ;
                 nicNameC nnPeer ;
                 ZE( countT , idp ) ;
                 ZE( countT , cbq ) ;
                 ZE( byteT* , pbq ) ;
 
-                //etRock.traceF( tin0P , gc.tSayInnerLoopBegun ) ;
+                /**/etRock.traceF( tin0P , gc.tSayInnerLoopBegun ) ;
                 _IO_
             {
             while( !POOP && !ether )
@@ -116,7 +116,7 @@ DONE( tmWorkF )
         socketC& sockd = *(socketC*)pbSocket ;
         byteT pbSocket[ sizeof( socketC ) ] ;
 
-        //etRock.traceF( tin0P , T("outer loop begun") ) ;
+        /**/etRock.traceF( tin0P , T("outer loop begun") ) ;
         _IO_
     {
     while( !POOP && !ether )
@@ -132,7 +132,7 @@ DONE( tmWorkF )
                 countT rc = POOP ;
             {
             else
-            if( !POOP ) ;//etRock.traceF( tin0P , T("wrote password suffix shared file aok [tLong]:    ")+tLong ) ;
+            if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote password suffix shared file aok [tLong]:    ")+tLong ) ;
             ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)gv.tWoTimePasswordUrlSuffix , gv.tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
             SCOOPS
             _IO_
@@ -143,7 +143,7 @@ DONE( tmWorkF )
 
     mySettings.grabMe.ungrabF( tin0P ) ;
 
-    //etRock.traceF( tin0P , T("initialized [gv.tWoTimePasswordUrlSuffix]:    ")+gv.tWoTimePasswordUrlSuffix ) ;
+    /**/etRock.traceF( tin0P , T("initialized [gv.tWoTimePasswordUrlSuffix]:    ")+gv.tWoTimePasswordUrlSuffix ) ;
 
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
@@ -219,7 +219,7 @@ DONE( tmWorkF )
     if( !mySettings )
     mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-    //etThread.traceF( tin0P , T("the settings are ready") ) ;
+    /**/etRock.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
     etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
 
@@ -268,9 +268,9 @@ DONE( tmWorkerF )
                                     countT rc = POOP ;
                                 {
                                 else
-                                if( !POOP ) ;//etRock.traceF( tin0P , gcP.tSayWroteReply ) ;
+                                if( !POOP ) /*;*/etRock.traceF( tin0P , gcP.tSayWroteReply ) ;
                                 sockdP.writeF( tin0P , job.idp , job.nnPeer , pbr , cbr ) ;
-                                //etRock.traceF( tin0P , gcP.tSayReplying1/*+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
+                                /**/etRock.traceF( tin0P , gcP.tSayReplying1/*+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
                                 _IO_
                             {
                             else
@@ -289,8 +289,8 @@ DONE( tmWorkerF )
                         ZE( countT , cbr ) ;
                         ZE( byteT* , pbr ) ;
 
-                        else                          ;//etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        if( postError && *postError ) ;//etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
+                        else                          /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        if( postError && *postError ) /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
                         const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
                     {
                     if( !bSilent || bForceReply )
@@ -318,11 +318,11 @@ DONE( tmWorkerF )
                                             //    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gcP.tWebHook1    ) ) nnOut = nnWebHook1    ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
                                             //    //     if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gcP.tWebHooks    ) ) nnOut = nnWebHook1    ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
                                             //
-                                            //    //etRock.traceF( tin0P , T("U:: debug    [gcP.tTarget]:    \"")+gcP.tTarget+T("\"") ) ;
-                                            //    //etRock.traceF( tin0P , T("U:: debug [tDomainNet]:    \"")+tDomainNet+T("\"") ) ;
+                                            //    /**/etRock.traceF( tin0P , T("U:: debug    [gcP.tTarget]:    \"")+gcP.tTarget+T("\"") ) ;
+                                            //    /**/etRock.traceF( tin0P , T("U:: debug [tDomainNet]:    \"")+tDomainNet+T("\"") ) ;
                                             //
                                             //    nicNameC nnOut ;
-                                            //    //etRock.traceF( tin0P , gcP.tSayAAAARequest/*+tDomainNet*/ ) ;
+                                            //    /**/etRock.traceF( tin0P , gcP.tSayAAAARequest/*+tDomainNet*/ ) ;
                                             //    _IO_
                                             //{
                                             //case ifcIDtYPEdNSqUERY_AAAA :
@@ -346,7 +346,7 @@ DONE( tmWorkerF )
                                                 if( bDivert )
 
                                                 nicNameC nnOut ;
-                                                //etRock.traceF( tin0P , gcP.tSayARequest/*+tDomainNet*/ ) ;
+                                                /**/etRock.traceF( tin0P , gcP.tSayARequest/*+tDomainNet*/ ) ;
                                                 _IO_
                                             {
                                             case ifcIDtYPEdNSqUERY_A :
@@ -381,7 +381,7 @@ DONE( tmWorkerF )
                                                             countT rc = POOP ;
                                                         {
                                                         else
-                                                        if( !POOP ) ;//etRock.traceF( tin0P , gcP.tSayWrotePasswordFile/*+tLong*/ ) ;
+                                                        if( !POOP ) /*;*/etRock.traceF( tin0P , gcP.tSayWrotePasswordFile/*+tLong*/ ) ;
                                                         ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)gvP.tWoTimePasswordUrlSuffix , gvP.tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
                                                         SCOOPS
                                                         _IO_
@@ -389,14 +389,14 @@ DONE( tmWorkerF )
                                                     IFsCRATCHoK
                                                     TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
 
-                                                    //etRock.traceF( tin0P , gcP.tSayNewPassword/*+gvP.tWoTimePasswordUrlSuffix*/ ) ;
+                                                    /**/etRock.traceF( tin0P , gcP.tSayNewPassword/*+gvP.tWoTimePasswordUrlSuffix*/ ) ;
 
                                                                           gvP.tGorillaSuffix = gvP.tWoTimePasswordUrlSuffix+gcP.tDotHiddenDotIdeafarmDotCom ;
                                                     gvP.tGorillaSuffixUsed  = gvP.tGorillaSuffix ; 
                                                                           gvP.tWoTimePasswordUrlSuffix = gcP.tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
                                                     gvP.tWoTimePasswordUrlSuffixUsed = gvP.tWoTimePasswordUrlSuffix ;
 
-                                                    //etRock.traceF( tin0P , gcP.tSayOldPassword/*+gvP.tWoTimePasswordUrlSuffix*/ ) ;
+                                                    /**/etRock.traceF( tin0P , gcP.tSayOldPassword/*+gvP.tWoTimePasswordUrlSuffix*/ ) ;
 
                                                     gvP.cUsed = 0 ;
                                                 {
@@ -406,14 +406,14 @@ DONE( tmWorkerF )
                                                     }
                                                         bNewPassword = 1 ;
                                                         bDivert = 0 ;
-                                                        //etRock.traceF( tin0P , gcP.tSayResettingDivert2/*+gvP.tGorillaSuffix*/ ) ;
+                                                        /**/etRock.traceF( tin0P , gcP.tSayResettingDivert2/*+gvP.tGorillaSuffix*/ ) ;
                                                         _IO_
                                                     {
                                                     else if( !etThread.strCompareF( tin0P , psttSuffix , gvP.tGorillaSuffix ) )
                                                     }
                                                         }
                                                             bNewPassword = 1 ;
-                                                            //etRock.traceF( tin0P , gcP.tSaySettingNewPassword/*+gvP.tGorillaSuffixUsed*/ ) ;
+                                                            /**/etRock.traceF( tin0P , gcP.tSaySettingNewPassword/*+gvP.tGorillaSuffixUsed*/ ) ;
                                                             _IO_
                                                         {                                                                                            
                                                         if( ++ gvP.cUsed > 0x80 || timeE2 || timeE1 > TOCK << 4 )                                   //20250608@0853: "0x80 <- 0x20" AND "<< 4" <- "<< 2" W/O ANALYSIS (THE PRECEDING CHANGE SEEMED TO REDUCED STUTTER BY A LOT)
@@ -424,7 +424,7 @@ DONE( tmWorkerF )
                                                         ZE( countT  , timeE1 ) ;
 
                                                         bDivert = 0 ;                                                                       //PS:PERSONALITY: THE DUPLICATE USAGE IS ALWAYS HONORED, BUT THEN WILL BE RETIRED IF USED TOO MANY TIMES OR TOO MUCH TIME HAS ELAPSED SINCE WOTH USE
-                                                        //etRock.traceF( tin0P , gcP.tSayResettingDivert/*+gvP.tGorillaSuffixUsed*/ ) ;
+                                                        /**/etRock.traceF( tin0P , gcP.tSayResettingDivert/*+gvP.tGorillaSuffixUsed*/ ) ;
                                                         _IO_
                                                     {
                                                     if( !etThread.strCompareF( tin0P , psttSuffix , gvP.tGorillaSuffixUsed ) )
@@ -435,7 +435,7 @@ DONE( tmWorkerF )
                                             {
                                             if( bDivert )                                                                               //PS:PERSONALITY: HONOR THE USED SUFFIX SO THAT DUPLICATE QUERIES ALL RECEIVE THE SAME wh1 ANSWER UNTIL THE CURRENT PASSWORD IS USED
 
-                                            //etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer/*+T(psttw)+T("\"    \"")+T(psttSuffix)+T("\"    \"")+tDomainPeer+T("\"")*/ ) ;
+                                            /**/etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer/*+T(psttw)+T("\"    \"")+T(psttSuffix)+T("\"    \"")+tDomainPeer+T("\"")*/ ) ;
 
                                             etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
                                             etThread.delF( tin0P , psttNet ) ;
@@ -453,7 +453,7 @@ DONE( tmWorkerF )
                                         else if( psttw && etThread.strIdF( tin0P , gcP.tHidden , psttw , 1 ) && etThread.strIdF( tin0P , gcP.tDash , psttw , 1 ) )
                                         }
                                             }
-                                                while( cDo -- ) ;//etRock.traceF( tin0P , gcP.tSayTraceMarkEnd , flTRACE_NOpREFIX ) ;
+                                                while( cDo -- ) /*;*/etRock.traceF( tin0P , gcP.tSayTraceMarkEnd , flTRACE_NOpREFIX ) ;
                                                 countT cDo = 8 ;
 
                                                 cirRecentDomainGrossTraceP << &psttSTFU ;
@@ -480,7 +480,7 @@ DONE( tmWorkerF )
                                         else if( etThread.strIdF( tin0P , gcP.tDomainGrossTraceMarkEnd , tDomainGross ) )
                                         }
                                             }
-                                                while( cDo -- ) ;//etRock.traceF( tin0P , gcP.tSayTraceMarkBegin , flTRACE_NOpREFIX ) ;
+                                                while( cDo -- ) /*;*/etRock.traceF( tin0P , gcP.tSayTraceMarkBegin , flTRACE_NOpREFIX ) ;
                                                 countT cDo = 8 ;
 
                                                 cirRecentDomainGrossTraceP << &psttSTFU ;
@@ -506,10 +506,10 @@ DONE( tmWorkerF )
                                         {
                                         if( etThread.strIdF( tin0P , gcP.tDomainGrossTraceMarkBegin , tDomainGross ) )
 
-                                        //etRock.traceF( tin0P , gcP.tSayDomainGrossPeer+tDomainGross+gcP.tqb4q+tDomainPeer+gcP.tq ) ;
+                                        /**/etRock.traceF( tin0P , gcP.tSayDomainGrossPeer+tDomainGross+gcP.tqb4q+tDomainPeer+gcP.tq ) ;
                                         TN( tDomainGross , psttw ) ;
                                         if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
-                                        //etRock.traceF( tin0P , gcP.tSayLoweringCase ) ;
+                                        /**/etRock.traceF( tin0P , gcP.tSayLoweringCase ) ;
                                         *ps >> psttw ;
                                         ZE( strokeS* , psttw ) ;
                                         _IO_
@@ -517,7 +517,7 @@ DONE( tmWorkerF )
                                     if( ps )
                                     stsQueries >> ps ;
                                     ZE( soulC* , ps ) ;
-                                    //etRock.traceF( tin0P , gcP.tSayPoppingQuery ) ;
+                                    /**/etRock.traceF( tin0P , gcP.tSayPoppingQuery ) ;
                                     _IO_
                                 {
                                 while( stsQueries )
@@ -531,27 +531,27 @@ DONE( tmWorkerF )
                             {
                             if( rc )
                             etThread.delF( tin0P , pbNU ) ;
-                            //etRock.traceF( tin0P , gcP.tSayCalledDnsParse ) ;
+                            /**/etRock.traceF( tin0P , gcP.tSayCalledDnsParse ) ;
                             countT rc = POOP ;
                             ((tin1S&)tin0P).pEtScratch->dnsParseF( tin0P , pbNU , countTC() , stsQueries , stsRepliesNU , job.pbq , job.cbq ) ;
                             SCOOPS
-                            //etRock.traceF( tin0P , gcP.tSayCallingDnsParse ) ;
+                            /**/etRock.traceF( tin0P , gcP.tSayCallingDnsParse ) ;
                             _IO_
                         {
                         IFsCRATCHoK
                         ZE( byteT* , pbNU ) ;
 
-                        //etRock.traceF( tin0P , gcP.tSayPurgedStacks ) ;
+                        /**/etRock.traceF( tin0P , gcP.tSayPurgedStacks ) ;
                         stsRepliesNU.purgeF( tin0P ) ;
                         stsQueries.purgeF( tin0P ) ;
-                        //etRock.traceF( tin0P , gcP.tSayPurgingStacks ) ;
+                        /**/etRock.traceF( tin0P , gcP.tSayPurgingStacks ) ;
                         _IO_
                     {
 
                     ++ gvP.idClient ;
 
                     //}
-                    //    //etRock.traceF( tin0P , TT(timeN1,timeN2)+gcP.tb4+tTimeOld+gcP.tb4+T(job.nnPeer)+(bDivert?gcP.tSayDiverting:gcP.tSayGranting)+tDomainPeer ) ;
+                    //    /**/etRock.traceF( tin0P , TT(timeN1,timeN2)+gcP.tb4+tTimeOld+gcP.tb4+T(job.nnPeer)+(bDivert?gcP.tSayDiverting:gcP.tSayGranting)+tDomainPeer ) ;
                     //
                     //    }
                     //        etThread.delF( tin0P , pstgcP.tSay ) ;
@@ -585,12 +585,12 @@ DONE( tmWorkerF )
 
             }
                 }
-                    //etRock.traceF( tin0P , gcP.tSayNotDiverting ) ;
+                    /**/etRock.traceF( tin0P , gcP.tSayNotDiverting ) ;
                     bDivert = 0 ;                                                                                                                                   //P:PERSONALITY: SUPPRESS DIVERSION IF RECENT QUERY FROM LETSENCRYPT
                 {
                 else
                 }
-                    //etRock.traceF( tin0P , gcP.tSayDiverting2 ) ;
+                    /**/etRock.traceF( tin0P , gcP.tSayDiverting2 ) ;
                 {
                 if( !timeLetsEncryptLath2 && !timeLetsEncryptLath1 )
             {
@@ -598,7 +598,7 @@ DONE( tmWorkerF )
 
             }
                 }
-                    //etRock.traceF( tin0P , gcP.tSayDiversionEnabled ) ;
+                    /**/etRock.traceF( tin0P , gcP.tSayDiversionEnabled ) ;
                     bForceReply = timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
                 {
                 if( timeE2 || timeE1 > TICK << 0 )
@@ -610,7 +610,7 @@ DONE( tmWorkerF )
             {
             else if( timeLetsEncryptLath2 || timeLetsEncryptLath1 )
             }
-                //etRock.traceF( tin0P , bSuppressed ? gcP.tSayDiversionSupRefreshed : gcP.tSayDiversionSuppressed ) ;
+                /**/etRock.traceF( tin0P , bSuppressed ? gcP.tSayDiversionSupRefreshed : gcP.tSayDiversionSuppressed ) ;
                 etThread.osTimeNowF( tin0P , timeLetsEncryptLath1 , timeLetsEncryptLath2 ) ;
                 timeLetsEncryptLath2 = timeLetsEncryptLath1 = 0 ;
                 countT bSuppressed = timeLetsEncryptLath2 || timeLetsEncryptLath1 ;
@@ -620,14 +620,14 @@ DONE( tmWorkerF )
 
             }
                 }
-                    //U::PROD: //etRock.traceF( tin0P , gcP.tSayPrefix+T(job.nnPeer)+gcP.tSayUnknownDomain+gcP.tb4+tDomainPeer ) ;
-                    //etRock.traceF( tin0P , gcP.tSayUnknownDomain ) ;
+                    //U::PROD: /**/etRock.traceF( tin0P , gcP.tSayPrefix+T(job.nnPeer)+gcP.tSayUnknownDomain+gcP.tb4+tDomainPeer ) ;
+                    /**/etRock.traceF( tin0P , gcP.tSayUnknownDomain ) ;
                     bDivert = 1 ;
                 {
                 else
                 }
                     }
-                        //etRock.traceF( tin0P , T("pushed into cirNnPeerDoNotDivertP [nnPeer]:    ")+T(job.nnPeer) ) ;
+                        /**/etRock.traceF( tin0P , T("pushed into cirNnPeerDoNotDivertP [nnPeer]:    ")+T(job.nnPeer) ) ;
                         cirNnPeerDoNotDivertP << &job.nnPeer ;
                     {
                     if( !bDoNotDivert )
@@ -650,14 +650,14 @@ DONE( tmWorkerF )
                             for( countT offt = 0 ; offt < mySettingsP.cDomainRootAllowed ; offt ++ )
                             mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-                            //etRock.traceF( tin0P , gcP.tSayPeer/*+T(psttPeer)*/ ) ;
+                            /**/etRock.traceF( tin0P , gcP.tSayPeer/*+T(psttPeer)*/ ) ;
                             tDomainPeer = T(psttPeer) ;
                             _IO_
                         {
                         else
-                        if( !psttPeer ) ;//etRock.traceF( tin0P , gcP.tSayExReverseLookupFailed ) ;
+                        if( !psttPeer ) /*;*/etRock.traceF( tin0P , gcP.tSayExReverseLookupFailed ) ;
                         etThread.sockPsttHostF( tin0P , psttPeer , job.nnPeer ) ; ___( psttPeer ) ;
-                        //etRock.traceF( tin0P , gcP.tSayDoingReverseLookup ) ;
+                        /**/etRock.traceF( tin0P , gcP.tSayDoingReverseLookup ) ;
                         ZE( strokeS* , psttPeer ) ;
                     {
                     if( !bSubnetTrusted )
@@ -697,7 +697,7 @@ DONE( tmWorkerF )
                     }
                         }
                             break ;
-                            //etRock.traceF( tin0P , T("found in cirNnPeerDoNotDivertP [nnPeer]:    ")+T(job.nnPeer) ) ;
+                            /**/etRock.traceF( tin0P , T("found in cirNnPeerDoNotDivertP [nnPeer]:    ")+T(job.nnPeer) ) ;
                             bDoNotDivert = 1 ;
                         {
                         if( pnn && *pnn == job.nnPeer )
@@ -716,7 +716,7 @@ DONE( tmWorkerF )
         {
         if( !gvP.bQuit )
 
-        //etThread.traceF( tin0P , T("pulled a job") ) ;
+        /**/etRock.traceF( tin0P , T("pulled a job") ) ;
 
         gvP.cirJob >> &job ;
         jobS job ;
@@ -765,7 +765,7 @@ countT deleteElementF( tin0S& tin0P , countT& cAtP , countT& cArgDeleteP )
 //U::6:                 countT rc = POOP ;
 //U::6:             {
 //U::6:             else
-//U::6:             if( !POOP ) ;//etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+//U::6:             if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
 //U::6:             ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
 //U::6:             SCOOPS
 //U::6:             _IO_
@@ -773,7 +773,7 @@ countT deleteElementF( tin0S& tin0P , countT& cAtP , countT& cArgDeleteP )
 //U::6:         IFsCRATCHoK
 //U::6:         TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore2+tNnHostWeb+tAfter2+T("\r\n") ;
 //U::6:         tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
-//U::6:         //etThread.traceF( tin0P , T("new  [nnHostWebLag0]:    ")+tNnHostWeb ) ;
+//U::6:         /**/etRock.traceF( tin0P , T("new  [nnHostWebLag0]:    ")+tNnHostWeb ) ;
 //U::6:         TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag0P) ;
 //U::6: 
 //U::6:                                                            nnHostWebLag0P = nnHostWebLathP ;
@@ -791,7 +791,7 @@ countT deleteElementF( tin0S& tin0P , countT& cAtP , countT& cArgDeleteP )
 //U::6:                     countT rc = POOP ;
 //U::6:                 {
 //U::6:                 else
-//U::6:                 if( !POOP ) ;//etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+//U::6:                 if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
 //U::6:                 ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
 //U::6:                 SCOOPS
 //U::6:                 _IO_
@@ -800,7 +800,7 @@ countT deleteElementF( tin0S& tin0P , countT& cAtP , countT& cArgDeleteP )
 //U::6:             TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore1+tNnHostWeb+tAfter1+T("\r\n") ;
 //U::6:             tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
 //U::6: 
-//U::6:             //etThread.traceF( tin0P , T("doomed [nnHostWebLag3]:    ")+tNnHostWeb ) ;
+//U::6:             /**/etRock.traceF( tin0P , T("doomed [nnHostWebLag3]:    ")+tNnHostWeb ) ;
 //U::6:             TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag3P) ;
 //U::6:         {
 //U::6:         if( ~nnHostWebLag3P )
@@ -928,7 +928,7 @@ voidT rec_MX_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const coun
         *ps << (countT)ifcIDtYPEdNSqUERY_AAAA ;
         *ps << psttP ;
 
-        //etherP.traceF( tin0P , T("rec_AAAA_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+        /**/etherP.traceF( tin0P , T("rec_AAAA_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
@@ -950,7 +950,7 @@ voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const co
         *ps << (countT)ifcIDtYPEdNSqUERY_A ;
         *ps << psttP ;
 
-        //etherP.traceF( tin0P , T("rec_A_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+        /**/etherP.traceF( tin0P , T("rec_A_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
@@ -976,9 +976,9 @@ DONE( tmFreshSettingsF )
                     if( ~mySettingsP ) break ;
 
                     mySettingsP.grabMe.ungrabF( tin0P ) ;
-                    etThread.traceF( tin0P , T(!mySettingsP?"the new settings are incomplete":"the new settings are aok")+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etRock.traceF( tin0P , T(!mySettingsP?"the new settings are incomplete":"the new settings are aok")+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     mySettingsP.freshenF( tin0P ) ;
-                    //etThread.traceF( tin0P , T(!mySettingsP?"the stale settings are incomplete":"the stale settings are aok")+tb4+TF2(++idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    /**/etRock.traceF( tin0P , T(!mySettingsP?"the stale settings are incomplete":"the stale settings are aok")+tb4+TF2(++idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                     ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ; // TIME FOR PISS TO FINISH UPDATING SETTINGS
@@ -987,7 +987,7 @@ DONE( tmFreshSettingsF )
                 ZE( countT , idTry ) ;
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                //etThread.traceF( tin0P , T("the timestamp of the settings files has changed ; napping and then calling freshenF") ) ;
+                /**/etRock.traceF( tin0P , T("the timestamp of the settings files has changed ; napping and then calling freshenF") ) ;
                 timeWrittenLath = timeWritten ;
                 _IO_
             {
@@ -998,14 +998,14 @@ DONE( tmFreshSettingsF )
                     }
                         }
                             continue ;
-                            /**/etThread.traceF( tin0P , T("!exception / could not get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
+                            /**/etRock.traceF( tin0P , T("!exception / could not get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
                             POOPRqUIET
                             countT rc = POOP ;
                         {
                         else
                         }
                             break ;
-                            //etThread.traceF( tin0P , T(" [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
+                            /**/etRock.traceF( tin0P , T(" [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
                         {
                         if( !POOP )
 
@@ -1014,7 +1014,7 @@ DONE( tmFreshSettingsF )
                     else
                     }
                         continue ;
-                        /**/etThread.traceF( tin0P , T("!exception / could not open settings file to get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
+                        /**/etRock.traceF( tin0P , T("!exception / could not open settings file to get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
@@ -1043,6 +1043,8 @@ DONE( tmFreshSettingsF )
     handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
     TN( tb4 , "    " ) ;
     boolT bWoth = 1 ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     TN( tLongFile , "" ) ; tLongFile = tLongPath + T("kv.settings.ipdos.jotC.data.booksC.1.book.00000001.00000001.bookC") ;
 
@@ -1080,7 +1082,7 @@ TASK( tmFreshSettingsF )
     {
 
     }
-        //etRock.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetTrusted[offn]) ) ;
+        /**/etRock.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetTrusted[offn]) ) ;
     {
     for( countT offn = 0 ; offn < cnnSubnetTrusted ; offn ++ )
 
@@ -1111,7 +1113,7 @@ TASK( tmFreshSettingsF )
                 nicNameC nnSubnet = nnIPv46.isIPv4F()
                 nicNameC nnIPv46  = etherMe.sockNicNameF( tin0P , psttc1 ) ;
 
-                //etRock.traceF( tin0P , psttc1 ) ;
+                /**/etRock.traceF( tin0P , psttc1 ) ;
                 _IO_
             {
             FORsTRINGSiN1( pstt1Nn )
@@ -1127,18 +1129,18 @@ TASK( tmFreshSettingsF )
 
     zapF( tin0P ) ;
 
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
 
-    //etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
 
-    //etRock.traceF( tin0P , T("[tNnTrusted]:    ")+tNnTrusted ) ;
+    /**/etRock.traceF( tin0P , T("[tNnTrusted]:    ")+tNnTrusted ) ;
     }
         etherMe.delF( tin0P , psttEat ) ;
         tNnTrusted = T(psttEat) ;
@@ -1296,7 +1298,7 @@ TASK( tmFreshSettingsF )
                     countT rc = POOP ;
                 {
                 else
-                if( !POOP ) ;//etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+                if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
                 ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
                 SCOOPS
                 _IO_

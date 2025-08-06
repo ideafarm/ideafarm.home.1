@@ -1,6 +1,4 @@
 
-#define ifcIDaDAM_TOOLtRACEcOPY                                        0x510008ab
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -9028,11 +9026,11 @@ pso not 0 is guaranteed for code between me and DONEdRIVENsERVER
         if( !etThread )                                                                                                                         \
         {                                                                                                                                       \
             /*etThread.traceF( tin0P , T("TASKdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;*/  \
-            psoP->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;                                                                             \
+            psoP->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;                                                                               \
                                                                                                                                                 \
             ZE( countT , idPortMeP ) ;                                                                                                          \
             nicNameC nnMeP ;                                                                                                                    \
-            IFsCRATCHoK                                                                                                                           \
+            IFsCRATCHoK                                                                                                                         \
             {                                                                                                                                   \
                 SCOOPS                                                                                                                          \
                 psoP->myNameF( tin0P , idPortMeP , nnMeP ) ;                                                                                    \
@@ -9044,7 +9042,7 @@ pso not 0 is guaranteed for code between me and DONEdRIVENsERVER
                 /*     if( nnPeerP.pcId[ 0 ] )                                            */                                                    \
                 /*     {                                                                  */                                                    \
                 /*         TELL( "querying dns for peer name string" ) ;                  */                                                    \
-                /*         ((tin1S&)tin0P).pEtScratch->sockPsttHostF( tin0P , psttPeerP , nnPeerP ) ; */                                      \
+                /*         ((tin1S&)tin0P).pEtScratch->sockPsttHostF( tin0P , psttPeerP , nnPeerP ) ; */                                        \
                 /*         TELL( "returned from querying dns for peer name string" ) ;    */                                                    \
                 /*     }                                                                  */                                                    \
                 /*     if( POOP ) { POOPR }                                               */                                                    \
@@ -11893,6 +11891,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_ADMINISTRATOR                                        0x51000892
 #define ifcIDaDAM_WELCOMER                                             0x51000893
 #define ifcIDaDAM_SHELL                                                0x5100089f
+#define ifcIDaDAM_TOOLtRACEcOPY                                        0x510008ab
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
