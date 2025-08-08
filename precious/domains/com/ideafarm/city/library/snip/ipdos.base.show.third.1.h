@@ -1,4 +1,7 @@
 
+#define flLOADmODULE_ASdATA                   0xe00001ff
+#define flLOADmODULE_null                     0xe00000ff
+
 #define ifcIDaDAM_TOOLfILEsPLIT                                        0x510008ac
 
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System

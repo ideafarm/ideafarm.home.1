@@ -30106,7 +30106,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3406f.thirdC.dosKillProcessF!||
  static voidT dosExitProcessIF( const countT rcP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34157.thirdC.dosExitProcessIF!||
- voidT dosLoadModuleF( tin0S& tin0P , handleC& handleP , osTextT*& postAnticipatedErrorP , const osTextT* const postP , etherC* const pEtherP = 0 ) ;
+ voidT dosLoadModuleF( tin0S& tin0P , handleC& handleP , osTextT*& postAnticipatedErrorP , const osTextT* const postP , etherC* const pEtherP = 0 , const flagsT flagsP = flLOADmODULE_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401e.thirdC.dosLoadModuleF!||
  voidT dosMoveF( tin0S& tin0P , const osTextT* const postNewP , const osTextT* const postOldP , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401f.thirdC.dosMoveF!||
@@ -33563,7 +33563,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3418b.etherC.dllEntryF!||
  voidT dllNameF( tin0S& tin0P , strokeS*& psttP , const handleC& handleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34024.etherC.dllNameF!||
- voidT dllOpenF( tin0S& tin0P , handleC& hDllP , const strokeS* psttP , const countT cTriesP = 0 ) ;
+ voidT dllOpenF( tin0S& tin0P , handleC& hDllP , const strokeS* psttP , const countT cTriesP = 0 , const flagsT flagsP = flLOADmODULE_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34025.etherC.dllOpenF!||
 
 /* foreign: domain name system */
