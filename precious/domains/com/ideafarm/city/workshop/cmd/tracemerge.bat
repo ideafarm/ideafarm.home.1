@@ -3,8 +3,8 @@
 rem param 1 (optional): path for output file
 
 d:
-adam 51000622 !idHome 10000008 !makeIf ba8
-adam 510008ab !idHome 10000008
+adam ELF           !idHome 10000008 !makeIf ba8
+adam TOOLtRACEcOPY !idHome 10000008
 
 c:
 cd \tmp
