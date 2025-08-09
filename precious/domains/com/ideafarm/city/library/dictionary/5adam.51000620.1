@@ -20,8 +20,10 @@ DONE( tmWorkF )
     }
         //etherC::loafIF( tin0P ) ; //TO FIND A BUG
         etThread.traceF( tin0P , T("I am Adam, and now that Eve has made her babies, I'm outahere.") ) ;
-        ether.ifcHireF( tin0P , T("ifcIDaDAM_ADAM") , ifcIDaDAM_EVE , T("")        , flHIRE_WAIT                ) ;
-        //ether.ifcHireF( tin0P , T("ifcIDaDAM_ADAM") , ifcIDaDAM_EVE , T("!debug ") , flHIRE_WAIT | flHIRE_DEBUG ) ;
+
+          ether.ifcHireF( tin0P , T("ifcIDaDAM_ADAM") , ifcIDaDAM_EVE , bMakeElfOnly ?              tCmd : tn          , flHIRE_WAIT                ) ;
+        //ether.ifcHireF( tin0P , T("ifcIDaDAM_ADAM") , ifcIDaDAM_EVE , bMakeElfOnly ? T("!debug ")+tCmd : T("!debug") , flHIRE_WAIT | flHIRE_DEBUG ) ;
+
         etThread.traceF( tin0P , T("We need helpers.  Let's make babies!") ) ;
         etThread.traceF( tin0P , T("I shall call you \"Eve\", my helpmate and companion!") ) ;
         etThread.traceF( tin0P , T("You are so beautiful.") ) ;
@@ -81,6 +83,18 @@ DONE( tmWorkF )
     etThread.traceF( tin0P , T("1 of 4 done.") ) ;
     etThread.osMakeHoverFileF( tin0P , 0x81000001 ) ;
     etThread.traceF( tin0P , T("I am Adam, and I am building the hover files, beginning with the huge base.dll.") ) ;
+
+    }
+        }
+            if( !etThread.strCompareF( tin0P , psttc1 , tCmd ) ) bMakeElfOnly = 1 ;
+        {
+        FORsTRINGSiN1( pstt1p )
+        strokeS*& pstt1p = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
+    {
+    ZE( boolT , bMakeElfOnly ) ;
+
+    TN( tCmd , "!makeElfOnly" ) ;
+    TN( tn   , "" ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )

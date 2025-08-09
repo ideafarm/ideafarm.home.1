@@ -9,6 +9,8 @@
 
 #pragma disable_message ( 549 , 656 , 657 , 665 , 666 , 726 ) ;
 
+unsigned bMakeElfOnly ;
+
 //THE ABOVE DEFINITIONS SHOULD NORMALLY BE COMMENTED OUT
 
 // ********************************************************************************************************************************************************************
@@ -1327,6 +1329,8 @@ void elf_eat_C::liveF( void )
     int idIn = 1 + incv02AM( idInLath ) ;
     if( idIn > 1 ) { BLAMMO ; }
 
+    //printf( "%s" , "elf_eat_C ++++\r\n" ) ;
+
     HANDLE oshIn = GetStdHandle( STD_INPUT_HANDLE ) ;
 
     freshenTokinF() ;
@@ -1336,8 +1340,11 @@ void elf_eat_C::liveF( void )
     {
         INPUT_RECORD_ALTEREDfORiPDOS info ;
         DWORD cDone = 0 ;
-        if( ReadConsoleInput( oshIn , (INPUT_RECORD*)&info , 1 , &cDone ) && cDone )
+        if( PeekConsoleInput( oshIn , (INPUT_RECORD*)&info , 1 , &cDone ) && cDone )
         {
+            cDone = 0 ;
+            ReadConsoleInput( oshIn , (INPUT_RECORD*)&info , 1 , &cDone ) ;
+
             switch( info.EventType )
             {
                 case KEY_EVENT :
@@ -1468,6 +1475,11 @@ void elf_eat_C::liveF( void )
             }
         }
     }
+
+    ether.title.freshF() ;
+    sayChoicesF() ;
+
+    //printf( "%s" , "elf_eat_C     ----\r\n" ) ;
 }
 
 int elf_eat_C::matchF( int offt )
@@ -1549,165 +1561,169 @@ void elf_eat_C::sayChoicesF( void )
 
     NEWtOKENS
 
-    sayF( "\f" , flSAY_START ) ;
-
-    if( pTokens )
+    if( flagsAll & flELVES_QUITsEEN || cIgnoreCommands ) sayF( "\f" ) ;
+    else
     {
-        int costMax = pTokens->costMaxF() ;
-        if( costMax )
+        if( pTokens )
         {
-            int cTokens = *pTokens ;
+            sayF( "\f" , flSAY_START ) ;
 
-            if( cTokens )
+            int costMax = pTokens->costMaxF() ;
+            if( costMax )
             {
-                char* postWrap = newF( ( 1 + costMax ) * cTokens + 2 ) ;
-                if( postWrap )
+                int cTokens = *pTokens ;
+
+                if( cTokens )
                 {
-                    char* posto = postWrap ;
-                    int cMatched = 0 ;
-                    *posto = 0 ;
-    
-                    for( int offt = 0 ; offt < cTokens ; offt ++ )
+                    char* postWrap = newF( ( 1 + costMax ) * cTokens + 2 ) ;
+                    if( postWrap )
                     {
-                        if( matchF( offt ) )
-                        {
-                            if( cMatched ++ ) *( posto ++ ) = ' ' ;
-    
-                            const char* postt = (*pTokens)[ offt ] ;
-                            strcpy( posto , postt ) ; posto += strlen( postt ) ;
-                        }
-                    }
-    
-                    if( !cMatched && !cIgnoreCommands )
-                    {
-                        strcpy( posto , "(all)" ) ; posto += 5 ;
-                
+                        char* posto = postWrap ;
+                        int cMatched = 0 ;
+                        *posto = 0 ;
+        
                         for( int offt = 0 ; offt < cTokens ; offt ++ )
                         {
-                            if( cMatched ++ ) *( posto ++ ) = ' ' ;
-    
-                            const char* postt = (*pTokens)[ offt ] ;
-                            strcpy( posto , postt ) ; posto += strlen( postt ) ;
+                            if( matchF( offt ) )
+                            {
+                                if( cMatched ++ ) *( posto ++ ) = ' ' ;
+        
+                                const char* postt = (*pTokens)[ offt ] ;
+                                strcpy( posto , postt ) ; posto += strlen( postt ) ;
+                            }
                         }
+        
+                        if( !cMatched && !cIgnoreCommands )
+                        {
+                            strcpy( posto , "(all)" ) ; posto += 5 ;
+                    
+                            for( int offt = 0 ; offt < cTokens ; offt ++ )
+                            {
+                                if( cMatched ++ ) *( posto ++ ) = ' ' ;
+        
+                                const char* postt = (*pTokens)[ offt ] ;
+                                strcpy( posto , postt ) ; posto += strlen( postt ) ;
+                            }
+                        }
+        
+                        sayF( postWrap , flSAY_MIDDLE ) ;
+                        delF( postWrap ) ;
                     }
-    
-                    sayF( postWrap , flSAY_MIDDLE ) ;
-                    delF( postWrap ) ;
                 }
             }
         }
-    }
-    delete pTokens ; pTokens = 0 ;
+        delete pTokens ; pTokens = 0 ;
 
-    if( postCmd[ 0 ] && !cIgnoreCommands )
-    {
-        sayF( "!divider <>", flSAY_MIDDLE ) ;
-        //sayF( "!paragraph" , flSAY_MIDDLE ) ;
-        sayF( "Please continue keying the command that appears in square brackets [] by keying one of the listed tokens." , flSAY_MIDDLE ) ;
-    }
+        if( postCmd[ 0 ] && !cIgnoreCommands )
+        {
+            sayF( "!divider <>", flSAY_MIDDLE ) ;
+            //sayF( "!paragraph" , flSAY_MIDDLE ) ;
+            sayF( "Please continue keying the command that appears in square brackets [] by keying one of the listed tokens." , flSAY_MIDDLE ) ;
+        }
 
-    if( flagsAll & flELVES_TERSE ) sayF( "" , flSAY_END ) ;
-    else
-    {
-        sayF( "!divider <>", flSAY_MIDDLE ) ;
-    
-        sayF(
-    
-            "[instructions]:"
-            "  IdeaFarm (tm) Elves obey commands that you key."
-            "  A command is a series of tokens, each separated by a blank."
-            "  For example, \"help new\" is a command composed of two tokens."
-    
-            , flSAY_MIDDLE
-        ) ;
-    
-        sayF( "!paragraph", flSAY_MIDDLE ) ;
-    
-        sayF(
-    
-            "You can key a command at any time, even while previously keyed commands are being obeyed."
-            "  As you key a command, it appears at the beginning of this window's title bar."
-            "  At any time, all tokens that you are allowed to key are listed on the line just below the title bar."
-            "  A keystroke will be ignored unless it is wo of the expected keys (the next key in wo of the listed tokens)."
-    
-            , flSAY_MIDDLE
-        ) ;
-    
-        sayF( "!paragraph", flSAY_MIDDLE ) ;
-    
-        sayF(
-    
-            "Usually, you only need to key the woth character of a token."
-            "  As soon as you have keyed enough to uniquely identify wo of the listed tokens, it will be \"recognized\" and will appear in the title bar."
-            "  As soon as a complete command is recognized, an elf will be born who will obey the command and then die."
-            "  When a complete command is recognized, it will disappear from the title bar, indicating that you can begin to key another command."
-    
-            , flSAY_MIDDLE
-        ) ;
-    
-        sayF( "!paragraph", flSAY_MIDDLE ) ;
-    
-        sayF(
-    
-            "You can key, for example, the command \"help new\" whenever the token \"help\" is listed below the title bar."
-            "  To key that command, you start keying \"help\" until it is recognized."
-            "  Then you start keying \"new\" until it is recognized."
-            "  When the full command is recognized, an explanation of the \"new\" command will appear in this window in a new section."
-    
-            , flSAY_MIDDLE
-        ) ;
-    
-        sayF( "!paragraph", flSAY_MIDDLE ) ;
-    
-        sayF(
-    
-            "While keying a token, you can press the \"esc\" key to discard the partially keyed token."
-            "  If you press the \"esc\" key when you are not in the middle of keying a token, the entire partially keyed command will be discarded."
-            "  If you press the \"esc\" key when you are not in the middle of keying a command, IdeaFarm (tm) Elves will close and all of the elves will go home."
-    
-            , flSAY_MIDDLE
-        ) ;
-    
-        sayF( "!paragraph", flSAY_MIDDLE ) ;
-    
-        sayF(
-    
-            "You can edit a partially keyed command."
-            "  To discard the lath keystroke, press the \"backspace\" key."
-            "  To discard a prior keystroke, press the \"left arrow\" key until the cursor appears immediately to the right of the doomed keystroke."
-            "  Then press the \"backspace\" key."
-            "  To insert a keystroke at a position other than at the (rightmost) end, move the cursor to the position where you want the new keystroke to appear; then key it."
-    
-            , flSAY_MIDDLE
-        ) ;
-    
-        sayF( "!paragraph", flSAY_MIDDLE ) ;
-    
-        sayF(
-    
-            "Whenever, while keying a command, you are allowed to key a value, a list of valid values will appear above."
-            "  If there are value restrictions, they will also be listed."
-            "  A keystroke at that time will only be accepted if it is consistent with the validation rules."
-            "  Numeric bigits (hexadecimal digits) must be keyed in order of increasing significance, according to IdeaFarm (tm) City custom."
-    
-            , flSAY_MIDDLE
-        ) ;
-    
-        sayF( "!paragraph", flSAY_MIDDLE ) ;
-    
-        sayF(
-    
-            "You can change the size, font, and layout of this window."
-            "  If you do that while elves are working and writing to this window, what has already been written will be lost."
-            "  The changes that you make will be remembered, so it is worth taking a moment to configure this window for IdeaFarm (tm) Elves."
-            "  Recommendations:"
-            "  (1) Choose the smallest font that you can read easily."
-            "  (2) Make the window as large as possible."
-            "  (3) Make the screen buffer the same width as the window but give the buffer lots of rows."
-            "  Example: 6x8 raster font, 160 columns, 60 rows, with 1024 rows in the screen buffer."
-    
-            , flSAY_END
-        ) ;
+        if( flagsAll & flELVES_TERSE ) sayF( "" , flSAY_END ) ;
+        else
+        {
+            sayF( "!divider <>", flSAY_MIDDLE ) ;
+        
+            sayF(
+        
+                "[instructions]:"
+                "  IdeaFarm (tm) Elves obey commands that you key."
+                "  A command is a series of tokens, each separated by a blank."
+                "  For example, \"help new\" is a command composed of two tokens."
+        
+                , flSAY_MIDDLE
+            ) ;
+        
+            sayF( "!paragraph", flSAY_MIDDLE ) ;
+        
+            sayF(
+        
+                "You can key a command at any time, even while previously keyed commands are being obeyed."
+                "  As you key a command, it appears at the beginning of this window's title bar."
+                "  At any time, all tokens that you are allowed to key are listed on the line just below the title bar."
+                "  A keystroke will be ignored unless it is wo of the expected keys (the next key in wo of the listed tokens)."
+        
+                , flSAY_MIDDLE
+            ) ;
+        
+            sayF( "!paragraph", flSAY_MIDDLE ) ;
+        
+            sayF(
+        
+                "Usually, you only need to key the woth character of a token."
+                "  As soon as you have keyed enough to uniquely identify wo of the listed tokens, it will be \"recognized\" and will appear in the title bar."
+                "  As soon as a complete command is recognized, an elf will be born who will obey the command and then die."
+                "  When a complete command is recognized, it will disappear from the title bar, indicating that you can begin to key another command."
+        
+                , flSAY_MIDDLE
+            ) ;
+        
+            sayF( "!paragraph", flSAY_MIDDLE ) ;
+        
+            sayF(
+        
+                "You can key, for example, the command \"help new\" whenever the token \"help\" is listed below the title bar."
+                "  To key that command, you start keying \"help\" until it is recognized."
+                "  Then you start keying \"new\" until it is recognized."
+                "  When the full command is recognized, an explanation of the \"new\" command will appear in this window in a new section."
+        
+                , flSAY_MIDDLE
+            ) ;
+        
+            sayF( "!paragraph", flSAY_MIDDLE ) ;
+        
+            sayF(
+        
+                "While keying a token, you can press the \"esc\" key to discard the partially keyed token."
+                "  If you press the \"esc\" key when you are not in the middle of keying a token, the entire partially keyed command will be discarded."
+                "  If you press the \"esc\" key when you are not in the middle of keying a command, IdeaFarm (tm) Elves will close and all of the elves will go home."
+        
+                , flSAY_MIDDLE
+            ) ;
+        
+            sayF( "!paragraph", flSAY_MIDDLE ) ;
+        
+            sayF(
+        
+                "You can edit a partially keyed command."
+                "  To discard the lath keystroke, press the \"backspace\" key."
+                "  To discard a prior keystroke, press the \"left arrow\" key until the cursor appears immediately to the right of the doomed keystroke."
+                "  Then press the \"backspace\" key."
+                "  To insert a keystroke at a position other than at the (rightmost) end, move the cursor to the position where you want the new keystroke to appear; then key it."
+        
+                , flSAY_MIDDLE
+            ) ;
+        
+            sayF( "!paragraph", flSAY_MIDDLE ) ;
+        
+            sayF(
+        
+                "Whenever, while keying a command, you are allowed to key a value, a list of valid values will appear above."
+                "  If there are value restrictions, they will also be listed."
+                "  A keystroke at that time will only be accepted if it is consistent with the validation rules."
+                "  Numeric bigits (hexadecimal digits) must be keyed in order of increasing significance, according to IdeaFarm (tm) City custom."
+        
+                , flSAY_MIDDLE
+            ) ;
+        
+            sayF( "!paragraph", flSAY_MIDDLE ) ;
+        
+            sayF(
+        
+                "You can change the size, font, and layout of this window."
+                "  If you do that while elves are working and writing to this window, what has already been written will be lost."
+                "  The changes that you make will be remembered, so it is worth taking a moment to configure this window for IdeaFarm (tm) Elves."
+                "  Recommendations:"
+                "  (1) Choose the smallest font that you can read easily."
+                "  (2) Make the window as large as possible."
+                "  (3) Make the screen buffer the same width as the window but give the buffer lots of rows."
+                "  Example: 6x8 raster font, 160 columns, 60 rows, with 1024 rows in the screen buffer."
+        
+                , flSAY_END
+            ) ;
+        }
     }
 //#endif
 }
@@ -1825,6 +1841,7 @@ int elf_obey_C::isStaleF( const char* postToLikeP , const char* postFromLike1P ,
 
 void elf_obey_C::liveF( void )
 {
+    //printf( "%s" , "elf_obey_C ++++\r\n" ) ;
     makeFoldersCopyThirdPartyDllsF() ; // THIS IS REDUNDANT BUT IS LOW COST AND ADDS IDIOT PROOFING (USER DELETING FOLDERS AFTER LAUNCHING THIS PROGRAM)
     
     //1 TOKEN COMMANDS, ALPHABETICAL
@@ -2136,7 +2153,7 @@ void elf_obey_C::liveF( void )
                 else if( bPrecious ) strcat( postCmd , " !precious" ) ;
                 else if( bTool     ) strcat( postCmd , " !tool" ) ;
 
-ether.sayF( 0 , postCmd , flSAY_NOwRAP | flSAY_NOgRAB | flSAY_NOuNGRAB ) ;
+//ether.sayF( 0 , postCmd , flSAY_NOwRAP | flSAY_NOgRAB | flSAY_NOuNGRAB ) ;
                 system( postCmd ) ;
             }
         }
@@ -2367,6 +2384,13 @@ ether.sayF( 0 , postCmd , flSAY_NOwRAP | flSAY_NOgRAB | flSAY_NOuNGRAB ) ;
 
             if( !cCompiled && flagsAll & flELVES_HIBERNATE ) system( "shutdown /h" ) ;
 
+            if( bMakeElfOnly )
+            {
+                etherC::gruntIF() ;
+                inc02AM( cIgnoreCommands ) ;
+                flagsAll |= flELVES_QUITsEEN ;
+            }
+
             //tmAbortF( 0 ) ; //U:: FOR TESTING
         }
     }
@@ -2416,23 +2440,29 @@ ether.sayF( 0 , postCmd , flSAY_NOwRAP | flSAY_NOgRAB | flSAY_NOuNGRAB ) ;
 
             if( bNumaIsAvailableF() )
             {
+                //char postAll[  0x80 ] = "wdw "                          "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ;
+                  char postAll[  0x80 ] = "start " postNUMAnODE " /wait " "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ;
+
                 #if defined( TELL )
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
-                      system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
+                    strcat( postAll , " !idNumaNode 2"         ) ;
                 #else
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
-                      system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
+                    strcat( postAll , "!idNumaNode 2 !noTells" ) ;
                 #endif
+
+                if( bMakeElfOnly ) strcat( postAll , " !makeElfOnly" ) ;
+                system( postAll ) ;
             }
             else
             {
-                #if defined( TELL )
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ) ;
-                      system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ) ;
-                #else
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells !debug" ) ;
-                      system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells" ) ;
+                //char postAll[  0x80 ] = "wdw "                          "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ;
+                  char postAll[  0x80 ] = "start "              " /wait " "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ;
+
+                #if !defined( TELL )
+                    strcat( postAll , " !noTells" ) ;
                 #endif
+
+                if( bMakeElfOnly ) strcat( postAll , " !makeElfOnly" ) ;
+                system( postAll ) ;
             }
         }
     }
@@ -2825,236 +2855,239 @@ ether.sayF( 0 , postCmd , flSAY_NOwRAP | flSAY_NOgRAB | flSAY_NOuNGRAB ) ;
         }
         else if( !strcmp( postCmd , "8bundle" ) )
         {
+            if( !bMakeElfOnly )
             {
-                const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\z\\z_if.i.exist.then.this.home.is.completely.unzipped" } ;
-                const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\8text.81000001.z_if.i.exist.then.this.home.is.completely.unzipped" } ;
-        
-                if( isStaleF( postTo1 , postFrom1 ) )
                 {
-                    sayF( "[8bundle]:  Copying the Z file, which Service assumes to always be the lath file to be unzipped when the user is installing the bundle." ) ;
+                    const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\z\\z_if.i.exist.then.this.home.is.completely.unzipped" } ;
+                    const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\8text.81000001.z_if.i.exist.then.this.home.is.completely.unzipped" } ;
+            
+                    if( isStaleF( postTo1 , postFrom1 ) )
+                    {
+                        sayF( "[8bundle]:  Copying the Z file, which Service assumes to always be the lath file to be unzipped when the user is installing the bundle." ) ;
 
-                    makeFoldersCopyThirdPartyDllsF() ;
-    
-                    char postCmd[ 0x400 ] = { "copy " } ;
-                    strcat( postCmd , postFrom1 ) ;
-                    strcat( postCmd , " " ) ;
-                    strcat( postCmd , postTo1 ) ;
-                    system( postCmd ) ;
+                        makeFoldersCopyThirdPartyDllsF() ;
+        
+                        char postCmd[ 0x400 ] = { "copy " } ;
+                        strcat( postCmd , postFrom1 ) ;
+                        strcat( postCmd , " " ) ;
+                        strcat( postCmd , postTo1 ) ;
+                        system( postCmd ) ;
+                    }
                 }
+
+                //20230408@1426: UNFORTUNATELY, OpenSSL STILL REQURIES THAT THE VISUAL STUDIO RUNTIMES BE INSTALLED, SO EVERY USER OF IPDOS MUST INSTALL THEM.
+                //U:: ADD THEIR INSTALLATION TO THE INSTALLER
+                //#if defined( NEVERdEFINED )
+
+                #if defined( NEVERdEFINED )
+
+                    // THIS SETTINGS FILE IS ELIMINATED BECAUSE IPDOS WILL BE DISTRIBUTED AS BARTERWARE, SO HOMES NEED NOT BE "PAID" OR OTHERWISE REGISTERED
+                    // U:: ELIMINATE THE CODE THAT CHECKS THE RACKSPACE CLOUD CONTAINER FOR "PAID" REGISTRATION RECORDS; THAT CODE IS IN WO OF THE EARLY ADAMS IN BUNDLE
+
+                    {
+                        const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\release\\0.settings.ideafarm.install.soil" } ;
+                        const char postFrom1[] = { "\\ideafarm.work\\txt\\settings.ideafarm.install.soil" } ;
+                
+                        if( isStaleF( postTo1 , postFrom1 ) )
+                        {
+                            sayF( "[8bundle]:  Copying the IdeaFarm (tm) Bundle installation settings file." ) ;
+
+                            makeFoldersCopyThirdPartyDllsF() ;
+            
+                            char postCmd[ 0x400 ] = { "copy " } ;
+                            strcat( postCmd , postFrom1 ) ;
+                            strcat( postCmd , " " ) ;
+                            strcat( postCmd , postTo1 ) ;
+                            system( postCmd ) ;
+                        }
+                    }
+
+                    {
+                        const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\release\\0.VC_redist.x64.exe" } ;
+                        const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\visualstudio\\VC_redist.x64.exe" } ;
+                
+                        if( isStaleF( postTo1 , postFrom1 ) )
+                        {
+                            sayF( "[8bundle]:  Copying the 64 bit Visual Studio runtime installer program." ) ;
+
+                            makeFoldersCopyThirdPartyDllsF() ;
+            
+                            char postCmd[ 0x400 ] = { "copy " } ;
+                            strcat( postCmd , postFrom1 ) ;
+                            strcat( postCmd , " " ) ;
+                            strcat( postCmd , postTo1 ) ;
+                            system( postCmd ) ;
+                        }
+                    }
+
+                #endif
+
+                    // AS OF 20230326@1610, END USERS NO LONGER NEED TO INSTALL THE VISUAL STUDIO RUNTIMES IN ORDER TO RUN IPDOS
+                    // (THEY WERE REQUIRED BECAUSE THE OLD OPENSSL DLL BINARIES REQUIRED THEM.  THOSE HAVE NOW BEEN REFRESHED TO USE BINARIES BUILT FROM THE OPENSSL 3.0.7 RELEASE SOURCE CODE)
+
+                    {
+                        const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\release\\1.VC_redist.x86.exe" } ;
+                        const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\visualstudio\\VC_redist.x86.exe" } ;
+                
+                        if( isStaleF( postTo1 , postFrom1 ) )
+                        {
+                            sayF( "[8bundle]:  Copying the 32 bit Visual Studio runtime installer program." ) ;
+
+                            makeFoldersCopyThirdPartyDllsF() ;
+            
+                            char postCmd[ 0x400 ] = { "copy " } ;
+                            strcat( postCmd , postFrom1 ) ;
+                            strcat( postCmd , " " ) ;
+                            strcat( postCmd , postTo1 ) ;
+                            system( postCmd ) ;
+                        }
+                    }
+
+                //#endif
+
+                #if defined( RELEASE )
+
+                    //if( !( flagsAll & flELVES_DEBUGiNFO ) )
+                    {
+                        system( "if exist \\ideafarm.home.1\\ephemeral\\release\\2.ideafarm.bundle.zip del \\ideafarm.home.1\\ephemeral\\release\\2.ideafarm.bundle.zip" ) ;
+                        system( "if exist \\tmp\\bundle\\ideafarm.home.101\\* rd /s /q \\tmp\\bundle\\ideafarm.home.101" ) ;
+                        makeFoldersCopyThirdPartyDllsF() ;
+                        system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\handle                                   \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\workshop\\handle                                   /E /MT" ) ;
+                        system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip                                  \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip                                  /E /MT" ) ;
+                        system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin                             \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin                             /E /MT" ) ;
+                        system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib                                     \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib                                     /E /MT" ) ;
+                        //U::O: IN THE PRECEEDING LINE, THE ENTIRE ZLIB DIRECTORY IS NOT NEEDED: \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib
+                      //system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\blob                                      \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\library\\blob                                      /E /MT" ) ;
+                        system( "    copy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\7reso.71000002.favicon.ico    \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\7reso.71000002.favicon.ico          " ) ;
+                        system( "robocopy \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1                                    \\tmp\\bundle\\ideafarm.home.101\\ephemeral\\city\\park\\exedll\\1                                    /E /MT" ) ;
+
+                        //REMOVE bench.baseless IN PRODUCTION
+                        //system( "zip -9r  \\ideafarm.home.1\\ephemeral\\release\\ideafarm.bundle.zip \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\bench.baseless \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\handle \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\blob \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1" ) ;
+
+                        {
+                            hoverC hover( "\\tmp\\bundle" ) ;
+                            system
+                            (
+                                "zip -9r"
+                                " \\ideafarm.home.1\\ephemeral\\release\\2.ideafarm.bundle.zip"
+                                " ideafarm.home.101"
+                            ) ;
+                        }
+
+                        #if defined( NEVERdEFINED )
+
+                            //SEE EARLIER COMMENT ABOUT IPDOS BEING DISTRIBUTED AS BARTERWARE SO THE HOME REGISTRATION AND PAYMENT VERIFICATION CODE, AND THIS SETTINGS FILE, IS NO LONGER NEEDED
+
+                            //WRITE THE TEMPLATE CONFIGURATION FILE
+                            boxPutF( "\\ideafarm.home.1\\ephemeral\\release\\0.settings.ideafarm.install.soil" ,
+
+                                "\r\n"
+                                "{settings:\r\n"
+                                "\r\n"
+                                "    {ipdos:\r\n"
+                                "\r\n"
+                                "        {kv: primary.end.user.email                             \"required\" }\r\n"
+                                "\r\n"
+                                "        {kv: primary.end.user.name                              \"required\" }\r\n"
+                                "\r\n"
+                                "        {kv: primary.end.user.postal.country                    \"required\" }\r\n"
+                                "\r\n"
+                                "        {kv: primary.end.user.postal.code                       \"required\" }\r\n"
+                                "\r\n"
+                                "\r\n"
+                                "        {kv: primary.technical.administrator.email              \"\" }\r\n"
+                                "\r\n"
+                                "        {kv: primary.technical.administrator.name               \"\" }\r\n"
+                                "\r\n"
+                                "        {kv: primary.technical.administrator.postal.country     \"\" }\r\n"
+                                "\r\n"
+                                "        {kv: primary.technical.administrator.postal.code        \"\" }\r\n"
+                                "\r\n"
+                                "\r\n"
+                                "        {kv: primary.billing.administrator.email                \"\" }\r\n"
+                                "\r\n"
+                                "        {kv: primary.billing.administrator.name                 \"\" }\r\n"
+                                "\r\n"
+                                "        {kv: primary.billing.administrator.postal.country       \"\" }\r\n"
+                                "\r\n"
+                                "        {kv: primary.billing.administrator.postal.code          \"\" }\r\n"
+                                "\r\n"
+                                "\r\n"
+                                "        {kv: arbitrary.uniquifier.1                             \"\" }\r\n"
+                                "\r\n"
+                                "    }\r\n"
+                                "}\r\n"
+                                "\r\n"
+                                "{comment:\r\n"
+                                "\r\n"
+                                "    Edit the kv (key value) settings ABOVE to specify your contact information\r\n"
+                                "    within each pair of double quotes.  Do not modify the arbitrary uniquifier.\r\n"
+                                "\r\n"
+                                "    The fields for the primary end user are required, but a role-based email\r\n"
+                                "    such as store.1234@whatever.com is acceptable as long as email sent to it\r\n"
+                                "    will be reliably received and handled by someone.  Specify the email address\r\n"
+                                "    of the person who will really be the primary user of the computer, even if\r\n"
+                                "    the primary user will change frequently (several times per year).  If the\r\n"
+                                "    primary user will change more frequently, e.g. monthly or daily, use a\r\n"
+                                "    role-based email address.\r\n"
+                                "\r\n"
+                                "    Each IdeaFarm (tm) Bundle configuration is associated with a primary\r\n"
+                                "    end user and also a computer.  IdeaFarm (tm) Bundle configurations\r\n"
+                                "    are not transferable either between users or computers.  However, the\r\n"
+                                "    PayPal subscription used for payment is associated with the primary\r\n"
+                                "    billing administrator.  Frequent changes in the primary end user do\r\n"
+                                "    not affect billing and do not result in subscription termination or\r\n"
+                                "    additional cost as long as the IdeaFarm (tm) Bundle configuration is\r\n"
+                                "    being paid for.\r\n"
+                                "\r\n"
+                                "    The fields for the primary technical administrator and the primary billing\r\n"
+                                "    administrator are optional and will default to the values specified\r\n"
+                                "    for the primary end user.\r\n"
+                                "\r\n"
+                                "    The lines that follow exemplify how to complete the settings at\r\n"
+                                "    the top of this file.  This comment block can optionally be\r\n"
+                                "    removed from this file.\r\n"
+                                "\r\n"
+                                "    ------------------------------------------------------------------------\r\n"
+                                "\r\n"
+                                "    primary.end.user.email                             \"your.email@whatever.com\"\r\n"
+                                "\r\n"
+                                "    primary.end.user.name                              \"Your O'Name\"\r\n"
+                                "\r\n"
+                                "    primary.end.user.postal.country                    \"United States of America\"\r\n"
+                                "\r\n"
+                                "    primary.end.user.postal.code                       \"00000\"\r\n"
+                                "\r\n"
+                                "\r\n"
+                                "    primary.technical.administrator.email              \"\"\r\n"
+                                "\r\n"
+                                "    primary.technical.administrator.name               \"\"\r\n"
+                                "\r\n"
+                                "    primary.technical.administrator.postal.country     \"\"\r\n"
+                                "\r\n"
+                                "    primary.technical.administrator.postal.code        \"\"\r\n"
+                                "\r\n"
+                                "\r\n"
+                                "    primary.billing.administrator.email                \"\"\r\n"
+                                "\r\n"
+                                "    primary.billing.administrator.name                 \"\"\r\n"
+                                "\r\n"
+                                "    primary.billing.administrator.postal.country       \"\"\r\n"
+                                "\r\n"
+                                "    primary.billing.administrator.postal.code          \"\"\r\n"
+                                "\r\n"
+                                "\r\n"
+                                "    arbitrary.uniquifier.1                             \"\"\r\n"
+                                "}\r\n"
+
+                            ) ;
+
+                        #endif
+
+                    }
+
+                #endif
             }
-
-            //20230408@1426: UNFORTUNATELY, OpenSSL STILL REQURIES THAT THE VISUAL STUDIO RUNTIMES BE INSTALLED, SO EVERY USER OF IPDOS MUST INSTALL THEM.
-            //U:: ADD THEIR INSTALLATION TO THE INSTALLER
-            //#if defined( NEVERdEFINED )
-
-            #if defined( NEVERdEFINED )
-
-                // THIS SETTINGS FILE IS ELIMINATED BECAUSE IPDOS WILL BE DISTRIBUTED AS BARTERWARE, SO HOMES NEED NOT BE "PAID" OR OTHERWISE REGISTERED
-                // U:: ELIMINATE THE CODE THAT CHECKS THE RACKSPACE CLOUD CONTAINER FOR "PAID" REGISTRATION RECORDS; THAT CODE IS IN WO OF THE EARLY ADAMS IN BUNDLE
-
-                {
-                    const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\release\\0.settings.ideafarm.install.soil" } ;
-                    const char postFrom1[] = { "\\ideafarm.work\\txt\\settings.ideafarm.install.soil" } ;
-            
-                    if( isStaleF( postTo1 , postFrom1 ) )
-                    {
-                        sayF( "[8bundle]:  Copying the IdeaFarm (tm) Bundle installation settings file." ) ;
-
-                        makeFoldersCopyThirdPartyDllsF() ;
-        
-                        char postCmd[ 0x400 ] = { "copy " } ;
-                        strcat( postCmd , postFrom1 ) ;
-                        strcat( postCmd , " " ) ;
-                        strcat( postCmd , postTo1 ) ;
-                        system( postCmd ) ;
-                    }
-                }
-
-                {
-                    const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\release\\0.VC_redist.x64.exe" } ;
-                    const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\visualstudio\\VC_redist.x64.exe" } ;
-            
-                    if( isStaleF( postTo1 , postFrom1 ) )
-                    {
-                        sayF( "[8bundle]:  Copying the 64 bit Visual Studio runtime installer program." ) ;
-
-                        makeFoldersCopyThirdPartyDllsF() ;
-        
-                        char postCmd[ 0x400 ] = { "copy " } ;
-                        strcat( postCmd , postFrom1 ) ;
-                        strcat( postCmd , " " ) ;
-                        strcat( postCmd , postTo1 ) ;
-                        system( postCmd ) ;
-                    }
-                }
-
-            #endif
-
-                // AS OF 20230326@1610, END USERS NO LONGER NEED TO INSTALL THE VISUAL STUDIO RUNTIMES IN ORDER TO RUN IPDOS
-                // (THEY WERE REQUIRED BECAUSE THE OLD OPENSSL DLL BINARIES REQUIRED THEM.  THOSE HAVE NOW BEEN REFRESHED TO USE BINARIES BUILT FROM THE OPENSSL 3.0.7 RELEASE SOURCE CODE)
-
-                {
-                    const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\release\\1.VC_redist.x86.exe" } ;
-                    const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\visualstudio\\VC_redist.x86.exe" } ;
-            
-                    if( isStaleF( postTo1 , postFrom1 ) )
-                    {
-                        sayF( "[8bundle]:  Copying the 32 bit Visual Studio runtime installer program." ) ;
-
-                        makeFoldersCopyThirdPartyDllsF() ;
-        
-                        char postCmd[ 0x400 ] = { "copy " } ;
-                        strcat( postCmd , postFrom1 ) ;
-                        strcat( postCmd , " " ) ;
-                        strcat( postCmd , postTo1 ) ;
-                        system( postCmd ) ;
-                    }
-                }
-
-            //#endif
-
-            #if defined( RELEASE )
-
-                //if( !( flagsAll & flELVES_DEBUGiNFO ) )
-                {
-                    system( "if exist \\ideafarm.home.1\\ephemeral\\release\\2.ideafarm.bundle.zip del \\ideafarm.home.1\\ephemeral\\release\\2.ideafarm.bundle.zip" ) ;
-                    system( "if exist \\tmp\\bundle\\ideafarm.home.101\\* rd /s /q \\tmp\\bundle\\ideafarm.home.101" ) ;
-                    makeFoldersCopyThirdPartyDllsF() ;
-                    system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\handle                                   \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\workshop\\handle                                   /E /MT" ) ;
-                    system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip                                  \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip                                  /E /MT" ) ;
-                    system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin                             \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin                             /E /MT" ) ;
-                    system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib                                     \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib                                     /E /MT" ) ;
-                    //U::O: IN THE PRECEEDING LINE, THE ENTIRE ZLIB DIRECTORY IS NOT NEEDED: \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib
-                  //system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\blob                                      \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\library\\blob                                      /E /MT" ) ;
-                    system( "    copy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\7reso.71000002.favicon.ico    \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\7reso.71000002.favicon.ico          " ) ;
-                    system( "robocopy \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1                                    \\tmp\\bundle\\ideafarm.home.101\\ephemeral\\city\\park\\exedll\\1                                    /E /MT" ) ;
-
-                    //REMOVE bench.baseless IN PRODUCTION
-                    //system( "zip -9r  \\ideafarm.home.1\\ephemeral\\release\\ideafarm.bundle.zip \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\bench.baseless \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\handle \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\blob \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1" ) ;
-
-                    {
-                        hoverC hover( "\\tmp\\bundle" ) ;
-                        system
-                        (
-                            "zip -9r"
-                            " \\ideafarm.home.1\\ephemeral\\release\\2.ideafarm.bundle.zip"
-                            " ideafarm.home.101"
-                        ) ;
-                    }
-
-                    #if defined( NEVERdEFINED )
-
-                        //SEE EARLIER COMMENT ABOUT IPDOS BEING DISTRIBUTED AS BARTERWARE SO THE HOME REGISTRATION AND PAYMENT VERIFICATION CODE, AND THIS SETTINGS FILE, IS NO LONGER NEEDED
-
-                        //WRITE THE TEMPLATE CONFIGURATION FILE
-                        boxPutF( "\\ideafarm.home.1\\ephemeral\\release\\0.settings.ideafarm.install.soil" ,
-
-                            "\r\n"
-                            "{settings:\r\n"
-                            "\r\n"
-                            "    {ipdos:\r\n"
-                            "\r\n"
-                            "        {kv: primary.end.user.email                             \"required\" }\r\n"
-                            "\r\n"
-                            "        {kv: primary.end.user.name                              \"required\" }\r\n"
-                            "\r\n"
-                            "        {kv: primary.end.user.postal.country                    \"required\" }\r\n"
-                            "\r\n"
-                            "        {kv: primary.end.user.postal.code                       \"required\" }\r\n"
-                            "\r\n"
-                            "\r\n"
-                            "        {kv: primary.technical.administrator.email              \"\" }\r\n"
-                            "\r\n"
-                            "        {kv: primary.technical.administrator.name               \"\" }\r\n"
-                            "\r\n"
-                            "        {kv: primary.technical.administrator.postal.country     \"\" }\r\n"
-                            "\r\n"
-                            "        {kv: primary.technical.administrator.postal.code        \"\" }\r\n"
-                            "\r\n"
-                            "\r\n"
-                            "        {kv: primary.billing.administrator.email                \"\" }\r\n"
-                            "\r\n"
-                            "        {kv: primary.billing.administrator.name                 \"\" }\r\n"
-                            "\r\n"
-                            "        {kv: primary.billing.administrator.postal.country       \"\" }\r\n"
-                            "\r\n"
-                            "        {kv: primary.billing.administrator.postal.code          \"\" }\r\n"
-                            "\r\n"
-                            "\r\n"
-                            "        {kv: arbitrary.uniquifier.1                             \"\" }\r\n"
-                            "\r\n"
-                            "    }\r\n"
-                            "}\r\n"
-                            "\r\n"
-                            "{comment:\r\n"
-                            "\r\n"
-                            "    Edit the kv (key value) settings ABOVE to specify your contact information\r\n"
-                            "    within each pair of double quotes.  Do not modify the arbitrary uniquifier.\r\n"
-                            "\r\n"
-                            "    The fields for the primary end user are required, but a role-based email\r\n"
-                            "    such as store.1234@whatever.com is acceptable as long as email sent to it\r\n"
-                            "    will be reliably received and handled by someone.  Specify the email address\r\n"
-                            "    of the person who will really be the primary user of the computer, even if\r\n"
-                            "    the primary user will change frequently (several times per year).  If the\r\n"
-                            "    primary user will change more frequently, e.g. monthly or daily, use a\r\n"
-                            "    role-based email address.\r\n"
-                            "\r\n"
-                            "    Each IdeaFarm (tm) Bundle configuration is associated with a primary\r\n"
-                            "    end user and also a computer.  IdeaFarm (tm) Bundle configurations\r\n"
-                            "    are not transferable either between users or computers.  However, the\r\n"
-                            "    PayPal subscription used for payment is associated with the primary\r\n"
-                            "    billing administrator.  Frequent changes in the primary end user do\r\n"
-                            "    not affect billing and do not result in subscription termination or\r\n"
-                            "    additional cost as long as the IdeaFarm (tm) Bundle configuration is\r\n"
-                            "    being paid for.\r\n"
-                            "\r\n"
-                            "    The fields for the primary technical administrator and the primary billing\r\n"
-                            "    administrator are optional and will default to the values specified\r\n"
-                            "    for the primary end user.\r\n"
-                            "\r\n"
-                            "    The lines that follow exemplify how to complete the settings at\r\n"
-                            "    the top of this file.  This comment block can optionally be\r\n"
-                            "    removed from this file.\r\n"
-                            "\r\n"
-                            "    ------------------------------------------------------------------------\r\n"
-                            "\r\n"
-                            "    primary.end.user.email                             \"your.email@whatever.com\"\r\n"
-                            "\r\n"
-                            "    primary.end.user.name                              \"Your O'Name\"\r\n"
-                            "\r\n"
-                            "    primary.end.user.postal.country                    \"United States of America\"\r\n"
-                            "\r\n"
-                            "    primary.end.user.postal.code                       \"00000\"\r\n"
-                            "\r\n"
-                            "\r\n"
-                            "    primary.technical.administrator.email              \"\"\r\n"
-                            "\r\n"
-                            "    primary.technical.administrator.name               \"\"\r\n"
-                            "\r\n"
-                            "    primary.technical.administrator.postal.country     \"\"\r\n"
-                            "\r\n"
-                            "    primary.technical.administrator.postal.code        \"\"\r\n"
-                            "\r\n"
-                            "\r\n"
-                            "    primary.billing.administrator.email                \"\"\r\n"
-                            "\r\n"
-                            "    primary.billing.administrator.name                 \"\"\r\n"
-                            "\r\n"
-                            "    primary.billing.administrator.postal.country       \"\"\r\n"
-                            "\r\n"
-                            "    primary.billing.administrator.postal.code          \"\"\r\n"
-                            "\r\n"
-                            "\r\n"
-                            "    arbitrary.uniquifier.1                             \"\"\r\n"
-                            "}\r\n"
-
-                        ) ;
-
-                    #endif
-
-                }
-
-            #endif
         }
         else if( !strcmp( postCmd , "!worker_2snips_ipdos.h" ) )
         {
@@ -3706,6 +3739,7 @@ ether.sayF( 0 , postCmd , flSAY_NOwRAP | flSAY_NOgRAB | flSAY_NOuNGRAB ) ;
             boxPutF( postFILEuSER , postw , idMe ) ;
         }
     }
+    //printf( "%s" , "elf_obey_C     ----\r\n" ) ;
 }
 
 int elf_obey_C::pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILETIME ftSnipP , char* postFileImage1P , char* postFileImage2P )
@@ -5168,7 +5202,7 @@ void titleC::freshF( void )
 
     strcat( post001 , TS "(c) Wo'O Ideafarm" TS "IDEAFARM.COM" ) ;
 
-    SetConsoleTitle( post001 ) ;
+//    SetConsoleTitle( post001 ) ;
 
     baton.ungrabF() ;
 }
@@ -5677,8 +5711,8 @@ void tmAbortF( void* pnuP )
 
     while( elfC::cElvesIF() > 1 ) Sleep( 0x100 ) ;
     SetConsoleTitle( "" ) ;
-    ether.sayF( 0 , postTHANKyOU , flSAY_NOwRAP ) ;
-    Sleep( 1000 * 30 ) ;
+    if( !bMakeElfOnly ) ether.sayF( 0 , postTHANKyOU , flSAY_NOwRAP ) ;
+    //Sleep( 1000 * 4 ) ;
     //Sleep( 1000 ) ;
 
     TOUCH( pnuP )
@@ -5704,6 +5738,12 @@ void tmElfF( void* pElfP )
 
 int main( int cArgP , char* ppostArgP[] , char* ppostEnvP[] )
 {
+    for( unsigned offi = 0 ; offi < cArgP ; offi ++ )
+    {
+        //printf( "%u    %s\r\n" , offi , ppostArgP[ offi ] ) ;
+        if( !strcmp( ppostArgP[ offi ] , "!makeElfOnly" ) ) bMakeElfOnly = 1 ;
+    }
+
     {
         int s1 = sizeof ppostTokensUser ;
         int s2 = sizeof ppostUserDisplay ;
@@ -5750,9 +5790,13 @@ int main( int cArgP , char* ppostArgP[] , char* ppostEnvP[] )
     while( elfC::cElvesIF() ) Sleep( 0x100 ) ;
 
     SetConsoleTitle( "" ) ;
-    ether.sayF( 0 , postTHANKyOU , flSAY_NOwRAP ) ;
-    Sleep( 1000 ) ;
+    if( !bMakeElfOnly )
+    {
+        ether.sayF( 0 , postTHANKyOU , flSAY_NOwRAP ) ;
+        Sleep( 1000 ) ;
+    }
 
     if( cArgP && ppostArgP && ppostEnvP ) ;
+    printf( "%s\r\n" , "\f" ) ;
     return 0 ;
 }

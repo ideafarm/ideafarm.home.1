@@ -122,23 +122,26 @@ DONE( tmWorkF )
     }
         #endif
 
-            ether.osThreadF( TaRG1( tmMakeF ) , (countT)&cMakerLives , (countT)&cMaking , (countT)&cErrors , pcIdAdam[ offa ] ) ;
+            ether.osThreadF( TaRG1( tmMakeF ) , (countT)&cMakerLives , (countT)&cMaking , (countT)&cErrors , pcIdAdamUse[ offa ] ) ;
 
         #else
 
-            syncMakeF( tin0P , ether , etThread , cMakerLives , cMaking , cErrors , pcIdAdam[ offa ] ) ;
+            syncMakeF( tin0P , ether , etThread , cMakerLives , cMaking , cErrors , pcIdAdamUse[ offa ] ) ;
 
         #if defined( SYNCHmAKE )
 
         inc02AM( cMaking ) ;
 
-        if( pcIdAdam[ offa ] != 0x51000622 ) stIdAdam << pcIdAdam[ offa ] ; // WILL BE HIRED IN THE ORDER SPECIFIED IN THE ARRAY
+        if( pcIdAdamUse[ offa ] != 0x51000622 ) stIdAdam << pcIdAdamUse[ offa ] ; // WILL BE HIRED IN THE ORDER SPECIFIED IN THE ARRAY
     {
-    for( countT offa = 0 ; !ether && offa < sizeof pcIdAdam / sizeof pcIdAdam[ 0 ] ; offa ++ )
+    for( countT offa = 0 ; !ether && offa < ccIdAdamUse ; offa ++ )
     ZE( countT , cErrors ) ;
     ZE( countT , cMakerLives ) ;
     ZE( countT , cMaking ) ;
     stackC stIdAdam( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+
+    const countT  ccIdAdamUse = bMakeElfOnly ? sizeof pcIdAdamElf / sizeof pcIdAdamElf[ 0 ] : sizeof pcIdAdamAll / sizeof pcIdAdamAll[ 0 ] ;
+    const countT* pcIdAdamUse = bMakeElfOnly ?        pcIdAdamElf                           :        pcIdAdamAll                           ;
 
     } ;
 
@@ -927,12 +930,24 @@ DONE( tmWorkF )
 
         //DEFINE DOaLL TO REFRESH THE GENERATED SNIP FILES, WHICH MUST BE DONE BEFORE BUILDING A RELEASE
     {
-    countT pcIdAdam[] =
+    countT pcIdAdamAll[] =
+
+    countT pcIdAdamElf[] = { ifcIDaDAM_ELF } ;
 
     tlsAllocStackExp_c_C tls_c( tin0P ) ;    //U:: MINIMIZE THE EXPONENT
 
     TN( tcri2 , "\r\n  " ) ;
     TN( tcr   , "\r\n"   ) ;
+
+    }
+        }
+            if( !etThread.strCompareF( tin0P , psttc1 , tCmd ) ) bMakeElfOnly = 1 ;
+        {
+        FORsTRINGSiN1( pstt1p )
+        strokeS*& pstt1p = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
+        TN( tCmd , "!makeElfOnly" ) ;
+    {
+    ZE( boolT , bMakeElfOnly ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
@@ -1020,7 +1035,7 @@ TASK( tmWorkF )
 #endif
 
     {
-    voidT syncMakeF( tin0S& tin0P , etherC& ether , etherC& etThread , countT& cMakerLivesP , countT& cMakingP , countT& cErrorsP , countT& idAdamP )
+    voidT syncMakeF( tin0S& tin0P , etherC& ether , etherC& etThread , countT& cMakerLivesP , countT& cMakingP , countT& cErrorsP , const countT idAdamP )
 
 #else
 

@@ -3,6 +3,7 @@
 rem param 1 (optional): path for output file
 
 d:
+ideafarm.elves.ipdos !makeElfOnly
 adam ELF           !idHome 10000008 !makeIf TOOLtRACEcOPY
 adam TOOLtRACEcOPY !idHome 10000008
 
