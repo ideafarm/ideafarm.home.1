@@ -42141,7 +42141,6 @@ base class to make a derived class of objects easily contained by a stackC objec
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.doC : 1snip.15000115.doc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.processGlobal4S : 1snip.150000e2.processglobal4s BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -42210,6 +42209,35 @@ base class to make a derived class of objects easily contained by a stackC objec
     byteT pbBooksNoPuseFootWords[                    CBbOOKScnOpUSEbACK ] ;
 
     public :
+
+    // THESE ARE CT WOTH BECAUSE ANOTHER MEMBER USES WO OF THEM
+    cryC                                     cry324 ;
+    mapCTC                  /*P3*/ /*CT:90*/ mapPopClientWork ;
+    mapCTC                  /*P3*/ /*CT:a0*/ mapProcessPhase ;
+    mapCTC                  /*P3*/ /*CT:b0*/ mapAdamClass   ;
+    mapCTC                  /*P3*/ /*CT:c0*/ mapAdam        ;
+    mapCTC                  /*P3*/ /*CT:d0*/ mapSoulItem    ;
+    mapCTC                  /*P3*/ /*CT:e0*/ mapWhat        ;
+    mapCTC                  /*P3*/ /*CT:f0*/ mapExceptionType ;
+    mapCTC                  /*P3*/ /*CT:01*/ mapdropNoteType ;
+    mapCTC                  /*P3*/ /*CT:11*/ mapDefinition  ;
+    mapCTC                  /*P3*/ /*CT:21*/ mapThreadPhase ;
+    mapCTC                  /*P3*/ /*CT:31*/ mapCaste       ;
+    mapCTC                  /*P3*/ /*CT:41*/ mapFileTitle   ;
+    mapCTC                  /*P3*/ /*CT:41*/ mapSadamCall       ;
+    mapCTC                  /*P3*/ /*CT:41*/ mapWindowMessage   ;
+    mapCTC                  /*P3*/ /*CT:41*/ mapTool            ;
+    mapCTC                  /*P3*/ /*CT:41*/ mapSay             ;
+    mapCTC                                   mapListName        ;
+    mapCTC                                   mapTinName         ;
+    mapCTC                                   mapAlphabet1       ;
+    mapCTC                                   mapGroup           ;
+    mapCTC                                   mapSSSIdAdam       ;
+    mapCTC                                   mapIdPhaseProcess  ;
+    mapCTC                                   mapIdGrabLayer     ;
+    mapCTC                                   mapBosCodeWindows  ;
+    mapCTC                                   mapIfcCode         ;
+    mapCTC                                   mapIdErrorDns      ;
 
     cryC                                     cry301 ;
     const timeS                              timeBaseBuilt ;
@@ -42313,33 +42341,6 @@ base class to make a derived class of objects easily contained by a stackC objec
     grabC                   /*P3*/ /*CT:d1*/ _thirdC_grab_flagsProcessState_ ;
     cryC                                     cry323 ;
     handleC                 /*P3*/ /*CT:91*/ _thirdC_hWindowingClient ; // SOME OPERATING SYSTEMS PASS A HANDLE INTO A WINDOW PROCESS AS A COMMAND LINE PARAMETER; THIS IS WHERE IT IS PUT
-    cryC                                     cry324 ;
-    mapCTC                  /*P3*/ /*CT:90*/ mapPopClientWork ;
-    mapCTC                  /*P3*/ /*CT:a0*/ mapProcessPhase ;
-    mapCTC                  /*P3*/ /*CT:b0*/ mapAdamClass   ;
-    mapCTC                  /*P3*/ /*CT:c0*/ mapAdam        ;
-    mapCTC                  /*P3*/ /*CT:d0*/ mapSoulItem    ;
-    mapCTC                  /*P3*/ /*CT:e0*/ mapWhat        ;
-    mapCTC                  /*P3*/ /*CT:f0*/ mapExceptionType ;
-    mapCTC                  /*P3*/ /*CT:01*/ mapdropNoteType ;
-    mapCTC                  /*P3*/ /*CT:11*/ mapDefinition  ;
-    mapCTC                  /*P3*/ /*CT:21*/ mapThreadPhase ;
-    mapCTC                  /*P3*/ /*CT:31*/ mapCaste       ;
-    mapCTC                  /*P3*/ /*CT:41*/ mapFileTitle   ;
-    mapCTC                  /*P3*/ /*CT:41*/ mapSadamCall       ;
-    mapCTC                  /*P3*/ /*CT:41*/ mapWindowMessage   ;
-    mapCTC                  /*P3*/ /*CT:41*/ mapTool            ;
-    mapCTC                  /*P3*/ /*CT:41*/ mapSay             ;
-    mapCTC                                   mapListName        ;
-    mapCTC                                   mapTinName         ;
-    mapCTC                                   mapAlphabet1       ;
-    mapCTC                                   mapGroup           ;
-    mapCTC                                   mapSSSIdAdam       ;
-    mapCTC                                   mapIdPhaseProcess  ;
-    mapCTC                                   mapIdGrabLayer     ;
-    mapCTC                                   mapBosCodeWindows  ;
-    mapCTC                                   mapIfcCode         ;
-    mapCTC                                   mapIdErrorDns      ;
     cryC                                     cry325 ;
 
     ~processGlobal4S( voidT ) ;
