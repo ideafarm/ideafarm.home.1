@@ -108,7 +108,11 @@
                 osTextT* const postToSave = postToP ;
             {
             else
-            if( idAdam ) thirdC::c_itoaIF( postToP , *(countT*)&idAdam , '0' ) ;
+            }
+                postToP[ 8 ] = 0 ;
+                thirdC::c_itoaIF( postToP , *(countT*)&idAdam , '0' ) ;
+            {
+            if( idAdam )
 
             }
                 idAdam  = mapAdam( postTry ) ;

@@ -148,7 +148,7 @@
                     }
                         }
                             pbc += sizeof pbSmall6 ;
-                            thirdC::c_memcpyIF( tin0P , pbc + 0xe , tName , tName.csF( tin0P ) ) ;
+                            thirdC::c_memcpyIF( tin0P , pbc + 0xf , tName , tName.csF( tin0P ) ) ;                              //20250808@1913: 0xf <- 0xe
                         {
                         if( pbc < pbe )
                         pbc = thirdC::c_memmemIF( tin0P , pbc , cbm - ( pbc - pbm ) , pbSmall6 , sizeof pbSmall6 ) ;
@@ -187,7 +187,11 @@
                     
                     byteT pbSmall8[] = ".he program encountered a problem at address %08lx and cannot continue" ;
                     byteT pbSmall7[] = ".he instruction at %08lx referenced memory at %08lx\x0aThe memory could not be %s" ;
+
                     byteT pbSmall6[] = "!postBaseName:ideafarm..1000001.ipdos-wm" ;
+                                     // 123456789abcdef0123456789abcdef0
+                                     // 0              1               2
+
                     byteT pbSmall5[] = ".:\\ideafarm.work\\backed.up.never\\gen\\" ;
                     byteT pbSmall4[] = ".:\\ideafarm.work\\backed.up.never\\gen\\" ;
                     byteT pbSmall3[] = { 't' , 'h' , 'e' , ' ' , 'p' , 'r' , 'o' , 'g' , 'r' , 'a' , 'm' , ' ' , 'e' , 'n' , 'c' , 'o' , 'u' , 'n' , 't' , 'e' , 'r' , 'e' , 'd' , ' ' , 'a' , ' ' , 'p' , 'r' , 'o' , 'b' , 'l' , 'e' , 'm' , ' ' , 'a' , 't' , ' ' , 'a' , 'd' , 'd' , 'r' , 'e' , 's' , 's' , ' ' , '%' , '0' , '8' , 'l' , 'x' , ' ' , 'a' , 'n' , 'd' , ' ' , 'c' , 'a' , 'n' , 'n' , 'o' , 't' , ' ' , 'c' , 'o' , 'n' , 't' , 'i' , 'n' , 'u' , 'e' } ;

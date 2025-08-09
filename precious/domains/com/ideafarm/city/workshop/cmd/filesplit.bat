@@ -7,6 +7,7 @@ if %1z == z goto :FIN
 
 d:
 adam ELF           !idHome 10000008 !makeIf ca8
-adam TOOLfILEsPLIT !idHome 10000008 !file %1
+rem adam TOOLfILEsPLIT !idHome 10000008 !file %1
+wdw adam TOOLfILEsPLIT !idHome 10000008 !file ///c/tmp/tracecopy.all.sorted.ttt
 
 :FIN
