@@ -335,7 +335,11 @@
                                                         }
                                                             cryC cry36( ( TOCK << 2 ) + 0x06 ) ;
                                                             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN92 ) ;
-                                                            etThread.dllOpenF( tin0P , hDll , T("ideafarm.")+T(psttDll)+T(bMasterMaster?".ipdos-wm":".ipdos-tm") ) ;
+                                                            etThread.dllOpenF( tin0P , hDll , tShort ) ;
+
+                                                            etThread.traceF( tin0P , T("master dll [tShort]:    ")+tShort ) ;
+                                                            TN( tShort , "" ) ; tShort = T("ideafarm.")+T(psttDll)+T(bMasterMaster?".ipdos-wm":".ipdos-tm") ;
+
                                                             __( etThread.strIdF( tin0P , S1C('/') , psttDll ) ) ;
                                                             cryC cry37( ( TOCK << 2 ) + 0x07 ) ;
 
@@ -363,9 +367,9 @@
                                                             bMasterTemporary = !etThread.strCompareF( tin0P , T(thirdC::postBaseNameIF(tin0P)) , T(ostoCopy2) ) ;
                                                             bMasterMaster    = !etThread.strCompareF( tin0P , T(thirdC::postBaseNameIF(tin0P)) , T(ostoCopy1) ) ;
 
-                                                            //etThread.traceF( tin0P , T(ostoCopy2) ) ;
-                                                            //etThread.traceF( tin0P , T(ostoCopy1) ) ;
-                                                            //etThread.traceF( tin0P , T(thirdC::postBaseNameIF(tin0P)) ) ;
+                                                            etThread.traceF( tin0P , T("testv2:    ")+T(ostoCopy2) ) ;
+                                                            etThread.traceF( tin0P , T("testv1:    ")+T(ostoCopy1) ) ;
+                                                            etThread.traceF( tin0P , T("base name: ")+T(thirdC::postBaseNameIF(tin0P)) ) ;
 
                                                             ( (osTextT*)(const osTextT*)ostoCopy2 )[ 9 ] = '8' ;  // THE SMUDGER THAT MAKES THE HOVER FILE WILL NOT REPLACE ostoCopy2 BUT IT WILL REPLACE THE STRING IN postBasenameIF
                                                             ( (osTextT*)(const osTextT*)ostoCopy1 )[ 9 ] = '8' ;  // THE SMUDGER THAT MAKES THE HOVER FILE WILL NOT REPLACE ostoCopy1 BUT IT WILL REPLACE THE STRING IN postBasenameIF
