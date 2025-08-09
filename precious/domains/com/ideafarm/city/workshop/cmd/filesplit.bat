@@ -6,7 +6,7 @@ if %1z == z echo missing parameter
 if %1z == z goto :FIN
 
 d:
-adam ELF           !idHome 10000008 !makeIf ca8
+adam ELF           !idHome 10000008 !makeIf TOOLfILEsPLIT
 adam TOOLfILEsPLIT !idHome 10000008 !file %1
 
 :FIN

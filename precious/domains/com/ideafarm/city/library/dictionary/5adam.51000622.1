@@ -145,14 +145,22 @@ DONE( tmWorkF )
                 etThread.traceF( tin0P , T("example [tDll]:    ///ideafarm/ephemeral/city/park/exedll/1/hover/ideafarm.51000621.ipdos-wd") ) ;
 
                 TN( tDll , "" ) ; tDll =                T("///ideafarm/ephemeral/city/park/exedll/1/hover/ideafarm.")+tIdAdam+T(".ipdos-wd") ;
-                TN( tb4 , "    " ) ;
             {
             ZE( boolT , bFound ) ;
 
             TN( tIdAdam , "" ) ; tIdAdam = TF2(idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN) ;
 
-            etThread.traceF( tin0P , T("!makeIf [idAdam]:    ")+TF2(idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            countT idAdam = etThread.strDigitsToSCountF( tin0P , psttc1 ) | 0x51000000 ;
+            etThread.traceF( tin0P , T("!makeIf [psttc1,idAdam]:    ")+T(psttc1)+tb4+TF2(idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            TN( tb4 , "    " ) ;
+
+            if( !idAdam ) idAdam = etThread.strDigitsToSCountF( tin0P , psttc1 ) | 0x51000000 ;
+
+            }
+                idAdam  = mapAdam( T(psttc1) ) ;                                        // LOOK UP idAdam VALUE IN mapAdam  (THIS WILL WORK IFF THE PARAMETER IS SOMETHING LIKE "SCRATCH0f" OR "TOOLwALKsEARCH")
+                mapCTC& mapAdam = processGlobal4S::_processGlobal4I_IF().mapAdam ;
+            {
+            ZE( countT , idAdam ) ;
+
             bArmMakeIf = 0 ;
         {
         else if( bArmMakeIf )
@@ -186,8 +194,17 @@ DONE( tmWorkF )
             etThread.osMakeF( tin0P , stErrors , idAdam , flMAKE_DEBUG | flMAKE_ENABLEtHIRDpARTIES ) ; //U::ELIMINATE flMAKE_ENABLEtHIRDpARTIES
             stackC stErrors( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_soulC ) ;
 
-            etThread.traceF( tin0P , T("!make [idAdam]:    ")+TF2(idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            countT idAdam = etThread.strDigitsToSCountF( tin0P , psttc1 ) | 0x51000000 ;
+            etThread.traceF( tin0P , T("!make [psttc1,idAdam]:    ")+T(psttc1)+tb4+TF2(idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            TN( tb4 , "    " ) ;
+
+            if( !idAdam ) idAdam = etThread.strDigitsToSCountF( tin0P , psttc1 ) | 0x51000000 ;
+
+            }
+                idAdam  = mapAdam( T(psttc1) ) ;                                        // LOOK UP idAdam VALUE IN mapAdam  (THIS WILL WORK IFF THE PARAMETER IS SOMETHING LIKE "SCRATCH0f" OR "TOOLwALKsEARCH")
+                mapCTC& mapAdam = processGlobal4S::_processGlobal4I_IF().mapAdam ;
+            {
+            ZE( countT , idAdam ) ;
+
             bArmMake = 0 ;
         {
         if( bArmMake )

@@ -3,7 +3,7 @@
 rem param 1 (optional): path for output file
 
 d:
-adam ELF           !idHome 10000008 !makeIf ba8
+adam ELF           !idHome 10000008 !makeIf TOOLtRACEcOPY
 adam TOOLtRACEcOPY !idHome 10000008
 
 c:
