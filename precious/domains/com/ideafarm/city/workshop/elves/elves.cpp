@@ -1474,6 +1474,8 @@ void elf_eat_C::liveF( void )
                 }
             }
         }
+
+        Sleep( 0x100 ) ;
     }
 
     ether.title.freshF() ;
