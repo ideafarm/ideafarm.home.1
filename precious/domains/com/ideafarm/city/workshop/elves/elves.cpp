@@ -1564,10 +1564,10 @@ void elf_eat_C::sayChoicesF( void )
     if( flagsAll & flELVES_QUITsEEN || cIgnoreCommands ) sayF( "\f" ) ;
     else
     {
+        sayF( "\f" , flSAY_START ) ;
+
         if( pTokens )
         {
-            sayF( "\f" , flSAY_START ) ;
-
             int costMax = pTokens->costMaxF() ;
             if( costMax )
             {
