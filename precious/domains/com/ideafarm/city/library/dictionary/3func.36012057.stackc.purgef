@@ -49,7 +49,19 @@
                     case ifcSTACKtYPE_sCountT               :
                     case ifcSTACKtYPE_countT                :
                     //U:: case ifcSTACKtYPE_handleC         : { handleC&  hh = *(handleC*)&PLATE_countT_REF( pDoomed ) ; hh.closeIfF()                         ; break ; }
-                    case ifcSTACKtYPE_PTR_soulC             : { soulC*    pn =     (soulC*)PLATE_countT_REF( pDoomed ) ; etherC::etRockIF( tin0P )( tin0P , pn ) ; break ; }
+
+
+
+
+                                                                      case ifcSTACKtYPE_PTR_soulC             : { soulC*    pn =     (soulC*)PLATE_countT_REF( pDoomed ) ;                               DEL( pn ) ; break ; }  //20250810@1157: NOW ASSUME THAT pn POINTS TO A DROP IN A poolC, SO THAT dnsParseF WILL WORK CORRECTLY
+
+                    //20250810@1157: THIS WAS THE BEHAVIOR UNTIL NOW: case ifcSTACKtYPE_PTR_soulC             : { soulC*    pn =     (soulC*)PLATE_countT_REF( pDoomed ) ; etherC::etRockIF( tin0P )( tin0P , pn ) ; break ; }
+
+                    //20250810@1157: THE FOLLOWING CHANGE WILL LIKELY BREAK EXISTING CODE THAT USES RECYCLING ; THE USE OF RECYCLING IS DEPRECATED ; CODE THAT REQUIRES OTHER BEHAVIOR CAN WORK AROUND THIS CHANGE BY EXPLICITLY POPPING pn AND DELETING/RECYCLING IT BEFORE CALLING purgeF
+
+
+
+
                     case ifcSTACKtYPE_PTR_countT            : { countT*   pn =    (countT*)PLATE_countT_REF( pDoomed ) ;               third.delF( tin0P , pn ) ; break ; }
                     case ifcSTACKtYPE_PTR_byteT             : { byteT*    pn =     (byteT*)PLATE_countT_REF( pDoomed ) ;               third.delF( tin0P , pn ) ; break ; }
                     case ifcSTACKtYPE_PTR_plateC            : { plateC*   pn =    (plateC*)PLATE_countT_REF( pDoomed ) ;                             DEL( pn ) ; break ; } //U::CONJ: WILL CALL THE BASE DT RATHER THAN THE DERIVED CLASS DT

@@ -16262,7 +16262,7 @@ footC( const countT cbFootP , byteT* const pbaFootP = 0 , const countT cbaFootP 
 
     virtual ~baseSoilXxxxC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.baseSoilXxxxC.dt_baseSoilXxxxC!||
-    baseSoilXxxxC( const osTextT* const & postOldClassNameIP , const osTextT* const & postNameP ) ;
+    baseSoilXxxxC( const countT idLineP , const countT idiFileP , const osTextT* const & postOldClassNameIP , const osTextT* const & postNameP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.baseSoilXxxxC.baseSoilXxxxC!||
     const osTextT* const & postOldClassNameIF( tin0S& tin0P ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.baseSoilXxxxC.postOldClassNameIF!||

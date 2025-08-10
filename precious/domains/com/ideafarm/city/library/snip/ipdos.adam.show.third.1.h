@@ -19644,7 +19644,6 @@ i am used with a soulC object to use that object as a forth-like program executo
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200202.ifcidcmdbase END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200203.variablefunctiondefs BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -19666,16 +19665,16 @@ i am used with a soulC object to use that object as a forth-like program executo
     NEWdELcLASSb( classP )                                                              \
                                                                                         \
     classP::classP( const osTextT* const postNameP ) :                                  \
-    baseSoilXxxxC( postOldClassNameI , postName ) ,                                     \
+    baseSoilXxxxC( LF , postOldClassNameI , postName ) ,                                \
     postName( 0 ) ,                                                                     \
     value( 0 )                                                                          \
     {                                                                                   \
         if( postNameP )                                                                 \
         {                                                                               \
             TINSL                                                                       \
-            if( ((tin1S&)tin0P).pEther )                                                           \
+            if( ((tin1S&)tin0P).pEther )                                                \
             {                                                                           \
-                countT costName = thirdC::c_strlenIF( tin0P , postNameP ) ;              \
+                countT costName = thirdC::c_strlenIF( tin0P , postNameP ) ;             \
                 ((tin1S&)tin0P).pEther->newF( tin0P , LF , *(osTextT**)&postName , 1 + costName ) ; ___( postName ) ; \
                 ((tin1S&)tin0P).pEther->memCopyF( tin0P , *(osTextT**)&postName , postNameP , 1 + costName ) ;   \
             }                                                                           \
@@ -19711,15 +19710,15 @@ i am used with a soulC object to use that object as a forth-like program executo
         return *this ;                                                                  \
     }                                                                                   \
                                                                                         \
-    voidT classP::operator ()( tin0S& tin0P , soulC& slP )                                \
+    voidT classP::operator ()( tin0S& tin0P , soulC& slP )                              \
     {                                                                                   \
         {                                                                               \
-            ZE( baseSoilXxxxC* , pMeI ) ;                                             \
+            ZE( baseSoilXxxxC* , pMeI ) ;                                               \
             slP >> pMeI ;                                                               \
             if( pMeI != (baseSoilXxxxC*)this ) { BLAMMO ; }                             \
         }                                                                               \
                                                                                         \
-        ZE( countT , idCmdBase ) ;                                                    \
+        ZE( countT , idCmdBase ) ;                                                      \
         slP >> idCmdBase ;                                                              \
         switch( idCmdBase )                                                             \
         {                                                                               \

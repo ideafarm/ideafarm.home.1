@@ -15,8 +15,6 @@ etherC::loafIF( tin0P ) ;
 etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    //++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
-
     }
         DEL( ps ) ;
         }
@@ -34,7 +32,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                 }
                     break ;
     
-                    if( idTypeAnswer == ifcIDtYPEdNSrEPLY_ANSWER ) etThread.traceF( tin0P , tMyDomainName+T(": ")+T(nnSingularity) ) ;
+                    if( idTypeAnswer == ifcIDtYPEdNSrEPLY_ANSWER ) etThread.traceF( tin0P , tQueryName+T(": ")+T(nnSingularity) ) ;
     
                     soul >> nnSingularity ;
                     nicNameC nnSingularity ;
@@ -72,17 +70,29 @@ etThread.traceF( tin0P , T("ok") ) ;
         stSoul >> ps ;
         ZE( soulC* , ps ) ;
     {
-    while( !etThread && stSoul )
+    else while( !etThread && stSoul )
+    if( !stSoul ) etThread.traceF( tin0P , tQueryName+T(" is not registered") ) ;
     
-    if( !stSoul ) etThread.traceF( tin0P , tMyDomainName+T(" is not registered") ) ;
-    
-    etThread.dnsQueryF( tin0P , stSoul , tMyDomainName , ifcIDtYPEdNSqUERY_A ) ;
+    etThread.dnsQueryF( tin0P , stSoul , tQueryName , ifcIDtYPEdNSqUERY_A ) ;
     stackC stSoul( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
 {
-//while( !etThread && !ether )
-sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-TN( tMyDomainName , "0.tracebegin.hidden.ideafarm.com" ) ;
+TN( tQueryName , "" ) ; tQueryName = tUniquifier+T(bEnd?".traceend":".tracebegin")+T(".hidden.ideafarm.com" ) ;
+
+}
+    }
+        }
+            case 2 : { if( !etThread.strCompareF( tin0P , psttc1 , T("!end") ) ) bEnd = 1 ; break ; }
+            case 1 : { tUniquifier = T(psttc1)                                            ; break ; }
+        {
+        switch( ++ idIn )
+    {
+    FORsTRINGSiN1( pstt1p )
+    ZE( countT , idIn ) ;
+    strokeS*& pstt1p = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
+{
+ZE( boolT , bEnd ) ;
+TN( tUniquifier , "" ) ;
 
 TODO
 
