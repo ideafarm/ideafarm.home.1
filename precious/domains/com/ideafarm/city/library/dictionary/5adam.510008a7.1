@@ -476,6 +476,7 @@ DONE( tmWorkerF )
                                                 count3S c3Handle ;
                                             {
                                             ZE( boolT , bSTFU ) ;
+                                            bForceReply = 1 ;
                                         {
                                         else if( etThread.strIdF( tin0P , gcP.tDomainGrossTraceMarkEnd , tDomainGross ) )
                                         }
@@ -503,6 +504,7 @@ DONE( tmWorkerF )
                                                 count3S c3Handle ;
                                             {
                                             ZE( boolT , bSTFU ) ;
+                                            bForceReply = 1 ;
                                         {
                                         if( etThread.strIdF( tin0P , gcP.tDomainGrossTraceMarkBegin , tDomainGross ) )
 
@@ -711,7 +713,8 @@ DONE( tmWorkerF )
                 _IO_
             {
             TN( tDomainPeer , "" ) ;
-            ZE( boolT , bDivert ) ;
+            ZE( boolT , bDivert     ) ;
+            ZE( boolT , bForceReply ) ;
             boolT bSilent = 1 ;         //PS:PERSONALITY: I DO NOT RESPOND UNLESS I KNOW THE ANSWER TO THE QUERY ; THIS IS INTENDED TO CAUSE THE REQUESTING PEER TO FAILOVER TO MAKE THE REQUEST FROM ITS ALTERNATE DNS SERVER
         {
         if( !gvP.bQuit )
@@ -722,7 +725,6 @@ DONE( tmWorkerF )
         jobS job ;
     {
     while( !gvP.bQuit )
-    ZE( boolT   , bForceReply          ) ;
     ZE( sCountT , timeLetsEncryptLath2 ) ;
     ZE( countT  , timeLetsEncryptLath1 ) ;
 

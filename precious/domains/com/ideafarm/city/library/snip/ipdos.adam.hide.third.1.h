@@ -11472,10 +11472,7 @@ this is the name of the host that the ifc system uses to map names to nicNameC v
 /**/
 /*1*//*postIFCnAMEsERVER*//*1*/
 
-//#define postIFCnAMEsERVER "NS4.BAYAREA.NET"
-//20250706@1555: "hidden.ideafarm.com"
-
-#define postIFCnAMEsERVER "hidden.ideafarm.com"
+#define postIFCnAMEsERVER "dns1.ideafarm.com"
 
 
 //

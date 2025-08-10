@@ -18,12 +18,13 @@ DONE( tmAskDnsF )
         {
         if( !idLoop || !( ++ idLoop % 0x10 ) )
     {
-    while( !ether && !etThread && !bGoItIt && !bTimeout )
+//    while( !ether && !etThread && !bGoItIt && !bTimeout )
     ZE( countT , idLoop ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    //nicNameC nnServer = etThread.sockNicNameF( tin0P , T(postIFCnAMEsERVER) ) ;
-    nicNameC nnServer = etThread.sockNicNameF( tin0P , T("127.0.0.1") ) ;               //U::20250706@1645: FOR TESTING ONLY; NOT FOR PRODUCTION
+    nicNameC nnServer = etThread.sockNicNameF( tin0P , T(postIFCnAMEsERVER) ) ;
+    //nicNameC nnServer = etThread.sockNicNameF( tin0P , T("127.0.0.1") ) ;               //U::20250706@1645: FOR TESTING ONLY; NOT FOR PRODUCTION
+    //nicNameC nnServer = etThread.sockNicNameF( tin0P , T("104.238.182.100") ) ;
 
     countT    cbQuery    =            pTaskP->c5 ;
     byteT*    pbQuery    =    (byteT*)pTaskP->c4 ;
