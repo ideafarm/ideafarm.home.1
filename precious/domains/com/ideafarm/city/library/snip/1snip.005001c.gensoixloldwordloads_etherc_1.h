@@ -471,11 +471,11 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "dllOpenF_ob4@3" ) ;
+    TN( tNameSoixlOld , "dllOpenF_ob4@37" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)dllOpenF_ob4P3_GF ;
+    *_pSwSoixlOldApi = (countT)dllOpenF_ob4P37_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

@@ -117,7 +117,7 @@ voidT diskRenameToHashF_o4P7_GF( tin0S& tin0P , etherC& etherP , soulC& slP , co
 
 voidT dllNameF_o4Pb_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT dllOpenF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT dllOpenF_ob4P37_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT dnsNicNamesF_o4P4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

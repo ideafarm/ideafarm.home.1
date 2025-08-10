@@ -57,7 +57,7 @@
     "    . diskUnzipOldF_o4@4@4@7       . ?? ")+T(postName)+T("\r\n"
     "    . diskRenameToHashF_o4@7       . ?? ")+T(postName)+T("\r\n"
     "    . dllNameF_o4@b       . ?? ")+T(postName)+T("\r\n"
-    "    . dllOpenF_ob4@3       . ?? ")+T(postName)+T("\r\n"
+    "    . dllOpenF_ob4@37       . ?? ")+T(postName)+T("\r\n"
     "    . dnsNicNamesF_o4@4@3       . ?? ")+T(postName)+T("\r\n"
     "    . dnsFormatQueryF_o1@34@3       . ?? ")+T(postName)+T("\r\n"
     "    . emailFactoryReportF_o4@4@       . ?? ")+T(postName)+T("\r\n"

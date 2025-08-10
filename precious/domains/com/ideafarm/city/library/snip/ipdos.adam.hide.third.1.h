@@ -11472,6 +11472,9 @@ this is the name of the host that the ifc system uses to map names to nicNameC v
 /**/
 /*1*//*postIFCnAMEsERVER*//*1*/
 
+//#define postIFCnAMEsERVER "NS4.BAYAREA.NET"
+//20250706@1555: "hidden.ideafarm.com"
+
 #define postIFCnAMEsERVER "dns1.ideafarm.com"
 
 
@@ -11890,6 +11893,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_SHELL                                                0x5100089f
 #define ifcIDaDAM_TOOLtRACEcOPY                                        0x510008ab
 #define ifcIDaDAM_TOOLfILEsPLIT                                        0x510008ac
+#define ifcIDaDAM_TOOLtRACEmARK                                        0x510008ad
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
@@ -19643,6 +19647,7 @@ i am used with a soulC object to use that object as a forth-like program executo
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200202.ifcidcmdbase END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200203.variablefunctiondefs BEGIN
+
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.

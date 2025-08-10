@@ -643,7 +643,7 @@ voidT dllNameF_o4Pb_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strok
     etherP.delF( tin0P , psttP ) ;
 }
 
-voidT dllOpenF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT dllOpenF_ob4P37_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -684,7 +684,31 @@ voidT dllOpenF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const stro
             }
         }
     }
-    if( !POOP ) etherP.dllOpenF( tin0P , hDllP , psttP , cTriesP ) ;
+
+    ZE( flagsT , flagsP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0x0 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                flagsP = flLOADmODULE_null ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tin0P , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0x0 , etherC )
+                if( !POOP ) { slP >> flagsP ; idArgNext ++ ; }
+            }
+        }
+    }
+    if( !POOP ) etherP.dllOpenF( tin0P , hDllP , psttP , cTriesP , flagsP ) ;
     etherP.delF( tin0P , psttP ) ;
 }
 

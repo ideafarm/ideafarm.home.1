@@ -4967,7 +4967,7 @@
 0x00001367 , "\0\0\0\0threadCheckC::threadCheckC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP ) :" ,
 0x00001368 , "\0\0\0\0argS::argS( etherC& etherP , const strokeS* const psttUniqueP , const strokeS* const psttExeP ) :" ,
 0x00001369 , "\0\0\0\0baseSoilXxxxC::~baseSoilXxxxC( voidT )" ,
-0x0000136a , "\0\0\0\0baseSoilXxxxC::baseSoilXxxxC( const osTextT* const & postOldClassNameIP , const osTextT* const & postNameP ) :" ,
+0x0000136a , "\0\0\0\0baseSoilXxxxC::baseSoilXxxxC( const countT idLineP , const countT idiFileP , const osTextT* const & postOldClassNameIP , const osTextT* const & postNameP ) :" ,
 0x0000136b , "\0\0\0\0const osTextT* const & baseSoilXxxxC::postOldClassNameIF( tin0S& tin0P )" ,
 0x0000136c , "\0\0\0\0const osTextT* const& baseSoilXxxxC::postNameF( tin0S& tin0P )" ,
 0x0000136d , "\0\0\0\0baseSoilXxxxC& baseSoilXxxxC::operator >>( soulC& slP )" ,
