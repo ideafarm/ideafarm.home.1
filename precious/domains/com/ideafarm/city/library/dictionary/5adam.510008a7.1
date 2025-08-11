@@ -33,12 +33,12 @@ DONE( tmWorkF )
             gv.bQuit ++ ;
 
             }
-                /**/etRock.traceF( tin0P , gc.tSayPushedJob ) ;
+                /**/etRock.traceF( tin0P , gc.tSayPushedJob+TF2(gv.cirJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                 gv.cirJob << &job ;
                 jobS job( pbq , cbq , idp , nnPeer ) ;
 
-                /**/etRock.traceF( tin0P , gc.tSayPushingJob ) ;
+                /**/etRock.traceF( tin0P , gc.tSayPushingJob+TF2(gv.cirJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                 /**/etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
                 }
@@ -460,7 +460,8 @@ DONE( tmWorkerF )
                                                 etThread.strMakeF( tin0P , LF , psttSTFU , tDomainGross ) ; ___( psttSTFU ) ;
                                                 ZE( strokeS* , psttSTFU ) ;
                                             {
-                                            if( !bSTFU )
+                                            else
+                                            if( bSTFU ) etThread.traceF( tin0P , T("stfu [tDomainGross]:    ")+tDomainGross ) ;
 
                                             }
                                                 while( c3Handle.c1 ) ;
@@ -488,7 +489,8 @@ DONE( tmWorkerF )
                                                 etThread.strMakeF( tin0P , LF , psttSTFU , tDomainGross ) ; ___( psttSTFU ) ;
                                                 ZE( strokeS* , psttSTFU ) ;
                                             {
-                                            if( !bSTFU )
+                                            else
+                                            if( bSTFU ) etThread.traceF( tin0P , T("stfu [tDomainGross]:    ")+tDomainGross ) ;
 
                                             }
                                                 while( c3Handle.c1 ) ;
@@ -1498,8 +1500,8 @@ struct gVarS
     tSayUnknownDomain(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    !exception / unknown peer domain"                                                                                  ) ,
     tSayPrefix(                      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[nnPeer]:    "                                                                                                         ) ,
 
-    tSayPushedJob(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed job"                                                                                                            ) ,
-    tSayPushingJob(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing job"                                                                                                           ) ,
+    tSayPushedJob(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed job  [cBacklog]:    "                                                                                           ) ,
+    tSayPushingJob(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing job [cBacklog]:    "                                                                                           ) ,
     tSayPurgedStacks(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "purged  stacks"                                                                                                        ) ,
     tSayPurgingStacks(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "purging stacks"                                                                                                        ) ,
     tSayExCouldNotWriteReply(        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not write reply [rc]:    "                                                                          ) ,
