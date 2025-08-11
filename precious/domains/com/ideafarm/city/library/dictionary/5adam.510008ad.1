@@ -87,6 +87,8 @@ TN( tQueryName , "" ) ; tQueryName = tUniquifier+T(bEnd?".traceend":".tracebegin
         else if( bArmUnique )
         else if( !etThread.strCompareF( tin0P , psttc1 , tKeyEnd    ) ) bEnd       = 1 ;
              if( !etThread.strCompareF( tin0P , psttc1 , tKeyUnique ) ) bArmUnique = 1 ;
+
+        etThread.traceF( tin0P , T("[parameter]:    ")+T(psttc1) ) ;
     {
     FORsTRINGSiN1( pstt1p )
     ZE( boolT , bArmUnique ) ;
