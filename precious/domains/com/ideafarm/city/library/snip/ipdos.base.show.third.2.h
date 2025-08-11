@@ -34663,7 +34663,6 @@ each textC object contains an unmodifiable string of strokes
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleOfByteC : 1snip.15000191.circleOfByteC END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.circleC : 1snip.150001d1.circleC BEGIN
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -34679,6 +34678,7 @@ each textC object contains an unmodifiable string of strokes
 {
     etherC&      ether       ;
     const boolT& bQuit       ;
+    const flagsT flagsCt     ;
     const countT cbElement   ;
     const countT cElements   ;
     const countT cbCircle    ;
@@ -34700,9 +34700,10 @@ each textC object contains an unmodifiable string of strokes
         ether.delF( tin0P , pbCircle ) ;
     }
 
-    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK , ifc2FT pDeleteCBFP = 0 , countT* pcArgDeleteP = 0 ) :
+    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const flagsT flagsP = flCIRCLEc_null , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK , ifc2FT pDeleteCBFP = 0 , countT* pcArgDeleteP = 0 ) :
     ether( etherP ) ,
     bQuit( bQuitP ) ,
+    flagsCt( flagsP ) ,
     cbElement( cbElementP ) ,
     cElements( cElementsP ) ,
     cbCircle( cbElementP * cElementsP ) ,
@@ -34724,7 +34725,7 @@ each textC object contains an unmodifiable string of strokes
     {
         while( setIfZeAM( bGrabToPush , 1 ) ) thirdC::dosSleepRawNoTinIF( 0 ) ;
 
-        while( !bQuit )
+        if( !( F(flagsCt) & flCIRCLEc_OVERWRITE ) ) while( !bQuit )
         {
             countT cBacklog = *this ;
             if( cBacklog < cElements ) break ;
@@ -34755,7 +34756,7 @@ each textC object contains an unmodifiable string of strokes
         while( !bQuit )
         {
             countT cBacklog = *this ;
-            if( cBacklog ) break ;
+            if( cBacklog ) break ;              //P:PERSONALITY: IF flCIRCLEc_OVERWRITE THEN PULLING WILL NOT BLOCK UNTIL THE NUMBER OF PULLS CATCHES UP WITH THE NUMBER OF PUSHES, EVEN IF SOME OR ALL SLOTS HAVE BEEN OVERWRITTEN ZILLIONS OF TIMES
 
             thirdC::dosSleepRawNoTinIF( 0 ) ;
         }

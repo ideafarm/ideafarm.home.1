@@ -66,7 +66,7 @@
         }
             thirdC::dosSleepRawNoTinIF( 0 ) ;
 
-            if( cBacklog ) break ;
+            if( cBacklog ) break ;              //P:PERSONALITY: IF flCIRCLEc_OVERWRITE THEN PULLING WILL NOT BLOCK UNTIL THE NUMBER OF PULLS CATCHES UP WITH THE NUMBER OF PUSHES, EVEN IF SOME OR ALL SLOTS HAVE BEEN OVERWRITTEN ZILLIONS OF TIMES
             countT cBacklog = *this ;
         {
         while( !bQuit )
@@ -97,7 +97,7 @@
             if( cBacklog < cElements ) break ;
             countT cBacklog = *this ;
         {
-        while( !bQuit )
+        if( !( F(flagsCt) & flCIRCLEc_OVERWRITE ) ) while( !bQuit )
 
         while( setIfZeAM( bGrabToPush , 1 ) ) thirdC::dosSleepRawNoTinIF( 0 ) ;
     {
@@ -119,9 +119,10 @@
     cbCircle( cbElementP * cElementsP ) ,
     cElements( cElementsP ) ,
     cbElement( cbElementP ) ,
+    flagsCt( flagsP ) ,
     bQuit( bQuitP ) ,
     ether( etherP ) ,
-    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK , ifc2FT pDeleteCBFP = 0 , countT* pcArgDeleteP = 0 ) :
+    inline circleC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const flagsT flagsP = flCIRCLEc_null , const countT cbElementP = sizeof( countT ) , const countT cElementsP = TUCK , ifc2FT pDeleteCBFP = 0 , countT* pcArgDeleteP = 0 ) :
 
     }
         ether.delF( tin0P , pbCircle ) ;
@@ -143,6 +144,7 @@
     const countT cbCircle    ;
     const countT cElements   ;
     const countT cbElement   ;
+    const flagsT flagsCt     ;
     const boolT& bQuit       ;
     etherC&      ether       ;
 {
