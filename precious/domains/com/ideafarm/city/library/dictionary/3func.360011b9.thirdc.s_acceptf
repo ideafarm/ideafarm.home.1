@@ -10,10 +10,15 @@
 }
     }
         pP.cFifoPushed ++ ;
+        if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("++++++++++++++++                  accepted [oshSocket]:    ")+TF2(to.oshSocket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN) ) ;
         to.oshSocket = oshMaybe ;
     {
     else
-    if( POOP ) to.oshSocket = 0 ;
+    }
+        to.oshSocket = INVALID_SOCKET ;
+        if( oshMaybe != INVALID_SOCKET ) closesocket( oshMaybe ) ;
+    {
+    if( POOP )
 
     __( cbInfo - sizeof info ) ;
 
