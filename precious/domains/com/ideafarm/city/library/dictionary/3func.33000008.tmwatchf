@@ -328,7 +328,7 @@ DONE( tmWatchF )
                 stQuitters.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 _IO_
             {
-            while( !etThread && !stQuitters.third && stQuitters )
+            while( !POOP && !etThread && !stQuitters.third && stQuitters )
             TELL( "canceling quitter sockets/+" ) ;
             /**/etRock.traceF( tin0P , T("cancelling quitter sockets") ) ;
                 
@@ -344,7 +344,7 @@ DONE( tmWatchF )
             }
                 stCatchers.ungrabF( tin0P ) ;
                 }
-                    while( !etThread && !stCatchers.third && ~handle ) ;
+                    while( !POOP && !etThread && !stCatchers.third && ~handle ) ;
                     }
                         }
                             THREADmODE1rESTORE
@@ -391,7 +391,7 @@ DONE( tmWatchF )
             /**/etRock.traceF( tin0P , T("released  threads blocked listening for new socket client connections") ) ;
             stAcceptors.ungrabF( tin0P ) ;
             }
-                while( !etThread && !stAcceptors.third && ~handle ) ;
+                while( !POOP && !etThread && !stAcceptors.third && ~handle ) ;
                 }
                     }
                         THREADmODE1rESTORE
@@ -442,7 +442,7 @@ DONE( tmWatchF )
         /**/etRock.traceF( tin0P , T("cancelled  sockets that are timed out idle") ) ;
         stIdleTimeouters.ungrabF( tin0P ) ;
         }
-            while( !etThread && !stIdleTimeouters.third && ~handle ) ;
+            while( !POOP && !etThread && !stIdleTimeouters.third && ~handle ) ;
             }
                 if( pso ) pso->cancelIfTimedOutF( tin0P ) ;
                 __Z( pso ) ;
@@ -718,7 +718,7 @@ DONE( tmWatchF )
             /**/etRock.traceF( tin0P , T("cleared  sexC deleted bits") ) ;
             stPoolNames.ungrabF( tin0P ) ;
             }
-                while( ~hWalk ) ;
+                while( !POOP && ~hWalk ) ;
                 }
                     }
                         }
@@ -818,6 +818,8 @@ DONE( tmWatchF )
         (
         &&
         !etThread
+        &&
+        !POOP
     (
     while
     TN( tSayTick , "tick" ) ;
