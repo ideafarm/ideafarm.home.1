@@ -987,7 +987,7 @@ DONE( tmFreshSettingsF )
                     mySettingsP.grabMe.ungrabF( tin0P ) ;
                     etRock.traceF( tin0P , T(!mySettingsP?"the new settings are incomplete":"the new settings are aok")+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     mySettingsP.freshenF( tin0P ) ;
-                    //etRock.traceF( tin0P , T(!mySettingsP?"the stale settings are incomplete":"the stale settings are aok")+tb4+TF2(++idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    /**/etRock.traceF( tin0P , T(!mySettingsP?"the stale settings are incomplete":"the stale settings are aok")+tb4+TF2(++idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                     ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ; // TIME FOR PISS TO FINISH UPDATING SETTINGS
@@ -996,7 +996,7 @@ DONE( tmFreshSettingsF )
                 ZE( countT , idTry ) ;
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                //etRock.traceF( tin0P , T("the timestamp of the settings files has changed ; napping and then calling freshenF") ) ;
+                /**/etRock.traceF( tin0P , T("the timestamp of the settings files has changed ; napping and then calling freshenF") ) ;
                 timeWrittenLath = timeWritten ;
                 _IO_
             {
@@ -1007,14 +1007,14 @@ DONE( tmFreshSettingsF )
                     }
                         }
                             continue ;
-                            //etRock.traceF( tin0P , T("!exception / could not get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
+                            /**/etRock.traceF( tin0P , T("!exception / could not get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
                             POOPRqUIET
                             countT rc = POOP ;
                         {
                         else
                         }
                             break ;
-                            //etRock.traceF( tin0P , T(" [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
+                            /**/etRock.traceF( tin0P , T(" [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
                         {
                         if( !POOP )
 
@@ -1023,7 +1023,7 @@ DONE( tmFreshSettingsF )
                     else
                     }
                         continue ;
-                        //etRock.traceF( tin0P , T("!exception / could not open settings file to get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
+                        /**/etRock.traceF( tin0P , T("!exception / could not open settings file to get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
@@ -1091,7 +1091,7 @@ TASK( tmFreshSettingsF )
     {
 
     }
-        //etRock.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetTrusted[offn]) ) ;
+        /**/etRock.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetTrusted[offn]) ) ;
     {
     for( countT offn = 0 ; offn < cnnSubnetTrusted ; offn ++ )
 
@@ -1122,7 +1122,7 @@ TASK( tmFreshSettingsF )
                 nicNameC nnSubnet = nnIPv46.isIPv4F()
                 nicNameC nnIPv46  = etherMe.sockNicNameF( tin0P , psttc1 ) ;
 
-                //etRock.traceF( tin0P , psttc1 ) ;
+                /**/etRock.traceF( tin0P , psttc1 ) ;
                 _IO_
             {
             FORsTRINGSiN1( pstt1Nn )
@@ -1138,18 +1138,18 @@ TASK( tmFreshSettingsF )
 
     zapF( tin0P ) ;
 
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
 
-    //etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
 
-    //etRock.traceF( tin0P , T("[tNnTrusted]:    ")+tNnTrusted ) ;
+    /**/etRock.traceF( tin0P , T("[tNnTrusted]:    ")+tNnTrusted ) ;
     }
         etherMe.delF( tin0P , psttEat ) ;
         tNnTrusted = T(psttEat) ;
@@ -1307,7 +1307,7 @@ TASK( tmFreshSettingsF )
                     countT rc = POOP ;
                 {
                 else
-                if( !POOP ) ;//etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+                if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
                 ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
                 SCOOPS
                 _IO_
