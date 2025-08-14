@@ -34,11 +34,9 @@ DONE( tmWorkF )
 
             }
                 etRock.traceF( tin0P , gc.tSayPushedJob+TF2(gv.cirJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
                 gv.cirJob << &job ;
+                etRock.traceF( tin0P , gc.tSayPushingJob+TF2(gv.cirJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 jobS job( pbq , cbq , idp , nnPeer ) ;
-
-                //etRock.traceF( tin0P , gc.tSayPushingJob+TF2(gv.cirJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                 //etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
                 }
@@ -456,7 +454,9 @@ DONE( tmWorkerF )
                                                 while( cDo -- ) ;//etRock.traceF( tin0P , gcP.tSayTraceMarkEnd ) ;
                                                 countT cDo = 8 ;
 
+                                                etRock.traceF( tin0P , gcP.tSayPushedDomain+TF2(cirRecentDomainGrossTraceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 cirRecentDomainGrossTraceP << &psttSTFU ;
+                                                etRock.traceF( tin0P , gcP.tSayPushingDomain+TF2(cirRecentDomainGrossTraceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 etThread.strMakeF( tin0P , LF , psttSTFU , tDomainGross ) ; ___( psttSTFU ) ;
                                                 ZE( strokeS* , psttSTFU ) ;
                                             {
@@ -485,7 +485,9 @@ DONE( tmWorkerF )
                                                 while( cDo -- ) ;//etRock.traceF( tin0P , gcP.tSayTraceMarkBegin ) ;
                                                 countT cDo = 8 ;
 
+                                                etRock.traceF( tin0P , gcP.tSayPushedDomain+TF2(cirRecentDomainGrossTraceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 cirRecentDomainGrossTraceP << &psttSTFU ;
+                                                etRock.traceF( tin0P , gcP.tSayPushingDomain+TF2(cirRecentDomainGrossTraceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 etThread.strMakeF( tin0P , LF , psttSTFU , tDomainGross ) ; ___( psttSTFU ) ;
                                                 ZE( strokeS* , psttSTFU ) ;
                                             {
@@ -631,8 +633,9 @@ DONE( tmWorkerF )
                 else
                 }
                     }
-                        //etRock.traceF( tin0P , T("pushed into cirNnPeerDoNotDivertP [nnPeer]:    ")+T(job.nnPeer) ) ;
+                        etRock.traceF( tin0P , gcP.tSayPushedPeer+TF2(cirNnPeerDoNotDivertP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         cirNnPeerDoNotDivertP << &job.nnPeer ;
+                        etRock.traceF( tin0P , gcP.tSayPushingPeer+TF2(cirNnPeerDoNotDivertP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     if( !bDoNotDivert )
                 {
@@ -1500,6 +1503,10 @@ struct gVarS
     tSayUnknownDomain(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    !exception / unknown peer domain"                                                                                  ) ,
     tSayPrefix(                      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[nnPeer]:    "                                                                                                         ) ,
 
+    tSayPushedDomain(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed domain  [cBacklog]:    "                                                                                        ) ,
+    tSayPushingDomain(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing domain [cBacklog]:    "                                                                                        ) ,
+    tSayPushedPeer(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed peer  [cBacklog]:    "                                                                                          ) ,
+    tSayPushingPeer(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing peer [cBacklog]:    "                                                                                          ) ,
     tSayPushedJob(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed job  [cBacklog]:    "                                                                                           ) ,
     tSayPushingJob(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing job [cBacklog]:    "                                                                                           ) ,
     tSayPurgedStacks(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "purged  stacks"                                                                                                        ) ,
@@ -1569,6 +1576,10 @@ struct gVarS
     textC tSayUnknownDomain               ;
     textC tSayPrefix                      ;
 
+    textC tSayPushedDomain                ;
+    textC tSayPushingDomain               ;
+    textC tSayPushedPeer                  ;
+    textC tSayPushingPeer                 ;
     textC tSayPushedJob                   ;
     textC tSayPushingJob                  ;
     textC tSayPurgedStacks                ;
