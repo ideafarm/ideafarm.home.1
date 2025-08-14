@@ -266,7 +266,7 @@ DONE( tmWorkerF )
                                     countT rc = POOP ;
                                 {
                                 else
-                                if( !POOP ) /*;*/etRock.traceF( tin0P , gcP.tSayWroteReply ) ;
+                                if( !POOP ) ; //etRock.traceF( tin0P , gcP.tSayWroteReply ) ;
                                 sockdP.writeF( tin0P , job.idp , job.nnPeer , pbr , cbr ) ;
                                 //etRock.traceF( tin0P , gcP.tSayReplying1/*+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
                                 _IO_
@@ -287,8 +287,8 @@ DONE( tmWorkerF )
                         ZE( countT , cbr ) ;
                         ZE( byteT* , pbr ) ;
 
-                        else                          /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        if( postError && *postError ) /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
+                        //else                          /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //if( postError && *postError ) /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
                         const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
                     {
                     if( !bSilent || bForceReply )
@@ -301,7 +301,8 @@ DONE( tmWorkerF )
                                 }
                                     DEL( ps ) ;
                                     }
-                                        if( !bSilent ) ;//etRock.traceF( tin0P , gcP.tSayReplying2+tDomainGross ) ;
+                                        if( !bSilent || bForceReply ) etRock.traceF( tin0P , gcP.tSayReplying2+tDomainGross ) ;
+
                                         }
                                             //}
                                             //    break ;
