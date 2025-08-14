@@ -33,7 +33,7 @@ DONE( tmWorkF )
             gv.bQuit ++ ;
 
             }
-                //etRock.traceF( tin0P , gc.tSayPushedJob+TF2(gv.cirJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etRock.traceF( tin0P , gc.tSayPushedJob+TF2(gv.cirJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                 gv.cirJob << &job ;
                 jobS job( pbq , cbq , idp , nnPeer ) ;
@@ -50,9 +50,9 @@ DONE( tmWorkF )
                         countT rc = POOP ;
                     {
                     if( POOP )
-                    //etRock.traceF( tin0P , gc.tSayCalledRead ) ;
+                    etRock.traceF( tin0P , gc.tSayCalledRead ) ;
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
-                    //etRock.traceF( tin0P , gc.tSayCallingRead ) ;
+                    etRock.traceF( tin0P , gc.tSayCallingRead ) ;
                     SCOOPS
                     _IO_
                 {
@@ -268,7 +268,7 @@ DONE( tmWorkerF )
                                     countT rc = POOP ;
                                 {
                                 else
-                                if( !POOP ) ;//etRock.traceF( tin0P , gcP.tSayWroteReply ) ;
+                                if( !POOP ) /*;*/etRock.traceF( tin0P , gcP.tSayWroteReply ) ;
                                 sockdP.writeF( tin0P , job.idp , job.nnPeer , pbr , cbr ) ;
                                 //etRock.traceF( tin0P , gcP.tSayReplying1/*+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
                                 _IO_
@@ -289,8 +289,8 @@ DONE( tmWorkerF )
                         ZE( countT , cbr ) ;
                         ZE( byteT* , pbr ) ;
 
-                        else                          ;//etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        if( postError && *postError ) ;//etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
+                        else                          /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        if( postError && *postError ) /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
                         const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
                     {
                     if( !bSilent || bForceReply )
@@ -721,7 +721,7 @@ DONE( tmWorkerF )
         {
         if( !gvP.bQuit )
 
-        //etRock.traceF( tin0P , T("pulled a job") ) ;
+        etRock.traceF( tin0P , T("pulled a job") ) ;
 
         gvP.cirJob >> &job ;
         jobS job ;
