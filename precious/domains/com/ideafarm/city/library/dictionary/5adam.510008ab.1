@@ -16,15 +16,16 @@ REST
             }
                 //etThread.fileWriteF( tin0P , fiWo  , pbi , cbi ) ;            //NOT NEEDED AND CONSUMES MUCH SPACE
                 etThread.fileWriteF( tin0P , fiAll , pbi , cbi ) ;
-                etThread.traceF( tin0P , T("wrote from wo bookC instance [idFileIn,cbi]:    ")+TF2(++idFileIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
+                etThread.traceF( tin0P , T("wrote from wo bookC instance [offi,idFileIn,cbi]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++idFileIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) /*, flTRACE_null , ifcIDtRACEdIVERT_1*/ ) ;
             {
             else
             }
-                etThread.traceF( tin0P , T("no more") , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
+                etThread.traceF( tin0P , T("no more") /*, flTRACE_null , ifcIDtRACEdIVERT_1*/ ) ;
                 bDone ++ ;
             {
             if( !pbi || !cbi )
             boolT bDelete = ppBksDo[ offi ]->readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK | flBOOKScrEAD_CURSORnEXTbOOK ) ;
+            etThread.traceF( tin0P , T("reading") ) ;
             countT cbi = - 1 ;
             ZE( const byteT* , pbi ) ;
         {
@@ -45,9 +46,13 @@ REST
     booksC* ppBksDo[ 4 ] = { &bksTrace1 , &bksTrace2 , &bksTrace3 , &bksTrace4 } ;
 
     booksC bksTrace4( tin0P , TAG( TAGiDnULL ) , "\\\\" "go1"  "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
+    etThread.traceF( tin0P , T("ct booksC 4") ) ;
     booksC bksTrace3( tin0P , TAG( TAGiDnULL ) , "\\\\" "dns1" "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
+    etThread.traceF( tin0P , T("ct booksC 3") ) ;
     booksC bksTrace2( tin0P , TAG( TAGiDnULL ) , "\\\\" "wh2"  "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
+    etThread.traceF( tin0P , T("ct booksC 2") ) ;
     booksC bksTrace1( tin0P , TAG( TAGiDnULL ) , "\\\\" "wh1"  "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
+    etThread.traceF( tin0P , T("ct booksC 1") ) ;
 
     osTextT* ppostLan[ 4 ] = { "wh1" , "wh2" , "dns1" , "go1" } ;
 
