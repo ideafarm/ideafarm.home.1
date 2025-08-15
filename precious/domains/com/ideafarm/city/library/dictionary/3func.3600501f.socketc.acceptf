@@ -57,9 +57,9 @@
             {
             if( pSocketP )
 
-            pSocketP = new( 0 , tin0P , LF ) socketC( *pEther , tin0P , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , hClient , idType , flags | flSOCKETc_CTbYlISTENER | flSOCKETc_NOdUALsTACK , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected , nicNameP , psttPemCertificates , psttPemPrivateKey ) ; ___( pSocketP ) ;
+            pSocketP = new( 0 , tin0P , LF ) socketC( *pEther , tin0P , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , hClient , idType , flags | flSOCKETc_CTbYlISTENER | flSOCKETc_NOdUALsTACK | flSOCKETc_DOnOTrEGISTERqUITTER , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected , nicNameP , psttPemCertificates , psttPemPrivateKey ) ; ___( pSocketP ) ;
         {
-        if( ~hClient )
+        if( ~hClient )                  // flSOCKETc_DOnOTrEGISTERqUITTER IS SPECIFIED FOR MAX SPEED BY MINIMIZING THE REGISTRATION RESOURCES CONSUMED ; A:ASSUME: ACCEPTED socketC INSTANCES HAVE STRICT (SHORT) TIMEOUT SETTINGS
 
         }
             pEther->sockAcceptF( tin0P , hClient , idPortP , nicNameP , handle , bRefuseP , ~hSslContext ? &hSslContext : 0 , pP ) ;
