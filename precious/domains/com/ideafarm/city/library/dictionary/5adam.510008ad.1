@@ -85,15 +85,15 @@ TN( tQueryName , "" ) ; tQueryName = tUniquifier+T(bEnd?".traceend":".tracebegin
             bArmUnique = 0 ;
         {
         else if( bArmUnique )
-        else if( !etThread.strCompareF( tin0P , psttc1 , tKeyEnd    ) ) bEnd       = 1 ;
-             if( !etThread.strCompareF( tin0P , psttc1 , tKeyUnique ) ) bArmUnique = 1 ;
+        else if( 1 == etThread.strIdF( tin0P , tKeyEnd    , psttc1 , 1 ) ) bEnd       = 1 ;
+             if( 1 == etThread.strIdF( tin0P , tKeyUnique , psttc1 , 1 ) ) bArmUnique = 1 ;
 
         etThread.traceF( tin0P , T("[parameter]:    ")+T(psttc1) ) ;
     {
     FORsTRINGSiN1( pstt1p )
     ZE( boolT , bArmUnique ) ;
-    TN( tKeyEnd    , "!end" ) ;
-    TN( tKeyUnique , "!unique" ) ;
+    TN( tKeyEnd    , "!e" ) ;       // USE !end    IN BAT FILES AND OTHER CODE ; USE !e WHEN TYPING AT COMMAND LINE
+    TN( tKeyUnique , "!u" ) ;       // USE !unique IN BAT FILES AND OTHER CODE ; USE !u WHEN TYPING AT COMMAND LINE
     strokeS*& pstt1p = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
 {
 ZE( boolT , bEnd ) ;
