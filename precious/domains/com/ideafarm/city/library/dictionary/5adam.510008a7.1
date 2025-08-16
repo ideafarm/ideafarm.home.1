@@ -676,6 +676,7 @@ DONE( tmWorkerF )
                             }
                                 }
                                     break ;
+                                    /**/etRock.traceF( tin0P , T("ipv6 found in mySettingsP.pnnSubnetTrusted [nnPeer]:    ")+T(job.nnPeer) ) ;
                                     bSubnetTrusted = 1 ;
                                 {
                                 if( mySettingsP.pnnSubnetTrusted[ offn ] == job.nnPeer( 0x40 ) )
@@ -684,6 +685,7 @@ DONE( tmWorkerF )
                             }
                                 }
                                     break ;
+                                    /**/etRock.traceF( tin0P , T("ipv4 found in mySettingsP.pnnSubnetTrusted [nnPeer]:    ")+T(job.nnPeer) ) ;
                                     bSubnetTrusted = 1 ;
                                 {
                                 if( mySettingsP.pnnSubnetTrusted[ offn ] == job.nnPeer( 0x18 ) )
@@ -705,7 +707,7 @@ DONE( tmWorkerF )
                     }
                         }
                             break ;
-                            //etRock.traceF( tin0P , T("found in cirNnPeerDoNotDivertP [nnPeer]:    ")+T(job.nnPeer) ) ;
+                            /**/etRock.traceF( tin0P , T("found in cirNnPeerDoNotDivertP [nnPeer]:    ")+T(job.nnPeer) ) ;
                             bDoNotDivert = 1 ;
                         {
                         if( pnn && *pnn == job.nnPeer )
@@ -1082,7 +1084,7 @@ TASK( tmFreshSettingsF )
 
     }
         }
-            else                                                                break ;
+            else                                                                     break ;
             if( etherMe.strCompareF( tin0P , *pptDomainRootAllowed[ offt ] , tnu ) ) cDomainRootAllowed ++ ;
         {
         for( countT offt = 0 ; offt < sizeof pptDomainRootAllowed / sizeof pptDomainRootAllowed[ 0 ] ; offt ++ )
@@ -1092,7 +1094,7 @@ TASK( tmFreshSettingsF )
     {
 
     }
-        /**/etRock.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetTrusted[offn]) ) ;
+        /**/etRock.traceF( tin0P , T("trusted (Stripe) [off,subnet]:    ")+TF3(offn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,3)+tb4+T(pnnSubnetTrusted[offn]) ) ;
     {
     for( countT offn = 0 ; offn < cnnSubnetTrusted ; offn ++ )
 
@@ -1123,7 +1125,7 @@ TASK( tmFreshSettingsF )
                 nicNameC nnSubnet = nnIPv46.isIPv4F()
                 nicNameC nnIPv46  = etherMe.sockNicNameF( tin0P , psttc1 ) ;
 
-                /**/etRock.traceF( tin0P , psttc1 ) ;
+                /**/etRock.traceF( tin0P , T("adding trusted:    ")+T(psttc1) ) ;
                 _IO_
             {
             FORsTRINGSiN1( pstt1Nn )
