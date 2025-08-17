@@ -348,15 +348,10 @@ DONE( tmWorkerF )
                                         etThread.delF( tin0P , psttw ) ;
                                         TN( tDomainNet , psttw ) ;
                                         }
-                                            if( !bSuffixOk ) bSilent = 1 ;
+                                            if( bSuffixOk ) bSilent = 0 ;
 
                                             etThread.delF( tin0P , psttSuffix ) ;
                                             /**/etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bSuffixOk?"           domainnet: \"":"REJECTED   domainnet: \"")+tDomainNet+T("\"   actual: \"")+T(psttSuffix)+T("\"   valid: \"")+tValid+T("\"   valid2: \"")+mySettingsP.tSuffixValid2+T("\"   peer: \"")+tDomainPeer+T("\"") ) ;
-
-}
-    countT foo = 2 ;
-{
-if( bSuffixOk )
 
                                             const boolT bSuffixOk = psttSuffix && ( !etThread.strCompareF( tin0P , psttSuffix , tValid ) || !etThread.strCompareF( tin0P , psttSuffix , mySettingsP.tSuffixValid2 ) ) ;
 
