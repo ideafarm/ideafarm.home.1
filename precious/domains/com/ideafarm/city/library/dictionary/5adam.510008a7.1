@@ -380,8 +380,8 @@ DONE( tmWorkerF )
                                             TN( tDomainNet , "" ) ; tDomainNet = T(psttNet)+T(".hidden.ideafarm.com") ;
 
                                             etThread.delF( tin0P , psttw ) ;
-                                            if( bDivert ) { etThread.strSubstringF( tin0P , psttSuffix , idf , countTC()    , psttw , 0     ) ; ___( psttSuffix ) ; }
-                                                            etThread.strSubstringF( tin0P , psttNet    , idf , sttq , gcP.tDash , psttw , 0 , 0 ) ; ___( psttNet    ) ;
+                                            etThread.strSubstringF( tin0P , psttSuffix , idf , sttq , gcP.tDot  , psttw , 0 , 0 ) ; ___( psttSuffix ) ;
+                                            etThread.strSubstringF( tin0P , psttNet    , idf , sttq , gcP.tDash , psttw , 0 , 0 ) ; ___( psttNet    ) ;
                                             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                             countT idf = 1 ;
                                             ZE( strokeS* , psttSuffix ) ;
@@ -1509,6 +1509,7 @@ struct gVarS
     tHidden(                         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".hidden.ideafarm.com"                                                                                                  ) ,
     tWebHook1(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
     tWebHooks(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
+    tDot(                            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "."                                                                                                                     ) ,
     tDash(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "-"                                                                                                                     ) ,
     tb4(                             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    "                                                                                                                  ) ,
     tPasswordPrefix(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
@@ -1579,6 +1580,7 @@ struct gVarS
     textC tHidden                         ;
     textC tWebHook1                       ;
     textC tWebHooks                       ;
+    textC tDot                            ;
     textC tDash                           ;
     textC tb4                             ;
     textC tPasswordPrefix                 ;
