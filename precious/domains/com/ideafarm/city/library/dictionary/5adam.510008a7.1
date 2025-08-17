@@ -353,7 +353,7 @@ DONE( tmWorkerF )
                                             etThread.delF( tin0P , psttSuffix ) ;
                                             /**/etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bSuffixOk?"            \"":"REJECTED    \"")+T(psttSuffix)+T("\"    \"")+tValid+T("\"    \"")+tDomainPeer+T("\"") ) ;
 
-                                            const boolT bSuffixOk = !etThread.strCompareF( tin0P , psttSuffix , tValid ) ;
+                                            const boolT bSuffixOk = !etThread.strCompareF( tin0P , psttSuffix , tValid ) || !etThread.strCompareF( tin0P , psttSuffix , mySettingsP.tSuffixValid2 ) ;
 
                                             }
                                                 etThread.delF( tin0P , postValid ) ;
@@ -1229,6 +1229,9 @@ TASK( tmFreshSettingsF )
         etherMe.delF( tin0P , psttEat ) ;
         }
             etherMe.delF( tin0P , psttNet ) ;
+            tSuffixValid2 = T(psttNet) ;
+            etherMe.strSubstringF( tin0P , psttNet , idf , sttq , tDot , psttEat , 0 , 0 ) ;
+            etherMe.delF( tin0P , psttNet ) ;
             tDomainLeafWebHooksNet = T(psttNet) ;
             etherMe.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
@@ -1286,6 +1289,7 @@ TASK( tmFreshSettingsF )
     static countT idFreshenLath ;
 
     TN( tb4     , "    " ) ;
+    TN( tDot    , "." ) ;
     TN( tDash   , "-" ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
     _IO_
@@ -1330,6 +1334,8 @@ voidT mySettingsS::zapF( tin0S& tin0P )
         ||
         !tDomainLeafWebHook1Net.csF( tin0P )
         ||
+        !tSuffixValid2.csF( tin0P )
+        ||
         !tDomainLeafWebHooksNet.csF( tin0P )
         ||
         !tIpWebHook2.csF( tin0P )
@@ -1370,6 +1376,7 @@ tDomainRootAllowed1(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""       
 tIpWebHook2(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tIpWebHook1(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainLeafWebHook1Net(      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tSuffixValid2(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainLeafWebHooksNet(      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tNetshCommandIpv4(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tNetshCommandIpv4SettingKey( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
@@ -1597,6 +1604,7 @@ struct gConstS
     textC        tIpWebHook2                 ;
     textC        tIpWebHook1                 ;
     textC        tDomainLeafWebHook1Net      ;
+    textC        tSuffixValid2               ;
     textC        tDomainLeafWebHooksNet      ;
 
     textC        tNetshCommandIpv4           ;
