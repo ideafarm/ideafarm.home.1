@@ -160,7 +160,7 @@ DONE( tmGorillaF )
         TN( tUrl , "" ) ; tUrl = tDomainUse+T("//http/nu") ;        // THE "nu" PORTION IS NOT USED, BECAUSE HTTP HEADER IS NOT PREPENDED
 
         }
-            tDomainUse                     = bOuter ? tDomainOuterBefore+tWoTimePasswordSuffix+tDomainOuterAfter : tDomainInner      ;
+            tDomainUse                     = bOuter ? tDomainOuterBefore+tSuffix+tDomainOuterAfter : tDomainInner      ;
             bOuterLag = bOuter ;
         {
         if( bOuterLag != bOuter ) ;
@@ -169,21 +169,19 @@ DONE( tmGorillaF )
         countT& cFailUse                   = bOuter ? cFailOuter                                            : cFailInner        ;
 
         }
-            etThread.delF( tin0P , posti ) ;
-            //etRock.traceF( tin0P , T("[tWoTimePasswordSuffix]:    ")+tWoTimePasswordSuffix ) ;
-            tWoTimePasswordSuffix = T(posti) ;
-            etThread.boxGetShadowF( tin0P , posti , costi , tLong ) ; ___( posti ) ;
-            ZE( countT   , costi ) ;
-            ZE( osTextT* , posti ) ;
+            /**/etRock.traceF( tin0P , T("[tSuffix]:    ")+tSuffix ) ;
+            etThread.boxPutF( tin0P , tLong , tSuffix , tSuffix.csF( tin0P ) ) ;
             TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/woTimePasswordUrlSuffix") ;
+
+            tSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
         {
         if( bOuter )
-        TN( tWoTimePasswordSuffix , "" ) ;
+        TN( tSuffix , "" ) ;
 
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
 
-        const boolT bOuter = !( idStomp % ( TUCK >> 5 ) ) ;
+        const boolT bOuter = idGorilla == 1 && !( idStomp % ( TUCK >> 5 ) ) ;                           // ONLY GORILLA 1 DOES OUTER STOMPS ; THIS SIMPLIFIES THE COMMUNICATION OF PASSWORD SUFFIXES TO DNS
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
 
         ZE( countT   , costi ) ;
@@ -198,8 +196,10 @@ DONE( tmGorillaF )
         _IO_
     {
     while( !ether )
+    ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     boolT bOuterLag = - 1 ; //A:ASSUME: operator ! RETURNS 0 OR 1
+    TN( tPasswordPrefix    , "psw_"     ) ;
     TN( tSlow              , "S L O W"  ) ;
     TN( tFail              , "F A I L"  ) ;
     TN( tDomainUse         , ""         ) ;

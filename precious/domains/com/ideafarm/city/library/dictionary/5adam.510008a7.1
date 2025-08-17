@@ -122,23 +122,6 @@ DONE( tmWorkF )
 
     //U::6: etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&gv.nnHostWebLath , (countT)&gv.nnHostWebLag0 , (countT)&gv.nnHostWebLag1 , (countT)&gv.nnHostWebLag2 , (countT)&gv.nnHostWebLag3 ) ;
 
-    }
-        }
-            }
-                etRock.traceF( tin0P , T("!exception / could not write password suffix shared file [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gc.tb4+tLong ) ;
-                POOPRqUIET
-                countT rc = POOP ;
-            {
-            else
-            if( !POOP ) ;//etRock.traceF( tin0P , T("wrote password suffix shared file aok [tLong]:    ")+tLong ) ;
-            ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)gv.tWoTimePasswordUrlSuffix , gv.tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
-            SCOOPS
-            _IO_
-        {
-        IFsCRATCHoK
-        TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
-    {
-
     mySettings.grabMe.ungrabF( tin0P ) ;
 
     //etRock.traceF( tin0P , T("initialized [gv.tWoTimePasswordUrlSuffix]:    ")+gv.tWoTimePasswordUrlSuffix ) ;
@@ -354,7 +337,7 @@ DONE( tmWorkerF )
                                             {
                                             case ifcIDtYPEdNSqUERY_CAA :
                                         {
-                                        if( idClass == 1 ) switch( idType )
+                                        if( !bSilent && idClass == 1 ) switch( idType )
 
                                         *ps >> idClass ;
                                         ZE( countT , idClass ) ;
@@ -365,76 +348,32 @@ DONE( tmWorkerF )
                                         etThread.delF( tin0P , psttw ) ;
                                         TN( tDomainNet , psttw ) ;
                                         }
+                                            if( !bSuffixOk ) bSilent = 1 ;
+
                                             etThread.delF( tin0P , psttSuffix ) ;
+                                            /**/etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bSuffixOk?"            \"":"REJECTED    \"")+T(psttSuffix)+T("\"    \"")+tValid+T("\"    \"")+tDomainPeer+T("\"") ) ;
+
+                                            const boolT bSuffixOk = !etThread.strCompareF( tin0P , psttSuffix , tValid ) ;
 
                                             }
-                                                }
-                                                    etThread.osTimeNowF( tin0P , gvP.timeUsed1 , gvP.timeUsed2 ) ;
-                                                    gvP.timeUsed2 = gvP.timeUsed1 = 0 ;
-                                                    gvP.cUsed = 1 ;
-
-                                                    }
-                                                        }
-                                                            etRock.traceF( tin0P , gcP.tSayExCouldNotWritePasswordFile+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gcP.tb4+tLong ) ;
-                                                            POOPRqUIET
-                                                            countT rc = POOP ;
-                                                        {
-                                                        else
-                                                        if( !POOP ) ;//etRock.traceF( tin0P , gcP.tSayWrotePasswordFile/*+tLong*/ ) ;
-                                                        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , (osTextT*)gvP.tWoTimePasswordUrlSuffix , gvP.tWoTimePasswordUrlSuffix.csF( tin0P ) ) ;
-                                                        SCOOPS
-                                                        _IO_
-                                                    {
-                                                    IFsCRATCHoK
-                                                    TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/woTimePasswordUrlSuffix") ;
-
-                                                    //etRock.traceF( tin0P , gcP.tSayNewPassword/*+gvP.tWoTimePasswordUrlSuffix*/ ) ;
-
-                                                                          gvP.tGorillaSuffix = gvP.tWoTimePasswordUrlSuffix+gcP.tDotHiddenDotIdeafarmDotCom ;
-                                                    gvP.tGorillaSuffixUsed  = gvP.tGorillaSuffix ; 
-                                                                          gvP.tWoTimePasswordUrlSuffix = gcP.tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
-                                                    gvP.tWoTimePasswordUrlSuffixUsed = gvP.tWoTimePasswordUrlSuffix ;
-
-                                                    //etRock.traceF( tin0P , gcP.tSayOldPassword/*+gvP.tWoTimePasswordUrlSuffix*/ ) ;
-
-                                                    gvP.cUsed = 0 ;
-                                                {
-                                                if( bNewPassword )
-
+                                                etThread.delF( tin0P , postValid ) ;
+                                                tValid = T(postValid) ;
                                                 }
                                                     }
-                                                        bNewPassword = 1 ;
-                                                        bDivert = 0 ;
-                                                        //etRock.traceF( tin0P , gcP.tSayResettingDivert2/*+gvP.tGorillaSuffix*/ ) ;
-                                                        _IO_
+                                                        etRock.traceF( tin0P , gcP.tSayExCouldNotReadPasswordFile+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gcP.tb4+tLongWoTimePasswordUrlSuffix ) ;
+                                                        POOPRqUIET
+                                                        countT rc = POOP ;
                                                     {
-                                                    else if( !etThread.strCompareF( tin0P , psttSuffix , gvP.tGorillaSuffix ) )
-                                                    }
-                                                        }
-                                                            bNewPassword = 1 ;
-                                                            //etRock.traceF( tin0P , gcP.tSaySettingNewPassword/*+gvP.tGorillaSuffixUsed*/ ) ;
-                                                            _IO_
-                                                        {                                                                                            
-                                                        if( ++ gvP.cUsed > 0x80 || timeE2 || timeE1 > TOCK << 4 )                                   //20250608@0853: "0x80 <- 0x20" AND "<< 4" <- "<< 2" W/O ANALYSIS (THE PRECEDING CHANGE SEEMED TO REDUCED STUTTER BY A LOT)
-                                                                                                                                                //20250607@1542: "0x20 <- 0x8" AND "<< 2" <- "<< 0" W/O ANALYSIS TO FIX STUTTER (MULTIPLE UPDATES TO A SINGLE USE)
-                                                        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , gvP.timeUsed1 , gvP.timeUsed2 ) ;
-                                                        etThread.osTimeNowF(      tin0P , timeE1 , timeE2 ) ;
-                                                        ZE( sCountT , timeE2 ) ;
-                                                        ZE( countT  , timeE1 ) ;
-
-                                                        bDivert = 0 ;                                                                       //PS:PERSONALITY: THE DUPLICATE USAGE IS ALWAYS HONORED, BUT THEN WILL BE RETIRED IF USED TOO MANY TIMES OR TOO MUCH TIME HAS ELAPSED SINCE WOTH USE
-                                                        //etRock.traceF( tin0P , gcP.tSayResettingDivert/*+gvP.tGorillaSuffixUsed*/ ) ;
-                                                        _IO_
-                                                    {
-                                                    if( !etThread.strCompareF( tin0P , psttSuffix , gvP.tGorillaSuffixUsed ) )
-
+                                                    if( POOP )
+                                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , postValid , costValid , tLongWoTimePasswordUrlSuffix ) ; ___( postValid ) ;
+                                                    SCOOPS
                                                     _IO_
                                                 {
-                                                ZE( boolT , bNewPassword ) ;
+                                                IFsCRATCHoK
+                                                ZE( countT   , costValid ) ;
+                                                ZE( osTextT* , postValid ) ;
                                             {
-                                            if( bDivert )                                                                               //PS:PERSONALITY: HONOR THE USED SUFFIX SO THAT DUPLICATE QUERIES ALL RECEIVE THE SAME wh1 ANSWER UNTIL THE CURRENT PASSWORD IS USED
-
-                                            //etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer/*+T(psttw)+T("\"    \"")+T(psttSuffix)+T("\"    \"")+tDomainPeer+T("\"")*/ ) ;
+                                            TN( tValid , "" ) ;
 
                                             etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
                                             etThread.delF( tin0P , psttNet ) ;
@@ -735,6 +674,7 @@ DONE( tmWorkerF )
         //etRock.traceF( tin0P , T("pulling a job") ) ;
     {
     while( !gvP.bQuit )
+    TN( tLongWoTimePasswordUrlSuffix , "" ) ; tLongWoTimePasswordUrlSuffix = T("///ideafarm/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/woTimePasswordUrlSuffix") ;
     ZE( sCountT , timeLetsEncryptLath2 ) ;
     ZE( countT  , timeLetsEncryptLath1 ) ;
 
@@ -1524,14 +1464,14 @@ struct gVarS
     tSayReplying2(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "replying / 2 [tDomainGross]:    "                                                                                      ) ,
     tSayAAAARequest(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "AAAA request [tDomainNet]:    "                                                                                        ) ,
     tSayARequest(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "A request [tDomainNet]:    "                                                                                           ) ,
-    tSayExCouldNotWritePasswordFile( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not write password suffix shared file [rc,tLong]:    "                                              ) ,
+    tSayExCouldNotReadPasswordFile(  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not read password suffix shared file [rc,tLong]:    "                                              ) ,
     tSayWrotePasswordFile(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "wrote password suffix shared file aok [tLong]:    "                                                                    ) ,
     tSayNewPassword(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "new         [gv.tWoTimePasswordUrlSuffix]:    "                                                                        ) ,
     tSayOldPassword(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "old         [gv.tWoTimePasswordUrlSuffix]:    "                                                                        ) ,
     tSayResettingDivert2(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "resetting bDivert because suffix is the current expected value [gv.tGorillaSuffix]:    "                               ) ,
     tSaySettingNewPassword(          tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "setting bNewPassword because suffix has already been used too many times or for too long [gv.tGorillaSuffixUsed]:    " ) ,
     tSayResettingDivert(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "resetting bDivert because suffix has already been used [gv.tGorillaSuffixUsed]:    "                                   ) ,
-    tSayDomainNetSuffixPeer(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[domainNet,suffix,peer]:      \""                                                                                      ) ,
+    tSayDomainNetSuffixPeer(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[bValid,domainNet,actual,valid,peer]:      \""                                                                         ) ,
     tSayDomainGrossPeer(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[domainGross,peer]:    \""                                                                                             ) ,
     tSayLoweringCase(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "lowering case"                                                                                                         ) ,
     tSayPoppingQuery(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "popping a query"                                                                                                       ) ,
@@ -1597,7 +1537,7 @@ struct gVarS
     textC tSayReplying2                   ;
     textC tSayAAAARequest                 ;
     textC tSayARequest                    ;
-    textC tSayExCouldNotWritePasswordFile ;
+    textC tSayExCouldNotReadPasswordFile  ;
     textC tSayWrotePasswordFile           ;
     textC tSayNewPassword                 ;
     textC tSayOldPassword                 ;
