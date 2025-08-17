@@ -1,4 +1,8 @@
 
+#define CsYSTEMtHREADS ( !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE ) + !!( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_tmWindows ) * 2 + ((tin1S&)tin0P).pag1->_deviceC_cHelper + !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) * 3 /*tmWatchF,tmWatchRudeF,tmKillSocketF*/ )
+
+#define CaLLtHREADS ( thirdC::os_cAllKidThreadsI_IF( tin0P ) + thirdC::os_cAllOrphanThreadsI_IF( tin0P ) )
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -32657,7 +32661,6 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120035b.fladam END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120035c.waituntilalmostalone BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -32671,6 +32674,10 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
 /**/
 /*1*//*WAITuNTILaLMOSTaLONE*//*1*/
 
+//20250816@1357: THE COMMENTS ARE OBSOLETE
+
+//U:: 20250816@1357: CHANGE BEHAVIOR SO THAT THE PARAMETER IS INCREASED BY A CONSTANT THAT IS THE NUMBER OF SYSTEM THREADS (WHICH WILL DEPEND UPON WHETHER I AM RUNNING FANCY (GRAPHICS) OR PLAIN (CONSOLE))
+
 #define WAITuNTILaLMOSTaLONE(cKidsOrphansAllowP)                                                                                                                                                                                                                        \
                                                                                                                                                                                                                                                                         \
     TELL( "waiting for all child threads except tmWindowsF tmAnimateSadamsOnPaperF to end" ) ;                                                                                                                                                                          \
@@ -32678,7 +32685,7 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
         const boolT b_tmWindows    = !!( F(thirdC::third_flagsModeAdam1I_IF(tin0P))    & flADAMmODE1_tmWindows          ) ;                                                                                                                                             \
         const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                                                                                                                                  \
         const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ;                                                                                                                                                  \
-        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */                                                                                                                      \
+        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/bService:" , bService , "\r\n" ) ;*/                                                                                                                       \
         countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tin0P ) ;                                                                                                                                                                                           \
         countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tin0P ) ;                                                                                                                                                                                        \
         IFsCRATCHoK                                                                                                                                                                                                                                                     \

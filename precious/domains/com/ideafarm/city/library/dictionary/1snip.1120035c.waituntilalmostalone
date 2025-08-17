@@ -25,7 +25,7 @@
         IFsCRATCHoK                                                                                                                                                                                                                                                     \
         countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tin0P ) ;                                                                                                                                                                                        \
         countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tin0P ) ;                                                                                                                                                                                           \
-        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */                                                                                                                      \
+        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/bService:" , bService , "\r\n" ) ;*/                                                                                                                       \
         const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ;                                                                                                                                                  \
         const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                                                                                                                                  \
         const boolT b_tmWindows    = !!( F(thirdC::third_flagsModeAdam1I_IF(tin0P))    & flADAMmODE1_tmWindows          ) ;                                                                                                                                             \
@@ -33,6 +33,10 @@
     TELL( "waiting for all child threads except tmWindowsF tmAnimateSadamsOnPaperF to end" ) ;                                                                                                                                                                          \
                                                                                                                                                                                                                                                                         \
 #define WAITuNTILaLMOSTaLONE(cKidsOrphansAllowP)                                                                                                                                                                                                                        \
+
+//U:: 20250816@1357: CHANGE BEHAVIOR SO THAT THE PARAMETER IS INCREASED BY A CONSTANT THAT IS THE NUMBER OF SYSTEM THREADS (WHICH WILL DEPEND UPON WHETHER I AM RUNNING FANCY (GRAPHICS) OR PLAIN (CONSOLE))
+
+//20250816@1357: THE COMMENTS ARE OBSOLETE
 
 /*1*//*WAITuNTILaLMOSTaLONE*//*1*/
 /**/

@@ -25,7 +25,7 @@ DONE( tmWorkF )
 //REMOVE IN PRODUCTION; THIS IS TO FACILITATE DEVELOPMENT OF SERVICE QUIT QUALITY
 
 }
-    //etThread.traceF( tin0P , T("cleaning up") ) ;
+    etThread.traceF( tin0P , T("cleaning up") ) ;
     //U:: }
     //U::     etThread.delF( tin0P , psttDriverName ) ;
     //U::     }
@@ -41,10 +41,9 @@ DONE( tmWorkF )
     //U:: if( !bKeep )
 
     //CONoUTrAW( "console is gone\r\n" ) ;
-    WAITuNTILaLMOSTaLONE( 0 )
+    WAITuNTILaLMOSTaLONE( 1 )
     bQuitConsole = 1 ;
-    //CONoUTrAW( "firing console\r\n" ) ;
-    //etThread.traceF( tin0P , T("firing console") ) ;
+    etThread.traceF( tin0P , T("firing console") ) ;
 
     }    
         DELzOMBIE( pms ) ;
@@ -65,7 +64,8 @@ DONE( tmWorkF )
     //Sleep( 1000 * 60 * 60 ) ;
     //etThread.traceF( tin0P , T("TO TEST:sleeping forever before firing my queue monitor") ) ;
 
-    WAITuNTILaLMOSTaLONE( 3 )
+    WAITuNTILaLMOSTaLONE( 6 )
+    //20250816@1342: 6 <- 3 (NEEDED FOR QUIT QUALITY)
     //20230905@1448: 3 <- 2 (NEEDED.  PROBABLY DUE TO ADDITION OF tmChatterF)
     //CONoUTrAW( "waiting for all threads other than console and glass2 to go away\r\n" ) ;
     etThread.traceF( tin0P , T("waiting for all threads other than those for the queue monitor for me and below me and console to finish") ) ;
