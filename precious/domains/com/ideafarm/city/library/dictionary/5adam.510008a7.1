@@ -351,9 +351,9 @@ DONE( tmWorkerF )
                                             if( !bSuffixOk ) bSilent = 1 ;
 
                                             etThread.delF( tin0P , psttSuffix ) ;
-                                            /**/etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bSuffixOk?"            \"":"REJECTED    \"")+T(psttSuffix)+T("\"    \"")+tValid+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                            /**/etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bSuffixOk?"           actual: \"":"REJECTED   actual: \"")+T(psttSuffix)+T("\"   valid: \"")+tValid+T("\"   valid: \"")+mySettingsP.tSuffixValid2+T("\"   peer: \"")+tDomainPeer+T("\"") ) ;
 
-                                            const boolT bSuffixOk = !etThread.strCompareF( tin0P , psttSuffix , tValid ) || !etThread.strCompareF( tin0P , psttSuffix , mySettingsP.tSuffixValid2 ) ;
+                                            const boolT bSuffixOk = psttSuffix && ( !etThread.strCompareF( tin0P , psttSuffix , tValid ) || !etThread.strCompareF( tin0P , psttSuffix , mySettingsP.tSuffixValid2 ) ) ;
 
                                             }
                                                 etThread.delF( tin0P , postValid ) ;
@@ -1478,7 +1478,7 @@ struct gVarS
     tSayResettingDivert2(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "resetting bDivert because suffix is the current expected value [gv.tGorillaSuffix]:    "                               ) ,
     tSaySettingNewPassword(          tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "setting bNewPassword because suffix has already been used too many times or for too long [gv.tGorillaSuffixUsed]:    " ) ,
     tSayResettingDivert(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "resetting bDivert because suffix has already been used [gv.tGorillaSuffixUsed]:    "                                   ) ,
-    tSayDomainNetSuffixPeer(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[bValid,domainNet,actual,valid,peer]:      \""                                                                         ) ,
+    tSayDomainNetSuffixPeer(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[bValid,domainNet,actual,valid,valid2,peer]:      \""                                                                  ) ,
     tSayDomainGrossPeer(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[domainGross,peer]:    \""                                                                                             ) ,
     tSayLoweringCase(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "lowering case"                                                                                                         ) ,
     tSayPoppingQuery(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "popping a query"                                                                                                       ) ,
