@@ -362,16 +362,19 @@ DONE( tmWorkerF )
                                         etThread.delF( tin0P , psttw ) ;
                                         TN( tDomainNet , psttw ) ;
                                         }
-                                            if( bSuffixOk ) bSilent = 0 ;
+                                            if( bGorilla || bStripe ) bSilent = 0 ;
+                                            if( bGorilla            ) bDivert = 0 ;
 
                                             etThread.delF( tin0P , psttSuffix ) ;
-                                            //etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bSuffixOk?"           domainnet: \"":"REJECTED   domainnet: \"")+tDomainNet+T("\"   actual: \"")+T(psttSuffix)+T("\"   valid: \"")+tValid+T("\"   stripe: \"")+mySettingsP.tSuffixUsedByStripe+T("\"   peer: \"")+tDomainPeer+T("\"") ) ;
+                                            //etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bGorilla||bStripe?"           domainnet: \"":"REJECTED   domainnet: \"")+tDomainNet+T("\"   actual: \"")+T(psttSuffix)+T("\"   valid: \"")+tSuffixUsedByGorilla+T("\"   stripe: \"")+mySettingsP.tSuffixUsedByStripe+T("\"   peer: \"")+tDomainPeer+T("\"") ) ;
 
-                                            const boolT bSuffixOk = psttSuffix && ( !etThread.strCompareF( tin0P , psttSuffix , tValid ) || !etThread.strCompareF( tin0P , psttSuffix , mySettingsP.tSuffixUsedByStripe ) ) ;
+                                            const boolT bStripe  = psttSuffix && !etThread.strCompareF( tin0P , psttSuffix , mySettingsP.tSuffixUsedByStripe  ) ;
+
+                                            const boolT bGorilla = psttSuffix && !etThread.strCompareF( tin0P , psttSuffix ,             tSuffixUsedByGorilla ) ;
 
                                             }
-                                                etThread.delF( tin0P , postValid ) ;
-                                                tValid = T(postValid) ;
+                                                etThread.delF( tin0P , postg ) ;
+                                                tSuffixUsedByGorilla = T(postg) ;
                                                 }
                                                     }
                                                         etRock.traceF( tin0P , gcP.tSayExCouldNotReadPasswordFile+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gcP.tb4+tLongWoTimePasswordUrlSuffix ) ;
@@ -379,15 +382,15 @@ DONE( tmWorkerF )
                                                         countT rc = POOP ;
                                                     {
                                                     if( POOP )
-                                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , postValid , costValid , tLongWoTimePasswordUrlSuffix , 1 ) ; ___( postValid ) ;
+                                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , postg , costg , tLongWoTimePasswordUrlSuffix , 1 ) ; ___( postg ) ;
                                                     SCOOPS
                                                     _IO_
                                                 {
                                                 IFsCRATCHoK
-                                                ZE( countT   , costValid ) ;
-                                                ZE( osTextT* , postValid ) ;
+                                                ZE( countT   , costg ) ;
+                                                ZE( osTextT* , postg ) ;
                                             {
-                                            TN( tValid , "" ) ;
+                                            TN( tSuffixUsedByGorilla , "" ) ;
 
                                             etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
                                             etThread.delF( tin0P , psttNet ) ;

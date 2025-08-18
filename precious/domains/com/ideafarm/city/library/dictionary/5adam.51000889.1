@@ -132,6 +132,14 @@ DONE( tmGorillaF )
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/     IFsCRATCHoK
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/ #if defined( NEVERdEFINED )
 
+        }
+            //etRock.traceF( tin0P , T("[tSuffix]:    ")+tSuffix ) ;
+            etThread.boxPutF( tin0P , tLong , "" , 1 ) ;
+            tSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
+        {
+        if( bOuter )
+        TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/woTimePasswordUrlSuffix") ;
+
         etThread.delF( tin0P , posti ) ;
         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeN1 , timeN2 ) ;
         etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
@@ -156,6 +164,15 @@ DONE( tmGorillaF )
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
 
+        }
+            //etRock.traceF( tin0P , T("[tSuffix]:    ")+tSuffix ) ;
+            etThread.boxPutF( tin0P , tLong , tSuffix , tSuffix.csF( tin0P ) ) ;
+            tSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
+        {
+        if( bOuter )
+        TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/woTimePasswordUrlSuffix") ;
+        TN( tSuffix , "" ) ;
+
         TN( tSayEnd1  , "stomp! (end1)"  ) ;
         TN( tSayBegin , "stomp! (begin)" ) ;
 
@@ -169,16 +186,6 @@ DONE( tmGorillaF )
         countT& idNewFailUse               = bOuter ? idNewFailOuter                                        : idNewFailInner    ;
         countT& idNewSuccessUse            = bOuter ? idNewSuccessOuter                                     : idNewSuccessInner ;
         countT& cFailUse                   = bOuter ? cFailOuter                                            : cFailInner        ;
-
-        }
-            //etRock.traceF( tin0P , T("[tSuffix]:    ")+tSuffix ) ;
-            etThread.boxPutF( tin0P , tLong , tSuffix , tSuffix.csF( tin0P ) ) ;
-            TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/woTimePasswordUrlSuffix") ;
-
-            tSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
-        {
-        if( bOuter )
-        TN( tSuffix , "" ) ;
 
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
