@@ -67,7 +67,7 @@ DONE( tmWorkF )
             while( !POOP && !ether )
 
             }
-                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 1 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&mySettings , (countT)&sockd , (countT)&gc , (countT)&gv ) ;
+                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&mySettings , (countT)&sockd , (countT)&gc , (countT)&gv ) ;
                 inc02AM( cWorkers ) ;
             {
             while( cDo -- )
@@ -773,8 +773,10 @@ DONE( tmWorkerF )
 
         //etRock.traceF( tin0P , T("pulled a job") ) ;
 
+        mySettingsP.grabMe.ungrabF( tin0P ) ;
         nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettingsP.tIpWebHook2 ) ;
         nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettingsP.tIpWebHook1 ) ;
+        mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
         gvP.cirJob >> &job ;
         jobS job ;
