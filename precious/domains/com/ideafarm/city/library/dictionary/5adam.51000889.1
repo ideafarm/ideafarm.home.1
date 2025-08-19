@@ -123,7 +123,7 @@ DONE( tmGorillaF )
                     "\r\n"
                     "of fails has ended.\r\n"
                     "by changing its IPv4 address.  Nullrouting is being re-enabled since the recent run\r\n"
-                    "This domain (above) is now responding timely after wh1 was preemptively nullrouted\r\n"
+                    "wh1 is now responding timely to both outer and inner after wh1 was preemptively nullrouted\r\n"
                     "\r\n"
                     "Subject: Notification from GORILLAwEBHOOKS / null routing SUCCESS! / ")+tDomainUse+T("\r\n"
             
@@ -132,7 +132,7 @@ DONE( tmGorillaF )
 
                 bSuppressNullRouting = 0 ;
             {
-            if( bSuppressNullRouting )
+            if( bSuppressNullRouting && !idNewFailOuter && !idNewFailInner && idNewSuccessOuter && idNewSuccessInner )
 
             /**/etRock.traceF( tin0P , tSayStompEnd+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+T(bSlowStrict?"FORGIVEN":"        "                        )+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
             idNewSuccessUse ++ ;
