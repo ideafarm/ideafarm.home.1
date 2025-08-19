@@ -206,6 +206,8 @@ DONE( tmGorillaF )
             ZE( sCountT , timeN2 ) ;
             ZE( countT  , timeN1 ) ;
 
+etRock.traceF( tin0P , T(bOuter?"     OUTER    ":"INNER         ")+tDomainUse ) ;
+
             }
                 tDomainUse                     = bOuter ? tDomainOuterBefore+tSuffix+tDomainOuterAfter : tDomainInner      ;
                 bOuterLag = bOuter ;
@@ -232,8 +234,6 @@ DONE( tmGorillaF )
 
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
-
-etRock.traceF( tin0P , T(bOuter?"     OUTER    ":"INNER         ")+tDomainUse ) ;
 
         const boolT bOuter = idGorilla == 1 && !( idStomp % ( TUCK >> 6 ) ) ;                           // ONLY GORILLA 1 DOES OUTER STOMPS ; THIS SIMPLIFIES THE COMMUNICATION OF PASSWORD SUFFIXES TO DNS
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
