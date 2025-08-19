@@ -213,7 +213,7 @@ if( bOuter )
 
 etRock.traceF( tin0P , T(bOuter?"     OUTER    ":"INNER         ")+tDomainUse+tb4+tUrl ) ;
 
-            TN( tUrl , "" ) ; tUrl = tDomainUse+T("//http/nu") ;        // THE "nu" PORTION IS NOT USED, BECAUSE HTTP HEADER IS NOT PREPENDED
+            tUrl = tDomainUse+T("//http/nu") ;        // THE "nu" PORTION IS NOT USED, BECAUSE HTTP HEADER IS NOT PREPENDED
 
             }
                 tDomainUse                     = bOuter ? tDomainOuterBefore+tSuffix+tDomainOuterAfter : tDomainInner      ;
@@ -230,6 +230,7 @@ etRock.traceF( tin0P , T(bOuter?"     OUTER    ":"INNER         ")+tDomainUse+tb
             if( bOuter )
             TN( tSuffix , "" ) ;
         {
+        TN( tUrl , "" ) ;
         ZE( sCountT , timeE2 ) ;
         ZE( countT  , timeE1 ) ;
 
