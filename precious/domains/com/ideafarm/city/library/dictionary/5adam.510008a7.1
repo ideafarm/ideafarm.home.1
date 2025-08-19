@@ -773,6 +773,9 @@ DONE( tmWorkerF )
 
         //etRock.traceF( tin0P , T("pulled a job") ) ;
 
+        nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettingsP.tIpWebHook2 ) ;
+        nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettingsP.tIpWebHook1 ) ;
+
         gvP.cirJob >> &job ;
         jobS job ;
 
@@ -786,8 +789,6 @@ DONE( tmWorkerF )
     stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
     stackC stsReplies(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
     stackC stsRepliesNU( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
-    nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettingsP.tIpWebHook2 ) ;
-    nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettingsP.tIpWebHook1 ) ;
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
