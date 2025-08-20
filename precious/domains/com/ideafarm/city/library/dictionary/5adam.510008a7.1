@@ -297,7 +297,7 @@ DONE( tmWorkerF )
                                             //    break ;
                                             //
                                             //    }
-                                            //        rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                            //        rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut , job.nnPeer ) ;
                                             //        bSilent = 0 ;
                                             //    {
                                             //    if( ~nnOut )
@@ -318,7 +318,7 @@ DONE( tmWorkerF )
                                                 break ;
 
                                                 }
-                                                    rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                    rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut , job.nnPeer ) ;
                                                     bSilent = 0 ;
                                                 {
                                                 if( ~nnOut )
@@ -996,13 +996,13 @@ voidT rec_MX_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const coun
         *ps << (countT)ifcIDtYPEdNSqUERY_AAAA ;
         *ps << psttP ;
 
-        /**/etherP.traceF( tin0P , T("rec_AAAA_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+        /**/etherP.traceF( tin0P , T("rec_AAAA_F [nnPeer,nn,name]:    peer: ")+T(nnPeerP)+T("    directed to: ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
     _IO_
 {
-voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
+voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP , const nicNameC& nnPeerP )
 
 }
     }
@@ -1018,13 +1018,13 @@ voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const co
         *ps << (countT)ifcIDtYPEdNSqUERY_A ;
         *ps << psttP ;
 
-        /**/etherP.traceF( tin0P , T("rec_A_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+        /**/etherP.traceF( tin0P , T("rec_A_F [nnPeer,nn,name]:    peer: ")+T(nnPeerP)+T("    directed to: ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
     _IO_
 {
-voidT rec_A_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
+voidT rec_A_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP , const nicNameC& nnPeerP )
 
 DONE( tmFreshSettingsF )
 }
