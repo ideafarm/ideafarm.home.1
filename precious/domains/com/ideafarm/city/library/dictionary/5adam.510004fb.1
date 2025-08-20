@@ -102,6 +102,8 @@ DONE( tmWorkF )
     {
     for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
 
+    bQuitSlowingAll = bQuitSuspendingAll = bQuitChattering = 1 ; //20250820@1412: THIS LINE IS DONE LATER ; CONDITIONALLY (IF SEMAPHORE FILE DOES NOT EXIST) DO IT HERE, TO SPEED UP QUIT
+
     sgnDone_tmFireAllF_.waitF( tin0P ) ;
     //etThread.traceF( tin0P , T("waiting for fire all thread to finish") ) ;
 
