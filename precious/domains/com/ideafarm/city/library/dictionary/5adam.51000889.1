@@ -217,10 +217,12 @@ DONE( tmGorillaF )
             if( bOuterLag != bOuter ) ;
 
             }
+                ++ s ; thirdC::dosSleepWinkIF( tin0P , 0 ) ;                        // DNS USES NONBLOCKING I/O TO READ, SO I NAP FOR A WINK TO GIVE THE FILE SYSTEM TIME TO LAZY WRITE THE FILE
                 //etRock.traceF( tin0P , T("[tSuffix]:    ")+tSuffix ) ;
                 etThread.boxPutF( tin0P , tLong , tSuffix , tSuffix.csF( tin0P ) ) ;
                 tSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
                 TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/woTimePasswordUrlSuffix") ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
             if( bOuter )
             TN( tSuffix , "" ) ;
