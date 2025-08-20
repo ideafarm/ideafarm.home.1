@@ -9,7 +9,7 @@
 }
     }
         }
-            //etThread.traceF( tin0P , T("noteFromStripeCBF / booked  [nnPeer,costaBody]:    ")+T(nnPeerP)+T("    ")+TF2(costaBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , T("noteFromStripeCBF / booked  [nnPeer,costaBody]:    ")+T(nnPeerP)+T("    ")+TF2(costaBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;      //THIS TRACE IS NEEDED SO THAT THE ASSOCIATED DNS QUERY CAN BE IDENTIFIED (USING TRACEMERGE.BAT) WHEN A VALID STRIPE NOTICE IS RECEIVED ON A WH SERVER OTHER THAN WH1
             bksWebHookNoticesP.writeF( tin0P , (byteT*)pcHeader , sizeof pcHeader , postBodyP , costaBody , flBOOKScwRITE_ALLOWoDDlENGTH | flBOOKScwRITE_ALLoRnONE , 0 ) ;
 
             *(nicNameC*)&pcHeader[ 4 ] = nnPeerP ;
