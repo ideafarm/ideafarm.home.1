@@ -477,8 +477,22 @@
                             OStEXTAK( ostoRpt , "\r\n((tin1S&)tin0P).pag1->flagsAdamState: " ) ;_M
                             OStEXTC(  ostoRpt , bCleanFailed , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\nbCleanFailed: " ) ;_M
-                            else                 { OStEXTC(  ostoRpt ,      (const countT)*((tin123S&)tin0Snap).pPoop , 0 ) ;_M }
-                            if( !((tin123S&)tin0Snap).pPoop ) { OStEXTAK( ostoRpt , "((tin123S&)tin0Snap).pPoop is null"               ) ;_M } 
+                            }
+                                }
+                                    OStEXTAK( ostoRpt , ")" ) ;
+                                    OStEXTC(  ostoRpt , ((tin123S&)tin0Snap).pPoop->idLineGruntF()  , 0 ) ;_M
+                                    OStEXTAK( ostoRpt , "(" ) ;
+                                    OStEXTC9( ostoRpt , ((tin123S&)tin0Snap).pPoop->idiFileGruntF()     ) ;_M
+                                    OStEXTAK( ostoRpt , "    " ) ;
+                                    OStEXTC(  ostoRpt , ((tin123S&)tin0Snap).pPoop->flagsF()        , 0 ) ;_M
+                                    OStEXTAK( ostoRpt , "    " ) ;
+                                {
+                                if( rc )
+                                OStEXTC(  ostoRpt , rc , 0 ) ;_M
+                                countT rc = (const countT)*((tin123S&)tin0Snap).pPoop ;
+                            {
+                            else
+                            if( !((tin123S&)tin0Snap).pPoop ) { OStEXTAK( ostoRpt , "((tin123S&)tin0Snap).pPoop is null" ) ;_M } 
                             OStEXTAK( ostoRpt , "\r\nPOOP: " ) ;_M
                             OStEXTC(  ostoRpt ,      processGlobal2I.cNestReportingException , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\n\r\nException reporting nest level: " ) ;_M

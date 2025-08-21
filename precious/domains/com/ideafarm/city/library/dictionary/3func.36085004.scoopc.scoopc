@@ -17,14 +17,24 @@
         LOGrAW( "\r\n" ) ;
         LOGrAW( ostoSay ) ;
         LOGrAW( "\r\n" ) ;
+
         OStEXTAK( ostoSay , ")" ) ;
+        OStEXTC9( ostoSay , ((tin1S&)tin0P).pPoop->idLineGruntF()      ) ;
+        OStEXTAK( ostoSay , "(" ) ;
+        OStEXTC(  ostoSay , ((tin1S&)tin0P).pPoop->idiFileGruntF() , 0 ) ;
+        OStEXTAK( ostoSay , "    " ) ;
+        OStEXTC(  ostoSay , ((tin1S&)tin0P).pPoop->flagsF()        , 0 ) ;
+        OStEXTAK( ostoSay , "    " ) ;
+        OStEXTC(  ostoSay , rc , 0 ) ;
+        OStEXTAK( ostoSay , ")    " ) ;
         OStEXTC9( ostoSay , idLineCt ) ;
         OStEXTAK( ostoSay , "(" ) ;
         OStEXTC(  ostoSay , idiFileCt , 0 ) ;
-        OStEXTAK( ostoSay , "scoopC / before using *pEtScratch, it is impotent (coding error) [idiFileCt,idLineCt]:    " ) ;
+        OStEXTAK( ostoSay , "scoopC / before using *pEtScratch, it is impotent (coding error) [idiFileCt,idLineCt,idSubType,idiFileGrunt,idLineGrunt]:    " ) ;
         OStEXT(   ostoSay , TUCK ) ;
     {
-    if( ((tin1S&)tin0P).pPoop != pPoopSave && POOP )    //20230610@1416: IF MY THREAD IS ALREADY USING etScratch THEN DON'T COMPLAIN ABOUT etScratch BEING IMPOTENT
+    if( ((tin1S&)tin0P).pPoop != pPoopSave && rc )    //20230610@1416: IF MY THREAD IS ALREADY USING etScratch THEN DON'T COMPLAIN ABOUT etScratch BEING IMPOTENT
+    countT rc = POOP ;
 
     if( getNegAM( ((tin1S&)tin0P).pPoop->fingerprint ) != FINGERnEG_POOPc ) { BLAMMOiD( 0x22222222 ) ; }
     if( !((tin1S&)tin0P).pPoop ) { BLAMMOiD( 0x11111111 ) ; }
