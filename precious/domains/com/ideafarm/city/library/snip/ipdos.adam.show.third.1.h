@@ -11893,7 +11893,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_RDPiNTRUSIONdETECTOR                                 0x5100088d
 #define ifcIDaDAM_WEBhOOKnOTICEfILER                                   0x5100088f
 #define ifcIDaDAM_ADMINISTRATOR                                        0x51000892
-#define ifcIDaDAM_WELCOMER                                             0x51000893
+#define ifcIDaDAM_WELCOMER                                             0x510008ae
 #define ifcIDaDAM_SHELL                                                0x5100089f
 #define ifcIDaDAM_TOOLtRACEcOPY                                        0x510008ab
 #define ifcIDaDAM_TOOLfILEsPLIT                                        0x510008ac
