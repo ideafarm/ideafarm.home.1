@@ -218,8 +218,9 @@ DONE( tmGorillaF )
 
             }
                 ++ s ; thirdC::dosSleepWinkIF( tin0P , 4 ) ;                        // DNS USES NONBLOCKING I/O TO READ, SO I NAP FOR A WINK TO GIVE THE FILE SYSTEM TIME TO LAZY WRITE THE FILE
-                //etRock.traceF( tin0P , T("[tSuffix]:    ")+tSuffix ) ;
+                /**/etRock.traceF( tin0P , T("wrote   suffix file [tSuffix]:    ")+tSuffix ) ;
                 etThread.boxPutF( tin0P , tLong , tSuffix , tSuffix.csF( tin0P ) ) ;
+                /**/etRock.traceF( tin0P , T("writing suffix file [tSuffix]:    ")+tSuffix ) ;
                 tSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
                 TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/woTimePasswordUrlSuffix") ;
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
