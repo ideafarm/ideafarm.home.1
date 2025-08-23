@@ -16,6 +16,9 @@ TODO
 
 DONE( tmWorkF )
 }
+
+#endif
+
     }
         }
             etThread.delF( tin0P , psttPassword ) ;
@@ -1850,6 +1853,9 @@ IFsCRATCHoK{}
 
     TN( tEatingDot , "eating." ) ;
     TN( tSlash     , "/"       ) ;
+#if defined( NEVERdEFINED )
+
+    etThread.osThreadF( TaRG2cBsTACK( tmStayConnectedF , CBsTACKmIN << 1 ) ) ;
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
@@ -1860,6 +1866,75 @@ IFsCRATCHoK{}
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+
+DONE( tmStayConnectedF )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
+        /**/etRock.traceF( tin0P , tSayNappingOuter ) ;
+
+        DELzOMBIE( psoc ) ;
+        }
+            ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
+
+            /**/etRock.traceF( tin0P , tSayVerifyingConnection ) ;
+        {
+        while( !ether && !POOP )
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+        }
+            }
+                }
+                    DELzOMBIE( psoc ) ;
+                    etRock.traceF( tin0P , tSayExCouldNotConnectToServer+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                    POOPRqUIET
+                    countT rc = POOP ;
+                {
+                if( POOP )
+                psoc->connectF( tin0P , 443 , nnServer ) ;
+                psoc = new( 0 , tin0P , pb_sockc , sizeof pb_sockc ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+            {
+            else
+            }
+                etRock.traceF( tin0P , tSayExCouldNotObtainNnServer+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                POOPRqUIET
+                countT rc = POOP ;
+            {
+            if( POOP )
+            nicNameC nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+
+            SCOOPS
+        {
+        IFsCRATCHoK
+        ZE( socketC* , psoc ) ;
+        byteT pb_sockc[ sizeof( socketC ) ] ;
+
+        /**/etRock.traceF( tin0P , tSayConnectingToServer+tServer ) ;
+    {
+    while( !ether && !POOP )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    const countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
+    const countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
+    const countT timeAllowedConnected = 0                       ;
+
+    TN( tServer , "ideafarm.com" ) ;
+    TN( tb4     , "    " ) ;
+
+    TN( tSayNappingInner              , "napping (inner)" ) ;
+    TN( tSayNappingOuter              , "napping (outer)" ) ;
+    TN( tSayExCouldNotConnectToServer , "!exception / could not connect to server [rc,tServer]:    " ) ;
+    TN( tSayExCouldNotObtainNnServer  , "!exception / could not obtain nnServer value [rc,tServer]:    " ) ;
+    TN( tSayVerifyingConnection , "verifying connection to homeserver" ) ;
+    TN( tSayConnectingToServer  , "connecting to server [tServer]:    " ) ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    _IO_
+{
+if( pTaskP )
+TASK( tmStayConnectedF )
 
 #define flFAIL_COULDnOTeXTRACTdATA2             0xe04000ff
 #define flFAIL_COULDnOTeXTRACTdATA1             0xe02000ff
