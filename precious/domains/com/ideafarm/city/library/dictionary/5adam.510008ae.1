@@ -17,7 +17,7 @@ TODO
 DONE( tmWorkF )
 }
 
-//#endif
+#endif
 
     }
         }
@@ -1853,7 +1853,7 @@ IFsCRATCHoK{}
 
     TN( tEatingDot , "eating." ) ;
     TN( tSlash     , "/"       ) ;
-//#if defined( NEVERdEFINED )
+#if defined( NEVERdEFINED )
 
     etThread.osThreadF( TaRG2cBsTACK( tmStayConnectedF , CBsTACKmIN << 1 ) ) ;
 
@@ -2027,7 +2027,7 @@ DONE( tmStayConnectedF )
             while( !ether && !POOP )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
-        if( psoc )
+        if( psoc && tValueAccessToken.csF( tin0P ) )
 
         }
             }
@@ -2045,53 +2045,68 @@ DONE( tmStayConnectedF )
                         
                         }
                             }
-                                etThread.delF( tin0P , pstpsttValue ) ;
-                        
                                 }
+                                    etThread.delF( tin0P , pstpsttValue ) ;
+                            
                                     }
-                                        etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                        *pptValue[ offe ] = T(pstpsttValue) ;
+                                        }
+                                            etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                            *pptValue[ offe ] = T(pstpsttValue) ;
+                                        {
+                                        if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
                                     {
-                                    if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                    for( countT offe = 0 ; offe < cPaths ; offe ++ )
+                            
+                                    if( cPaths - cValues ) { BLAMMO ; }
+                                    countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                    countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+                            
+                                    /**/etRock.traceF( tin0P , T("--------------------------        [value]:    ")+T(pstpsttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                    /**/etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            
+                                    strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                    psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+                            
+                                    _IO_
                                 {
-                                for( countT offe = 0 ; offe < cPaths ; offe ++ )
-                        
-                                if( cPaths - cValues ) { BLAMMO ; }
-                                countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                                countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-                        
-                                /**/etRock.traceF( tin0P , T("--------------------------        [value]:    ")+T(pstpsttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                /**/etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                        
-                                strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                                psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-                        
-                                _IO_
+                                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
                             {
-                            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                            countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                            if( !POOP )
+                            
+                            ;
+                            }
+                                &tPathDeviceId     ,
+                                &tPathAccessToken  ,
+                            {
+                            textC* pptPath[] =
+                            
+                            TN( tPathDeviceId    , "\"device_id\"/"    ) ;
+                            TN( tPathAccessToken , "\"access_token\"/" ) ;
+                            
+                            ;
+                            }
+                                &tValueDeviceId      ,
+                                &tValueAccessToken ,
+                            {
+                            textC* pptValue[] =
                         {
-                        if( !POOP )
+                        if( pSwPathValue )
                         
-                        ;
                         }
-                            &tPathDeviceId     ,
-                            &tPathAccessToken  ,
+                            }
+                                DEL( pSwPathValue ) ;
+                                etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                POOPRqUIET
+                                countT rc = POOP ;
+                            {
+                            if( POOP )
+                            __Z( pSwPathValue ) ;
+                            ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+
+                            SCOOPS
                         {
-                        textC* pptPath[] =
-                        
-                        TN( tPathDeviceId    , "\"device_id\"/"    ) ;
-                        TN( tPathAccessToken , "\"access_token\"/" ) ;
-                        
-                        ;
-                        }
-                            &tValueDeviceId      ,
-                            &tValueAccessToken ,
-                        {
-                        textC* pptValue[] =
-                        
-                        __Z( pSwPathValue ) ;
-                        etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                        IFsCRATCHoK
                         ZE( switchC* , pSwPathValue ) ;
                         ZE( strokeS* , psttPath     ) ;
                         _IO_
@@ -2200,6 +2215,7 @@ DONE( tmStayConnectedF )
     TN( tServer , "ideafarm.com" ) ;
     TN( tb4     , "    " ) ;
 
+    TN( tSayExCouldNotParseJson       , "!exception / could not parse json" ) ;
     TN( tSayQueried                   , "queried"         ) ;
     TN( tSayQuerying                  , "querying"        ) ;
     TN( tSayNappingInner              , "napping (inner)" ) ;
