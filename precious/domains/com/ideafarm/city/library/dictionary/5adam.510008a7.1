@@ -372,7 +372,7 @@ DONE( tmWorkerF )
 
                                             const boolT bGorilla = psttSuffix && !etThread.strCompareF( tin0P , psttSuffix ,             tSuffixUsedByGorilla ) ;
 
-                                            /**/etRock.traceF( tin0P , gcP.tSayEndReadingSuffixFile ) ;
+                                            /**/etRock.traceF( tin0P , gcP.tSayReadSuffixFile+tSuffixUsedByGorilla ) ;
                                             }
                                                 }
                                                     }
@@ -398,7 +398,7 @@ DONE( tmWorkerF )
                                                 ZE( osTextT* , postg ) ;
                                             {
                                             while( !ether && !POOP )
-                                            /**/etRock.traceF( tin0P , gcP.tSayBeginReadingSuffixFile ) ;
+                                            /**/etRock.traceF( tin0P , gcP.tSayReadingSuffixFile ) ;
                                             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                                             TN( tSuffixUsedByGorilla , "" ) ;
 
@@ -1557,8 +1557,8 @@ struct gVarS
     tSayUnknownDomain(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    !exception / unknown peer domain"                                                                                  ) ,
     tSayPrefix(                      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[nnPeer]:    "                                                                                                         ) ,
 
-    tSayEndReadingSuffixFile(        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "end   reading suffix file"                                                                                             ) ,
-    tSayBeginReadingSuffixFile(      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "begin reading suffix file"                                                                                             ) ,
+    tSayReadSuffixFile(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "read    suffix file [suffix]:    "                                                                                     ) ,
+    tSayReadingSuffixFile(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "reading suffix file"                                                                                                   ) ,
     tSayPushedDomain(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed domain  [cDomains]:    "                                                                                        ) ,
     tSayPushingDomain(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing domain [cDomains]:    "                                                                                        ) ,
     tSayPushedPeer(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed peer  [cPeers]:    "                                                                                            ) ,
@@ -1630,8 +1630,9 @@ struct gVarS
     textC tSayUnknownDomain               ;
     textC tSayPrefix                      ;
 
-    textC tSayEndReadingSuffixFile        ;
-    textC tSayBeginReadingSuffixFile      ;
+    textC tSayReadSuffixFile              ;
+    textC tSayReadingSuffixFile           ;
+
     textC tSayPushedDomain                ;
     textC tSayPushingDomain               ;
     textC tSayPushedPeer                  ;
