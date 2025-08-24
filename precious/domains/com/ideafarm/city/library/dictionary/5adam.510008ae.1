@@ -1855,7 +1855,8 @@ IFsCRATCHoK{}
     TN( tSlash     , "/"       ) ;
 //#if defined( NEVERdEFINED )
 
-    etThread.osThreadF( TaRG2cBsTACK( tmStayConnectedF , CBsTACKmIN << 1 ) ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmStayConnectedF , CBsTACKmIN << 1 ) , (countT)&bServerIsUp ) ;
+    ZE( boolT , bServerIsUp ) ;
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
@@ -1979,55 +1980,81 @@ DONE( tmStayConnectedF )
             }
                 ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
 
+                if( !bServerIsUpLag ) break ;
+
                 /**/etRock.traceF( tin0P , tSayQueried ) ;
 
-                etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                etRock.traceF( tin0P , T("json response:") ) ;
+                }
+                    notifyF( tin0P , etThread , bServerIsUpLag ) ;
+                    bServerIsUpLag = bUpNow ;
+                {
+                if( bServerIsUpLag != bUpNow  )
+                
+                boolT bUpNow = !!etThread.strIdF( tin0P , tOpenCurly , tJson ) ;
 
                 }
-                    //etRock.traceF( tin0P , T(posth) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    //etRock.traceF( tin0P , T("[headers]:") ) ;
-                    posth[ costh ] = 0 ;
+                    etRock.traceF( tin0P , tJson , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    etRock.traceF( tin0P , T("json response:") ) ;
+
+                    tJson = T(postj) ;
+
                     }
+                        //etRock.traceF( tin0P , T(posth) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        //etRock.traceF( tin0P , T("[headers]:") ) ;
+                        posth[ costh ] = 0 ;
                         }
-                            break ;
+                            }
+                                break ;
 
-                            postj[ costj ] = save ;
-                                           postj[ costj ] = 0 ;
-                            osTextT save = postj[ costj ] ;
+                                postj[ costj ] = save ;
+                                               postj[ costj ] = 0 ;
+                                osTextT save = postj[ costj ] ;
+                            {
+                            else if( costj )
+                                 if( cNest ) costj ++ ;
+
+                            else if( postj[ costj ] == '}' ) cNest -- ;
+                                 if( postj[ costj ] == '{' ) cNest ++ ;
+
+                            if( !costj && !cNest ) posth[ costh ++ ] = postj[ costj ] ;
+
+                            if( !cbIn ) break ;
+                            countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
                         {
-                        else if( costj )
-                             if( cNest ) costj ++ ;
+                        for(;;)
+                        ZE( countT , cNest ) ;
+                        ZE( countT , idReadLath ) ;
 
-                        else if( postj[ costj ] == '}' ) cNest -- ;
-                             if( postj[ costj ] == '{' ) cNest ++ ;
-
-                        if( !costj && !cNest ) posth[ costh ++ ] = postj[ costj ] ;
-
-                        if( !cbIn ) break ;
-                        countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
+                        ZE( countT , costh ) ;
+                        osTextT posth[ TUCK << 1 ] ;
+                        _IO_
                     {
-                    for(;;)
-                    ZE( countT , cNest ) ;
-                    ZE( countT , idReadLath ) ;
+                    ZE( countT , costj ) ;
+                    thirdC::c_memsetIF( tin0P , postj , sizeof postj , 0 ) ;
+                    osTextT postj[ TUCK << 1 ] ;
 
-                    ZE( countT , costh ) ;
-                    osTextT posth[ TUCK << 1 ] ;
-                    _IO_
+                    psoc->writeF( tin0P , (osTextT*)tSay ) ;
+                    TN( tSay , "" ) ; tSay = T("GET /_synapse/admin/v1/statistics/users/media HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\n\r\n") ;
                 {
-                ZE( countT , costj ) ;
-                thirdC::c_memsetIF( tin0P , postj , sizeof postj , 0 ) ;
-                osTextT postj[ TUCK << 1 ] ;
+                //if( idTest % ( TUCK >> 6 ) )
+                TN( tJson , "" ) ;
 
-                psoc->writeF( tin0P , (osTextT*)tSay ) ;
-                TN( tSay , "" ) ; tSay = T("GET /_synapse/admin/v1/statistics/users/media HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\n\r\n") ;
+                /**/etRock.traceF( tin0P , tSayQuerying+TF2(idTest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                /**/etRock.traceF( tin0P , tSayQuerying ) ;
+                ++ idTest ;
             {
             while( !ether && !POOP )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
-        if( psoc && tValueAccessToken.csF( tin0P ) )
+        else
+        }
+            }
+                notifyF( tin0P , etThread , 0 ) ;
+                bServerIsUpLag  = 0 ;
+            {
+            if( bServerIsUpLag  )
+        {
+        if( !psoc || !tValueAccessToken.csF( tin0P ) )
 
         }
             }
@@ -2198,26 +2225,32 @@ DONE( tmStayConnectedF )
             SCOOPS
         {
         IFsCRATCHoK
+        ZE( boolT , bServerIsUpNew ) ;
         ZE( socketC* , psoc ) ;
         byteT pb_sockc[ sizeof( socketC ) ] ;
         TN( tValueDeviceId    , "" ) ;
         TN( tValueAccessToken , "" ) ;
 
+        ++ idTest ;
+
         /**/etRock.traceF( tin0P , tSayConnectingToServer+tServer ) ;
     {
     while( !ether && !POOP )
+    ZE( countT , idTest ) ;
+    boolT bServerIsUpLag = - 1 ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     const countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
     const countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
     const countT timeAllowedConnected = 0                       ;
 
+    TN( tOpenCurly , "{" ) ;
     TN( tServer , "ideafarm.com" ) ;
     TN( tb4     , "    " ) ;
 
     TN( tSayExCouldNotParseJson       , "!exception / could not parse json" ) ;
     TN( tSayQueried                   , "queried"         ) ;
-    TN( tSayQuerying                  , "querying"        ) ;
+    TN( tSayQuerying                  , "querying [idTest]:    " ) ;
     TN( tSayNappingInner              , "napping (inner)" ) ;
     TN( tSayNappingOuter              , "napping (outer)" ) ;
     TN( tSayExCouldNotConnectToServer , "!exception / could not connect to server [rc,tServer]:    " ) ;
@@ -2230,10 +2263,23 @@ DONE( tmStayConnectedF )
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
+    boolT& bServerIsUpP = *(boolT*)pTaskP->c1 ;
+
     _IO_
 {
-if( pTaskP )
+if( pTaskP && pTaskP->c1 )
 TASK( tmStayConnectedF )
+
+}
+    /**/etRock.traceF( tin0P , tSubject+tb4+tBody ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+    etherP.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com" /*"/support@communick.com"*/ ) , tSubject+tBody ) ;
+
+    TN( tb4      , "    " ) ;
+    TN( tBody    , bServerIsUpP ? "\r\nA server that monitors the IDEAFARM.COM [matrix] homeserver was able to log in and successfully query, using the \"GET /_synapse/admin/v1/statistics/users/media\" api.\r\n\r\n" : "\r\nA server that monitors the IDEAFARM.COM [matrix] homeserver either could not log in or could not query, using the \"GET /_synapse/admin/v1/statistics/users/media\" api.\r\n\r\n" ) ;
+    TN( tSubject , bServerIsUpP ? "The IDEAFARM.COM [matrix] homeserver is now UP" : "The IDEAFARM.COM [matrix] homeserver is now DOWN" ) ;
+{
+voidT notifyF( tin0S& tin0P , etherC& etherP , const boolT bServerIsUpP )
 
 #define flFAIL_COULDnOTeXTRACTdATA2             0xe04000ff
 #define flFAIL_COULDnOTeXTRACTdATA1             0xe02000ff
