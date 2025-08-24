@@ -16,9 +16,6 @@ TODO
 
 DONE( tmWorkF )
 }
-
-//#endif
-
     }
         }
             etThread.delF( tin0P , psttPassword ) ;
@@ -1073,30 +1070,21 @@ IFsCRATCHoK{}
                                                                             //etRock.traceF( tin0P , T("debug / 7.5") ) ;
 
                                                                             TN( tSay , "" ) ; tSay = T("POST /_synapse/admin/v1/register HTTP/1.1")/*+T("\r\nAuthorization: Bearer ")+tValueSharedSecret*/+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
-IFsCRATCHoK{}
 
                                                                             countT costBody = tBody.csF( tin0P ) ;
-IFsCRATCHoK{}
 
                                                                             //etRock.traceF( tin0P , T("debug / 7.6") ) ;
-                                                                            sockc.connectF( tin0P , 443 , nnServer ) ;
+                                                                            sockc.connectF( tin0P , 443 , nnServer ) ;                  //U::20250824@0848: IF SERVER DOES NOT RESPOND, THIS LINE WILL CAUSE etScratch TO BECOME IMPOTENT, WHICH WILL CAUSE scoopC TO BLAMMO
                                                                             socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
                                                                             //etRock.traceF( tin0P , T("debug / 7.7") ) ;
 
-
-//U::: 20250820@1913: THIS IS FAILING AND CAUSING scoopC TO COMPLAIN
-
-
-IFsCRATCHoK{}
                                                                             countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
                                                                             countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
                                                                             countT timeAllowedConnected = TICK >> 2 ;
 
-IFsCRATCHoK{}
                                                                             nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
                                                                             nicNameC nnServer ;
 
-IFsCRATCHoK{}
                                                                             //etRock.traceF( tin0P , T("debug / 7.8") ) ;
                                                                             ) ;
 
@@ -1108,7 +1096,6 @@ IFsCRATCHoK{}
                                                                                 "{\r\n"
 
                                                                             TN( tBody , "" ) ; tBody = T(
-IFsCRATCHoK{}
 
                                                                             //etRock.traceF( tin0P , T("[mac]:    ")+tMac ) ;
                                                                             }
@@ -1116,29 +1103,24 @@ IFsCRATCHoK{}
                                                                                 tMac = T(psttMac) ;
                                                                                 etThread.openSslHmacF( tin0P , psttMac , tValueSharedSecret , tValueSharedSecret.csF( tin0P ) , postRaw , costRaw ) ; ___( psttMac ) ;
                                                                                 ZE( strokeS* , psttMac ) ;
-IFsCRATCHoK{}
 
                                                                                 countT costRaw = postc - postRaw ;
 
                                                                                 thirdC::c_strcpyIF( tin0P , postc , posti ) ; postc += costi     ;
                                                                                 costi = tNote.csF( tin0P ) ;
                                                                                 posti = tNote ;
-IFsCRATCHoK{}
 
                                                                                 thirdC::c_strcpyIF( tin0P , postc , posti ) ; postc += costi + 1 ;
                                                                                 costi = tNewPassword.csF( tin0P ) ;
                                                                                 posti = tNewPassword ;
-IFsCRATCHoK{}
 
                                                                                 thirdC::c_strcpyIF( tin0P , postc , posti ) ; postc += costi + 1 ;
                                                                                 costi = tNewUserNameShort.csF( tin0P ) ;
                                                                                 posti = tNewUserNameShort ;
-IFsCRATCHoK{}
 
                                                                                 thirdC::c_strcpyIF( tin0P , postc , posti ) ; postc += costi + 1 ;
                                                                                 countT   costi = tValueNonce.csF( tin0P ) ;
                                                                                 osTextT* posti = tValueNonce ;
-IFsCRATCHoK{}
 
                                                                                 osTextT* postc = postRaw ;
                                                                                 thirdC::c_memsetIF( tin0P , postRaw , sizeof postRaw , 0 ) ;
@@ -1147,12 +1129,10 @@ IFsCRATCHoK{}
                                                                                 _IO_
                                                                             {
                                                                             TN( tMac , "" ) ;
-IFsCRATCHoK{}
 
                                                                             TN( tNote , "notadmin"  ) ;
                                                                             //etRock.traceF( tin0P , T("debug / 7.h") ) ;
 
-IFsCRATCHoK{}
                                                                             _IO_
 
                                                                             //******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -1163,7 +1143,6 @@ IFsCRATCHoK{}
                                                                         {
                                                                         //etRock.traceF( tin0P , T("debug / 8") ) ;
 
-IFsCRATCHoK{}
                                                                         }
                                                                             }
                                                                                 //etRock.traceF( tin0P , T("socket is impotent") ) ;
@@ -1853,7 +1832,6 @@ IFsCRATCHoK{}
 
     TN( tEatingDot , "eating." ) ;
     TN( tSlash     , "/"       ) ;
-//#if defined( NEVERdEFINED )
 
     etThread.osThreadF( TaRG2cBsTACK( tmStayConnectedF , CBsTACKmIN << 1 ) , (countT)&bServerIsUp ) ;
     ZE( boolT , bServerIsUp ) ;
@@ -1985,8 +1963,9 @@ DONE( tmStayConnectedF )
                 /**/etRock.traceF( tin0P , tSayQueried ) ;
 
                 }
-                    notifyF( tin0P , etThread , bServerIsUpLag ) ;
+                    notifyF( tin0P , etThread , bServerIsUpLag , bCommunick ) ;
                     bServerIsUpLag = bUpNow ;
+                    boolT bCommunick = bServerIsUpLag != - 1 ;
                 {
                 if( bServerIsUpLag != bUpNow  )
                 
@@ -2049,8 +2028,9 @@ DONE( tmStayConnectedF )
         else
         }
             }
-                notifyF( tin0P , etThread , 0 ) ;
+                notifyF( tin0P , etThread , 0 , bCommunick ) ;
                 bServerIsUpLag  = 0 ;
+                boolT bCommunick = bServerIsUpLag != - 1 ;
             {
             if( bServerIsUpLag  )
         {
@@ -2237,7 +2217,7 @@ DONE( tmStayConnectedF )
     {
     while( !ether && !POOP )
     ZE( countT , idTest ) ;
-    boolT bServerIsUpLag = - 1 ;
+    boolT bServerIsUpLag = - 1 ;            //NORMALLY [0,1] ; "- 1": "NO TESTS YET, SO DO NOT NOTIFY communick.com"
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     const countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
@@ -2273,13 +2253,14 @@ TASK( tmStayConnectedF )
 }
     /**/etRock.traceF( tin0P , tSubject+tb4+tBody ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
-    etherP.boxPutF(   tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com" /*"/support@communick.com"*/ ) , tSubject+tBody ) ;
+    etherP.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/")+tTo , tSubject+tBody ) ;
 
+    TN( tTo      , !bCommunickP ? "factoryreports@ideafarm.com" : "factoryreports@ideafarm.com/support@communick.com" ) ;
     TN( tb4      , "    " ) ;
-    TN( tBody    , bServerIsUpP ? "\r\nA server that monitors the IDEAFARM.COM [matrix] homeserver was able to log in and successfully query, using the \"GET /_synapse/admin/v1/statistics/users/media\" api.\r\n\r\n" : "\r\nA server that monitors the IDEAFARM.COM [matrix] homeserver either could not log in or could not query, using the \"GET /_synapse/admin/v1/statistics/users/media\" api.\r\n\r\n" ) ;
-    TN( tSubject , bServerIsUpP ? "The IDEAFARM.COM [matrix] homeserver is now UP" : "The IDEAFARM.COM [matrix] homeserver is now DOWN" ) ;
+    TN( tBody    , bServerIsUpP ? "A server that monitors the IDEAFARM.COM [matrix] homeserver was able to log in and successfully query, using the \"GET /_synapse/admin/v1/statistics/users/media\" api.\r\n\r\n" : "A server that monitors the IDEAFARM.COM [matrix] homeserver either could not log in or could not query, using the \"GET /_synapse/admin/v1/statistics/users/media\" api.\r\n\r\n" ) ;
+    TN( tSubject , bServerIsUpP ? "Subject: The IDEAFARM.COM [matrix] homeserver is now UP\r\n" : "Subject: The IDEAFARM.COM [matrix] homeserver is now DOWN\r\n" ) ;
 {
-voidT notifyF( tin0S& tin0P , etherC& etherP , const boolT bServerIsUpP )
+voidT notifyF( tin0S& tin0P , etherC& etherP , const boolT bServerIsUpP , const boolT bCommunickP )
 
 #define flFAIL_COULDnOTeXTRACTdATA2             0xe04000ff
 #define flFAIL_COULDnOTeXTRACTdATA1             0xe02000ff
