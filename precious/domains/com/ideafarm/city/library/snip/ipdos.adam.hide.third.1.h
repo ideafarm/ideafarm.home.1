@@ -1,8 +1,4 @@
 
-#define CsYSTEMtHREADS ( !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE ) + !!( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_tmWindows ) * 2 + ((tin1S&)tin0P).pag1->_deviceC_cHelper + !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) * 3 /*tmWatchF,tmWatchRudeF,tmKillSocketF*/ )
-
-#define CaLLtHREADS ( thirdC::os_cAllKidThreadsI_IF( tin0P ) + thirdC::os_cAllOrphanThreadsI_IF( tin0P ) )
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -2099,6 +2095,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200023.TASK123pART0 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200024.DONEpART0 BEGIN
+
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -32659,6 +32656,7 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120035b.fladam END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120035c.waituntilalmostalone BEGIN
+
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.

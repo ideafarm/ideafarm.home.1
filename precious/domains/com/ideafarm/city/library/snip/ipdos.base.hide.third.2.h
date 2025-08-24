@@ -4379,6 +4379,59 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200620.flCIRCLEc END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200621.CaLLtHREADS BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*CaLLtHREADS*//*1*/
+
+#define CaLLtHREADS ( thirdC::os_cAllKidThreadsI_IF( tin0P ) + thirdC::os_cAllOrphanThreadsI_IF( tin0P ) )
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200621.CaLLtHREADS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200622.CsYSTEMtHREADS BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*CsYSTEMtHREADS*//*1*/
+
+                      // bService                                                                + b_tmWindows                                                              * 2 +                                        + bSysThreads                                                                    * 3
+#define CsYSTEMtHREADS ( !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE ) + !!( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_tmWindows ) * 2 + ((tin1S&)tin0P).pag1->_deviceC_cHelper + !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) * 3 /*tmWatchF,tmWatchRudeF,tmKillSocketF*/ )
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200622.CsYSTEMtHREADS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
