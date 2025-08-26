@@ -253,71 +253,61 @@ DONE( tmWorkF )
 
                                                                             }            
                                                                                 }
-                                                                                    }
-                                                                                        tInvitationsSubmitted += tb4+tNameSpaceAcademic+tcrlf ;
-                                                                                        TN( tNameSpaceAcademic , "Students and Faculty Only (ICIS)" ) ;
-                                                                                    {
-                                                                                    if( !bFail3 )
+                                                                                    tInvitationsSubmitted += tb4+tNameSpaceAcademic+tcrlf ;
+                                                                                    TN( tNameSpaceAcademic , "Students and Faculty Only (ICIS)" ) ;
+                                                                                {
+                                                                                if( !bFail3 )
 
+                                                                                if( !tValueErrorCode1.csF( tin0P ) ) bFail3 = 0 ;
+                                                                                DEL( pSwPathValue ) ;
+                                                                                }
                                                                                     }
-                                                                                        bFail3 = 1 ;
-                                                                                        //etRock.traceF( tin0P , T("socket is impotent") ) ;
-                                                                                        POOPRqUIET
-                                                                                    {
-                                                                                    if( POOP )
-                                                                                
-                                                                                    }
-                                                                                        if( !tValueErrorCode3.csF( tin0P ) ) bFail3 = 0 ;
-                                                                                        DEL( pSwPathValue ) ;
+                                                                                        etThread.delF( tin0P , pstpsttValue ) ;
+
                                                                                         }
                                                                                             }
-                                                                                                }
-                                                                                                    etThread.delF( tin0P , pstpsttValue ) ;
-
-                                                                                                    }
-                                                                                                        }
-                                                                                                            //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                                            *pptValue[ offe ] = T(pstpsttValue) ;
-                                                                                                        {
-                                                                                                        if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
-                                                                                                    {
-                                                                                                    for( countT offe = 0 ; offe < cPaths ; offe ++ )
-
-                                                                                                    if( cPaths - cValues ) { BLAMMO ; }
-                                                                                                    countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                                                                                                    countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-
-                                                                                                    strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                                                                                                    psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-
-                                                                                                    _IO_
-                                                                                                {
-                                                                                                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                                                                                countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                                                                                                //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                                *pptValue[ offe ] = T(pstpsttValue) ;
                                                                                             {
-                                                                                            if( !POOP )
-
-                                                                                            //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
-
-                                                                                            ;
-                                                                                            }
-                                                                                                &tPathError     ,
-                                                                                                &tPathErrorCode ,
-                                                                                            {
-                                                                                            textC* pptPath[] =
-
-                                                                                            TN( tPathError     , "\"error\"/"   ) ;
-                                                                                            TN( tPathErrorCode , "\"errcode\"/" ) ;
-
-                                                                                            ;
-                                                                                            }
-                                                                                                &tValueError3     ,
-                                                                                                &tValueErrorCode3 ,
-                                                                                            {
-                                                                                            textC* pptValue[] =
+                                                                                            if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
                                                                                         {
-                                                                                        if( pSwPathValue )
+                                                                                        for( countT offe = 0 ; offe < cPaths ; offe ++ )
 
+                                                                                        if( cPaths - cValues ) { BLAMMO ; }
+                                                                                        countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                                                                        countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+
+                                                                                        strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                                                                        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+
+                                                                                        _IO_
+                                                                                    {
+                                                                                    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                                                                    countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+
+                                                                                    //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
+                                                                                    ;
+                                                                                    }
+                                                                                        &tPathError     ,
+                                                                                        &tPathErrorCode ,
+                                                                                    {
+                                                                                    textC* pptPath[] =
+
+                                                                                    TN( tPathError     , "\"error\"/"   ) ;
+                                                                                    TN( tPathErrorCode , "\"errcode\"/" ) ;
+
+                                                                                    ;
+                                                                                    }
+                                                                                        &tValueError1     ,
+                                                                                        &tValueErrorCode1 ,
+                                                                                    {
+                                                                                    textC* pptValue[] =
+                                                                                {
+                                                                                if( pSwPathValue )
+
+                                                                                }
+                                                                                    }
                                                                                         }
                                                                                             }
                                                                                                 DEL( pSwPathValue ) ;
@@ -328,46 +318,56 @@ DONE( tmWorkF )
                                                                                             if( POOP )
                                                                                             __Z( pSwPathValue ) ;
                                                                                             ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
-
-                                                                                            SCOOPS
                                                                                         {
-                                                                                        IFsCRATCHoK
-                                                                                        ZE( switchC* , pSwPathValue ) ;
-                                                                                        ZE( strokeS* , psttPath     ) ;
-                                                                                    {
-
-                                                                                    //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                    //etRock.traceF( tin0P , T("json response:") ) ;
-
-                                                                                    }
+                                                                                        else
                                                                                         }
-                                                                                            else if( costj ) break ;
-                                                                                                 if( cNest ) costj ++ ;
-                                                                                
-                                                                                            else if( postj[ costj ] == '}' ) cNest -- ;
-                                                                                                 if( postj[ costj ] == '{' ) cNest ++ ;
-                                                                                
-                                                                                            putchar( postj[ costj ] ) ;
-
-                                                                                            if( !cbIn ) break ;
-                                                                                            countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
+                                                                                            etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                            POOPRqUIET
+                                                                                            countT rc = POOP ;
                                                                                         {
-                                                                                        for(;;)
-                                                                                        ZE( countT , cNest ) ;
+                                                                                        if( POOP )
+
+                                                                                        //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                        //etRock.traceF( tin0P , T("json response:") ) ;
+
+                                                                                        }
+                                                                                            }
+                                                                                                else if( costj ) break ;
+                                                                                                     if( cNest ) costj ++ ;
+                                                                                    
+                                                                                                else if( postj[ costj ] == '}' ) cNest -- ;
+                                                                                                     if( postj[ costj ] == '{' ) cNest ++ ;
+                                                                                    
+                                                                                                //putchar( postj[ costj ] ) ;
+
+                                                                                                if( !cbIn ) break ;
+                                                                                                countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
+                                                                                            {
+                                                                                            while( !POOP )
+                                                                                            ZE( countT , cNest ) ;
+                                                                                        {
+                                                                                        ZE( countT , costj ) ;
+                                                                                        thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
+                                                                                        osTextT postj[ TUCK << 1 ] ;
                                                                                     {
-                                                                                    ZE( countT , costj ) ;
-                                                                                    thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
-                                                                                    osTextT postj[ TUCK << 1 ] ;
-                                                                                
+                                                                                    else
+                                                                                    }
+                                                                                        etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                        POOPRqUIET
+                                                                                        countT rc = POOP ;
+                                                                                    {
+                                                                                    if( POOP )
                                                                                     psoc->writeF( tin0P , (osTextT*)tSay ) ;
                                                                                     //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                                                                     //etRock.traceF( tin0P , T("request:") ) ;
-
+                                                                                
                                                                                     TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!CxQXuURdflEEIURQXO:ideafarm.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBodyInvite.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
                                                                                 
                                                                                     SCOOPS
                                                                                 {
                                                                                 IFsCRATCHoK
+                                                                                ZE( switchC* , pSwPathValue ) ;
+                                                                                ZE( strokeS* , psttPath     ) ;
                                                                                 _IO_
 
                                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -383,71 +383,61 @@ DONE( tmWorkF )
                                                                             
                                                                             }            
                                                                                 }
-                                                                                    }
-                                                                                        tInvitationsSubmitted += tb4+tNameSpaceCourtship+tcrlf ;
-                                                                                        TN( tNameSpaceCourtship , "Bait N' Switch Courtship Workshops (ICIS)" ) ;
-                                                                                    {
-                                                                                    if( !bFail2 )
+                                                                                    tInvitationsSubmitted += tb4+tNameSpaceCourtship+tcrlf ;
+                                                                                    TN( tNameSpaceCourtship , "Bait N' Switch Courtship Workshops (ICIS)" ) ;
+                                                                                {
+                                                                                if( !bFail2 )
 
+                                                                                if( !tValueErrorCode1.csF( tin0P ) ) bFail2 = 0 ;
+                                                                                DEL( pSwPathValue ) ;
+                                                                                }
                                                                                     }
-                                                                                        bFail2 = 1 ;
-                                                                                        //etRock.traceF( tin0P , T("socket is impotent") ) ;
-                                                                                        POOPRqUIET
-                                                                                    {
-                                                                                    if( POOP )
-                                                                                
-                                                                                    }
-                                                                                        if( !tValueErrorCode2.csF( tin0P ) ) bFail2 = 0 ;
-                                                                                        DEL( pSwPathValue ) ;
+                                                                                        etThread.delF( tin0P , pstpsttValue ) ;
+
                                                                                         }
                                                                                             }
-                                                                                                }
-                                                                                                    etThread.delF( tin0P , pstpsttValue ) ;
-
-                                                                                                    }
-                                                                                                        }
-                                                                                                            //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                                            *pptValue[ offe ] = T(pstpsttValue) ;
-                                                                                                        {
-                                                                                                        if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
-                                                                                                    {
-                                                                                                    for( countT offe = 0 ; offe < cPaths ; offe ++ )
-
-                                                                                                    if( cPaths - cValues ) { BLAMMO ; }
-                                                                                                    countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                                                                                                    countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-
-                                                                                                    strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                                                                                                    psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-
-                                                                                                    _IO_
-                                                                                                {
-                                                                                                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                                                                                countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                                                                                                //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                                *pptValue[ offe ] = T(pstpsttValue) ;
                                                                                             {
-                                                                                            if( !POOP )
-
-                                                                                            //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
-
-                                                                                            ;
-                                                                                            }
-                                                                                                &tPathError     ,
-                                                                                                &tPathErrorCode ,
-                                                                                            {
-                                                                                            textC* pptPath[] =
-
-                                                                                            TN( tPathError     , "\"error\"/"   ) ;
-                                                                                            TN( tPathErrorCode , "\"errcode\"/" ) ;
-
-                                                                                            ;
-                                                                                            }
-                                                                                                &tValueError2     ,
-                                                                                                &tValueErrorCode2 ,
-                                                                                            {
-                                                                                            textC* pptValue[] =
+                                                                                            if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
                                                                                         {
-                                                                                        if( pSwPathValue )
+                                                                                        for( countT offe = 0 ; offe < cPaths ; offe ++ )
 
+                                                                                        if( cPaths - cValues ) { BLAMMO ; }
+                                                                                        countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                                                                        countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+
+                                                                                        strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                                                                        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+
+                                                                                        _IO_
+                                                                                    {
+                                                                                    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                                                                    countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+
+                                                                                    //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
+                                                                                    ;
+                                                                                    }
+                                                                                        &tPathError     ,
+                                                                                        &tPathErrorCode ,
+                                                                                    {
+                                                                                    textC* pptPath[] =
+
+                                                                                    TN( tPathError     , "\"error\"/"   ) ;
+                                                                                    TN( tPathErrorCode , "\"errcode\"/" ) ;
+
+                                                                                    ;
+                                                                                    }
+                                                                                        &tValueError1     ,
+                                                                                        &tValueErrorCode1 ,
+                                                                                    {
+                                                                                    textC* pptValue[] =
+                                                                                {
+                                                                                if( pSwPathValue )
+
+                                                                                }
+                                                                                    }
                                                                                         }
                                                                                             }
                                                                                                 DEL( pSwPathValue ) ;
@@ -458,37 +448,45 @@ DONE( tmWorkF )
                                                                                             if( POOP )
                                                                                             __Z( pSwPathValue ) ;
                                                                                             ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
-
-                                                                                            SCOOPS
                                                                                         {
-                                                                                        IFsCRATCHoK
-                                                                                        ZE( switchC* , pSwPathValue ) ;
-                                                                                        ZE( strokeS* , psttPath     ) ;
-                                                                                    {
-
-                                                                                    //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                    //etRock.traceF( tin0P , T("json response:") ) ;
-
-                                                                                    }
+                                                                                        else
                                                                                         }
-                                                                                            else if( costj ) break ;
-                                                                                                 if( cNest ) costj ++ ;
-                                                                                
-                                                                                            else if( postj[ costj ] == '}' ) cNest -- ;
-                                                                                                 if( postj[ costj ] == '{' ) cNest ++ ;
-                                                                                
-                                                                                            putchar( postj[ costj ] ) ;
-
-                                                                                            if( !cbIn ) break ;
-                                                                                            countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
+                                                                                            etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                            POOPRqUIET
+                                                                                            countT rc = POOP ;
                                                                                         {
-                                                                                        for(;;)
-                                                                                        ZE( countT , cNest ) ;
+                                                                                        if( POOP )
+
+                                                                                        //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                        //etRock.traceF( tin0P , T("json response:") ) ;
+
+                                                                                        }
+                                                                                            }
+                                                                                                else if( costj ) break ;
+                                                                                                     if( cNest ) costj ++ ;
+                                                                                    
+                                                                                                else if( postj[ costj ] == '}' ) cNest -- ;
+                                                                                                     if( postj[ costj ] == '{' ) cNest ++ ;
+                                                                                    
+                                                                                                //putchar( postj[ costj ] ) ;
+
+                                                                                                if( !cbIn ) break ;
+                                                                                                countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
+                                                                                            {
+                                                                                            while( !POOP )
+                                                                                            ZE( countT , cNest ) ;
+                                                                                        {
+                                                                                        ZE( countT , costj ) ;
+                                                                                        thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
+                                                                                        osTextT postj[ TUCK << 1 ] ;
                                                                                     {
-                                                                                    ZE( countT , costj ) ;
-                                                                                    thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
-                                                                                    osTextT postj[ TUCK << 1 ] ;
-                                                                                
+                                                                                    else
+                                                                                    }
+                                                                                        etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                        POOPRqUIET
+                                                                                        countT rc = POOP ;
+                                                                                    {
+                                                                                    if( POOP )
                                                                                     psoc->writeF( tin0P , (osTextT*)tSay ) ;
                                                                                     //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                                                                     //etRock.traceF( tin0P , T("request:") ) ;
@@ -498,6 +496,8 @@ DONE( tmWorkF )
                                                                                     SCOOPS
                                                                                 {
                                                                                 IFsCRATCHoK
+                                                                                ZE( switchC* , pSwPathValue ) ;
+                                                                                ZE( strokeS* , psttPath     ) ;
                                                                                 _IO_
 
                                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -509,7 +509,7 @@ DONE( tmWorkF )
                                                                             else if( !bFail0 )
                                                                             if( age < 13 || age > 29 ) bFail2 = 0 ;
                                                                             //etRock.traceF( tin0P , T("debug / 5") ) ;
-                                                                            
+
                                                                             }
                                                                                 }
                                                                                     tInvitationsSubmitted += tb4+tNameSpaceVisitors+tcrlf ;
