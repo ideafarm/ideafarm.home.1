@@ -68,8 +68,7 @@ DONE( tmWorkF )
                                                 POOPR
                                             {
                                             if( POOP )
-                                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tWhere+tShort , tLongEating , 1 ) ;
-
+                                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , bFail0 ? tLong : tWhere+tShort , tLongEating , 1 ) ;
                                             SCOOPS
                                         {
                                         IFsCRATCHoK
@@ -161,9 +160,7 @@ DONE( tmWorkF )
                                                                 }
                                                                     ) ;
 
-                                                                        "Be sure to use the same email address so that we can detect duplicate charges and reverse them.\r\n\r\n"
-                                                                        "If you entered your [matrix] username incorrectly, you can submit a new, corrected order.\r\n"
-                                                                        "\r\nWe have been notified and will contact you via email during business hours.\r\n"
+                                                                        "\r\nWe have been notified and will contact you via email if necessary.\r\n\r\n"
 
                                                                     tThankYou += T(
 
@@ -196,11 +193,12 @@ DONE( tmWorkF )
 
                                                                     ) ;
 
-                                                                        "Your payment has been received but this automated system could not generate some of your invite(s):\r\n\r\n"
+                                                                        : "Your payment has been received but this automated system could not generate some of your invite(s):\r\n\r\n"
+                                                                        ? "Your payment has been received but this automated system cannot process your order right now.\r\nIt will be retried after a delay.\r\n\r\n"
 
-                                                                    tThankYou += T(
+                                                                    tThankYou += T( bFail0
                                                                 {
-                                                                if( bFail1 || bFail2 || bFail3 )
+                                                                if( bFail0 || bFail1 || bFail2 || bFail3 )
 
                                                                 ) ;
                                                                     "go to http://admissions.ideafarm.com/ and click: \"[Click here to manage your subscription]\".\r\n"
@@ -683,9 +681,14 @@ DONE( tmWorkF )
                                                                                         {
                                                                                         else
                                                                                         }
+                                                                                            break ;
+                                                                                            etRock.traceF( tin0P , T("!exception / could not register a user and the server did not return error information, so the homeserver must be down") ) ;
+                                                                                        {
+                                                                                        else if( !tValueErrorCode.csF( tin0P ) && !tValueError.csF( tin0P ) )
+                                                                                        }
                                                                                             continue ;
                                                                                             bRetrySameUsername = 1 ;
-                                                                                            //etRock.traceF( tin0P , T("!exception / other error ; will retry the same value [errorCode,error]:    ")+tValueErrorCode+tb4+tValueError ) ;
+                                                                                            etRock.traceF( tin0P , T("!exception / other error ; will retry the same value [errorCode,error]:    ")+tValueErrorCode+tb4+tValueError ) ;
                                                                                         {
                                                                                         else if( tValueErrorCode.csF( tin0P ) || tValueError.csF( tin0P ) )
                                                                                         }
@@ -893,6 +896,12 @@ DONE( tmWorkF )
                                                                                     //****                                          ********************************************************************************************************************************************************************************************************************************************************
                                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                                 {
+                                                                                else
+                                                                                }
+                                                                                    break ;
+                                                                                    etRock.traceF( tin0P , T("!exception / could not obtain nonce so the homeserver must be down") ) ;
+                                                                                {
+                                                                                if( !tValueNonce.csF( tin0P ) )
                                                                                 //etRock.traceF( tin0P , T("debug / 8") ) ;
 
                                                                                 //etRock.traceF( tin0P , T("[nonce]:    ")+tValueNonce ) ;
@@ -1178,7 +1187,6 @@ DONE( tmWorkF )
                                                                 boolT bFail3 = 1 ;
                                                                 boolT bFail2 = 1 ;
                                                                 boolT bFail1 = 1 ;
-                                                                boolT bFail0 = 1 ;
                                                                 TN( tInvitationsSubmitted , "" ) ;
                                                                 bValidEvent = 1 ;                           //I THINK THAT THIS IS A VALID EVENT THAT IS REALLY FROM STRIPE, SO WILL PROCEED TO ISSUE A WELCOME EMAIL WITH CREDENTIALS
 
@@ -1346,6 +1354,7 @@ DONE( tmWorkF )
                                             _IO_
                                         {
                                         if( !( F(flagsFail) ) )
+                                        boolT bFail0 = 1 ;
                                         ZE( boolT , bGorilla01  ) ;
                                         ZE( boolT , bRegistered ) ;     // WILL ALSO BE SET IF I USE A PREEXISTING CREDENTIALS SETTING
 
