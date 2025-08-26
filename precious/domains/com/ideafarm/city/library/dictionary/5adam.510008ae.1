@@ -1562,10 +1562,6 @@ DONE( tmWorkF )
         TN( tSayExCouldNotParseJson       , "!exception / could not parse json" ) ;
         TN( tSayExCouldNotConnectToServer , "!exception / could not connect to server [rc,tServer]:    " ) ;
         TN( tSayExCouldNotObtainNnServer  , "!exception / could not obtain nnServer value [rc,tServer]:    " ) ;
-        TN( tSayLoggedOut  , "logged  out from homeserver" ) ;
-        TN( tSayLoggingOut , "logging out from homeserver [accessToken,deviceId]:    " ) ;
-        TN( tSayLoggedIn  , "logged  in to homeserver [accessToken,deviceId]:    " ) ;
-        TN( tSayLoggingIn , "logging in to homeserver" ) ;
 
         TN( tb4DomainColontb4        , "    domain:    "               ) ;
         TN( tLanNameExpected         , "WH1"                           ) ;
@@ -1769,7 +1765,7 @@ DONE( tmStayConnectedF )
         
             TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessTokenP+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
         
-            /**/etRock.traceF( tin0P , tSayLoggingOut+tValueAccessTokenP+tb4+tValueDeviceIdP ) ;
+            /**/etRock.traceF( tin0P , tSayLoggingOut ) ;
 
             //******************************************************************************************************************************************************************************************************************************************************************************************************
             //****          ****************************************************************************************************************************************************************************************************************************************************************************************
@@ -1881,6 +1877,8 @@ DONE( tmStayConnectedF )
                 ++ idTest ;
             {
             while( !ether )
+
+            /**/etRock.traceF( tin0P , tSayLoggedIn ) ;
         {
         else
         }
@@ -2131,8 +2129,8 @@ DONE( tmStayConnectedF )
     TN( tSayExCouldNotConnectToServer , "!exception / could not connect to server [rc,tServer]:    " ) ;
     TN( tSayExCouldNotObtainNnServer  , "!exception / could not obtain nnServer value [rc,tServer]:    " ) ;
     TN( tSayLoggedOut  , "logged  out from homeserver" ) ;
-    TN( tSayLoggingOut , "logging out from homeserver [accessToken,deviceId]:    " ) ;
-    TN( tSayLoggedIn  , "logged  in to homeserver [accessToken,deviceId]:    " ) ;
+    TN( tSayLoggingOut , "logging out from homeserver" ) ;
+    TN( tSayLoggedIn  , "logged  in to homeserver" ) ;
     TN( tSayLoggingIn , "logging in to homeserver" ) ;
     TN( tSayConnectingToServer  , "connecting to server [tServer]:    " ) ;
 
