@@ -154,6 +154,490 @@ DONE( tmWorkF )
                                                     }
                                                         }
                                                             }
+                                                                //etRock.traceF( tin0P , T("debug / 0") ) ;
+                                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com/")+T(psttValueEmail)+T("") , tThankYou ) ;
+                                                                //etRock.traceF( tin0P , T("debug / 1") ) ;
+
+                                                                }
+                                                                    ) ;
+
+                                                                        "Be sure to use the same email address so that we can detect duplicate charges and reverse them.\r\n\r\n"
+                                                                        "If you entered your [matrix] username incorrectly, you can submit a new, corrected order.\r\n"
+                                                                        "\r\nWe have been notified and will contact you via email during business hours.\r\n"
+
+                                                                    tThankYou += T(
+
+                                                                    }
+                                                                        ) ;
+
+                                                                            "    [students and faculty]:    ")+tValueError3+T("\r\n"
+
+                                                                        tThankYou += T(
+                                                                    {
+                                                                    if( bFail3 )
+
+                                                                    }
+                                                                        ) ;
+
+                                                                            "    [courtship workshops]:     ")+tValueError2+T("\r\n"
+
+                                                                        tThankYou += T(
+                                                                    {
+                                                                    if( bFail2 )
+
+                                                                    }
+                                                                        ) ;
+
+                                                                            "    [visitors]:                ")+tValueError1+T("\r\n"
+
+                                                                        tThankYou += T(
+                                                                    {
+                                                                    if( bFail1 )
+
+                                                                    ) ;
+
+                                                                        "Your payment has been received but this automated system could not generate some of your invite(s):\r\n\r\n"
+
+                                                                    tThankYou += T(
+                                                                {
+                                                                if( bFail1 || bFail2 || bFail3 )
+
+                                                                ) ;
+                                                                    "go to http://admissions.ideafarm.com/ and click: \"[Click here to manage your subscription]\".\r\n"
+                                                                    "unless you think that this email is spam.  To terminate or modify the subscription that you just paid for,\r\n"
+                                                                    "The anti-spam link at the bottom appears at the end of all email sent from IDEAFARM.COM.  Please do NOT click it\r\n"
+                                                                    +tInvitationsSubmitted +T("\r\n\r\n"
+                                                                    "You have been invited to join the following spaces and rooms at The IdeaFarm (tm) College of Imagination Science:\r\n\r\n")
+                                                                    "    [backup codes]:  ")+T("        (You will receive these during your first login, but hopefully will never need them.)\r\n\r\n"
+                                                                    "    [secret phrase]: ")+T("        (You will make this up during your first login and enter it each time you log in.)\r\n"
+                                                                    "Your account will also be secured by the following credentials:\r\n\r\n"
+                                                                    "    [password]:      ")+tNewPassword+T("        (Be sure to change this right away!)\r\n\r\n"
+                                                                    "    [username]:      ")+tNewUserNameShort+T("\r\n"
+                                                                    "Here are your credentials.  You can use them immediately to log in:\r\n\r\n"
+                                                                    "For instructions, see http://admissions.ideafarm.com .\r\n\r\n"
+                                                                    "    [hawker]:        ")+T(psttValueHawker)+T("\r\n\r\n"
+                                                                    "    [age (parsed)]:  ")+TF4(age,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
+                                                                    "    [age (raw)]:     ")+T(psttValueAge)+T("\r\n"
+                                                                    "    [email]:         ")+T(psttValueEmail)+T("\r\n"
+                                                                    +T("Payment received for:\r\n\r\n"
+                                                                    "Subject: Notification from IDEAFARM.COM\r\n\r\nThank you for ")+tForWhat
+
+                                                                TN( tThankYou , "" ) ; tThankYou = T(
+
+                                                                else           tForWhat = T("paying your entry fee for self-monitored chat.\r\n\r\n") ;
+                                                                if( bStudent ) tForWhat = T("registering as a student on IDEAFARM.COM.\r\n\r\n") ;
+                                                                TN( tForWhat , "" ) ;
+                                                                //etRock.traceF( tin0P , T("debug / 2") ) ;
+
+                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                //****                          ************************************************************************************************************************************************************************************************************************************************************************
+                                                                //****  POST THE WELCOME EMAIL  ************************************************************************************************************************************************************************************************************************************************************************
+                                                                //****                          ************************************************************************************************************************************************************************************************************************************************************************
+                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
+
+                                                                if( !tInvitationsSubmitted.csF( tin0P ) ) tInvitationsSubmitted = T("    none\r\n") ;
+                                                                //etRock.traceF( tin0P , T("debug / 3") ) ;
+
+                                                                }            
+                                                                    }
+                                                                        tInvitationsSubmitted += tb4+tNameSpaceAcademic+tcrlf ;
+                                                                        TN( tNameSpaceAcademic , "Students and Faculty Only (ICIS)" ) ;
+                                                                    {
+                                                                    if( !bFail3 )
+
+                                                                    if( !tValueErrorCode1.csF( tin0P ) ) bFail3 = 0 ;
+                                                                    DEL( pSwPathValue ) ;
+                                                                    }
+                                                                        }
+                                                                            etThread.delF( tin0P , pstpsttValue ) ;
+
+                                                                            }
+                                                                                }
+                                                                                    //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                    *pptValue[ offe ] = T(pstpsttValue) ;
+                                                                                {
+                                                                                if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                                                            {
+                                                                            for( countT offe = 0 ; offe < cPaths ; offe ++ )
+
+                                                                            if( cPaths - cValues ) { BLAMMO ; }
+                                                                            countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                                                            countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+
+                                                                            strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                                                            psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+
+                                                                            _IO_
+                                                                        {
+                                                                        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                                                        countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+
+                                                                        //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
+                                                                        ;
+                                                                        }
+                                                                            &tPathError     ,
+                                                                            &tPathErrorCode ,
+                                                                        {
+                                                                        textC* pptPath[] =
+
+                                                                        TN( tPathError     , "\"error\"/"   ) ;
+                                                                        TN( tPathErrorCode , "\"errcode\"/" ) ;
+
+                                                                        ;
+                                                                        }
+                                                                            &tValueError1     ,
+                                                                            &tValueErrorCode1 ,
+                                                                        {
+                                                                        textC* pptValue[] =
+                                                                    {
+                                                                    if( pSwPathValue )
+
+                                                                    }
+                                                                        }
+                                                                            }
+                                                                                }
+                                                                                    DEL( pSwPathValue ) ;
+                                                                                    etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                    POOPRqUIET
+                                                                                    countT rc = POOP ;
+                                                                                {
+                                                                                if( POOP )
+                                                                                __Z( pSwPathValue ) ;
+                                                                                ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                                                                            {
+                                                                            else
+                                                                            }
+                                                                                etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                POOPRqUIET
+                                                                                countT rc = POOP ;
+                                                                            {
+                                                                            if( POOP )
+
+                                                                            //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                            //etRock.traceF( tin0P , T("json response:") ) ;
+
+                                                                            }
+                                                                                }
+                                                                                    else if( costj ) break ;
+                                                                                         if( cNest ) costj ++ ;
+                                                                        
+                                                                                    else if( postj[ costj ] == '}' ) cNest -- ;
+                                                                                         if( postj[ costj ] == '{' ) cNest ++ ;
+                                                                        
+                                                                                    //putchar( postj[ costj ] ) ;
+
+                                                                                    if( !cbIn ) break ;
+                                                                                    countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
+                                                                                {
+                                                                                while( !POOP )
+                                                                                ZE( countT , cNest ) ;
+                                                                            {
+                                                                            ZE( countT , costj ) ;
+                                                                            thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
+                                                                            osTextT postj[ TUCK << 1 ] ;
+                                                                        {
+                                                                        else
+                                                                        }
+                                                                            etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                            POOPRqUIET
+                                                                            countT rc = POOP ;
+                                                                        {
+                                                                        if( POOP )
+                                                                        psoc->writeF( tin0P , (osTextT*)tSay ) ;
+                                                                        //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                        //etRock.traceF( tin0P , T("request:") ) ;
+                                                                    
+                                                                        TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!CxQXuURdflEEIURQXO:ideafarm.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBodyInvite.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+                                                                    
+                                                                        SCOOPS
+                                                                    {
+                                                                    IFsCRATCHoK
+                                                                    ZE( switchC* , pSwPathValue ) ;
+                                                                    ZE( strokeS* , psttPath     ) ;
+                                                                    _IO_
+
+                                                                    //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                    //****                                                   ***********************************************************************************************************************************************************************************************************************************************
+                                                                    //****  INVITE TO ROOM Students and Faculty Only (ICIS)  ***********************************************************************************************************************************************************************************************************************************************
+                                                                    //****                                                   ***********************************************************************************************************************************************************************************************************************************************
+                                                                    //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                {
+                                                                else if( !bFail0 )
+                                                                if( age < 16 || !bStudent ) bFail3 = 0 ;
+                                                                TN( tNameSpaceAcademic , "Students and Faculty Only (ICIS)" ) ;    // INVITE TO SPACE
+                                                                //etRock.traceF( tin0P , T("debug / 4") ) ;
+                                                                
+                                                                }            
+                                                                    }
+                                                                        tInvitationsSubmitted += tb4+tNameSpaceCourtship+tcrlf ;
+                                                                        TN( tNameSpaceCourtship , "Bait N' Switch Courtship Workshops (ICIS)" ) ;
+                                                                    {
+                                                                    if( !bFail2 )
+
+                                                                    if( !tValueErrorCode1.csF( tin0P ) ) bFail2 = 0 ;
+                                                                    DEL( pSwPathValue ) ;
+                                                                    }
+                                                                        }
+                                                                            etThread.delF( tin0P , pstpsttValue ) ;
+
+                                                                            }
+                                                                                }
+                                                                                    //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                    *pptValue[ offe ] = T(pstpsttValue) ;
+                                                                                {
+                                                                                if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                                                            {
+                                                                            for( countT offe = 0 ; offe < cPaths ; offe ++ )
+
+                                                                            if( cPaths - cValues ) { BLAMMO ; }
+                                                                            countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                                                            countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+
+                                                                            strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                                                            psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+
+                                                                            _IO_
+                                                                        {
+                                                                        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                                                        countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+
+                                                                        //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
+                                                                        ;
+                                                                        }
+                                                                            &tPathError     ,
+                                                                            &tPathErrorCode ,
+                                                                        {
+                                                                        textC* pptPath[] =
+
+                                                                        TN( tPathError     , "\"error\"/"   ) ;
+                                                                        TN( tPathErrorCode , "\"errcode\"/" ) ;
+
+                                                                        ;
+                                                                        }
+                                                                            &tValueError1     ,
+                                                                            &tValueErrorCode1 ,
+                                                                        {
+                                                                        textC* pptValue[] =
+                                                                    {
+                                                                    if( pSwPathValue )
+
+                                                                    }
+                                                                        }
+                                                                            }
+                                                                                }
+                                                                                    DEL( pSwPathValue ) ;
+                                                                                    etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                    POOPRqUIET
+                                                                                    countT rc = POOP ;
+                                                                                {
+                                                                                if( POOP )
+                                                                                __Z( pSwPathValue ) ;
+                                                                                ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                                                                            {
+                                                                            else
+                                                                            }
+                                                                                etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                POOPRqUIET
+                                                                                countT rc = POOP ;
+                                                                            {
+                                                                            if( POOP )
+
+                                                                            //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                            //etRock.traceF( tin0P , T("json response:") ) ;
+
+                                                                            }
+                                                                                }
+                                                                                    else if( costj ) break ;
+                                                                                         if( cNest ) costj ++ ;
+                                                                        
+                                                                                    else if( postj[ costj ] == '}' ) cNest -- ;
+                                                                                         if( postj[ costj ] == '{' ) cNest ++ ;
+                                                                        
+                                                                                    //putchar( postj[ costj ] ) ;
+
+                                                                                    if( !cbIn ) break ;
+                                                                                    countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
+                                                                                {
+                                                                                while( !POOP )
+                                                                                ZE( countT , cNest ) ;
+                                                                            {
+                                                                            ZE( countT , costj ) ;
+                                                                            thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
+                                                                            osTextT postj[ TUCK << 1 ] ;
+                                                                        {
+                                                                        else
+                                                                        }
+                                                                            etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                            POOPRqUIET
+                                                                            countT rc = POOP ;
+                                                                        {
+                                                                        if( POOP )
+                                                                        psoc->writeF( tin0P , (osTextT*)tSay ) ;
+                                                                        //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                        //etRock.traceF( tin0P , T("request:") ) ;
+                                                                    
+                                                                        TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!esnkyOGEyeJQlIZGPM:ideafarm.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBodyInvite.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+                                                                    
+                                                                        SCOOPS
+                                                                    {
+                                                                    IFsCRATCHoK
+                                                                    ZE( switchC* , pSwPathValue ) ;
+                                                                    ZE( strokeS* , psttPath     ) ;
+                                                                    _IO_
+
+                                                                    //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                    //****                                                            **************************************************************************************************************************************************************************************************************************************
+                                                                    //****  INVITE TO ROOM Bait N' Switch Courtship Workshops (ICIS)  **************************************************************************************************************************************************************************************************************************************
+                                                                    //****                                                            **************************************************************************************************************************************************************************************************************************************
+                                                                    //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                {
+                                                                else if( !bFail0 )
+                                                                if( age < 13 || age > 29 ) bFail2 = 0 ;
+                                                                //etRock.traceF( tin0P , T("debug / 5") ) ;
+
+                                                                }
+                                                                    }
+                                                                        tInvitationsSubmitted += tb4+tNameSpaceVisitors+tcrlf ;
+                                                                        TN( tNameSpaceVisitors , "Visitors (ICIS: The IdeaFarm (tm) College of Imagination Science)" ) ;
+                                                                    {
+                                                                    if( !bFail1 )
+
+                                                                    if( !tValueErrorCode1.csF( tin0P ) ) bFail1 = 0 ;
+                                                                    DEL( pSwPathValue ) ;
+                                                                    }
+                                                                        }
+                                                                            etThread.delF( tin0P , pstpsttValue ) ;
+
+                                                                            }
+                                                                                }
+                                                                                    //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                    *pptValue[ offe ] = T(pstpsttValue) ;
+                                                                                {
+                                                                                if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                                                            {
+                                                                            for( countT offe = 0 ; offe < cPaths ; offe ++ )
+
+                                                                            if( cPaths - cValues ) { BLAMMO ; }
+                                                                            countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                                                            countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+
+                                                                            strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                                                            psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+
+                                                                            _IO_
+                                                                        {
+                                                                        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                                                        countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+
+                                                                        //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
+                                                                        ;
+                                                                        }
+                                                                            &tPathError     ,
+                                                                            &tPathErrorCode ,
+                                                                        {
+                                                                        textC* pptPath[] =
+
+                                                                        TN( tPathError     , "\"error\"/"   ) ;
+                                                                        TN( tPathErrorCode , "\"errcode\"/" ) ;
+
+                                                                        ;
+                                                                        }
+                                                                            &tValueError1     ,
+                                                                            &tValueErrorCode1 ,
+                                                                        {
+                                                                        textC* pptValue[] =
+                                                                    {
+                                                                    if( pSwPathValue )
+
+                                                                    }
+                                                                        }
+                                                                            }
+                                                                                }
+                                                                                    DEL( pSwPathValue ) ;
+                                                                                    etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                    POOPRqUIET
+                                                                                    countT rc = POOP ;
+                                                                                {
+                                                                                if( POOP )
+                                                                                __Z( pSwPathValue ) ;
+                                                                                ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                                                                            {
+                                                                            else
+                                                                            }
+                                                                                etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                POOPRqUIET
+                                                                                countT rc = POOP ;
+                                                                            {
+                                                                            if( POOP )
+
+                                                                            //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                            //etRock.traceF( tin0P , T("json response:") ) ;
+
+                                                                            }
+                                                                                }
+                                                                                    else if( costj ) break ;
+                                                                                         if( cNest ) costj ++ ;
+                                                                        
+                                                                                    else if( postj[ costj ] == '}' ) cNest -- ;
+                                                                                         if( postj[ costj ] == '{' ) cNest ++ ;
+                                                                        
+                                                                                    //putchar( postj[ costj ] ) ;
+
+                                                                                    if( !cbIn ) break ;
+                                                                                    countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
+                                                                                {
+                                                                                while( !POOP )
+                                                                                ZE( countT , cNest ) ;
+                                                                            {
+                                                                            ZE( countT , costj ) ;
+                                                                            thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
+                                                                            osTextT postj[ TUCK << 1 ] ;
+                                                                        {
+                                                                        else
+                                                                        }
+                                                                            etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                            POOPRqUIET
+                                                                            countT rc = POOP ;
+                                                                        {
+                                                                        if( POOP )
+                                                                        psoc->writeF( tin0P , (osTextT*)tSay ) ;
+                                                                        //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                        //etRock.traceF( tin0P , T("request:") ) ;
+                                                                    
+                                                                        TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!tvsMKCZYUrmUfxhZIq:ideafarm.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBodyInvite.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+                                                                    
+                                                                        SCOOPS
+                                                                    {
+                                                                    IFsCRATCHoK
+                                                                    ZE( switchC* , pSwPathValue ) ;
+                                                                    ZE( strokeS* , psttPath     ) ;
+                                                                    _IO_
+
+                                                                    //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                    //****                                                                                    **************************************************************************************************************************************************************************************************************
+                                                                    //****  INVITE TO SPACE Visitors (ICIS: The IdeaFarm (tm) College of Imagination Science) **************************************************************************************************************************************************************************************************************
+                                                                    //****                                                                                    **************************************************************************************************************************************************************************************************************
+                                                                    //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                {
+                                                                else if( !bFail0 )
+                                                                if( age < 13 ) bFail1 = 0 ;
+                                                                //etRock.traceF( tin0P , T("debug / 6") ) ;
+
+                                                                if( bRegistered ) bFail0 = 0 ;
+
+                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                //****                                         *********************************************************************************************************************************************************************************************************************************************************
+                                                                //****  SEND A WELCOME EMAIL WITH CREDENTIALS  *********************************************************************************************************************************************************************************************************************************************************
+                                                                //****                                         *********************************************************************************************************************************************************************************************************************************************************
+                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
+
                                                                 }
                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -163,484 +647,8 @@ DONE( tmWorkF )
                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
 
-                                                                    //etRock.traceF( tin0P , T("debug / 0") ) ;
-                                                                    etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com/")+T(psttValueEmail)+T("") , tThankYou ) ;
-                                                                    //etRock.traceF( tin0P , T("debug / 1") ) ;
-
-                                                                    }
-                                                                        ) ;
-
-                                                                            "Be sure to use the same email address so that we can detect duplicate charges and reverse them.\r\n\r\n"
-                                                                            "If you entered your [matrix] username incorrectly, you can submit a new, corrected order.\r\n"
-                                                                            "\r\nWe have been notified and will contact you via email during business hours.\r\n"
-
-                                                                        tThankYou += T(
-
-                                                                        }
-                                                                            ) ;
-
-                                                                                "    [students and faculty]:    ")+tValueError3+T("\r\n"
-
-                                                                            tThankYou += T(
-                                                                        {
-                                                                        if( bFail3 )
-
-                                                                        }
-                                                                            ) ;
-
-                                                                                "    [courtship workshops]:     ")+tValueError2+T("\r\n"
-
-                                                                            tThankYou += T(
-                                                                        {
-                                                                        if( bFail2 )
-
-                                                                        }
-                                                                            ) ;
-
-                                                                                "    [visitors]:                ")+tValueError1+T("\r\n"
-
-                                                                            tThankYou += T(
-                                                                        {
-                                                                        if( bFail1 )
-
-                                                                        ) ;
-
-                                                                            "Your payment has been received but this automated system could not generate some of your invite(s):\r\n\r\n"
-
-                                                                        tThankYou += T(
-                                                                    {
-                                                                    if( bFail1 || bFail2 || bFail3 )
-
-                                                                    ) ;
-                                                                        "go to http://admissions.ideafarm.com/ and click: \"[Click here to manage your subscription]\".\r\n"
-                                                                        "unless you think that this email is spam.  To terminate or modify the subscription that you just paid for,\r\n"
-                                                                        "The anti-spam link at the bottom appears at the end of all email sent from IDEAFARM.COM.  Please do NOT click it\r\n"
-                                                                        +tInvitationsSubmitted +T("\r\n\r\n"
-                                                                        "You have been invited to join the following spaces and rooms at The IdeaFarm (tm) College of Imagination Science:\r\n\r\n")
-                                                                        "    [backup codes]:  ")+T("        (You will receive these during your first login, but hopefully will never need them.)\r\n\r\n"
-                                                                        "    [secret phrase]: ")+T("        (You will make this up during your first login and enter it each time you log in.)\r\n"
-                                                                        "Your account will also be secured by the following credentials:\r\n\r\n"
-                                                                        "    [password]:      ")+tNewPassword+T("        (Be sure to change this right away!)\r\n\r\n"
-                                                                        "    [username]:      ")+tNewUserNameShort+T("\r\n"
-                                                                        "Here are your credentials.  You can use them immediately to log in:\r\n\r\n"
-                                                                        "For instructions, see http://admissions.ideafarm.com .\r\n\r\n"
-                                                                        "    [hawker]:        ")+T(psttValueHawker)+T("\r\n\r\n"
-                                                                        "    [age (parsed)]:  ")+TF4(age,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
-                                                                        "    [age (raw)]:     ")+T(psttValueAge)+T("\r\n"
-                                                                        "    [email]:         ")+T(psttValueEmail)+T("\r\n"
-                                                                        +T("Payment received for:\r\n\r\n"
-                                                                        "Subject: Notification from IDEAFARM.COM\r\n\r\nThank you for ")+tForWhat
-
-                                                                    TN( tThankYou , "" ) ; tThankYou = T(
-
-                                                                    else           tForWhat = T("paying your entry fee for self-monitored chat.\r\n\r\n") ;
-                                                                    if( bStudent ) tForWhat = T("registering as a student on IDEAFARM.COM.\r\n\r\n") ;
-                                                                    TN( tForWhat , "" ) ;
-                                                                    //etRock.traceF( tin0P , T("debug / 2") ) ;
-
-                                                                    //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                    //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                    //****                          ************************************************************************************************************************************************************************************************************************************************************************
-                                                                    //****  POST THE WELCOME EMAIL  ************************************************************************************************************************************************************************************************************************************************************************
-                                                                    //****                          ************************************************************************************************************************************************************************************************************************************************************************
-                                                                    //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                    //******************************************************************************************************************************************************************************************************************************************************************************************************
-
                                                                     }
                                                                         }
-                                                                            if( !tInvitationsSubmitted.csF( tin0P ) ) tInvitationsSubmitted = T("    none\r\n") ;
-                                                                            //etRock.traceF( tin0P , T("debug / 3") ) ;
-
-                                                                            }            
-                                                                                }
-                                                                                    tInvitationsSubmitted += tb4+tNameSpaceAcademic+tcrlf ;
-                                                                                    TN( tNameSpaceAcademic , "Students and Faculty Only (ICIS)" ) ;
-                                                                                {
-                                                                                if( !bFail3 )
-
-                                                                                if( !tValueErrorCode1.csF( tin0P ) ) bFail3 = 0 ;
-                                                                                DEL( pSwPathValue ) ;
-                                                                                }
-                                                                                    }
-                                                                                        etThread.delF( tin0P , pstpsttValue ) ;
-
-                                                                                        }
-                                                                                            }
-                                                                                                //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                                *pptValue[ offe ] = T(pstpsttValue) ;
-                                                                                            {
-                                                                                            if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
-                                                                                        {
-                                                                                        for( countT offe = 0 ; offe < cPaths ; offe ++ )
-
-                                                                                        if( cPaths - cValues ) { BLAMMO ; }
-                                                                                        countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                                                                                        countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-
-                                                                                        strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                                                                                        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-
-                                                                                        _IO_
-                                                                                    {
-                                                                                    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                                                                    countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
-
-                                                                                    //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
-
-                                                                                    ;
-                                                                                    }
-                                                                                        &tPathError     ,
-                                                                                        &tPathErrorCode ,
-                                                                                    {
-                                                                                    textC* pptPath[] =
-
-                                                                                    TN( tPathError     , "\"error\"/"   ) ;
-                                                                                    TN( tPathErrorCode , "\"errcode\"/" ) ;
-
-                                                                                    ;
-                                                                                    }
-                                                                                        &tValueError1     ,
-                                                                                        &tValueErrorCode1 ,
-                                                                                    {
-                                                                                    textC* pptValue[] =
-                                                                                {
-                                                                                if( pSwPathValue )
-
-                                                                                }
-                                                                                    }
-                                                                                        }
-                                                                                            }
-                                                                                                DEL( pSwPathValue ) ;
-                                                                                                etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
-                                                                                                POOPRqUIET
-                                                                                                countT rc = POOP ;
-                                                                                            {
-                                                                                            if( POOP )
-                                                                                            __Z( pSwPathValue ) ;
-                                                                                            ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
-                                                                                        {
-                                                                                        else
-                                                                                        }
-                                                                                            etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
-                                                                                            POOPRqUIET
-                                                                                            countT rc = POOP ;
-                                                                                        {
-                                                                                        if( POOP )
-
-                                                                                        //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                        //etRock.traceF( tin0P , T("json response:") ) ;
-
-                                                                                        }
-                                                                                            }
-                                                                                                else if( costj ) break ;
-                                                                                                     if( cNest ) costj ++ ;
-                                                                                    
-                                                                                                else if( postj[ costj ] == '}' ) cNest -- ;
-                                                                                                     if( postj[ costj ] == '{' ) cNest ++ ;
-                                                                                    
-                                                                                                //putchar( postj[ costj ] ) ;
-
-                                                                                                if( !cbIn ) break ;
-                                                                                                countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
-                                                                                            {
-                                                                                            while( !POOP )
-                                                                                            ZE( countT , cNest ) ;
-                                                                                        {
-                                                                                        ZE( countT , costj ) ;
-                                                                                        thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
-                                                                                        osTextT postj[ TUCK << 1 ] ;
-                                                                                    {
-                                                                                    else
-                                                                                    }
-                                                                                        etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
-                                                                                        POOPRqUIET
-                                                                                        countT rc = POOP ;
-                                                                                    {
-                                                                                    if( POOP )
-                                                                                    psoc->writeF( tin0P , (osTextT*)tSay ) ;
-                                                                                    //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                    //etRock.traceF( tin0P , T("request:") ) ;
-                                                                                
-                                                                                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!CxQXuURdflEEIURQXO:ideafarm.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBodyInvite.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
-                                                                                
-                                                                                    SCOOPS
-                                                                                {
-                                                                                IFsCRATCHoK
-                                                                                ZE( switchC* , pSwPathValue ) ;
-                                                                                ZE( strokeS* , psttPath     ) ;
-                                                                                _IO_
-
-                                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                                //****                                                   ***********************************************************************************************************************************************************************************************************************************************
-                                                                                //****  INVITE TO ROOM Students and Faculty Only (ICIS)  ***********************************************************************************************************************************************************************************************************************************************
-                                                                                //****                                                   ***********************************************************************************************************************************************************************************************************************************************
-                                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                            {
-                                                                            else if( !bFail0 )
-                                                                            if( age < 16 || !bStudent ) bFail3 = 0 ;
-                                                                            TN( tNameSpaceAcademic , "Students and Faculty Only (ICIS)" ) ;    // INVITE TO SPACE
-                                                                            //etRock.traceF( tin0P , T("debug / 4") ) ;
-                                                                            
-                                                                            }            
-                                                                                }
-                                                                                    tInvitationsSubmitted += tb4+tNameSpaceCourtship+tcrlf ;
-                                                                                    TN( tNameSpaceCourtship , "Bait N' Switch Courtship Workshops (ICIS)" ) ;
-                                                                                {
-                                                                                if( !bFail2 )
-
-                                                                                if( !tValueErrorCode1.csF( tin0P ) ) bFail2 = 0 ;
-                                                                                DEL( pSwPathValue ) ;
-                                                                                }
-                                                                                    }
-                                                                                        etThread.delF( tin0P , pstpsttValue ) ;
-
-                                                                                        }
-                                                                                            }
-                                                                                                //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                                *pptValue[ offe ] = T(pstpsttValue) ;
-                                                                                            {
-                                                                                            if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
-                                                                                        {
-                                                                                        for( countT offe = 0 ; offe < cPaths ; offe ++ )
-
-                                                                                        if( cPaths - cValues ) { BLAMMO ; }
-                                                                                        countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                                                                                        countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-
-                                                                                        strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                                                                                        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-
-                                                                                        _IO_
-                                                                                    {
-                                                                                    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                                                                    countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
-
-                                                                                    //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
-
-                                                                                    ;
-                                                                                    }
-                                                                                        &tPathError     ,
-                                                                                        &tPathErrorCode ,
-                                                                                    {
-                                                                                    textC* pptPath[] =
-
-                                                                                    TN( tPathError     , "\"error\"/"   ) ;
-                                                                                    TN( tPathErrorCode , "\"errcode\"/" ) ;
-
-                                                                                    ;
-                                                                                    }
-                                                                                        &tValueError1     ,
-                                                                                        &tValueErrorCode1 ,
-                                                                                    {
-                                                                                    textC* pptValue[] =
-                                                                                {
-                                                                                if( pSwPathValue )
-
-                                                                                }
-                                                                                    }
-                                                                                        }
-                                                                                            }
-                                                                                                DEL( pSwPathValue ) ;
-                                                                                                etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
-                                                                                                POOPRqUIET
-                                                                                                countT rc = POOP ;
-                                                                                            {
-                                                                                            if( POOP )
-                                                                                            __Z( pSwPathValue ) ;
-                                                                                            ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
-                                                                                        {
-                                                                                        else
-                                                                                        }
-                                                                                            etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
-                                                                                            POOPRqUIET
-                                                                                            countT rc = POOP ;
-                                                                                        {
-                                                                                        if( POOP )
-
-                                                                                        //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                        //etRock.traceF( tin0P , T("json response:") ) ;
-
-                                                                                        }
-                                                                                            }
-                                                                                                else if( costj ) break ;
-                                                                                                     if( cNest ) costj ++ ;
-                                                                                    
-                                                                                                else if( postj[ costj ] == '}' ) cNest -- ;
-                                                                                                     if( postj[ costj ] == '{' ) cNest ++ ;
-                                                                                    
-                                                                                                //putchar( postj[ costj ] ) ;
-
-                                                                                                if( !cbIn ) break ;
-                                                                                                countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
-                                                                                            {
-                                                                                            while( !POOP )
-                                                                                            ZE( countT , cNest ) ;
-                                                                                        {
-                                                                                        ZE( countT , costj ) ;
-                                                                                        thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
-                                                                                        osTextT postj[ TUCK << 1 ] ;
-                                                                                    {
-                                                                                    else
-                                                                                    }
-                                                                                        etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
-                                                                                        POOPRqUIET
-                                                                                        countT rc = POOP ;
-                                                                                    {
-                                                                                    if( POOP )
-                                                                                    psoc->writeF( tin0P , (osTextT*)tSay ) ;
-                                                                                    //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                    //etRock.traceF( tin0P , T("request:") ) ;
-                                                                                
-                                                                                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!esnkyOGEyeJQlIZGPM:ideafarm.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBodyInvite.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
-                                                                                
-                                                                                    SCOOPS
-                                                                                {
-                                                                                IFsCRATCHoK
-                                                                                ZE( switchC* , pSwPathValue ) ;
-                                                                                ZE( strokeS* , psttPath     ) ;
-                                                                                _IO_
-
-                                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                                //****                                                            **************************************************************************************************************************************************************************************************************************************
-                                                                                //****  INVITE TO ROOM Bait N' Switch Courtship Workshops (ICIS)  **************************************************************************************************************************************************************************************************************************************
-                                                                                //****                                                            **************************************************************************************************************************************************************************************************************************************
-                                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                            {
-                                                                            else if( !bFail0 )
-                                                                            if( age < 13 || age > 29 ) bFail2 = 0 ;
-                                                                            //etRock.traceF( tin0P , T("debug / 5") ) ;
-
-                                                                            }
-                                                                                }
-                                                                                    tInvitationsSubmitted += tb4+tNameSpaceVisitors+tcrlf ;
-                                                                                    TN( tNameSpaceVisitors , "Visitors (ICIS: The IdeaFarm (tm) College of Imagination Science)" ) ;
-                                                                                {
-                                                                                if( !bFail1 )
-
-                                                                                if( !tValueErrorCode1.csF( tin0P ) ) bFail1 = 0 ;
-                                                                                DEL( pSwPathValue ) ;
-                                                                                }
-                                                                                    }
-                                                                                        etThread.delF( tin0P , pstpsttValue ) ;
-
-                                                                                        }
-                                                                                            }
-                                                                                                //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                                *pptValue[ offe ] = T(pstpsttValue) ;
-                                                                                            {
-                                                                                            if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
-                                                                                        {
-                                                                                        for( countT offe = 0 ; offe < cPaths ; offe ++ )
-
-                                                                                        if( cPaths - cValues ) { BLAMMO ; }
-                                                                                        countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                                                                                        countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-
-                                                                                        strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                                                                                        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-
-                                                                                        _IO_
-                                                                                    {
-                                                                                    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                                                                    countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
-
-                                                                                    //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
-
-                                                                                    ;
-                                                                                    }
-                                                                                        &tPathError     ,
-                                                                                        &tPathErrorCode ,
-                                                                                    {
-                                                                                    textC* pptPath[] =
-
-                                                                                    TN( tPathError     , "\"error\"/"   ) ;
-                                                                                    TN( tPathErrorCode , "\"errcode\"/" ) ;
-
-                                                                                    ;
-                                                                                    }
-                                                                                        &tValueError1     ,
-                                                                                        &tValueErrorCode1 ,
-                                                                                    {
-                                                                                    textC* pptValue[] =
-                                                                                {
-                                                                                if( pSwPathValue )
-
-                                                                                }
-                                                                                    }
-                                                                                        }
-                                                                                            }
-                                                                                                DEL( pSwPathValue ) ;
-                                                                                                etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
-                                                                                                POOPRqUIET
-                                                                                                countT rc = POOP ;
-                                                                                            {
-                                                                                            if( POOP )
-                                                                                            __Z( pSwPathValue ) ;
-                                                                                            ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
-                                                                                        {
-                                                                                        else
-                                                                                        }
-                                                                                            etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
-                                                                                            POOPRqUIET
-                                                                                            countT rc = POOP ;
-                                                                                        {
-                                                                                        if( POOP )
-
-                                                                                        //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                        //etRock.traceF( tin0P , T("json response:") ) ;
-
-                                                                                        }
-                                                                                            }
-                                                                                                else if( costj ) break ;
-                                                                                                     if( cNest ) costj ++ ;
-                                                                                    
-                                                                                                else if( postj[ costj ] == '}' ) cNest -- ;
-                                                                                                     if( postj[ costj ] == '{' ) cNest ++ ;
-                                                                                    
-                                                                                                //putchar( postj[ costj ] ) ;
-
-                                                                                                if( !cbIn ) break ;
-                                                                                                countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
-                                                                                            {
-                                                                                            while( !POOP )
-                                                                                            ZE( countT , cNest ) ;
-                                                                                        {
-                                                                                        ZE( countT , costj ) ;
-                                                                                        thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
-                                                                                        osTextT postj[ TUCK << 1 ] ;
-                                                                                    {
-                                                                                    else
-                                                                                    }
-                                                                                        etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
-                                                                                        POOPRqUIET
-                                                                                        countT rc = POOP ;
-                                                                                    {
-                                                                                    if( POOP )
-                                                                                    psoc->writeF( tin0P , (osTextT*)tSay ) ;
-                                                                                    //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                    //etRock.traceF( tin0P , T("request:") ) ;
-                                                                                
-                                                                                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!tvsMKCZYUrmUfxhZIq:ideafarm.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBodyInvite.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
-                                                                                
-                                                                                    SCOOPS
-                                                                                {
-                                                                                IFsCRATCHoK
-                                                                                ZE( switchC* , pSwPathValue ) ;
-                                                                                ZE( strokeS* , psttPath     ) ;
-                                                                                _IO_
-
-                                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                                //****                                                                                    **************************************************************************************************************************************************************************************************************
-                                                                                //****  INVITE TO SPACE Visitors (ICIS: The IdeaFarm (tm) College of Imagination Science) **************************************************************************************************************************************************************************************************************
-                                                                                //****                                                                                    **************************************************************************************************************************************************************************************************************
-                                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                            {
-                                                                            else if( !bFail0 )
-                                                                            if( age < 13 ) bFail1 = 0 ;
-                                                                            //etRock.traceF( tin0P , T("debug / 6") ) ;
-
-                                                                            if( bRegistered ) bFail0 = 0 ;
-
                                                                             }
                                                                                 }
                                                                                     }
@@ -1037,8 +1045,6 @@ DONE( tmWorkF )
                                                                         {
                                                                         if( !tPreexistingPassword.csF( tin0P ) && !tValueSharedSecret.csF( tin0P ) )
 
-                                                                        TN( tServer , "ideafarm.com" ) ;
-
                                                                         }
                                                                             //etRock.traceF( tin0P , T("[sharedSecret]:    ")+tValueSharedSecret ) ;
                                                                             etThread.delF( tin0P , psttSharedSecret ) ;
@@ -1122,8 +1128,6 @@ DONE( tmWorkF )
                                                                         const boolT bLive = !etThread.strCompareF( tin0P , psttValueLive , tTrue ) ;
                                                                         _IO_
                                                                     {
-                                                                    TN( tIdUser , "" ) ;
-                                                                    TN( tBodyInvite , "" ) ;
                                                                     // DISPENSE CREDENTIALS (LIVE OR TEST)
 
                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -1157,6 +1161,9 @@ DONE( tmWorkF )
                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                 {
                                                                 while( !ether && !POOP && !bRegistered )     //WILL continue UNTIL SUCCESSFULLY REGISTER A NEW USERNAME ; THIS CAUSES idNewUser TO INCREMENT UNTIL IT IS A VALUE THAT HAS NOT BEEN REGISTERED
+                                                                TN( tIdUser , "" ) ;
+                                                                TN( tBodyInvite , "" ) ;
+                                                                TN( tServer , "ideafarm.com" ) ;
 
                                                                 ZE( boolT , bRetrySameUsername ) ;
                                                                 TN( tNewPassword         , "" ) ;
@@ -1177,9 +1184,9 @@ DONE( tmWorkF )
 
                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                //****                                         *********************************************************************************************************************************************************************************************************************************************************
-                                                                //****  SEND A WELCOME EMAIL WITH CREDENTIALS  *********************************************************************************************************************************************************************************************************************************************************
-                                                                //****                                         *********************************************************************************************************************************************************************************************************************************************************
+                                                                //****                                      ************************************************************************************************************************************************************************************************************************************************************
+                                                                //****  OBTAIN A NEW USERNAME AND PASSWORD  ************************************************************************************************************************************************************************************************************************************************************
+                                                                //****                                      ************************************************************************************************************************************************************************************************************************************************************
                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                             {
