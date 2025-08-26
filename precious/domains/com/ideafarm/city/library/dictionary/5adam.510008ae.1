@@ -259,109 +259,117 @@ DONE( tmWorkF )
                                                                             etRock.traceF( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
                                                                         
                                                                             }
-                                                                                DEL( pSwPathValue ) ;
                                                                                 }
+                                                                                    DEL( pSwPathValue ) ;
                                                                                     }
                                                                                         }
-                                                                                            etThread.delF( tin0P , pstpsttValue ) ;
-                                                                            
                                                                                             }
+                                                                                                etThread.delF( tin0P , pstpsttValue ) ;
+                                                                                
                                                                                                 }
-                                                                                                    //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                                    *pptValue[ offe ] = T(pstpsttValue) ;
+                                                                                                    }
+                                                                                                        //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                                        *pptValue[ offe ] = T(pstpsttValue) ;
+                                                                                                    {
+                                                                                                    if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
                                                                                                 {
-                                                                                                if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                                                                                for( countT offe = 0 ; offe < cPaths ; offe ++ )
+                                                                                
+                                                                                                if( cPaths - cValues ) { BLAMMO ; }
+                                                                                                countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                                                                                countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+                                                                                
+                                                                                                //etRock.traceF( tin0P , T("--------------------------        [value]:    ")+T(pstpsttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                                //etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                
+                                                                                                strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                                                                                psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+                                                                                
+                                                                                                _IO_
                                                                                             {
-                                                                                            for( countT offe = 0 ; offe < cPaths ; offe ++ )
-                                                                            
-                                                                                            if( cPaths - cValues ) { BLAMMO ; }
-                                                                                            countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                                                                                            countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-                                                                            
-                                                                                            //etRock.traceF( tin0P , T("--------------------------        [value]:    ")+T(pstpsttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                            //etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                            
-                                                                                            strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                                                                                            psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-                                                                            
+                                                                                            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                                                                            countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
                                                                                             _IO_
                                                                                         {
-                                                                                        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                                                                        countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                                                                                        if( !POOP )
+                                                                                
+                                                                                        ;
+                                                                                        }
+                                                                                            &tPathDeviceId     ,
+                                                                                            &tPathAccessToken  ,
+                                                                                        {
+                                                                                        textC* pptPath[] =
+                                                                                
+                                                                                        TN( tPathDeviceId    , "\"device_id\"/"    ) ;
+                                                                                        TN( tPathAccessToken , "\"access_token\"/" ) ;
+                                                                                
+                                                                                        ;
+                                                                                        }
+                                                                                            &tValueDeviceId      ,
+                                                                                            &tValueAccessToken ,
+                                                                                        {
+                                                                                        textC* pptValue[] =
+                                                                                        _IO_
                                                                                     {
-                                                                                    if( !POOP )
-                                                                            
-                                                                                    ;
-                                                                                    }
-                                                                                        &tPathDeviceId     ,
-                                                                                        &tPathAccessToken  ,
-                                                                                    {
-                                                                                    textC* pptPath[] =
-                                                                            
-                                                                                    TN( tPathDeviceId    , "\"device_id\"/"    ) ;
-                                                                                    TN( tPathAccessToken , "\"access_token\"/" ) ;
-                                                                            
-                                                                                    ;
-                                                                                    }
-                                                                                        &tValueDeviceId      ,
-                                                                                        &tValueAccessToken ,
-                                                                                    {
-                                                                                    textC* pptValue[] =
-                                                                                {
-                                                                                if( pSwPathValue )
+                                                                                    if( pSwPathValue )
 
+                                                                                    }
+                                                                                        }
+                                                                                            DEL( pSwPathValue ) ;
+                                                                                            etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                                                                            POOPRqUIET
+                                                                                            countT rc = POOP ;
+                                                                                        {
+                                                                                        if( POOP )
+                                                                                        __Z( pSwPathValue ) ;
+                                                                                        ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+
+                                                                                        SCOOPS
+                                                                                        _IO_
+                                                                                    {
+                                                                                    IFsCRATCHoK
+                                                                                    ZE( switchC* , pSwPathValue ) ;
+                                                                                    ZE( strokeS* , psttPath     ) ;
+                                                                                    _IO_
+                                                                                {
+                                                                            
+                                                                                //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                //etRock.traceF( tin0P , T("json response:") ) ;
+                                                                            
                                                                                 }
                                                                                     }
-                                                                                        DEL( pSwPathValue ) ;
-                                                                                        etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
-                                                                                        POOPRqUIET
-                                                                                        countT rc = POOP ;
+                                                                                        else if( costj ) break ;
+                                                                                             if( cNest ) costj ++ ;
+                                                                            
+                                                                                        else if( postj[ costj ] == '}' ) cNest -- ;
+                                                                                             if( postj[ costj ] == '{' ) cNest ++ ;
+
+                                                                                        if( !cbIn ) break ;
+                                                                                        countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
                                                                                     {
-                                                                                    if( POOP )
-                                                                                    __Z( pSwPathValue ) ;
-                                                                                    ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
-
-                                                                                    SCOOPS
+                                                                                    for(;;)
+                                                                                    ZE( countT , cNest ) ;
+                                                                                    _IO_
                                                                                 {
-                                                                                IFsCRATCHoK
-                                                                                ZE( switchC* , pSwPathValue ) ;
-                                                                                ZE( strokeS* , psttPath     ) ;
-                                                                            {
-                                                                        
-                                                                            //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                            //etRock.traceF( tin0P , T("json response:") ) ;
-                                                                        
-                                                                            }
-                                                                                }
-                                                                                    else if( costj ) break ;
-                                                                                         if( cNest ) costj ++ ;
-                                                                        
-                                                                                    else if( postj[ costj ] == '}' ) cNest -- ;
-                                                                                         if( postj[ costj ] == '{' ) cNest ++ ;
+                                                                                ZE( countT , costj ) ;
+                                                                                thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
+                                                                                osTextT postj[ TUCK << 1 ] ;
+                                                                            
+                                                                                psoc->writeF( tin0P , (osTextT*)tSay ) ;
+                                                                                //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                //etRock.traceF( tin0P , T("request:") ) ;
+                                                                            
+                                                                                TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+                                                                            
+                                                                                /**/etRock.traceF( tin0P , tSayLoggingOut+tValueAccessToken+tb4+tValueDeviceId ) ;
 
-                                                                                    if( !cbIn ) break ;
-                                                                                    countT cbIn = psoc->readF( tin0P , postj + costj , 1 ) ;
-                                                                                {
-                                                                                for(;;)
-                                                                                ZE( countT , cNest ) ;
+                                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                                //****          ****************************************************************************************************************************************************************************************************************************************************************************************
+                                                                                //****  LOGOUT  ****************************************************************************************************************************************************************************************************************************************************************************************
+                                                                                //****          ****************************************************************************************************************************************************************************************************************************************************************************************
+                                                                                //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                                _IO_
                                                                             {
-                                                                            ZE( countT , costj ) ;
-                                                                            thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
-                                                                            osTextT postj[ TUCK << 1 ] ;
-                                                                        
-                                                                            psoc->writeF( tin0P , (osTextT*)tSay ) ;
-                                                                            //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                            //etRock.traceF( tin0P , T("request:") ) ;
-                                                                        
-                                                                            TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
-                                                                        
-                                                                            /**/etRock.traceF( tin0P , tSayLoggingOut+tValueAccessToken+tb4+tValueDeviceId ) ;
-
-                                                                            //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                            //****          ****************************************************************************************************************************************************************************************************************************************************************************************
-                                                                            //****  LOGOUT  ****************************************************************************************************************************************************************************************************************************************************************************************
-                                                                            //****          ****************************************************************************************************************************************************************************************************************************************************************************************
-                                                                            //******************************************************************************************************************************************************************************************************************************************************************************************************
 
                                                                             if( !tInvitationsSubmitted.csF( tin0P ) ) tInvitationsSubmitted = T("    none\r\n") ;
                                                                             //etRock.traceF( tin0P , T("debug / 3") ) ;
@@ -933,6 +941,7 @@ DONE( tmWorkF )
                                                                                 nicNameC nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
 
                                                                                 SCOOPS
+                                                                                _IO_
                                                                             {
                                                                             IFsCRATCHoK
                                                                             ZE( socketC* , psoc ) ;
@@ -1355,11 +1364,12 @@ DONE( tmWorkF )
                                                                                 {
                                                                                 IFsCRATCHoK
                                                                                 TN( tValueNonce , "" ) ;
+                                                                                _IO_
                                                                             {
                                                                             else
                                                                             if( tPreexistingPassword.csF( tin0P ) ) bRegistered = 1 ;
 
-                                                                            _IO_
+                                                                            _IO_              //U:20250826@0855:  <----------------- A.V. IN HERE (WRITE TO SMALL OFFSET FROM NULL ADDRESS
                                                                         {
                                                                         else
                                                                         }
