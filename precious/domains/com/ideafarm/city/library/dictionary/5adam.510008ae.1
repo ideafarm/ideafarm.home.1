@@ -1132,10 +1132,12 @@ DONE( tmWorkF )
                                                                                 ZE( switchC* , pSwPathValue ) ;
                                                                                 ZE( strokeS* , psttPath     ) ;
                                                                             {
-if( idIn > ( TUCK >> 4 ) )
-countT idIn = 1 + incv02AM( idInLath ) ;
-static countT idInLath ;
-//NEVER TRUE SO WON'T GET A NONCE (TO TEST)
+
+                                                                            //if( idIn > ( TUCK >> 4 ) )
+                                                                            //countT idIn = 1 + incv02AM( idInLath ) ;
+                                                                            //static countT idInLath ;
+                                                                            //TO TEST ERROR HANDLING (E.G. HOMESERVER NOT RESPONSIVE), ENABLE THESE 3 LINES, WHICH WILL CAUSE tValueNonce TO BE NULL FOR A MINUTE, WHICH SHOULD RESULT IN A "SORRY" EMAIL FOLLOWED SHORTLY BY A SUCCESS EMAIL
+
                                                                             TN( tValueNonce , "" ) ;
 
                                                                             //******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -1746,7 +1748,6 @@ DONE( tmStayConnectedF )
     }
         ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
 
-IFsCRATCHoK{}
         if( bNotify1 ) notifyF( tin0P , etThread , bNotify1bUp , bNotify1bCommunick ) ;
         grab_psocP.ungrabF( tin0P ) ;
 
@@ -1898,12 +1899,9 @@ IFsCRATCHoK{}
             //****          ****************************************************************************************************************************************************************************************************************************************************************************************
             //******************************************************************************************************************************************************************************************************************************************************************************************************
 
-IFsCRATCHoK{}
             }
-IFsCRATCHoK{}
                 if( !bServerIsUpLag ) break ;
                 grab_psocP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-IFsCRATCHoK{}
                 if( bServerIsUpLag ) { ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ; }
                 if( bNotify2 ) notifyF( tin0P , etThread , bNotify2bUp , bNotify2bCommunick ) ;
                 grab_psocP.ungrabF( tin0P ) ;
@@ -1933,7 +1931,6 @@ IFsCRATCHoK{}
                 
                 boolT bUpNow = !!etThread.strIdF( tin0P , tOpenCurly , tJson ) ;
 
-IFsCRATCHoK{}
                 }
 
                     }
@@ -2004,7 +2001,6 @@ IFsCRATCHoK{}
                 /**/etRock.traceF( tin0P , tSayQuerying+TF2(idTest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                 ++ idTest ;
-IFsCRATCHoK{}
             {
             while( !ether )
 
@@ -2029,7 +2025,6 @@ IFsCRATCHoK{}
         ZE( boolT , bNotify1 ) ;
 
         }
-IFsCRATCHoK{}
             }
                 }
                     etRock.traceF( tin0P , tSayExCouldNotDestroySocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
@@ -2045,10 +2040,8 @@ IFsCRATCHoK{}
         if( !tValueAccessTokenP.csF( tin0P ) )
 
         }
-IFsCRATCHoK{}
             DEL( pSwPathValue ) ;
             }
-IFsCRATCHoK{}
                 }
                     etThread.delF( tin0P , psttValue ) ;
             
@@ -2092,11 +2085,9 @@ IFsCRATCHoK{}
                     &tValueAccessTokenP ,
                 {
                 textC* pptValue[] =
-IFsCRATCHoK{}
             {
             if( pSwPathValue )
 
-IFsCRATCHoK{}
             }        
                 }
                     }
@@ -2211,7 +2202,6 @@ IFsCRATCHoK{}
                 "{\r\n"
             
             TN( tBody , "" ) ; tBody = T(
-IFsCRATCHoK{}
         {
 
         ++ idTest ;
@@ -2219,8 +2209,6 @@ IFsCRATCHoK{}
         /**/etRock.traceF( tin0P , tSayConnectingToServer+tServer ) ;
 
         grab_psocP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-
-IFsCRATCHoK{}
     {
     while( !ether )
     ZE( boolT , bReady ) ;
