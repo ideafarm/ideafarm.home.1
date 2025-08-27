@@ -767,6 +767,12 @@ DONE( tmWorkF )
                                                                                     }
                                                                                         continue ;
                                                                                         bRetrySameUsername = 1 ;
+                                                                                        etRock.traceF( tin0P , T("!exception / no error code but userId or accessToken is null [tUser,tToken]:    ")+tValueUserId+tb4+tValueToken ) ;
+                                                                                    {
+                                                                                    else if( !tValueUserId.csF( tin0P ) || !tValueToken.csF( tin0P ) )
+                                                                                    }
+                                                                                        continue ;
+                                                                                        bRetrySameUsername = 1 ;
                                                                                         etRock.traceF( tin0P , T("!exception / other error ; will retry the same value [errorCode,error]:    ")+tValueErrorCode+tb4+tValueError ) ;
                                                                                     {
                                                                                     else if( tValueErrorCode.csF( tin0P ) || tValueError.csF( tin0P ) )
@@ -815,22 +821,30 @@ DONE( tmWorkF )
 
                                                                                         ;
                                                                                         }
+                                                                                            &tPathToken     ,
+                                                                                            &tPathUserId    ,
                                                                                             &tPathError     ,
                                                                                             &tPathErrorCode ,
                                                                                         {
                                                                                         textC* pptPath[] =
 
+                                                                                        TN( tPathToken     , "\"access_token\"/"   ) ;
+                                                                                        TN( tPathUserId    , "\"user_id\"/"   ) ;
                                                                                         TN( tPathError     , "\"error\"/"   ) ;
                                                                                         TN( tPathErrorCode , "\"errcode\"/" ) ;
 
                                                                                         ;
                                                                                         }
+                                                                                            &tValueToken     ,
+                                                                                            &tValueUserId    ,
                                                                                             &tValueError     ,
                                                                                             &tValueErrorCode ,
                                                                                         {
                                                                                         textC* pptValue[] =
                                                                                     {
                                                                                     if( pSwPathValue )
+                                                                                    TN( tValueToken     , "" ) ;
+                                                                                    TN( tValueUserId    , "" ) ;
                                                                                     TN( tValueError     , "" ) ;
                                                                                     TN( tValueErrorCode , "" ) ;
 
@@ -858,6 +872,18 @@ DONE( tmWorkF )
                                                                                     }
                                                                                         etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                                                                         etRock.traceF( tin0P , T("json response:") ) ;
+
+                                                                                        // --------------------------        [value]:    @test.123:ideafarm.com
+                                                                                        // -------------------------- [path]:            "user_id"/
+                                                                                        // --------------------------        [value]:    ideafarm.com
+                                                                                        // -------------------------- [path]:            "home_server"/
+                                                                                        // --------------------------        [value]:    [SMUDGED]
+                                                                                        // -------------------------- [path]:            "device_id"/
+                                                                                        // --------------------------        [value]:    syt_[SMUDGED]
+                                                                                        // -------------------------- [path]:            "access_token"/
+                                                                                        // {"user_id":"@test.123:ideafarm.com","home_server":"ideafarm.com","access_token":"syt_[SMUDGED]","device_id":"[SMUDGED]"}
+                                                                                        //
+                                                                                        // EXAMPLE JSON RESPONSE
 
                                                                                         }
                                                                                             //etRock.traceF( tin0P , T(posth) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
