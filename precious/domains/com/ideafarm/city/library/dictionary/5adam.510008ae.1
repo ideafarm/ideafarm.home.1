@@ -236,10 +236,16 @@ DONE( tmWorkF )
                                                                 etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
                                                                 timeS timeN ;
 
+                                                                ) ;
+                                                                    "go to http://admissions.ideafarm.com/ and click: \"[Click here to manage your subscription]\".\r\n"
+                                                                    "unless you think that this email is spam.  To terminate or modify the subscription that you just paid for,\r\n"
+                                                                    "The anti-spam link at the bottom appears at the end of all email sent from IDEAFARM.COM.  Please do NOT click it\r\n"
+                                                                tThankYou += T(
+
                                                                 }
                                                                     ) ;
 
-                                                                        "\r\nWe have been notified and will contact you via email if necessary.\r\n\r\n"
+                                                                        "We have been notified and will contact you via email if necessary.\r\n\r\n"
 
                                                                     tThankYou += T(
 
@@ -280,9 +286,6 @@ DONE( tmWorkF )
                                                                 if( bFail0 || bFail1 || bFail2 || bFail3 )
 
                                                                 ) ;
-                                                                    "go to http://admissions.ideafarm.com/ and click: \"[Click here to manage your subscription]\".\r\n"
-                                                                    "unless you think that this email is spam.  To terminate or modify the subscription that you just paid for,\r\n"
-                                                                    "The anti-spam link at the bottom appears at the end of all email sent from IDEAFARM.COM.  Please do NOT click it\r\n"
                                                                     +tInvitationsSubmitted +T("\r\n\r\n"
                                                                     "You have been invited to join the following spaces and rooms at The IdeaFarm (tm) College of Imagination Science:\r\n\r\n")
                                                                     "    [backup codes]:  ")+T("        (You will receive these during your first login, but hopefully will never need them.)\r\n\r\n"
@@ -306,6 +309,8 @@ DONE( tmWorkF )
                                                                 TN( tForWhat , "" ) ;
                                                                 //etRock.traceF( tin0P , T("debug / 2") ) ;
 
+                                                                if( !tInvitationsSubmitted.csF( tin0P ) ) tInvitationsSubmitted = T("    none\r\n") ;
+
                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                 //****                          ************************************************************************************************************************************************************************************************************************************************************************
@@ -315,7 +320,6 @@ DONE( tmWorkF )
                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
 
                                                                 }
-                                                                    if( !tInvitationsSubmitted.csF( tin0P ) ) tInvitationsSubmitted = T("    none\r\n") ;
                                                                     //etRock.traceF( tin0P , T("debug / 3") ) ;
 
                                                                     }            
