@@ -76,7 +76,7 @@ DONE( tmWorkF )
                                         ;
                                                 : tSharedFolderEventDone
                                                 ? tSharedFolderEventRetryLater
-                                            : F(flagsFail) || !bRegistered
+                                            : F(flagsFail) || bFail0                                        // THIS IS REDUNDANT SINCE tWhere WILL NOT BE USED IF bFail0 (INSTEAD OF RETRYING, THE FILE WILL BE PUT BACK INTO THE INPUT QUEUE)
                                             ? tSharedFolderEventGorilla01
                                         TN( tWhere , "" ) ; tWhere = bGorilla01
 
@@ -159,7 +159,7 @@ DONE( tmWorkF )
                                                                     etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com/")+T(psttValueEmail)+T("") , tThankYou ) ;
                                                                     //etRock.traceF( tin0P , T("debug / 1") ) ;
                                                                 {
-                                                                if( timeE.time2 || timeE.time1 > ( TICK << 4 ) )
+                                                                if( !bFail0 || timeE.time2 || timeE.time1 > ( TICK << 4 ) )
 
                                                                 etThread.osTimeSubtractF( tin0P , timeE.time1 , timeE.time2 , timeL.time1 , timeL.time2 ) ;
                                                                 etThread.osTimeNowF(      tin0P , timeE.time1 , timeE.time2                             ) ;
@@ -652,8 +652,6 @@ DONE( tmWorkF )
                                                                 else
                                                                 if( bFail0 ) bFail3 = bFail2 = bFail1 = 0 ;
 
-                                                                if( bRegistered ) bFail0 = 0 ;
-
                                                                 }
                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -695,7 +693,7 @@ DONE( tmWorkF )
                                                                                             ZE( sCountT , timeN2 ) ;
                                                                                             ZE( countT  , timeN1 ) ;
 
-                                                                                            bRegistered = 1 ;
+                                                                                            bFail0 = 0 ;
                                                                                         {
                                                                                         else
                                                                                         }
@@ -1047,6 +1045,8 @@ DONE( tmWorkF )
                                                                                     ZE( switchC* , pSwPathValue ) ;
                                                                                     ZE( strokeS* , psttPath     ) ;
                                                                                 {
+if( tValueNonce.csF( tin0P ) )
+//NEVER TRUE SO WON'T GET A NONCE (TO TEST)
                                                                                 TN( tValueNonce , "" ) ;
 
                                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -1058,7 +1058,7 @@ DONE( tmWorkF )
                                                                                 _IO_
                                                                             {
                                                                             else
-                                                                            if( tPreexistingPassword.csF( tin0P ) ) bRegistered = 1 ;
+                                                                            if( tPreexistingPassword.csF( tin0P ) ) bFail0 = 0 ;
 
                                                                             _IO_              //U:20250826@0855:  <----------------- A.V. IN HERE (WRITE TO SMALL OFFSET FROM NULL ADDRESS
                                                                         {
@@ -1187,7 +1187,7 @@ DONE( tmWorkF )
                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                                 {
-                                                                while( !ether && !POOP && !bRegistered )     //WILL continue UNTIL SUCCESSFULLY REGISTER A NEW USERNAME ; THIS CAUSES idNewUser TO INCREMENT UNTIL IT IS A VALUE THAT HAS NOT BEEN REGISTERED
+                                                                while( !ether && !POOP && bFail0 )     //WILL continue UNTIL SUCCESSFULLY REGISTER A NEW USERNAME ; THIS CAUSES idNewUser TO INCREMENT UNTIL IT IS A VALUE THAT HAS NOT BEEN REGISTERED
                                                                 TN( tIdUser , "" ) ;
                                                                 TN( tBodyInvite , "" ) ;
                                                                 TN( tServer , "ideafarm.com" ) ;
@@ -1372,9 +1372,8 @@ DONE( tmWorkF )
                                             _IO_
                                         {
                                         if( !( F(flagsFail) ) )
-                                        boolT bFail0 = 1 ;
+                                        boolT bFail0 = 1 ;              // WILL BE RESET IF I USE A PREEXISTING CREDENTIALS SETTING
                                         ZE( boolT , bGorilla01  ) ;
-                                        ZE( boolT , bRegistered ) ;     // WILL ALSO BE SET IF I USE A PREEXISTING CREDENTIALS SETTING
 
                                         }
                                             }
