@@ -309,9 +309,19 @@ DONE( tmWorkF )
                                                             "    [age (raw)]:     ")+T(psttValueAge)+T("\r\n"
                                                             "    [email]:         ")+T(psttValueEmail)+T("\r\n"
                                                             +T("Payment received for:\r\n\r\n"
-                                                            "Subject: Notification from IDEAFARM.COM\r\n\r\nThank you for ")+tForWhat
+                                                            "Subject: Notification from IDEAFARM.COM:  ORDER PROCESSED\r\n\r\nThank you for ")+tForWhat
 
-                                                        TN( tThankYou , "" ) ; tThankYou = T(
+                                                        else tThankYou = T(
+                                                        ) ;
+                                                            "    [hawker]:        ")+T(psttValueHawker)+T("\r\n\r\n"
+                                                            "    [age (parsed)]:  ")+TF4(age,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
+                                                            "    [age (raw)]:     ")+T(psttValueAge)+T("\r\n"
+                                                            "    [email]:         ")+T(psttValueEmail)+T("\r\n"
+                                                            +T("Payment received for:\r\n\r\n"
+                                                            "Subject: Notification from IDEAFARM.COM:  ORDER PROCESSING DELAYED\r\n\r\nThank you for ")+tForWhat
+
+                                                        if( bFail0 ) tThankYou = T(
+                                                        TN( tThankYou , "" ) ;
 
                                                         else           tForWhat = T("paying your entry fee for self-monitored chat.\r\n\r\n") ;
                                                         if( bStudent ) tForWhat = T("registering as a student on IDEAFARM.COM.\r\n\r\n") ;
@@ -2274,7 +2284,7 @@ DONE( tmStayConnectedF )
     TN( tSayLoggingIn , "logging in to homeserver" ) ;
     TN( tSayConnectingToServer  , "connecting to server [tServer]:    " ) ;
 
-etherC::loafIF( tin0P ) ;
+ether.osSleepF( tin0P , TOCK << 4 ) ;
 sgnReady_tmStayConnectedP.giveF( tin0P ) ;
 //TO TEST
 
