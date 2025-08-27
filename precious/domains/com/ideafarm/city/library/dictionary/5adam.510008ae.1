@@ -765,11 +765,6 @@ DONE( tmWorkF )
                                                                                     {
                                                                                     else
                                                                                     }
-                                                                                        break ;
-                                                                                        etRock.traceF( tin0P , T("!exception / could not register a user and the server did not return error information, so the homeserver must be down") ) ;
-                                                                                    {
-                                                                                    else if( !tValueErrorCode.csF( tin0P ) && !tValueError.csF( tin0P ) )
-                                                                                    }
                                                                                         continue ;
                                                                                         bRetrySameUsername = 1 ;
                                                                                         etRock.traceF( tin0P , T("!exception / other error ; will retry the same value [errorCode,error]:    ")+tValueErrorCode+tb4+tValueError ) ;
@@ -794,7 +789,7 @@ DONE( tmWorkF )
 
                                                                                             }
                                                                                                 }
-                                                                                                    //etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                                    etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                                                                                     *pptValue[ offe ] = T(psttValue) ;
                                                                                                 {
                                                                                                 if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
@@ -805,8 +800,8 @@ DONE( tmWorkF )
                                                                                             countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
                                                                                             countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
 
-                                                                                            //etRock.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                            //etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                            etRock.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                            etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
                                                                                             strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                                                                                             psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -861,8 +856,8 @@ DONE( tmWorkF )
 
                                                                                 }
                                                                                     }
-                                                                                        //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                                                                        //etRock.traceF( tin0P , T("json response:") ) ;
+                                                                                        etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                                                                        etRock.traceF( tin0P , T("json response:") ) ;
 
                                                                                         }
                                                                                             //etRock.traceF( tin0P , T(posth) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -988,7 +983,7 @@ DONE( tmWorkF )
                                                                             if( !tValueNonce.csF( tin0P ) )
                                                                             //etRock.traceF( tin0P , T("debug / 8") ) ;
 
-                                                                            //etRock.traceF( tin0P , T("[nonce]:    ")+tValueNonce ) ;
+                                                                            etRock.traceF( tin0P , T("[nonce]:    ")+tValueNonce ) ;
 
                                                                             }
                                                                                 DEL( pSwPathValue ) ;
