@@ -125,9 +125,74 @@ DONE( tmWorkF )
                                                          etThread.delF( tin0P , psttPeer2Domain ) ;
                                                          etThread.delF( tin0P , psttPeer1Domain ) ;
 
-                                                         if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueUpdatedLanName ) ) etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer ")+T(psttValueUpdatedLanName)+T(": ")+T(psttValueUpdatedNnPeer)+tb4DomainColontb4+T(psttPeer3Domain)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
-                                                         if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueCreatedLanName ) ) etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer ")+T(psttValueCreatedLanName)+T(": ")+T(psttValueCreatedNnPeer)+tb4DomainColontb4+T(psttPeer2Domain)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
-                                                         if( etThread.strCompareF( tin0P , tLanNameExpected , psttValuePaidLanName    ) ) etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer ")+T(psttValuePaidLanName   )+T(": ")+T(psttValuePaidNnPeer   )+tb4DomainColontb4+T(psttPeer1Domain)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+                                                        }
+                                                            }
+                                                                }
+                                                                    __1 ;
+                                                                {
+                                                                if( !ids )
+                                                                stNnUntrustedReported.sinkF( tin0P , ids , nnPeer3 , flSTACKsINK_UNIQUE ) ;
+                                                                ZE( countT , ids ) ;
+
+                                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer ")+T(psttValueUpdatedLanName)+T(": ")+T(psttValueUpdatedNnPeer)+tb4DomainColontb4+T(psttPeer3Domain)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+                                                            {
+                                                            if( !bFound )
+
+                                                            }
+                                                                if( ids ) bFound = 1 ;
+                                                                stNnUntrustedReported.sinkF( tin0P , ids , nnPeer3 , flSTACKsINK_QUERY ) ;
+                                                                ZE( countT , ids ) ;
+                                                            {
+                                                            if( stNnUntrustedReported )
+                                                            ZE( boolT , bFound ) ;
+                                                        {
+                                                        if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueUpdatedLanName ) )
+
+                                                        }
+                                                            }
+                                                                }
+                                                                    __1 ;
+                                                                {
+                                                                if( !ids )
+                                                                stNnUntrustedReported.sinkF( tin0P , ids , nnPeer2 , flSTACKsINK_UNIQUE ) ;
+                                                                ZE( countT , ids ) ;
+
+                                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer ")+T(psttValueCreatedLanName)+T(": ")+T(psttValueCreatedNnPeer)+tb4DomainColontb4+T(psttPeer2Domain)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+                                                            {
+                                                            if( !bFound )
+
+                                                            }
+                                                                if( ids ) bFound = 1 ;
+                                                                stNnUntrustedReported.sinkF( tin0P , ids , nnPeer2 , flSTACKsINK_QUERY ) ;
+                                                                ZE( countT , ids ) ;
+                                                            {
+                                                            if( stNnUntrustedReported )
+                                                            ZE( boolT , bFound ) ;
+                                                        {
+                                                        if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueCreatedLanName ) )
+
+                                                        }
+                                                            }
+                                                                }
+                                                                    __1 ;
+                                                                {
+                                                                if( !ids )
+                                                                stNnUntrustedReported.sinkF( tin0P , ids , nnPeer1 , flSTACKsINK_UNIQUE ) ;
+                                                                ZE( countT , ids ) ;
+
+                                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer ")+T(psttValuePaidLanName   )+T(": ")+T(psttValuePaidNnPeer   )+tb4DomainColontb4+T(psttPeer1Domain)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+                                                            {
+                                                            if( !bFound )
+
+                                                            }
+                                                                if( ids ) bFound = 1 ;
+                                                                stNnUntrustedReported.sinkF( tin0P , ids , nnPeer1 , flSTACKsINK_QUERY ) ;
+                                                                ZE( countT , ids ) ;
+                                                            {
+                                                            if( stNnUntrustedReported )
+                                                            ZE( boolT , bFound ) ;
+                                                        {
+                                                        if( etThread.strCompareF( tin0P , tLanNameExpected , psttValuePaidLanName ) )
 
                                                          ZE( strokeS* , psttPeer3Domain ) ; etThread.sockPsttHostF( tin0P , psttPeer3Domain , nnPeer3 ) ; ___( psttPeer3Domain ) ;
                                                          ZE( strokeS* , psttPeer2Domain ) ; etThread.sockPsttHostF( tin0P , psttPeer2Domain , nnPeer2 ) ; ___( psttPeer2Domain ) ;
@@ -1569,6 +1634,8 @@ if( tValueNonce.csF( tin0P ) )
 
         switchC swTimeEmailSentLath( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzEmail , 0 , sizeof( timeS ) ) ;
         ZE( strokeS* , psttzEmail ) ;
+
+        stackC stNnUntrustedReported( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_nicNameC ) ;
 
         //******************************************************************************************************************************************************************************************************************************************************************************************************
         //******************************************************************************************************************************************************************************************************************************************************************************************************
