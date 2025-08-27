@@ -295,7 +295,7 @@ DONE( tmWorkF )
                                                         if( bFail0 || bFail1 || bFail2 || bFail3 )
 
                                                         ) ;
-                                                            +tInvitationsSubmitted +T("\r\n\r\n"
+                                                            +tInvitationsSubmitted+T("\r\n"
                                                             "You have been invited to join the following spaces and rooms at The IdeaFarm (tm) College of Imagination Science:\r\n\r\n")
                                                             "    [backup codes]:  ")+T("        (You will receive these during your first login, but hopefully will never need them.)\r\n\r\n"
                                                             "    [secret phrase]: ")+T("        (You will make this up during your first login and enter it each time you log in.)\r\n"
@@ -2284,9 +2284,10 @@ DONE( tmStayConnectedF )
     TN( tSayLoggingIn , "logging in to homeserver" ) ;
     TN( tSayConnectingToServer  , "connecting to server [tServer]:    " ) ;
 
-ether.osSleepF( tin0P , TOCK << 4 ) ;
-sgnReady_tmStayConnectedP.giveF( tin0P ) ;
-//TO TEST
+    //ether.osSleepF( tin0P , TOCK << 4 ) ;
+    //sgnReady_tmStayConnectedP.giveF( tin0P ) ;
+    //WHEN AN INCOMING EVENT IS ALREAY PRESENT, WAITING TO BE SEEN, ENABLING THESE 2 LINES WILL RESULT IN A PROCESSING FAILURE NOTICE BEING SENT AND, A MINUTE LATER, A PROCESSING SUCCESS NOTICE BEING SENT
+    //TO TEST:
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
