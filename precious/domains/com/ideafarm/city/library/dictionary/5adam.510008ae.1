@@ -765,15 +765,13 @@ DONE( tmWorkF )
                                                                                     {
                                                                                     else
                                                                                     }
-                                                                                        continue ;
-                                                                                        bRetrySameUsername = 1 ;
-                                                                                        etRock.traceF( tin0P , T("!exception / no error code but userId or accessToken is null [tUser,tToken]:    ")+tValueUserId+tb4+tValueToken ) ;
+                                                                                        break ;
+                                                                                        etRock.traceF( tin0P , T("!exception / no error code but null userId or accessToken [tUser,tToken]:    ")+tValueUserId+tb4+tValueToken ) ;
                                                                                     {
                                                                                     else if( !tValueUserId.csF( tin0P ) || !tValueToken.csF( tin0P ) )
                                                                                     }
-                                                                                        continue ;
-                                                                                        bRetrySameUsername = 1 ;
-                                                                                        etRock.traceF( tin0P , T("!exception / other error ; will retry the same value [errorCode,error]:    ")+tValueErrorCode+tb4+tValueError ) ;
+                                                                                        break ;
+                                                                                        etRock.traceF( tin0P , T("!exception / unexpected error [errorCode,error]:    ")+tValueErrorCode+tb4+tValueError ) ;
                                                                                     {
                                                                                     else if( tValueErrorCode.csF( tin0P ) || tValueError.csF( tin0P ) )
                                                                                     }
@@ -783,9 +781,9 @@ DONE( tmWorkF )
                                                                                     if( !etThread.strCompareF( tin0P , tValueErrorCode , T("M_USER_IN_USE") ) )
 
                                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                                                    //****                                                      ********************************************************************************************************************************************************************************************************************************************
-                                                                                    //****  IF OK THEN WRITE JSON FILE, ELSE CONTINUE TO RETRY  ********************************************************************************************************************************************************************************************************************************************
-                                                                                    //****                                                      ********************************************************************************************************************************************************************************************************************************************
+                                                                                    //****                                                                                                 *************************************************************************************************************************************************************************************************
+                                                                                    //****  IF OK THEN WRITE JSON FILE, ELSE IF ALREADY REGISTERED CONTINUE TO RETRY, ELSE ERROR SO BREAK  *************************************************************************************************************************************************************************************************
+                                                                                    //****                                                                                                 *************************************************************************************************************************************************************************************************
                                                                                     //******************************************************************************************************************************************************************************************************************************************************************************************************
 
                                                                                     DEL( pSwPathValue ) ;
@@ -1004,7 +1002,7 @@ DONE( tmWorkF )
                                                                             else
                                                                             }
                                                                                 break ;
-                                                                                etRock.traceF( tin0P , T("!exception / could not obtain nonce so the homeserver must be down") ) ;
+                                                                                etRock.traceF( tin0P , T("!exception / could not obtain nonce") ) ;
                                                                             {
                                                                             if( !tValueNonce.csF( tin0P ) )
                                                                             //etRock.traceF( tin0P , T("debug / 8") ) ;
@@ -1134,7 +1132,7 @@ DONE( tmWorkF )
                                                                                 ZE( switchC* , pSwPathValue ) ;
                                                                                 ZE( strokeS* , psttPath     ) ;
                                                                             {
-if( idIn > ( TUCK >> 5 ) )
+if( idIn > ( TUCK >> 4 ) )
 countT idIn = 1 + incv02AM( idInLath ) ;
 static countT idInLath ;
 //NEVER TRUE SO WON'T GET A NONCE (TO TEST)
