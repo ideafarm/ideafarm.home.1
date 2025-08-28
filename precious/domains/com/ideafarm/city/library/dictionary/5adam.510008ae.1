@@ -301,8 +301,10 @@ DONE( tmWorkF )
                                                             "    [username]:      ")+(bFail0?tn:tNewUserNameShort)+T("\r\n"
                                                             "Here are your credentials.  You can use them immediately to log in:\r\n\r\n"
                                                             "For instructions, see http://admissions.ideafarm.com .\r\n\r\n"
-                                                            "    [hawker]:        ")+T(psttValueHawker)+T("\r\n\r\n"
-                                                            "    [age (parsed)]:  ")+TF4(age,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
+                                                            "\r\n\r\n"
+                                                            //"    [hawker]:        ")+T(psttValueHawker)+T(
+                                                            //"\r\n"
+                                                            "    [age (parsed)]:  ")+TF4(age,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T(
                                                             "    [age (raw)]:     ")+T(psttValueAge)+T("\r\n"
                                                             "    [email]:         ")+T(psttValueEmail)+T("\r\n"
                                                             +T("Payment received for:\r\n\r\n"
@@ -310,8 +312,10 @@ DONE( tmWorkF )
 
                                                         else tThankYou = T(
                                                         ) ;
-                                                            "    [hawker]:        ")+T(psttValueHawker)+T("\r\n\r\n"
-                                                            "    [age (parsed)]:  ")+TF4(age,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
+                                                            "\r\n\r\n"
+                                                            //"    [hawker]:        ")+T(psttValueHawker)+T(
+                                                            //"\r\n"
+                                                            "    [age (parsed)]:  ")+TF4(age,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T(
                                                             "    [age (raw)]:     ")+T(psttValueAge)+T("\r\n"
                                                             "    [email]:         ")+T(psttValueEmail)+T("\r\n"
                                                             +T("Payment received for:\r\n\r\n"
@@ -2281,10 +2285,10 @@ DONE( tmStayConnectedF )
     TN( tSayLoggingIn , "logging in to homeserver" ) ;
     TN( tSayConnectingToServer  , "connecting to server [tServer]:    " ) ;
 
-    //ether.osSleepF( tin0P , TOCK << 4 ) ;
-    //sgnReady_tmStayConnectedP.giveF( tin0P ) ;
-    //WHEN AN INCOMING EVENT IS ALREAY PRESENT, WAITING TO BE SEEN, ENABLING THESE 2 LINES WILL RESULT IN A PROCESSING FAILURE NOTICE BEING SENT AND, A MINUTE LATER, A PROCESSING SUCCESS NOTICE BEING SENT
-    //TO TEST:
+ether.osSleepF( tin0P , TOCK << 4 ) ;
+sgnReady_tmStayConnectedP.giveF( tin0P ) ;
+//WHEN AN INCOMING EVENT IS ALREAY PRESENT, WAITING TO BE SEEN, ENABLING THESE 2 LINES WILL RESULT IN A PROCESSING FAILURE NOTICE BEING SENT AND, A MINUTE LATER, A PROCESSING SUCCESS NOTICE BEING SENT
+//TO TEST:
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
