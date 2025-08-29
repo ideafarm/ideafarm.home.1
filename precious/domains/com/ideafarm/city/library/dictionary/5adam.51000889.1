@@ -44,6 +44,7 @@ DONE( tmGorillaF )
         }
             idNewSuccessUse = 0 ;
 
+#endif
             }
                 }
                     bSuppressNullRouting = 1 ;                                                  //P:PERSONALITY: NULL ROUTING IS NOT DONE IF IT HAS ALREADY BEEN DONE FOR THE CURRENT RUN OF FAILURES
@@ -106,8 +107,9 @@ DONE( tmGorillaF )
                 _IO_
             {
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
+#if defined( NEVERdEFINED )
 
-            /**/etRock.traceF( tin0P , T("stomp! (end)  ")+(cFailUse?tFail:tSlow)+T(" [idStomp,time,idNewFailUse(before),tInvoice,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
+            /**/etRock.traceF( tin0P , tSayStompEndFail+(cFailUse?tFail:tSlow)+T(" [idStomp,time,idNewFailUse(before),tInvoice,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
             _IO_
         {
         else
@@ -134,7 +136,7 @@ DONE( tmGorillaF )
             {
             if( bSuppressNullRouting && !idNewFailOuter && !idNewFailInner && idNewSuccessOuter && idNewSuccessInner )
 
-            /**/etRock.traceF( tin0P , tSayStompEnd+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+T(bSlowStrict?"FORGIVEN":"        "                        )+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
+            /**/etRock.traceF( tin0P , tSayStompEndAok+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+T(bSlowStrict?"FORGIVEN":"        "                        )+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
             idNewSuccessUse ++ ;
             idNewFailUse = 0 ;
         {
@@ -217,6 +219,22 @@ DONE( tmGorillaF )
             if( bOuterLag != bOuter ) ;
 
             }
+                }
+                    sThrow.writeF( tin0P , idpCatch , nnHe , tSuffix , tSuffix.csF( tin0P ) ) ;
+                    etRock.traceF( tin0P , tSayThrowing+tSuffix ) ;
+                    countT idpCatch = *(countT*)pbi ;
+                {
+                if( pbi && cbi == sizeof( countT ) )
+                etThread.boxGetShadowF( tin0P , pbi , cbi , tLongThrowToPort ) ; ___( pbi ) ;
+                ZE( countT , cbi ) ;
+                ZE( byteT* , pbi ) ;
+
+                sThrow.bindF( tin0P , 0 , nnMe ) ;
+                socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+            {
+            if( bOuter )
+
+            }
                 ++ s ; thirdC::dosSleepWinkIF( tin0P , 4 ) ;                        // DNS USES NONBLOCKING I/O TO READ, SO I NAP FOR A WINK TO GIVE THE FILE SYSTEM TIME TO LAZY WRITE THE FILE
                 /**/etRock.traceF( tin0P , T("wrote   suffix file [tSuffix]:    ")+tSuffix ) ;
                 etThread.boxPutF( tin0P , tLong , tSuffix , tSuffix.csF( tin0P ) ) ;
@@ -239,8 +257,7 @@ DONE( tmGorillaF )
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
 
-ZE( boolT , bOuter ) ;
-//        const boolT bOuter = idGorilla == 1 && !( idStomp % ( TUCK >> 6 ) ) ;                           // ONLY GORILLA 1 DOES OUTER STOMPS ; THIS SIMPLIFIES THE COMMUNICATION OF PASSWORD SUFFIXES TO DNS
+        const boolT bOuter = idGorilla == 1 && !( idStomp % ( TUCK >> 6 ) ) ;                           // ONLY GORILLA 1 DOES OUTER STOMPS ; THIS SIMPLIFIES THE COMMUNICATION OF PASSWORD SUFFIXES TO DNS
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
 
         ZE( countT   , costi ) ;
@@ -255,11 +272,16 @@ ZE( boolT , bOuter ) ;
         _IO_
     {
     while( !ether )
+    TN( tSayThrowing , "throwing [tSuffix]:    " ) ;
+    TN( tLongThrowToPort , "" ) ; tLongThrowToPort = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/idpCatchSuffix") ;
     ZE( boolT , bSuppressNullRouting ) ;
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     boolT bOuterLag = - 1 ; //A:ASSUME: operator ! RETURNS 0 OR 1
-    TN( tSayStompEnd       , "stomp! (end)    aok   [idStomp,time,bSlowStrict         ,tInvoice,tUrl]:    " ) ;
+    nicNameC nnHe = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
+    nicNameC nnMe = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
+    TN( tSayStompEndFail   , "stomp! (end)  " ) ;
+    TN( tSayStompEndAok       , "stomp! (end)    aok   [idStomp,time,bSlowStrict         ,tInvoice,tUrl]:    " ) ;
     TN( tSayStompBegin     , "stomp! (begin)" ) ;
     TN( tPasswordPrefix    , ""               ) ;
     TN( tSlow              , "S L O W"        ) ;
