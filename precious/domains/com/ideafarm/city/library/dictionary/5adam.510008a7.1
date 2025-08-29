@@ -198,6 +198,8 @@ DONE( tmWorkF )
     if( !mySettings )
     mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
+    etThread.osThreadF( TaRG2cBsTACK( tmCatchF , CBsTACKmIN << 1 ) ) ;
+
     //etRock.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
     etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
