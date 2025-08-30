@@ -1236,7 +1236,7 @@ DONE( tmWorkF )
                                                                         }
                                                                             }
                                                                                 }
-                                                                                    etThread.fileWriteF( tin0P , fileCount , (byteT*)&idOldUser , sizeof idOldUser ) ;
+                                                                                    etThread.fileWriteF( tin0P , fileCount , (byteT*)&idSlotLath , sizeof idSlotLath ) ;
                                                                                     etThread.fileSetPtrF( tin0P , fileCount , flSETfILEpTR_BEGINNING , c2z ) ;
                                                                                     count2S c2z ;
                                                                                 {
@@ -1278,14 +1278,14 @@ DONE( tmWorkF )
                                                                             if( psttEat )
                                                                             ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , tSetting ) ; ___( psttEat ) ;
 
-                                                                            TN( tSetting , "" ) ; tSetting = T("!ipdos.matrix.preexisting.account.a.")+TF2(idSlotNext,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+                                                                            TN( tSetting , "" ) ; tSetting = T("!ipdos.matrix.preexisting.account.a.")+TF2(++idSlotLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 
                                                                             }
                                                                                 }
                                                                                     etRock.traceF( tin0P , T("!exception / invalid file size for idSlotUseLath, so using 0 [tLongSlotLath]:    ")+tLongSlotLath ) ;
-                                                                                    idSlotNext = 0 ;
+                                                                                    idSlotLath = 0 ;
                                                                                 {
-                                                                                if( cbr - sizeof idSlotNext )
+                                                                                if( cbr - sizeof idSlotLath )
 
                                                                                 }
                                                                                     }
@@ -1294,14 +1294,14 @@ DONE( tmWorkF )
                                                                                         POOPR ;
                                                                                     {
                                                                                     if( POOP )
-                                                                                    ((tin1S&)tin0P).pEtScratch->fileReadF( tin0P , (byteT*)&idSlotNext , cbr , fileCount ) ;
+                                                                                    ((tin1S&)tin0P).pEtScratch->fileReadF( tin0P , (byteT*)&idSlotLath , cbr , fileCount ) ;
                                                                                     SCOOPS
                                                                                 {
                                                                                 IFsCRATCHoK
-                                                                                countT cbr = sizeof idSlotNext ;
+                                                                                countT cbr = sizeof idSlotLath ;
                                                                             {
                                                                             if( !bNewFile )
-                                                                            countT idSlotNext = 1 ;
+                                                                            ZE( countT , idSlotLath ) ;
 
                                                                             const boolT bNewFile = ifcOPENrESULT_CREATED == fileCount.idOpenResultF( tin0P  ) ;
                                                                             fileC fileCount( tin0P , (strokeS*)tLongSlotLath , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
