@@ -1256,7 +1256,7 @@ DONE( tmWorkF )
                                                                             countT cbr = sizeof idOld ;
                                                                         {
                                                                         if( !bNewFile )
-                                                                        countT idOld = bStudent ? 0 : TOCK ;    // STUDENTS GET LOW VALUES, DISPENSED IN SERIAL ORDER 1 2 3 4 ... ; OTHERWISE INITIALIZE TO A HIGH VALUE THAT WILL BE USED IF THE FILE DOES NOT EXIST OR IS INVALID
+                                                                        countT idOld = bStudent && bLive ? 0 : TOCK ;    // STUDENTS GET LOW VALUES, DISPENSED IN SERIAL ORDER 1 2 3 4 ... ; OTHERWISE INITIALIZE TO A HIGH VALUE THAT WILL BE USED IF THE FILE DOES NOT EXIST OR IS INVALID
 
                                                                         const boolT bNewFile = ifcOPENrESULT_CREATED == fileCount.idOpenResultF( tin0P  ) ;
                                                                         fileC fileCount( tin0P , (strokeS*)tName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
