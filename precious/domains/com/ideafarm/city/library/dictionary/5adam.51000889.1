@@ -44,7 +44,6 @@ DONE( tmGorillaF )
         }
             idNewSuccessUse = 0 ;
 
-#endif
             }
                 }
                     bSuppressNullRouting = 1 ;                                                  //P:PERSONALITY: NULL ROUTING IS NOT DONE IF IT HAS ALREADY BEEN DONE FOR THE CURRENT RUN OF FAILURES
@@ -107,7 +106,6 @@ DONE( tmGorillaF )
                 _IO_
             {
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
-#if defined( NEVERdEFINED )
 
             /**/etRock.traceF( tin0P , tSayStompEndFail+(cFailUse?tFail:tSlow)+T(" [idStomp,time,idNewFailUse(before),tInvoice,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
             _IO_
@@ -257,8 +255,7 @@ DONE( tmGorillaF )
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
 
-boolT bOuter = 1 ;
-//        const boolT bOuter = idGorilla == 1 && !( idStomp % ( TUCK >> 6 ) ) ;                           // ONLY GORILLA 1 DOES OUTER STOMPS ; THIS SIMPLIFIES THE COMMUNICATION OF PASSWORD SUFFIXES TO DNS
+        const boolT bOuter = idGorilla == 1 && !( idStomp % ( TUCK >> 6 ) ) ;                           // ONLY GORILLA 1 DOES OUTER STOMPS ; THIS SIMPLIFIES THE COMMUNICATION OF PASSWORD SUFFIXES TO DNS
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
 
         ZE( countT   , costi ) ;
