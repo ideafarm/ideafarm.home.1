@@ -21,30 +21,6 @@ DONE( tmWorkF )
         sgnDone_tmStayConnected.waitF( tin0P ) ;
 
         }
-            }
-                etThread.delF( tin0P , psttPassword ) ;
-                strokeS*& psttPassword = (strokeS*&)(countT&)swExistingCredentials ;
-                psttzLeverIdUser = (strokeS*)swExistingCredentials.leverF( tin0P , idf ) ;
-
-                _IO_
-            {
-            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swExistingCredentials.cFlavorsF( tin0P ) ;
-        {
-
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //****                                             *****************************************************************************************************************************************************************************************************************************************************
-        //****  PURGE THE PREEXISTING CREDENTIALS switchC  *****************************************************************************************************************************************************************************************************************************************************
-        //****                                             *****************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-
-        }
             ++ s ; ether.osSleepF( tin0P , TOCK ) ;
 
             }
@@ -1172,20 +1148,9 @@ DONE( tmWorkF )
 
                                                                             _IO_
                                                                         {
-                                                                        else
-                                                                        if( tPreexistingPassword.csF( tin0P ) ) bFail0 = 0 ;
 
-                                                                        _IO_              //U:20250826@0855:  <----------------- A.V. IN HERE (WRITE TO SMALL OFFSET FROM NULL ADDRESS
+                                                                        _IO_
                                                                     {
-                                                                    else
-                                                                    }
-                                                                        ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;                    //THIS ENSURES THAT I DON'T PEG CPU BY RETRYING ; I AM SPRINKLED OVER CODE WITHOUT ANALYSIS
-                                                                        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-
-                                                                        flagsFail |= flFAIL_COULDnOTgETsHAREDsECRET ;
-                                                                        //etRock.traceF( tin0P , T("could not retrieve shared secret") ) ;
-                                                                    {
-                                                                    if( !tPreexistingPassword.csF( tin0P ) && !tValueSharedSecret.csF( tin0P ) )
 
                                                                     }
                                                                         //etRock.traceF( tin0P , T("[sharedSecret]:    ")+tValueSharedSecret ) ;
@@ -1197,8 +1162,6 @@ DONE( tmWorkF )
                                                                         tNewPassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x3e) ;
                                                                         countT idNewPassword = ruPassword ;
                                                                     {
-                                                                    else
-                                                                    if( tPreexistingPassword.csF( tin0P ) ) tNewPassword = tPreexistingPassword ;
                                                                     TN( tValueSharedSecret , "" ) ;
 
                                                                     _IO_
@@ -1212,23 +1175,12 @@ DONE( tmWorkF )
                                                                 if( tNewUserNameLong.csF( tin0P ) )
 
                                                                 }
-                                                                    //etRock.traceF( tin0P , T("dispensing preexisting credentials [tNewUserNameShort]:    ")+tNewUserNameShort ) ;
-                                                                    tPreexistingPassword   = T(psttPassword)                                       ;
-                                                                    strokeS*& psttPassword = (strokeS*&)(countT&)swExistingCredentials             ;
-                                                                    psttzLeverIdUser       = (strokeS*)swExistingCredentials.leverF( tin0P , idf ) ;
-                                                                {
-                                                                if( idf )
-                                                                countT idf = swExistingCredentials.idSlotOfLeverF( tin0P , (countT)(const strokeS*)tIdUser ) ;
-                                                                //etRock.traceF( tin0P , T("looking for preexisting credentials for [tIdUser]:    ")+tIdUser ) ;
-                                                                TN( tPreexistingPassword , "" ) ;                                                           // ALSO USED AS BOOLEAN TO SUPPRESS REGISTRATION OF A NEW USER
-
-                                                                }
-                                                                    tBodyInvite = T("{\"user_id\": \"")+tNewUserNameLong+T("\"}\r\n") ;
-                                                                    tNewUserNameLong  = T("@")+tNewUserNameShort+T(":ideafarm.com") ;       // GIVE ONLY THE SHORT USERNAME IN THE EMAILS BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
-                                                                    tNewUserNameShort = T(bLive?"a.":"test.")+tIdUser ;
-                                                                    tIdUser = TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ;       // [0-9,a-z]
-
                                                                     }
+                                                                        tBodyInvite = T("{\"user_id\": \"")+tNewUserNameLong+T("\"}\r\n") ;
+                                                                        tNewUserNameLong  = T("@")+tNewUserNameShort+T(":ideafarm.com") ;       // GIVE ONLY THE SHORT USERNAME IN THE EMAILS BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
+                                                                        tNewUserNameShort = T(bLive?"a.":"test.")+tIdUser ;
+                                                                        TN( tIdUser , "" ) ; tIdUser = TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ;       // [0-9,a-z]
+
                                                                         etThread.fileWriteF( tin0P , fileCount , (byteT*)&idNewUser , sizeof idNewUser ) ;
                                                                         etThread.fileSetPtrF( tin0P , fileCount , flSETfILEpTR_BEGINNING , c2z ) ;
                                                                         count2S c2z ;
@@ -1237,7 +1189,7 @@ DONE( tmWorkF )
 
                                                                         }
                                                                             }
-                                                                                etRock.traceF( tin0P , T("!exception / invalid file size for idNewUserLath, so using 0 [tName]:    ")+tName ) ;
+                                                                                etRock.traceF( tin0P , T("!exception / invalid file size for idNewUserLath, so using 0 [tLongNewUserLath]:    ")+tLongNewUserLath ) ;
                                                                                 idOld = 0 ;
                                                                             {
                                                                             if( cbr - sizeof idOld )
@@ -1245,7 +1197,7 @@ DONE( tmWorkF )
                                                                             }
                                                                                 }
                                                                                     cbr = 0 ;       // PROBABLY REDUNDANT
-                                                                                    etRock.traceF( tin0P , T("!exception / countT file is not of the expected size [tName]")+tName ) ;
+                                                                                    etRock.traceF( tin0P , T("!exception / countT file is not of the expected size [tLongNewUserLath]")+tLongNewUserLath ) ;
                                                                                     POOPR ;
                                                                                 {
                                                                                 if( POOP )
@@ -1259,15 +1211,140 @@ DONE( tmWorkF )
                                                                         countT idOld = bStudent && bLive ? 0 : TOCK ;    // STUDENTS GET LOW VALUES, DISPENSED IN SERIAL ORDER 1 2 3 4 ... ; OTHERWISE INITIALIZE TO A HIGH VALUE THAT WILL BE USED IF THE FILE DOES NOT EXIST OR IS INVALID
 
                                                                         const boolT bNewFile = ifcOPENrESULT_CREATED == fileCount.idOpenResultF( tin0P  ) ;
-                                                                        fileC fileCount( tin0P , (strokeS*)tName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
+                                                                        fileC fileCount( tin0P , (strokeS*)tLongNewUserLath , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
+
+                                                                        else           tLongNewUserLath = tSharedFolderWorking+T(bLive?"idNewUserLiveVisitorLath":"idNewUserTestVisitorLath") ;
+                                                                        if( bStudent ) tLongNewUserLath = tSharedFolderWorking+T(bLive?"idNewUserLiveStudentLath":"idNewUserTestStudentLath") ;
+                                                                        TN( tLongNewUserLath , "" ) ; 
+                                                                        ZE( countT , idNewUser ) ;
                                                                     {
-                                                                    ZE( countT , idNewUser ) ;
+                                                                    else
+                                                                    }
+                                                                        break ;
 
-                                                                    else           tName = tSharedFolderWorking+T(bLive?"idNewUserLiveVisitorLath":"idNewUserTestVisitorLath") ;
-                                                                    if( bStudent ) tName = tSharedFolderWorking+T(bLive?"idNewUserLiveStudentLath":"idNewUserTestStudentLath") ;
-                                                                    TN( tName , "" ) ; 
+                                                                        tBodyInvite = T("{\"user_id\": \"")+tNewUserNameLong+T("\"}\r\n") ;
+                                                                        tNewUserNameLong  = T("@")+tNewUserNameShort+T(":ideafarm.com") ;       // GIVE ONLY THE SHORT USERNAME IN THE EMAILS BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
+                                                                        tNewUserNameShort = T(bLive?"a.":"test.")+tIdUser ;
 
-                                                                    const boolT bLive = !etThread.strCompareF( tin0P , psttValueLive , tTrue ) ;
+                                                                        bFail0 = 0 ;
+                                                                        tNewPassword = tOldPassword ;
+                                                                        TN( tIdUser , (strokeS*)tOldIdUser ) ;
+                                                                    {
+                                                                    if( tOldIdUser.csF( tin0P ) && tOldPassword.csF( tin0P ) )
+
+                                                                    }
+                                                                        }
+                                                                            }
+                                                                                }
+                                                                                    etThread.fileWriteF( tin0P , fileCount , (byteT*)&idOldUser , sizeof idOldUser ) ;
+                                                                                    etThread.fileSetPtrF( tin0P , fileCount , flSETfILEpTR_BEGINNING , c2z ) ;
+                                                                                    count2S c2z ;
+                                                                                {
+                                                                                else
+                                                                                if( !idOldUser ) tOldIdUser = tOldPassword = tn ;
+                                                                                countT idOldUser = etThread.strDigitsToSCountF( tin0P , tOldIdUser ) ;
+                                                                            {
+                                                                            if( tOldIdUser.csF( tin0P ) && tOldPassword.csF( tin0P ) )
+
+                                                                            etThread.delF( tin0P , psttEat ) ;
+                                                                            }
+                                                                                }
+                                                                                    etThread.delF( tin0P , pstt1IdPassword ) ;
+                                                                                    }
+                                                                                        }
+                                                                                            break ;
+                                                                                            tOldPassword = T(psttc1) ;
+                                                                                        {
+                                                                                        else
+                                                                                        }
+                                                                                            tOldIdUser = T(psttc1) ;
+                                                                                            bWoth = 0 ;
+                                                                                        {
+                                                                                        if( bWoth )
+                                                                                        //etRock.traceF( tin0P , psttc1 ) ;
+                                                                                        _IO_
+                                                                                    {
+                                                                                    FORsTRINGSiN1( pstt1IdPassword )
+                                                                                    boolT bWoth = 1 ;
+
+                                                                                    etThread.delF( tin0P , psttEat ) ;
+                                                                                    countT cNn = etThread.strWordsF( tin0P , pstt1IdPassword , psttEat , sttq , T(" ,") ) ; ___( pstt1IdPassword ) ;
+                                                                                    strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                                                                                    ZE( strokeS* , pstt1IdPassword ) ;
+                                                                                {
+
+                                                                                //etRock.traceF( tin0P , T("i will dispense preexisting matrix credentials [tSetting,tCredentials]:    ")+tSetting+tb4+T(psttEat) ) ;
+                                                                            {
+                                                                            if( psttEat )
+                                                                            ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , tSetting ) ; ___( psttEat ) ;
+
+                                                                            TN( tSetting , "" ) ; tSetting = T("!ipdos.matrix.preexisting.account.a.")+TF2(idSlotNext,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+
+                                                                            }
+                                                                                }
+                                                                                    etRock.traceF( tin0P , T("!exception / invalid file size for idSlotUseLath, so using 0 [tLongSlotLath]:    ")+tLongSlotLath ) ;
+                                                                                    idSlotNext = 0 ;
+                                                                                {
+                                                                                if( cbr - sizeof idSlotNext )
+
+                                                                                }
+                                                                                    }
+                                                                                        cbr = 0 ;       // PROBABLY REDUNDANT
+                                                                                        etRock.traceF( tin0P , T("!exception / countT file is not of the expected size [tLongSlotLath]")+tLongSlotLath ) ;
+                                                                                        POOPR ;
+                                                                                    {
+                                                                                    if( POOP )
+                                                                                    ((tin1S&)tin0P).pEtScratch->fileReadF( tin0P , (byteT*)&idSlotNext , cbr , fileCount ) ;
+                                                                                    SCOOPS
+                                                                                {
+                                                                                IFsCRATCHoK
+                                                                                countT cbr = sizeof idSlotNext ;
+                                                                            {
+                                                                            if( !bNewFile )
+                                                                            countT idSlotNext = 1 ;
+
+                                                                            const boolT bNewFile = ifcOPENrESULT_CREATED == fileCount.idOpenResultF( tin0P  ) ;
+                                                                            fileC fileCount( tin0P , (strokeS*)tLongSlotLath , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
+
+                                                                            TN( tLongSlotLath , "" ) ; tLongSlotLath = tSharedFolderWorking+T("idSlotLiveStudentLath") ;
+                                                                        {
+
+                                                                        //     
+                                                                        //     2. IF THERE IS A NEXT SLOT, DISPENSE IT AND UPDATE THE FILE
+                                                                        //     
+                                                                        //     1. QUERY THE FILE FOR THE idSlot OF THE LATH SLOT DISPENSED
+                                                                        //     
+                                                                        // RECIPE:
+
+                                                                        // THE FILE tLongOldSlotLath CONTAINS THE idSlot OF THE LATH SLOT DISPENSED
+
+                                                                        // 
+                                                                        //         {kv: matrix.preexisting.account.a.1                     "3    [smudged]"                                   }
+                                                                        // 
+                                                                        //         {kv: matrix.preexisting.account.a.2                     "4    [smudged]"                                   }
+                                                                        // 
+                                                                        //         {kv: matrix.preexisting.account.a.3                     "5    [smudged]"                                   }
+                                                                        // 
+                                                                        //         {kv: matrix.preexisting.account.a.4                     "6    [smudged]"                                   }
+                                                                        // 
+                                                                        //         {kv: matrix.preexisting.account.a.5                     "52   [smudged]"                                   }
+                                                                        // 
+                                                                        //         {kv: matrix.preexisting.account.a.6                     "hke1 [smudged]"                                   }
+                                                                        // 
+                                                                        // THE SETTINGS FILE CONTAINS A LIST OF [IDuSER,PASSWORD] PAIRS ; SLOT 1 REFERS TO THE "a.1" LINE, WHICH CONTAINS THE PASSWORD FOR IDuSER 3 (THAT FULL USERNAME IS "a.3")
+
+                                                                        //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                        //****                                          ********************************************************************************************************************************************************************************************************************************************************
+                                                                        //****  USE A PREEXISTING ACCOUNT IF AVAILABLE  ********************************************************************************************************************************************************************************************************************************************************
+                                                                        //****                                          ********************************************************************************************************************************************************************************************************************************************************
+                                                                        //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                                    {
+                                                                    if( bLive && bStudent )
+                                                                    TN( tOldPassword , "" ) ;
+                                                                    TN( tOldIdUser   , "" ) ;
+
+boolT bLive = 1 ;
+//                                                                    const boolT bLive = !etThread.strCompareF( tin0P , psttValueLive , tTrue ) ;
                                                                     _IO_
                                                                 {
                                                                 // DISPENSE CREDENTIALS (LIVE OR TEST)
@@ -1303,12 +1380,19 @@ DONE( tmWorkF )
                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                             {
                                                             while( !ether && !POOP && bFail0 )     //WILL continue UNTIL SUCCESSFULLY REGISTER A NEW USERNAME ; THIS CAUSES idNewUser TO INCREMENT UNTIL IT IS A VALUE THAT HAS NOT BEEN REGISTERED
+
+                                                            //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                            //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                            //****                                              ****************************************************************************************************************************************************************************************************************************************************
+                                                            //****  OBTAIN AN OLD OR NEW USERNAME AND PASSWORD  ****************************************************************************************************************************************************************************************************************************************************
+                                                            //****                                              ****************************************************************************************************************************************************************************************************************************************************
+                                                            //******************************************************************************************************************************************************************************************************************************************************************************************************
+                                                            //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                         {
                                                         if( psoc )
                                                         /**/etRock.traceF( tin0P , T(psoc?"server is UP when starting to process an event file [tShort]:    ":"server is DOWN so not processing an event file [tShort]:    ")+tShort ) ;
                                                         grab_psoc.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-                                                        TN( tIdUser , "" ) ;
                                                         TN( tBodyInvite , "" ) ;
                                                         TN( tServer , "ideafarm.com" ) ;
 
@@ -1327,14 +1411,6 @@ DONE( tmWorkF )
                                                         boolT bFail1 = 1 ;
                                                         TN( tInvitationsSubmitted , "" ) ;
                                                         bValidEvent = 1 ;                           //I THINK THAT THIS IS A VALID EVENT THAT IS REALLY FROM STRIPE, SO WILL PROCEED TO ISSUE A WELCOME EMAIL WITH CREDENTIALS
-
-                                                        //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                        //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                        //****                                      ************************************************************************************************************************************************************************************************************************************************************
-                                                        //****  OBTAIN A NEW USERNAME AND PASSWORD  ************************************************************************************************************************************************************************************************************************************************************
-                                                        //****                                      ************************************************************************************************************************************************************************************************************************************************************
-                                                        //******************************************************************************************************************************************************************************************************************************************************************************************************
-                                                        //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                     {
                                                     //else
                                                     //}
@@ -1492,7 +1568,7 @@ DONE( tmWorkF )
                                     _IO_
                                 {
                                 if( !( F(flagsFail) ) )
-                                boolT bFail0 = 1 ;              // WILL BE RESET IF I USE A PREEXISTING CREDENTIALS SETTING
+                                boolT bFail0 = 1 ;
                                 ZE( boolT , bGorilla01  ) ;
 
                                 }
@@ -1613,89 +1689,10 @@ DONE( tmWorkF )
         //******************************************************************************************************************************************************************************************************************************************************************************************************
         //******************************************************************************************************************************************************************************************************************************************************************************************************
 
-        }
-            }
-                //etRock.traceF( tin0P , T("existing credentials:    a.")+T(psttzLeverIdUser)+tb4+T(psttPassword) ) ;
-
-                strokeS*& psttPassword = (strokeS*&)(countT&)swExistingCredentials ;
-                psttzLeverIdUser = (strokeS*)swExistingCredentials.leverF( tin0P , idf ) ;
-
-                _IO_
-            {
-            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swExistingCredentials.cFlavorsF( tin0P ) ;
-
-            }
-                }
-                    }
-                        else               { etThread.strMakeF( tin0P , LF , psttPassword , tPassword ) ; ___( psttPassword ) ; }
-                        if( psttPassword ) etRock.traceF( tin0P , T("!exception / duplicate tIdUser [tIdUser]:    ")+tIdUser ) ;
-
-                        strokeS*& psttPassword = (strokeS*&)(countT&)swExistingCredentials ;
-                        psttzLeverIdUser = tIdUser ;
-
-                        }
-                            etThread.delF( tin0P , pstt1IdPassword ) ;
-                            }
-                                }
-                                    break ;
-                                    tPassword = T(psttc1) ;
-                                {
-                                else
-                                }
-                                    tIdUser = T(psttc1) ;
-                                    bWoth = 0 ;
-                                {
-                                if( bWoth )
-                                //etRock.traceF( tin0P , psttc1 ) ;
-                                _IO_
-                            {
-                            FORsTRINGSiN1( pstt1IdPassword )
-                            boolT bWoth = 1 ;
-
-                            etThread.delF( tin0P , psttEat ) ;
-                            countT cNn = etThread.strWordsF( tin0P , pstt1IdPassword , psttEat , sttq , T(" ,") ) ; ___( pstt1IdPassword ) ;
-                            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-                            ZE( strokeS* , pstt1IdPassword ) ;
-                        {
-                        TN( tPassword , "" ) ;
-                        TN( tIdUser   , "" ) ;
-
-                        //etRock.traceF( tin0P , T("setting for preexisting matrix credentials found:    ")+tSetting+tb4+T(psttEat) ) ;
-                    {
-                    else
-                    if( !psttEat ) break ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , tSetting ) ; ___( psttEat ) ;
-                    _IO_
-
-                    TN( tSetting , "" ) ; tSetting = T("!ipdos.matrix.preexisting.account.a.")+TF2(++idSetting,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
-                {
-                while( !ether )
-                ZE( countT , idSetting ) ;
-            {
-            etherC& etRock = etherC::etRockIF( tin0P ) ;
-
-            TN( tb4 , "    " ) ;
-        {
-        switchC swExistingCredentials( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzLeverIdUser ) ;
-        ZE( strokeS* , psttzLeverIdUser ) ;
-
         switchC swTimeEmailSentLath( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzEmail , 0 , sizeof( timeS ) ) ;
         ZE( strokeS* , psttzEmail ) ;
 
         stackC stNnUntrustedReported( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_nicNameC ) ;
-
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //****                                              ****************************************************************************************************************************************************************************************************************************************************
-        //****  LOAD PREEXISTING CREDENTIALS FROM SETTINGS  ****************************************************************************************************************************************************************************************************************************************************
-        //****                                              ****************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
-        //******************************************************************************************************************************************************************************************************************************************************************************************************
 
         const countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
         const countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
