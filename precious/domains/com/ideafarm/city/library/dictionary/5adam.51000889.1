@@ -217,9 +217,12 @@ DONE( tmGorillaF )
             if( bOuterLag != bOuter ) ;
 
             }
+                ++ s ; thirdC::dosSleepWinkIF( tin0P , 4 ) ;                        // NAP FOR A WINK TO GIVE DNS TIME TO CATCH THE DATAGRAM
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
                 }
                     sThrow.writeF( tin0P , idpCatch , nnHe , tSuffix , tSuffix.csF( tin0P ) ) ;
-                    etRock.traceF( tin0P , tSayThrowing+tSuffix ) ;
+                    //etRock.traceF( tin0P , tSayThrowing+tSuffix ) ;
                     countT idpCatch = *(countT*)pbi ;
                 {
                 if( pbi && cbi == sizeof( countT ) )
@@ -227,19 +230,9 @@ DONE( tmGorillaF )
                 ZE( countT , cbi ) ;
                 ZE( byteT* , pbi ) ;
 
-                //U::NO WORKIE: sThrow.bindF( tin0P , 0 , nnMe ) ;
                 socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
-            {
-            if( bOuter )
 
-            }
-                ++ s ; thirdC::dosSleepWinkIF( tin0P , 4 ) ;                        // DNS USES NONBLOCKING I/O TO READ, SO I NAP FOR A WINK TO GIVE THE FILE SYSTEM TIME TO LAZY WRITE THE FILE
-                /**/etRock.traceF( tin0P , T("wrote   suffix file [tSuffix]:    ")+tSuffix ) ;
-                etThread.boxPutF( tin0P , tLong , tSuffix , tSuffix.csF( tin0P ) ) ;
-                /**/etRock.traceF( tin0P , T("writing suffix file [tSuffix]:    ")+tSuffix ) ;
                 tSuffix = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
-                TN( tLong , "" ) ; tLong = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/woTimePasswordUrlSuffix") ;
-                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
             if( bOuter )
             TN( tSuffix , "" ) ;
