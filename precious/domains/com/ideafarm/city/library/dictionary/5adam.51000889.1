@@ -20,7 +20,7 @@ DONE( tmWorkF )
     //etThread.traceF( tin0P , T("ok") ) ;
 
     while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&idStompLath ) ;
-      countT cDo = 1 ;              //PRODUCTION
+      countT cDo = 2 ;              //PRODUCTION
     //countT cDo = TUCK >> 3 ;      //TESTING
     ZE( countT , idStompLath ) ;
 
@@ -79,7 +79,7 @@ DONE( tmGorillaF )
 
                     _IO_
                 {
-                if( idNewFailUse == 4 && !bSuppressNullRouting )
+                if( idNewFailUse == 4 && !bSuppressNullRouting && idWebHookCatcher == 1 )
 
                 }
                     /**/etRock.traceF( tin0P , T(bOuter?"posted  an email notice (wo'th fail of a run of outer fails)":"posted an email notice (wo'th fail of a run of inner fails)") ) ;
@@ -113,26 +113,48 @@ DONE( tmGorillaF )
         else
         }
             }
-                /**/etRock.traceF( tin0P , T("posted  an email notice (preemptive nullrouting succeeded)") ) ;
-                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
-            
-                ) ;
-                    "\r\n"
-                    "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                    "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                    "\r\n"
-                    "of fails has ended.\r\n"
-                    "by changing its IPv4 address.  Nullrouting is being re-enabled since the recent run\r\n"
-                    "wh1 is now responding timely to both outer and inner after wh1 was preemptively nullrouted\r\n"
-                    "\r\n"
-                    "Subject: Notification from GORILLAwEBHOOKS / null routing SUCCESS! / ")+tDomainUse+T("\r\n"
-            
-                TN( tSay , "" ) ; tSay = T(
-                /**/etRock.traceF( tin0P , T("posting an email notice (preemptive nullrouting succeeded)") ) ;
+                }
+                    /**/etRock.traceF( tin0P , T("posted  an email notice (exposed server is now up) [idWebHookCatcher]:    ")+tId ) ;
+                    etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
+                
+                    ) ;
+                        "\r\n"
+                        "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                        "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                        "\r\n"
+                        "wh2 is now responding timely to both outer and inner.  The recent run of fails has ended.\r\n"
+                        "\r\n"
+                        "Subject: Notification from GORILLAwEBHOOKS / exposed server ")+tId+T(" is now up / ")+tDomainUse+T("\r\n"
+                
+                    TN( tSay , "" ) ; tSay = T(
+                    /**/etRock.traceF( tin0P , T("posting an email notice (exposed server is now up) [idWebHookCatcher]:    ")+tId ) ;
 
-                bSuppressNullRouting = 0 ;
+                    TN( tId , "" ) ; tId = TF2(idWebHookCatcher,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+                {
+                else
+                }
+                    /**/etRock.traceF( tin0P , T("posted  an email notice (preemptive nullrouting succeeded)") ) ;
+                    etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
+                
+                    ) ;
+                        "\r\n"
+                        "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                        "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                        "\r\n"
+                        "of fails has ended.\r\n"
+                        "by changing its IPv4 address.  Nullrouting is being re-enabled since the recent run\r\n"
+                        "wh1 is now responding timely to both outer and inner after wh1 was preemptively nullrouted\r\n"
+                        "\r\n"
+                        "Subject: Notification from GORILLAwEBHOOKS / null routing SUCCESS! / ")+tDomainUse+T("\r\n"
+                
+                    TN( tSay , "" ) ; tSay = T(
+                    /**/etRock.traceF( tin0P , T("posting an email notice (preemptive nullrouting succeeded)") ) ;
+
+                    bSuppressNullRouting = 0 ;
+                {
+                if( bSuppressNullRouting )
             {
-            if( bSuppressNullRouting && !idNewFailOuter && !idNewFailInner && idNewSuccessOuter && idNewSuccessInner )
+            if( !idNewFailOuter && !idNewFailInner && idNewSuccessOuter && idNewSuccessInner )
 
             /**/etRock.traceF( tin0P , tSayStompEndAok+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+T(bSlowStrict?"FORGIVEN":"        "                        )+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
             idNewSuccessUse ++ ;
@@ -274,7 +296,7 @@ DONE( tmGorillaF )
     TN( tSayStompEndFail   , "stomp! (end)  " ) ;
     TN( tSayStompEndAok       , "stomp! (end)    aok   [idStomp,time,bSlowStrict         ,tInvoice,tUrl]:    " ) ;
     TN( tSayStompBegin     , "stomp! (begin)" ) ;
-    TN( tPasswordPrefix    , ""               ) ;
+    TN( tPasswordPrefix    , "wh"             ) ; tPasswordPrefix += TF2(idWebHookCatcher,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
     TN( tSlow              , "S L O W"        ) ;
     TN( tFail              , "F A I L"        ) ;
     TN( tDomainUse         , "10.0.1.1"       ) ;
@@ -331,6 +353,8 @@ DONE( tmGorillaF )
     TN( tInvoicePrefix , "inv_gorilla_" ) ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    const countT idWebHookCatcher = idGorilla <= 2 ? idGorilla : 0 ;
 
     const countT idGorilla = 1 + incv02AM( idGorillaLath ) ;
     static countT idGorillaLath ;

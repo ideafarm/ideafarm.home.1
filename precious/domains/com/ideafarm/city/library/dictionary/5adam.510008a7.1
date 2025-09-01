@@ -67,7 +67,7 @@ DONE( tmWorkF )
             while( !POOP && !ether )
 
             }
-                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&mySettings , (countT)&sockd , (countT)&gc , (countT)&gv , (countT)&tSuffixGorilla , (countT)&grab_tSuffixGorilla ) ;
+                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&mySettings , (countT)&sockd , (countT)&gc , (countT)&gv , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla ) ;
                 inc02AM( cWorkers ) ;
             {
             while( cDo -- )
@@ -198,9 +198,11 @@ DONE( tmWorkF )
     if( !mySettings )
     mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmCatchF , CBsTACKmIN << 1 ) , (countT)&tSuffixGorilla , (countT)&grab_tSuffixGorilla ) ;
-    grabC grab_tSuffixGorilla( tin0P , TAG( TAGiDnULL ) ) ;
-    TN( tSuffixGorilla , "" ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmCatchF , CBsTACKmIN << 1 ) , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla ) ;
+    TN( tSuffix2Gorilla , "" ) ;
+    grabC grab_tSuffix2Gorilla( tin0P , TAG( TAGiDnULL ) ) ;
+    TN( tSuffix1Gorilla , "" ) ;
+    grabC grab_tSuffix1Gorilla( tin0P , TAG( TAGiDnULL ) ) ;
 
     //etRock.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
@@ -366,17 +368,31 @@ DONE( tmWorkerF )
                                         etThread.delF( tin0P , psttw ) ;
                                         TN( tDomainNet , psttw ) ;
                                         }
-                                            if( bGorilla || bStripe ) bSilent = 0 ;
-                                            if( bGorilla            ) bDivert = 0 ;
+                                            else if( bStripe   )                 bSilent = 0 ;      // PEER MIGHT OR MIGHT NOT REALLY BE STRIPE, SO bDivert WILL DEPEND UPON WHETHER nnPeer IS ON THE TRUSTED LIST
+                                            else if( bGorilla2 ) { bDivert = 1 ; bSilent = 0 ; }
+                                                 if( bGorilla1 ) { bDivert =     bSilent = 0 ; }
 
                                             etThread.delF( tin0P , psttSuffix ) ;
-                                            //etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bGorilla||bStripe?"           domainnet: \"":"REJECTED   domainnet: \"")+tDomainNet+T("\"   actual: \"")+T(psttSuffix)+T("\"   valid: \"")+tSuffixGorilla+T("\"   stripe: \"")+mySettingsP.tSuffixUsedByStripe+T("\"   peer: \"")+tDomainPeer+T("\"") ) ;
+                                            }
+                                                //etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bGorilla1||bStripe?"           domainnet: \"":"REJECTED   domainnet: \"")+tDomainNet+T("\"   actual: \"")+T(psttSuffix)+T("\"   valid: \"")+tSuffix1Gorilla+T("\"   stripe: \"")+mySettingsP.tSuffixUsedByStripe+T("\"   peer: \"")+tDomainPeer+T("\"") ) ;
 
-                                            const boolT bStripe  = psttSuffix && !etThread.strCompareF( tin0P , psttSuffix , mySettingsP.tSuffixUsedByStripe  ) ;
+                                                if( !bGorilla1 && !bGorilla2 ) bStripe = !etThread.strCompareF( tin0P , psttSuffix , mySettingsP.tSuffixUsedByStripe  ) ;
 
-                                            grab_tSuffixGorillaP.ungrabF( tin0P ) ;
-                                            const boolT bGorilla = psttSuffix && !etThread.strCompareF( tin0P , psttSuffix ,             tSuffixGorillaP ) ;
-                                            grab_tSuffixGorillaP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                                                }
+                                                    grab_tSuffix2GorillaP.ungrabF( tin0P ) ;
+                                                    bGorilla2 = !etThread.strCompareF( tin0P , psttSuffix , tSuffix2GorillaP ) ;
+                                                    grab_tSuffix2GorillaP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                                                {
+                                                if( !bGorilla1 )
+
+                                                grab_tSuffix1GorillaP.ungrabF( tin0P ) ;
+                                                bGorilla1 = !etThread.strCompareF( tin0P , psttSuffix , tSuffix1GorillaP ) ;
+                                                grab_tSuffix1GorillaP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                                            {
+                                            if( psttSuffix )
+                                            ZE( boolT , bGorilla2 ) ;
+                                            ZE( boolT , bGorilla1 ) ;
+                                            ZE( boolT , bStripe   ) ;
 
                                             etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
                                             etThread.delF( tin0P , psttNet ) ;
@@ -780,8 +796,10 @@ DONE( tmWorkerF )
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-    grabC&       grab_tSuffixGorillaP       =       *(grabC*)pTaskP->ca ;
-    textC&       tSuffixGorillaP            =       *(textC*)pTaskP->c9 ;
+    textC&       tSuffix2GorillaP           =       *(textC*)pTaskP->cc ;
+    grabC&       grab_tSuffix2GorillaP      =       *(grabC*)pTaskP->cb ;
+    textC&       tSuffix1GorillaP           =       *(textC*)pTaskP->ca ;
+    grabC&       grab_tSuffix1GorillaP      =       *(grabC*)pTaskP->c9 ;
     gVarS&       gvP                        =       *(gVarS*)pTaskP->c8 ;
     gConstS&     gcP                        =     *(gConstS*)pTaskP->c7 ;
     socketC&     sockdP                     =     *(socketC*)pTaskP->c6 ;
@@ -808,10 +826,20 @@ DONE( tmCatchF )
             }
                 etThread.delF( tin0P , pbi ) ;
                 }
-                    //etThread.traceF( tin0P , tSay+tSuffixGorillaP ) ;
-                    grab_tSuffixGorillaP.ungrabF( tin0P ) ;
-                    tSuffixGorillaP = T(pbi) ;
-                    grab_tSuffixGorillaP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                    }
+                        etThread.traceF( tin0P , tSay2+tSuffix2GorillaP ) ;
+                        grab_tSuffix2GorillaP.ungrabF( tin0P ) ;
+                        tSuffix2GorillaP = T(pbi) ;
+                        grab_tSuffix2GorillaP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                    {
+                    else if( pbi == thirdC::c_strstrIF( tin0P , pbi , "wh2" ) )
+                    }
+                        etThread.traceF( tin0P , tSay1+tSuffix1GorillaP ) ;
+                        grab_tSuffix1GorillaP.ungrabF( tin0P ) ;
+                        tSuffix1GorillaP = T(pbi) ;
+                        grab_tSuffix1GorillaP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                    {
+                    if( pbi == thirdC::c_strstrIF( tin0P , pbi , "wh1" ) )
                 {
                 //if( nnPeer == nnAllowed )
 
@@ -824,11 +852,8 @@ DONE( tmCatchF )
             while( !ether && !POOP )
 
             etRock.traceF( tin0P , T("catching begun [idpCatch]:    ")+TF4(idpCatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
-
             etScratch.boxPutF( tin0P , tLong , (byteT*)&idpCatch , sizeof idpCatch ) ;
-
             countT idpCatch = sCatch.bindF( tin0P ) ;
-
             socketC sCatch( tin0P , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
             etherC& etScratch = *((tin1S&)tin0P).pEtScratch ;
 
@@ -839,14 +864,16 @@ DONE( tmCatchF )
     {
     while( !ether )
 
-    TN( tSay , "caught [tSuffixGorilla]:    " ) ;
+    TN( tSay2 , "caught [tSuffix2Gorilla]:    " ) ;
+    TN( tSay1 , "caught [tSuffix1Gorilla]:    " ) ;
     TN( tLong , "" ) ; tLong = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/idpCatchSuffix") ;
-    nicNameC nnAllowed = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
-    nicNameC nnAdapter = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
+    //nicNameC nnAllowed = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
     etherC&  etRock    = etherC::etRockIF( tin0P ) ;
 
-    grabC& grab_tSuffixGorillaP = *(grabC*)pTaskP->c2 ;
-    textC& tSuffixGorillaP      = *(textC*)pTaskP->c1 ;
+    textC& tSuffix2GorillaP      = *(textC*)pTaskP->c4 ;
+    grabC& grab_tSuffix2GorillaP = *(grabC*)pTaskP->c3 ;
+    textC& tSuffix1GorillaP      = *(textC*)pTaskP->c2 ;
+    grabC& grab_tSuffix1GorillaP = *(grabC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1&& pTaskP->c2 )
 TASK( tmCatchF )
