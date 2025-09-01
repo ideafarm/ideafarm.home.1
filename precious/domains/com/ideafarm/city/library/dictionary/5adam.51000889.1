@@ -306,16 +306,16 @@ DONE( tmGorillaF )
     boolT bOuterLag = - 1 ; //A:ASSUME: operator ! RETURNS 0 OR 1
     nicNameC nnHe = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
     nicNameC nnMe = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
-    TN( tSayStompEndFail   , "stomp! (end)  " ) ;
-    TN( tSayStompEndAok       , "stomp! (end)    aok   [idStomp,time,bSlowStrict         ,tInvoice,tUrl]:    " ) ;
-    TN( tSayStompBegin     , "stomp! (begin)" ) ;
-    TN( tPasswordPrefix    , "wh"             ) ; tPasswordPrefix += TF2(idWebHookCatcher,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
-    TN( tSlow              , "S L O W"        ) ;
-    TN( tFail              , "F A I L"        ) ;
-    TN( tDomainUse         , "10.0.1.1"       ) ;
-    TN( tDomainInner       , "10.0.1.1"       ) ;
-    TN( tDomainOuterAfter  , ".hidden.ideafarm.com" ) ;
-    TN( tDomainOuterBefore , "AbgMdwMYbvFJ3YuB5R-" ) ;         //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
+    TN( tSayStompEndFail   , "stomp! (end)  "                                                               ) ;
+    TN( tSayStompEndAok    , "stomp! (end)    aok   [idStomp,time,bSlowStrict         ,tInvoice,tUrl]:    " ) ;
+    TN( tSayStompBegin     , "stomp! (begin)"                                                               ) ;
+    TN( tPasswordPrefix    , "wh"                                                                           ) ; tPasswordPrefix += TF2(idWebHookCatcher,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+    TN( tSlow              , "S L O W"                                                                      ) ;
+    TN( tFail              , "F A I L"                                                                      ) ;
+    TN( tDomainUse         , (strokeS*)tDomainInner                                                         ) ;
+    TN( tDomainInner       , idWebHookCatcher == 1 ? "10.0.1.1" : "10.0.1.2"                                ) ;
+    TN( tDomainOuterAfter  , ".hidden.ideafarm.com"                                                         ) ;
+    TN( tDomainOuterBefore , "AbgMdwMYbvFJ3YuB5R-"                                                          ) ;         //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
     ZE( countT , idNewFailInner    ) ;
     ZE( countT , idNewFailOuter    ) ;
     ZE( countT , idNewSuccessInner ) ;
