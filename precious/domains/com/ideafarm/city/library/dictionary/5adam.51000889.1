@@ -46,9 +46,11 @@ DONE( tmGorillaF )
 
             }
                 }
-                    bSuppressNullRouting = 1 ;                                                  //P:PERSONALITY: NULL ROUTING IS NOT DONE IF IT HAS ALREADY BEEN DONE FOR THE CURRENT RUN OF FAILURES
+                    bRunningFailures = 1 ;
 
                     }
+                        bSuppressNullRouting = 1 ;                                                                  //P:PERSONALITY: NULL ROUTING IS NOT DONE IF IT HAS ALREADY BEEN DONE FOR THE CURRENT RUN OF FAILURES
+
                         /**/etRock.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
                         dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
                         /**/etRock.traceF( tin0P , T("ordering the next ipv4 value for wh1") ) ;
@@ -153,8 +155,10 @@ DONE( tmGorillaF )
                     bSuppressNullRouting = 0 ;
                 {
                 if( bSuppressNullRouting )
+
+                bRunningFailures = 0 ;
             {
-            if( !idNewFailOuter && !idNewFailInner && idNewSuccessOuter && idNewSuccessInner )
+            if( bRunningFailures && !idNewFailOuter && !idNewFailInner && idNewSuccessOuter && idNewSuccessInner )
 
             /**/etRock.traceF( tin0P , tSayStompEndAok+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+T(bSlowStrict?"FORGIVEN":"        "                        )+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
             idNewSuccessUse ++ ;
@@ -270,7 +274,7 @@ DONE( tmGorillaF )
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
 
-        const boolT bOuter = idGorilla == 1 && !( idStomp % ( TUCK >> 6 ) ) ;                           // ONLY GORILLA 1 DOES OUTER STOMPS ; THIS SIMPLIFIES THE COMMUNICATION OF PASSWORD SUFFIXES TO DNS
+        const boolT bOuter = idGorilla <= 2 && !( idStomp % ( TUCK >> 6 ) ) ;                           // ONLY GORILLAS 1 AND 2 DO OUTER STOMPS ; THIS SIMPLIFIES THE COMMUNICATION OF PASSWORD SUFFIXES TO DNS ; 1 STOMPS WH1 ; 2 STOMPS WH2
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
 
         ZE( countT   , costi ) ;
@@ -287,6 +291,7 @@ DONE( tmGorillaF )
     while( !ether )
     TN( tSayThrowing , "throwing [tSuffix]:    " ) ;
     TN( tLongThrowToPort , "" ) ; tLongThrowToPort = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/idpCatchSuffix") ;
+    ZE( boolT , bRunningFailures ) ;
     ZE( boolT , bSuppressNullRouting ) ;
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
