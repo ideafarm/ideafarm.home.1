@@ -46,42 +46,79 @@ DONE( tmGorillaF )
 
             }
                 }
-                    bRunningFailures = 1 ;
-
                     }
-                        bSuppressNullRouting = 1 ;                                                                  //P:PERSONALITY: NULL ROUTING IS NOT DONE IF IT HAS ALREADY BEEN DONE FOR THE CURRENT RUN OF FAILURES
+                        }
+                            break ;
+                            }
+                                bRunningFailures = 1 ;
 
-                        /**/etRock.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
-                        dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
-                        /**/etRock.traceF( tin0P , T("ordering the next ipv4 value for wh1") ) ;
+                                }
+                                    /**/etRock.traceF( tin0P , T(bOuter?"posted  an email notice (running failures detected due to 4 outer failures)":"posted  an email notice (running failures detected due to 4 inner failures)") ) ;
+                                    etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
+                                
+                                    ) ;
+                                        "\r\n"
+                                        "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                        "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                        "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                        "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                        "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                        "\r\n"
+                                        "of fails ends.\r\n"
+                                        "by changing its IPv4 address.  Further nullrouting will be disabled until the current run\r\n"
+                                        "This domain (above) has not respond timely 4 times consecutively, so I am nullrouting wh1\r\n"
+                                        "\r\n"
+                                        "Subject: Notification from GORILLAwEBHOOKS / server exception / running failures detected / ")+tDomainUse+T("\r\n"
+                                
+                                    TN( tSay , "" ) ; tSay = T(
+                                    /**/etRock.traceF( tin0P , T(bOuter?"posting an email notice (running failures detected due to 4 outer failures)":"posting an email notice (running failures detected due to 4 inner failures)") ) ;
+                                {
+
+                                _IO_
+                            {
+                            if( !bRunningFailures )
+                        {
+                        case 2 :
+                        }
+                            break ;
+                            }
+                                bRunningFailures = bSuppressNullRouting = 1 ;                                                                  //P:PERSONALITY: NULL ROUTING IS NOT DONE IF IT HAS ALREADY BEEN DONE FOR THE CURRENT RUN OF FAILURES
+
+                                /**/etRock.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
+                                dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
+                                /**/etRock.traceF( tin0P , T("ordering the next ipv4 value for wh1") ) ;
+
+                                }
+                                    /**/etRock.traceF( tin0P , T(bOuter?"posted an email notice (preemptive nullrouting due to 4 outer failures)":"posted an email notice (preemptive nullrouting due to 4 inner failures)") ) ;
+                                    etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
+                                
+                                    ) ;
+                                        "\r\n"
+                                        "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                        "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                        "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                        "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                        "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                        "\r\n"
+                                        "of fails ends.\r\n"
+                                        "by changing its IPv4 address.  Further nullrouting will be disabled until the current run\r\n"
+                                        "This domain (above) has not respond timely 4 times consecutively, so I am nullrouting wh1\r\n"
+                                        "\r\n"
+                                        "Subject: Notification from GORILLAwEBHOOKS / server exception / preemptive nullrouting / ")+tDomainUse+T("\r\n"
+                                
+                                    TN( tSay , "" ) ; tSay = T(
+                                    /**/etRock.traceF( tin0P , T(bOuter?"posting an email notice (preemptive nullrouting due to 4 outer failures)":"posting an email notice (preemptive nullrouting due to 4 inner failures)") ) ;
+                                {
+
+                                _IO_
+                            {
+                            if( !bRunningFailures )
+                        {
+                        case 1 :
                     {
-                    if( idGorilla == 1 )
-
-                    }
-                        /**/etRock.traceF( tin0P , T(bOuter?"posted an email notice (preemptive nullrouting due to 4 outer failures)":"posted an email notice (preemptive nullrouting due to 4 inner failures)") ) ;
-                        etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
-                    
-                        ) ;
-                            "\r\n"
-                            "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                            "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                            "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                            "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                            "\r\n"
-                            "of fails ends.\r\n"
-                            "by changing its IPv4 address.  Further nullrouting will be disabled until the current run\r\n"
-                            "This domain (above) has not respond timely 4 times consecutively, so I am nullrouting wh1\r\n"
-                            "\r\n"
-                            "Subject: Notification from GORILLAwEBHOOKS / server exception / preemptive nullrouting / ")+tDomainUse+T("\r\n"
-                    
-                        TN( tSay , "" ) ; tSay = T(
-                        /**/etRock.traceF( tin0P , T(bOuter?"posting an email notice (preemptive nullrouting due to 4 outer failures)":"posting an email notice (preemptive nullrouting due to 4 inner failures)") ) ;
-                    {
-
-                    _IO_
+                    switch( idWebHookCatcher )
                 {
-                if( idNewFailUse == 4 && !bSuppressNullRouting && idWebHookCatcher == 1 )
+                if( idNewFailUse == 4 )
 
                 }
                     /**/etRock.traceF( tin0P , T(bOuter?"posted  an email notice (wo'th fail of a run of outer fails)":"posted an email notice (wo'th fail of a run of inner fails)") ) ;
