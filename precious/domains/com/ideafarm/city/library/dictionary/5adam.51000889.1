@@ -47,154 +47,173 @@ DONE( tmGorillaF )
             }
                 }
                     }
+                        break ;
+
                         }
-                            break ;
                             }
-                                bRunningFailures = 1 ;
-
+                                break ;
                                 }
-                                    /**/etRock.traceF( tin0P , T(bOuter?"posted  an email notice (running failures detected due to 4 outer failures)":"posted  an email notice (running failures detected due to 4 inner failures)") ) ;
-                                    etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
-                                
-                                    ) ;
-                                        "\r\n"
-                                        "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                        "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                        "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                        "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                        "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                        "\r\n"
-                                        "running failures.  I will notify you when this run of failures ends.\r\n"
-                                        "This domain (above) has not respond timely 4 times consecutively, so I have detected\r\n"
-                                        "\r\n"
-                                        "Subject: Notification from GORILLAwEBHOOKS / server exception / running failures detected / ")+tDomainUse+T("\r\n"
-                                
-                                    TN( tSay , "" ) ; tSay = T(
-                                    /**/etRock.traceF( tin0P , T(bOuter?"posting an email notice (running failures detected due to 4 outer failures)":"posting an email notice (running failures detected due to 4 inner failures)") ) ;
-                                {
+                                    bRunningFailures = 1 ;
 
-                                _IO_
+                                    }
+                                        /**/etRock.traceF( tin0P , T(bOuter?"posted  an email notice (running failures detected due to 4 outer failures)":"posted  an email notice (running failures detected due to 4 inner failures)") ) ;
+                                        etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
+                                    
+                                        ) ;
+                                            "\r\n"
+                                            "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "\r\n"
+                                            "running failures.  I will notify you when this run of failures ends.\r\n"
+                                            "This domain (above) has not respond timely 4 times consecutively, so I have detected\r\n"
+                                            "\r\n"
+                                            "Subject: Notification from GORILLAwEBHOOKS / server exception / running failures detected / ")+tDomainUse+T("\r\n"
+                                    
+                                        TN( tSay , "" ) ; tSay = T(
+                                        /**/etRock.traceF( tin0P , T(bOuter?"posting an email notice (running failures detected due to 4 outer failures)":"posting an email notice (running failures detected due to 4 inner failures)") ) ;
+                                    {
+
+                                    _IO_
+                                {
+                                if( !bRunningFailures )
                             {
-                            if( !bRunningFailures )
-                        {
-                        case 2 :
-                        }
-                            break ;
+                            case 2 :
                             }
-                                bRunningFailures = bSuppressNullRouting = 1 ;                                                                  //P:PERSONALITY: NULL ROUTING IS NOT DONE IF IT HAS ALREADY BEEN DONE FOR THE CURRENT RUN OF FAILURES
-
-                                /**/etRock.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
-                                dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
-                                /**/etRock.traceF( tin0P , T("ordering the next ipv4 value for wh1") ) ;
-
+                                break ;
                                 }
-                                    /**/etRock.traceF( tin0P , T(bOuter?"posted an email notice (preemptive nullrouting due to 4 outer failures)":"posted an email notice (preemptive nullrouting due to 4 inner failures)") ) ;
-                                    etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
-                                
-                                    ) ;
-                                        "\r\n"
-                                        "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                        "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                        "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                        "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                        "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                        "\r\n"
-                                        "of fails ends.\r\n"
-                                        "by changing its IPv4 address.  Further nullrouting will be disabled until the current run\r\n"
-                                        "This domain (above) has not respond timely 4 times consecutively, so I am nullrouting wh1\r\n"
-                                        "\r\n"
-                                        "Subject: Notification from GORILLAwEBHOOKS / server exception / preemptive nullrouting / ")+tDomainUse+T("\r\n"
-                                
-                                    TN( tSay , "" ) ; tSay = T(
-                                    /**/etRock.traceF( tin0P , T(bOuter?"posting an email notice (preemptive nullrouting due to 4 outer failures)":"posting an email notice (preemptive nullrouting due to 4 inner failures)") ) ;
-                                {
+                                    bRunningFailures = bSuppressNullRouting = 1 ;                                                                  //P:PERSONALITY: NULL ROUTING IS NOT DONE IF IT HAS ALREADY BEEN DONE FOR THE CURRENT RUN OF FAILURES
 
-                                _IO_
+                                    /**/etRock.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
+                                    dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
+                                    /**/etRock.traceF( tin0P , T("ordering the next ipv4 value for wh1") ) ;
+
+                                    }
+                                        /**/etRock.traceF( tin0P , T(bOuter?"posted an email notice (preemptive nullrouting due to 4 outer failures)":"posted an email notice (preemptive nullrouting due to 4 inner failures)") ) ;
+                                        etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
+                                    
+                                        ) ;
+                                            "\r\n"
+                                            "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "\r\n"
+                                            "of fails ends.\r\n"
+                                            "by changing its IPv4 address.  Further nullrouting will be disabled until the current run\r\n"
+                                            "This domain (above) has not respond timely 4 times consecutively, so I am nullrouting wh1\r\n"
+                                            "\r\n"
+                                            "Subject: Notification from GORILLAwEBHOOKS / server exception / preemptive nullrouting / ")+tDomainUse+T("\r\n"
+                                    
+                                        TN( tSay , "" ) ; tSay = T(
+                                        /**/etRock.traceF( tin0P , T(bOuter?"posting an email notice (preemptive nullrouting due to 4 outer failures)":"posting an email notice (preemptive nullrouting due to 4 inner failures)") ) ;
+                                    {
+
+                                    _IO_
+                                {
+                                if( !bRunningFailures )
                             {
-                            if( !bRunningFailures )
+                            case 1 :
                         {
-                        case 1 :
+                        switch( idWebHookCatcher )
                     {
-                    switch( idWebHookCatcher )
+                    case 4 :
+                    }
+                        break ;
+
+                        /**/etRock.traceF( tin0P , T(bOuter?"posted  an email notice (wo'th fail of a run of outer fails)":"posted an email notice (wo'th fail of a run of inner fails)") ) ;
+                        etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
+                    
+                        ) ;
+                            "\r\n"
+                            "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "\r\n"
+
+                            )+T(
+
+                                    "wo'th failure of a run of failures for a domain.\r\n"
+                                    "This domain (above) did not respond timely.  An email like this will be sent only on the\r\n"
+                                :
+                                    "An email like this will be sent only on the wo'th failure of a run of failures for a domain.\r\n"
+                                    "This domain (above) did not respond timely.  If it fails 3 more times, I will nullroute wh1.\r\n"
+                                ?
+
+                            "\r\n")+T( idGorilla == 1
+                            "Subject: Notification from GORILLAwEBHOOKS / server exception / woth stomp fail / ")+tDomainUse+T("\r\n"
+                    
+                        TN( tSay , "" ) ; tSay = T(
+                        /**/etRock.traceF( tin0P , T(bOuter?"posting an email notice (wo'th fail of a run of outer fails)":"posting an email notice (wo'th fail of a run of inner fails)") ) ;
+                    {
+                    case 1 :
                 {
-                if( idNewFailUse == 4 )
-
-                }
-                    /**/etRock.traceF( tin0P , T(bOuter?"posted  an email notice (wo'th fail of a run of outer fails)":"posted an email notice (wo'th fail of a run of inner fails)") ) ;
-                    etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
-                
-                    ) ;
-                        "\r\n"
-                        "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                        "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                        "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                        "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                        "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                        "\r\n"
-
-                        )+T(
-
-                                "wo'th failure of a run of failures for a domain.\r\n"
-                                "This domain (above) did not respond timely.  An email like this will be sent only on the\r\n"
-                            :
-                                "An email like this will be sent only on the wo'th failure of a run of failures for a domain.\r\n"
-                                "This domain (above) did not respond timely.  If it fails 3 more times, I will nullroute wh1.\r\n"
-                            ?
-
-                        "\r\n")+T( idGorilla == 1
-                        "Subject: Notification from GORILLAwEBHOOKS / server exception / woth stomp fail / ")+tDomainUse+T("\r\n"
-                
-                    TN( tSay , "" ) ; tSay = T(
-                    /**/etRock.traceF( tin0P , T(bOuter?"posting an email notice (wo'th fail of a run of outer fails)":"posting an email notice (wo'th fail of a run of inner fails)") ) ;
-                {
-                if( idNewFailUse == 1 )
+                switch( idNewFailUse )
 
                 _IO_
             {
-            if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
+            if( cFailsEpochUse <= 4 )
 
             /**/etRock.traceF( tin0P , tSayStompEndFail+(cFailUse?tFail:tSlow)+T(" [idStomp,time,idNewFailUse(before),tInvoice,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
+
+            }
+                etRock.traceF( tin0P , tSayIncidentStarted+TF2(offEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                offEpochIncidentWoth = offEpoch ;
+            {
+            if( !offEpochIncidentWoth )
+            cFailsEpochUse ++ ;
             _IO_
         {
         else
         }
             }
                 }
-                    /**/etRock.traceF( tin0P , T("posted  an email notice (exposed server is now up) [idWebHookCatcher]:    ")+tId ) ;
-                    etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
-                
-                    ) ;
-                        "\r\n"
-                        "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                        "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                        "\r\n"
-                        "wh2 is now responding timely to both outer and inner.  The recent run of fails has ended.\r\n"
-                        "\r\n"
-                        "Subject: Notification from GORILLAwEBHOOKS / exposed server ")+tId+T(" is now up / ")+tDomainUse+T("\r\n"
-                
-                    TN( tSay , "" ) ; tSay = T(
-                    /**/etRock.traceF( tin0P , T("posting an email notice (exposed server is now up) [idWebHookCatcher]:    ")+tId ) ;
+                    }
+                        /**/etRock.traceF( tin0P , T("posted  an email notice (exposed server is now up) [idWebHookCatcher]:    ")+tId ) ;
+                        etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
+                    
+                        ) ;
+                            "\r\n"
+                            "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "\r\n"
+                            "wh2 is now responding timely to both outer and inner.  The recent run of fails has ended.\r\n"
+                            "\r\n"
+                            "Subject: Notification from GORILLAwEBHOOKS / exposed server ")+tId+T(" is now up / ")+tDomainUse+T("\r\n"
+                    
+                        TN( tSay , "" ) ; tSay = T(
+                        /**/etRock.traceF( tin0P , T("posting an email notice (exposed server is now up) [idWebHookCatcher]:    ")+tId ) ;
 
-                    TN( tId , "" ) ; tId = TF2(idWebHookCatcher,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+                        TN( tId , "" ) ; tId = TF2(idWebHookCatcher,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+                    {
+                    if( cFailsEpochUse <= 4 )
                 {
                 else
                 }
-                    /**/etRock.traceF( tin0P , T("posted  an email notice (preemptive nullrouting succeeded)") ) ;
-                    etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
-                
-                    ) ;
-                        "\r\n"
-                        "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                        "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                        "\r\n"
-                        "of fails has ended.\r\n"
-                        "by changing its IPv4 address.  Nullrouting is being re-enabled since the recent run\r\n"
-                        "wh1 is now responding timely to both outer and inner after wh1 was preemptively nullrouted\r\n"
-                        "\r\n"
-                        "Subject: Notification from GORILLAwEBHOOKS / null routing SUCCESS! / ")+tDomainUse+T("\r\n"
-                
-                    TN( tSay , "" ) ; tSay = T(
-                    /**/etRock.traceF( tin0P , T("posting an email notice (preemptive nullrouting succeeded)") ) ;
+                    }
+                        /**/etRock.traceF( tin0P , T("posted  an email notice (preemptive nullrouting succeeded)") ) ;
+                        etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
+                    
+                        ) ;
+                            "\r\n"
+                            "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "\r\n"
+                            "of fails has ended.\r\n"
+                            "by changing its IPv4 address.  Nullrouting is being re-enabled since the recent run\r\n"
+                            "wh1 is now responding timely to both outer and inner after wh1 was preemptively nullrouted\r\n"
+                            "\r\n"
+                            "Subject: Notification from GORILLAwEBHOOKS / null routing SUCCESS! / ")+tDomainUse+T("\r\n"
+                    
+                        TN( tSay , "" ) ; tSay = T(
+                        /**/etRock.traceF( tin0P , T("posting an email notice (preemptive nullrouting succeeded)") ) ;
+                    {
+                    if( cFailsEpochUse <= 4 )
 
                     bSuppressNullRouting = 0 ;
                 {
@@ -255,6 +274,18 @@ DONE( tmGorillaF )
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/ #if defined( NEVERdEFINED )
 
         }
+            cFailsEpochOuter = cFailsEpochInner = 0 ;
+            offEpochLath     = offEpoch             ;
+
+            }
+                offEpochIncidentWoth = 0 ;
+                etRock.traceF( tin0P , tSayIncidentEnded+TF2(offEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offEpochIncidentWoth,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            {
+            if( offEpochIncidentWoth && !cFailsEpochOuter && !cFailsEpochInner )
+        {
+        if( offEpochLath != offEpoch )
+
+        }
             etThread.delF( tin0P , posti ) ;
             etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeN1 , timeN2 ) ;
             etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
@@ -272,6 +303,7 @@ DONE( tmGorillaF )
             {
             IFsCRATCHoK
 
+            offEpoch = timeN1 >> 0x18 ;
             etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT  , timeN1 ) ;
@@ -308,8 +340,11 @@ DONE( tmGorillaF )
             TN( tSuffix , "" ) ;
         {
         TN( tUrl , "" ) ;
-        ZE( sCountT , timeE2 ) ;
-        ZE( countT  , timeE1 ) ;
+        ZE( countT  , offEpoch ) ;
+        ZE( sCountT , timeE2   ) ;
+        ZE( countT  , timeE1   ) ;
+
+        countT& cFailsEpochUse             = bOuter ? cFailsEpochOuter                                      : cFailsEpochInner  ;
 
         countT& idNewFailUse               = bOuter ? idNewFailOuter                                        : idNewFailInner    ;
         countT& idNewSuccessUse            = bOuter ? idNewSuccessOuter                                     : idNewSuccessInner ;
@@ -333,6 +368,10 @@ DONE( tmGorillaF )
         _IO_
     {
     while( !ether )
+    ZE( countT , offEpochIncidentWoth ) ;
+    ZE( countT , cFailsEpochInner ) ;
+    ZE( countT , cFailsEpochOuter ) ;
+    ZE( countT , offEpochLath ) ;
     TN( tSayThrowing , "throwing [tSuffix]:    " ) ;
     TN( tLongThrowToPort , "" ) ; tLongThrowToPort = T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/idpCatchSuffix") ;
     ZE( boolT , bRunningFailures ) ;
@@ -342,16 +381,18 @@ DONE( tmGorillaF )
     boolT bOuterLag = - 1 ; //A:ASSUME: operator ! RETURNS 0 OR 1
     nicNameC nnHe = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
     nicNameC nnMe = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
-    TN( tSayStompEndFail   , "stomp! (end)  "                                                               ) ;
-    TN( tSayStompEndAok    , "stomp! (end)    aok   [idStomp,time,bSlowStrict         ,tInvoice,tUrl]:    " ) ;
-    TN( tSayStompBegin     , "stomp! (begin)"                                                               ) ;
-    TN( tPasswordPrefix    , "wh"                                                                           ) ; tPasswordPrefix += TF2(idWebHookCatcher,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
-    TN( tSlow              , "S L O W"                                                                      ) ;
-    TN( tFail              , "F A I L"                                                                      ) ;
-    TN( tDomainUse         , (strokeS*)tDomainInner                                                         ) ;
-    TN( tDomainInner       , idWebHookCatcher == 1 ? "10.0.1.1" : "10.0.1.2"                                ) ;
-    TN( tDomainOuterAfter  , ".hidden.ideafarm.com"                                                         ) ;
-    TN( tDomainOuterBefore , "AbgMdwMYbvFJ3YuB5R-"                                                          ) ;         //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
+    TN( tSayIncidentEnded   , "incident ended [offEpoch,offEpochIncidentWoth]:    "                          ) ;
+    TN( tSayIncidentStarted , "incident started [offEpoch]:    "                                             ) ;
+    TN( tSayStompEndFail    , "stomp! (end)  "                                                               ) ;
+    TN( tSayStompEndAok     , "stomp! (end)    aok   [idStomp,time,bSlowStrict         ,tInvoice,tUrl]:    " ) ;
+    TN( tSayStompBegin      , "stomp! (begin)"                                                               ) ;
+    TN( tPasswordPrefix     , "wh"                                                                           ) ; tPasswordPrefix += TF2(idWebHookCatcher,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+    TN( tSlow               , "S L O W"                                                                      ) ;
+    TN( tFail               , "F A I L"                                                                      ) ;
+    TN( tDomainUse          , (strokeS*)tDomainInner                                                         ) ;
+    TN( tDomainInner        , idWebHookCatcher == 1 ? "10.0.1.1" : "10.0.1.2"                                ) ;
+    TN( tDomainOuterAfter   , ".hidden.ideafarm.com"                                                         ) ;
+    TN( tDomainOuterBefore  , "AbgMdwMYbvFJ3YuB5R-"                                                          ) ;         //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
     ZE( countT , idNewFailInner    ) ;
     ZE( countT , idNewFailOuter    ) ;
     ZE( countT , idNewSuccessInner ) ;
