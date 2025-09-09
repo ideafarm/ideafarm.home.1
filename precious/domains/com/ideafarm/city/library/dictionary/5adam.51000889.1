@@ -65,7 +65,7 @@ DONE( tmGorillaF )
                                             "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                                             "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                                             "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "    [cFailTrialUse]:        ")+TF2(cFailTrialUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                                             "\r\n"
                                             "running failures.  I will notify you when this run of failures ends.\r\n"
                                             "This domain (above) has not respond timely 4 times consecutively, so I have detected\r\n"
@@ -100,7 +100,7 @@ DONE( tmGorillaF )
                                             "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                                             "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                                             "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                                            "    [cFailTrialUse]:        ")+TF2(cFailTrialUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                                             "\r\n"
                                             "of fails ends.\r\n"
                                             "by changing its IPv4 address.  Further nullrouting will be disabled until the current run\r\n"
@@ -133,7 +133,7 @@ DONE( tmGorillaF )
                             "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                             "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                             "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "    [cFailTrialUse]:        ")+TF2(cFailTrialUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                             "\r\n"
 
                             )+T(
@@ -159,7 +159,7 @@ DONE( tmGorillaF )
             {
             if( cFailsEpochUse <= 4 )
 
-            /**/etRock.traceF( tin0P , tSayStompEndFail+(cFailUse?tFail:tSlow)+T(" [idStomp,time,idNewFailUse(before),tInvoice,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
+            /**/etRock.traceF( tin0P , tSayStompEndFail+(cFailTrialUse?tFail:tSlow)+T(" [idStomp,time,idNewFailUse(before),tInvoice,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
 
             }
                 etRock.traceF( tin0P , tSayIncidentStarted+TF2(offEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -167,6 +167,7 @@ DONE( tmGorillaF )
             {
             if( !offEpochIncidentWoth )
             cFailsEpochUse ++ ;
+            idNewFailUse ++ ;
             _IO_
         {
         else
@@ -180,7 +181,7 @@ DONE( tmGorillaF )
                         ) ;
                             "\r\n"
                             "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "    [cFailTrialUse]:        ")+TF2(cFailTrialUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                             "\r\n"
                             "wh2 is now responding timely to both outer and inner.  The recent run of fails has ended.\r\n"
                             "\r\n"
@@ -202,7 +203,7 @@ DONE( tmGorillaF )
                         ) ;
                             "\r\n"
                             "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                            "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                            "    [cFailTrialUse]:        ")+TF2(cFailTrialUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                             "\r\n"
                             "of fails has ended.\r\n"
                             "by changing its IPv4 address.  Nullrouting is being re-enabled since the recent run\r\n"
@@ -227,7 +228,7 @@ DONE( tmGorillaF )
             idNewSuccessUse ++ ;
             idNewFailUse = 0 ;
         {
-        if( !cFailUse && !bSlowLenient )
+        if( !cFailTrialUse && !bSlowLenient )
 
         ;
 
@@ -248,7 +249,7 @@ DONE( tmGorillaF )
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/     }
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/         }
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/             //etRock.traceF( tin0P , T("!exception / boxGetShadowF failed") ) ;
-        /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/             cFailUse ++ ;
+        /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/             cFailTrialUse ++ ;
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/             POOPRqUIET
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/         {
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/         if( POOP )
@@ -262,7 +263,7 @@ DONE( tmGorillaF )
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/     }
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/         }
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/             //etRock.traceF( tin0P , T("!exception / boxGetShadowF failed") ) ;
-        /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/             cFailUse ++ ;
+        /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/             cFailTrialUse ++ ;
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/             POOPRqUIET
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/         {
         /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/         if( POOP )
@@ -292,7 +293,7 @@ DONE( tmGorillaF )
             
             }
                 }
-                    cFailUse ++ ;
+                    cFailTrialUse ++ ;
                     POOPRqUIET
                 {
                 if( POOP )
@@ -344,14 +345,14 @@ DONE( tmGorillaF )
         ZE( sCountT , timeE2   ) ;
         ZE( countT  , timeE1   ) ;
 
-        countT& cFailsEpochUse             = bOuter ? cFailsEpochOuter                                      : cFailsEpochInner  ;
+        countT& cFailsEpochUse  = bOuter ? cFailsEpochOuter  : cFailsEpochInner  ;
 
-        countT& idNewFailUse               = bOuter ? idNewFailOuter                                        : idNewFailInner    ;
-        countT& idNewSuccessUse            = bOuter ? idNewSuccessOuter                                     : idNewSuccessInner ;
-        countT& cFailUse                   = bOuter ? cFailOuter                                            : cFailInner        ;
+        countT& idNewFailUse    = bOuter ? idNewFailOuter    : idNewFailInner    ;
+        countT& idNewSuccessUse = bOuter ? idNewSuccessOuter : idNewSuccessInner ;
+        countT& cFailTrialUse   = bOuter ? cFailTrialOuter   : cFailTrialInner   ;
 
-        ZE( countT , cFailInner ) ;
-        ZE( countT , cFailOuter ) ;
+        ZE( countT , cFailTrialInner ) ;
+        ZE( countT , cFailTrialOuter ) ;
 
         const boolT bOuter = idGorilla <= 2 && !( idStomp % ( TUCK >> 6 ) ) ;                           // ONLY GORILLAS 1 AND 2 DO OUTER STOMPS ; THIS SIMPLIFIES THE COMMUNICATION OF PASSWORD SUFFIXES TO DNS ; 1 STOMPS WH1 ; 2 STOMPS WH2
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
