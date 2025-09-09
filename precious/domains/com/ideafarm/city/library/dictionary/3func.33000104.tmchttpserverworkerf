@@ -55,9 +55,9 @@ DONE( tmcHttpServerWorkerF )
                             {
 
                             }
-                                //etRock.traceF( tin0P , tSayClientPrefix+T("called etherDoHttpJobF") ) ;
+                                etRock.traceF( tin0P , tSayClientPrefix+T("called etherDoHttpJobF") ) ;
                                 etThread.etherDoHttpJobF( tin0P , jobP , psoP , sessionP , idPortMeP , nnMeP ) ;
-                                //etRock.traceF( tin0P , tSayClientPrefix+T("calling etherDoHttpJobF") ) ;
+                                etRock.traceF( tin0P , tSayClientPrefix+T("calling etherDoHttpJobF") ) ;
                                 _IO_
                             {
                             etThread.osTimeNowF( tin0P , jobP.timeDoJob1 , jobP.timeDoJob2 ) ;
@@ -119,7 +119,7 @@ DONE( tmcHttpServerWorkerF )
 
                     etThread.osTimeNowF( tin0P , jobP.timeJobPopped1 , jobP.timeJobPopped2 ) ;
 
-                    //etRock.traceF( tin0P , tSayClientPrefix+T("beginning to do a job") ) ;
+                    etRock.traceF( tin0P , tSayClientPrefix+T("beginning to do a job") ) ;
 
                     //CONoUTrAW5( "\r\n||PULL||:  [idThread,pstt]:    " , ((tin1S&)tin0P).glass.idThread , "    " , jobP.psttSayClientPrefix , "" ) ;
 
@@ -128,12 +128,12 @@ DONE( tmcHttpServerWorkerF )
                 {
                 else
                 }
-                    //etRock.traceF( tin0P , T("doing nothing since !pbJob") ) ;
+                    etRock.traceF( tin0P , T("doing nothing since !pbJob") ) ;
                 {
                 if( !pbJob )
 
                 stJobP.ungrabF( tin0P ) ;
-                //etRock.traceF( tin0P , T("ungrabbing stJobP after popping a job") ) ;
+                etRock.traceF( tin0P , T("ungrabbing stJobP after popping a job") ) ;
 
                 stJobP >> pbJob ;
                 byteT* pbJob = _pbaJob ;
