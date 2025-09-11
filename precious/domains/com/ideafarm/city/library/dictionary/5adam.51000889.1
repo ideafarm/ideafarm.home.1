@@ -110,9 +110,10 @@ DONE( tmGorillaF )
             {
             if( bRunningFailures && !idFailRunOuter && !idFailRunInner && idSuccessRunOuter && idSuccessRunInner )
 
-            /**/etRock.traceF( tin0P , tSayStompEndAok+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+T(bSlowStrict?"FORGIVEN":"        "                        )+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
             idSuccessRunUse ++ ;
             idFailRunUse = 0 ;
+
+            /**/etRock.traceF( tin0P , tSayStompEndAok+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+T(bSlowStrict?"FORGIVEN":"        "                        )+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
 
             //*****************************************************************************************************************************************************************************************************************************************************************************
             //*****************************************************************************************************************************************************************************************************************************************************************************
@@ -270,8 +271,6 @@ DONE( tmGorillaF )
             //*****************************************************************************************************************************************************************************************************************************************************************************
             //*****************************************************************************************************************************************************************************************************************************************************************************
 
-            /**/etRock.traceF( tin0P , tSayStompEndFail+(cFailStompUse?tFail:tSlow)+T(" [idStomp,time,idFailRunUse(before),tInvoice,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idFailRunUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
-
             }
                 etRock.traceF( tin0P , tSayIncidentStarted+TF2(idWebHookCatcher,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 offEpochIncidentWoth = offEpoch ;
@@ -279,6 +278,8 @@ DONE( tmGorillaF )
             if( !offEpochIncidentWoth )
             cFailsEpochUse ++ ;
             idFailRunUse ++ ;
+
+            /**/etRock.traceF( tin0P , tSayStompEndFail+(cFailStompUse?tFail:tSlow)+T(" [idStomp,time,idFailRunUse(before),tInvoice,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idFailRunUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tInvoicePrefix+tInvoice+tb4+tUrl ) ;
 
             //*****************************************************************************************************************************************************************************************************************************************************************************
             //*****************************************************************************************************************************************************************************************************************************************************************************
