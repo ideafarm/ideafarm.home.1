@@ -38,7 +38,7 @@ DONE( tmWorkF )
                 //etRock.traceF( tin0P , gc.tSayPushingJob+TF2(gv.cirJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 jobS job( pbq , cbq , idp , nnPeer ) ;
 
-                //etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
+                /**/etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
                 }
                     }
                         break ;
@@ -296,7 +296,7 @@ DONE( tmWorkerF )
                                 }
                                     DEL( ps ) ;
                                     }
-                                        if( !bSilent || bForceReply ) ;//etRock.traceF( tin0P , gcP.tSayReplying2+tDomainGross ) ;
+                                        /**/etRock.traceF( tin0P , (!bSilent||bForceReply?gcP.tSayReplying2:gcP.tSaySilence)+tDomainGross ) ;
 
                                         }
                                             //}
@@ -773,7 +773,7 @@ DONE( tmWorkerF )
         {
         if( !gvP.bQuit )
 
-        //etRock.traceF( tin0P , T("pulled a job") ) ;
+        /**/etRock.traceF( tin0P , T("pulled a job") ) ;
 
         mySettingsP.grabMe.ungrabF( tin0P ) ;
         nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettingsP.tIpWebHook2 ) ;
@@ -1633,6 +1633,7 @@ struct gVarS
     tSayWroteReply(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "wrote reply"                                                                                                           ) ,
     tSayReplying1(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "replying / 1 [cbr]:    "                                                                                               ) ,
     tSayExCouldNotBuildReply(        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not build reply [rc]:    "                                                                          ) ,
+    tSaySilence(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "silence [tDomainGross]:    "                                                                                           ) ,
     tSayReplying2(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "replying / 2 [tDomainGross]:    "                                                                                      ) ,
     tSayAAAARequest(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "AAAA request [tDomainNet]:    "                                                                                        ) ,
     tSayARequest(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "A request [tDomainNet]:    "                                                                                           ) ,
@@ -1707,6 +1708,7 @@ struct gVarS
     textC tSayWroteReply                  ;
     textC tSayReplying1                   ;
     textC tSayExCouldNotBuildReply        ;
+    textC tSaySilence                     ;
     textC tSayReplying2                   ;
     textC tSayAAAARequest                 ;
     textC tSayARequest                    ;
