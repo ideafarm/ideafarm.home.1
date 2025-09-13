@@ -9,7 +9,7 @@
 }
     }
         }
-            etThread.traceF( tin0P , T("noteFromStripeCBF / booked  [nnPeer,costaBody]:    ")+T(nnPeerP)+T("    ")+TF2(costaBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;      //THIS TRACE IS NEEDED SO THAT THE ASSOCIATED DNS QUERY CAN BE IDENTIFIED (USING TRACEMERGE.BAT) WHEN A VALID STRIPE NOTICE IS RECEIVED ON A WH SERVER OTHER THAN WH1
+            etThread.traceF( tin0P , T("noteFromStripeCBF / booked  [nnPeer,costaBody,tInvoice,tStripeNoticeType]:    ")+T(nnPeerP)+tb4+TF2(costaBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tInvoice+tb4+tStripeNoticeType ) ;      //THIS TRACE IS NEEDED SO THAT THE ASSOCIATED DNS QUERY CAN BE IDENTIFIED (USING TRACEMERGE.BAT) WHEN A VALID STRIPE NOTICE IS RECEIVED ON A WH SERVER OTHER THAN WH1
             bksWebHookNoticesP.writeF( tin0P , (byteT*)pcHeader , sizeof pcHeader , postBodyP , costaBody , flBOOKScwRITE_ALLOWoDDlENGTH | flBOOKScwRITE_ALLoRnONE , 0 ) ;
 
             *(nicNameC*)&pcHeader[ 4 ] = nnPeerP ;
@@ -22,10 +22,10 @@
             }
                 }
                     }
-                        //etThread.traceF( tin0P , T("noteFromStripeCBF / [webHookNoticeType]:    ")+tType ) ;
+                        //etThread.traceF( tin0P , T("noteFromStripeCBF / [webHookNoticeType]:    ")+tStripeNoticeType ) ;
 
                         *poste = ostSave ;
-                        TN( tType , postv ) ;
+                        tStripeNoticeType = T(postv) ;
                         *poste = 0 ;
                         osTextT ostSave = *poste ;
                     {
@@ -37,6 +37,7 @@
             {
             if( postc = thirdC::c_strstrIF( tin0P , postc , "\"" ) , postc )                                            // THE '"' AT THE END OF "\"type\""
             postc = postTypeKeyLath ;
+            TN( tStripeNoticeType , "" ) ;
 
             // postTypeKeyLath NOW POINTS TO THE 't' IN THE LATH OCCURRANCE OF "\"type\":"
             while( postc = thirdC::c_strstrIF( tin0P , postc , "\"type\":" ) , postc ) postTypeKeyLath = ++ postc ;
@@ -59,11 +60,11 @@
                     if( poste ) ;
                     osTextT* poste = thirdC::c_strstrIF( tin0P , postc , "\"" ) ;
                 {
-                TN( tInvoice , "" ) ;
                 postc ++ ;
-                TN( tb4 , "    " ) ;
             {
             if( postc = thirdC::c_strstrIF( tin0P , postBodyP , "\"in_" ) , postc )
+            TN( tInvoice , "" ) ;
+            TN( tb4 , "    " ) ;
         {
         else
         }
