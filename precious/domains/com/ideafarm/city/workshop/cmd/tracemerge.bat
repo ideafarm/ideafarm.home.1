@@ -7,7 +7,7 @@ call a.bat TOOLtRACEcOPY
 c:
 cd \tmp
 
-if not exist tracecopy.all.ttt echo file tracecopy.dns1.ttt not found
+if not exist tracecopy.all.ttt echo file tracecopy.all.ttt not found
 if not exist tracecopy.all.ttt goto :FIN
 
 echo sorting
