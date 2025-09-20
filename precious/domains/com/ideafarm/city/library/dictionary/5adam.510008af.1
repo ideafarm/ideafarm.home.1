@@ -1105,10 +1105,10 @@ DONE( tmFreshSettingsF )
                 bWoth = 0 ;
                 _IO_
             {
-            if( bWoth )
+            else
+            if( !bWoth ) ++ offSettingsUseP ;        // NOT SERIALIZED BECAUSE offSettingsUseP % 2 CANNOT EVER POINT TO AN INVALID INSTANCE
 
             }
-                ++ offSettingsUseP ;        // NOT SERIALIZED BECAUSE offSettingsUseP % 2 CANNOT EVER POINT TO AN INVALID INSTANCE
                 __NZ( !mySettingsNew ) ;
 
                 }
@@ -1256,15 +1256,20 @@ TASK( tmFreshSettingsF )
         }
             etherMe.delF( tin0P , pstt1Nn ) ;
             }
-                stNnSubnetTrusted.sinkF( tin0P , countTC() , nnSubnet , flSTACKsINK_UNIQUE ) ;
+                }
+                    stNnSubnetTrusted.sinkF( tin0P , countTC() , nnSubnet , flSTACKsINK_UNIQUE ) ;
 
-                ;
-                    : nnIPv46( 0x40 )
-                    ? nnIPv46( 0x18 )
-                nicNameC nnSubnet = nnIPv46.isIPv4F()
-                nicNameC nnIPv46  = etherMe.sockNicNameF( tin0P , psttc1 ) ;
+                    ;
+                        : nnIPv46( 0x40 )
+                        ? nnIPv46( 0x18 )
+                    nicNameC nnSubnet = nnIPv46.isIPv4F()
+                    nicNameC nnIPv46  = etherMe.sockNicNameF( tin0P , psttc1 ) ;
 
-                /**/etRock.traceF( tin0P , T("adding trusted:    ")+T(psttc1) ) ;
+                    /**/etRock.traceF( tin0P , T("adding trusted:    ")+T(psttc1) ) ;
+                {
+                else
+                if( !psttc1 || !psttc1->idAdam ) etRock.traceF( tin0P , T("!exception / null length trusted nicNameC value ignored") ) ;
+
                 _IO_
             {
             FORsTRINGSiN1( pstt1Nn )
