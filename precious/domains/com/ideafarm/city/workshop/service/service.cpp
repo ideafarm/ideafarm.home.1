@@ -579,8 +579,10 @@ VOID WINAPI serviceMainF( DWORD cArgP , LPTSTR* ppostArgP )
         {
             logTimeGF( "creating slab\r\n" ) ;
             static char postNapkinName[ 0x100 ] = "Global\\ideafarm.domains.com.ideafarm.1._._._...napkinC.napSlab" ;
+            logTimeGF( "creating slab debug 1\r\n" ) ;
 
             char _pbsd[ SECURITY_DESCRIPTOR_MIN_LENGTH + sizeof( int ) ] ;
+            logTimeGF( "creating slab debug 2\r\n" ) ;
 
             logTimeGF( "creating slab / initializing security descriptor\r\n" ) ;
             SECURITY_ATTRIBUTES sa ;
