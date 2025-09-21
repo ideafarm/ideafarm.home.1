@@ -19,9 +19,14 @@ DONE( tmWorkF )
     etherC::loafIF( tin0P ) ;
     //etThread.traceF( tin0P , T("ok") ) ;
 
-    while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&idStompLath ) ;
-      countT cDo = 2 ;              //2: PRODUCTION ; 1: TESTING
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;                                                         //GLASS: NAP SO THAT WO'TH THREAD HAS TIME TO SET ITS idGorilla BEFORE THE NEXT THREAD IS LAUNCHED ; THIS IS ONLY SO THAT idThread IN THE TRACE PREFIX IS MONOTONIC IN idGorilla
+        etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&idStompLath ) ;
+    {
+    while( cDo -- )
+    countT cDo = 2 ;              //2: PRODUCTION ; 1: TESTING
     //countT cDo = TUCK >> 3 ;      //TESTING
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , idStompLath ) ;
 
 //    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
@@ -258,7 +263,7 @@ DONE( tmGorillaF )
                 bDoNullRouting = bSuppressNullRouting = 1 ;                                                                  //P:PERSONALITY: NULL ROUTING IS NOT DONE IF IT HAS ALREADY BEEN DONE FOR THE CURRENT RUN OF FAILURES
 
                 /**/etRock.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
-                dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
+                dropAndModifyDns1SettingsSoilFileImageF( tin0P , etThread , tNextDns1SettingsSoilFileImageToUse , idStomp , idGorilla ) ;
                 /**/etRock.traceF( tin0P , T("ordering the next ipv4 value for wh1") ) ;
             {
             if( !bSuppressNullRouting && idWebHookCatcher == 1 && idFailRunUse == 4 )
@@ -528,17 +533,17 @@ DONE( tmGorillaF )
     const countT costInvoiceRequired = tInvoice.csF( tin0P ) ;
     TN( tInvoice , "" ) ; tInvoice = TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;   //A:ASSUME: UPDATES TO tInvoice DO NOT CHANGE ITS LENGTH
 
-    if( idGorilla == 1 ) dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , 0 , idGorilla ) ;
+    if( idWebHookCatcher == 1 ) dropAndModifyDns1SettingsSoilFileImageF( tin0P , etThread , tNextDns1SettingsSoilFileImageToUse , 0 , idGorilla ) ;
 
     }
         etThread.delF( tin0P , posti ) ;
-        tModifiedSettingsSoilFileImageToUse = T(posti) ;
+        tNextDns1SettingsSoilFileImageToUse = T(posti) ;
         etThread.boxGetShadowF( tin0P , posti , costi , T("///d/ideafarm.work/txt/soil/settings/production/settings.production.dns1.no.gorilla.no.administrator.no.welcomer.yes.dns.soil") ) ; ___( posti ) ;
         ZE( countT   , costi ) ;
-        ZE( osTextT* , posti ) ;                        //P:PERSONALITY: MY COMPUTER MUST HAVE THE CURRENT COPY OF THE SETTINGS FILE FOR THE DNS COMPUTER
+        ZE( osTextT* , posti ) ;                        //A:ASSUME: MY COMPUTER MUST HAVE THE CURRENT COPY OF THE SETTINGS FILE FOR THE DNS COMPUTER
         _IO_
     {
-    TN( tModifiedSettingsSoilFileImageToUse , "" ) ;
+    TN( tNextDns1SettingsSoilFileImageToUse , "" ) ;
     TN( tb4 , "    " ) ;
     TN( tInvoicePrefix , "inv_gorilla_" ) ;
 
@@ -617,7 +622,7 @@ TASK( tmGorillaF )
     TN( tUser , thirdC::postUserNameIF() ) ;
     _IO_
 {
-voidT dropAndModifySettingsSoilFileImageF( tin0S& tin0P , etherC& etherP , textC& tP , countT idStompP , countT idGorillaP )
+voidT dropAndModifyDns1SettingsSoilFileImageF( tin0S& tin0P , etherC& etherP , textC& tP , countT idStompP , countT idGorillaP )
 
 countT idInvoiceLath ;
 
