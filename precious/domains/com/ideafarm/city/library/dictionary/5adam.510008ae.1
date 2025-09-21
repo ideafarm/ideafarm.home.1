@@ -1931,7 +1931,7 @@ DONE( tmStayConnectedF )
 
         }
             }
-                etRock.traceF( tin0P , tSayExCouldNotDestroySocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                etRock.traceF( tin0P , tSayExCouldNotDestroySocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                 POOPRqUIET
                 countT rc = POOP ;
             {
@@ -1999,7 +1999,7 @@ DONE( tmStayConnectedF )
                     }
                         }
                             DEL( pSwPathValue ) ;
-                            etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                            etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                             POOPRqUIET
                             countT rc = POOP ;
                         {
@@ -2009,7 +2009,7 @@ DONE( tmStayConnectedF )
                     {
                     else
                     }
-                        etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                        etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
@@ -2028,7 +2028,7 @@ DONE( tmStayConnectedF )
                         if( !cbIn ) break ;
                         }
                             break ;
-                            etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                            etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                             POOPRqUIET
                             countT rc = POOP ;
                         {
@@ -2043,7 +2043,7 @@ DONE( tmStayConnectedF )
                 {
                 else
                 }
-                    etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                    etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                     POOPRqUIET
                     countT rc = POOP ;
                 {
@@ -2057,7 +2057,7 @@ DONE( tmStayConnectedF )
             //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
             //etRock.traceF( tin0P , T("request:") ) ;
         
-            TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessTokenP+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+            TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessTokenP+T("\r\nHost: ")+tIdeafarmDotCom+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
         
             /**/etRock.traceF( tin0P , tSayLoggingOut ) ;
 
@@ -2131,7 +2131,7 @@ DONE( tmStayConnectedF )
                                     if( !cbIn ) break ;
                                     }
                                         break ;
-                                        etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                        etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                                         POOPRqUIET
                                         countT rc = POOP ;
                                     {
@@ -2153,7 +2153,7 @@ DONE( tmStayConnectedF )
                         {
                         else
                         }
-                            etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                            etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                             POOPRqUIET
                             countT rc = POOP ;
                         {
@@ -2162,7 +2162,7 @@ DONE( tmStayConnectedF )
                         SCOOPS
                     {
                     IFsCRATCHoK
-                    TN( tSay , "" ) ; tSay = T("GET /_synapse/admin/v1/statistics/users/media HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessTokenP+T("\r\nHost: ")+tServer+T("\r\n\r\n") ;
+                    TN( tSay , "" ) ; tSay = T("GET /_synapse/admin/v1/statistics/users/media HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessTokenP+T("\r\nHost: ")+tIdeafarmDotCom+T("\r\n\r\n") ;
                 {
                 TN( tJson , "" ) ;
 
@@ -2195,7 +2195,7 @@ DONE( tmStayConnectedF )
         }
             }
                 }
-                    etRock.traceF( tin0P , tSayExCouldNotDestroySocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                    etRock.traceF( tin0P , tSayExCouldNotDestroySocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                     POOPRqUIET
                     countT rc = POOP ;
                 {
@@ -2263,7 +2263,7 @@ DONE( tmStayConnectedF )
                             }
                                 }
                                     DEL( pSwPathValue ) ;
-                                    etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                    etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                                     POOPRqUIET
                                     countT rc = POOP ;
                                 {
@@ -2275,7 +2275,7 @@ DONE( tmStayConnectedF )
                             {
                             else
                             }
-                                etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                                etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                                 POOPRqUIET
                                 countT rc = POOP ;
                             {
@@ -2303,7 +2303,7 @@ DONE( tmStayConnectedF )
                         {
                         else
                         }
-                            etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                            etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                             POOPRqUIET
                             countT rc = POOP ;
                         {
@@ -2323,13 +2323,13 @@ DONE( tmStayConnectedF )
                     else
                     }
                         }
-                            etRock.traceF( tin0P , tSayExCouldNotDestroySocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                            etRock.traceF( tin0P , tSayExCouldNotDestroySocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                             POOPRqUIET
                             countT rc = POOP ;
                         {
                         if( POOP )
                         DELzOMBIE( psocP ) ;
-                        etRock.traceF( tin0P , tSayExCouldNotConnectToServer+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                        etRock.traceF( tin0P , tSayExCouldNotConnectToServer+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
@@ -2339,13 +2339,13 @@ DONE( tmStayConnectedF )
                 {
                 else
                 }
-                    etRock.traceF( tin0P , tSayExCouldNotObtainNnServer+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tServer ) ;
+                    etRock.traceF( tin0P , tSayExCouldNotObtainNnServer+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tIdeafarmDotCom ) ;
                     POOPRqUIET
                     countT rc = POOP ;
                 {
                 if( POOP )
                 // IMPOTENCE HERE TESTED ; WORKS AOK
-                nicNameC nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+                nicNameC nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tIpv4IdeafarmCom ) ;
 
                 SCOOPS
             {
@@ -2353,7 +2353,7 @@ DONE( tmStayConnectedF )
             ZE( switchC* , pSwPathValue ) ;
             ZE( strokeS* , psttPath     ) ;
 
-            TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/login HTTP/1.1\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
+            TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/login HTTP/1.1\r\nHost: ")+tIdeafarmDotCom+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
         
             countT costBody = tBody.csF( tin0P ) ;
         
@@ -2374,7 +2374,7 @@ DONE( tmStayConnectedF )
 
         ++ idTest ;
 
-        /**/etRock.traceF( tin0P , tSayConnectingToServer+tServer ) ;
+        /**/etRock.traceF( tin0P , tSayConnectingToServer+tIdeafarmDotCom ) ;
 
         grab_psocP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
@@ -2407,8 +2407,18 @@ DONE( tmStayConnectedF )
     const countT timeAllowedConnected = 0                       ;
 
     TN( tOpenCurly , "{" ) ;
-    TN( tServer , "ideafarm.com" ) ;
     TN( tb4     , "    " ) ;
+
+    }
+        etThread.delF( tin0P , pstts ) ;
+        tIpv4IdeafarmCom = T(pstts) ;
+        //etRock.traceF( tin0P , T("[password]:    ")+T(pstts) ) ;
+        if( pstts && pstts->idAdam ) tIpv4IdeafarmCom = T(pstts) ;
+
+          ZE( strokeS* , pstts ) ; etThread.querySettingF( tin0P , pstts , T("!ipdos.ipv4.ideafarm.com"          ) ) ; ___( pstts ) ;
+    {
+    TN( tIpv4IdeafarmCom , "" ) ; // IPV4 OF "ideafarm.com", WHICH IS THE [MATRIX] HOMESERVER FOR IDEAFARM.COM (HOSTED AT HETZNER)
+    TN( tIdeafarmDotCom , "ideafarm.com" ) ;
 
     TN( tSayGaveSignReady             , "gave sgnReady" ) ;
     TN( tSayGivingSignReady           , "giving sgnReady" ) ;
