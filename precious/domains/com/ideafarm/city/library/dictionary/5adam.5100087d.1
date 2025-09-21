@@ -125,7 +125,7 @@ DONE( tmWorkF )
                     //etThread.trace F( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     //etThread.trace F( tin0P , T("request:") ) ;
                 
-                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout/all HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout/all HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tIdeafarmDotCom+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
                 {
                 else        
                 }
@@ -144,7 +144,7 @@ DONE( tmWorkF )
             {
             if( POOP )        
         
-            nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+            nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tIpv4IdeafarmCom ) ;
         
             SCOOPS
         {
@@ -520,7 +520,7 @@ DONE( tmWorkF )
                     
                         //etThread.trace F( tin0P , T("requesting sync (update)") ) ;
 
-                        TN( tSay , "" ) ; tSay = T("GET /_matrix/client/v3/sync")+tQuery+T(" HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer/*+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)*/+T("\r\n\r\n")/*+tBody*/ ;
+                        TN( tSay , "" ) ; tSay = T("GET /_matrix/client/v3/sync")+tQuery+T(" HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tIdeafarmDotCom/*+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)*/+T("\r\n\r\n")/*+tBody*/ ;
 
                         ) ;
 
@@ -547,7 +547,7 @@ DONE( tmWorkF )
                 {
                 if( POOP )        
             
-                nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+                nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tIpv4IdeafarmCom ) ;
             
                 SCOOPS
             {
@@ -821,13 +821,13 @@ DONE( tmWorkF )
             {
             if( POOP )        
         
-            nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+            nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tIpv4IdeafarmCom ) ;
 
             SCOOPS
         {
         IFsCRATCHoK
 
-        TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/login HTTP/1.1\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
+        TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/login HTTP/1.1\r\nHost: ")+tIdeafarmDotCom+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
         countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
         countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
         countT timeAllowedConnected = TICK >> 2 ;
@@ -866,8 +866,17 @@ DONE( tmWorkF )
     TN( tValueDeviceId    , ""                     ) ;
     TN( tValueAccessToken , ""                     ) ;
 
-    TN( tServer           , "ideafarm.com"         ) ;
-  //TN( tServer           , "matrix.communick.com" ) ;
+    }
+        etThread.delF( tin0P , pstts ) ;
+        tIpv4IdeafarmCom = T(pstts) ;
+        //etRock.traceF( tin0P , T("[password]:    ")+T(pstts) ) ;
+        if( pstts && pstts->idAdam ) tIpv4IdeafarmCom = T(pstts) ;
+
+          ZE( strokeS* , pstts ) ; etThread.querySettingF( tin0P , pstts , T("!ipdos.ipv4.ideafarm.com"          ) ) ; ___( pstts ) ;
+    {
+    TN( tIpv4IdeafarmCom , "" ) ; // IPV4 OF "ideafarm.com", WHICH IS THE [MATRIX] HOMESERVER FOR IDEAFARM.COM (HOSTED AT HETZNER)
+    TN( tIdeafarmDotCom , "ideafarm.com" ) ;
+
     TN( tbOpen            , " ("                   ) ;
     TN( tCloseColonCRLF   , "):\r\n"               ) ;
     TN( tbIndentDetail    , "          \\r"        ) ;
