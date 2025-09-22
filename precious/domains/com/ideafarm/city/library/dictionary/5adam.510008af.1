@@ -370,9 +370,12 @@ DONE( tmWorkerF )
                                         etThread.delF( tin0P , psttw ) ;
                                         TN( tDomainNet , psttw ) ;
                                         }
-                                            else if( bStripe   )                 bSilent = 0 ;      // PEER MIGHT OR MIGHT NOT REALLY BE STRIPE, SO bDivert WILL DEPEND UPON WHETHER nnPeer IS ON THE TRUSTED LIST
-                                            else if( bGorilla2 ) { bDivert = 1 ; bSilent = 0 ; }
-                                                 if( bGorilla1 ) { bDivert =     bSilent = 0 ; }
+                                            else if( bStripe )                       bSilent = 0 ;      // PEER MIGHT OR MIGHT NOT REALLY BE STRIPE, SO bDivert WILL DEPEND UPON WHETHER nnPeer IS ON THE TRUSTED LIST
+                                            }
+                                                else if( bGorilla2 ) { bDivert = 1 ; bSilent = 0 ; }
+                                                     if( bGorilla1 ) { bDivert =     bSilent = 0 ; }
+                                            {
+                                            if( bPeerIsGorilla1 )
 
                                             etThread.delF( tin0P , psttSuffix ) ;
                                             }
@@ -546,6 +549,8 @@ DONE( tmWorkerF )
                         //etRock.traceF( tin0P , gcP.tSayPurgingStacks ) ;
                         _IO_
                     {
+
+                    const boolT bPeerIsGorilla1 = job.nnPeer == nnGorilla1 ;
 
                     ++ gvP.idClient ;
 
@@ -778,9 +783,10 @@ DONE( tmWorkerF )
         /**/etRock.traceF( tin0P , T("pulled a job") ) ;
 
         mySettingsUse.grabMe.ungrabF( tin0P ) ;
+        nicNameC nnGorilla1 = etThread.sockNicNameF( tin0P , mySettingsUse.tIpGorilla1 ) ;
         nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettingsUse.tIpWebHook2 ) ;
         nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettingsUse.tIpWebHook1 ) ;
-        /**/etRock.traceF( tin0P , T("[offSettingsUseSnap,tIpWebHook1,tIpWebHook2]:    ")+TF2(offSettingsUseSnap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+mySettingsUse.tIpWebHook1+tb4+mySettingsUse.tIpWebHook2 ) ;
+        /**/etRock.traceF( tin0P , T("[offSettingsUseSnap,tIpWebHook1,tIpWebHook2,tIpGorilla1]:    ")+TF2(offSettingsUseSnap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+mySettingsUse.tIpWebHook1+tb4+mySettingsUse.tIpWebHook2+tb4+mySettingsUse.tIpGorilla1 ) ;
         mySettingsUse.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
         mySettingsS& mySettingsUse = offSettingsUseSnap % 2 ? mySettingsBP : mySettingsAP ;        //P:PERSONALITY: I WILL USE THE SAME SETTINGS INSTANCE FOR ALL PROCESSING FOR A JOB
@@ -1297,7 +1303,7 @@ TASK( tmFreshSettingsF )
     /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
     /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
 
-    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tIpGorilla1,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tIpGorilla1+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
 
     /**/etRock.traceF( tin0P , T("[tNnTrusted]:    ")+tNnTrusted ) ;
     }
@@ -1387,6 +1393,14 @@ TASK( tmFreshSettingsF )
         {
         if( psttEat )
         ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.wh1")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tIpGorilla1 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.go1")  ) ; ___( psttEat ) ;
         _IO_
     {
 
@@ -1544,6 +1558,8 @@ voidT mySettingsS::zapF( tin0S& tin0P )
         ||
         !tDomainLeafWebHooksNet.csF( tin0P )
         ||
+        !tIpGorilla1.csF( tin0P )
+        ||
         !tIpWebHook2.csF( tin0P )
         ||
         !tIpWebHook1.csF( tin0P )
@@ -1579,6 +1595,7 @@ tDomainRootAllowed4(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""       
 tDomainRootAllowed3(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed2(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed1(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tIpGorilla1(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tIpWebHook2(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tIpWebHook1(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainLeafWebHook1Net(      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
@@ -1791,6 +1808,7 @@ struct gConstS
     textC* const pptDomainRootAllowed[ 8 ]   ;
 
     textC        tNnTrusted                  ;
+    textC        tIpGorilla1                 ;
     textC        tIpWebHook2                 ;
     textC        tIpWebHook1                 ;
     textC        tDomainLeafWebHook1Net      ;
