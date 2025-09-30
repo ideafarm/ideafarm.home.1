@@ -31,12 +31,14 @@ pause
 rw *
 
 for %%f in (adirm.*) do @sort /+36 < %%f > s.%%f
+
 del a*
 
 if exist fc.ttt del fc.ttt
 
-    for %%s in (2099 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 1999) do @for %%f in (*.%%s.ttt) do @fc %%f s.adirm.%1.HDD3.ARC.2021010601.%%s.ttt >> fc.ttt
+    for %%s in (2099 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 1999) do @for %%f in (*.%%s.ttt) do @fc %%f s.adirm.%1.ssd4.arc.2024070404.%%s.ttt >> fc.ttt
 rem for %%s in (2099 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 1999) do @for %%f in (*.%%s.ttt) do @fc %%f s.adirm.%1.internal.%%s.ttt            >> fc.ttt
+rem U:: ENABLE THE PRECEDING LINE AFTER HEALED ARCHIVE IS COPIED TO THE INTERNAL SSD DRIVE e:
 
 rw fc.ttt
 
