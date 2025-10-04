@@ -1813,22 +1813,23 @@ examples
 /*3*/
 #define flFORMAT_UNSIGNED          0xe0000107
 #define flFORMAT_NObASE            0xe0000207
-#define flFORMAT_SIGNcOLlEFT       0xe0000407
-#define flFORMAT_SIGNcOLrIGHT      0xe0000807
-#define flFORMAT_SHOWpLUS          0xe0001007
-#define flFORMAT_FILLzE            0xe0002007
-#define flFORMAT_FILLsIGN          0xe0004007
-#define flFORMAT_EXPONENT          0xe0008007
-#define flFORMAT_FOREIGN           0xe0010007
-#define flFORMAT_DIGITnAMES        0xe0020007
-#define flFORMAT_CITIZENnAME       0xe0040007
-#define flFORMAT_CITIZENeMAIL      0xe0080007
-#define flFORMAT_DOTTEDdECIMAL     0xe0100007
-#define flFORMAT_COLONEDhEX        0xe0200007
-#define flFORMAT_NObIGITvALUES     0xe0400007
-#define flFORMAT_TIMEqUARTERnAME   0xe0800007
-#define flFORMAT_PREFIXED          0xe1000007
-#define flFORMAT_BASE64RFC4648     0xe2000007
+#define flFORMAT_BASE              0xe0000407
+#define flFORMAT_SIGNcOLlEFT       0xe0000807
+#define flFORMAT_SIGNcOLrIGHT      0xe0001007
+#define flFORMAT_SHOWpLUS          0xe0002007
+#define flFORMAT_FILLzE            0xe0004007
+#define flFORMAT_FILLsIGN          0xe0008007
+#define flFORMAT_EXPONENT          0xe0010007
+#define flFORMAT_FOREIGN           0xe0020007
+#define flFORMAT_DIGITnAMES        0xe0040007
+#define flFORMAT_CITIZENnAME       0xe0080007
+#define flFORMAT_CITIZENeMAIL      0xe0100007
+#define flFORMAT_DOTTEDdECIMAL     0xe0200007
+#define flFORMAT_COLONEDhEX        0xe0400007
+#define flFORMAT_NObIGITvALUES     0xe0800007
+#define flFORMAT_TIMEqUARTERnAME   0xe1000007
+#define flFORMAT_PREFIXED          0xe2000007
+#define flFORMAT_BASE64RFC4648     0xe4000007
 /*3*/
 #define flFORMAT_null    0xe0000007
 

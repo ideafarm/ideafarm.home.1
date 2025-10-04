@@ -127,7 +127,10 @@
         const boolT bNoBigitValues = F(flagsFormatP) & flFORMAT_NObIGITvALUES /* || !thirdC::p WinRootIF() */ ;_WQ
         const boolT bForeign       = !((tin12S&)tin0P).strokeMode.idCasteDefault ;_WQ
 
-        const boolT bRadixIndicator = radix != 16 && !( F(flagsFormatP) & flFORMAT_NObASE ) ;_WQ
+        ;
+            :  !( F(flagsFormatP) & flFORMAT_NObASE )
+            ? !!( F(flagsFormatP) & flFORMAT_BASE   )
+        const boolT bRadixIndicator = radix == 0x10
 
         }
             else                                                              sttSign = S1C(' ') ;

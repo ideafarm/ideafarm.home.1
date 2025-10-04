@@ -234,7 +234,10 @@
     {
     ZE( strokeS* , psttDigits ) ; // PREPENDED SIGN, DIGITS.  WILL -NOT- CONTAIN: SIGN COLUMNS, RADIX INDICATOR
 
-    const boolT bRadixIndicator = radix != 16 && !( F(flagsFormatP) & flFORMAT_NObASE ) ;_WQ
+    ;
+        :  !( F(flagsFormatP) & flFORMAT_NObASE )
+        ? !!( F(flagsFormatP) & flFORMAT_BASE   )
+    const boolT bRadixIndicator = radix == 0x10
 
     }
         else                                                           sttSign = S1C(' ') ;
