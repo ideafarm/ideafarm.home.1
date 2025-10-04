@@ -74,7 +74,8 @@
 
         etRock.traceF( tin0P , T("s_acceptF / calling accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        countT idAccept = ((tin1S&)tin0P).glass.idThread << 0x10 | 1 + incv02AM( pParamsP->idAcceptLath ) ;
+        countT idAccept = ((tin1S&)tin0P).glass.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
+        static countT idAcceptLath ;
 
         sCountT cbInfo = sizeof info ;
         c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;
