@@ -48725,13 +48725,15 @@ i am nonconformant in that all of my member function definitions are in a single
     const countT              cFifoCapacity ;
     countT&                   cFifoPulled ;
     const handleC&            handle ;
+    countT                    idAcceptLath  ;
 
     inline s_acceptF_parametersS( countT& cFifoPushedP , oshSocketAcceptedS* const pFifoP , const countT cFifoCapacityP , countT& cFifoPulledP , const handleC& handleP ) :
     cFifoPushed(   cFifoPushedP   ) ,
     pFifo(         pFifoP         ) ,
     cFifoCapacity( cFifoCapacityP ) ,
     cFifoPulled(   cFifoPulledP   ) ,
-    handle(        handleP        )
+    handle(        handleP        ) ,
+    idAcceptLath( 0 )
     {}
 }
 ;

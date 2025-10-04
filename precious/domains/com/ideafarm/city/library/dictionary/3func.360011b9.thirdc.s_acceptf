@@ -22,7 +22,7 @@
 
     __( cbInfo - sizeof info ) ;
 
-    etRock.traceF( tin0P , T("s_acceptF / called  accept [idAccept,POOP]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etRock.traceF( tin0P , T("s_acceptF / called  accept [idAccept,POOP]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     countT oshMaybe = ((tin1S&)tin0P).brcRaw ;
     BOSpOOP
@@ -31,8 +31,7 @@
     //etRock.traceF( tin0P , T("s_acceptF / calling accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-    countT idAccept = ((tin1S&)tin0P).glass.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
-    static countT idAcceptLath ;
+    countT idAccept = ((tin1S&)tin0P).glass.idThread << 0x10 | 1 + incv02AM( pP.idAcceptLath ) ;
 
     c_memsetIF( tin0P , (byteT* const)&info , cbInfo ) ;
     sCountT cbInfo = sizeof( sockaddr_in6 ) ;
