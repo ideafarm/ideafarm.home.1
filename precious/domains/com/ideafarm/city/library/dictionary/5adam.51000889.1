@@ -23,9 +23,14 @@ DONE( tmWorkF )
         ++ s ; ether.osSleepF( tin0P , TOCK ) ;                                                         //GLASS: NAP SO THAT WO'TH THREAD HAS TIME TO SET ITS idGorilla BEFORE THE NEXT THREAD IS LAUNCHED ; THIS IS ONLY SO THAT idThread IN THE TRACE PREFIX IS MONOTONIC IN idGorilla
         etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&idStompLath ) ;
     {
-    while( cDo -- )
+    if( !ether ) while( cDo -- )
     countT cDo = 2 ;              //2: PRODUCTION ; 1: TESTING
     //countT cDo = TUCK >> 3 ;      //TESTING
+
+    etRock.traceF( tin0P , T("napped  for a tick to give all other servers time to completely start serving") ) ;
+    ++ s ; ether.osSleepF( tin0P , TICK ) ;     // TO GIVE ALL OTHER SERVERS PLENTY OF TIME TO COMPLETELY START
+    etRock.traceF( tin0P , T("napping for a tick to give all other servers time to completely start serving") ) ;
+
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , idStompLath ) ;
 
@@ -34,6 +39,8 @@ DONE( tmWorkF )
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;        // THIS IS SO PASSWORD (WEBHOOK SUFFIX) UPDATES ARE RECEIVED TIMELY
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     _IO_
 {
