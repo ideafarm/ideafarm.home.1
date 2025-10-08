@@ -49963,7 +49963,6 @@ use this rather than _ to avoid the overhead of _
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200569.COUNTsTRINGSiN END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120056a.ETHERlIST1bEFOREwORK BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -49975,25 +49974,25 @@ use this rather than _ to avoid the overhead of _
 */
 /**/
 
-/*1*//*ETHERlIST1bEFOREwORK*//*1*/
+/*1*//*ETHERlIST3aFTERoPTIONALbREAK*//*1*/
 
-#define ETHERlIST1bEFOREwORK(psttP)                                                                                                 \
+#define ETHERlIST3aFTERoPTIONALbREAK                                                                                                \
                                                                                                                                     \
-    boolT _bStringOfStrings = ISsTRINGoFsTRINGS( (psttP) ) ;                                                                        \
-    ZE( strokeS* , _pstt1u ) ;                                                                                                      \
-    if( !_bStringOfStrings ) { strFuseSeparateF( tin0P , _pstt1u , (psttP) ) ; ___( _pstt1u ) ; }                                    \
-    else                    _pstt1u = (strokeS*)(psttP) ;                                                                           \
+                }                                                                                                                   \
+                else                                                                                                                \
+                {                                                                                                                   \
+                    if( !idErrorWoth ) idErrorWoth = POOP ;                                                                         \
+                    POOPRqUIET                                                                                                      \
+                    if( !_pScoop ) break ;                                                                                          \
+                    else           DEL( _pScoop ) ;                                                                                 \
+                }                                                                                                                   \
+            }                                                                                                                       \
+        }                                                                                                                           \
+    }                                                                                                                               \
                                                                                                                                     \
-    ZE( countT , _cOk ) ;                                                                                                           \
-    {                                                                                                                               \
-        FORsTRINGSiN1( _pstt1u )                                                                                                    \
-        {                                                                                                                           \
-            IFsCRATCHoK                                                                                                               \
-            {                                                                                                                       \
-                scoopC* _pScoop = this != ((tin1S&)tin0P).pEtScratch ? 0 : new( 0 , tin0P , LF ) scoopC( tin0P , LF ) ; ___( _pScoop ) ;         \
+    if( !_bStringOfStrings ) delF( tin0P , _pstt1u ) ;                                                                              \
                                                                                                                                     \
-                /* CALLER'S WORK CODE */
-
+    if( !_cOk ) { __( idErrorWoth ? idErrorWoth : BM_HIGH | 0x1234 ) ; }
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -50001,9 +50000,6 @@ use this rather than _ to avoid the overhead of _
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120056a.ETHERlIST1bEFOREwORK END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120056b.ETHERlIST2bEFOREoPTIONALbREAK BEGIN
 
 
 //
@@ -50036,9 +50032,6 @@ use this rather than _ to avoid the overhead of _
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120056b.ETHERlIST2bEFOREoPTIONALbREAK END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120056c.ETHERlIST3aFTERoPTIONALbREAK BEGIN
-
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -50051,24 +50044,25 @@ use this rather than _ to avoid the overhead of _
 */
 /**/
 
-/*1*//*ETHERlIST3aFTERoPTIONALbREAK*//*1*/
+/*1*//*ETHERlIST1bEFOREwORK*//*1*/
 
-#define ETHERlIST3aFTERoPTIONALbREAK                                                                                                \
-                                                                                                                                    \
-                }                                                                                                                   \
-                else                                                                                                                \
-                {                                                                                                                   \
-                    POOPRqUIET                                                                                                      \
-                    if( !_pScoop ) break ;                                                                                          \
-                    else           DEL( _pScoop ) ;                                                                                 \
-                }                                                                                                                   \
-            }                                                                                                                       \
-        }                                                                                                                           \
-    }                                                                                                                               \
-                                                                                                                                    \
-    if( !_bStringOfStrings ) delF( tin0P , _pstt1u ) ;                                                                               \
-                                                                                                                                    \
-    __Z( _cOk ) ;
+#define ETHERlIST1bEFOREwORK(psttP)                                                                                                         \
+                                                                                                                                            \
+    boolT _bStringOfStrings = ISsTRINGoFsTRINGS( (psttP) ) ;                                                                                \
+    ZE( strokeS* , _pstt1u ) ;                                                                                                              \
+    if( !_bStringOfStrings ) { strFuseSeparateF( tin0P , _pstt1u , (psttP) ) ; ___( _pstt1u ) ; }                                           \
+    else                    _pstt1u = (strokeS*)(psttP) ;                                                                                   \
+                                                                                                                                            \
+    ZE( countT , idErrorWoth ) ;                                                                                                            \
+    ZE( countT , _cOk ) ;                                                                                                                   \
+    {                                                                                                                                       \
+        FORsTRINGSiN1( _pstt1u )                                                                                                            \
+        {                                                                                                                                   \
+            IFsCRATCHoK                                                                                                                     \
+            {                                                                                                                               \
+                scoopC* _pScoop = this != ((tin1S&)tin0P).pEtScratch ? 0 : new( 0 , tin0P , LF ) scoopC( tin0P , LF ) ; ___( _pScoop ) ;    \
+                                                                                                                                            \
+                /* CALLER'S WORK CODE */
 
 
 //
