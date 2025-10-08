@@ -38,7 +38,7 @@ DONE( tmWorkF )
                 //etRock.traceF( tin0P , gc.tSayPushingJob+TF2(gv.cirJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 jobS job( pbq , cbq , idp , nnPeer ) ;
 
-                /**/etRock.traceF( tin0P , gc.tSayWaitedForPacket/*+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
+                /**/etRock.traceF( tin0P , gc.tSayWaitedForPacket+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 }
                     }
                         break ;
@@ -379,7 +379,7 @@ DONE( tmWorkerF )
 
                                             etThread.delF( tin0P , psttSuffix ) ;
                                             }
-                                                /**/etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bGorilla1||bGorilla2||bStripe?"           domainnet: \"":"REJECTED   domainnet: \"")+tDomainNet+T("\"   actual: \"")+T(psttSuffix)+T("\"   valid1: \"")+tSuffix1GorillaP+T("\"   valid2: \"")+tSuffix2GorillaP+T("\"   stripe: \"")+mySettingsUse.tSuffixUsedByStripe+T("\"   peer: \"")+tDomainPeer+T("\"") ) ;
+                                                /**/etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bGorilla1||bGorilla2||bStripe?"           domainnet: \"":"REJECTED   domainnet: \"")+tDomainNet+T("\"   actual: \"")+T(psttSuffix)+T("\"   valid1: \"")+tSuffix1GorillaP+T("\"   valid2: \"")+tSuffix2GorillaP+T("\"   stripe: \"")+mySettingsUse.tSuffixUsedByStripe+T("\"   peer: ")+T(nnPeer)+T("   tDomainPeer: \"")+tDomainPeer+T("\"") ) ;
 
                                                 if( !bGorilla1 && !bGorilla2 ) bStripe = !etThread.strCompareF( tin0P , psttSuffix , mySettingsUse.tSuffixUsedByStripe  ) ;
 
@@ -1682,7 +1682,7 @@ struct gVarS
     tSayWrotePasswordFile(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "wrote password suffix shared file aok [tLong]:    "                                                                    ) ,
     tSaySettingNewPassword(          tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "setting bNewPassword because suffix has already been used too many times or for too long [gv.tGorillaSuffixUsed]:    " ) ,
     tSayResettingDivert(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "resetting bDivert because suffix has already been used [gv.tGorillaSuffixUsed]:    "                                   ) ,
-    tSayDomainNetSuffixPeer(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[bValid,domainNet,actual,valid,valid2,peer]:      \""                                                                  ) ,
+    tSayDomainNetSuffixPeer(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[bValid,domainNet,actual,valid,valid2,peer,tDomainPeer]:      \""                                                      ) ,
     tSayDomainGrossPeer(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[domainGross,peer]:    \""                                                                                             ) ,
     tSayLoweringCase(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "lowering case"                                                                                                         ) ,
     tSayPoppingQuery(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "popping a query"                                                                                                       ) ,
