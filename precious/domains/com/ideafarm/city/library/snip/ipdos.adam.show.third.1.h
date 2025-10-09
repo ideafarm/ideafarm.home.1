@@ -11796,6 +11796,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 //CODEsYNCH: 0050014 00101a1 (ifcIDaDAM_2GLASS2)
 
 /*3*/
+#define ifcIDaDAM_TOOLwATCHfOLDER                                      0x510008b0
 #define ifcIDaDAMoLD_BASELINErOOT                                      0x51000000
 #define ifcIDaDAM_ROOTfTPsERVER                                        0x5100034e
 #define ifcIDaDAM_PATCHaLLmASTERS                                      0x51000359
