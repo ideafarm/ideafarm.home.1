@@ -11796,7 +11796,6 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 //CODEsYNCH: 0050014 00101a1 (ifcIDaDAM_2GLASS2)
 
 /*3*/
-#define ifcIDaDAM_TOOLwATCHfOLDER                                      0x510008b0
 #define ifcIDaDAMoLD_BASELINErOOT                                      0x51000000
 #define ifcIDaDAM_ROOTfTPsERVER                                        0x5100034e
 #define ifcIDaDAM_PATCHaLLmASTERS                                      0x51000359
@@ -11896,6 +11895,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TOOLtRACEcOPY                                        0x510008ab
 #define ifcIDaDAM_TOOLfILEsPLIT                                        0x510008ac
 #define ifcIDaDAM_TOOLtRACEmARK                                        0x510008ad
+#define ifcIDaDAM_TOOLwATCHfOLDER                                      0x510008b0
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
@@ -49964,75 +49964,6 @@ use this rather than _ to avoid the overhead of _
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200569.COUNTsTRINGSiN END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120056a.ETHERlIST1bEFOREwORK BEGIN
 
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*//*ETHERlIST3aFTERoPTIONALbREAK*//*1*/
-
-#define ETHERlIST3aFTERoPTIONALbREAK                                                                                                \
-                                                                                                                                    \
-                }                                                                                                                   \
-                else                                                                                                                \
-                {                                                                                                                   \
-                    if( !idErrorWoth ) idErrorWoth = POOP ;                                                                         \
-                    POOPRqUIET                                                                                                      \
-                    if( !_pScoop ) break ;                                                                                          \
-                    else           DEL( _pScoop ) ;                                                                                 \
-                }                                                                                                                   \
-            }                                                                                                                       \
-        }                                                                                                                           \
-    }                                                                                                                               \
-                                                                                                                                    \
-    if( !_bStringOfStrings ) delF( tin0P , _pstt1u ) ;                                                                              \
-                                                                                                                                    \
-    if( !_cOk ) { __( idErrorWoth ? idErrorWoth : BM_HIGH | 0x1234 ) ; }
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*//*ETHERlIST2bEFOREoPTIONALbREAK*//*1*/
-
-#define ETHERlIST2bEFOREoPTIONALbREAK                                                                                               \
-                                                                                                                                    \
-                if( !POOP )                                                                                                         \
-                {                                                                                                                   \
-                    _cOk ++ ;                                                                                                       \
-                    DEL( _pScoop ) ;                                                                                                \
-                                                                                                                                    \
-                    /* CALLER'S OPTIONAL BREAK STATEMENT */
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -50065,6 +49996,82 @@ use this rather than _ to avoid the overhead of _
                                                                                                                                             \
                 /* CALLER'S WORK CODE */
 
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120056a.ETHERlIST1bEFOREwORK END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120056b.ETHERlIST2bEFOREoPTIONALbREAK BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*ETHERlIST2bEFOREoPTIONALbREAK*//*1*/
+
+#define ETHERlIST2bEFOREoPTIONALbREAK                                                                                               \
+                                                                                                                                    \
+                if( !POOP )                                                                                                         \
+                {                                                                                                                   \
+                    _cOk ++ ;                                                                                                       \
+                    DEL( _pScoop ) ;                                                                                                \
+                                                                                                                                    \
+                    /* CALLER'S OPTIONAL BREAK STATEMENT */
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120056b.ETHERlIST2bEFOREoPTIONALbREAK END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120056c.ETHERlIST3aFTERoPTIONALbREAK BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*ETHERlIST3aFTERoPTIONALbREAK*//*1*/
+
+#define ETHERlIST3aFTERoPTIONALbREAK                                                                                                \
+                                                                                                                                    \
+                }                                                                                                                   \
+                else                                                                                                                \
+                {                                                                                                                   \
+                    if( !idErrorWoth ) idErrorWoth = POOP ;                                                                         \
+                    POOPRqUIET                                                                                                      \
+                    if( !_pScoop ) break ;                                                                                          \
+                    else           DEL( _pScoop ) ;                                                                                 \
+                }                                                                                                                   \
+            }                                                                                                                       \
+        }                                                                                                                           \
+    }                                                                                                                               \
+                                                                                                                                    \
+    if( !_bStringOfStrings ) delF( tin0P , _pstt1u ) ;                                                                              \
+                                                                                                                                    \
+    if( !_cOk ) { __( idErrorWoth ? idErrorWoth : BM_HIGH | 0x1234 ) ; }
 
 //
 // Respecting the rights of other people is an important part of empowering one another.

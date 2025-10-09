@@ -348,6 +348,19 @@ DONE( tmWorkerF )
                                             case ifcIDtYPEdNSqUERY_A :
                                             }
                                                 break ;
+
+                                                }
+                                                    rec_TXT_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , mySettingsUse.tAcmeResponse , job.nnPeer ) ;
+                                                    bSilent = 0 ;
+                                                {
+                                                if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gcP.tAcmeChallenge ) )
+
+                                                //etRock.traceF( tin0P , gcP.tSayARequest/*+tDomainNet*/ ) ;
+                                                _IO_
+                                            {
+                                            case ifcIDtYPEdNSqUERY_TXT :
+                                            }
+                                                break ;
                                             {
                                             case ifcIDtYPEdNSqUERY_CAA :
                                         {
@@ -1105,6 +1118,29 @@ voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const co
 {
 voidT rec_A_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP , const nicNameC& nnPeerP )
 
+}
+    }
+        stsRepliesP << ps ;
+
+        *ps << psttvP ;
+        *ps << cText ;
+        countT cText = 1 ;
+        *ps << (countT&)time2 ;
+        *ps << time1 ;
+        ZE( sCountT , time2 ) ;
+        ZE( countT  , time1 ) ;
+        *ps << (countT)1 ;
+        *ps << (countT)ifcIDtYPEdNSqUERY_TXT ;
+        *ps << psttP ;
+
+        /**/etherP.traceF( tin0P , T("rec_TXT_F [nnPeer,value,name]:    peer: ")+T(nnPeerP)+T("    directed to: ")+T(psttvP)+T("    \"")+T(psttP)+T("\"") ) ;
+    {
+    if( ps )
+    soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
+{
+voidT rec_TXT_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const strokeS* const psttvP , const nicNameC& nnPeerP )
+
 DONE( tmFreshSettingsF )
 }
     }
@@ -1586,6 +1622,7 @@ boolT mySettingsS::operator !( voidT )
 cDomainRootAllowed(          0                                                                  )
 cnnSubnetTrusted(            0                                                                  ) ,
 pnnSubnetTrusted(            0                                                                  ) ,
+tAcmeResponse(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\"krVzMMpjYHtjxSMGlKv-NmEqBAwjksnFKtDrr3YB9CA\"" ) ,        //U:: MOVE THIS VALUE INTO A SETTING
 tNnTrusted(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed8(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed7(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
@@ -1713,6 +1750,7 @@ struct gVarS
     tHidden(                         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".hidden.ideafarm.com"                                                                                                  ) ,
     tWebHook1(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
     tWebHooks(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
+    tAcmeChallenge(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "_acme-challenge.hidden.ideafarm.com"                                                                                   ) ,
     tDot(                            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "."                                                                                                                     ) ,
     tDash(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "-"                                                                                                                     ) ,
     tb4(                             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    "                                                                                                                  ) ,
@@ -1785,6 +1823,7 @@ struct gVarS
     textC tHidden                         ;
     textC tWebHook1                       ;
     textC tWebHooks                       ;
+    textC tAcmeChallenge                  ;
     textC tDot                            ;
     textC tDash                           ;
     textC tb4                             ;
@@ -1806,6 +1845,8 @@ struct gConstS
 
     countT       cDomainRootAllowed          ;
     textC* const pptDomainRootAllowed[ 8 ]   ;
+
+    textC        tAcmeResponse               ;
 
     textC        tNnTrusted                  ;
     textC        tIpGorilla1                 ;
