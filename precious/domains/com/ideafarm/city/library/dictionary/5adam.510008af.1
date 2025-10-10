@@ -353,7 +353,12 @@ DONE( tmWorkerF )
                                                     rec_TXT_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , mySettingsUse.tAcmeResponse , job.nnPeer ) ;
                                                     bSilent = 0 ;
                                                 {
-                                                if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainGross , gcP.tAcmeChallenge ) )
+                                                else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainGross , gcP.tAcmeChallenge ) )
+                                                }
+                                                    rec_TXT_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , mySettingsUse.tTestTextResponse , job.nnPeer ) ;
+                                                    bSilent = 0 ;
+                                                {
+                                                if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainGross , gcP.tTestTextChallenge ) )
 
                                                 //etRock.traceF( tin0P , gcP.tSayARequest/*+tDomainNet*/ ) ;
                                                 _IO_
@@ -525,6 +530,19 @@ DONE( tmWorkerF )
                                             //****************************************************************************************************************************************************************************************************************************************************************************************************
                                         {
                                         if( !etThread.strCompareF( tin0P , tDomainGross , gcP.tAcmeChallenge ) )
+                                        }
+                                            bForceReply = 1 ;
+                                            bSilent     = 0 ;
+
+                                            //****************************************************************************************************************************************************************************************************************************************************************************************************
+                                            //****************************************************************************************************************************************************************************************************************************************************************************************************
+                                            //****                      **************************************************************************************************************************************************************************************************************************************************************************
+                                            //****  TEST TXT CHALLENGE  **************************************************************************************************************************************************************************************************************************************************************************
+                                            //****                      **************************************************************************************************************************************************************************************************************************************************************************
+                                            //****************************************************************************************************************************************************************************************************************************************************************************************************
+                                            //****************************************************************************************************************************************************************************************************************************************************************************************************
+                                        {
+                                        if( !etThread.strCompareF( tin0P , tDomainGross , gcP.tTestTextChallenge ) )
 
                                         //****************************************************************************************************************************************************************************************************************************************************************************************************
                                         //****************************************************************************************************************************************************************************************************************************************************************************************************
@@ -1636,6 +1654,7 @@ cDomainRootAllowed(          0                                                  
 cnnSubnetTrusted(            0                                                                  ) ,
 pnnSubnetTrusted(            0                                                                  ) ,
 tAcmeResponse(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\"krVzMMpjYHtjxSMGlKv-NmEqBAwjksnFKtDrr3YB9CA\"" ) ,        //U:: MOVE THIS VALUE INTO A SETTING
+tTestTextResponse(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "abcdefgh"               ) ,
 tNnTrusted(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed8(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed7(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
@@ -1764,6 +1783,7 @@ struct gVarS
     tWebHook1(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
     tWebHooks(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
     tAcmeChallenge(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "_acme-challenge.hidden.ideafarm.com"                                                                                   ) ,
+    tTestTextChallenge(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "testtxt.hidden.ideafarm.com"                                                                                           ) ,
     tDot(                            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "."                                                                                                                     ) ,
     tDash(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "-"                                                                                                                     ) ,
     tb4(                             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    "                                                                                                                  ) ,
@@ -1837,6 +1857,7 @@ struct gVarS
     textC tWebHook1                       ;
     textC tWebHooks                       ;
     textC tAcmeChallenge                  ;
+    textC tTestTextChallenge              ;
     textC tDot                            ;
     textC tDash                           ;
     textC tb4                             ;
@@ -1860,6 +1881,7 @@ struct gConstS
     textC* const pptDomainRootAllowed[ 8 ]   ;
 
     textC        tAcmeResponse               ;
+    textC        tTestTextResponse           ;
 
     textC        tNnTrusted                  ;
     textC        tIpGorilla1                 ;
