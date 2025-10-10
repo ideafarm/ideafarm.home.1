@@ -1858,20 +1858,23 @@
         //CS:CODEsYNC: 3300005b 3600212d
 
         /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF / ++++") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-        /**/traceF( tin0P , tSayClientPrefix+tSayStart , flTRACE_null , ifcIDtRACEdIVERT_9 ) ;
-        TN( tSayDone  , "--------" ) ;
-        TN( tSayStart , "++++++++" ) ;
-
-        TN( tSayClientPrefix , jobP.psttSayClientPrefix ) ;
 
         }
             TESTsCRATCH //U:: TO FIND A BUG
             _IO_
         {
+
+        /**/traceF( tin0P , tSayClientPrefix+tSayStart , flTRACE_null , ifcIDtRACEdIVERT_9 ) ;
+        TN( tSayDone  , "--------" ) ;
+        TN( tSayStart , "++++++++" ) ;
+
         _IO_
     {
-    if( jobP.cArg )
+    else
+    if( !jobP.cArg ) traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF / !exception / jobP.cArg is null") ) ;
     //THREADmODE4oN( flTHREADmODE4_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY )
+
+    TN( tSayClientPrefix , jobP.psttSayClientPrefix ) ;
 
     _IO_
 {
