@@ -280,7 +280,7 @@
 0x11200129 , 0x00000118 ,   // 1snip.11200129.swab2
 0x1120012a , 0x00000119 ,   // 1snip.1120012a.swab4
 0x1120012b , 0x0000011a ,   // 1snip.1120012b.ifcidtypednsquery
-0x1120012c , 0x0000011b ,   // 1snip.1120012c.ifcidtypednsreply
+0x1120012c , 0x0000011b ,   // 1snip.1120012c.ifcidsectiondnsreply
 0x1120012d , 0x0000011c ,   // 1snip.1120012d.swabnet2
 0x1120012e , 0x0000011d ,   // 1snip.1120012e.swabnet4
 0x1120012f , 0x0000011e ,   // 1snip.1120012f.costosfilenamemax

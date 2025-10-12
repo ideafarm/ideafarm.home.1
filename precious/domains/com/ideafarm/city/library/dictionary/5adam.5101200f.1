@@ -9,38 +9,87 @@
 
 REST
 
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
+
 etThread.delF( tin0P , pbr ) ;
 }
-    etThread.osEditF( tin0P , tLog ) ; // THIS WILL ONLY BE USEFUL IF IFC HAS BEEN CONFIGURED TO USE AN EDITOR THAT CAN DISPLAY HEX
+    }
+        }
+            DEL( ps ) ;
+            }
+                etRock.traceF( tin0P , T("      [class] :    ")+TF2(idClass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                *ps >> idClass ;
+                ZE( countT , idClass ) ;
 
-    etThread.delF( tin0P , psttl ) ;
-    etherC::ifcSayIF( T(psttl) , flSAY_APPEND | flSAY_LOG ) ;
-    etThread.dnsLabelsF( tin0P , psttl , pbe , &header ) ; ___( psttl ) ;
-    pbe += 2 * sizeof( count01T ) ;
-    pbe +=     sizeof( count02T ) ;
-    pbe += 2 * sizeof( count01T ) ;
-    etThread.delF( tin0P , psttl ) ;
-    etherC::ifcSayIF( T(psttl) , flSAY_APPEND | flSAY_LOG ) ;
-    etThread.dnsLabelsF( tin0P , psttl , pbe , &header ) ; ___( psttl ) ;
+                etRock.traceF( tin0P , T("      [type]  :    ")+TF2(idSection,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                *ps >> idSection ;
+                ZE( countT , idSection ) ;
+
+                etRock.traceF( tin0P , T("reply [domain]:    ")+tDomainGross ) ;
+                TN( tDomainGross , psttw ) ;
+                if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
+                *ps >> psttw ;
+                ZE( strokeS* , psttw ) ;
+                _IO_
+            {
+            if( ps )
+            stsReplies >> ps ;
+            ZE( soulC* , ps ) ;
+            _IO_
+        {
+        while( stsReplies )
+
+        }
+            DEL( ps ) ;
+            }
+                etRock.traceF( tin0P , T("      [class] :    ")+TF2(idClass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                *ps >> idClass ;
+                ZE( countT , idClass ) ;
+
+                etRock.traceF( tin0P , T("      [type]  :    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                *ps >> idType ;
+                ZE( countT , idType ) ;
+
+                etRock.traceF( tin0P , T("query [domain]:    ")+tDomainGross ) ;
+                TN( tDomainGross , psttw ) ;
+                if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
+                *ps >> psttw ;
+                ZE( strokeS* , psttw ) ;
+                _IO_
+            {
+            if( ps )
+            stsQueries >> ps ;
+            ZE( soulC* , ps ) ;
+            _IO_
+        {
+        while( stsQueries )
+        _IO_
+    {
+    if( !bFail )
 
     }
         }
-            pbe += 2 * sizeof( count01T ) ;
-            etThread.delF( tin0P , psttl ) ;
-            //etherC::ifcSayIF( T(psttl) , flSAY_APPEND | flSAY_LOG ) ;
-            etThread.dnsLabelsF( tin0P , psttl , pbe , &header ) ; ___( psttl ) ;
+            etRock.traceF( tin0P , T("!exception / could not parse reply [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            bFail = 1 ;
+            POOPRqUIET
         {
-        while( cq -- )
-        headerTmp.swabF() ;
-        countT cq = headerTmp.cQuerys ;
-        headerTmp.swabF() ;
-        pbe = pbr + sizeof( dnsMsgHeaderS ) ; // QNAME
-        dnsMsgHeaderS headerTmp = *(dnsMsgHeaderS*)pbr ;
+        if( rc )
+
+        }
+            etThread.delF( tin0P , pbHeaderAndQueriesNU ) ;
+            rc = POOP ;
+            ((tin1S&)tin0P).pEtScratch->dnsParseF( tin0P , pbHeaderAndQueriesNU , countTC() , stsQueries , stsReplies , pbr , cbr ) ;
+            ZE( byteT* , pbHeaderAndQueriesNU ) ;
+        {
+        ZE( countT , rc ) ;
+        SCOOPS
+        _IO_
     {
-    const byteT* pbe = pbr + sizeof( dnsMsgHeaderS ) ; // QNAME
-    dnsMsgHeaderS& header = *(dnsMsgHeaderS*)pbr ;
-    ZE( strokeS* , psttl ) ;
-    //PARSE REPLY TO OBTAIN LABELS
+    IFsCRATCHoK
+    ZE( boolT , bFail ) ;
+    stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stsReplies(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
 
     etThread.osEditF( tin0P , tFile ) ; // THIS WILL ONLY BE USEFUL IF IFC HAS BEEN CONFIGURED TO USE AN EDITOR THAT CAN DISPLAY HEX
 
@@ -49,15 +98,18 @@ etThread.delF( tin0P , pbr ) ;
 {
 if( !POOP )
 
-etThread.dnsQueryF( tin0P , pbr , cbr , tName , ifcIDtYPEdNSqUERY_TXT ) ; ___( pbr ) ;
-//etThread.dnsQueryF( tin0P , pbr , cbr , tName , ifcIDtYPEdNSqUERY_A ) ; ___( pbr ) ;
+//etThread.dnsQueryF( tin0P , pbr , cbr , tName , ifcIDtYPEdNSqUERY_CNAME ) ; ___( pbr ) ;
+//etThread.dnsQueryF( tin0P , pbr , cbr , tName , ifcIDtYPEdNSqUERY_TXT ) ; ___( pbr ) ;
+etThread.dnsQueryF( tin0P , pbr , cbr , tName , ifcIDtYPEdNSqUERY_A ) ; ___( pbr ) ;
 ZE( countT , cbr ) ;
 ZE( byteT* , pbr ) ;
 
+//TN( tName , "ipdos.ideafarm.com" ) ;
 //TN( tName , "testtxt.hidden.ideafarm.com" ) ;
-TN( tName , "testtxt.ideafarm.com" ) ;
-//TN( tName , "dns1.ideafarm.com" ) ;
-TN( tLog , "///d/ideafarm.log.thirdC" ) ;
+//TN( tName , "testtxt.ideafarm.com" ) ;
+TN( tName , "dns1.ideafarm.com" ) ;
+
+etherC& etRock = etherC::etRockIF( tin0P ) ;
 
 TODO
 

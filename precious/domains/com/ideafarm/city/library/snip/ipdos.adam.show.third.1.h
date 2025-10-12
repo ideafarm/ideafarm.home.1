@@ -12221,7 +12221,7 @@ these values are used in the foreign domain name system
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120012b.ifcidtypednsquery END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120012c.ifcidtypednsreply BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120012c.ifcidsectiondnsreply BEGIN
 
 
 //
@@ -12236,15 +12236,15 @@ these values are used in the foreign domain name system
 */
 /**/
 
-/*1*//*ifcIDtYPEdNSrEPLY*//*1*/
+/*1*//*ifcIDsECTIONdNSrEPLY*//*1*/
 
 /*3*/
-#define ifcIDtYPEdNSrEPLY_ANSWER                                   0xdddd04d1
-#define ifcIDtYPEdNSrEPLY_AUTHORITY                                0xdddd04d2
-#define ifcIDtYPEdNSrEPLY_NOTE                                     0xdddd04d3
+#define ifcIDsECTIONdNSrEPLY_ANSWER                                   0xdddd04d1
+#define ifcIDsECTIONdNSrEPLY_AUTHORITY                                0xdddd04d2
+#define ifcIDsECTIONdNSrEPLY_NOTE                                     0xdddd04d3
 /*3*/
-#define ifcIDtYPEdNSrEPLY_min     0xdddd04d1
-#define ifcIDtYPEdNSrEPLY_max     0xdddd04d3
+#define ifcIDsECTIONdNSrEPLY_min     0xdddd04d1
+#define ifcIDsECTIONdNSrEPLY_max     0xdddd04d3
 
 
 //
@@ -12254,7 +12254,7 @@ these values are used in the foreign domain name system
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120012c.ifcidtypednsreply END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120012c.ifcidsectiondnsreply END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120012d.swabnet2 BEGIN
 
 
@@ -34706,8 +34706,9 @@ coding standard
 
 // SOME CODE USES LISTnAME_min LISTnAME_max AND OTHER CODE RELIES ON processGlobal4I.mapListName, TO DECIDE WHETHER TO LOOK UP A VALUE IN THE DICTIONARY OF THE CURRENT poolC INSTANCE
 // FOR THIS REASON, WHENEVER THIS LIST CHANGES, ALWAYS DO A FULL BUILD (BY setting bAll = 1 in Eve), SO THAT BOTH METHODS RETURN THE SAME RESULT
-// (CHEAT HINT: IN THE ALTERNATIVE, 1snip.1120039b.listnamesys.h IN THE snip DIRECTORY CAN BE MANUALLY EDITED.)
+// (CHEAT HINT: IN THE ALTERNATIVE, MY "*.h" FLIPPED COPY IN THE snip DIRECTORY CAN BE MANUALLY EDITED.)
 
+/*3*/
 #define LISTnAMEsYS_min                                                  0x80000001
 #define LISTnAMEsYS_ROOT                                                 0x80000001
 #define LISTnAMEsYS_ROOTsYSTEM1                                          0x80000002
@@ -34769,6 +34770,7 @@ coding standard
 #define LISTnAMEsYS_SETS                                                 0x8000003a
 #define LISTnAMEsYS_SETsTATE                                             0x8000003b
 #define LISTnAMEsYS_max                                                  0x8000003b
+/*3*/
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
