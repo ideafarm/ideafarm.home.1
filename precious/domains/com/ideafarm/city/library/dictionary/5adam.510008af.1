@@ -1153,13 +1153,13 @@ voidT rec_A_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const count
     }
         stsRepliesP << ps ;
 
-        *ps << psttvP ;
+        *ps << psttvP ;                 //U:: ENHANCE THIS TO SUPPORT ARBITRARY BLOB (I.E. THAT CAN CONTAIN NULL BYTES AND ANY BYTE VALUE)
         *ps << cText ;
         countT cText = 1 ;
         *ps << (countT&)time2 ;
         *ps << time1 ;
         ZE( sCountT , time2 ) ;
-        ZE( countT  , time1 ) ;
+        ZE( countT  , time1 ) ;          time1 = 0x1c71c71 ;  // 17c17c10.00000000 IS 600 SECONDS, WHICH IS GODADDY MINIMUM TTL ; THIS IS DONE HERE SO RESPONSES CAN BE COMPARED WITH THOSE FROM GODADDY
         *ps << (countT)1 ;
         *ps << (countT)ifcIDtYPEdNSqUERY_TXT ;
         *ps << psttP ;
