@@ -11896,6 +11896,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TOOLfILEsPLIT                                        0x510008ac
 #define ifcIDaDAM_TOOLtRACEmARK                                        0x510008ad
 #define ifcIDaDAM_TOOLwATCHfOLDER                                      0x510008b0
+#define ifcIDaDAM_TOOLdUMPdNSrEPLY                                     0x510008b1
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
