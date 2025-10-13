@@ -350,7 +350,31 @@ DONE( tmWorkerF )
                                                 break ;
 
                                                 }
-                                                    rec_TXT_F( tin0P , etThread , stsReplies , ifcIDsECTIONdNSrEPLY_ANSWER , tDomainGross , mySettingsUse.tAcmeResponse , job.nnPeer ) ;
+                                                    etThread.delF( tin0P , pbValue ) ;
+                                                    }
+                                                        rec_TXT_F( tin0P , etThread , stsReplies , ifcIDsECTIONdNSrEPLY_ANSWER , tDomainGross , tValue , job.nnPeer ) ;
+
+                                                        etRock.traceF( tin0P , gcP.tSayAcmeChallengeValue+tValue ) ;
+                                                        TN( tValue , pbValue ) ;
+                                                        if( pbe ) *pbe = 0 ;
+                                                        byteT* pbe = thirdC::c_strstrIF( tin0P , pbValue , " \r\n" ) ;      // THE WINDOWS SHELL COMMAND "echo abcd > [filename]" RESULTS IN A FILE IMAGE THAT ENDS WITH " \r\n" ; THIS CODE SUPPORTS USING SUCH A COMMAND TO WRITE THE FILE
+                                                    {
+                                                    if( pbValue )
+
+                                                    }
+                                                        }
+                                                            etThread.delF( tin0P , pbValue ) ;
+                                                            etRock.traceF( tin0P , T("!exception / could not get contents of ")+tLongAcmeChallengeValue ) ;
+                                                            POOPR ;
+                                                        {
+                                                        if( POOP )
+                                                        ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbValue , cbValue , tLongAcmeChallengeValue , 1 ) ; ___( pbValue ) ;
+                                                        SCOOPS
+                                                    {
+                                                    IFsCRATCHoK
+                                                    ZE( countT , cbValue ) ;
+                                                    ZE( byteT* , pbValue ) ;
+
                                                     bSilent = 0 ;
                                                 {
                                                 else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainGross , gcP.tAcmeChallenge ) )
@@ -847,6 +871,8 @@ DONE( tmWorkerF )
     TN( tLongWoTimePasswordUrlSuffix , "" ) ; tLongWoTimePasswordUrlSuffix = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/woTimePasswordUrlSuffix") ;
     ZE( sCountT , timeLetsEncryptLath2 ) ;
     ZE( countT  , timeLetsEncryptLath1 ) ;
+
+    TN( tLongAcmeChallengeValue , "///d/acme/txt.challenge.value.ttt" ) ;
 
     stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
     stackC stsReplies(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
@@ -1655,7 +1681,6 @@ boolT mySettingsS::operator !( voidT )
 cDomainRootAllowed(          0                                                                  )
 cnnSubnetTrusted(            0                                                                  ) ,
 pnnSubnetTrusted(            0                                                                  ) ,
-tAcmeResponse(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "x7zy_fm5cuiFAvvy7y-SXi0D6FhxXF5vcvu5r7ju6xY" ) ,        //U:: MOVE THIS VALUE INTO A SETTING
 tTestTextResponse(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "abcdefgh"               ) ,
 tNnTrusted(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed8(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
@@ -1721,6 +1746,7 @@ struct gVarS
 
     tDotLetsEncryptDotOrg(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".letsencrypt.org"                                                                                                      )
 
+    tSayAcmeChallengeValue(          tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "TXT acme.challenge [value]:    "                                                                                       ) ,
     tSayTraceMarkEnd(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "---------------------------------------------------------------------------------------------------------------------" ) ,
     tSayTraceMarkBegin(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ) ,
     tDomainGrossTraceMarkEnd(        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".traceend.hidden.ideafarm.com"                                                                                         ) ,
@@ -1797,6 +1823,7 @@ struct gVarS
 
     textC tDotLetsEncryptDotOrg           ;
 
+    textC tSayAcmeChallengeValue          ;
     textC tSayTraceMarkEnd                ;
     textC tSayTraceMarkBegin              ;
     textC tDomainGrossTraceMarkEnd        ;
@@ -1882,7 +1909,6 @@ struct gConstS
     countT       cDomainRootAllowed          ;
     textC* const pptDomainRootAllowed[ 8 ]   ;
 
-    textC        tAcmeResponse               ;
     textC        tTestTextResponse           ;
 
     textC        tNnTrusted                  ;
