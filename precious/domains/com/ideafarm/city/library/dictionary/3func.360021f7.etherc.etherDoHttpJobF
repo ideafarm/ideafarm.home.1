@@ -92,14 +92,15 @@
                 delF( tin0P , postBody    ) ;
                 delF( tin0P , psttAgent   ) ;
                 delF( tin0P , psttName    ) ;
-                delF( tin0P , psttQueryKV ) ;
+                delF( tin0P , psttQueries ) ;
+                delF( tin0P , psttDomain  ) ;
 
 //((tin123S&)tin0P).pc Utility[ 0 ] -- ;
                 /**/traceF( tin0P , tSayClientPrefix+tSayDone , flTRACE_null , ifcIDtRACEdIVERT_9 ) ;
 //((tin123S&)tin0P).pc Utility[ 0 ] ++ ;
 
                 // /*else*/                         /**/traceF( tin0P , tSayClientPrefix+T("accumulated time pending [nnPeer,time]:    "        )                   +T(jobP.nnPeer)+tb4+TT(timeTotalPending1,timeTotalPending2)+T(timeTotalPending1>TOCK?"    ********":"") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
-                //if( bDeadman1 || bDeadman2 ) /*;*/traceF( tin0P , tSayClientPrefix+T("accumulated time pending [idCycle,nnPeer,time]:    ")+T(psttQueryKV)+tb4+T(jobP.nnPeer)+tb4+TT(timeTotalPending1,timeTotalPending2)+T(timeTotalPending1>TOCK?"    ********":"") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                //if( bDeadman1 || bDeadman2 ) /*;*/traceF( tin0P , tSayClientPrefix+T("accumulated time pending [idCycle,nnPeer,time]:    ")+T(psttQueries)+tb4+T(jobP.nnPeer)+tb4+TT(timeTotalPending1,timeTotalPending2)+T(timeTotalPending1>TOCK?"    ********":"") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                 osTimeAddF(      tin0P , timeTotalPending1 , timeTotalPending2 , timeElapsed1 , timeElapsed2 ) ;
                 osTimeSubtractF( tin0P , timeElapsed1 , timeElapsed2 , timeStart1 , timeStart2 ) ;
                 osTimeNowF(      tin0P , timeElapsed1 , timeElapsed2 ) ;
@@ -119,16 +120,16 @@
                         /**/traceF( tin0P , tSayClientPrefix+TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    nonfile response has been written") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
                         delF( tin0P , psttKVReport ) ;
-                        swKV.freeNullsF( tin0P ) ;
+                        swQuery.freeNullsF( tin0P ) ;
                         TELL( "cleaning up 5" ) ;
                         }
                             }
                                 delF( tin0P , psttv ) ;                                  //U::               psttLeverKV->idCaste: 0xddddf001 + 0xff524d75: 0xdd303d76
-                                strokeS*& psttv = *(strokeS**)&(countT&)swKV ;        //U::20210126@1850: psttLeverKV->idCaste - sc_PREFIXlENGTH: 57d425ff
-                                psttLeverKV = (strokeS*)swKV.leverF( tin0P , idf ) ;
+                                strokeS*& psttv = *(strokeS**)&(countT&)swQuery ;        //U::20210126@1850: psttLeverKV->idCaste - sc_PREFIXlENGTH: 57d425ff
+                                psttLeverKV = (strokeS*)swQuery.leverF( tin0P , idf ) ;
                             {
                             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                            countT cFlavors = swKV.cFlavorsF( tin0P ) ;            //U:: BUG: swKV ACCESS IS NOT SERIALIZED IN SEVERAL PLACES; CONJ: ONLY USED BY THIS THREAD SO SHOULD NOT NEED SERIALIZATION: 
+                            countT cFlavors = swQuery.cFlavorsF( tin0P ) ;            //U:: BUG: swQuery ACCESS IS NOT SERIALIZED IN SEVERAL PLACES; CONJ: ONLY USED BY THIS THREAD SO SHOULD NOT NEED SERIALIZATION: 
                             _IO_
                         {
                         TELL( "cleaning up 4" ) ;
@@ -152,7 +153,7 @@
 
                             DEL( pRefReply ) ;
                             }
-                                (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swKV , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueryKV , psttAgent , postBody ) ;
+                                (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swQuery , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueries , psttAgent , postBody ) ;
                                 _IO_
                             {
                             if( bQuickReply && REPLY.pCBF )
@@ -257,7 +258,7 @@
                                         }
                                             }
                                                 memCopyF( tin0P , postc , tKV , tKV.csF( tin0P ) ) ; postc += tKV.csF( tin0P ) ;
-                                                TN( tKV , "?" ) ; tKV += T(psttQueryKV) ;
+                                                TN( tKV , "?" ) ; tKV += T(psttQueries) ;
                                             {
                                             if( bQuery )
 
@@ -275,13 +276,13 @@
                                     newF( tin0P , LF , postsReply , sizeof( countT ) + costReply + 1 ) ; ___( postsReply ) ;
 
                                     if( bClose ) costReply += sizeof postOldConnectionClose - 1 ;
-                                    if( prPostsHttpLocation ) costReply += sizeof postLocationKey - 1 + COSTS( *prPostsHttpLocation ) + ( bQuery ? 1 + psttQueryKV->idAdam : 0 ) ;
+                                    if( prPostsHttpLocation ) costReply += sizeof postLocationKey - 1 + COSTS( *prPostsHttpLocation ) + ( bQuery ? 1 + psttQueries->idAdam : 0 ) ;
 
                                     }
-                                        strMakeFromOsTextF( tin0P , psttQueryKV , "rc=" postREFERRALcHAMPIONiD ) ; ___( psttQueryKV) ;
-                                        delF( tin0P , psttQueryKV ) ;
+                                        strMakeFromOsTextF( tin0P , psttQueries , "rc=" postREFERRALcHAMPIONiD ) ; ___( psttQueries) ;
+                                        delF( tin0P , psttQueries ) ;
                                     {
-                                    if( !psttQueryKV || !psttQueryKV->idAdam )
+                                    if( !psttQueries || !psttQueries->idAdam )
 
                                     ;
                                         + costBody
@@ -706,7 +707,7 @@
 
                                                 }
                                                     }
-                                                        (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBodyDynamic , psttKVReport , swKV , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueryKV , psttAgent , postBody ) ;
+                                                        (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBodyDynamic , psttKVReport , swQuery , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueries , psttAgent , postBody ) ;
                                                         TELL( T(psttName) ) ;
                                                         _IO_
                                                     {
@@ -781,7 +782,7 @@
                                                 //THESE WERE REMOVED IN 2019. 20200729@1734: ENABLED WITHOUT ANALYSIS
 
                                                 }
-                                                    (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swKV , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueryKV , psttAgent , postBody ) ;
+                                                    (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swQuery , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueries , psttAgent , postBody ) ;
                                                     _IO_
                                                 {
                                                 if( !bQuickReply && REPLY.pCBF )
@@ -908,7 +909,7 @@
                                                               /**/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / l") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                                                 }
                                                     /**/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / called REPLY.pCBF") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
-                                                    (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swKV , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueryKV , psttAgent , postBody ) ;
+                                                    (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swQuery , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueries , psttAgent , postBody ) ;
                                                     /**/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / calling REPLY.pCBF") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                                                     _IO_
                                                 {
@@ -1033,7 +1034,7 @@
                         if( bDeadman1 ) /*;*/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / r") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                       /**/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / r") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
-                        (*pHttpEatKeyValuePairsCBFP)( tin0P , *this , bQuitP , psttKVReport , 0 /*DISABLED TO PREVENT ATTACK: T("///ideafarm/ephemeral/")+TF1(ifcIDaDAM_ROOTfORMdATAeATER)+T("/in/form") */ , swKV , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueryKV , psttAgent , postBody ) ;
+                        (*pHttpEatKeyValuePairsCBFP)( tin0P , *this , bQuitP , psttKVReport , 0 /*DISABLED TO PREVENT ATTACK: T("///ideafarm/ephemeral/")+TF1(ifcIDaDAM_ROOTfORMdATAeATER)+T("/in/form") */ , swQuery , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueries , psttAgent , postBody ) ;
                         ZE( strokeS* , psttKVReport ) ;
                         TELL( "calling keyvalue eater" ) ;
                         if( bDeadman1 ) /*;*/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / s") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
@@ -1087,13 +1088,13 @@
                                                  if( !strCompareF( tin0P , psttv , T("verbose") ) ) idHeadFlavorOverride = ifcIDhEADfLAVOR_VERBOSE ;
                                         {
                                         if( psttv )
-                                        strokeS* psttv = *(strokeS**)&(countT&)swKV ;
+                                        strokeS* psttv = *(strokeS**)&(countT&)swQuery ;
                                     {
                                     if( !strCompareF( tin0P , psttLeverKV , tKeyHeadFlavor ) )
-                                    psttLeverKV = (strokeS*)swKV.leverF( tin0P , idf ) ;
+                                    psttLeverKV = (strokeS*)swQuery.leverF( tin0P , idf ) ;
                                 {
                                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                countT cFlavors = swKV.cFlavorsF( tin0P ) ;
+                                countT cFlavors = swQuery.cFlavorsF( tin0P ) ;
 
                                 TN( tKeyHeadFlavor , "headflavor" ) ;
                                 _IO_
@@ -1115,11 +1116,11 @@
                         //    }
                         //        tSay += T("[")+T(psttLeverKV)+T("]: \"")+T(zsttv)+T("\"\r\n") ;
                         //
-                        //        strokeS*& zsttv = *(strokeS**)&(countT&)swKV ;
-                        //        psttLeverKV = (strokeS*)swKV.leverF( tin0P , idf ) ;
+                        //        strokeS*& zsttv = *(strokeS**)&(countT&)swQuery ;
+                        //        psttLeverKV = (strokeS*)swQuery.leverF( tin0P , idf ) ;
                         //    {
                         //    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                        //    countT cFlavors = swKV.cFlavorsF( tin0P ) ;
+                        //    countT cFlavors = swQuery.cFlavorsF( tin0P ) ;
                         //
                         //    TN( tSay , "" ) ;
                         //    _IO_
@@ -1511,8 +1512,8 @@
                 if( bDeadman1 ) /*;*/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / N") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                               /**/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / N") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
-                /**/traceF( tin0P , tSayClientPrefix+TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    request:    \"")+T(psttName)+T("\"")+(psttQueryKV?tb4+T(psttQueryKV):T("")) , bDeadman1 || bDeadman2 ? flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY : flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
-                /**/traceF( tin0P , tSayClientPrefix+TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    request:    \"")+T(psttName)+T("\"")+(psttQueryKV?tb4+T(psttQueryKV):T("")) , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                /**/traceF( tin0P , tSayClientPrefix+TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    request:    \"")+T(psttName)+T("\"")+(psttQueries?tb4+T(psttQueries):T("")) , bDeadman1 || bDeadman2 ? flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY : flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                /**/traceF( tin0P , tSayClientPrefix+TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    request:    \"")+T(psttName)+T("\"")+(psttQueries?tb4+T(psttQueries):T("")) , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                 if( bDeadman1 ) /*;*/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / O    ")+TT(timeElRead1,timeElRead2)+tb4+T(psttName) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                               /**/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / O    ")+TT(timeElRead1,timeElRead2)+tb4+T(psttName) , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
@@ -1619,33 +1620,33 @@
                 if( bDeadman1 || bDeadman2 ) /*;*/traceF( tin0P , tSayClientPrefix+T(psttName)+T(!bClose?"        connection will be kept open":"        CONNECTION WILL BE CLOSED") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
                 }
-                    else if( timeElA2R1 > ( TICK >> 0xf ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****f**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >> 0xe ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****e**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >> 0xd ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****d**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >> 0xc ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****c**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >> 0xb ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****b**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >> 0xa ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****a**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >>   9 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****9**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >>   8 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****8**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >>   7 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****7**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >>   6 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****6**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >>   5 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****5**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >>   4 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****4**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >>   3 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****3**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >>   2 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****2**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >>   1 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****1**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    else if( timeElA2R1 > ( TICK >>   0 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****0**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                         if( timeElA2R2                   ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****!**** [idCycle,timeRead]:    ")+T(psttQueryKV)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >> 0xf ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****f**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >> 0xe ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****e**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >> 0xd ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****d**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >> 0xc ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****c**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >> 0xb ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****b**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >> 0xa ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****a**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >>   9 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****9**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >>   8 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****8**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >>   7 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****7**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >>   6 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****6**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >>   5 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****5**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >>   4 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****4**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >>   3 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****3**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >>   2 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****2**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >>   1 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****1**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    else if( timeElA2R1 > ( TICK >>   0 ) ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****0**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                         if( timeElA2R2                   ) /*;*/traceF( tin0P , tSayClientPrefix+T("deadman1 accept to reading ****!**** [idCycle,timeRead]:    ")+T(psttQueries)+tb4+TTF(timeElA2R1,timeElA2R2) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
                     osTimeSubtractF( tin0P , timeElA2R1 , timeElA2R2 , jobP.timeAccepted1 , jobP.timeAccepted2 ) ;
                     sCountT timeElA2R2 = timeRead2 ;
                     countT  timeElA2R1 = timeRead1 ;
 
-                    /**/traceF( tin0P , tSayClientPrefix+T("deadman1 reading began [idCycle,timeRead]      :    ")+T(psttQueryKV)+tb4+TTF(timeRead1,timeRead2)                      +tb4+T("reading began") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    /**/traceF( tin0P , tSayClientPrefix+T("deadman1 do job        [idCycle,timeDoJob]     :    ")+T(psttQueryKV)+tb4+TTF(jobP.timeDoJob1,jobP.timeDoJob2)          +tb4+T("do job")        , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    /**/traceF( tin0P , tSayClientPrefix+T("deadman1 job popped    [idCycle,timeJobPopped] :    ")+T(psttQueryKV)+tb4+TTF(jobP.timeJobPopped1,jobP.timeJobPopped2)  +tb4+T("job popped")    , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    /**/traceF( tin0P , tSayClientPrefix+T("deadman1 job created   [idCycle,timeJobCreated]:    ")+T(psttQueryKV)+tb4+TTF(jobP.timeJobCreated1,jobP.timeJobCreated2)+tb4+T("job created")   , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-                    /**/traceF( tin0P , tSayClientPrefix+T("deadman1 accepted      [idCycle,timeAccepted]  :    ")+T(psttQueryKV)+tb4+TTF(jobP.timeAccepted1,jobP.timeAccepted2)    +tb4+T("accepted")      , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    /**/traceF( tin0P , tSayClientPrefix+T("deadman1 reading began [idCycle,timeRead]      :    ")+T(psttQueries)+tb4+TTF(timeRead1,timeRead2)                      +tb4+T("reading began") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    /**/traceF( tin0P , tSayClientPrefix+T("deadman1 do job        [idCycle,timeDoJob]     :    ")+T(psttQueries)+tb4+TTF(jobP.timeDoJob1,jobP.timeDoJob2)          +tb4+T("do job")        , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    /**/traceF( tin0P , tSayClientPrefix+T("deadman1 job popped    [idCycle,timeJobPopped] :    ")+T(psttQueries)+tb4+TTF(jobP.timeJobPopped1,jobP.timeJobPopped2)  +tb4+T("job popped")    , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    /**/traceF( tin0P , tSayClientPrefix+T("deadman1 job created   [idCycle,timeJobCreated]:    ")+T(psttQueries)+tb4+TTF(jobP.timeJobCreated1,jobP.timeJobCreated2)+tb4+T("job created")   , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                    /**/traceF( tin0P , tSayClientPrefix+T("deadman1 accepted      [idCycle,timeAccepted]  :    ")+T(psttQueries)+tb4+TTF(jobP.timeAccepted1,jobP.timeAccepted2)    +tb4+T("accepted")      , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                     _IO_
                 {
                 if( bDeadman1 )
@@ -1660,7 +1661,7 @@
 
                 }
                     }
-                        else if( bQuery    ) tNameCache += tQuest+T(psttQueryKV) ;
+                        else if( bQuery    ) tNameCache += tQuest+T(psttQueries) ;
                         else if( bTalkBody ) tNameCache += bBadgeOk ? tNameCacheTalkBodySuffixPrivate : tNameCacheTalkBodySuffixPublic ;
                         if( bFavIcon ) ;
 
@@ -1694,7 +1695,7 @@
                 ZE( boolT , bTalkBody ) ;
                 ZE( boolT , bDeadman2 ) ;
                 ZE( boolT , bDeadman1 ) ;
-                const boolT bQuery = psttQueryKV && psttQueryKV->idAdam ;
+                const boolT bQuery = psttQueries && psttQueries->idAdam ;
 
                 // LAZY   : CONSTRUCTING AND SERVING NONCACHED RESPONSES
                 // NORMAL : GENERAL SERVER WORKLOAD
@@ -1717,11 +1718,11 @@
                         {
                         if( !strCompareF( tin0P , psttzv , tBadgeForce ) )
 
-                        strokeS* psttzv = (strokeS*)(countT&)swKV ;
+                        strokeS* psttzv = (strokeS*)(countT&)swQuery ;
                         psttLeverKV = tBadge ;
                         _IO_
                     {
-                    if( swKV.idSlotOfLeverF( tin0P , (countT)(strokeS*)tBadge ) )
+                    if( swQuery.idSlotOfLeverF( tin0P , (countT)(strokeS*)tBadge ) )
 
                     }
                         }
@@ -1729,14 +1730,14 @@
                             bNoCacheStore = bNoCacheSearch = 0 ;
                         {
                         if( psttzv && !strCompareF( tin0P , psttzv , tYes ) )
-                        strokeS* psttzv = (strokeS*)(countT&)swKV ;
+                        strokeS* psttzv = (strokeS*)(countT&)swQuery ;
                         psttLeverKV = tCacheSearch ;
                         _IO_
                     {
-                    if( swKV.idSlotOfLeverF( tin0P , (countT)(strokeS*)tCacheSearch ) )
+                    if( swQuery.idSlotOfLeverF( tin0P , (countT)(strokeS*)tCacheSearch ) )
                     _IO_
                 {
-                if( swKV.cFlavorsF( tin0P ) )
+                if( swQuery.cFlavorsF( tin0P ) )
                 ZE( boolT , bBadgeOk ) ;
                 boolT bNoCacheStore  = 1 ;
                 boolT bNoCacheSearch = 1 ; //20210924@1359: IMPLICITLY SUPPRESS CACHE SEARCH WHENEVER ANY QUERY PARAMETERS ARE PRESENT IN THE URI ; wO'o'S TABLE DIDN'T DO THIS BECAUSE IT USED QUERY PARAMETERS THAT COULD BE CACHED ; THE CODE NOW REQUIRES SUCH APPLICATIONS TO EXPLICITLY TURN ON CACHEING RATHER THAN TURN IT OFF
@@ -1751,7 +1752,8 @@
                     _IO_
                 {
 
-                //if( psttQueryKV && psttQueryKV->idAdam ) /*;*/traceF( tin0P , tSayClientPrefix+T("[psttQueryKV]:    ")+T(psttQueryKV) ) ;
+                /**/traceF( tin0P , tSayClientPrefix+T("[psttDomain]:       ")+T(psttDomain) ) ;
+                //if( psttQueries && psttQueries->idAdam ) /*;*/traceF( tin0P , tSayClientPrefix+T("[psttQueries]:    ")+T(psttQueries) ) ;
                 /**/traceF( tin0P , tSayClientPrefix+T("[psttName]:       ")+T(psttName) ) ;
 
                 }
@@ -1767,7 +1769,7 @@
                 ___( psttName ) ;
                 /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF / called  readRequestF [psttName]:    ")+T(psttName) , flTRACE_FORCEnOsILENCE ) ;
                 }
-                    idEscaped = meP.readRequestF( tin0P , bFail , psttName , psttQueryKV , swKV , psttLeverKV , psttAgent , postBody , bClose , jobP , psoP , pHttpRawCommandServerCBFP ? "!@" : 0 ) ;
+                    idEscaped = meP.readRequestF( tin0P , bFail , psttName , psttQueries , psttDomain , psttLeverKV , swQuery , swHeader , psttAgent , postBody , bClose , jobP , psoP , pHttpRawCommandServerCBFP ? "!@" : 0 ) ;
                     _IO_
                 {
                 /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF / calling readRequestF") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
@@ -1775,7 +1777,8 @@
                 ZE( boolT , bClose ) ;
                 ZE( osTextT* , postBody ) ;
                 ZE( strokeS* , psttAgent ) ;
-                ZE( strokeS* , psttQueryKV ) ;
+                ZE( strokeS* , psttDomain ) ;
+                ZE( strokeS* , psttQueries ) ;
                 ZE( strokeS* , psttName ) ;
                 TELL( "reading a request" ) ;
                 TESTsCRATCH //U:: TO FIND A BUG
@@ -1837,7 +1840,8 @@
         switchC swTally( tin0P , third , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLeverUrlTally ) ;
         ZE( strokeS* , psttLeverUrlTally ) ;
 
-        switchC swKV( tin0P , third , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLeverKV ) ;
+        switchC swHeader( tin0P , third , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLeverKV ) ;
+        switchC swQuery(  tin0P , third , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLeverKV ) ;
         ZE( strokeS* , psttLeverKV ) ;
 
         ZE( countT , cHamburgersThisSession ) ;

@@ -19,7 +19,7 @@
         }
             ether.delF( tin0P , postBodyP ) ;
             ether.delF( tin0P , psttAgentP ) ;
-            ether.delF( tin0P , psttQueryKVP ) ;
+            ether.delF( tin0P , psttQueriesP ) ;
             ether.delF( tin0P , psttNameP ) ;
         {
         if( bFailP )
@@ -42,7 +42,7 @@
                     ether.delF( tin0P , psttk ) ;
                     }
                         psttLeverKVP = 0 ;
-                        swKVP = (countT)psttv ; psttv = 0 ;
+                        swQueryP = (countT)psttv ; psttv = 0 ;
                         //LOGrAW( T("value registered:\r\n--------\r\n")+T(psttv)+T("\r\n--------\r\n") ) ; //U::
                         psttLeverKVP = psttk ;
 
@@ -98,20 +98,20 @@
                 {
                 FORsTRINGSiN1( pstt1e )
                 strokeS sttEq( '=' ) ;
-                ether.strWordsOldF( tin0P , pstt1e , psttQueryKVP , sttq , T("&") ) ; ___( pstt1e ) ;
+                ether.strWordsOldF( tin0P , pstt1e , psttQueriesP , sttq , T("&") ) ; ___( pstt1e ) ;
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , pstt1e ) ;
                 _IO_
             {
-            if( !bFailP && !POOP && psttQueryKVP ) // STORE THE KEY/VALUE PAIRS
+            if( !bFailP && !POOP && psttQueriesP ) // STORE THE KEY/VALUE PAIRS
 
             }
                 }
                     }
                         ether.delF( tin0P , psttd ) ;
-                        ether.strMakeF( tin0P , LF , psttQueryKVP , ( psttd ? T(psttd)+T("&") : T("") )+tBody ) ; ___( psttQueryKVP ) ; //ASSUME: psttQueryKVP IS OF FORM T("aaaa=1111&bbbb=2222&cccc=3333&dddd=4444")
-                        psttQueryKVP = 0 ;
-                        strokeS* psttd = psttQueryKVP ;
+                        ether.strMakeF( tin0P , LF , psttQueriesP , ( psttd ? T(psttd)+T("&") : T("") )+tBody ) ; ___( psttQueriesP ) ; //ASSUME: psttQueriesP IS OF FORM T("aaaa=1111&bbbb=2222&cccc=3333&dddd=4444")
+                        psttQueriesP = 0 ;
+                        strokeS* psttd = psttQueriesP ;
                         TN( tBody , "" ) ; tBody = T(postBodyP) ;
                                 
                         //CONoUTrAW( T("--------\r\n")+T(postBodyP)+T("\r\n--------\r\n") ) ; //U::
@@ -169,8 +169,17 @@
                 }
                     ether.delF( tin0P , psttValue ) ;
                     ether.delF( tin0P , psttKey ) ;
+
+                    psttLeverKVP = 0 ;
+                    swHeaderP = (countT)psttValue ;
+                    psttLeverKVP = psttKey ;
                 
                     }
+                        }
+                            ether.strMakeF( tin0P , LF , psttDomainP , psttValue ) ; ___( psttDomainP ) ;
+                            if( psttDomainP ) ether.delF( tin0P , psttDomainP ) ;
+                        {
+                        else if( !ether.strCompareF( tin0P , psttKey , tKeyDomain        ) )
                         }
                             ether.strMakeF( tin0P , LF , psttAgentP , psttValue ) ; ___( psttAgentP ) ;
                             if( psttAgentP ) ether.delF( tin0P , psttAgentP ) ;
@@ -202,7 +211,7 @@
                         }
                             }
                                 }
-                                    ether.strWordF( tin0P , psttQueryKVP , psttUrlNew , sttq , sttQuest , 2 ) ; ___( psttQueryKVP ) ;
+                                    ether.strWordF( tin0P , psttQueriesP , psttUrlNew , sttq , sttQuest , 2 ) ; ___( psttQueriesP ) ;
                                     ether.strWordF( tin0P , psttNameP    , psttUrlNew , sttq , sttQuest , 1 ) ; ___( psttNameP    ) ;
                                 {
                                 else
@@ -212,7 +221,7 @@
                                 if( !ether.strIdF( tin0P , sttQuest , psttUrlNew ) ) // HTTP/1.0 KEYvALUE PAIRS
                                 strokeS sttQuest( '?' ) ;
 
-                                ether.delF( tin0P , psttQueryKVP ) ;
+                                ether.delF( tin0P , psttQueriesP ) ;
                                 ether.delF( tin0P , psttNameP ) ;
                             {
                             if( psttUrlNew && psttUrlNew->idAdam )
@@ -227,16 +236,16 @@
 
                         swMapUrl.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-                        TN( tUrlOld , "Rb" ) ; tUrlOld = T(psttNameP)+T("?")+T(psttQueryKVP) ;
+                        TN( tUrlOld , "Rb" ) ; tUrlOld = T(psttNameP)+T("?")+T(psttQueriesP) ;
                     {
                     if( !bFailP )
 
                     }
                         ether.delF( tin0P , psttw ) ;
 
-                        //LOGrAW( T("from url[psttQueryKVP]: \"")+T(psttQueryKVP)+T("\"\r\n") ) ;
+                        //LOGrAW( T("from url[psttQueriesP]: \"")+T(psttQueriesP)+T("\"\r\n") ) ;
 
-                        ether.strWordF( tin0P , psttQueryKVP , psttw , sttq , sttQuest , 2 ) ; ___( psttQueryKVP   ) ;
+                        ether.strWordF( tin0P , psttQueriesP , psttw , sttq , sttQuest , 2 ) ; ___( psttQueriesP   ) ;
                         ether.strWordF( tin0P , psttNameP    , psttw , sttq , sttQuest , 1 ) ; ___( psttNameP      ) ;
                         psttNameP = 0 ;
                         strokeS* psttw = psttNameP ;
@@ -290,6 +299,7 @@
         {
         TN( tb4 , "    " ) ;
         TN( tKeyConnection    , "connection"     ) ;
+        TN( tKeyDomain        , "host"           ) ;
         TN( tKeyUserAgent     , "user-agent"     ) ;
         TN( tKeyContentLength , "content-length" ) ;
         TN( tColonWhite , ": " ) ;
@@ -392,7 +402,7 @@
     TESTsCRATCH //U:: TO FIND A BUG
     scoopC scoop( tin0P , LF , ether ) ;  //U:: 20201021@1350: ADDED WITHOUT ANALYSIS.  ALL MEMBER FUNCTIONS OF CLASSES WITH AN ether MEMBER SHOULD DO THIS
 {
-/*1*/osTextT httpServerC::readRequestF( tin0S& tin0P , boolT& bFailP , strokeS*& psttNameP , strokeS*& psttQueryKVP , switchC& swKVP , strokeS*& psttLeverKVP , strokeS*& psttAgentP , osTextT*& postBodyP , boolT& bCloseP , taskDrivenServerJobS& jobP , socketC* psoP , const osTextT* const postEscapeP )/*1*/
+/*1*/osTextT httpServerC::readRequestF( tin0S& tin0P , boolT& bFailP , strokeS*& psttNameP , strokeS*& psttQueriesP , strokeS*& psttDomainP , strokeS*& psttLeverKVP , switchC& swQueryP , switchC& swHeaderP , strokeS*& psttAgentP , osTextT*& postBodyP , boolT& bCloseP , taskDrivenServerJobS& jobP , socketC* psoP , const osTextT* const postEscapeP )/*1*/
 /**/
 */
 /*
