@@ -67,7 +67,7 @@ DONE( tmWorkF )
             while( !POOP && !ether )
 
             }
-                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&offSettingsUse , (countT)&mySettingsA , (countT)&mySettingsB , (countT)&sockd , (countT)&gc , (countT)&gv , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla ) ;
+                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&offSettingsUse , (countT)&mySettingsA , (countT)&mySettingsB , (countT)&sockd , (countT)&gc , (countT)&gv , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
                 inc02AM( cWorkers ) ;
             {
             while( cDo -- )
@@ -160,7 +160,11 @@ DONE( tmWorkF )
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
 
-    gVarS gv( tin0P , etThread , gc ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmRandomizeWebhookDomainPrefixF , CBsTACKmIN << 1 ) , (countT)&offSettingsUse , (countT)&mySettingsA , (countT)&mySettingsB , (countT)&gc , (countT)&gv , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
+    TN( tRandomLabelPrefixLag , "" ) ;
+    TN( tRandomLabelPrefix    , "AbgMdwMYbvFJ3YuB5R" ) ;
+
+    gVarS gv( tin0P , etThread , gc , mySettingsA ) ;
 
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
     //*******************************************************************************************************************************************************************************************************************************************************************************************************************
@@ -202,8 +206,6 @@ DONE( tmWorkF )
     grabC grab_tSuffix2Gorilla( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tSuffix1Gorilla , "" ) ;
     grabC grab_tSuffix1Gorilla( tin0P , TAG( TAGiDnULL ) ) ;
-
-    etThread.osThreadF( TaRG2cBsTACK( tmRandomizeWebhookDomainPrefixF , CBsTACKmIN << 1 ) , (countT)&offSettingsUse , (countT)&mySettingsA , (countT)&mySettingsB ) ;
 
     //etRock.traceF( tin0P , T("the settings are ready") ) ;
     }
@@ -313,8 +315,6 @@ DONE( tmWorkerF )
                                             //    if( ~nnOut )
                                             //
                                             //           if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gcP.tTarget      ) ) nnOut = gvP.nnHostWebLag0 ;
-                                            //    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gcP.tWebHook1    ) ) nnOut = nnWebHook1    ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
-                                            //    //     if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gcP.tWebHooks    ) ) nnOut = nnWebHook1    ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
                                             //
                                             //    //etRock.traceF( tin0P , T("U:: debug    [gcP.tTarget]:    \"")+gcP.tTarget+T("\"") ) ;
                                             //    //etRock.traceF( tin0P , T("U:: debug [tDomainNet]:    \"")+tDomainNet+T("\"") ) ;
@@ -333,15 +333,7 @@ DONE( tmWorkerF )
                                                 {
                                                 if( ~nnOut )
 
-                                                }
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gcP.tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
-                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gcP.tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
-                                                {
-                                                else
-                                                }
-                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gcP.tWebHooks    ) ) nnOut = nnWebHook2 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
-                                                {
-                                                if( bDivert )
+                                                if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gvP.tDomainWebHooksNet ) ) nnOut = bDivert ? nnWebHook2 : nnWebHook1 ;
 
                                                 nicNameC nnOut ;
                                                 //etRock.traceF( tin0P , gcP.tSayARequest/*+tDomainNet*/ ) ;
@@ -481,7 +473,7 @@ DONE( tmWorkerF )
                                             //****************************************************************************************************************************************************************************************************************************************************************************************************
                                             //****************************************************************************************************************************************************************************************************************************************************************************************************
                                         {
-                                        else if( psttw && etThread.strIdF( tin0P , gcP.tHidden , psttw , 1 ) && etThread.strIdF( tin0P , gcP.tDash , psttw , 1 ) )
+                                        else if( psttw && etThread.strIdF( tin0P , gcP.tDotHiddenDomain , psttw , 1 ) && etThread.strIdF( tin0P , gcP.tDash , psttw , 1 ) )
                                         }
                                             }
                                                 while( cDo -- ) etRock.traceF( tin0P , gcP.tSayTraceMarkEnd ) ;
@@ -899,22 +891,24 @@ DONE( tmWorkerF )
     etherC& etRock = etherC::etRockIF( tin0P ) ;
     TN( tb4 , "    " ) ;
 
-    textC&       tSuffix2GorillaP           =       *(textC*)pTaskP->ce ;
-    grabC&       grab_tSuffix2GorillaP      =       *(grabC*)pTaskP->cd ;
-    textC&       tSuffix1GorillaP           =       *(textC*)pTaskP->cc ;
-    grabC&       grab_tSuffix1GorillaP      =       *(grabC*)pTaskP->cb ;
-    gVarS&       gvP                        =       *(gVarS*)pTaskP->ca ;
-    gConstS&     gcP                        =     *(gConstS*)pTaskP->c9 ;
-    socketC&     sockdP                     =     *(socketC*)pTaskP->c8 ;
-    mySettingsS& mySettingsBP               = *(mySettingsS*)pTaskP->c7 ;
-    mySettingsS& mySettingsAP               = *(mySettingsS*)pTaskP->c6 ;
-    countT&      offSettingsUseP            =      *(countT*)pTaskP->c5 ;
-    circleC&     cirRecentDomainGrossTraceP =     *(circleC*)pTaskP->c4 ;
-    circleC&     cirNnPeerDoNotDivertP      =     *(circleC*)pTaskP->c3 ;
-    countT&      cWorkersP                  =      *(countT*)pTaskP->c2 ;
-    boolT&       bFailP                     =       *(boolT*)pTaskP->c1 ;
+    textC&       tRandomLabelPrefixLagP     =       *(textC*)pTaskP->c01 ;
+    textC&       tRandomLabelPrefixP        =       *(textC*)pTaskP->cf  ;
+    textC&       tSuffix2GorillaP           =       *(textC*)pTaskP->ce  ;
+    grabC&       grab_tSuffix2GorillaP      =       *(grabC*)pTaskP->cd  ;
+    textC&       tSuffix1GorillaP           =       *(textC*)pTaskP->cc  ;
+    grabC&       grab_tSuffix1GorillaP      =       *(grabC*)pTaskP->cb  ;
+    gVarS&       gvP                        =       *(gVarS*)pTaskP->ca  ;
+    gConstS&     gcP                        =     *(gConstS*)pTaskP->c9  ;
+    socketC&     sockdP                     =     *(socketC*)pTaskP->c8  ;
+    mySettingsS& mySettingsBP               = *(mySettingsS*)pTaskP->c7  ;
+    mySettingsS& mySettingsAP               = *(mySettingsS*)pTaskP->c6  ;
+    countT&      offSettingsUseP            =      *(countT*)pTaskP->c5  ;
+    circleC&     cirRecentDomainGrossTraceP =     *(circleC*)pTaskP->c4  ;
+    circleC&     cirNnPeerDoNotDivertP      =     *(circleC*)pTaskP->c3  ;
+    countT&      cWorkersP                  =      *(countT*)pTaskP->c2  ;
+    boolT&       bFailP                     =       *(boolT*)pTaskP->c1  ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->ca )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->ca && pTaskP->cb && pTaskP->cc && pTaskP->cd && pTaskP->ce && pTaskP->cf && pTaskP->c01 )
 TASK( tmWorkerF )
 
 DONE( tmCatchF )
@@ -995,6 +989,11 @@ DONE( tmRandomizeWebhookDomainPrefixF )
         
                 }
                     }
+                        }
+                            gvP.tDomainWebHooksNet = tRandomLabelPrefixP+gcP.tDotHiddenDomain ;
+                            tRandomLabelPrefixP = *pptValue[ offe ] ;                                                                                                           //CS:CODEsYNC: 510008af 510008af    ; CODE ASSUMES THAT tValueUrl IS AT OFFSET 0
+                        {
+                        if( !offe )
                         etRock.traceF( tin0P , T("**** AFTER UPDATE ****    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                         *pptValue[ offe ] = T(psttValue) ;
                     {
@@ -1027,7 +1026,7 @@ DONE( tmRandomizeWebhookDomainPrefixF )
             
             ;
             }
-                &tValueUrl ,
+                &tValueUrl ,                                                                                                                                                    //CS:CODEsYNC: 510008af 510008af    ; CODE ASSUMES THAT tValueUrl IS AT OFFSET 0
             {
             textC* pptValue[] =
 
@@ -1091,7 +1090,14 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                     //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     //etRock.traceF( tin0P , T("request:") ) ;
 
-                    TN( tSay , "" ) ; tSay = T("POST ")+tPathEndpoint+mySettingsUse.tStripeIdObjectWebhookDestinationTest+T("?url=https%3A%2F%2F")+tRandomLabelPrefix+T("-3DFg.hidden.ideafarm.com%2Fnobot%2Fnotify%2Fstripe.20240206%401123 HTTP/1.1\r\nAuthorization: Bearer ")+mySettingsUse.tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
+                    mySettingsUse.grabMe.ungrabF( tin0P ) ;
+                    TN( tSay , "" ) ; tSay = T("POST ")+tPathEndpoint+mySettingsUse.tStripeIdObjectWebhookDestinationTest+T("?url=https%3A%2F%2F")+tRandomLabelPrefixP+T("-3DFg.hidden.ideafarm.com%2Fnobot%2Fnotify%2Fstripe.20240206%401123 HTTP/1.1\r\nAuthorization: Bearer ")+mySettingsUse.tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
+                    mySettingsUse.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                    gvP.tDomainWebHooksNet    = tRandomLabelPrefixP   +gcP.tDotHiddenDomain ;
+                    //U::SET A NEW RANDOM VALUE HERE:                                               tRandomLabelPrefixP = ...
+                    gvP.tDomainWebHooksNetLag = tRandomLabelPrefixLagP+gcP.tDotHiddenDomain ;
+                    tRandomLabelPrefixLagP    = tRandomLabelPrefixP                         ;
                 {
                 else
                 }
@@ -1132,7 +1138,6 @@ DONE( tmRandomizeWebhookDomainPrefixF )
     TN( tSayExCouldNotConnectToServer , "!exception / could not connect to server [rc,domain]:    " ) ;
     TN( tSayExCouldNotObtainNnServer  , "!exception / could not obtain IPv4 [rc,domain]:    " ) ;
 
-    TN( tRandomLabelPrefix                    , "AbgMdwMYbvFJ3YuB5R"                                ) ;
     TN( tPathEndpoint    , "/v1/webhook_endpoints/" ) ;
     TN( tDomainStripeApi , "api.stripe.com" ) ;
     TN( tb4 , "    " ) ;
@@ -1140,6 +1145,10 @@ DONE( tmRandomizeWebhookDomainPrefixF )
     // FOR SIMPLICITY AND RELIABILITY, A NEW CONNECTION IS ESTABLISHED FOR EACH ITERATION (THIS CAN BE OPTIMIZED)
     // THIS IS JUST SKELETON CODE FOR PROOF OF CONCEPT ; I PERIODICALLY UPDATE THE STRIPE WEBHOOK DESTINATION URL FOR THE TEST ENVIRONMENT, BUT ALWAYS TO THE SAME VALUE
 
+    textC&       tRandomLabelPrefixLagP     =       *(textC*)pTaskP->c7 ;
+    textC&       tRandomLabelPrefixP        =       *(textC*)pTaskP->c6 ;
+    gVarS&       gvP                        =       *(gVarS*)pTaskP->c5 ;
+    gConstS&     gcP                        =     *(gConstS*)pTaskP->c4 ;
     mySettingsS& mySettingsBP               = *(mySettingsS*)pTaskP->c3 ;
     mySettingsS& mySettingsAP               = *(mySettingsS*)pTaskP->c2 ;
     countT&      offSettingsUseP            =      *(countT*)pTaskP->c1 ;
@@ -1580,7 +1589,7 @@ TASK( tmFreshSettingsF )
     /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
     /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
 
-    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tIpGorilla1,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tIpGorilla1+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tIpGorilla1,tStripeApiKeyTest,tStripeIdObjectWebhookDestinationTest]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tIpGorilla1+T("\"    \"")+tStripeApiKeyTest+T("\"    \"")+tStripeIdObjectWebhookDestinationTest ) ;
 
     /**/etRock.traceF( tin0P , T("[tStripeIdObjectWebhookDestinationTest]:    ")+tStripeIdObjectWebhookDestinationTest ) ;
     }
@@ -1673,24 +1682,6 @@ TASK( tmFreshSettingsF )
 
     }
         etherMe.delF( tin0P , psttEat ) ;
-        }
-            etherMe.delF( tin0P , psttNet ) ;
-            tDomainLeafWebHook1Net = T(psttNet) ;
-            etherMe.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
-            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-            countT idf = 1 ;
-            ZE( strokeS* , psttNet ) ;
-
-            etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
-            _IO_
-        {
-        if( psttEat )
-        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.wh1")  ) ; ___( psttEat ) ;
-        _IO_
-    {
-
-    }
-        etherMe.delF( tin0P , psttEat ) ;
         tIpGorilla1 = T(psttEat) ;
         if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
         ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.go1")  ) ; ___( psttEat ) ;
@@ -1708,21 +1699,12 @@ TASK( tmFreshSettingsF )
     }
         etherMe.delF( tin0P , psttEat ) ;
         }
-            etherMe.delF( tin0P , psttNet ) ;
-            tSuffixUsedByStripe = T(psttNet) ;
-            etherMe.strSubstringF( tin0P , psttNet , idf , sttq , tDot , psttEat , 0 , 0 ) ;
-            etherMe.delF( tin0P , psttNet ) ;
-            tDomainLeafWebHooksNet = T(psttNet) ;
-            etherMe.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
-            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-            countT idf = 1 ;
-            ZE( strokeS* , psttNet ) ;
-
+            tSuffixUsedByStripe = T(psttEat) ;
             etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
             _IO_
         {
         if( psttEat )
-        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.webhooks")  ) ; ___( psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.stripe.label.suffix")  ) ; ___( psttEat ) ;
         _IO_
     {
 
@@ -1849,11 +1831,7 @@ voidT mySettingsS::zapF( tin0S& tin0P )
         ||
         !tDomainRootAllowed1.csF( tin0P )
         ||
-        !tDomainLeafWebHook1Net.csF( tin0P )
-        ||
         !tSuffixUsedByStripe.csF( tin0P )
-        ||
-        !tDomainLeafWebHooksNet.csF( tin0P )
         ||
         !tIpGorilla1.csF( tin0P )
         ||
@@ -1898,9 +1876,7 @@ tDomainRootAllowed1(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null ,
 tIpGorilla1(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tIpWebHook2(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tIpWebHook1(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainLeafWebHook1Net(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tSuffixUsedByStripe(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainLeafWebHooksNet(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tNetshCommandIpv4(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tNetshCommandIpv4SettingKey(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 grabMe(                                tin0P , TAG( TAGiDnULL ) , flGRABc_SHARElAYER | flGRABc_NOTjEALOUS ) ,
@@ -1922,10 +1898,12 @@ NEWdELcLASS( 1 , jobS ) ;
         //U::6: nnHostWebLag0 = etherP.sockNicNameF( tin0P , T("2001:19f0:0:7077::1") ) ;        //U:: FOR TESTING
         //U::6: nnHostWebLath = etherP.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
     {
-    cirJob(  tin0P , etherP , bQuit , flCIRCLEc_null , sizeof jobS , TUCK << 0 )
+    tDomainWebHooksNetLag( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" )
+    tDomainWebHooksNet(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
+    cirJob(  tin0P , etherP , bQuit , flCIRCLEc_null , sizeof jobS , TUCK << 0 ) ,
     idClient( 0 ) ,
     bQuit( 0 ) ,
-    inline gVarS( tin0S& tin0P , etherC& etherP , gConstS& gcP ) :
+    inline gVarS( tin0S& tin0P , etherC& etherP , gConstS& gcP , mySettingsS& mySettingsP ) :
 
     //U::6: nicNameC nnHostWebLag3 ;
     //U::6: nicNameC nnHostWebLag2 ;
@@ -1934,17 +1912,17 @@ NEWdELcLASS( 1 , jobS ) ;
     //U::6: nicNameC nnHostWebLag0 ;
     //U::6: nicNameC nnHostWebLath ;
 
-    circleC cirJob   ;
-    countT  idClient ;
-    boolT   bQuit    ;
+    textC   tDomainWebHooksNetLag ;
+    textC   tDomainWebHooksNet    ;
+    circleC cirJob                ;
+    countT  idClient              ;
+    boolT   bQuit                 ;
 {
 struct gVarS
 
 ;
 }
     }
-        tWebHook1 = mySettingsP.tDomainLeafWebHook1Net+tHidden ;
-        tWebHooks = mySettingsP.tDomainLeafWebHooksNet+tHidden ;
     {
     //U::6: , tTarget(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "target.ipv6-only.ideafarm.com" )
 
@@ -2011,16 +1989,13 @@ struct gVarS
     tq(                              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\""                                                                                                                    ) ,
     tqb4q(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\"    \""                                                                                                              ) ,
 
-    tHidden(                         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".hidden.ideafarm.com"                                                                                                  ) ,
-    tWebHook1(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
-    tWebHooks(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
     tAcmeChallenge(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "_acme-challenge.hidden.ideafarm.com"                                                                                   ) ,
     tTestTextChallenge(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "testtxt.hidden.ideafarm.com"                                                                                           ) ,
     tDot(                            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "."                                                                                                                     ) ,
     tDash(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "-"                                                                                                                     ) ,
     tb4(                             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    "                                                                                                                  ) ,
     tPasswordPrefix(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
-    tDotHiddenDotIdeafarmDotCom(     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".hidden.ideafarm.com"                                                                                                  ) ,
+    tDotHiddenDomain(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".hidden.ideafarm.com"                                                                                                  ) ,
     inline gConstS( tin0S& tin0P , mySettingsS& mySettingsP ) :
 
     //U::6: textC tTarget                 ;
@@ -2086,16 +2061,13 @@ struct gVarS
     textC tq                              ;
     textC tqb4q                           ;
 
-    textC tHidden                         ;
-    textC tWebHook1                       ;
-    textC tWebHooks                       ;
     textC tAcmeChallenge                  ;
     textC tTestTextChallenge              ;
     textC tDot                            ;
     textC tDash                           ;
     textC tb4                             ;
     textC tPasswordPrefix                 ;
-    textC tDotHiddenDotIdeafarmDotCom     ;
+    textC tDotHiddenDomain                ;
 {
 struct gConstS
 
@@ -2122,9 +2094,7 @@ struct gConstS
     textC        tIpGorilla1                           ;
     textC        tIpWebHook2                           ;
     textC        tIpWebHook1                           ;
-    textC        tDomainLeafWebHook1Net                ;
     textC        tSuffixUsedByStripe                   ;
-    textC        tDomainLeafWebHooksNet                ;
 
     textC        tNetshCommandIpv4                     ;
 
@@ -2188,7 +2158,7 @@ struct jobS
 
 /**/
 */
- i simply map names (many to 1 and 1 to many) into ip addresses and tell the client to not cache
+ i simply map names (many to 1 and 1 to many) into ip addresses and, generally, tell the client to not cache
 i do not use the canonical name concept
 /*
 
