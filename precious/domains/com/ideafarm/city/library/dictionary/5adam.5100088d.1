@@ -112,8 +112,8 @@ BOOL CALLBACK enumWindowsCBF( HWND hWindowP , LPARAM cArgP )
                 countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
                 countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
 
-                etherP.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                etherP.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                etherP.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) ) ;
+                etherP.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
 
                 strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                 psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -233,8 +233,8 @@ voidT haltRdpServerF( tin0S& tin0P , etherC& etherP )
                     countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
                     countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
 
-                    //etherP.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    //etherP.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etherP.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) ) ;
+                    //etherP.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
 
                     strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                     psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;

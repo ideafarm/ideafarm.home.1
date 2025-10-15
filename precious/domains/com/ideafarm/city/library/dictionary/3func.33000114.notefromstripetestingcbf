@@ -17,7 +17,7 @@
 #endif
                 }
                     }
-                        etThread.traceF( tin0P , T("********    ") + *pptKey[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etThread.traceF( tin0P , T("********    ") + *pptKey[ offe ] + T("   :    ") + *pptValue[ offe ] ) ;
 
                         etThread.delF( tin0P , psttt ) ;
                         *pptValue[ offe ] = T(psttt) ;
@@ -33,8 +33,8 @@
                 countT cKeys  = sizeof pptKey  / sizeof pptKey[  0 ] ;
 #if defined( NEVERdEFINED )
         
-                etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_10 ) ;
-                etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_10 ) ;
+                etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_null , ifcIDtRACEdIVERT_10 ) ;
+                etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_null , ifcIDtRACEdIVERT_10 ) ;
         
                 strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                 psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
