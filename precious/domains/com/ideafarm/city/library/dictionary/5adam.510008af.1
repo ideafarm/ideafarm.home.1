@@ -333,7 +333,12 @@ DONE( tmWorkerF )
                                                 {
                                                 if( ~nnOut )
 
-                                                if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gvP.tDomainWebHooksNet ) ) nnOut = bDivert ? nnWebHook2 : nnWebHook1 ;
+                                                nnOut = bDivert ? nnWebHook2 : nnWebHook1 ;
+                                                )
+                                                    || !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gvP.tDomainWebHooksNetLag )
+                                                       !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gvP.tDomainWebHooksNet    )
+                                                (
+                                                if
 
                                                 nicNameC nnOut ;
                                                 //etRock.traceF( tin0P , gcP.tSayARequest/*+tDomainNet*/ ) ;
