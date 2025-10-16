@@ -30547,6 +30547,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600119d.thirdc.ostracewrongnodeif!||
  static countT osHireThenMonitorIF( tin0S& tin0P , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP ) ;
  static voidT osOldTimeFromUnixTimeIF( tin0S& tin0P , boolT& isDaylightSavingsTimeP , countT& yDayP , countT& wDayP , countT& yearP , countT& monthP , countT& mDayP , countT& hourP , countT& minuteP , countT& secondP , const countT secondsIntoUnixEpochP ) ;
+ voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const nicNameC& nnP , const osTextT* const postDescriptionP = 0 ) ;
 
 /* commands: math */
 
@@ -33973,6 +33974,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34091.etherC.osTimeWatchF!||
  voidT reportProcessNamePidF( tin0S& tin0P , strokeS*& psttP , strokeS*& psttPrefixP , strokeS*& psttSuffixP , strokeS*& psttUniqueP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34030.etherC.reportProcessNamePidF!||
+ voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const nicNameC& nnP , const strokeS* const psttDescriptionP = 0 ) ;
 
 /* openssl: foreign encryption */
 
