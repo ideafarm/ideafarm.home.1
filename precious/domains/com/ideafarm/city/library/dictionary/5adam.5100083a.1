@@ -34,6 +34,7 @@ DONE( tmLaunchBatExeFilesF )
     }
         ++ s ; etThread.osSleepF( tin0P , TOCK >> 0 ) ;    //THIS IS FOR SAFETY TO PREVENT CPU PEGGING AT MY PUSHY DESIRE
 
+        if( bCallingWait ) etRock.traceF( tin0P , T("calling diskWaitDirF") ) ;
         }
             if( bWoth ) bWoth = 0 ;
 
@@ -89,9 +90,13 @@ DONE( tmLaunchBatExeFilesF )
             if( !bWoth ) etThread.traceF( tin0P , T("waited  for a change [tDrop]:    ")+tDrop ) ;
 
             if( bQuitP ) break ;
+            bCallingWait = 0 ;
+            if( bCallingWait ) etRock.traceF( tin0P , T("called diskWaitDirF") ) ;
         {
-        if( bWoth || ( bChanged = etThread.etherC::diskWaitDirF( tin0P , hWait , bQuitP , tDrop , 1000 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) , bChanged ) )     //P:PERSONALITY: FIRING ME HAS NO EFFECT ; I KEEP WORKING UNTIL THE KID PROCESS ENDS
+        if( bWoth || ( bChanged = etThread.diskWaitDirF( tin0P , hWait , bQuitP , tDrop , 1000 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) , bChanged ) )     //P:PERSONALITY: FIRING ME HAS NO EFFECT ; I KEEP WORKING UNTIL THE KID PROCESS ENDS
+        if( bCallingWait ) etRock.traceF( tin0P , T("calling diskWaitDirF") ) ;
         if( !bWoth ) etThread.traceF( tin0P , T("waiting for a change [tDrop]:    ")+tDrop ) ;
+        boolT bCallingWait = !bWoth ;
         ZE( boolT , bChanged ) ;
     {
     while( !bQuitP && !POOP )
