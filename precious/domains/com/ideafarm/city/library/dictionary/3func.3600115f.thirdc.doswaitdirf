@@ -27,7 +27,7 @@ pEtherContainsMe->traceF( tin0P , tSay+TF2(msNow,flFORMAT_NObIGITvALUES|flFORMAT
                 BOS( WHATsfr , BOSwAITcODE , WaitForSingleObject( (HANDLE)handleP.osF( ifcIDtYPEhANDLE_FILEwAIT ) , msNow ) )
 
                 if( msMaxP != - 1 ) msMaxP -= msNow ;
-                countT msNow = msMaxP < 250 ? msMaxP : 250 ;
+                countT msNow = msMaxP < msGrain ? msMaxP : msGrain ;
             {
             else while( !*this && !bQuitP )            //P:PERSONALITY: ALWAYS WAITS FOR THE OBJECT AT LEAST WO TIME SO bChanged GETS SET
             }
@@ -64,6 +64,7 @@ pEtherContainsMe->traceF( tin0P , tSay+TF2(msNow,flFORMAT_NObIGITvALUES|flFORMAT
         #elif defined( __NT__ )
         #ifdef __OS2__
 
+        const countT msGrain = msMaxP / 4 ;
         boolT bWoth = !handleP ;
     {
     if( !POOP )
