@@ -41,20 +41,15 @@ DONE( tmLaunchBatExeFilesF )
             }
                 }
                     }
+                        etThread.diskMoveFileOrDirF( tin0P , tLongDone , tLong ) ;
+
                         }
-                            }
-                                etThread.traceF( tin0P , T("!exception / could not launch [tLong]:    ")+tLong ) ;
-                                POOPRqUIET
-                            {
-                            if( POOP )
-
-                            CONoUTrAW( "\r\n" ) ;
-                            ((tin1S&)tin0P).pEtScratch->diskFileOrDirDeleteF( tin0P , tLong , flFILEoRdIRdELETE_null , 1 ) ;
-                            CONoUTrAW( "\r\n" ) ;
-
-                            SCOOPS
+                            etThread.delF( tin0P , psttld ) ;
+                            tLongDone = T(psttld) ;
+                            etThread.strReplaceF( tin0P , psttld , tLong , T("/drop.executables/") , T("/done.executables/") ) ; ___( psttld ) ;
+                            ZE( strokeS* , psttld ) ;
                         {
-                        IFsCRATCHoK
+                        TN( tLongDone , "" ) ;
 
                         }
                             }
@@ -101,6 +96,9 @@ DONE( tmLaunchBatExeFilesF )
     boolT bWoth = 1 ;
     TN( tDotHeyWritingDot , ".!writing." ) ;
     TN( tDotBat , ".bat" ) ;
+
+    etThread.diskMakeDirIfNeededF( tin0P , tDone ) ;
+    TN( tDone , "///ideafarm/controls/done.executables/" ) ;
 
     etThread.diskMakeDirIfNeededF( tin0P , tDrop ) ;
     TN( tDrop , "///ideafarm/controls/drop.executables/" ) ;

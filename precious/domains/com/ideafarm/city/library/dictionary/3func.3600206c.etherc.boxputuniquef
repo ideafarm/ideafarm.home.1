@@ -55,9 +55,16 @@
             tListUse += T(psttUse) ;
 
             }
+                }
+                    strFuseF( tin0P , psttUse , psttSuffixP ) ; ___( psttP ) ;
+                    strFuseF( tin0P , psttUse , T(".") ) ; ___( psttP ) ;
+                {
+                if( psttSuffixP )
                 strFuseF( tin0P , psttUse , psttU ) ; ___( psttP ) ;
                 strFuseF( tin0P , psttUse , T(".") ) ; ___( psttP ) ;
-                strMakeF( tin0P , LF , psttUse , psttLikeP , ( psttU ? 1 + psttU->idAdam : 0 ) ) ; ___( psttUse ) ;
+                strMakeF( tin0P , LF , psttUse , psttLikeP , cstte ) ; ___( psttUse ) ;
+
+                countT cstte = ( psttU ? 1 + psttU->idAdam : 0 ) + ( psttSuffixP ? 1 + psttSuffixP->idAdam : 0 ) ;
             {
             else
             if( strIdF( tin0P , tMark , psttc1 ) ) { strReplaceF( tin0P , psttUse , psttc1 , tMark , psttU ) ; ___( psttUse ) ; }
@@ -87,7 +94,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::boxPutUniqueF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttLikeP , const byteT* const pbP , const countT cbP , countT cOpenTriesP , const flagsT flagsOpenDetailsP )/*1*/
+/*1*/voidT etherC::boxPutUniqueF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttLikeP , const byteT* const pbP , const countT cbP , countT cOpenTriesP , const strokeS* const psttSuffixP , const flagsT flagsOpenDetailsP )/*1*/
 
 /**/
 */

@@ -1273,7 +1273,6 @@ voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , 
             }
         }
     }
-    if( !POOP ) etherP.boxPutUniqueF( tin0P , psttP , psttLikeP , pbP , cbP , cOpenTriesP , flagsOpenDetailsP ) ;
     etherP.delF( tin0P , pbP ) ;
     etherP.delF( tin0P , psttLikeP ) ;
 
