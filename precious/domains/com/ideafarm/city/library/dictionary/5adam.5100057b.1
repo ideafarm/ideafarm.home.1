@@ -32,7 +32,8 @@ DONE( tmWorkF )
 
             httpServerC serverS( tin0P , arg1S , arg2 , &cache ) ;
 
-            httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
+            //httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
+            //20251017@1048: DISABLED BECAUSE CERTBOT NO LONGER USED AND dns-01 IS NOW USED TO PROVE CONTROL OVER THE hidden.ideafarm.com DOMAIN (TO GET A WILDCARD CERTIFICATE FOR THAT DOMAIN)
             //20241122@1004: ENABLED SO THAT CERTBOT CAN RENEW
             //20240210@2035: DISABLED FOR SECURITY (FACTORY1 USES HTTPS AND ONLY TO RECEIVE NOTICES FROM Stripe)
         {
@@ -44,10 +45,10 @@ DONE( tmWorkF )
         //U:: ENABLE AFTER REWRITE DATABASE SUBSYSTEMS FOR BILLING:: arg2.pHttpFreshenCacheCBF = httpFreshenCacheCBF ;
         httpServerC_arg2S arg2 ;
         httpServerC_arg1S arg1S( TAG( TAGiDnULL ) , etThread , cArgApp , ifcIDpORT_HTTPS , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , T("World Wide Web Secured") ) ;    //ifcDrivenServerF WILL DO HANDSHAKE AFTER IT DECIDES TO NOT SILENTLY CLOSE THE CONNECTION ; THIS IS TO PREVENT MALICIOUS PEERS FROM EXPLOITING THE SHIT WITHIN OpenSSL
-        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , ifcIDpORT_HTTP  , flSOCKETc_null                                                      , T("World Wide Web") ) ;
+        //httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , ifcIDpORT_HTTP  , flSOCKETc_null                                                      , T("World Wide Web") ) ;
 
         countT cArgApp = (countT)&c8p ;
-        count8S c8p( /*(countT)&pusePeanut*/0 , (countT)&booksSurvey , (countT)&cLeverPassword , (countT)&swsUnconfirmedPeerDeleteEmailZipCountryByPassword , (countT)&bShieldsDown , (countT)&bksWebHookNotices ) ;
+        count8S c8p( /*(countT)&pusePeanut*/0 , (countT)&booksSurvey , (countT)&cLeverPassword , (countT)&swsUnconfirmedPeerDeleteEmailZipCountryByPassword , (countT)&bShieldsDown , (countT)&bksWebHookNotices , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
 
         switchStackC swsUnconfirmedPeerDeleteEmailZipCountryByPassword( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLeverPassword , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS , ifcIDgRABlAYER_7BASEmISC1 ) ;
         ZE( countT , cLeverPassword ) ;
@@ -67,7 +68,7 @@ DONE( tmWorkF )
 
     nicNamesAllowedStripeWebHookNotificationsC nnAllowed( tin0P , etThread , ether , TICK << 4 ) ;      // "<< 4" IN PRODUCTION
 
-    etThread.osThreadF( TaRG2cBsTACK( tmRandomLabelPrefixF , CBsTACKmIN << 1 ) , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmRefreshRandomLabelPrefixF , CBsTACKmIN << 1 ) , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
     TN( tRandomLabelPrefixLag , "" ) ;
     TN( tRandomLabelPrefix    , "" ) ;
 
@@ -82,7 +83,7 @@ DONE( tmWorkF )
 if( pTaskP )
 TASK( tmWorkF )
 
-DONE( tmRandomLabelPrefixF )
+DONE( tmRefreshRandomLabelPrefixF )
 }
     THREADmODE1rESTORE
     }
@@ -133,7 +134,7 @@ DONE( tmRandomLabelPrefixF )
     textC& tRandomLabelPrefixP    = *(textC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
-TASK( tmRandomLabelPrefixF )
+TASK( tmRefreshRandomLabelPrefixF )
 
 DONE( tmShieldsDownF )
 }
