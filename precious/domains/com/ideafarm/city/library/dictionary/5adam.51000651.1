@@ -142,7 +142,7 @@ DONE( tmWorkF )
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 _IO_
             {
-            if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , t11DropSoil , - 1 , flWAITdIR_FILEnAME ) )     // ORDER OF TESTING DOES NOT MATTER SINCE diskWaitDirF WILL ALWAYS RETURN TRUE THE WOTH TIME THAT IT IS CALLED FOR A WAIT OBJECT ; AS WRITTEN, THE CODE DOES NOT DEPEND UPON THIS
+            if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , t11DropSoil , 1000 , flWAITdIR_FILEnAME ) )     // ORDER OF TESTING DOES NOT MATTER SINCE diskWaitDirF WILL ALWAYS RETURN TRUE THE WOTH TIME THAT IT IS CALLED FOR A WAIT OBJECT ; AS WRITTEN, THE CODE DOES NOT DEPEND UPON THIS
             _IO_
         {
         while( !ether && !POOP )
@@ -870,7 +870,7 @@ DONE( tmCleanF )
                 if( bWoth ) bWoth = 0 ;
                 if( !bWoth ) ;//etThread.traceF( tin0P , T("waited  for a change [tDrop]:    ")+tDrop ) ;
             {
-            if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tDrop , - 1 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) )
+            if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tDrop , 1000 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) )
             if( !bWoth ) ;//etThread.traceF( tin0P , T("waiting for a change [tDrop]:    ")+tDrop ) ;
         {
         while( !ether && !POOP )
@@ -911,7 +911,7 @@ DONE( tmRenameF )
             if( bWoth ) bWoth = 0 ;
             _IO_
         {
-        if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , psttmDropArchive , - 1 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) )
+        if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , psttmDropArchive , 1000 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) )
         _IO_
     {
     while( !ether && !POOP )

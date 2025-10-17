@@ -15,7 +15,7 @@ etThread.traceF( tin0P , T("ok") ) ;
 }
     etThread.traceF( tin0P , T("waited  for a change to [tFoo]:    ")+tFoo ) ;
     }
-        bChanged = etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tFoo , - 1 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) ;
+        bChanged = etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tFoo , 1000 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) ;
     {
     while( !bChanged )
     handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
