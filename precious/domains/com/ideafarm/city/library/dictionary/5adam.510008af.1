@@ -1099,6 +1099,7 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                     TN( tSay , "" ) ; tSay = T("POST ")+tPathEndpoint+mySettingsUse.tStripeIdObjectWebhookDestinationTest+T("?url=https%3A%2F%2F")+tRandomLabelPrefixP+T("-3DFg.hidden.ideafarm.com%2Fnobot%2Fnotify%2Fstripe.20240206%401123 HTTP/1.1\r\nAuthorization: Bearer ")+mySettingsUse.tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
                     mySettingsUse.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
+                    etRock.traceF( tin0P , T("said  [tRandomLabelPrefix]:    ")+tRandomLabelPrefixP ) ;
                     etThread.boxPutF( tin0P , tLongRandomLabelPrefix , tRandomLabelPrefixP , tRandomLabelPrefixP.csF( tin0P ) ) ;
 
                     gvP.tDomainWebHooksNet    = tRandomLabelPrefixP   +gcP.tDotHiddenDomain ;
@@ -1109,6 +1110,9 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                         countT idNewPassword = ruPassword ;
                     {
                     gvP.tDomainWebHooksNetLag = tRandomLabelPrefixLagP+gcP.tDotHiddenDomain ;
+
+                    etRock.traceF( tin0P , T("said  [tRandomLabelPrefixLag]:    ")+tRandomLabelPrefixLagP ) ;
+                    etThread.boxPutF( tin0P , tLongRandomLabelPrefixLag , tRandomLabelPrefixLagP , tRandomLabelPrefixLagP.csF( tin0P ) ) ;
                     tRandomLabelPrefixLagP    = tRandomLabelPrefixP                         ;
                 {
                 else
@@ -1152,10 +1156,15 @@ DONE( tmRandomizeWebhookDomainPrefixF )
     TN( tSayExCouldNotConnectToServer , "!exception / could not connect to server [rc,domain]:    " ) ;
     TN( tSayExCouldNotObtainNnServer  , "!exception / could not obtain IPv4 [rc,domain]:    " ) ;
 
-    TN( tLongRandomLabelPrefix , "///ideafarm.home.101/controls/set.by.dns.1/dnsRandomLabelPrefix" ) ;
+    //CS:CODEsYNC: dns.2/ CHANGES AFTER dns.1/ CHANGES, SO WATCHER SHOULD WAIT FOR dns.2/ AND THEN WAIT FOR dns.1/
+
+    TN( tLongRandomLabelPrefix    , "////dns1/d/ideafarm.home.101/controls/set.by.dns.2/dnsRandomLabelPrefix"    ) ;      //CS:CODEsYNC: 510008af 510005ab
+    TN( tLongRandomLabelPrefixLag , "////dns1/d/ideafarm.home.101/controls/set.by.dns.1/dnsRandomLabelPrefixLag" ) ;      //CS:CODEsYNC: 510008af 510005ab
     TN( tPathEndpoint    , "/v1/webhook_endpoints/" ) ;
     TN( tDomainStripeApi , "api.stripe.com" ) ;
     TN( tb4 , "    " ) ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     // FOR SIMPLICITY AND RELIABILITY, A NEW CONNECTION IS ESTABLISHED FOR EACH ITERATION (THIS CAN BE OPTIMIZED)
     // THIS IS JUST SKELETON CODE FOR PROOF OF CONCEPT ; I PERIODICALLY UPDATE THE STRIPE WEBHOOK DESTINATION URL FOR THE TEST ENVIRONMENT, BUT ALWAYS TO THE SAME VALUE
