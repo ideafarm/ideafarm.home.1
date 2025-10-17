@@ -10,32 +10,12 @@
 }
     return bChange ;
 
-    }
-        delF( tin0P , psttn ) ;
-        bChange = third.dosWaitDirF( tin0P , handleP , bQuitP , osFileNameC( tin0P , third , T(psttn) ) , ms , flagsP ) ;
-        diskMapFileNameF( tin0P , psttn , psttDirP ) ; ___( psttn ) ;
-        ZE( strokeS* , psttn ) ;
+    delF( tin0P , psttn ) ;
+    boolT bChange = third.dosWaitDirF( tin0P , handleP , bQuitP , osFileNameC( tin0P , third , T(psttn) ) , msMax , flagsP ) ;
+    diskMapFileNameF( tin0P , psttn , psttDirP ) ; ___( psttn ) ;
+    ZE( strokeS* , psttn ) ;
 
-        ms += ss * 1000 ;
-        ss += mm * 60 ;
-    {
-    if( !POOP )
-    ZE( boolT , bChange ) ;
-
-    }    
-        __NZ( hh ) ;                                                                                                    //REDUNDANT ; SHOULD BE IMPOSSIBLE
-        __NZ( d  ) ;                                                                                                    //REDUNDANT ; SHOULD BE IMPOSSIBLE
-        __NZ( m  ) ;                                                                                                    //REDUNDANT ; SHOULD BE IMPOSSIBLE
-        __NZ( y  ) ;                                                                                                    //REDUNDANT ; SHOULD BE IMPOSSIBLE
-        osTimeToOldTimeF( tin0P , ms , ss , mm , hh , d , m , y , countTC() , timeMaxP , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
-        ZE( sCountT , y  ) ;
-        ZE(  countT , m  ) ;
-        ZE(  countT , d  ) ;
-        ZE(  countT , hh ) ;
-    {
-    ZE( countT , mm ) ;
-    ZE( countT , ss ) ;
-    ZE( countT , ms ) ;
+    countT msMax = osTimeToOldTimeMsF( tin0P , timeMaxP , 0 ) ;
 
     }
         if( POOP ) return 0 ;
