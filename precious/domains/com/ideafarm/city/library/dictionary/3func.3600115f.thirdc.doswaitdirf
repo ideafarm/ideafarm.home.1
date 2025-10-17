@@ -22,7 +22,10 @@
                 if( ((tin1S&)tin0P).brcRaw == WAIT_OBJECT_0 )
 
                 BOSpOOP
-                BOS( WHATsfr , BOSwAITcODE , WaitForSingleObject( (HANDLE)handleP.osF( ifcIDtYPEhANDLE_FILEwAIT ) , 250 ) ) //MS
+                BOS( WHATsfr , BOSwAITcODE , WaitForSingleObject( (HANDLE)handleP.osF( ifcIDtYPEhANDLE_FILEwAIT ) , msNow ) )
+
+                if( msMaxP != - 1 ) msMaxP -= msNow ;
+                countT msNow = msMaxP < 250 ? msMaxP : 250 ;
             {
             else while( !*this && !bQuitP )
             }
@@ -84,11 +87,19 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/boolT thirdC::dosWaitDirF( tin0S& tin0P , handleC& handleP , const boolT& bQuitP , const osTextT* const postDirP , const flagsT flagsP )/*1*/
+/*1*/boolT thirdC::dosWaitDirF( tin0S& tin0P , handleC& handleP , const boolT& bQuitP , const osTextT* const postDirP , countT msMaxP , const flagsT flagsP )/*1*/
+
+// TO BE SAFE, COMBINE THIS WITH POLLING
+// CONJECTURE: NTFS DOES FORWARD CHANGE NOTIFICATIONS SO THIS WILL WORK IF THE PEER IS ALSO NTFS
+// 20251017@0849: "Notifications may not be returned when calling FindFirstChangeNotification for a remote file system."  (https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-findfirstchangenotificationa)
 
 /**/
 
 */
+  if - 1 then i will not return until i have detected a change
+  if not 0 then i will return when i have waited this long even if no change detected
+  may be 0
+ msMaxP
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.00102e1.flWAITdIR!||
  flagsP
  postDirP

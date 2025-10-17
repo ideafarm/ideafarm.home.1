@@ -30197,7 +30197,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340c7.thirdC.dosFindFileOrDirF!||
  static voidT dosFindFileOrDirSimpleIF( tin0S& tin0P , osTextT* const postP , const countT costaP , handleC& handleP , const osTextT* const postLikeP , const flagsT flagsP = flDOSfINDfILEoRdIR_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34186.thirdC.DosFindFileOrDirSimpleF!||
- boolT dosWaitDirF( tin0S& tin0P , handleC& handleP , const boolT& bQuitP , const osTextT* const postDirP , const flagsT flagsP = flWAITdIR_null ) ;
+ boolT dosWaitDirF( tin0S& tin0P , handleC& handleP , const boolT& bQuitP , const osTextT* const postDirP , countT msMaxP = - 1 , const flagsT flagsP = flWAITdIR_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3415f.thirdC.dosWaitDirF!||
  static voidT dosFreeMemIF( tin0S& tin0P , voidT*& pvP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34043.thirdC.dosFreeMemIF!||
@@ -33633,7 +33633,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34112.etherC.diskMapFileNameHoverF!||
  voidT diskSelectF( tin0S& tin0P , const strokeS* const psttDriveNameP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34067.etherC.diskSelectF!||
- boolT diskWaitDirF( tin0S& tin0P , handleC& handleP , const boolT& bQuitP , const strokeS* const psttDirP , const flagsT flagsP = flWAITdIR_null ) ;
+ boolT diskWaitDirF( tin0S& tin0P , handleC& handleP , const boolT& bQuitP , const strokeS* const psttDirP , countT msMaxP = - 1 , const flagsT flagsP = flWAITdIR_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3416e.etherC.diskWaitDirF!||
  voidT diskWalkF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const strokeS* const psttNameP , const boolT& bQuitP , const flagsT flagsP = flDISKwALK_null , diskWalkCBFT pCbfP = 0 , countT* const pcArgP = 0 , countT* pModuloDirsP = 0 , countT* pModuloFilesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341ba.etherC.diskWalkF!||

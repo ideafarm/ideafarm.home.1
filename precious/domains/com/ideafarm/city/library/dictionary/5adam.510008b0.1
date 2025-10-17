@@ -31,7 +31,7 @@ DONE( tmWorkF )
                 if( bWoth ) bWoth = 0 ;
                 if( !bWoth ) /*;*/etThread.traceF( tin0P , T("waited  for a change [tFolder]:    ")+tFolder ) ;
             {
-            if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tFolder , /*flWAITdIR_RECURSE |*/ flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) )
+            if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tFolder , - 1 , /*flWAITdIR_RECURSE |*/ flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) )
             if( !bWoth ) /*;*/etThread.traceF( tin0P , T("waiting for a change [tFolder]:    ")+tFolder ) ;
         {
         while( !ether && !POOP )
