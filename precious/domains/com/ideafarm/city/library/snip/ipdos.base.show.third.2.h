@@ -33633,7 +33633,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34112.etherC.diskMapFileNameHoverF!||
  voidT diskSelectF( tin0S& tin0P , const strokeS* const psttDriveNameP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34067.etherC.diskSelectF!||
- boolT diskWaitDirF( tin0S& tin0P , handleC& handleP , const boolT& bQuitP , const strokeS* const psttDirP , countT msMaxP = 1000 , const flagsT flagsP = flWAITdIR_null ) ;
+ boolT diskWaitDirF( tin0S& tin0P , handleC& handleP , const boolT& bQuitP , const strokeS* const psttDirP , countT timeMaxP = TOCK << 4 , const flagsT flagsP = flWAITdIR_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3416e.etherC.diskWaitDirF!||
  voidT diskWalkF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const strokeS* const psttNameP , const boolT& bQuitP , const flagsT flagsP = flDISKwALK_null , diskWalkCBFT pCbfP = 0 , countT* const pcArgP = 0 , countT* pModuloDirsP = 0 , countT* pModuloFilesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341ba.etherC.diskWalkF!||

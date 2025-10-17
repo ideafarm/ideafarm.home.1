@@ -10,13 +10,36 @@
 }
     return bChange ;
 
-    delF( tin0P , psttn ) ;
-    boolT bChange = third.dosWaitDirF( tin0P , handleP , bQuitP , osFileNameC( tin0P , third , T(psttn) ) , msMaxP , flagsP ) ;
-    diskMapFileNameF( tin0P , psttn , psttDirP ) ; ___( psttn ) ;
-    ZE( strokeS* , psttn ) ;
+    }
+        delF( tin0P , psttn ) ;
+        bChange = third.dosWaitDirF( tin0P , handleP , bQuitP , osFileNameC( tin0P , third , T(psttn) ) , ms , flagsP ) ;
+        diskMapFileNameF( tin0P , psttn , psttDirP ) ; ___( psttn ) ;
+        ZE( strokeS* , psttn ) ;
+
+        ms += ss * 1000 ;
+        ss += mm * 60 ;
+    {
+    if( !POOP )
+    ZE( boolT , bChange ) ;
+
+    }    
+        __NZ( hh ) ;                                                                                                    //REDUNDANT ; SHOULD BE IMPOSSIBLE
+        __NZ( d  ) ;                                                                                                    //REDUNDANT ; SHOULD BE IMPOSSIBLE
+        __NZ( m  ) ;                                                                                                    //REDUNDANT ; SHOULD BE IMPOSSIBLE
+        __NZ( y  ) ;                                                                                                    //REDUNDANT ; SHOULD BE IMPOSSIBLE
+        osTimeToOldTimeF( tin0P , ms , ss , mm , hh , d , m , y , countTC() , timeMaxP , 0 , flOStIMEtOoLDtIME_null ) ;
+        ZE( countT , y  ) ;
+        ZE( countT , m  ) ;
+        ZE( countT , d  ) ;
+        ZE( countT , hh ) ;
+    {
+    ZE( countT , mm ) ;
+    ZE( countT , ss ) ;
+    ZE( countT , ms ) ;
 
     }
         if( POOP ) return 0 ;
+        __( timeMaxP > TOCK << 4 ) ;                                        //P:PERSONALITY: I DISALLOW A TIMEOUT VALUE AT OR ABOVE AN IFC "MINUTE" TO ENSURE THAT BASE OS SHUTDOWN CAN PROCEED EVEN IF bQuitP IS NEVER SET
         __( psttDirP[ CSpREFIX - 1 + psttDirP->idAdam ].idAdam != '/' ) ;
         if( POOP ) return 0 ;
         __Z( psttDirP ) ;
@@ -25,7 +48,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT etherC::diskWaitDirF( tin0S& tin0P , handleC& handleP , const boolT& bQuitP , const strokeS* const psttDirP , countT msMaxP , const flagsT flagsP )/*1*/
+/*1*/boolT etherC::diskWaitDirF( tin0S& tin0P , handleC& handleP , const boolT& bQuitP , const strokeS* const psttDirP , countT timeMaxP , const flagsT flagsP )/*1*/
 
 /**/
 */
