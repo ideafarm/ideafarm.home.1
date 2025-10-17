@@ -32,63 +32,67 @@ TASK( tmWorkF )
 DONE( tmLaunchBatExeFilesF )
 }
     }
-        ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;    //THIS IS FOR SAFETY TO PREVENT CPU PEGGING AT MY PUSHY DESIRE
+        ++ s ; etThread.osSleepF( tin0P , TOCK >> 0 ) ;    //THIS IS FOR SAFETY TO PREVENT CPU PEGGING AT MY PUSHY DESIRE
 
         }
             if( bWoth ) bWoth = 0 ;
 
-            FORsTRINGSiNsPANNEDcOMBINEDtAIL1
             }
+                FORsTRINGSiNsPANNEDcOMBINEDtAIL1
                 }
                     }
-                        etThread.diskMoveFileOrDirF( tin0P , tLongDone , tLong ) ;
-
                         }
-                            etThread.delF( tin0P , psttld ) ;
-                            tLongDone = T(psttld) ;
-                            etThread.strReplaceF( tin0P , psttld , tLong , T("/drop.executables/") , T("/done.executables/") ) ; ___( psttld ) ;
-                            ZE( strokeS* , psttld ) ;
-                        {
-                        TN( tLongDone , "" ) ;
+                            etThread.diskMoveFileOrDirF( tin0P , tLongDone , tLong ) ;
 
-                        }
+                            }
+                                etThread.delF( tin0P , psttld ) ;
+                                tLongDone = T(psttld) ;
+                                etThread.strReplaceF( tin0P , psttld , tLong , T("/drop.executables/") , T("/done.executables/") ) ; ___( psttld ) ;
+                                ZE( strokeS* , psttld ) ;
+                            {
+                            TN( tLongDone , "" ) ;
+
                             }
                                 }
-                                    etThread.traceF( tin0P , T("!exception / could not launch [tLong]:    ")+tLong ) ;
-                                    POOPRqUIET
+                                    }
+                                        etThread.traceF( tin0P , T("!exception / could not launch [tLong]:    ")+tLong ) ;
+                                        POOPRqUIET
+                                    {
+                                    if( POOP )
+
+                                    CONoUTrAW( "\r\n" ) ;
+                                    ((tin1S&)tin0P).pEtScratch->osProcessF( tin0P , countTC() , countTC() , countTC() , countTC() , tLong ) ;
+                                    CONoUTrAW( "\r\n" ) ;
+
+                                    SCOOPS
                                 {
-                                if( POOP )
+                                IFsCRATCHoK
+                                etThread.traceF( tin0P , T("launching [tLong]:    ")+tLong ) ;
+                            {                                                                       //A:ASSUME: FILES ARE STATELESS, IN THAT A FILE CAN BE OMITTED WITHOUT CHANGING THE OUTCOME OF THE PASS
+                            if( !bWoth )                                                            //P:PERSONALITY: I PURGE ALL FILES THAT ARE WAITING FOR ME WHEN I START UP ; I ONLY HIRE FILES THAT ARE NEWLY DROPPED AFTER I START
 
-                                CONoUTrAW( "\r\n" ) ;
-                                ((tin1S&)tin0P).pEtScratch->osProcessF( tin0P , countTC() , countTC() , countTC() , countTC() , tLong ) ;
-                                CONoUTrAW( "\r\n" ) ;
-
-                                SCOOPS
-                            {
-                            IFsCRATCHoK
-                            etThread.traceF( tin0P , T("launching [tLong]:    ")+tLong ) ;
-                        {                                                                       //A:ASSUME: FILES ARE STATELESS, IN THAT A FILE CAN BE OMITTED WITHOUT CHANGING THE OUTCOME OF THE PASS
-                        if( !bWoth )                                                            //P:PERSONALITY: I PURGE ALL FILES THAT ARE WAITING FOR ME WHEN I START UP ; I ONLY HIRE FILES THAT ARE NEWLY DROPPED AFTER I START
-
-                        etThread.delF( tin0P , psttm ) ;
-                        TN( tLong , psttm ) ;
-                        etThread.diskMapFileNameF( tin0P , psttm , psttc1 ) ; ___( psttm ) ;
-                        ZE( strokeS* , psttm ) ;
+                            etThread.delF( tin0P , psttm ) ;
+                            TN( tLong , psttm ) ;
+                            etThread.diskMapFileNameF( tin0P , psttm , psttc1 ) ; ___( psttm ) ;
+                            ZE( strokeS* , psttm ) ;
+                        {
+                        if( etThread.strIdF( tin0P , tDotBat , psttc1 ) && !etThread.strIdF( tin0P , tDotHeyWritingDot , psttc1 ) )
                     {
-                    if( etThread.strIdF( tin0P , tDotBat , psttc1 ) && !etThread.strIdF( tin0P , tDotHeyWritingDot , psttc1 ) )
+                    if( psttc1[ CSpREFIX - 1 + psttc1->idAdam ].idAdam != '/' )                                 // IF NOT DIRECTORY
                 {
-                if( psttc1[ CSpREFIX - 1 + psttc1->idAdam ].idAdam != '/' )                                 // IF NOT DIRECTORY
+                FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
+                etThread.boxMenuF( tin0P , soul1m , tDrop+T("*") , 0 , TUCK ) ;
+                soulC soul1m( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.launch.bat.and.exe" ) ;
             {
-            FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
-            etThread.boxMenuF( tin0P , soul1m , tDrop+T("*") , 0 , TUCK ) ;
-            soulC soul1m( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.launch.bat.and.exe" ) ;
+            if( bChanged )
 
             if( !bWoth ) etThread.traceF( tin0P , T("waited  for a change [tDrop]:    ")+tDrop ) ;
 
             if( bQuitP ) break ;
         {
-        if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , bQuitP , tDrop , 1000 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) )     //P:PERSONALITY: FIRING ME HAS NO EFFECT ; I KEEP WORKING UNTIL THE KID PROCESS ENDS
+        if( bWoth || ( bChanged = etThread.etherC::diskWaitDirF( tin0P , hWait , bQuitP , tDrop , 1000 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) , bChanged ) )     //P:PERSONALITY: FIRING ME HAS NO EFFECT ; I KEEP WORKING UNTIL THE KID PROCESS ENDS
         if( !bWoth ) etThread.traceF( tin0P , T("waiting for a change [tDrop]:    ")+tDrop ) ;
+        ZE( boolT , bChanged ) ;
     {
     while( !bQuitP && !POOP )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
