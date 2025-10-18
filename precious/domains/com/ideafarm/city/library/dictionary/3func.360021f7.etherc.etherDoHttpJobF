@@ -1754,8 +1754,8 @@
                 {
 
                 }
-                    osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("no domain, or unexpected url") ) ;
-                    traceF( tin0P , T("no domain specified, or unexpected url [domain,url]:    ")+T(psttDomain)+tb4+T(psttName) ) ;
+                    break ;
+                    osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("no domain, or unexpected url") , T("no domain specified, or unexpected url [domain,url]:    ")+T(psttDomain)+tb4+T(psttName) ) ;
                 {
                 )
                     !strIdF( tin0P , T(".hidden.ideafarm.com/nobot/notify/stripe.20240206@1123") , psttName )
@@ -1781,7 +1781,7 @@
                 ___( psttName ) ;
                 /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF / called  readRequestF [psttName]:    ")+T(psttName) , flTRACE_FORCEnOsILENCE ) ;
                 }
-                    idEscaped = meP.readRequestF( tin0P , bFail , psttName , psttQueries , psttDomain , psttLeverKV , swQuery , swHeader , psttAgent , postBody , bClose , jobP , psoP , pHttpRawCommandServerCBFP ? "!@" : 0 ) ;
+                    idEscaped = meP.readRequestF( tin0P , bFail , psttName , psttQueries , psttDomain , psttLeverKV , swQuery , swHeader , psttAgent , postBody , bClose , jobP , psoP , tRandomLabelPrefix , tRandomLabelPrefixLag , pHttpRawCommandServerCBFP ? "!@" : 0 ) ;
                     _IO_
                 {
                 /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF / calling readRequestF") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
@@ -1841,7 +1841,10 @@
 
             cacheC* pzCache = meP.pzCacheF() ;
 
-            puseC& pusePeanutP = *(puseC*)c8P.c1 ;
+            textC& tRandomLabelPrefixLag = *(textC*)c8P.c8 ;
+            textC& tRandomLabelPrefix    = *(textC*)c8P.c7 ;
+            puseC& pusePeanutP           = *(puseC*)c8P.c1 ;
+
             count8S& c8P = *(count8S*)cArgAppP ;
             _IO_
         {

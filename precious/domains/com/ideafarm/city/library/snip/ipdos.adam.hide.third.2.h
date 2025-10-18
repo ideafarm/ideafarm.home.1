@@ -33974,7 +33974,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34091.etherC.osTimeWatchF!||
  voidT reportProcessNamePidF( tin0S& tin0P , strokeS*& psttP , strokeS*& psttPrefixP , strokeS*& psttSuffixP , strokeS*& psttUniqueP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34030.etherC.reportProcessNamePidF!||
- voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const nicNameC& nnP , const strokeS* const psttDescriptionP = 0 ) ;
+ voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const nicNameC& nnP , const strokeS* const psttDescriptionP = 0 , const strokeS* const psttTraceP = 0 ) ;
 
 /* openssl: foreign encryption */
 
@@ -41061,7 +41061,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.httpServerC.sayFieldEditF!||
 
     /* serve a client */
-    osTextT readRequestF( tin0S& tin0P , boolT& bFailP , strokeS*& psttNameP , strokeS*& psttQueriesP , strokeS*& psttDomainP , strokeS*& psttLeverKVP , switchC& swQueryP , switchC& swHeaderP , strokeS*& psttAgentP , osTextT*& postBodyP , boolT& bCloseP , taskDrivenServerJobS& jobP , socketC* psoP , const osTextT* const postEscapeP = 0 ) ;
+    osTextT readRequestF( tin0S& tin0P , boolT& bFailP , strokeS*& psttNameP , strokeS*& psttQueriesP , strokeS*& psttDomainP , strokeS*& psttLeverKVP , switchC& swQueryP , switchC& swHeaderP , strokeS*& psttAgentP , osTextT*& postBodyP , boolT& bCloseP , taskDrivenServerJobS& jobP , socketC* psoP , const strokeS* const psttRandomLabelPrefixP , const strokeS* const psttRandomLabelPrefixLagP , const osTextT* const postEscapeP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.httpServerC.readRequestF!||
     voidT getReplyF( tin0S& tin0P , httpReplyRefC*& prP , const strokeS* const psttUrlP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.httpServerC.getReplyF!||

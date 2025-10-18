@@ -294,11 +294,7 @@ DONE( tmWorkerF )
                     {
                     if( !bSilent || bForceReply )
 
-                    }
-                        etThread.osFirewallBlockF( tin0P , LF , job.nnPeer , T("bSilent is set") ) ;
-                        etThread.traceF( tin0P , T("bSilent, so blocking peer [nnPeer]:    ")+T(job.nnPeer) ) ;
-                    {
-                    if( bSilent )
+                    if( bSilent ) etThread.osFirewallBlockF( tin0P , LF , job.nnPeer , T("bSilent is set") , T("bSilent, so blocking peer [nnPeer]:    ")+T(job.nnPeer) ) ;
 
                     }
                         }

@@ -342,6 +342,7 @@
                                                     {
                                                     if( info1P.bQuit || third || bSilent || POOP )
 
+                                                    if( bSilent ) etThread.osFirewallBlockF( tin0P , LF , nnPeer , T("bSilent is set") , T("ifcDrivenServerF / bSilent, so blocking peer [nnPeer]:    ")+T(nnPeer) ) ;
 //bSilent = 0 ;
 
                                                     if( bShieldsDown ) bSilent = 0 ;
@@ -583,6 +584,8 @@
                                                     ZE( boolT , bHeIsMe ) ;
 
                                                     boolT bLoopback = nnPeer.isLoopbackOldDoNotUseF() ;
+
+                                                    if( !bPeerAllowed ) etThread.osFirewallBlockF( tin0P , LF , nnPeer , T("bPeerAllowed is not set") , T("ifcDrivenServerF / !bPeerAllowed, so blocking peer [nnPeer]:    ")+T(nnPeer) ) ;
 
 //bPeerAllowed = 1 ;
 
