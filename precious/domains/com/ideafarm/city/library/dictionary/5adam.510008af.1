@@ -201,7 +201,7 @@ DONE( tmWorkF )
     if( !mySettingsA )
     mySettingsA.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmCatchF , CBsTACKmIN << 1 ) , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmCatchLabelSuffixF , CBsTACKmIN << 1 ) , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla ) ;
     TN( tSuffix2Gorilla , "" ) ;
     grabC grab_tSuffix2Gorilla( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tSuffix1Gorilla , "" ) ;
@@ -921,7 +921,7 @@ DONE( tmWorkerF )
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->ca && pTaskP->cb && pTaskP->cc && pTaskP->cd && pTaskP->ce && pTaskP->cf && pTaskP->c01 )
 TASK( tmWorkerF )
 
-DONE( tmCatchF )
+DONE( tmCatchLabelSuffixF )
 }
     }
         }
@@ -975,7 +975,7 @@ DONE( tmCatchF )
 
     TN( tSay2 , "caught [tSuffix2Gorilla]:    " ) ;
     TN( tSay1 , "caught [tSuffix1Gorilla]:    " ) ;
-    TN( tLong , "" ) ; tLong = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/idpCatchSuffix") ;
+    TN( tLong , "" ) ; tLong = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/idpCatchLabelSuffix") ;
     //nicNameC nnAllowed = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
     etherC&  etRock    = etherC::etRockIF( tin0P ) ;
 
@@ -985,7 +985,7 @@ DONE( tmCatchF )
     grabC& grab_tSuffix1GorillaP = *(grabC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
-TASK( tmCatchF )
+TASK( tmCatchLabelSuffixF )
 
 DONE( tmRandomizeWebhookDomainPrefixF )
 }
@@ -1099,8 +1099,35 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                     TN( tSay , "" ) ; tSay = T("POST ")+tPathEndpoint+mySettingsUse.tStripeIdObjectWebhookDestinationTest+T("?url=https%3A%2F%2F")+tRandomLabelPrefixP+T("-3DFg.hidden.ideafarm.com%2Fnobot%2Fnotify%2Fstripe.20240206%401123 HTTP/1.1\r\nAuthorization: Bearer ")+mySettingsUse.tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
                     mySettingsUse.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-                    etRock.traceF( tin0P , T("said  [tRandomLabelPrefix   ]:    ")+tRandomLabelPrefixP ) ;
-                    etThread.boxPutF( tin0P , tLongRandomLabelPrefix , tRandomLabelPrefixP , tRandomLabelPrefixP.csF( tin0P ) ) ;
+                    }
+                        ++ s ; thirdC::dosSleepWinkIF( tin0P , 4 ) ;                        // NAP FOR A WINK TO GIVE HTTP SERVERS TIME TO CATCH THE DATAGRAM
+                        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+                        etThread.delF( tin0P , pbi ) ;
+                        }
+                            sThrow.writeF( tin0P , idpCatch , nnHe2 , tThrow , tThrow.csF( tin0P ) ) ;
+                            /**/etRock.traceF( tin0P , tSayThrowing2+tThrow ) ;
+                            countT idpCatch = *(countT*)pbi ;
+                        {
+                        if( pbi && cbi == sizeof( countT ) )
+                        etThread.boxGetShadowF( tin0P , pbi , cbi , tLongThrowToPort2 ) ; ___( pbi ) ;
+
+                        cbi = 0 ;
+                        etThread.delF( tin0P , pbi ) ;
+                        }
+                            sThrow.writeF( tin0P , idpCatch , nnHe1 , tThrow , tThrow.csF( tin0P ) ) ;
+                            /**/etRock.traceF( tin0P , tSayThrowing1+tThrow ) ;
+                            countT idpCatch = *(countT*)pbi ;
+                        {
+                        if( pbi && cbi == sizeof( countT ) )
+                        etThread.boxGetShadowF( tin0P , pbi , cbi , tLongThrowToPort1 ) ; ___( pbi ) ;
+                        ZE( countT , cbi ) ;
+                        ZE( byteT* , pbi ) ;
+
+                        socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+
+                        TN( tThrow , "" ) ; tThrow = tRandomLabelPrefixP+tb+tRandomLabelPrefixLagP ;
+                    {
 
                     gvP.tDomainWebHooksNet    = tRandomLabelPrefixP   +gcP.tDotHiddenDomain ;
                     }
@@ -1111,9 +1138,7 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                     {
                     gvP.tDomainWebHooksNetLag = tRandomLabelPrefixLagP+gcP.tDotHiddenDomain ;
 
-                    etRock.traceF( tin0P , T("said  [tRandomLabelPrefixLag]:    ")+tRandomLabelPrefixLagP ) ;
-                    etThread.boxPutF( tin0P , tLongRandomLabelPrefixLag , tRandomLabelPrefixLagP , tRandomLabelPrefixLagP.csF( tin0P ) ) ;
-                    tRandomLabelPrefixLagP    = tRandomLabelPrefixP                         ;
+                    tRandomLabelPrefixLagP = tRandomLabelPrefixP                         ;
                 {
                 else
                 }
@@ -1150,6 +1175,9 @@ DONE( tmRandomizeWebhookDomainPrefixF )
     ZE( countT , idLabelPrefixLath ) ; //U:: FOR TESTING ONLY ; REPLACE WITH RANDOM NUMBER THAT IS UPDATED RANDOMLY
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
+    nicNameC nnHe2 = etThread.sockNicNameF( tin0P , T("10.0.1.2") ) ;
+    nicNameC nnHe1 = etThread.sockNicNameF( tin0P , T("10.0.1.1") ) ;
+
     TN( tSayExCouldNotParseJson       , "!exception / could not parse json [rc,domain]:    " ) ;
     TN( tSayExCouldNotReadFromSocket  , "!exception / could not read from socket [rc,domain]:    " ) ;
     TN( tSayExCouldNotWriteToSocket   , "!exception / could not write to socket [rc,domain]:    " ) ;
@@ -1158,11 +1186,17 @@ DONE( tmRandomizeWebhookDomainPrefixF )
 
     //CS:CODEsYNC: dns.2/ CHANGES AFTER dns.1/ CHANGES, SO WATCHER SHOULD WAIT FOR dns.2/ AND THEN WAIT FOR dns.1/
 
+    TN( tSayThrowing2 , "throwing to wh2 [tLabelPrefix]:    " ) ;
+    TN( tSayThrowing1 , "throwing to wh1 [tLabelPrefix]:    " ) ;
+    TN( tLongThrowToPort2 , "" ) ; tLongThrowToPort2 = T("////wh2/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_ROOThTTPsERVER)+T("/idpCatchLabelPrefix") ;
+    TN( tLongThrowToPort1 , "" ) ; tLongThrowToPort1 = T("////wh1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_ROOThTTPsERVER)+T("/idpCatchLabelPrefix") ;
+
     TN( tLongRandomLabelPrefix    , "////dns1/d/ideafarm.home.101/controls/set.by.dns.2/dnsRandomLabelPrefix"    ) ;      //CS:CODEsYNC: 510008af 510005ab
     TN( tLongRandomLabelPrefixLag , "////dns1/d/ideafarm.home.101/controls/set.by.dns.1/dnsRandomLabelPrefixLag" ) ;      //CS:CODEsYNC: 510008af 510005ab
     TN( tPathEndpoint    , "/v1/webhook_endpoints/" ) ;
     TN( tDomainStripeApi , "api.stripe.com" ) ;
     TN( tb4 , "    " ) ;
+    TN( tb , " " ) ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 

@@ -68,7 +68,7 @@ DONE( tmWorkF )
 
     nicNamesAllowedStripeWebHookNotificationsC nnAllowed( tin0P , etThread , ether , TICK << 4 ) ;      // "<< 4" IN PRODUCTION
 
-    etThread.osThreadF( TaRG2cBsTACK( tmRefreshRandomLabelPrefixF , CBsTACKmIN << 1 ) , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmCatchLabelPrefixF , CBsTACKmIN << 1 ) , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
     TN( tRandomLabelPrefixLag , "" ) ;
     TN( tRandomLabelPrefix    , "" ) ;
 
@@ -83,59 +83,55 @@ DONE( tmWorkF )
 if( pTaskP )
 TASK( tmWorkF )
 
-DONE( tmRefreshRandomLabelPrefixF )
+DONE( tmCatchLabelPrefixF )
 }
-    THREADmODE1rESTORE
     }
         }
             }
-                etRock.traceF( tin0P , T("heard [tRandomLabelPrefixLag]:    ")+tRandomLabelPrefixLagP ) ;
-                etThread.delF( tin0P , posti ) ;
-                tRandomLabelPrefixLagP = T(posti) ;
-                etThread.boxGetShadowF( tin0P , posti , costi , tLongRandomLabelPrefixLag ) ; ___( posti ) ;
+                etRock.traceF( tin0P , T("!exception / impotence while catching [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                POOPRqUIET
+                countT rc = POOP ;
             {
-            if( etThread.diskFileExistsF( tin0P , tLongRandomLabelPrefixLag ) )
+            if( POOP )
 
             }
-                etRock.traceF( tin0P , T("heard [tRandomLabelPrefix   ]:    ")+tRandomLabelPrefixP ) ;
-                costi = 0 ;
-                etThread.delF( tin0P , posti ) ;
-                tRandomLabelPrefixP = T(posti) ;
-                etThread.boxGetShadowF( tin0P , posti , costi , tLongRandomLabelPrefix ) ; ___( posti ) ;
-            {
-            if( etThread.diskFileExistsF( tin0P , tLongRandomLabelPrefix ) )
-            ZE( countT   , costi ) ;
-            ZE( osTextT* , posti ) ;
+                etThread.delF( tin0P , pbi ) ;
+                }
+                    etRock.traceF( tin0P , tSay+T(pbi) ) ;
+                {
+                //if( nnPeer == nnAllowed )
 
-            if( bWoth ) bWoth = 0 ;
+                sCatch.readF( tin0P , pbi , cbi , idPortHe , nnPeer ) ; ___( pbi ) ;
+                nicNameC nnPeer ;
+                ZE( countT , idPortHe ) ;
+                ZE( countT , cbi ) ;
+                ZE( byteT* , pbi ) ;
+            {
+            while( !ether && !POOP )
+
+            etRock.traceF( tin0P , T("catching begun [idpCatch]:    ")+TF4(idpCatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+            etScratch.boxPutF( tin0P , tLong , (byteT*)&idpCatch , sizeof idpCatch ) ;
+            countT idpCatch = sCatch.bindF( tin0P ) ;
+            socketC sCatch( tin0P , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+            etherC& etScratch = *((tin1S&)tin0P).pEtScratch ;
+
+            SCOOPS
             _IO_
         {
-        if( etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tPath2 , TOCK << 4 , flWAITdIR_FILEnAME ) || bWoth )
-        _IO_
+        IFsCRATCHoK
     {
-    while( !ether && !POOP )
-    handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
-    boolT bWoth = 1 ;
-    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
+    while( !ether )
 
-    etThread.etherC::diskMakeDirIfNeededF( tin0P , tPath2 ) ;
-    etThread.etherC::diskMakeDirIfNeededF( tin0P , tPath1 ) ;
-
-    TN( tPath2 , "////dns1/d/ideafarm.home.101/controls/set.by.dns.2/" ) ;
-    TN( tPath1 , "////dns1/d/ideafarm.home.101/controls/set.by.dns.1/" ) ;
-
-    TN( tLongRandomLabelPrefix    , "////dns1/d/ideafarm.home.101/controls/set.by.dns.2/dnsRandomLabelPrefix"    ) ;      //CS:CODEsYNC: 510008af 510005ab
-    TN( tLongRandomLabelPrefixLag , "////dns1/d/ideafarm.home.101/controls/set.by.dns.1/dnsRandomLabelPrefixLag" ) ;      //CS:CODEsYNC: 510008af 510005ab
-
-    //CS:CODEsYNC: dns.2/ CHANGES AFTER dns.1/ CHANGES, SO WATCHER SHOULD WAIT FOR dns.2/ AND THEN READ BOTH FILES
-
-    etherC& etRock = etherC::etRockIF( tin0P ) ;
+    TN( tSay , "caught [tPrefix1Dns]:    " ) ;
+    TN( tLong , "" ) ; tLong = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_ROOThTTPsERVER)+T("/idpCatchLabelPrefix") ;
+    //nicNameC nnAllowed = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
+    etherC&  etRock    = etherC::etRockIF( tin0P ) ;
 
     textC& tRandomLabelPrefixLagP = *(textC*)pTaskP->c2 ;
     textC& tRandomLabelPrefixP    = *(textC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
-TASK( tmRefreshRandomLabelPrefixF )
+TASK( tmCatchLabelPrefixF )
 
 DONE( tmShieldsDownF )
 }
