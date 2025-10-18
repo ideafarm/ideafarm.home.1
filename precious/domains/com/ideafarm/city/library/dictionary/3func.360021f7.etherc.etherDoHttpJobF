@@ -997,7 +997,7 @@
 
                             TESTsCRATCH //U::TO FIND A BUG
                             }
-                                osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("requested url not found") ) ;
+                                osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("requested url path not found") , tSayClientPrefix+T("requested url path not found [url]:    ")+T(psttName) ) ;
                                 meP.getReplyF( tin0P , pRefReply , T("!nf") ) ; ___( pRefReply ) ;
                                 _IO_
                             {
@@ -1755,14 +1755,15 @@
 
                 }
                     break ;
-                    osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("no domain, or unexpected url") , T("no domain specified, or unexpected url [domain,url]:    ")+T(psttDomain)+tb4+T(psttName) ) ;
+                    osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("unexpected url path") , tSayClientPrefix+T("unexpected url path [name]:    ")+T(psttName) ) ;
                 {
-                )
-                    !strIdF( tin0P , T(".hidden.ideafarm.com/nobot/notify/stripe.20240206@1123") , psttName )
-                    ||
-                    !psttDomain->idAdam
-                (
-                if
+                if( !psttName || strCompareF( tin0P , T("/nobot/notify/stripe.20240206@1123") , psttName ) )
+
+                }
+                    break ;
+                    osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("unexpected domain") , tSayClientPrefix+T("unexpected domain [correctPrefix2,correctPrefix1,actualDomain]:    ")+tRandomLabelPrefixLag+tb4+tRandomLabelPrefix+tb4+T(psttDomain) ) ;
+                {
+                if( !psttDomain || ( 1 != strIdF( tin0P , tRandomLabelPrefix , psttDomain ) && 1 != strIdF( tin0P , tRandomLabelPrefixLag , psttDomain ) ) )
 
                 /**/traceF( tin0P , tSayClientPrefix+T("[psttDomain]:       ")+T(psttDomain) ) ;
                 //if( psttQueries && psttQueries->idAdam ) /*;*/traceF( tin0P , tSayClientPrefix+T("[psttQueries]:    ")+T(psttQueries) ) ;
