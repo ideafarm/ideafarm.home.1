@@ -55,7 +55,7 @@ voidT boxPutHtmlF_o64P4P4P4P4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP ,
 
 voidT boxPutHtmlFromKnowledgeTreeBaseF_o64P4P4P4P4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT boxPutUniqueF_o4P4P1P334P7_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT boxServerF_o36_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
@@ -101,7 +101,7 @@ voidT diskMapFileNameHoverF_o4P4P3_GF( tin0S& tin0P , etherC& etherP , soulC& sl
 
 voidT diskSelectF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT diskWaitDirF_ob64P7_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT diskWaitDirF_ob64P37_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT diskZipOldF_o4P4P7_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
@@ -278,6 +278,8 @@ voidT osThreadSwitchingOnF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , co
 voidT osTimeSetF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT reportProcessNamePidF_o4P4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT osFirewallBlockF_o33d4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT openSslTls_setupF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

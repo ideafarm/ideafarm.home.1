@@ -238,7 +238,7 @@ voidT diskSelectF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const str
     etherP.delF( tin0P , psttDriveNameP ) ;
 }
 
-voidT diskWaitDirF_ob64P7_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskWaitDirF_ob64P37_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -260,6 +260,30 @@ voidT diskWaitDirF_ob64P7_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
     SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
     ZE( strokeS* , psttDirP ) ;
     if( !POOP ) { slP >> psttDirP ; ___( psttDirP ) ; idArgNext ++ ; }
+
+    ZE( countT , timeMaxP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                timeMaxP = TOCK << 4 ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tin0P , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+                if( !POOP ) { slP >> timeMaxP ; idArgNext ++ ; }
+            }
+        }
+    }
 
     ZE( flagsT , flagsP ) ;
     {
@@ -286,7 +310,7 @@ voidT diskWaitDirF_ob64P7_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
     }
 
     ZE( boolT , noName ) ;
-    if( !POOP ) noName = etherP.diskWaitDirF( tin0P , handleP , bQuitP , psttDirP , flagsP ) ;
+    if( !POOP ) noName = etherP.diskWaitDirF( tin0P , handleP , bQuitP , psttDirP , timeMaxP , flagsP ) ;
     etherP.delF( tin0P , psttDirP ) ;
 
     slP << noName ;

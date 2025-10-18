@@ -33565,9 +33565,9 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340a2.etherC.boxPutHtmlF!||
  voidT boxPutHtmlFromKnowledgeTreeBaseF( tin0S& tin0P , const boolT bOneFileP , const strokeS* const psttLikeLocalP , const strokeS* const psttLikeP , const strokeS* const psttTitleP , const strokeS* const psttOldCopyrightP , const strokeS* const psttFileP , const countT csttExtraP = 0 , countT cOpenTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340a3.etherC.boxPutHtmlFromKnowledgeTreeBaseF!||
- voidT boxPutUniqueF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttLikeP , soulC& soulP , countT cOpenTriesP = 0 , const strokeS* const psttSuffixP = 0 , const flagsT flagsOpenDetailsP = flOPENdETAILS_null ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3406c.etherC.boxPutUniqueF!||
  voidT boxPutUniqueF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttLikeP , const byteT* const pbP , const countT cbP = 0 , countT cOpenTriesP = 0 , const strokeS* const psttSuffixP = 0 , const flagsT flagsOpenDetailsP = flOPENdETAILS_null ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3406c.etherC.boxPutUniqueF!||
+ voidT boxPutUniqueF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttLikeP , soulC& soulP , countT cOpenTriesP = 0 , const strokeS* const psttSuffixP = 0 , const flagsT flagsOpenDetailsP = flOPENdETAILS_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021e8.etherc.boxputuniquef!||
  voidT boxServerF( tin0S& tin0P , const countT idPortP = 0 , const boolT bTalkP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340a6.etherC.boxServerF!||

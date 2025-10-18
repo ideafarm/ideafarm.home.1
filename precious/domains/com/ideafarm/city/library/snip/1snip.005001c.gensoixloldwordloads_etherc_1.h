@@ -223,11 +223,11 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "boxPutUniqueF_o4@4@1@337" ) ;
+    TN( tNameSoixlOld , "boxPutUniqueF_o4@4@1@334@7" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxPutUniqueF_o4P4P1P337_GF ;
+    *_pSwSoixlOldApi = (countT)boxPutUniqueF_o4P4P1P334P7_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
@@ -407,11 +407,11 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "diskWaitDirF_ob64@7" ) ;
+    TN( tNameSoixlOld , "diskWaitDirF_ob64@37" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskWaitDirF_ob64P7_GF ;
+    *_pSwSoixlOldApi = (countT)diskWaitDirF_ob64P37_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
@@ -1116,6 +1116,14 @@
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
     *_pSwSoixlOldApi = (countT)reportProcessNamePidF_o4P4P4P4P_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
+    TN( tNameSoixlOld , "osFirewallBlockF_o33d4@4@" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)osFirewallBlockF_o33d4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

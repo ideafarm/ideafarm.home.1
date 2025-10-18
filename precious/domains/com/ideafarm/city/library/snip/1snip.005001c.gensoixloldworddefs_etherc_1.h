@@ -1179,7 +1179,7 @@ voidT boxPutHtmlFromKnowledgeTreeBaseF_o64P4P4P4P4P33_GF( tin0S& tin0P , etherC&
     etherP.delF( tin0P , psttLikeLocalP ) ;
 }
 
-voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxPutUniqueF_o4P4P1P334P7_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1250,6 +1250,30 @@ voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , 
         }
     }
 
+    ZE( strokeS* , psttSuffixP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                psttSuffixP = 0 ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tin0P , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+                if( !POOP ) { slP >> psttSuffixP ; idArgNext ++ ; }
+            }
+        }
+    }
+
     ZE( flagsT , flagsOpenDetailsP ) ;
     {
         strokeS sttColon( ':' ) ;
@@ -1273,6 +1297,8 @@ voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , 
             }
         }
     }
+    if( !POOP ) etherP.boxPutUniqueF( tin0P , psttP , psttLikeP , pbP , cbP , cOpenTriesP , psttSuffixP , flagsOpenDetailsP ) ;
+    etherP.delF( tin0P , psttSuffixP ) ;
     etherP.delF( tin0P , pbP ) ;
     etherP.delF( tin0P , psttLikeP ) ;
 
