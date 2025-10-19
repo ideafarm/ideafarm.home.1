@@ -2713,6 +2713,10 @@ void elf_obey_C::liveF( void )
 
                     " library \\tmp\\20230722.2049.vsdll.lib"
 
+//U:: REMOVE THIS IN PRODUCTION ; IT IS ONLY FOR EARLY TESTING USING STATIC LINKING
+//" library D:\\npcap-sdk-1.15\\Lib\\wpcap.lib"
+
+
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\watcom\\lib386\\nt\\shlwapi.lib"
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\watcom\\lib386\\nt\\PowrProf.lib"
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\watcom\\lib386\\nt\\winmm.lib"

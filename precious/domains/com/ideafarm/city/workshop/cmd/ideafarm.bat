@@ -188,7 +188,7 @@ set wix=%iworkshop%\wix\WiX Toolset v3.11\
 
 rem COMMENT OUT THESE LINES IF YOU HAVE INSTALLED Open Watcom V2:
 set watcom=%iworkshop%/watcom
-set include=%iworkshop%\watcom\H;%iworkshop%\watcom\H\NT;%iworkshop%\watcom\H\NT\DIRECTX;%iworkshop%\watcom\H\NT\DDK;%iworkshop%\openssl\include
+set include=%iworkshop%\watcom\H;%iworkshop%\watcom\H\NT;%iworkshop%\watcom\H\NT\DIRECTX;%iworkshop%\watcom\H\NT\DDK;%iworkshop%\openssl\include;D:\npcap-sdk-1.15\Include
 rem THE OPENSSL INCLUDE PATHS MUST BE ADDED TO SYSTEM ENVIRONMENT IF NEEDED FOR VISUAL STUDIO
 
 set path=%iworkshop%\WinHelp;%path%;%iworkshop%\cmd;%iworkshop%\watcom\BINNT;%iworkshop%\infozip\unzip.exe;%iworkshop%\infozip\zip.exe;%iworkshop%\openssl\dll;%iworkshop%\zlib\unzipped.zlib123dll\dll32
