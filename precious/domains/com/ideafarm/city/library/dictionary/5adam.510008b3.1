@@ -28,7 +28,26 @@ etThread.traceF( tin0P , T("ok") ) ;
                     }
                         }
                             }
-                                etThread.traceF( tin0P , T(rc==1?"got wo!":"oops") ) ;
+                                }
+                                    etThread.traceF( tin0P , T("[idPacket,dest,source]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+T(nnDest)+tb4+T(nnSource) ) ;
+                                    nicNameC nnSource( SWAB4( ipSource ) ) ;
+                                    nicNameC nnDest(   SWAB4( ipDest   ) ) ;
+
+                                    //etThread.traceF( tin0P , T("[dest,source]:    ")+TF2(ipDest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ipSource,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    countT ipSource = *(countT*)pbc ; pbc += 4 ;
+                                    countT ipDest   = *(countT*)pbc ; pbc += 4 ;
+                                    pbc += 3 * sizeof( countT ) ;
+                                {
+                                if( rc == 1 && idType == 8 )
+
+                                //else          etThread.traceF( tin0P , T("oops") ) ;
+                                //if( rc == 1 ) etThread.traceF( tin0P , T("[type]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                count01T idType         = *(count01T*)pbc ; pbc += 2 ;
+                                byteT* pbMACSource      =             pbc ; pbc += 6 ;
+                                byteT* pbMACDestination =             pbc ; pbc += 6 ;
+
+                                byteT* pbc = (byteT*)pInfo3Data ;
 
                                 rc = pcap_next_ex( pHandle , &pInfo3Header , &pInfo3Data ) ;
                                 ZE( const u_char* , pInfo3Data   ) ;
@@ -74,13 +93,15 @@ etThread.traceF( tin0P , T("ok") ) ;
     ZE( countT , idDevice ) ;
     pcap_if_t* pCursor = pInfo ;
 
-    int rc = pcap_findalldevs( &pInfo , postError ) ;
+    rc = pcap_findalldevs( &pInfo , postError ) ;
+static    int rc ;
     pcap_if_t* pInfo ;
 
     //thirdC::c_systemIF( tin0P , "cls" ) ;
 {
 while( !ether )
 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+ZE( countT , idPacket ) ;
 
 char postError[ PCAP_ERRBUF_SIZE ] ;
 
@@ -88,15 +109,15 @@ etThread.traceF( tin0P , T(postv) ) ;
 const osTextT* postv = pcap_lib_version() ;
 
 TN( tWant , "ASIX USB to Gigabit Ethernet Family Adapter" ) ;
+TN( tb4 , "    " ) ;
 
 TODO
 
+// TO COMPILE ME, YOU MUST ENABLE THE npcap LINE IN osLinkF         WARNING:  THIS ****MUST NOT**** BE DONE IN PRODUCTION
+
 #include <D:\npcap-sdk-1.15\include.smudged\pcap\pcap.h>
 
-//G: extern "C" const char __cdecl *pcap_lib_version( void ) ;
-
-
-/*1*/WAKEhIDE( "doodle" )/*1*/
+/*1*/WAKEhIDE( "doodle.simple.npcap.packet.sniffer" )/*1*/
 /**/
 */
 /*
