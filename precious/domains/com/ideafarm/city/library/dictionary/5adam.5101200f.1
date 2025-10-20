@@ -12,16 +12,88 @@ REST
 etherC::loafIF( tin0P ) ;
 etThread.traceF( tin0P , T("ok") ) ;
 
+}
+    ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+
+    pcap_freealldevs( pInfo ) ; pInfo = 0 ;
+
+    }
+        pCursor = pCursor->next ;
+
+        }
+            }
+                pcap_free_datalinks( pInfo2 ) ;
+
+                }
+                    }
+                        }
+                            }
+                                etThread.traceF( tin0P , T(rc==1?"got wo!":"oops") ) ;
+
+                                rc = pcap_next_ex( pHandle , &pInfo3Header , &pInfo3Data ) ;
+                                ZE( const u_char* , pInfo3Data   ) ;
+                                ZE( pcap_pkthdr*  , pInfo3Header ) ;
+                            {
+                            while( !ether )
+                            etThread.traceF( tin0P , T("receiving header/data images") ) ;
+                        {
+                        if( !rc )
+
+                        rc = pcap_set_datalink( pHandle , 1 ) ;
+                    {
+                    if( bOk )
+
+                    }
+
+                        if( pInfo2[ offa ] == 1 )  bOk = 1 ;
+                        etThread.traceF( tin0P , T("link layer header type:    ")+TF2(pInfo2[offa],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    {
+                    for( countT offa = 0 ; offa < rc ; offa ++ )
+                    ZE( boolT , bOk ) ;
+                {
+                if( rc )
+
+                rc = pcap_list_datalinks( pHandle , &pInfo2 ) ;
+
+                ZE( int* , pInfo2 ) ;
+            {
+            if( !rc )
+            rc = pcap_activate( pHandle ) ;
+
+            etThread.traceF( tin0P , T(pHandle?"aok":"nope") ) ;
+            pcap_t* pHandle = pcap_create( pCursor->name , postError ) ;
+
+            etThread.traceF( tin0P , T("name:           ")+T(pCursor->name) ) ;
+        {
+        if( !etThread.strCompareF( tin0P , T(pCursor->description) , tWant ) )
+        etThread.traceF( tin0P , T("wanted     :    ")+tWant                   ) ;
+        etThread.traceF( tin0P , T("description:    ")+T(pCursor->description) ) ;
+        etThread.traceF( tin0P , T("idDevice:       ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    {
+    while( pCursor )
+    ZE( countT , idDevice ) ;
+    pcap_if_t* pCursor = pInfo ;
+
+    int rc = pcap_findalldevs( &pInfo , postError ) ;
+    pcap_if_t* pInfo ;
+
+    //thirdC::c_systemIF( tin0P , "cls" ) ;
+{
+while( !ether )
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+char postError[ PCAP_ERRBUF_SIZE ] ;
+
 etThread.traceF( tin0P , T(postv) ) ;
 const osTextT* postv = pcap_lib_version() ;
 
+TN( tWant , "ASIX USB to Gigabit Ethernet Family Adapter" ) ;
+
 TODO
 
-//#include <D:\npcap-sdk-1.15\Include\pcap\pcap.h>
+#include <D:\npcap-sdk-1.15\include.smudged\pcap\pcap.h>
 
-extern "C" const char __cdecl *pcap_lib_version( void ) ;
-
-// extern "C" BOOL __stdcall    QueryWorkingSetEx( HANDLE hProcess , PVOID pv , DWORD cb ) ;
+//G: extern "C" const char __cdecl *pcap_lib_version( void ) ;
 
 
 /*1*/WAKEhIDE( "doodle" )/*1*/
