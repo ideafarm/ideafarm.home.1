@@ -2515,9 +2515,10 @@ void elf_obey_C::liveF( void )
 
                     strcat( postCmd , " " IPDOScOMPILEoPTIONS ) ;
 
-                    strcat( postCmd , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
-                    strcat( postCmd , ppostTool[ offt ] ) ;
-                    strcat( postCmd , ".pch -fo=" ) ;
+//                    strcat( postCmd , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
+//                    strcat( postCmd , ppostTool[ offt ] ) ;
+//                    strcat( postCmd , ".pch" ) ;
+                    strcat( postCmd , " -fo=" ) ;
                     strcat( postCmd , postObj ) ;
                     strcat( postCmd , " -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
                     strcat( postCmd , ppostTool[ offt ] ) ;
@@ -2712,10 +2713,6 @@ void elf_obey_C::liveF( void )
                     " file \\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\3*.obj"
 
                     " library \\tmp\\20230722.2049.vsdll.lib"
-
-//U:: REMOVE THIS IN PRODUCTION ; IT IS ONLY FOR EARLY TESTING USING STATIC LINKING
-//" library D:\\npcap-sdk-1.15\\Lib\\wpcap.lib"
-
 
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\watcom\\lib386\\nt\\shlwapi.lib"
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\watcom\\lib386\\nt\\PowrProf.lib"
@@ -3996,8 +3993,8 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 
                 if( !bCNotCpp )
                 {
-                                                       strcat( postCmd , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
-                                                       strcat( postCmd , bThird ? "base.show.third.pch" : "base.hide.third.pch" ) ;
+//                                                       strcat( postCmd , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
+//                                                       strcat( postCmd , bThird ? "base.show.third.pch" : "base.hide.third.pch" ) ;
                 }
                                                        strcat( postCmd , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
                                                        strcat( postCmd , " -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ) ;
@@ -4133,7 +4130,7 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
             strcat( postCmd2 , " -dBiFCcLASS=0" ) ;
             /*if( flagsAll & flELVES_DEBUGiNFO )*/ strcat( postCmd2 , " -d2" ) ;  //DEBUG INFO IS ALWAYS INSERTED INTO OBJECT MODULES
             if( !bExe ) strcat( postCmd2 , " -bd" ) ;
-            strcat( postCmd2 , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\adam.show.third.pch" ) ;
+//            strcat( postCmd2 , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\adam.show.third.pch" ) ;
             strcat( postCmd2 , " -fo=" ) ;
             strcat( postCmd2 , postObj ) ;
             strcat( postCmd2 , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
