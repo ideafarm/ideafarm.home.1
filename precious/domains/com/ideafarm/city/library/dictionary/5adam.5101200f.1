@@ -18,7 +18,7 @@ etThread.traceF( tin0P , T("ok") ) ;
     pcap_freealldevs( pInfo ) ; pInfo = 0 ;
 
     }
-        pCursor = pCursor->next ;
+        pcDevice = pcDevice->next ;
 
         }
             }
@@ -29,32 +29,37 @@ etThread.traceF( tin0P , T("ok") ) ;
                         }
                             }
                                 }
-                                    etThread.traceF( tin0P , T("[idPacket,dest,source,protocol]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tDestination+tb4+tSource+tb4+tProtocol ) ;
+                                    }
+                                        }
+                                            etThread.traceF( tin0P , T("[idPacket,dest,source,protocol]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tDestination+tb4+tSource+tb4+tProtocol ) ;
 
-                                    TN( tProtocol    , "" ) ; tProtocol    = T(ppostProtocol[head.protocol]) ;
-                                    TN( tDestination , "" ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x10 ) tDestination += tb ;
-                                    TN( tSource      , "" ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x10 ) tSource      += tb ;
+                                            TN( tProtocol    , "" ) ; tProtocol    = T(ppostProtocol[head.protocol]) ;
+                                            TN( tDestination , "" ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x10 ) tDestination += tb ;
+                                            TN( tSource      , "" ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x10 ) tSource      += tb ;
+                                        {
+                                        if( nnMeOnWanted == nnSource )
 
-                                    nicNameC nnDest(   SWAB4( head.ipv4Destination ) ) ;
-                                    nicNameC nnSource( SWAB4( head.ipv4Source      ) ) ;
+                                        nicNameC nnDest(   SWAB4( rc ) ) ;
+                                        rc = head.ipv4Destination ;
+                                        nicNameC nnSource( SWAB4( rc ) ) ;
+                                        rc = head.ipv4Source ;
 
-                                    //etThread.traceF( tin0P , T("[dest,source]:    ")+TF2(ipDest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ipSource,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                    //countT ipSource = *(countT*)pbc ; pbc += 4 ;
-                                    //countT ipDest   = *(countT*)pbc ; pbc += 4 ;
-                                    //pbc += 3 * sizeof( countT ) ;
+                                        //etThread.traceF( tin0P , T("[dest,source]:    ")+TF2(ipDest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ipSource,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        //countT ipSource = *(countT*)pbc ; pbc += 4 ;
+                                        //countT ipDest   = *(countT*)pbc ; pbc += 4 ;
+                                        //pbc += 3 * sizeof( countT ) ;
 
-                                    ipv4HeadS& head = *(ipv4HeadS*)pbc ; pbc += sizeof( ipv4HeadS ) ;
+                                        const ipv4HeadS& head = *(const ipv4HeadS*)pbc ; pbc += sizeof( ipv4HeadS ) ;
+                                    {
+                                    if( idType == 0x800 )
+
+                                    count01T     idType           = *(count01T*)pbc ; pbc += 2 ; idType = SWAB2( idType ) ;
+                                    const byteT* pbMACSource      =             pbc ; pbc += 6 ;
+                                    const byteT* pbMACDestination =             pbc ; pbc += 6 ;
+
+                                    byteT* pbc = (byteT*)pInfo3Data ;
                                 {
-                                if( rc == 1 && idType == 8 )
-
-                                //else          etThread.traceF( tin0P , T("oops") ) ;
-                                //if( rc == 1 ) etThread.traceF( tin0P , T("[type]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-                                count01T idType         = *(count01T*)pbc ; pbc += 2 ;
-                                byteT* pbMACSource      =             pbc ; pbc += 6 ;
-                                byteT* pbMACDestination =             pbc ; pbc += 6 ;
-
-                                byteT* pbc = (byteT*)pInfo3Data ;
+                                if( rc == 1 )
 
                                 rc = pcap_next_ex( pHandle , &pInfo3Header , &pInfo3Data ) ;
                                 ZE( const u_char* , pInfo3Data   ) ;
@@ -71,7 +76,7 @@ etThread.traceF( tin0P , T("ok") ) ;
 
                     }
 
-                        if( pInfo2[ offa ] == 1 )  bOk = 1 ;
+                        if( pInfo2[ offa ] == 1 /*LINKTYPE_ETHERNET*/ )  bOk = 1 ;
                         etThread.traceF( tin0P , T("link layer header type:    ")+TF2(pInfo2[offa],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     for( countT offa = 0 ; offa < rc ; offa ++ )
@@ -80,27 +85,25 @@ etThread.traceF( tin0P , T("ok") ) ;
                 if( rc )
 
                 rc = pcap_list_datalinks( pHandle , &pInfo2 ) ;
-
                 ZE( int* , pInfo2 ) ;
             {
             if( !rc )
             rc = pcap_activate( pHandle ) ;
 
             etThread.traceF( tin0P , T(pHandle?"aok":"nope") ) ;
-            pcap_t* pHandle = pcap_create( pCursor->name , postError ) ;
+            pcap_t* pHandle = pcap_create( pcDevice->name , postError ) ;
             etThread.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------") ) ;
         {
         if( etThread.strIdF( tin0P , tWantCurly , tName ) )
-        etThread.traceF( tin0P , T("description    :    ")+T(pCursor->description) ) ;
+        etThread.traceF( tin0P , T("description    :    ")+T(pcDevice->description) ) ;
         etThread.traceF( tin0P , T("name           :    ")+tName ) ;
-        etThread.traceF( tin0P , T("wanted         :    ")+tWantCurly ) ;
         etThread.traceF( tin0P , T("idDevice       :    ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        TN( tName , pCursor->name ) ;
+        TN( tName , pcDevice->name ) ;
     {
-    while( pCursor )
+    while( pcDevice )
     ZE( countT , idDevice ) ;
-    pCursor = pInfo ;
-    pcap_if_t* pCursor ;
+    pcDevice = pInfo ;
+    pcap_if_t* pcDevice ;
 
     int rc = pcap_findalldevs( &pInfo , postError ) ;
     pcap_if_t* pInfo ;
