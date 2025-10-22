@@ -92,13 +92,15 @@ etThread.traceF( tin0P , T("ok") ) ;
             etThread.traceF( tin0P , T("name:           ")+T(pCursor->name) ) ;
         {
         if( !etThread.strCompareF( tin0P , T(pCursor->description) , tWant ) )
-        etThread.traceF( tin0P , T("wanted     :    ")+tWant                   ) ;
-        etThread.traceF( tin0P , T("description:    ")+T(pCursor->description) ) ;
-        etThread.traceF( tin0P , T("idDevice:       ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tin0P , T("description    :    ")+T(pCursor->description) ) ;
+        etThread.traceF( tin0P , T("name           :    ")+T(pCursor->name) ) ;
+        etThread.traceF( tin0P , T("wanted         :    ")+tWant                   ) ;
+        etThread.traceF( tin0P , T("idDevice       :    ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     while( pCursor )
     ZE( countT , idDevice ) ;
-    pcap_if_t* pCursor = pInfo ;
+    pCursor = pInfo ;
+static    pcap_if_t* pCursor ;
 
     int rc = pcap_findalldevs( &pInfo , postError ) ;
     pcap_if_t* pInfo ;
@@ -129,32 +131,34 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
     pc1 = pc1->Next ;
 
     }
+        pc2 = pc2->Next ;
+
         }
-            pc2 = pc2->Next ;
+            etThread.traceF( tin0P , T("    [nnMe]        :    ")+T(nnMe) ) ;
 
-            }
-                etThread.traceF( tin0P , T("AF_INET [nnMe]:    ")+T(nnMe) ) ;
-
-                nicNameC nnMe( nnv ) ;
-                countT nnv = SWAB4( *(countT*)pbv ) ;
-                byteT* pbv = (byteT*)pc2->Address.lpSockaddr->sa_data + 2 ;        //U:: THE "+ 2" IS NEEDED TO GET TO THE IPV4 VALUE, BUT I DO NOT KNOW WHY (CONJ: THE DEF OF THE STRUCTURE HAS CHANGED AND I AM USING AN OBSOLETE VERSION)
-            {
-            if( pc2->Address.lpSockaddr->sa_family == AF_INET )
+            nicNameC nnMe( nnv ) ;
+            countT nnv = SWAB4( *(countT*)pbv ) ;
+            byteT* pbv = (byteT*)pc2->Address.lpSockaddr->sa_data + 2 ;        //U:: THE "+ 2" IS NEEDED TO GET TO THE IPV4 VALUE, BUT I DO NOT KNOW WHY (CONJ: THE DEF OF THE STRUCTURE HAS CHANGED AND I AM USING AN OBSOLETE VERSION)
         {
-        while( pc2 )
-        IP_ADAPTER_UNICAST_ADDRESS_LH* pc2 = pc1->FirstUnicastAddress ;
-
-        etThread.traceF( tin0P , tSayFriendlyName+T(postt) ) ;
-
-        if( !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) )
-        osTextT postt[ TUCK + 1 ] ;
+        if( pc2->Address.lpSockaddr->sa_family == AF_INET )
     {
-    if( cunt <= TUCK )
-    countT cunt = unicodeLengthF( punt ) ;
+    while( pc2 )
+    IP_ADAPTER_UNICAST_ADDRESS_LH* pc2 = pc1->FirstUnicastAddress ;
+
+    if( cunt <= TUCK && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) ) etThread.traceF( tin0P , tSayDescription+T(postt) ) ;
+    cunt = unicodeLengthF( punt ) ;
+    punt = (unTextT*)pc1->Description ;
+
+    etThread.traceF( tin0P , tSayName+T(pc1->AdapterName) ) ;
+
+    if( cunt <= TUCK && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) ) etThread.traceF( tin0P , tSayFriendlyName+T(postt) ) ;
+    countT   cunt = unicodeLengthF( punt ) ;
     unTextT* punt = (unTextT*)pc1->FriendlyName ;
+
+    osTextT postt[ TUCK + 1 ] ;
 {
 while( pc1 )
-IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
+static IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
 
 ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
 unsigned long cba = sizeof pInfo ; 
@@ -163,6 +167,8 @@ IP_ADAPTER_ADDRESSES pInfo[ 0x10 ] ;
 etThread.traceF( tin0P , T(postv) ) ;
 const osTextT* postv = pcap_lib_version() ;
 
+TN( tSayDescription  , "    [description] :    " ) ;
+TN( tSayName         , "    [name]        :    " ) ;
 TN( tSayFriendlyName , "[friendlyName]:    " ) ;
 //TN( tWant , "Red Hat VirtIO Ethernet Adapter #3" ) ;          // INNER: WH1
 //  TN( tWant , "Red Hat VirtIO Ethernet Adapter #2" ) ;          // OUTER: WH1
