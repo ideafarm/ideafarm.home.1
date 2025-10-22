@@ -31,25 +31,33 @@ etThread.traceF( tin0P , T("ok") ) ;
                                 }
                                     }
                                         }
-                                            etThread.traceF( tin0P , T("[idPacket,dest,source,protocol]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tDestination+tb4+tSource+tb4+tProtocol ) ;
+                                            etThread.traceF( tin0P , T("[idPacket,source,dest,protocol]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent+tb4+tSource+tb4+tDestination+tb4+tProtocol , flTRACE_NOpREFIX ) ;
 
-                                            TN( tProtocol    , "" ) ; tProtocol    = T(ppostProtocol[head.protocol]) ;
+                                            else if( bToMe   ) tIndent = tb4 ;
+                                                 if( bFromMe ) tIndent = tn  ;
+                                            TN( tIndent , "                                                                " ) ;
+
+                                            boolT bToMe   = nnMeOnWanted == nnSource ;
+                                            boolT bFromMe = nnMeOnWanted == nnSource ;
+
+                                            TN( tProtocol    , "" ) ; tProtocol    = T(ppostProtocol[pHead->protocol]) ;
                                             TN( tDestination , "" ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x10 ) tDestination += tb ;
                                             TN( tSource      , "" ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x10 ) tSource      += tb ;
                                         {
-                                        if( nnMeOnWanted == nnSource )
+                                        //if( nnMeOnWanted == nnSource )
 
                                         nicNameC nnDest(   SWAB4( rc ) ) ;
-                                        rc = head.ipv4Destination ;
+                                        rc = pHead->ipv4Destination ;
                                         nicNameC nnSource( SWAB4( rc ) ) ;
-                                        rc = head.ipv4Source ;
+                                        rc = pHead->ipv4Source ;
 
                                         //etThread.traceF( tin0P , T("[dest,source]:    ")+TF2(ipDest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ipSource,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         //countT ipSource = *(countT*)pbc ; pbc += 4 ;
                                         //countT ipDest   = *(countT*)pbc ; pbc += 4 ;
                                         //pbc += 3 * sizeof( countT ) ;
 
-                                        const ipv4HeadS& head = *(const ipv4HeadS*)pbc ; pbc += sizeof( ipv4HeadS ) ;
+pHead = (const ipv4HeadS*)pbc ; pbc += sizeof( ipv4HeadS ) ;
+static                                  const ipv4HeadS* pHead ;
                                     {
                                     if( idType == 0x800 )
 
@@ -57,13 +65,16 @@ etThread.traceF( tin0P , T("ok") ) ;
                                     const byteT* pbMACSource      =             pbc ; pbc += 6 ;
                                     const byteT* pbMACDestination =             pbc ; pbc += 6 ;
 
-                                    byteT* pbc = (byteT*)pInfo3Data ;
+pbc = (byteT*)pInfo3Data ;
+static                              byteT* pbc ;
                                 {
                                 if( rc == 1 )
 
                                 rc = pcap_next_ex( pHandle , &pInfo3Header , &pInfo3Data ) ;
-                                ZE( const u_char* , pInfo3Data   ) ;
-                                ZE( pcap_pkthdr*  , pInfo3Header ) ;
+pInfo3Data = 0 ;
+static                          ZE( const u_char* , pInfo3Data   ) ;
+pInfo3Header = 0 ;
+static                          ZE( pcap_pkthdr*  , pInfo3Header ) ;
                             {
                             while( !ether )
                             etThread.traceF( tin0P , T("receiving header/data images") ) ;
@@ -646,8 +657,8 @@ osTextT* ppostProtocol[] =
     count01T    identification    ;
     count01T    totalLength       ;
     byteT       service           ;
-    byteT       hLength : 4       ;
-    byteT       version : 4       ;
+//    byteT       hLength : 4       ;
+//    byteT       version : 4       ;
 {
 struct ipv4HeadS
 
