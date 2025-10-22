@@ -50,7 +50,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                                             boolT bToMe   = nnMeOnWanted == nnDest   ;
                                             boolT bFromMe = nnMeOnWanted == nnSource ;
 
-                                            TN( tProtocol    , "" ) ; tProtocol    = T(ppostProtocol[pIpHead->protocol]) ;
+                                            TN( tProtocol    , "" ) ; tProtocol    = TF2(pIpHead->protocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(ppostProtocol[pIpHead->protocol]) ;
                                             TN( tDestination , "" ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x10 ) tDestination += tb ;
                                             TN( tSource      , "" ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x10 ) tSource      += tb ;
                                         {
@@ -66,7 +66,64 @@ etThread.traceF( tin0P , T("ok") ) ;
                                         //countT ipDest   = *(countT*)pbc ; pbc += 4 ;
                                         //pbc += 3 * sizeof( countT ) ;
 
-pIpHead = (const ipv4HeadS*)pbc ; pbc += sizeof( ipv4HeadS ) ;
+                                        //etThread.traceF( tin0P , T("[hLength]:    ")+TF2(pIpHead->hLength,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+    break ;
+
+    etThread.traceF( tin0P , T("[cbLooked]:    ")+TF2(cbLooked,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    countT cbLooked = (byteT*)postLook - (byteT*)pIpHead ;
+
+    }
+        postLook ++ ;
+
+        }
+            else break ;
+            }
+                }
+                    countT foo = 2 ;
+                    etThread.traceF( tin0P , T("============================== FOUND! ===============================") ) ;
+                {
+                if( postHit )
+                const osTextT* postHit = thirdC::c_strstrIF( postLook , "HTTP" ) ;
+            {
+            if( !_restart )
+            _restart.flags |= flRESTARTc_QUIET ;
+            RESTART
+        {
+        else
+        }
+            }
+                etThread.traceF( tin0P , T("============================== FOUND! ===============================") ) ;
+            {
+            if( postHit )
+            const osTextT* postHit = thirdC::c_strstrIF( postLook , "GET" ) ;
+        {
+        if( !_restart )
+        _restart.flags |= flRESTARTc_QUIET ;
+        RESTART
+    {
+    while( !ether )
+    const osTextT* postLook = (const osTextT*)pIpHead ;
+{
+while( !ether )
+//IT IS TCP, SO LOOK FOR PLAIN TEXT, RECOVERING IF EXCEPTION OCCURS
+
+
+
+pIpHead = (const ipv4HeadS*)pbc ; //U:: pbc += sizeof( countT ) * pIpHead->hLength ;
 static                                  const ipv4HeadS* pIpHead ;
                                     {
                                     if( idType == 0x800 )
