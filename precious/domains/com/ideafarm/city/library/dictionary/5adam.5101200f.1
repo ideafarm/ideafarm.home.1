@@ -88,14 +88,14 @@ etThread.traceF( tin0P , T("ok") ) ;
 
             etThread.traceF( tin0P , T(pHandle?"aok":"nope") ) ;
             pcap_t* pHandle = pcap_create( pCursor->name , postError ) ;
-
-            etThread.traceF( tin0P , T("name:           ")+T(pCursor->name) ) ;
+            etThread.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------") ) ;
         {
-        if( !etThread.strCompareF( tin0P , T(pCursor->description) , tWant ) )
+        if( etThread.strIdF( tin0P , tWantCurly , tName , sCountT idP = 1 ) ; )
         etThread.traceF( tin0P , T("description    :    ")+T(pCursor->description) ) ;
-        etThread.traceF( tin0P , T("name           :    ")+T(pCursor->name) ) ;
-        etThread.traceF( tin0P , T("wanted         :    ")+tWant                   ) ;
+        etThread.traceF( tin0P , T("name           :    ")+tName ) ;
+        etThread.traceF( tin0P , T("wanted         :    ")+tWantCurly ) ;
         etThread.traceF( tin0P , T("idDevice       :    ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        TN( tName , pCursor->name ) ;
     {
     while( pCursor )
     ZE( countT , idDevice ) ;
@@ -113,20 +113,6 @@ ZE( countT , idPacket ) ;
 
 char postError[ PCAP_ERRBUF_SIZE ] ;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
     pc1 = pc1->Next ;
 
@@ -134,7 +120,9 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
         pc2 = pc2->Next ;
 
         }
-            etThread.traceF( tin0P , T("    [nnMe]        :    ")+T(nnMe) ) ;
+            etThread.traceF( tin0P , T("    [nnMe]        :    ")+T(nnMe)+(bWanted?tb4+T("wanted"):tn) ) ;
+
+            if( bWanted && !nnMeOnWanted )  nnMeOnWanted = nnMe ;       //ONLY SUPPORTS A SINGLE ADDRESS ON THE WANTED ADAPTER
 
             nicNameC nnMe( nnv ) ;
             countT nnv = SWAB4( *(countT*)pbv ) ;
@@ -151,14 +139,27 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
 
     etThread.traceF( tin0P , tSayName+T(pc1->AdapterName) ) ;
 
-    if( cunt <= TUCK && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) ) etThread.traceF( tin0P , tSayFriendlyName+T(postt) ) ;
+    }
+        }
+            tWantCurly = tCurly ;
+            bWanted = 1 ;
+        {
+        if( !etThread.strCompareF( tin0P , tWantFriendly , T(postt) )
+        etThread.traceF( tin0P , tSayFriendlyName+tFriendly ) ;
+        TN( tFriendly , postt ) ;
+    {
+    if( cunt <= TUCK && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) )
+    ZE( boolT , bWanted ) ;
     countT   cunt = unicodeLengthF( punt ) ;
     unTextT* punt = (unTextT*)pc1->FriendlyName ;
 
     osTextT postt[ TUCK + 1 ] ;
+
+    TN( tCurly , pc1->AdapterName ) ;
 {
 while( pc1 )
 static IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
+nicNameC nnMeOnWanted ;
 
 ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
 unsigned long cba = sizeof pInfo ; 
@@ -172,9 +173,11 @@ TN( tSayName         , "    [name]        :    " ) ;
 TN( tSayFriendlyName , "[friendlyName]:    " ) ;
 //TN( tWant , "Red Hat VirtIO Ethernet Adapter #3" ) ;          // INNER: WH1
 //  TN( tWant , "Red Hat VirtIO Ethernet Adapter #2" ) ;          // OUTER: WH1
-TN( tWant , "ASIX USB to Gigabit Ethernet Family Adapter" ) ;
+TN( tWantCurly , "" ) ;
+TN( tWantFriendly , "outer" ) ;
 TN( tb4 , "    " ) ;
 TN( tb  , " "    ) ;
+TN( tn  , ""    ) ;
 
 //if( cProtocol != TUCK ) { BLAMMOiD( 0xff00ff00 ) ; }
 etThread.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
