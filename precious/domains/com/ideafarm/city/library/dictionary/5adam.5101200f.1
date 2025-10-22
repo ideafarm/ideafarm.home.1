@@ -90,7 +90,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             pcap_t* pHandle = pcap_create( pCursor->name , postError ) ;
             etThread.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------") ) ;
         {
-        if( etThread.strIdF( tin0P , tWantCurly , tName , sCountT idP = 1 ) ; )
+        if( etThread.strIdF( tin0P , tWantCurly , tName ) )
         etThread.traceF( tin0P , T("description    :    ")+T(pCursor->description) ) ;
         etThread.traceF( tin0P , T("name           :    ")+tName ) ;
         etThread.traceF( tin0P , T("wanted         :    ")+tWantCurly ) ;
@@ -100,7 +100,7 @@ etThread.traceF( tin0P , T("ok") ) ;
     while( pCursor )
     ZE( countT , idDevice ) ;
     pCursor = pInfo ;
-static    pcap_if_t* pCursor ;
+    pcap_if_t* pCursor ;
 
     int rc = pcap_findalldevs( &pInfo , postError ) ;
     pcap_if_t* pInfo ;
@@ -144,7 +144,7 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
             tWantCurly = tCurly ;
             bWanted = 1 ;
         {
-        if( !etThread.strCompareF( tin0P , tWantFriendly , T(postt) )
+        if( !etThread.strCompareF( tin0P , tWantFriendly , T(postt) ) )
         etThread.traceF( tin0P , tSayFriendlyName+tFriendly ) ;
         TN( tFriendly , postt ) ;
     {
