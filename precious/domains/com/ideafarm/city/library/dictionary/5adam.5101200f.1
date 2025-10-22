@@ -112,12 +112,16 @@ ZE( countT , idPacket ) ;
 
 char postError[ PCAP_ERRBUF_SIZE ] ;
 
+ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
+unsigned long cba = sizeof pInfo ; 
+static IP_ADAPTER_ADDRESSES pInfo[ 0x10 ] ;
+
 etThread.traceF( tin0P , T(postv) ) ;
 const osTextT* postv = pcap_lib_version() ;
 
 //TN( tWant , "Red Hat VirtIO Ethernet Adapter #3" ) ;          // INNER: WH1
-  TN( tWant , "Red Hat VirtIO Ethernet Adapter #2" ) ;          // OUTER: WH1
-//TN( tWant , "ASIX USB to Gigabit Ethernet Family Adapter" ) ;
+//  TN( tWant , "Red Hat VirtIO Ethernet Adapter #2" ) ;          // OUTER: WH1
+TN( tWant , "ASIX USB to Gigabit Ethernet Family Adapter" ) ;
 TN( tb4 , "    " ) ;
 TN( tb  , " "    ) ;
 
@@ -611,6 +615,8 @@ struct ipv4HeadS
 //
 //    RFC 6274
 //
+
+#include <iphlpapi.h>
 
 /*1*/WAKEhIDE( "was.copy.of.doodle.simple.npcap.packet.sniffer" )/*1*/
 /**/
