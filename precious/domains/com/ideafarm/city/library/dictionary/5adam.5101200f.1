@@ -100,8 +100,7 @@ etThread.traceF( tin0P , T("ok") ) ;
     ZE( countT , idDevice ) ;
     pcap_if_t* pCursor = pInfo ;
 
-    rc = pcap_findalldevs( &pInfo , postError ) ;
-static    int rc ;
+    int rc = pcap_findalldevs( &pInfo , postError ) ;
     pcap_if_t* pInfo ;
 
     //thirdC::c_systemIF( tin0P , "cls" ) ;
@@ -112,13 +111,59 @@ ZE( countT , idPacket ) ;
 
 char postError[ PCAP_ERRBUF_SIZE ] ;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+    pc1 = pc1->Next ;
+
+    }
+        }
+            pc2 = pc2->Next ;
+
+            }
+                etThread.traceF( tin0P , T("AF_INET [nnMe]:    ")+T(nnMe) ) ;
+
+                nicNameC nnMe( nnv ) ;
+                countT nnv = SWAB4( *(countT*)pbv ) ;
+                byteT* pbv = (byteT*)pc2->Address.lpSockaddr->sa_data + 2 ;        //U:: THE "+ 2" IS NEEDED TO GET TO THE IPV4 VALUE, BUT I DO NOT KNOW WHY (CONJ: THE DEF OF THE STRUCTURE HAS CHANGED AND I AM USING AN OBSOLETE VERSION)
+            {
+            if( pc2->Address.lpSockaddr->sa_family == AF_INET )
+        {
+        while( pc2 )
+        IP_ADAPTER_UNICAST_ADDRESS_LH* pc2 = pc1->FirstUnicastAddress ;
+
+        etThread.traceF( tin0P , tSayFriendlyName+T(postt) ) ;
+
+        if( !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) )
+        osTextT postt[ TUCK + 1 ] ;
+    {
+    if( cunt <= TUCK )
+    countT cunt = unicodeLengthF( punt ) ;
+    unTextT* punt = (unTextT*)pc1->FriendlyName ;
+{
+while( pc1 )
+IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
+
 ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
 unsigned long cba = sizeof pInfo ; 
-static IP_ADAPTER_ADDRESSES pInfo[ 0x10 ] ;
+IP_ADAPTER_ADDRESSES pInfo[ 0x10 ] ;
 
 etThread.traceF( tin0P , T(postv) ) ;
 const osTextT* postv = pcap_lib_version() ;
 
+TN( tSayFriendlyName , "[friendlyName]:    " ) ;
 //TN( tWant , "Red Hat VirtIO Ethernet Adapter #3" ) ;          // INNER: WH1
 //  TN( tWant , "Red Hat VirtIO Ethernet Adapter #2" ) ;          // OUTER: WH1
 TN( tWant , "ASIX USB to Gigabit Ethernet Family Adapter" ) ;
@@ -615,6 +660,30 @@ struct ipv4HeadS
 //
 //    RFC 6274
 //
+
+}
+    return 0 ;
+
+    *pbOutP = 0 ;
+    }
+        pbInP ++ ;
+        *( pbOutP ++ ) = *( pbInP ++ ) ;
+    {
+    while( cInP -- )
+
+    if( cbOutP <= cInP ) return 1 ;
+{
+boolT unicodeToAnsiF( byteT* pbOutP , const countT cbOutP , const byteT* pbInP , countT cInP )
+//U::MOVE TO BASE (COPIED FROM 767)
+
+}
+    return cunt ;
+    for( countT offi = 0 ; puntP[ offi ] ; offi ++ ) cunt ++ ;
+    ZE( countT , cunt ) ;
+{
+countT unicodeLengthF( const unTextT* puntP )
+//U::MOVE TO BASE (COPIED FROM 767)
+
 
 #include <iphlpapi.h>
 
