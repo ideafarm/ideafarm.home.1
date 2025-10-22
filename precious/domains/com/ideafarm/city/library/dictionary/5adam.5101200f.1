@@ -31,33 +31,43 @@ etThread.traceF( tin0P , T("ok") ) ;
                                 }
                                     }
                                         }
-                                            etThread.traceF( tin0P , T("[idPacket,source,dest,protocol]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent+tb4+tSource+tb4+tDestination+tb4+tProtocol , flTRACE_NOpREFIX ) ;
+                                            etThread.traceF( tin0P , T("[idPacket,source,dest,protocol]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol , flTRACE_NOpREFIX ) ;
 
-                                            else if( bToMe   ) tIndent = tb4 ;
-                                                 if( bFromMe ) tIndent = tn  ;
-                                            TN( tIndent , "                                                                " ) ;
+                                            ;
+                                                    : tn
+                                                    ? tb42
+                                                : bToMe
+                                                ? tb84
+                                            TN( tIndent2 , "" ) ; tIndent2 = bFromMe
 
-                                            boolT bToMe   = nnMeOnWanted == nnSource ;
+                                            ;
+                                                    : tb84
+                                                    ? tb42
+                                                : bToMe
+                                                ? tn
+                                            TN( tIndent1 , "" ) ; tIndent1 = bFromMe
+
+                                            boolT bToMe   = nnMeOnWanted == nnDest   ;
                                             boolT bFromMe = nnMeOnWanted == nnSource ;
 
-                                            TN( tProtocol    , "" ) ; tProtocol    = T(ppostProtocol[pHead->protocol]) ;
+                                            TN( tProtocol    , "" ) ; tProtocol    = T(ppostProtocol[pIpHead->protocol]) ;
                                             TN( tDestination , "" ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x10 ) tDestination += tb ;
                                             TN( tSource      , "" ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x10 ) tSource      += tb ;
                                         {
                                         //if( nnMeOnWanted == nnSource )
 
                                         nicNameC nnDest(   SWAB4( rc ) ) ;
-                                        rc = pHead->ipv4Destination ;
+                                        rc = pIpHead->ipv4Destination ;
                                         nicNameC nnSource( SWAB4( rc ) ) ;
-                                        rc = pHead->ipv4Source ;
+                                        rc = pIpHead->ipv4Source ;
 
                                         //etThread.traceF( tin0P , T("[dest,source]:    ")+TF2(ipDest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ipSource,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         //countT ipSource = *(countT*)pbc ; pbc += 4 ;
                                         //countT ipDest   = *(countT*)pbc ; pbc += 4 ;
                                         //pbc += 3 * sizeof( countT ) ;
 
-pHead = (const ipv4HeadS*)pbc ; pbc += sizeof( ipv4HeadS ) ;
-static                                  const ipv4HeadS* pHead ;
+pIpHead = (const ipv4HeadS*)pbc ; pbc += sizeof( ipv4HeadS ) ;
+static                                  const ipv4HeadS* pIpHead ;
                                     {
                                     if( idType == 0x800 )
 
@@ -189,6 +199,8 @@ TN( tSayFriendlyName , "[friendlyName]:    " ) ;
 //  TN( tWant , "Red Hat VirtIO Ethernet Adapter #2" ) ;          // OUTER: WH1
 TN( tWantCurly , "" ) ;
 TN( tWantFriendly , "outer" ) ;
+TN( tb84 , "                                                                        " ) ;
+TN( tb42 , "                                    " ) ;
 TN( tb4 , "    " ) ;
 TN( tb  , " "    ) ;
 TN( tn  , ""    ) ;
