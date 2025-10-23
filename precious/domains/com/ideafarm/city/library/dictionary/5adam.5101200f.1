@@ -31,7 +31,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                                 }
                                     }
                                         }
-                                            if( pIpHead->protocol == 6 /*TCP*/ ) etThread.traceF( tin0P , T("[idPacket,source,dest,protocol,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
+                                            /*if( pIpv6Head->idNextHeader == 6 )*/ etThread.traceF( tin0P , T("[idPacket,source,dest,idNextHeader,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
 
                                             ;
                                                     : tn
@@ -50,24 +50,14 @@ etThread.traceF( tin0P , T("ok") ) ;
                                             boolT bToMe   = nnMeOnWanted == nnDest   ;
                                             boolT bFromMe = nnMeOnWanted == nnSource ;
 
-                                            TN( tProtocol    , "" ) ; tProtocol    = TF2(pIpHead->protocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(ppostProtocol[pIpHead->protocol]) ;
-                                            TN( tDestination , "" ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x10 ) tDestination += tb ;
-                                            TN( tSource      , "" ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x10 ) tSource      += tb ;
+                                            TN( tProtocol    , "" ) ; tProtocol    = TF2(pIpv6Head->idNextHeader,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(ppostProtocol[pIpv6Head->idNextHeader]) ;
+                                            TN( tDestination , "" ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x40 ) tDestination += tb ;
+                                            TN( tSource      , "" ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x40 ) tSource      += tb ;                                           //U::0x40 IS MORE THAN WHAT IS NEEDED
                                         {
                                         //if( nnMeOnWanted == nnSource )
 
-                                        nicNameC nnDest(   SWAB4( rc ) ) ;
-                                        rc = pIpHead->ipv4Destination ;
-                                        nicNameC nnSource( SWAB4( rc ) ) ;
-                                        rc = pIpHead->ipv4Source ;
-
-                                        //etThread.traceF( tin0P , T("[dest,source]:    ")+TF2(ipDest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ipSource,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                        //countT ipSource = *(countT*)pbc ; pbc += 4 ;
-                                        //countT ipDest   = *(countT*)pbc ; pbc += 4 ;
-                                        //pbc += 3 * sizeof( countT ) ;
-
-                                        //etThread.traceF( tin0P , T("[cbGram] :    ")+TF2(pIpHead->cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                        //etThread.traceF( tin0P , T("[hLength]:    ")+TF2(pIpHead->hLength,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        nicNameC nnDest(   pIpv6Head->pcDestination[ 0 ] , pIpv6Head->pcDestination[ 1 ] , pIpv6Head->pcDestination[ 2 ] , pIpv6Head->pcDestination[ 3 ] ) ;
+                                        nicNameC nnSource( pIpv6Head->pcSource[      0 ] , pIpv6Head->pcSource[      1 ] , pIpv6Head->pcSource[      2 ] , pIpv6Head->pcSource[      3 ] ) ;
 
                                         }
                                             etThread.delF( tin0P , psttData ) ;
@@ -87,79 +77,112 @@ etThread.traceF( tin0P , T("ok") ) ;
                                             etThread.strMakeF( tin0P , LF , psttData , 0 , TUCK ) ; ___( psttData ) ;
                                             ZE( strokeS* , psttData ) ;
 
-                                            const byteT* const pbDataEnd =            (byteT*)pIpHead + pIpHead->cbGram    ;
-                                            const byteT* const pbData    = (byteT*)( (countT*)pIpHead + pIpHead->hLength ) ;
+                                            const byteT* const pbDataEnd =                       pbData + pIpv6Head->cbData     ;
+                                            const byteT* const pbData    = (byteT*)( (countT*)pIpv6Head + sizeof( ipv6HeadS ) ) ;
                                         {
-                                        if( pIpHead->protocol == 6 /*TCP*/ )
+//U::                                        if( pIpv6Head->idNextHeader == 6 /*TCP*/ )
                                         TN( tData , "" ) ;
-    
-
-
-
-//}
-//    break ;
-//
-//    etThread.traceF( tin0P , T("[cbLooked]:    ")+TF2(cbLooked,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-//    countT cbLooked = (byteT*)postLook - (byteT*)pIpHead ;
-//
-//    }
-//        postLook ++ ;
-//
-//        }
-//            else break ;
-//            }
-//                }
-//                    countT foo = 2 ;
-//                    etThread.traceF( tin0P , T("============================== FOUND! ===============================") ) ;
-//                {
-//                if( postHit )
-//                const osTextT* postHit = thirdC::c_strstrIF( postLook , "HTTP" ) ;
-//            {
-//            if( !_restart )
-//            _restart.flags |= flRESTARTc_QUIET ;
-//            RESTART
-//        {
-//        else
-//        }
-//            }
-//                etThread.traceF( tin0P , T("============================== FOUND! ===============================") ) ;
-//            {
-//            if( postHit )
-//            const osTextT* postHit = thirdC::c_strstrIF( postLook , "GET" ) ;
-//        {
-//        if( !_restart )
-//        _restart.flags |= flRESTARTc_QUIET ;
-//        RESTART
-//    {
-//    while( !ether )
-//    const osTextT* postLook = (const osTextT*)pIpHead ;
-//{
-//while( !ether )
-//IT IS TCP, SO LOOK FOR PLAIN TEXT, RECOVERING IF EXCEPTION OCCURS
-
-
-
-
-
-
-pIpHead = (const ipv4HeadS*)pbc ; //U:: pbc += sizeof( countT ) * pIpHead->hLength ;
-                                        const ipv4HeadS* pIpHead ;
                                     {
-                                    if( idType == 0x800 )
+                                    else if( pIpv6Head )
+                                    }
+                                        }
+//                                            if( pIpv4Head->protocol == 6 /*TCP*/ ) etThread.traceF( tin0P , T("[idPacket,source,dest,protocol,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
 
-                                    count01T     idType           = *(count01T*)pbc ; pbc += 2 ; idType = SWAB2( idType ) ;
-                                    const byteT* pbMACSource      =             pbc ; pbc += 6 ;
-                                    const byteT* pbMACDestination =             pbc ; pbc += 6 ;
+                                            ;
+                                                    : tn
+                                                    ? tb42
+                                                : bToMe
+                                                ? tb84
+                                            TN( tIndent2 , "" ) ; tIndent2 = bFromMe
 
-pbc = (byteT*)pInfo3Data ;
+                                            ;
+                                                    : tb84
+                                                    ? tb42
+                                                : bToMe
+                                                ? tn
+                                            TN( tIndent1 , "" ) ; tIndent1 = bFromMe
+
+                                            boolT bToMe   = nnMeOnWanted == nnDest   ;
+                                            boolT bFromMe = nnMeOnWanted == nnSource ;
+
+                                            TN( tProtocol    , "" ) ; tProtocol    = TF2(pIpv4Head->protocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(ppostProtocol[pIpv4Head->protocol]) ;
+                                            TN( tDestination , "" ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x10 ) tDestination += tb ;
+                                            TN( tSource      , "" ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x10 ) tSource      += tb ;
+                                        {
+                                        //if( nnMeOnWanted == nnSource )
+
+                                        nicNameC nnDest(   SWAB4( rc ) ) ;
+                                        rc = pIpv4Head->ipv4Destination ;
+                                        nicNameC nnSource( SWAB4( rc ) ) ;
+                                        rc = pIpv4Head->ipv4Source ;
+
+                                        //etThread.traceF( tin0P , T("[dest,source]:    ")+TF2(ipDest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ipSource,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        //countT ipSource = *(countT*)pbc ; pbc += 4 ;
+                                        //countT ipDest   = *(countT*)pbc ; pbc += 4 ;
+                                        //pbc += 3 * sizeof( countT ) ;
+
+                                        //etThread.traceF( tin0P , T("[cbGram] :    ")+TF2(pIpv4Head->cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        //etThread.traceF( tin0P , T("[hLength]:    ")+TF2(pIpv4Head->hLength,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                        }
+                                            etThread.delF( tin0P , psttData ) ;
+                                            tData = T(psttData) ;
+
+                                            }
+                                                pbd ++ ;
+                                                }
+                                                    etThread.strFuseF( tin0P , psttData , T(post2) ) ;
+                                                    osTextT post2[] = { *pbd , 0 } ;
+                                                {
+                                                if( *pbd >= 0x20 && *pbd < 0x7e )
+                                            {
+                                            while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
+                                            const byteT* pbd = pbData ;
+
+                                            etThread.strMakeF( tin0P , LF , psttData , 0 , TUCK ) ; ___( psttData ) ;
+                                            ZE( strokeS* , psttData ) ;
+
+                                            const byteT* const pbDataEnd =            (byteT*)pIpv4Head + pIpv4Head->cbGram    ;
+                                            const byteT* const pbData    = (byteT*)( (countT*)pIpv4Head + pIpv4Head->hLength ) ;
+                                        {
+                                        if( pIpv4Head->protocol == 6 /*TCP*/ )
+                                        TN( tData , "" ) ;
+                                    {
+                                    if( pIpv4Head )
+
+                                    }
+                                        if( idType == 0x800 ) pIpv4Head   = (const ipv4HeadS*)pbc ;
+
+                                        count01T     idType           = *(count01T*)pbc ; pbc += 2 ; idType = SWAB2( idType ) ;
+                                        const byteT* pbMACSource      =             pbc ; pbc += 6 ;
+                                        const byteT* pbMACDestination =             pbc ; pbc += 6 ;
+                                    {
+                                    else if( idLinkType == osIDlINKtYPE_ETHERNET )
+                                    }
+                                        }
+                                            case 0x1e : { pIpv6Head = (ipv6HeadS*)( pbc + sizeof( loopHeadS ) - 1 ) ; break ; }         //U::"- 1" TO MAKE IT WORK (MYSTERY)
+                                            case 0x1c :
+                                            case 0x18 :
+
+                                            case 0x2 : { pIpv4Head = (ipv4HeadS*)( pbc + sizeof( loopHeadS ) ) ; break ; }
+                                        {
+                                        switch( pLoopHead->protocol )
+
+                                        const loopHeadS* pLoopHead = (const loopHeadS*)pbc ;
+                                    {
+                                    if( idLinkType == osIDlINKtYPE_NULL )
+                                    ZE( const ipv6HeadS* , pIpv6Head ) ;
+                                    ZE( const ipv4HeadS* , pIpv4Head ) ;
+
+                                    pbc = (byteT*)pInfo3Data ;
                                     byteT* pbc ;
                                 {
                                 if( rc == 1 )
 
                                 rc = pcap_next_ex( pHandle , &pInfo3Header , &pInfo3Data ) ;
-pInfo3Data = 0 ;
+                                pInfo3Data = 0 ;
                                 ZE( const u_char* , pInfo3Data   ) ;
-pInfo3Header = 0 ;
+                                pInfo3Header = 0 ;
                                 ZE( pcap_pkthdr*  , pInfo3Header ) ;
                             {
                             while( !ether )
@@ -167,17 +190,21 @@ pInfo3Header = 0 ;
                         {
                         if( !rc )
 
-                        rc = pcap_set_datalink( pHandle , 1 ) ;
+                        rc = pcap_set_datalink( pHandle , idLinkType ) ;
                     {
-                    if( bOk )
+                    if( idLinkType != - 1 )
 
                     }
-
-                        if( pInfo2[ offa ] == 1 /*LINKTYPE_ETHERNET*/ )  bOk = 1 ;
-                        etThread.traceF( tin0P , T("link layer header type:    ")+TF2(pInfo2[offa],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        }
+                            break ;
+                            idLinkType = idMaybe ;
+                        {
+                        if( idMaybe == osIDlINKtYPE_NULL /*LOOPBACK*/ || idMaybe == osIDlINKtYPE_ETHERNET )
+                        etThread.traceF( tin0P , T("link layer header type:    ")+TF2(idMaybe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        countT idMaybe = pInfo2[ offa ] ;
                     {
                     for( countT offa = 0 ; offa < rc ; offa ++ )
-                    ZE( boolT , bOk ) ;
+                    countT idLinkType = - 1 ;
                 {
                 if( rc )
 
@@ -191,8 +218,9 @@ pInfo3Header = 0 ;
             pcap_t* pHandle = pcap_create( pcDevice->name , postError ) ;
             etThread.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------") ) ;
         {
-        if( etThread.strIdF( tin0P , tWantCurly , tName ) )
+        if( etThread.strIdF( tin0P , tWantCurly , tName ) || !etThread.strCompareF( tin0P , tName , tWantExactName ) )
         etThread.traceF( tin0P , T("description    :    ")+T(pcDevice->description) ) ;
+        etThread.traceF( tin0P , T("wantName       :    ")+tWantExactName ) ;
         etThread.traceF( tin0P , T("name           :    ")+tName ) ;
         etThread.traceF( tin0P , T("idDevice       :    ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         TN( tName , pcDevice->name ) ;
@@ -212,6 +240,9 @@ sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 ZE( countT , idPacket ) ;
 
 char postError[ PCAP_ERRBUF_SIZE ] ;
+
+#define osIDlINKtYPE_ETHERNET 1
+#define osIDlINKtYPE_NULL     0
 
 }
     pc1 = pc1->Next ;
@@ -248,12 +279,12 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
         etThread.traceF( tin0P , tSayFriendlyName+tFriendly ) ;
         TN( tFriendly , postt ) ;
     {
-    if( cunt <= TUCK && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) )
+    if( cunt < sizeof postt && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) )
     ZE( boolT , bWanted ) ;
     countT   cunt = unicodeLengthF( punt ) ;
     unTextT* punt = (unTextT*)pc1->FriendlyName ;
 
-    osTextT postt[ TUCK + 1 ] ;
+    osTextT postt[ TUCK << 1 + 1 ] ;
 
     TN( tCurly , pc1->AdapterName ) ;
 {
@@ -268,13 +299,17 @@ IP_ADAPTER_ADDRESSES pInfo[ 0x10 ] ;
 etThread.traceF( tin0P , T(postv) ) ;
 const osTextT* postv = pcap_lib_version() ;
 
-TN( tSayDescription  , "    [description] :    " ) ;
-TN( tSayName         , "    [name]        :    " ) ;
-TN( tSayFriendlyName , "[friendlyName]:    " ) ;
-//TN( tWant , "Red Hat VirtIO Ethernet Adapter #3" ) ;          // INNER: WH1
-//  TN( tWant , "Red Hat VirtIO Ethernet Adapter #2" ) ;          // OUTER: WH1
-TN( tWantCurly , "" ) ;
-TN( tWantFriendly , "outer" ) ;
+  TN( tSayDescription  , "    [description] :    "     ) ;
+  TN( tSayName         , "    [name]        :    "     ) ;
+  TN( tSayFriendlyName , "[friendlyName]:    "         ) ;
+  TN( tWantCurly       , ""                            ) ;
+
+//TN( tWantFriendly    , "outer"                       ) ;
+  TN( tWantFriendly    , "Loopback Pseudo-Interface 1" ) ;
+
+//TN( tWantExactName   , ""                            ) ;
+  TN( tWantExactName   , "\\Device\\NPF_Loopback"      ) ;
+
 TN( tb84 , "                                                                        " ) ;
 TN( tb42 , "                                    " ) ;
 TN( tb4 , "    " ) ;
@@ -285,7 +320,67 @@ TN( tn  , ""    ) ;
 etThread.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
 
+etThread.osThreadF( TaRG2cBsTACK( tmAcceptF , CBsTACKmIN << 1 ) ) ;
+
 TODO
+
+DONE( tmAcceptF )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+        thThread.s_writeF( tin0P , handleJob , tSay , tSay.csF( tin0P ) ) ;
+    {
+    while( !ether )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    TN( tSay , "\r\nhow now brown cow!" ) ;
+
+    etThread.traceF( tin0P , T("[nnPeerClient,protocol]:    ")+T(nnPeer)+tb4+T(nnPeer.isIPv4F()?"4   ":"   6") ) ;
+    thThread.s_acceptF( tin0P , handleJob , idPortPeer , nnPeer , handleServer , countTC() ) ;
+    ZE( countT , idPortPeer ) ;
+    nicNameC nnPeer ;
+    handleC handleJob( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+
+    etThread.osThreadF( TaRG2cBsTACK( tmClientF , CBsTACKmIN << 1 ) ) ;
+
+    thThread.s_listenF( tin0P , handleServer ) ;
+    idPort = thThread.s_bindF( tin0P , handleServer ) ;
+    thThread.s_socketIF( tin0P , handleServer ) ;
+    handleC handleServer( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+
+    TN( tb4 , "    " ) ;
+
+    thirdC& thThread = etThread ;
+{
+if( pTaskP )
+TASK( tmAcceptF )
+
+DONE( tmClientF )
+}
+    }
+        etThread.traceF( tin0P , T("received: ")+T(postIn) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+
+        countT cbIn = thThread.s_readF( tin0P , postIn , sizeof postIn , handleClient , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK , 0 , 0 , ifcIDmODEsOCKETS_NOTeNCRYPTED ) ;
+    {
+    while( !ether )
+
+    osTextT postIn[ TUCK ] ;
+
+    thThread.s_connectF( tin0P , handleClient , idPort , nnServer ) ;
+    thThread.s_socketIF( tin0P , handleClient ) ;
+    handleC handleClient( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+
+    nicNameC nnServer = socketC::nicNameIF( tin0P , etThread , T("::1") ) ;
+
+    Sleep( 4000 ) ;
+
+    thirdC& thThread = etThread ;
+{
+if( pTaskP )
+TASK( tmClientF )
+
+countT idPort ;
+
 
 ;
 }
@@ -787,6 +882,46 @@ struct tcpIpHeadS
 
 ;
 }
+    countT      pcDestination[ 4 ] ;
+    countT      pcSource[ 4 ]      ;
+    byteT       hopLimit           ;
+    byteT       idNextHeader       ;
+    count01T    cbData             ;
+    countT      flowLabel : 0x14   ;
+    byteT       trafficClass       ;
+    byteT       version : 4        ;
+{
+struct ipv6HeadS
+
+//    
+//       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//       |                                                               |
+//       +                                                               +
+//       |                                                               |
+//       +                      Destination Address                      +
+//       |                                                               |
+//       +                                                               +
+//       |                                                               |
+//       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//       |                                                               |
+//       +                                                               +
+//       |                                                               |
+//       +                         Source Address                        +
+//       |                                                               |
+//       +                                                               +
+//       |                                                               |
+//       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//       |         Payload Length        |  Next Header  |   Hop Limit   |
+//       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//       |Version| Traffic Class |           Flow Label                  |
+//       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//    
+//        RFC 8200
+//    
+
+
+;
+}
     countT      optional          ;
     countT      ipv4Destination   ;
     countT      ipv4Source        ;
@@ -824,6 +959,36 @@ struct ipv4HeadS
 //
 //    RFC 6274
 //
+
+;
+}
+    countT      protocol ;
+{
+struct loopHeadS
+
+//      
+//          23 - payload is an IPX packet.
+//          7 - payload is an OSI packet;
+//          30 - payload is an IPv6 packet;         0x1e
+//          28 - payload is an IPv6 packet;         0x1c
+//          24 - payload is an IPv6 packet;         0x18
+//          2 - payload is an IPv4 packet;
+//      
+//      The protocol type field is in the host byte order of the machine on which the capture was done. The values for that field are:
+//      
+//      Description
+//      
+//      .                           .
+//      .                           .
+//      .                           .
+//      |           Payload         |
+//      +---------------------------+
+//      |         (4 Octets)        |
+//      |       Protocol type       |
+//      +---------------------------+
+//      
+//      https://www.tcpdump.org/linktypes/LINKTYPE_NULL.html
+//      
 
 }
     return 0 ;
