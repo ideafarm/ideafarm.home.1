@@ -31,7 +31,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                                 }
                                     }
                                         }
-                                            etThread.traceF( tin0P , T("[idPacket,source,dest,protocol]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol , flTRACE_NOpREFIX ) ;
+                                            if( pIpHead->protocol == 6 /*TCP*/ ) etThread.traceF( tin0P , T("[idPacket,source,dest,protocol,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
 
                                             ;
                                                     : tn
@@ -66,65 +66,84 @@ etThread.traceF( tin0P , T("ok") ) ;
                                         //countT ipDest   = *(countT*)pbc ; pbc += 4 ;
                                         //pbc += 3 * sizeof( countT ) ;
 
+                                        //etThread.traceF( tin0P , T("[cbGram] :    ")+TF2(pIpHead->cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         //etThread.traceF( tin0P , T("[hLength]:    ")+TF2(pIpHead->hLength,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
+                                        }
+                                            etThread.delF( tin0P , psttData ) ;
+                                            tData = T(psttData) ;
+
+                                            }
+                                                pbd ++ ;
+                                                }
+                                                    etThread.strFuseF( tin0P , psttData , T(post2) ) ;
+                                                    osTextT post2[] = { *pbd , 0 } ;
+                                                {
+                                                if( *pbd >= 0x20 && *pbd < 0x7e )
+                                            {
+                                            while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
+                                            const byteT* pbd = pbData ;
+
+                                            etThread.strMakeF( tin0P , LF , psttData , 0 , TUCK ) ; ___( psttData ) ;
+                                            ZE( strokeS* , psttData ) ;
+
+                                            const byteT* const pbDataEnd =            (byteT*)pIpHead + pIpHead->cbGram    ;
+                                            const byteT* const pbData    = (byteT*)( (countT*)pIpHead + pIpHead->hLength ) ;
+                                        {
+                                        if( pIpHead->protocol == 6 /*TCP*/ )
+                                        TN( tData , "" ) ;
+    
 
 
 
-
-
-
-
-
-
-
-
-
-}
-    break ;
-
-    etThread.traceF( tin0P , T("[cbLooked]:    ")+TF2(cbLooked,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    countT cbLooked = (byteT*)postLook - (byteT*)pIpHead ;
-
-    }
-        postLook ++ ;
-
-        }
-            else break ;
-            }
-                }
-                    countT foo = 2 ;
-                    etThread.traceF( tin0P , T("============================== FOUND! ===============================") ) ;
-                {
-                if( postHit )
-                const osTextT* postHit = thirdC::c_strstrIF( postLook , "HTTP" ) ;
-            {
-            if( !_restart )
-            _restart.flags |= flRESTARTc_QUIET ;
-            RESTART
-        {
-        else
-        }
-            }
-                etThread.traceF( tin0P , T("============================== FOUND! ===============================") ) ;
-            {
-            if( postHit )
-            const osTextT* postHit = thirdC::c_strstrIF( postLook , "GET" ) ;
-        {
-        if( !_restart )
-        _restart.flags |= flRESTARTc_QUIET ;
-        RESTART
-    {
-    while( !ether )
-    const osTextT* postLook = (const osTextT*)pIpHead ;
-{
-while( !ether )
+//}
+//    break ;
+//
+//    etThread.traceF( tin0P , T("[cbLooked]:    ")+TF2(cbLooked,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//    countT cbLooked = (byteT*)postLook - (byteT*)pIpHead ;
+//
+//    }
+//        postLook ++ ;
+//
+//        }
+//            else break ;
+//            }
+//                }
+//                    countT foo = 2 ;
+//                    etThread.traceF( tin0P , T("============================== FOUND! ===============================") ) ;
+//                {
+//                if( postHit )
+//                const osTextT* postHit = thirdC::c_strstrIF( postLook , "HTTP" ) ;
+//            {
+//            if( !_restart )
+//            _restart.flags |= flRESTARTc_QUIET ;
+//            RESTART
+//        {
+//        else
+//        }
+//            }
+//                etThread.traceF( tin0P , T("============================== FOUND! ===============================") ) ;
+//            {
+//            if( postHit )
+//            const osTextT* postHit = thirdC::c_strstrIF( postLook , "GET" ) ;
+//        {
+//        if( !_restart )
+//        _restart.flags |= flRESTARTc_QUIET ;
+//        RESTART
+//    {
+//    while( !ether )
+//    const osTextT* postLook = (const osTextT*)pIpHead ;
+//{
+//while( !ether )
 //IT IS TCP, SO LOOK FOR PLAIN TEXT, RECOVERING IF EXCEPTION OCCURS
 
 
 
+
+
+
 pIpHead = (const ipv4HeadS*)pbc ; //U:: pbc += sizeof( countT ) * pIpHead->hLength ;
-static                                  const ipv4HeadS* pIpHead ;
+                                        const ipv4HeadS* pIpHead ;
                                     {
                                     if( idType == 0x800 )
 
@@ -133,15 +152,15 @@ static                                  const ipv4HeadS* pIpHead ;
                                     const byteT* pbMACDestination =             pbc ; pbc += 6 ;
 
 pbc = (byteT*)pInfo3Data ;
-static                              byteT* pbc ;
+                                    byteT* pbc ;
                                 {
                                 if( rc == 1 )
 
                                 rc = pcap_next_ex( pHandle , &pInfo3Header , &pInfo3Data ) ;
 pInfo3Data = 0 ;
-static                          ZE( const u_char* , pInfo3Data   ) ;
+                                ZE( const u_char* , pInfo3Data   ) ;
 pInfo3Header = 0 ;
-static                          ZE( pcap_pkthdr*  , pInfo3Header ) ;
+                                ZE( pcap_pkthdr*  , pInfo3Header ) ;
                             {
                             while( !ether )
                             etThread.traceF( tin0P , T("receiving header/data images") ) ;
@@ -239,7 +258,7 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
     TN( tCurly , pc1->AdapterName ) ;
 {
 while( pc1 )
-static IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
+IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
 nicNameC nnMeOnWanted ;
 
 ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
@@ -777,7 +796,7 @@ struct tcpIpHeadS
     count01T    offFragment : 0xd ;
     byteT       flags : 3         ;
     count01T    identification    ;
-    count01T    ccGram            ;
+    count01T    cbGram            ;
 //  byteT       service           ;
     byteT       hLength : 4       ;
     byteT       version : 4       ;
