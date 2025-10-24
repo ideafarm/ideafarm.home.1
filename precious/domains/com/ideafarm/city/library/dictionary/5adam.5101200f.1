@@ -56,8 +56,8 @@ etThread.traceF( tin0P , T("ok") ) ;
                                         {
                                         //if( nnMeOnWanted == nnSource )
 
-                                        nicNameC nnDest(   pIpv6Head->pcDestination[ 0 ] , pIpv6Head->pcDestination[ 1 ] , pIpv6Head->pcDestination[ 2 ] , pIpv6Head->pcDestination[ 3 ] ) ;
-                                        nicNameC nnSource( pIpv6Head->pcSource[      0 ] , pIpv6Head->pcSource[      1 ] , pIpv6Head->pcSource[      2 ] , pIpv6Head->pcSource[      3 ] ) ;
+                                        nicNameC nnDest(   SWAB4( pIpv6Head->pcDestination[ 3 ] ) , SWAB4( pIpv6Head->pcDestination[ 2 ] ) , SWAB4( pIpv6Head->pcDestination[ 1 ] ) , SWAB4( pIpv6Head->pcDestination[ 0 ] ) ) ;
+                                        nicNameC nnSource( SWAB4( pIpv6Head->pcSource[      3 ] ) , SWAB4( pIpv6Head->pcSource[      2 ] ) , SWAB4( pIpv6Head->pcSource[      1 ] ) , SWAB4( pIpv6Head->pcSource[      0 ] ) ) ;
 
                                         }
                                             etThread.delF( tin0P , psttData ) ;
@@ -160,7 +160,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                                     else if( idLinkType == osIDlINKtYPE_ETHERNET )
                                     }
                                         }
-                                            case 0x1e : { pIpv6Head = (ipv6HeadS*)( pbc + sizeof( loopHeadS ) - 1 ) ; break ; }         //U::"- 1" TO MAKE IT WORK (MYSTERY)
+                                            case 0x1e : { pIpv6Head = (ipv6HeadS*)( pbc + sizeof( loopHeadS ) - 2 ) ; break ; }         //U::"- 2" TO MAKE IT WORK (MYSTERY)
                                             case 0x1c :
                                             case 0x18 :
 
