@@ -29,7 +29,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                         }
                             }
                                 }
-                                    if( tData.csF( tin0P ) ) etThread.traceF( tin0P , T("[idPacket,source,dest,protocol,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
+                                    etThread.traceF( tin0P , T("[idPacket,source,dest,protocol,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
 
                                     ;
                                             : tn
@@ -76,60 +76,103 @@ etThread.traceF( tin0P , T("ok") ) ;
 
                                             tcp.swabF() ;
                                             tcpHeadRawS tcp = *pTcp ;
-                                            tcpHeadRawS* pTcp = (tcpHeadRawS*)( (byteT*)pIpv6HeadRaw + sizeof head ) ;
                                         {
-                                        if( protocol == 6 /*TCP*/ )
+                                        if( pTcp )
 
-                                        const byteT* pbDataEnd = (byteT*)pIpv6HeadRaw + sizeof head + head.u.swabbed.cbGramNet ;
-
-                                        protocol = head.u.swabbed.idNextHeader ;
-                                        nnDest   = nicNameC( head.u.swabbed.pcDestination[ 0 ] , head.u.swabbed.pcDestination[ 1 ] , head.u.swabbed.pcDestination[ 2 ] , head.u.swabbed.pcDestination[ 3 ] ) ;
-                                        nnSource = nicNameC( head.u.swabbed.pcSource[      0 ] , head.u.swabbed.pcSource[      1 ] , head.u.swabbed.pcSource[      2 ] , head.u.swabbed.pcSource[      3 ] ) ;
-
-                                        head.swabF() ;
-                                        ipv6HeadRawS head = *pIpv6HeadRaw ;
-                                    {
-                                    else if( pIpv6HeadRaw )
-                                    }
                                         }
-                                            etThread.delF( tin0P , psttData ) ;
-                                            tData = T(psttData) ;
-
                                             }
-                                                pbd ++ ;
                                                 }
-                                                    etThread.strFuseF( tin0P , psttData , T(post2) ) ;
-                                                    osTextT post2[] = { *pbd , 0 } ;
+                                                    }
+                                                        break ;
+                                                        bQuit = 1 ;
+                                                    {
+                                                    default :
+                                                    }
+                                                        break ;
+                                                                                            // THIS IS A SECURITY ATTACK SURFACE ; AN ATTACKER CAN HIDE FROM ME BY INSERTING AN IPv6 EXTENSION HEADER TO CAUSE ME TO IGNORE THE PACKET ; SO I AM GOING TO TRACE THIS PACKET
+                                                        pbNextHead  = 0 ;                   // I GIVE UP; AS OF THIS WRITING, ALL OF THE VALUES FOR protocol OTHER THAN 6 (TCP) ARRIVE HERE, BECAUSE I DON'T NEED TO SNIFF THEM AND IT IS SAFER TO IGNORE THEM THAN RISK INCORRECTLY PARSING THEM
+                                                    {
+                                                    case 139 :
+                                                    case  50 :
+                                                    case  44 :
+                                                    //}
+                                                    //    break ;
+                                                    //    pbNextHead += ( pbNextHead[ 1 ] + 1 ) * ( 2 * sizeof( countT) ) ;
+                                                    //    protocol    =   pbNextHead[ 0 ] ;
+                                                    //{
+                                                    case 140 :
+                                                    case 135 :
+                                                    //}
+                                                    //    break ;
+                                                    //    pbNextHead += ( pbNextHead[ 1 ] + 2 ) * sizeof( countT) ;       // NOT SURE; SEE RFC
+                                                    //    protocol    =   pbNextHead[ 0 ] ;
+                                                    //{
+                                                    case 51 :
+                                                    //}
+                                                    //    break ;
+                                                    //    pbNextHead +=   pbNextHead[ 1 ] + 1 ;
+                                                    //    protocol    =   pbNextHead[ 0 ] ;
+                                                    //{
+                                                    case 60 :
+                                                    case 43 :
+                                                    case 0  :
+                                                    }
+                                                        break ;
+                                                        pTcp = (tcpHeadRawS*)pbNextHead ;
+                                                    {
+                                                    case 6 /*TCP*/ :
                                                 {
-                                                if( *pbd >= 0x20 && *pbd < 0x7e )
+                                                switch( protocol )
+
+                                                //      
+                                                //      0    *   IPv6 Hop-by-Hop Option                  [RFC8200]
+                                                //      43   *   Routing Header for IPv6                 [RFC8200][RFC5095]
+                                                //      44   *   Fragment Header for IPv6                [RFC8200]
+                                                //      50   *   Encapsulating Security Payload          [RFC4303]
+                                                //      51   *   Authentication Header                   [RFC4302]
+                                                //      60   *   Destination Options for IPv6            [RFC8200]
+                                                //      135  *   Mobility Header                         [RFC6275]
+                                                //      139  *   Host Identity Protocol                  [RFC7401]
+                                                //      140  *   Shim6 Protocol                          [RFC5533]
+                                                //      253  -   Use for experimentation and testing     [RFC3692][RFC4727]
+                                                //      254  -   Use for experimentation and testing     [RFC3692][RFC4727]
+                                                //      
+                                                //      ipv6 extension header types
+                                                //      
+                                                //      https://www.iana.org/assignments/ipv6-parameters/ipv6-parameters.xhtml
+                                                //      
+
                                             {
-                                            while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
-                                            const byteT* pbd = pbData ;
+                                            while( !pTcp && !bQuit && pbNextHead )
+                                            ZE( boolT , bQuit ) ;
+                                            byteT* pbNextHead = (byteT*)pIpv6HeadRaw + sizeof head ;
 
-                                            etThread.strMakeF( tin0P , LF , psttData , 0 , TUCK ) ; ___( psttData ) ;
-                                            ZE( strokeS* , psttData ) ;
+                                            pbDataEnd = (byteT*)pIpv6HeadRaw + sizeof head + head.u.swabbed.cbGramNet ;
 
-                                            const byteT* const pbDataEnd =            (byteT*)pIpv4HeadRaw + head.u.swabbed.cbGramNet    ;
+                                            protocol = head.u.swabbed.idNextHeader ;
+                                            nnDest   = nicNameC( head.u.swabbed.pcDestination[ 0 ] , head.u.swabbed.pcDestination[ 1 ] , head.u.swabbed.pcDestination[ 2 ] , head.u.swabbed.pcDestination[ 3 ] ) ;
+                                            nnSource = nicNameC( head.u.swabbed.pcSource[      0 ] , head.u.swabbed.pcSource[      1 ] , head.u.swabbed.pcSource[      2 ] , head.u.swabbed.pcSource[      3 ] ) ;
 
-                                            countT cbData = pbDataEnd - pbData ;
-                                            const byteT* pbData    = (byteT*)( (countT*)pTcp + tcp.u.swabbed.hCounts ) ;
-
-                                            tcp.swabF() ;
-                                            tcpHeadRawS tcp = *pTcp ;
-                                            tcpHeadRawS* pTcp = (tcpHeadRawS*)( (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ;
+                                            head.swabF() ;
+                                            ipv6HeadRawS head = *pIpv6HeadRaw ;
                                         {
-                                        if( protocol == 6 /*TCP*/ )
+                                        else if( pIpv6HeadRaw )
+                                        }
+                                            if( protocol == 6 ) pTcp = (tcpHeadRawS*)( (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ;
 
-                                        const byteT* pbDataEnd = (byteT*)pIpv4HeadRaw + head.u.swabbed.hCounts * sizeof( countT ) + head.u.swabbed.cbGramNet ;
+                                            pbDataEnd = (byteT*)pIpv4HeadRaw + head.u.swabbed.hCounts * sizeof( countT ) + head.u.swabbed.cbGramNet ;
 
-                                        protocol = head.u.swabbed.protocol ;
-                                        nnDest   = nicNameC( head.u.swabbed.ipv4Destination ) ;
-                                        nnSource = nicNameC( head.u.swabbed.ipv4Source      ) ;
+                                            protocol = head.u.swabbed.protocol ;
+                                            nnDest   = nicNameC( head.u.swabbed.ipv4Destination ) ;
+                                            nnSource = nicNameC( head.u.swabbed.ipv4Source      ) ;
 
-                                        head.swabF() ;
-                                        ipv4HeadRawS head = *pIpv4HeadRaw ;
+                                            head.swabF() ;
+                                            ipv4HeadRawS head = *pIpv4HeadRaw ;
+                                        {
+                                        if( pIpv4HeadRaw )
+                                        ZE( const byteT* , pbDataEnd ) ;
+                                        ZE( tcpHeadRawS* , pTcp ) ;
                                     {
-                                    if( pIpv4HeadRaw )
                                     ZE( countT , protocol ) ;
                                     nicNameC nnDest   ;
                                     nicNameC nnSource ;
@@ -1186,7 +1229,7 @@ countT unicodeLengthF( const unTextT* puntP )
 
 #include <iphlpapi.h>
 
-/*1*/WAKEhIDE( "was.copy.of.doodle.simple.npcap.packet.sniffer" )/*1*/
+/*1*/WAKEhIDE( "ifcIDaDAM_TOOLpACKETsNIFFER" )/*1*/
 /**/
 */
 /*
