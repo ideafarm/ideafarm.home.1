@@ -59,8 +59,10 @@ etThread.traceF( tin0P , T("ok") ) ;
 
                                         nicNameC nnDest(   SWAB4( pIpv6HeadRaw->pcDestination[ 3 ] ) , SWAB4( pIpv6HeadRaw->pcDestination[ 2 ] ) , SWAB4( pIpv6HeadRaw->pcDestination[ 1 ] ) , SWAB4( pIpv6HeadRaw->pcDestination[ 0 ] ) ) ;
                                         nicNameC nnSource( SWAB4( pIpv6HeadRaw->pcSource[      3 ] ) , SWAB4( pIpv6HeadRaw->pcSource[      2 ] ) , SWAB4( pIpv6HeadRaw->pcSource[      1 ] ) , SWAB4( pIpv6HeadRaw->pcSource[      0 ] ) ) ;
+#if defined( NEVERdEFINED )
 
                                         }
+#endif
                                             etThread.delF( tin0P , psttData ) ;
                                             tData = T(psttData) ;
 
@@ -80,25 +82,24 @@ etThread.traceF( tin0P , T("ok") ) ;
 
                                             const byteT* const pbDataEnd =                       pbData + pIpv6HeadRaw->cbData     ;
                                             const byteT* const pbData    = (byteT*)( (countT*)pIpv6HeadRaw + sizeof( ipv6HeadS ) ) ;
-                                        {
-//U::                                        if( pIpv6HeadRaw->idNextHeader == 6 /*TCP*/ )
+
 #if defined( NEVERdEFINED )
+
+if( rc ) ;
+                                            tcp.swabF() ;
+                                            tcpHeadRawS tcp = *(tcpHeadRawS*)( (countT*)pIpv6HeadRaw + sizeof head ) ;
+                                        {
+                                        if( head.u.swabbed.idNextHeader == 6 /*TCP*/ )
                                         TN( tData , "" ) ;
 
                                         head.swabF() ;
-
-if( cbRaw || cbSwabbed ) ;
-static countT cbSwabbed = sizeof head.u.swabbed ;
-static countT cbRaw     = sizeof head.u.raw ;
-
                                         ipv6HeadRawS head = *pIpv6HeadRaw ;
-
                                     {
                                     else if( pIpv6HeadRaw )
                                     }
 #endif
                                         }
-//                                            if( pIpv4HeadRaw->protocol == 6 /*TCP*/ ) etThread.traceF( tin0P , T("[idPacket,source,dest,protocol,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
+//                                            if( head.u.swabbed.protocol == 6 /*TCP*/ ) etThread.traceF( tin0P , T("[idPacket,source,dest,protocol,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
 
                                             ;
                                                     : tn
@@ -117,26 +118,29 @@ static countT cbRaw     = sizeof head.u.raw ;
                                             boolT bToMe   = nnMeOnWanted == nnDest   ;
                                             boolT bFromMe = nnMeOnWanted == nnSource ;
 
-                                            TN( tProtocol    , "" ) ; tProtocol    = TF2(pIpv4HeadRaw->protocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(ppostProtocol[pIpv4HeadRaw->protocol]) ;
+                                            TN( tProtocol    , "" ) ; tProtocol    = TF2(head.protocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(ppostProtocol[head.u.swabbed.protocol]) ;
                                             TN( tDestination , "" ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x10 ) tDestination += tb ;
                                             TN( tSource      , "" ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x10 ) tSource      += tb ;
                                         {
                                         //if( nnMeOnWanted == nnSource )
 
                                         nicNameC nnDest(   SWAB4( rc ) ) ;
-                                        rc = pIpv4HeadRaw->ipv4Destination ;
+                                        rc = head.u.swabbed.ipv4Destination ;
                                         nicNameC nnSource( SWAB4( rc ) ) ;
-                                        rc = pIpv4HeadRaw->ipv4Source ;
+                                        rc = head.u.swabbed.ipv4Source ;
 
                                         //etThread.traceF( tin0P , T("[dest,source]:    ")+TF2(ipDest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ipSource,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         //countT ipSource = *(countT*)pbc ; pbc += 4 ;
                                         //countT ipDest   = *(countT*)pbc ; pbc += 4 ;
                                         //pbc += 3 * sizeof( countT ) ;
 
-                                        //etThread.traceF( tin0P , T("[cbGram] :    ")+TF2(pIpv4HeadRaw->cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                        //etThread.traceF( tin0P , T("[hLength]:    ")+TF2(pIpv4HeadRaw->hLength,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        //etThread.traceF( tin0P , T("[cbGram] :    ")+TF2(head.u.swabbed.cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        //etThread.traceF( tin0P , T("[hLength]:    ")+TF2(head.u.swabbed.hLength,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+#if defined( NEVERdEFINED )
 
                                         }
+#endif
                                             etThread.delF( tin0P , psttData ) ;
                                             tData = T(psttData) ;
 
@@ -154,11 +158,15 @@ static countT cbRaw     = sizeof head.u.raw ;
                                             etThread.strMakeF( tin0P , LF , psttData , 0 , TUCK ) ; ___( psttData ) ;
                                             ZE( strokeS* , psttData ) ;
 
-                                            const byteT* const pbDataEnd =            (byteT*)pIpv4HeadRaw + pIpv4HeadRaw->cbGram    ;
-                                            const byteT* const pbData    = (byteT*)( (countT*)pIpv4HeadRaw + pIpv4HeadRaw->hLength ) ;
-                                        {
-                                        if( pIpv4HeadRaw->protocol == 6 /*TCP*/ )
+                                            const byteT* const pbDataEnd =            (byteT*)pIpv4HeadRaw + head.u.swabbed.cbGram    ;
+                                            const byteT* const pbData    = (byteT*) ;
 #if defined( NEVERdEFINED )
+
+if( rc ) ;
+                                            tcp.swabF() ;
+                                            tcpHeadRawS tcp = *(tcpHeadRawS*)( (countT*)pIpv4HeadRaw + head.u.swabbed.hLength ) ;
+                                        {
+                                        if( head.u.swabbed.protocol == 6 /*TCP*/ )
                                         TN( tData , "" ) ;
 
                                         head.swabF() ;
@@ -845,27 +853,85 @@ osTextT* ppostProtocol[] =
 
 ;
 }
-    countT      options              ;
-    count01T    offUrgent            ;
-    count01T    checksum             ;
-    count01T    cbWindow             ;
-    byteT       bFIN             : 1 ;
-    byteT       bSYN             : 1 ;
-    byteT       bRST             : 1 ;
-    byteT       bPSH             : 1 ;
-    byteT       bACK             : 1 ;
-    byteT       bURG             : 1 ;
-    byteT       bECE             : 1 ;
-    byteT       bCWR             : 1 ;
-    byteT       reserved         : 4 ;
-    byteT       hLength          : 4 ;
-    countT      idAcknowlegement     ;
-    countT      idSerial             ;
-    count01T    idpDestination       ;
-    count01T    idpSource            ;
-{
-struct tcpIpHeadS
+    }
+        }
+                                                 u.bytes.pbRaw[ offMax - offs ] = save ;
+                         u.bytes.pbRaw[ offs ] = u.bytes.pbRaw[ offMax - offs ]        ;
+            byteT save = u.bytes.pbRaw[ offs ]                                         ;
+        {
+        for( countT offs = 0 ; offs < offStop ; offs ++ )
+        countT offStop = 1 + offMax >> 1 ;                  //        1   1   2   2   3   3   4   4
+        countT offMax  = sizeof u.bytes.pbRaw - 1 ;         //        0   1   2   3   4   5   6   7
+    {                                                       // CASES
+    inline voidT swabF( voidT )                             // FOR EVEN NUMBER OF BYTES, EFFICIENT ; FOR ODD NUMBER OF BYTES, SWITCHES THE MIDDLE BYTE WITH ITSELF
 
+    } u ;
+
+        swabbed ;
+        }
+
+            count01T    idpSource            ;
+            count01T    idpDestination       ;
+
+            countT      idSerial             ;
+
+            countT      idAcknowlegement     ;
+
+            byteT       hLength          : 4 ;
+            byteT       reserved         : 4 ;
+            byteT       bFIN             : 1 ;
+            byteT       bSYN             : 1 ;
+            byteT       bRST             : 1 ;
+            byteT       bPSH             : 1 ;
+            byteT       bACK             : 1 ;
+            byteT       bURG             : 1 ;
+            byteT       bECE             : 1 ;
+            byteT       bCWR             : 1 ;
+            count01T    cbWindow             ;
+
+            count01T    checksum             ;
+            count01T    offUrgent            ;
+
+        {
+        struct
+
+        raw ;
+        }
+
+            count01T    offUrgent            ;
+            count01T    checksum             ;
+
+            count01T    cbWindow             ;
+            byteT       bFIN             : 1 ;
+            byteT       bSYN             : 1 ;
+            byteT       bRST             : 1 ;
+            byteT       bPSH             : 1 ;
+            byteT       bACK             : 1 ;
+            byteT       bURG             : 1 ;
+            byteT       bECE             : 1 ;
+            byteT       bCWR             : 1 ;
+            byteT       hLength          : 4 ;
+            byteT       reserved         : 4 ;
+
+            countT      idAcknowlegement     ;
+
+            countT      idSerial             ;
+
+            count01T    idpDestination       ;
+            count01T    idpSource            ;
+
+        {
+        struct
+
+        bytes ;
+        }
+            byteT pbRaw[ 0x5 * sizeof( countT ) ] ;
+        {
+        struct
+    {
+    union
+{
+struct tcpHeadRawS
 
 //  
 //  
@@ -896,54 +962,8 @@ struct tcpIpHeadS
 //  RFC 9293
 //  
 
-#endif
-
-}
-    }
-        *pbm |= (byteT)( ( *( pbb ++ ) ) << 4 ) ;
-        *pbm  = (byteT)(   *( pbb ++ )        ) ;
-    {
-    for( byteT* pbm = pbMe ; pbm < pbMeEnd ; pbm ++ )
-    pbb = pbBig ;
-
-    swabF( pbBig , sizeof pbBig ) ;
-
-    pbb = pbBig ;
-
-    }
-        *( pbb ++ )  = (byteT)( ( *pbm & 0xf0 ) >> 4 ) ;
-        *( pbb ++ )  = (byteT)( ( *pbm & 0x0f )      ) ;
-    {
-    for( byteT* pbm = pbMe ; pbm < pbMeEnd ; pbm ++ )
-    byteT* pbb = pbBig ;
-
-    byteT* pbMeEnd  = pbMe + sizeof( *this ) ;
-    byteT* pbMe     = (byteT*)this ;
-
-    byteT  pbBig[ sizeof( *this ) << 1 ] ;
-{
-voidT ipv6HeadRawS::swanF( voidT )
-
-}
-    }
-                                     pbUse[ offMax - offs ] = save ;
-                     pbUse[ offs ] = pbUse[ offMax - offs ]        ;
-        byteT save = pbUse[ offs ]                                 ;
-    {
-    for( countT offs = 0 ; offs < offStop ; offs ++ )
-    countT offStop = 1 + offMax >> 1 ;                  //        1   1   2   2   3   3   4   4
-    countT offMax  = cbUse - 1 ;                        //        0   1   2   3   4   5   6   7
-
-    countT cbUse = pbP && cbP ? cbP : sizeof *this ;
-    byteT* pbUse = pbP        ? pbP : (byteT*)this ;
-{                                                       // CASES
-voidT ipv6HeadRawS::swabF( byteT* const pbP , const countT cbP )                      // FOR EVEN NUMBER OF BYTES, EFFICIENT ; FOR ODD NUMBER OF BYTES, SWITCHES THE MIDDLE BYTE WITH ITSELF
-
-#if defined( NEVERdEFINED )
-
 ;
 }
-//#endif
     }
         }
                                                  u.bytes.pbRaw[ offMax - offs ] = save ;
@@ -955,10 +975,6 @@ voidT ipv6HeadRawS::swabF( byteT* const pbP , const countT cbP )                
         countT offMax  = sizeof u.bytes.pbRaw - 1 ;         //        0   1   2   3   4   5   6   7
     {                                                       // CASES
     inline voidT swabF( voidT )                             // FOR EVEN NUMBER OF BYTES, EFFICIENT ; FOR ODD NUMBER OF BYTES, SWITCHES THE MIDDLE BYTE WITH ITSELF
-    voidT swanF( voidT ) ;
-//#if defined( NEVERdEFINED )
-
-//    voidT swabF( byteT* const pbP = 0 , const countT cbP = 0 ) ;
 
     } u ;
 
@@ -1060,27 +1076,6 @@ struct ipv6HeadRawS
 //    
 //        RFC 8200
 //    
-
-
-;
-}
-    voidT swabF( voidT ) ;
-
-    countT      ipv4Destination   ;
-    countT      ipv4Source        ;
-    count01T    hChecksum         ;
-    byteT       protocol          ;
-    byteT       ttl               ;
-    count01T    offFragment : 0xd ;
-    byteT       flags : 3         ;
-    count01T    identification    ;
-
-    count01T    cbGram            ;
-//  byteT       service           ;
-    byteT       version : 4       ;
-    byteT       hLength : 4       ;
-{
-struct ipv4HeadS
 
 ;
 }
