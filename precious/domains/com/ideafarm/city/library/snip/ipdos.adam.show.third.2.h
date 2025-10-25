@@ -4605,7 +4605,6 @@ it is illegal to refer to this symbol in the definition of an adam
 
         #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\npcap\npcap-sdk-1.15\include.ideafarm\pcap\pcap.h"
 
-
     #endif
 
 #endif
