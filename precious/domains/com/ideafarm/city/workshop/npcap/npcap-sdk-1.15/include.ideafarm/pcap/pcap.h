@@ -472,7 +472,8 @@ PCAP_AVAILABLE_1_2
 PCAP_API int	pcap_set_tstamp_type(pcap_t *, int);
 
 PCAP_AVAILABLE_1_5
-PCAP_API int	pcap_set_immediate_mode(pcap_t *, int);
+//PCAP_API int         pcap_set_immediate_mode(pcap_t *, int);
+  PCAP_API int __cdecl pcap_set_immediate_mode(pcap_t *, int);
 
 PCAP_AVAILABLE_1_0
 PCAP_API int	pcap_set_buffer_size(pcap_t *, int);
