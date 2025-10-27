@@ -52,8 +52,8 @@ etThread.traceF( tin0P , T("ok") ) ;
                                     TN( tIdSerial         , "" ) ; tIdSerial = TF3(idSerial,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
 
                                     TN( tProtocol    , ppostProtocol[ protocol ] ) ;
-                                    TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+tCloseParen ;
-                                    TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+tCloseParen ;
+                                    TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+tCloseParen ; while( tDestination.csF( tin0P ) < 0x1f ) tDestination += tb ;
+                                    TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+tCloseParen ; while( tSource     .csF( tin0P ) < 0x1f ) tSource      += tb ;
 
                                     }
                                         }
