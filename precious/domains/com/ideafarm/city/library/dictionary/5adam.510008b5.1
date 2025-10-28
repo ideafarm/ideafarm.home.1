@@ -46,7 +46,7 @@ DONE( tmLaunchBatExeFilesF )
                             }
                                 etThread.delF( tin0P , psttld ) ;
                                 tLongTo = T(psttld) ;
-                                etThread.strReplaceF( tin0P , psttld , tLong , T("/drop.executables.manual/") , T(bWoth?"/ignored.executables.manual/":"/done.executables.manual/") ) ; ___( psttld ) ;
+                                etThread.strReplaceF( tin0P , psttld , tLong , tSlashDropSuffix , bWoth ? tSlashIgnoredSuffix : tSlashDoneSuffix ) ; ___( psttld ) ;
                                 ZE( strokeS* , psttld ) ;
                             {
                             TN( tLongTo , "" ) ;
@@ -82,20 +82,20 @@ DONE( tmLaunchBatExeFilesF )
                     if( psttc1[ CSpREFIX - 1 + psttc1->idAdam ].idAdam != '/' )                                 // IF NOT DIRECTORY
                 {
                 FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
-                etThread.boxMenuF( tin0P , soul1m , tDrop+T("*") , 0 , TUCK ) ;
+                etThread.boxMenuF( tin0P , soul1m , tLongDrop+T("*") , 0 , TUCK ) ;
                 soulC soul1m( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.launch.bat.and.exe" ) ;
             {
             if( bWoth || bChanged )
 
-            if( !bWoth ) etThread.traceF( tin0P , T("waited  for a change [tDrop]:    ")+tDrop ) ;
+            if( !bWoth ) etThread.traceF( tin0P , T("waited  for a change [tLongDrop]:    ")+tLongDrop ) ;
 
             if( bQuitP ) break ;
             bCallingWait = 0 ;
             if( bCallingWait ) etRock.traceF( tin0P , T("called diskWaitDirF") ) ;
         {
-        if( bWoth || ( bChanged = etThread.diskWaitDirF( tin0P , hWait , bQuitP , tDrop , TOCK << 4 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) , bChanged ) )     //P:PERSONALITY: FIRING ME HAS NO EFFECT ; I KEEP WORKING UNTIL THE KID PROCESS ENDS
+        if( bWoth || ( bChanged = etThread.diskWaitDirF( tin0P , hWait , bQuitP , tLongDrop , TOCK << 2 , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) , bChanged ) )     //P:PERSONALITY: FIRING ME HAS NO EFFECT ; I KEEP WORKING UNTIL THE KID PROCESS ENDS
         if( bCallingWait ) etRock.traceF( tin0P , T("calling diskWaitDirF") ) ;
-        if( !bWoth ) etThread.traceF( tin0P , T("waiting for a change [tDrop]:    ")+tDrop ) ;
+        if( !bWoth ) etThread.traceF( tin0P , T("waiting for a change [tLongDrop]:    ")+tLongDrop ) ;
         boolT bCallingWait = !bWoth ;
         ZE( boolT , bChanged ) ;
     {
@@ -106,12 +106,17 @@ DONE( tmLaunchBatExeFilesF )
     TN( tDotHeyWritingDot , ".!writing." ) ;
     TN( tDotBat , ".bat" ) ;
 
-    etThread.diskMakeDirIfNeededF( tin0P , tIgnored ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tDone    ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tDrop    ) ;
-    TN( tIgnored , "///d/ideafarm.home.101/controls/ignored.executables.manual/" ) ;
-    TN( tDone    , "///d/ideafarm.home.101/controls/done.executables.manual/"    ) ;
-    TN( tDrop    , "///d/ideafarm.home.101/controls/drop.executables.manual/"    ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tLongIgnored ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tLongDone    ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tLongDrop    ) ;
+
+    TN( tSlashIgnoredSuffix , "/ignored"                                ) ; tSlashIgnoredSuffix += tSuffix ;
+    TN( tSlashDoneSuffix    , "/done"                                   ) ; tSlashDoneSuffix    += tSuffix ;
+    TN( tSlashDropSuffix    , "/drop"                                   ) ; tSlashDropSuffix    += tSuffix ;
+    TN( tLongIgnored        , "///d/ideafarm.home.101/controls/ignored" ) ; tLongIgnored        += tSuffix ;
+    TN( tLongDone           , "///d/ideafarm.home.101/controls/done"    ) ; tLongDone           += tSuffix ;
+    TN( tLongDrop           , "///d/ideafarm.home.101/controls/drop"    ) ; tLongDrop           += tSuffix ;
+    TN( tSuffix             , ".executables.firewall/" ) ;
 
     boolT& bQuitP = *(boolT*)pTaskP->c1 ;
 {
@@ -122,7 +127,7 @@ TASK( tmLaunchBatExeFilesF )                    //P:PERSONALITY: I LAUNCH (AND E
 
 //BASELINE: ifcIDaDAM_TOOLwATCHfOLDER
 
-/*1*/WAKEsHOWtEXT( "ifcIDaDAM_TOOLdOmANUALLY" )/*1*/
+/*1*/WAKEhIDE( "ifcIDaDAM_ADMINISTERfIREWALL" )/*1*/
 /**/
 */
 \<A HREF=\"5.d840104.1.0.html\"\>definition\</A\>
