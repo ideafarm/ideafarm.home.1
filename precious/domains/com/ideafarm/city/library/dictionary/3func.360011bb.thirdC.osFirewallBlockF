@@ -15,7 +15,7 @@
     countT rc = c_systemIF( tin0P , tCommand ) ;
 
     if( postDescriptionP ) tCommand += T(" description=\"")+T(postDescriptionP)+T("\"") ;
-    TN( tCommand , "" ) ; tCommand = T("netsh advfirewall firewall add rule name=\"IPDOS(tm) osFirewallBlockF ")+tnn+tb+tTimeOld+tb+TTF(timeN1,timeN2)+tb+TF2(idiFileP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("(")+TF2(idLineP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\" dir=in action=block remoteip=")+tnn+T(" profile=any") ;
+    TN( tCommand , "" ) ; tCommand = T("netsh advfirewall firewall add rule name=\"IPDOS(tm) osFirewallBlockF ")+tTimeOld+tb+TTF(timeN1,timeN2)+tb+tnn+tb+TF2(idiFileP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("(")+TF2(idLineP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\" dir=in action=block remoteip=")+tnn+T(" profile=any") ;
 
     TN( tnn , ""  ) ; tnn = T(nnP) ;
     TN( tb4  , "    " ) ;
