@@ -41,6 +41,7 @@ DONE( tmLaunchBatExeFilesF )
                     }
                         }
                             etThread.diskMoveFileOrDirF( tin0P , tLongTo , tLong ) ;
+                            etThread.traceF( tin0P , T("moving [to]:    ")+tLongTo ) ;
 
                             }
                                 etThread.delF( tin0P , psttld ) ;
@@ -68,6 +69,8 @@ DONE( tmLaunchBatExeFilesF )
                                 etThread.traceF( tin0P , T("launching [tLong]:    ")+tLong ) ;
                             {                                                                       //A:ASSUME: FILES ARE STATELESS, IN THAT A FILE CAN BE OMITTED WITHOUT CHANGING THE OUTCOME OF THE PASS
                             if( !bWoth )                                                            //P:PERSONALITY: I PURGE ALL FILES THAT ARE WAITING FOR ME WHEN I START UP ; I ONLY HIRE FILES THAT ARE NEWLY DROPPED AFTER I START
+
+                            etThread.traceF( tin0P , tLong ) ;
 
                             etThread.delF( tin0P , psttm ) ;
                             TN( tLong , psttm ) ;
