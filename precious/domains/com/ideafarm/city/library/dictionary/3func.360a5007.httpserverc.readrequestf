@@ -335,7 +335,7 @@
         }
             //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
             }
-                if( !bEnd ) thirdC::dosSleepWinkIF( tin0P , 0 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
+                if( !bEnd ) thirdC::dosSleepWinkIF( tin0P , 8 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
 
                 }
                     break ;
@@ -361,6 +361,8 @@
                     costHead += delta ;
 
                     }
+ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / got header [cMouthfulsUsed]:    ")+TF2(cMouthfulsBegin-cMouthfulsAllowed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
                         *poste = 0 ;
                         delta = poste - postcWas ;
                         bEnd = 1 ;
@@ -392,8 +394,10 @@
                 ZE( countT , delta ) ;
             {
             while( !bEnd && costRemain )
+countT cMouthfulsBegin = cMouthfulsAllowed ;
             ZE( countT , idLoop ) ;
-            countT cMouthfulsAllowed = TUCK >> 3 ;      // ">> 5" FAILS WITH GORILLA
+            //U::countT cMouthfulsAllowed = TUCK >> 3 ;      // ">> 5" FAILS WITH GORILLA BUT WORKS WITH STRIPE
+countT cMouthfulsAllowed = TICK >> 0 ;
             ZE( boolT , bEnd ) ;
             countT   costRemain = costaHeadPlus ;        
             osTextT* postc      = postHeadPlus  ;
