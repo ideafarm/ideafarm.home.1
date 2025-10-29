@@ -165,6 +165,7 @@
         }
             }
                 ether.osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("readRequestF / incorrect label prefix") , T("readRequestF / incorrect label prefix, so blocking peer [nnPeer]:    ")+T(jobP.nnPeer) ) ;
+                ether.traceF( tin0P , T("incorrect label prefix [domain,prefix,prefixLag]:    ")+T(psttDomainP)+tb4+T(psttRandomLabelPrefixP)+tb4+T(psttRandomLabelPrefixLagP) ) ;
                 bFailP = 1 ;
             {
             if( 1 != ether.strIdF( tin0P , psttRandomLabelPrefixP , psttDomainP ) && 1 != ether.strIdF( tin0P , psttRandomLabelPrefixLagP , psttDomainP ) )
