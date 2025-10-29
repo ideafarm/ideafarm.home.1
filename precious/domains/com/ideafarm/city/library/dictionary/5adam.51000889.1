@@ -487,6 +487,10 @@ DONE( tmGorillaF )
 
             tUrl = tDomainUse+T("//http/nu") ;        // THE "nu" PORTION IS NOT USED, BECAUSE HTTP HEADER IS NOT PREPENDED
 
+            TN( tRequestAll3 , "" ) ; tRequestAll3 = tHead+tDomainUse+tCRLF+tContentLength3+tRaw3Part1+tInvoice+tRaw3Part2 ;
+            TN( tRequestAll2 , "" ) ; tRequestAll2 = tHead+tDomainUse+tCRLF+tContentLength2+tRaw2Part1+tInvoice+tRaw2Part2 ;
+            TN( tRequestAll1 , "" ) ; tRequestAll1 = tHead+tDomainUse+tCRLF+tContentLength1+tRaw1Part1+tInvoice+tRaw1Part2 ;     //U::O: THIS COULD BE DONE FASTER BY PATCHING THE INVOICE STRING INTO A FIXED osTextT STRING AND BY AVOIDING THE USE OF strokeS AND textC
+
             }
                 tDomainUse                     = bOuter ? tRandomLabelPrefixP+tDash+tSuffix+tDomainOuterAfter : tDomainInner      ;
                 bOuterLag = bOuter ;
@@ -533,10 +537,6 @@ DONE( tmGorillaF )
 
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
-
-        TN( tRequestAll3 , "" ) ; tRequestAll3 = tHead+tContentLength3+tRaw3Part1+tInvoice+tRaw3Part2 ;
-        TN( tRequestAll2 , "" ) ; tRequestAll2 = tHead+tContentLength2+tRaw2Part1+tInvoice+tRaw2Part2 ;
-        TN( tRequestAll1 , "" ) ; tRequestAll1 = tHead+tContentLength1+tRaw1Part1+tInvoice+tRaw1Part2 ;     //U::O: THIS COULD BE DONE FASTER BY PATCHING THE INVOICE STRING INTO A FIXED osTextT STRING AND BY AVOIDING THE USE OF strokeS AND textC
 
         if( tInvoice.csF( tin0P ) - costInvoiceRequired ) { BLAMMOiD( 0x12344321 ) ; }
         tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
@@ -1299,7 +1299,7 @@ osTextT postRaw1Part1[] = {
 
 } ;
 
-    "Host: webhooks.hidden.ideafarm.com\r\n"
+    "Host: "
     "Connection: close\r\n"
     "Stripe-Signature: t=1736809627,v1=b15a66f137ec949edca5d0abd4f3e750358eefa30ee6c5d119523f8caf81413e,v0=a43eaea4e1eb354ecc6b64a3620ffc75e3c57b49240fc0d7dfbb4be480c1cf7d\r\n"
     "Accept: */*; q=0.5, application/xml\r\n"
