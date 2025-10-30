@@ -11,9 +11,7 @@
     stNnP.ungrabF( tin0P ) ;
     }
         if( tTrace.csF( tin0P ) ) traceF( tin0P , tTrace ) ;
-
-        if( !tTrace.csF( tin0P ) ) tTrace = T(psttDescriptionP) ;
-        TN( tTrace , psttTraceP ) ;
+        TN( tTrace , psttTraceP ? psttTraceP : psttDescriptionP ) ;
 
         delF( tin0P , psttLong ) ;
         boxPutUniqueF( tin0P , psttLong , tLike , tBatFileImage , tBatFileImage.csF( tin0P ) ) ; ___( psttLong ) ;
@@ -32,7 +30,7 @@
             stNnP >> nnWo ;
             nicNameC nnWo ;
         {
-        if( psttCmds ) while( stNnP )
+        while( stNnP )
         strMakeF( tin0P , LF , psttCmds , 0 , stNnP * ( TUCK + ( psttDescriptionP ? psttDescriptionP->idAdam : 0 ) ) ) ; ___( psttCmds ) ;        
         ZE( strokeS* , psttCmds ) ;
 
@@ -63,8 +61,6 @@
 
         osTextT* postd = psttDescriptionP ? (osTextT*)td : 0 ;
         TN( td , psttDescriptionP ) ;
-
-        _IO_
     {
     if( stNnP )    
     stNnP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
