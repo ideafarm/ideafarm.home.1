@@ -23,6 +23,8 @@ DONE( tmWorkF )
         {
 
         }
+            sgnDone_tmBlockF.waitF( tin0P ) ;
+
             }
                 ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
                 etRock.traceF( tin0P , T("waiting for all workers to go away [cIn,cWorkers]:    ")+TF2(++cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gc.tb4+TF2(cWorkers,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -67,12 +69,16 @@ DONE( tmWorkF )
             while( !POOP && !ether )
 
             }
-                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&offSettingsUse , (countT)&mySettingsA , (countT)&mySettingsB , (countT)&sockd , (countT)&gc , (countT)&gv , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
+                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&offSettingsUse , (countT)&mySettingsA , (countT)&mySettingsB , (countT)&sockd , (countT)&gc , (countT)&gv , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag , (countT)&stNnPeerBlock ) ;
                 inc02AM( cWorkers ) ;
             {
             while( cDo -- )
             countT cDo = thirdC::osProcessorsIF( tin0P ) << 3 ;
 
+            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmBlockF , sgnDone_tmBlockF , CBsTACKmIN << 1 ) , (countT)&stNnPeerBlock ) ;
+            signC sgnDone_tmBlockF( tin0P , TAG( TAGiDnULL ) ) ;
+
+            stackC  stNnPeerBlock( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
             circleC cirRecentDomainGrossTrace( tin0P , etThread , gv.bQuit , flCIRCLEc_OVERWRITE , sizeof( strokeS* ) , TUCK >> 5 , deleteElementF ) ;
             circleC cirNnPeerDoNotDivert(      tin0P , etThread , gv.bQuit , flCIRCLEc_OVERWRITE , sizeof( nicNameC ) , TUCK >> 2 ) ;
         {
@@ -294,7 +300,7 @@ DONE( tmWorkerF )
                     {
                     if( !bSilent || bForceReply )
 
-                    if( bSilent && !bPeerIsGorilla1 ) etThread.osFirewallBlockF( tin0P , LF , job.nnPeer , T("bSilent is set") , T("bSilent, so blocking peer [nnPeer]:    ")+T(job.nnPeer) ) ;
+                    if( bSilent && !bPeerIsGorilla1 ) stNnPeerBlockP.sinkF( tin0P , countTC() , job.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
 
                     }
                         }
@@ -897,6 +903,7 @@ DONE( tmWorkerF )
     etherC& etRock = etherC::etRockIF( tin0P ) ;
     TN( tb4 , "    " ) ;
 
+    stackC&      stNnPeerBlockP             =      *(stackC*)pTaskP->c11 ;
     textC&       tRandomLabelPrefixLagP     =       *(textC*)pTaskP->c01 ;
     textC&       tRandomLabelPrefixP        =       *(textC*)pTaskP->cf  ;
     textC&       tSuffix2GorillaP           =       *(textC*)pTaskP->ce  ;
@@ -916,6 +923,22 @@ DONE( tmWorkerF )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->ca && pTaskP->cb && pTaskP->cc && pTaskP->cd && pTaskP->ce && pTaskP->cf && pTaskP->c01 )
 TASK( tmWorkerF )
+
+DONE( tmBlockF )
+}
+
+    }
+        ++ s ; ether.osSleepF( tin0P , TICK >> 2 ) ;
+        etThread.osFirewallBlockF( tin0P , LF , stNnPeerBlockP , T("dns bSilent is set") , T("dns bSilent, so blocking peers [idSet]:    ")+TF2(++idSet,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    {
+    while( !ether )
+    ZE( countT , idSet ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    stackC& stNnPeerBlockP = *(stackC*)pTaskP->c11 ;
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmBlockF )
 
 DONE( tmCatchLabelSuffixF )
 }
