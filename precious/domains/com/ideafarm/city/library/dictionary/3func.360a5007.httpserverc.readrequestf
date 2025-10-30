@@ -164,7 +164,7 @@
 
         }
             }
-                ether.osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("readRequestF / incorrect label prefix") , T("readRequestF / incorrect label prefix, so blocking peer [nnPeer]:    ")+T(jobP.nnPeer) ) ;
+                if( jobP.nnPeer != nnGorilla1P ) ether.osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("readRequestF / incorrect label prefix") , T("readRequestF / incorrect label prefix, so blocking peer [nnPeer]:    ")+T(jobP.nnPeer) ) ;
                 ether.traceF( tin0P , T("incorrect label prefix [domain,prefix,prefixLag]:    ")+T(psttDomainP)+tb4+T(psttRandomLabelPrefixP)+tb4+T(psttRandomLabelPrefixLagP) ) ;
                 bFailP = 1 ;
             {
@@ -262,7 +262,7 @@
                     else if( ether.strIdF( tin0P , sttQuest , psttNameP ) ) // HTTP/1.0 KEYvALUE PAIRS
                     }
                         break ;
-                        ether.osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("readRequestF / null length url path requested") , T("readRequestF / null length url path requested, so blocking peer [nnPeer]:    ")+T(jobP.nnPeer) ) ;
+                        if( jobP.nnPeer != nnGorilla1P ) ether.osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("readRequestF / null length url path requested") , T("readRequestF / null length url path requested, so blocking peer [nnPeer]:    ")+T(jobP.nnPeer) ) ;
                         bFailP = 1 ;
                         //ether.traceF( tin0P , tSayClientPrefix+T("!exception / readRequestF / psttNameP is null or null length") ) ;
                     {
@@ -328,7 +328,7 @@
         ZE( osTextT* , postzBodySome ) ;
     {
     else
-    if( bFailP ) ether.osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("readRequestF / incomplete header") , T("readRequestF / incomplete header, so blocking peer [nnPeer]:    ")+T(jobP.nnPeer) ) ;
+    if( bFailP && jobP.nnPeer != nnGorilla1P ) ether.osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("readRequestF / incomplete header") , T("readRequestF / incomplete header, so blocking peer [nnPeer]:    ")+T(jobP.nnPeer) ) ;
 
     ZE( osTextT  , ostEscaped ) ; //U:: ELIMINATE THIS SINCE I NO LONGER SET IT (I NO LONGER USE readWoLineF)
 
@@ -423,7 +423,7 @@ countT cMouthfulsAllowed = TICK >> 0 ;
     TESTsCRATCH //U:: TO FIND A BUG
     scoopC scoop( tin0P , LF , ether ) ;  //U:: 20201021@1350: ADDED WITHOUT ANALYSIS.  ALL MEMBER FUNCTIONS OF CLASSES WITH AN ether MEMBER SHOULD DO THIS
 {
-/*1*/osTextT httpServerC::readRequestF( tin0S& tin0P , boolT& bFailP , strokeS*& psttNameP , strokeS*& psttQueriesP , strokeS*& psttDomainP , strokeS*& psttLeverKVP , switchC& swQueryP , switchC& swHeaderP , strokeS*& psttAgentP , osTextT*& postBodyP , boolT& bCloseP , taskDrivenServerJobS& jobP , socketC* psoP , const strokeS* const psttRandomLabelPrefixP , const strokeS* const psttRandomLabelPrefixLagP , const osTextT* const postEscapeP )/*1*/
+/*1*/osTextT httpServerC::readRequestF( tin0S& tin0P , boolT& bFailP , strokeS*& psttNameP , strokeS*& psttQueriesP , strokeS*& psttDomainP , strokeS*& psttLeverKVP , switchC& swQueryP , switchC& swHeaderP , strokeS*& psttAgentP , osTextT*& postBodyP , boolT& bCloseP , taskDrivenServerJobS& jobP , socketC* psoP , const strokeS* const psttRandomLabelPrefixP , const strokeS* const psttRandomLabelPrefixLagP , nicNameC& nnGorilla1P , const osTextT* const postEscapeP )/*1*/
 /**/
 */
 /*

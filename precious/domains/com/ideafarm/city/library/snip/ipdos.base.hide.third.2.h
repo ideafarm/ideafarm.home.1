@@ -33443,7 +33443,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341c0.etherC.etherSoilF!||
  count04T etherDispenseSerialNumberF( tin0S& tin0P , const strokeS* const psttFileP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021f5.etherc.etherDispenseSerialNumberF!||
- voidT etherDoHttpJobF( tin0S& tin0P , taskDrivenServerJobS& jobP , socketC*& psoP , sessionC& sessionP , countT idPortMeP , nicNameC nnMeP ) ;
+ voidT etherDoHttpJobF( tin0S& tin0P , taskDrivenServerJobS& jobP , socketC*& psoP , sessionC& sessionP , countT idPortMeP , nicNameC nnMeP , nicNameC nnGorilla1P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021f7.etherc.etherDoHttpJobF!||
 
  voidT socketsHostNameF( tin0S& tin0P , strokeS*& psttP ) ;
@@ -41061,7 +41061,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.httpServerC.sayFieldEditF!||
 
     /* serve a client */
-    osTextT readRequestF( tin0S& tin0P , boolT& bFailP , strokeS*& psttNameP , strokeS*& psttQueriesP , strokeS*& psttDomainP , strokeS*& psttLeverKVP , switchC& swQueryP , switchC& swHeaderP , strokeS*& psttAgentP , osTextT*& postBodyP , boolT& bCloseP , taskDrivenServerJobS& jobP , socketC* psoP , const strokeS* const psttRandomLabelPrefixP , const strokeS* const psttRandomLabelPrefixLagP , const osTextT* const postEscapeP = 0 ) ;
+    osTextT readRequestF( tin0S& tin0P , boolT& bFailP , strokeS*& psttNameP , strokeS*& psttQueriesP , strokeS*& psttDomainP , strokeS*& psttLeverKVP , switchC& swQueryP , switchC& swHeaderP , strokeS*& psttAgentP , osTextT*& postBodyP , boolT& bCloseP , taskDrivenServerJobS& jobP , socketC* psoP , const strokeS* const psttRandomLabelPrefixP , const strokeS* const psttRandomLabelPrefixLagP , nicNameC& nnGorilla1P , const osTextT* const postEscapeP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.httpServerC.readRequestF!||
     voidT getReplyF( tin0S& tin0P , httpReplyRefC*& prP , const strokeS* const psttUrlP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.httpServerC.getReplyF!||
@@ -41111,7 +41111,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
         return bOk ;
     }
 
-    friend voidT etherC::etherDoHttpJobF( tin0S& tin0P , taskDrivenServerJobS& jobP , socketC*& psoP , sessionC& sessionP , countT idPortMeP , nicNameC nnMeP ) ;
+    friend voidT etherC::etherDoHttpJobF( tin0S& tin0P , taskDrivenServerJobS& jobP , socketC*& psoP , sessionC& sessionP , countT idPortMeP , nicNameC nnMeP , nicNameC nnGorilla1P ) ;
     friend TASKpROTO( tm_httpServerC_F ) ;
     friend TASKpROTO( tmHttpCacheF ) ;
     friend voidT loginCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , osTextT*& postBodyP ) ; //U::idPort

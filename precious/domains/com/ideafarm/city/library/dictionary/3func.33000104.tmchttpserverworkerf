@@ -56,7 +56,7 @@ DONE( tmcHttpServerWorkerF )
 
                             }
                                 etRock.traceF( tin0P , tSayClientPrefix+T("called  etherDoHttpJobF [idPortMe,nnMe]:    ")+TF2(idPortMeP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnMeP) ) ;
-                                etThread.etherDoHttpJobF( tin0P , jobP , psoP , sessionP , idPortMeP , nnMeP ) ;
+                                etThread.etherDoHttpJobF( tin0P , jobP , psoP , sessionP , idPortMeP , nnMeP , nnGorillaOuterOk1 ) ;
                                 etRock.traceF( tin0P , tSayClientPrefix+T("calling etherDoHttpJobF [idPortMe,nnMe]:    ")+TF2(idPortMeP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnMeP) ) ;
                                 TN( tb4 , "    " ) ;
                                 _IO_
@@ -158,6 +158,22 @@ DONE( tmcHttpServerWorkerF )
         //etRock.traceF( tin0P , T("waiting for a push to stJobP") ) ;
     {
     while( !bQuitP )
+
+    nicNameC nnGorillaOuterOk1 = socketC::nicNameIF( tin0P , etThread , tNnGorillaOuter ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        }
+            tNnGorillaOuter = T(psttEat) ;
+            etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        {
+        else
+        if( !psttEat ) etRock.traceF( tin0P , T("!exception / missing setting [key]:    ")+tSettingKey ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , tSettingKey  ) ; ___( psttEat ) ;
+        TN( tSettingKey , "!ipdos.http.gorilla.go1" ) ;
+    {
+    TN( tNnGorillaOuter , "10.0.9.9" ) ;    // A LEGAL VALUE THAT IS A "DON'T CARE" AS IT WILL LIKELY NEVER BE USED
+    //CS:CODEsYNC: 3600212d 33000104 3300005b
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 

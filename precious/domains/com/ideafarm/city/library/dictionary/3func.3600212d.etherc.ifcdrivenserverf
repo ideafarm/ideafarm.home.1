@@ -342,7 +342,7 @@
                                                     {
                                                     if( info1P.bQuit || third || bSilent || POOP )
 
-                                                    if( bSilent ) osFirewallBlockF( tin0P , LF , nnPeer , T("bSilent is set") , T("ifcDrivenServerF / bSilent, so blocking peer [nnPeer]:    ")+T(nnPeer) ) ;
+                                                    if( bSilent && nnPeer != nnGorillaOuterOk1 ) osFirewallBlockF( tin0P , LF , nnPeer , T("bSilent is set") , T("ifcDrivenServerF / bSilent, so blocking peer [nnPeer]:    ")+T(nnPeer) ) ;
 //bSilent = 0 ;
 
                                                     if( bShieldsDown ) bSilent = 0 ;
@@ -585,7 +585,7 @@
 
                                                     boolT bLoopback = nnPeer.isLoopbackOldDoNotUseF() ;
 
-                                                    if( !bPeerAllowed ) osFirewallBlockF( tin0P , LF , nnPeer , T("bPeerAllowed is not set") , T("ifcDrivenServerF / !bPeerAllowed, so blocking peer [nnPeer]:    ")+T(nnPeer) ) ;
+                                                    if( !bPeerAllowed && nnPeer != nnGorillaOuterOk1 ) osFirewallBlockF( tin0P , LF , nnPeer , T("bPeerAllowed is not set") , T("ifcDrivenServerF / !bPeerAllowed, so blocking peer [nnPeer]:    ")+T(nnPeer) ) ;
 
 //bPeerAllowed = 1 ;
 
@@ -1063,6 +1063,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
             TN( tSettingKey , "!ipdos.http.gorilla.go1" ) ;
         {
         TN( tNnGorillaOuter , "10.0.9.9" ) ;    // A LEGAL VALUE THAT IS A "DON'T CARE" AS IT WILL LIKELY NEVER BE USED
+        //CS:CODEsYNC: 3600212d 33000104 3300005b
 
         textC& tRandomLabelPrefixLag = *(textC*)((count8S*)info2P.cArgApp)->c8 ;
         textC& tRandomLabelPrefix    = *(textC*)((count8S*)info2P.cArgApp)->c7 ;
