@@ -926,8 +926,6 @@ TASK( tmWorkerF )
 
 DONE( tmBlockF )
 }
-    THREADmODE1rESTORE
-
     }
         ++ s ; ether.osSleepF( tin0P , TICK >> 2 ) ;
         etThread.osFirewallBlockF( tin0P , LF , stNnPeerBlockP , T("dns bSilent is set") , T("dns bSilent, so blocking peers [idSet]:    ")+TF2(++idSet,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -935,8 +933,6 @@ DONE( tmBlockF )
     while( !ether )
     ZE( countT , idSet ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-
-    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
     stackC& stNnPeerBlockP = *(stackC*)pTaskP->c1 ;
 {
