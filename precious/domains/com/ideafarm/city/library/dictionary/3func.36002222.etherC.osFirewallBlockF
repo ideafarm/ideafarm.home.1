@@ -24,6 +24,7 @@
         TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+T(psttCmds) ;
 
         }
+            strFuseF( tin0P , psttCmds , tCmd ) ;
             if( psttDescriptionP ) tCmd += T(" description=\"")+T(psttDescriptionP)+T("\"") ;
             TN( tCmd , "" ) ;      tCmd = T("netsh advfirewall firewall add rule name=\"IPDOS(tm) osFirewallBlockF ")+tTimeOld+tb+TTF(timeN1,timeN2)+tb+tnn+tb+TF2(idiFileP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("(")+TF2(idLineP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\" dir=in action=block remoteip=")+tnn+T(" profile=any\r\n") ;
 
