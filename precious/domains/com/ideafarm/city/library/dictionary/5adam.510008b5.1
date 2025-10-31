@@ -24,72 +24,75 @@ DONE( tmWorkF )
         ++ s ; ether.osSleepF( tin0P , TICK >> 4 ) ;        // PRUNING IS DONE EACH MINUTE, SO A GIVEN ATTACKER MUST WAIT AT LEAST A MINUTE BEFORE HAVING ANOTHER CHANCE TO GET A PACKET INTO THE TARGET
 
         }
-            etThread.delF( tin0P , psttd ) ;
+            }
+                etThread.delF( tin0P , psttd ) ;
 
-            countT rc = thirdC::c_systemIF( tin0P , tCommand ) ;
-            //etThread.traceF( tin0P , tCommand ) ;
-            TN( tCommand , "netsh advfirewall firewall delete rule name=\"" ) ; tCommand += T(psttd)+T("\"") ;
+                countT rc = thirdC::c_systemIF( tin0P , tCommand ) ;
+                //etThread.traceF( tin0P , tCommand ) ;
+                TN( tCommand , "netsh advfirewall firewall delete rule name=\"" ) ; tCommand += T(psttd)+T("\"") ;
 
-            stRule >> psttd ;
-            ZE( strokeS* , psttd ) ;
-        {
-        while( stRule > 0x10 )              // PULL THE RULE NAMES CONTAINING THE EARLIEST (SMALLEST VALUE) DATETIMES AND DELETE THEM
+                stRule >> psttd ;
+                ZE( strokeS* , psttd ) ;
+            {
+            while( !ether && stRule > 0x10 )              // PULL THE RULE NAMES CONTAINING THE EARLIEST (SMALLEST VALUE) DATETIMES AND DELETE THEM
 
-        //}
-        //    while( ~hWalk ) ;
-        //    }
-        //        //etThread.traceF( tin0P , T("    [rule]:    ")+T(psttr) ) ;
-        //        __Z( psttr ) ;
-        //        strokeS* psttr = (strokeS*)stRule.downF( tin0P , hWalk ) ;
-        //    {
-        //    do
-        //    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-        //{
-        //if( stRule )
-        //etThread.traceF( tin0P , T("[cRules]:    ")+TF2(stRule,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //}
+            //    while( ~hWalk ) ;
+            //    }
+            //        //etThread.traceF( tin0P , T("    [rule]:    ")+T(psttr) ) ;
+            //        __Z( psttr ) ;
+            //        strokeS* psttr = (strokeS*)stRule.downF( tin0P , hWalk ) ;
+            //    {
+            //    do
+            //    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            //{
+            //if( stRule )
+            //etThread.traceF( tin0P , T("[cRules]:    ")+TF2(stRule,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        }
             }
                 }
                     }
                         }
-                            etThread.delF( tin0P , pstts ) ;                                                                // DUPLICATE NAMES WILL ONLY EXIST IF THE USER MANUALLY COPIES AND PASTES RULES
-                            etThread.traceF( tin0P , T("!exception: sink unique failed [ruleName]:    ")+T(pstts) ) ;       // RULES WITH DUPLICATE NAMES COULD BE DELETED HERE, BUT THEY WILL BE DELETED ANYWAY AS NEW RULES WITH LATER DATES ARE ADDED
-                        {                                                                                                   // P:PERSONALITY: I IGNORE DUPLICATE RULE NAMES
-                        else
-                        if( ids ) ;
-                        stRule.sinkF( tin0P , ids , pstts , flSTACKsINK_UNIQUE , 0 , 0 ) ;          // RULE NAMES CONTAINING THE MOST RECENT (LARGEST VALUE) DATETIMES WILL SINK TO THE BOTTOM
-                        ZE( countT , ids ) ;
+                            }
+                                etThread.delF( tin0P , pstts ) ;                                                                // DUPLICATE NAMES WILL ONLY EXIST IF THE USER MANUALLY COPIES AND PASTES RULES
+                                etThread.traceF( tin0P , T("!exception: sink unique failed [ruleName]:    ")+T(pstts) ) ;       // RULES WITH DUPLICATE NAMES COULD BE DELETED HERE, BUT THEY WILL BE DELETED ANYWAY AS NEW RULES WITH LATER DATES ARE ADDED
+                            {                                                                                                   // P:PERSONALITY: I IGNORE DUPLICATE RULE NAMES
+                            else
+                            if( ids ) ;
+                            stRule.sinkF( tin0P , ids , pstts , flSTACKsINK_UNIQUE , 0 , 0 ) ;          // RULE NAMES CONTAINING THE MOST RECENT (LARGEST VALUE) DATETIMES WILL SINK TO THE BOTTOM
+                            ZE( countT , ids ) ;
 
-                        //etThread.traceF( tin0P , T("sinking [name]:    ")+T(pstts) ) ;
+                            //etThread.traceF( tin0P , T("sinking [name]:    ")+T(pstts) ) ;
+                        {
+                        if( 1 == etThread.strIdF( tin0P , tIPDOS , pstts ) )
+                        etThread.strTrimF( tin0P , pstts ) ; ___( pstts ) ;
                     {
-                    if( 1 == etThread.strIdF( tin0P , tIPDOS , pstts ) )
-                    etThread.strTrimF( tin0P , pstts ) ; ___( pstts ) ;
+                    if( bFound )
+                    bFound = etThread.strSubstringF( tin0P , pstts , idf , sttq , tCRLF , tList , 1 ) ; ___( pstts ) ;
+                    etThread.delF( tin0P , pstts ) ;
                 {
-                if( bFound )
-                bFound = etThread.strSubstringF( tin0P , pstts , idf , sttq , tCRLF , tList , 1 ) ; ___( pstts ) ;
-                etThread.delF( tin0P , pstts ) ;
+                if( bFound && idf )
+                boolT bFound = etThread.strSubstringF( tin0P , pstts , idf , sttq , tRuleName , tList ) ; ___( pstts ) ;
+                ZE( strokeS* , pstts ) ;
             {
-            if( bFound && idf )
-            boolT bFound = etThread.strSubstringF( tin0P , pstts , idf , sttq , tRuleName , tList ) ; ___( pstts ) ;
-            ZE( strokeS* , pstts ) ;
-        {
-        while( idf )
-        stackC stRule( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
-        strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-        countT idf = 1 ;
-        TN( tCRLF     , "\r\n"       ) ;
-        TN( tRuleName , "Rule Name:" ) ;
-        TN( tIPDOS    , "IPDOS(tm) osFirewallBlockF" ) ;
+            while( !ether && idf )
+            stackC stRule( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            countT idf = 1 ;
+            TN( tCRLF     , "\r\n"       ) ;
+            TN( tRuleName , "Rule Name:" ) ;
+            TN( tIPDOS    , "IPDOS(tm) osFirewallBlockF" ) ;
 
-        }
-            etThread.delF( tin0P , posti ) ;
-            tList = T(posti) ;
-            etThread.boxGetF( tin0P , posti , costi , tLongMapped ) ; ___( posti ) ;
-            ZE( countT   , costi ) ;
-            ZE( osTextT* , posti ) ;
+            }
+                etThread.delF( tin0P , posti ) ;
+                tList = T(posti) ;
+                etThread.boxGetF( tin0P , posti , costi , tLongMapped ) ; ___( posti ) ;
+                ZE( countT   , costi ) ;
+                ZE( osTextT* , posti ) ;
+            {
+            TN( tList , "" ) ;
         {
-        TN( tList , "" ) ;
+        if( !ether )
 
         //  
         //  Action:                               Allow
@@ -135,7 +138,7 @@ TASK( tmWorkF )
 DONE( tmLaunchBatExeFilesF )
 }
     }
-        ++ s ; etThread.osSleepF( tin0P , TOCK >> 0 ) ;    //THIS IS FOR SAFETY TO PREVENT CPU PEGGING AT MY PUSHY DESIRE
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;    //THIS IS FOR SAFETY TO PREVENT CPU PEGGING AT MY PUSHY DESIRE
 
         if( bCallingWait ) ;//etRock.traceF( tin0P , T("calling diskWaitDirF") ) ;
         }
