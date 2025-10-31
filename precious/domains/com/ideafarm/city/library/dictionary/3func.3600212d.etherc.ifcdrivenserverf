@@ -342,7 +342,7 @@
                                                     {
                                                     if( info1P.bQuit || third || bSilent || POOP )
 
-                                                    if( bSilent && nnPeer != nnGorillaOuterOk1 ) osFirewallBlockF( tin0P , LF , nnPeer , T("bSilent is set") , T("ifcDrivenServerF / bSilent, so blocking peer [nnPeer]:    ")+T(nnPeer) ) ;
+                                                    if( bSilent && nnPeer != nnGorillaOuterOk1 ) stNnPeerBlock.sinkF( tin0P , countTC() , nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
 //bSilent = 0 ;
 
                                                     if( bShieldsDown ) bSilent = 0 ;
@@ -585,7 +585,7 @@
 
                                                     boolT bLoopback = nnPeer.isLoopbackOldDoNotUseF() ;
 
-                                                    if( !bPeerAllowed && nnPeer != nnGorillaOuterOk1 ) osFirewallBlockF( tin0P , LF , nnPeer , T("bPeerAllowed is not set") , T("ifcDrivenServerF / !bPeerAllowed, so blocking peer [nnPeer]:    ")+T(nnPeer) ) ;
+                                                    if( !bPeerAllowed && nnPeer != nnGorillaOuterOk1 ) stNnPeerBlock.sinkF( tin0P , countTC() , nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
 
 //bPeerAllowed = 1 ;
 
@@ -1065,10 +1065,11 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
         TN( tNnGorillaOuter , "10.0.9.9" ) ;    // A LEGAL VALUE THAT IS A "DON'T CARE" AS IT WILL LIKELY NEVER BE USED
         //CS:CODEsYNC: 3600212d 33000104 3300005b
 
-        textC& tRandomLabelPrefixLag = *(textC*)((count8S*)info2P.cArgApp)->c8 ;
-        textC& tRandomLabelPrefix    = *(textC*)((count8S*)info2P.cArgApp)->c7 ;
+        stackC& stNnPeerBlock         = *(stackC*)((count9S*)info2P.cArgApp)->c9 ;
+        textC&  tRandomLabelPrefixLag =  *(textC*)((count9S*)info2P.cArgApp)->c8 ;
+        textC&  tRandomLabelPrefix    =  *(textC*)((count9S*)info2P.cArgApp)->c7 ;
 
-        boolT& bShieldsDown = *(boolT*)((count8S*)info2P.cArgApp)->c5 ;
+        boolT& bShieldsDown = *(boolT*)((count9S*)info2P.cArgApp)->c5 ;
 
         const boolT bHttp    = info2P.idPortHint == ifcIDpORT_HTTP ;
         const boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;

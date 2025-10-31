@@ -997,7 +997,7 @@
 
                             TESTsCRATCH //U::TO FIND A BUG
                             }
-                                if( jobP.nnPeer != nnGorilla1P ) osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("requested url path not found") , tSayClientPrefix+T("requested url path not found [url]:    ")+T(psttName) ) ;
+                                if( jobP.nnPeer != nnGorilla1P ) stNnPeerBlock.sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                                 meP.getReplyF( tin0P , pRefReply , T("!nf") ) ; ___( pRefReply ) ;
                                 _IO_
                             {
@@ -1755,13 +1755,13 @@
 
                 }
                     break ;
-                    if( jobP.nnPeer != nnGorilla1P ) osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("unexpected url path") , tSayClientPrefix+T("unexpected url path [name]:    ")+T(psttName) ) ;
+                    if( jobP.nnPeer != nnGorilla1P ) stNnPeerBlock.sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                 {
                 if( !psttName || strCompareF( tin0P , T("/nobot/notify/stripe.20240206@1123") , psttName ) )
 
                 }
                     break ;
-                    if( jobP.nnPeer != nnGorilla1P ) osFirewallBlockF( tin0P , LF , jobP.nnPeer , T("unexpected domain") , tSayClientPrefix+T("unexpected domain [correctPrefix2,correctPrefix1,actualDomain]:    ")+tRandomLabelPrefixLag+tb4+tRandomLabelPrefix+tb4+T(psttDomain) ) ;
+                    if( jobP.nnPeer != nnGorilla1P ) stNnPeerBlock.sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                 {
                 if( !psttDomain || ( 1 != strIdF( tin0P , tRandomLabelPrefix , psttDomain ) && 1 != strIdF( tin0P , tRandomLabelPrefixLag , psttDomain ) ) )
 
@@ -1782,7 +1782,7 @@
                 ___( psttName ) ;
                 /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF / called  readRequestF [psttName]:    ")+T(psttName) , flTRACE_FORCEnOsILENCE ) ;
                 }
-                    idEscaped = meP.readRequestF( tin0P , bFail , psttName , psttQueries , psttDomain , psttLeverKV , swQuery , swHeader , psttAgent , postBody , bClose , jobP , psoP , tRandomLabelPrefix , tRandomLabelPrefixLag , nnGorilla1P , pHttpRawCommandServerCBFP ? "!@" : 0 ) ;
+                    idEscaped = meP.readRequestF( tin0P , bFail , psttName , psttQueries , psttDomain , psttLeverKV , swQuery , swHeader , psttAgent , postBody , bClose , jobP , psoP , tRandomLabelPrefix , tRandomLabelPrefixLag , nnGorilla1P , stNnPeerBlock , pHttpRawCommandServerCBFP ? "!@" : 0 ) ;
                     _IO_
                 {
                 /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF / calling readRequestF") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
@@ -1842,11 +1842,12 @@
 
             cacheC* pzCache = meP.pzCacheF() ;
 
-            textC& tRandomLabelPrefixLag = *(textC*)c8P.c8 ;
-            textC& tRandomLabelPrefix    = *(textC*)c8P.c7 ;
-            puseC& pusePeanutP           = *(puseC*)c8P.c1 ;
+            stackC& stNnPeerBlock         = *(stackC*)c9P.c9 ;
+            textC&  tRandomLabelPrefixLag =  *(textC*)c9P.c8 ;
+            textC&  tRandomLabelPrefix    =  *(textC*)c9P.c7 ;
+            puseC&  pusePeanutP           =  *(puseC*)c9P.c1 ;
 
-            count8S& c8P = *(count8S*)cArgAppP ;
+            count9S& c9P = *(count9S*)cArgAppP ;
             _IO_
         {
         TN( tSlashDeadman2    , "/deadman2" ) ;

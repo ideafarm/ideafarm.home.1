@@ -17,6 +17,8 @@ TODO
 
 DONE( tmWorkF )
 }
+    sgnDone_tmBlockF.waitF( tin0P ) ;
+
     THREADmODE2rESTORE0( flagsSave )
     }
         THREADmODE2oN0( flTHREADmODE2_UNLOCKpOOLiDENTITY )
@@ -48,8 +50,8 @@ DONE( tmWorkF )
         httpServerC_arg1S arg1S( TAG( TAGiDnULL ) , etThread , cArgApp , ifcIDpORT_HTTPS , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , T("World Wide Web Secured") ) ;    //ifcDrivenServerF WILL DO HANDSHAKE AFTER IT DECIDES TO NOT SILENTLY CLOSE THE CONNECTION ; THIS IS TO PREVENT MALICIOUS PEERS FROM EXPLOITING THE SHIT WITHIN OpenSSL
         httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , ifcIDpORT_HTTP  , flSOCKETc_null                                                      , T("World Wide Web") ) ;
 
-        countT cArgApp = (countT)&c8p ;
-        count8S c8p( /*(countT)&pusePeanut*/0 , (countT)&booksSurvey , (countT)&cLeverPassword , (countT)&swsUnconfirmedPeerDeleteEmailZipCountryByPassword , (countT)&bShieldsDown , (countT)&bksWebHookNotices , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
+        countT cArgApp = (countT)&c9p ;
+        count9S c9p( /*(countT)&pusePeanut*/0 , (countT)&booksSurvey , (countT)&cLeverPassword , (countT)&swsUnconfirmedPeerDeleteEmailZipCountryByPassword , (countT)&bShieldsDown , (countT)&bksWebHookNotices , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag , (countT)&stNnPeerBlock ) ;
 
         switchStackC swsUnconfirmedPeerDeleteEmailZipCountryByPassword( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLeverPassword , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS , ifcIDgRABlAYER_7BASEmISC1 ) ;
         ZE( countT , cLeverPassword ) ;
@@ -69,6 +71,11 @@ DONE( tmWorkF )
 
     nicNamesAllowedStripeWebHookNotificationsC nnAllowed( tin0P , etThread , ether , TICK << 4 ) ;      // "<< 4" IN PRODUCTION
 
+    etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmBlockF , sgnDone_tmBlockF , CBsTACKmIN << 1 ) , (countT)&stNnPeerBlock ) ;
+    signC sgnDone_tmBlockF( tin0P , TAG( TAGiDnULL ) ) ;
+
+    stackC stNnPeerBlock( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+
     etThread.osThreadF( TaRG2cBsTACK( tmCatchLabelPrefixF , CBsTACKmIN << 1 ) , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
     TN( tRandomLabelPrefixLag , "" ) ;
     TN( tRandomLabelPrefix    , "" ) ;
@@ -83,6 +90,21 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+DONE( tmBlockF )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TICK >> 2 ) ;
+        etThread.osFirewallBlockF( tin0P , LF , stNnPeerBlockP , T("http") , T("http blocking peers [idSet]:    ")+TF2(++idSet,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    {
+    while( !ether )
+    ZE( countT , idSet ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    stackC& stNnPeerBlockP = *(stackC*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmBlockF )
 
 DONE( tmCatchLabelPrefixF )
 }
