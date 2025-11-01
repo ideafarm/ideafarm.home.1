@@ -33,14 +33,14 @@ etThread.traceF( tin0P , T("ok") ) ;
 
                                     ;
                                             : tn
-                                            ? tb42
+                                            ? tb32
                                         : bToMe
-                                        ? tb84
+                                        ? tb64
                                     TN( tIndent2 , "" ) ; tIndent2 = bFromMe
 
                                     ;
-                                            : tb84
-                                            ? tb42
+                                            : tb64
+                                            ? tb32
                                         : bToMe
                                         ? tn
                                     TN( tIndent1 , "" ) ; tIndent1 = idLinkType == osIDlINKtYPE_NULL || bFromMe
@@ -51,9 +51,9 @@ etThread.traceF( tin0P , T("ok") ) ;
                                     TN( tIdSerialExpected , "        " ) ; if( bACK ) tIdSerialExpected = TF3(idSerialExpected,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
                                     TN( tIdSerial         , "" ) ; tIdSerial = TF3(idSerial,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
 
-                                    TN( tProtocol    , ppostProtocol[ protocol ] ) ;
-                                    TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+tCloseParen ; while( tDestination.csF( tin0P ) < 0x1f ) tDestination += tb ;
-                                    TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+tCloseParen ; while( tSource     .csF( tin0P ) < 0x1f ) tSource      += tb ;
+                                    TN( tProtocol    , ppostProtocol[ protocol ] ) ; while( tProtocol.csF( tin0P ) < 0x18 ) tProtocol += tb ;
+                                    TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
+                                    TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
 
                                     }
                                         }
@@ -370,26 +370,26 @@ const osTextT* postv = pcap_lib_version() ;
 //TN( tWantExactName   , "\\Device\\NPF_Loopback"      ) ;
 
 TN( tFINoN  , "FIN" ) ;
-TN( tFINoFF , "   " ) ;
+TN( tFINoFF , "---" ) ;
 TN( tSYNoN  , "SYN" ) ;
-TN( tSYNoFF , "   " ) ;
+TN( tSYNoFF , "---" ) ;
 TN( tRSToN  , "RST" ) ;
-TN( tRSToFF , "   " ) ;
+TN( tRSToFF , "---" ) ;
 TN( tPSHoN  , "PSH" ) ;
-TN( tPSHoFF , "   " ) ;
+TN( tPSHoFF , "---" ) ;
 TN( tACKoN  , "ACK" ) ;
-TN( tACKoFF , "   " ) ;
+TN( tACKoFF , "---" ) ;
 TN( tURGoN  , "URG" ) ;
-TN( tURGoFF , "   " ) ;
+TN( tURGoFF , "---" ) ;
 TN( tECEoN  , "ECE" ) ;
-TN( tECEoFF , "   " ) ;
+TN( tECEoFF , "---" ) ;
 TN( tCWRoN  , "CWR" ) ;
-TN( tCWRoFF , "   " ) ;
+TN( tCWRoFF , "---" ) ;
 
 TN( tCloseParen , ")" ) ;
 TN( tOpenParen , "(" ) ;
-TN( tb84 , "                                                                        " ) ;
-TN( tb42 , "                                    " ) ;
+TN( tb64 , "                                                                      " ) ;
+TN( tb32 , "                                   " ) ;
 TN( tb4 , "    " ) ;
 TN( tb  , " "    ) ;
 TN( tn  , ""    ) ;
