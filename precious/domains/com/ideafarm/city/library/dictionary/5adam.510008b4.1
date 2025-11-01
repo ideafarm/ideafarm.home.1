@@ -320,8 +320,9 @@ etThread.traceF( tin0P , T("ok") ) ;
                 ZE( int* , pInfo2 ) ;
             {
             if( !rc )
-            rc = pcap_activate( pHandle ) ;
-            rc = pcap_set_immediate_mode( pHandle , 1 ) ;
+            rc = pcap_activate(           pHandle        ) ;
+            rc = pcap_set_timeout(        pHandle , 2000 ) ;
+          //rc = pcap_set_immediate_mode( pHandle , 1    ) ;
 
             etThread.traceF( tin0P , T(pHandle?"aok":"nope") ) ;
             pcap_t* pHandle = pcap_create( pcDevice->name , postError ) ;

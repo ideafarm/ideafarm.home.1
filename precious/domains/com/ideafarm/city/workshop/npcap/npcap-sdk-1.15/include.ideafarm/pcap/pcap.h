@@ -466,7 +466,8 @@ PCAP_AVAILABLE_1_0
 PCAP_API int	pcap_set_rfmon(pcap_t *, int);
 
 PCAP_AVAILABLE_1_0
-PCAP_API int	pcap_set_timeout(pcap_t *, int);
+//PCAP_API int	       pcap_set_timeout(pcap_t *, int);
+  PCAP_API int __cdecl pcap_set_timeout(pcap_t *, int);
 
 PCAP_AVAILABLE_1_2
 PCAP_API int	pcap_set_tstamp_type(pcap_t *, int);
