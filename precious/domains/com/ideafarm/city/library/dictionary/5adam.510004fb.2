@@ -1878,15 +1878,30 @@ TELL( "cleaning up 0" )
                             periodDataS& pd = *(periodDataS*)&stPeriodData[ 1 ] ;
                             stPeriodData.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                             TELL( "tallying" )
+
+                            }
+                                break ;
+                                etThread.traceF( tin0P , T("tmEatTelemetrySysF / !exception / ignoring body with bad fingers") ) ;
+                                bBookHead = 1 ;
+                            {
+                            if( bFail )
     
-                            __( getNegAM( fingerTail ) - FINGERnEG_BOOK0cwRITEtAIL ) ;
-                            if( bQuitEatingP ) break ;
-                            while( !fingerTail && !bQuitEatingP ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 2 ) ; }
-                            countT& fingerTail = *(countT*)( pbi + sizeof( tellS ) + told.cbNote ) ;
-        
-                            __( getNegAM( told.finger2 ) - FINGERnEG_TELEMETRY2 ) ;
-                            __( getNegAM( told.finger1 ) - FINGERnEG_TELEMETRY1 ) ;
+                            }
+                                bFail = !!( getNegAM( fingerTail ) - FINGERnEG_BOOK0cwRITEtAIL ) ;
+                                if( bQuitEatingP ) break ;
+                                while( !fingerTail && !bQuitEatingP ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 2 ) ; }
+                                countT& fingerTail = *(countT*)( pbi + sizeof( tellS ) + told.cbNote ) ;
+                            {
+                            if( !bFail )        
+
+                            ) ;
+                                getNegAM( told.finger2 ) - FINGERnEG_TELEMETRY2
+                                ||
+                                getNegAM( told.finger1 ) - FINGERnEG_TELEMETRY1
+                            (
+                            boolT bFail =
                             TELL( "checking fingers" )
+
                             if( bQuitEatingP ) break ;
                             while( !told.finger2 && !bQuitEatingP ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 2 ) ; }
                             tellS& told = *(tellS*)pbi ;
