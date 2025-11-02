@@ -1,0 +1,215 @@
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+                            
+REST
+
+sgnDone_tmWorkF.waitF( tin0P ) ;
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
+
+TODO
+
+DONE( tmWorkF )
+}
+    etherC::loafIF( tin0P ) ;
+    etThread.traceF( tin0P , T("ok") ) ;
+
+    }
+//        ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
+
+        }
+            break ;
+            etThread.traceF( tin0P , T("no more events") ) ;
+        {
+        if( !tIdEventLath.csF( tin0P ) )
+
+        DEL( pSwPathValue ) ;
+        }
+            }
+                etThread.delF( tin0P , psttValue ) ;
+        
+                }
+                    }
+                        tIdEventLath = *pptValue[ offe ] ;
+                        etRock.traceF( tin0P , T("******************************************    ")+*pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] ) ;
+                        *pptValue[ offe ] = T(psttValue) ;
+                    {
+                    if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                {
+                for( countT offe = 0 ; offe < cPaths ; offe ++ )
+        
+                if( cPaths - cValues ) { BLAMMO ; }
+                countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+        
+                //etRock.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) ) ;
+                //etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
+        
+                strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+        
+                _IO_
+            {
+            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+            countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+            
+            ;
+            }
+                &tPathIdEvent ,
+            {
+            textC* pptPath[] =
+            
+            TN( tPathIdEvent , "\"data\"/item.00000001/\"id\"/" ) ;
+            
+            ;
+            }
+                &tValueIdEvent ,                                                                                                                                                    //CS:CODEsYNC: 510008af 510008af    ; CODE ASSUMES THAT tValueIdEvent IS AT OFFSET 0
+            {
+            textC* pptValue[] =
+
+            TN( tValueIdEvent , "" ) ;
+        {
+        if( pSwPathValue )
+
+        }        
+            }
+                }
+                    }
+                        }
+                            }
+                                DEL( pSwPathValue ) ;
+                                etRock.traceF( tin0P , tSayExCouldNotParseJson+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tDomainStripeApi ) ;
+                                POOPRqUIET
+                                countT rc = POOP ;
+                            {
+                            if( POOP )
+                            __Z( pSwPathValue ) ;
+                            ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                            //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            //etRock.traceF( tin0P , T("json response:") ) ;
+                        {
+                        else
+                        }
+                            etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tDomainStripeApi ) ;
+                            POOPRqUIET
+                            countT rc = POOP ;
+                        {
+                        if( POOP )
+                
+                        }
+                            }
+                                else if( costj ) break ;
+                                     if( cNest ) costj ++ ;
+                    
+                                else if( postj[ costj ] == '}' ) cNest -- ;
+                                     if( postj[ costj ] == '{' ) cNest ++ ;
+                    
+                                //putchar( postj[ costj ] ) ;
+
+                                if( !cbIn ) break ;
+                                countT cbIn = sock.readF( tin0P , postj + costj , 1 ) ;
+                            {
+                            while( !POOP )
+                            ZE( countT , cNest ) ;
+                            ZE( countT , costj ) ;
+                        {
+                        thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
+//                        osTextT postj[ TUCK << 3 ] ;
+                    {
+                    else
+                    }
+                        etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tDomainStripeApi ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    if( POOP )
+                    sock.writeF( tin0P , (osTextT*)tSay ) ;
+                    //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etRock.traceF( tin0P , T("request:") ) ;
+
+                    tIdEventLath = tn ;
+                    TN( tSay , "" ) ; tSay = T("GET /v1/events?limit=1")+(tIdEventLath.csF(tin0P)?tStartingAfter+tIdEventLath:tn)+T(" HTTP/1.1\r\nAuthorization: Bearer ")+tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
+                {
+                else
+                }
+                    etRock.traceF( tin0P , tSayExCouldNotConnectToServer+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tDomainStripeApi ) ;
+                    POOPRqUIET
+                    countT rc = POOP ;
+                {
+                if( POOP )
+                sock.connectF( tin0P , 443 , nnServer ) ;
+                socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL ) ;
+
+                //etRock.traceF( tin0P , T("connecting to IPv4:    ")+T(nnServer) ) ;
+            {
+            else
+            }
+                etRock.traceF( tin0P , tSayExCouldNotObtainNnServer+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tDomainStripeApi ) ;
+                POOPRqUIET
+                countT rc = POOP ;
+            {
+            if( POOP )
+            nicNameC nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tDomainStripeApi ) ;
+
+            SCOOPS
+        {
+        IFsCRATCHoK
+        ZE( switchC* , pSwPathValue ) ;
+        ZE( strokeS* , psttPath     ) ;
+    {
+    while( !ether )
+    TN( tIdEventLath , "" ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    /**/etRock.traceF( tin0P , T("[tStripeApiKeyTest]:    ")+tStripeApiKeyTest ) ;
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tStripeApiKeyTest = T(psttEat) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.stripe.api.key.test")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+    TN( tStripeApiKeyTest             , "" ) ;
+
+    TN( tSayExCouldNotParseJson       , "!exception / could not parse json [rc,domain]:    " ) ;
+    TN( tSayExCouldNotReadFromSocket  , "!exception / could not read from socket [rc,domain]:    " ) ;
+    TN( tSayExCouldNotWriteToSocket   , "!exception / could not write to socket [rc,domain]:    " ) ;
+    TN( tSayExCouldNotConnectToServer , "!exception / could not connect to server [rc,domain]:    " ) ;
+    TN( tSayExCouldNotObtainNnServer  , "!exception / could not obtain IPv4 [rc,domain]:    " ) ;
+
+    TN( tStartingAfter   , "&starting_after="        ) ;
+    TN( tPathEndpoint    , "/v1/webhook_endpoints/" ) ;
+    TN( tDomainStripeApi , "api.stripe.com" ) ;
+    TN( tb4 , "    " ) ;
+    TN( tb , " " ) ;
+    TN( tn , "" ) ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    // FOR SIMPLICITY AND RELIABILITY, A NEW CONNECTION IS ESTABLISHED FOR EACH ITERATION (THIS CAN BE OPTIMIZED)
+    // THIS IS JUST SKELETON CODE FOR PROOF OF CONCEPT ; I PERIODICALLY UPDATE THE STRIPE WEBHOOK DESTINATION URL FOR THE TEST ENVIRONMENT, BUT ALWAYS TO THE SAME VALUE
+
+    _IO_
+{
+if( pTaskP )
+TASK( tmWorkF )
+
+osTextT postj[ TICK ] ;
+
+
+/*1*/WAKEhIDE( "doodle stripe api new events" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
