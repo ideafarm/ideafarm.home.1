@@ -36,11 +36,22 @@ DONE( tmWorkF )
         
                 }
                     }
-                        tIdEventLath = *pptValue[ offe ] ;
-                        etRock.traceF( tin0P , T("******************************************    ")+*pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] ) ;
-                        *pptValue[ offe ] = T(psttValue) ;
+                        etThread.delF( tin0P , pstts ) ;
+                        }
+                            tIdEventLath = *pptValue[ offe ] ;
+                            etRock.traceF( tin0P , T("******************************************    ")+T(psttPath) + T("   :    ") + *pptValue[ offe ] ) ;
+                            *pptValue[ offe ] = T(psttValue) ;
+                        {
+                        if( 8 == pstts->idAdam )
+                        etThread.strSubstringF( tin0P , pstts , idf , sttq , tPathIdEvent2 , psttPath , 0 , 0 ) ; ___( pstts ) ;
+                        countT idf = 1 + tPathIdEvent1.csF( tin0P ) ;
+                        strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                        ZE( strokeS* , pstts ) ;
                     {
-                    if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                    if( 1 == etThread.strIdF( tin0P , tPathIdEvent1 , psttPath ) )
+
+
+                    //if( !etThread.strCompareF( tin0P , psttPath , *pptP ath[ offe ] ) )
                 {
                 for( countT offe = 0 ; offe < cPaths ; offe ++ )
         
@@ -65,7 +76,9 @@ DONE( tmWorkF )
             {
             textC* pptPath[] =
             
-            TN( tPathIdEvent , "\"data\"/item.00000001/\"id\"/" ) ;
+            TN( tPathIdEvent2 , "/\"id\"/" ) ;
+            TN( tPathIdEvent1 , "\"data\"/item." ) ;
+            TN( tPathIdEvent  , "\"data\"/item.00000001/\"id\"/" ) ;
             
             ;
             }
@@ -134,7 +147,7 @@ DONE( tmWorkF )
                     //etRock.traceF( tin0P , T("request:") ) ;
 
                     tIdEventLath = tn ;
-                    TN( tSay , "" ) ; tSay = T("GET /v1/events?limit=1")+(tIdEventLath.csF(tin0P)?tStartingAfter+tIdEventLath:tn)+T(" HTTP/1.1\r\nAuthorization: Bearer ")+tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
+                    TN( tSay , "" ) ; tSay = T("GET /v1/events?limit=16")+(tIdEventLath.csF(tin0P)?tStartingAfter+tIdEventLath:tn)+T(" HTTP/1.1\r\nAuthorization: Bearer ")+tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
                 {
                 else
                 }
