@@ -34,6 +34,8 @@
     }
         idsDoP = ++ idsMax ; // ')'
 
+//        if( idsDoP <= idsMax ) bMatch = 0 ; //20251103@1931: ADDED W/O ANALYSIS
+
         }
             }
                 }
@@ -327,7 +329,8 @@
             const countT idbDoSaveInLoop = idbDoP ;
             const countT idsDoSaveInLoop = idsDoP ;
         {
-        if( idsDoP <= idsMax && idbDoP <= psttBigP->idAdam ) for(;;)
+  //      while( idsDoP <= idsMax && idbDoP <= psttBigP->idAdam )                                 //20251103@1914: W/O ANALYSIS
+        if( idsDoP <= idsMax && idbDoP <= psttBigP->idAdam ) for(;;)                //U:: BUG: 20251103@1914: OBSERVED TO BE ACCESSING STRING BEYOND ITS LENGTH
         ZE( countT , idbDoLathMatch ) ;
         ZE( countT , idsDoLathMatch ) ;
 

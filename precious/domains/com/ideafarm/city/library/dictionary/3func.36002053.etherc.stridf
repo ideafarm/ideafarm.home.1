@@ -31,16 +31,16 @@
                 }
                     }
                         idFirstP  = 0 ;_WQ
-}
-    ((tin123S&)tin0P).pcUtility[ 0 ] ++ ;
-    traceF( tin0P , T("[idFirstP ]:    ")+TF2(idFirstP ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    traceF( tin0P , T("[csttSmall]:    ")+TF2(csttSmall,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    traceF( tin0P , T("[csttBig  ]:    ")+TF2(csttBig  ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    traceF( tin0P , T("[idbDo    ]:    ")+TF2(idbDo    ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    traceF( tin0P , T("[idHit    ]:    ")+TF2(idHit    ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    ((tin123S&)tin0P).pcUtility[ 0 ] -- ;
-{
-if( ((tin123S&)tin0P).pcUtility[ 0 ] )
+//}
+//    ((tin123S&)tin0P).pcUtility[ 0 ] ++ ;
+//    traceF( tin0P , T("[idFirstP ]:    ")+TF2(idFirstP ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//    traceF( tin0P , T("[csttSmall]:    ")+TF2(csttSmall,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//    traceF( tin0P , T("[csttBig  ]:    ")+TF2(csttBig  ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//    traceF( tin0P , T("[idbDo    ]:    ")+TF2(idbDo    ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//    traceF( tin0P , T("[idHit    ]:    ")+TF2(idHit    ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//    ((tin123S&)tin0P).pcUtility[ 0 ] -- ;
+//{
+//if( ((tin123S&)tin0P).pcUtility[ 0 ] )
                     {
                     if( !idHit || idFirstP > csttBig )
 
@@ -60,10 +60,25 @@ if( ((tin123S&)tin0P).pcUtility[ 0 ] )
                         }
                             else if( !strComparePrivateF( psttBigP + CSpREFIX - 1 + idHit , psttSmall ) ) break ;
                             }
-                                else                                                                 idbDo = 0 ;
+                                else                                                                           idbDo = 0 ;
                                 if( sssAndF( tin0P , pstMatchP , flagsMatchP , psttSmallP , psttBigP , idsDo , idbDo ) ) break ;
                                 idbDo = idHit ;_WQ
                                 countT idsDo = 1 ;_WQ
+
+}
+    ((tin123S&)tin0P).pcUtility[ 0 ] ++ ;
+//    traceF( tin0P , T("[idHit]     :    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//    delF( tin0P , psttd ) ;
+//    traceF( tin0P , T("[psttSmallP]:    ")+T(psttd) ) ;
+//    strDumpStrokesIF( tin0P , psttd , psttSmallP ) ; ___( psttd ) ;
+//    delF( tin0P , psttd ) ;
+//    traceF( tin0P , T("[psttBigP]  :    ")+T(psttd) ) ;
+//    strDumpStrokesIF( tin0P , psttd , psttBigP ) ; ___( psttd ) ;
+//    ZE( strokeS* , psttd ) ;
+    traceF( tin0P , T("[psttBigP]  :    ")+T(psttBigP) ) ;
+    ((tin123S&)tin0P).pcUtility[ 0 ] -- ;
+{
+if( ((tin123S&)tin0P).pcUtility[ 0 ] )
                             {
                             if( bSSS )
                         {
