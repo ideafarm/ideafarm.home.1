@@ -2456,8 +2456,8 @@ void elf_obey_C::liveF( void )
             }
             else
             {
-                //char postAll[  0x80 ] = "wdw "                          "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ;
-                  char postAll[  0x80 ] = "start "              " /wait " "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ;
+                char postAll[  0x80 ] = "wdw "                          "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ;
+                //  char postAll[  0x80 ] = "start "              " /wait " "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ;
 
                 #if !defined( TELL )
                     strcat( postAll , " !noTells" ) ;
