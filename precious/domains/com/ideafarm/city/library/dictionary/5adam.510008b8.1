@@ -33,8 +33,9 @@ DONE( tmWorkF )
                 break ;
                 etThread.traceF( tin0P , T("no more events") ) ;
             {
-            //if( !tIdEventLath.csF( tin0P ) )
-            if( idInner == 2 )
+            if( !etThread.strCompareF( tin0P , tValueMore , tFalse ) )
+
+            if( tIdEventWoth.csF( tin0P ) ) tIdEventWothLag = tIdEventWoth ;
 
             etRock.traceF( tin0P , tPrefix+T("end   " DASH79) ) ;
             DEL( pSwPathValue ) ;
@@ -45,7 +46,11 @@ DONE( tmWorkF )
                    }
 //((tin123S&)tin0P).pcUtility[ 0 ] -- ;
                         }
-                            if( !offe ) tIdEventLathSticky = tIdEventLath = *pptValue[ offe ] ;
+                            }
+                                if( !tIdEventWoth.csF( tin0P ) )   tIdEventWoth = *pptValue[ offe ] ;
+                                                                 //tIdEventLath = *pptValue[ offe ] ;
+                            {
+                            if( !offe )
                             etRock.traceF( tin0P , T("****    ")+T(psttPath) + T("   :    ") + *pptValue[ offe ] ) ;
                             *pptValue[ offe ] = T(psttValue) ;
                         {
@@ -139,11 +144,25 @@ DONE( tmWorkF )
                         {
                         if( POOP )
                         sock.writeF( tin0P , (osTextT*)tSay ) ;
-                        //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                        //etRock.traceF( tin0P , T("request:") ) ;
+                        etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etRock.traceF( tin0P , T("request:") ) ;
 
-                        tIdEventLath = tn ;
-                        TN( tSay , "" ) ; tSay = T("GET /v1/events?limit=1")+(tIdEventLath.csF(tin0P)?tStartingAfter+tIdEventLath:tn)+T(" HTTP/1.1\r\nAuthorization: Bearer ")+tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
+                        TN( tSay , "" ) ; tSay = tSay1+(tIdEventWothLag.csF(tin0P)?tEndingBefore+tIdEventWothLag:tn)+T(" HTTP/1.1\r\nAuthorization: Bearer ")+tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
+
+                        ) ;
+
+                            "&types[]=customer.subscription.updated"
+                            "&types[]=customer.subscription.trial_will_end"
+                            "&types[]=customer.subscription.resumed"
+                            "&types[]=customer.subscription.pending_update_expired"
+                            "&types[]=customer.subscription.pending_update_applied"
+                            "&types[]=customer.subscription.paused"
+                            "&types[]=customer.subscription.deleted"
+                            "&types[]=customer.subscription.created"
+                            "&types[]=checkout.session.completed"
+                            "GET /v1/events?limit=32"
+
+                        TN( tSay1 ,
                     {
                     else
                     }
@@ -177,31 +196,28 @@ DONE( tmWorkF )
             idInner ++ ;
         {
         while( !ether )
-        TN( tIdEventLath , "" ) ; tIdEventLath = tIdEventLathSticky ;
-        idOuter ++ ;
+        //TN( tIdEventLath , "" ) ;               // "LATH" MEANS "LATH IN THE LIST, WHICH IS THE OLDEST      EVENT IN THE LIST RETURNED IN THIS PASS"
+          TN( tIdEventWoth , "" ) ;               // "WOTH" MEANS "WOTH IN THE LIST, WHICH IS THE MOST RECENT EVENT IN THE LIST RETURNED IN THIS PASS"
+        idOuter ++ ;                              // "WOTH STICKY" MEANS "WOTH IN THE PREVIOUS LIST, WHICH IS THE MOST RECENT EVENT IN THE LIST RETURNED IN THE PREVIOUS PASS"
     {
     while( !ether )
     ZE( countT , idInner ) ;
     ZE( countT , idOuter ) ;
 
-    TN( tIdEventLathSticky , "evt_1SPQy5LzWCJsgIUVkt8RJxBG" ) ;
+    /**/etRock.traceF( tin0P , T("initial value of ending before [tIdEventWothLag]:    ")+tIdEventWothLag ) ;         // THE STRIPE API RETURNS EVENTS IN REVERSE CHRONOLOGICAL ORDER
 
-    //CNR: TN( tIdEventLathSticky , "evt_3SPQy2LzWCJsgIUV1t7U21F7" ) ;
-    //SAMEO: tIdEventLathSticky , "evt_1SPQy5LzWCJsgIUVkt8RJxBG" ) ;
-    //TN( tIdEventLathSticky , "evt_1SPQy6LzWCJsgIUV0awwujs1" ) ;
-    //TN( tIdEventLathSticky , "evt_1SPQy6LzWCJsgIUVGrU3DEhd" ) ;
-    //TN( tIdEventLathSticky , "evt_3SPQy2LzWCJsgIUV1t7U21F7" ) ;
-    //TN( tIdEventLathSticky , "evt_1SPQy5LzWCJsgIUV5BBbc364" ) ;
-    //TN( tIdEventLathSticky , "evt_1SPQy5LzWCJsgIUVy0OHubSf" ) ;
-    //TOO OLD: TN( tIdEventLathSticky , "evt_1SELZvLzWCJsgIUVTF9RZKnP" ) ;
+    TN( tIdEventWothLag , "evt_1SQ8fHLzWCJsgIUVtPsnvQuA" ) ;                    //U::LOAD THIS FROM A FILE, AND KEEP THE FILE UPDATED AS I RECEIVE EVENTS
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     ;
     }
+        &tPathMore    ,
         &tPathType    ,
-        &tPathIdEvent ,
+        &tPathIdEvent ,         //MUST BE AT OFFSET 0
     {
     textC* pptPath[] =
+
+    TN( tPathMore , "\"has_more\"/" ) ;
 
     ;
 
@@ -227,11 +243,13 @@ DONE( tmWorkF )
 
     ;
     }
+        &tValueMore    ,                                                                                                                                                    //CS:CODEsYNC: 510008af 510008af    ; CODE ASSUMES THAT tValueIdEvent IS AT OFFSET 0
         &tValueType    ,                                                                                                                                                    //CS:CODEsYNC: 510008af 510008af    ; CODE ASSUMES THAT tValueIdEvent IS AT OFFSET 0
         &tValueIdEvent ,                                                                                                                                                    //CS:CODEsYNC: 510008af 510008af    ; CODE ASSUMES THAT tValueIdEvent IS AT OFFSET 0
     {
     textC* pptValue[] =
 
+    TN( tValueMore    , "" ) ;
     TN( tValueType    , "" ) ;
     TN( tValueIdEvent , "" ) ;
 
@@ -250,9 +268,10 @@ DONE( tmWorkF )
     TN( tSayExCouldNotConnectToServer , "!exception / could not connect to server [rc,domain]:    " ) ;
     TN( tSayExCouldNotObtainNnServer  , "!exception / could not obtain IPv4 [rc,domain]:    " ) ;
 
-    TN( tStartingAfter   , "&starting_after="        ) ;
+    TN( tEndingBefore   , "&ending_before="        ) ;
     TN( tPathEndpoint    , "/v1/webhook_endpoints/" ) ;
     TN( tDomainStripeApi , "api.stripe.com" ) ;
+    TN( tFalse , "false" ) ;
     TN( tDot , "."    ) ;
     TN( tb4  , "    " ) ;
     TN( tb   , " "    ) ;
