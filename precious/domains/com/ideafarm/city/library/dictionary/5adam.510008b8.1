@@ -53,6 +53,16 @@ DONE( tmWorkF )
                                         etThread.traceF( tin0P , psttLong ) ;
                                         etThread.boxPutGenerationF( tin0P , psttLong , T("///d/save/event") , 0 , tEvent , tEvent.csF( tin0P ) , 0 , flOPENdETAILS_null , T(".ttt") ) ;
                                         ZE( strokeS* , psttLong ) ;
+
+                                        etThread.traceF( tin0P , T("ifcIDaDAM_QUERYsTRIPEeVENTS / booked  [nnPeer,costae]:    ")+T(nnZe)+tb4+TF2(costae,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        bksWebHookNotices.writeF( tin0P , (byteT*)pcHeader , sizeof pcHeader , postze , costae , flBOOKScwRITE_ALLOWoDDlENGTH | flBOOKScwRITE_ALLoRnONE , 0 ) ;
+
+                                        *(nicNameC*)&pcHeader[ 4 ] = nnZe ;
+                                        putNegAM( pcHeader[ 0 ] , FINGERnEG_WEBhOOKnOTICES ) ;
+                                        count02T pcHeader[] = { 0 , 1 , costae , fliWEBhOOKnOTICE_NEW , 0 , 0 , 0 , 0 } ;
+
+                                        countT   costae = tEvent.csF( tin0P ) + 1 ;
+                                        osTextT* postze = tEvent ;
                                     {
                                     else
                                     if( !tEvent.csF( tin0P ) ) etRock.traceF( tin0P , T("!exception / null length event") ) ;
@@ -81,7 +91,7 @@ DONE( tmWorkF )
                     countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
 
                     //etRock.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) ) ;
-                    etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
+                    //etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
             
                     strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                     psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -214,6 +224,8 @@ DONE( tmWorkF )
     ZE( countT , idInner ) ;
     ZE( countT , idOuter ) ;
 
+    booksC bksWebHookNotices( tin0P , TAG( TAGiDnULL ) , "webhook.notices" , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
+
     /**/etRock.traceF( tin0P , T("initial value of ending before [tIdEventWothLag]:    ")+tIdEventWothLag ) ;         // THE STRIPE API RETURNS EVENTS IN REVERSE CHRONOLOGICAL ORDER
 
     }
@@ -320,6 +332,7 @@ DONE( tmWorkF )
     TN( tb4  , "    " ) ;
     TN( tb   , " "    ) ;
     TN( tn   , ""     ) ;
+    const nicNameC nnZe ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
