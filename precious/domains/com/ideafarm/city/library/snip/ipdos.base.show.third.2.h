@@ -33549,7 +33549,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3407a.etherC.boxMailGetF!||
  countT boxMenuF( tin0S& tin0P , soulC& soulP , const strokeS* const psttLikeP , grabC* pGrabP = 0 , const countT cMaxP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3406e.etherC.boxMenuF!||
- voidT boxMenuIdRangeF( tin0S& tin0P , countT& idMinP , countT& idMaxP , const strokeS* psttLikeP , const countT csttEstimateP , strokeS sttDelimiterP = strokeS() ) ;
+ voidT boxMenuIdRangeF( tin0S& tin0P , countT& idMinP , countT& idMaxP , const strokeS* psttLikeP , const countT csttEstimateP , strokeS sttDelimiterP = strokeS() , const countT cSuffixesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3407e.etherC.boxMenuIdRangeF!||
  countT boxPourF( tin0S& tin0P , const strokeS* const psttHostP , const strokeS* const psttLikeToP , const strokeS* const psttLikeFromP , const countT csttEstimateP , const countT cMaxP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34082.etherC.boxPourF!||
