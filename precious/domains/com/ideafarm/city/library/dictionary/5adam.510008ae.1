@@ -113,11 +113,14 @@ DONE( tmWorkF )
                                                 }
                                                     }
                                                         }
-                                                            __1 ;
+                                                            }
+                                                                __1 ;
+                                                            {
+                                                            if( !ids )
+                                                            stNnUntrustedReported.sinkF( tin0P , ids , nnPeer3 , flSTACKsINK_UNIQUE ) ;
+                                                            ZE( countT , ids ) ;
                                                         {
-                                                        if( !ids )
-                                                        stNnUntrustedReported.sinkF( tin0P , ids , nnPeer3 , flSTACKsINK_UNIQUE ) ;
-                                                        ZE( countT , ids ) ;
+                                                        if( ~nnPeer3 )
 
                                                         etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
                                                     {
@@ -131,7 +134,7 @@ DONE( tmWorkF )
                                                         stNnUntrustedReported.sinkF( tin0P , ids , nnPeer3 , flSTACKsINK_QUERY ) ;
                                                         ZE( countT , ids ) ;
                                                     {
-                                                    if( stNnUntrustedReported )
+                                                    if( ~nnPeer3 && stNnUntrustedReported )
                                                     ZE( boolT , bFound ) ;
                                                 {
                                                 if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueUpdatedLanName ) )
@@ -139,11 +142,14 @@ DONE( tmWorkF )
                                                 }
                                                     }
                                                         }
-                                                            __1 ;
+                                                            }
+                                                                __1 ;
+                                                            {
+                                                            if( !ids )
+                                                            stNnUntrustedReported.sinkF( tin0P , ids , nnPeer2 , flSTACKsINK_UNIQUE ) ;
+                                                            ZE( countT , ids ) ;
                                                         {
-                                                        if( !ids )
-                                                        stNnUntrustedReported.sinkF( tin0P , ids , nnPeer2 , flSTACKsINK_UNIQUE ) ;
-                                                        ZE( countT , ids ) ;
+                                                        if( ~nnPeer2 )
 
                                                         etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
                                                     {
@@ -157,7 +163,7 @@ DONE( tmWorkF )
                                                         stNnUntrustedReported.sinkF( tin0P , ids , nnPeer2 , flSTACKsINK_QUERY ) ;
                                                         ZE( countT , ids ) ;
                                                     {
-                                                    if( stNnUntrustedReported )
+                                                    if( ~nnPeer2 && stNnUntrustedReported )
                                                     ZE( boolT , bFound ) ;
                                                 {
                                                 if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueCreatedLanName ) )
@@ -165,10 +171,13 @@ DONE( tmWorkF )
                                                 }
                                                     }
                                                         }
-                                                            __1 ;
+                                                            }
+                                                                __1 ;
+                                                            {
+                                                            if( !ids )
+                                                            stNnUntrustedReported.sinkF( tin0P , ids , nnPeer1 , flSTACKsINK_UNIQUE ) ;
                                                         {
-                                                        if( !ids )
-                                                        stNnUntrustedReported.sinkF( tin0P , ids , nnPeer1 , flSTACKsINK_UNIQUE ) ;
+                                                        if( ~nnPeer1 )
                                                         ZE( countT , ids ) ;
 
                                                         etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
@@ -183,7 +192,7 @@ DONE( tmWorkF )
                                                         stNnUntrustedReported.sinkF( tin0P , ids , nnPeer1 , flSTACKsINK_QUERY ) ;
                                                         ZE( countT , ids ) ;
                                                     {
-                                                    if( stNnUntrustedReported )
+                                                    if( ~nnPeer1 && stNnUntrustedReported )
                                                     ZE( boolT , bFound ) ;
                                                 {
                                                 if( etThread.strCompareF( tin0P , tLanNameExpected , psttValuePaidLanName ) )
@@ -192,9 +201,9 @@ DONE( tmWorkF )
                                                  ZE( strokeS* , psttPeer2Domain ) ; etThread.sockPsttHostF( tin0P , psttPeer2Domain , nnPeer2 ) ; ___( psttPeer2Domain ) ;
                                                  ZE( strokeS* , psttPeer1Domain ) ; etThread.sockPsttHostF( tin0P , psttPeer1Domain , nnPeer1 ) ; ___( psttPeer1Domain ) ;
 
-                                                nicNameC nnPeer3 = etThread.sockNicNameF( tin0P , tNnPeer3 ) ;
-                                                nicNameC nnPeer2 = etThread.sockNicNameF( tin0P , tNnPeer2 ) ;
-                                                nicNameC nnPeer1 = etThread.sockNicNameF( tin0P , tNnPeer1 ) ;
+                                                nicNameC nnPeer3 = etThread.sockNicNameF( tin0P , tNnPeer3 ) ;      // THIS VALUE WILL BE NULL IF THE EVENT WAS BOOKED BY ifcIDaDAM_QUERYsTRIPEeVENTS
+                                                nicNameC nnPeer2 = etThread.sockNicNameF( tin0P , tNnPeer2 ) ;      // THIS VALUE WILL BE NULL IF THE EVENT WAS BOOKED BY ifcIDaDAM_QUERYsTRIPEeVENTS
+                                                nicNameC nnPeer1 = etThread.sockNicNameF( tin0P , tNnPeer1 ) ;      // THIS VALUE WILL BE NULL IF THE EVENT WAS BOOKED BY ifcIDaDAM_QUERYsTRIPEeVENTS
                                             {
                                             if( bValidEvent )
 
