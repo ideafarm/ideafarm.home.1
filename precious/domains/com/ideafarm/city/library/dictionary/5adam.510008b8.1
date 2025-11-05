@@ -20,11 +20,6 @@ DONE( tmWorkF )
     etherC::loafIF( tin0P ) ;
     etThread.traceF( tin0P , T("ok") ) ;
 
-//etThread.delF( tin0P , postj2 ) ;
-//etThread.delF( tin0P , postj1 ) ;
-//etThread.boxPutF( tin0P , T("///ideafarm/tmp/stripe.2.ttt") , postj2 , costj2 ) ;
-//etThread.boxPutF( tin0P , T("///ideafarm/tmp/stripe.1.ttt") , postj1 , costj1 ) ;
-
     }
         ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
 
@@ -35,27 +30,47 @@ DONE( tmWorkF )
             {
             if( !etThread.strCompareF( tin0P , tValueMore , tFalse ) )
 
-            if( tIdEventWoth.csF( tin0P ) ) tIdEventWothLag = tIdEventWoth ;
+            }
+                etThread.boxPutF( tin0P , tLongStopAtThisEvent , tIdEventWothLag , tIdEventWothLag.csF( tin0P ) ) ;
+                tIdEventWothLag = tIdEventWoth ;
+            {
+            if( tIdEventWoth.csF( tin0P ) )
 
             etRock.traceF( tin0P , tPrefix+T("end   " DASH79) ) ;
+
             DEL( pSwPathValue ) ;
             }
                 }
                     etThread.delF( tin0P , psttValue ) ;
             
                    }
-//((tin123S&)tin0P).pcUtility[ 0 ] -- ;
                         }
                             }
-                                if( !tIdEventWoth.csF( tin0P ) )   tIdEventWoth = *pptValue[ offe ] ;
-                                                                 //tIdEventLath = *pptValue[ offe ] ;
+                                }
+                                    break ;
+                                    }
+                                        etThread.delF( tin0P , psttLong ) ;
+                                        etThread.traceF( tin0P , psttLong ) ;
+                                        etThread.boxPutGenerationF( tin0P , psttLong , T("///d/save/event") , 0 , tEvent , tEvent.csF( tin0P ) , 0 , flOPENdETAILS_null , T(".ttt") ) ;
+                                        ZE( strokeS* , psttLong ) ;
+                                    {
+                                    else
+                                    if( !tEvent.csF( tin0P ) ) etRock.traceF( tin0P , T("!exception / null length event") ) ;
+                                    TN( tEvent , "" ) ; tEvent = *pptValue[ offe ] ;
+                                {
+                                case 1 :                                                                                                               //CS:CODEsYNC: 510008b8 510008b8 510008b8    ; CODE ASSUMES THAT tValueEvent   IS AT OFFSET 1
+                                }
+                                    break ;
+                                    if( !tIdEventWoth.csF( tin0P ) )   tIdEventWoth = *pptValue[ offe ] ;
+                                                                     //tIdEventLath = *pptValue[ offe ] ;
+                                {
+                                case 0 :                                                                                                               //CS:CODEsYNC: 510008b8 510008b8 510008b8    ; CODE ASSUMES THAT tValueIdEvent IS AT OFFSET 0
                             {
-                            if( !offe )
+                            switch( offe )
                             etRock.traceF( tin0P , T("****    ")+T(psttPath) + T("   :    ") + *pptValue[ offe ] ) ;
                             *pptValue[ offe ] = T(psttValue) ;
                         {
                         if( 1 == etThread.strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , *pptPath[ offe ] , psttPath , 0 , 1 ) && !idf )
-//((tin123S&)tin0P).pcUtility[ 0 ] ++ ;
                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                         countT idf = 1 ;
                     {
@@ -66,7 +81,7 @@ DONE( tmWorkF )
                     countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
 
                     //etRock.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) ) ;
-                    //etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
+                    etRock.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
             
                     strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                     psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -106,13 +121,8 @@ DONE( tmWorkF )
                             }
                                 etThread.delF( tin0P , psttLong ) ;
                                 etThread.traceF( tin0P , psttLong ) ;
-//((tin123S&)tin0P).pcUtility[ 0 ] -- ;
                                 etThread.boxPutGenerationF( tin0P , psttLong , T("///d/save/stripe") , costj + TUCK , postj , costj , 0 , flOPENdETAILS_null , T(".ttt") ) ;
                                 ZE( strokeS* , psttLong ) ;
-//((tin123S&)tin0P).pcUtility[ 0 ] ++ ;
-
-
-                                //etThread.boxPutF( tin0P , T("///ideafarm/tmp/stripe.")+TF2(idInner,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".ttt") , postj , costj ) ;
 
                                 }
                                     }
@@ -144,8 +154,8 @@ DONE( tmWorkF )
                         {
                         if( POOP )
                         sock.writeF( tin0P , (osTextT*)tSay ) ;
-                        etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                        etRock.traceF( tin0P , T("request:") ) ;
+                        //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        //etRock.traceF( tin0P , T("request:") ) ;
 
                         TN( tSay , "" ) ; tSay = tSay1+(tIdEventWothLag.csF(tin0P)?tEndingBefore+tIdEventWothLag:tn)+T(" HTTP/1.1\r\nAuthorization: Bearer ")+tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
 
@@ -206,16 +216,48 @@ DONE( tmWorkF )
 
     /**/etRock.traceF( tin0P , T("initial value of ending before [tIdEventWothLag]:    ")+tIdEventWothLag ) ;         // THE STRIPE API RETURNS EVENTS IN REVERSE CHRONOLOGICAL ORDER
 
-    TN( tIdEventWothLag , "evt_1SQ8fHLzWCJsgIUVtPsnvQuA" ) ;                    //U::LOAD THIS FROM A FILE, AND KEEP THE FILE UPDATED AS I RECEIVE EVENTS
+    }
+        }
+            }
+                etThread.delF( tin0P , posti ) ;
+                tIdEventWothLag = T(posti) ;
+            {
+            else
+            }
+                etRock.traceF( tin0P , T("!exception / could not read [tLongStopAtThisEvent]:    ")+tLongStopAtThisEvent ) ;
+                POOPRqUIET
+            {
+            if( POOP )
+            ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tLongStopAtThisEvent , 1 ) ; ___( posti ) ;
+            SCOOPS
+        {
+        IFsCRATCHoK
+        ZE( countT   , costi ) ;
+        ZE( osTextT* , posti ) ;
+    {
+    TN( tIdEventWothLag , "evt_1SQC6fLzWCJsgIUVr8Yj2U4P" ) ;
+    TN( tLongStopAtThisEvent , "" ) ; tLongStopAtThisEvent = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_QUERYsTRIPEeVENTS)+T("/stop.at.this.event") ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     ;
     }
         &tPathMore    ,
         &tPathType    ,
-        &tPathIdEvent ,         //MUST BE AT OFFSET 0
+        &tPathEvent   ,         //CS:CODEsYNC: 510008b8 510008b8 510008b8    ; CODE ASSUMES THAT tValueEvent   IS AT OFFSET 1
+        &tPathIdEvent ,         //CS:CODEsYNC: 510008b8 510008b8 510008b8    ; CODE ASSUMES THAT tValueIdEvent IS AT OFFSET 0
     {
     textC* pptPath[] =
+
+    ;
+
+        +S2(sa_SSSaNDeND,sc_ccSSS)
+            +T("/")
+            +S2(sa_SSSmARKnUMERICf,sc_cSSSmARK)
+            +S3(7,sc_ccSSSrEPEAT,7)
+            +T("\"data\"/item.")
+        +S2(sa_SSSaND,sc_ccSSS)
+
+    TN( tPathEvent , "" ) ; tPathEvent = tn
 
     TN( tPathMore , "\"has_more\"/" ) ;
 
@@ -243,15 +285,17 @@ DONE( tmWorkF )
 
     ;
     }
-        &tValueMore    ,                                                                                                                                                    //CS:CODEsYNC: 510008af 510008af    ; CODE ASSUMES THAT tValueIdEvent IS AT OFFSET 0
-        &tValueType    ,                                                                                                                                                    //CS:CODEsYNC: 510008af 510008af    ; CODE ASSUMES THAT tValueIdEvent IS AT OFFSET 0
-        &tValueIdEvent ,                                                                                                                                                    //CS:CODEsYNC: 510008af 510008af    ; CODE ASSUMES THAT tValueIdEvent IS AT OFFSET 0
+        &tValueMore    ,
+        &tValueType    ,
+        &tValueEvent   ,                             //CS:CODEsYNC: 510008b8 510008b8 510008b8    ; CODE ASSUMES THAT tValueEvent   IS AT OFFSET 1
+        &tValueIdEvent ,                             //CS:CODEsYNC: 510008b8 510008b8 510008b8    ; CODE ASSUMES THAT tValueIdEvent IS AT OFFSET 0
     {
     textC* pptValue[] =
 
+    TN( tValueEvent   , "" ) ;      // SINCE THE INPUT CONTAINS MULTIPLE EVENTS, THESE tValue* OBJECTS WILL CONTAIN THE LATH VALUES ENCOUNTERED FOR EACH
     TN( tValueMore    , "" ) ;
-    TN( tValueType    , "" ) ;
-    TN( tValueIdEvent , "" ) ;
+    TN( tValueType    , "" ) ;      // SINCE THE INPUT CONTAINS MULTIPLE EVENTS, THESE tValue* OBJECTS WILL CONTAIN THE LATH VALUES ENCOUNTERED FOR EACH
+    TN( tValueIdEvent , "" ) ;      // SINCE THE INPUT CONTAINS MULTIPLE EVENTS, THESE tValue* OBJECTS WILL CONTAIN THE LATH VALUES ENCOUNTERED FOR EACH
 
     /**/etRock.traceF( tin0P , T("[tStripeApiKeyTest]:    ")+tStripeApiKeyTest ) ;
     }
@@ -289,9 +333,13 @@ TASK( tmWorkF )
 
 osTextT postj[ TICK ] ;
 
-/*1*/WAKEhIDE( "doodle stripe api new events" )/*1*/
+/*1*/WAKEhIDE( "ifcIDaDAM_QUERYsTRIPEeVENTS" )/*1*/
 /**/
 */
+ avoidance of duplicate processing of an event is left to later processing (ifcIDaDAM_WELCOMER and ifcIDaDAM_ADMINISTRATOR)
+ in particular, i don't worry about whether each event that i receive has already been received by the webhook system
+ i am a redundant system that does exactly what the webhook system does
+i obtain (and eventually will book) new stripe events
 /*
 
 //

@@ -11899,6 +11899,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TOOLdUMPdNSrEPLY                                     0x510008b1
 #define ifcIDaDAM_TOOLpACKETsNIFFER                                    0x510008b4
 #define ifcIDaDAM_TOOLdOmANUALLY                                       0x510008b5
+#define ifcIDaDAM_QUERYsTRIPEeVENTS                                    0x510008b8
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
