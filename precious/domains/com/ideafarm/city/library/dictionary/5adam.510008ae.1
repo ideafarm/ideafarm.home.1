@@ -59,9 +59,9 @@ DONE( tmWorkF )
                                 IFsCRATCHoK
 
                                 ;
-                                                : tSharedFolderEventDone
-                                                ? tSharedFolderEventDuplicates
-                                            ? bDuplicate
+                                            : tSharedFolderEventDone
+                                            ? tSharedFolderEventDuplicates
+                                        : bDuplicate
                                         ? tSharedFolderEventRetryLater
                                     : F(flagsFail) || bFail0                                        // THIS IS REDUNDANT SINCE tWhere WILL NOT BE USED IF bFail0 (INSTEAD OF RETRYING, THE FILE WILL BE PUT BACK INTO THE INPUT QUEUE)
                                     ? tSharedFolderEventGorilla01
