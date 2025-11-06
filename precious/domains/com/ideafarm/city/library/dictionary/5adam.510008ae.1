@@ -62,17 +62,17 @@ DONE( tmWorkF )
 
                                 ;
                                             : tSharedFolderEventDone
-                                            ? tSharedFolderEventDuplicates
-                                        : b3
-                                        ? tSharedFolderEventRetryLater
-                                    : b2                                        // THIS IS REDUNDANT SINCE tWhere WILL NOT BE USED IF bFail0 (INSTEAD OF RETRYING, THE FILE WILL BE PUT BACK INTO THE INPUT QUEUE)
+                                            ? tSharedFolderEventRetryLater
+                                        : b3                                        // THIS IS REDUNDANT SINCE tWhere WILL NOT BE USED IF bFail0 (INSTEAD OF RETRYING, THE FILE WILL BE PUT BACK INTO THE INPUT QUEUE)
+                                        ? tSharedFolderEventDuplicates
+                                    : b2
                                     ? tSharedFolderEventGorilla01
                                 TN( tWhere , "" ) ; tWhere = b1
 
                                 /**/etRock.traceF( tin0P , T("[b1,b2,b3]:    ")+TF2(b1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(b2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(b3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                boolT b3 = bDuplicate ;
-                                boolT b2 = F(flagsFail) || bFail0 ;
+                                boolT b3 = F(flagsFail) || bFail0 ;
+                                boolT b2 = bDuplicate ;
                                 boolT b1 = bGorilla01 ;
 
                                 //etRock.traceF( tin0P , T("moving the file") ) ;
