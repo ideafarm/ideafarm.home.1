@@ -1562,7 +1562,9 @@ DONE( tmWorkF )
                                                             TN( tInvitationsSubmitted , "" ) ;
                                                             bValidEvent = 1 ;                           //I THINK THAT THIS IS A VALID EVENT THAT IS REALLY FROM STRIPE, SO WILL PROCEED TO ISSUE A WELCOME EMAIL WITH CREDENTIALS
                                                         {
-                                                        if( !bDuplicate )
+                                                        else
+                                                        if( bDuplicate ) etRock.traceF( tin0P , T("duplicate event file detected and ignored") ) ;
+
 
                                                         }
                                                             while( !bDuplicate && !ether && ~hFindEvent && !POOP ) ;
@@ -2075,7 +2077,7 @@ DONE( tmWorkF )
 
         textC* pptFolderEventsIncoming[] = { &tFolderEventsIncoming } ;
 
-        TN( tFolderEventsIncoming , "///" "/go1/" "d/ideafarm.shared/5100088f/events.incoming/" ) ;
+        TN( tFolderEventsIncoming , "" ) ; tFolderEventsIncoming = T("////go1/d/ideafarm.shared/")+TfORsTRING(ifcIDaDAM_ADMINISTRATOR)+T("/events.incoming/" ) ;
 
         patternC patMyEvents( tin0P , etThread , tPatternMyEvents , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
         TN( tPatternMyEvents , "" ) ; tPatternMyEvents = T("event.*.")+tLanName+T(".*.soulC") ;
