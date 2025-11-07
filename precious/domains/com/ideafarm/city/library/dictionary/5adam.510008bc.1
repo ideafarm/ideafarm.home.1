@@ -22,7 +22,126 @@ DONE( tmWorkF )
 
     }
         }
+            etThread.delF( tin0P , psttzSuffix ) ;
+            strokeS*& psttzSuffix = *(strokeS**)&(countT&)swSuffixUse ;
+            psttzlName = (strokeS*)swSuffixUse.leverF( tin0P , idf ) ;
+    
+            _IO_
+        {
+        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+        countT cFlavors = swSuffixUse.cFlavorsF( tin0P ) ;
+
+        switchC&      swSuffixUse     = !offPass ? swSuffix4     : swSuffix6     ;
+    {
+    for( countT offPass = 0 ; offPass <= 1 ; offPass ++ )
+    // DELETE strokeS STRING switchC VALUES
+
+    etThread.traceF( tin0P , T("****************************************************************************************************************************************************************************************************************************************************************") ) ;
+    }
+        }
             }
+                }
+                    while( ~hWalk ) ;
+                    }
+                        thirdC::c_systemIF( tin0P , tCommand ) ;
+                        etThread.traceF( tin0P , tCommand+T("    |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||") ) ;
+
+                        ;
+
+                            +T(" validate=no")+tCRLF
+                            +T(pstta)
+                            +T("\" address=")
+                            T(psttzlName)
+
+                        TN( tCommand , !offPass ? "netsh interface ipv4 add dnsservers name=\"" : "netsh interface ipv6 add dnsservers name=\"" ) ; tCommand +=
+
+                        etThread.traceF( tin0P , tb8+T(pstta) ) ;
+                        strokeS* pstta = (strokeS*)swsAddressesUse.downF( tin0P , hWalk ) ;
+                    {
+                    do
+                    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+
+                    thirdC::c_systemIF( tin0P , tCommand ) ;
+                    etThread.traceF( tin0P , tCommand+T("    -----------------------------------------------------------------------------------------------") ) ;
+
+                    ;
+                        +T(" validate=no")+tCRLF
+                        )
+                                    : tRegisterBoth
+                                    ? tRegisterPrimary
+                                : !etThread.strCompareF( tin0P , psttzSuffix , tPrimaryOnly )
+                                ? tRegisterNone
+                            !etThread.strCompareF( tin0P , psttzSuffix , tNone )
+                        (
+                        +
+                        +T("\" source=static address=none ")
+                        +T(psttzlName)
+                        +T(" set dnsservers name=\"")
+                        T(!offPass?"ipv4":"ipv6")
+
+                    TN( tCommand , "netsh interface " ) ; tCommand +=
+                {
+                else
+                }
+                    thirdC::c_systemIF( tin0P , tCommand ) ;
+                    etThread.traceF( tin0P , tCommand+T("    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++") ) ;
+
+                    ;
+                        +T("\" source=dhcp validate=no")
+                        +T(psttzlName)
+                        +T(" set dnsservers name=\"")
+                        T(!offPass?"ipv4":"ipv6")
+
+                    TN( tCommand , "netsh interface " ) ; tCommand +=
+                {
+                if( idType == 1 )
+            {
+            if( swsAddressesUse )
+
+            etThread.traceF( tin0P , T("*************************************    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzSuffix)+tb4+T(psttzlName) ) ;
+            strokeS* psttzSuffix = (strokeS*)(countT&)swSuffixUse ;
+            countT idType = swTypeUse ;
+            psttzlName = (strokeS*)swTypeUse.leverF( tin0P , idf ) ;
+    
+            _IO_
+        {
+        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+        countT cFlavors = swTypeUse.cFlavorsF( tin0P ) ;
+
+        switchStackC& swsAddressesUse = !offPass ? swsAddresses4 : swsAddresses6 ;
+        switchC&      swSuffixUse     = !offPass ? swSuffix4     : swSuffix6     ;
+        switchC&      swTypeUse       = !offPass ? swType4       : swType6       ;
+
+        etThread.traceF( tin0P , T(!offPass?"====================================================== IPV4 ==========================================================":"====================================================== IPV6 ==========================================================") ) ;
+    {
+    for( countT offPass = 0 ; offPass <= 1 ; offPass ++ )
+    etThread.traceF( tin0P , T("****************************************************************************************************************************************************************************************************************************************************************") ) ;
+    // RESTORE PRIOR DNS SETTINGS FOR ALL INTERFACES THAT HAD DNS ADDRESSES
+
+    }
+        }
+            }
+                thirdC::c_systemIF( tin0P , tCommand ) ;
+
+                ;
+
+                    +T(" validate=no")+tCRLF
+                    )
+                                : tRegisterBoth
+                                ? tRegisterPrimary
+                            : !etThread.strCompareF( tin0P , psttzSuffix , tPrimaryOnly )
+                            ? tRegisterNone
+                        !etThread.strCompareF( tin0P , psttzSuffix , tNone )
+                    (
+                    +
+                    +T(!offPass?"127.0.0.1 ":"::1 ")
+                    +T("\" source=static address=")
+                    T(psttzlName)
+
+                TN( tCommand , !offPass ? "netsh interface ipv4 set dnsservers name=\"" : "netsh interface ipv6 set dnsservers name=\"" ) ; tCommand +=
+
+                // netsh interface ipv4 set dnsservers name="foo"  source=static address=1.2.3.4 register=none validate=no
+
                 while( ~hWalk ) ;
                 }
                     etThread.traceF( tin0P , tb8+T(pstta) ) ;
@@ -33,7 +152,8 @@ DONE( tmWorkF )
             {
             if( swsAddressesUse )
 
-            etThread.traceF( tin0P , TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzlName) ) ;
+            etThread.traceF( tin0P , T("*************************************    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzSuffix)+tb4+T(psttzlName) ) ;
+            strokeS* psttzSuffix = (strokeS*)(countT&)swSuffixUse ;
             countT idType = swTypeUse ;
             psttzlName = (strokeS*)swTypeUse.leverF( tin0P , idf ) ;
     
@@ -42,25 +162,38 @@ DONE( tmWorkF )
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
         countT cFlavors = swTypeUse.cFlavorsF( tin0P ) ;
 
-        switchStackC& swsAddressesUse = !idPass ? swsAddresses4 : swsAddresses6 ;
-        switchC&      swSuffixUse     = !idPass ? swSuffix4     : swSuffix6     ;
-        switchC&      swTypeUse       = !idPass ? swType4       : swType6       ;
+        switchStackC& swsAddressesUse = !offPass ? swsAddresses4 : swsAddresses6 ;
+        switchC&      swSuffixUse     = !offPass ? swSuffix4     : swSuffix6     ;
+        switchC&      swTypeUse       = !offPass ? swType4       : swType6       ;
+        etThread.traceF( tin0P , T(!offPass?"====================================================== IPV4 ==========================================================":"====================================================== IPV6 ==========================================================") ) ;
     {
-    for( countT idPass = 0 ; idPass <= 1 ; idPass ++ )
+    for( countT offPass = 0 ; offPass <= 1 ; offPass ++ )
+    etThread.traceF( tin0P , T("****************************************************************************************************************************************************************************************************************************************************************") ) ;
+    // SET DNS TO LOOPBACK FOR ALL INTERFACES THAT HAVE DNS ADDRESSES
 
     }
         }
             }
                 }
-                    etThread.delF( tin0P , pstt1Addresses ) ;
                     }
-                        swsAddressesUse << psttLower ;
-                        etThread.strConvertToLowerCaseF( tin0P , psttLower , psttc1 ) ; ___( psttLower ) ;
-                        ZE( strokeS* , psttLower ) ;
+                        }
+                            swSuffixUse = (countT)pstts ;
+                            etThread.strTrimF( tin0P , pstts ) ; ___( pstts ) ;
+                            etThread.strSubstringF( tin0P , pstts , idf , sttq , tCRLF , psttBig ) ; ___( pstts ) ;
+                            ZE( strokeS* , pstts ) ;
+                        {
+
+                        etThread.delF( tin0P , pstt1Addresses ) ;
+                        }
+                            swsAddressesUse << psttLower ;
+                            etThread.strConvertToLowerCaseF( tin0P , psttLower , psttc1 ) ; ___( psttLower ) ;
+                            ZE( strokeS* , psttLower ) ;
+                        {
+                        FORsTRINGSiN1( pstt1Addresses )
+                        etThread.strWordsF( tin0P , pstt1Addresses , tAddresses , sttq , T(" \r\n") ) ; ___( pstt1Addresses ) ;
+                        ZE( strokeS* , pstt1Addresses ) ;
                     {
-                    FORsTRINGSiN1( pstt1Addresses )
-                    etThread.strWordsF( tin0P , pstt1Addresses , tAddresses , sttq , T(" \r\n") ) ; ___( pstt1Addresses ) ;
-                    ZE( strokeS* , pstt1Addresses ) ;
+                    if( etThread.strCompareF( tin0P , tNone , tAddresses ) )
 
                     etThread.delF( tin0P , pstts ) ;
                     TN( tAddresses , pstts ) ;
@@ -107,7 +240,7 @@ DONE( tmWorkF )
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
 
-            etThread.traceF( tin0P , tListRaw , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            //etThread.traceF( tin0P , tListRaw , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
             strokeS* psttBig = tListRaw ;
             strokeS* psttre = tre ;
@@ -118,13 +251,13 @@ DONE( tmWorkF )
             ZE( countT   , costi ) ;
             ZE( osTextT* , posti ) ;
 
-            thirdC::c_systemIF( tin0P , !idPass ? "netsh interface ipv4 show dnsservers > c:\\doodle.ttt" :  "netsh interface ipv6 show dnsservers > c:\\doodle.ttt" ) ;
+            thirdC::c_systemIF( tin0P , !offPass ? "netsh interface ipv4 show dnsservers > c:\\doodle.ttt" :  "netsh interface ipv6 show dnsservers > c:\\doodle.ttt" ) ;
 
-            switchStackC& swsAddressesUse = !idPass ? swsAddresses4 : swsAddresses6 ;
-            switchC&      swSuffixUse     = !idPass ? swSuffix4     : swSuffix6     ;
-            switchC&      swTypeUse       = !idPass ? swType4       : swType6       ;
+            switchStackC& swsAddressesUse = !offPass ? swsAddresses4 : swsAddresses6 ;
+            switchC&      swSuffixUse     = !offPass ? swSuffix4     : swSuffix6     ;
+            switchC&      swTypeUse       = !offPass ? swType4       : swType6       ;
         {
-        for( countT idPass = 0 ; idPass <= 1 ; idPass ++ )
+        for( countT offPass = 0 ; offPass <= 1 ; offPass ++ )
 
         ;
 
@@ -153,7 +286,7 @@ DONE( tmWorkF )
         TN( t3 , "Statically Configured DNS Servers:" ) ;
         TN( t2 , "DNS servers configured through DHCP:" ) ;
         TN( t1 , "Configuration for interface \"" ) ;
-        TN( tCRLF , "\r\n" ) ;
+        TN( tNone , "None" ) ;
         TN( tq , "\"" ) ;
         TN( tn , "" ) ;
     {
@@ -165,8 +298,19 @@ DONE( tmWorkF )
     switchC        swType4(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzlName ) ;
     ZE( strokeS* , psttzlName ) ;
 
-    TN( tb8  , "        " ) ;
-    TN( tb4  , "    " ) ;
+    TN( tRegisterBoth    , "register=both"    ) ;
+    TN( tRegisterPrimary , "register=primary" ) ;
+    TN( tRegisterNone    , "register=none"    ) ;
+
+    TN( tCommandClearLoopback , "" ) ;
+    TN( tCommandSetLoopback , "" ) ;
+
+    TN( tNameLoopback , "Loopback Pseudo-Interface 1" ) ;
+    TN( tPrimaryOnly  , "Primary only" ) ;
+    TN( tNone         , "None"         ) ;
+    TN( tb8           , "        "     ) ;
+    TN( tb4           , "    "         ) ;
+    TN( tCRLF , "\r\n" ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
@@ -236,7 +380,7 @@ TASK( tmWorkF )
 //  
 //  OUTPUT OF "netsh interface ipv4 show dnsservers"
 
-/*1*/WAKEhIDE( "doodle" )/*1*/
+/*1*/WAKEhIDE( "doodle.switch.to.private.local.dns.and.then.restore" )/*1*/
 /**/
 */
 /*
