@@ -23,19 +23,25 @@
                 diskFileOrDirDeleteF( tin0P , psttc1 ) ;
             {
             FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
-            boxMenuF( tin0P , soul1m , tObjLike ) ;
+            boxMenuF( tin0P , soul1m , tLongObjLike ) ;
             soulC soul1m( tin0P , *this , TAG( TAGiDnULL ) ) ;
         {
+
+        }
+            thirdC::c_systemIF( tin0P , T("wlib -p=32 -q -n -b ")+tShortLib+T(" +")+tShortDll ) ;
+            hoverC hover( tin0P , *this , tPathMaster ) ;
+        {
+
         delF( tin0P , postDescription ) ;
-        third.osLinkF( tin0P , osFileNameC( tin0P , third , tDll ) , osFileNameC( tin0P , third , tObjLike ) , flagsP , osFileNameC( tin0P , third , tLib ) , postDescription ) ;
-        TN( tLib , "" ) ; tLib = T(psttHome)+T("ephemeral/city/park/exedll/1/master/ideafarm.81000001.ipdos-wl") ;
-        TN( tObjLike , "" ) ; tObjLike = T(psttHome)+T("ephemeral/city/workshop/3object/")+tIdiForeign+T(".*.obj") ;
+        third.osLinkF( tin0P , osFileNameC( tin0P , third , tLongDll ) , osFileNameC( tin0P , third , tLongObjLike ) , flagsP , osFileNameC( tin0P , third , tLongLibBase ) , postDescription ) ;
+        TN( tLongLibBase , "" ) ; tLongLibBase = T(psttHome)+T("ephemeral/city/park/exedll/1/master/ideafarm.81000001.ipdos-wl") ;
+        TN( tLongObjLike , "" ) ; tLongObjLike = T(psttHome)+T("ephemeral/city/workshop/3object/")+tIdiForeign+T(".*.obj") ;
 
         postDescription[ 0 ] = '!' ;
         strMakeF( tin0P , LF , postDescription , T("?ifcExeDllDescBegin !cName ")+tIdi+T(" !idCopy ")+TF3(idCopyLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(" !contact http://ideafarm.com IdeaFarm " "(tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd") ) ; ___( postDescription ) ;
         ZE( osTextT* , postDescription ) ;
 
-//U:: TO FIND A BUG        grabOsMake.ungrabF( tin0P ) ;
+        grabOsMake.ungrabF( tin0P ) ;
         }
             }
                 idCopyLath = 1 + incv02AM( *(countT*)pbi ) ;
@@ -52,13 +58,18 @@
             fileWindowsC fwsLath( tin0P , *this , tName , flFILEwINDOW_WRITE ) ;
             TN( tName , "///ideafarm/ephemeral/ipdos/idCopyLath" ) ;
         {
-//U:: TO FIND A BUG        grabOsMake.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        grabOsMake.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         ZE( countT , idCopyLath ) ;
         //CS:CODEsYNC: PSEUDOdUPLICATE 33002111 33002134
 
-        if( diskFileExistsF( tin0P , tDll ) ) diskFileOrDirDeleteF( tin0P , tDll ) ;
-        diskMakeDirIfNeededF( tin0P , tDll ) ;
-        TN( tDll , "" ) ; tDll = T(psttHome)+T("ephemeral/city/park/exedll/1/master/ideafarm.")+tIdiForeign+T(".ipdos-wm") ;
+        if( diskFileExistsF( tin0P , tLongLib ) ) diskFileOrDirDeleteF( tin0P , tLongLib ) ;
+        if( diskFileExistsF( tin0P , tLongDll ) ) diskFileOrDirDeleteF( tin0P , tLongDll ) ;
+        diskMakeDirIfNeededF( tin0P , tLongDll ) ;
+        TN( tLongLib    , "" ) ; tLongLib    = tPathMaster+tShortLib ;
+        TN( tLongDll    , "" ) ; tLongDll    = tPathMaster+tShortDll ;
+        TN( tPathMaster , "" ) ; tPathMaster = T(psttHome)+T("ephemeral/city/park/exedll/1/master/") ;
+        TN( tShortLib   , "" ) ; tShortLib   = T("ideafarm.")+tIdiForeign+T(".ipdos-wl") ;
+        TN( tShortDll   , "" ) ; tShortDll   = T("ideafarm.")+tIdiForeign+T(".ipdos-wm") ;
         /**/traceF( tin0P , T("osMakeF / 2") ) ; //U:: TO FIND A BUG (SPEED PROBLEM)
     {
     if( !bErrorsAll )
