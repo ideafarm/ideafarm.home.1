@@ -2698,16 +2698,21 @@ void elf_obey_C::liveF( void )
                 isStaleF
                 (
                     "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" ,
-                    "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\2*.obj"                           ,
-                    "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\3*.obj"
+                    "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\2*.obj"                           ,
+                    "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\3*.obj"
                 )
             )
             {
                 sayF( "[4link]:  Linking to build the base dll and the base static object library." ) ;
     
                 {
-                    hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object" ) ;
-                    system( "for %f in (2* 3*) do @wlib -p=32 -q -n -b base.lib +%f" ) ;
+                    hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll" ) ;
+                    system( "for %f in (2* 3*) do @wlib -p=32 -q -n -b base.dll.lib +%f" ) ;
+                }
+    
+                {
+                    hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe" ) ;
+                    system( "for %f in (2* 3*) do @wlib -p=32 -q -n -b base.exe.lib +%f" ) ;
                 }
 
                 char postMas[]      = { "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" } ;
@@ -2719,8 +2724,8 @@ void elf_obey_C::liveF( void )
                 strcat( postCmd , postMas ) ;
                 strcat( postCmd ,
         
-                    " file \\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\2*.obj"
-                    " file \\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\3*.obj"
+                    " file \\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\2*.obj"
+                    " file \\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\3*.obj"
 
                     " library \\tmp\\20230722.2049.vsdll.lib"
 
@@ -2761,9 +2766,9 @@ void elf_obey_C::liveF( void )
 
                 // postCmd, FOLLOWED BY ALTERED FLAVOR TO BUILD A "THROWAWAY" BASE DLL:
                 //
-                //  [debug]:  wlink debug all name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-wm file \ideafarm.home.1\ephemeral\city\workshop\3object\2*.obj file \ideafarm.home.1\ephemeral\city\workshop\3object\3*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\shlwapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\PowrProf.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\wsock32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\Ws2_32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\advapi32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\psapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\User32.Lib system nt_dll op q op map=\tmp\base.map op mangle op de '!ifcExeDllDescBegin !cName 10000018 !idCopy 00000000 !contact (c) Wo Of Ideafarm http://ideafarm.com !ifcExeDllDescEnd' op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared segment 'CONST32' shared exp '_rTagF@0' exp '_eipF@4' >> \tmp\link1.err
+                //  [debug]:  wlink debug all name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-wm file \ideafarm.home.1\ephemeral\city\workshop\3object.dll\2*.obj file \ideafarm.home.1\ephemeral\city\workshop\3object.dll\3*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\shlwapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\PowrProf.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\wsock32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\Ws2_32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\advapi32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\psapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\User32.Lib system nt_dll op q op map=\tmp\base.map op mangle op de '!ifcExeDllDescBegin !cName 10000018 !idCopy 00000000 !contact (c) Wo Of Ideafarm http://ideafarm.com !ifcExeDllDescEnd' op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared segment 'CONST32' shared exp '_rTagF@0' exp '_eipF@4' >> \tmp\link1.err
                 //
-                //  [debug]:  wlink debug all name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-tm file \ideafarm.home.1\ephemeral\city\workshop\3object\2*.obj file \ideafarm.home.1\ephemeral\city\workshop\3object\3*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\shlwapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\PowrProf.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\wsock32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\Ws2_32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\advapi32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\psapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\User32.Lib system nt_dll op q op map=\tmp\base.map op mangle op de '!ifcExeDllDescBegin !cName 10000018 !idCopy 00000000 !contact (c) Wo Of Ideafarm http://ideafarm.com !ifcExeDllDescEnd' op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared segment 'CONST32' shared exp '_rTagF@0' exp '_eipF@4' >> \tmp\link2.err
+                //  [debug]:  wlink debug all name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-tm file \ideafarm.home.1\ephemeral\city\workshop\3object.dll\2*.obj file \ideafarm.home.1\ephemeral\city\workshop\3object.dll\3*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\shlwapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\PowrProf.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\wsock32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\Ws2_32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\advapi32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\psapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\User32.Lib system nt_dll op q op map=\tmp\base.map op mangle op de '!ifcExeDllDescBegin !cName 10000018 !idCopy 00000000 !contact (c) Wo Of Ideafarm http://ideafarm.com !ifcExeDllDescEnd' op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared segment 'CONST32' shared exp '_rTagF@0' exp '_eipF@4' >> \tmp\link2.err
                 //
                 //                                                                                                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
                 //  2 changes:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           2
@@ -3773,7 +3778,7 @@ int elf_obey_C::pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILE
             strcat( postFileImage2P , "extern \"C\" voidT moduleCodeTrailer_" ) ; strcat( postFileImage2P , postGroupP ) ; strcat( postFileImage2P , "_GF( voidT ) ;\r\n" ) ;
         }
 
-        char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\" ;
+        char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\" ;
         strcat( postObj , postGroupP ) ;
         strcat( postObj , ".obj" ) ;
 
@@ -3853,7 +3858,8 @@ void elf_obey_C::assembleF( const char* postGroupP )
 
             { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\"   ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > "              ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
 
-            { char postCmd[ 0x200 ] = "wasm -5p -d1 -e -q -we -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "wasm -5p -d1 -e -q -we -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "wasm -5p -d1 -e -q -we -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
             inc02AM( cCompiled ) ;
 
             //system( "rw \\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\*" ) ;
@@ -3986,11 +3992,11 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 
         #undef FILEpILEpREFIX
 
-        if( bOk )
+        if( bOk ) for( int offPass = 0 ; offPass <= 1 ; offPass ++ )     // 0:DLL 1:EXE
         {
             char postSource[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\2source\\" ; strcat( postSource , postModule ) ; strcat( postSource , ".cpp" ) ;
 
-            { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > "                                  ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+            if( !offPass ) { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > "                                  ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
 
             //FORMERLY, DEBUG INFO WAS ALWAYS INSERTED INTO OBJECT MODULES BECAUSE WE RELIED ON THE LINKER TO STRIP IT
             //20251108@0937: NOW DEBUG INFO IS ONLY INSERTED IF flELVES_DEBUGiNFO, SO THAT LEAN STATIC OBJECT LIBRARY FILES CAN BE BUILT
@@ -4001,7 +4007,7 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
                 if( bTryCatch )                        strcat( postCmd , " -xs" ) ; // 20150321@1747: CAN'T DO THIS GLOBALLY BECAUSE BREAKS pTinAM ; AT THIS TIME, WANT IT ONLY FOR CALLING openSSL
                 if( flagsAll & flELVES_DEBUGiNFO )     strcat( postCmd , " -d2" ) ;
                                                        strcat( postCmd , bClass ? " -dBiFCcLASS=1" : " -dBiFCcLASS=0" ) ;
-                                                       strcat( postCmd , " -bd" ) ;
+                if( !offPass )                         strcat( postCmd , " -bd" ) ;
 
                 if( !bCNotCpp )
                 {
@@ -4009,12 +4015,12 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 //                                                       strcat( postCmd , bThird ? "base.show.third.pch" : "base.hide.third.pch" ) ;
                 }
                                                        strcat( postCmd , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
-                                                       strcat( postCmd , " -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ) ;
+                                                       strcat( postCmd , !offPass ? " -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " : " -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ) ;
                                                        strcat( postCmd , postSource ) ;
                 //system( postCmd ) ;
                 hireF( idMe , postCmd ) ;
             }
-            inc02AM( cCompiled ) ;
+            if( offPass ) inc02AM( cCompiled ) ;
 
             if( !bThird && !bHeaderMadeHideThird ) bHeaderMadeHideThird = 1 ;
             if(  bThird && !bHeaderMadeShowThird ) bHeaderMadeShowThird = 1 ;
@@ -4066,7 +4072,8 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
     char postDef[ 0x100 ] = "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\" ;
     strcat( postDef , postDefShort ) ;
 
-    char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\" ;
+    char postObj[ 0x100 ] ;
+    strcpy( postObj , bExe ? "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\" : "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\" ) ;
     strcat( postObj , postIdiForeignP ) ;
     if( !bExe )
     {
@@ -4176,7 +4183,8 @@ void elf_obey_C::linkF( char* postIdiForeignP )
     {
         char postIdi[ 9 ] = { postIdiForeignP[ 7 ] , postIdiForeignP[ 6 ] , postIdiForeignP[ 5 ] , postIdiForeignP[ 4 ] , postIdiForeignP[ 3 ] , postIdiForeignP[ 2 ] , postIdiForeignP[ 1 ] , postIdiForeignP[ 0 ] , 0 } ;
 
-        char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\" ;
+        char postObj[ 0x100 ] ;
+        strcpy( postObj , bExe ? "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\" : "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\" ) ;
         strcat( postObj , postIdiForeignP ) ;
         strcat( postObj , bExe ? ".obj" : ".*.obj" ) ;
 
@@ -4242,9 +4250,9 @@ void elf_obey_C::linkF( char* postIdiForeignP )
                 //sayF( "[debug3]:    " ) ;
                 //sayF( postCmd ) ;
 
-                // [debug3]:    wlink debug all system nt name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.41000002.ipdos-wm file \ideafarm.home.1\ephemeral\city\workshop\3object\41000002.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-wl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\41000002.map op mangle op de '!ifcExeDllDescBegin !cName 20000014 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link1.err
+                // [debug3]:    wlink debug all system nt name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.41000002.ipdos-wm file \ideafarm.home.1\ephemeral\city\workshop\3object.dll\41000002.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-wl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\41000002.map op mangle op de '!ifcExeDllDescBegin !cName 20000014 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link1.err
 
-                // [debug3]:    wlink debug all system nt name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.41000002.ipdos-tm file \ideafarm.home.1\ephemeral\city\workshop\3object\41000002.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-tl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\41000002.tap op mangle op de '!ifcExeDllDescBegin !cName 20000014 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link2.err
+                // [debug3]:    wlink debug all system nt name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.41000002.ipdos-tm file \ideafarm.home.1\ephemeral\city\workshop\3object.dll\41000002.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-tl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\41000002.tap op mangle op de '!ifcExeDllDescBegin !cName 20000014 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link2.err
 
                 // 4 changes:                                                                                                                                    |                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                     |                                                                                                                                                                                                                                 |
                 //                                                                                                                                               1                                                                                                                                                                                                                                                                                           2                                                                                                                                                                                                                     3                                                                                                                                                                                                                                 4
@@ -4252,9 +4260,9 @@ void elf_obey_C::linkF( char* postIdiForeignP )
 
 
 
-                // [debug3]:    wlink debug all system nt_dll name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.51000620.ipdos-wm file \ideafarm.home.1\ephemeral\city\workshop\3object\51000620.*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-wl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\51000620.map op mangle op de '!ifcExeDllDescBegin !cName 02600015 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link1.err
+                // [debug3]:    wlink debug all system nt_dll name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.51000620.ipdos-wm file \ideafarm.home.1\ephemeral\city\workshop\3object.dll\51000620.*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-wl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\51000620.map op mangle op de '!ifcExeDllDescBegin !cName 02600015 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link1.err
 
-                // [debug3]:    wlink debug all system nt_dll name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.51000620.ipdos-tm file \ideafarm.home.1\ephemeral\city\workshop\3object\51000620.*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-tl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\51000620.tap op mangle op de '!ifcExeDllDescBegin !cName 02600015 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link2.err
+                // [debug3]:    wlink debug all system nt_dll name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.51000620.ipdos-tm file \ideafarm.home.1\ephemeral\city\workshop\3object.dll\51000620.*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-tl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\51000620.tap op mangle op de '!ifcExeDllDescBegin !cName 02600015 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link2.err
 
                 // 4 changes:                                                                                                                                        |                                                                                                                                                                                                                                                                                             |                                                                                                                                                                                                                     |                                                                                                                                                                                                                                 |
                 //                                                                                                                                                   1                                                                                                                                                                                                                                                                                             2                                                                                                                                                                                                                     3                                                                                                                                                                                                                                 4
@@ -4308,7 +4316,8 @@ void elf_obey_C::linkF( char* postIdiForeignP )
                 system( postCmd2 ) ;
             }
     
-            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object" , postIdiForeignP ) ;
+            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll" , postIdiForeignP ) ;
+            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe" , postIdiForeignP ) ;
         }
     }
 }
@@ -5586,7 +5595,8 @@ void makeFoldersCopyThirdPartyDllsF( void )
     CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp" , 0 ) ;
     CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw" , 0 ) ;
     CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\2source" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe" , 0 ) ;
     CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report" , 0 ) ;
 
     CreateDirectory( "\\ideafarm.home.1\\ephemeral\\state" , 0 ) ;

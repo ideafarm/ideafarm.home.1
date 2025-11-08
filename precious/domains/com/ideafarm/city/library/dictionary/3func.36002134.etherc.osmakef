@@ -17,15 +17,16 @@
         /**/traceF( tin0P , T("osMakeF / 0") ) ; //U:: TO FIND A BUG (SPEED PROBLEM)
         osMakeHoverFileF( tin0P , idAdamP ) ;
         /**/traceF( tin0P , T("osMakeF / 1") ) ; //U:: TO FIND A BUG (SPEED PROBLEM)
-        }
-            FORsTRINGSiNsPANNEDcOMBINEDtAIL1
-            }
-                diskFileOrDirDeleteF( tin0P , psttc1 ) ;
-            {
-            FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
-            boxMenuF( tin0P , soul1m , tLongObjLike ) ;
-            soulC soul1m( tin0P , *this , TAG( TAGiDnULL ) ) ;
-        {
+        //}
+        //    FORsTRINGSiNsPANNEDcOMBINEDtAIL1
+        //    }
+        //        diskFileOrDirDeleteF( tin0P , psttc1 ) ;
+        //    {
+        //    FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
+        //    boxMenuF( tin0P , soul1m , tLongObjLike ) ;
+        //    soulC soul1m( tin0P , *this , TAG( TAGiDnULL ) ) ;
+        //{
+        //20251108@1254: KEEP THE OBJ FILES SO THAT THEY CAN BE USED TO BUILD STATIC LIBRARIES AND EXECUTABLES
 
         }
             thirdC::c_systemIF( tin0P , T("wlib -p=32 -q -n -b ")+tShortLib+T(" +")+tShortDll ) ;
@@ -35,7 +36,7 @@
         delF( tin0P , postDescription ) ;
         third.osLinkF( tin0P , osFileNameC( tin0P , third , tLongDll ) , osFileNameC( tin0P , third , tLongObjLike ) , flagsP , osFileNameC( tin0P , third , tLongLibBase ) , postDescription ) ;
         TN( tLongLibBase , "" ) ; tLongLibBase = T(psttHome)+T("ephemeral/city/park/exedll/1/master/ideafarm.81000001.ipdos-wl") ;
-        TN( tLongObjLike , "" ) ; tLongObjLike = T(psttHome)+T("ephemeral/city/workshop/3object/")+tIdiForeign+T(".*.obj") ;
+        TN( tLongObjLike , "" ) ; tLongObjLike = T(psttHome)+T("ephemeral/city/workshop/3object.dll/")+tIdiForeign+T(".*.obj") ;
 
         postDescription[ 0 ] = '!' ;
         strMakeF( tin0P , LF , postDescription , T("?ifcExeDllDescBegin !cName ")+tIdi+T(" !idCopy ")+TF3(idCopyLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(" !contact http://ideafarm.com IdeaFarm " "(tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd") ) ; ___( postDescription ) ;
@@ -62,8 +63,10 @@
         ZE( countT , idCopyLath ) ;
         //CS:CODEsYNC: PSEUDOdUPLICATE 33002111 33002134
 
-        if( diskFileExistsF( tin0P , tLongLib ) ) diskFileOrDirDeleteF( tin0P , tLongLib ) ;
-        if( diskFileExistsF( tin0P , tLongDll ) ) diskFileOrDirDeleteF( tin0P , tLongDll ) ;
+        //if( diskFileExistsF( tin0P , tLongLib ) ) diskFileOrDirDeleteF( tin0P , tLongLib ) ;
+        //if( diskFileExistsF( tin0P , tLongDll ) ) diskFileOrDirDeleteF( tin0P , tLongDll ) ;
+        //20251108@1245: KEEP THE OBJECT FILES SO THAT THEY CAN BE USED TO BUILD STATIC LIBRARIES AND BENCH EXECUTABLES
+
         diskMakeDirIfNeededF( tin0P , tLongDll ) ;
         TN( tLongLib    , "" ) ; tLongLib    = tPathMaster+tShortLib ;
         TN( tLongDll    , "" ) ; tLongDll    = tPathMaster+tShortDll ;
@@ -188,9 +191,9 @@
         diskMakeDirIfNeededF( tin0P , tErr ) ;
         diskMakeDirIfNeededF( tin0P , tObj ) ;
 
-        TN( tErr , "" ) ; tErr = T(psttHome)+T("ephemeral/city/workshop/4report/")+tIdiForeign+tDot+tIdModule+T(".err") ;
-        TN( tObj , "" ) ; tObj = T(psttHome)+T("ephemeral/city/workshop/3object/")+tIdiForeign+tDot+tIdModule+T(".obj") ;
-        TN( tSrc , "" ) ; tSrc = T(psttHome)+T("ephemeral/city/workshop/2source/")+tIdiForeign+tDot+tIdModule+T(".cpp") ;
+        TN( tErr , "" ) ; tErr = T(psttHome)+T("ephemeral/city/workshop/4report/"    )+tIdiForeign+tDot+tIdModule+T(".err") ;
+        TN( tObj , "" ) ; tObj = T(psttHome)+T("ephemeral/city/workshop/3object.dll/")+tIdiForeign+tDot+tIdModule+T(".obj") ;
+        TN( tSrc , "" ) ; tSrc = T(psttHome)+T("ephemeral/city/workshop/2source/"    )+tIdiForeign+tDot+tIdModule+T(".cpp") ;
     
         }
             delF( tin0P , psttIdModule ) ;
