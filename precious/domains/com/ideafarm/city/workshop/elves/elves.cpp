@@ -2029,6 +2029,11 @@ void elf_obey_C::liveF( void )
     {
         compileF( "5adam" , "51000620" , "1" ) ;
         linkF( "51000620" ) ;
+        {
+            hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master" ) ;
+            system( "wlib -p=32 -q -n -b ideafarm.51000620.ipdos-wl +ideafarm.51000620.ipdos-wm" ) ;
+            system( "wlib -p=32 -q -n -b ideafarm.51000620.ipdos-tl +ideafarm.51000620.ipdos-tm" ) ;
+        }
     }
     else if( !strcmp( postCmd , "!worker_install" ) )
     {
@@ -3102,6 +3107,7 @@ void elf_obey_C::liveF( void )
                 //THIS LIST IS IN REVERSE ORDER OF WHAT WILL APPEAR IN ipdos.h
                 char* ppostFrom[] =
                 {
+                    "1snip.15*.ideaNetC"                                    ,
                     "1snip.15*.s_acceptF_parametersS"                       ,
                     "1snip.15*.oshSocketAcceptedS"                          ,
                     "1snip.15*.listOfSet_countT_C"                          ,

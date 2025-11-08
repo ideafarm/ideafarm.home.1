@@ -48751,5 +48751,49 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.s_acceptF_parametersS : 1snip.150001d0.s_acceptF_parametersS END
+/*
+*/
+/**/
+
+/*1*/class _export ideaNetC/*1*/
+{
+    etherC&        ether            ;
+    poopC&         poop             ;
+    strokeS*       psttzlName       ;
+    switchC        swType4          ;
+    switchC        swType6          ;
+    switchC        swSuffix4        ;
+    switchC        swSuffix6        ;
+    switchStackC   swsAddresses4    ;
+    switchStackC   swsAddresses6    ;
+
+    textC          tb4              ;
+    textC          tb8              ;
+    textC          tCRLF            ;
+    textC          tNone            ;
+    textC          tPrimaryOnly     ;
+    textC          tRegisterNone    ;
+    textC          tRegisterPrimary ;
+    textC          tRegisterBoth    ;
+
+    public :
+
+    ~ideaNetC( voidT ) ;
+    ideaNetC( tin0S& tin0P , etherC& etherP ) ;
+}
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

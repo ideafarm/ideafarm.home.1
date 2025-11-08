@@ -822,3 +822,5 @@ extern "C" voidT moduleCodeHeader_3617a_GF( voidT ) ;
 extern "C" voidT moduleCodeTrailer_3617a_GF( voidT ) ;
 extern "C" voidT moduleCodeHeader_3617b_GF( voidT ) ;
 extern "C" voidT moduleCodeTrailer_3617b_GF( voidT ) ;
+extern "C" voidT moduleCodeHeader_3617c_GF( voidT ) ;
+extern "C" voidT moduleCodeTrailer_3617c_GF( voidT ) ;
