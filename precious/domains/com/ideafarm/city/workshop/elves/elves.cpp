@@ -2698,13 +2698,18 @@ void elf_obey_C::liveF( void )
                 isStaleF
                 (
                     "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" ,
-                    "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\2*.obj" ,
+                    "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\2*.obj"                           ,
                     "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\3*.obj"
                 )
             )
             {
-                sayF( "[4link]:  Linking to build the base dll." ) ;
+                sayF( "[4link]:  Linking to build the base dll and the base static object library." ) ;
     
+                {
+                    hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object" ) ;
+                    system( "for %f in (2* 3*) do @wlib -p=32 -q -n -b base.lib +%f" ) ;
+                }
+
                 char postMas[]      = { "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" } ;
                 char postMasShort[] = {                                                                                      "ideafarm.81000001.ipdos-wm" } ;
     
@@ -3987,13 +3992,14 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 
             { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > "                                  ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
 
-            //DEBUG INFO IS ALWAYS INSERTED INTO OBJECT MODULES
+            //FORMERLY, DEBUG INFO WAS ALWAYS INSERTED INTO OBJECT MODULES BECAUSE WE RELIED ON THE LINKER TO STRIP IT
+            //20251108@0937: NOW DEBUG INFO IS ONLY INSERTED IF flELVES_DEBUGiNFO, SO THAT LEAN STATIC OBJECT LIBRARY FILES CAN BE BUILT
             {
                 char postCmd[ 0x400 ] = "" ;
                                                        strcat( postCmd , bCNotCpp ? "wcc386" : "wpp386" ) ;
                                                        strcat( postCmd , !bCNotCpp ? " " IPDOScOMPILEoPTIONS : " " IPDOScOMPILEoPTIONScnOTcPP ) ;
                 if( bTryCatch )                        strcat( postCmd , " -xs" ) ; // 20150321@1747: CAN'T DO THIS GLOBALLY BECAUSE BREAKS pTinAM ; AT THIS TIME, WANT IT ONLY FOR CALLING openSSL
-                /*if( flagsAll & flELVES_DEBUGiNFO )*/ strcat( postCmd , " -d2" ) ;
+                if( flagsAll & flELVES_DEBUGiNFO )     strcat( postCmd , " -d2" ) ;
                                                        strcat( postCmd , bClass ? " -dBiFCcLASS=1" : " -dBiFCcLASS=0" ) ;
                                                        strcat( postCmd , " -bd" ) ;
 
