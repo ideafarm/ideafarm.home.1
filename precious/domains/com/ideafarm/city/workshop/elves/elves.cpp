@@ -4054,7 +4054,7 @@ void elf_obey_C::translateF( const char* postGroupP , int bPauseP )
 
 void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* postSuffixP )
 {
-    int bExe  = !!strcmp( postPrefixP , "5adam" ) ;
+    int bExe  = !!strcmp( postPrefixP , "5adam" ) ;     // IF !bExe THEN I WILL COMPILE OO TIMES, LEAVING AN OBJ FILE SUITABLE FOR LINKING INTO A DLL, AND ANOHTHER FLAVOR SUITABLE FOR LINKING STATICLY INTO AN EXE
     int bBoot =  !strcmp( postPrefixP , "4boot" ) ;
 
     if( bBoot )
@@ -4072,15 +4072,25 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
     char postDef[ 0x100 ] = "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\" ;
     strcat( postDef , postDefShort ) ;
 
-    char postObj[ 0x100 ] ;
-    strcpy( postObj , bExe ? "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\" : "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\" ) ;
-    strcat( postObj , postIdiForeignP ) ;
+    char postObjForDll[ 0x100 ] ;
+    strcpy( postObjForDll , "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\" ) ;
+    strcat( postObjForDll , postIdiForeignP ) ;
     if( !bExe )
     {
-        strcat( postObj , "." ) ;
-        strcat( postObj , postSuffixP ) ;
+        strcat( postObjForDll , "." ) ;
+        strcat( postObjForDll , postSuffixP ) ;
     }
-    strcat( postObj , ".obj" ) ;
+    strcat( postObjForDll , ".obj" ) ;
+
+    char postObjForExe[ 0x100 ] ;
+    strcpy( postObjForExe , "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\" ) ;
+    strcat( postObjForExe , postIdiForeignP ) ;
+    if( !bExe )
+    {
+        strcat( postObjForExe , "." ) ;
+        strcat( postObjForExe , postSuffixP ) ;
+    }
+    strcat( postObjForExe , ".obj" ) ;
 
     char postHdr[ 0x100 ] ;
     strcpy( postHdr , postPrefixP ) ;
@@ -4098,7 +4108,7 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
     strcpy( postRaw , postIdiForeignP ) ;
     strcat( postRaw , ".raw" ) ;
 
-    if( isStaleF( postObj , postDef ) )
+    if( isStaleF( postObjForDll , postDef ) )
     {
         char post001[ 0x100 ] ;
         strcpy( post001 , "  Compiling " ) ;
@@ -4143,28 +4153,33 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
         if( bOk )
         {
             { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > \\ideafarm.home.1\\ephemeral\\city\\workshop\\2source\\" ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
-    
-            char postCmd2[ 0x400 ] = "wpp386" ;
-            strcat( postCmd2 , " " IPDOScOMPILEoPTIONS ) ;
-            strcat( postCmd2 , " -dBiFCcLASS=0" ) ;
-            /*if( flagsAll & flELVES_DEBUGiNFO )*/ strcat( postCmd2 , " -d2" ) ;  //DEBUG INFO IS ALWAYS INSERTED INTO OBJECT MODULES
-            if( !bExe ) strcat( postCmd2 , " -bd" ) ;
+
+            for( int offPass = 0 ; offPass <= 1 ; offPass ++ )
+            {    
+                char postCmd2[ 0x400 ] = "wpp386" ;
+                strcat( postCmd2 , " " IPDOScOMPILEoPTIONS ) ;
+                strcat( postCmd2 , " -dBiFCcLASS=0" ) ;
+                /*if( flagsAll & flELVES_DEBUGiNFO )*/ strcat( postCmd2 , " -d2" ) ;  //DEBUG INFO IS ALWAYS INSERTED INTO OBJECT MODULES
+                if( !bExe && !offPass ) strcat( postCmd2 , " -bd" ) ;
 //            strcat( postCmd2 , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\adam.show.third.pch" ) ;
-            strcat( postCmd2 , " -fo=" ) ;
-            strcat( postCmd2 , postObj ) ;
-            strcat( postCmd2 , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
-            strcat( postCmd2 , " -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\" ) ;
-            strcat( postCmd2 , postIdiForeignP ) ;
-            if( !bExe )
-            {
-                strcat( postCmd2 , "." ) ;
-                strcat( postCmd2 , postSuffixP ) ;
+                strcat( postCmd2 , " -fo=" ) ;
+                strcat( postCmd2 , !bExe && !offPass ? postObjForDll : postObjForExe ) ;
+                strcat( postCmd2 , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
+                strcat( postCmd2 , " -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\" ) ;
+                strcat( postCmd2 , postIdiForeignP ) ;
+                if( !bExe )
+                {
+                    strcat( postCmd2 , "." ) ;
+                    strcat( postCmd2 , postSuffixP ) ;
+                }
+                strcat( postCmd2 , ".err \\ideafarm.home.1\\ephemeral\\city\\workshop\\2source\\" ) ;
+                strcat( postCmd2 , postSource ) ;
+        
+                //system( postCmd2 ) ;
+                hireF( idMe , postCmd2 ) ;
+
+                if( bExe ) break ;          // IF bExe THEN I ONLY MAKE WO OBJ FILE ; ELSE I MAKE WO SUITABLE FOR LINKING INTO A DLL, AND ANOTHER FLAVOR SUITABLE FOR STATIC LINKING INTO A EXE
             }
-            strcat( postCmd2 , ".err \\ideafarm.home.1\\ephemeral\\city\\workshop\\2source\\" ) ;
-            strcat( postCmd2 , postSource ) ;
-    
-            //system( postCmd2 ) ;
-            hireF( idMe , postCmd2 ) ;
             inc02AM( cCompiled ) ;
     
             ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw" , postRaw ) ;

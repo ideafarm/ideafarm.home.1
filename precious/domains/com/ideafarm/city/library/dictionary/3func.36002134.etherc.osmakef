@@ -183,17 +183,23 @@
         {
         if( bErrors )
 
-        third.osCompileF( tin0P , bErrors , osFileNameC( tin0P , third , tObj ) , osFileNameC( tin0P , third , tErr ) , osFileNameC( tin0P , third , tSrc ) , flagsP ) ;
+        }
+            if( !bExe ) third.osCompileF( tin0P , bErrors , osFileNameC( tin0P , third ,        tObjForExe              ) , osFileNameC( tin0P , third , tErr ) , osFileNameC( tin0P , third , tSrc ) , flagsP | flMAKE_EXE ) ;
+                        third.osCompileF( tin0P , bErrors , osFileNameC( tin0P , third , bExe ? tObjForExe : tObjForDll ) , osFileNameC( tin0P , third , tErr ) , osFileNameC( tin0P , third , tSrc ) , flagsP              ) ;
+            boolT bExe = F(flagsP) & flMAKE_EXE || F(flagsP) & flMAKE_EXEwIN ;
+        {
         ZE( boolT , bErrors ) ;
 
         if( diskFileExistsF( tin0P , tErr ) ) diskFileOrDirDeleteF( tin0P , tErr ) ;
-        if( diskFileExistsF( tin0P , tObj ) ) diskFileOrDirDeleteF( tin0P , tObj ) ;
+        if( diskFileExistsF( tin0P , tObjForDll ) ) diskFileOrDirDeleteF( tin0P , tObjForDll ) ;
         diskMakeDirIfNeededF( tin0P , tErr ) ;
-        diskMakeDirIfNeededF( tin0P , tObj ) ;
+        diskMakeDirIfNeededF( tin0P , tObjForExe ) ;
+        diskMakeDirIfNeededF( tin0P , tObjForDll ) ;
 
-        TN( tErr , "" ) ; tErr = T(psttHome)+T("ephemeral/city/workshop/4report/"    )+tIdiForeign+tDot+tIdModule+T(".err") ;
-        TN( tObj , "" ) ; tObj = T(psttHome)+T("ephemeral/city/workshop/3object.dll/")+tIdiForeign+tDot+tIdModule+T(".obj") ;
-        TN( tSrc , "" ) ; tSrc = T(psttHome)+T("ephemeral/city/workshop/2source/"    )+tIdiForeign+tDot+tIdModule+T(".cpp") ;
+        TN( tErr       , "" ) ; tErr       = T(psttHome)+T("ephemeral/city/workshop/4report/"    )+tIdiForeign+tDot+tIdModule+T(".err") ;
+        TN( tObjForExe , "" ) ; tObjForExe = T(psttHome)+T("ephemeral/city/workshop/3object.exe/")+tIdiForeign+tDot+tIdModule+T(".obj") ;
+        TN( tObjForDll , "" ) ; tObjForDll = T(psttHome)+T("ephemeral/city/workshop/3object.dll/")+tIdiForeign+tDot+tIdModule+T(".obj") ;
+        TN( tSrc       , "" ) ; tSrc       = T(psttHome)+T("ephemeral/city/workshop/2source/"    )+tIdiForeign+tDot+tIdModule+T(".cpp") ;
     
         }
             delF( tin0P , psttIdModule ) ;

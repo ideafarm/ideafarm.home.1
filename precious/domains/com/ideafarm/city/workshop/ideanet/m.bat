@@ -5,7 +5,7 @@ if exist *.obj del *.obj
 
  copy \ideafarm.home.1\ephemeral\city\workshop\3object.exe\2*.obj
  copy \ideafarm.home.1\ephemeral\city\workshop\3object.exe\3*.obj
- copy \ideafarm.home.1\ephemeral\city\workshop\3object.dll\510008bd.*.obj
+ copy \ideafarm.home.1\ephemeral\city\workshop\3object.exe\510008bd.*.obj
 
 wpp386 -d2 -dBiFCcLASS=0 ideanet.cpp
 
