@@ -2707,12 +2707,13 @@ void elf_obey_C::liveF( void )
     
                 {
                     hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll" ) ;
-                    system( "for %f in (2* 3*) do @wlib -p=32 -q -n -b base.dll.lib +%f" ) ;
+
+                    if( !fileExistsF( "base.dll.lib" ) system( "for %f in (2* 3*) do @wlib -p=2048 -q -b base.dll.lib -+%f" ) ;     // THIS TAKES A LONG TIME; TO GET THE STATIC LIB UPDATED, DELETE IT MANUALLY
                 }
     
                 {
                     hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe" ) ;
-                    system( "for %f in (2* 3*) do @wlib -p=32 -q -n -b base.exe.lib +%f" ) ;
+                    if( !fileExistsF( "base.exe.lib" ) system( "for %f in (2* 3*) do @wlib -p=2048 -q -b base.exe.lib -+%f" ) ;     // THIS TAKES A LONG TIME; TO GET THE STATIC LIB UPDATED, DELETE IT MANUALLY
                 }
 
                 char postMas[]      = { "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" } ;
@@ -5704,6 +5705,20 @@ int sourceCodeExistsF( void )
     int rc = 0 ;
     WIN32_FIND_DATA info ;
     HANDLE oshFind = FindFirstFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\elves\\elves.cpp" , &info ) ;
+
+    if( oshFind != INVALID_HANDLE_VALUE )
+    {
+        FindClose( oshFind ) ; oshFind = INVALID_HANDLE_VALUE ;
+        rc = 1 ;
+    }
+    return rc ;
+}
+
+int fileExistsF( char* postP )
+{
+    int rc = 0 ;
+    WIN32_FIND_DATA info ;
+    HANDLE oshFind = FindFirstFile( postP , &info ) ;
 
     if( oshFind != INVALID_HANDLE_VALUE )
     {
