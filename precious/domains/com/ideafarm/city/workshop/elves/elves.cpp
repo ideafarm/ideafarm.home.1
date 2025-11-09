@@ -315,6 +315,7 @@ void           itoaF( char* post9P , int costa9P , int cP ) ;
 void           makeFoldersCopyThirdPartyDllsF( void ) ;
 char*          newF( int cbP ) ;
 int            sourceCodeExistsF( void ) ;
+int            fileExistsF( char* postP ) ;
 void           tmAbortF( void* pnuP ) ;
 void           tmElfF( void* pElfP ) ;
 void           truncateF( char* postP , const char* postTestP ) ;
@@ -2708,12 +2709,12 @@ void elf_obey_C::liveF( void )
                 {
                     hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll" ) ;
 
-                    if( !fileExistsF( "base.dll.lib" ) system( "for %f in (2* 3*) do @wlib -p=2048 -q -b base.dll.lib -+%f" ) ;     // THIS TAKES A LONG TIME; TO GET THE STATIC LIB UPDATED, DELETE IT MANUALLY
+                    if( !fileExistsF( "base.dll.lib" ) ) system( "for %f in (2* 3*) do @wlib -p=2048 -q -b base.dll.lib -+%f" ) ;     // THIS TAKES A LONG TIME; TO GET THE STATIC LIB UPDATED, DELETE IT MANUALLY
                 }
     
                 {
                     hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe" ) ;
-                    if( !fileExistsF( "base.exe.lib" ) system( "for %f in (2* 3*) do @wlib -p=2048 -q -b base.exe.lib -+%f" ) ;     // THIS TAKES A LONG TIME; TO GET THE STATIC LIB UPDATED, DELETE IT MANUALLY
+                    if( !fileExistsF( "base.exe.lib" ) ) system( "for %f in (2* 3*) do @wlib -p=2048 -q -b base.exe.lib -+%f" ) ;     // THIS TAKES A LONG TIME; TO GET THE STATIC LIB UPDATED, DELETE IT MANUALLY
                 }
 
                 char postMas[]      = { "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" } ;
