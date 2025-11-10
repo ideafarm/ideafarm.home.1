@@ -17,19 +17,55 @@ TODO
 
 DONE( tmWorkF )
 }
-    etherC::loafIF( tin0P ) ;
-    CONoUTrAW( "\r" ) ;
+    etThread.traceF( tin0P , T("normal access restored") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
-    etThread.traceF( tin0P , T("this computer no longer has access to its normal DNS servers ; key Ctrl-C to restore access") ) ;
+    }
+        etThread.delF( tin0P , psttUnwanted ) ;
+        etThread.delF( tin0P , psttWanted ) ;
+        etThread.strHearF( tin0P , psttWanted , psttUnwanted , 0 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
+        etThread.traceF( tin0P , T("Press the Enter key, and I will restore your access to the public web and disable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
-    ideaNetC in( tin0P , etThread ) ;
+#endif
+        }
+
+        {
+        if( bFirefox )
+
+        etThread.delF( tin0P , psttUnwanted ) ;
+        etThread.delF( tin0P , psttWanted ) ;
+        boolT bFirefox = !etThread.strCompareF( tin0P , psttWanted , tY ) ;
+        etThread.strConvertToLowerCaseF( tin0P , psttWanted ) ;
+        etThread.strHearF( tin0P , psttWanted , psttUnwanted , 1 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
+        etThread.traceF( tin0P , T("Is Firefox your default browser on this computer? ('y' or 'n'):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+
+        etThread.osHttpViewF( tin0P , T("about:config?dnsCache") , 0 ) ;
+
+        etThread.delF( tin0P , psttBrowser ) ;
+        etThread.traceF( tin0P , psttBrowser ) ;
+        etThread.osHttpViewerF( tin0P , psttBrowser ) ; ___( psttBrowser ) ;
+        ZE( strokeS* , psttBrowser ) ;
+#if defined( NEVERdEFINED )
+
+        ideaNetC in( tin0P , etThread ) ;
+    {
+
+    etThread.delF( tin0P , psttUnwanted ) ;
+    etThread.delF( tin0P , psttWanted ) ;
+    etThread.strHearF( tin0P , psttWanted , psttUnwanted , 0 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
+    etThread.traceF( tin0P , T("Press the Enter key, and I will disable your access to the public web and enable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etThread.traceF( tin0P , T(DASH127) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+
+    ZE( strokeS* , psttUnwanted ) ;
+    ZE( strokeS* , psttWanted ) ;
+
+    TN( tY , "y" ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
 
 //OBSOLETES: 8bc_
 
-/*1*/WAKEhIDE( "example.simplest.1snip.150001d2.ideaNetC" )/*1*/
+/*1*/WAKEhIDE( "ifcIDaDAM_IDEAnET" )/*1*/
 /**/
 */
 /*

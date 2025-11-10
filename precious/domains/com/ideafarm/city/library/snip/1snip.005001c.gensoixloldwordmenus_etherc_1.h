@@ -175,6 +175,7 @@
     "    . sockFtpServerF_o       . ?? ")+T(postName)+T("\r\n"
     "    . sockNicNameF_o4@       . ?? ")+T(postName)+T("\r\n"
     "    . sockPsttHostF_o4@d       . ?? ")+T(postName)+T("\r\n"
+    "    . strHearF_o4@4@3       . ?? ")+T(postName)+T("\r\n"
     "    . strAbridgeF_o4@4@4@       . ?? ")+T(postName)+T("\r\n"
     "    . strAsciiCodeTableF_o4@       . ?? ")+T(postName)+T("\r\n"
     "    . strBadCodeLineF_o4@4@       . ?? ")+T(postName)+T("\r\n"

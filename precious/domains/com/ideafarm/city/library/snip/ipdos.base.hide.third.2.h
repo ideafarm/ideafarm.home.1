@@ -5835,8 +5835,8 @@ it is illegal to refer to this symbol in the definition of an adam
 it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
-/*1*//*extern "C" typedef voidT (OSF *peekFT)( peekS* const pPeekParametersP )*//*1*/
-extern "C" typedef voidT (OSF */*ff*/peekFT/*ff*/)( peekS* const pPeekParametersP ) ; /*ff*//**//*ff*/
+/*1*//*extern "C" typedef countT (OSF *peekFT)( peekS* const pPeekParametersP )*//*1*/
+extern "C" typedef countT (OSF */*ff*/peekFT/*ff*/)( peekS* const pPeekParametersP ) ; /*ff*//**//*ff*/
 
 
 //
@@ -7508,8 +7508,8 @@ typedef boolT (*/*ff*/diskWalkSearchCBFT/*ff*/)( tin0S& tin0P , countT& cDirsP ,
 it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
-/*1*//*extern "C" voidT _export OSF peekF(   peekS* const pPeekParametersP )*//*1*/
-extern "C" voidT _export OSF peekF(   peekS* const pPeekParametersP ) ;
+/*1*//*extern "C" countT _export OSF peekF( peekS* const pPeekParametersP )*//*1*/
+extern "C" countT _export OSF peekF( peekS* const pPeekParametersP ) ;
 
 
 //
@@ -30281,7 +30281,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340f2.thirdC.dosReadProcessMemoryIF!||
  static voidT dosWriteProcessMemoryIF( tin0S& tin0P , boolT& bOkP , voidT* const pvToP , const countT osPidP , byteT* const pbP , const countT cbP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340f3.thirdC.dosWriteProcessMemoryIF!||
- voidT dosReadStdInF( tin0S& tin0P , byteT*& pbP , countT& cbP ) ;
+ voidT dosReadStdInF( tin0S& tin0P , byteT*& pbP , byteT*& pbUnwantedP , countT& cbP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34078.thirdC.dosReadStdInF!||
  voidT dosReadThreadContextF( tin0S& tin0P , countT*& pcLathP , countT*& pcWothP , const countT osHandleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340fc.thirdC.dosReadThreadContextF!||
@@ -34100,6 +34100,7 @@ examples
  voidT statisticsF( tin0S& tin0P , measureT& minP , measureT& maxP , measureT& meanP , measureT& medianP , measureT& stdDeviationP , stackC& stXP ) ;
 
 /* commands: strings */
+ voidT strHearF( tin0S& tin0P , strokeS*& psttP , strokeS*& psttUnwantedP , const countT csttWantedP = 0 ) ;
  voidT strAbridgeF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttOldP = 0 , const strokeS* const psttDelimiterP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34034.etherC.strAbridgeF!||
  voidT strAsciiCodeTableF( tin0S& tin0P , strokeS*& psttP ) ;
@@ -34760,7 +34761,7 @@ each textC object contains an unmodifiable string of strokes
 */
 /**/
 
-/*1*/class circleC/*1*/
+/*1*/class _export circleC/*1*/
 {
     etherC&      ether       ;
     const boolT& bQuit       ;
@@ -48751,6 +48752,10 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.s_acceptF_parametersS : 1snip.150001d0.s_acceptF_parametersS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetC : 1snip.150001d2.ideaNetC BEGIN
+
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -48797,3 +48802,4 @@ i am nonconformant in that all of my member function definitions are in a single
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetC : 1snip.150001d2.ideaNetC END

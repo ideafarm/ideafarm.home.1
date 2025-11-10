@@ -27,20 +27,20 @@ paint dialog active standout button bright white on cyan
 display all /close
 display status
 display toolbar /fixed 0
+display assembly /close 1625,1287,8170,8712
 display break /close 0,1161,5225,3141
 display file /close 0,0,10000,9999
-display locals /close 6040,234,3960,4347
 display log /close 0,5931,2605,2106
-display memory /close 4265,0,4000,9999
+display memory /close 7780,225,2220,9774
+display register /close 0,63,10000,792
 display stack /close 8000,4995,2000,4995
 display thread /close 7815,2421,1810,4563
-display variable /close 3370,810,1665,1107
+display variable /close 20,1539,1680,1125
 display calls /open 2475,5589,6160,4410
+display locals /open 6040,234,3960,4347
 display modules /open 8610,0,1390,9981
-display source /open 0,0,10000,7011
-display watch /open 70,7011,9930,2565
-display register /open 0,63,10000,792
-display assembly /open 1625,1287,8170,8712
+display source /open 0,0,10000,7722
+display watch /open 0,7677,9960,2277
 font all {-13 0 0 0 400 0 0 0 0 1 2 1 49 "Courier"}
 font assembly {-13 0 0 0 400 0 0 0 0 1 1 1 1 "Courier"}
 font break {-13 0 0 0 400 0 0 0 0 1 1 1 1 "Courier"}
@@ -56,9 +56,9 @@ font thread {-13 0 0 0 400 0 0 0 0 1 1 1 1 "Courier"}
 font variable {-13 0 0 0 400 0 0 0 0 1 1 1 1 "Courier"}
 set autosave on
 set assembly source hexadecimal Intel/Lower Intel/Outside 
-set variable partial nocode noinherit nocompiler members private protected nostatic 
+set variable partial nocode inherit nocompiler members private protected static 
 set functions all 
-set globals all 
+set globals typed 
 set modules typed 
 set register Intel/Hexadecimal Intel/Normal Intel/User 
 set fpu Intel/Decimal 
@@ -76,58 +76,58 @@ set symbol /add /ignore {*_}
 set symbol /add /ignore {_*}
 set tab 8
 set types {
-  struct bookMarkS { 
-   field pbz { pointer }
+  struct bookMarkS { noinherit nostatic 
+   field pbz { pointer noinherit nostatic }
   }
-  struct booksC { isstruct scoopC hex 
+  struct booksC { isstruct scoopC hex noinherit nostatic 
   }
-  struct DEBUG_EVENT { 
-   field dwProcessId { decimal }
-   field dwThreadId { decimal }
+  struct DEBUG_EVENT { noinherit nostatic 
+   field dwProcessId { decimal noinherit nostatic }
+   field dwThreadId { decimal noinherit nostatic }
   }
-  struct osTextC { isstruct handleC hex 
-   field pbFoot { string }
+  struct osTextC { isstruct handleC hex noinherit nostatic 
+   field pbFoot { string noinherit nostatic }
   }
-  struct osFileNameC { 
-   field post { string }
+  struct osFileNameC { noinherit nostatic 
+   field post { string noinherit nostatic }
   }
-  struct SYSTEMTIME { 
-   field wYear { decimal }
-   field wMinute { decimal }
+  struct SYSTEMTIME { noinherit nostatic 
+   field wYear { decimal noinherit nostatic }
+   field wMinute { decimal noinherit nostatic }
   }
-  struct poolRegistrationS { pointer 
+  struct poolRegistrationS { pointer noinherit nostatic 
   }
-  struct processGlobal1S { 
-   field pbAddressMin { pointer }
+  struct processGlobal1S { noinherit nostatic 
+   field pbAddressMin { pointer noinherit nostatic }
   }
-  struct tinS { 
-   field pbThreadStackLowest { pointer }
-   field pbThreadStackEnd { pointer }
+  struct tinS { noinherit nostatic 
+   field pbThreadStackLowest { pointer noinherit nostatic }
+   field pbThreadStackEnd { pointer noinherit nostatic }
   }
-  struct tinNormalS { 
-   field pbThreadStackEnd { pointer }
-   field pbThreadStackLowest { pointer }
+  struct tinNormalS { noinherit nostatic 
+   field pbThreadStackEnd { pointer noinherit nostatic }
+   field pbThreadStackLowest { pointer noinherit nostatic }
   }
-  struct tin123S { 
-   field pbThreadStackEnd { pointer }
-   field pbThreadStackLowest { pointer }
+  struct tin123S { noinherit nostatic 
+   field pbThreadStackEnd { pointer noinherit nostatic }
+   field pbThreadStackLowest { pointer noinherit nostatic }
   }
-  struct tin1S { 
-   field pbThreadStackEnd { pointer }
-   field pbThreadStackLowest { pointer }
-   field brcLath { decimal }
+  struct tin1S { noinherit nostatic 
+   field pbThreadStackEnd { pointer noinherit nostatic }
+   field pbThreadStackLowest { pointer noinherit nostatic }
+   field brcLath { decimal noinherit nostatic }
   }
-  struct addressRangeS { 
-   field pbWoth { pointer }
-   field pbLath { pointer }
+  struct addressRangeS { noinherit nostatic 
+   field pbWoth { pointer noinherit nostatic }
+   field pbLath { pointer noinherit nostatic }
   }
-  struct homeDiskS { 
-   field ostDisk { character }
+  struct homeDiskS { noinherit nostatic 
+   field ostDisk { character noinherit nostatic }
   }
-  struct strokeS { pointer 
+  struct strokeS { pointer noinherit nostatic 
   }
-  struct infoFileS { 
-   field postOsName { string }
+  struct infoFileS { noinherit nostatic 
+   field postOsName { string noinherit nostatic }
   }
 }
 set macro source v {
@@ -598,18 +598,18 @@ set macro all SHIFT-F9 {
     }
     
 }
-set supportroutine {__wcpp_*}{IF@*}{RT@*}{__CHK}{__CHP}{__EDA}{__EDC}{__EDD}
-set supportroutine {__EDM}{__EDS}{__EPI}{__Far16Cdecl2}{__Far16Func2}{__Far16Pascal2}
-set supportroutine {__Far16ToFlat}{__FDA}{__FDC}{__FDD}{__FDFS}{__FDI4}
-set supportroutine {__FDI8}{__FDM}{__FDN}{__FDS}{__FDU4}{__FDU8}{__FlatToFar16}
-set supportroutine {__FSA}{__FSC}{__FSD}{__FSFD}{__FSI4}{__FSI8}{__FSM}
-set supportroutine {__FSN}{__FSS}{__FSU4}{__FSU8}{__GETDS}{__GRO}{__I4D}
-set supportroutine {__I4FD}{__I4FS}{__I4M}{__I8DQE}{__I8DQ}{__I8DRE}{__I8DR}
-set supportroutine {__I8D}{__I8FD}{__I8FS}{__I8M}{__PIA}{__PIS}{__PRO}
-set supportroutine {__PTC}{__PTS}{__RDFS}{__RDI4}{__RDU4}{__RSI4}{__RSU4}
-set supportroutine {__SCN1}{__SCN2}{__SCN4}{__STK}{__TNC}{__TNK}{__U4D}
-set supportroutine {__U4FD}{__U4FS}{__U4M}{__U8DQE}{__U8DQ}{__U8DRE}{__U8DR}
-set supportroutine {__U8D}{__U8FD}{__U8FS}{__U8M}
+set supportroutine {__U8M}{__U8FS}{__U8FD}{__U8D}{__U8DR}{__U8DRE}{__U8DQ}
+set supportroutine {__U8DQE}{__U4M}{__U4FS}{__U4FD}{__U4D}{__TNK}{__TNC}
+set supportroutine {__STK}{__SCN4}{__SCN2}{__SCN1}{__RSU4}{__RSI4}{__RDU4}
+set supportroutine {__RDI4}{__RDFS}{__PTS}{__PTC}{__PRO}{__PIS}{__PIA}
+set supportroutine {__I8M}{__I8FS}{__I8FD}{__I8D}{__I8DR}{__I8DRE}{__I8DQ}
+set supportroutine {__I8DQE}{__I4M}{__I4FS}{__I4FD}{__I4D}{__GRO}{__GETDS}
+set supportroutine {__FSU8}{__FSU4}{__FSS}{__FSN}{__FSM}{__FSI8}{__FSI4}
+set supportroutine {__FSFD}{__FSD}{__FSC}{__FSA}{__FlatToFar16}{__FDU8}
+set supportroutine {__FDU4}{__FDS}{__FDN}{__FDM}{__FDI8}{__FDI4}{__FDFS}
+set supportroutine {__FDD}{__FDC}{__FDA}{__Far16ToFlat}{__Far16Pascal2}
+set supportroutine {__Far16Func2}{__Far16Cdecl2}{__EPI}{__EDS}{__EDM}{__EDD}
+set supportroutine {__EDC}{__EDA}{__CHP}{__CHK}{RT@*}{IF@*}{__wcpp_*}
 set breakonwrite off
 set dontexpandhex off
 flip off

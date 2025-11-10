@@ -4004,21 +4004,21 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
             //20251108@0937: NOW DEBUG INFO IS ONLY INSERTED IF flELVES_DEBUGiNFO, SO THAT LEAN STATIC OBJECT LIBRARY FILES CAN BE BUILT
             {
                 char postCmd[ 0x400 ] = "" ;
-                                                       strcat( postCmd , bCNotCpp ? "wcc386" : "wpp386" ) ;
-                                                       strcat( postCmd , !bCNotCpp ? " " IPDOScOMPILEoPTIONS : " " IPDOScOMPILEoPTIONScnOTcPP ) ;
-                if( bTryCatch )                        strcat( postCmd , " -xs" ) ; // 20150321@1747: CAN'T DO THIS GLOBALLY BECAUSE BREAKS pTinAM ; AT THIS TIME, WANT IT ONLY FOR CALLING openSSL
-                if( flagsAll & flELVES_DEBUGiNFO )     strcat( postCmd , " -d2" ) ;
-                                                       strcat( postCmd , bClass ? " -dBiFCcLASS=1" : " -dBiFCcLASS=0" ) ;
-                if( !offPass )                         strcat( postCmd , " -bd" ) ;
+                                                               strcat( postCmd , bCNotCpp ? "wcc386" : "wpp386" ) ;
+                                                               strcat( postCmd , !bCNotCpp ? " " IPDOScOMPILEoPTIONS : " " IPDOScOMPILEoPTIONScnOTcPP ) ;
+                if( bTryCatch )                                strcat( postCmd , " -xs" ) ; // 20150321@1747: CAN'T DO THIS GLOBALLY BECAUSE BREAKS pTinAM ; AT THIS TIME, WANT IT ONLY FOR CALLING openSSL
+                if( !offPass || flagsAll & flELVES_DEBUGiNFO ) strcat( postCmd , " -d2" ) ;                                                             //P:PERSONALITY: DLL FLAVOR ALWAYS GETS DEBUGGING INFO BECAUSE THE LINKER CAN STRIP IT
+                                                               strcat( postCmd , bClass ? " -dBiFCcLASS=1" : " -dBiFCcLASS=0" ) ;
+                if( !offPass )                                 strcat( postCmd , " -bd" ) ;
 
                 if( !bCNotCpp )
                 {
-//                                                       strcat( postCmd , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
-//                                                       strcat( postCmd , bThird ? "base.show.third.pch" : "base.hide.third.pch" ) ;
+//                                                           strcat( postCmd , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
+//                                                           strcat( postCmd , bThird ? "base.show.third.pch" : "base.hide.third.pch" ) ;
                 }
-                                                       strcat( postCmd , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
-                                                       strcat( postCmd , !offPass ? " -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " : " -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ) ;
-                                                       strcat( postCmd , postSource ) ;
+                                                               strcat( postCmd , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
+                                                               strcat( postCmd , !offPass ? " -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " : " -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ) ;
+                                                               strcat( postCmd , postSource ) ;
                 //system( postCmd ) ;
                 hireF( idMe , postCmd ) ;
             }
@@ -4160,22 +4160,22 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
             {    
                 char postCmd2[ 0x400 ] = "wpp386" ;
                 strcat( postCmd2 , " " IPDOScOMPILEoPTIONS ) ;
-                strcat( postCmd2 , " -dBiFCcLASS=0" ) ;
-                /*if( flagsAll & flELVES_DEBUGiNFO )*/ strcat( postCmd2 , " -d2" ) ;  //DEBUG INFO IS ALWAYS INSERTED INTO OBJECT MODULES
-                if( !bExe && !offPass ) strcat( postCmd2 , " -bd" ) ;
-//            strcat( postCmd2 , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\adam.show.third.pch" ) ;
-                strcat( postCmd2 , " -fo=" ) ;
-                strcat( postCmd2 , !bExe && !offPass ? postObjForDll : postObjForExe ) ;
-                strcat( postCmd2 , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
-                strcat( postCmd2 , " -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\" ) ;
-                strcat( postCmd2 , postIdiForeignP ) ;
+                                                               strcat( postCmd2 , " -dBiFCcLASS=0" ) ;
+                if( !offPass || flagsAll & flELVES_DEBUGiNFO ) strcat( postCmd2 , " -d2" ) ;  //P:PERSONALITY: DLL FLAVOR ALWAYS GETS DEBUGGING INFO BECAUSE THE LINKER CAN STRIP IT
+                if( !offPass && !bExe                        ) strcat( postCmd2 , " -bd" ) ;
+//                                                           strcat( postCmd2 , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\adam.show.third.pch" ) ;
+                                                               strcat( postCmd2 , " -fo=" ) ;
+                                                               strcat( postCmd2 , !bExe && !offPass ? postObjForDll : postObjForExe ) ;
+                                                               strcat( postCmd2 , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
+                                                               strcat( postCmd2 , " -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\" ) ;
+                                                               strcat( postCmd2 , postIdiForeignP ) ;
                 if( !bExe )
                 {
-                    strcat( postCmd2 , "." ) ;
-                    strcat( postCmd2 , postSuffixP ) ;
+                                                               strcat( postCmd2 , "." ) ;
+                                                               strcat( postCmd2 , postSuffixP ) ;
                 }
-                strcat( postCmd2 , ".err \\ideafarm.home.1\\ephemeral\\city\\workshop\\2source\\" ) ;
-                strcat( postCmd2 , postSource ) ;
+                                                               strcat( postCmd2 , ".err \\ideafarm.home.1\\ephemeral\\city\\workshop\\2source\\" ) ;
+                                                               strcat( postCmd2 , postSource ) ;
         
                 //system( postCmd2 ) ;
                 hireF( idMe , postCmd2 ) ;

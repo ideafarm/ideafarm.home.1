@@ -9,55 +9,101 @@
 
 }
     }
-        pbP[ cbP > 1 ? cbP - 2 : 0 ] = 0 ;
-        cbP = cba ;
+        }
+            cbP = postCR - pbP ;
+            *postCR = 0 ;
+        {
+        else
+        }
+            #endif
+
+                BOSpOOP
+                BOS( WHATsfr , BOSoK , ReadFile( (HANDLE)((tin1S&)tin0P).brcRaw , pbd , 1 , &cbd , 0 ) )
+
+                BOSpOOP
+                BOS( WHATgbo , BOShANDLE , GetStdHandle( STD_INPUT_HANDLE ) ) //INTENTIONALLY NOT CLOSED, PER MSDN DOC COMMENT
+
+            #elif defined( __NT__ )
+                BOSpOOP
+                BOS( WHATsfr , BOSfAIL , DosRead( (HFILE)0 , (voidT*)pbd , 1 , &cbd ) )
+            #ifdef __OS2__
+            ZE( ULONG , cbd ) ;
+            byteT pbd[ 1 ] ;                                                                // DISCARD THE '\n' THAT IS WAITING TO BE READ
+
+            cbP = postCR - 1 - pbP ;
+            *( postCR - 1 ) = 0 ;
+            }
+                pbUnwantedP[ 1 ] = 0 ;
+                pbUnwantedP[ 0 ] = pbP[ cbP ] ;
+            {
+            if( pbUnwantedP )
+            newF( tin0P , LF , pbUnwantedP , 2 ) ; ___( pbUnwantedP ) ;
+        {
+        else if( postCR == pbP + cbP + 1 )
+        }
+            pbP[ cbP ] = 0 ;
+            }
+                pbUnwantedP[ 2 ] = 0 ;
+                pbUnwantedP[ 1 ] = pbP[ cbP + 1 ] ;
+                pbUnwantedP[ 0 ] = pbP[ cbP     ] ;
+            {
+            if( pbUnwantedP )
+            newF( tin0P , LF , pbUnwantedP , 3 ) ; ___( pbUnwantedP ) ;
+        {
+        if( !postCR )
+        osTextT* postCR = c_strstrIF( tin0P , pbP , "\r" ) ;
+
         #endif
 
             BOSpOOP
-            BOS( WHATsfr , BOSoK , ReadFile( (HANDLE)((tin1S&)tin0P).brcRaw , pbP , cbP , &cba , 0 ) )
+            BOS( WHATsfr , BOSoK , ReadFile( (HANDLE)((tin1S&)tin0P).brcRaw , pbP , cba , &cbIn , 0 ) )
 
             BOSpOOP
             BOS( WHATgbo , BOShANDLE , GetStdHandle( STD_INPUT_HANDLE ) ) //INTENTIONALLY NOT CLOSED, PER MSDN DOC COMMENT
 
         #elif defined( __NT__ )
             BOSpOOP
-            BOS( WHATsfr , BOSfAIL , DosRead( (HFILE)0 , (voidT*)pbP , cbP , &cba ) )
+            BOS( WHATsfr , BOSfAIL , DosRead( (HFILE)0 , (voidT*)pbP , cba , &cbIn ) )
         #ifdef __OS2__
-        ZE( ULONG , cba ) ;
+        ZE( ULONG , cbIn ) ;
     {
     if( !POOP )
 
     if( pbP ) *pbP = 0 ;
-    newF( tin0P , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
-    cbP += 2 ; // FOR CRLF
+    newF( tin0P , LF , pbP , cba ) ; ___( pbP ) ;
+    countT cba = cbP + 2 ;      // CR LF
 
     _IO_
 
     }
         if( POOP ) return ;
-        __Z( cbP ) ;
+        __NZ( pbUnwantedP ) ;
         __NZ( pbP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::dosReadStdInF( tin0S& tin0P , byteT*& pbP , countT& cbP )/*1*/
+/*1*/voidT thirdC::dosReadStdInF( tin0S& tin0P , byteT*& pbP , byteT*& pbUnwantedP , countT& cbP )/*1*/
 
 /**/
 */
+  set this to the number of strokes wanted, excluding the terminating null
+  may be 0
  cbP
   after evaluation, is guaranteed to be nonze if impotence does not occur
   must be 0
  pbP
 arguments
+use the correspinding etherC member rather than me because it handles user input that exceeds cbP by more than 2 strokes
 a null byte is appended to the value, which is placed into pbP that caller provides
 after evaluation, cbP contains the actual number of bytes read
 limit: line must be less than the specified maximum size cbP
 the terminating crlf is read, but is excluded from the value
 does not return until the user has pressed the Enter key
 reads a line from std in
-it is illegal to refer to this symbol in the definition of an adam
+20251109@0907: HEAReNTER definition was removed many years ago in favor of an alternative that is now forgotten
+it was originally illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.1020085.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$dosReadStdInF.0.html\"\>instances\</A\>
 /*

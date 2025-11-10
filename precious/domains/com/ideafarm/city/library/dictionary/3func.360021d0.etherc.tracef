@@ -364,11 +364,11 @@
                         _IO_
                     {
                     if( !( F(flagsP) & flTRACE_NOpREFIX ) )
-                                                                             //20250711@1713: ADDED "0x30" FOR DELTA NET TIME AND CYCLES
-                    OStEXTAK( ostoSay , "\r\n" ) ;                           //20250622@1742: ADDED "0x20" FOR THE COMPUTER LAN NAME ADDED TODAY TO THE PREFIX
-                    OStEXT( ostoSay , TUCK + 0x50 + CBrEADABILITYmAPdUMP ) ; //CS:CODEsYNC: 360020 360020 ; 20171225@1122: INCREASED TO BE BIG ENOUGH FOR MEMORY READABILITY MAP DUMP
+                                                                                                                                //20250711@1713: ADDED "0x30" FOR DELTA NET TIME AND CYCLES
+                    if( !( F(flagsP) & flTRACE_NOcRlFaTbEGINNING ) ) OStEXTAK( ostoSay , "\r\n" ) ;                             //20250622@1742: ADDED "0x20" FOR THE COMPUTER LAN NAME ADDED TODAY TO THE PREFIX
+                                                                     OStEXT(   ostoSay , TUCK + 0x50 + CBrEADABILITYmAPdUMP ) ; //CS:CODEsYNC: 360020 360020 ; 20171225@1122: INCREASED TO BE BIG ENOUGH FOR MEMORY READABILITY MAP DUMP
 
-                    THREADmODE3oN( flTHREADmODE3_POOLaLLOCATEfROMhEAP )                         // MY CALLER MIGHT HAVE GRABBED LISTnAMEsYS_ROOT, WHICH COULD DEADLOCK sexC::sexC
+                    THREADmODE3oN( flTHREADmODE3_POOLaLLOCATEfROMhEAP )                                                         // MY CALLER MIGHT HAVE GRABBED LISTnAMEsYS_ROOT, WHICH COULD DEADLOCK sexC::sexC
 
                     }
                         //if( POOP ) return 0 ;

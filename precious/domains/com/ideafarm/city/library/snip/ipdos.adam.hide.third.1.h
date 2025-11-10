@@ -420,6 +420,7 @@ class   /*ff*/listingOfSet_countTstrz_C/*ff*/                           ; /*ff*/
 struct  /*ff*/addressRangeS/*ff*/                                       ; /*ff*//**//*ff*/
 struct  /*ff*/oshSocketAcceptedS/*ff*/                                  ; /*ff*//**//*ff*/
 struct  /*ff*/s_acceptF_parametersS/*ff*/                               ; /*ff*//**//*ff*/
+class   /*ff*/ideaNetC/*ff*/                                            ; /*ff*//**//*ff*/
 
 //INCLUDE GENERATED SNIPPETS HERE
 
@@ -602,13 +603,13 @@ it is illegal to refer to this symbol in the definition of an adam
 
 #define PEEK(postDebugP,postDisplayP,postTitleP)                                                                    \
                                                                                                                     \
-    extern "C" voidT _export OSF peekF( peekS* const pPeekParametersP )                                             \
+    extern "C" countT _export OSF peekF( peekS* const pPeekParametersP )                                            \
     {                                                                                                               \
         ZE( peekS* , ppp ) ;                                                                                        \
         ppp = pPeekParametersP ;                                                                                    \
         if( ppp )                                                                                                   \
         {                                                                                                           \
-            tin0S& tin0P  = ppp->tin0 ;                                                                    \
+            tin0S& tin0P  = ppp->tin0 ;                                                                             \
             etherC& ether = ppp->ether ;                                                                            \
             boolT save = bTlsEarlyLateIF() ;                                                                        \
             bTlsEarlyLateIF() = 0 ;                                                                                 \
@@ -617,6 +618,7 @@ it is illegal to refer to this symbol in the definition of an adam
             else if( !ether.strCompareF( tin0P , ppp->psttDirectives , T("!debug"  ) ) ) { ether.strMakeF( tin0P , LF , ppp->psttDirectivesReplied , T(postDebugP  ) ) ; ___( ppp->psttDirectivesReplied ) ; } \
             bTlsEarlyLateIF() = save ;                                                                              \
         }                                                                                                           \
+        return DDNUMB ;                                                                                             \
     }
 
 
@@ -11900,6 +11902,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TOOLpACKETsNIFFER                                    0x510008b4
 #define ifcIDaDAM_TOOLdOmANUALLY                                       0x510008b5
 #define ifcIDaDAM_QUERYsTRIPEeVENTS                                    0x510008b8
+#define ifcIDaDAM_IDEAnET                                              0x510008bd
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
@@ -22593,7 +22596,7 @@ examples
   \<A HREF=\"5.fe10104.1.1.0.html\"\>fe10104:  WAKEsHOW( "example.simplest.snip.0010005.WAKE" )\</A\>
 */
 /**/
-/*1*//*WAKEsHOW(titleP)*//*1*/
+/*1*//*WAKEdEBUGsHOW(titleP)*//*1*/
 #define WAKEdEBUGsHOW(titleP) PEEK( "yes" , "strokes" , (titleP) )
 
 
@@ -22619,7 +22622,7 @@ examples
 \<A HREF=\"5.00101da.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*WAKEsHOWtEXT(titleP)*//*1*/
+/*1*//*WAKEdEBUGsHOWtEXT(titleP)*//*1*/
 
 #define WAKEdEBUGsHOWtEXT(titleP) PEEK( "yes" , "text" , (titleP) )
 
@@ -45192,19 +45195,20 @@ arguments
 /*3*/
 #define flTRACE_RESET                0xe00001ee
 #define flTRACE_PARAMETERiSoStEXT    0xe00002ee
-#define flTRACE_NOpREFIX             0xe00004ee
-#define flTRACE_KEEPcRlF             0xe00008ee
-#define flTRACE_NOcONSOLE            0xe00010ee
-#define flTRACE_NObOOK               0xe00020ee
-#define flTRACE_NOtELL               0xe00040ee
-#define flTRACE_LOOP                 0xe00080ee
-#define flTRACE_HOMEeCHO             0xe00100ee
-#define flTRACE_HOMEeCHOdEADMAN1     0xe00200ee
-#define flTRACE_HOMEeCHOdEADMAN2     0xe00400ee
-#define flTRACE_HOMEeCHOgORILLAhOME  0xe00800ee
-#define flTRACE_ECHOoNLY             0xe01000ee
-#define flTRACE_FORCEdIVERT          0xe02000ee
-#define flTRACE_FORCEnOsILENCE       0xe04000ee
+#define flTRACE_NOcRlFaTbEGINNING    0xe00004ee
+#define flTRACE_NOpREFIX             0xe00008ee
+#define flTRACE_KEEPcRlF             0xe00010ee
+#define flTRACE_NOcONSOLE            0xe00020ee
+#define flTRACE_NObOOK               0xe00040ee
+#define flTRACE_NOtELL               0xe00080ee
+#define flTRACE_LOOP                 0xe00100ee
+#define flTRACE_HOMEeCHO             0xe00200ee
+#define flTRACE_HOMEeCHOdEADMAN1     0xe00400ee
+#define flTRACE_HOMEeCHOdEADMAN2     0xe00800ee
+#define flTRACE_HOMEeCHOgORILLAhOME  0xe01000ee
+#define flTRACE_ECHOoNLY             0xe02000ee
+#define flTRACE_FORCEdIVERT          0xe04000ee
+#define flTRACE_FORCEnOsILENCE       0xe08000ee
 /*3*/
 #define flTRACE_null    0xe00000ee
 

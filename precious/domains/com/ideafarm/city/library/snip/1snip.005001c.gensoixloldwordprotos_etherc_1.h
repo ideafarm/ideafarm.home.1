@@ -353,6 +353,8 @@ voidT sockNicNameF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const st
 
 voidT sockPsttHostF_o4Pd_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
+voidT strHearF_o4P4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
 voidT strAbridgeF_o4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT strAsciiCodeTableF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;

@@ -1415,6 +1415,14 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
+    TN( tNameSoixlOld , "strHearF_o4@4@3" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)strHearF_o4P4P3_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
     TN( tNameSoixlOld , "strAbridgeF_o4@4@4@" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;

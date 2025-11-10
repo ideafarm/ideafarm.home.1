@@ -428,5 +428,6 @@
     ((countT)0x36179) , "tlsstackframenotls1s" ,
     ((countT)0x3617a) , "tlsstackframe12s" ,
     ((countT)0x3617b) , "tlsstackframe1s" ,
+    ((countT)0x3617c) , "ideaNetC" ,
     ((countT)0x41000) , "citygate" ,
     ((countT)0x20231) , "5adam" ,
