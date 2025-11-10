@@ -57,8 +57,12 @@ DONE( tmKillSocketF )
     {
     boolT& bQuitKillSocket = ((tin1S&)tin0P).pag1->_thirdC_.bQuitKillSocket ;
     TELL( "working" )
+
+    sgnKillSocketReadyP.giveF( tin0P ) ;
+
+    signC& sgnKillSocketReadyP = *(signC*)pTaskP->c1 ;
 {
-if( pTaskP )
+if( pTaskP && pTaskP->c1 )
 
 /*1*/TASK( tmKillSocketF )/*1*/
 /**/

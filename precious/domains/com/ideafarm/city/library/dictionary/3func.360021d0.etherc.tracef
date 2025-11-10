@@ -444,7 +444,8 @@
             if( F(flagsP) & flTRACE_PARAMETERiSoStEXT )
             _IO_
         {
-        if( processGlobal2I.postSuppressTraceIf[ 0 ] && psttP )
+        else if( processGlobal2I.postSuppressTraceIf[ 0 ] && psttP )
+        if( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_NOtRACE ) bTrace = 0 ;
 
         }
             if( bAll ) bTrace ++ ;

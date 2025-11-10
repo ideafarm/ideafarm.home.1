@@ -13576,6 +13576,8 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 #define flPROCESSsTATE_GLOBALdESTRUCTIONiScOMPLETE  0xe000202d
 #define flPROCESSsTATE_MAINtHREADiSaLONE            0xe000402d
 #define flPROCESSsTATE_EXCEPTIONnOThANDLED          0xe000802d
+#define flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM       0xe001002d
+#define flPROCESSsTATE_NOtRACE                      0xe002002d
 /*3*/
 #define flPROCESSsTATE_null    0xe000002d
 

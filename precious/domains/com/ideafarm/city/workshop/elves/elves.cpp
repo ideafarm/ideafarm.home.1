@@ -2706,11 +2706,12 @@ void elf_obey_C::liveF( void )
             {
                 sayF( "[4link]:  Linking to build the base dll and the base static object library." ) ;
     
-                {
-                    hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll" ) ;
-
-                    if( !fileExistsF( "base.dll.lib" ) ) system( "for %f in (2* 3*) do @wlib -p=2048 -q -b base.dll.lib -+%f" ) ;     // THIS TAKES A LONG TIME; TO GET THE STATIC LIB UPDATED, DELETE IT MANUALLY
-                }
+                //THIS TAKES LOTS OF TIME AND IS NOT NEEDED
+                //{
+                //    hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll" ) ;
+                //
+                //    if( !fileExistsF( "base.dll.lib" ) ) system( "for %f in (2* 3*) do @wlib -p=2048 -q -b base.dll.lib -+%f" ) ;     // THIS TAKES A LONG TIME; TO GET THE STATIC LIB UPDATED, DELETE IT MANUALLY
+                //}
     
                 {
                     hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe" ) ;
@@ -2718,7 +2719,7 @@ void elf_obey_C::liveF( void )
                 }
 
                 char postMas[]      = { "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" } ;
-                char postMasShort[] = {                                                                                      "ideafarm.81000001.ipdos-wm" } ;
+                char postMasShort[] = {                                                              "ideafarm.81000001.ipdos-wm" } ;
     
                 char postCmd[ 0x800 ] = { "wlink" } ;
                 if( flagsAll & flELVES_DEBUGiNFO ) strcat( postCmd , " debug all" ) ;
@@ -4059,11 +4060,6 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
     int bExe  = !!strcmp( postPrefixP , "5adam" ) ;     // IF !bExe THEN I WILL COMPILE OO TIMES, LEAVING AN OBJ FILE SUITABLE FOR LINKING INTO A DLL, AND ANOHTHER FLAVOR SUITABLE FOR LINKING STATICLY INTO AN EXE
     int bBoot =  !strcmp( postPrefixP , "4boot" ) ;
 
-    if( bBoot )
-    {
-        int foo = 2 ;
-    }
-
     char postDefShort[ 0x100 ] ;
     strcpy( postDefShort , postPrefixP ) ;
     strcat( postDefShort , "." ) ;
@@ -4110,7 +4106,7 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
     strcpy( postRaw , postIdiForeignP ) ;
     strcat( postRaw , ".raw" ) ;
 
-    if( isStaleF( postObjForDll , postDef ) )
+    if( isStaleF( bBoot ? postObjForExe : postObjForDll , postDef ) )
     {
         char post001[ 0x100 ] ;
         strcpy( post001 , "  Compiling " ) ;

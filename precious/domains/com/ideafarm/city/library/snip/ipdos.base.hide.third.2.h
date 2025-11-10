@@ -5753,6 +5753,7 @@ a count8S object contains 8 countT values
 
 /*1*/struct _export processGlobal1S/*1*/
 {
+    const countT                    idAdamStatic ;
     const countT                    idAdamRoot  ;
     const byteT*                    pbHeap ;                    // THIS IS AN OPTIMIZATION BUT MAINLY HERE BECAUSE ___ INSPECTS THESE VALUES BEFORE processGlobal4S::heap IS CT
     const byteT*                    pbHeapEnd ;                 // THIS IS AN OPTIMIZATION BUT MAINLY HERE BECAUSE ___ INSPECTS THESE VALUES BEFORE processGlobal4S::heap IS CT

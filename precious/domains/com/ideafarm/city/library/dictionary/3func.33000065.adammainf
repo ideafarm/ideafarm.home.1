@@ -211,11 +211,20 @@
                                                             }
                                                                 }
                                                                     etThread.traceF( tin0P , (strokeS*)"--------------------------------------------------------------------------------------------------------------------------------------- adamDll ----" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
+                                                                    if( bNoTrace ) processGlobal2I._thirdC_flagsProcessState |= F(flPROCESSsTATE_NOtRACE) ;
+
                                                                     }
                                                                         (*pMainF)( &main ) ; // ASSUME: WILL NOT RETURN UNTIL ALL KID THREADS HAVE ENDED, INCLUDING tmWatchF AND tmWatchRudeF
                                                                         _IO_
                                                                     {
+
+                                                                    if( bNoTrace ) processGlobal2I._thirdC_flagsProcessState &= ~( F(flPROCESSsTATE_NOtRACE) ) ;
+                                                                    boolT bNoTrace = F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_NOtRACE ;
                                                                     etThread.traceF( tin0P , (strokeS*)"--------------------------------------------------------------------------------------------------------------------------------------- adamDll ++++" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
+
+                                                                    sgnTimeNowReady.waitF( tin0P ) ;        //THIS WAIT IS MERELY COSMETIC, TO ENSURE THAT ALL TRACING DONE BY THE THREAD DURING INITIALIZATION OCCURS BEFORE NOW
+                                                                    sgnKillSocketReady.waitF( tin0P ) ;     //THIS WAIT IS MERELY COSMETIC, TO ENSURE THAT ALL TRACING DONE BY THE THREAD DURING INITIALIZATION OCCURS BEFORE NOW
+
                                                                     _IO_
                                                                 {
 
@@ -592,12 +601,15 @@
 
                                                 etThread.ifcDatumF( tin0P , flDATUM1_CLASStRACEaLWAYShIRE , flDATUM2_null , 0 , 0 , 0 , (voidT*)DDNAME ) ;
                                                 }
-                                                    etThread.osThreadF( TaRG1( tmTimeNowF    ) ) ;
+                                                    etThread.osThreadF( TaRG2cBsTACK( tmTimeNowF , CBsTACKmIN << 0 ) , (countT)&sgnTimeNowReady ) ;
                                                     //etThread.traceF( tin0P , T("launching tmTimeNowF") ) ;
-                                                    etThread.osThreadF( TaRG2cBsTACK( tmKillSocketF , CBsTACKmIN << 1 ) ) ; //A:ASSUME: thirdC::s_setupIF HAS ALREADY BEEN CALLED (LOOK FOR IT VERY EARLY DURING CT OF processGlobal4I)
+                                                    etThread.osThreadF( TaRG2cBsTACK( tmKillSocketF , CBsTACKmIN << 1 ) , (countT)&sgnKillSocketReady ) ; //A:ASSUME: thirdC::s_setupIF HAS ALREADY BEEN CALLED (LOOK FOR IT VERY EARLY DURING CT OF processGlobal4I)
                                                     //etThread.traceF( tin0P , T("launching tmKillSocketF") ) ;
                                                 {
                                                 if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) )
+
+                                                signC sgnTimeNowReady(      tin0P , TAG( TAGiDnULL ) ) ;
+                                                signC sgnKillSocketReady(   tin0P , TAG( TAGiDnULL ) ) ;
                                                 ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN91 ) ;
                                                 cryC cry2010( ( TOCK << 1 ) + 0x10 ) ;
 

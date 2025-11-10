@@ -52,13 +52,17 @@ DONE( tmWorkF )
     etThread.delF( tin0P , psttUnwanted ) ;
     etThread.delF( tin0P , psttWanted ) ;
     etThread.strHearF( tin0P , psttWanted , psttUnwanted , 0 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
-    etThread.traceF( tin0P , T("Press the Enter key, and I will disable your access to the public web and enable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-    etThread.traceF( tin0P , T(DASH127) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etThread.traceF( tin0P , T("Press the Enter key, and I will disable your access to the public web and enable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
     ZE( strokeS* , psttUnwanted ) ;
     ZE( strokeS* , psttWanted ) ;
 
     TN( tY , "y" ) ;
+
+        etThread.delF( tin0P , psttBrowser ) ;
+        //etThread.traceF( tin0P , psttBrowser ) ;
+        etThread.osHttpViewerF( tin0P , psttBrowser ) ; ___( psttBrowser ) ;
+        ZE( strokeS* , psttBrowser ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
