@@ -28,7 +28,7 @@ DONE( tmWorkF )
     //countT cDo = TUCK >> 3 ;      //TESTING
 
     etRock.traceF( tin0P , T("napped  for a tick to give all other servers time to completely start serving") ) ;
-//    ++ s ; ether.osSleepF( tin0P , TICK ) ;     // TO GIVE ALL OTHER SERVERS PLENTY OF TIME TO COMPLETELY START
+    ++ s ; ether.osSleepF( tin0P , TICK ) ;     // TO GIVE ALL OTHER SERVERS PLENTY OF TIME TO COMPLETELY START
     etRock.traceF( tin0P , T("napping for a tick to give all other servers time to completely start serving") ) ;
 
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -640,9 +640,9 @@ DONE( tmGorillaF )
     TN( tInvoice , "" ) ; tInvoice = TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;   //A:ASSUME: UPDATES TO tInvoice DO NOT CHANGE ITS LENGTH
 
 //    }
-//        etRock.traceF( tin0P , T("napped  for oo minutes to give the dns server time to set the ipv4 address of wh1") ) ;
-//        ++ s ; ether.osSleepF( tin0P , TICK >> 1 ) ;
-//        etRock.traceF( tin0P , T("napping for oo minutes to give the dns server time to set the ipv4 address of wh1") ) ;
+//        etRock.traceF( tin0P , T("napped  for a tick to give the dns server time to set the ipv4 address of wh1") ) ;
+//        ++ s ; ether.osSleepF( tin0P , TICK >> 0 ) ;
+//        etRock.traceF( tin0P , T("napping for a tick to give the dns server time to set the ipv4 address of wh1") ) ;
 //        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 //
 //        dropAndModifyDns1SettingsSoilFileImageF( tin0P , etThread , tNextDns1SettingsSoilFileImageToUse , 0 , idGorilla ) ;
