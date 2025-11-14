@@ -1073,12 +1073,14 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                             ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
                             //etRock.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                             //etRock.traceF( tin0P , T("json response:") ) ;
+                            _IO_
                         {
                         else
                         }
                             etRock.traceF( tin0P , tSayExCouldNotReadFromSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tDomainStripeApi ) ;
                             POOPRqUIET
                             countT rc = POOP ;
+                            _IO_
                         {
                         if( POOP )
                 
@@ -1101,12 +1103,14 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                         {
                         thirdC::c_memsetIF( tin0P , postj , sizeof postj ) ;
                         osTextT postj[ TUCK << 1 ] ;
+                        _IO_
                     {
                     else
                     }
                         etRock.traceF( tin0P , tSayExCouldNotWriteToSocket+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tDomainStripeApi ) ;
                         POOPRqUIET
                         countT rc = POOP ;
+                        _IO_
                     {
                     if( POOP )
                     sock.writeF( tin0P , (osTextT*)tSay ) ;
@@ -1128,7 +1132,17 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                             countT idpCatch = *(countT*)pbi ;
                         {
                         if( pbi && cbi == sizeof( countT ) )
-                        etThread.boxGetShadowF( tin0P , pbi , cbi , tLongThrowToPort3 ) ; ___( pbi ) ;
+                        }
+                            }
+                                etThread.delF( tin0P , pbi ) ;
+                                etRock.traceF( tin0P , T("!exception / could not get contents of ")+tLongThrowToPort3 ) ;
+                                POOPR ;
+                            {
+                            if( POOP )
+                            ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbi , cbi , tLongThrowToPort3 ) ; ___( pbi ) ;
+                            SCOOPS
+                        {
+                        IFsCRATCHoK
 
                         cbi = 0 ;
                         etThread.delF( tin0P , pbi ) ;
@@ -1138,7 +1152,17 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                             countT idpCatch = *(countT*)pbi ;
                         {
                         if( pbi && cbi == sizeof( countT ) )
-                        etThread.boxGetShadowF( tin0P , pbi , cbi , tLongThrowToPort2 ) ; ___( pbi ) ;
+                        }
+                            }
+                                etThread.delF( tin0P , pbi ) ;
+                                etRock.traceF( tin0P , T("!exception / could not get contents of ")+tLongThrowToPort2 ) ;
+                                POOPR ;
+                            {
+                            if( POOP )
+                            ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbi , cbi , tLongThrowToPort2 ) ; ___( pbi ) ;
+                            SCOOPS
+                        {
+                        IFsCRATCHoK
 
                         cbi = 0 ;
                         etThread.delF( tin0P , pbi ) ;
@@ -1148,13 +1172,24 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                             countT idpCatch = *(countT*)pbi ;
                         {
                         if( pbi && cbi == sizeof( countT ) )
-                        etThread.boxGetShadowF( tin0P , pbi , cbi , tLongThrowToPort1 ) ; ___( pbi ) ;
+                        }
+                            }
+                                etThread.delF( tin0P , pbi ) ;
+                                etRock.traceF( tin0P , T("!exception / could not get contents of ")+tLongThrowToPort1 ) ;
+                                POOPR ;
+                            {
+                            if( POOP )
+                            ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbi , cbi , tLongThrowToPort1 ) ; ___( pbi ) ;
+                            SCOOPS
+                        {
+                        IFsCRATCHoK
                         ZE( countT , cbi ) ;
                         ZE( byteT* , pbi ) ;
 
                         socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
                         TN( tThrow , "" ) ; tThrow = tRandomLabelPrefixP+tb+tRandomLabelPrefixLagP ;
+                        _IO_
                     {
 
                     gvP.tDomainWebHooksNet    = tRandomLabelPrefixP   +gcP.tDotHiddenDomain ;
@@ -1163,31 +1198,37 @@ DONE( tmRandomizeWebhookDomainPrefixF )
 
                         TN( tNewPassword , "" ) ; tNewPassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;    //[0-9,a-z]
                         countT idNewPassword = ruPassword ;
+                        _IO_
                     {
                     gvP.tDomainWebHooksNetLag = tRandomLabelPrefixLagP+gcP.tDotHiddenDomain ;
 
                     tRandomLabelPrefixLagP = tRandomLabelPrefixP                         ;
+                    _IO_
                 {
                 else
                 }
                     etRock.traceF( tin0P , tSayExCouldNotConnectToServer+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tDomainStripeApi ) ;
                     POOPRqUIET
                     countT rc = POOP ;
+                    _IO_
                 {
                 if( POOP )
                 sock.connectF( tin0P , 443 , nnServer ) ;
                 socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL ) ;
 
                 //etRock.traceF( tin0P , T("connecting to IPv4:    ")+T(nnServer) ) ;
+                _IO_
             {
             else
             }
                 etRock.traceF( tin0P , tSayExCouldNotObtainNnServer+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tDomainStripeApi ) ;
                 POOPRqUIET
                 countT rc = POOP ;
+                _IO_
             {
             if( POOP )
             nicNameC nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tDomainStripeApi ) ;
+            _IO_
 
             SCOOPS
         {
@@ -1197,6 +1238,7 @@ DONE( tmRandomizeWebhookDomainPrefixF )
 
         mySettingsS& mySettingsUse = offSettingsUseSnap % 2 ? mySettingsBP : mySettingsAP ;
         const countT offSettingsUseSnap = offSettingsUseP ;
+        _IO_
     {
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
