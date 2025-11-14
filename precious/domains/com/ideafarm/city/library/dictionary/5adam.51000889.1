@@ -639,7 +639,15 @@ DONE( tmGorillaF )
     const countT costInvoiceRequired = tInvoice.csF( tin0P ) ;
     TN( tInvoice , "" ) ; tInvoice = TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;   //A:ASSUME: UPDATES TO tInvoice DO NOT CHANGE ITS LENGTH
 
-    if( idWebHookCatcher == 1 ) dropAndModifyDns1SettingsSoilFileImageF( tin0P , etThread , tNextDns1SettingsSoilFileImageToUse , 0 , idGorilla ) ;
+    }
+        etRock.traceF( tin0P , T("napped  for oo minutes to give the dns server time to set the ipv4 address of wh1") ) ;
+        ++ s ; ether.osSleepF( tin0P , TICK >> 1 ) ;
+        etRock.traceF( tin0P , T("napping for oo minutes to give the dns server time to set the ipv4 address of wh1") ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+        dropAndModifyDns1SettingsSoilFileImageF( tin0P , etThread , tNextDns1SettingsSoilFileImageToUse , 0 , idGorilla ) ;
+    {
+    if( idWebHookCatcher == 1 )
 
     }
         etThread.delF( tin0P , posti ) ;
