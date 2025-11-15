@@ -446,8 +446,8 @@ DONE( tmWorkF )
     {
     TN( tComputerName , "" ) ;
 
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
-    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ; // RUDE WOULD BE AN ATTACK SURFACE
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ; // THESE MATCH DNS (8af) SO SETTINGS DROPS ON DNS ARE PROCESSED TIMELY
 
     _IO_
 {
