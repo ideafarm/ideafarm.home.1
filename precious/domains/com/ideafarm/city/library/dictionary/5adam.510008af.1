@@ -1875,13 +1875,14 @@ TASK( tmFreshSettingsF )
         etherMe.delF( tin0P , psttEat ) ;
         }
             }
-                ++ s ; etPrime.osSleepF( tin0P , TOCK >> 1 ) ;
+                ++ s ; etPrime.osSleepF( tin0P , TOCK << 1 ) ;
 
                 }
                     }
                         etherMe.delF( tin0P , psttLong ) ;
-                        etRock.traceF( tin0P , T("!exception / will retry ; could not write to unique file named like ")+tLike ) ;
+                        etRock.traceF( tin0P , T("!exception / will retry ; could not write to unique file [rc,like]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLike ) ;
                         POOPR ;
+                        countT rc = POOP ;
                     {
                     if( POOP )
                     ((tin1S&)tin0P).pEtScratch->boxPutUniqueF( tin0P , psttLong , tLike , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
