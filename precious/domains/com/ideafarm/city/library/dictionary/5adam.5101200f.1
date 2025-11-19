@@ -78,19 +78,18 @@ TODO
 
     countT* pcIdHost = (countT*)&idHost ;
 
-    count04T idHost = (count04T)part1 | ( (count04T)part2 << 0x16 ) ;
+    count04T idHost = (count01T)part1 | ( (count04T)idSubscription << 0x10 ) | ( (count04T)idBook << 0x30 ) ;
 
-    countT part2 = hashF( tMac2 , tMac2.csF( tin0P ) , part1  ) ;
     countT part1 = hashF( tMac1 , tMac1.csF( tin0P ) , timeN2 ) ;
 
     ether.delF( tin0P , psttMac ) ;
-    TN( tMac2 , psttMac ) ;
-    }
-                                                   psttMac[ CSpREFIX + 1 ].idAdam = save ;
-                      psttMac[ CSpREFIX ].idAdam = psttMac[ CSpREFIX + 1 ].idAdam        ;
-        countT save = psttMac[ CSpREFIX ].idAdam                                         ;
-    {
-    if( psttMac->idAdam >= 2 )
+    //TN( tMac2 , psttMac ) ;
+    //}
+    //                                               psttMac[ CSpREFIX + 1 ].idAdam = save ;
+    //                  psttMac[ CSpREFIX ].idAdam = psttMac[ CSpREFIX + 1 ].idAdam        ;
+    //    countT save = psttMac[ CSpREFIX ].idAdam                                         ;
+    //{
+    //if( psttMac->idAdam >= 2 )
     TN( tMac1 , psttMac ) ;
 
     //ether.traceF( tin0P , psttMac ) ;
@@ -99,11 +98,14 @@ TODO
 
     TN( tSecret , psttSecretP ) ;
 
-    countT minute = timeN1 /*>> 0x14*/ ;
+    countT minute = timeN1 >> 0x14 ;
 
     ether.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT  , timeN1 ) ;
+
+    countT idSubscription = 0x22222222 ;
+    countT idBook         = 0x1111 ;
 {
 ether( etherP )
 subscriberC::subscriberC( tin0S& tin0P , etherC& etherP , const strokeS* const psttSecretP ) :
