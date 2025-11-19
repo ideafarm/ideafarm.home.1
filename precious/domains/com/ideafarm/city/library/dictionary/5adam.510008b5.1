@@ -142,7 +142,7 @@ DONE( tmLaunchBatExeFilesF )
 
         if( bCallingWait ) ;//etRock.traceF( tin0P , T("calling diskWaitDirF") ) ;
         }
-            if( bWoth ) bWoth = 0 ;
+            if( bWoth && cFound < cAsk ) bWoth = 0 ;
 
             }
                 FORsTRINGSiNsPANNEDcOMBINEDtAIL1
@@ -192,10 +192,12 @@ DONE( tmLaunchBatExeFilesF )
                     if( psttc1[ CSpREFIX - 1 + psttc1->idAdam ].idAdam != '/' )                                 // IF NOT DIRECTORY
                 {
                 FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
-                etThread.boxMenuF( tin0P , soul1m , tLongDrop+T("*") , 0 , TUCK ) ;
+                cFound = etThread.boxMenuF( tin0P , soul1m , tLongDrop+T("*") , 0 , cAsk ) ;
                 soulC soul1m( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.launch.bat.and.exe" ) ;
             {
             if( bWoth || bChanged )
+            ZE( countT , cFound ) ;
+            const countT cAsk = TUCK ;
 
             if( !bWoth ) ;//etThread.traceF( tin0P , T("waited  for a change [tLongDrop]:    ")+tLongDrop ) ;
 
