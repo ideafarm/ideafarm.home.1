@@ -22,7 +22,7 @@ for( countT offs = 0 ; offs < sizeof ppSub / sizeof ppSub[ 0 ] ; offs ++ )
 
     }
         }
-            etThread.traceF( tin0P , T("[rc,cmd]:    ")+TF3(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tCommand , flTRACE_NOpREFIX ) ;
+            etThread.traceF( tin0P , T("[time,rc,cmd]:    ")+TT(timeN1,timeN2)+tb4+TF3(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tCommand , flTRACE_NOpREFIX ) ;
             countT rc = thirdC::c_systemIF( tin0P , tCommand ) ;
             TN( tCommand , "" ) ; tCommand = tCmd1+tNn+tCmd2 ;
 
@@ -32,6 +32,11 @@ for( countT offs = 0 ; offs < sizeof ppSub / sizeof ppSub[ 0 ] ; offs ++ )
             nicNameC nnNow = ppSub[ offs ]->nnF( tin0P , minute ) ;
         {
         for( countT offs = 0 ; offs < sizeof ppSub / sizeof ppSub[ 0 ] ; offs ++ )
+
+        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+        ZE( sCountT , timeN2 ) ;
+        ZE( countT  , timeN1 ) ;
+
         //etThread.traceF( tin0P , tDash ) ;
         minuteLath = minute ;
     {
