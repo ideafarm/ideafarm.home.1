@@ -76,12 +76,21 @@ DONE( tmWorkF )
 
     stackC stNnPeerBlock( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmCatchLabelPrefixF , CBsTACKmIN << 1 ) , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
+    if( !bAllowAllDomains ) etThread.osThreadF( TaRG2cBsTACK( tmCatchLabelPrefixF , CBsTACKmIN << 1 ) , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag ) ;
     TN( tRandomLabelPrefixLag , "" ) ;
     TN( tRandomLabelPrefix    , "" ) ;
 
     etThread.osThreadF( TaRG2cBsTACK( tmShieldsDownF , CBsTACKmIN << 1 ) , (countT)&bShieldsDown ) ;
     ZE( boolT , bShieldsDown ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        if( psttEat ) bAllowAllDomains = !etThread.strCompareF( tin0P , psttEat , T("yes") ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , tSettingKey  ) ; ___( psttEat ) ;
+        TN( tSettingKey , "!ipdos.http.allow.all.domains" ) ;
+        _IO_
+    {
+    ZE( boolT , bAllowAllDomains ) ;
 
     //etThread.osThreadF( TaRG1( tmPopOpenPortF ) ) ;
 
