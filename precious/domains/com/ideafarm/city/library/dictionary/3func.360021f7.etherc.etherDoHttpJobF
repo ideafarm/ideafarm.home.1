@@ -1757,13 +1757,13 @@
                     break ;
                     if( jobP.nnPeer != nnGorilla1P ) stNnPeerBlock.sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                 {
-                if( !psttName || strCompareF( tin0P , T("/nobot/notify/stripe.20240206@1123") , psttName ) )
+                if( !psttName || ( tRandomLabelPrefix.csF( tin0P ) && strCompareF( tin0P , T("/nobot/notify/stripe.20240206@1123") , psttName ) ) )     // A:ASSUME: IF NULL LENGTH RANDOM PREFIX THEN I AM NOT RUNNING ON wh1 OR wh2 (E.G. I AM RUNNING ON web1), SO DON'T ENFORCE THIS URL PATH
 
                 }
                     break ;
                     if( jobP.nnPeer != nnGorilla1P ) stNnPeerBlock.sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                 {
-                if( !psttDomain || ( 1 != strIdF( tin0P , tRandomLabelPrefix , psttDomain ) && 1 != strIdF( tin0P , tRandomLabelPrefixLag , psttDomain ) ) )
+                if( !psttDomain || ( tRandomLabelPrefix.csF( tin0P ) && 1 != strIdF( tin0P , tRandomLabelPrefix , psttDomain ) && 1 != strIdF( tin0P , tRandomLabelPrefixLag , psttDomain ) ) )
 
                 /**/traceF( tin0P , tSayClientPrefix+T("[psttDomain]:       ")+T(psttDomain) ) ;
                 //if( psttQueries && psttQueries->idAdam ) /*;*/traceF( tin0P , tSayClientPrefix+T("[psttQueries]:    ")+T(psttQueries) ) ;
