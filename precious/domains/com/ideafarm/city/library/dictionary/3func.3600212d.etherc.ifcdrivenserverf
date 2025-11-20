@@ -591,7 +591,8 @@
 
                                                     ) ;
                                                         || bPeerIsGorilla
-                                                           !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer
+                                                        || !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer
+                                                           bAllowAllPeers
                                                     (
                                                     bPeerAllowed =
 
@@ -1070,6 +1071,15 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
         textC&  tRandomLabelPrefix    =  *(textC*)((count9S*)info2P.cArgApp)->c7 ;
 
         boolT& bShieldsDown = *(boolT*)((count9S*)info2P.cArgApp)->c5 ;
+
+        }
+            delF( tin0P , psttEat ) ;
+            if( psttEat ) bAllowAllPeers = !strCompareF( tin0P , psttEat , T("yes") ) ;
+            ZE( strokeS* , psttEat ) ; querySettingF( tin0P , psttEat , tSettingKey  ) ; ___( psttEat ) ;
+            TN( tSettingKey , "!ipdos.http.allow.all.peers" ) ;
+            _IO_
+        {
+        ZE( boolT , bAllowAllPeers ) ;
 
         const boolT bHttp    = info2P.idPortHint == ifcIDpORT_HTTP ;
         const boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
