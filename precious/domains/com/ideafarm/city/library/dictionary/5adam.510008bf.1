@@ -112,28 +112,21 @@ voidT welcomeF( tin0S& tin0P , etherC& etherP , subC*& pSubP , const strokeS* co
 
     countT part1 = 0x1234 ; //U::MUST BE RANDOM
 
-    //countT part1 = hashF( tMac1 , tMac1.csF( tin0P ) , minuteP ) ;
-    //
-    //ether.delF( tin0P , psttMac ) ;
-    ////TN( tMac2 , psttMac ) ;
-    ////}
-    ////                                               psttMac[ CSpREFIX + 1 ].idAdam = save ;
-    ////                  psttMac[ CSpREFIX ].idAdam = psttMac[ CSpREFIX + 1 ].idAdam        ;
-    ////    countT save = psttMac[ CSpREFIX ].idAdam                                         ;
-    ////{
-    ////if( psttMac->idAdam >= 2 )
-    //TN( tMac1 , psttMac ) ;
-    //
-    ////ether.traceF( tin0P , psttMac ) ;
-    //ether.openSslHmacF( tin0P , psttMac , tSecret , tSecret.csF( tin0P ) , (byteT*)&minuteP , sizeof minuteP ) ; ___( psttMac ) ;       //REWRITE THIS TO AVOID USING OPENSSL SO THAT ideanet.exe DOES NOT NEED TO CALL OPENSSL 
-    //ZE( strokeS* , psttMac ) ;
-    // 
-    //  * tSecret CANNOT BE DISCOVERED BY OBSERVING A SEQUENCE OF [minute,random] PAIRS
-    //  * THE countT VALUE CANNOT BE PREDICTED WITHOUT KNOWING tSecret
-    // REQUIREMENTS:
-    // THIS CODE JUST PRODUCES A "RANDOM" countT VALUE THAT DEPENDS UPON tSecret AND minuteP
-    // 
-    // THIS WOULD REQUIRE ideanet.exe TO HAVE ACCESS TO THE OPENSSL DLL'S
+    countT part1 = hashF( tMac1 , tMac1.csF( tin0P ) , minuteP ) ;
+
+    ether.delF( tin0P , psttMac ) ;
+    //TN( tMac2 , psttMac ) ;
+    //}
+    //                                               psttMac[ CSpREFIX + 1 ].idAdam = save ;
+    //                  psttMac[ CSpREFIX ].idAdam = psttMac[ CSpREFIX + 1 ].idAdam        ;
+    //    countT save = psttMac[ CSpREFIX ].idAdam                                         ;
+    //{
+    //if( psttMac->idAdam >= 2 )
+    TN( tMac1 , psttMac ) ;
+
+    //ether.traceF( tin0P , psttMac ) ;
+    ether.openSslHmacF( tin0P , psttMac , tSecret , tSecret.csF( tin0P ) , (byteT*)&minuteP , sizeof minuteP ) ; ___( psttMac ) ;
+    ZE( strokeS* , psttMac ) ;
 {
 nicNameC subC::nnF( tin0S& tin0P , countT minuteP )
 
