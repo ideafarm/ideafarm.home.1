@@ -25,7 +25,9 @@
                 DECoShANDLES
 
                 handleP.osh = 0 ;
-                EVP_PKEY_free( (EVP_PKEY*)handleP.osh ) ;
+                #endif
+                    EVP_PKEY_free( (EVP_PKEY*)handleP.osh ) ;
+                #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
                 _IO_
             {
             case ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC :
@@ -49,7 +51,9 @@
                     DECoShANDLES
 
                     //etherC::etTextIF( tin0P ).traceF( tin0P , T("~handleCloseIF / called  OpenSSL free context") ) ;
-                    BOSnOvALUE( WHATgbo , SSL_CTX_free( (SSL_CTX*)handleP.osh ) )     //20211111@1551: OBSERVED TO NEVER RETURN AFTER EXCEPTION CAUGHT WITHIN acceptF CALL TO shakeHandsAsServerF
+                    #endif
+                        BOSnOvALUE( WHATgbo , SSL_CTX_free( (SSL_CTX*)handleP.osh ) )     //20211111@1551: OBSERVED TO NEVER RETURN AFTER EXCEPTION CAUGHT WITHIN acceptF CALL TO shakeHandsAsServerF
+                    #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
                     //etherC::etTextIF( tin0P ).traceF( tin0P , T("~handleCloseIF / calling OpenSSL free context") ) ;
                     _IO_
                 {

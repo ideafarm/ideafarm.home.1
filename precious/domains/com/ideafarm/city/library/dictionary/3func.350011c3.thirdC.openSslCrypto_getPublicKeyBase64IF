@@ -15,7 +15,9 @@
         __( ec ) ;
         if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslCrypto_getPublicKeyBase64IF / failed") ) ;
 
-        c_openSslCrypto_getPublicKeyBase64IF( &ec , postaP , costaP , postaTmpP , costaTmpP , (unsigned)c_pKey ) ;
+        #endif
+            c_openSslCrypto_getPublicKeyBase64IF( &ec , postaP , costaP , postaTmpP , costaTmpP , (unsigned)c_pKey ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
         countT c_pKey = handleP.osF( handleP.idTypeF() == ifcIDtYPEhANDLE_OPENSSLkEYpAIR ? ifcIDtYPEhANDLE_OPENSSLkEYpAIR : ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC ) ;
         ZE( countT , ec ) ;

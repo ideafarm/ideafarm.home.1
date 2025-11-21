@@ -19,7 +19,9 @@
 
 
         if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_setupIF / exception caught") ) ;
+        #endif
                             c_openSslTls_setupIF( &ec ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
         ZE( countT , ec ) ;
 
     #elif defined( __NT__ )

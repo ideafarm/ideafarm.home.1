@@ -7,22 +7,24 @@
 //
 
 
-}
-    return cbWritten ;
-
+#endif
     }
-        *pEcP = ifcIDeXCEPTIONoPENsSL_writeIF ;
+        return cbWritten ;
+    
+        }
+            *pEcP = ifcIDeXCEPTIONoPENsSL_writeIF ;
+        {
+        _except( EXCEPTION_EXECUTE_HANDLER )
+        }
+            cbWritten = SSL_write( pSslP , pbP , cbP ) ;
+        {
+        _try
+    
+        *pEcP = 0 ;
+        unsigned cbWritten = 0 ;
     {
-    _except( EXCEPTION_EXECUTE_HANDLER )
-    }
-        cbWritten = SSL_write( pSslP , pbP , cbP ) ;
-    {
-    _try
-
-    *pEcP = 0 ;
-    unsigned cbWritten = 0 ;
-{
-/**//*1*/unsigned __watcall c_openSslTls_writeIF( unsigned* pEcP , SSL* pSslP , const char* const pbP , const unsigned cbP )/*1*/
+    /**//*1*/unsigned __watcall c_openSslTls_writeIF( unsigned* pEcP , SSL* pSslP , const char* const pbP , const unsigned cbP )/*1*/
+#if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
 */
 /*

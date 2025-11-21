@@ -13,7 +13,9 @@
     {
     _except( EXCEPTION_EXECUTE_HANDLER )
     }
-        *pEcP = ERR_get_error() ;
+        #endif
+            *pEcP = ERR_get_error() ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
     {
     _try
 

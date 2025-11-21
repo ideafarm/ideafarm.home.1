@@ -8,58 +8,60 @@
 
 
 }
-    }
+    #endif
         }
-            *pEcP = ifcIDeXCEPTIONoPENsSL_decryptIF ;
-        {
-        _except( EXCEPTION_EXECUTE_HANDLER )
-        }
+            }
+                *pEcP = ifcIDeXCEPTIONoPENsSL_decryptIF ;
+            {
+            _except( EXCEPTION_EXECUTE_HANDLER )
             }
                 }
                     }
                         }
                             }
-                                *pcbPlainTextP = cbOutAllBlob ;
+                                }
+                                    *pcbPlainTextP = cbOutAllBlob ;
+                                    cbOutAllBlob += *pcbPlainTextP ;
+                                    EVP_CIPHER_CTX_free( pContext ) ; pContext = 0 ;
+                                {
+                                else
+                                if( !rc ) *pEcP |= 0x800000 ;
+                                rc = EVP_OpenFinal( pContext , pbPlainTextP + cbOutAllBlob , pcbPlainTextP ) ;
                                 cbOutAllBlob += *pcbPlainTextP ;
-                                EVP_CIPHER_CTX_free( pContext ) ; pContext = 0 ;
                             {
                             else
-                            if( !rc ) *pEcP |= 0x800000 ;
-                            rc = EVP_OpenFinal( pContext , pbPlainTextP + cbOutAllBlob , pcbPlainTextP ) ;
-                            cbOutAllBlob += *pcbPlainTextP ;
+                            if( !rc ) *pEcP |= 0x1000000 ;
+                            rc = EVP_OpenUpdate( pContext , pbPlainTextP , pcbPlainTextP , pbSymCypherTextP , cbSymCypherTextP ) ;
                         {
                         else
-                        if( !rc ) *pEcP |= 0x1000000 ;
-                        rc = EVP_OpenUpdate( pContext , pbPlainTextP , pcbPlainTextP , pbSymCypherTextP , cbSymCypherTextP ) ;
+                        if( rc != 1 ) *pEcP |= 0x2000000 | rc ;
+                        rc = EVP_OpenInit( pContext , EVP_aes_128_cbc() , pbHushedSymKeyP , cbHushedSymKeyP , pbSeedP , pKeyPrivateP ) ;
+                        EVP_CIPHER_CTX_init( pContext ) ;
                     {
                     else
-                    if( rc != 1 ) *pEcP |= 0x2000000 | rc ;
-                    rc = EVP_OpenInit( pContext , EVP_aes_128_cbc() , pbHushedSymKeyP , cbHushedSymKeyP , pbSeedP , pKeyPrivateP ) ;
-                    EVP_CIPHER_CTX_init( pContext ) ;
+                    if( !pContext ) *pEcP |= 0x4000000 ;
+                    EVP_CIPHER_CTX* pContext = EVP_CIPHER_CTX_new() ;
                 {
                 else
-                if( !pContext ) *pEcP |= 0x4000000 ;
-                EVP_CIPHER_CTX* pContext = EVP_CIPHER_CTX_new() ;
+                if( cbInnerKeyNeeded > cbHushedSymKeyP ) *pEcP |= 0x8000000 | cbInnerKeyNeeded ;
+                unsigned cbInnerKeyNeeded = EVP_PKEY_size( pKeyPrivateP ) ;
             {
-            else
-            if( cbInnerKeyNeeded > cbHushedSymKeyP ) *pEcP |= 0x8000000 | cbInnerKeyNeeded ;
-            unsigned cbInnerKeyNeeded = EVP_PKEY_size( pKeyPrivateP ) ;
+            _try
         {
-        _try
-    {
-    if( !*pEcP )
+        if( !*pEcP )
 
-    if(  cbSeedP < EVP_MAX_IV_LENGTH ) *pEcP |= 0x10000000 ;    //THIS IS THE ALLOCATED LENGTH, NOT THE ACTUAL LENGTH USED
-    if( !pbSeedP                     ) *pEcP |= 0x20000000 ;
-    if( !pbHushedSymKeyP                 ) *pEcP |= 0x40000000 ;
-    if( !pKeyPrivateP                ) *pEcP |= 0x80000000 ;
+        if(  cbSeedP < EVP_MAX_IV_LENGTH ) *pEcP |= 0x10000000 ;    //THIS IS THE ALLOCATED LENGTH, NOT THE ACTUAL LENGTH USED
+        if( !pbSeedP                     ) *pEcP |= 0x20000000 ;
+        if( !pbHushedSymKeyP                 ) *pEcP |= 0x40000000 ;
+        if( !pKeyPrivateP                ) *pEcP |= 0x80000000 ;
 
-    *pEcP = 0 ;
+        *pEcP = 0 ;
 
-    int cbOutAllBlob = 0 ;
-    unsigned rc = 0 ;
-    FILE* osh = 0 ;
-    EVP_PKEY* pKeyPrivateP = (EVP_PKEY*)c_pKeyPrivateP ;
+        int cbOutAllBlob = 0 ;
+        unsigned rc = 0 ;
+        FILE* osh = 0 ;
+        EVP_PKEY* pKeyPrivateP = (EVP_PKEY*)c_pKeyPrivateP ;
+    #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 {
 /**//*1*/void __watcall c_openSslCrypto_decryptIF( unsigned* pEcP , unsigned char* pbPlainTextP , int* pcbPlainTextP , unsigned char* pbSymCypherTextP , int cbSymCypherTextP , unsigned char* pbHushedSymKeyP , int cbHushedSymKeyP , unsigned char* pbSeedP , int cbSeedP , unsigned c_pKeyPrivateP )/*1*/
 

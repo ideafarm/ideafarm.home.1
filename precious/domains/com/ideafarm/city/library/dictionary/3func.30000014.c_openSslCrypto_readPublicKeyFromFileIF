@@ -20,7 +20,9 @@
 
                 fclose( osh ) ;
                 if( !c_pKey ) *pEcP = 0x10000000 ;
-                c_pKey = (unsigned)PEM_read_PUBKEY( osh , 0 , 0 , 0 ) ;
+                #endif
+                    c_pKey = (unsigned)PEM_read_PUBKEY( osh , 0 , 0 , 0 ) ;
+                #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
             {
             else
             if( !osh ) *pEcP = 0x20000000 | errno ;

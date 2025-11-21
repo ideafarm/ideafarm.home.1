@@ -7,19 +7,21 @@
 //
 
 
-}
+#endif
     }
-        *pEcP = ifcIDeXCEPTIONoPENsSL_waveByeIF ;
+        }
+            *pEcP = ifcIDeXCEPTIONoPENsSL_waveByeIF ;
+        {
+        _except( EXCEPTION_EXECUTE_HANDLER )
+        }
+            SSL_shutdown( pSslP ) ;
+        {
+        _try
+    
+        *pEcP = 0 ;
     {
-    _except( EXCEPTION_EXECUTE_HANDLER )
-    }
-        SSL_shutdown( pSslP ) ;
-    {
-    _try
-
-    *pEcP = 0 ;
-{
-/**//*1*/void __watcall c_openSslTls_waveByeIF( unsigned* pEcP , SSL* pSslP )/*1*/
+    /**//*1*/void __watcall c_openSslTls_waveByeIF( unsigned* pEcP , SSL* pSslP )/*1*/
+#if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
 */
 /*

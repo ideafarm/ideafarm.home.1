@@ -19,12 +19,16 @@
         else
         }
 
-            handleP.osF( ifcIDtYPEhANDLE_OPENSSLkEYpAIR , c_pKeyPair ) ;
+            #endif
+                handleP.osF( ifcIDtYPEhANDLE_OPENSSLkEYpAIR , c_pKeyPair ) ;
+            #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
             /*etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslCrypto_keyPairIF / aok") )*/ ;
         {
         if( !ec )
 
-        countT c_pKeyPair = c_openSslCrypto_keyPairIF( &ec , cBitsP ) ;
+        #endif
+            countT c_pKeyPair = c_openSslCrypto_keyPairIF( &ec , cBitsP ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
         ZE( countT , ec ) ;
 
     #elif defined( __NT__ )

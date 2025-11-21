@@ -11,6 +11,9 @@
 /**/
 /*1*//*CnOTcPPhEADER*//*1*/
 
+// THE FOLLOWING LINE IS NORMALLY COMMENTED OUT ; ENABLE IT WHEN BUILDING base.exe.lib FOR BUILDING A STANDALONE EXECUTABLE
+#define OMITfOREIGNeNCRYPTIONsUPPORT
+
 //CS:CODEsYNC:PSEUDOdUPLICATE CODE: 112005a8 01000002
 #define ifcIDeXCEPTIONoPENsSL_setupIF                       0x80000001
 #define ifcIDeXCEPTIONoPENsSL_waveByeIF                     0x80000002
@@ -46,26 +49,28 @@
     #define MYpREFIX extern "C"
 
     //OPENSSL SYMBOLS CALLED WITHIN C++ CODE (NOT NEEDED FOR C CODE DUE TO THE -ecc COMPILER SWITCH FOR C CODE)
-    #pragma aux (cdecl) ERR_get_error                              ;
-    #pragma aux (cdecl) EVP_aes_128_cbc                            ;
-    #pragma aux (cdecl) EVP_PKEY_free                              ;
-    #pragma aux (cdecl) EVP_PKEY_Q_keygen                          ;
-    #pragma aux (cdecl) EVP_SealInit                               ;
-    #pragma aux (cdecl) OPENSSL_init_ssl                           ;
-    #pragma aux (cdecl) SSL_accept                                 ;
-    #pragma aux (cdecl) SSL_connect                                ;
-    #pragma aux (cdecl) SSL_CTX_free                               ;
-    #pragma aux (cdecl) SSL_CTX_new                                ;
-    #pragma aux (cdecl) SSL_CTX_use_certificate_chain_file         ;
-    #pragma aux (cdecl) SSL_CTX_use_PrivateKey_file                ;
-    #pragma aux (cdecl) SSL_free                                   ;
-    #pragma aux (cdecl) SSL_new                                    ;
-    #pragma aux (cdecl) SSL_peek                                   ;
-    #pragma aux (cdecl) SSL_read                                   ;
-    #pragma aux (cdecl) SSL_set_fd                                 ;
-    #pragma aux (cdecl) SSL_shutdown                               ;
-    #pragma aux (cdecl) SSL_write                                  ;
-    #pragma aux (cdecl) TLS_method                                 ;
+    #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
+        #pragma aux (cdecl) ERR_get_error                              ;
+        #pragma aux (cdecl) EVP_aes_128_cbc                            ;
+        #pragma aux (cdecl) EVP_PKEY_free                              ;
+        #pragma aux (cdecl) EVP_PKEY_Q_keygen                          ;
+        #pragma aux (cdecl) EVP_SealInit                               ;
+        #pragma aux (cdecl) OPENSSL_init_ssl                           ;
+        #pragma aux (cdecl) SSL_accept                                 ;
+        #pragma aux (cdecl) SSL_connect                                ;
+        #pragma aux (cdecl) SSL_CTX_free                               ;
+        #pragma aux (cdecl) SSL_CTX_new                                ;
+        #pragma aux (cdecl) SSL_CTX_use_certificate_chain_file         ;
+        #pragma aux (cdecl) SSL_CTX_use_PrivateKey_file                ;
+        #pragma aux (cdecl) SSL_free                                   ;
+        #pragma aux (cdecl) SSL_new                                    ;
+        #pragma aux (cdecl) SSL_peek                                   ;
+        #pragma aux (cdecl) SSL_read                                   ;
+        #pragma aux (cdecl) SSL_set_fd                                 ;
+        #pragma aux (cdecl) SSL_shutdown                               ;
+        #pragma aux (cdecl) SSL_write                                  ;
+        #pragma aux (cdecl) TLS_method                                 ;
+    #endif
 
     #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\1snip.0060001.genModuleCodeCallProtos.h"
     #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\1snip.0050011.gen_CmODULESbASE.h"
@@ -120,29 +125,30 @@ MYpREFIX void            _export __watcall c_oldTimeFromUnixTimeIF( unsigned* pE
 #else
 #endif
 
-
-MYpREFIX void           __watcall c_openSslTls_wrapperFreeIF(                 unsigned* pEcP , SSL* pSslP                                                                                                                                                                                                                         ) ;
-MYpREFIX void           __watcall c_openSslTls_setupIF(                       unsigned* pEcP                                                                                                                                                                                                                                      ) ;
-MYpREFIX void           __watcall c_openSslTls_waveByeIF(                     unsigned* pEcP , SSL* pSslP                                                                                                                                                                                                                         ) ;
-MYpREFIX SSL_CTX*       __watcall c_openSslTls_getContextIF(                  unsigned* pEcP , const char* const postPemCertificatesP , const char* const postPemPrivateKeyP                                                                                                                                                      ) ;
-MYpREFIX SSL*           __watcall c_openSslTls_getWrapperIF(                  unsigned* pEcP , SSL_CTX* pContextP                                                                                                                                                                                                                 ) ;
-MYpREFIX void           __watcall c_openSslTls_wrapSocketIF(                  unsigned* pEcP , unsigned oshSocketP , SSL* pSslP                                                                                                                                                                                                   ) ;
-MYpREFIX void           __watcall c_openSslTls_shakeHandsAsClientIF(          unsigned* pEcP , SSL* pSslP                                                                                                                                                                                                                         ) ;
-MYpREFIX void           __watcall c_openSslTls_shakeHandsAsServerIF(          unsigned* pEcP , SSL* pSslP                                                                                                                                                                                                                         ) ;
-MYpREFIX unsigned       __watcall c_openSslTls_writeIF(                       unsigned* pEcP , SSL* pSslP , const char* const pbP , const unsigned cbP                                                                                                                                                                            ) ;
-MYpREFIX unsigned       __watcall c_openSslTls_readIF(                        unsigned* pEcP , char* pbP , unsigned cbP , SSL* pSslP                                                                                                                                                                                              ) ;
-MYpREFIX unsigned       __watcall c_openSslTls_peekIF(                        unsigned* pEcP , char* pbP , unsigned cbP , SSL* pSslP                                                                                                                                                                                              ) ;
-MYpREFIX unsigned       __watcall c_openSslCrypto_keyPairIF(                  unsigned* pEcP , unsigned bitsP                                                                                                                                                                                                                     ) ;
-MYpREFIX void           __watcall c_openSslCrypto_errorCodeIF(                unsigned* pEcP                                                                                                                                                                                                                                      ) ;
-MYpREFIX void           __watcall c_openSslCrypto_writePrivateKeyToFileIF(    unsigned* pEcP , const char* postFileP , unsigned c_pKeyPairP                                                                                                                                                                                       ) ;
-MYpREFIX void           __watcall c_openSslCrypto_writePublicKeyToFileIF(     unsigned* pEcP , const char* postFileP , unsigned c_pKeyPairP                                                                                                                                                                                       ) ;
-MYpREFIX void           __watcall c_openSslCrypto_getPublicKeyBase64IF(       unsigned* pEcP , char* const postaP , const unsigned costaP , char* const postaTmpP , const unsigned costaTmpP , unsigned c_pKeyPairP                                                                                                               ) ;
-MYpREFIX void           __watcall c_openSslCrypto_getPrivateKeyBase64IF(      unsigned* pEcP , char* const postaP , const unsigned costaP , char* const postaTmpP , const unsigned costaTmpP , unsigned c_pKeyPairP                                                                                                               ) ;
-MYpREFIX unsigned       __watcall c_openSslCrypto_readPrivateKeyFromFileIF(   unsigned* pEcP , const char* postFileP                                                                                                                                                                                                              ) ;
-MYpREFIX unsigned       __watcall c_openSslCrypto_readPublicKeyFromFileIF(    unsigned* pEcP , const char* postFileP                                                                                                                                                                                                              ) ;
-MYpREFIX void           __watcall c_openSslCrypto_encryptIF(                  unsigned* pEcP , unsigned char* pbSymCypherTextP , int* pcbSymCypherTextP , unsigned char* pbHushedSymKeyP , int* pcbHushedSymKeyP , unsigned char* pbSeedP , int cbSeedP , unsigned char* pbPlainTextP , int cbPlainTextP , unsigned c_pKeyPublicP ) ;
-MYpREFIX void           __watcall c_openSslCrypto_decryptIF(                  unsigned* pEcP , unsigned char* pbPlainTextP , int* pcbPlainTextP , unsigned char* pbSymCypherTextP , int cbSymCypherTextP , unsigned char* pbHushedSymKeyP , int cbHushedSymKeyP , unsigned char* pbSeedP , int cbSeedP , unsigned c_pKeyPrivateP  ) ;
-MYpREFIX char*          __watcall c_openSslHmac_hmacIF(                       unsigned* pEcP , const char* postSecretP , unsigned costSecretP , const char* postRawP , unsigned costRawP , char* postScratchP , unsigned* pCostScratchP                                                                                           ) ;
+#if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
+    MYpREFIX void           __watcall c_openSslTls_wrapperFreeIF(                 unsigned* pEcP , SSL* pSslP                                                                                                                                                                                                                         ) ;
+    MYpREFIX void           __watcall c_openSslTls_setupIF(                       unsigned* pEcP                                                                                                                                                                                                                                      ) ;
+    MYpREFIX void           __watcall c_openSslTls_waveByeIF(                     unsigned* pEcP , SSL* pSslP                                                                                                                                                                                                                         ) ;
+    MYpREFIX SSL_CTX*       __watcall c_openSslTls_getContextIF(                  unsigned* pEcP , const char* const postPemCertificatesP , const char* const postPemPrivateKeyP                                                                                                                                                      ) ;
+    MYpREFIX SSL*           __watcall c_openSslTls_getWrapperIF(                  unsigned* pEcP , SSL_CTX* pContextP                                                                                                                                                                                                                 ) ;
+    MYpREFIX void           __watcall c_openSslTls_wrapSocketIF(                  unsigned* pEcP , unsigned oshSocketP , SSL* pSslP                                                                                                                                                                                                   ) ;
+    MYpREFIX void           __watcall c_openSslTls_shakeHandsAsClientIF(          unsigned* pEcP , SSL* pSslP                                                                                                                                                                                                                         ) ;
+    MYpREFIX void           __watcall c_openSslTls_shakeHandsAsServerIF(          unsigned* pEcP , SSL* pSslP                                                                                                                                                                                                                         ) ;
+    MYpREFIX unsigned       __watcall c_openSslTls_writeIF(                       unsigned* pEcP , SSL* pSslP , const char* const pbP , const unsigned cbP                                                                                                                                                                            ) ;
+    MYpREFIX unsigned       __watcall c_openSslTls_readIF(                        unsigned* pEcP , char* pbP , unsigned cbP , SSL* pSslP                                                                                                                                                                                              ) ;
+    MYpREFIX unsigned       __watcall c_openSslTls_peekIF(                        unsigned* pEcP , char* pbP , unsigned cbP , SSL* pSslP                                                                                                                                                                                              ) ;
+    MYpREFIX unsigned       __watcall c_openSslCrypto_keyPairIF(                  unsigned* pEcP , unsigned bitsP                                                                                                                                                                                                                     ) ;
+    MYpREFIX void           __watcall c_openSslCrypto_errorCodeIF(                unsigned* pEcP                                                                                                                                                                                                                                      ) ;
+    MYpREFIX void           __watcall c_openSslCrypto_writePrivateKeyToFileIF(    unsigned* pEcP , const char* postFileP , unsigned c_pKeyPairP                                                                                                                                                                                       ) ;
+    MYpREFIX void           __watcall c_openSslCrypto_writePublicKeyToFileIF(     unsigned* pEcP , const char* postFileP , unsigned c_pKeyPairP                                                                                                                                                                                       ) ;
+    MYpREFIX void           __watcall c_openSslCrypto_getPublicKeyBase64IF(       unsigned* pEcP , char* const postaP , const unsigned costaP , char* const postaTmpP , const unsigned costaTmpP , unsigned c_pKeyPairP                                                                                                               ) ;
+    MYpREFIX void           __watcall c_openSslCrypto_getPrivateKeyBase64IF(      unsigned* pEcP , char* const postaP , const unsigned costaP , char* const postaTmpP , const unsigned costaTmpP , unsigned c_pKeyPairP                                                                                                               ) ;
+    MYpREFIX unsigned       __watcall c_openSslCrypto_readPrivateKeyFromFileIF(   unsigned* pEcP , const char* postFileP                                                                                                                                                                                                              ) ;
+    MYpREFIX unsigned       __watcall c_openSslCrypto_readPublicKeyFromFileIF(    unsigned* pEcP , const char* postFileP                                                                                                                                                                                                              ) ;
+    MYpREFIX void           __watcall c_openSslCrypto_encryptIF(                  unsigned* pEcP , unsigned char* pbSymCypherTextP , int* pcbSymCypherTextP , unsigned char* pbHushedSymKeyP , int* pcbHushedSymKeyP , unsigned char* pbSeedP , int cbSeedP , unsigned char* pbPlainTextP , int cbPlainTextP , unsigned c_pKeyPublicP ) ;
+    MYpREFIX void           __watcall c_openSslCrypto_decryptIF(                  unsigned* pEcP , unsigned char* pbPlainTextP , int* pcbPlainTextP , unsigned char* pbSymCypherTextP , int cbSymCypherTextP , unsigned char* pbHushedSymKeyP , int cbHushedSymKeyP , unsigned char* pbSeedP , int cbSeedP , unsigned c_pKeyPrivateP  ) ;
+    MYpREFIX char*          __watcall c_openSslHmac_hmacIF(                       unsigned* pEcP , const char* postSecretP , unsigned costSecretP , const char* postRawP , unsigned costRawP , char* postScratchP , unsigned* pCostScratchP                                                                                           ) ;
+#endif
 
 //
 // Respecting the rights of other people is an important part of empowering one another.

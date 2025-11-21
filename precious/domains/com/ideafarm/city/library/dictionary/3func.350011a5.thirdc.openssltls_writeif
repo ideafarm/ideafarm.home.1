@@ -8,7 +8,11 @@
 
 
 }
-    return cbWritten ;
+    #endif
+        return 0 ;
+    #else
+        return cbWritten ;
+    #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
     #endif
 
@@ -18,7 +22,9 @@
 
         __( ec ) ;
         if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_writeIF / exception caught") ) ;
-        countT cbWritten  = c_openSslTls_writeIF( &ec , (SSL*)hWrapperP.cNoteF() , pbP , cbP ) ;
+        #endif
+            countT cbWritten  = c_openSslTls_writeIF( &ec , (SSL*)hWrapperP.cNoteF() , pbP , cbP ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
         ZE( countT , ec ) ;
 
     #elif defined( __NT__ )

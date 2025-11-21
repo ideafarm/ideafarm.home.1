@@ -7,19 +7,21 @@
 //
 
 
-}
+#endif
     }
-        *pEcP = ifcIDeXCEPTIONoPENsSL_wrapSocketIF ;
+        }
+            *pEcP = ifcIDeXCEPTIONoPENsSL_wrapSocketIF ;
+        {
+        _except( EXCEPTION_EXECUTE_HANDLER )
+        }
+            SSL_set_fd( pSslP , oshSocketP ) ;
+        {
+        _try
+    
+        *pEcP = 0 ;
     {
-    _except( EXCEPTION_EXECUTE_HANDLER )
-    }
-        SSL_set_fd( pSslP , oshSocketP ) ;
-    {
-    _try
-
-    *pEcP = 0 ;
-{
-/**//*1*/void __watcall c_openSslTls_wrapSocketIF( unsigned* pEcP , unsigned oshSocketP , SSL* pSslP )/*1*/
+    /**//*1*/void __watcall c_openSslTls_wrapSocketIF( unsigned* pEcP , unsigned oshSocketP , SSL* pSslP )/*1*/
+#if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
 */
 /*

@@ -15,8 +15,10 @@
         __( ec ) ;
         if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslCrypto_readPublicKeyFromFileIF / failed") ) ;
 
-        hKeyPublicP.osF( ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC , c_pKeyPublic ) ;
-        countT c_pKeyPublic = c_openSslCrypto_readPublicKeyFromFileIF( &ec , postFileP ) ;
+        #endif
+            hKeyPublicP.osF( ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC , c_pKeyPublic ) ;
+            countT c_pKeyPublic = c_openSslCrypto_readPublicKeyFromFileIF( &ec , postFileP ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
         ZE( countT , ec ) ;
 
     #elif defined( __NT__ )

@@ -15,7 +15,9 @@
 
 
 
-        c_openSslCrypto_errorCodeIF( &ec ) ;
+        #endif
+            c_openSslCrypto_errorCodeIF( &ec ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
     #elif defined( __NT__ )
     #ifdef __OS2__

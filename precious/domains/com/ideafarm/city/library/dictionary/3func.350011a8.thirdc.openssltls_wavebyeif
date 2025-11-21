@@ -18,7 +18,9 @@
 
         __( ec ) ;
         if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_waveByeIF / exception caught") ) ;
+        #endif
                             c_openSslTls_waveByeIF( &ec , (SSL*)hWrapperP.cNoteF() ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
         ZE( countT , ec ) ;
 
     #elif defined( __NT__ )

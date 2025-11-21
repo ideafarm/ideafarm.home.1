@@ -14,7 +14,9 @@
         if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslCrypto_encryptIF / failed") ) ;
 
         if( was < cbSymCypherTextP ) { BLAMMO ; } //SHITTY OPENSSL CODE HAS OVERWRITTEN MEMORY ; CALLER MUST ENSURE THAT THIS DOES NOT HAPPEN BY ENSURING THAT THE BUFFER IS LARGE ENOUGH
-        c_openSslCrypto_encryptIF( &ec , (unsigned char*)pbSymCypherTextP , (int*)&cbSymCypherTextP , (unsigned char*)pbInnerKeyP , (int*)&cbInnerKeyP , (unsigned char*)pbSeedP , cbSeedP , (unsigned char*)pbPlainTextP , cbPlainTextP , c_pKey ) ;
+        #endif
+            c_openSslCrypto_encryptIF( &ec , (unsigned char*)pbSymCypherTextP , (int*)&cbSymCypherTextP , (unsigned char*)pbInnerKeyP , (int*)&cbInnerKeyP , (unsigned char*)pbSeedP , cbSeedP , (unsigned char*)pbPlainTextP , cbPlainTextP , c_pKey ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
         countT was = cbSymCypherTextP ;
 
         countT c_pKey = handleP.osF( handleP.idTypeF() == ifcIDtYPEhANDLE_OPENSSLkEYpAIR ? ifcIDtYPEhANDLE_OPENSSLkEYpAIR : ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC ) ;

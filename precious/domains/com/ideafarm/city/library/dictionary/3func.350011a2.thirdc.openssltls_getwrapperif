@@ -11,18 +11,22 @@
 
 
     #endif
+        #endif
 
-        if( !POOP ) handleP.cNoteF() = (countT)pWrap ; //U:: LEAK IF NOT ZE
+            if( !POOP ) handleP.cNoteF() = (countT)pWrap ; //U:: LEAK IF NOT ZE
 
 
-        __Z( pWrap ) ;
-        __( ec ) ;
-        if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_getWrapperIF / exception caught") ) ;
-        SSL* pWrap        = c_openSslTls_getWrapperIF( &ec , (SSL_CTX*)hContextP.osF( ifcIDtYPEhANDLE_openSslContext ) ) ;
-        ZE( countT , ec ) ;
+            #endif
+                __Z( pWrap ) ;
+                __( ec ) ;
+                if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_getWrapperIF / exception caught") ) ;
+                SSL* pWrap        = c_openSslTls_getWrapperIF( &ec , (SSL_CTX*)hContextP.osF( ifcIDtYPEhANDLE_openSslContext ) ) ;
+            #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
+            ZE( countT , ec ) ;
 
-    #elif defined( __NT__ )
-    #ifdef __OS2__
+        #elif defined( __NT__ )
+        #ifdef __OS2__
+    #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
     if( !( F(((tin1S&)tin0P).flagsThreadMode4) & flTHREADmODE4_ARMoPENsSL ) ) { BLAMMO ; }
 

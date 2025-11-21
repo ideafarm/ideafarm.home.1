@@ -8,7 +8,11 @@
 
 
 }
-    return cbRead ;
+    #endif
+        return 0 ;
+    #else
+        return cbRead ;
+    #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
     #endif
 
@@ -18,7 +22,9 @@
 
         __( ec ) ;
         if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_peekIF / exception caught") ) ;
-        countT cbRead     = c_openSslTls_peekIF( &ec , pbP , cbP , (SSL*)hWrapperP.cNoteF() ) ;
+        #endif
+            countT cbRead     = c_openSslTls_peekIF( &ec , pbP , cbP , (SSL*)hWrapperP.cNoteF() ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
         ZE( countT , ec ) ;
 
     #elif defined( __NT__ )

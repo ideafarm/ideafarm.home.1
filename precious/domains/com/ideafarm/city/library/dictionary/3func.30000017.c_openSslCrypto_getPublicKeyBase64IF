@@ -16,52 +16,54 @@
         }
             }
                 fclose( pFile ) ;
-                }
+                #endif
                     }
-                        //}
-                        //    fclose( pFileV ) ;
-                        //    fprintf( pFileV , "%s" , postaP ) ;
-                        //    pFileV = _fsopen( postFile , "wb" , _SH_DENYRW ) ;
-                        //    strcat( postFile , ".net" ) ;
-                        //
-                        //    FILE* pFileV = 0 ;
-                        //{
-
                         }
-                            }
-                                 else if( postaTmpP[ offi ] != '\r' && postaTmpP[ offi     ] != '\n' ) postaP[ offo ++ ] = postaTmpP[ offi ] ;
-                                      if( postaTmpP[ offi ] == '\n' && postaTmpP[ offi + 1 ] == '-'  ) bArmed = 0 ;
-                            {
-                            if( bArmed )
+                            //}
+                            //    fclose( pFileV ) ;
+                            //    fprintf( pFileV , "%s" , postaP ) ;
+                            //    pFileV = _fsopen( postFile , "wb" , _SH_DENYRW ) ;
+                            //    strcat( postFile , ".net" ) ;
+                            //
+                            //    FILE* pFileV = 0 ;
+                            //{
 
                             }
-                                continue ;
-                                bArmed = 1 ;
+                                }
+                                     else if( postaTmpP[ offi ] != '\r' && postaTmpP[ offi     ] != '\n' ) postaP[ offo ++ ] = postaTmpP[ offi ] ;
+                                          if( postaTmpP[ offi ] == '\n' && postaTmpP[ offi + 1 ] == '-'  ) bArmed = 0 ;
+                                {
+                                if( bArmed )
+
+                                }
+                                    continue ;
+                                    bArmed = 1 ;
+                                {
+                                if( !bArmed && postaTmpP[ offi ] == '\n' )
                             {
-                            if( !bArmed && postaTmpP[ offi ] == '\n' )
+                            for( offi = 0 ; offi < positionB ; offi ++ )
+
+                            fprintf( pFile , "%s" , postXXXX ) ;
+                            rc = fseek( pFile , 0 , SEEK_SET ) ;
+
+                            postaTmpP[ rc ] = 0 ;
+                            rc = fread( postaTmpP , 1 , positionB , pFile ) ;
+                            rc = fseek( pFile , 0 , SEEK_SET ) ;
+
+                            int      bArmed   = 0 ;
+                            int      offo     = 0 ;
+                            int      offi     = 0 ;
+                            unsigned costKey  = positionB ;
                         {
-                        for( offi = 0 ; offi < positionB ; offi ++ )
-
-                        fprintf( pFile , "%s" , postXXXX ) ;
-                        rc = fseek( pFile , 0 , SEEK_SET ) ;
-
-                        postaTmpP[ rc ] = 0 ;
-                        rc = fread( postaTmpP , 1 , positionB , pFile ) ;
-                        rc = fseek( pFile , 0 , SEEK_SET ) ;
-
-                        int      bArmed   = 0 ;
-                        int      offo     = 0 ;
-                        int      offi     = 0 ;
-                        unsigned costKey  = positionB ;
+                        else
+                        if( positionB >= costaTmpP ) *pEcP = 0x04000000 ;
+                        rc = fgetpos( pFile , &positionB ) ;
+                        fpos_t positionB ;
                     {
                     else
-                    if( positionB >= costaTmpP ) *pEcP = 0x04000000 ;
-                    rc = fgetpos( pFile , &positionB ) ;
-                    fpos_t positionB ;
-                {
-                else
-                if( !bOk ) *pEcP = 0x08000000 ;
-                unsigned bOk = PEM_write_PUBKEY( pFile , (EVP_PKEY*)c_pKeyPairP ) ;
+                    if( !bOk ) *pEcP = 0x08000000 ;
+                    unsigned bOk = PEM_write_PUBKEY( pFile , (EVP_PKEY*)c_pKeyPairP ) ;
+                #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
                 int rc = fgetpos( pFile , &positionA ) ;
                 fpos_t positionA ;

@@ -8,22 +8,26 @@
 
 
 }
-    return postHash ;
-
-    __( ec ) ;
-
     #endif
+        return 0 ;
+    #else
+        return postHash ;
+
+        __( ec ) ;
+
+        #endif
 
 
 
 
 
-        if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslHmac_hmacIF / exception caught or other error") ) ;
-                            osTextT* postHash = c_openSslHmac_hmacIF( &ec , postSecretP , costSecretP , postRawP , costRawP , postScratchP , pCostScratchP ) ;
-        ZE( countT , ec ) ;
+            if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslHmac_hmacIF / exception caught or other error") ) ;
+                                osTextT* postHash = c_openSslHmac_hmacIF( &ec , postSecretP , costSecretP , postRawP , costRawP , postScratchP , pCostScratchP ) ;
+            ZE( countT , ec ) ;
 
-    #elif defined( __NT__ )
-    #ifdef __OS2__
+        #elif defined( __NT__ )
+        #ifdef __OS2__
+    #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
 
 

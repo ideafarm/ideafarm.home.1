@@ -18,7 +18,9 @@
 
         __( ec ) ;
         if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_wrapSocketIF / exception caught") ) ;
+        #endif
                             c_openSslTls_wrapSocketIF( &ec , hSocketP.osF( ifcIDtYPEhANDLE_SOCKET ) , (SSL*)hWrapperP.cNoteF() ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
         ZE( countT , ec ) ;
 
     #elif defined( __NT__ )

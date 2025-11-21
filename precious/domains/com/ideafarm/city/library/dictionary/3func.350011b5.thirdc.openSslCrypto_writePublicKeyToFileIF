@@ -15,7 +15,9 @@
         __( ec ) ;
         if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslCrypto_writePublicKeyToFileIF / failed") ) ;
 
-        c_openSslCrypto_writePublicKeyToFileIF( &ec , postFileP , (unsigned)c_pKey ) ;
+        #endif
+            c_openSslCrypto_writePublicKeyToFileIF( &ec , postFileP , (unsigned)c_pKey ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
         countT c_pKey = handleP.osF( handleP.idTypeF() == ifcIDtYPEhANDLE_OPENSSLkEYpAIR ? ifcIDtYPEhANDLE_OPENSSLkEYpAIR : ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC ) ;
         ZE( countT , ec ) ;
 

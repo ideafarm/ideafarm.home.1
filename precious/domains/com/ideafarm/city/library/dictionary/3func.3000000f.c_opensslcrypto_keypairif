@@ -8,24 +8,28 @@
 
 
 }
-    return (unsigned)pKeyPair ;
+    #endif
+        return 0 ;
+    #else
+        return (unsigned)pKeyPair ;
 
-    }
-        *pEcP = ifcIDeXCEPTIONoPENsSL_keyPairIF ;
-    {
-    _except( EXCEPTION_EXECUTE_HANDLER )
-    }
         }
-            *pEcP = 1 ; /* rc = ERR_get_error() ;*/
+            *pEcP = ifcIDeXCEPTIONoPENsSL_keyPairIF ;
         {
-        if( !pKeyPair )
+        _except( EXCEPTION_EXECUTE_HANDLER )
+        }
+            }
+                *pEcP = 1 ; /* rc = ERR_get_error() ;*/
+            {
+            if( !pKeyPair )
 
-        pKeyPair = EVP_PKEY_Q_keygen( NULL , NULL , "RSA" , cBitsP ) ;
-    {
-    _try
+            pKeyPair = EVP_PKEY_Q_keygen( NULL , NULL , "RSA" , cBitsP ) ;
+        {
+        _try
 
-    *pEcP = 0 ;
-    EVP_PKEY* pKeyPair = 0 ;
+        *pEcP = 0 ;
+        EVP_PKEY* pKeyPair = 0 ;
+    #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 {
 /**//*1*/unsigned __watcall c_openSslCrypto_keyPairIF( unsigned* pEcP , unsigned int cBitsP )/*1*/
 

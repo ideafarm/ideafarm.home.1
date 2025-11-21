@@ -7,38 +7,40 @@
 //
 
 
-}
-    return pContext ;
-
+#endif
     }
-        *pEcP = ifcIDeXCEPTIONoPENsSL_getContextIF ;
-    {
-    _except( EXCEPTION_EXECUTE_HANDLER )
-    }
+        return pContext ;
+    
         }
+            *pEcP = ifcIDeXCEPTIONoPENsSL_getContextIF ;
+        {
+        _except( EXCEPTION_EXECUTE_HANDLER )
+        }
+            }
+                while( ERR_get_error() ) ;
+                if( - 1 + SSL_CTX_use_PrivateKey_file(  pContext , postPemPrivateKeyP   , SSL_FILETYPE_PEM ) ) *pEcP |= 8 ;
+                while( ERR_get_error() ) ;
+                if( - 1 + SSL_CTX_use_certificate_chain_file( pContext , postPemCertificatesP              ) ) *pEcP |= 4 ;
+                while( ERR_get_error() ) ;
+            {
+            if( postPemCertificatesP && postPemPrivateKeyP && *postPemCertificatesP && *postPemPrivateKeyP )
+    
+            //*pEcP |= - 1 + SSL_CTX_set_ecdh_auto( pContext , 1 ) ;
+    
             while( ERR_get_error() ) ;
-            if( - 1 + SSL_CTX_use_PrivateKey_file(  pContext , postPemPrivateKeyP   , SSL_FILETYPE_PEM ) ) *pEcP |= 8 ;
-            while( ERR_get_error() ) ;
-            if( - 1 + SSL_CTX_use_certificate_chain_file( pContext , postPemCertificatesP              ) ) *pEcP |= 4 ;
+            if( !pContext ) *pEcP |= 2 ;
+            pContext = SSL_CTX_new( TLS_method() ) ;
             while( ERR_get_error() ) ;
         {
-        if( postPemCertificatesP && postPemPrivateKeyP && *postPemCertificatesP && *postPemPrivateKeyP )
-
-        //*pEcP |= - 1 + SSL_CTX_set_ecdh_auto( pContext , 1 ) ;
-
-        while( ERR_get_error() ) ;
-        if( !pContext ) *pEcP |= 2 ;
-        pContext = SSL_CTX_new( TLS_method() ) ;
-        while( ERR_get_error() ) ;
+        _try
+        //CS:CODEsYNC: 350011a1 30000003
+    
+        *pEcP = 0 ;
+        unsigned rcDebug = 0 ;
+        SSL_CTX* pContext = 0 ;
     {
-    _try
-    //CS:CODEsYNC: 350011a1 30000003
-
-    *pEcP = 0 ;
-    unsigned rcDebug = 0 ;
-    SSL_CTX* pContext = 0 ;
-{
-/**//*1*/SSL_CTX* __watcall c_openSslTls_getContextIF( unsigned* pEcP , const char* const postPemCertificatesP , const char* const postPemPrivateKeyP )/*1*/
+    /**//*1*/SSL_CTX* __watcall c_openSslTls_getContextIF( unsigned* pEcP , const char* const postPemCertificatesP , const char* const postPemPrivateKeyP )/*1*/
+#if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
 
 */

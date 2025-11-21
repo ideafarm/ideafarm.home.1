@@ -8,63 +8,65 @@
 
 
 }
-    }
+    #endif
         }
-            *pEcP = ifcIDeXCEPTIONoPENsSL_encryptIF ;
-        {
-        _except( EXCEPTION_EXECUTE_HANDLER )
-        }
+            }
+                *pEcP = ifcIDeXCEPTIONoPENsSL_encryptIF ;
+            {
+            _except( EXCEPTION_EXECUTE_HANDLER )
             }
                 }
                     }
                         }
                             }
-                                *pcbSymCypherTextP = cbOutAllBlob ;
+                                }
+                                    *pcbSymCypherTextP = cbOutAllBlob ;
+                                    cbOutAllBlob += *pcbSymCypherTextP ;
+                                    EVP_CIPHER_CTX_free( pContext ) ; pContext = 0 ;
+                                {
+                                else
+                                if( !rc ) *pEcP |= 0x800000 ;
+                                rc = EVP_SealFinal( pContext , pbSymCypherTextP + cbOutAllBlob , pcbSymCypherTextP ) ;
                                 cbOutAllBlob += *pcbSymCypherTextP ;
-                                EVP_CIPHER_CTX_free( pContext ) ; pContext = 0 ;
                             {
                             else
-                            if( !rc ) *pEcP |= 0x800000 ;
-                            rc = EVP_SealFinal( pContext , pbSymCypherTextP + cbOutAllBlob , pcbSymCypherTextP ) ;
-                            cbOutAllBlob += *pcbSymCypherTextP ;
+                            if( !rc ) *pEcP |= 0x1000000 ;
+                            rc = EVP_SealUpdate( pContext , pbSymCypherTextP , pcbSymCypherTextP , pbPlainTextP , cbPlainTextP ) ;
                         {
                         else
-                        if( !rc ) *pEcP |= 0x1000000 ;
-                        rc = EVP_SealUpdate( pContext , pbSymCypherTextP , pcbSymCypherTextP , pbPlainTextP , cbPlainTextP ) ;
+                        if( rc != 1 ) *pEcP |= 0x2000000 | rc ;
+                        rc = EVP_SealInit( pContext , EVP_aes_128_cbc() , ppbInnerKey , pcbInnerKeyP , pbSeedP , &pKeyPublicP , 1 ) ;
+
+                        EVP_CIPHER_CTX_init( pContext ) ;
                     {
                     else
-                    if( rc != 1 ) *pEcP |= 0x2000000 | rc ;
-                    rc = EVP_SealInit( pContext , EVP_aes_128_cbc() , ppbInnerKey , pcbInnerKeyP , pbSeedP , &pKeyPublicP , 1 ) ;
-
-                    EVP_CIPHER_CTX_init( pContext ) ;
+                    if( !pContext ) *pEcP |= 0x4000000 ;
+                    EVP_CIPHER_CTX* pContext = EVP_CIPHER_CTX_new() ;
                 {
                 else
-                if( !pContext ) *pEcP |= 0x4000000 ;
-                EVP_CIPHER_CTX* pContext = EVP_CIPHER_CTX_new() ;
+                if( cbInnerKeyNeeded > *pcbInnerKeyP ) *pEcP |= 0x8000000 | cbInnerKeyNeeded ;
+                unsigned cbInnerKeyNeeded = EVP_PKEY_size( pKeyPublicP ) ;
             {
-            else
-            if( cbInnerKeyNeeded > *pcbInnerKeyP ) *pEcP |= 0x8000000 | cbInnerKeyNeeded ;
-            unsigned cbInnerKeyNeeded = EVP_PKEY_size( pKeyPublicP ) ;
+            _try
+
+            memset( pbSeedP , 0 , cbSeedP ) ; //U:: ALLOW CALLER TO INITIALIZE SEED, BUT NEED TO ENSURE THAT INITIAL VALUE IS TRULY RANDOM RATHER THAN JUST E.G. UNINITIALIZED STACK MEMORY
         {
-        _try
+        if( !*pEcP )
 
-        memset( pbSeedP , 0 , cbSeedP ) ; //U:: ALLOW CALLER TO INITIALIZE SEED, BUT NEED TO ENSURE THAT INITIAL VALUE IS TRULY RANDOM RATHER THAN JUST E.G. UNINITIALIZED STACK MEMORY
-    {
-    if( !*pEcP )
+        if(  cbSeedP < EVP_MAX_IV_LENGTH ) *pEcP |= 0x10000000 ;
+        if( !pbSeedP                     ) *pEcP |= 0x20000000 ;
+        if( !pbInnerKeyP                 ) *pEcP |= 0x40000000 ;
+        if( !pKeyPublicP                 ) *pEcP |= 0x80000000 ;
 
-    if(  cbSeedP < EVP_MAX_IV_LENGTH ) *pEcP |= 0x10000000 ;
-    if( !pbSeedP                     ) *pEcP |= 0x20000000 ;
-    if( !pbInnerKeyP                 ) *pEcP |= 0x40000000 ;
-    if( !pKeyPublicP                 ) *pEcP |= 0x80000000 ;
+        ppbInnerKey[ 0 ] = &pbInnerKeyP[ 0 ] ;
+        *pEcP = 0 ;
 
-    ppbInnerKey[ 0 ] = &pbInnerKeyP[ 0 ] ;
-    *pEcP = 0 ;
-
-    int cbOutAllBlob = 0 ;
-    unsigned rc = 0 ;
-    FILE* osh = 0 ;
-    unsigned char* ppbInnerKey[ 1 ] ;
-    EVP_PKEY* pKeyPublicP = (EVP_PKEY*)c_pKeyPublicP ;
+        int cbOutAllBlob = 0 ;
+        unsigned rc = 0 ;
+        FILE* osh = 0 ;
+        unsigned char* ppbInnerKey[ 1 ] ;
+        EVP_PKEY* pKeyPublicP = (EVP_PKEY*)c_pKeyPublicP ;
+    #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 {
 /**//*1*/void __watcall c_openSslCrypto_encryptIF( unsigned* pEcP , unsigned char* pbSymCypherTextP , int* pcbSymCypherTextP , unsigned char* pbInnerKeyP , int* pcbInnerKeyP , unsigned char* pbSeedP , int cbSeedP , unsigned char* pbPlainTextP , int cbPlainTextP , unsigned c_pKeyPublicP )/*1*/
 

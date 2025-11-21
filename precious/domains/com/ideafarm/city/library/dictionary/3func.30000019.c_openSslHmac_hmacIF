@@ -10,21 +10,23 @@
 }
     return postHash ;
 
-    }
+    #endif
         }
-            *pEcP = ifcIDeXCEPTIONoPENsSL_hmacIF_3 ;
+            }
+                *pEcP = ifcIDeXCEPTIONoPENsSL_hmacIF_3 ;
+            {
+            _except( EXCEPTION_EXECUTE_HANDLER )
+            }
+                postHash[ *pCostScratchP ] = 0 ;
+                postHash = (char*)HMAC( EVP_sha1() , postSecretP , costSecretP , postRawP , costRawP , postScratchP , pCostScratchP ) ;
+            {
+            _try
         {
-        _except( EXCEPTION_EXECUTE_HANDLER )
-        }
-            postHash[ *pCostScratchP ] = 0 ;
-            postHash = (char*)HMAC( EVP_sha1() , postSecretP , costSecretP , postRawP , costRawP , postScratchP , pCostScratchP ) ;
-        {
-        _try
-    {
-    else
-    else if( *pCostScratchP < EVP_MAX_MD_SIZE ) *pEcP = ifcIDeXCEPTIONoPENsSL_hmacIF_2 ;
-         if( !pCostScratchP                   ) *pEcP = ifcIDeXCEPTIONoPENsSL_hmacIF_1 ;
+        else
+        else if( *pCostScratchP < EVP_MAX_MD_SIZE ) *pEcP = ifcIDeXCEPTIONoPENsSL_hmacIF_2 ;
+             if( !pCostScratchP                   ) *pEcP = ifcIDeXCEPTIONoPENsSL_hmacIF_1 ;
 
+    #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
     *pEcP = 0 ;
     char* postHash = 0 ;
 {

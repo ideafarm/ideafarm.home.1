@@ -13,7 +13,9 @@
         __( ec ) ;
         if( ec ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslCrypto_decryptIF / failed") ) ;
 
-        c_openSslCrypto_decryptIF( &ec , (unsigned char*)pbPlainTextP , (int*)&cbPlainTextP , (unsigned char*)pbSymCypherTextP , cbSymCypherTextP , (unsigned char*)pbHushedSymKeyP , cbHushedSymKeyP , (unsigned char*)pbSeedP , cbSeedP , c_pKey ) ;
+        #endif
+            c_openSslCrypto_decryptIF( &ec , (unsigned char*)pbPlainTextP , (int*)&cbPlainTextP , (unsigned char*)pbSymCypherTextP , cbSymCypherTextP , (unsigned char*)pbHushedSymKeyP , cbHushedSymKeyP , (unsigned char*)pbSeedP , cbSeedP , c_pKey ) ;
+        #if !defined( OMITfOREIGNeNCRYPTIONsUPPORT )
 
         countT c_pKey = handleP.osF( handleP.idTypeF() == ifcIDtYPEhANDLE_OPENSSLkEYpAIR ? ifcIDtYPEhANDLE_OPENSSLkEYpAIR : ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
         ZE( countT , ec ) ;

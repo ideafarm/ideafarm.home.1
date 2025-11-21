@@ -1,4 +1,7 @@
 
+// THE FOLLOWING LINE IS NORMALLY COMMENTED OUT ; ENABLE IT WHEN BUILDING base.exe.lib FOR BUILDING A STANDALONE EXECUTABLE
+// #define OMITfOREIGNeNCRYPTIONsUPPORT
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
