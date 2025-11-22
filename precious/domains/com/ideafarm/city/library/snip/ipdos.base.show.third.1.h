@@ -424,6 +424,7 @@ struct  /*ff*/addressRangeS/*ff*/                                       ; /*ff*/
 struct  /*ff*/oshSocketAcceptedS/*ff*/                                  ; /*ff*//**//*ff*/
 struct  /*ff*/s_acceptF_parametersS/*ff*/                               ; /*ff*//**//*ff*/
 class   /*ff*/ideaNetC/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/ideaNetSubscriptionC/*ff*/                                ; /*ff*//**//*ff*/
 
 //INCLUDE GENERATED SNIPPETS HERE
 
@@ -8213,9 +8214,10 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifcIDtYPEdROPnOTE_x0SwitchStackC                                0xdddd0451
 #define ifcIDtYPEdROPnOTE_xrayC                                         0xdddd0452
 #define ifcIDtYPEdROPnOTE_xSwitchStackC                                 0xdddd0453
+#define ifcIDtYPEdROPnOTE_ideaNetSubscriptionC                          0xdddd0454
 /*3*/
 #define ifcIDtYPEdROPnOTE__1S_min     0xdddd033e
-#define ifcIDtYPEdROPnOTE__1S_max     0xdddd0453
+#define ifcIDtYPEdROPnOTE__1S_max     0xdddd0454
 
 
 //

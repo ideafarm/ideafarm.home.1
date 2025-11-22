@@ -57,7 +57,7 @@ TN( tDash , DASH256 ) ;
 TN( tCmd2 , " store=active validlifetime=2m preferredlifetime=2m" ) ;
 TN( tCmd1 , "netsh interface ipv6 add address \"ideanet\" " ) ;
 
-ZE( subC* , pSub ) ;
+ZE( ideaNetSubscriptionC* , pSub ) ;
 
 }
     welcomeF( tin0P , etThread , ppSub[ offs ] , T("foo@ideafarm.com") ) ; ___( ppSub[ offs ] ) ;
@@ -65,15 +65,15 @@ ZE( subC* , pSub ) ;
 for( countT offs = 0 ; offs < sizeof ppSub / sizeof ppSub[ 0 ] ; offs ++ )
 
 thirdC::c_memsetIF( tin0P , (byteT*)ppSub , sizeof ppSub ) ;
-//subC* ppSub[ TUCK << 2 ] ;
-subC* ppSub[ 1 ] ;
+//ideaNetSubscriptionC* ppSub[ TUCK << 2 ] ;
+ideaNetSubscriptionC* ppSub[ 1 ] ;
 
 TN( tb4 , "    " ) ;
 
 TODO
 
 }
-    pSubP = new( 0 , tin0P , LF ) subC( tin0P , etherP , idSub , tSecret ) ; ___( pSubP ) ;
+    pSubP = new( 0 , tin0P , LF ) ideaNetSubscriptionC( tin0P , etherP , 1 , idSub , tSecret ) ; ___( pSubP ) ;
 
     etherP.traceF( tin0P , T("[generatedSecret]:    ")+tSecret ) ;
     }
@@ -94,66 +94,7 @@ TODO
     static countT idSubLath ;
     countT idBook = 1 ;
 {
-voidT welcomeF( tin0S& tin0P , etherC& etherP , subC*& pSubP , const strokeS* const psttEmailP )
-
-}
-    return nicNameC( pcIdHost[ 0 ] , pcIdHost[ 1 ] , pcSubnet[ 2 ] , pcSubnet[ 3 ] ) ;
-
-    const countT* pcSubnet = nnSubnet ;
-    nicNameC nnSubnet =  socketC::nicNameIF( tin0P , ether , tSubnet ) ;
-    TN( tSubnet , "2001:19f0:ac00:4cfb::" ) ;
-
-    //ether.traceF( tin0P , T("[idHost]:    ")+tIdHost ) ;
-    //TN( tIdHost , "" ) ; tIdHost = TF2(idHost,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
-
-    countT* pcIdHost = (countT*)&idHost ;
-
-    count04T idHost = (count01T)part1 | ( (count04T)idSub << 0x10 ) | ( (count04T)idBook << 0x30 ) ;
-
-    countT part1 = 0x1234 ; //U::MUST BE RANDOM
-
-    countT part1 = hashF( tMac1 , tMac1.csF( tin0P ) , minuteP ) ;
-
-    ether.delF( tin0P , psttMac ) ;
-    //TN( tMac2 , psttMac ) ;
-    //}
-    //                                               psttMac[ CSpREFIX + 1 ].idAdam = save ;
-    //                  psttMac[ CSpREFIX ].idAdam = psttMac[ CSpREFIX + 1 ].idAdam        ;
-    //    countT save = psttMac[ CSpREFIX ].idAdam                                         ;
-    //{
-    //if( psttMac->idAdam >= 2 )
-    TN( tMac1 , psttMac ) ;
-
-    //ether.traceF( tin0P , psttMac ) ;
-    ether.openSslHmacF( tin0P , psttMac , tSecret , tSecret.csF( tin0P ) , (byteT*)&minuteP , sizeof minuteP ) ; ___( psttMac ) ;
-    ZE( strokeS* , psttMac ) ;
-{
-nicNameC subC::nnF( tin0S& tin0P , countT minuteP )
-
-}
-{
-idSub( idSubP )
-idBook( 0x1111 ) ,
-tSecret( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , psttSecretP ) ,
-ether( etherP ) ,
-subC::subC( tin0S& tin0P , etherC& etherP , const countT idSubP , const strokeS* const psttSecretP ) :
-
-NEWdELcLASS( 1 , subC ) ;
-
-;
-}
-    nicNameC nnF( tin0S& tin0P , countT minuteP ) ;
-    subC( tin0S& tin0P , etherC& etherP , const countT idSubP , const strokeS* const psttSecretP ) ;
-    NEWdELcLASSpROTOS
-
-    public :
-
-    const countT idSub   ;
-    const countT idBook  ;
-    textC        tSecret ;
-    etherC&      ether   ;
-{
-class subC
+voidT welcomeF( tin0S& tin0P , etherC& etherP , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_TOOLrANDOMiPV6" )/*1*/
 /**/

@@ -1,1 +1,1 @@
-#define CmODULESbASE 0x1a1 
+#define CmODULESbASE 0x1a2 
