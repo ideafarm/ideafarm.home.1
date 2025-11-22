@@ -2741,8 +2741,18 @@ void elf_obey_C::liveF( void )
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\watcom\\lib386\\nt\\advapi32.lib"
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\watcom\\lib386\\nt\\psapi.lib"
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\microsoft\\User32.Lib"
-                    " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\lib\\libssl.lib"
-                    " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\lib\\libcrypto.lib"
+
+
+
+
+                    //" library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\lib\\libssl.lib"
+                    //" library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\lib\\libcrypto.lib"
+
+                    " library \\openssl.static.20251121@1411\\lib\\libssl.lib"
+                    " library \\openssl.static.20251121@1411\\lib\\libcrypto.lib"
+
+
+
                     //NO WORKIE:" library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\lib\\libssl_static.lib"
                     //NO WORKIE:" library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\lib\\libcrypto_static.lib"
                     " system nt_dll"

@@ -1,77 +1,27 @@
 
-#include <windows.h>
-#include <string.h>
-#include <stdio.h>
-
-#define __STDC_WANT_LIB_EXT1__ 1
-
-#include <time.h>
-
-int main( void )
-{
-
-    time_t epoch_time = 1733793157; // Example epoch time 
-    struct tm foreignTime ;
-
-    localtime_s( &epoch_time , &foreignTime ) ;
-
-    printf("Date and time: %s\n", asctime( &foreignTime ) ) ;
-
 #if defined( NEVERdEFINED )
 
-    STARTUPINFO         info1 ;
-    PROCESS_INFORMATION info2 ;
-    DEBUG_EVENT         info3 ;
-    BOOL bOk ;
-    int rc ;
-
-    memset( (char*)&info1 , 0 , sizeof info1 ) ;
-    memset( (char*)&info2 , 0 , sizeof info2 ) ;
-    memset( (char*)&info3 , 0 , sizeof info3 ) ;
-
-    bOk = CreateProcessA( 0 , "d:\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\null.exe" , 0 , 0 , 0 , CREATE_NEW_CONSOLE | DEBUG_PROCESS , 0 , 0 , &info1 , &info2 ) ;
-
-    if( !bOk )
-    {
-        rc = GetLastError() ;
-        if( rc ) rc = 0 ;
-    }
-
-    while( info3.dwDebugEventCode != EXIT_PROCESS_DEBUG_EVENT )
-    {
-        bOk = WaitForDebugEvent( &info3 , INFINITE ) ;
 
 
-        switch( info3.dwDebugEventCode )
-        {
-            case 1  : { printf( "event: %d: EXCEPTION_DEBUG_EVENT\r\n" , info3.dwDebugEventCode ) ; break ; }
-            case 2  : { printf( "event: %d: CREATE_THREAD_DEBUG_EVENT\r\n" , info3.dwDebugEventCode ) ; break ; }
-            case 3  : { printf( "event: %d: CREATE_PROCESS_DEBUG_EVENT\r\n" , info3.dwDebugEventCode ) ; break ; }
-            case 4  : { printf( "event: %d: EXIT_THREAD_DEBUG_EVENT\r\n" , info3.dwDebugEventCode ) ; break ; }
-            case 5  : { printf( "event: %d: EXIT_PROCESS_DEBUG_EVENT\r\n" , info3.dwDebugEventCode ) ; break ; }
-            case 6  : { printf( "event: %d: LOAD_DLL_DEBUG_EVENT\r\n" , info3.dwDebugEventCode ) ; break ; }
-            case 7  : { printf( "event: %d: UNLOAD_DLL_DEBUG_EVENT\r\n" , info3.dwDebugEventCode ) ; break ; }
-            case 8  : { printf( "event: %d: OUTPUT_DEBUG_STRING_EVENT\r\n" , info3.dwDebugEventCode ) ; break ; }
-            case 9  : { printf( "event: %d: RIP_EVENT\r\n" , info3.dwDebugEventCode ) ; break ; }
-            default : { printf( "event: %d: (unexpected)\r\n" , info3.dwDebugEventCode ) ; break ; }
-        }
 
-        if( !bOk )
-        {
-            rc = GetLastError() ;
-            if( rc ) rc = 0 ;
-        }
 
-        bOk = ContinueDebugEvent( info3.dwProcessId , info3.dwThreadId , DBG_EXCEPTION_NOT_HANDLED ) ;
+int OPENSSL_init_ssl(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
+//typedef UINT64 uint64_t;
 
-        if( !bOk )
-        {
-            rc = GetLastError() ;
-            if( rc ) rc = 0 ;
-        }
-    }
+
+
+
 
 #endif
 
+#pragma aux (cdecl) OPENSSL_init_ssl ;
+
+#include <windows.h>
+#include <openssl\ssl.h>
+
+
+int main( void )
+{
+    OPENSSL_init_ssl( OPENSSL_INIT_LOAD_SSL_STRINGS , 0 ) ;
     return 0 ;
 }

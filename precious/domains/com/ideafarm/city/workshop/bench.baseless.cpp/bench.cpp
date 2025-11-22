@@ -1,30 +1,9 @@
 
-
-struct fooS
-{
-    unsigned c1 ;
-}
-;
-
-struct gooS : public fooS
-{
-    unsigned pcArray[ 8 ] ;
-}
-;
+#include <openssl\ssl.h>
 
 int main( void )
 {
-    gooS  goo ;
-    fooS& fooRef = goo ;
-
-    unsigned cElts = sizeof ((gooS&)fooRef).pcArray / sizeof ((gooS&)fooRef).pcArray[ 0 ] ;
-
-    if( cElts ) ;
-
-    for( unsigned offe = 0 ; offe < sizeof ((gooS&)fooRef).pcArray / sizeof ((gooS&)fooRef).pcArray[ 0 ] ; offe ++ )
-    {
-        if( offe ) ;
-    }
+    OPENSSL_init_ssl( OPENSSL_INIT_LOAD_SSL_STRINGS , 0 ) ;
 
     return 0 ;
 }
