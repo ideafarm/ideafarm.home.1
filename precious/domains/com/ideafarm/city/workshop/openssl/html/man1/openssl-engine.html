@@ -19,7 +19,6 @@
   <li><a href="#EXAMPLES">EXAMPLES</a></li>
   <li><a href="#ENVIRONMENT">ENVIRONMENT</a></li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
-  <li><a href="#HISTORY">HISTORY</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
 </ul>
 
@@ -32,8 +31,6 @@
 <p><b>openssl engine</b> [<b>-help</b>] [<b>-v</b>] [<b>-vv</b>] [<b>-vvv</b>] [<b>-vvvv</b>] [<b>-c</b>] [<b>-t</b>] [<b>-tt</b>] [<b>-pre</b> <i>command</i>] ... [<b>-post</b> <i>command</i>] ... [<i>engine</i> ...]</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
-
-<p>This command has been deprecated. Providers should be used instead of engines.</p>
 
 <p>This command is used to query the status and capabilities of the specified <i>engine</i>s. Engines may be specified before and after all other command-line flags. Only those specified are queried.</p>
 
@@ -89,30 +86,30 @@
 
 <p>To list all the commands available to a dynamic engine:</p>
 
-<pre><code>$ openssl engine -t -tt -vvvv dynamic
-(dynamic) Dynamic engine loading support
-     [ unavailable ]
-     SO_PATH: Specifies the path to the new ENGINE shared library
-          (input flags): STRING
-     NO_VCHECK: Specifies to continue even if version checking fails (boolean)
-          (input flags): NUMERIC
-     ID: Specifies an ENGINE id name for loading
-          (input flags): STRING
-     LIST_ADD: Whether to add a loaded ENGINE to the internal list (0=no,1=yes,2=mandatory)
-          (input flags): NUMERIC
-     DIR_LOAD: Specifies whether to load from &#39;DIR_ADD&#39; directories (0=no,1=yes,2=mandatory)
-          (input flags): NUMERIC
-     DIR_ADD: Adds a directory from which ENGINEs can be loaded
-          (input flags): STRING
-     LOAD: Load up the ENGINE specified by other settings
-          (input flags): NO_INPUT</code></pre>
+<pre><code> $ openssl engine -t -tt -vvvv dynamic
+ (dynamic) Dynamic engine loading support
+      [ unavailable ]
+      SO_PATH: Specifies the path to the new ENGINE shared library
+           (input flags): STRING
+      NO_VCHECK: Specifies to continue even if version checking fails (boolean)
+           (input flags): NUMERIC
+      ID: Specifies an ENGINE id name for loading
+           (input flags): STRING
+      LIST_ADD: Whether to add a loaded ENGINE to the internal list (0=no,1=yes,2=mandatory)
+           (input flags): NUMERIC
+      DIR_LOAD: Specifies whether to load from &#39;DIR_ADD&#39; directories (0=no,1=yes,2=mandatory)
+           (input flags): NUMERIC
+      DIR_ADD: Adds a directory from which ENGINEs can be loaded
+           (input flags): STRING
+      LOAD: Load up the ENGINE specified by other settings
+           (input flags): NO_INPUT</code></pre>
 
 <p>To list the capabilities of the <b>rsax</b> engine:</p>
 
-<pre><code>$ openssl engine -c
-(rsax) RSAX engine support
- [RSA]
-(dynamic) Dynamic engine loading support</code></pre>
+<pre><code> $ openssl engine -c
+ (rsax) RSAX engine support
+  [RSA]
+ (dynamic) Dynamic engine loading support</code></pre>
 
 <h1 id="ENVIRONMENT">ENVIRONMENT</h1>
 
@@ -128,11 +125,7 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man1/openssl.1.html">openssl(1)</a>, <a href="https://man7.org/linux/man-pages/man5/config.5.html">config(5)</a></p>
-
-<h1 id="HISTORY">HISTORY</h1>
-
-<p>This command was deprecated in OpenSSL 3.0.</p>
+<p><a href="../man1/openssl.html">openssl(1)</a>, <a href="../man5/config.html">config(5)</a></p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 

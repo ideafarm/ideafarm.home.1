@@ -18,7 +18,6 @@
   <li><a href="#RETURN-VALUES">RETURN VALUES</a></li>
   <li><a href="#NOTES">NOTES</a></li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
-  <li><a href="#HISTORY">HISTORY</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
 </ul>
 
@@ -28,15 +27,15 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/ssl.h&gt;
+<pre><code> #include &lt;openssl/ssl.h&gt;
 
-long SSL_get_peer_tmp_key(SSL *ssl, EVP_PKEY **key);
-long SSL_get_server_tmp_key(SSL *ssl, EVP_PKEY **key);
-long SSL_get_tmp_key(SSL *ssl, EVP_PKEY **key);</code></pre>
+ long SSL_get_peer_tmp_key(SSL *ssl, EVP_PKEY **key);
+ long SSL_get_server_tmp_key(SSL *ssl, EVP_PKEY **key);
+ long SSL_get_tmp_key(SSL *ssl, EVP_PKEY **key);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>SSL_get_peer_tmp_key() returns the temporary key provided by the peer and used during key exchange. For example, if ECDHE is in use, then this represents the peer&#39;s public ECDHE key. On success a pointer to the key is stored in <b>*key</b>. It is the caller&#39;s responsibility to free this key after use using <a href="https://man7.org/linux/man-pages/man3/EVP_PKEY_free.3.html">EVP_PKEY_free(3)</a>.</p>
+<p>SSL_get_peer_tmp_key() returns the temporary key provided by the peer and used during key exchange. For example, if ECDHE is in use, then this represents the peer&#39;s public ECDHE key. On success a pointer to the key is stored in <b>*key</b>. It is the caller&#39;s responsibility to free this key after use using <a href="../man3/EVP_PKEY_free.html">EVP_PKEY_free(3)</a>.</p>
 
 <p>SSL_get_server_tmp_key() is a backwards compatibility alias for SSL_get_peer_tmp_key(). Under that name it worked just on the client side of the connection, its behaviour on the server end is release-dependent.</p>
 
@@ -52,15 +51,11 @@ long SSL_get_tmp_key(SSL *ssl, EVP_PKEY **key);</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man7/ssl.7.html">ssl(7)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_PKEY_free.3.html">EVP_PKEY_free(3)</a></p>
-
-<h1 id="HISTORY">HISTORY</h1>
-
-<p>SSL_get_peer_tmp_key(), SSL_get_tmp_key() were added in OpenSSL 1.1.1a.</p>
+<p><a href="../man7/ssl.html">ssl(7)</a>, <a href="../man3/EVP_PKEY_free.html">EVP_PKEY_free(3)</a></p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2017-2025 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2017-2018 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

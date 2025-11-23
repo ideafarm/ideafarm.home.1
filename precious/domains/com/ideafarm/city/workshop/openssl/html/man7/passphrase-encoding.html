@@ -66,20 +66,20 @@
 
 <p>A pass phrase encoded in ISO-8859-2 could very well have a sequence such as 0xC3 0xAF (which is the two characters &quot;LATIN CAPITAL LETTER A WITH BREVE&quot; and &quot;LATIN CAPITAL LETTER Z WITH DOT ABOVE&quot; in ISO-8859-2 encoding), but would be misinterpreted as the perfectly valid UTF-8 encoded code point U+00EF (LATIN SMALL LETTER I WITH DIAERESIS) <i>if the pass phrase doesn&#39;t contain anything that would be invalid UTF-8</i>. A pass phrase that contains this kind of byte sequence will give a different outcome in OpenSSL 1.1.0 and newer than in OpenSSL older than 1.1.0.</p>
 
-<pre><code>0x00 0xC3 0x00 0xAF                    # OpenSSL older than 1.1.0
-0x00 0xEF                              # OpenSSL 1.1.0 and newer</code></pre>
+<pre><code> 0x00 0xC3 0x00 0xAF                    # OpenSSL older than 1.1.0
+ 0x00 0xEF                              # OpenSSL 1.1.0 and newer</code></pre>
 
 <p>On the same accord, anything encoded in UTF-8 that was given to OpenSSL older than 1.1.0 was misinterpreted as ISO-8859-1 sequences.</p>
 
 <h2 id="OSSL_STORE">OSSL_STORE</h2>
 
-<p><a href="https://man7.org/linux/man-pages/man7/ossl_store.7.html">ossl_store(7)</a> acts as a general interface to access all kinds of objects, potentially protected with a pass phrase, a PIN or something else. This API stipulates that pass phrases should be UTF-8 encoded, and that any other pass phrase encoding may give undefined results. This API relies on the application to ensure UTF-8 encoding, and doesn&#39;t check that this is the case, so what it gets, it will also pass to the underlying loader.</p>
+<p><a href="../man7/ossl_store.html">ossl_store(7)</a> acts as a general interface to access all kinds of objects, potentially protected with a pass phrase, a PIN or something else. This API stipulates that pass phrases should be UTF-8 encoded, and that any other pass phrase encoding may give undefined results. This API relies on the application to ensure UTF-8 encoding, and doesn&#39;t check that this is the case, so what it gets, it will also pass to the underlying loader.</p>
 
 <h1 id="RECOMMENDATIONS">RECOMMENDATIONS</h1>
 
 <p>This section assumes that you know what pass phrase was used for encryption, but that it may have been encoded in a different character encoding than the one used by your current input method. For example, the pass phrase may have been used at a time when your default encoding was ISO-8859-1 (i.e. &quot;na&iuml;ve&quot; resulting in the byte sequence 0x6E 0x61 0xEF 0x76 0x65), and you&#39;re now in an environment where your default encoding is UTF-8 (i.e. &quot;na&iuml;ve&quot; resulting in the byte sequence 0x6E 0x61 0xC3 0xAF 0x76 0x65). Whenever it&#39;s mentioned that you should use a certain character encoding, it should be understood that you either change the input method to use the mentioned encoding when you type in your pass phrase, or use some suitable tool to convert your pass phrase from your default encoding to the target encoding.</p>
 
-<p>Also note that the sub-sections below discuss human readable pass phrases. This is particularly relevant for PKCS#12 objects, where human readable pass phrases are assumed. For other objects, it&#39;s as legitimate to use any byte sequence (such as a sequence of bytes from <i>/dev/urandom</i> that&#39;s been saved away), which makes any character encoding discussion irrelevant; in such cases, simply use the same byte sequence as it is.</p>
+<p>Also note that the sub-sections below discuss human readable pass phrases. This is particularly relevant for PKCS#12 objects, where human readable pass phrases are assumed. For other objects, it&#39;s as legitimate to use any byte sequence (such as a sequence of bytes from `/dev/urandom` that&#39;s been saved away), which makes any character encoding discussion irrelevant; in such cases, simply use the same byte sequence as it is.</p>
 
 <h2 id="Creating-new-objects">Creating new objects</h2>
 
@@ -108,11 +108,11 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man7/evp.7.html">evp(7)</a>, <a href="https://man7.org/linux/man-pages/man7/ossl_store.7.html">ossl_store(7)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_BytesToKey.3.html">EVP_BytesToKey(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_DecryptInit.3.html">EVP_DecryptInit(3)</a>, <a href="https://man7.org/linux/man-pages/man3/PEM_do_header.3.html">PEM_do_header(3)</a>, <a href="https://man7.org/linux/man-pages/man3/PKCS12_parse.3.html">PKCS12_parse(3)</a>, <a href="https://man7.org/linux/man-pages/man3/PKCS12_newpass.3.html">PKCS12_newpass(3)</a>, <a href="https://man7.org/linux/man-pages/man3/d2i_PKCS8PrivateKey_bio.3.html">d2i_PKCS8PrivateKey_bio(3)</a></p>
+<p><a href="../man7/evp.html">evp(7)</a>, <a href="../man7/ossl_store.html">ossl_store(7)</a>, <a href="../man3/EVP_BytesToKey.html">EVP_BytesToKey(3)</a>, <a href="../man3/EVP_DecryptInit.html">EVP_DecryptInit(3)</a>, <a href="../man3/PEM_do_header.html">PEM_do_header(3)</a>, <a href="../man3/PKCS12_parse.html">PKCS12_parse(3)</a>, <a href="../man3/PKCS12_newpass.html">PKCS12_newpass(3)</a>, <a href="../man3/d2i_PKCS8PrivateKey_bio.html">d2i_PKCS8PrivateKey_bio(3)</a></p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2018-2021 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2018-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

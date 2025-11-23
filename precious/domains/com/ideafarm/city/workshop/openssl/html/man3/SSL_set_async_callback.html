@@ -27,14 +27,14 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/ssl.h&gt;
+<pre><code> #include &lt;openssl/ssl.h&gt;
 
-typedef int (*SSL_async_callback_fn)(SSL *s, void *arg);
-int SSL_CTX_set_async_callback(SSL_CTX *ctx, SSL_async_callback_fn callback);
-int SSL_CTX_set_async_callback_arg(SSL_CTX *ctx, void *arg);
-int SSL_set_async_callback(SSL *s, SSL_async_callback_fn callback);
-int SSL_set_async_callback_arg(SSL *s, void *arg);
-int SSL_get_async_status(SSL *s, int *status);</code></pre>
+ typedef int (*SSL_async_callback_fn)(SSL *s, void *arg);
+ int SSL_CTX_set_async_callback(SSL_CTX *ctx, SSL_async_callback_fn callback);
+ int SSL_CTX_set_async_callback_arg(SSL_CTX *ctx, void *arg);
+ int SSL_set_async_callback(SSL *s, SSL_async_callback_fn callback);
+ int SSL_set_async_callback_arg(SSL *s, void *arg);
+ int SSL_get_async_status(SSL *s, int *status);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -70,7 +70,7 @@ int SSL_get_async_status(SSL *s, int *status);</code></pre>
 <li><p>The engine will call the application&#39;s callback passing the callback data as a parameter.</p>
 
 </li>
-<li><p>The callback function should then run. Note: it is a requirement that the callback function is small and nonblocking as it will be run in the context of a polling mechanism or an interrupt.</p>
+<li><p>The callback function should then run. Note: it is a requirement that the callback function is small and non-blocking as it will be run in the context of a polling mechanism or an interrupt.</p>
 
 </li>
 <li><p>It is the application&#39;s responsibility via the callback function to schedule recalling the OpenSSL asynchronous function and to continue processing.</p>
@@ -87,7 +87,7 @@ int SSL_get_async_status(SSL *s, int *status);</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man7/ssl.7.html">ssl(7)</a></p>
+<p><a href="../man7/ssl.html">ssl(7)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
 

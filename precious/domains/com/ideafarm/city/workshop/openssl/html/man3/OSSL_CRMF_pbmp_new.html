@@ -29,31 +29,29 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/crmf.h&gt;
+<pre><code>  #include &lt;openssl/crmf.h&gt;
 
-int OSSL_CRMF_pbm_new(OSSL_LIB_CTX *libctx, const char *propq,
-                      const OSSL_CRMF_PBMPARAMETER *pbmp,
-                      const unsigned char *msg, size_t msglen,
-                      const unsigned char *sec, size_t seclen,
-                      unsigned char **mac, size_t *maclen);
+  int OSSL_CRMF_pbm_new(const OSSL_CRMF_PBMPARAMETER *pbmp,
+                        const unsigned char *msg, size_t msglen,
+                        const unsigned char *sec, size_t seclen,
+                        unsigned char **mac, size_t *maclen);
 
-OSSL_CRMF_PBMPARAMETER *OSSL_CRMF_pbmp_new(OSSL_LIB_CTX *libctx, size_t saltlen,
-                                           int owfnid, size_t itercnt,
-                                           int macnid);</code></pre>
+  OSSL_CRMF_PBMPARAMETER *OSSL_CRMF_pbmp_new(size_t saltlen, int owfnid,
+                                             int itercnt, int macnid);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>OSSL_CRMF_pbm_new() generates a PBM (Password-Based MAC) based on given PBM parameters <i>pbmp</i>, message <i>msg</i>, and secret <i>sec</i>, along with the respective lengths <i>msglen</i> and <i>seclen</i>. The optional library context <i>libctx</i> and <i>propq</i> parameters may be used to influence the selection of the MAC algorithm referenced in the <i>pbmp</i>; see <a href="https://man7.org/linux/man-pages/man7/crypto.7.html">&quot;ALGORITHM FETCHING&quot; in crypto(7)</a> for further information. On success writes the address of the newly allocated MAC via the <i>mac</i> reference parameter and writes the length via the <i>maclen</i> reference parameter unless it its NULL.</p>
+<p>OSSL_CRMF_pbm_new() generates a PBM (Password-Based MAC) based on given PBM parameters <b>pbmp</b>, message <b>msg</b>, and secret <b>sec</b>, along with the respective lengths <b>msglen</b> and <b>seclen</b>. On success writes the address of the newly allocated MAC via the <b>mac</b> reference parameter and writes the length via the <b>maclen</b> reference parameter unless it its NULL.</p>
 
-<p>OSSL_CRMF_pbmp_new() initializes and returns a new <b>PBMParameter</b> structure with a new random salt of given length <i>saltlen</i>, OWF (one-way function) NID <i>owfnid</i>, OWF iteration count <i>itercnt</i>, and MAC NID <i>macnid</i>. The library context <i>libctx</i> parameter may be used to select the provider for the random number generation (DRBG) and may be NULL for the default.</p>
+<p>The iteration count must be at least 100, as stipulated by RFC 4211, and is limited to at most 100000 to avoid DoS through manipulated or otherwise malformed input.</p>
+
+<p>OSSL_CRMF_pbmp_new() initializes and returns a new PBMParameter structure with a new random salt of given length <b>saltlen</b>, OWF (one-way function) NID <b>owfnid</b>, iteration count <b>itercnt</b>, and MAC NID <b>macnid</b>.</p>
 
 <h1 id="NOTES">NOTES</h1>
 
-<p>The algorithms for the OWF (one-way function) and for the MAC (message authentication code) may be any with a NID defined in <i>&lt;openssl/objects.h&gt;</i>. For backward compatibility with RFC 4210, these should include NID_hmac_sha1.</p>
+<p>The algorithms for the OWF (one-way function) and for the MAC (message authentication code) may be any with a NID defined in <b>openssl/objects.h</b>. As specified by RFC 4210, these should include NID_hmac_sha1.</p>
 
-<p>RFC 4210 recommended that the salt SHOULD be at least 8 bytes (64 bits) long, where 16 bytes is common.</p>
-
-<p>The iteration count must be at least 100, as stipulated by RFC 4211, and is limited to at most 100000 to avoid DoS through manipulated or otherwise malformed input. See RFC 9045 for currently suggested values.</p>
+<p>RFC 4210 recommends that the salt SHOULD be at least 8 bytes (64 bits) long.</p>
 
 <h1 id="RETURN-VALUES">RETURN VALUES</h1>
 
@@ -63,16 +61,16 @@ OSSL_CRMF_PBMPARAMETER *OSSL_CRMF_pbmp_new(OSSL_LIB_CTX *libctx, size_t saltlen,
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
-<pre><code>OSSL_CRMF_PBMPARAMETER *pbm = NULL;
-unsigned char *msg = &quot;Hello&quot;;
-unsigned char *sec = &quot;SeCrEt&quot;;
-unsigned char *mac = NULL;
-size_t maclen;
+<pre><code> OSSL_CRMF_PBMPARAMETER *pbm = NULL;
+ unsigned char *msg = &quot;Hello&quot;;
+ unsigned char *sec = &quot;SeCrEt&quot;;
+ unsigned char *mac = NULL;
+ size_t maclen;
 
-if ((pbm = OSSL_CRMF_pbmp_new(16, NID_sha256, 500, NID_hmac_sha1) == NULL))
-    goto err;
-if (!OSSL_CRMF_pbm_new(pbm, msg, 5, sec, 6, &amp;mac, &amp;maclen))
-    goto err;</code></pre>
+ if ((pbm = OSSL_CRMF_pbmp_new(16, NID_sha256, 500, NID_hmac_sha1) == NULL))
+     goto err;
+ if (!OSSL_CRMF_pbm_new(pbm, msg, 5, sec, 6, &amp;mac, &amp;maclen))
+     goto err;</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
@@ -84,7 +82,7 @@ if (!OSSL_CRMF_pbm_new(pbm, msg, 5, sec, 6, &amp;mac, &amp;maclen))
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2007-2021 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2007-2019 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

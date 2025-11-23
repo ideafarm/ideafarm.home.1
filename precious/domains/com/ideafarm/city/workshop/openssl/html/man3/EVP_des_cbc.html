@@ -15,7 +15,6 @@
   <li><a href="#NAME">NAME</a></li>
   <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
   <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
-  <li><a href="#NOTES">NOTES</a></li>
   <li><a href="#RETURN-VALUES">RETURN VALUES</a></li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
@@ -27,9 +26,9 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/evp.h&gt;
+<pre><code> #include &lt;openssl/evp.h&gt;
 
-const EVP_CIPHER *EVP_ciphername(void)</code></pre>
+ const EVP_CIPHER *EVP_ciphername(void)</code></pre>
 
 <p><i>EVP_ciphername</i> is used a placeholder for any of the described cipher functions, such as <i>EVP_des_cbc</i>.</p>
 
@@ -43,8 +42,6 @@ const EVP_CIPHER *EVP_ciphername(void)</code></pre>
 <dd>
 
 <p>DES in CBC, ECB, CFB with 64-bit shift, CFB with 1-bit shift, CFB with 8-bit shift and OFB modes.</p>
-
-<p>None of these algorithms are provided by the OpenSSL default provider. To use them it is necessary to load either the OpenSSL legacy provider or another implementation.</p>
 
 </dd>
 <dt id="EVP_des_ede-EVP_des_ede_cbc-EVP_des_ede_cfb-EVP_des_ede_cfb64-EVP_des_ede_ecb-EVP_des_ede_ofb">EVP_des_ede(), EVP_des_ede_cbc(), EVP_des_ede_cfb(), EVP_des_ede_cfb64(), EVP_des_ede_ecb(), EVP_des_ede_ofb()</dt>
@@ -67,21 +64,17 @@ const EVP_CIPHER *EVP_ciphername(void)</code></pre>
 </dd>
 </dl>
 
-<h1 id="NOTES">NOTES</h1>
-
-<p>Developers should be aware of the negative performance implications of calling these functions multiple times and should consider using <a href="https://man7.org/linux/man-pages/man3/EVP_CIPHER_fetch.3.html">EVP_CIPHER_fetch(3)</a> with <a href="https://man7.org/linux/man-pages/man7/EVP_CIPHER-DES.7.html">EVP_CIPHER-DES(7)</a> instead. See <a href="https://man7.org/linux/man-pages/man7/crypto.7.html">&quot;Performance&quot; in crypto(7)</a> for further information.</p>
-
 <h1 id="RETURN-VALUES">RETURN VALUES</h1>
 
-<p>These functions return an <b>EVP_CIPHER</b> structure that contains the implementation of the symmetric cipher. See <a href="https://man7.org/linux/man-pages/man3/EVP_CIPHER_meth_new.3.html">EVP_CIPHER_meth_new(3)</a> for details of the <b>EVP_CIPHER</b> structure.</p>
+<p>These functions return an <b>EVP_CIPHER</b> structure that contains the implementation of the symmetric cipher. See <a href="../man3/EVP_CIPHER_meth_new.html">EVP_CIPHER_meth_new(3)</a> for details of the <b>EVP_CIPHER</b> structure.</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man7/evp.7.html">evp(7)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_EncryptInit.3.html">EVP_EncryptInit(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_CIPHER_meth_new.3.html">EVP_CIPHER_meth_new(3)</a></p>
+<p><a href="../man7/evp.html">evp(7)</a>, <a href="../man3/EVP_EncryptInit.html">EVP_EncryptInit(3)</a>, <a href="../man3/EVP_CIPHER_meth_new.html">EVP_CIPHER_meth_new(3)</a></p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2017-2023 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2017-2018 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

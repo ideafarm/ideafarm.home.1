@@ -58,7 +58,7 @@
 <dt id="key-OSSL_KDF_PARAM_KEY-octet-string">&quot;key&quot; (<b>OSSL_KDF_PARAM_KEY</b>) &lt;octet string&gt;</dt>
 <dd>
 
-<p>These parameters work as described in <a href="https://man7.org/linux/man-pages/man3/EVP_KDF.3.html">&quot;PARAMETERS&quot; in EVP_KDF(3)</a>.</p>
+<p>These parameters work as described in <a href="../man3/EVP_KDF.html">&quot;PARAMETERS&quot; in EVP_KDF(3)</a>.</p>
 
 </dd>
 <dt id="constant-OSSL_KDF_PARAM_CONSTANT-octet-string">&quot;constant&quot; (<b>OSSL_KDF_PARAM_CONSTANT</b>) &lt;octet string&gt;</dt>
@@ -73,39 +73,42 @@
 
 <p>A context for KRB5KDF can be obtained by calling:</p>
 
-<pre><code>EVP_KDF *kdf = EVP_KDF_fetch(NULL, &quot;KRB5KDF&quot;, NULL);
-EVP_KDF_CTX *kctx = EVP_KDF_CTX_new(kdf);</code></pre>
+<pre><code> EVP_KDF *kdf = EVP_KDF_fetch(NULL, &quot;KRB5KDF&quot;, NULL);
+ EVP_KDF_CTX *kctx = EVP_KDF_new_ctx(kdf);</code></pre>
 
-<p>The output length of the KRB5KDF derivation is specified via the <i>keylen</i> parameter to the <a href="https://man7.org/linux/man-pages/man3/EVP_KDF_derive.3.html">EVP_KDF_derive(3)</a> function, and MUST match the key length for the chosen cipher or an error is returned. Moreover, the constant&#39;s length must not exceed the block size of the cipher. Since the KRB5KDF output length depends on the chosen cipher, calling <a href="https://man7.org/linux/man-pages/man3/EVP_KDF_CTX_get_kdf_size.3.html">EVP_KDF_CTX_get_kdf_size(3)</a> to obtain the requisite length returns the correct length only after the cipher is set. Prior to that <b>EVP_MAX_KEY_LENGTH</b> is returned. The caller must allocate a buffer of the correct length for the chosen cipher, and pass that buffer to the <a href="https://man7.org/linux/man-pages/man3/EVP_KDF_derive.3.html">EVP_KDF_derive(3)</a> function along with that length.</p>
+<p>The output length of the KRB5KDF derivation is specified via the <i>keylen</i> parameter to the <a href="../man3/EVP_KDF_derive.html">EVP_KDF_derive(3)</a> function, and MUST match the key length for the chosen cipher or an error is returned. Moreover the constant&#39;s length must not exceed the block size of the cipher. Since the KRB5KDF output length depends on the chosen cipher, calling <a href="../man3/EVP_KDF_size.html">EVP_KDF_size(3)</a> to obtain the requisite length returns the correct length only after the cipher is set. Prior to that <b>EVP_MAX_KEY_LENGTH</b> is returned. The caller must allocate a buffer of the correct length for the chosen cipher, and pass that buffer to the <a href="../man3/EVP_KDF_derive.html">EVP_KDF_derive(3)</a> function along with that length.</p>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
 <p>This example derives a key using the AES-128-CBC cipher:</p>
 
-<pre><code>EVP_KDF *kdf;
-EVP_KDF_CTX *kctx;
-unsigned char key[16] = &quot;01234...&quot;;
-unsigned char constant[] = &quot;I&#39;m a constant&quot;;
-unsigned char out[16];
-size_t outlen = sizeof(out);
-OSSL_PARAM params[4], *p = params;
+<pre><code> EVP_KDF *kdf;
+ EVP_KDF_CTX *kctx;
+ unsigned char key[16] = &quot;01234...&quot;;
+ unsigned char constant[] = &quot;I&#39;m a constant&quot;;
+ unsigned char out[16];
+ size_t outlen = sizeof(out);
+ OSSL_PARAM params[4], *p = params;
 
-kdf = EVP_KDF_fetch(NULL, &quot;KRB5KDF&quot;, NULL);
-kctx = EVP_KDF_CTX_new(kdf);
-EVP_KDF_free(kdf);
+ kdf = EVP_KDF_fetch(NULL, &quot;KRB5KDF&quot;, NULL);
+ kctx = EVP_KDF_new_ctx(kdf);
+ EVP_KDF_free(kdf);
 
-*p++ = OSSL_PARAM_construct_utf8_string(OSSL_KDF_PARAM_CIPHER,
-                                        SN_aes_128_cbc,
-                                        strlen(SN_aes_128_cbc));
-*p++ = OSSL_PARAM_construct_octet_string(OSSL_KDF_PARAM_KEY,
-                                         key, (size_t)16);
-*p++ = OSSL_PARAM_construct_octet_string(OSSL_KDF_PARAM_CONSTANT,
-                                         constant, strlen(constant));
-*p = OSSL_PARAM_construct_end();
-if (EVP_KDF_derive(kctx, out, outlen, params) &lt;= 0)
-    /* Error */
+ *p++ = OSSL_PARAM_construct_utf8_string(OSSL_KDF_PARAM_CIPHER,
+                                         SN_aes_128_cbc,
+                                         strlen(SN_aes_128_cbc));
+ *p++ = OSSL_PARAM_construct_octet_string(OSSL_KDF_PARAM_KEY,
+                                          key, (size_t)16);
+ *p++ = OSSL_PARAM_construct_octet_string(OSSL_KDF_PARAM_CONSTANT,
+                                          constant, strlen(constant));
+ *p = OSSL_PARAM_construct_end();
+ if (EVP_KDF_set_params(kctx, params) &lt;= 0)
+     /* Error */
 
-EVP_KDF_CTX_free(kctx);</code></pre>
+ if (EVP_KDF_derive(kctx, out, outlen) &lt;= 0)
+     /* Error */
+
+ EVP_KDF_free_ctx(kctx);</code></pre>
 
 <h1 id="CONFORMING-TO">CONFORMING TO</h1>
 
@@ -113,15 +116,15 @@ EVP_KDF_CTX_free(kctx);</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man3/EVP_KDF.3.html">EVP_KDF(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_KDF_CTX_free.3.html">EVP_KDF_CTX_free(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_KDF_CTX_get_kdf_size.3.html">EVP_KDF_CTX_get_kdf_size(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_KDF_derive.3.html">EVP_KDF_derive(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_KDF.3.html">&quot;PARAMETERS&quot; in EVP_KDF(3)</a></p>
+<p><a href="../man3/EVP_KDF.html">EVP_KDF(3)</a>, <a href="../man3/EVP_KDF_free_ctx.html">EVP_KDF_free_ctx(3)</a>, <a href="../man3/EVP_KDF_ctrl.html">EVP_KDF_ctrl(3)</a>, <a href="../man3/EVP_KDF_size.html">EVP_KDF_size(3)</a>, <a href="../man3/EVP_KDF_derive.html">EVP_KDF_derive(3)</a>, <a href="../man3/EVP_KDF.html">&quot;PARAMETERS&quot; in EVP_KDF(3)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
-<p>This functionality was added in OpenSSL 3.0.</p>
+<p>This functionality was added to OpenSSL 3.0.</p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2016-2021 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2016-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

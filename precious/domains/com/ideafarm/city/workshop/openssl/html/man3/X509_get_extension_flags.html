@@ -28,19 +28,19 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/x509v3.h&gt;
+<pre><code> #include &lt;openssl/x509v3.h&gt;
 
-long X509_get_pathlen(X509 *x);
-uint32_t X509_get_extension_flags(X509 *x);
-uint32_t X509_get_key_usage(X509 *x);
-uint32_t X509_get_extended_key_usage(X509 *x);
-const ASN1_OCTET_STRING *X509_get0_subject_key_id(X509 *x);
-const ASN1_OCTET_STRING *X509_get0_authority_key_id(X509 *x);
-const GENERAL_NAMES *X509_get0_authority_issuer(X509 *x);
-const ASN1_INTEGER *X509_get0_authority_serial(X509 *x);
-void X509_set_proxy_flag(X509 *x);
-void X509_set_proxy_pathlen(int l);
-long X509_get_proxy_pathlen(X509 *x);</code></pre>
+ long X509_get_pathlen(X509 *x);
+ uint32_t X509_get_extension_flags(X509 *x);
+ uint32_t X509_get_key_usage(X509 *x);
+ uint32_t X509_get_extended_key_usage(X509 *x);
+ const ASN1_OCTET_STRING *X509_get0_subject_key_id(X509 *x);
+ const ASN1_OCTET_STRING *X509_get0_authority_key_id(X509 *x);
+ const GENERAL_NAMES *X509_get0_authority_issuer(X509 *x);
+ const ASN1_INTEGER *X509_get0_authority_serial(X509 *x);
+ void X509_set_proxy_flag(X509 *x);
+ void X509_set_proxy_pathlen(int l);
+ long X509_get_proxy_pathlen(X509 *x);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -106,12 +106,6 @@ long X509_get_proxy_pathlen(X509 *x);</code></pre>
 <p>Some certificate extension values are invalid or inconsistent. The certificate should be rejected. This bit may also be raised after an out-of-memory error while processing the X509 object, so it may not be related to the processed ASN1 object itself.</p>
 
 </dd>
-<dt id="EXFLAG_NO_FINGERPRINT"><b>EXFLAG_NO_FINGERPRINT</b></dt>
-<dd>
-
-<p>Failed to compute the internal SHA1 hash value of the certificate or CRL. This may be due to malloc failure or because no SHA1 implementation was found.</p>
-
-</dd>
 <dt id="EXFLAG_INVALID_POLICY"><b>EXFLAG_INVALID_POLICY</b></dt>
 <dd>
 
@@ -170,7 +164,7 @@ long X509_get_proxy_pathlen(X509 *x);</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man3/X509_check_purpose.3.html">X509_check_purpose(3)</a></p>
+<p><a href="../man3/X509_check_purpose.html">X509_check_purpose(3)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
@@ -178,7 +172,7 @@ long X509_get_proxy_pathlen(X509 *x);</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2015-2021 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2015-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 
