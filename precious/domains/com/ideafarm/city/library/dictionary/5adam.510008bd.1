@@ -10,7 +10,7 @@
 REST
 
 sgnDone_tmWorkF.waitF( tin0P ) ;
-etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK >> 2 ) ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
 signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
@@ -19,11 +19,9 @@ DONE( tmWorkF )
 }
     etThread.traceF( tin0P , T("Normal access restored.") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
+    sgnDone_tmWorkDnsF.waitF( tin0P ) ;
     }
-        etThread.delF( tin0P , psttUnwanted ) ;
-        etThread.delF( tin0P , psttWanted ) ;
-        etThread.strHearF( tin0P , psttWanted , psttUnwanted , 0 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
-        etThread.traceF( tin0P , T("Press the Enter key, and I will restore your access to the public web and disable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        bQuitDns = 1 ;
 
 #endif
         }
@@ -49,7 +47,7 @@ DONE( tmWorkF )
 
 
         }
-            ++ s ; ether.osSleepF( tin0P , TUCK >> 6 ) ;
+            ++ s ; etThread.osSleepF( tin0P , TUCK >> 6 ) ;
 
             }
                 etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+T(nnNow) , flTRACE_NOpREFIX ) ;
@@ -68,9 +66,13 @@ DONE( tmWorkF )
             ZE( sCountT , timeN2 ) ;
             ZE( countT  , timeN1 ) ;
         {
-        while( !ether )
+        while( !bHeardEnterKey )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         ZE( countT , minuteLath ) ;
+
+        etThread.traceF( tin0P , T("Press the Enter key, and I will restore your access to the public web and disable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkDnsF , sgnDone_tmWorkDnsF , TICK >> 2 ) , (countT)&bHeardEnterKey ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+        ZE( boolT , bHeardEnterKey ) ;
 
         ideaNetSubscriptionC sub( tin0P , etThread , 1 , 1 , tSecret ) ; ___( pSubP ) ;
 
@@ -79,6 +81,10 @@ DONE( tmWorkF )
 
         ideaNetC in( tin0P , etThread ) ;
     {
+
+    etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkDnsF , sgnDone_tmWorkDnsF , TICK >> 2 ) , (countT)&bQuitDns ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+    signC sgnDone_tmWorkDnsF( tin0P , TAG( TAGiDnULL ) ) ;
+    ZE( boolT , bQuitDns ) ;
 
     etThread.delF( tin0P , psttUnwanted ) ;
     etThread.delF( tin0P , psttWanted ) ;
@@ -119,6 +125,312 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+DONE( tmHearF )
+}
+    etThread.delF( tin0P , psttUnwanted ) ;
+    etThread.delF( tin0P , psttWanted ) ;
+    etThread.strHearF( tin0P , psttWanted , psttUnwanted , 0 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
+    ZE( strokeS* , psttUnwanted ) ;
+    ZE( strokeS* , psttWanted ) ;
+
+    boolT& bHeardEnterKeyP = *(boolT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmHearF )
+
+DONE( tmWorkDnsF )
+}
+    }
+        }
+            DELzOMBIE( psoDoomed ) ;
+            socketC* psoDoomed = (socketC*)pbSocket ;
+        {
+
+        }
+            }
+                ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
+            {
+            while( cWorkers )
+            ZE( countT , cIn ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+            gv.bQuit ++ ;
+
+            }
+                gv.cirJob << &job ;
+                jobDnsS job( pbq , cbq , idp , nnPeer ) ;
+
+                }
+                    }
+                        break ;
+                        ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
+                        POOPR
+                    {
+                    if( POOP )
+                    sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
+                nicNameC nnPeer ;
+                ZE( countT , idp ) ;
+                ZE( countT , cbq ) ;
+                ZE( byteT* , pbq ) ;
+                _IO_
+            {
+            while( !POOP && !bQuitDnsP )
+
+            }
+                etThread.osThreadF( TaRG2cBsTACK( tmWorkerDnsF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&sockd , (countT)&gv ) ;
+                inc02AM( cWorkers ) ;
+            {
+            while( cDo -- )
+            countT cDo = thirdC::osProcessorsIF( tin0P ) << 3 ;
+        {
+
+        ZE( boolT  , bFail    ) ;
+        ZE( countT , cWorkers ) ;
+
+        }
+            }
+                continue ;
+                ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
+                POOPR
+            {
+            if( POOP )
+            sockd.bindF( tin0P , ifcPORToLD2_DNS ) ;
+            SCOOPS
+            _IO_
+        {
+        IFsCRATCHoK
+
+        }
+            }
+                continue ;
+                ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
+                POOPR
+            {
+            if( POOP )
+            new( 0 , tin0P , pbSocket , sizeof pbSocket ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+            SCOOPS
+            _IO_
+        {
+        IFsCRATCHoK
+        socketC& sockd = *(socketC*)pbSocket ;
+        byteT pbSocket[ sizeof( socketC ) ] ;
+
+        _IO_
+    {
+    while( !POOP && !bQuitDnsP )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    gVarDnsS gv( tin0P , etThread ) ;
+
+    boolT& bQuitDnsP = *(boolT*)pTaskP->c1 ;
+
+    _IO_
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmWorkDnsF )
+
+DONE( tmWorkerDnsF )
+}
+    dec02AM( cWorkersP ) ;
+
+    }
+        }
+            IFsCRATCHoK{}
+
+            etThread.delF( tin0P , job.pbq ) ;
+            }
+                }
+                    etThread.delF( tin0P , pbr ) ;
+                    }
+                        }
+                            }
+                                POOPR
+                            {
+                            if( POOP )
+                            sockdP.writeF( tin0P , job.idp , job.nnPeer , pbr , cbr ) ;
+                            _IO_
+                        {
+                        else
+                        }
+                            POOPR
+                        {
+                        if( POOP )
+                        ((tin1S&)tin0P).pEtScratch->dnsReplyF( tin0P , pbr , cbr , job.pbq , stsReplies , 1 , idError ) ;
+                        SCOOPS
+                        _IO_
+                    {
+                    IFsCRATCHoK
+                    ZE( countT , cbr ) ;
+                    ZE( byteT* , pbr ) ;
+
+                    const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
+                {
+
+                }
+                    }
+                        }
+                            if( !stsReplies ) idError = ifcIDeRRORdNS_NAMEnOTdEFINED ;
+
+                            }
+                                DEL( ps ) ;
+                                }
+                                    }
+                                        }
+                                            break ;
+                                        
+                                            }
+                                                etRock.traceF( tin0P , T(job.nnPeer) ) ;
+                                                rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDsECTIONdNSrEPLY_ANSWER , tDomainGross , nnOut , job.nnPeer ) ;
+                                            {
+                                            if( ~nnOut )
+                                        
+                                            if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainGross , T("1.ideanet.ideafarm.com") ) ) nnOut = nnBook1 ;
+                                        
+                                            nicNameC nnOut ;
+                                            etRock.traceF( tin0P , tDomainGross ) ;
+                                            _IO_
+                                        {
+                                        case ifcIDtYPEdNSqUERY_AAAA :
+                                    {
+                                    if( idClass == 1 ) switch( idType )
+
+                                    *ps >> idClass ;
+                                    ZE( countT , idClass ) ;
+
+                                    *ps >> idType ;
+                                    ZE( countT , idType ) ;
+
+                                    etThread.delF( tin0P , psttw ) ;
+                                    TN( tDomainGross , psttw ) ;
+                                    if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
+                                    *ps >> psttw ;
+                                    ZE( strokeS* , psttw ) ;
+                                    _IO_
+                                {
+                                if( ps )
+                                stsQueries >> ps ;
+                                ZE( soulC* , ps ) ;
+                                _IO_
+                            {
+                            while( stsQueries )
+                            _IO_
+                        {
+                        else
+                        }
+                            idError = ifcIDeRRORdNS_CANNOTpARSEqUERY ;
+                            POOPR
+                        {
+                        if( rc )
+                        etThread.delF( tin0P , pbNU ) ;
+                        countT rc = POOP ;
+                        ((tin1S&)tin0P).pEtScratch->dnsParseF( tin0P , pbNU , countTC() , stsQueries , stsRepliesNU , job.pbq , job.cbq ) ;
+                        SCOOPS
+                        _IO_
+                    {
+                    IFsCRATCHoK
+                    ZE( byteT* , pbNU ) ;
+
+                    stsRepliesNU.purgeF( tin0P ) ;
+                    stsQueries.purgeF( tin0P ) ;
+                    _IO_
+                {
+
+                ++ gvP.idClient ;
+
+                countT idError = ifcIDeRRORdNS_AOK ;
+                _IO_
+            {
+            if( job.pbq && job.cbq )
+            _IO_
+        {
+        if( !gvP.bQuit )
+
+        gvP.cirJob >> &job ;
+        jobDnsS job ;
+    {
+    while( !gvP.bQuit )
+
+    nicNameC nnBook1 = etThread.sockNicNameF( tin0P , T("2001:19f0:ac00:4cfb::2") ) ;
+
+    stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stsReplies(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stsRepliesNU( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+    TN( tb4 , "    " ) ;
+
+    gVarDnsS&    gvP       = *(gVarDnsS*)pTaskP->c4  ;
+    socketC&     sockdP    =  *(socketC*)pTaskP->c3  ;
+    countT&      cWorkersP =   *(countT*)pTaskP->c2  ;
+    boolT&       bFailP    =    *(boolT*)pTaskP->c1  ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
+TASK( tmWorkerDnsF )
+
+}
+    }
+        stsRepliesP << ps ;
+
+        nicNameP >> *ps ;
+
+        *ps << (countT&)time2 ;
+        *ps << time1 ;
+        ZE( sCountT , time2 ) ;
+        ZE( countT  , time1 ) ;
+        *ps << (countT)1 ;
+        *ps << (countT)ifcIDtYPEdNSqUERY_AAAA ;
+        *ps << psttP ;
+
+        /**/etherP.traceF( tin0P , T("rec_AAAA_F [nnPeer,nn,name]:    peer: ")+T(nnPeerP)+T("    directed to: ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+    {
+    if( ps )
+    soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
+{
+voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP , const nicNameC& nnPeerP )
+
+NEWdELcLASS( 1 , jobDnsS ) ;
+
+;
+}
+    }
+    {
+    cirJob(  tin0P , etherP , bQuit , flCIRCLEc_null , sizeof jobDnsS , TUCK << 0 )
+    idClient( 0 ) ,
+    bQuit( 0 ) ,
+    inline gVarDnsS( tin0S& tin0P , etherC& etherP ) :
+
+    circleC cirJob                ;
+    countT  idClient              ;
+    boolT   bQuit                 ;
+{
+struct gVarDnsS
+
+;
+}
+    {}
+    idp( 0 )
+    cbq( 0 ) ,
+    pbq( 0 ) ,
+    inline jobDnsS( voidT ) :
+
+    {}
+    nnPeer( nnPeerP )
+    idp( idpP ) ,
+    cbq( cbqP ) ,
+    pbq( pbqP ) ,
+    inline jobDnsS( byteT* pbqP , countT cbqP , countT idpP , nicNameC& nnPeerP ) :
+    NEWdELcLASSpROTOS
+
+    nicNameC nnPeer ;
+    countT   idp    ;
+    countT   cbq    ;
+    byteT*   pbq    ;
+{
+struct jobDnsS
 
 //OBSOLETES: 8bc_
 
