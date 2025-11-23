@@ -13,6 +13,29 @@ sgnDone_tmWorkF.waitF( tin0P ) ;
 etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK >> 2 ) ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
 signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
 
+#endif
+}
+//    bFail = WSACleanup() ;
+
+    if( bFail ) ;
+
+    bFail = bind( osh , (sockaddr*)&info2 , sizeof info2 ) ;
+
+    info2.sin6_port   = (short)htons( 0x00000035 ) ;
+    info2.sin6_family = AF_INET6 ;
+    static sockaddr_in6 info2 ;
+
+    unsigned osh = socket( PF_INET6 , SOCK_DGRAM , 0 ) ;
+
+    }
+//        bFail = WSAStartup( 0x0202 , &info1 ) ;
+//        WSADATA info1 ;
+    {
+
+    int bFail = 0 ;
+{
+#if defined( NEVERdEFINED )
+
 TODO
 
 DONE( tmWorkF )
@@ -70,16 +93,16 @@ DONE( tmWorkF )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         ZE( countT , minuteLath ) ;
 
-        etThread.traceF( tin0P , T("Press the Enter key, and I will restore your access to the public web and disable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkDnsF , sgnDone_tmWorkDnsF , TICK >> 2 ) , (countT)&bHeardEnterKey ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
-        ZE( boolT , bHeardEnterKey ) ;
-
         ideaNetSubscriptionC sub( tin0P , etThread , 1 , 1 , tSecret ) ; ___( pSubP ) ;
 
         TN( tSecret , "308f" "c905" "2f7e" "f879" "38b0" "e553" "4095" "944f" "1c0b" "88e5" ) ;         //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
         TN( tb4 , "    " ) ;
 
         ideaNetC in( tin0P , etThread ) ;
+
+        etThread.traceF( tin0P , T("Press the Enter key, and I will restore your access to the public web and disable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        etThread.osThreadF( TaRG2cBsTACK( tmHearF , TICK >> 2 ) , (countT)&bHeardEnterKey ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+        ZE( boolT , bHeardEnterKey ) ;
     {
 
     etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkDnsF , sgnDone_tmWorkDnsF , TICK >> 2 ) , (countT)&bQuitDns ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
@@ -128,6 +151,8 @@ TASK( tmWorkF )
 
 DONE( tmHearF )
 }
+    bHeardEnterKeyP = 1 ;
+
     etThread.delF( tin0P , psttUnwanted ) ;
     etThread.delF( tin0P , psttWanted ) ;
     etThread.strHearF( tin0P , psttWanted , psttUnwanted , 0 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
@@ -148,46 +173,50 @@ DONE( tmWorkDnsF )
         {
 
         }
-            }
-                ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
-            {
-            while( cWorkers )
-            ZE( countT , cIn ) ;
-            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-            gv.bQuit ++ ;
+            ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
+        {
+        while( cWorkers )
+        gv.bQuit = 1 ;
+
+        }
+            gv.cirJob << &job ;
+            jobDnsS job( pbq , cbq , idp , nnPeer ) ;
 
             }
-                gv.cirJob << &job ;
-                jobDnsS job( pbq , cbq , idp , nnPeer ) ;
-
                 }
                     }
                         break ;
                         ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
-                        POOPR
+                        etRock.traceF( tin0P , postRc ? T(postRc) : T("network error [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                     {
-                    if( POOP )
-                    sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
-                    SCOOPS
-                    _IO_
+                    if( rc != ifcIDiMPOTENCEbASEeRRORcODE_NETWORKbUSY )
+
+                    POOPRqUIET
+                    countT rc = POOP ;
                 {
-                IFsCRATCHoK
-                nicNameC nnPeer ;
-                ZE( countT , idp ) ;
-                ZE( countT , cbq ) ;
-                ZE( byteT* , pbq ) ;
+                if( POOP )
+                sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
+                SCOOPS
                 _IO_
             {
-            while( !POOP && !bQuitDnsP )
-
-            }
-                etThread.osThreadF( TaRG2cBsTACK( tmWorkerDnsF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&sockd , (countT)&gv ) ;
-                inc02AM( cWorkers ) ;
-            {
-            while( cDo -- )
-            countT cDo = thirdC::osProcessorsIF( tin0P ) << 3 ;
+            IFsCRATCHoK
+            nicNameC nnPeer ;
+            ZE( countT , idp ) ;
+            ZE( countT , cbq ) ;
+            ZE( byteT* , pbq ) ;
+            _IO_
         {
+        while( !POOP && !bQuitDnsP )
 
+        }
+            etThread.osThreadF( TaRG2cBsTACK( tmWorkerDnsF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&sockd , (countT)&gv ) ;
+            inc02AM( cWorkers ) ;
+        {
+        while( cDo -- )
+        if( cDo > 1 ) cDo = 1 ;
+        countT cDo = thirdC::osProcessorsIF( tin0P ) ;
+        gVarDnsS gv( tin0P , etThread ) ;
         ZE( boolT  , bFail    ) ;
         ZE( countT , cWorkers ) ;
 
@@ -216,6 +245,7 @@ DONE( tmWorkDnsF )
             _IO_
         {
         IFsCRATCHoK
+
         socketC& sockd = *(socketC*)pbSocket ;
         byteT pbSocket[ sizeof( socketC ) ] ;
 
@@ -223,8 +253,6 @@ DONE( tmWorkDnsF )
     {
     while( !POOP && !bQuitDnsP )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-
-    gVarDnsS gv( tin0P , etThread ) ;
 
     boolT& bQuitDnsP = *(boolT*)pTaskP->c1 ;
 
