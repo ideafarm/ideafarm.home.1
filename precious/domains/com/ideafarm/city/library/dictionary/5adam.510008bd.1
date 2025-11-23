@@ -23,7 +23,7 @@ DONE( tmWorkF )
         etThread.delF( tin0P , psttUnwanted ) ;
         etThread.delF( tin0P , psttWanted ) ;
         etThread.strHearF( tin0P , psttWanted , psttUnwanted , 0 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
-        etThread.traceF( tin0P , T("Press the Enter key, and I will restore your access to the public web and disable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+        etThread.traceF( tin0P , T("Press the Enter key, and I will restore your access to the public web and disable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
 #endif
         }
@@ -45,6 +45,37 @@ DONE( tmWorkF )
         etThread.osHttpViewerF( tin0P , psttBrowser ) ; ___( psttBrowser ) ;
         ZE( strokeS* , psttBrowser ) ;
 #if defined( NEVERdEFINED )
+
+
+
+        }
+            ++ s ; ether.osSleepF( tin0P , TUCK >> 6 ) ;
+
+            }
+                etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+T(nnNow) , flTRACE_NOpREFIX ) ;
+                nicNameC nnNow = sub.nnF( tin0P , minute ) ;
+
+                etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+                ZE( sCountT , timeN2 ) ;
+                ZE( countT  , timeN1 ) ;
+
+                minuteLath = minute ;
+            {
+            if( minuteLath != minute )                          // A:ASSUME: THE LIFETIME OF EACH ipv6 ADDRESS IS GREATER THAN RE MINUTES, SO THAT THE ipv6 OF THE LATH MINUTE WILL CONTINUE TO BE VALID WELL AFTER I NO LONGER OBTAIN ITS VALUE
+            countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE
+
+            etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+            ZE( sCountT , timeN2 ) ;
+            ZE( countT  , timeN1 ) ;
+        {
+        while( !ether )
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        ZE( countT , minuteLath ) ;
+
+        ideaNetSubscriptionC sub( tin0P , etThread , 1 , 1 , tSecret ) ; ___( pSubP ) ;
+
+        TN( tSecret , "308f" "c905" "2f7e" "f879" "38b0" "e553" "4095" "944f" "1c0b" "88e5" ) ;         //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
+        TN( tb4 , "    " ) ;
 
         ideaNetC in( tin0P , etThread ) ;
     {

@@ -27,45 +27,49 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code> #include &lt;openssl/evp.h&gt;
+<pre><code>#include &lt;openssl/evp.h&gt;</code></pre>
 
- EVP_MD *EVP_MD_meth_new(int md_type, int pkey_type);
- void EVP_MD_meth_free(EVP_MD *md);
- EVP_MD *EVP_MD_meth_dup(const EVP_MD *md);
+<p>The following functions have been deprecated since OpenSSL 3.0, and can be hidden entirely by defining <b>OPENSSL_API_COMPAT</b> with a suitable version value, see <a href="https://man7.org/linux/man-pages/man7/openssl_user_macros.7.html">openssl_user_macros(7)</a>:</p>
 
- int EVP_MD_meth_set_input_blocksize(EVP_MD *md, int blocksize);
- int EVP_MD_meth_set_result_size(EVP_MD *md, int resultsize);
- int EVP_MD_meth_set_app_datasize(EVP_MD *md, int datasize);
- int EVP_MD_meth_set_flags(EVP_MD *md, unsigned long flags);
- int EVP_MD_meth_set_init(EVP_MD *md, int (*init)(EVP_MD_CTX *ctx));
- int EVP_MD_meth_set_update(EVP_MD *md, int (*update)(EVP_MD_CTX *ctx,
-                                                      const void *data,
-                                                      size_t count));
- int EVP_MD_meth_set_final(EVP_MD *md, int (*final)(EVP_MD_CTX *ctx,
-                                                    unsigned char *md));
- int EVP_MD_meth_set_copy(EVP_MD *md, int (*copy)(EVP_MD_CTX *to,
-                                                  const EVP_MD_CTX *from));
- int EVP_MD_meth_set_cleanup(EVP_MD *md, int (*cleanup)(EVP_MD_CTX *ctx));
- int EVP_MD_meth_set_ctrl(EVP_MD *md, int (*ctrl)(EVP_MD_CTX *ctx, int cmd,
-                                                  int p1, void *p2));
+<pre><code>EVP_MD *EVP_MD_meth_new(int md_type, int pkey_type);
+void EVP_MD_meth_free(EVP_MD *md);
+EVP_MD *EVP_MD_meth_dup(const EVP_MD *md);
 
- int EVP_MD_meth_get_input_blocksize(const EVP_MD *md);
- int EVP_MD_meth_get_result_size(const EVP_MD *md);
- int EVP_MD_meth_get_app_datasize(const EVP_MD *md);
- unsigned long EVP_MD_meth_get_flags(const EVP_MD *md);
- int (*EVP_MD_meth_get_init(const EVP_MD *md))(EVP_MD_CTX *ctx);
- int (*EVP_MD_meth_get_update(const EVP_MD *md))(EVP_MD_CTX *ctx,
-                                                 const void *data,
-                                                 size_t count);
- int (*EVP_MD_meth_get_final(const EVP_MD *md))(EVP_MD_CTX *ctx,
-                                                unsigned char *md);
- int (*EVP_MD_meth_get_copy(const EVP_MD *md))(EVP_MD_CTX *to,
-                                               const EVP_MD_CTX *from);
- int (*EVP_MD_meth_get_cleanup(const EVP_MD *md))(EVP_MD_CTX *ctx);
- int (*EVP_MD_meth_get_ctrl(const EVP_MD *md))(EVP_MD_CTX *ctx, int cmd,
-                                               int p1, void *p2);</code></pre>
+int EVP_MD_meth_set_input_blocksize(EVP_MD *md, int blocksize);
+int EVP_MD_meth_set_result_size(EVP_MD *md, int resultsize);
+int EVP_MD_meth_set_app_datasize(EVP_MD *md, int datasize);
+int EVP_MD_meth_set_flags(EVP_MD *md, unsigned long flags);
+int EVP_MD_meth_set_init(EVP_MD *md, int (*init)(EVP_MD_CTX *ctx));
+int EVP_MD_meth_set_update(EVP_MD *md, int (*update)(EVP_MD_CTX *ctx,
+                                                     const void *data,
+                                                     size_t count));
+int EVP_MD_meth_set_final(EVP_MD *md, int (*final)(EVP_MD_CTX *ctx,
+                                                   unsigned char *md));
+int EVP_MD_meth_set_copy(EVP_MD *md, int (*copy)(EVP_MD_CTX *to,
+                                                 const EVP_MD_CTX *from));
+int EVP_MD_meth_set_cleanup(EVP_MD *md, int (*cleanup)(EVP_MD_CTX *ctx));
+int EVP_MD_meth_set_ctrl(EVP_MD *md, int (*ctrl)(EVP_MD_CTX *ctx, int cmd,
+                                                 int p1, void *p2));
+
+int EVP_MD_meth_get_input_blocksize(const EVP_MD *md);
+int EVP_MD_meth_get_result_size(const EVP_MD *md);
+int EVP_MD_meth_get_app_datasize(const EVP_MD *md);
+unsigned long EVP_MD_meth_get_flags(const EVP_MD *md);
+int (*EVP_MD_meth_get_init(const EVP_MD *md))(EVP_MD_CTX *ctx);
+int (*EVP_MD_meth_get_update(const EVP_MD *md))(EVP_MD_CTX *ctx,
+                                                const void *data,
+                                                size_t count);
+int (*EVP_MD_meth_get_final(const EVP_MD *md))(EVP_MD_CTX *ctx,
+                                               unsigned char *md);
+int (*EVP_MD_meth_get_copy(const EVP_MD *md))(EVP_MD_CTX *to,
+                                              const EVP_MD_CTX *from);
+int (*EVP_MD_meth_get_cleanup(const EVP_MD *md))(EVP_MD_CTX *ctx);
+int (*EVP_MD_meth_get_ctrl(const EVP_MD *md))(EVP_MD_CTX *ctx, int cmd,
+                                              int p1, void *p2);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>All of the functions described on this page are deprecated. Applications should instead use the OSSL_PROVIDER APIs.</p>
 
 <p>The <b>EVP_MD</b> type is a structure for digest method implementation. It can also have associated public/private key signing and verifying routines.</p>
 
@@ -73,7 +77,7 @@
 
 <p>EVP_MD_meth_dup() creates a copy of <b>md</b>.</p>
 
-<p>EVP_MD_meth_free() decrements the reference count for the <b>EVP_MD</b> structure. If the reference count drops to 0 then the structure is freed.</p>
+<p>EVP_MD_meth_free() decrements the reference count for the <b>EVP_MD</b> structure. If the reference count drops to 0 then the structure is freed. If the argument is NULL, nothing is done.</p>
 
 <p>EVP_MD_meth_set_input_blocksize() sets the internal input block size for the method <b>md</b> to <b>blocksize</b> bytes.</p>
 
@@ -129,11 +133,11 @@
 
 <p>EVP_MD_meth_set_final() sets the digest final function for <b>md</b>. The digest final function is called by EVP_Digest(), EVP_DigestFinal(), EVP_DigestFinal_ex(), EVP_SignFinal() and EVP_VerifyFinal().</p>
 
-<p>EVP_MD_meth_set_copy() sets the function for <b>md</b> to do extra computations after the method&#39;s private data structure has been copied from one <b>EVP_MD_CTX</b> to another. If all that&#39;s needed is to copy the data, there is no need for this copy function. Note that the copy function is passed two <b>EVP_MD_CTX *</b>, the private data structure is then available with EVP_MD_CTX_md_data(). This copy function is called by EVP_MD_CTX_copy() and EVP_MD_CTX_copy_ex().</p>
+<p>EVP_MD_meth_set_copy() sets the function for <b>md</b> to do extra computations after the method&#39;s private data structure has been copied from one <b>EVP_MD_CTX</b> to another. If all that&#39;s needed is to copy the data, there is no need for this copy function. Note that the copy function is passed two <b>EVP_MD_CTX *</b>, the private data structure is then available with EVP_MD_CTX_get0_md_data(). This copy function is called by EVP_MD_CTX_copy() and EVP_MD_CTX_copy_ex().</p>
 
-<p>EVP_MD_meth_set_cleanup() sets the function for <b>md</b> to do extra cleanup before the method&#39;s private data structure is cleaned out and freed. Note that the cleanup function is passed a <b>EVP_MD_CTX *</b>, the private data structure is then available with EVP_MD_CTX_md_data(). This cleanup function is called by EVP_MD_CTX_reset() and EVP_MD_CTX_free().</p>
+<p>EVP_MD_meth_set_cleanup() sets the function for <b>md</b> to do extra cleanup before the method&#39;s private data structure is cleaned out and freed. Note that the cleanup function is passed a <b>EVP_MD_CTX *</b>, the private data structure is then available with EVP_MD_CTX_get0_md_data(). This cleanup function is called by EVP_MD_CTX_reset() and EVP_MD_CTX_free().</p>
 
-<p>EVP_MD_meth_set_ctrl() sets the control function for <b>md</b>. See <a href="../man3/EVP_MD_CTX_ctrl.html">EVP_MD_CTX_ctrl(3)</a> for the available controls.</p>
+<p>EVP_MD_meth_set_ctrl() sets the control function for <b>md</b>. See <a href="https://man7.org/linux/man-pages/man3/EVP_MD_CTX_ctrl.3.html">EVP_MD_CTX_ctrl(3)</a> for the available controls.</p>
 
 <p>EVP_MD_meth_get_input_blocksize(), EVP_MD_meth_get_result_size(), EVP_MD_meth_get_app_datasize(), EVP_MD_meth_get_flags(), EVP_MD_meth_get_init(), EVP_MD_meth_get_update(), EVP_MD_meth_get_final(), EVP_MD_meth_get_copy(), EVP_MD_meth_get_cleanup() and EVP_MD_meth_get_ctrl() are all used to retrieve the method data given with the EVP_MD_meth_set_*() functions above.</p>
 
@@ -143,15 +147,17 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="../man3/EVP_DigestInit.html">EVP_DigestInit(3)</a>, <a href="../man3/EVP_SignInit.html">EVP_SignInit(3)</a>, <a href="../man3/EVP_VerifyInit.html">EVP_VerifyInit(3)</a></p>
+<p><a href="https://man7.org/linux/man-pages/man3/EVP_DigestInit.3.html">EVP_DigestInit(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_SignInit.3.html">EVP_SignInit(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_VerifyInit.3.html">EVP_VerifyInit(3)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
+
+<p>All of these functions were deprecated in OpenSSL 3.0.</p>
 
 <p>The <b>EVP_MD</b> structure was openly available in OpenSSL before version 1.1. The functions described here were added in OpenSSL 1.1. The <b>EVP_MD</b> structure created with these functions became reference counted in OpenSSL 3.0.</p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2015-2018 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2015-2024 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

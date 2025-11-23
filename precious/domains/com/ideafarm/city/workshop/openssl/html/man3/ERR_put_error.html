@@ -16,7 +16,12 @@
   <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
   <li><a href="#DESCRIPTION">DESCRIPTION</a>
     <ul>
-      <li><a href="#Reporting-errors">Reporting errors</a></li>
+      <li><a href="#Reporting-errors">Reporting errors</a>
+        <ul>
+          <li><a href="#OpenSSL-library-reports">OpenSSL library reports</a></li>
+          <li><a href="#Other-pieces-of-software">Other pieces of software</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#RETURN-VALUES">RETURN VALUES</a></li>
@@ -32,25 +37,25 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code> #include &lt;openssl/err.h&gt;
+<pre><code>#include &lt;openssl/err.h&gt;
 
- void ERR_raise(int lib, int reason);
- void ERR_raise_data(int lib, int reason, const char *fmt, ...);
+void ERR_raise(int lib, int reason);
+void ERR_raise_data(int lib, int reason, const char *fmt, ...);
 
- void ERR_add_error_data(int num, ...);
- void ERR_add_error_vdata(int num, va_list arg);
- void ERR_add_error_txt(const char *sep, const char *txt);
- void ERR_add_error_mem_bio(const char *sep, BIO *bio);</code></pre>
+void ERR_add_error_data(int num, ...);
+void ERR_add_error_vdata(int num, va_list arg);
+void ERR_add_error_txt(const char *sep, const char *txt);
+void ERR_add_error_mem_bio(const char *sep, BIO *bio);</code></pre>
 
-<p>Deprecated since OpenSSL 3.0:</p>
+<p>The following function has been deprecated since OpenSSL 3.0, and can be hidden entirely by defining <b>OPENSSL_API_COMPAT</b> with a suitable version value, see <a href="https://man7.org/linux/man-pages/man7/openssl_user_macros.7.html">openssl_user_macros(7)</a>:</p>
 
-<pre><code> void ERR_put_error(int lib, int func, int reason, const char *file, int line);</code></pre>
+<pre><code>void ERR_put_error(int lib, int func, int reason, const char *file, int line);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
 <p>ERR_raise() adds a new error to the thread&#39;s error queue. The error occurred in the library <b>lib</b> for the reason given by the <b>reason</b> code. Furthermore, the name of the file, the line, and name of the function where the error occurred is saved with the error record.</p>
 
-<p>ERR_raise_data() does the same thing as ERR_raise(), but also lets the caller specify additional information as a format string <b>fmt</b> and an arbitrary number of values, which are processed with <a href="../man3/BIO_snprintf.html">BIO_snprintf(3)</a>.</p>
+<p>ERR_raise_data() does the same thing as ERR_raise(), but also lets the caller specify additional information as a format string <b>fmt</b> and an arbitrary number of values, which are processed with <a href="https://man7.org/linux/man-pages/man3/BIO_snprintf.3.html">BIO_snprintf(3)</a>.</p>
 
 <p>ERR_put_error() adds an error code to the thread&#39;s error queue. It signals that the error of reason code <b>reason</b> occurred in function <b>func</b> of library <b>lib</b>, in line number <b>line</b> of <b>file</b>. This function is usually called by a macro.</p>
 
@@ -60,35 +65,81 @@
 
 <p>ERR_add_error_mem_bio() is the same as ERR_add_error_txt() except that the text string is taken from the given memory BIO. It appends &#39;\0&#39; to the BIO contents if not already NUL-terminated.</p>
 
-<p><a href="../man3/ERR_load_strings.html">ERR_load_strings(3)</a> can be used to register error strings so that the application can a generate human-readable error messages for the error code.</p>
+<p><a href="https://man7.org/linux/man-pages/man3/ERR_load_strings.3.html">ERR_load_strings(3)</a> can be used to register error strings so that the application can a generate human-readable error messages for the error code.</p>
 
 <h2 id="Reporting-errors">Reporting errors</h2>
 
-<p>Each sub-library has a specific macro XXXerr() that is used to report errors. Its first argument is a function code <b>XXX_F_...</b>, the second argument is a reason code <b>XXX_R_...</b>. Function codes are derived from the function names; reason codes consist of textual error descriptions. For example, the function ssl3_read_bytes() reports a &quot;handshake failure&quot; as follows:</p>
+<h3 id="OpenSSL-library-reports">OpenSSL library reports</h3>
 
-<pre><code> SSLerr(SSL_F_SSL3_READ_BYTES, SSL_R_SSL_HANDSHAKE_FAILURE);</code></pre>
+<p>Each OpenSSL sub-library has library code <b>ERR_LIB_XXX</b> and has its own set of reason codes <b>XXX_R_...</b>. These are both passed in combination to ERR_raise() and ERR_raise_data(), and the combination ultimately produces the correct error text for the reported error.</p>
 
-<p>Function and reason codes should consist of uppercase characters, numbers and underscores only. The error file generation script translates function codes into function names by looking in the header files for an appropriate function name, if none is found it just uses the capitalized form such as &quot;SSL3_READ_BYTES&quot; in the above example.</p>
+<p>All these macros and the numbers they have as values are specific to OpenSSL&#39;s libraries. OpenSSL reason codes normally consist of textual error descriptions. For example, the function ssl3_read_bytes() reports a &quot;handshake failure&quot; as follows:</p>
 
-<p>The trailing section of a reason code (after the &quot;_R_&quot;) is translated into lowercase and underscores changed to spaces.</p>
+<pre><code>ERR_raise(ERR_LIB_SSL, SSL_R_SSL_HANDSHAKE_FAILURE);</code></pre>
 
-<p>Although a library will normally report errors using its own specific XXXerr macro, another library&#39;s macro can be used. This is normally only done when a library wants to include ASN1 code which must use the ASN1err() macro.</p>
+<p>There are two exceptions:</p>
+
+<dl>
+
+<dt id="ERR_LIB_SYS"><b>ERR_LIB_SYS</b></dt>
+<dd>
+
+<p>This &quot;library code&quot; indicates that a system error is being reported. In this case, the reason code given to ERR_raise() and ERR_raise_data() <i>must</i> be <a href="https://man7.org/linux/man-pages/man3/errno.3.html">errno(3)</a>.</p>
+
+<pre><code>ERR_raise(ERR_LIB_SYS, errno);</code></pre>
+
+</dd>
+<dt id="ERR_R_XXX"><b>ERR_R_XXX</b></dt>
+<dd>
+
+<p>This set of error codes is considered global, and may be used in combination with any sub-library code.</p>
+
+<pre><code>ERR_raise(ERR_LIB_RSA, ERR_R_PASSED_INVALID_ARGUMENT);</code></pre>
+
+</dd>
+</dl>
+
+<h3 id="Other-pieces-of-software">Other pieces of software</h3>
+
+<p>Other pieces of software that may want to use OpenSSL&#39;s error reporting system, such as engines or applications, must normally get their own numbers.</p>
+
+<ul>
+
+<li><p>To get a &quot;library&quot; code, call <a href="https://man7.org/linux/man-pages/man3/ERR_get_next_error_library.3.html">ERR_get_next_error_library(3)</a>; this gives the calling code a dynamic number, usable for the duration of the process.</p>
+
+</li>
+<li><p>Reason codes for each such &quot;library&quot; are determined or generated by the authors of that code. They must be numbers in the range 1 to 524287 (in other words, they must be nonzero unsigned 18 bit integers).</p>
+
+</li>
+</ul>
+
+<p>The exceptions mentioned in <a href="#OpenSSL-library-reports">&quot;OpenSSL library reports&quot;</a> above are valid for other pieces of software, i.e. they may use <b>ERR_LIB_SYS</b> to report system errors:</p>
+
+<pre><code>ERR_raise(ERR_LIB_SYS, errno);</code></pre>
+
+<p>... and they may use <b>ERR_R_XXX</b> macros together with their own &quot;library&quot; code.</p>
+
+<pre><code>int app_lib_code = ERR_get_next_error_library();
+
+/* ... */
+
+ERR_raise(app_lib_code, ERR_R_PASSED_INVALID_ARGUMENT);</code></pre>
 
 <h1 id="RETURN-VALUES">RETURN VALUES</h1>
 
-<p>ERR_raise(), ERR_put_error(), ERR_add_error_data(), ERR_add_error_vdata() ERR_add_error_txt(), and ERR_add_error_mem_bio() return no values.</p>
+<p>ERR_raise(), ERR_raise_data(), ERR_put_error(), ERR_add_error_data(), ERR_add_error_vdata() ERR_add_error_txt(), and ERR_add_error_mem_bio() return no values.</p>
 
 <h1 id="NOTES">NOTES</h1>
 
-<p>ERR_raise() and ERR_put_error() are implemented as macros.</p>
+<p>ERR_raise(), ERR_raise() and ERR_put_error() are implemented as macros.</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="../man3/ERR_load_strings.html">ERR_load_strings(3)</a></p>
+<p><a href="https://man7.org/linux/man-pages/man3/ERR_load_strings.3.html">ERR_load_strings(3)</a>, <a href="https://man7.org/linux/man-pages/man3/ERR_get_next_error_library.3.html">ERR_get_next_error_library(3)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
-<p><b>ERR_add_error_txt</b> and <b>ERR_add_error_mem_bio</b> were added in OpenSSL 3.0.</p>
+<p>ERR_raise, ERR_raise_data, ERR_add_error_txt() and ERR_add_error_mem_bio() were added in OpenSSL 3.0.</p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 

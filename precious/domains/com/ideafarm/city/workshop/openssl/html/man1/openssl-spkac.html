@@ -29,7 +29,7 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><b>openssl</b> <b>spkac</b> [<b>-help</b>] [<b>-in</b> <i>filename</i>] [<b>-out</b> <i>filename</i>] [<b>-key</b> <i>keyfile</i>] [<b>-keyform</b> <b>DER</b>|<b>PEM</b>|<b>P12</b>|<b>ENGINE</b>] [<b>-passin</b> <i>arg</i>] [<b>-challenge</b> <i>string</i>] [<b>-pubkey</b>] [<b>-spkac</b> <i>spkacname</i>] [<b>-spksect</b> <i>section</i>] [<b>-noout</b>] [<b>-verify</b>] [<b>-engine</b> <i>id</i>] [<b>-provider</b> <i>name</i>] [<b>-provider_path</b> <i>path</i>]</p>
+<p><b>openssl</b> <b>spkac</b> [<b>-help</b>] [<b>-in</b> <i>filename</i>] [<b>-out</b> <i>filename</i>] [<b>-digest</b> <i>digest</i>] [<b>-key</b> <i>filename</i>|<i>uri</i>] [<b>-keyform</b> <b>DER</b>|<b>PEM</b>|<b>P12</b>|<b>ENGINE</b>] [<b>-passin</b> <i>arg</i>] [<b>-challenge</b> <i>string</i>] [<b>-pubkey</b>] [<b>-spkac</b> <i>spkacname</i>] [<b>-spksect</b> <i>section</i>] [<b>-noout</b>] [<b>-verify</b>] [<b>-engine</b> <i>id</i>] [<b>-provider</b> <i>name</i>] [<b>-provider-path</b> <i>path</i>] [<b>-provparam</b> <i>[name:]key=value</i>] [<b>-propquery</b> <i>propq</i>]</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -57,22 +57,28 @@
 <p>Specifies the output filename to write to or standard output by default.</p>
 
 </dd>
-<dt id="key-keyfile"><b>-key</b> <i>keyfile</i></dt>
+<dt id="digest-digest"><b>-digest</b> <i>digest</i></dt>
 <dd>
 
-<p>Create an SPKAC file using the private key in <i>keyfile</i>. The <b>-in</b>, <b>-noout</b>, <b>-spksect</b> and <b>-verify</b> options are ignored if present.</p>
+<p>Use the specified <i>digest</i> to sign a created SPKAC file. The default digest algorithm is MD5.</p>
+
+</dd>
+<dt id="key-filename-uri"><b>-key</b> <i>filename</i>|<i>uri</i></dt>
+<dd>
+
+<p>Create an SPKAC file using the private key specified by <i>filename</i> or <i>uri</i>. The <b>-in</b>, <b>-noout</b>, <b>-spksect</b> and <b>-verify</b> options are ignored if present.</p>
 
 </dd>
 <dt id="keyform-DER-PEM-P12-ENGINE"><b>-keyform</b> <b>DER</b>|<b>PEM</b>|<b>P12</b>|<b>ENGINE</b></dt>
 <dd>
 
-<p>The key format; the default is <b>PEM</b>. The only value with effect is <b>ENGINE</b>; all others have become obsolete. See <a href="../man1/openssl.html">&quot;Format Options&quot; in openssl(1)</a> for details.</p>
+<p>The key format; unspecified by default. See <a href="https://man7.org/linux/man-pages/man1/openssl-format-options.1.html">openssl-format-options(1)</a> for details.</p>
 
 </dd>
 <dt id="passin-arg"><b>-passin</b> <i>arg</i></dt>
 <dd>
 
-<p>The input file password source. For more information about the format of <i>arg</i> see <a href="../man1/openssl.html">&quot;Pass Phrase Options&quot; in openssl(1)</a>.</p>
+<p>The input file password source. For more information about the format of <i>arg</i> see <a href="https://man7.org/linux/man-pages/man1/openssl-passphrase-options.1.html">openssl-passphrase-options(1)</a>.</p>
 
 </dd>
 <dt id="challenge-string"><b>-challenge</b> <i>string</i></dt>
@@ -114,17 +120,25 @@
 <dt id="engine-id"><b>-engine</b> <i>id</i></dt>
 <dd>
 
-<p>See <a href="../man1/openssl.html">&quot;Engine Options&quot; in openssl(1)</a>.</p>
+<p>See <a href="https://man7.org/linux/man-pages/man1/openssl.1.html">&quot;Engine Options&quot; in openssl(1)</a>. This option is deprecated.</p>
 
 </dd>
 <dt id="provider-name"><b>-provider</b> <i>name</i></dt>
 <dd>
 
 </dd>
-<dt id="provider_path-path"><b>-provider_path</b> <i>path</i></dt>
+<dt id="provider-path-path"><b>-provider-path</b> <i>path</i></dt>
 <dd>
 
-<p>See <a href="../man1/openssl.html">&quot;Provider Options&quot; in openssl(1)</a>.</p>
+</dd>
+<dt id="provparam-name:-key-value"><b>-provparam</b> <i>[name:]key=value</i></dt>
+<dd>
+
+</dd>
+<dt id="propquery-propq"><b>-propquery</b> <i>propq</i></dt>
+<dd>
+
+<p>See <a href="https://man7.org/linux/man-pages/man1/openssl.1.html">&quot;Provider Options&quot; in openssl(1)</a>, <a href="https://man7.org/linux/man-pages/man7/provider.7.html">provider(7)</a>, and <a href="https://man7.org/linux/man-pages/man7/property.7.html">property(7)</a>.</p>
 
 </dd>
 </dl>
@@ -133,28 +147,28 @@
 
 <p>Print out the contents of an SPKAC:</p>
 
-<pre><code> openssl spkac -in spkac.cnf</code></pre>
+<pre><code>openssl spkac -in spkac.cnf</code></pre>
 
 <p>Verify the signature of an SPKAC:</p>
 
-<pre><code> openssl spkac -in spkac.cnf -noout -verify</code></pre>
+<pre><code>openssl spkac -in spkac.cnf -noout -verify</code></pre>
 
 <p>Create an SPKAC using the challenge string &quot;hello&quot;:</p>
 
-<pre><code> openssl spkac -key key.pem -challenge hello -out spkac.cnf</code></pre>
+<pre><code>openssl spkac -key key.pem -challenge hello -out spkac.cnf</code></pre>
 
 <p>Example of an SPKAC, (long lines split up for clarity):</p>
 
-<pre><code> SPKAC=MIG5MGUwXDANBgkqhkiG9w0BAQEFAANLADBIAkEA\
- 1cCoq2Wa3Ixs47uI7FPVwHVIPDx5yso105Y6zpozam135a\
- 8R0CpoRvkkigIyXfcCjiVi5oWk+6FfPaD03uPFoQIDAQAB\
- FgVoZWxsbzANBgkqhkiG9w0BAQQFAANBAFpQtY/FojdwkJ\
- h1bEIYuc2EeM2KHTWPEepWYeawvHD0gQ3DngSC75YCWnnD\
- dq+NQ3F+X4deMx9AaEglZtULwV4=</code></pre>
+<pre><code>SPKAC=MIG5MGUwXDANBgkqhkiG9w0BAQEFAANLADBIAkEA\
+1cCoq2Wa3Ixs47uI7FPVwHVIPDx5yso105Y6zpozam135a\
+8R0CpoRvkkigIyXfcCjiVi5oWk+6FfPaD03uPFoQIDAQAB\
+FgVoZWxsbzANBgkqhkiG9w0BAQQFAANBAFpQtY/FojdwkJ\
+h1bEIYuc2EeM2KHTWPEepWYeawvHD0gQ3DngSC75YCWnnD\
+dq+NQ3F+X4deMx9AaEglZtULwV4=</code></pre>
 
 <h1 id="NOTES">NOTES</h1>
 
-<p>A created SPKAC with suitable DN components appended can be fed to <a href="../man1/openssl-ca.html">openssl-ca(1)</a>.</p>
+<p>A created SPKAC with suitable DN components appended can be fed to <a href="https://man7.org/linux/man-pages/man1/openssl-ca.1.html">openssl-ca(1)</a>.</p>
 
 <p>SPKACs are typically generated by Netscape when a form is submitted containing the <b>KEYGEN</b> tag as part of the certificate enrollment process.</p>
 
@@ -162,15 +176,17 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="../man1/openssl.html">openssl(1)</a>, <a href="../man1/openssl-ca.html">openssl-ca(1)</a></p>
+<p><a href="https://man7.org/linux/man-pages/man1/openssl.1.html">openssl(1)</a>, <a href="https://man7.org/linux/man-pages/man1/openssl-ca.1.html">openssl-ca(1)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
-<p>All <b>-keyform</b> values except <b>ENGINE</b> have become obsolete in OpenSSL 3.0.0 and have no effect.</p>
+<p>The <b>-engine</b> option was deprecated in OpenSSL 3.0.</p>
+
+<p>The <b>-digest</b> option was added in OpenSSL 3.0.</p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2000-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2000-2021 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

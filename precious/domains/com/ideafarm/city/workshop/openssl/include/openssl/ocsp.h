@@ -107,7 +107,7 @@ SKM_DEFINE_STACK_OF_INTERNAL(OCSP_CERTID, OCSP_CERTID, OCSP_CERTID)
 #define sk_OCSP_CERTID_unshift(sk, ptr) OPENSSL_sk_unshift(ossl_check_OCSP_CERTID_sk_type(sk), ossl_check_OCSP_CERTID_type(ptr))
 #define sk_OCSP_CERTID_pop(sk) ((OCSP_CERTID *)OPENSSL_sk_pop(ossl_check_OCSP_CERTID_sk_type(sk)))
 #define sk_OCSP_CERTID_shift(sk) ((OCSP_CERTID *)OPENSSL_sk_shift(ossl_check_OCSP_CERTID_sk_type(sk)))
-#define sk_OCSP_CERTID_pop_free(sk, freefunc) OPENSSL_sk_pop_free(ossl_check_OCSP_CERTID_sk_type(sk),ossl_check_OCSP_CERTID_freefunc_type(freefunc))
+#define sk_OCSP_CERTID_pop_free(sk, freefunc) OPENSSL_sk_pop_free(ossl_check_OCSP_CERTID_sk_type(sk), ossl_check_OCSP_CERTID_freefunc_type(freefunc))
 #define sk_OCSP_CERTID_insert(sk, ptr, idx) OPENSSL_sk_insert(ossl_check_OCSP_CERTID_sk_type(sk), ossl_check_OCSP_CERTID_type(ptr), (idx))
 #define sk_OCSP_CERTID_set(sk, idx, ptr) ((OCSP_CERTID *)OPENSSL_sk_set(ossl_check_OCSP_CERTID_sk_type(sk), (idx), ossl_check_OCSP_CERTID_type(ptr)))
 #define sk_OCSP_CERTID_find(sk, ptr) OPENSSL_sk_find(ossl_check_OCSP_CERTID_sk_type(sk), ossl_check_OCSP_CERTID_type(ptr))
@@ -133,7 +133,7 @@ SKM_DEFINE_STACK_OF_INTERNAL(OCSP_ONEREQ, OCSP_ONEREQ, OCSP_ONEREQ)
 #define sk_OCSP_ONEREQ_unshift(sk, ptr) OPENSSL_sk_unshift(ossl_check_OCSP_ONEREQ_sk_type(sk), ossl_check_OCSP_ONEREQ_type(ptr))
 #define sk_OCSP_ONEREQ_pop(sk) ((OCSP_ONEREQ *)OPENSSL_sk_pop(ossl_check_OCSP_ONEREQ_sk_type(sk)))
 #define sk_OCSP_ONEREQ_shift(sk) ((OCSP_ONEREQ *)OPENSSL_sk_shift(ossl_check_OCSP_ONEREQ_sk_type(sk)))
-#define sk_OCSP_ONEREQ_pop_free(sk, freefunc) OPENSSL_sk_pop_free(ossl_check_OCSP_ONEREQ_sk_type(sk),ossl_check_OCSP_ONEREQ_freefunc_type(freefunc))
+#define sk_OCSP_ONEREQ_pop_free(sk, freefunc) OPENSSL_sk_pop_free(ossl_check_OCSP_ONEREQ_sk_type(sk), ossl_check_OCSP_ONEREQ_freefunc_type(freefunc))
 #define sk_OCSP_ONEREQ_insert(sk, ptr, idx) OPENSSL_sk_insert(ossl_check_OCSP_ONEREQ_sk_type(sk), ossl_check_OCSP_ONEREQ_type(ptr), (idx))
 #define sk_OCSP_ONEREQ_set(sk, idx, ptr) ((OCSP_ONEREQ *)OPENSSL_sk_set(ossl_check_OCSP_ONEREQ_sk_type(sk), (idx), ossl_check_OCSP_ONEREQ_type(ptr)))
 #define sk_OCSP_ONEREQ_find(sk, ptr) OPENSSL_sk_find(ossl_check_OCSP_ONEREQ_sk_type(sk), ossl_check_OCSP_ONEREQ_type(ptr))
@@ -173,7 +173,7 @@ SKM_DEFINE_STACK_OF_INTERNAL(OCSP_RESPID, OCSP_RESPID, OCSP_RESPID)
 #define sk_OCSP_RESPID_unshift(sk, ptr) OPENSSL_sk_unshift(ossl_check_OCSP_RESPID_sk_type(sk), ossl_check_OCSP_RESPID_type(ptr))
 #define sk_OCSP_RESPID_pop(sk) ((OCSP_RESPID *)OPENSSL_sk_pop(ossl_check_OCSP_RESPID_sk_type(sk)))
 #define sk_OCSP_RESPID_shift(sk) ((OCSP_RESPID *)OPENSSL_sk_shift(ossl_check_OCSP_RESPID_sk_type(sk)))
-#define sk_OCSP_RESPID_pop_free(sk, freefunc) OPENSSL_sk_pop_free(ossl_check_OCSP_RESPID_sk_type(sk),ossl_check_OCSP_RESPID_freefunc_type(freefunc))
+#define sk_OCSP_RESPID_pop_free(sk, freefunc) OPENSSL_sk_pop_free(ossl_check_OCSP_RESPID_sk_type(sk), ossl_check_OCSP_RESPID_freefunc_type(freefunc))
 #define sk_OCSP_RESPID_insert(sk, ptr, idx) OPENSSL_sk_insert(ossl_check_OCSP_RESPID_sk_type(sk), ossl_check_OCSP_RESPID_type(ptr), (idx))
 #define sk_OCSP_RESPID_set(sk, idx, ptr) ((OCSP_RESPID *)OPENSSL_sk_set(ossl_check_OCSP_RESPID_sk_type(sk), (idx), ossl_check_OCSP_RESPID_type(ptr)))
 #define sk_OCSP_RESPID_find(sk, ptr) OPENSSL_sk_find(ossl_check_OCSP_RESPID_sk_type(sk), ossl_check_OCSP_RESPID_type(ptr))
@@ -210,7 +210,7 @@ SKM_DEFINE_STACK_OF_INTERNAL(OCSP_SINGLERESP, OCSP_SINGLERESP, OCSP_SINGLERESP)
 #define sk_OCSP_SINGLERESP_unshift(sk, ptr) OPENSSL_sk_unshift(ossl_check_OCSP_SINGLERESP_sk_type(sk), ossl_check_OCSP_SINGLERESP_type(ptr))
 #define sk_OCSP_SINGLERESP_pop(sk) ((OCSP_SINGLERESP *)OPENSSL_sk_pop(ossl_check_OCSP_SINGLERESP_sk_type(sk)))
 #define sk_OCSP_SINGLERESP_shift(sk) ((OCSP_SINGLERESP *)OPENSSL_sk_shift(ossl_check_OCSP_SINGLERESP_sk_type(sk)))
-#define sk_OCSP_SINGLERESP_pop_free(sk, freefunc) OPENSSL_sk_pop_free(ossl_check_OCSP_SINGLERESP_sk_type(sk),ossl_check_OCSP_SINGLERESP_freefunc_type(freefunc))
+#define sk_OCSP_SINGLERESP_pop_free(sk, freefunc) OPENSSL_sk_pop_free(ossl_check_OCSP_SINGLERESP_sk_type(sk), ossl_check_OCSP_SINGLERESP_freefunc_type(freefunc))
 #define sk_OCSP_SINGLERESP_insert(sk, ptr, idx) OPENSSL_sk_insert(ossl_check_OCSP_SINGLERESP_sk_type(sk), ossl_check_OCSP_SINGLERESP_type(ptr), (idx))
 #define sk_OCSP_SINGLERESP_set(sk, idx, ptr) ((OCSP_SINGLERESP *)OPENSSL_sk_set(ossl_check_OCSP_SINGLERESP_sk_type(sk), (idx), ossl_check_OCSP_SINGLERESP_type(ptr)))
 #define sk_OCSP_SINGLERESP_find(sk, ptr) OPENSSL_sk_find(ossl_check_OCSP_SINGLERESP_sk_type(sk), ossl_check_OCSP_SINGLERESP_type(ptr))
@@ -238,19 +238,19 @@ typedef struct ocsp_service_locator_st OCSP_SERVICELOC;
 #  define d2i_OCSP_RESPONSE_bio(bp,p) ASN1_d2i_bio_of(OCSP_RESPONSE,OCSP_RESPONSE_new,d2i_OCSP_RESPONSE,bp,p)
 
 #  define PEM_read_bio_OCSP_REQUEST(bp,x,cb) (OCSP_REQUEST *)PEM_ASN1_read_bio( \
-     (char *(*)())d2i_OCSP_REQUEST,PEM_STRING_OCSP_REQUEST, \
+     (d2i_of_void *)d2i_OCSP_REQUEST,PEM_STRING_OCSP_REQUEST, \
      bp,(char **)(x),cb,NULL)
 
 #  define PEM_read_bio_OCSP_RESPONSE(bp,x,cb) (OCSP_RESPONSE *)PEM_ASN1_read_bio(\
-     (char *(*)())d2i_OCSP_RESPONSE,PEM_STRING_OCSP_RESPONSE, \
+     (d2i_of_void *)d2i_OCSP_RESPONSE,PEM_STRING_OCSP_RESPONSE, \
      bp,(char **)(x),cb,NULL)
 
 #  define PEM_write_bio_OCSP_REQUEST(bp,o) \
-    PEM_ASN1_write_bio((int (*)())i2d_OCSP_REQUEST,PEM_STRING_OCSP_REQUEST,\
+    PEM_ASN1_write_bio((i2d_of_void *)i2d_OCSP_REQUEST,PEM_STRING_OCSP_REQUEST,\
                         bp,(char *)(o), NULL,NULL,0,NULL,NULL)
 
 #  define PEM_write_bio_OCSP_RESPONSE(bp,o) \
-    PEM_ASN1_write_bio((int (*)())i2d_OCSP_RESPONSE,PEM_STRING_OCSP_RESPONSE,\
+    PEM_ASN1_write_bio((i2d_of_void *)i2d_OCSP_RESPONSE,PEM_STRING_OCSP_RESPONSE,\
                         bp,(char *)(o), NULL,NULL,0,NULL,NULL)
 
 #  define i2d_OCSP_RESPONSE_bio(bp,o) ASN1_i2d_bio_of(OCSP_RESPONSE,i2d_OCSP_RESPONSE,bp,o)
