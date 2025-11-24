@@ -278,7 +278,8 @@ DONE( tmWorkerDnsF )
                             }
                                 POOPR
                             {
-                            if( POOP )
+                            else
+                            if( !POOP ) /*;*/etRock.traceF( tin0P , T("reply written aok") ) ;
                             sockdP.writeF( tin0P , job.idp , job.nnPeer , pbr , cbr ) ;
                             _IO_
                         {
@@ -311,7 +312,7 @@ DONE( tmWorkerDnsF )
                                             break ;
                                         
                                             }
-                                                etRock.traceF( tin0P , T(job.nnPeer) ) ;
+                                                etRock.traceF( tin0P , T("dns reply [nnOut,nnPeer]:    ")+tb4+T(nnOut)+tb4+T(job.nnPeer) ) ;
                                                 rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDsECTIONdNSrEPLY_ANSWER , tDomainGross , nnOut , job.nnPeer ) ;
                                             {
                                             if( ~nnOut )
@@ -320,7 +321,7 @@ DONE( tmWorkerDnsF )
                                             if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainGross , T("ideanet.ideafarm.com") ) ) nnOut = nnBook1 ;
                                         
                                             nicNameC nnOut ;
-                                            etRock.traceF( tin0P , tDomainGross ) ;
+                                            etRock.traceF( tin0P , T("dns [query]:    ")+tDomainGross ) ;
                                             _IO_
                                         {
                                         case ifcIDtYPEdNSqUERY_AAAA :
