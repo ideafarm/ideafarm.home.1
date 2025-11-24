@@ -336,20 +336,24 @@ DONE( tmWorkerF )
                                                 break ;
 
                                                 }
-                                                    rec_A_F( tin0P , etThread , stsReplies , ifcIDsECTIONdNSrEPLY_ANSWER , tDomainGross , nnOut , job.nnPeer ) ;
-                                                    bSilent = 0 ;
+                                                    }
+                                                        rec_A_F( tin0P , etThread , stsReplies , ifcIDsECTIONdNSrEPLY_ANSWER , tDomainGross , nnOut , job.nnPeer ) ;
+                                                        bSilent = 0 ;
+                                                    {
+                                                    if( ~nnOut )
+
+                                                    nnOut = bDivert ? nnWebHook2 : nnWebHook1 ;
+                                                    )
+                                                        || !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gvP.tDomainWebHooksNetLag )
+                                                           !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gvP.tDomainWebHooksNet    )
+                                                    (
+                                                    if
+
+                                                    nicNameC nnOut ;
+                                                    etRock.traceF( tin0P , gcP.tSayARequest+tDomainNet ) ;
                                                 {
-                                                if( ~nnOut )
+                                                if( !bNoHit )
 
-                                                nnOut = bDivert ? nnWebHook2 : nnWebHook1 ;
-                                                )
-                                                    || !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gvP.tDomainWebHooksNetLag )
-                                                       !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gvP.tDomainWebHooksNet    )
-                                                (
-                                                if
-
-                                                nicNameC nnOut ;
-                                                etRock.traceF( tin0P , gcP.tSayARequest+tDomainNet ) ;
                                                 _IO_
                                             {
                                             case ifcIDtYPEdNSqUERY_A :
@@ -427,6 +431,13 @@ DONE( tmWorkerF )
                                         //****************************************************************************************************************************************************************************************************************************************************************************************************
                                         //****************************************************************************************************************************************************************************************************************************************************************************************************
 
+                                        }
+                                            bNoHit  = 1 ;
+                                            bSilent = 0 ;
+                                        {
+                                        if( bIdeaNet && idClass == 1 && idType == ifcIDtYPEdNSqUERY_A )
+                                        ZE( boolT , bNoHit ) ;
+
                                         *ps >> idClass ;
                                         ZE( countT , idClass ) ;
 
@@ -436,7 +447,10 @@ DONE( tmWorkerF )
                                         etThread.delF( tin0P , psttw ) ;
                                         TN( tDomainNet , psttw ) ;
                                         }
-                                            // SILENCE ; ANY QUERIES FOR THIS DOMAIN ARE PRESUMED TO BE INITIATED BY IDEANET BOOK SUBSCRIBERS RESOLVING DOMAINS OF THE FORM "1234.ideanet.ideafarm.com", WHERE "1234" IS THE idBook; SUCH QUERIES ARE TO BE ANSWERED BY IDEANET.EXE RUNNING ON THE SUBSCRIBER'S COMPUTER
+                                            bIdeaNet = 1 ;
+
+                                            // IPV6: SILENCE ; ANY QUERIES FOR THIS DOMAIN ARE PRESUMED TO BE INITIATED BY IDEANET BOOK SUBSCRIBERS RESOLVING DOMAINS OF THE FORM "1234.ideanet.ideafarm.com", WHERE "1234" IS THE idBook; SUCH QUERIES ARE TO BE ANSWERED BY IDEANET.EXE RUNNING ON THE SUBSCRIBER'S COMPUTER
+                                            // IPV4: SAY "NO SUCH NAME"
 
                                             //****************************************************************************************************************************************************************************************************************************************************************************************************
                                             //****************************************************************************************************************************************************************************************************************************************************************************************************
@@ -603,6 +617,7 @@ DONE( tmWorkerF )
                                             //****************************************************************************************************************************************************************************************************************************************************************************************************
                                         {
                                         if( !etThread.strCompareF( tin0P , tDomainGross , gcP.tTestTextChallenge ) )
+                                        ZE( boolT , bIdeaNet ) ;
 
                                         //****************************************************************************************************************************************************************************************************************************************************************************************************
                                         //****************************************************************************************************************************************************************************************************************************************************************************************************
