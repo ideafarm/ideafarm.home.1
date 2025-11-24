@@ -384,7 +384,8 @@ DONE( tmWorkerDnsF )
     {
     while( !gvP.bQuit )
 
-    nicNameC nnBook1 = etThread.sockNicNameF( tin0P , T("2001:19f0:ac00:4cfb::2") ) ;
+    nicNameC nnBook1( 0x200119f0 , 0xac004cfb , 0x0 , 0x2 ) ;
+    //nicNameC nnBook1 = etThread.sockNicNameF( tin0P , T("2001:19f0:ac00:4cfb::2") ) ;
 
     stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
     stackC stsReplies(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
