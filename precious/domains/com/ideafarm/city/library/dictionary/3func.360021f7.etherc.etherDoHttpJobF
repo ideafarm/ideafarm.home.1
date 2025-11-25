@@ -95,9 +95,7 @@
                 delF( tin0P , psttQueries ) ;
                 delF( tin0P , psttDomain  ) ;
 
-//((tin123S&)tin0P).pc Utility[ 0 ] -- ;
                 /**/traceF( tin0P , tSayClientPrefix+tSayDone , flTRACE_null , ifcIDtRACEdIVERT_9 ) ;
-//((tin123S&)tin0P).pc Utility[ 0 ] ++ ;
 
                 // /*else*/                         /**/traceF( tin0P , tSayClientPrefix+T("accumulated time pending [nnPeer,time]:    "        )                   +T(jobP.nnPeer)+tb4+TT(timeTotalPending1,timeTotalPending2)+T(timeTotalPending1>TOCK?"    ********":"") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                 //if( bDeadman1 || bDeadman2 ) /*;*/traceF( tin0P , tSayClientPrefix+T("accumulated time pending [idCycle,nnPeer,time]:    ")+T(psttQueries)+tb4+T(jobP.nnPeer)+tb4+TT(timeTotalPending1,timeTotalPending2)+T(timeTotalPending1>TOCK?"    ********":"") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
@@ -192,6 +190,8 @@
                             IFsCRATCHoK
                             /**/traceF( tin0P , tSayClientPrefix+T("writing from snips") ) ;
                             TELL( "writing reply 2" ) ;
+
+                            //LOGrAW( POSTS( postsReply ) ) ;
 
                             /**/traceF( tin0P , tSayClientPrefix+T(POSTS(postsReply)) ) ;
 
@@ -327,9 +327,14 @@
                                 if( REPLY.idSnipHttpPrefix == ifcIDsNIPpREDEFINED_HTTPfAILmOVEDtEMP && !*pStkBody )
 
                                 }
-                                    meP.getSnipF( tin0P , prPostsHttpLocation , idSnip ) ; ___( prPostsHttpLocation ) ;
-                                    if( !idSnip ) idSnip =  ifcIDsNIPpREDEFINED_HTTPlOCATIONrOOT ;
-                                    countT idSnip = REPLY.idSnipHttpLocation ;
+                                    if( idSnip ) { meP.getSnipF( tin0P , prPostsHttpLocation , idSnip ) ; ___( prPostsHttpLocation ) ; }
+
+                                    }
+                                        else             { prPostsHttpLocation = new( 0 , tin0P , LF ) pbRefC( (pbRefC&)(countT&)(*pStkBody)[ 1 ] ) ; ___( prPostsHttpLocation ) ; }
+                                        if( !*pStkBody ) idSnip = ifcIDsNIPpREDEFINED_HTTPlOCATIONrOOT ;
+                                    {
+                                    if( !idSnip )
+                                    countT idSnip = REPLY.idSnipHttpLocation ;                                                  // <---------------------------------------------------------------------------------------------------------------------------------------
                                 {
                                 if( REPLY.idSnipHttpPrefix == ifcIDsNIPpREDEFINED_HTTPfAILmOVEDtEMP )
                                 ZE( pbRefC* , prPostsHttpLocation ) ;
@@ -992,6 +997,9 @@
 
                             /**/traceF( tin0P , tSayClientPrefix+T( bQuickReply ? "etherDoHttpJobF / bQuickReply is set" : "etherDoHttpJobF / bQuickReply is NOT set" ) ) ;
                             const boolT bQuickReply = F(REPLY.flagsHttpReply) & flHTTPrEPLY_QUICKrEPLY ; //********************************************************************************************************************************************************************************
+
+                            //pDebug = &REPLY ;
+                            //static httpReplyS* pDebug ;
 
                             if( !pRefReply ) { BLAMMO ; }
 

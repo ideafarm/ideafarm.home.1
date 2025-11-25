@@ -29,17 +29,31 @@ DONE( tmWorkF )
             ether.loafIF( tin0P ) ;
             etThread.traceF( tin0P , T("loafing") ) ;
 
-    //U::        while( cDo -- ) etThread.osThreadF( TaRG1( tmUpdateCacheF ) ) ;
+            //U::        while( cDo -- ) etThread.osThreadF( TaRG1( tmUpdateCacheF ) ) ;
             countT cDo = 2 ;                                                // CS:CODEsYNC: 5100057b 5100057b
 
             httpServerC serverS( tin0P , arg1S , arg2 , &cache ) ;
+            httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
+        {
+
+        else
+        }
+            etThread.traceF( tin0P , T("cleaning up") ) ;
+            ether.loafIF( tin0P ) ;
+            etThread.traceF( tin0P , T("loafing") ) ;
+
+            //U::        while( cDo -- ) etThread.osThreadF( TaRG1( tmUpdateCacheF ) ) ;
+            countT cDo = 2 ;                                                // CS:CODEsYNC: 5100057b 5100057b
 
             httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
-            //20251029@1450: ENABLED BECAUSE GORILLA USES HTTP
-            //20251017@1048: DISABLED BECAUSE CERTBOT NO LONGER USED AND dns-01 IS NOW USED TO PROVE CONTROL OVER THE hidden.ideafarm.com DOMAIN (TO GET A WILDCARD CERTIFICATE FOR THAT DOMAIN)
-            //20241122@1004: ENABLED SO THAT CERTBOT CAN RENEW
-            //20240210@2035: DISABLED FOR SECURITY (FACTORY1 USES HTTPS AND ONLY TO RECEIVE NOTICES FROM Stripe)
         {
+        if( F(processGlobal2S::_processGlobal2I_IF()._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM )
+        //U::COMMENT OUT THIS BLOCK OF CODE IN PRODUCTION ; (THIS IS USED FOR TESTING OF CODE THAT WILL BE USED IN IDEANET.EXE)
+
+        //20251029@1450: ENABLED BECAUSE GORILLA USES HTTP
+        //20251017@1048: DISABLED BECAUSE CERTBOT NO LONGER USED AND dns-01 IS NOW USED TO PROVE CONTROL OVER THE hidden.ideafarm.com DOMAIN (TO GET A WILDCARD CERTIFICATE FOR THAT DOMAIN)
+        //20241122@1004: ENABLED SO THAT CERTBOT CAN RENEW
+        //20240210@2035: DISABLED FOR SECURITY (FACTORY1 USES HTTPS AND ONLY TO RECEIVE NOTICES FROM Stripe)
 
         cacheC cache( tin0P , etThread ) ;
 
