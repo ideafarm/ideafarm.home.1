@@ -41065,7 +41065,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.httpServerC.sayFieldEditF!||
 
     /* serve a client */
-    osTextT readRequestF( tin0S& tin0P , boolT& bFailP , strokeS*& psttNameP , strokeS*& psttQueriesP , strokeS*& psttDomainP , strokeS*& psttLeverKVP , switchC& swQueryP , switchC& swHeaderP , strokeS*& psttAgentP , osTextT*& postBodyP , boolT& bCloseP , taskDrivenServerJobS& jobP , socketC* psoP , const strokeS* const psttRandomLabelPrefixP , const strokeS* const psttRandomLabelPrefixLagP , nicNameC& nnGorilla1P , stackC& stNnPeerBlockP , const osTextT* const postEscapeP = 0 ) ;
+    osTextT readRequestF( tin0S& tin0P , boolT& bFailP , strokeS*& psttNameP , strokeS*& psttQueriesP , strokeS*& psttDomainP , strokeS*& psttLeverKVP , switchC& swQueryP , switchC& swHeaderP , strokeS*& psttAgentP , osTextT*& postBodyP , boolT& bCloseP , taskDrivenServerJobS& jobP , socketC* psoP , const strokeS* const psttRandomLabelPrefixP , const strokeS* const psttRandomLabelPrefixLagP , nicNameC& nnGorilla1P , stackC* pStkNnPeerBlockP , const osTextT* const postEscapeP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.httpServerC.readRequestF!||
     voidT getReplyF( tin0S& tin0P , httpReplyRefC*& prP , const strokeS* const psttUrlP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.httpServerC.getReplyF!||

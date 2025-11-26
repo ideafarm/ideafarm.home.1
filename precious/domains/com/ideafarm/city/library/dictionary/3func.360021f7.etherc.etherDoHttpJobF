@@ -475,9 +475,10 @@
                                                         if( postLathPeanut ) { strMakeF( tin0P , LF , prPostsLathPeanut , T(postLathPeanut) , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostsLathPeanut ) ; }
                                                         puseC puseWork1( tin0P , ifcIDpOOL_ADAMtEMP ) ; //--------------------------------------------------------------------------------------
                                                         //PUSE.list_osTextTstrz_Old 2012F( tin0P , postLathPeanut , pczName ) ; //A:ASSUME: ANOTHER THREAD MIGHT REPLACE THIS VALUE WHILE I AM USING THIS POINTER, BUT THIS POINTER WILL REMAIN POINTING TO VALID STORAGE
-                                                        puseC pusePeanut( pusePeanutP ) ;
+                                                        puseC pusePeanut( *pPusePeanutP ) ;
                                                         ZE( osTextT* , postLathPeanut ) ;
                                                     {
+                                                    if( pPusePeanutP )
                                                     THREADmODE2oN( flTHREADmODE2_UNLOCKpOOLiDENTITY )
 
                                                     { countT pczFrom[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , idPortMe | BM_HIGH , 0 } ; strStretchIF( tin0P , pczName , pczFrom , T(POSTS(*REPLY.prPostUrl)) ) ; ___( pczName ) ; }
@@ -1005,7 +1006,7 @@
 
                             TESTsCRATCH //U::TO FIND A BUG
                             }
-                                if( jobP.nnPeer != nnGorilla1P ) stNnPeerBlock.sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                                if( pStkNnPeerBlockP && jobP.nnPeer != nnGorilla1P ) pStkNnPeerBlockP->sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                                 meP.getReplyF( tin0P , pRefReply , T("!nf") ) ; ___( pRefReply ) ;
                                 _IO_
                             {
@@ -1763,15 +1764,15 @@
 
                 }
                     break ;
-                    if( jobP.nnPeer != nnGorilla1P ) stNnPeerBlock.sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                    if( pStkNnPeerBlockP && jobP.nnPeer != nnGorilla1P ) pStkNnPeerBlockP->sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                 {
-                if( !psttName || ( tRandomLabelPrefix.csF( tin0P ) && strCompareF( tin0P , T("/nobot/notify/stripe.20240206@1123") , psttName ) ) )     // A:ASSUME: IF NULL LENGTH RANDOM PREFIX THEN I AM NOT RUNNING ON wh1 OR wh2 (E.G. I AM RUNNING ON web1), SO DON'T ENFORCE THIS URL PATH
+                if( !psttName || ( ptRandomLabelPrefixP && ptRandomLabelPrefixP->csF( tin0P ) && strCompareF( tin0P , T("/nobot/notify/stripe.20240206@1123") , psttName ) ) )     // A:ASSUME: IF NULL LENGTH RANDOM PREFIX THEN I AM NOT RUNNING ON wh1 OR wh2 (E.G. I AM RUNNING ON web1), SO DON'T ENFORCE THIS URL PATH
 
                 }
                     break ;
-                    if( jobP.nnPeer != nnGorilla1P ) stNnPeerBlock.sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                    if( pStkNnPeerBlockP && jobP.nnPeer != nnGorilla1P ) pStkNnPeerBlockP->sinkF( tin0P , countTC() , jobP.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                 {
-                if( !psttDomain || ( tRandomLabelPrefix.csF( tin0P ) && 1 != strIdF( tin0P , tRandomLabelPrefix , psttDomain ) && 1 != strIdF( tin0P , tRandomLabelPrefixLag , psttDomain ) ) )
+                if( !psttDomain || ( ptRandomLabelPrefixP && ptRandomLabelPrefixLagP && ptRandomLabelPrefixP->csF( tin0P ) && 1 != strIdF( tin0P , *ptRandomLabelPrefixP , psttDomain ) && 1 != strIdF( tin0P , *ptRandomLabelPrefixLagP , psttDomain ) ) )
 
                 /**/traceF( tin0P , tSayClientPrefix+T("[psttDomain]:       ")+T(psttDomain) ) ;
                 //if( psttQueries && psttQueries->idAdam ) /*;*/traceF( tin0P , tSayClientPrefix+T("[psttQueries]:    ")+T(psttQueries) ) ;
@@ -1790,7 +1791,7 @@
                 ___( psttName ) ;
                 /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF / called  readRequestF [psttName]:    ")+T(psttName) , flTRACE_FORCEnOsILENCE ) ;
                 }
-                    idEscaped = meP.readRequestF( tin0P , bFail , psttName , psttQueries , psttDomain , psttLeverKV , swQuery , swHeader , psttAgent , postBody , bClose , jobP , psoP , tRandomLabelPrefix , tRandomLabelPrefixLag , nnGorilla1P , stNnPeerBlock , pHttpRawCommandServerCBFP ? "!@" : 0 ) ;
+                    idEscaped = meP.readRequestF( tin0P , bFail , psttName , psttQueries , psttDomain , psttLeverKV , swQuery , swHeader , psttAgent , postBody , bClose , jobP , psoP , ptRandomLabelPrefixP ? *ptRandomLabelPrefixP : tn , ptRandomLabelPrefixLagP ? *ptRandomLabelPrefixLagP : tn , nnGorilla1P , pStkNnPeerBlockP , pHttpRawCommandServerCBFP ? "!@" : 0 ) ;
                     _IO_
                 {
                 /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF / calling readRequestF") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
@@ -1850,10 +1851,10 @@
 
             cacheC* pzCache = meP.pzCacheF() ;
 
-            stackC& stNnPeerBlock         = *(stackC*)c9P.c9 ;
-            textC&  tRandomLabelPrefixLag =  *(textC*)c9P.c8 ;
-            textC&  tRandomLabelPrefix    =  *(textC*)c9P.c7 ;
-            puseC&  pusePeanutP           =  *(puseC*)c9P.c1 ;
+            stackC* pStkNnPeerBlockP        = (stackC*)c9P.c9 ;
+            textC*  ptRandomLabelPrefixLagP =  (textC*)c9P.c8 ;
+            textC*  ptRandomLabelPrefixP    =  (textC*)c9P.c7 ;
+            puseC*  pPusePeanutP            =  (puseC*)c9P.c1 ;
 
             count9S& c9P = *(count9S*)cArgAppP ;
             _IO_
@@ -1861,6 +1862,7 @@
         TN( tSlashDeadman2    , "/deadman2" ) ;
         TN( tSlashDeadman1    , "/deadman1" ) ;
         TN( tb4 , "    " ) ;
+        TN( tn  , ""     ) ;
 
         switchC swTally( tin0P , third , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLeverUrlTally ) ;
         ZE( strokeS* , psttLeverUrlTally ) ;

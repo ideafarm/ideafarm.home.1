@@ -342,10 +342,10 @@
                                                     {
                                                     if( info1P.bQuit || third || bSilent || POOP )
 
-                                                    if( bSilent && nnPeer != nnGorillaOuterOk1 ) stNnPeerBlock.sinkF( tin0P , countTC() , nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                                                    if( bSilent && pStkNnPeerBlockP && nnPeer != nnGorillaOuterOk1 ) pStkNnPeerBlockP->sinkF( tin0P , countTC() , nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
 //bSilent = 0 ;
 
-                                                    if( bShieldsDown ) bSilent = 0 ;
+                                                    if( pbShieldsDownP && *pbShieldsDownP ) bSilent = 0 ;
 
                                                     sw_cSessionWithPeer.ungrabF( tin0P ) ;
 
@@ -585,7 +585,7 @@
 
                                                     boolT bLoopback = nnPeer.isLoopbackOldDoNotUseF() ;
 
-                                                    if( !bPeerAllowed && nnPeer != nnGorillaOuterOk1 ) stNnPeerBlock.sinkF( tin0P , countTC() , nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                                                    if( !bPeerAllowed && pStkNnPeerBlockP && nnPeer != nnGorillaOuterOk1 ) pStkNnPeerBlockP->sinkF( tin0P , countTC() , nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
 
 //bPeerAllowed = 1 ;
 
@@ -1066,11 +1066,8 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
         TN( tNnGorillaOuter , "10.0.9.9" ) ;    // A LEGAL VALUE THAT IS A "DON'T CARE" AS IT WILL LIKELY NEVER BE USED
         //CS:CODEsYNC: 3600212d 33000104 3300005b
 
-        stackC& stNnPeerBlock         = *(stackC*)((count9S*)info2P.cArgApp)->c9 ;
-        textC&  tRandomLabelPrefixLag =  *(textC*)((count9S*)info2P.cArgApp)->c8 ;
-        textC&  tRandomLabelPrefix    =  *(textC*)((count9S*)info2P.cArgApp)->c7 ;
-
-        boolT& bShieldsDown = *(boolT*)((count9S*)info2P.cArgApp)->c5 ;
+        stackC* pStkNnPeerBlockP = (stackC*)((count9S*)info2P.cArgApp)->c9 ;
+        boolT*  pbShieldsDownP   =  (boolT*)((count9S*)info2P.cArgApp)->c5 ;
 
         }
             delF( tin0P , psttEat ) ;

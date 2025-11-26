@@ -10,7 +10,7 @@ if exist *.map del *.map
 dir
 pause
 
-copy \ideafarm.home.1\ephemeral\city\workshop\3object.exe\510008bd.*.obj
+copy \ideafarm.home.1\ephemeral\city\workshop\3object.exe\510008c0.*.obj
 
 wpp386 -q -d2 -dBiFCcLASS=0 ideanet.cpp
 
