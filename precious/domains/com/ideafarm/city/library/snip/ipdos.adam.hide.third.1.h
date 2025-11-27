@@ -1,4 +1,17 @@
 
+
+
+#define ifcIDsTATUShTTPsERVICE_UNBORN       1
+#define ifcIDsTATUShTTPsERVICE_AWAKENING    2
+#define ifcIDsTATUShTTPsERVICE_READY        3
+#define ifcIDsTATUShTTPsERVICE_ABORTING     4
+#define ifcIDsTATUShTTPsERVICE_RETIRING     5
+#define ifcIDsTATUShTTPsERVICE_GONE         6
+
+
+
+
+
 // THE FOLLOWING LINE IS NORMALLY COMMENTED OUT ; ENABLE IT WHEN BUILDING base.exe.lib FOR BUILDING A STANDALONE EXECUTABLE
 // #define OMITfOREIGNeNCRYPTIONsUPPORT
 
@@ -45201,22 +45214,23 @@ arguments
 /*1*//*flTRACE*//*1*/
 
 /*3*/
-#define flTRACE_RESET                0xe00001ee
-#define flTRACE_PARAMETERiSoStEXT    0xe00002ee
-#define flTRACE_NOcRlFaTbEGINNING    0xe00004ee
-#define flTRACE_NOpREFIX             0xe00008ee
-#define flTRACE_KEEPcRlF             0xe00010ee
-#define flTRACE_NOcONSOLE            0xe00020ee
-#define flTRACE_NObOOK               0xe00040ee
-#define flTRACE_NOtELL               0xe00080ee
-#define flTRACE_LOOP                 0xe00100ee
-#define flTRACE_HOMEeCHO             0xe00200ee
-#define flTRACE_HOMEeCHOdEADMAN1     0xe00400ee
-#define flTRACE_HOMEeCHOdEADMAN2     0xe00800ee
-#define flTRACE_HOMEeCHOgORILLAhOME  0xe01000ee
-#define flTRACE_ECHOoNLY             0xe02000ee
-#define flTRACE_FORCEdIVERT          0xe04000ee
-#define flTRACE_FORCEnOsILENCE       0xe08000ee
+#define flTRACE_RESET                                    0xe00001ee
+#define flTRACE_PARAMETERiSoStEXT                        0xe00002ee
+#define flTRACE_NOcRlFaTbEGINNING                        0xe00004ee
+#define flTRACE_NOpREFIX                                 0xe00008ee
+#define flTRACE_KEEPcRlF                                 0xe00010ee
+#define flTRACE_NOcONSOLE                                0xe00020ee
+#define flTRACE_NObOOK                                   0xe00040ee
+#define flTRACE_NOtELL                                   0xe00080ee
+#define flTRACE_LOOP                                     0xe00100ee
+#define flTRACE_HOMEeCHO                                 0xe00200ee
+#define flTRACE_HOMEeCHOdEADMAN1                         0xe00400ee
+#define flTRACE_HOMEeCHOdEADMAN2                         0xe00800ee
+#define flTRACE_HOMEeCHOgORILLAhOME                      0xe01000ee
+#define flTRACE_ECHOoNLY                                 0xe02000ee
+#define flTRACE_FORCEdIVERT                              0xe04000ee
+#define flTRACE_FORCEnOsILENCE                           0xe08000ee
+#define flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM 0xe10000ee
 /*3*/
 #define flTRACE_null    0xe00000ee
 

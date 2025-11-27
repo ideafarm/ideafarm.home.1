@@ -39111,10 +39111,11 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
     voidT* const tmF ;
     countT&      idPort ;
     const boolT& bQuit ; 
+    countT&      idStatusHttpService ;
     countT&      time1idleTimeoutRead ;
     countT&      time1idleTimeoutWrite ;
 
-    serverInfo1S( byteT** ppbdVaryingP , batonC* pBat_pbdVaryingP , boolT& bHandedOffP , signC& sgnIdPortReplacedP , voidT* const tmFP , countT& idPortP , const boolT& bQuitP , countT& time1idleTimeoutReadP , countT& time1idleTimeoutWriteP ) ;
+    serverInfo1S( byteT** ppbdVaryingP , batonC* pBat_pbdVaryingP , boolT& bHandedOffP , signC& sgnIdPortReplacedP , voidT* const tmFP , countT& idPortP , const boolT& bQuitP , countT& idStatusHttpServiceP , countT& time1idleTimeoutReadP , countT& time1idleTimeoutWriteP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.serverInfo1S.serverInfo1S!||
 
 /**/
@@ -39128,6 +39129,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.serverInfo1S : 1snip.15000056.serverinfo1s END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.serverInfo2S : 1snip.15000057.serverinfo2s BEGIN
@@ -41146,18 +41148,19 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
 /**/
 /*1*/struct _export httpServerC_arg1S/*1*/
 {
-    const countT                idLineCt ;
-    const countT                idiFileCt ;
-    const byteT* const          pbBitsCt ;
-    etherC&                     ether ;
-    const flagsT                flagsSocket ;
-    const countT                idPort ;
-    countT&                     cArgApp ;
-    strokeS*                    psttName ;
+    const countT                idLineCt            ;
+    const countT                idiFileCt           ;
+    const byteT* const          pbBitsCt            ;
+    etherC&                     ether               ;
+    countT&                     idStatusHttpService ;
+    const flagsT                flagsSocket         ;
+    const countT                idPort              ;
+    countT&                     cArgApp             ;
+    strokeS*                    psttName            ;
 
     ~httpServerC_arg1S( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.httpServerC_arg1S.dt_httpServerC_arg1S!||
-    httpServerC_arg1S( const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , etherC& etherP , countT& cArgAppP , const countT idPortP = ifcIDpORT_HTTP , const flagsT flagsSocketP = flSOCKETc_null , const strokeS* const psttNameP = 0 ) ;
+    httpServerC_arg1S( const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , etherC& etherP , countT& cArgAppP , countT& idStatusHttpServiceP , const countT idPortP = ifcIDpORT_HTTP , const flagsT flagsSocketP = flSOCKETc_null , const strokeS* const psttNameP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.httpServerC_arg1S.httpServerC_arg1S!||
 }
 ;
@@ -41169,6 +41172,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.httpServerC_arg1S : 1snip.150000b8.httpserverc_arg1s END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.httpServerC_arg2S : 1snip.150000b9.httpserverc_arg2s BEGIN
@@ -42302,6 +42306,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     static const                             mapCTS pMapa1[]                                                 ;
     static const                             mapCTS pMapb1[]                                                 ;
     static const                             mapCTS pMapc1[]                                                 ;
+    static const                             mapCTS pMapd1[]                                                 ;
 
     private :
 
@@ -42362,6 +42367,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     mapCTC                                   mapIdErrorDns                                                   ;
     mapCTC                                   mapIdTypeDnsQuery                                               ;
     mapCTC                                   mapIdSectionDnsReply                                            ;
+    mapCTC                                   mapIdStatusHttpService                                          ;
 
     cryC                                     cry301                                                          ;
     const timeS                              timeBaseBuilt                                                   ;

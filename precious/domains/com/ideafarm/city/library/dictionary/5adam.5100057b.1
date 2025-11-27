@@ -32,7 +32,7 @@ DONE( tmWorkF )
             //U::        while( cDo -- ) etThread.osThreadF( TaRG1( tmUpdateCacheF ) ) ;
             countT cDo = 2 ;                                                // CS:CODEsYNC: 5100057b 5100057b
 
-            httpServerC serverS( tin0P , arg1S , arg2 , &cache ) ;
+//            httpServerC serverS( tin0P , arg1S , arg2 , &cache ) ;
             httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
         {
 
@@ -61,8 +61,9 @@ DONE( tmWorkF )
 
         //U:: ENABLE AFTER REWRITE DATABASE SUBSYSTEMS FOR BILLING:: arg2.pHttpFreshenCacheCBF = httpFreshenCacheCBF ;
         httpServerC_arg2S arg2 ;
-        httpServerC_arg1S arg1S( TAG( TAGiDnULL ) , etThread , cArgApp , ifcIDpORT_HTTPS , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , T("World Wide Web Secured") ) ;    //ifcDrivenServerF WILL DO HANDSHAKE AFTER IT DECIDES TO NOT SILENTLY CLOSE THE CONNECTION ; THIS IS TO PREVENT MALICIOUS PEERS FROM EXPLOITING THE SHIT WITHIN OpenSSL
-        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , ifcIDpORT_HTTP  , flSOCKETc_null                                                      , T("World Wide Web") ) ;
+        httpServerC_arg1S arg1S( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpService , ifcIDpORT_HTTPS , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , T("World Wide Web Secured") ) ;    //ifcDrivenServerF WILL DO HANDSHAKE AFTER IT DECIDES TO NOT SILENTLY CLOSE THE CONNECTION ; THIS IS TO PREVENT MALICIOUS PEERS FROM EXPLOITING THE SHIT WITHIN OpenSSL
+        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpService , ifcIDpORT_HTTP  , flSOCKETc_null                                                      , T("World Wide Web") ) ;
+        ZE( countT , idStatusHttpService ) ;
 
         countT cArgApp = (countT)&c9p ;
         count9S c9p( /*(countT)&pusePeanut*/0 , (countT)&booksSurvey , (countT)&cLeverPassword , (countT)&swsUnconfirmedPeerDeleteEmailZipCountryByPassword , (countT)&bShieldsDown , (countT)&bksWebHookNotices , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag , (countT)&stNnPeerBlock ) ;

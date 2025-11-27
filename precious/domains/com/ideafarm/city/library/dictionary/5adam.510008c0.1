@@ -40,7 +40,7 @@ TODO
 
 DONE( tmWorkF )
 }
-    etThread.traceF( tin0P , T("I am no longer serving web pages.") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+    etThread.traceF( tin0P , T("I am no longer serving web pages.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
     }
         sgnDone_tmServeHttpF.waitF( tin0P ) ;
@@ -79,7 +79,7 @@ DONE( tmWorkF )
         etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) ) ;
         signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
 
-        etThread.traceF( tin0P , T("Press the Enter key, and I will stop serving web pages, which will disable your access to IdeaNet (tm):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        etThread.traceF( tin0P , T("Press the Enter key, and I will stop serving web pages, which will disable your access to IdeaNet (tm):    ") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
         etThread.osThreadF( TaRG2cBsTACK( tmHearF , TICK >> 2 ) , (countT)&bHeardEnterKey ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
         ZE( boolT , bHeardEnterKey ) ;
     {
@@ -88,26 +88,12 @@ DONE( tmWorkF )
     etThread.delF( tin0P , psttWanted ) ;
     etThread.strHearF( tin0P , psttWanted , psttUnwanted , 0 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
 
-    ) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
-        "\r\nPress the Enter key, and then tell Windows to allow me to serve web pages (which I will do only for you) which will enable your access to IdeaNet (tm):    "
+        "\r\nThis is safe, because I will ignore requests that come from any computers other than yours:    "
+        "\r\nPress the Enter key, and then, when prompted, tell Windows to allow me to serve web pages (to you)."
         "\r\n"
-        "\r\naddress changes every few seconds.)"
-        "\r\nthat will serve that page to your computer so that your browser can display it.  (That numeric"
-        "\r\nsee it.  Second, only I know how to obtain the numeric address of the computer, \"1.ideafarm.com\","
-        "\r\nreasons.  First, your password must never be put out onto the public Internet, where someone might"
-        "\r\nfor this, by redirecting all domain name queries on your computer to myself.  This is done for two"
-        "\r\nSuch a page can be viewed using your normal Web browser, but only after I have set up your computer"
-        "\r\n"
-        "\r\n    http://someunguessablepassword.password.1.ideafarm.com/somepage.html"
-        "\r\n"
-        "\r\nresource (\"page\") on the Web, like this:"
-        "\r\nEach subscriber is issued a password, which is specified at the beginning of the domain name for a"
         "\r\nIdeaFarm (tm) IdeaNet (tm) is a subscribers-only World Wide Web system within the public Internet system."
-        "\r\n"
-        "\r\nobtain the numeric address for the computer that serves \"somedomain.com\"."
-        "\r\nWeb browser can display a page with a name such as \"http://somedomain.com/somepage.html\", it must"
-        "\r\nEach computer on the public Internet has a numeric address, which is a single large number. Before your"
 
     etThread.traceF( tin0P , T(
 
@@ -183,8 +169,11 @@ DONE( tmServeHttpF )
 
         //U:: ENABLE AFTER REWRITE DATABASE SUBSYSTEMS FOR BILLING:: arg2.pHttpFreshenCacheCBF = httpFreshenCacheCBF ;
         httpServerC_arg2S arg2 ;
-        httpServerC_arg1S arg1S( TAG( TAGiDnULL ) , etThread , cArgApp , ifcIDpORT_HTTPS , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , T("World Wide Web Secured") ) ;    //ifcDrivenServerF WILL DO HANDSHAKE AFTER IT DECIDES TO NOT SILENTLY CLOSE THE CONNECTION ; THIS IS TO PREVENT MALICIOUS PEERS FROM EXPLOITING THE SHIT WITHIN OpenSSL
-        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , ifcIDpORT_HTTP  , flSOCKETc_null                                                      , T("World Wide Web") ) ;
+        httpServerC_arg1S arg1S( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpService , ifcIDpORT_HTTPS , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , T("World Wide Web Secured") ) ;    //ifcDrivenServerF WILL DO HANDSHAKE AFTER IT DECIDES TO NOT SILENTLY CLOSE THE CONNECTION ; THIS IS TO PREVENT MALICIOUS PEERS FROM EXPLOITING THE SHIT WITHIN OpenSSL
+        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpService , ifcIDpORT_HTTP  , flSOCKETc_null                                                      , T("World Wide Web") ) ;
+
+        etThread.osThreadF( TaRG1( tmDisplayStatus ) , (countT)&idStatusHttpService ) ;
+        ZE( countT , idStatusHttpService ) ;
 
         countT cArgApp = (countT)&c9p ;
         count9S c9p( 0 ) ;
@@ -216,6 +205,21 @@ DONE( tmServeHttpF )
 {
 if( pTaskP )
 TASK( tmServeHttpF )
+
+DONE( tmDisplayStatus )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+        etThread.traceF( tin0P , tSay1+TF2(idStatusHttpServiceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+    {
+    while( !ether )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    TN( tSay1 , "\rlocal loopback http server status:    " ) ;
+
+    const countT& idStatusHttpServiceP = *(const countT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmDisplayStatus )
 
 #endif
         }

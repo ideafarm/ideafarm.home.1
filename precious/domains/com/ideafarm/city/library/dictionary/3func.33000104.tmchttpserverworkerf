@@ -145,19 +145,19 @@ DONE( tmcHttpServerWorkerF )
                 break ;
                 stJobP.ungrabF( tin0P ) ;
                 //etRock.traceF( tin0P , T("ungrabbing stJobP because empty") ) ;
-           {
-            if( !stJobP || bQuitP )
+            {
+            if( !stJobP || bQuitP || bAbortP )
 
             //etRock.traceF( tin0P , T("grabbed stJobP") ) ;
             stJobP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
-        while( !bQuitP )
+        while( !bQuitP && !bAbortP )
 
         //etRock.traceF( tin0P , T("waited for a push to stJobP") ) ;
         stJobP.waitF( tin0P ) ;
         //etRock.traceF( tin0P , T("waiting for a push to stJobP") ) ;
     {
-    while( !bQuitP )
+    while( !bQuitP && !bAbortP )
 
     nicNameC nnGorillaOuterOk1 = socketC::nicNameIF( tin0P , etThread , tNnGorillaOuter ) ;
 
@@ -179,11 +179,12 @@ DONE( tmcHttpServerWorkerF )
 
     const countT idDesireOld = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
 
-    countT& cWorkerP = *(countT*)pTaskP->c3 ;
-    stackC& stJobP   = *(stackC*)pTaskP->c2 ;
+    countT& cWorkerP = *(countT*)pTaskP->c4 ;
+    stackC& stJobP   = *(stackC*)pTaskP->c3 ;
+    boolT&  bAbortP  = *(countT*)pTaskP->c2 ;
     countT& bQuitP   = *(countT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 
 TELL( "preparing for work" ) ;
 /*1*/TASK( tmcHttpServerWorkerF )/*1*/

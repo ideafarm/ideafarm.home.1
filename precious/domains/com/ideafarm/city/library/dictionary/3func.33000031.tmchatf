@@ -14,11 +14,12 @@ DONE( tmChatF )
     TELL( "waiting for sgnDone_tmRegisterPort" )
     etThread.ifcDrivenServerF( tin0P , i1 , i2 ) ;
     serverInfo2S i2( idPortHint , flSOCKETc_null , T("[tmChatF]") , 0 , (countT)&c4p_tmcChat , 0 , - 1 , 0 ) ;
-    serverInfo1S i1( 0 , 0 , bHandedOffNU , sgnIdPortReplaced , tmcChatF , idPort , ether , time1idleTimeoutRead , time1idleTimeoutWrite ) ;
+    serverInfo1S i1( 0 , 0 , bHandedOffNU , sgnIdPortReplaced , tmcChatF , idPort , ether , idStatusHttpService , time1idleTimeoutRead , time1idleTimeoutWrite ) ;
     ZE( countT , time1idleTimeoutWrite ) ;
     ZE( countT , time1idleTimeoutRead ) ;
     TELL( "serving a chat port" )
 
+    ZE( countT , idStatusHttpService ) ;
     ZE( boolT , bHandedOffNU ) ;
 
     count4S c4p_tmcChat( (countT)chatHandlerF , ( chatHandlerF == jobHandlerF ? (countT)&cArgJobber : cArgAdamDef ) , idAdamHandling , (countT)&cSessions ) ;

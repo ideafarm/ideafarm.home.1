@@ -47,7 +47,7 @@
                                     ++ s ; thirdC::dosSleepIF( tin0P , TUCK * 0x40 ) ;
 
                                     stJob.ungrabF( tin0P ) ;
-                                    new( 0 , tin0P , (byteT*)&(countT&)stJob[ 1 ] , sizeof( taskDrivenServerJobS ) ) taskDrivenServerJobS() ;
+                                    if( stJob ) new( 0 , tin0P , (byteT*)&(countT&)stJob[ 1 ] , sizeof( taskDrivenServerJobS ) ) taskDrivenServerJobS() ;
                                     stJob << (byteT*)0 ;
                                     stJob.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
@@ -126,10 +126,12 @@
                             //if( pState )
 
                             }
+                                DELzOMBIE( pzTh ) ;
                                 info1P.sgnIdPortReplaced.giveF( tin0P ) ;
                                 TELL( "server: cleaning up" )
 
-                                __NZ( bMissingSetting ) ;
+                                __NZ( bPortNotAvailable ) ;
+                                __NZ( bMissingSetting   ) ;
                                 }
                                     }
                                         if( POOP ) POOPR
@@ -189,6 +191,8 @@
                                                 {
                                                 IFsCRATCHoK
                                                 bQuitAccepting = 1 ;
+
+                                                info1P.idStatusHttpService = ifcIDsTATUShTTPsERVICE_RETIRING ;
 
                                                 //THREADmODE4rESTORE
                                                 }
@@ -590,9 +594,13 @@
 //bPeerAllowed = 1 ;
 
                                                     ) ;
-                                                        || bPeerIsGorilla
-                                                        || !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer
-                                                           bAllowAllPeers
+                                                        )
+                                                            || bPeerIsGorilla
+                                                            || !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer
+                                                               bAllowAllPeers
+                                                        (
+                                                        &&
+                                                        !bPeerIsIntruder
                                                     (
                                                     bPeerAllowed =
 
@@ -656,6 +664,8 @@
                                                         (
                                                         bPeerIsGorilla =
 
+                                                        if( nnPeer != nnSelfIpv6 && F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) bPeerIsIntruder = 1 ;
+
                                                         }
                                                             //etRock.traceF( tin0P , T("ifcDrivenServerF / queue is growing [cQueuedMax]:    ")+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                             //etRock.traceF( tin0P , T("ifcDrivenServerF / queue is growing [cQueuedMax]:    ")+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
@@ -671,8 +681,9 @@
                                                     {
                                                     IFsCRATCHoK
                                                     TN( tNnPeer , "" ) ;
-                                                    ZE( boolT , bPeerAllowed   ) ;
-                                                    ZE( boolT , bPeerIsGorilla ) ;
+                                                    ZE( boolT , bPeerAllowed    ) ;
+                                                    ZE( boolT , bPeerIsGorilla  ) ;
+                                                    ZE( boolT , bPeerIsIntruder ) ;
                                                     ZE( socketC* , pso ) ;
                                                     idAccept ++ ;
                                                     //etRock.traceF( tin0P , T("ifcDrivenServerF / waiting for a client to connect") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
@@ -715,6 +726,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                                     _IO_
                                                 {
                                                 while( !info1P.bQuit && !POOP )
+                                                info1P.idStatusHttpService = ifcIDsTATUShTTPsERVICE_READY ;
                                                 ZE( countT , cRefused ) ;
                                                 ZE( countT , cAccepted ) ;
                                                 //THREADmODE4oN( flTHREADmODE4_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY )
@@ -738,6 +750,9 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                             //LOGrAW3( "listener socket has been bound to port [idPort]: " , info1P.idPort , "\r\n" ) ;
                                             }
                                                 }
+                                                    break ;
+                                                    info1P.idStatusHttpService = ifcIDsTATUShTTPsERVICE_ABORTING ;
+                                                    bAbort = bPortNotAvailable = 1 ;
                                                     etRock.traceF( tin0P , T("!exception / ifcDrivenServerF / could not configure (name, bind, listen) listener socket [idPort]:    ")+TF2(info1P.idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                     }
                                                         POOPRqUIET
@@ -757,7 +772,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                                 }   
                                                     info1P.sgnIdPortReplaced.giveF( tin0P ) ;
                                                     psoListen->listenF( tin0P ) ;
-                                                    info1P.idPort = psoListen->bindF( tin0P , info2P.idPortHint ) ;
+                                                    info1P.idPort = psoListen->bindF( tin0P , info2P.idPortHint , nicNameC() , 1 ) ;
                                                     _IO_
                                                 {
                                                 if( !info1P.bQuit )
@@ -839,7 +854,8 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                                 else
                                                 }
                                                     break ;
-                                                    bMissingSetting = 1 ;
+                                                    info1P.idStatusHttpService = ifcIDsTATUShTTPsERVICE_ABORTING ;
+                                                    bAbort = bMissingSetting = 1 ;
                                                     etRock.traceF( tin0P , T("!exception / missing setting [key]:    ")+tSettingKey ) ;
                                                     _IO_
                                                 {
@@ -862,8 +878,9 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                     _IO_
                                 {
                                 while( !info1P.bQuit )
-                                ZE( countT , idClient ) ;
-                                ZE( boolT , bMissingSetting ) ;
+                                ZE( countT , idClient          ) ;
+                                ZE( boolT  , bPortNotAvailable ) ;
+                                ZE( boolT  , bMissingSetting   ) ;
 
                                 } ;
                                     &tSayModulo_f
@@ -903,7 +920,10 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                 TN( tSayModulo_0 , "0--------------- " ) ;
 
                                 ZE( countT , idAccept ) ;
-                                threadC th( tin0P , *this , TAG( TAGiDnULL ) , tmLoadSilentF , cArg_tmLoadSilent , flTHREADlAUNCH_SHOWpONY , CBsTACKmIN << 1 ) ;
+
+                                if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) ) pzTh = new( 0 , tin0P , pb_th , sizeof pb_th ) threadC( tin0P , *this , TAG( TAGiDnULL ) , tmLoadSilentF , cArg_tmLoadSilent , flTHREADlAUNCH_SHOWpONY , CBsTACKmIN << 1 ) ;
+                                ZE( threadC* , pzTh ) ;
+                                byteT pb_th[ sizeof( threadC ) ] ;
                                 TELL( "server: launching thread tmLoadSilentF" )
 
                                 countT cArg_tmLoadSilent = (countT)pc8tp ;
@@ -970,7 +990,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
 
                         }
                             }
-                                osThreadF( tin0P , tid , info1P.tmF , 0 , 0  , flTHREADlAUNCH_SHOWpONY , CBsTACKmIN << 2 , 0 , (countT)&info1P.bQuit , (countT)&stJob , (countT)&cWorker ) ;
+                                osThreadF( tin0P , tid , info1P.tmF , 0 , 0  , flTHREADlAUNCH_SHOWpONY , CBsTACKmIN << 2 , 0 , (countT)&info1P.bQuit , (countT)&bAbort , (countT)&stJob , (countT)&cWorker ) ;
                                 ZE( countT , tid ) ;
                                 inc02AM( cWorker ) ;
                                 _IO_
@@ -978,7 +998,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                             while( scDo -- )
                             //etRock.traceF( tin0P , T("ifcDrivenServerF / launching workers [cWorkers]:    ")+TF2(scDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
-                            //scDo = 1 ; //TO MAKE THE TRACE BOOKS EASY TO READ DURING TESTING
+scDo = 1 ; //TO MAKE THE TRACE BOOKS EASY TO READ DURING TESTING
 
                             if( scDo > 0x10 ) scDo = 0x10 ; //U::20240205@1335: WORKAROUND TO AVOID MEMORY EXHAUSTION WHEN EXIST 02 PROCESSORS ; STUDY WHY "SHOWPONY" IS NEEDED (WHAT DOES IT DO?:); STUDY: USING MINIMAL THREAD STACK HERE SO CAN LAUNCH MORE
                             if( scDo < 0 ) scDo = ( - scDo ) * thirdC::osProcessorsIF( tin0P ) ;
@@ -986,11 +1006,15 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                             _IO_
                         {
                         if( cWorkersSave )
+                        ZE( boolT , bAbort ) ;
 
                         const countT cWorkersSave = info2P.cWorkers ;
 
                         _IO_
                     {
+
+pDebug = &stJob ;
+static stackC* pDebug ;
 
                     ZE( countT , cJobsHighWater ) ;
                     stackC stJob( tin0P , third , TAG( TAGiDnULL ) , /*flSTACKc_FIFO |*/ flSTACKc_BLOB | flSTACKc_ALLOWzE | flSTACKc_GIVEsIGNnEWpLATE , sizeof( taskDrivenServerJobS ) , ifcIDgRABlAYER_7BASEmISC1 ) ;
@@ -1052,6 +1076,8 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
         nicNameC nnGorillaOuterOk1 = socketC::nicNameIF( tin0P , *this , tNnGorillaOuter ) ;
         nicNameC nnGorillaInnerOk1 = socketC::nicNameIF( tin0P , *this , T("10.0.3.1") ) ;
 
+        nicNameC nnSelfIpv6( 1 ) ;
+
         }
             delF( tin0P , psttEat ) ;
             }
@@ -1095,10 +1121,12 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
         __( info1P.idPort ) ;
         __( !info1P.tmF ) ;
         __( info1P.ppbdVarying && !!*info1P.ppbdVarying ) ;
-        __( F(flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ;
         __( F(flagsMode) & flTHIRDmODE_QUITTER ) ;
 
-        __( !( F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ADAMmAINtHREAD ) && !( F(flagsMode) & flTHIRDmODE_TINoWNER ) ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED
+        //__( F(flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ;
+        //__( !( F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ADAMmAINtHREAD ) && !( F(flagsMode) & flTHIRDmODE_TINoWNER ) ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED
+        //20251126@1527: DISABLE THIS SO THAT IDEANET.EXE CAN USE pEtScratch TO CALL ME
+
         __(    F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ADAMmAINtHREAD   &&    F(flagsMode) & flTHIRDmODE_TINoWNER   ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED (THIS LINE WILL DETECT THE USE OF etPrimeF() BUT WILL FAIL TO DETECT THE USE OF AN etherC OBJECT OTHER THAN ether AND etThread ON THREAD 1)
 
         if( POOP ) return ;

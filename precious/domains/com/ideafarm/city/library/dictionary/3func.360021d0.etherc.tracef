@@ -445,7 +445,8 @@
             _IO_
         {
         else if( processGlobal2I.postSuppressTraceIf[ 0 ] && psttP )
-        if( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_NOtRACE ) bTrace = 0 ;
+        else if( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM && !( F(flagsP) & flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ) bTrace = 0 ;
+             if( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_NOtRACE                                                                                     ) bTrace = 0 ;
 
         }
             if( bAll ) bTrace ++ ;

@@ -15,7 +15,18 @@ TELL( "cleaned up" ) ;
         etThread.osThreadSwitchingDesireF( tin0P , idDesireOld ) ;
 
         TELL( "returned from ifcDrivenServerF" ) ;
-        etThread.ifcDrivenServerF( tin0P , i1 , i2 ) ;
+        }
+            }
+                etRock.traceF( tin0P , T("!exception / ifcDrivenServerF returned impotent") ) ;
+                POOPRqUIET
+                _IO_
+            {
+            if( POOP )
+            ((tin1S&)tin0P).pEtScratch->ifcDrivenServerF( tin0P , i1 , i2 ) ;
+            SCOOPS
+            _IO_
+        {
+        IFsCRATCHoK
         TELL( "calling ifcDrivenServerF" ) ;
 
         countT idDesireOld = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
@@ -28,7 +39,7 @@ TELL( "cleaned up" ) ;
 
         serverInfo2S i2( idPortP , flagsSocketP , psttName , 0 , cArgSys , cArgAppP , 0 , - 8 , /*1U::bState SET TO ZE PROVISIONALLY SO DOOR AND PANIC DOOR CAN BE SERVED BY SAME PROCESS TO MAKE DEVELOPMENT OF THE INTERFACES EASIER; SET TO 1 WHEN THESE DOORS ARE SERVED BY SEPARATE PROCESSES, AS CALLED FOR IN THE DESIGN*/0 , 0 , 0 , 0 , 0 , 0 , &meP.sessions , pnnAllowedStripeP ) ;
 
-        serverInfo1S i1( 0 , 0 , bHandedOff , sgnIdPortReplaced , /*tmcHttpServerWoJobOldF*/ tmcHttpServerWorkerF , countTC() , bQuitP , time1idleTimeoutRead , time1idleTimeoutWrite ) ;
+        serverInfo1S i1( 0 , 0 , bHandedOff , sgnIdPortReplaced , /*tmcHttpServerWoJobOldF*/ tmcHttpServerWorkerF , countTC() , bQuitP , idStatusHttpServiceP , time1idleTimeoutRead , time1idleTimeoutWrite ) ;
         signC sgnIdPortReplaced( tin0P , TAG( TAGiDnULL ) ) ;
         ZE( boolT , bHandedOff ) ;
         TELL( "constructing serverInfoS parameters" ) ;
@@ -54,6 +65,9 @@ TELL( "cleaned up" ) ;
     meP.sgnCtDone.waitF( tin0P ) ;
     TELL( "waiting for meP.sgnCtDone" ) ;
 
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    countT&                                     idStatusHttpServiceP                       =                                    *(countT*)_c8tp2.c4 ;
     nicNamesAllowedStripeWebHookNotificationsC* pnnAllowedStripeP                          = (nicNamesAllowedStripeWebHookNotificationsC*)_c8tp2.c3 ;
     strokeS*&                                   psttName                                   =                                 *(strokeS**)&_c8tp2.c2 ;
     httpRawCommandServerCBFT                    pHttpRawCommandServerCBFP                  =                    (httpRawCommandServerCBFT)_c8tp2.c1 ;
