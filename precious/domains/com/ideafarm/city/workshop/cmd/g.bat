@@ -47,6 +47,8 @@ if %1z == deadz  cd\ideafarm.work\bench\deadman
 if %1z == deadz  goto :FIN
 if %1z == elz  cd \ideafarm.home.%idHomeG%\precious\domains\com\ideafarm\city\workshop\elves
 if %1z == elz  goto :FIN
+if %1z == idz  cd \ideafarm.home.%idHomeG%\precious\domains\com\ideafarm\city\workshop\ideanet
+if %1z == idz  goto :FIN
 if %1z == wwz  cd\ideafarm.work\bench\wowindow
 if %1z == wwz  goto :FIN
 rem if %1z == hwz cd \Program Files\Microsoft SDKs\Windows\v7.0\Include

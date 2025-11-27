@@ -75,7 +75,7 @@ TODO
 }
     pSubP = new( 0 , tin0P , LF ) ideaNetSubscriptionC( tin0P , etherP , 1 , idSub , tSecret ) ; ___( pSubP ) ;
 
-    etherP.traceF( tin0P , T("[generatedSecret]:    ")+tSecret ) ;
+    etherP.traceF( tin0P , T("[idBook,idSub,generatedSecret]:    ")+TF2(idBook,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret ) ;
     }
         etherP.delF( tin0P , psttMac ) ;
         tSecret = T(psttMac) ;
@@ -85,8 +85,9 @@ TODO
     TN( tSecret , "" ) ;
 
     TN( tEmail , psttEmailP ) ;
+    TN( tb4    , "    " ) ;
 
-    etherP.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+    if( idBook != 1 || idSub != 1 ) etherP.osTimeNowF( tin0P , timeN1 , timeN2 ) ;      // FOR BOOK 1 SUB 1, I ALWAYS GENERATE THE SAME SECRET, WHICH IS HARDCODED INTO IDEANET.EXE
     ZE( sCountT , timeN2 ) ;
     ZE( countT  , timeN1 ) ;
 

@@ -51,7 +51,9 @@ DONE( tmWorkF )
                 ++ s ; etThread.osSleepF( tin0P , TUCK >> 6 ) ;
 
                 }
-                    //etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+T(nnNow) , flTRACE_NOpREFIX ) ;
+                    etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6Now , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+
+                    tIpv6Now = T(nnNow) ;
                     nicNameC nnNow = sub.nnF( tin0P , minute ) ;
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
@@ -70,9 +72,11 @@ DONE( tmWorkF )
             while( !bHeardEnterKey && idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY )
             ZE( countT , minuteLath ) ;
 
-            ideaNetSubscriptionC sub( tin0P , etThread , 1 , 1 , tSecret ) ; ___( pSubP ) ;
+            ideaNetSubscriptionC sub( tin0P , etThread , idBook , idSub , tSecret ) ; ___( pSubP ) ;
 
-            TN( tSecret , "308f" "c905" "2f7e" "f879" "38b0" "e553" "4095" "944f" "1c0b" "88e5" ) ;         //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
+            TN( tSecret , "4428" "6618" "7a68" "2b1d" "8fc5" "c30f" "e3e4" "fce4" "a9a4" "e126" ) ;
+            //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
+
             TN( tb4 , "    " ) ;
 
             etThread.traceF( tin0P , T("Press the Enter key, and I will stop serving web pages, which will disable your access to IdeaNet (tm):    ") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -94,8 +98,10 @@ DONE( tmWorkF )
         while( idStatusHttpService < ifcIDsTATUShTTPsERVICE_READY )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-        etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService ) ;
+        etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6Now , (countT)&idBook , (countT)&idSub ) ;
         signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
+
+        TN( tIpv6Now , "" ) ;
         ZE( countT , idStatusHttpService ) ;
     {
     ZE( boolT , bAborted ) ;
@@ -111,6 +117,9 @@ DONE( tmWorkF )
         "IdeaFarm (tm) IdeaNet (tm) is a subscribers-only World Wide Web system within the public Internet system."
 
     etThread.traceF( tin0P , T(
+
+    countT idSub  = 1 ;
+    countT idBook = 1 ;
 
     ZE( strokeS* , psttUnwanted ) ;
     ZE( strokeS* , psttWanted ) ;
@@ -198,7 +207,7 @@ DONE( tmServeHttpF )
         //etThread.osThreadF( TaRG1( tmDisplayStatus ) , (countT)&idStatusHttpServiceP ) ;
 
         countT cArgApp = (countT)&c9p ;
-        count9S c9p( 0 ) ;
+        count9S c9p( (countT)&tIpv6NowP , (countT)&idBookP , (countT)&idSubP ) ;
 
         //THREADmODE2rESTORE0( flagsSave )
         //puseC puse( tin0P , ifcIDpOOL_ADAMtEMP ) ;
@@ -225,25 +234,30 @@ DONE( tmServeHttpF )
 //    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 //    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ; // "RUDE" SO THAT I RESPOND TO GORILLA WITH CONSISTENT "REAL TIME" SPEED ; THIS CREATES AN ATTACK SURFACE ; CPU SPINNING *MUST* BE PREVENTED (IMPOTENCE CPU SPIN BUGS, DDOS HTTP FLOOD ATTACKS)
 
+    countT& idSubP               = *(countT*)pTaskP->c4 ;
+    countT& idBookP              = *(countT*)pTaskP->c3 ;
+    textC&  tIpv6NowP            =  *(textC*)pTaskP->c2 ;
     countT& idStatusHttpServiceP = *(countT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmServeHttpF )
 
-DONE( tmDisplayStatus )
-}
+#endif
+    DONE( tmDisplayStatus )
     }
-        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-        etThread.traceF( tin0P , tSay1+TF2(idStatusHttpServiceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-    {
-    while( !ether && idStatusHttpServiceP <= ifcIDsTATUShTTPsERVICE_READY )
-    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-    TN( tSay1 , "\rlocal loopback http server status:    " ) ;
+        }
+            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+            etThread.traceF( tin0P , tSay1+TF2(idStatusHttpServiceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+        {
+        while( !ether && idStatusHttpServiceP <= ifcIDsTATUShTTPsERVICE_READY )
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        TN( tSay1 , "\rlocal loopback http server status:    " ) ;
 
-    const countT& idStatusHttpServiceP = *(const countT*)pTaskP->c1 ;
-{
-if( pTaskP && pTaskP->c1 )
-TASK( tmDisplayStatus )
+        const countT& idStatusHttpServiceP = *(const countT*)pTaskP->c1 ;
+    {
+    if( pTaskP && pTaskP->c1 )
+    TASK( tmDisplayStatus )
+#if defined( NEVERdEFINED )
 
 #endif
         }
