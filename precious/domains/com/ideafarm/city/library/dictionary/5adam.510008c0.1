@@ -40,49 +40,65 @@ TODO
 
 DONE( tmWorkF )
 }
-    etThread.traceF( tin0P , T("I am no longer serving web pages.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
-
     }
         sgnDone_tmServeHttpF.waitF( tin0P ) ;
-
-        FIREmYSELF
-
         }
-            ++ s ; etThread.osSleepF( tin0P , TUCK >> 6 ) ;
+            FIREmYSELF
+
+            etThread.traceF( tin0P , T("I am no longer serving web pages.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
             }
-                //etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+T(nnNow) , flTRACE_NOpREFIX ) ;
-                nicNameC nnNow = sub.nnF( tin0P , minute ) ;
+                ++ s ; etThread.osSleepF( tin0P , TUCK >> 6 ) ;
+
+                }
+                    //etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+T(nnNow) , flTRACE_NOpREFIX ) ;
+                    nicNameC nnNow = sub.nnF( tin0P , minute ) ;
+
+                    etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+                    ZE( sCountT , timeN2 ) ;
+                    ZE( countT  , timeN1 ) ;
+
+                    minuteLath = minute ;
+                {
+                if( minuteLath != minute )                          // A:ASSUME: THE LIFETIME OF EACH ipv6 ADDRESS IS GREATER THAN RE MINUTES, SO THAT THE ipv6 OF THE LATH MINUTE WILL CONTINUE TO BE VALID WELL AFTER I NO LONGER OBTAIN ITS VALUE
+                countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE
 
                 etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                 ZE( sCountT , timeN2 ) ;
                 ZE( countT  , timeN1 ) ;
-
-                minuteLath = minute ;
             {
-            if( minuteLath != minute )                          // A:ASSUME: THE LIFETIME OF EACH ipv6 ADDRESS IS GREATER THAN RE MINUTES, SO THAT THE ipv6 OF THE LATH MINUTE WILL CONTINUE TO BE VALID WELL AFTER I NO LONGER OBTAIN ITS VALUE
-            countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE
+            while( !bHeardEnterKey && idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY )
+            ZE( countT , minuteLath ) ;
 
-            etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
-            ZE( sCountT , timeN2 ) ;
-            ZE( countT  , timeN1 ) ;
+            ideaNetSubscriptionC sub( tin0P , etThread , 1 , 1 , tSecret ) ; ___( pSubP ) ;
+
+            TN( tSecret , "308f" "c905" "2f7e" "f879" "38b0" "e553" "4095" "944f" "1c0b" "88e5" ) ;         //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
+            TN( tb4 , "    " ) ;
+
+            etThread.traceF( tin0P , T("Press the Enter key, and I will stop serving web pages, which will disable your access to IdeaNet (tm):    ") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etThread.osThreadF( TaRG2cBsTACK( tmHearF , TICK >> 2 ) , (countT)&bHeardEnterKey ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+            ZE( boolT , bHeardEnterKey ) ;
+
+            etThread.traceF( tin0P , T("I am ready to serve web pages.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         {
-        while( !bHeardEnterKey )
+        else
+        }
+            etThread.traceF( tin0P , T("I cannot serve web pages, likely because there is already an http server running on this computer.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+            bAborted = 1 ;
+        {
+        if( idStatusHttpService > ifcIDsTATUShTTPsERVICE_READY )
+
+        }
+            ++ s ; ether.osSleepF( tin0P ) ;
+        {
+        while( idStatusHttpService < ifcIDsTATUShTTPsERVICE_READY )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-        ZE( countT , minuteLath ) ;
 
-        ideaNetSubscriptionC sub( tin0P , etThread , 1 , 1 , tSecret ) ; ___( pSubP ) ;
-
-        TN( tSecret , "308f" "c905" "2f7e" "f879" "38b0" "e553" "4095" "944f" "1c0b" "88e5" ) ;         //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
-        TN( tb4 , "    " ) ;
-
-        etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) ) ;
+        etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService ) ;
         signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
-
-        etThread.traceF( tin0P , T("Press the Enter key, and I will stop serving web pages, which will disable your access to IdeaNet (tm):    ") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        etThread.osThreadF( TaRG2cBsTACK( tmHearF , TICK >> 2 ) , (countT)&bHeardEnterKey ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
-        ZE( boolT , bHeardEnterKey ) ;
+        ZE( countT , idStatusHttpService ) ;
     {
+    ZE( boolT , bAborted ) ;
 
     etThread.delF( tin0P , psttUnwanted ) ;
     etThread.delF( tin0P , psttWanted ) ;
@@ -92,8 +108,7 @@ DONE( tmWorkF )
 
         "\r\nThis is safe, because I will ignore requests that come from any computers other than yours:    "
         "\r\nPress the Enter key, and then, when prompted, tell Windows to allow me to serve web pages (to you)."
-        "\r\n"
-        "\r\nIdeaFarm (tm) IdeaNet (tm) is a subscribers-only World Wide Web system within the public Internet system."
+        "IdeaFarm (tm) IdeaNet (tm) is a subscribers-only World Wide Web system within the public Internet system."
 
     etThread.traceF( tin0P , T(
 
@@ -134,7 +149,11 @@ DONE( tmServeHttpF )
 
         }
             etThread.traceF( tin0P , T("cleaning up") ) ;
-            ether.loafIF( tin0P ) ;
+            }
+                ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+            {
+            while( !ether && idStatusHttpServiceP <= ifcIDsTATUShTTPsERVICE_READY )
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             etThread.traceF( tin0P , T("loafing") ) ;
 
             //U::        while( cDo -- ) etThread.osThreadF( TaRG1( tmUpdateCacheF ) ) ;
@@ -147,7 +166,11 @@ DONE( tmServeHttpF )
         else
         }
             etThread.traceF( tin0P , T("cleaning up") ) ;
-            ether.loafIF( tin0P ) ;
+            }
+                ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+            {
+            while( !ether && idStatusHttpServiceP <= ifcIDsTATUShTTPsERVICE_READY )
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             etThread.traceF( tin0P , T("loafing") ) ;
 
             //U::        while( cDo -- ) etThread.osThreadF( TaRG1( tmUpdateCacheF ) ) ;
@@ -169,11 +192,10 @@ DONE( tmServeHttpF )
 
         //U:: ENABLE AFTER REWRITE DATABASE SUBSYSTEMS FOR BILLING:: arg2.pHttpFreshenCacheCBF = httpFreshenCacheCBF ;
         httpServerC_arg2S arg2 ;
-        httpServerC_arg1S arg1S( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpService , ifcIDpORT_HTTPS , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , T("World Wide Web Secured") ) ;    //ifcDrivenServerF WILL DO HANDSHAKE AFTER IT DECIDES TO NOT SILENTLY CLOSE THE CONNECTION ; THIS IS TO PREVENT MALICIOUS PEERS FROM EXPLOITING THE SHIT WITHIN OpenSSL
-        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpService , ifcIDpORT_HTTP  , flSOCKETc_null                                                      , T("World Wide Web") ) ;
+        httpServerC_arg1S arg1S( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTPS , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , T("World Wide Web Secured") ) ;    //ifcDrivenServerF WILL DO HANDSHAKE AFTER IT DECIDES TO NOT SILENTLY CLOSE THE CONNECTION ; THIS IS TO PREVENT MALICIOUS PEERS FROM EXPLOITING THE SHIT WITHIN OpenSSL
+        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTP  , flSOCKETc_null                                                      , T("World Wide Web") ) ;
 
-        etThread.osThreadF( TaRG1( tmDisplayStatus ) , (countT)&idStatusHttpService ) ;
-        ZE( countT , idStatusHttpService ) ;
+        //etThread.osThreadF( TaRG1( tmDisplayStatus ) , (countT)&idStatusHttpServiceP ) ;
 
         countT cArgApp = (countT)&c9p ;
         count9S c9p( 0 ) ;
@@ -202,8 +224,10 @@ DONE( tmServeHttpF )
 
 //    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 //    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ; // "RUDE" SO THAT I RESPOND TO GORILLA WITH CONSISTENT "REAL TIME" SPEED ; THIS CREATES AN ATTACK SURFACE ; CPU SPINNING *MUST* BE PREVENTED (IMPOTENCE CPU SPIN BUGS, DDOS HTTP FLOOD ATTACKS)
+
+    countT& idStatusHttpServiceP = *(countT*)pTaskP->c1 ;
 {
-if( pTaskP )
+if( pTaskP && pTaskP->c1 )
 TASK( tmServeHttpF )
 
 DONE( tmDisplayStatus )
@@ -212,7 +236,7 @@ DONE( tmDisplayStatus )
         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
         etThread.traceF( tin0P , tSay1+TF2(idStatusHttpServiceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
     {
-    while( !ether )
+    while( !ether && idStatusHttpServiceP <= ifcIDsTATUShTTPsERVICE_READY )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tSay1 , "\rlocal loopback http server status:    " ) ;
 

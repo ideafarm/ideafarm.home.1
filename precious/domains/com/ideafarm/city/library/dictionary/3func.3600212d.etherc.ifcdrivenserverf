@@ -8,6 +8,8 @@
 
 
 }
+    __( bFail ) ;
+
     TELL( "server: destroying locals 0 (no action here)" )
     }
         TELL( "server: destroying locals 1 (nothing interesting)" )
@@ -130,8 +132,8 @@
                                 info1P.sgnIdPortReplaced.giveF( tin0P ) ;
                                 TELL( "server: cleaning up" )
 
-                                __NZ( bPortNotAvailable ) ;
-                                __NZ( bMissingSetting   ) ;
+                                if( bMissingSetting || bPortNotAvailable ) bFail = 1 ;
+
                                 }
                                     }
                                         if( POOP ) POOPR
@@ -1111,6 +1113,7 @@ static stackC* pDebug ;
 
         _IO_
     {
+    ZE( boolT , bFail ) ;
 
     }
         if( POOP ) return ;
