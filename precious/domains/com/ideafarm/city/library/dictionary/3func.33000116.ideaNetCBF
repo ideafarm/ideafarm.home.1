@@ -10,15 +10,21 @@
     DEL( prPosts ) ;
     if( prPosts ) meP.pushSnipF( tin0P , stBodyP , *prPosts ) ;
 
-    etThread.strMakeF( tin0P , LF , prPosts , tRequest , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+      etThread.strMakeF( tin0P , LF , prPosts , tRequestDomain  , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+    //etThread.strMakeF( tin0P , LF , prPosts , tRequestAddress , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
     ZE( pbRefC* , prPosts ) ;
 
-    etThread.traceF( tin0P , T("ideaNetCBF [request]:    ")+tRequest , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-    TN( tRequest , "" ) ; tRequest = T("http://[")+tIpv6NowP+T("]/ideanet/")+TF2(idBookP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".")+TF2(idSubP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(psttNameP) ;
+    etThread.traceF( tin0P , T("ideaNetCBF  [requestDomain]:    ")+tRequestDomain , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+    etThread.traceF( tin0P , T("ideaNetCBF [requestAddress]:    ")+tRequestAddress , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
-    countT& idSubP   = *(countT*)((count9S*)cArgP)->c3 ;
-    countT& idBookP  = *(countT*)((count9S*)cArgP)->c2 ;
-    textC& tIpv6NowP =  *(textC*)((count9S*)cArgP)->c1 ;
+    TN( tRequestDomain  , ""        ) ; tRequestDomain  = T("http://")+TF2(hashNowP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("-1-1.ideanet.ideafarm.com")                                                       +tName ;
+    TN( tRequestAddress , ""        ) ; tRequestAddress = T("http://[")+tIpv6NowP+T("]/ideanet/")+TF2(idBookP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".")+TF2(idSubP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tName ;
+    TN( tName           , psttNameP ) ;
+
+    countT&   idSubP    =   *(countT*)((count9S*)cArgP)->c4 ;
+    countT&   idBookP   =   *(countT*)((count9S*)cArgP)->c3 ;
+    count01T& hashNowP  = *(count01T*)((count9S*)cArgP)->c2 ;
+    textC&    tIpv6NowP =    *(textC*)((count9S*)cArgP)->c1 ;
 {
 /*1*/voidT ideaNetCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , osTextT*& postBodyP )/*1*/
 
