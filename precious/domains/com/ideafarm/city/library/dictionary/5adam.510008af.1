@@ -468,7 +468,7 @@ DONE( tmWorkerF )
                                                             if( hashQuery == hashNow ) bOk = 1 ;                // IF MATCH THEN THE QUERY CONTAINS THE EXPECTED HASH
 
                                                             ideaNetSubP.nnF( tin0P , hashNow , minute ) ;
-                                                            ZE( countT , hashNow ) ;
+                                                            ZE( count01T , hashNow ) ;
 
                                                             countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE (TO AVOID RACING WITH THE WEB SERVER)
 
@@ -1043,7 +1043,7 @@ DONE( tmRememberRecentIdeaNetHashP )
             stRecentHashP.purgeF( tin0P , 8 ) ;     //U:: 4 IS PROBABLY ENOUGH
             stRecentHashP << hashNow ;
             nnIdeaNetUseP = ideaNetSubP.nnF( tin0P , hashNow , minute ) ;
-            ZE( countT , hashNow ) ;
+            ZE( count01T , hashNow ) ;
 
             etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
