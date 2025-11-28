@@ -449,7 +449,7 @@ DONE( tmWorkerF )
                                                             }
                                                                 while( ~handle ) ;
                                                                 }
-                                                                    etThread.strokeF( tin0P , T("stRecentHashP [hash]:    ")+TF2(vv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") ) ;
+                                                                    etThread.traceF( tin0P , T("stRecentHashP [hash]:    ")+TF2(vv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                                     countT vv = stRecentHashP.downF( tin0P , handle ) ;
                                                                 {
                                                                 do
@@ -476,9 +476,24 @@ DONE( tmWorkerF )
                                                             ZE( sCountT , timeN2 ) ;
                                                             ZE( countT  , timeN1 ) ;
                                                         {
-                                                        if( !bOk )
+                                                        if( !bOk )                       // bOk SHOULD ALWAYS BE 1 EXCEPT WHEN stRecentHashP HAS NOT YET BEEN LOADED FULLY
 
-                                                        boolT bOk = !!stRecentHashP( hashQuery ) ;              // THIS SHOULD ALWAYS SET bOk TO 1 EXCEPT WHEN stRecentHashP HAS NOT YET BEEN LOADED FULLY
+                                                        }
+                                                            while( ~handle ) ;
+                                                            }
+                                                                }
+                                                                    break ;
+                                                                    bOk = 1 ;
+                                                                {
+                                                                if( hashQuery == hash )
+                                                                etThread.traceF( tin0P , T("stRecentHashP [query,valid]:    ")+TF2(hashQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(hash,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                                countT hash = stRecentHashP.downF( tin0P , handle ) ;
+                                                            {
+                                                            do
+                                                            handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                                        {
+                                                        if( stRecentHashP )
+                                                        ZE( boolT , bOk ) ;
 
                                                         countT hashQuery = etThread.strDigitsToSCountF( tin0P , psttHashQuery ) ;
 
