@@ -17,10 +17,11 @@
     //TN( tIdHost , "" ) ; tIdHost = TF2(idHost,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 
     countT*  pcIdHost = (countT*)&idHost ;
-    count04T idHost   = (count01T)hashP | ( (count04T)idSub << 0x10 ) | ( (count04T)idBook << 0x30 ) ;
+    count04T idHost   = hashP | ( (count04T)idSub << 0x10 ) | ( (count04T)idBook << 0x30 ) ;
 
-    hashP ^= hashP >> 0x10 ;
-    hashP = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
+    hashP = (count01T)hashRaw ;
+    hashRaw ^= hashRaw >> 0x10 ;
+    countT hashRaw = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
 
     //hashP = hashF( tMac1 , tMac1.csF( tin0P ) , minuteP ) ;
     //
@@ -50,7 +51,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT& hashP , countT minuteP )/*1*/
+/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , count01T& hashP , countT minuteP )/*1*/
 /**/
 */
 /*
