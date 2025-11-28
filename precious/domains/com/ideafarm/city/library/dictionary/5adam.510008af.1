@@ -69,7 +69,7 @@ DONE( tmWorkF )
             while( !POOP && !ether )
 
             }
-                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&offSettingsUse , (countT)&mySettingsA , (countT)&mySettingsB , (countT)&sockd , (countT)&gc , (countT)&gv , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag , (countT)&stNnPeerBlock ) ;
+                etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&offSettingsUse , (countT)&mySettingsA , (countT)&mySettingsB , (countT)&sockd , (countT)&gc , (countT)&gv , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag , (countT)&stNnPeerBlock , (countT)&stRecentHash , (countT)&ideaNetSub , (countT)&nnIdeaNetUse ) ;
                 inc02AM( cWorkers ) ;
             {
             while( cDo -- )
@@ -125,6 +125,17 @@ DONE( tmWorkF )
     {
     while( !POOP && !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    etThread.osThreadF( TaRG2cBsTACK( tmRememberRecentIdeaNetHashP , CBsTACKmIN << 1 ) , (countT)&nnIdeaNetUse , (countT)&stRecentHash , (countT)&ideaNetSub ) ;
+    ideaNetSubscriptionC ideaNetSub( tin0P , etThread , idBook , idSub , tSecret ) ; ___( pSubP ) ;
+    countT   idSub  = 1 ;
+    countT   idBook = 1 ;
+    stackC   stRecentHash( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_ALLOWzE ) ;     // THE HASH FUNCTION CAN RETURN 0
+    nicNameC nnIdeaNetUse ;
+
+    TN( tSecret , "bc2a" "79d2" "dc3d" "4462" "c587" "603e" "c576" "5563" "dd57" "181f" ) ;         //CS:CODEsYNC: 510008c0 510008af
+    //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
+
 
     //U::6: etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&gv.nnHostWebLath , (countT)&gv.nnHostWebLag0 , (countT)&gv.nnHostWebLag1 , (countT)&gv.nnHostWebLag2 , (countT)&gv.nnHostWebLag3 ) ;
 
@@ -322,7 +333,7 @@ DONE( tmWorkerF )
                                                 {
                                                 if( ~nnOut )
 
-                                                if( bIdeaNet && !bNoHit ) nnOut = nnIdeaNetNow ;
+                                                if( bIdeaNet && !bNoHit ) nnOut = nnIdeaNetUseP ;
                                                 nicNameC nnOut ;
 
                                                 //etRock.traceF( tin0P , gcP.tSayAAAARequest/*+tDomainNet*/ ) ;
@@ -434,20 +445,31 @@ DONE( tmWorkerF )
                                                     break ;
 
                                                     }
-                                                        etThread.delF( tin0P , psttHashActual ) ;
-                                                        if( etThread.strCompareF( tin0P , psttHashActual , TF2(hashNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ) bNoHit = 1 ;       //U:: USE A stackC TO REMEMBER RECENT tHashNow VALUES AND ALLOW THOSE, TOO
-                                                        nnIdeaNetNow = sub.nnF( tin0P , hashNow , minute ) ;
-                                                        ZE( countT , hashNow ) ;
+                                                        etThread.delF( tin0P , psttHashQuery ) ;
+                                                        etThread.traceF( tin0P , T("debug [hashQuery,bNoHit]:    ")+TF2(hashQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bNoHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                        if( !bOk ) bNoHit = 1 ;
 
-                                                        countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE (TO AVOID RACING WITH THE WEB SERVER)
+                                                        }
+                                                            if( hashQuery == hashNow ) bOk = 1 ;                // IF MATCH THEN THE QUERY CONTAINS THE EXPECTED HASH
 
-                                                        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
-                                                        ZE( sCountT , timeN2 ) ;
-                                                        ZE( countT  , timeN1 ) ;
+                                                            ideaNetSubP.nnF( tin0P , hashNow , minute ) ;
+                                                            ZE( countT , hashNow ) ;
 
-                                                        etThread.strSubstringF( tin0P , psttHashActual , countTC( 1 ) , sttq , gcP.tDash , tDomainNet ) ; ___( psttHashActual ) ;
+                                                            countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE (TO AVOID RACING WITH THE WEB SERVER)
+
+                                                            etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+                                                            ZE( sCountT , timeN2 ) ;
+                                                            ZE( countT  , timeN1 ) ;
+                                                        {
+                                                        if( !bOk )
+
+                                                        boolT bOk = !!stRecentHashP( hashQuery ) ;              // THIS SHOULD ALWAYS SET bOk TO 1 EXCEPT WHEN stRecentHashP HAS NOT YET BEEN LOADED FULLY
+
+                                                        countT hashQuery = etThread.strDigitsToSCountF( tin0P , psttHashQuery ) ;
+
+                                                        etThread.strSubstringF( tin0P , psttHashQuery , countTC( 1 ) , sttq , gcP.tDash , tDomainNet ) ; ___( psttHashQuery ) ;
                                                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-                                                        ZE( strokeS* , psttHashActual ) ;
+                                                        ZE( strokeS* , psttHashQuery ) ;
 
                                                         bSilent = 0 ;
                                                     {
@@ -465,7 +487,6 @@ DONE( tmWorkerF )
                                         {
                                         if( bIdeaNet && idClass == 1 )
                                         ZE( boolT , bNoHit ) ;
-                                        nicNameC nnIdeaNetNow ;
 
                                         *ps >> idClass ;
                                         ZE( countT , idClass ) ;
@@ -950,13 +971,6 @@ DONE( tmWorkerF )
     ZE( sCountT , timeLetsEncryptLath2 ) ;
     ZE( countT  , timeLetsEncryptLath1 ) ;
 
-    ideaNetSubscriptionC sub( tin0P , etThread , idBook , idSub , tSecret ) ; ___( pSubP ) ;
-    countT idSub  = 1 ;
-    countT idBook = 1 ;
-
-    TN( tSecret , "bc2a" "79d2" "dc3d" "4462" "c587" "603e" "c576" "5563" "dd57" "181f" ) ;         //CS:CODEsYNC: 510008c0 510008af
-    //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
-
     TN( tLongAcmeChallengeValue2 , "///d/acme/txt.challenge.value."   "hidden.ideafarm.com.ttt" ) ;
     TN( tLongAcmeChallengeValue1 , "///d/acme/txt.challenge.value." "_.hidden.ideafarm.com.ttt" ) ;
 
@@ -966,26 +980,64 @@ DONE( tmWorkerF )
     etherC& etRock = etherC::etRockIF( tin0P ) ;
     TN( tb4 , "    " ) ;
 
-    stackC&      stNnPeerBlockP             =      *(stackC*)pTaskP->c11 ;
-    textC&       tRandomLabelPrefixLagP     =       *(textC*)pTaskP->c01 ;
-    textC&       tRandomLabelPrefixP        =       *(textC*)pTaskP->cf  ;
-    textC&       tSuffix2GorillaP           =       *(textC*)pTaskP->ce  ;
-    grabC&       grab_tSuffix2GorillaP      =       *(grabC*)pTaskP->cd  ;
-    textC&       tSuffix1GorillaP           =       *(textC*)pTaskP->cc  ;
-    grabC&       grab_tSuffix1GorillaP      =       *(grabC*)pTaskP->cb  ;
-    gVarS&       gvP                        =       *(gVarS*)pTaskP->ca  ;
-    gConstS&     gcP                        =     *(gConstS*)pTaskP->c9  ;
-    socketC&     sockdP                     =     *(socketC*)pTaskP->c8  ;
-    mySettingsS& mySettingsBP               = *(mySettingsS*)pTaskP->c7  ;
-    mySettingsS& mySettingsAP               = *(mySettingsS*)pTaskP->c6  ;
-    countT&      offSettingsUseP            =      *(countT*)pTaskP->c5  ;
-    circleC&     cirRecentDomainGrossTraceP =     *(circleC*)pTaskP->c4  ;
-    circleC&     cirNnPeerDoNotDivertP      =     *(circleC*)pTaskP->c3  ;
-    countT&      cWorkersP                  =      *(countT*)pTaskP->c2  ;
-    boolT&       bFailP                     =       *(boolT*)pTaskP->c1  ;
+    nicNameC&             nnIdeaNetUseP              =             *(nicNameC*)pTaskP->c41 ;
+    ideaNetSubscriptionC& ideaNetSubP                = *(ideaNetSubscriptionC*)pTaskP->c31 ;
+    stackC&               stRecentHashP              =               *(stackC*)pTaskP->c21 ;
+    stackC&               stNnPeerBlockP             =               *(stackC*)pTaskP->c11 ;
+    textC&                tRandomLabelPrefixLagP     =                *(textC*)pTaskP->c01 ;
+    textC&                tRandomLabelPrefixP        =                *(textC*)pTaskP->cf  ;
+    textC&                tSuffix2GorillaP           =                *(textC*)pTaskP->ce  ;
+    grabC&                grab_tSuffix2GorillaP      =                *(grabC*)pTaskP->cd  ;
+    textC&                tSuffix1GorillaP           =                *(textC*)pTaskP->cc  ;
+    grabC&                grab_tSuffix1GorillaP      =                *(grabC*)pTaskP->cb  ;
+    gVarS&                gvP                        =                *(gVarS*)pTaskP->ca  ;
+    gConstS&              gcP                        =              *(gConstS*)pTaskP->c9  ;
+    socketC&              sockdP                     =              *(socketC*)pTaskP->c8  ;
+    mySettingsS&          mySettingsBP               =          *(mySettingsS*)pTaskP->c7  ;
+    mySettingsS&          mySettingsAP               =          *(mySettingsS*)pTaskP->c6  ;
+    countT&               offSettingsUseP            =               *(countT*)pTaskP->c5  ;
+    circleC&              cirRecentDomainGrossTraceP =              *(circleC*)pTaskP->c4  ;
+    circleC&              cirNnPeerDoNotDivertP      =              *(circleC*)pTaskP->c3  ;
+    countT&               cWorkersP                  =               *(countT*)pTaskP->c2  ;
+    boolT&                bFailP                     =                *(boolT*)pTaskP->c1  ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->ca && pTaskP->cb && pTaskP->cc && pTaskP->cd && pTaskP->ce && pTaskP->cf && pTaskP->c01 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->ca && pTaskP->cb && pTaskP->cc && pTaskP->cd && pTaskP->ce && pTaskP->cf && pTaskP->c01 && pTaskP->c11 && pTaskP->c21 )
 TASK( tmWorkerF )
+
+DONE( tmRememberRecentIdeaNetHashP )
+}
+    }
+        ++ s ; etThread.osSleepF( tin0P , TUCK >> 6 ) ;
+
+        }
+            stRecentHashP.purgeF( tin0P , 8 ) ;     //U:: 4 IS PROBABLY ENOUGH
+            stRecentHashP << hashNow ;
+            nnIdeaNetUseP = ideaNetSubP.nnF( tin0P , hashNow , minute ) ;
+            ZE( countT , hashNow ) ;
+
+            etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+            ZE( sCountT , timeN2 ) ;
+            ZE( countT  , timeN1 ) ;
+
+            minuteLath = minute ;
+        {
+        if( minuteLath != minute )                          // A:ASSUME: THE LIFETIME OF EACH ipv6 ADDRESS IS GREATER THAN RE MINUTES, SO THAT THE ipv6 OF THE LATH MINUTE WILL CONTINUE TO BE VALID WELL AFTER I NO LONGER OBTAIN ITS VALUE
+        countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE (TO AVOID RACING WITH THE WEB SERVER)
+
+        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+        ZE( sCountT , timeN2 ) ;
+        ZE( countT  , timeN1 ) ;
+    {
+    while( !ether )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    ZE( countT , minuteLath ) ;
+
+    ideaNetSubscriptionC& ideaNetSubP   = *(ideaNetSubscriptionC*)pTaskP->c3 ;
+    stackC&               stRecentHashP =               *(stackC*)pTaskP->c2 ;
+    nicNameC&             nnIdeaNetUseP =             *(nicNameC*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
+TASK( tmRememberRecentIdeaNetHashP )
 
 DONE( tmBlockF )
 }
