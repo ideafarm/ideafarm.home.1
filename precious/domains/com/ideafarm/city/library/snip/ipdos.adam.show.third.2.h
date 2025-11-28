@@ -48892,7 +48892,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     NEWdELcLASSpROTOS
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP ) ;
-    nicNameC nnF( tin0S& tin0P , countT minuteP ) ;
+    nicNameC nnF( tin0S& tin0P , countT& hashP , countT minuteP ) ;
 }
 ;
 

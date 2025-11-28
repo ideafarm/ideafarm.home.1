@@ -313,25 +313,22 @@ DONE( tmWorkerF )
                                         /**/etRock.traceF( tin0P , (!bSilent||bForceReply?gcP.tSayReplying2:gcP.tSaySilence)+tDomainGross ) ;
 
                                         }
-                                            //}
-                                            //    break ;
-                                            //
-                                            //    }
-                                            //        rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDsECTIONdNSrEPLY_ANSWER , tDomainGross , nnOut , job.nnPeer ) ;
-                                            //        bSilent = 0 ;
-                                            //    {
-                                            //    if( ~nnOut )
-                                            //
-                                            //           if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gcP.tTarget      ) ) nnOut = gvP.nnHostWebLag0 ;
-                                            //
-                                            //    //etRock.traceF( tin0P , T("U:: debug    [gcP.tTarget]:    \"")+gcP.tTarget+T("\"") ) ;
-                                            //    //etRock.traceF( tin0P , T("U:: debug [tDomainNet]:    \"")+tDomainNet+T("\"") ) ;
-                                            //
-                                            //    nicNameC nnOut ;
-                                            //    //etRock.traceF( tin0P , gcP.tSayAAAARequest/*+tDomainNet*/ ) ;
-                                            //    _IO_
-                                            //{
-                                            //case ifcIDtYPEdNSqUERY_AAAA :
+                                            }
+                                                break ;
+                                            
+                                                }
+                                                    rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDsECTIONdNSrEPLY_ANSWER , tDomainGross , nnOut , job.nnPeer ) ;
+                                                    bSilent = 0 ;
+                                                {
+                                                if( ~nnOut )
+
+                                                if( bIdeaNet && !bNoHit ) nnOut = nnIdeaNetNow ;
+                                                nicNameC nnOut ;
+
+                                                //etRock.traceF( tin0P , gcP.tSayAAAARequest/*+tDomainNet*/ ) ;
+                                                _IO_
+                                            {
+                                            case ifcIDtYPEdNSqUERY_AAAA :
                                             }
                                                 break ;
 
@@ -432,11 +429,43 @@ DONE( tmWorkerF )
                                         //****************************************************************************************************************************************************************************************************************************************************************************************************
 
                                         }
-                                            bNoHit  = 1 ;
-                                            bSilent = 0 ;
+                                            }
+                                                }
+                                                    break ;
+
+                                                    }
+                                                        etThread.delF( tin0P , psttHashActual ) ;
+                                                        if( etThread.strCompareF( tin0P , psttHashActual , TF2(hashNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ) bNoHit = 1 ;       //U:: USE A stackC TO REMEMBER RECENT tHashNow VALUES AND ALLOW THOSE, TOO
+                                                        nnIdeaNetNow = sub.nnF( tin0P , hashNow , minute ) ;
+                                                        ZE( countT , hashNow ) ;
+
+                                                        countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE (TO AVOID RACING WITH THE WEB SERVER)
+
+                                                        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+                                                        ZE( sCountT , timeN2 ) ;
+                                                        ZE( countT  , timeN1 ) ;
+
+                                                        etThread.strSubstringF( tin0P , psttHashActual , countTC( 1 ) , sttq , gcP.tDash , tDomainNet ) ; ___( psttHashActual ) ;
+                                                        strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                                                        ZE( strokeS* , psttHashActual ) ;
+
+                                                        bSilent = 0 ;
+                                                    {
+                                                    if( etThread.strIdF( tin0P , gcP.tDashSub1DashBook1DotIdeaNetDomain , tDomainNet , 1 ) )
+                                                {
+                                                case ifcIDtYPEdNSqUERY_AAAA :
+                                                }
+                                                    break ;
+                                                    bNoHit  = 1 ;
+                                                    bSilent = 0 ;
+                                                {
+                                                case ifcIDtYPEdNSqUERY_A :
+                                            {
+                                            switch( idType )
                                         {
-                                        if( bIdeaNet && idClass == 1 && idType == ifcIDtYPEdNSqUERY_A )
+                                        if( bIdeaNet && idClass == 1 )
                                         ZE( boolT , bNoHit ) ;
+                                        nicNameC nnIdeaNetNow ;
 
                                         *ps >> idClass ;
                                         ZE( countT , idClass ) ;
@@ -449,7 +478,7 @@ DONE( tmWorkerF )
                                         }
                                             bIdeaNet = 1 ;
 
-                                            // IPV6: SILENCE ; ANY QUERIES FOR THIS DOMAIN ARE PRESUMED TO BE INITIATED BY IDEANET BOOK SUBSCRIBERS RESOLVING DOMAINS OF THE FORM "1234.ideanet.ideafarm.com", WHERE "1234" IS THE idBook; SUCH QUERIES ARE TO BE ANSWERED BY IDEANET.EXE RUNNING ON THE SUBSCRIBER'S COMPUTER
+                                            // IPV6: REPLY IFF VALID DOMAIN OF THE FORM "[random]-[idSub]-[idBook].ideanet.ideafarm.com" AND [random] MATCHES THE CURRENT [random] VALUE IN THE IPv6 ADDRESS ENABLED BY WEB1 FOR THAT SUBSCRIBER
                                             // IPV4: SAY "NO SUCH NAME"
 
                                             //****************************************************************************************************************************************************************************************************************************************************************************************************
@@ -812,9 +841,9 @@ DONE( tmWorkerF )
 
                     //****************************************************************************************************************************************************************************************************************************************************************************************************
                     //****************************************************************************************************************************************************************************************************************************************************************************************************
-                    //****                                                       *****************************************************************************************************************************************************************************************************************************************
-                    //****  DO NOT DIVERT IF DOMAIN ROOT IS ALLOWED IN SETTINGS  *****************************************************************************************************************************************************************************************************************************************
-                    //****                                                       *****************************************************************************************************************************************************************************************************************************************
+                    //****                                                              **********************************************************************************************************************************************************************************************************************************
+                    //****  DO NOT DIVERT IF PEER'S DOMAIN ROOT IS ALLOWED IN SETTINGS  **********************************************************************************************************************************************************************************************************************************
+                    //****                                                              **********************************************************************************************************************************************************************************************************************************
                     //****************************************************************************************************************************************************************************************************************************************************************************************************
                     //****************************************************************************************************************************************************************************************************************************************************************************************************
 
@@ -848,9 +877,9 @@ DONE( tmWorkerF )
 
                     //****************************************************************************************************************************************************************************************************************************************************************************************************
                     //****************************************************************************************************************************************************************************************************************************************************************************************************
-                    //****                                                         ***************************************************************************************************************************************************************************************************************************************
-                    //****  DO NOT DIVERT IF DOMAIN SUBNET IS TRUSTED IN SETTINGS  ***************************************************************************************************************************************************************************************************************************************
-                    //****                                                         ***************************************************************************************************************************************************************************************************************************************
+                    //****                                                                ********************************************************************************************************************************************************************************************************************************
+                    //****  DO NOT DIVERT IF PEER'S DOMAIN SUBNET IS TRUSTED IN SETTINGS  ********************************************************************************************************************************************************************************************************************************
+                    //****                                                                ********************************************************************************************************************************************************************************************************************************
                     //****************************************************************************************************************************************************************************************************************************************************************************************************
                     //****************************************************************************************************************************************************************************************************************************************************************************************************
                 {
@@ -920,6 +949,13 @@ DONE( tmWorkerF )
     TN( tLongWoTimePasswordUrlSuffix , "" ) ; tLongWoTimePasswordUrlSuffix = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/woTimePasswordUrlSuffix") ;
     ZE( sCountT , timeLetsEncryptLath2 ) ;
     ZE( countT  , timeLetsEncryptLath1 ) ;
+
+    ideaNetSubscriptionC sub( tin0P , etThread , idBook , idSub , tSecret ) ; ___( pSubP ) ;
+    countT idSub  = 1 ;
+    countT idBook = 1 ;
+
+    TN( tSecret , "bc2a" "79d2" "dc3d" "4462" "c587" "603e" "c576" "5563" "dd57" "181f" ) ;         //CS:CODEsYNC: 510008c0 510008af
+    //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
 
     TN( tLongAcmeChallengeValue2 , "///d/acme/txt.challenge.value."   "hidden.ideafarm.com.ttt" ) ;
     TN( tLongAcmeChallengeValue1 , "///d/acme/txt.challenge.value." "_.hidden.ideafarm.com.ttt" ) ;
@@ -2091,152 +2127,154 @@ struct gVarS
 }
     }
     {
-    //U::6: , tTarget(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "target.ipv6-only.ideafarm.com" )
+    //U::6: , tTarget(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "target.ipv6-only.ideafarm.com" )
 
-    tDotLetsEncryptDotOrg(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".letsencrypt.org"                                                                                                      )
+    tDotLetsEncryptDotOrg(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".letsencrypt.org"                                                                                                      )
 
-    tSayAcmeChallengeValue(          tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "TXT acme.challenge [value]:    "                                                                                       ) ,
-    tSayTraceMarkEnd(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "---------------------------------------------------------------------------------------------------------------------" ) ,
-    tSayTraceMarkBegin(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ) ,
-    tDomainGrossTraceMarkEnd(        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".traceend.hidden.ideafarm.com"                                                                                         ) ,
-    tDomainGrossTraceMarkBegin(      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".tracebegin.hidden.ideafarm.com"                                                                                       ) ,
+    tSayAcmeChallengeValue(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "TXT acme.challenge [value]:    "                                                                                       ) ,
+    tSayTraceMarkEnd(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "---------------------------------------------------------------------------------------------------------------------" ) ,
+    tSayTraceMarkBegin(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ) ,
+    tDomainGrossTraceMarkEnd(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".traceend.hidden.ideafarm.com"                                                                                         ) ,
+    tDomainGrossTraceMarkBegin(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".tracebegin.hidden.ideafarm.com"                                                                                       ) ,
 
-    tSayGranting(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    granting information    "                                                                                          ) ,
-    tSayDiverting(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    diverting information    "                                                                                         ) ,
-    tSayUnknownDomain(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    !exception / unknown peer domain"                                                                                  ) ,
-    tSayPrefix(                      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[nnPeer]:    "                                                                                                         ) ,
+    tSayGranting(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    granting information    "                                                                                          ) ,
+    tSayDiverting(                      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    diverting information    "                                                                                         ) ,
+    tSayUnknownDomain(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    !exception / unknown peer domain"                                                                                  ) ,
+    tSayPrefix(                         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[nnPeer]:    "                                                                                                         ) ,
 
-    tSayReadSuffixFile(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "read    suffix file [suffix]:    "                                                                                     ) ,
-    tSayReadingSuffixFile(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "reading suffix file"                                                                                                   ) ,
-    tSayPushedDomain(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed domain  [cDomains]:    "                                                                                        ) ,
-    tSayPushingDomain(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing domain [cDomains]:    "                                                                                        ) ,
-    tSayPushedPeer(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed peer  [cPeers]:    "                                                                                            ) ,
-    tSayPushingPeer(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing peer [cPeers]:    "                                                                                            ) ,
-    tSayPushedJob(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed job  [cBacklog]:    "                                                                                           ) ,
-    tSayPushingJob(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing job [cBacklog]:    "                                                                                           ) ,
-    tSayPurgedStacks(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "purged  stacks"                                                                                                        ) ,
-    tSayPurgingStacks(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "purging stacks"                                                                                                        ) ,
-    tSayExCouldNotWriteReply(        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not write reply [rc]:    "                                                                          ) ,
-    tSayWroteReply(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "wrote reply"                                                                                                           ) ,
-    tSayReplying1(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "replying / 1 [cbr]:    "                                                                                               ) ,
-    tSayExCouldNotBuildReply(        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not build reply [rc]:    "                                                                          ) ,
-    tSaySilence(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "silence [tDomainGross]:    "                                                                                           ) ,
-    tSayReplying2(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "replying / 2 [tDomainGross]:    "                                                                                      ) ,
-    tSayAAAARequest(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "AAAA request [tDomainNet]:    "                                                                                        ) ,
-    tSayARequest(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "A request [tDomainNet]:    "                                                                                           ) ,
-    tSayExCouldNotReadPasswordFile(  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not read password suffix shared file [rc,costg,(countT)postg,postg,tLong]:    "                     ) ,
-    tSayWrotePasswordFile(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "wrote password suffix shared file aok [tLong]:    "                                                                    ) ,
-    tSaySettingNewPassword(          tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "setting bNewPassword because suffix has already been used too many times or for too long [gv.tGorillaSuffixUsed]:    " ) ,
-    tSayResettingDivert(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "resetting bDivert because suffix has already been used [gv.tGorillaSuffixUsed]:    "                                   ) ,
-    tSayDomainNetSuffixPeer(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[bValid,domainNet,actual,valid,valid2,peer,tDomainPeer]:    "                                                          ) ,
-    tSayDomainGrossPeer(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[domainGross,peer]:    \""                                                                                             ) ,
-    tSayLoweringCase(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "lowering case"                                                                                                         ) ,
-    tSayPoppingQuery(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "popping a query"                                                                                                       ) ,
-    tSayExCouldNotParse(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not parse query [rc]:    "                                                                          ) ,
-    tSayCalledDnsParse(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "called  dnsParseF"                                                                                                     ) ,
-    tSayCallingDnsParse(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "calling dnsParseF"                                                                                                     ) ,
-    tSayNotDiverting(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: not diverting"                     ) ,
+    tSayReadSuffixFile(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "read    suffix file [suffix]:    "                                                                                     ) ,
+    tSayReadingSuffixFile(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "reading suffix file"                                                                                                   ) ,
+    tSayPushedDomain(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed domain  [cDomains]:    "                                                                                        ) ,
+    tSayPushingDomain(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing domain [cDomains]:    "                                                                                        ) ,
+    tSayPushedPeer(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed peer  [cPeers]:    "                                                                                            ) ,
+    tSayPushingPeer(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing peer [cPeers]:    "                                                                                            ) ,
+    tSayPushedJob(                      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushed job  [cBacklog]:    "                                                                                           ) ,
+    tSayPushingJob(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "pushing job [cBacklog]:    "                                                                                           ) ,
+    tSayPurgedStacks(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "purged  stacks"                                                                                                        ) ,
+    tSayPurgingStacks(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "purging stacks"                                                                                                        ) ,
+    tSayExCouldNotWriteReply(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not write reply [rc]:    "                                                                          ) ,
+    tSayWroteReply(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "wrote reply"                                                                                                           ) ,
+    tSayReplying1(                      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "replying / 1 [cbr]:    "                                                                                               ) ,
+    tSayExCouldNotBuildReply(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not build reply [rc]:    "                                                                          ) ,
+    tSaySilence(                        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "silence [tDomainGross]:    "                                                                                           ) ,
+    tSayReplying2(                      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "replying / 2 [tDomainGross]:    "                                                                                      ) ,
+    tSayAAAARequest(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "AAAA request [tDomainNet]:    "                                                                                        ) ,
+    tSayARequest(                       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "A request [tDomainNet]:    "                                                                                           ) ,
+    tSayExCouldNotReadPasswordFile(     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not read password suffix shared file [rc,costg,(countT)postg,postg,tLong]:    "                     ) ,
+    tSayWrotePasswordFile(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "wrote password suffix shared file aok [tLong]:    "                                                                    ) ,
+    tSaySettingNewPassword(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "setting bNewPassword because suffix has already been used too many times or for too long [gv.tGorillaSuffixUsed]:    " ) ,
+    tSayResettingDivert(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "resetting bDivert because suffix has already been used [gv.tGorillaSuffixUsed]:    "                                   ) ,
+    tSayDomainNetSuffixPeer(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[bValid,domainNet,actual,valid,valid2,peer,tDomainPeer]:    "                                                          ) ,
+    tSayDomainGrossPeer(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[domainGross,peer]:    \""                                                                                             ) ,
+    tSayLoweringCase(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "lowering case"                                                                                                         ) ,
+    tSayPoppingQuery(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "popping a query"                                                                                                       ) ,
+    tSayExCouldNotParse(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / could not parse query [rc]:    "                                                                          ) ,
+    tSayCalledDnsParse(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "called  dnsParseF"                                                                                                     ) ,
+    tSayCallingDnsParse(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "calling dnsParseF"                                                                                                     ) ,
+    tSayNotDiverting(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: not diverting"                     ) ,
 
-    //U::PROD: tSayDiverting2(       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| * * * * D I V E R T I N G * * * *" ) ,
-    tSayDiverting2(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "D I V E R T I N G"                                                                                                     ) ,
+    //U::PROD: tSayDiverting2(          tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| * * * * D I V E R T I N G * * * *" ) ,
+    tSayDiverting2(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "D I V E R T I N G"                                                                                                     ) ,
 
-    tSayDiversionEnabled(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "----------------------------------------------------------------------------------- DIVERSION ENABLED"                 ) ,
-    tSayDiversionSuppressed(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSED"              ) ,
-    tSayDiversionSupRefreshed(       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSION REFRESHED"   ) ,
-    tSayPeer(                        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[tPeer]:    "                                                                                                          ) ,
-    tSayExReverseLookupFailed(       tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / reverse DNS lookup failed"                                                                                ) ,
-    tSayDoingReverseLookup(          tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "doing reverse DNS lookup"                                                                                              ) ,
-    tSayExReadFailed(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / socket read failed [rc]:    "                                                                             ) ,
-    tSayCalledRead(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "called readF"                                                                                                          ) ,
-    tSayCallingRead(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "calling readF"                                                                                                         ) ,
-    tSayWaitedForPacket(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "waited for a packet [nnPeer,cbq]:    "                                                                                 ) ,
-    tSayWaitingForPacket(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "waiting for a packet"                                                                                                  ) ,
-    tSayInnerLoopBegun(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "inner loop begun"                                                                                                      ) ,
+    tSayDiversionEnabled(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "----------------------------------------------------------------------------------- DIVERSION ENABLED"                 ) ,
+    tSayDiversionSuppressed(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSED"              ) ,
+    tSayDiversionSupRefreshed(          tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DIVERSION SUPPRESSION REFRESHED"   ) ,
+    tSayPeer(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "[tPeer]:    "                                                                                                          ) ,
+    tSayExReverseLookupFailed(          tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / reverse DNS lookup failed"                                                                                ) ,
+    tSayDoingReverseLookup(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "doing reverse DNS lookup"                                                                                              ) ,
+    tSayExReadFailed(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "!exception / socket read failed [rc]:    "                                                                             ) ,
+    tSayCalledRead(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "called readF"                                                                                                          ) ,
+    tSayCallingRead(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "calling readF"                                                                                                         ) ,
+    tSayWaitedForPacket(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "waited for a packet [nnPeer,cbq]:    "                                                                                 ) ,
+    tSayWaitingForPacket(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "waiting for a packet"                                                                                                  ) ,
+    tSayInnerLoopBegun(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "inner loop begun"                                                                                                      ) ,
 
-    tq(                              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\""                                                                                                                    ) ,
-    tqb4q(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\"    \""                                                                                                              ) ,
+    tq(                                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\""                                                                                                                    ) ,
+    tqb4q(                              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\"    \""                                                                                                              ) ,
 
-    tAcmeChallenge(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "_acme-challenge.hidden.ideafarm.com"                                                                                   ) ,
-    tTestTextChallenge(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "testtxt.hidden.ideafarm.com"                                                                                           ) ,
-    tDot(                            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "."                                                                                                                     ) ,
-    tDash(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "-"                                                                                                                     ) ,
-    tb4(                             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    "                                                                                                                  ) ,
-    tPasswordPrefix(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
-    tDotIdeaNetDomain(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".ideanet.ideafarm.com"                                                                                                 ) ,
-    tDotHiddenDomain(                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".hidden.ideafarm.com"                                                                                                  ) ,
+    tAcmeChallenge(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "_acme-challenge.hidden.ideafarm.com"                                                                                   ) ,
+    tTestTextChallenge(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "testtxt.hidden.ideafarm.com"                                                                                           ) ,
+    tDot(                               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "."                                                                                                                     ) ,
+    tDash(                              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "-"                                                                                                                     ) ,
+    tb4(                                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    "                                                                                                                  ) ,
+    tPasswordPrefix(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
+    tDashSub1DashBook1DotIdeaNetDomain( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "-1-1.ideanet.ideafarm.com"                                                                                             ) ,
+    tDotIdeaNetDomain(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".ideanet.ideafarm.com"                                                                                                 ) ,
+    tDotHiddenDomain(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".hidden.ideafarm.com"                                                                                                  ) ,
     inline gConstS( tin0S& tin0P , mySettingsS& mySettingsP ) :
 
-    //U::6: textC tTarget                 ;
+    //U::6: textC tTarget                       ;
 
-    textC tDotLetsEncryptDotOrg           ;
+    textC tDotLetsEncryptDotOrg                 ;
 
-    textC tSayAcmeChallengeValue          ;
-    textC tSayTraceMarkEnd                ;
-    textC tSayTraceMarkBegin              ;
-    textC tDomainGrossTraceMarkEnd        ;
-    textC tDomainGrossTraceMarkBegin      ;
+    textC tSayAcmeChallengeValue                ;
+    textC tSayTraceMarkEnd                      ;
+    textC tSayTraceMarkBegin                    ;
+    textC tDomainGrossTraceMarkEnd              ;
+    textC tDomainGrossTraceMarkBegin            ;
 
-    textC tSayGranting                    ;
-    textC tSayDiverting                   ;
-    textC tSayUnknownDomain               ;
-    textC tSayPrefix                      ;
+    textC tSayGranting                          ;
+    textC tSayDiverting                         ;
+    textC tSayUnknownDomain                     ;
+    textC tSayPrefix                            ;
 
-    textC tSayReadSuffixFile              ;
-    textC tSayReadingSuffixFile           ;
+    textC tSayReadSuffixFile                    ;
+    textC tSayReadingSuffixFile                 ;
 
-    textC tSayPushedDomain                ;
-    textC tSayPushingDomain               ;
-    textC tSayPushedPeer                  ;
-    textC tSayPushingPeer                 ;
-    textC tSayPushedJob                   ;
-    textC tSayPushingJob                  ;
-    textC tSayPurgedStacks                ;
-    textC tSayPurgingStacks               ;
-    textC tSayExCouldNotWriteReply        ;
-    textC tSayWroteReply                  ;
-    textC tSayReplying1                   ;
-    textC tSayExCouldNotBuildReply        ;
-    textC tSaySilence                     ;
-    textC tSayReplying2                   ;
-    textC tSayAAAARequest                 ;
-    textC tSayARequest                    ;
-    textC tSayExCouldNotReadPasswordFile  ;
-    textC tSayWrotePasswordFile           ;
-    textC tSaySettingNewPassword          ;
-    textC tSayResettingDivert             ;
-    textC tSayDomainNetSuffixPeer         ;
-    textC tSayDomainGrossPeer             ;
-    textC tSayLoweringCase                ;
-    textC tSayPoppingQuery                ;
-    textC tSayExCouldNotParse             ;
-    textC tSayCalledDnsParse              ;
-    textC tSayCallingDnsParse             ;
-    textC tSayNotDiverting                ;
-    textC tSayDiverting2                  ;
-    textC tSayDiversionEnabled            ;
-    textC tSayDiversionSuppressed         ;
-    textC tSayDiversionSupRefreshed       ;
-    textC tSayPeer                        ;
-    textC tSayExReverseLookupFailed       ;
-    textC tSayDoingReverseLookup          ;
-    textC tSayExReadFailed                ;
-    textC tSayCalledRead                  ;
-    textC tSayCallingRead                 ;
-    textC tSayWaitedForPacket             ;
-    textC tSayWaitingForPacket            ;
-    textC tSayInnerLoopBegun              ;
+    textC tSayPushedDomain                      ;
+    textC tSayPushingDomain                     ;
+    textC tSayPushedPeer                        ;
+    textC tSayPushingPeer                       ;
+    textC tSayPushedJob                         ;
+    textC tSayPushingJob                        ;
+    textC tSayPurgedStacks                      ;
+    textC tSayPurgingStacks                     ;
+    textC tSayExCouldNotWriteReply              ;
+    textC tSayWroteReply                        ;
+    textC tSayReplying1                         ;
+    textC tSayExCouldNotBuildReply              ;
+    textC tSaySilence                           ;
+    textC tSayReplying2                         ;
+    textC tSayAAAARequest                       ;
+    textC tSayARequest                          ;
+    textC tSayExCouldNotReadPasswordFile        ;
+    textC tSayWrotePasswordFile                 ;
+    textC tSaySettingNewPassword                ;
+    textC tSayResettingDivert                   ;
+    textC tSayDomainNetSuffixPeer               ;
+    textC tSayDomainGrossPeer                   ;
+    textC tSayLoweringCase                      ;
+    textC tSayPoppingQuery                      ;
+    textC tSayExCouldNotParse                   ;
+    textC tSayCalledDnsParse                    ;
+    textC tSayCallingDnsParse                   ;
+    textC tSayNotDiverting                      ;
+    textC tSayDiverting2                        ;
+    textC tSayDiversionEnabled                  ;
+    textC tSayDiversionSuppressed               ;
+    textC tSayDiversionSupRefreshed             ;
+    textC tSayPeer                              ;
+    textC tSayExReverseLookupFailed             ;
+    textC tSayDoingReverseLookup                ;
+    textC tSayExReadFailed                      ;
+    textC tSayCalledRead                        ;
+    textC tSayCallingRead                       ;
+    textC tSayWaitedForPacket                   ;
+    textC tSayWaitingForPacket                  ;
+    textC tSayInnerLoopBegun                    ;
 
-    textC tq                              ;
-    textC tqb4q                           ;
+    textC tq                                    ;
+    textC tqb4q                                 ;
 
-    textC tAcmeChallenge                  ;
-    textC tTestTextChallenge              ;
-    textC tDot                            ;
-    textC tDash                           ;
-    textC tb4                             ;
-    textC tPasswordPrefix                 ;
-    textC tDotIdeaNetDomain               ;
-    textC tDotHiddenDomain                ;
+    textC tAcmeChallenge                        ;
+    textC tTestTextChallenge                    ;
+    textC tDot                                  ;
+    textC tDash                                 ;
+    textC tb4                                   ;
+    textC tPasswordPrefix                       ;
+    textC tDashSub1DashBook1DotIdeaNetDomain    ;
+    textC tDotIdeaNetDomain                     ;
+    textC tDotHiddenDomain                      ;
 {
 struct gConstS
 

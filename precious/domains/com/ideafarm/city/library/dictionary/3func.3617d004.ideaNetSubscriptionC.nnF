@@ -16,14 +16,13 @@
     //ether.traceF( tin0P , T("[idHost]:    ")+tIdHost ) ;
     //TN( tIdHost , "" ) ; tIdHost = TF2(idHost,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 
-    countT* pcIdHost = (countT*)&idHost ;
+    countT*  pcIdHost = (countT*)&idHost ;
+    count04T idHost   = (count01T)hashP | ( (count04T)idSub << 0x10 ) | ( (count04T)idBook << 0x30 ) ;
 
-    count04T idHost = (count01T)myHash | ( (count04T)idSub << 0x10 ) | ( (count04T)idBook << 0x30 ) ;
+    hashP ^= hashP >> 0x10 ;
+    hashP = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
 
-    myHash ^= myHash >> 0x10 ;
-    countT myHash = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
-
-    //countT myHash = hashF( tMac1 , tMac1.csF( tin0P ) , minuteP ) ;
+    //hashP = hashF( tMac1 , tMac1.csF( tin0P ) , minuteP ) ;
     //
     //ether.delF( tin0P , psttMac ) ;
     ////TN( tMac2 , psttMac ) ;
@@ -43,8 +42,15 @@
     // DEFENSE: AN ATTACK USING A SUBSCRIPTION'S SECRET CAN BE DETECTED AND THAT SUBSCRIPTION'S SECRET CAN BE AUTOMATICALLY CHANGED
     // THE IMPLICATION IS THAT OBSERVING PART OF THE SEQUENCE OF [ipv6,minute] FOR A SUBSCRIPTION MIGHT ENABLE A BAD ACTOR TO DEDUCE THE SUBSCRIPTION SECRET AND THEN USE IT TO PREDICT FUTURE ipv6 VALUES FOR THAT SUBSCRIPTION
     //20251122@0739: THIS CODE AVOIDS USING OpenSSL SO THAT ideanet.exe CAN BE DISTRIBUTED AS A SINGLE FILE WITH NO DEPENDENCY ON OPENSSL OR VC RUNTIMES
+
+    }
+        if( POOP ) return nicNameC() ;
+        __NZ( hashP ) ;
+        if( POOP ) return nicNameC() ;
+    {
+    IFbEcAREFUL
 {
-/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT minuteP )/*1*/
+/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT& hashP , countT minuteP )/*1*/
 /**/
 */
 /*

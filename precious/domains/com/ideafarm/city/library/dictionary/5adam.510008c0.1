@@ -54,7 +54,7 @@ DONE( tmWorkF )
                     etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6Now , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                     tIpv6Now = T(nnNow) ;
-                    nicNameC nnNow = sub.nnF( tin0P , minute ) ;
+                    nicNameC nnNow = sub.nnF( tin0P , countTC() , minute ) ;
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
@@ -63,7 +63,7 @@ DONE( tmWorkF )
                     minuteLath = minute ;
                 {
                 if( minuteLath != minute )                          // A:ASSUME: THE LIFETIME OF EACH ipv6 ADDRESS IS GREATER THAN RE MINUTES, SO THAT THE ipv6 OF THE LATH MINUTE WILL CONTINUE TO BE VALID WELL AFTER I NO LONGER OBTAIN ITS VALUE
-                countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE
+                countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE (TO AVOID RACING WITH THE WEB SERVER)
 
                 etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                 ZE( sCountT , timeN2 ) ;
@@ -74,7 +74,7 @@ DONE( tmWorkF )
 
             ideaNetSubscriptionC sub( tin0P , etThread , idBook , idSub , tSecret ) ; ___( pSubP ) ;
 
-            TN( tSecret , "bc2a" "79d2" "dc3d" "4462" "c587" "603e" "c576" "5563" "dd57" "181f" ) ;
+            TN( tSecret , "bc2a" "79d2" "dc3d" "4462" "c587" "603e" "c576" "5563" "dd57" "181f" ) ;         //CS:CODEsYNC: 510008c0 510008af
             //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
 
             TN( tb4 , "    " ) ;
