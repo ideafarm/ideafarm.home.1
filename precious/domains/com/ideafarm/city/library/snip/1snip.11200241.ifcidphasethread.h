@@ -1,5 +1,5 @@
-0xdddd06ee , "PROLOG" ,
-0xdddd06ef , "WORKING" ,
-0xdddd06f0 , "QUITTING" ,
-0xdddd06f1 , "EPILOGkIDS" ,
-0xdddd06f2 , "EPILOGnOkIDS"
+0xdddd06ef , "PROLOG" ,
+0xdddd06f0 , "WORKING" ,
+0xdddd06f1 , "QUITTING" ,
+0xdddd06f2 , "EPILOGkIDS" ,
+0xdddd06f3 , "EPILOGnOkIDS"

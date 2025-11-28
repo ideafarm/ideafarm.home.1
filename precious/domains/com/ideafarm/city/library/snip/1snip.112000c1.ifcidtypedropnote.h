@@ -275,4 +275,5 @@
 0xdddd0450 , "windowOldC" ,
 0xdddd0451 , "x0SwitchStackC" ,
 0xdddd0452 , "xrayC" ,
-0xdddd0453 , "xSwitchStackC"
+0xdddd0453 , "xSwitchStackC" ,
+0xdddd0454 , "ideaNetSubscriptionC"
