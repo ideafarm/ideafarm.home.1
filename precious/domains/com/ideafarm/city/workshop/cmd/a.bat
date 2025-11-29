@@ -8,6 +8,7 @@ if %1z == z echo missing parameter
 if %1z == z goto :FIN
 
 d:
+call g e
 ideafarm.elves.ipdos !makeElfOnly
 adam ELF !makeIf %1
 if     %2z == !debugz wdw adam %1 %2 %3 %4 %5 %6 %7 %8 %9

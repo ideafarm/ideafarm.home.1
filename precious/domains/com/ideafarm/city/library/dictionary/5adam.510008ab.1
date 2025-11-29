@@ -10,6 +10,9 @@
 REST
 
 }
+        DEL( ppBksDo[ offb ] ) ;
+    for( countT offb = 0 ; offb < sizeof ppBksDo / sizeof ppBksDo[ 0 ] ; offb ++ )
+
     }
         }
             if( bDelete ) PUSE( tin0P , *(byteT**)&pbi ) ;
@@ -44,20 +47,25 @@ REST
     fileC fiAll( tin0P , (strokeS*)tAll , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
     TN( tAll , "///c/tmp/tracecopy.all.ttt" ) ;
 
-    booksC* ppBksDo[] = { &bksTrace_wh1_101 , &bksTrace_wh2_101 , &bksTrace_dns1_101 , &bksTrace_go1_101 , &bksTrace_web1_101 } ;
+        if( etThread.diskFileExistsF( tin0P , T(ppostLong[offb])+T(".*") ) ) { ppBksDo[ offb ] = new( 0 , tin0P , LF ) booksC( tin0P , TAG( TAGiDnULL ) , ppostLong[ offb ] , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ; ___( ppBksDo[ offb ] ) ; }
+    for( countT offb = 0 ; offb < sizeof ppBksDo / sizeof ppBksDo[ 0 ] ; offb ++ )
+    etThread.memSetF( tin0P , (byteT*)ppBksDo , sizeof ppBksDo ) ;
+    booksC* ppBksDo[ sizeof ppostLong / sizeof ppostLong[ 0 ] ] ;
 
-    //etThread.traceF(  tin0P , T("ct booksC web1 101") ) ; booksC bksTrace_web1_1( tin0P , TAG( TAGiDnULL ) , "\\\\" "web1" "\\d\\ideafarm.home.1\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace"   , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
-    //etThread.traceF(  tin0P , T("ct booksC go1 1"   ) ) ; booksC bksTrace_go1_1(  tin0P , TAG( TAGiDnULL ) , "\\\\" "go1"  "\\d\\ideafarm.home.1\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace"   , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
-    //etThread.traceF(  tin0P , T("ct booksC dns1 1"  ) ) ; booksC bksTrace_dns1_1( tin0P , TAG( TAGiDnULL ) , "\\\\" "dns1" "\\d\\ideafarm.home.1\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace"   , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
-    //etThread.traceF(  tin0P , T("ct booksC wh2 1"   ) ) ; booksC bksTrace_wh2_1(  tin0P , TAG( TAGiDnULL ) , "\\\\" "wh2"  "\\d\\ideafarm.home.1\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace"   , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
-    //etThread.traceF(  tin0P , T("ct booksC wh1 1"   ) ) ; booksC bksTrace_wh1_1(  tin0P , TAG( TAGiDnULL ) , "\\\\" "wh1"  "\\d\\ideafarm.home.1\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace"   , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
-    // ENABLE THESE IF WANT TO SEE THE HOME 1 TRACES
+    } ;
+        // "\\\\" "web1" "\\d\\ideafarm.home.1"   "\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" ,
+        // "\\\\" "go1"  "\\d\\ideafarm.home.1"   "\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" ,
+        // "\\\\" "dns1" "\\d\\ideafarm.home.1"   "\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" ,
+        // "\\\\" "wh2"  "\\d\\ideafarm.home.1"   "\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" ,
+        // "\\\\" "wh1"  "\\d\\ideafarm.home.1"   "\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" ,
 
-    etThread.traceF(  tin0P , T("ct booksC web1 101") ) ; booksC bksTrace_web1_101( tin0P , TAG( TAGiDnULL ) , "\\\\" "web1" "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
-    etThread.traceF(  tin0P , T("ct booksC go1 101" ) ) ; booksC bksTrace_go1_101(  tin0P , TAG( TAGiDnULL ) , "\\\\" "go1"  "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
-    etThread.traceF(  tin0P , T("ct booksC dns1 101") ) ; booksC bksTrace_dns1_101( tin0P , TAG( TAGiDnULL ) , "\\\\" "dns1" "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
-    etThread.traceF(  tin0P , T("ct booksC wh2 101" ) ) ; booksC bksTrace_wh2_101(  tin0P , TAG( TAGiDnULL ) , "\\\\" "wh2"  "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
-    etThread.traceF(  tin0P , T("ct booksC wh1"     ) ) ; booksC bksTrace_wh1_101(  tin0P , TAG( TAGiDnULL ) , "\\\\" "wh1"  "\\d\\ideafarm.home.101\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ;
+        "\\\\" "web1" "\\d\\ideafarm.home.101" "\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" ,
+        "\\\\" "go1"  "\\d\\ideafarm.home.101" "\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" ,
+        "\\\\" "dns1" "\\d\\ideafarm.home.101" "\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" ,
+        "\\\\" "wh2"  "\\d\\ideafarm.home.101" "\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" ,
+        "\\\\" "wh1"  "\\d\\ideafarm.home.101" "\\ephemeral\\ipdos\\memorySpaces\\Administrator\\00000100\\stateSpaces\\fffeffff\\bksTrace" ,
+    {
+    osTextT* ppostLong[] =
 {
 
 TODO
