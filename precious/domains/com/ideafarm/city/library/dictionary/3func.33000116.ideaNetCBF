@@ -15,11 +15,19 @@
     ZE( pbRefC* , prPosts ) ;
 
     etThread.traceF( tin0P , T("ideaNetCBF  [requestDomain]:    ")+tRequestDomain , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-    etThread.traceF( tin0P , T("ideaNetCBF [requestAddress]:    ")+tRequestAddress , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+    //etThread.traceF( tin0P , T("ideaNetCBF [requestAddress]:    ")+tRequestAddress , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
-    TN( tRequestDomain  , ""        ) ; tRequestDomain  = T("http://")+TF2(hashNowP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("-1-1.ideanet.ideafarm.com")                                                       +tName ;
-    TN( tRequestAddress , ""        ) ; tRequestAddress = T("http://[")+tIpv6NowP+T("]/ideanet/")+TF2(idBookP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".")+TF2(idSubP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tName ;
+    TN( tRequestDomain  , ""        ) ; tRequestDomain  = T("http://")+TF2(hashNowP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("-1-1.ideanet.ideafarm.com/1.1")                                  +( tName.csF( tin0P ) == 1 ? tn : tName ) ;
+
+    //TN( tRequestAddress , ""        ) ; tRequestAddress = T("http://[")+tIpv6NowP+T("]/ideanet/")+TF2(idBookP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".")+TF2(idSubP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tName ;
+
     TN( tName           , psttNameP ) ;
+    TN( tn              , ""        ) ;
+
+    // storeReplyF( tin0P , ifcIDsWITCHhTTPrEPLY_PREFIX , ifcIDfORMhTTPrEPLY_RAW , T("/1.1/"        ) , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML    , T("") , T("") , T("") , T("") , T("") , T("") , 0 , tSay4 ) ;
+    // storeReplyF( tin0P , ifcIDsWITCHhTTPrEPLY_EXACT  , ifcIDfORMhTTPrEPLY_RAW , T("/1.1/toc.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML    , T("") , T("") , T("") , T("") , T("") , T("") , 0 , tSay3 ) ;
+    // storeReplyF( tin0P , ifcIDsWITCHhTTPrEPLY_EXACT  , ifcIDfORMhTTPrEPLY_RAW , T("/1.1"         ) , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML    , T("") , T("") , T("") , T("") , T("") , T("") , 0 , tSay2 ) ;
+    // storeReplyF( tin0P , ifcIDsWITCHhTTPrEPLY_EXACT  , ifcIDfORMhTTPrEPLY_RAW , T("/")             , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML    , T("") , T("") , T("") , T("") , T("") , T("") , 0 , tSay1 ) ;
 
     countT&   idSubP    =   *(countT*)((count9S*)cArgP)->c4 ;
     countT&   idBookP   =   *(countT*)((count9S*)cArgP)->c3 ;
