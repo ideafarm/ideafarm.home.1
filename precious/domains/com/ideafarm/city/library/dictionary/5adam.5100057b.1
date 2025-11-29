@@ -35,20 +35,22 @@ DONE( tmWorkF )
             httpServerC serverS( tin0P , arg1S , arg2 , &cache ) ;
             httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
         {
+        else
+        }
+            etThread.traceF( tin0P , T("cleaning up") ) ;
+            ether.loafIF( tin0P ) ;
+            etThread.traceF( tin0P , T("loafing") ) ;
+        
+            //U::        while( cDo -- ) etThread.osThreadF( TaRG1( tmUpdateCacheF ) ) ;
+            countT cDo = 2 ;                                                // CS:CODEsYNC: 5100057b 5100057b
+        
+            httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
+        {
+        if( 1 == etThread.strIdF( tin0P , T("WEB") , T(postComputerLanName) ) )         //U:: 20251129@1146: FOR TESTING OF HTTP IDEANET ON WEB1 (HTTPS IS NOT WORKING: HANDSHAKE DELAYS FOR A LONG TIME)
 
-        //else
-        //}
-        //    etThread.traceF( tin0P , T("cleaning up") ) ;
-        //    ether.loafIF( tin0P ) ;
-        //    etThread.traceF( tin0P , T("loafing") ) ;
-        //
-        //    //U::        while( cDo -- ) etThread.osThreadF( TaRG1( tmUpdateCacheF ) ) ;
-        //    countT cDo = 2 ;                                                // CS:CODEsYNC: 5100057b 5100057b
-        //
-        //    httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
-        //{
-        //if( F(processGlobal2S::_processGlobal2I_IF()._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM )
-        //COMMENT OUT THIS BLOCK OF CODE IN PRODUCTION ; (THIS IS USED FOR TESTING OF CODE THAT WILL BE USED IN IDEANET.EXE)
+        thirdC::computerLanNameIF( tin0P , postComputerLanName , costComputerLanName ) ;
+        countT costComputerLanName = sizeof postComputerLanName ;
+        osTextT postComputerLanName[ TUCK >> 3 ] ;
 
         //20251029@1450: ENABLED BECAUSE GORILLA USES HTTP
         //20251017@1048: DISABLED BECAUSE CERTBOT NO LONGER USED AND dns-01 IS NOW USED TO PROVE CONTROL OVER THE hidden.ideafarm.com DOMAIN (TO GET A WILDCARD CERTIFICATE FOR THAT DOMAIN)
