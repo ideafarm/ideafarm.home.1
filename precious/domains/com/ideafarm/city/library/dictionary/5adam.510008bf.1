@@ -18,8 +18,7 @@ etThread.traceF( tin0P , T("ok") ) ;
 for( countT offs = 0 ; offs < sizeof ppSub / sizeof ppSub[ 0 ] ; offs ++ )
 
 }
-    //++ s ; ether.osSleepF( tin0P , TUCK >> 6 ) ;
-      ++ s ; ether.osSleepF( tin0P , TICK << 4 ) ;  //U:: FOR TESTING ; REMOVE IN PRODUCTION
+    ++ s ; ether.osSleepF( tin0P , TUCK >> 6 ) ;
 
     }
         }
@@ -56,8 +55,7 @@ ZE( countT , minuteLath ) ;
 
 TN( tDash , DASH256 ) ;
 
-//TN( tCmd2 , " store=active validlifetime=2m preferredlifetime=2m" ) ;
-  TN( tCmd2 , " store=active validlifetime=8h preferredlifetime=8h" ) ; //U:: FOR TESTING ; REMOVE IN PRODUCTION
+TN( tCmd2 , " store=active validlifetime=2m preferredlifetime=2m" ) ;
 TN( tCmd1 , "netsh interface ipv6 add address \"ideanet\" " ) ;
 
 ZE( ideaNetSubscriptionC* , pSub ) ;
