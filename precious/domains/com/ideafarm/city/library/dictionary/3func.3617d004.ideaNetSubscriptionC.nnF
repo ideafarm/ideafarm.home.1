@@ -19,8 +19,6 @@
     countT*  pcIdHost = (countT*)&idHost ;
     count04T idHost   = hashP | ( (count04T)idSub << 0x10 ) | ( (count04T)idBook << 0x30 ) ;
 
-hashP = 2 ; //U:: FOR TESTING ONLY ; REMOVE THIS IN PRODUCTION
-
     hashP = (count01T)hashRaw ;
     hashRaw ^= hashRaw >> 0x10 ;
     countT hashRaw = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
