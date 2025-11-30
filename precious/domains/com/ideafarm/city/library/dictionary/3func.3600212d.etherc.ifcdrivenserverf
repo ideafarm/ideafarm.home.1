@@ -1145,6 +1145,8 @@ static stackC* pDebug ;
             TN( tSettingKey , "!ipdos.http.allow.all.peers" ) ;
             _IO_
         {
+        else
+        if( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) bAllowAllPeers = 1 ;
         ZE( boolT , bAllowAllPeers ) ;
 
         const boolT bHttp    = info2P.idPortHint == ifcIDpORT_HTTP ;
