@@ -6045,7 +6045,7 @@
 0x0000179d , "\0\0\0\0ideaNetC::~ideaNetC( voidT )" ,
 0x0000179e , "\0\0\0\0ideaNetC::ideaNetC( tin0S& tin0P , etherC& etherP ) :" ,
 0x0000179f , "\0\0\0\0ideaNetSubscriptionC::ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP ) :" ,
-0x000017a0 , "\0\0\0\0nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT minuteP )" ,
+0x000017a0 , "\0\0\0\0nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , count01T& hashP , countT minuteP )" ,
 0x000017a1 , "\0\0\0\0citizen gui driver" ,
 0x000017a2 , "\0\0\0\0citizen detached process driver" ,
 0x000017a3 , "\0\0\0\0citizen gui driver"

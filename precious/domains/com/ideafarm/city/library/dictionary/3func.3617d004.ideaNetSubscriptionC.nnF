@@ -21,7 +21,26 @@
 
     hashP = (count01T)hashRaw ;
     hashRaw ^= hashRaw >> 0x10 ;
-    countT hashRaw = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
+
+    #endif
+
+        countT hashRaw = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
+
+    #else
+
+        countT hashRaw = hashF( pbMany , sizeof pbMany , minuteP ) ;
+
+        byteT pbMany[] = { hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth } ; // IF NECESSARY, APPLY SOME HARDCODED "JUMBLING" TO THIS ARRAY SO THAT hashRaw LOOKS UNIFORMLY DISTRIBUTED OVER THE ENTIRE countT SPACE
+
+        byteT hashWoth = (byte)( hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) % TUCK ) ;
+
+    #if defined( NEVERdEFINED )
+
+    // BASIC IDEA: FEED "tSecret % TUCK", RATHER THAN tSecret, INTO hashF
+    // 
+    // APPROACH: DO SOMETHING HERE SO THAT, FOR A GIVEN VALUE OF minuteP, THE INPUT TO hashF, CURRENTLY tSecret, HAS ONLY A SMALL NUMBER OF POSSIBLE VALUES
+    //
+    //U:: INSERT AN INTERMEDIATE HASHING STEP HERE TO CONSTRAIN THE NUMBER OF POSSIBLE VALUES FOR hashRaw
 
     //hashP = hashF( tMac1 , tMac1.csF( tin0P ) , minuteP ) ;
     //
