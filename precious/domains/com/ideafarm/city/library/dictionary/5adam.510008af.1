@@ -386,11 +386,11 @@ bSilent = 0 ; //U::20251130@1754: CONJECTURE: THE SILENT TREATMENT IS RESULTING 
                                                         }
                                                             }
                                                                 etThread.delF( tin0P , pbValue ) ;
-                                                                etRock.traceF( tin0P , T("!exception / could not get contents of ")+tLongAcmeChallengeValue2 ) ;
+                                                                etRock.traceF( tin0P , T("!exception / could not get contents of ")+tLongUse2 ) ;
                                                                 POOPR ;
                                                             {
                                                             if( POOP )
-                                                            ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbValue , cbValue , tLongAcmeChallengeValue2 , 1 ) ; ___( pbValue ) ;
+                                                            ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbValue , cbValue , tLongUse2 , 1 ) ; ___( pbValue ) ;
                                                             SCOOPS
                                                         {
                                                         IFsCRATCHoK
@@ -400,11 +400,11 @@ bSilent = 0 ; //U::20251130@1754: CONJECTURE: THE SILENT TREATMENT IS RESULTING 
                                                     }
                                                         }
                                                             etThread.delF( tin0P , pbValue ) ;
-                                                            etRock.traceF( tin0P , T("!exception / could not get contents of ")+tLongAcmeChallengeValue1 ) ;
+                                                            etRock.traceF( tin0P , T("!exception / could not get contents of ")+tLongUse1 ) ;
                                                             POOPR ;
                                                         {
                                                         if( POOP )
-                                                        ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbValue , cbValue , tLongAcmeChallengeValue1 , 1 ) ; ___( pbValue ) ;
+                                                        ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbValue , cbValue , tLongUse1 , 1 ) ; ___( pbValue ) ;
                                                         SCOOPS
                                                     {
                                                     IFsCRATCHoK
@@ -412,13 +412,19 @@ bSilent = 0 ; //U::20251130@1754: CONJECTURE: THE SILENT TREATMENT IS RESULTING 
                                                     ZE( byteT* , pbValue ) ;
 
                                                     bSilent = 0 ;
+
+                                                    textC& tLongUse2 = bAcmeChallengeHidden ? tLongAcmeChallengeValueHidden2 : tLongAcmeChallengeValueIdeaNet2 ;
+                                                    textC& tLongUse1 = bAcmeChallengeHidden ? tLongAcmeChallengeValueHidden1 : tLongAcmeChallengeValueIdeaNet1 ;
                                                 {
-                                                else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainGross , gcP.tAcmeChallenge ) )
+                                                else if( bAcmeChallengeHidden || bAcmeChallengeIdeaNet )
                                                 }
                                                     rec_TXT_F( tin0P , etThread , stsReplies , ifcIDsECTIONdNSrEPLY_ANSWER , tDomainGross , mySettingsUse.tTestTextResponse , job.nnPeer ) ;
                                                     bSilent = 0 ;
                                                 {
                                                 if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainGross , gcP.tTestTextChallenge ) )
+
+                                                boolT bAcmeChallengeIdeaNet =  !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainGross , gcP.tAcmeChallengeIdeaNet ) ;
+                                                boolT bAcmeChallengeHidden  =  !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainGross , gcP.tAcmeChallengeHidden  ) ;
 
                                                 etRock.traceF( tin0P , gcP.tSayARequest+tDomainNet ) ;
                                                 _IO_
@@ -685,7 +691,7 @@ bSilent = 0 ; //U::20251130@1754: CONJECTURE: THE SILENT TREATMENT IS RESULTING 
                                             //****************************************************************************************************************************************************************************************************************************************************************************************************
                                             //****************************************************************************************************************************************************************************************************************************************************************************************************
                                         {
-                                        if( !etThread.strCompareF( tin0P , tDomainGross , gcP.tAcmeChallenge ) )
+                                        if( !etThread.strCompareF( tin0P , tDomainGross , gcP.tAcmeChallengeHidden ) || !etThread.strCompareF( tin0P , tDomainGross , gcP.tAcmeChallengeIdeaNet ) )
                                         }
                                             bForceReply = 1 ;
                                             bSilent     = 0 ;
@@ -1003,8 +1009,11 @@ bSilent = 0 ; //U::20251130@1754: CONJECTURE: THE SILENT TREATMENT IS RESULTING 
     ZE( sCountT , timeLetsEncryptLath2 ) ;
     ZE( countT  , timeLetsEncryptLath1 ) ;
 
-    TN( tLongAcmeChallengeValue2 , "///d/acme/txt.challenge.value."   "hidden.ideafarm.com.ttt" ) ;
-    TN( tLongAcmeChallengeValue1 , "///d/acme/txt.challenge.value." "_.hidden.ideafarm.com.ttt" ) ;
+    TN( tLongAcmeChallengeValueIdeaNet2 , "///d/acme/txt.challenge.value."   "ideanet.ideafarm.com.ttt" ) ;
+    TN( tLongAcmeChallengeValueIdeaNet1 , "///d/acme/txt.challenge.value." "_.ideanet.ideafarm.com.ttt" ) ;
+
+    TN( tLongAcmeChallengeValueHidden2 , "///d/acme/txt.challenge.value."   "hidden.ideafarm.com.ttt" ) ;
+    TN( tLongAcmeChallengeValueHidden1 , "///d/acme/txt.challenge.value." "_.hidden.ideafarm.com.ttt" ) ;
 
     stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
     stackC stsReplies(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
@@ -2276,7 +2285,8 @@ struct gVarS
     tq(                                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\""                                                                                                                    ) ,
     tqb4q(                              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "\"    \""                                                                                                              ) ,
 
-    tAcmeChallenge(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "_acme-challenge.hidden.ideafarm.com"                                                                                   ) ,
+    tAcmeChallengeIdeaNet(              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "_acme-challenge.ideanet.ideafarm.com"                                                                                  ) ,
+    tAcmeChallengeHidden(               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "_acme-challenge.hidden.ideafarm.com"                                                                                   ) ,
     tTestTextChallenge(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "testtxt.hidden.ideafarm.com"                                                                                           ) ,
     tDot(                               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "."                                                                                                                     ) ,
     tDash(                              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "-"                                                                                                                     ) ,
@@ -2350,7 +2360,8 @@ struct gVarS
     textC tq                                    ;
     textC tqb4q                                 ;
 
-    textC tAcmeChallenge                        ;
+    textC tAcmeChallengeIdeaNet                 ;
+    textC tAcmeChallengeHidden                  ;
     textC tTestTextChallenge                    ;
     textC tDot                                  ;
     textC tDash                                 ;
