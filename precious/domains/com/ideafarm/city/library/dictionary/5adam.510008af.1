@@ -130,7 +130,7 @@ DONE( tmWorkF )
     ideaNetSubscriptionC ideaNetSub( tin0P , etThread , idBook , idSub , tSecret ) ; ___( pSubP ) ;
     countT   idSub  = 1 ;
     countT   idBook = 1 ;
-    stackC   stRecentHash( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_ALLOWzE ) ;     // THE HASH FUNCTION CAN RETURN 0
+    stackC   stRecentHash( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_ALLOWzE , ifcSTACKtYPE_timeS ) ;     // THE HASH FUNCTION CAN RETURN 0 ; ifcSTACKtYPE_timeS IS JUST USED AS A CONVENIENT WAY TO STORE A count04T VALUE
     nicNameC nnIdeaNetUse ;
 
     TN( tSecret , "bc2a" "79d2" "dc3d" "4462" "c587" "603e" "c576" "5563" "dd57" "181f" ) ;         //CS:CODEsYNC: 510008c0 510008af
@@ -1054,7 +1054,7 @@ DONE( tmRememberRecentIdeaNetHashP )
             stRecentHashP.purgeF( tin0P , 8 ) ;     //U:: 4 IS PROBABLY ENOUGH
             stRecentHashP << (countT)hashNow ;
             nnIdeaNetUseP = ideaNetSubP.nnF( tin0P , hashNow , minute ) ;
-            ZE( count01T , hashNow ) ;
+            ZE( count04T , hashNow ) ;
 
             etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;

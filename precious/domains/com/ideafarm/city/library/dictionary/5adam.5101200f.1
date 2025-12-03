@@ -16,14 +16,17 @@ signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
 TODO
 
 DONE( tmWorkF )
+
 }
     }
+        etThread.traceF( tin0P , TF3(hashRaw1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3(hashRaw2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) , flTRACE_NOpREFIX ) ;
+
+        countT hashRaw2 = hashF( pbMany , sizeof pbMany , hashRaw1 ) ;
+        countT hashRaw1 = hashF( pbMany , sizeof pbMany , 0x1234 ) ;
+
+        byteT pbMany[] = { (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv , (byteT)vv } ;
     {
-    if( nnAsk )
-    etThread.traceF( tin0P , T(nnAsk) ) ;
-
-    nicNameC nnAsk = socketC::nicNameIF( tin0P , etThread , T("1.ideanet.ideafarm.com") ) ;
-
+    for( countT vv = 0 ; !ether || vv % TUCK ; vv ++ )
 {
 if( pTaskP )
 TASK( tmWorkF )

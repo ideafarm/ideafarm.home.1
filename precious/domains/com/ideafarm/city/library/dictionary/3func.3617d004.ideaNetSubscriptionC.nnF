@@ -7,61 +7,20 @@
 //
 
 }
-    return nicNameC( pcIdHost[ 0 ] , pcIdHost[ 1 ] , pcSubnet[ 2 ] , pcSubnet[ 3 ] ) ;
+    return nicNameC( hashRaw1 , hashRaw2 , pcSubnet[ 2 ] , pcSubnet[ 3 ] ) ;
 
     const countT* pcSubnet = nnSubnet ;
-    nicNameC nnSubnet =  socketC::nicNameIF( tin0P , ether , tSubnet ) ;
+    nicNameC nnSubnet =  socketC::nicNameIF( tin0P , ether , tSubnet ) ;        //U::O: MAKE THIS A PARAMETER
     TN( tSubnet , "2001:19f0:ac00:4cfb::" ) ;
 
-    //ether.traceF( tin0P , T("[idHost]:    ")+tIdHost ) ;
-    //TN( tIdHost , "" ) ; tIdHost = TF2(idHost,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+    hashP = hashRaw1 | ( hashRaw2 << 0x20 ) ;
 
-    countT*  pcIdHost = (countT*)&idHost ;
-    count04T idHost   = hashP | ( (count04T)idSub << 0x10 ) | ( (count04T)idBook << 0x30 ) ;
+    countT hashRaw2 = hashF( pbMany , sizeof pbMany , hashRaw1 ) ;
+    countT hashRaw1 = hashF( pbMany , sizeof pbMany , minuteP ) ;
 
-    hashP = (count01T)hashRaw ;
-    hashRaw ^= hashRaw >> 0x10 ;
+    byteT pbMany[] = { hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth } ; // THIS ARRAY IS LIMITED TO ONLY A TUCK OF UNIQUE VALUES
 
-    #endif
-
-        countT hashRaw = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
-
-    #else
-
-        countT hashRaw = hashF( pbMany , sizeof pbMany , minuteP ) ;
-
-        byteT pbMany[] = { hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth , hashWoth } ; // IF NECESSARY, APPLY SOME HARDCODED "JUMBLING" TO THIS ARRAY SO THAT hashRaw LOOKS UNIFORMLY DISTRIBUTED OVER THE ENTIRE countT SPACE
-
-        byteT hashWoth = (byte)( hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) % TUCK ) ;
-
-    #if defined( NEVERdEFINED )
-
-    // BASIC IDEA: FEED "tSecret % TUCK", RATHER THAN tSecret, INTO hashF
-    // 
-    // APPROACH: DO SOMETHING HERE SO THAT, FOR A GIVEN VALUE OF minuteP, THE INPUT TO hashF, CURRENTLY tSecret, HAS ONLY A SMALL NUMBER OF POSSIBLE VALUES
-    //
-    //U:: INSERT AN INTERMEDIATE HASHING STEP HERE TO CONSTRAIN THE NUMBER OF POSSIBLE VALUES FOR hashRaw
-
-    //hashP = hashF( tMac1 , tMac1.csF( tin0P ) , minuteP ) ;
-    //
-    //ether.delF( tin0P , psttMac ) ;
-    ////TN( tMac2 , psttMac ) ;
-    ////}
-    ////                                               psttMac[ CSpREFIX + 1 ].idAdam = save ;
-    ////                  psttMac[ CSpREFIX ].idAdam = psttMac[ CSpREFIX + 1 ].idAdam        ;
-    ////    countT save = psttMac[ CSpREFIX ].idAdam                                         ;
-    ////{
-    ////if( psttMac->idAdam >= 2 )
-    //TN( tMac1 , psttMac ) ;
-    //
-    //ether.traceF( tin0P , psttMac ) ;
-    //ether.openSslHmacF( tin0P , psttMac , tSecret , tSecret.csF( tin0P ) , (byteT*)&minuteP , sizeof minuteP ) ; ___( psttMac ) ;
-    //ZE( strokeS* , psttMac ) ;
-    //THIS CODE WOULD MAKE SUCH AN ATTACK MORE DIFFICULT OR IMPOSSIBLE, BUT WOULD REQUIRE THAT OpenSSL BE AVAILABLE TO ideanet.exe
-
-    // DEFENSE: AN ATTACK USING A SUBSCRIPTION'S SECRET CAN BE DETECTED AND THAT SUBSCRIPTION'S SECRET CAN BE AUTOMATICALLY CHANGED
-    // THE IMPLICATION IS THAT OBSERVING PART OF THE SEQUENCE OF [ipv6,minute] FOR A SUBSCRIPTION MIGHT ENABLE A BAD ACTOR TO DEDUCE THE SUBSCRIPTION SECRET AND THEN USE IT TO PREDICT FUTURE ipv6 VALUES FOR THAT SUBSCRIPTION
-    //20251122@0739: THIS CODE AVOIDS USING OpenSSL SO THAT ideanet.exe CAN BE DISTRIBUTED AS A SINGLE FILE WITH NO DEPENDENCY ON OPENSSL OR VC RUNTIMES
+    byteT hashWoth = (byte)( hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) % TUCK ) ;
 
     }
         if( POOP ) return nicNameC() ;
@@ -70,7 +29,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , count01T& hashP , countT minuteP )/*1*/
+/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , count04T& hashP , countT minuteP )/*1*/
 /**/
 */
 /*
