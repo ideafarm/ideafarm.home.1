@@ -31,6 +31,15 @@
                     byteT*& pbv = *(byteT**)&valueP ;
                 {
                 case ifcSTACKtYPE_BLOB             :    
+                case ifcSTACKtYPE_count9S          : {          *(count9S*)valueP =          *(count9S*)PLATE_byteT_PTR(  ppd ) ; break ; }
+                case ifcSTACKtYPE_count8S          : {          *(count8S*)valueP =          *(count8S*)PLATE_byteT_PTR(  ppd ) ; break ; }
+                case ifcSTACKtYPE_count7S          : {          *(count7S*)valueP =          *(count7S*)PLATE_byteT_PTR(  ppd ) ; break ; }
+                case ifcSTACKtYPE_count6S          : {          *(count6S*)valueP =          *(count6S*)PLATE_byteT_PTR(  ppd ) ; break ; }
+                case ifcSTACKtYPE_count5S          : {          *(count5S*)valueP =          *(count5S*)PLATE_byteT_PTR(  ppd ) ; break ; }
+                case ifcSTACKtYPE_count4S          : {          *(count4S*)valueP =          *(count4S*)PLATE_byteT_PTR(  ppd ) ; break ; }
+                case ifcSTACKtYPE_count3S          : {          *(count3S*)valueP =          *(count3S*)PLATE_byteT_PTR(  ppd ) ; break ; }
+                case ifcSTACKtYPE_count2S          : {          *(count2S*)valueP =          *(count2S*)PLATE_byteT_PTR(  ppd ) ; break ; }
+                case ifcSTACKtYPE_count04T         : {         *(count04T*)valueP =         *(count04T*)PLATE_byteT_PTR(  ppd ) ; break ; }
                 case ifcSTACKtYPE_timeS            : {            *(timeS*)valueP =            *(timeS*)PLATE_byteT_PTR(  ppd ) ; break ; }
                 case ifcSTACKtYPE_nicNameC         : {         *(nicNameC*)valueP =         *(nicNameC*)PLATE_byteT_PTR(  ppd ) ; break ; }
             {
@@ -61,6 +70,15 @@
             }
                 default                            : { valueP = randomF( tin0P )                     ;         __( extractF( tin0P , 0  ) - valueP )    ; break ; }
                 case ifcSTACKtYPE_BLOB             : { randomF( tin0P ,            (byteT*&)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
+                case ifcSTACKtYPE_count9S          : { randomF( tin0P ,          *(count9S*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
+                case ifcSTACKtYPE_count8S          : { randomF( tin0P ,          *(count8S*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
+                case ifcSTACKtYPE_count7S          : { randomF( tin0P ,          *(count7S*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
+                case ifcSTACKtYPE_count6S          : { randomF( tin0P ,          *(count6S*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
+                case ifcSTACKtYPE_count5S          : { randomF( tin0P ,          *(count5S*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
+                case ifcSTACKtYPE_count4S          : { randomF( tin0P ,          *(count4S*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
+                case ifcSTACKtYPE_count3S          : { randomF( tin0P ,          *(count3S*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
+                case ifcSTACKtYPE_count2S          : { randomF( tin0P ,          *(count2S*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
+                case ifcSTACKtYPE_count04T         : { randomF( tin0P ,         *(count04T*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
                 case ifcSTACKtYPE_timeS            : { randomF( tin0P ,            *(timeS*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
                 case ifcSTACKtYPE_nicNameC         : { randomF( tin0P ,         *(nicNameC*)valueP ) ;             extractF( 0 , tin0P , 0 )            ; break ; }
             {
@@ -86,6 +104,7 @@
         }
             default                            : { __NZ( valueP ) ; break ; }
             case ifcSTACKtYPE_BLOB             : {                  break ; }
+            case ifcSTACKtYPE_count04T         : { __Z(  valueP ) ; break ; }
             case ifcSTACKtYPE_timeS            : { __Z(  valueP ) ; break ; }
             case ifcSTACKtYPE_nicNameC         :
         {

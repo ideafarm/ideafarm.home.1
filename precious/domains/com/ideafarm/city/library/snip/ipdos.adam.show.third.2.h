@@ -5208,7 +5208,7 @@ typedef count01T /*ff*/unTextT/*ff*/ ;    /*ff*//*8*//*ff*/
 /*1*//*typedef countT*//*1*/
 
 #if defined( __386__ )
-    typedef count02T /*ff*/countT/*ff*/ ;     /*ff*//*3*//*ff*/
+    typedef unsigned /*ff*/countT/*ff*/ ;     /*ff*//*3*//*ff*/
 #else
     //U:
 #endif
@@ -10291,6 +10291,17 @@ TASKpART0PROTO( tm_sessionsC_watchF ) ;
 /**/
 /*1*/countT subtract_timeS_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
 
+
+
+/*1*/countT subtract_count9S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+/*1*/countT subtract_count8S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+/*1*/countT subtract_count7S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+/*1*/countT subtract_count6S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+/*1*/countT subtract_count5S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+/*1*/countT subtract_count4S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+/*1*/countT subtract_count3S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+/*1*/countT subtract_count2S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+/*1*/countT subtract_count04T_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -24046,7 +24057,6 @@ i obtain the current thread's tin1S  , by walking up the thread stack from a spe
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ag1_stackC_C : 1snip.150000d5.ag1_stackc_c END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.stackC : 1snip.15000004.stackc BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -24224,6 +24234,15 @@ the data portion of each plate is of size sizeof( countT )
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34036.stackC.operator_shiftLeft!||
  stackC& operator << ( const timeS& timeP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34053.stackC.operator_shiftLeft!||
+ stackC& operator << ( const count04T& cP ) ;
+ stackC& operator << ( const count2S& cP ) ;
+ stackC& operator << ( const count3S& cP ) ;
+ stackC& operator << ( const count4S& cP ) ;
+ stackC& operator << ( const count5S& cP ) ;
+ stackC& operator << ( const count6S& cP ) ;
+ stackC& operator << ( const count7S& cP ) ;
+ stackC& operator << ( const count8S& cP ) ;
+ stackC& operator << ( const count9S& cP ) ;
  voidT sinkF( tin0S& tin0P , countT& idSlotP , const countT valueP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.stackC.sinkF!||
  voidT sinkF( tin0S& tin0P , countT& idSlotP , const measureT mP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
@@ -24258,6 +24277,15 @@ the data portion of each plate is of size sizeof( countT )
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34038.stackC.sinkF!||
  voidT sinkF( tin0S& tin0P , countT& idSlotP , const timeS& timeP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34052.stackC.sinkF!||
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count04T& cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count2S & cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count3S & cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count4S & cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count5S & cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count6S & cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count7S & cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count8S & cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count9S & cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
  voidT sinkF( tin0S& tin0P , soulC& soulP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34056.stackC.sinkF!||
  voidT sinkF( tin0S& tin0P , countT& idSlotP , const plateC* const pPlateP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
@@ -24302,6 +24330,15 @@ the data portion of each plate is of size sizeof( countT )
  //||!k t|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/U::!||
  stackC& operator >> ( timeS& timeP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34051.stackC.operator_shiftRight!||
+ stackC& operator >> ( count04T& cP ) ;
+ stackC& operator >> ( count2S&  cP ) ;
+ stackC& operator >> ( count3S&  cP ) ;
+ stackC& operator >> ( count4S&  cP ) ;
+ stackC& operator >> ( count5S&  cP ) ;
+ stackC& operator >> ( count6S&  cP ) ;
+ stackC& operator >> ( count7S&  cP ) ;
+ stackC& operator >> ( count8S&  cP ) ;
+ stackC& operator >> ( count9S&  cP ) ;
  stackC& operator >> ( soulC*& pSoulP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34037.stackC.operator_shiftRight!||
  voidT extractF( byteT* const pbP , tin0S& tin0P , countT idP = 0 ) ;
@@ -24316,6 +24353,15 @@ the data portion of each plate is of size sizeof( countT )
  //||!k t|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/U::!||
  voidT extractF( tin0S& tin0P , timeS& timeP , const countT idP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34050.stackC.extractF!||
+ voidT extractF( tin0S& tin0P , count04T& cP , const countT idP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count2S&  cP , const countT idP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count3S&  cP , const countT idP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count4S&  cP , const countT idP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count5S&  cP , const countT idP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count6S&  cP , const countT idP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count7S&  cP , const countT idP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count8S&  cP , const countT idP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count9S&  cP , const countT idP = 0 ) ;
  voidT extractNullsF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3405e.stackC.extractNullsF!||
 
@@ -24358,6 +24404,8 @@ the data portion of each plate is of size sizeof( countT )
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34039.stackC.operator_call!||
  countT operator () ( const timeS& timeP , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34054.stackC.operator_call!||
+ countT operator () ( const count04T& cP , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
+ countT operator () ( const count9S&  cP , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 ) ;
  flagsT flagsF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34045.stackC.flagsF!||
  flagsT flagsStateF( tin0S& tin0P ) ;
@@ -24388,6 +24436,15 @@ the data portion of each plate is of size sizeof( countT )
  //||!k t|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/U::!||
  voidT randomF( tin0S& tin0P , timeS& timeP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404f.stackC.randomF!||
+ voidT randomF( tin0S& tin0P , count04T& cP ) ;
+ voidT randomF( tin0S& tin0P , count2S&  cP ) ;
+ voidT randomF( tin0S& tin0P , count3S&  cP ) ;
+ voidT randomF( tin0S& tin0P , count4S&  cP ) ;
+ voidT randomF( tin0S& tin0P , count5S&  cP ) ;
+ voidT randomF( tin0S& tin0P , count6S&  cP ) ;
+ voidT randomF( tin0S& tin0P , count7S&  cP ) ;
+ voidT randomF( tin0S& tin0P , count8S&  cP ) ;
+ voidT randomF( tin0S& tin0P , count9S&  cP ) ;
  countT& topF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34030.stackC.topF!||
  countT& upF( tin0S& tin0P , handleC& handleP ) ;
@@ -25694,7 +25751,6 @@ examples
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.boxC : 1snip.15000009.boxc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.switchStackC : 1snip.1500000a.switchstackc BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -25801,6 +25857,15 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34053.switchStackC.operator_shiftLeft!||
  switchStackC& operator << ( const timeS& timeP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34075.switchStackC.operator_shiftLeft!||
+ switchStackC& operator << ( const count04T& cP ) ;
+ switchStackC& operator << ( const count2S&  cP ) ;
+ switchStackC& operator << ( const count3S&  cP ) ;
+ switchStackC& operator << ( const count4S&  cP ) ;
+ switchStackC& operator << ( const count5S&  cP ) ;
+ switchStackC& operator << ( const count6S&  cP ) ;
+ switchStackC& operator << ( const count7S&  cP ) ;
+ switchStackC& operator << ( const count8S&  cP ) ;
+ switchStackC& operator << ( const count9S&  cP ) ;
  switchStackC& pushF( tin0S& tin0P , const countT valueP , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34035.switchStackC.pushF!||
  switchStackC& pushF( tin0S& tin0P , const measureT mP , const boolT bTinHasLeverP = 0 ) ;
@@ -25833,6 +25898,15 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34054.switchStackC.pushF!||
  switchStackC& pushF( tin0S& tin0P , const timeS& timeP , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34074.switchStackC.pushF!||
+ switchStackC& pushF( tin0S& tin0P , const count04T& cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pushF( tin0S& tin0P , const count2S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pushF( tin0S& tin0P , const count3S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pushF( tin0S& tin0P , const count4S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pushF( tin0S& tin0P , const count5S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pushF( tin0S& tin0P , const count6S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pushF( tin0S& tin0P , const count7S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pushF( tin0S& tin0P , const count8S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pushF( tin0S& tin0P , const count9S&  cP , const boolT bTinHasLeverP = 0 ) ;
  voidT sinkF( tin0S& tin0P , countT& idSlotP , const countT valueP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.switchStackC.sinkF!||
  voidT sinkF( tin0S& tin0P , countT& idSlotP , const byteT* const pbP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
@@ -25866,6 +25940,15 @@ examples
  voidT sinkF( tin0S& tin0P , countT& idSlotP , const soulC* const pSoulP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34055.switchStackC.sinkF!||
  voidT sinkF( tin0S& tin0P , countT& idSlotP , const timeS& timeP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count04T& cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count2S&  cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count3S&  cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count4S&  cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count5S&  cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count6S&  cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count7S&  cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count8S&  cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
+ voidT sinkF( tin0S& tin0P , countT& idSlotP , const count9S&  cP , const flagsT flagsP = flSTACKsINK_null , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
 
 /* commands and expressions to insert an object into the stack at a specific slot */
  voidT insertF( tin0S& tin0P , const countT valueP , const countT idTypeP = ifcSTACKtYPE_countT , const countT idP = 0 , const boolT bOtherWayP = 0 , const boolT bTinHasLeverP = 0 ) ;
@@ -25904,6 +25987,15 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34056.switchStackC.operator_shiftRight!||
  switchStackC& operator >> ( timeS& timeP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34072.switchStackC.operator_shiftRight!||
+ switchStackC& operator >> ( count04T& cP ) ;
+ switchStackC& operator >> ( count2S&  cP ) ;
+ switchStackC& operator >> ( count3S&  cP ) ;
+ switchStackC& operator >> ( count4S&  cP ) ;
+ switchStackC& operator >> ( count5S&  cP ) ;
+ switchStackC& operator >> ( count6S&  cP ) ;
+ switchStackC& operator >> ( count7S&  cP ) ;
+ switchStackC& operator >> ( count8S&  cP ) ;
+ switchStackC& operator >> ( count9S&  cP ) ;
  countT extractF( tin0S& tin0P , const countT idP = 0 , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.switchStackC.extractF!||
  voidT extractF( tin0S& tin0P , byteT*& pbP , countT& cbP , const countT idP = 0 , const boolT bTinHasLeverP = 0 ) ;
@@ -25912,6 +26004,15 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3406e.switchStackC.extractF!||
  voidT extractF( tin0S& tin0P , timeS& timeP , const countT idP , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3406f.switchStackC.extractF!||
+ voidT extractF( tin0S& tin0P , count04T& cP , const countT idP , const boolT bTinHasLeverP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count2S&  cP , const countT idP , const boolT bTinHasLeverP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count3S&  cP , const countT idP , const boolT bTinHasLeverP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count4S&  cP , const countT idP , const boolT bTinHasLeverP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count5S&  cP , const countT idP , const boolT bTinHasLeverP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count6S&  cP , const countT idP , const boolT bTinHasLeverP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count7S&  cP , const countT idP , const boolT bTinHasLeverP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count8S&  cP , const countT idP , const boolT bTinHasLeverP = 0 ) ;
+ voidT extractF( tin0S& tin0P , count9S&  cP , const countT idP , const boolT bTinHasLeverP = 0 ) ;
  voidT extractF( byteT* const pbP , tin0S& tin0P , const countT idP = 0 , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34080.switchStackC.extractF!||
  switchStackC& pullF( tin0S& tin0P , countT& valueP , const boolT bTinHasLeverP = 0 ) ;
@@ -25946,6 +26047,15 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34057.switchStackC.pullF!||
  switchStackC& pullF( tin0S& tin0P , timeS& timeP , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34071.switchStackC.pullF!||
+ switchStackC& pullF( tin0S& tin0P , count04T& cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pullF( tin0S& tin0P , count2S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pullF( tin0S& tin0P , count3S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pullF( tin0S& tin0P , count4S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pullF( tin0S& tin0P , count5S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pullF( tin0S& tin0P , count6S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pullF( tin0S& tin0P , count7S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pullF( tin0S& tin0P , count8S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ switchStackC& pullF( tin0S& tin0P , count9S&  cP , const boolT bTinHasLeverP = 0 ) ;
 
 /* commands and expressions to obtain information from the stack for the current thread */
  operator countT ( voidT ) ;
@@ -25984,6 +26094,8 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34058.switchStackC.operator_call!||
  countT operator () ( timeS& timeP , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34076.switchStackC.operator_call!||
+ countT operator () ( count04T& cP , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
+ countT operator () ( count9S&  cP , ifc4FT pSubtractFP = 0 , const countT subtractionParmP = 0 , const boolT bTinHasLeverP = 0 ) ;
  voidT grabF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34022.switchStackC.grabF!||
  voidT ungrabF( tin0S& tin0P ) ;
@@ -26032,6 +26144,15 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3406d.switchStackC.randomF!||
  voidT randomF( tin0S& tin0P , timeS& timeP , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34070.switchStackC.randomF!||
+ voidT randomF( tin0S& tin0P , count04T& cP , const boolT bTinHasLeverP = 0 ) ;
+ voidT randomF( tin0S& tin0P , count2S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ voidT randomF( tin0S& tin0P , count3S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ voidT randomF( tin0S& tin0P , count4S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ voidT randomF( tin0S& tin0P , count5S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ voidT randomF( tin0S& tin0P , count6S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ voidT randomF( tin0S& tin0P , count7S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ voidT randomF( tin0S& tin0P , count8S&  cP , const boolT bTinHasLeverP = 0 ) ;
+ voidT randomF( tin0S& tin0P , count9S&  cP , const boolT bTinHasLeverP = 0 ) ;
  voidT randomF( tin0S& tin0P , byteT*& pbP , const boolT bTinHasLeverP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34089.switchStackC.randomF!||
  countT& upF( tin0S& tin0P , handleC& handleP , const boolT bTinHasLeverP = 0 ) ;
@@ -34216,6 +34337,7 @@ examples
  nicNameC strDigitsToNicNameF( tin0S& tin0P , const strokeS* const psttP , const countT defaultRadixP = 0 , const boolT bForeignP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3410d.etherC.strDigitsToNicNameF!||
  sCountT strDigitsToSCountF( tin0S& tin0P , const strokeS* const psttP , const countT defaultRadixP = 0 , const boolT bForeignP = 0 ) ;
+ sCount04T strDigitsToSCount04F( tin0S& tin0P , const strokeS* const psttP , const countT defaultRadixP = 0 , const boolT bForeignP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404d.etherC.strDigitsToSCountF!||
  voidT strDigitsToSCountF( tin0S& tin0P , sCountC& valueP , const strokeS* const psttP , const countT defaultRadixP = 0 , const boolT bForeignP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340d3.etherC.strDigitsToSCountF!||
@@ -48892,7 +49014,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     NEWdELcLASSpROTOS
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP ) ;
-    nicNameC nnF( tin0S& tin0P , count01T& hashP , countT minuteP ) ;
+    nicNameC nnF( tin0S& tin0P , count04T& hashP , countT minuteP ) ;
 }
 ;
 

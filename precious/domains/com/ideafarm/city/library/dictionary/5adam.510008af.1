@@ -130,7 +130,7 @@ DONE( tmWorkF )
     ideaNetSubscriptionC ideaNetSub( tin0P , etThread , idBook , idSub , tSecret ) ; ___( pSubP ) ;
     countT   idSub  = 1 ;
     countT   idBook = 1 ;
-    stackC   stRecentHash( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_ALLOWzE , ifcSTACKtYPE_timeS ) ;     // THE HASH FUNCTION CAN RETURN 0 ; ifcSTACKtYPE_timeS IS JUST USED AS A CONVENIENT WAY TO STORE A count04T VALUE
+    stackC   stRecentHash( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_ALLOWzE , ifcSTACKtYPE_timeS ) ;     // THE HASH FUNCTION CAN RETURN 0 ;                  //U:: GET THIS TO WORK WITH ifcSTACKtYPE_count04T ; WO LINE IN ME WON'T COMPILE
     nicNameC nnIdeaNetUse ;
 
     TN( tSecret , "bc2a" "79d2" "dc3d" "4462" "c587" "603e" "c576" "5563" "dd57" "181f" ) ;         //CS:CODEsYNC: 510008c0 510008af
@@ -457,8 +457,9 @@ bSilent = 0 ; //U::20251130@1754: CONJECTURE: THE SILENT TREATMENT IS RESULTING 
                                                             }
                                                                 while( ~handle ) ;
                                                                 }
-                                                                    etThread.traceF( tin0P , T("stRecentHashP [hash]:    ")+TF2(vv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                                                    countT vv = stRecentHashP.downF( tin0P , handle ) ;
+                                                                    etThread.traceF( tin0P , T("stRecentHashP [hash]:    ")+TF2(vv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF3(pcv[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3(pcv[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                                                                    countT*  pcv = (countT*)&vv ;
+                                                                    count04T vv = (count04T&)stRecentHashP.downF( tin0P , handle ) ;
                                                                 {
                                                                 do
                                                                 handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
@@ -476,7 +477,7 @@ bSilent = 0 ; //U::20251130@1754: CONJECTURE: THE SILENT TREATMENT IS RESULTING 
                                                             if( hashQuery == hashNow ) bOk = 1 ;                // IF MATCH THEN THE QUERY CONTAINS THE EXPECTED HASH
 
                                                             ideaNetSubP.nnF( tin0P , hashNow , minute ) ;
-                                                            ZE( count01T , hashNow ) ;
+                                                            ZE( count04T , hashNow ) ;
 
                                                             countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE (TO AVOID RACING WITH THE WEB SERVER)
 
@@ -486,6 +487,7 @@ bSilent = 0 ; //U::20251130@1754: CONJECTURE: THE SILENT TREATMENT IS RESULTING 
                                                         {
                                                         if( !bOk )                       // bOk SHOULD ALWAYS BE 1 EXCEPT WHEN stRecentHashP HAS NOT YET BEEN LOADED FULLY
 
+                                                        stRecentHashP.ungrabF( tin0P ) ;
                                                         }
                                                             while( ~handle ) ;
                                                             }
@@ -494,16 +496,18 @@ bSilent = 0 ; //U::20251130@1754: CONJECTURE: THE SILENT TREATMENT IS RESULTING 
                                                                     bOk = 1 ;
                                                                 {
                                                                 if( hashQuery == hash )
-                                                                etThread.traceF( tin0P , T("stRecentHashP [query,valid]:    ")+TF2(hashQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(hash,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                                                countT hash = stRecentHashP.downF( tin0P , handle ) ;
+                                                                etThread.traceF( tin0P , T("stRecentHashP [query,valid]:    ")+TF2(hashQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF3(pcHash[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3(pcHash[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                                                                countT*  pcHash = (countT*)&hash ;
+                                                                count04T hash   = (count04T&)stRecentHashP.downF( tin0P , handle ) ;
                                                             {
                                                             do
                                                             handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                                         {
                                                         if( stRecentHashP )
+                                                        stRecentHashP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                                                         ZE( boolT , bOk ) ;
 
-                                                        countT hashQuery = etThread.strDigitsToSCountF( tin0P , psttHashQuery , 0 , 1 ) ;           // THE HASH IS INCLUDED IN THE DOMAIN FOR OO REASONS: 1. SO I CAN VALIDATE.  2. TO PREVENT CACHEING OF STALE IPV6 VALUES
+                                                        count04T hashQuery = etThread.strDigitsToSCountF( tin0P , psttHashQuery , 0 , 1 ) ;           // THE HASH IS INCLUDED IN THE DOMAIN FOR OO REASONS: 1. SO I CAN VALIDATE.  2. TO PREVENT CACHEING OF STALE IPV6 VALUES
 
                                                         etThread.strSubstringF( tin0P , psttHashQuery , countTC( 1 ) , sttq , gcP.tDash , tDomainNet ) ; ___( psttHashQuery ) ;
                                                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
@@ -1052,7 +1056,7 @@ DONE( tmRememberRecentIdeaNetHashP )
 
         }
             stRecentHashP.purgeF( tin0P , 8 ) ;     //U:: 4 IS PROBABLY ENOUGH
-            stRecentHashP << (countT)hashNow ;
+            stRecentHashP << (timeS&)hashNow ;
             nnIdeaNetUseP = ideaNetSubP.nnF( tin0P , hashNow , minute ) ;
             ZE( count04T , hashNow ) ;
 

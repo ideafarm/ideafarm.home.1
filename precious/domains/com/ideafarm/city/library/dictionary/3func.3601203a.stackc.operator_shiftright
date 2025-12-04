@@ -149,11 +149,12 @@
                                     *(countT*)( pbi + off ) = pcv[ off2 ] ;
                                 {
                                 for( countT off2 = 0 ; off2 < ccToDo ; off2 ++ )
-                                countT* pcv = idType == ifcSTACKtYPE_nicNameC || idType == ifcSTACKtYPE_timeS ? (countT*)PLATE_byteT_PTR( ppi ) : (countT*)PLATE_countT_REF( ppi ) ;
+                                countT* pcv = idType == ifcSTACKtYPE_nicNameC || idType == ifcSTACKtYPE_timeS || idType == ifcSTACKtYPE_count04T ? (countT*)PLATE_byteT_PTR( ppi ) : (countT*)PLATE_countT_REF( ppi ) ;
 
                                 }
                                     default                           : ccToDo = idType + 2 - ifcSTACKtYPE_PTR_count2S ;
-                                    case    ifcSTACKtYPE_timeS        : ccToDo = sizeof( timeS ) / sizeof( countT ) ;
+                                    case    ifcSTACKtYPE_count04T     : ccToDo = sizeof( count04T ) / sizeof( countT ) ;
+                                    case    ifcSTACKtYPE_timeS        : ccToDo = sizeof( timeS    ) / sizeof( countT ) ;
                                     case    ifcSTACKtYPE_PTR_nicNameC : ccToDo = processGlobal2I.cb_nicNameC_ / sizeof( countT ) ;
                                     case    ifcSTACKtYPE_nicNameC     :
                                 {
@@ -164,7 +165,7 @@
 
                             if( idType != ifcSTACKtYPE_nicNameC && idType != ifcSTACKtYPE_timeS ) { __( !PLATE_countT_REF( ppi ) ) ; }
                         {
-                        else if( idType == ifcSTACKtYPE_PTR_nicNameC || idType == ifcSTACKtYPE_nicNameC || idType == ifcSTACKtYPE_timeS || ( idType >= ifcSTACKtYPE_PTR_count2S && idType <= ifcSTACKtYPE_PTR_count8S ) ) //ASSUME: nicNameC AND timeS AND count2S count3S count4S count5S count6S count7S count8S MEMORY IMAGE IS A SEQUENCE OF countT OBJECTS
+                        else if( idType == ifcSTACKtYPE_PTR_nicNameC || idType == ifcSTACKtYPE_nicNameC || idType == ifcSTACKtYPE_timeS || idType == ifcSTACKtYPE_count04T || ( idType >= ifcSTACKtYPE_PTR_count2S && idType <= ifcSTACKtYPE_PTR_count9S ) ) //ASSUME: nicNameC AND timeS AND count2S count3S count4S count5S count6S count7S count8S MEMORY IMAGE IS A SEQUENCE OF countT OBJECTS
                         }
                             }
                                 off += cbPlateData ;
@@ -202,7 +203,7 @@
 
             third.newF( tin0P , LF , pbi , cbi ) ; ___BITScT( pbi , 0xe0f ) ;
             else __1
-            else if( idType >= ifcSTACKtYPE_PTR_count2S  && idType <= ifcSTACKtYPE_PTR_count8S                                     ) cbi += cPlates * sizeof( countT ) * ( idType + 2 - ifcSTACKtYPE_PTR_count2S ) ;
+            else if( idType >= ifcSTACKtYPE_PTR_count2S  && idType <= ifcSTACKtYPE_PTR_count9S                                     ) cbi += cPlates * sizeof( countT ) * ( idType + 2 - ifcSTACKtYPE_PTR_count2S ) ;
             }
                 }
                     }
@@ -216,12 +217,23 @@
                 if( cbData ) cbi += cPlates * cbData ;
             {
             else if( idType == ifcSTACKtYPE_BLOB )
-            else if( idType == ifcSTACKtYPE_timeS                                                                                  ) cbi += cPlates * sizeof( timeS ) ;
-            else if( idType == ifcSTACKtYPE_nicNameC     || idType == ifcSTACKtYPE_PTR_nicNameC                                    ) cbi += cPlates * processGlobal2I.cb_nicNameC_ ;
-                 if( idType == ifcSTACKtYPE_countT       || idType == ifcSTACKtYPE_sCountT      || idType == ifcSTACKtYPE_measureT ) cbi += cPlates * sizeof( countT ) ;
+            else if( idType == ifcSTACKtYPE_count9S                                                                                ) cbi += cPlates * sizeof( count9S )             ;
+            else if( idType == ifcSTACKtYPE_count8S                                                                                ) cbi += cPlates * sizeof( count8S )             ;
+            else if( idType == ifcSTACKtYPE_count7S                                                                                ) cbi += cPlates * sizeof( count7S )             ;
+            else if( idType == ifcSTACKtYPE_count6S                                                                                ) cbi += cPlates * sizeof( count6S )             ;
+            else if( idType == ifcSTACKtYPE_count5S                                                                                ) cbi += cPlates * sizeof( count5S )             ;
+            else if( idType == ifcSTACKtYPE_count4S                                                                                ) cbi += cPlates * sizeof( count4S )             ;
+            else if( idType == ifcSTACKtYPE_count3S                                                                                ) cbi += cPlates * sizeof( count3S )             ;
+            else if( idType == ifcSTACKtYPE_count2S                                                                                ) cbi += cPlates * sizeof( count2S )             ;
+            else if( idType == ifcSTACKtYPE_count04T                                                                               ) cbi += cPlates * sizeof( count04T )            ;
+            else if( idType == ifcSTACKtYPE_timeS                                                                                  ) cbi += cPlates * sizeof( timeS )               ;
+            else if( idType == ifcSTACKtYPE_nicNameC     || idType == ifcSTACKtYPE_PTR_nicNameC                                    ) cbi += cPlates * processGlobal2I.cb_nicNameC_  ;
+                 if( idType == ifcSTACKtYPE_countT       || idType == ifcSTACKtYPE_sCountT      || idType == ifcSTACKtYPE_measureT ) cbi += cPlates * sizeof( countT )              ;
             countT cbi = 5 * sizeof( countT ) ; //ASSUME: sizeof( flagsT ) == sizeof( countT )
             ZE( byteT* , pbi ) ;
         {
+        case ifcSTACKtYPE_BLOB         :
+        case ifcSTACKtYPE_PTR_count9S  :
         case ifcSTACKtYPE_PTR_count8S  :
         case ifcSTACKtYPE_PTR_count7S  :
         case ifcSTACKtYPE_PTR_count6S  :
@@ -229,8 +241,8 @@
         case ifcSTACKtYPE_PTR_count4S  :
         case ifcSTACKtYPE_PTR_count3S  :
         case ifcSTACKtYPE_PTR_count2S  :
+        case ifcSTACKtYPE_count04T     :
         case ifcSTACKtYPE_PTR_nicNameC :
-        case ifcSTACKtYPE_BLOB         :
         case ifcSTACKtYPE_timeS        :
         case ifcSTACKtYPE_nicNameC     :
         case ifcSTACKtYPE_measureT     :

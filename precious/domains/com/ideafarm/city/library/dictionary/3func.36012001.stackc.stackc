@@ -65,28 +65,34 @@
     ___CT( pBaton ) ;
 {
 )
-    ) 
-        //U:: ) 
-            ) 
-                sizeof( countT )
-                :
-                sizeof( timeS )
-                ?
-                idType == ifcSTACKtYPE_timeS
-            (
         //U::     :
         //U::     SIZEOF_handleC
         //U::     ?
         //U::     idType == ifcSTACKtYPE_handleC
-        //U:: (
-        :
-        processGlobal2I.cb_nicNameC_
-        ?
-        idType == ifcSTACKtYPE_nicNameC
-    (
-    :
-    idTypeP
-    ?
+                                                    : sizeof( countT )
+                                                    ? sizeof( count9S )
+                                                : idType == ifcSTACKtYPE_count9S
+                                                ? sizeof( count8S )
+                                            : idType == ifcSTACKtYPE_count8S
+                                            ? sizeof( count7S )
+                                        : idType == ifcSTACKtYPE_count7S
+                                        ? sizeof( count6S )
+                                    : idType == ifcSTACKtYPE_count6S
+                                    ? sizeof( count5S )
+                                : idType == ifcSTACKtYPE_count5S
+                                ? sizeof( count4S )
+                            : idType == ifcSTACKtYPE_count4S
+                            ? sizeof( count3S )
+                        : idType == ifcSTACKtYPE_count3S
+                        ? sizeof( count2S )
+                    : idType == ifcSTACKtYPE_count2S
+                ? sizeof( count04T )
+            : idType == ifcSTACKtYPE_count04T
+            ? sizeof( timeS )
+        : idType == ifcSTACKtYPE_timeS
+        ? processGlobal2I.cb_nicNameC_
+    : idType == ifcSTACKtYPE_nicNameC
+    ? idTypeP
     F(flagsP) & flSTACKc_BLOB
 (
 cbData

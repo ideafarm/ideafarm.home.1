@@ -49,6 +49,15 @@
         }
             }
                 default                    : {   *(countT*)pbP =             PLATE_countT_REF( ppc ) ; break ; }
+                case ifcSTACKtYPE_count9S  : {  *(count9S*)pbP =  *(count9S*)PLATE_byteT_PTR(  ppc ) ; break ; }
+                case ifcSTACKtYPE_count8S  : {  *(count8S*)pbP =  *(count8S*)PLATE_byteT_PTR(  ppc ) ; break ; }
+                case ifcSTACKtYPE_count7S  : {  *(count7S*)pbP =  *(count7S*)PLATE_byteT_PTR(  ppc ) ; break ; }
+                case ifcSTACKtYPE_count6S  : {  *(count6S*)pbP =  *(count6S*)PLATE_byteT_PTR(  ppc ) ; break ; }
+                case ifcSTACKtYPE_count5S  : {  *(count5S*)pbP =  *(count5S*)PLATE_byteT_PTR(  ppc ) ; break ; }
+                case ifcSTACKtYPE_count4S  : {  *(count4S*)pbP =  *(count4S*)PLATE_byteT_PTR(  ppc ) ; break ; }
+                case ifcSTACKtYPE_count3S  : {  *(count3S*)pbP =  *(count3S*)PLATE_byteT_PTR(  ppc ) ; break ; }
+                case ifcSTACKtYPE_count2S  : {  *(count2S*)pbP =  *(count2S*)PLATE_byteT_PTR(  ppc ) ; break ; }
+                case ifcSTACKtYPE_count04T : { *(count04T*)pbP = *(count04T*)PLATE_byteT_PTR(  ppc ) ; break ; }
                 case ifcSTACKtYPE_timeS    : {    *(timeS*)pbP =    *(timeS*)PLATE_byteT_PTR(  ppc ) ; break ; }
                 case ifcSTACKtYPE_nicNameC : { *(nicNameC*)pbP = *(nicNameC*)PLATE_byteT_PTR(  ppc ) ; break ; }
                 }
@@ -112,7 +121,7 @@
   can be 0
  pbP
 arguments
-it is illegal to call me for an ifcSTACKtYPE_nicNameC or ifcSTACKtYPE_timeS stackC
+it is illegal to call me for an ifcSTACKtYPE_nicNameC or ifcSTACKtYPE_timeS or ifcSTACKtYPE_count04S or ifcSTACKtYPE_count?S stackC
 returns the idP'th item and removes it from the stack
 \<A HREF=\"5.115004f.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$extractF.0.html\"\>instances\</A\>
