@@ -8,6 +8,8 @@
 
 
 }
+    return rc ;
+
     freeaddrinfo( pInfo ) ;
 
     *( pcOut ++ ) = 0x11111111 ;
@@ -65,7 +67,7 @@
     unsigned* pcEnd = (unsigned*)( pbListP + cbListP - sizeof( unsigned ) ) ;     /* RESERVES TRAILING unsigned FOR END MARKER */
     unsigned* pcOut = (unsigned*)pbListP ;
 {
-/*1*/void _export __watcall c_getaddrinfoF( char* pbListP , unsigned cbListP , const char* const postNameP )/*1*/
+/*1*/unsigned _export __watcall c_getaddrinfoF( char* pbListP , unsigned cbListP , const char* const postNameP )/*1*/
 
 /**/
 */
