@@ -51,7 +51,7 @@ DONE( tmWorkF )
                     countT* pcHash = (countT*)&hashNow ;
                     //CS:CODEsYNC: 510008c0 33000116
                 {
-                if( bGorilla && !( cSkipStomp && cSkipStomp -- ) )
+                if( bGorilla && !( cSkipStomp && cSkipStomp -- ) && !( idPass % ( TUCK >> 2 ) ) )
 
                 }
                     //etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6Now , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
@@ -76,8 +76,11 @@ DONE( tmWorkF )
                     countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
                 {
                 if( cSkipPage && !( -- cSkipPage ) )
+
+                ++ idPass ;
             {
             while( !bHeardEnterKey && idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY )
+            ZE( countT , idPass ) ;
             countT cSkipStomp = TUCK >> 4 ;
             countT cSkipPage  = TUCK >> 5 ;
             ZE( countT , cStompFail ) ;
