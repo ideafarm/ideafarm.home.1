@@ -55,7 +55,13 @@
     ZE( boolT , bDone ) ;
 
     __( rc ) ;
-    countT rc = c_getaddrinfoF( (byteT*)pca , sizeof pca , postP ) ;
+    while( rc == WSATRY_AGAIN ) ;
+    }
+        Sleep( 100 ) ;
+        rc = c_getaddrinfoF( (byteT*)pca , sizeof pca , postP ) ;
+    {
+    do
+    ZE( countT , rc ) ;
                                     //WO WAY TO DO THIS IS TO USE OO POWER ALLOCATION (ADD A RETURN VALUE TO c_getaddrinfoF TO REVEAL HOW MUCH BUFFER LENGTH IS NEEDED)
     countT pca[ TUCK >> 2 ] ;       //THIS WILL NEED TO BE ENLARGED TO SUPPORT A NAME WITH MANY ADDRESSES
 
