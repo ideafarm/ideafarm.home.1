@@ -312,7 +312,16 @@ DONE( tmWorkerF )
                     {
                     if( !bSilent || bForceReply )
 
-                    if( bSilent && !bPeerIsGorilla1 ) stNnPeerBlockP.sinkF( tin0P , countTC() , job.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                    }
+                        stNnPeerBlockP.sinkF( tin0P , countTC() , job.nnPeer , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                        }
+                            BLAMMOiD( 0x17171717 ) ;
+                            etRock.traceF( tin0P , T("BLAMMO / was about to block nnGorilla1") ) ;
+                        {
+                        if( job.nnPeer == nnGorilla1 )
+                        etRock.traceF( tin0P , T("blocking [nnPeer,nnGorilla1]:    ")+T(job.nnPeer)+tb4+T(nnGorilla1) ) ;
+                    {
+                    if( bSilent && !bPeerIsGorilla1 )
 
                     //bSilent = 0 ; //DOING THIS CAN RACE WITH A SECONDARY DNS SERVER THAT DOES HAVE AN ANSWER FOR THE REQUESTED NAME
 
