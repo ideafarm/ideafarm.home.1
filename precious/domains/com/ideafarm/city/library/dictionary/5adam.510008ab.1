@@ -49,7 +49,27 @@ REST
     fileC fiAll( tin0P , (strokeS*)tAll , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
     TN( tAll , "///c/tmp/tracecopy.all.ttt" ) ;
 
-        if( etThread.diskFileExistsF( tin0P , T(ppostLong[offb])+T(".*") ) ) { ppBksDo[ offb ] = new( 0 , tin0P , LF ) booksC( tin0P , TAG( TAGiDnULL ) , ppostLong[ offb ] , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ; ___( ppBksDo[ offb ] ) ; }
+    }
+        if( bFound ) { ppBksDo[ offb ] = new( 0 , tin0P , LF ) booksC( tin0P , TAG( TAGiDnULL ) , ppostLong[ offb ] , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_NOsHORTfILENAMEpREFIX | flBOOKSc_UNIQUEsHAREDmEMORY ) ; ___( ppBksDo[ offb ] ) ; }
+
+        }
+            }
+                bFound = 0 ;
+                etRock.traceF( tin0P , T("diskFileExistsF failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                POOPRqUIET
+                countT rc = POOP ;
+            {
+            if( POOP )
+            bFound = ((tin1S&)tin0P).pEtScratch->diskFileExistsF( tin0P , tLike ) ;
+            SCOOPS
+            _IO_
+        {
+        IFsCRATCHoK
+        ZE( boolT , bFound ) ;
+
+        etThread.traceF( tin0P , T("looking for [tLike]:    ")+tLike ) ;
+        TN( tLike , ppostLong[offb] ) : tLike += T(".*") ;
+    {
     for( countT offb = 0 ; offb < sizeof ppBksDo / sizeof ppBksDo[ 0 ] ; offb ++ )
     etThread.memSetF( tin0P , (byteT*)ppBksDo , sizeof ppBksDo ) ;
     booksC* ppBksDo[ sizeof ppostLong / sizeof ppostLong[ 0 ] ] ;
