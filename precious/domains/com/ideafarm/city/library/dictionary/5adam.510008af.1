@@ -321,7 +321,7 @@ DONE( tmWorkerF )
                         if( job.nnPeer == nnGorilla1 )
                         etRock.traceF( tin0P , T("blocking [nnPeer,nnGorilla1]:    ")+T(job.nnPeer)+tb4+T(nnGorilla1) ) ;
                     {
-                    if( bSilent && !bPeerIsGorilla1 )
+                    if( bBlockIf && bSilent && !bPeerIsGorilla1 )
 
                     //bSilent = 0 ; //DOING THIS CAN RACE WITH A SECONDARY DNS SERVER THAT DOES HAVE AN ANSWER FOR THE REQUESTED NAME
 
@@ -607,6 +607,7 @@ DONE( tmWorkerF )
 
                                             }
                                                 validatePeerF( tin0P , etThread , etRock , bForceReply , bDivert , bPeerIsGorilla1 , job , nnGorilla1 , tDomainPeer , cirNnPeerDoNotDivertP , timeLetsEncryptLath1 , timeLetsEncryptLath2 , mySettingsUse , gcP ) ;
+                                                bBlockIf = 1 ;
                                                 bWothHidden = 0 ;
                                             {
                                             if( bWothHidden )
@@ -824,9 +825,10 @@ DONE( tmWorkerF )
             //****************************************************************************************************************************************************************************************************************************************************************************************************
 
             TN( tDomainPeer , "" ) ;
+            ZE( boolT , bBlockIf        ) ;
             ZE( boolT , bPeerIsGorilla1 ) ;
-            ZE( boolT , bDivert     ) ;
-            ZE( boolT , bForceReply ) ;
+            ZE( boolT , bDivert         ) ;
+            ZE( boolT , bForceReply     ) ;
             boolT bSilent = 1 ;         //PS:PERSONALITY: I DO NOT RESPOND UNLESS I KNOW THE ANSWER TO THE QUERY ; THIS IS INTENDED TO CAUSE THE REQUESTING PEER TO FAILOVER TO MAKE THE REQUEST FROM ITS ALTERNATE DNS SERVER
 
             //****************************************************************************************************************************************************************************************************************************************************************************************************
