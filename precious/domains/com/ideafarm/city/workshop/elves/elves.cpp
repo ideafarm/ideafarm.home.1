@@ -4010,6 +4010,7 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
                                                                strcat( postCmd , !bCNotCpp ? " " IPDOScOMPILEoPTIONS : " " IPDOScOMPILEoPTIONScnOTcPP ) ;
                 if( bTryCatch )                                strcat( postCmd , " -xs" ) ; // 20150321@1747: CAN'T DO THIS GLOBALLY BECAUSE BREAKS pTinAM ; AT THIS TIME, WANT IT ONLY FOR CALLING openSSL
                 if( !offPass || flagsAll & flELVES_DEBUGiNFO ) strcat( postCmd , " -d2" ) ;                                                             //P:PERSONALITY: DLL FLAVOR ALWAYS GETS DEBUGGING INFO BECAUSE THE LINKER CAN STRIP IT
+                if( offPass )                                  strcat( postCmd , " -dOMITfOREIGNeNCRYPTIONsUPPORT" ) ;
                                                                strcat( postCmd , bClass ? " -dBiFCcLASS=1" : " -dBiFCcLASS=0" ) ;
                 if( !offPass )                                 strcat( postCmd , " -bd" ) ;
 

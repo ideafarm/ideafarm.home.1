@@ -175,10 +175,10 @@ TASK( tmHearF )
 
 DONE( tmServeHttpF )
 }
-    THREADmODE2rESTORE0( flagsSave )
+    //THREADmODE2rESTORE0( flagsSave )
     }
-        THREADmODE2oN0( flTHREADmODE2_UNLOCKpOOLiDENTITY )
-        THREADmODE2sAVE0( flagsSave )
+        //THREADmODE2oN0( flTHREADmODE2_UNLOCKpOOLiDENTITY )
+        //THREADmODE2sAVE0( flagsSave )
 
         }
             etThread.traceF( tin0P , T("cleaning up") ) ;
@@ -189,73 +189,17 @@ DONE( tmServeHttpF )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             etThread.traceF( tin0P , T("loafing") ) ;
 
-            //U::        while( cDo -- ) etThread.osThreadF( TaRG1( tmUpdateCacheF ) ) ;
-            countT cDo = 2 ;                                                // CS:CODEsYNC: 5100057b 5100057b
-
             httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
         {
-
-        else
-        }
-            etThread.traceF( tin0P , T("cleaning up") ) ;
-            }
-                ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-            {
-            while( !ether && idStatusHttpServiceP <= ifcIDsTATUShTTPsERVICE_READY )
-            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-            etThread.traceF( tin0P , T("loafing") ) ;
-
-            //U::        while( cDo -- ) etThread.osThreadF( TaRG1( tmUpdateCacheF ) ) ;
-            countT cDo = 2 ;                                                // CS:CODEsYNC: 5100057b 5100057b
-
-            httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
-        {
-        if( F(processGlobal2S::_processGlobal2I_IF()._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM )
-        //U::COMMENT OUT THIS BLOCK OF CODE IN PRODUCTION ; (THIS IS USED FOR TESTING OF CODE THAT WILL BE USED IN IDEANET.EXE)
-
-        //20251029@1450: ENABLED BECAUSE GORILLA USES HTTP
-        //20251017@1048: DISABLED BECAUSE CERTBOT NO LONGER USED AND dns-01 IS NOW USED TO PROVE CONTROL OVER THE hidden.ideafarm.com DOMAIN (TO GET A WILDCARD CERTIFICATE FOR THAT DOMAIN)
-        //20241122@1004: ENABLED SO THAT CERTBOT CAN RENEW
-        //20240210@2035: DISABLED FOR SECURITY (FACTORY1 USES HTTPS AND ONLY TO RECEIVE NOTICES FROM Stripe)
 
         cacheC cache( tin0P , etThread ) ;
-
-        arg2.pnnAllowedStripe = &nnAllowed ;
-
-        //U:: ENABLE AFTER REWRITE DATABASE SUBSYSTEMS FOR BILLING:: arg2.pHttpFreshenCacheCBF = httpFreshenCacheCBF ;
         httpServerC_arg2S arg2 ;
-        httpServerC_arg1S arg1S( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTPS , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , T("World Wide Web Secured") ) ;    //ifcDrivenServerF WILL DO HANDSHAKE AFTER IT DECIDES TO NOT SILENTLY CLOSE THE CONNECTION ; THIS IS TO PREVENT MALICIOUS PEERS FROM EXPLOITING THE SHIT WITHIN OpenSSL
         httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTP  , flSOCKETc_null                                                      , T("World Wide Web") ) ;
-
-        //etThread.osThreadF( TaRG1( tmDisplayStatus ) , (countT)&idStatusHttpServiceP ) ;
 
         countT cArgApp = (countT)&c9p ;
         count9S c9p( (countT)&tIpv6NowP , (countT)&hashNowP , (countT)&idBookP , (countT)&idSubP ) ;
-
-        //THREADmODE2rESTORE0( flagsSave )
-        //puseC puse( tin0P , ifcIDpOOL_ADAMtEMP ) ;
-        //puseC pusePeanut( tin0P , "list.lath.peanut" , flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
-        //THREADmODE2oN0( flTHREADmODE2_UNLOCKpOOLiDENTITY )
-        //THREADmODE2sAVE0( flagsSave )
-        //20120901: COMMENTED OUT TO GET THIS TO WORK
     {
     ZE( flagsT , flagsSave ) ;
-
-    nicNamesAllowedStripeWebHookNotificationsC nnAllowed( tin0P , etThread , ether , TICK << 4 ) ;      // "<< 4" IN PRODUCTION
-
-    }
-        etThread.delF( tin0P , psttEat ) ;
-        if( psttEat ) bAllowAllDomains = !etThread.strCompareF( tin0P , psttEat , T("yes") ) ;
-        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , tSettingKey  ) ; ___( psttEat ) ;
-        TN( tSettingKey , "!ipdos.http.allow.all.domains" ) ;
-        _IO_
-    {
-    ZE( boolT , bAllowAllDomains ) ;
-
-    //etThread.osThreadF( TaRG1( tmPopOpenPortF ) ) ;
-
-//    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
-//    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ; // "RUDE" SO THAT I RESPOND TO GORILLA WITH CONSISTENT "REAL TIME" SPEED ; THIS CREATES AN ATTACK SURFACE ; CPU SPINNING *MUST* BE PREVENTED (IMPOTENCE CPU SPIN BUGS, DDOS HTTP FLOOD ATTACKS)
 
     countT&   idSubP               =   *(countT*)pTaskP->c5 ;
     countT&   idBookP              =   *(countT*)pTaskP->c4 ;
@@ -266,49 +210,8 @@ DONE( tmServeHttpF )
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 TASK( tmServeHttpF )
 
-#endif
-    DONE( tmDisplayStatus )
-    }
-        }
-            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-            etThread.traceF( tin0P , tSay1+TF2(idStatusHttpServiceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-        {
-        while( !ether && idStatusHttpServiceP <= ifcIDsTATUShTTPsERVICE_READY )
-        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-        TN( tSay1 , "\rlocal loopback http server status:    " ) ;
-
-        const countT& idStatusHttpServiceP = *(const countT*)pTaskP->c1 ;
-    {
-    if( pTaskP && pTaskP->c1 )
-    TASK( tmDisplayStatus )
-#if defined( NEVERdEFINED )
-
-#endif
-        }
-
-        {
-        if( bFirefox )
-
-        etThread.delF( tin0P , psttUnwanted ) ;
-        etThread.delF( tin0P , psttWanted ) ;
-        boolT bFirefox = !etThread.strCompareF( tin0P , psttWanted , tY ) ;
-        etThread.strConvertToLowerCaseF( tin0P , psttWanted ) ;
-        etThread.strHearF( tin0P , psttWanted , psttUnwanted , 1 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
-        etThread.traceF( tin0P , T("Is Firefox your default browser on this computer? ('y' or 'n'):    ") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
-
-        etThread.osHttpViewF( tin0P , T("about:config?dnsCache") , 0 ) ;
-
-        etThread.delF( tin0P , psttBrowser ) ;
-        etThread.traceF( tin0P , psttBrowser ) ;
-        etThread.osHttpViewerF( tin0P , psttBrowser ) ; ___( psttBrowser ) ;
-        ZE( strokeS* , psttBrowser ) ;
-#if defined( NEVERdEFINED )
-
 // LIKE 8bc BUT DNS SERVER REPLACED WITH HTTP SERVER
-
-//OBSOLETES: 8bc_
-
-//OBSOLETED BY: 8c0_
+// OBSOLETES: 8bc_
 
 /*1*/WAKEhIDE( "ifcIDaDAM_IDEAnET" )/*1*/
 /**/

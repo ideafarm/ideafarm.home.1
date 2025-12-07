@@ -18,8 +18,6 @@ wlink.exe system nt op q op map=ideanet.map op mangle debug all name ideanet    
  file *.obj                                                                                                                                                                                 ^
  library \ideafarm.home.1\ephemeral\city\workshop\3object.exe\base.exe.lib                                                                                                                  ^
  library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\User32.Lib                                                                                                  ^
- library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\lib\libcrypto.lib                                                                                             ^
- library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\lib\libssl.lib                                                                                                ^
  library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\advapi32.lib                                                                                         ^
  library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\PowrProf.lib                                                                                         ^
  library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\psapi.lib                                                                                            ^

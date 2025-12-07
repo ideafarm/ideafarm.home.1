@@ -125,7 +125,8 @@
                             }
                                 fileWriteGF( ostoFileName , postRpt , costRpt , 1 ) ;_M
                                 OStEXTAK( ostoFileName , "\\log.exception.txt" ) ;_M
-                                OStEXTA(  ostoFileName , processGlobal2I.postPathHomeTmp ) ;_M
+                                else                                   { OStEXTA(  ostoFileName , "c:" ) ;_M }
+                                if( *processGlobal2I.postPathHomeTmp ) { OStEXTA(  ostoFileName , processGlobal2I.postPathHomeTmp ) ;_M }
                             {_M
                             OStEXT( ostoFileName , TUCK << 1 ) ;_M
 
@@ -559,12 +560,6 @@
                             LOGrAW( "\r\nosExceptionHandlerWorkIF / too many nested exceptions so not writing report" ) ;_M
                         {_M
                         if( !postaUse )
-
-                        }
-                            bReport = 0 ;_M
-                            LOGrAW( "\r\nosExceptionHandlerWorkIF / *processGlobal2I.postPathHomeTmp is null so not writing report" ) ;_M
-                        {_M
-                        if( !*processGlobal2I.postPathHomeTmp )
 
                         boolT bReport = 1 ;_M
 
