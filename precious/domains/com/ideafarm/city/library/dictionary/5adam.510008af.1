@@ -40,7 +40,7 @@ DONE( tmWorkF )
                 //etRock.traceF( tin0P , gc.tSayPushingJob+TF2(gv.cirJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 jobS job( pbq , cbq , idp , nnPeer ) ;
 
-                /**/etRock.traceF( tin0P , gc.tSayWaitedForPacket+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //etRock.traceF( tin0P , gc.tSayWaitedForPacket+T(nnPeer)+gc.tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 }
                     }
                         break ;
@@ -333,7 +333,7 @@ DONE( tmWorkerF )
                                 }
                                     DEL( ps ) ;
                                     }
-                                        /**/etRock.traceF( tin0P , (!bSilent||bForceReply?gcP.tSayReplying2:gcP.tSaySilence)+tDomainGross ) ;
+                                        //etRock.traceF( tin0P , (!bSilent||bForceReply?gcP.tSayReplying2:gcP.tSaySilence)+tDomainGross ) ;
 
                                         }
                                             }
@@ -370,7 +370,7 @@ DONE( tmWorkerF )
                                                     if
 
                                                     nicNameC nnOut ;
-                                                    etRock.traceF( tin0P , gcP.tSayARequest+tDomainNet ) ;
+                                                    //etRock.traceF( tin0P , gcP.tSayARequest+tDomainNet ) ;
                                                 {
                                                 if( !bNoHit )
 
@@ -463,6 +463,7 @@ DONE( tmWorkerF )
                                                     break ;
 
                                                     }
+#endif
                                                         }
                                                             }
                                                                 while( ~handle ) ;
@@ -522,6 +523,7 @@ DONE( tmWorkerF )
                                                         etThread.strSubstringF( tin0P , psttHashQuery , countTC( 1 ) , sttq , gcP.tDash , tDomainNet ) ; ___( psttHashQuery ) ;
                                                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                                         ZE( strokeS* , psttHashQuery ) ;
+#if defined( NEVERdEFINED )
 
                                                         bSilent = 0 ;
                                                     {
@@ -573,7 +575,7 @@ DONE( tmWorkerF )
 
                                             etThread.delF( tin0P , psttSuffix ) ;
                                             }
-                                                /**/etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bGorilla1||bGorilla2||bStripe?"           domainnet: \"":"REJECTED   domainnet: \"")+tDomainNet+T("\"   actual: \"")+T(psttSuffix)+T("\"   valid1: \"")+tSuffix1GorillaP+T("\"   valid2: \"")+tSuffix2GorillaP+T("\"   stripe: \"")+mySettingsUse.tSuffixUsedByStripe+T("\"   peer: ")+T(job.nnPeer)+T("   tDomainPeer: \"")+tDomainPeer+T("\"") ) ;
+                                                //etRock.traceF( tin0P , gcP.tSayDomainNetSuffixPeer+T(bGorilla1||bGorilla2||bStripe?"           domainnet: \"":"REJECTED   domainnet: \"")+tDomainNet+T("\"   actual: \"")+T(psttSuffix)+T("\"   valid1: \"")+tSuffix1GorillaP+T("\"   valid2: \"")+tSuffix2GorillaP+T("\"   stripe: \"")+mySettingsUse.tSuffixUsedByStripe+T("\"   peer: ")+T(job.nnPeer)+T("   tDomainPeer: \"")+tDomainPeer+T("\"") ) ;
 
                                                 if( !bGorilla1 && !bGorilla2 ) bStripe = !etThread.strCompareF( tin0P , psttSuffix , mySettingsUse.tSuffixUsedByStripe  ) ;
 
@@ -841,16 +843,16 @@ DONE( tmWorkerF )
         {
         if( !gvP.bQuit )
 
-        /**/etRock.traceF( tin0P , T("pulled a job") ) ;
+        //etRock.traceF( tin0P , T("pulled a job") ) ;
 
         mySettingsUse.grabMe.ungrabF( tin0P ) ;
         nicNameC nnGorilla1 = etThread.sockNicNameF( tin0P , mySettingsUse.tIpGorilla1 ) ;
         nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettingsUse.tIpWebHook2 ) ;
         nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettingsUse.tIpWebHook1 ) ;
-        /**/etRock.traceF( tin0P , T("[offSettingsUseSnap,tIpWebHook1,tIpWebHook2,tIpGorilla1]:    ")+TF2(offSettingsUseSnap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+mySettingsUse.tIpWebHook1+tb4+mySettingsUse.tIpWebHook2+tb4+mySettingsUse.tIpGorilla1 ) ;
-        /**/etRock.traceF( tin0P , T("grabbed  settings") ) ;
+        //etRock.traceF( tin0P , T("[offSettingsUseSnap,tIpWebHook1,tIpWebHook2,tIpGorilla1]:    ")+TF2(offSettingsUseSnap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+mySettingsUse.tIpWebHook1+tb4+mySettingsUse.tIpWebHook2+tb4+mySettingsUse.tIpGorilla1 ) ;
+        //etRock.traceF( tin0P , T("grabbed  settings") ) ;
         mySettingsUse.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-        /**/etRock.traceF( tin0P , T("grabbing settings") ) ;
+        //etRock.traceF( tin0P , T("grabbing settings") ) ;
 
         mySettingsS& mySettingsUse = offSettingsUseSnap % 2 ? mySettingsBP : mySettingsAP ;        //P:PERSONALITY: I WILL USE THE SAME SETTINGS INSTANCE FOR ALL PROCESSING FOR A JOB
         const countT offSettingsUseSnap = offSettingsUseP ;
@@ -1658,7 +1660,7 @@ voidT rec_MX_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const coun
         *ps << (countT)ifcIDtYPEdNSqUERY_AAAA ;
         *ps << psttP ;
 
-        /**/etherP.traceF( tin0P , T("rec_AAAA_F [nnPeer,nn,name]:    peer: ")+T(nnPeerP)+T("    directed to: ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+        //etherP.traceF( tin0P , T("rec_AAAA_F [nnPeer,nn,name]:    peer: ")+T(nnPeerP)+T("    directed to: ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
@@ -1680,7 +1682,7 @@ voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const co
         *ps << (countT)ifcIDtYPEdNSqUERY_A ;
         *ps << psttP ;
 
-        /**/etherP.traceF( tin0P , T("rec_A_F [nnPeer,nn,name]:    peer: ")+T(nnPeerP)+T("    directed to: ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+        //etherP.traceF( tin0P , T("rec_A_F [nnPeer,nn,name]:    peer: ")+T(nnPeerP)+T("    directed to: ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
@@ -1703,7 +1705,7 @@ voidT rec_A_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const count
         *ps << (countT)ifcIDtYPEdNSqUERY_TXT ;
         *ps << psttP ;
 
-        /**/etherP.traceF( tin0P , T("rec_TXT_F [nnPeer,value,name]:    peer: ")+T(nnPeerP)+T("    directed to: ")+T(psttvP)+T("    \"")+T(psttP)+T("\"") ) ;
+        //etherP.traceF( tin0P , T("rec_TXT_F [nnPeer,value,name]:    peer: ")+T(nnPeerP)+T("    directed to: ")+T(psttvP)+T("    \"")+T(psttP)+T("\"") ) ;
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
