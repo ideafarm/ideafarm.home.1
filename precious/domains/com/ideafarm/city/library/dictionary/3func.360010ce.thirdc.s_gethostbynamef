@@ -55,6 +55,7 @@
     ZE( boolT , bDone ) ;
 
     __( rc ) ;
+    if( rc && pEtherContainsMe ) pEtherContainsMe->traceF( tin0P , T("s_getHostByNameF [rc]:    ")+(rc==WSAHOST_NOT_FOUND?T("WSAHOST_NOT_FOUND"):TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)) ) ;
     }
         Sleep( 100 ) ;
         if( pEtherContainsMe ) pEtherContainsMe->traceF( tin0P , T("s_getHostByNameF / WSATRY_AGAIN") ) ;
