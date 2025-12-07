@@ -137,6 +137,59 @@ cDo = 1 ;
     TN( tSecret , "bc2a" "79d2" "dc3d" "4462" "c587" "603e" "c576" "5563" "dd57" "181f" ) ;         //CS:CODEsYNC: 510008c0 510008af
     //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
 
+    }
+        while( cFailNU ) ;
+        }
+            ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
+            if( !cFailNU ) break ;
+
+            }
+                }
+                    }
+                        continue ;
+                        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+                        etRock.traceF( tin0P , T("!exception / could not bind socket to the dns port [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                        cFailNU ++ ;
+                    {
+                    if( POOP )
+                    sockNU2.bindF( tin0P , ifcIDpORT_HTTPS , nicNameC() , 1 ) ;
+                    sockNU1.bindF( tin0P , ifcIDpORT_HTTP  , nicNameC() , 1 ) ;
+
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
+            {
+            if( !cFailNU )
+
+            }
+                }
+                    etRock.traceF( tin0P , T("!exception / could not construct the NU1 NU2 sockets [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    POOPRqUIET
+                    countT rc = POOP ;
+                    cFailNU ++ ;
+                {
+                if( POOP )
+
+                new( 0 , tin0P , pbSocketNU2 , sizeof pbSocketNU2 ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM ) ;
+                new( 0 , tin0P , pbSocketNU1 , sizeof pbSocketNU1 ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM ) ;
+
+                SCOOPS
+                _IO_
+            {
+            IFsCRATCHoK
+        {
+        do
+        ZE( countT , cFailNU ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    {
+    socketC& sockNU2 = *(socketC*)pbSocketNU2 ;
+    socketC& sockNU1 = *(socketC*)pbSocketNU1 ;
+    byteT pbSocketNU2[ sizeof( socketC ) ] ;
+    byteT pbSocketNU1[ sizeof( socketC ) ] ;
+    // ENSURE THAT THIS HOST CANNOT ACCEPT A CONNECTION ON THE HTTP OR HTTPS PORTS ; I DO THIS SO THAT I CAN USE MY OWN IPV4 ADDRESS TO DEFEAT THE "HAPPY EYEBALLS" ALGORITHM USED BY BROWSERS, TO FORCE THEM TO CONNECT TO THE WEB* SERVERS USING IPV6
 
     //U::6: etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&gv.nnHostWebLath , (countT)&gv.nnHostWebLag0 , (countT)&gv.nnHostWebLag1 , (countT)&gv.nnHostWebLag2 , (countT)&gv.nnHostWebLag3 ) ;
 
@@ -367,7 +420,8 @@ DONE( tmWorkerF )
                                                         || !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gvP.tDomainWebHooksNetLag )
                                                            !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , gvP.tDomainWebHooksNet    )
                                                     (
-                                                    if
+                                                    else if
+                                                    if( bIdeaNet ) nnOut = nnMe ;                               // THIS IS TO DEFEAT "HAPPY EYEBALLS" BY ENSURING THAT NO BROWSER WILL BE ABLE TO CONNECT USING IPV4
 
                                                     nicNameC nnOut ;
                                                     //etRock.traceF( tin0P , gcP.tSayARequest+tDomainNet ) ;
@@ -530,11 +584,6 @@ DONE( tmWorkerF )
                                                     if( etThread.strIdF( tin0P , gcP.tDashSub1DashBook1DotIdeaNetDomain , tDomainNet , 1 ) )
                                                 {
                                                 case ifcIDtYPEdNSqUERY_AAAA :
-                                                }
-                                                    break ;
-                                                    bNoHit  = 1 ;
-                                                    bSilent = 0 ;
-                                                {
                                                 case ifcIDtYPEdNSqUERY_A :
                                             {
                                             switch( idType )
@@ -845,11 +894,13 @@ DONE( tmWorkerF )
 
         //etRock.traceF( tin0P , T("pulled a job") ) ;
 
+
         mySettingsUse.grabMe.ungrabF( tin0P ) ;
+        nicNameC nnMe       = etThread.sockNicNameF( tin0P , mySettingsUse.tIpDns1     ) ;
         nicNameC nnGorilla1 = etThread.sockNicNameF( tin0P , mySettingsUse.tIpGorilla1 ) ;
         nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettingsUse.tIpWebHook2 ) ;
         nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettingsUse.tIpWebHook1 ) ;
-        //etRock.traceF( tin0P , T("[offSettingsUseSnap,tIpWebHook1,tIpWebHook2,tIpGorilla1]:    ")+TF2(offSettingsUseSnap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+mySettingsUse.tIpWebHook1+tb4+mySettingsUse.tIpWebHook2+tb4+mySettingsUse.tIpGorilla1 ) ;
+        //etRock.traceF( tin0P , T("[offSettingsUseSnap,tIpWebHook1,tIpWebHook2,tIpGorilla1,tIpDns1]:    ")+TF2(offSettingsUseSnap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+mySettingsUse.tIpWebHook1+tb4+mySettingsUse.tIpWebHook2+tb4+mySettingsUse.tIpGorilla1+tb4+mySettingsUse.tIpDns1 ) ;
         //etRock.traceF( tin0P , T("grabbed  settings") ) ;
         mySettingsUse.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         //etRock.traceF( tin0P , T("grabbing settings") ) ;
@@ -1911,7 +1962,7 @@ TASK( tmFreshSettingsF )
     /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
     /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
 
-    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tIpGorilla1,tStripeApiKeyTest,tStripeIdObjectWebhookDestinationTest]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tIpGorilla1+T("\"    \"")+tStripeApiKeyTest+T("\"    \"")+tStripeIdObjectWebhookDestinationTest ) ;
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tIpGorilla1,tIpDns1,tStripeApiKeyTest,tStripeIdObjectWebhookDestinationTest]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tIpGorilla1+T("\"    \"")+tIpDns1+T("\"    \"")+tStripeApiKeyTest+T("\"    \"")+tStripeIdObjectWebhookDestinationTest ) ;
 
     /**/etRock.traceF( tin0P , T("[tStripeIdObjectWebhookDestinationTest]:    ")+tStripeIdObjectWebhookDestinationTest ) ;
     }
@@ -1999,6 +2050,14 @@ TASK( tmFreshSettingsF )
         tDomainRootAllowed1 = T(psttEat) ;
         if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
         ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.1")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tIpDns1 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.dns1")  ) ; ___( psttEat ) ;
         _IO_
     {
 
@@ -2163,6 +2222,8 @@ voidT mySettingsS::zapF( tin0S& tin0P )
         ||
         !tSuffixUsedByStripe.csF( tin0P )
         ||
+        !tIpDns1.csF( tin0P )
+        ||
         !tIpGorilla1.csF( tin0P )
         ||
         !tIpWebHook2.csF( tin0P )
@@ -2203,6 +2264,7 @@ tDomainRootAllowed4(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null ,
 tDomainRootAllowed3(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed2(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed1(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tIpDns1(                               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tIpGorilla1(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tIpWebHook2(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tIpWebHook1(                           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
@@ -2427,6 +2489,7 @@ struct gConstS
     textC        tTestTextResponse                     ;
 
     textC        tNnTrusted                            ;
+    textC        tIpDns1                               ;
     textC        tIpGorilla1                           ;
     textC        tIpWebHook2                           ;
     textC        tIpWebHook1                           ;
