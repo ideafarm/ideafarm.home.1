@@ -16,6 +16,7 @@ TODO
 
 DONE( tmWorkF )
 }
+    sgnDone_tmBlockF.waitF( tin0P ) ;
     }
         }
             DELzOMBIE( psoDoomed ) ;
@@ -23,8 +24,6 @@ DONE( tmWorkF )
         {
 
         }
-            sgnDone_tmBlockF.waitF( tin0P ) ;
-
             }
                 ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
                 etRock.traceF( tin0P , T("waiting for all workers to go away [cIn,cWorkers]:    ")+TF2(++cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gc.tb4+TF2(cWorkers,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -76,10 +75,6 @@ DONE( tmWorkF )
 cDo = 1 ;
             countT cDo = thirdC::osProcessorsIF( tin0P ) << 3 ;
 
-            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmBlockF , sgnDone_tmBlockF , CBsTACKmIN << 1 ) , (countT)&stNnPeerBlock ) ;
-            signC sgnDone_tmBlockF( tin0P , TAG( TAGiDnULL ) ) ;
-
-            stackC  stNnPeerBlock( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
             circleC cirRecentDomainGrossTrace( tin0P , etThread , gv.bQuit , flCIRCLEc_OVERWRITE , sizeof( strokeS* ) , TUCK >> 5 , deleteElementF ) ;
             circleC cirNnPeerDoNotDivert(      tin0P , etThread , gv.bQuit , flCIRCLEc_OVERWRITE , sizeof( nicNameC ) , TUCK >> 2 ) ;
         {
@@ -126,6 +121,10 @@ cDo = 1 ;
     {
     while( !POOP && !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmBlockF , sgnDone_tmBlockF , CBsTACKmIN << 1 ) , (countT)&stNnPeerBlock ) ;
+    signC  sgnDone_tmBlockF( tin0P , TAG( TAGiDnULL ) ) ;
+    stackC stNnPeerBlock( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
 
     etThread.osThreadF( TaRG2cBsTACK( tmRememberRecentIdeaNetHashP , CBsTACKmIN << 1 ) , (countT)&nnIdeaNetUse , (countT)&stRecentHash , (countT)&ideaNetSub ) ;
     ideaNetSubscriptionC ideaNetSub( tin0P , etThread , idBook , idSub , tSecret ) ; ___( pSubP ) ;
