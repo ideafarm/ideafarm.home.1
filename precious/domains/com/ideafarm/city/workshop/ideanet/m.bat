@@ -29,3 +29,5 @@ wlink.exe system nt op q op map=ideanet.map op mangle debug all name ideanet    
  > ideanet.link.err
 
 dir
+
+copy *.exe c:\tmp

@@ -147,7 +147,7 @@
         {
 
         countT costaBookName = costaName + TUCK ; //U:: REPLACE "TUCK" WITH ACTUAL NEEDED
-        countT costaName     = 1 + thirdC::c_strlenIF( tin0P , postShortOrLongP )     ;
+        countT costaName     = 1 + thirdC::c_strlenIF( tin0P , postShortOrLongUse )     ;
         countT cbaFlags      = 1 + ( CbOOKsLOTS ) / SB ;
         countT cbaBooks      = ( CbOOKsLOTS ) * SIZEOF_bookC       ;
         countT cbaPointers   = ( CbOOKsLOTS ) * sizeof( countT* )  ;
@@ -166,45 +166,45 @@
         {
         if( *postShort )
 
-        else if( thirdC::c_strlenIF( tin0P , postShortOrLongP ) + 1 < sizeof( postShort ) ) thirdC::c_strcpyIF( tin0P , postShort , postShortOrLongP ) ;
+        else if( thirdC::c_strlenIF( tin0P , postShortOrLongUse ) + 1 < sizeof( postShort ) ) thirdC::c_strcpyIF( tin0P , postShort , postShortOrLongUse ) ;
         }
             }
                 else *postPath = 0 ;
                 }
                     postPath[ costPath ] = 0 ;
-                    thirdC::c_memcpyIF( tin0P , postPath , postShortOrLongP , costPath ) ;
+                    thirdC::c_memcpyIF( tin0P , postPath , postShortOrLongUse , costPath ) ;
                 {
                 if( costPath < sizeof postPath )
 
-                countT costPath = postc - postShortOrLongP ;
+                countT costPath = postc - postShortOrLongUse ;
 
                 else                                                               *postShort = 0 ;
                 if( thirdC::c_strlenIF( tin0P , postc ) + 1 < sizeof( postShort ) ) thirdC::c_strcpyIF( tin0P , postShort , postc ) ;
                 postc ++ ;
             {
             if( postc )
-            osTextT* postc = thirdC::c_strrchrIF( tin0P , postShortOrLongP , '\\' ) ;
+            osTextT* postc = thirdC::c_strrchrIF( tin0P , postShortOrLongUse , '\\' ) ;
         {
         )
             )
                 )
-                    postShortOrLongP[ 1 ] == '\\'
+                    postShortOrLongUse[ 1 ] == '\\'
                     &&                                  // NETWORK FILE NAME
-                    postShortOrLongP[ 0 ] == '\\'
+                    postShortOrLongUse[ 0 ] == '\\'
                 (
                 ||
                 )
-                    postShortOrLongP[ 2 ] == '\\'
+                    postShortOrLongUse[ 2 ] == '\\'
                     &&
-                    postShortOrLongP[ 0 ] <= 'z'
+                    postShortOrLongUse[ 0 ] <= 'z'
                     &&                                  // LOCAL FILE NAME
-                    postShortOrLongP[ 0 ] >= 'a'
+                    postShortOrLongUse[ 0 ] >= 'a'
                     &&
-                    postShortOrLongP[ 1 ] == ':'
+                    postShortOrLongUse[ 1 ] == ':'
                 (
             (
             &&
-            postShortOrLongP
+            postShortOrLongUse
         (
         if                                              //IF LONG
 
@@ -225,14 +225,14 @@
         __NZ( cbP && !( F(flagsP) & flBOOKSc_WRITER ) ) ;
         FV( flBOOKSc , flagsP ) ;
         }
-            __Z( idStateSpaceP ) ; // !idStateSpaceP CAN BE ALLOWED IF THERE IS EVER A REASON TO DO SO, BUT THIS WOULD BE AN ODD APPLICATION BECAUSE THE CLIENT READER WOULD NEED TO KEEP UP WITH THE SERVER WRITER ; IF A SERVER WRITER FINISHED WRITING A bookC BEFORE THE CLIENT READER STARTED READING IT, THE DATA IN THE bookC WOULD BE LOST
+            __Z( idStateSpace ) ; // !idStateSpace CAN BE ALLOWED IF THERE IS EVER A REASON TO DO SO, BUT THIS WOULD BE AN ODD APPLICATION BECAUSE THE CLIENT READER WOULD NEED TO KEEP UP WITH THE SERVER WRITER ; IF A SERVER WRITER FINISHED WRITING A bookC BEFORE THE CLIENT READER STARTED READING IT, THE DATA IN THE bookC WOULD BE LOST
         {
         else
         }
             __( CbOOKsLOTS > 2 ) ;
             __Z( cbBooksNoPuseBackP ) ;
             __Z( pbBooksNoPuseBackP ) ;
-            __( !postShortOrLongP != !idStateSpaceP ) ;  //INSTANCES WITHOUT BACKING FILES MUST BE UNNAMED; THIS RESTRICTION CAN BE REMOVED ONCE I AM EDITED TO ENUMERATE SHARED MEMORY OBJECTS RATHER THAN BACKING FILES
+            __( !postShortOrLongP != !idStateSpace ) ;  //INSTANCES WITHOUT BACKING FILES MUST BE UNNAMED; THIS RESTRICTION CAN BE REMOVED ONCE I AM EDITED TO ENUMERATE SHARED MEMORY OBJECTS RATHER THAN BACKING FILES
             __( ((tin1S&)tin0P).glass.idThread != 1 ) ; //I WILL USE STATIC STORAGE SO WILL NOT BE THREAD SAFE; INTENDED ONLY FOR CT/DT OF INSTANCES IN STATIC STORAGE
         {
         if( F(flagsCt) & flBOOKSc_DOnOTuSEpUSE )
@@ -253,6 +253,8 @@
     //U:: CYCLING IS CURRENTLY NOT SUPPORTED CORRECTLY WHEN CbOOKsLOTS IS NOT 1
 
     //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->trace F( tin0P , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": ")+T(postShort)+T(": ")+T("ct + [offBookBackNow,CbOOKsLOTS]:    ")+TF2(offBookBackNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(CbOOKsLOTS,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
+
+    const osTextT* const postShortOrLongUse = F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ? 0 : postShortOrLongP ;
 {
 bFill( bFillP )
 psttFindLike( 0 ) ,
@@ -260,7 +262,7 @@ ppcpIdBook( 0 ) ,
 cKeepInactive( cKeepInactiveP ) ,
 grabBookNow( tin0P , idLineCtP , idiFileCtP , pbBitsCtP , flGRABc_NOTjEALOUS | flGRABc_SNEAKYlOVER | flGRABc_SHARElAYER , ifcIDgRABlAYER_bBOOKSc ) , // flGRABc_SHARElAYER: NEEDED BECAUSE booksC::writeF CAN CALL ITSELF RECURSIVELY DUE TO TELEMETRY WHEN CHANGING bookC INSTANCES
 idMemorySpace( idMemorySpaceP ) ,
-idStateSpace( idStateSpaceP ) ,
+idStateSpace( !idStateSpaceP || F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ? 0 : idStateSpaceP ) ,
 cbBodyNew( cbP ) ,
 postBookNameScratch( 0 ) ,
 ) ,
