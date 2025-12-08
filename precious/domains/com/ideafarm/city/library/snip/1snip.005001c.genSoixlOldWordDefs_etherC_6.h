@@ -1,4 +1,25 @@
 
+voidT hushReadPrivateKeyFromFileF_ob4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
+    handleC hKeyPrivateP( /*GOOEY*/tin0P , TAG( TAGiDnULL ) ) ;
+    if( !POOP ) { hKeyPrivateP << slP ; idArgNext ++ ; }
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttFileP ) ;
+    if( !POOP ) { slP >> psttFileP ; ___( psttFileP ) ; idArgNext ++ ; }
+    if( !POOP ) etherP.hushReadPrivateKeyFromFileF( tin0P , hKeyPrivateP , psttFileP ) ;
+    etherP.delF( tin0P , psttFileP ) ;
+}
+
 voidT hushReadPublicKeyFromFileF_ob4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;

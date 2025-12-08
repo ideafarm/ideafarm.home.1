@@ -188,6 +188,7 @@
     "    . strConvertToUpperCaseF_o4@4@       . ?? ")+T(postName)+T("\r\n"
     "    . strDeleteF_o4@33       . ?? ")+T(postName)+T("\r\n"
     "    . strDigitsToNicNameF_o4@36       . ?? ")+T(postName)+T("\r\n"
+    "    . strDigitsToSCount04F_o4@36       . ?? ")+T(postName)+T("\r\n"
     "    . strDigitsToMeasureF_o4@36       . ?? ")+T(postName)+T("\r\n"
     "    . strEvaluateF_o4@34@       . ?? ")+T(postName)+T("\r\n"
     "    . strEvaluateFormat01F_o4@34@       . ?? ")+T(postName)+T("\r\n"

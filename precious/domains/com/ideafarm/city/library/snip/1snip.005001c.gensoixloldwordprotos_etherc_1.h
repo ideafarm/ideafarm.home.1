@@ -379,6 +379,8 @@ voidT strDeleteF_o4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const st
 
 voidT strDigitsToNicNameF_o4P36_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
+voidT strDigitsToSCount04F_o4P36_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
 voidT strDigitsToMeasureF_o4P36_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT strEvaluateF_o4P34P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;

@@ -4468,6 +4468,32 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200623.ifcIDsTATUShTTPsERVICE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200624.IDEAnETiPV6aDDRESSESuSED BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*IDEAnETiPV6aDDRESSESuSED*//*1*/
+
+#define IDEAnETiPV6aDDRESSESuSED ( TUCK )
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200624.IDEAnETiPV6aDDRESSESuSED END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -10292,17 +10318,6 @@ TASKpART0PROTO( tm_sessionsC_watchF ) ;
 /*1*/countT subtract_timeS_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
 
 
-
-/*1*/countT subtract_count9S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
-/*1*/countT subtract_count8S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
-/*1*/countT subtract_count7S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
-/*1*/countT subtract_count6S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
-/*1*/countT subtract_count5S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
-/*1*/countT subtract_count4S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
-/*1*/countT subtract_count3S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
-/*1*/countT subtract_count2S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
-/*1*/countT subtract_count04T_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
-
 //
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
@@ -13334,31 +13349,6 @@ parameters
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.170000ec.subtractblobsf END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.170000ed.subtract_times_f BEGIN
-
-
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/countT subtract_timeS_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.170000ed.subtract_times_f END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.170000ee.subtractcountstringsf BEGIN
 
 
@@ -15651,6 +15641,222 @@ TASKpART0PROTO( tmWatchRudeF ) ;
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000243.ideaNetCBF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000244.subtract_count04T_F BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/countT subtract_count04T_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000244.subtract_count04T_F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000245.subtract_count2S_F BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/countT subtract_count2S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000245.subtract_count2S_F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000246.subtract_count3S_F BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/countT subtract_count3S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000246.subtract_count3S_F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000247.subtract_count4S_F BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/countT subtract_count4S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000247.subtract_count4S_F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000248.subtract_count5S_F BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/countT subtract_count5S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000248.subtract_count5S_F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000248.subtract_count6S_F BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/countT subtract_count6S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000248.subtract_count6S_F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000248.subtract_count7S_F BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/countT subtract_count7S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000248.subtract_count7S_F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000248.subtract_count8S_F BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/countT subtract_count8S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000248.subtract_count8S_F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000248.subtract_count9S_F BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/countT subtract_count9S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000248.subtract_count9S_F END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tellInfoAppInOutFrameS : 1snip.15000188.tellinfoappinoutframes BEGIN
 
 
@@ -24057,6 +24263,7 @@ i obtain the current thread's tin1S  , by walking up the thread stack from a spe
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ag1_stackC_C : 1snip.150000d5.ag1_stackc_c END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.stackC : 1snip.15000004.stackc BEGIN
 
+
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -25750,6 +25957,7 @@ examples
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.boxC : 1snip.15000009.boxc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.switchStackC : 1snip.1500000a.switchstackc BEGIN
+
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -34337,10 +34545,10 @@ examples
  nicNameC strDigitsToNicNameF( tin0S& tin0P , const strokeS* const psttP , const countT defaultRadixP = 0 , const boolT bForeignP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3410d.etherC.strDigitsToNicNameF!||
  sCountT strDigitsToSCountF( tin0S& tin0P , const strokeS* const psttP , const countT defaultRadixP = 0 , const boolT bForeignP = 0 ) ;
- sCount04T strDigitsToSCount04F( tin0S& tin0P , const strokeS* const psttP , const countT defaultRadixP = 0 , const boolT bForeignP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404d.etherC.strDigitsToSCountF!||
  voidT strDigitsToSCountF( tin0S& tin0P , sCountC& valueP , const strokeS* const psttP , const countT defaultRadixP = 0 , const boolT bForeignP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340d3.etherC.strDigitsToSCountF!||
+ sCount04T strDigitsToSCount04F( tin0S& tin0P , const strokeS* const psttP , const countT defaultRadixP = 0 , const boolT bForeignP = 0 ) ;
  measureT strDigitsToMeasureF( tin0S& tin0P , const strokeS* const psttP , const countT defaultRadixP = 0 , const boolT bForeignP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341a0.etherC.strDigitsToMeasureF!||
  boolT strEvaluateF( tin0S& tin0P , strokeS*& psttP , const countT csttExtraP = 0 , const strokeS* const psttOldP = 0 ) ;
