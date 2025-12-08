@@ -496,7 +496,7 @@ DONE( tmWatchF )
             //etRock.traceF( tin0P , T("setting/resetting control flags") ) ;
             _IO_
         {
-        if( !( idCycle % ( TUCK >> 3 ) ) )
+        if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) && !( idCycle % ( TUCK >> 3 ) ) )
         
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -866,10 +866,15 @@ DONE( tmWatchF )
 
     countT desireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZY ) ;
 
-    etThread.diskMakeDirIfNeededF( tin0P , tFileControlTraceOn  ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFileControlTraceOff ) ;
-    TN( tFileControlTraceOn  , ""  ) ; tFileControlTraceOn  = T("///ideafarm/controls/")+tUser+T("/on"  "/in.out.trace.txt") ;
-    TN( tFileControlTraceOff , ""  ) ; tFileControlTraceOff = T("///ideafarm/controls/")+tUser+T("/off" "/in.out.trace.txt") ;
+    }
+        etThread.diskMakeDirIfNeededF( tin0P , tFileControlTraceOn  ) ;
+        etThread.diskMakeDirIfNeededF( tin0P , tFileControlTraceOff ) ;
+        tFileControlTraceOn  = T("///ideafarm/controls/")+tUser+T("/on"  "/in.out.trace.txt") ;
+        tFileControlTraceOff = T("///ideafarm/controls/")+tUser+T("/off" "/in.out.trace.txt") ;
+    {
+    if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) )
+    TN( tFileControlTraceOn  , ""  ) ;
+    TN( tFileControlTraceOff , ""  ) ;
     TN( tUser , thirdC::postUserNameIF() ) ;
 
     const boolT b_tmWindows = !!( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_tmWindows ) ;
