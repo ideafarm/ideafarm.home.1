@@ -46,7 +46,7 @@
                     ) ,
                             : (const handleC*)*(fileC*)pbFile
                             ? 0
-                        !idStateSpaceP
+                        !idStateSpaceUse
                     (
                     ostoBuf ,
                     pbBitsCtP ,
@@ -63,10 +63,10 @@
                 if( F(flagsP) & flBOOKc_UNIQUEsHAREDmEMORY )
 
                 }
-                    OStEXTCF( ostoBuf , idStateSpaceP , '0' ) ;
+                    OStEXTCF( ostoBuf , idStateSpaceUse , '0' ) ;
                     OStEXTAK( ostoBuf , "." ) ;
                 {
-                if( idStateSpaceP )                                 // APPENDING idStateSpaceP ENSURES THAT SHARED MEMORY NAME IS DISTINCT FOR EACH BACKING FILE; ADDED 20190104@1712 WITHOUT ANALYSIS
+                if( idStateSpaceUse )                                 // APPENDING idStateSpaceUse ENSURES THAT SHARED MEMORY NAME IS DISTINCT FOR EACH BACKING FILE; ADDED 20190104@1712 WITHOUT ANALYSIS
                 OStEXTA(  ostoBuf , postShort ) ;
                 OStEXTAK( ostoBuf , "book0C/" ) ;
                 OStEXT(   ostoBuf , TUCK << 2 ) ;
@@ -100,9 +100,9 @@
                 bFileExisted = file.idOpenResultF( tin0P  ) == ifcOPENrESULT_EXISTED ;
 
                 fileC& file = *(fileC*)pbFile ;
-                ctFileF( tin0P , postShort , postShort ? postPath : 0 , idStateSpaceP , idMemorySpaceP ) ;
+                ctFileF( tin0P , postShort , postShort ? postPath : 0 , idStateSpaceUse , idMemorySpaceP ) ;
             {
-            if( idStateSpaceP )
+            if( idStateSpaceUse )
             ZE( boolT , bFileExisted ) ;
         {
         else
@@ -189,23 +189,28 @@
         else
         }
             __( idMemorySpaceP   ) ;
-            __( idStateSpaceP    ) ;
+            __( idStateSpaceUse  ) ;
             __( postShortOrLongP ) ;
         {
         if( F(flagsCt) & flBOOKc_USEhEAPnOTnAPKIN )
         __( cbP && !( F(flagsCt) & flBOOKc_WRITER ) ) ;
         __( F(flagsP) & flBOOKc_FILEiScONSTRUCTED ) ; //THIS FLAG IS FOR INTERNAL USE ONLY; CALLER MAY NOT SPECIFY IT
-        __( F(flagsP) & flBOOKc_NOsTATEsPACE      ) ; //THIS FLAG IS FOR INTERNAL USE ONLY; CALLER MAY NOT SPECIFY IT (IT IS IMPLIED BY !idStateSpaceP)
+        __( F(flagsP) & flBOOKc_NOsTATEsPACE      ) ; //THIS FLAG IS FOR INTERNAL USE ONLY; CALLER MAY NOT SPECIFY IT (IT IS IMPLIED BY !idStateSpaceUse)
         FV( flBOOKc , flagsP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL    
+
+    ;
+        : idStateSpaceP
+        ? 0
+    const countT idStateSpaceUse = !idStateSpaceP || F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM
 {
 pbFromHeap( 0 )
 ) ,
         : flagsP | flBOOKc_NOsTATEsPACE
         ? flagsP
-    idStateSpaceP
+    idStateSpaceP && !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM )
 (
 flagsCt
 book0C( tin0P , 0 , 0 ) ,
