@@ -8,7 +8,7 @@ if exist *.exe del *.exe
 if exist *.map del *.map
 
 dir
-pause
+echo -------------------------------------------------------------------------
 
 copy \ideafarm.home.1\ephemeral\city\workshop\3object.exe\510008c0.*.obj
 

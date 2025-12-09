@@ -2873,6 +2873,14 @@ void elf_obey_C::liveF( void )
 
                 Sleep( 1000 * 16 ) ;
             }
+
+            const char postTo4[]   = { "\\ideafarm.home.1\\ephemeral\\release\\ideanet.unconfigured.exe" } ;
+            const char postFrom4[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\ideanet\\ideanet.exe" } ;
+            char postCmd[ 0x400 ] = { "copy " } ;
+            strcat( postCmd , postFrom4 ) ;
+            strcat( postCmd , " " ) ;
+            strcat( postCmd , postTo4 ) ;
+            system( postCmd ) ;
         }
         else if( !strcmp( postCmd , "8bundle" ) )
         {
