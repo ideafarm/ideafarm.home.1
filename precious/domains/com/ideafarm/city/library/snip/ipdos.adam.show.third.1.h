@@ -1,4 +1,9 @@
 
+#define ifcIDkIT_IDEAnETsUBSCRIBEReNCRYPTED     1
+#define ifcIDkIT_IDEAnETsUBSCRIBEReMAIL         2
+#define ifcIDkIT_IDEAnETsUBSCRIBERiDaCCOUNT     3
+#define ifcIDkIT_IDEAnETsUBSCRIBERsECRET        4
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
