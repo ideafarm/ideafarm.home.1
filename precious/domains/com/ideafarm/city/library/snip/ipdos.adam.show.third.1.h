@@ -1,4 +1,6 @@
 
+#define ifcIDaDAM_TOOLmAKErcfILE                                       0x510008c3
+
 #define ifcIDkIT_IDEAnETsUBSCRIBEReNCRYPTED     1
 #define ifcIDkIT_IDEAnETsUBSCRIBEReMAIL         2
 #define ifcIDkIT_IDEAnETsUBSCRIBERiDaCCOUNT     3
