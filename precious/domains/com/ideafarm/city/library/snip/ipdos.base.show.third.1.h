@@ -10026,7 +10026,7 @@ flHIRE_SHOW
 #define FINGERnEG_dropNoteSlotsHasAdjustedDropHeader        ((countT)-(sCountT)0xcccc0065)
 #define FINGERnEG_dropNotePoolIsAdjustingDropHeader         ((countT)-(sCountT)0xcccc0066)
 #define FINGERnEG_dropNotePoolHasAdjustedDropHeader         ((countT)-(sCountT)0xcccc0067)
-#define FINGERnEG_dropNoteDeleted                          ((countT)-(sCountT)0xcccc0068)
+#define FINGERnEG_dropNoteDeleted                           ((countT)-(sCountT)0xcccc0068)
 #define FINGERnEG_dropSeparator                             ((countT)-(sCountT)0xcccc0069)
 #define FINGERnEG_dropHeaderInitialize                      ((countT)-(sCountT)0xcccc006a)
 #define FINGERnEG_nodeC                                     ((countT)-(sCountT)0xcccc006b)
@@ -10038,9 +10038,10 @@ flHIRE_SHOW
 #define FINGERnEG_fileWindowsC                              ((countT)-(sCountT)0xcccc0071)
 #define FINGERnEG_listingC                                  ((countT)-(sCountT)0xcccc0072)
 #define FINGERnEG_WEBhOOKnOTICES                            ((countT)-(sCountT)0xcccc0073)
+#define FINGERnEG_IDEAnETsUBSCRIPTIONcsOUL                  ((countT)-(sCountT)0xcccc0074)
 /*3*/
 #define FINGERnEG_min     0xcccc0001
-#define FINGERnEG_max     0xcccc0073
+#define FINGERnEG_max     0xcccc0074
 
 //CS:CODEsYNC: 510004FB 112000EF
 
@@ -11915,7 +11916,8 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_QUERYsTRIPEeVENTS                                    0x510008b8
 #define ifcIDaDAM_IDEAnET                                              0x510008c0
 #define ifcIDaDAM_TOOLrANDOMiPV6                                       0x510008bf
-#define ifcIDaDAM_TOOLmAKErcfILE                                       0x510008c3
+#define ifcIDaDAM_TOOLmAKEkITsOURCEfILE                                       0x510008c3
+#define ifcIDaDAM_TOOLuPDATEkIT                                      0x510008c5
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003

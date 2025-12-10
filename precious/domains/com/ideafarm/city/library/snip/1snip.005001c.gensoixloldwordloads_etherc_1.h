@@ -1319,14 +1319,6 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "sockAcceptF_ob3db6b@s_acceptF_parametersS@" ) ;
-    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockAcceptF_ob3db6bPs_acceptF_parametersSP_GF ;
-    _pSwSoixlOldApi->ungrabF( tin0P ) ;
-}
-{
     TN( tNameSoixlOld , "sockListenF_ob" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
@@ -1516,14 +1508,6 @@
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
     *_pSwSoixlOldApi = (countT)strDigitsToNicNameF_o4P36_GF ;
-    _pSwSoixlOldApi->ungrabF( tin0P ) ;
-}
-{
-    TN( tNameSoixlOld , "strDigitsToSCount04F_o4@36" ) ;
-    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strDigitsToSCount04F_o4P36_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

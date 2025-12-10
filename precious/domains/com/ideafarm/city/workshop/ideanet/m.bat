@@ -7,8 +7,9 @@ if exist *.err del *.err
 if exist *.exe del *.exe
 if exist *.map del *.map
 
+echo --------------------------------------------------------------------------------------------------------------------------------------------------
 dir
-echo -------------------------------------------------------------------------
+echo --------------------------------------------------------------------------------------------------------------------------------------------------
 
 copy \ideafarm.home.1\ephemeral\city\workshop\3object.exe\510008c0.*.obj
 
@@ -30,4 +31,5 @@ wlink.exe system nt op q op map=ideanet.map op mangle debug all name ideanet    
 
 dir
 
-copy *.exe c:\tmp
+if not exist d:\tmp md d:\tmp
+copy ideanet.exe d:\tmp\ideanet.unconfigured.exe

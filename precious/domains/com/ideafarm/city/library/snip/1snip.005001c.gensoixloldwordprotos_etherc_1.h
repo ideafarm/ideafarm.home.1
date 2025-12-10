@@ -329,8 +329,6 @@ voidT sockF_ob6bP_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS
 
 voidT chokeAttackerF_ob33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT sockAcceptF_ob3db6bPs_acceptF_parametersSP_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
-
 voidT sockListenF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT sockMyNameF_o3db_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
@@ -378,8 +376,6 @@ voidT strConvertToUpperCaseF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& sl
 voidT strDeleteF_o4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT strDigitsToNicNameF_o4P36_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
-
-voidT strDigitsToSCount04F_o4P36_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT strDigitsToMeasureF_o4P36_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
