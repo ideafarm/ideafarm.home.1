@@ -6075,6 +6075,8 @@
 0x3617c003 , 0x000017bb ,   // 3func.3617c003.ideaNetC.ideaNetC
 0x3617d003 , 0x000017bc ,   // 3func.3617d003.ideaNetSubscriptionC.ideaNetSubscriptionC
 0x3617d004 , 0x000017bd ,   // 3func.3617d004.ideaNetSubscriptionC.nnF
-0x41000001 , 0x000017be ,   // 4boot.41000001.citygate
-0x41000002 , 0x000017bf ,   // 4boot.41000002.citizenconsoledriver
-0x41000003 , 0x000017c0 ,   // 4boot.41000003.citizenguidriver
+0x3617d005 , 0x000017be ,   // 3func.3617d005.ideaNetSubscriptionC.operator_shiftright
+0x3617d006 , 0x000017bf ,   // 3func.3617d006.ideaNetSubscriptionC.operator_shiftleft
+0x41000001 , 0x000017c0 ,   // 4boot.41000001.citygate
+0x41000002 , 0x000017c1 ,   // 4boot.41000002.citizenconsoledriver
+0x41000003 , 0x000017c2 ,   // 4boot.41000003.citizenguidriver
