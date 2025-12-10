@@ -4494,6 +4494,40 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200624.IDEAnETiPV6aDDRESSESuSED END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200625.ifcIDkIT BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*ifcIDkIT*//*1*/
+
+/*3*/
+#define ifcIDkIT_IDEAnETsUBSCRIBEReNCRYPTED     0xdddd124b
+#define ifcIDkIT_IDEAnETsUBSCRIBEReMAIL         0xdddd124c
+#define ifcIDkIT_IDEAnETsUBSCRIBERiDaCCOUNT     0xdddd124d
+#define ifcIDkIT_IDEAnETsUBSCRIBERsECRET        0xdddd124e
+/*3*/
+#define ifcIDkIT_min     0xdddd124b
+#define ifcIDkIT_max     0xdddd124e
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200625.ifcIDkIT END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
