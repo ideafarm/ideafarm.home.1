@@ -28,6 +28,7 @@ DONE( tmWorkF )
             }
                 ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
                 etRock.traceF( tin0P , T("waiting for all workers to go away [cIn,cWorkers]:    ")+TF2(++cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+gc.tb4+TF2(cWorkers,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                _IO_
             {
             while( cWorkers )
             ZE( countT , cIn ) ;
@@ -48,6 +49,7 @@ DONE( tmWorkF )
                         etRock.traceF( tin0P , gc.tSayExReadFailed+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         POOPRqUIET
                         countT rc = POOP ;
+                        _IO_
                     {
                     if( POOP )
                     /**/etRock.traceF( tin0P , gc.tSayCalledRead ) ;
@@ -71,12 +73,14 @@ DONE( tmWorkF )
             }
                 etThread.osThreadF( TaRG2cBsTACK( tmWorkerF , CBsTACKmIN << 2 ) , (countT)&bFail , (countT)&cWorkers , (countT)&cirNnPeerDoNotDivert , (countT)&cirRecentDomainGrossTrace , (countT)&offSettingsUse , (countT)&mySettingsA , (countT)&mySettingsB , (countT)&sockd , (countT)&gc , (countT)&gv , (countT)&grab_tSuffix1Gorilla , (countT)&tSuffix1Gorilla , (countT)&grab_tSuffix2Gorilla , (countT)&tSuffix2Gorilla , (countT)&tRandomLabelPrefix , (countT)&tRandomLabelPrefixLag , (countT)&stNnPeerBlock , (countT)&stRecentHash , (countT)&ideaNetSub , (countT)&nnIdeaNetUse ) ;
                 inc02AM( cWorkers ) ;
+                _IO_
             {
             while( cDo -- )
             countT cDo = thirdC::osProcessorsIF( tin0P ) << 3 ;
 
             circleC cirRecentDomainGrossTrace( tin0P , etThread , gv.bQuit , flCIRCLEc_OVERWRITE , sizeof( strokeS* ) , TUCK >> 5 , deleteElementF ) ;
             circleC cirNnPeerDoNotDivert(      tin0P , etThread , gv.bQuit , flCIRCLEc_OVERWRITE , sizeof( nicNameC ) , TUCK >> 2 ) ;
+            _IO_
         {
 
         ZE( boolT  , bFail    ) ;
@@ -179,10 +183,12 @@ DONE( tmWorkF )
                 _IO_
             {
             IFsCRATCHoK
+            _IO_
         {
         do
         ZE( countT , cFailNU ) ;
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        _IO_
     {
     socketC& sockNU2 = *(socketC*)pbSocketNU2 ;
     socketC& sockNU1 = *(socketC*)pbSocketNU1 ;
@@ -282,6 +288,7 @@ DONE( tmWorkF )
         sgnSettingsReady.waitF( tin0P ) ;
         etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&sgnSettingsReady , (countT)&offSettingsUse , (countT)&mySettingsA , (countT)&mySettingsB ) ;
         signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
+        _IO_
     {
 
     ZE( countT , offSettingsUse ) ;
@@ -548,6 +555,7 @@ DONE( tmWorkerF )
                                                             etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                                                             ZE( sCountT , timeN2 ) ;
                                                             ZE( countT  , timeN1 ) ;
+                                                            _IO_
                                                         {
                                                         if( !bOk )                       // bOk SHOULD ALWAYS BE 1 EXCEPT WHEN stRecentHashP HAS NOT YET BEEN LOADED FULLY
 
@@ -970,6 +978,7 @@ DONE( tmRememberRecentIdeaNetHashP )
             ZE( countT  , timeN1 ) ;
 
             minuteLath = minute ;
+            _IO_
         {
         if( minuteLath != minute )                          // A:ASSUME: THE LIFETIME OF EACH ipv6 ADDRESS IS GREATER THAN RE MINUTES, SO THAT THE ipv6 OF THE LATH MINUTE WILL CONTINUE TO BE VALID WELL AFTER I NO LONGER OBTAIN ITS VALUE
         countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE (TO AVOID RACING WITH THE WEB SERVER)
@@ -977,6 +986,7 @@ DONE( tmRememberRecentIdeaNetHashP )
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
+        _IO_
     {
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -1378,6 +1388,7 @@ TASK( tmRandomizeWebhookDomainPrefixF )
         etherP.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
         ZE( sCountT , timeE2 ) ;
         ZE( countT  , timeE1 ) ;
+        _IO_
     {
     else if( timeLetsEncryptLath2P || timeLetsEncryptLath1P )
     }
@@ -1386,6 +1397,7 @@ TASK( tmRandomizeWebhookDomainPrefixF )
         timeLetsEncryptLath2P = timeLetsEncryptLath1P = 0 ;
         countT bSuppressed = timeLetsEncryptLath2P || timeLetsEncryptLath1P ;
         bForceReplyP = 1 ;
+        _IO_
     {
     if( 1 + tDomainPeerP.csF( tin0P ) - gcP.tDotLetsEncryptDotOrg.csF( tin0P ) == etherP.strIdF( tin0P , gcP.tDotLetsEncryptDotOrg , tDomainPeerP ) )
 

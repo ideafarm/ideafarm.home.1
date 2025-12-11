@@ -4340,7 +4340,7 @@ void elf_obey_C::linkF( char* postIdiForeignP )
                 sayF( postCmd2 , flSAY_MIDDLE ) ;
                 sayF( "\"." , flSAY_END ) ;
 
-                system( "dir" ) ;
+                //system( "dir" ) ;
 
                 system( postCmd2 ) ;
             }
