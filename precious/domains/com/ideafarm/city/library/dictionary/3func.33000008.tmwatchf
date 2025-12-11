@@ -149,7 +149,7 @@ DONE( tmWatchF )
         etThread.diskFileOrDirDeleteF( tin0P , tDirBlammo , flFILEoRdIRdELETE_RECURSE , 1 ) ;
         _IO_
     {
-    if( etThread.diskFileExistsF( tin0P , tDirBlammo+T("*") ) )
+    if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) && etThread.diskFileExistsF( tin0P , tDirBlammo+T("*") ) )
     //DUPLICATE CODE: 33000008 33000008
 
     //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -791,7 +791,7 @@ DONE( tmWatchF )
             etThread.diskFileOrDirDeleteF( tin0P , tDirBlammo , flFILEoRdIRdELETE_RECURSE , 1 ) ;
             _IO_
         {
-        if( !( idCycle % ( TUCK >> 4 ) ) && etThread.diskFileExistsF( tin0P , tDirBlammo+T("*") ) )
+        if( !(F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM) && !( idCycle % ( TUCK >> 4 ) ) && etThread.diskFileExistsF( tin0P , tDirBlammo+T("*") ) )
         //DUPLICATE CODE: 33000008 33000008
 
         //**********************************************************************************************************************************************************************************************************************************************************************************

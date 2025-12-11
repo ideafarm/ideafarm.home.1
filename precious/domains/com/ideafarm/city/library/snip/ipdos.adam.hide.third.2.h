@@ -49259,10 +49259,14 @@ i am nonconformant in that all of my member function definitions are in a single
     public :
 
     NEWdELcLASSpROTOS
+    ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP ) ;
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP , const strokeS* const psttEmailP ) ;
     nicNameC nnF( tin0S& tin0P , count04T& hashP , countT minuteP ) ;
     voidT    operator >>( soulC& sP ) ;
     voidT    operator <<( soulC& sP ) ;
+
+    inline   operator textC(  voidT ) const { return tEmail ; }
+    inline   operator countT( voidT ) const { return idSub  ; }
 }
 ;
 

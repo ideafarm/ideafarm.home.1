@@ -27,23 +27,23 @@ DONE( tmWorkF )
 
             etThread.diskCopyFileF( tin0P , tLongExe , T("///d/ideafarm.home.1/ephemeral/release/ideanet.unconfigured.exe") ) ;
 
-            TN( tLongExe , "///ideafarm/tmp/ideanet.exe" ) ;
+            TN( tLongExe , "///ideafarm/tmp/ideanet.key." ) ; tLongExe += TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".exe") ;
 
-            // kitfresh  !update ///ideafarm/tmp/ideanet.[tSoulDump].exe ///ideafarm/tmp/ideanet.[tSoulDump].rc ///ideafarm/tmp/ideanet.[tSoulDump].res
+            // kitfresh  !update ///ideafarm/tmp/ideanet.[tSoulSubDump].exe ///ideafarm/tmp/ideanet.[tSoulSubDump].rc ///ideafarm/tmp/ideanet.[tSoulSubDump].res
 
             etThread.ifcHireF( tin0P , T("ifcIDaDAM_TOOLrEGISTEReMAIL") , ifcIDaDAM_TOOLmAKEkITsOURCEfILE , tArg , flHIRE_WAIT | flHIRE_DISPLAYtEXT , nicNameC() ) ;
             etThread.traceF( tin0P , tArg , flTRACE_NOpREFIX ) ;
-            TN( tArg , "" ) ; tArg = T("!ignoreFireByOperator !string 101 \"")+tSoulDump+T("\" !long ///ideafarm/tmp/ideanet.rc") ;
+            TN( tArg , "" ) ; tArg = T("!ignoreFireByOperator !string 101 \"")+tSoulSubDump+T("\" !long ///ideafarm/tmp/ideanet.rc") ;
 
-            // kitsource !string 101 "[tSoulDump]" !long ///ideafarm/tmp/ideanet.rc
+            // kitsource !string 101 "[tSoulSubDump]" !long ///ideafarm/tmp/ideanet.rc
 
             }
                 etThread.delF( tin0P , psttd ) ;
-                tSoulDump = T(psttd) ;
+                tSoulSubDump = T(psttd) ;
                 etThread.strDumpIF( tin0P , psttd , pbSoul , cbSoul , flSTRdUMP_FOREIGN , 0 , 0 , 0 , 0 ) ; ___( psttd ) ;
                 ZE( strokeS* , psttd ) ;
             {
-            TN( tSoulDump , "" ) ;
+            TN( tSoulSubDump , "" ) ;
 
             etThread.boxPutF( tin0P , tLongSoul , pbSoul , cbSoul ) ;
 
