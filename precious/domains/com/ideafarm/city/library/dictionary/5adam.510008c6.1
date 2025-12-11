@@ -18,7 +18,58 @@ TODO
 DONE( tmWorkF )
 
 }
-    etThread.traceF( tin0P , T("registering [email]:    ")+tEmail ) ;
+    }
+        DEL( pSub ) ;
+        }
+            etThread.ifcHireF( tin0P , T("ifcIDaDAM_TOOLrEGISTEReMAIL") , ifcIDaDAM_TOOLuPDATEkIT , tArg , flHIRE_WAIT | flHIRE_DISPLAYtEXT , nicNameC() ) ;
+            etThread.traceF( tin0P , tArg , flTRACE_NOpREFIX ) ;
+            tArg = T("!ignoreFireByOperator !update ")+tLongExe+T(" ///ideafarm/tmp/ideanet.rc ///ideafarm/tmp/ideanet.res") ;
+
+            etThread.diskCopyFileF( tin0P , tLongExe , T("///d/ideafarm.home.1/ephemeral/release/ideanet.unconfigured.exe") ) ;
+
+            TN( tLongExe , "///ideafarm/tmp/ideanet.exe" ) ;
+
+            // kitfresh  !update ///ideafarm/tmp/ideanet.[tSoulDump].exe ///ideafarm/tmp/ideanet.[tSoulDump].rc ///ideafarm/tmp/ideanet.[tSoulDump].res
+
+            etThread.ifcHireF( tin0P , T("ifcIDaDAM_TOOLrEGISTEReMAIL") , ifcIDaDAM_TOOLmAKEkITsOURCEfILE , tArg , flHIRE_WAIT | flHIRE_DISPLAYtEXT , nicNameC() ) ;
+            etThread.traceF( tin0P , tArg , flTRACE_NOpREFIX ) ;
+            TN( tArg , "" ) ; tArg = T("!ignoreFireByOperator !string 101 \"")+tSoulDump+T("\" !long ///ideafarm/tmp/ideanet.rc") ;
+
+            // kitsource !string 101 "[tSoulDump]" !long ///ideafarm/tmp/ideanet.rc
+
+            }
+                etThread.delF( tin0P , psttd ) ;
+                tSoulDump = T(psttd) ;
+                etThread.strDumpIF( tin0P , psttd , pbSoul , cbSoul , flSTRdUMP_FOREIGN , 0 , 0 , 0 , 0 ) ; ___( psttd ) ;
+                ZE( strokeS* , psttd ) ;
+            {
+            TN( tSoulDump , "" ) ;
+
+            etThread.boxPutF( tin0P , tLongSoul , pbSoul , cbSoul ) ;
+
+            countT       cbSoul = soulSub.cbF( tin0P ) ;
+            const byteT* pbSoul = soulSub ;
+
+            *pSub >> soulSub ;
+            soulC soulSub( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+
+            etThread.traceF( tin0P , T("registering [email,dump]:    ")+tEmail+tb4+tEmailDump+tb4+tLongSoul ) ;
+            TN( tLongSoul , "" ) ; tLongSoul = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_TOOLrEGISTEReMAIL)+T("/sub.01.00000001.")+TfORsTRING(idSub)+tDot+tEmailDump+T(".soulC") ;
+        {
+        if( pSub )
+        countT idSub = welcomeF( tin0P , etThread , etRock , pSub , tEmail ) ; ___( pSub ) ;
+        ZE( ideaNetSubscriptionC* , pSub ) ;
+    {
+    if( tEmailDump.csF( tin0P ) )
+
+    }
+        etThread.delF( tin0P , psttd ) ;
+        tEmailDump = T(psttd) ;
+        etThread.strDumpIF( tin0P , psttd , tEmail , tEmail.csF( tin0P ) , flSTRdUMP_FOREIGN , 0 , 0 , 0 , 0 ) ; ___( psttd ) ;
+        ZE( strokeS* , psttd ) ;
+    {
+    if( tEmail.csF( tin0P ) )
+    TN( tEmailDump , "" ) ;
 
     }
         }
@@ -36,12 +87,19 @@ DONE( tmWorkF )
         TN( tHeyUpdate , "!email" ) ;
     {
     TN( tEmail , "" ) ;
+
+    TN( tDot , "."    ) ;
+    TN( tb4  , "    " ) ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
 
 }
-    pSubP = new( 0 , tin0P , LF ) ideaNetSubscriptionC( tin0P , etherP , 1 , idSub , tSecret ) ; ___( pSubP ) ;
+    return idSub ;
+
+    pSubP = new( 0 , tin0P , LF ) ideaNetSubscriptionC( tin0P , etherP , 1 , idSub , tSecret , tEmail ) ; ___( pSubP ) ;
 
     etherP.traceF( tin0P , T("[idBook,idSub,generatedSecret]:    ")+TF2(idBook,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret ) ;
     }
@@ -55,15 +113,52 @@ TASK( tmWorkF )
     TN( tEmail , psttEmailP ) ;
     TN( tb4    , "    " ) ;
 
-    if( idBook != 1 || idSub != 1 ) etherP.osTimeNowF( tin0P , timeN1 , timeN2 ) ;      // FOR BOOK 1 SUB 1, I ALWAYS GENERATE THE SAME SECRET, WHICH IS HARDCODED INTO IDEANET.EXE
+    etherP.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT  , timeN1 ) ;
 
-    countT idSub = 1 + incv02AM( idSubLath ) ;
-    static countT idSubLath ;
+    }
+        etherP.fileWriteF(  tin0P , fileCount , (byteT*)&idSubLath , sizeof idSubLath ) ;
+        etherP.fileSetPtrF( tin0P , fileCount , flSETfILEpTR_BEGINNING , c2z ) ;
+        count2S c2z ;
+        idSub = ++ idSubLath ;
+
+        }
+            }
+                etRockP.traceF( tin0P , T("!exception / invalid file size for idSlotUseLath, so using 0 [tLongIdSubLath]:    ")+tLongIdSubLath ) ;
+                idSubLath = 0 ;
+            {
+            if( cbr - sizeof idSubLath )
+
+            }
+                }
+                    cbr = 0 ;       // PROBABLY REDUNDANT
+                    etRockP.traceF( tin0P , T("!exception / countT file is not of the expected size [tLongIdSubLath]")+tLongIdSubLath ) ;
+                    POOPR ;
+                {
+                if( POOP )
+                ((tin1S&)tin0P).pEtScratch->fileReadF( tin0P , (byteT*)&idSubLath , cbr , fileCount ) ;
+                SCOOPS
+            {
+            IFsCRATCHoK
+            countT cbr = sizeof idSubLath ;
+        {
+        else
+        }
+        {
+        if( bNewFile )
+        ZE( countT , idSubLath ) ;
+
+        const boolT bNewFile = ifcOPENrESULT_CREATED == fileCount.idOpenResultF( tin0P  ) ;
+        fileC fileCount( tin0P , (strokeS*)tLongIdSubLath , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
+
+        TN( tLongIdSubLath , "" ) ; tLongIdSubLath = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_TOOLrEGISTEReMAIL)+T("/idBook.00000001.idSub.lath.bin") ;
+    {
+    ZE( countT , idSub ) ;
+
     countT idBook = 1 ;
 {
-voidT welcomeF( tin0S& tin0P , etherC& etherP , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP )
+countT welcomeF( tin0S& tin0P , etherC& etherP , etherC& etRockP , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_TOOLrEGISTEReMAIL" )/*1*/
 /**/

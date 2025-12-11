@@ -89,7 +89,7 @@ DONE( tmWorkF )
             ZE( countT , idEpoch    ) ;
             ZE( countT , minuteLath ) ;
 
-            ideaNetSubscriptionC sub( tin0P , etThread , idBook , idSub , tSecret ) ; ___( pSubP ) ;
+            ideaNetSubscriptionC sub( tin0P , etThread , idBook , idSub , tSecret , T("foo@goo.com") ) ; ___( pSubP ) ;
 
             TN( tSecret , "bc2a" "79d2" "dc3d" "4462" "c587" "603e" "c576" "5563" "dd57" "181f" ) ;         //CS:CODEsYNC: 510008c0 510008af
             //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
@@ -154,9 +154,14 @@ DONE( tmWorkF )
         TN( tHeyGorilla , "!gorilla" ) ;
     {
     ZE( boolT , bGorilla ) ;
+
+    etThread.traceF( tin0P , T(postFoo) , flTRACE_NOpREFIX ) ;
+    countT rc = LoadStringA( 0 , 101 , postFoo , sizeof postFoo ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+osTextT postFoo[ TUCK << 4 ] ;
 
 DONE( tmHearF )
 }

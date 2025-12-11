@@ -49248,14 +49248,17 @@ i am nonconformant in that all of my member function definitions are in a single
 /*1*/class _export ideaNetSubscriptionC/*1*/
 {
     etherC&      ether   ;
+    textC        tEmail  ;
     textC        tSecret ;
-    const countT idBook  ;
-    const countT idSub   ;
+    countT       timeC1  ;
+    sCountT      timeC2  ;
+    countT idBook  ;
+    countT idSub   ;
 
     public :
 
     NEWdELcLASSpROTOS
-    ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP ) ;
+    ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP , const strokeS* const psttEmailP ) ;
     nicNameC nnF( tin0S& tin0P , count04T& hashP , countT minuteP ) ;
     voidT    operator >>( soulC& sP ) ;
     voidT    operator <<( soulC& sP ) ;

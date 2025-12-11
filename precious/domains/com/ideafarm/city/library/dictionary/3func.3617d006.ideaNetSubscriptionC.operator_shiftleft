@@ -8,11 +8,14 @@
 
 
 }
-    ZE( strokeS* , psttSecret ) ; sP >> psttSecret ; tSecret = T(psttSecret) ; ((tin1S&)tin0P).pEther->delF( tin0P , psttSecret ) ;
-    ZE( countT   , idSub      ) ; sP >> idSub      ;
-    ZE( countT   , idBook     ) ; sP >> idBook     ;
-    ZE( countT   , idFormat   ) ; sP >> idFormat   ;
-    ZE( countT   , finger     ) ; sP >> finger     ;
+    idSub  = 0                  ; sP >>          idSub      ;
+    idBook = 0                  ; sP >>          idBook     ;
+    timeC2 = 0                  ; sP >> (countT&)timeC2     ;
+    timeC1 = 0                  ; sP >>          timeC1     ;
+    ZE( strokeS* , psttSecret ) ; sP >>          psttSecret ; tSecret = T(psttSecret) ; ((tin1S&)tin0P).pEther->delF( tin0P , psttSecret ) ;
+    ZE( strokeS* , psttEmail  ) ; sP >>          psttEmail  ; tEmail  = T(psttEmail ) ; ((tin1S&)tin0P).pEther->delF( tin0P , psttEmail  ) ;
+    ZE( countT   , idFormat   ) ; sP >>          idFormat   ;
+    ZE( countT   , finger     ) ; sP >>          finger     ;
 
     TINSL
 {
