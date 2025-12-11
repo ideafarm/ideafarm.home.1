@@ -34779,6 +34779,7 @@ examples
  //voidT strIfcLogoF( tin0S& tin0P , strokeS*& psttP , const measureT mScaleP = 1 , const countT csttExtraP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34160.etherC.strIfcLogoF!||
  static voidT strDumpIF( tin0S& tin0P , strokeS*& psttP , const byteT* pbP , const countT cbP , const flagsT flagsP = flSTRdUMP_null , countT mPerLineP = 0 , const countT mPerGroupP = 0 , const byteT bReadableP = 0 , const countT mPerGrouprP = 0 ) ;
+ voidT strUnDumpF( tin0S& tin0P , byteT*& pbP , countT& cbP , const strokeS* const psttP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34179.etherC.strDumpIF!||
  static voidT strDumpStrokesIF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttInP , const strokeS* const psttDelimiterP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3419f.etherC.strDumpStrokesIF!||
