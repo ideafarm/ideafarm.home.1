@@ -268,9 +268,7 @@ DONE( tmWorkF )
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 
-    etThread.traceF( tin0P , T("maybe changed priority class for TermService") ) ;
-    thirdC::c_systemIF( tin0P , T("powershell d:\\ideafarm.work\\cmd\\config.server.ps1") ) ;       // AS OF THIS WRITING, THIS JUST RAISES THE PRIORITY CLASS TO REALTIME OF THE RDP SERVICE PROCESS ; IT IS DONE HERE BECAUSE I AM THE WOTH PROCESS LAUNCHED IN THE IPDOS (TM) SERVICE BUNDLE
-    etThread.traceF( tin0P , T("changing priority class for TermService") ) ;
+    thirdC::c_systemIF( tin0P , T("d:\\ideafarm.work\\cmd\\config.server.bat") ) ;  //A:ASSUME: I AM THE WOTH PROCESS HIRED BY THE IPDOS (TM) SERVICE ; I AM HERE BECAUSE THE SERVER IS TO BE CONFIGURED ASAP ; DOING THIS ON AN END USER'S PC IS HARMLESS AND DOES NOTHING
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
