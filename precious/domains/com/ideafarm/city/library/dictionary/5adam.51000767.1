@@ -6,32 +6,60 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
-
 REST
 
-swFlock.ungrabF( tin0P ) ;
-swFlock.freeAllF( tin0P ) ;
+sgnDone_tmWorkF.waitF( tin0P ) ;
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;
+signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
 
+TODO
+
+DONE( tmWorkF )
 }
-    DEL( pFlock ) ;
+    swFlock.ungrabF( tin0P ) ;
+    swFlock.freeAllF( tin0P ) ;
 
     }
+        DEL( pFlock ) ;
+
         }
             }
-                else                        break ;
-                if( info3.NextEntryOffset ) pbInfo3 += info3.NextEntryOffset ;
+                }
+                    else                        break ;
+                    if( info3.NextEntryOffset ) pbInfo3 += info3.NextEntryOffset ;
 
-                //etThread.traceF( tin0P , T("    [name]:    ")+T(postName) ) ;
-                if( bOk ) ;
+                    //etThread.traceF( tin0P , T("    [name]:    ")+T(postName) ) ;
+                    if( bOk ) ;
 
-                unicodeToAnsiF( postName , sizeof postName , (byteT*)info3.FileName , info3.FileNameLength >> 1 ) ;
+                    unicodeToAnsiF( postName , sizeof postName , (byteT*)info3.FileName , info3.FileNameLength >> 1 ) ;
 
-                thirdC::c_memsetIF( tin0P , postName , sizeof postName ) ;
-                osTextT postName[ TUCK << 1 ] ;
+                    thirdC::c_memsetIF( tin0P , postName , sizeof postName ) ;
+                    osTextT postName[ TUCK << 1 ] ;
 
-                FILE_FULL_DIR_INFO& info3 = *(FILE_FULL_DIR_INFO*)pbInfo3 ;
+                    FILE_FULL_DIR_INFO& info3 = *(FILE_FULL_DIR_INFO*)pbInfo3 ;
+                {
+                for(;;)
             {
-            for(;;)
+            else
+            }
+                if( rc ) ;
+                countT rc = GetLastError() ;
+            {
+            if( !bOk )
+
+            bOk = GetFileInformationByHandleEx( (HANDLE)hFile.osF( ifcIDtYPEhANDLE_FILE ) , (FILE_INFO_BY_HANDLE_CLASS)FileFullDirectoryInfo_updated , pbBuffer , sizeof pbBuffer ) ;
+        {
+
+        byteT* pbInfo3 = pbBuffer ;
+
+        }
+            //etThread.traceF( tin0P , T("[name]:    ")+T(postName) ) ;
+            if( bOk ) ;
+
+            unicodeToAnsiF( postName , sizeof postName , (byteT*)info2.FileName , info2.FileNameLength >> 1 ) ;
+
+            thirdC::c_memsetIF( tin0P , postName , sizeof postName ) ;
+            osTextT postName[ TUCK << 1 ] ;
         {
         else
         }
@@ -39,234 +67,217 @@ swFlock.freeAllF( tin0P ) ;
             countT rc = GetLastError() ;
         {
         if( !bOk )
+        bOk = GetFileInformationByHandleEx( (HANDLE)hFile.osF( ifcIDtYPEhANDLE_FILE ) , FileNameInfo , pbBuffer , sizeof pbBuffer ) ;
+        FILE_NAME_INFO& info2 = *(FILE_NAME_INFO*)pbBuffer ;
+        byteT pbBuffer[ TOCK ] ;
 
-        bOk = GetFileInformationByHandleEx( (HANDLE)hFile.osF( ifcIDtYPEhANDLE_FILE ) , (FILE_INFO_BY_HANDLE_CLASS)FileFullDirectoryInfo_updated , pbBuffer , sizeof pbBuffer ) ;
-    {
-
-    byteT* pbInfo3 = pbBuffer ;
-
-    }
-        //etThread.traceF( tin0P , T("[name]:    ")+T(postName) ) ;
-        if( bOk ) ;
-
-        unicodeToAnsiF( postName , sizeof postName , (byteT*)info2.FileName , info2.FileNameLength >> 1 ) ;
-
-        thirdC::c_memsetIF( tin0P , postName , sizeof postName ) ;
-        osTextT postName[ TUCK << 1 ] ;
-    {
-    else
-    }
-        if( rc ) ;
-        countT rc = GetLastError() ;
-    {
-    if( !bOk )
-    bOk = GetFileInformationByHandleEx( (HANDLE)hFile.osF( ifcIDtYPEhANDLE_FILE ) , FileNameInfo , pbBuffer , sizeof pbBuffer ) ;
-    FILE_NAME_INFO& info2 = *(FILE_NAME_INFO*)pbBuffer ;
-    byteT pbBuffer[ TOCK ] ;
-
-    }
-        //etThread.traceF( tin0P , T("uncloaking [volume,idiFile]:    ")+TF3((countT)info.dwVolumeSerialNumber,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb4+TF3((countT)info.nFileIndexLow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3((countT)info.nFileIndexHigh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
-    {
-    if( bOk )
-    boolT bOk = GetFileInformationByHandle( (HANDLE)hFile.osF( ifcIDtYPEhANDLE_FILE ) , &info ) ;
-    BY_HANDLE_FILE_INFORMATION info ;
-    handleC& hFile = *pFlock ;
-
-    fileC*& pFlock   = *(fileC**)&(countT&)swFlock ;
-    psttzLeverFolder = (strokeS*)swFlock.leverF( tin0P , idf ) ;
-{
-for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-countT cFlavors = swFlock.cFlavorsF( tin0P ) ;
-swFlock.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-TN( tb4    , "    " ) ;
-
-//etThread.traceF( tin0P , T("unlocking") ) ;
-ether.loafIF( tin0P ) ;
-
-etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 1 ) ) ;
-
-//U::etThread.osThreadF( TaRG1( tmWatchHandlesF ) ) ;
-
-etThread.osThreadF( TaRG2cBsTACK( tmServerF , CBsTACKmIN << 1 ) , (countT)&psttzLeverFolder , (countT)&swFlock ) ;
-
-//etThread.traceF( tin0P , T("folder:    ")+tFolder ) ;
-//}
-//    etThread.delF( tin0P , psttFolder ) ;
-//    tFolder = T(psttFolder) ;
-//    ZE( strokeS* , psttFolder ) ; etThread.querySettingF( tin0P , psttFolder , T("!ipdos.cloak.folder")  ) ; ___( psttFolder ) ;
-//{
-//TN( tFolder , "" ) ;
-
-}
-    etThread.delF( tin0P , psttf ) ;
-
-    }
         }
-            }
-                DEL( pFlock ) ;
-            {
-            if( cDo )
-
-            }
-                }
-                    swFlock.ungrabF( tin0P ) ;
-                    else          { swFlock = (countT)pFlock ; pFlock = 0 ; }
-                    if( swFlock ) DEL( pFlock )                                   //SHOULD BE IMPOSSIBLE
-                    psttzLeverFolder = psttf ;
-                    swFlock.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                    //etThread.traceF( tin0P , T("folder locked:    ")+T(psttf) ) ;
-                {
-                if( !cDo )
-            {
-            else
-            }
-                DEL( pFlock ) ;
-                etThread.traceF( tin0P , T("error: could not lock folder:    ")+T(psttf) ) ;
-                POOPRqUIET
-            {
-            if( POOP )
-
-            fileC* pFlock = new( 0 , tin0P , LF ) fileC( tin0P , psttf , ifcOPENaCCESS_R , 0 , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_BUMPkEY | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ; ___( pFlock ) ;
+            //etThread.traceF( tin0P , T("uncloaking [volume,idiFile]:    ")+TF3((countT)info.dwVolumeSerialNumber,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb4+TF3((countT)info.nFileIndexLow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3((countT)info.nFileIndexHigh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
         {
-        while( cDo -- )  //THIS IS TO VERIFY THAT I CAN DESTROY AND RECREATE THE FILE LOCK
-        countT cDo = 2 ;
+        if( bOk )
+        boolT bOk = GetFileInformationByHandle( (HANDLE)hFile.osF( ifcIDtYPEhANDLE_FILE ) , &info ) ;
+        BY_HANDLE_FILE_INFORMATION info ;
+        handleC& hFile = *pFlock ;
 
-        SCOOPS
+        fileC*& pFlock   = *(fileC**)&(countT&)swFlock ;
+        psttzLeverFolder = (strokeS*)swFlock.leverF( tin0P , idf ) ;
     {
-    IFsCRATCHoK
-    //CS:CODEsYNCH 51000767 51000767
+    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+    countT cFlavors = swFlock.cFlavorsF( tin0P ) ;
+    swFlock.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    TN( tb4    , "    " ) ;
 
-    stFolderToCloak >> psttf ;
-    ZE( strokeS* , psttf ) ;
-{
-while( stFolderToCloak )
+    //etThread.traceF( tin0P , T("unlocking") ) ;
+    ether.loafIF( tin0P ) ;
 
-switchC swFlock( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzLeverFolder ) ;
-ZE( strokeS* , psttzLeverFolder ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 1 ) ) ;
 
-}
+    //U::etThread.osThreadF( TaRG1( tmWatchHandlesF ) ) ;
+
+    etThread.osThreadF( TaRG2cBsTACK( tmServerF , CBsTACKmIN << 1 ) , (countT)&psttzLeverFolder , (countT)&swFlock ) ;
+
+    //etThread.traceF( tin0P , T("folder:    ")+tFolder ) ;
+    //}
+    //    etThread.delF( tin0P , psttFolder ) ;
+    //    tFolder = T(psttFolder) ;
+    //    ZE( strokeS* , psttFolder ) ; etThread.querySettingF( tin0P , psttFolder , T("!ipdos.cloak.folder")  ) ; ___( psttFolder ) ;
+    //{
+    //TN( tFolder , "" ) ;
+
     }
+        etThread.delF( tin0P , psttf ) ;
+
         }
             }
-                psttf = 0 ; // psttf HAS BEEN SUNK, SO THIS COPY IS A ZOMBIE
+                }
+                    DEL( pFlock ) ;
+                {
+                if( cDo )
 
                 }
-                    etThread.traceF( tin0P , T("error: could not walk:    ")+T(psttf) ) ;
-                    POOPR
+                    }
+                        swFlock.ungrabF( tin0P ) ;
+                        else          { swFlock = (countT)pFlock ; pFlock = 0 ; }
+                        if( swFlock ) DEL( pFlock )                                   //SHOULD BE IMPOSSIBLE
+                        psttzLeverFolder = psttf ;
+                        swFlock.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                        //etThread.traceF( tin0P , T("folder locked:    ")+T(psttf) ) ;
+                    {
+                    if( !cDo )
+                {
+                else
+                }
+                    DEL( pFlock ) ;
+                    etThread.traceF( tin0P , T("error: could not lock folder:    ")+T(psttf) ) ;
+                    POOPRqUIET
                 {
                 if( POOP )
 
-                ((tin1S&)tin0P).pEtScratch->diskWalkF( tin0P , cDirs , cFiles , psttf , ether , flDISKwALK_DIRECTORIESoNLY , sinkFolderToCloakCBF , pcArg , 0 , 0 ) ;
-                ZE( countT , cFiles ) ;
-                ZE( countT , cDirs ) ;
-
-                SCOOPS
+                fileC* pFlock = new( 0 , tin0P , LF ) fileC( tin0P , psttf , ifcOPENaCCESS_R , 0 , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_BUMPkEY | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ; ___( pFlock ) ;
             {
-            IFsCRATCHoK
+            while( cDo -- )  //THIS IS TO VERIFY THAT I CAN DESTROY AND RECREATE THE FILE LOCK
+            countT cDo = 2 ;
+
+            SCOOPS
         {
-        else
-        if( !ids ) etThread.delF( tin0P , psttf ) ;
+        IFsCRATCHoK
+        //CS:CODEsYNCH 51000767 51000767
 
-        stFolderToCloak.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
-        ZE( countT , ids ) ;
-
-        stFoldersToWalk >> psttf ;
+        stFolderToCloak >> psttf ;
         ZE( strokeS* , psttf ) ;
     {
-    while( stFoldersToWalk )
+    while( stFolderToCloak )
 
-    countT pcArg[] = { (countT)((tin1S&)tin0P).pEtScratch , (countT)&stFolderToCloak , (countT)&stFolderExclude , (countT)&stFoldersExclude } ;
+    switchC swFlock( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzLeverFolder ) ;
+    ZE( strokeS* , psttzLeverFolder ) ;
 
     }
-        //else       psttf = 0 ;
-        //if( !ids ) etThread.delF( tin0P , psttf ) ;
-        //stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
-        //ids = 0 ;
-        //etThread.strMakeF( tin0P , LF , psttf , tHome+T("tmp/") ) ; ___( psttf ) ;
-
-        else       psttf = 0 ;
-        if( !ids ) etThread.delF( tin0P , psttf ) ;
-        stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
-        ids = 0 ;
-        etThread.strMakeF( tin0P , LF , psttf , tHome+T("controls/") ) ; ___( psttf ) ;
-
-        //else       psttf = 0 ;
-        //if( !ids ) etThread.delF( tin0P , psttf ) ;
-        //stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
-        //ids = 0 ;
-        //etThread.strMakeF( tin0P , LF , psttf , tHome+T("precious/domains/com/ideafarm/city/workshop/handle/") ) ; ___( psttf ) ;
-
-        //else       psttf = 0 ;
-        //if( !ids ) etThread.delF( tin0P , psttf ) ;
-        //stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
-        //ids = 0 ;
-        //etThread.strMakeF( tin0P , LF , psttf , tHome+T("ephemeral/ipdos/memorySpaces/") ) ; ___( psttf ) ;
-
-        //else       psttf = 0 ;
-        //if( !ids ) etThread.delF( tin0P , psttf ) ;
-        //stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
-        //ids = 0 ;
-        //etThread.strMakeF( tin0P , LF , psttf , tHome+T("ephemeral/city/park/exedll/1/master/") ) ; ___( psttf ) ;
-
-        else       psttf = 0 ;
-        if( !ids ) etThread.delF( tin0P , psttf ) ;
-        stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
-        ids = 0 ;
-        etThread.strMakeF( tin0P , LF , psttf , tHome+T("IdeaFarm (tm)/") ) ; ___( psttf ) ;
-
-        // SINK EXCLUSIONS
-
-        else       psttf = 0 ;
-        if( !ids ) etThread.delF( tin0P , psttf ) ;
-        stFoldersToWalk.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
-        //U::etThread.strMakeF( tin0P , LF , psttf , tHome ) ; ___( psttf ) ;
-        etThread.strMakeF( tin0P , LF , psttf , /*U:: tHome */ T("///ideafarm/tmp/locked.test/") ) ; ___( psttf ) ;
-        ZE( countT , ids ) ;
-
-        // SINK FOLDERS TO WALK
-
-        ZE( strokeS* , psttf ) ;
-        
-        //etThread.traceF( tin0P , T("home:  ")+tHome ) ;
         }
-            etThread.delF( tin0P , psttNU ) ;
-            etThread.delF( tin0P , psttHome ) ;
-            tHome  = T(psttHome) ;
-            etThread.strBisectF( tin0P , psttHome , psttNU , tName , tSlash , 5 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttHome ) ; ___( psttNU ) ;
-            ZE( strokeS* , psttNU ) ;
-            ZE( strokeS* , psttHome ) ;
-        
-            //etThread.traceF( tin0P , T("if name:  ")+tName ) ;
             }
-                break ;
-                tName = T(ifName) ;
-                etThread.delF( tin0P , psttLower ) ;
-                ifFileNameC ifName( tin0P , etThread , T(psttLower) ) ;
-                etThread.strConvertToLowerCaseF( tin0P , psttLower , psttc1 ) ; ___( psttLower ) ;    // D:\iDeAfArM.home.1\ephemeral\city\park\exedll\1\hover\ideafarm.00000180.ipdos-we
-                ZE( strokeS* , psttLower ) ;
-                //etThread.traceF( tin0P , T("parameter:  ")+T(psttc1) ) ;
+                }
+                    psttf = 0 ; // psttf HAS BEEN SUNK, SO THIS COPY IS A ZOMBIE
+
+                    }
+                        etThread.traceF( tin0P , T("error: could not walk:    ")+T(psttf) ) ;
+                        POOPR
+                    {
+                    if( POOP )
+
+                    ((tin1S&)tin0P).pEtScratch->diskWalkF( tin0P , cDirs , cFiles , psttf , ether , flDISKwALK_DIRECTORIESoNLY , sinkFolderToCloakCBF , pcArg , 0 , 0 ) ;
+                    ZE( countT , cFiles ) ;
+                    ZE( countT , cDirs ) ;
+
+                    SCOOPS
+                {
+                IFsCRATCHoK
             {
-            FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tin0P ) )
-            TN( tName , "" ) ;
-            TN( tSlash , "/" ) ;
+            else
+            if( !ids ) etThread.delF( tin0P , psttf ) ;
+
+            stFolderToCloak.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
+            ZE( countT , ids ) ;
+
+            stFoldersToWalk >> psttf ;
+            ZE( strokeS* , psttf ) ;
         {
-        TN( tHome , "" ) ;
+        while( stFoldersToWalk )
+
+        countT pcArg[] = { (countT)((tin1S&)tin0P).pEtScratch , (countT)&stFolderToCloak , (countT)&stFolderExclude , (countT)&stFoldersExclude } ;
+
+        }
+            //else       psttf = 0 ;
+            //if( !ids ) etThread.delF( tin0P , psttf ) ;
+            //stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
+            //ids = 0 ;
+            //etThread.strMakeF( tin0P , LF , psttf , tHome+T("tmp/") ) ; ___( psttf ) ;
+
+            else       psttf = 0 ;
+            if( !ids ) etThread.delF( tin0P , psttf ) ;
+            stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
+            ids = 0 ;
+            etThread.strMakeF( tin0P , LF , psttf , tHome+T("controls/") ) ; ___( psttf ) ;
+
+            //else       psttf = 0 ;
+            //if( !ids ) etThread.delF( tin0P , psttf ) ;
+            //stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
+            //ids = 0 ;
+            //etThread.strMakeF( tin0P , LF , psttf , tHome+T("precious/domains/com/ideafarm/city/workshop/handle/") ) ; ___( psttf ) ;
+
+            //else       psttf = 0 ;
+            //if( !ids ) etThread.delF( tin0P , psttf ) ;
+            //stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
+            //ids = 0 ;
+            //etThread.strMakeF( tin0P , LF , psttf , tHome+T("ephemeral/ipdos/memorySpaces/") ) ; ___( psttf ) ;
+
+            //else       psttf = 0 ;
+            //if( !ids ) etThread.delF( tin0P , psttf ) ;
+            //stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
+            //ids = 0 ;
+            //etThread.strMakeF( tin0P , LF , psttf , tHome+T("ephemeral/city/park/exedll/1/master/") ) ; ___( psttf ) ;
+
+            else       psttf = 0 ;
+            if( !ids ) etThread.delF( tin0P , psttf ) ;
+            stFoldersExclude.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
+            ids = 0 ;
+            etThread.strMakeF( tin0P , LF , psttf , tHome+T("IdeaFarm (tm)/") ) ; ___( psttf ) ;
+
+            // SINK EXCLUSIONS
+
+            else       psttf = 0 ;
+            if( !ids ) etThread.delF( tin0P , psttf ) ;
+            stFoldersToWalk.sinkF( tin0P , ids , psttf , flSTACKsINK_UNIQUE ) ;
+            //U::etThread.strMakeF( tin0P , LF , psttf , tHome ) ; ___( psttf ) ;
+            etThread.strMakeF( tin0P , LF , psttf , /*U:: tHome */ T("///ideafarm/tmp/locked.test/") ) ; ___( psttf ) ;
+            ZE( countT , ids ) ;
+
+            // SINK FOLDERS TO WALK
+
+            ZE( strokeS* , psttf ) ;
+
+            //etThread.traceF( tin0P , T("home:  ")+tHome ) ;
+            }
+                etThread.delF( tin0P , psttNU ) ;
+                etThread.delF( tin0P , psttHome ) ;
+                tHome  = T(psttHome) ;
+                etThread.strBisectF( tin0P , psttHome , psttNU , tName , tSlash , 5 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttHome ) ; ___( psttNU ) ;
+                ZE( strokeS* , psttNU ) ;
+                ZE( strokeS* , psttHome ) ;
+
+                //etThread.traceF( tin0P , T("if name:  ")+tName ) ;
+                }
+                    break ;
+                    tName = T(ifName) ;
+                    etThread.delF( tin0P , psttLower ) ;
+                    ifFileNameC ifName( tin0P , etThread , T(psttLower) ) ;
+                    etThread.strConvertToLowerCaseF( tin0P , psttLower , psttc1 ) ; ___( psttLower ) ;    // D:\iDeAfArM.home.1\ephemeral\city\park\exedll\1\hover\ideafarm.00000180.ipdos-we
+                    ZE( strokeS* , psttLower ) ;
+                    //etThread.traceF( tin0P , T("parameter:  ")+T(psttc1) ) ;
+                {
+                FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tin0P ) )
+                TN( tName , "" ) ;
+                TN( tSlash , "/" ) ;
+            {
+            TN( tHome , "" ) ;
+        {
+        stackC stFoldersExclude( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;        // PLURAL:        THE EXACT MATCH FOLDER AND ALL CONTAINED SUBFOLDERS
+        stackC stFolderExclude(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;        // SINGULAR: ONLY THE EXACT MATCH FOLDER
+        stackC stFoldersToWalk(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
     {
-    stackC stFoldersExclude( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;        // PLURAL:        THE EXACT MATCH FOLDER AND ALL CONTAINED SUBFOLDERS
-    stackC stFolderExclude(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;        // SINGULAR: ONLY THE EXACT MATCH FOLDER
-    stackC stFoldersToWalk(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stFolderToCloak(      tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+
+    etThread.traceF( tin0P , T("maybe changed priority class for TermService") ) ;
+    thirdC::c_systemIF( tin0P , T("powershell d:\\ideafarm.work\\cmd\\config.server.ps1") ) ;       // AS OF THIS WRITING, THIS JUST RAISES THE PRIORITY CLASS TO REALTIME OF THE RDP SERVICE PROCESS ; IT IS DONE HERE BECAUSE I AM THE WOTH PROCESS LAUNCHED IN THE IPDOS (TM) SERVICE BUNDLE
+    etThread.traceF( tin0P , T("changing priority class for TermService") ) ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    _IO_
 {
-stackC stFolderToCloak(      tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
-
-etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
-thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
-
-etThread.traceF( tin0P , T("maybe changed priority class for TermService") ) ;
-thirdC::c_systemIF( tin0P , T("powershell d:\\ideafarm.work\\cmd\\config.server.ps1") ) ;       // AS OF THIS WRITING, THIS JUST RAISES THE PRIORITY CLASS TO REALTIME OF THE RDP SERVICE PROCESS ; IT IS DONE HERE BECAUSE I AM THE WOTH PROCESS LAUNCHED IN THE IPDOS (TM) SERVICE BUNDLE
-etThread.traceF( tin0P , T("changing priority class for TermService") ) ;
-
-
-TODO
+if( pTaskP )
+TASK( tmWorkF )
 
 DONE( tmHireF )
 }
