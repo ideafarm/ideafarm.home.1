@@ -19,11 +19,22 @@ DONE( tmWorkF )
 }
     etherC::loafIF( tin0P ) ;
     etThread.traceF( tin0P , T("maybe changed priority class for TermService") ) ;
-    countT rc = thirdC::c_systemIF( tin0P , "powershell -Command \"$list1 = Get-CimInstance Win32_Process -Filter \"Name = 'svchost.exe'\" | Select-Object ProcessId ; foreach( $foo in $list1) { $hit = ( Get-CimInstance Win32_Service -Filter \"ProcessId = $($foo.ProcessId) AND Name = 'TermService'\" ).ProcessId ; if( $hit ){ Write-Host \"found [pid]: $hit\" ; ( Get-Process -Id $hit ).PriorityClass = 'RealTime' } }\"" ) ;
+
+
+
+
+  //countT rc = thirdC::c_systemIF( tin0P , "powershell -Command \"$list1 = Get-CimInstance Win32_Process -Filter \"Name = 'svchost.exe'\" | Select-Object ProcessId ; foreach( $foo in $list1) { $hit = ( Get-CimInstance Win32_Service -Filter \"ProcessId = $($foo.ProcessId) AND Name = 'TermService'\" ).ProcessId ; if( $hit ){ Write-Host \"$hit\" ; ( Get-Process -Id $hit ).PriorityClass = 'RealTime' } }\"" ) ;
+    countT rc = thirdC::c_systemIF( tin0P , "powershell -Command \"$list1 = Get-CimInstance Win32_Process -Filter \"Name = 'svchost.exe'\" | Select-Object ProcessId ;\"" ) ;
+
+
+
+
     etThread.traceF( tin0P , T("changing priority class for TermService") ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+// powershell -Command "$list1 = Get-CimInstance Win32_Process -Filter "Name = 'svchost.exe'" | Select-Object ProcessId ; foreach( $foo in $list1) { $hit = ( Get-CimInstance Win32_Service -Filter "ProcessId = $($foo.ProcessId) AND Name = 'TermService'" ).ProcessId ; if( $hit ){ Write-Host "found [pid]: $hit" ; ( Get-Process -Id $hit ).PriorityClass = 'RealTime' } }"
 
 /*1*/WAKEhIDE( "doodle.powershell" )/*1*/
 /**/
