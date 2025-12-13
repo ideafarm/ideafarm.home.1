@@ -28,7 +28,11 @@ DONE( tmWorkF )
 
 
     etThread.traceF( tin0P , tCmd , flTRACE_NOpREFIX ) ;
-    TN( tCmd , "powershell -Command \"$list1 = Get-CimInstance Win32_Process -Filter \"Name = 'svchost.exe'\" | Select-Object ProcessId ; foreach( $foo in $list1) { $hit = ( Get-CimInstance Win32_Service -Filter \"ProcessId = $($foo.ProcessId) AND Name = 'TermService'\" ).ProcessId ; if( $hit ){ Write-Host \"$hit\" ; ( Get-Process -Id $hit ).PriorityClass = 'RealTime' } }\"" ) ;
+
+    TN( tCmd , "powershell -Command \"$list1 = Get-CimInstance Win32_Process -Filter 'Name = \"svchost.exe\"' | Select-Object ProcessId ; foreach( $foo in $list1) { $hit = ( Get-CimInstance Win32_Service -Filter 'ProcessId = $($foo.ProcessId) AND Name = \"TermService\"' ).ProcessId ; if( $hit ){ Write-Host '$hit' ; ( Get-Process -Id $hit ).PriorityClass = 'RealTime' } }\"" ) ;
+
+
+    //B: TN( tCmd , "powershell -Command \"$list1 = Get-CimInstance Win32_Process -Filter \"Name = 'svchost.exe'\" | Select-Object ProcessId ; foreach( $foo in $list1) { $hit = ( Get-CimInstance Win32_Service -Filter \"ProcessId = $($foo.ProcessId) AND Name = 'TermService'\" ).ProcessId ; if( $hit ){ Write-Host \"$hit\" ; ( Get-Process -Id $hit ).PriorityClass = 'RealTime' } }\"" ) ;
 
 
     etThread.traceF( tin0P , T("changing priority class for TermService") ) ;
