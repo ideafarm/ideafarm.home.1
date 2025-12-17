@@ -18,15 +18,22 @@ TODO
 DONE( tmWorkF )
 
 }
-    if( tLong.csF( tin0P ) ) etThread.boxPutF( tin0P , tLong , tRC , tRC.csF( tin0P ) ) ;
-
-    etThread.traceF( tin0P , tRC , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etThread.delF( tin0P , pstt1Values ) ;
+    etThread.delF( tin0P , pstt1Ids    ) ;
 
     }
-        tRC += tEnd ;
+        etThread.boxPutF( tin0P , tLong , tRC , tRC.csF( tin0P ) ) ;
+        etThread.delF( tin0P , psttSource ) ;
+        TN( tRC , "" ) ; tRC = T(psttSource) ;
+        etThread.ifcKitMakeSourceF( tin0P , psttSource , pstt1Ids , pstt1Values ) ; ___( psttSource ) ;
+        ZE( strokeS* , psttSource ) ;
+    {
+    if( tLong.csF( tin0P ) )
+
+    }
         }
             }
-                offi   = 0 ;
+                offi    = 0 ;
                 bString = 1 ;
             {
             else if( !etThread.strCompareF( tin0P , psttc1 , tHeyString ) )
@@ -36,17 +43,16 @@ DONE( tmWorkF )
                     }
                         break ;
                         bString = 0 ;
-                        tRC += tq+T(psttc1)+tq+tcrlf ;
+                        etThread.strFuseSeparateF( tin0P , pstt1Values , psttc1 , 0 , 0 , 0 , 0 , TUCK << 4 ) ;
                     {
                     case 1 :
                     }
                         break ;
-                        tRC += T(psttc1) ;
+                        etThread.strFuseSeparateF( tin0P , pstt1Ids    , psttc1 , 0 , 0 , 0 , 0 , TUCK << 4 ) ;
                     {
                     case 0 :
                 {
                 switch( ( offi ++ ) % 2 )
-                tRC += tb4 ;
             {
             else if( bString )
             }
@@ -65,24 +71,13 @@ DONE( tmWorkF )
         ZE( boolT , bString ) ;
         TN( tHeyString , "!string" ) ;
         TN( tHeyLong , "!long" ) ;
-        TN( tcrlf , "\r\n" ) ;
-        TN( tq    , "\"" ) ;
-        TN( tb4   , "    " ) ;
         ZE( countT , offi ) ;
     {
+    etThread.strMakeF( tin0P , LF , pstt1Values , 0 , TUCK << 4 ) ; ___( pstt1Values ) ;
+    etThread.strMakeF( tin0P , LF , pstt1Ids    , 0 , TUCK << 4 ) ; ___( pstt1Ids    ) ;
+    ZE( strokeS* , pstt1Values ) ;
+    ZE( strokeS* , pstt1Ids    ) ;
     TN( tLong , "" ) ;
-
-    TN( tEnd , "END\r\n" ) ;
-
-    ) ;
-
-        "BEGIN\r\n"
-        "STRINGTABLE\r\n"
-        "\r\n"
-        "1 ICON \"\\\\ideafarm.home.1\\\\precious\\\\domains\\\\com\\\\ideafarm\\\\city\\\\library\\\\dictionary\\\\7reso.71000002.favicon.ico\"\r\n"
-        "\r\n"
-
-    TN( tRC ,
 {
 if( pTaskP )
 TASK( tmWorkF )
