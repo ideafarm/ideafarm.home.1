@@ -34277,6 +34277,7 @@ examples
  voidT ifcUdpFileThrowFileF( tin0S& tin0P , const boolT& bQuitP , countT& idGramP , countT& secretToUseP , countT& cThrownP , count04T& cb04ThrownP , const strokeS* const psttLongP ) ;
  stackC& ifcStkPoolNamesF( tin0S& tin0P ) ;
  voidT ifcKitMakeSourceF( tin0S& tin0P , strokeS*& psttSourceP , const strokeS* const pstt1IdsP , const strokeS* const pstt1ValuesP ) ;
+ voidT ifcKitUpdateKitF( tin0S& tin0P , const strokeS* const psttExeP , const strokeS* const psttRcP , const strokeS* const psttResP ) ;
 
 /* commands: sorting */
  voidT ifcSortaF( tin0S& tin0P , const boolT& bQuitP , byteT* const pbArrayP , const countT cbArrayP , const countT cbSuffixP , const countT cbPrefixP , const countT cbKeyP , const flagsT flagsP = flSORTAc_null ) ;
