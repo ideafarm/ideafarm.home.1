@@ -21,21 +21,21 @@ DONE( tmWorkF )
     }
         DEL( pSub ) ;
         }
-            etThread.ifcHireF( tin0P , T("ifcIDaDAM_TOOLrEGISTEReMAIL") , ifcIDaDAM_TOOLuPDATEkIT , tArg , flHIRE_WAIT | flHIRE_DISPLAYtEXT , nicNameC() ) ;
-            etThread.traceF( tin0P , tArg , flTRACE_NOpREFIX ) ;
-            tArg = T("!ignoreFireByOperator !update ")+tLongExe+T(" ///ideafarm/tmp/ideanet.rc ///ideafarm/tmp/ideanet.res") ;
+            etThread.ifcKitUpdateKitF(  tin0P , tLongExe , tLongRc , tLongRes ) ;
+            etThread.diskCopyFileF(     tin0P , tLongExe , T("///d/ideafarm.home.1/ephemeral/release/ideanet.unconfigured.exe") ) ;
 
-            etThread.diskCopyFileF( tin0P , tLongExe , T("///d/ideafarm.home.1/ephemeral/release/ideanet.unconfigured.exe") ) ;
+            etThread.boxPutF( tin0P , tLongRc , tSource , tSource.csF( tin0P ) ) ;
+            }
+                etThread.delF( tin0P , psttSource ) ;
+                tSource = T(psttSource) ;
+                etThread.ifcKitMakeSourceF( tin0P , psttSource , T("101") , tSoulSubDump ) ; ___( psttSource ) ;
+                ZE( strokeS* , psttSource ) ;
+            {
+            TN( tSource , "" ) ;
 
+            TN( tLongRes , "///ideafarm/tmp/ideanet.key." ) ; tLongRes += TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".res") ;
+            TN( tLongRc  , "///ideafarm/tmp/ideanet.key." ) ; tLongRc  += TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".rc" ) ;
             TN( tLongExe , "///ideafarm/tmp/ideanet.key." ) ; tLongExe += TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".exe") ;
-
-            // kitfresh  !update ///ideafarm/tmp/ideanet.[tSoulSubDump].exe ///ideafarm/tmp/ideanet.[tSoulSubDump].rc ///ideafarm/tmp/ideanet.[tSoulSubDump].res
-
-            etThread.ifcHireF( tin0P , T("ifcIDaDAM_TOOLrEGISTEReMAIL") , ifcIDaDAM_TOOLmAKEkITsOURCEfILE , tArg , flHIRE_WAIT | flHIRE_DISPLAYtEXT , nicNameC() ) ;
-            etThread.traceF( tin0P , tArg , flTRACE_NOpREFIX ) ;
-            TN( tArg , "" ) ; tArg = T("!ignoreFireByOperator !string 101 \"")+tSoulSubDump+T("\" !long ///ideafarm/tmp/ideanet.rc") ;
-
-            // kitsource !string 101 "[tSoulSubDump]" !long ///ideafarm/tmp/ideanet.rc
 
             }
                 etThread.delF( tin0P , psttd ) ;
