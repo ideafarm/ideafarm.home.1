@@ -34279,6 +34279,8 @@ examples
  voidT ifcKitMakeSourceF( tin0S& tin0P , strokeS*& psttSourceP , const strokeS* const pstt1IdsP , const strokeS* const pstt1ValuesP ) ;
  voidT ifcKitUpdateKitF( tin0S& tin0P , const strokeS* const psttExeP , const strokeS* const psttRcP , const strokeS* const psttResP ) ;
 
+ countT inetCreateSubscriptionF( tin0S& tin0P , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP , const countT idBookP = 1 ) ;
+
 /* commands: sorting */
  voidT ifcSortaF( tin0S& tin0P , const boolT& bQuitP , byteT* const pbArrayP , const countT cbArrayP , const countT cbSuffixP , const countT cbPrefixP , const countT cbKeyP , const flagsT flagsP = flSORTAc_null ) ;
 

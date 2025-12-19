@@ -57,7 +57,7 @@ DONE( tmWorkF )
             TN( tLongSoul , "" ) ; tLongSoul = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_TOOLrEGISTEReMAIL)+T("/sub.01.00000001.")+TfORsTRING(idSub)+tDot+tEmailDump+T(".soulC") ;
         {
         if( pSub )
-        countT idSub = welcomeF( tin0P , etThread , etRock , pSub , tEmail ) ; ___( pSub ) ;
+        countT idSub = etThread.inetCreateSubscriptionF( tin0P , pSub , tEmail , 1 ) ; ___( pSub ) ;
         ZE( ideaNetSubscriptionC* , pSub ) ;
     {
     if( tEmailDump.csF( tin0P ) )
@@ -95,70 +95,6 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
-
-}
-    return idSub ;
-
-    pSubP = new( 0 , tin0P , LF ) ideaNetSubscriptionC( tin0P , etherP , 1 , idSub , tSecret , tEmail ) ; ___( pSubP ) ;
-
-    etherP.traceF( tin0P , T("[idBook,idSub,generatedSecret]:    ")+TF2(idBook,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret ) ;
-    }
-        etherP.delF( tin0P , psttMac ) ;
-        tSecret = T(psttMac) ;
-        etherP.openSslHmacF( tin0P , psttMac , tEmail , tEmail.csF( tin0P ) , (byteT*)&timeN1 , sizeof timeN1 ) ; ___( psttMac ) ;
-        ZE( strokeS* , psttMac ) ;
-    {
-    TN( tSecret , "" ) ;
-
-    TN( tEmail , psttEmailP ) ;
-    TN( tb4    , "    " ) ;
-
-    etherP.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
-    ZE( sCountT , timeN2 ) ;
-    ZE( countT  , timeN1 ) ;
-
-    }
-        etherP.fileWriteF(  tin0P , fileCount , (byteT*)&idSubLath , sizeof idSubLath ) ;
-        etherP.fileSetPtrF( tin0P , fileCount , flSETfILEpTR_BEGINNING , c2z ) ;
-        count2S c2z ;
-        idSub = ++ idSubLath ;
-
-        }
-            }
-                etRockP.traceF( tin0P , T("!exception / invalid file size for idSlotUseLath, so using 0 [tLongIdSubLath]:    ")+tLongIdSubLath ) ;
-                idSubLath = 0 ;
-            {
-            if( cbr - sizeof idSubLath )
-
-            }
-                }
-                    cbr = 0 ;       // PROBABLY REDUNDANT
-                    etRockP.traceF( tin0P , T("!exception / countT file is not of the expected size [tLongIdSubLath]")+tLongIdSubLath ) ;
-                    POOPR ;
-                {
-                if( POOP )
-                ((tin1S&)tin0P).pEtScratch->fileReadF( tin0P , (byteT*)&idSubLath , cbr , fileCount ) ;
-                SCOOPS
-            {
-            IFsCRATCHoK
-            countT cbr = sizeof idSubLath ;
-        {
-        else
-        }
-        {
-        if( bNewFile )
-        ZE( countT , idSubLath ) ;
-
-        const boolT bNewFile = ifcOPENrESULT_CREATED == fileCount.idOpenResultF( tin0P  ) ;
-        fileC fileCount( tin0P , (strokeS*)tLongIdSubLath , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
-
-        TN( tLongIdSubLath , "" ) ; tLongIdSubLath = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_TOOLrEGISTEReMAIL)+T("/idBook.00000001.idSub.lath.bin") ;
-    {
-    ZE( countT , idSub ) ;
-
-    countT idBook = 1 ;
-{
-countT welcomeF( tin0S& tin0P , etherC& etherP , etherC& etRockP , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_TOOLrEGISTEReMAIL" )/*1*/
 /**/
