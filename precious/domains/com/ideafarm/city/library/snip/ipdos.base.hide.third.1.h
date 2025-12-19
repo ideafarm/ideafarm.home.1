@@ -423,6 +423,7 @@ struct  /*ff*/addressRangeS/*ff*/                                       ; /*ff*/
 struct  /*ff*/oshSocketAcceptedS/*ff*/                                  ; /*ff*//**//*ff*/
 struct  /*ff*/s_acceptF_parametersS/*ff*/                               ; /*ff*//**//*ff*/
 class   /*ff*/ideaNetC/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/ideaNetSubscriptionC/*ff*/                                ; /*ff*//**//*ff*/
 
 //INCLUDE GENERATED SNIPPETS HERE
 
