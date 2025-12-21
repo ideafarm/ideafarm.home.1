@@ -193,6 +193,14 @@ voidT ifcCreateNewHomeF_o31P31P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP 
 
 voidT ifcCreateNewWightF_o31P31P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
+voidT ifcKitMakeSourceF_o4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT ifcKitUpdateKitF_o4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT inetCreateSubscriptionF_oP4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT inetBookSubscriberConfigureExeF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
 voidT ifcSortaF_o61P33337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT querySettingF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
@@ -464,6 +472,8 @@ voidT strEncode_01F_o1P1P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , cons
 voidT strEncodeF_o1P4P1P31P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT strDecodeF_o4P1P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT strUnDumpF_o1P34P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT strBisectF_o4P4P4P4P373_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

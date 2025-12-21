@@ -4528,6 +4528,32 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200625.ifcIDkIT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200626.TIMEnAPdURINGsERVICEsTARTUP BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TIMEnAPdURINGsERVICEsTARTUP*//*1*/
+
+#define TIMEnAPdURINGsERVICEsTARTUP ( TOCK << 5 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200626.TIMEnAPdURINGsERVICEsTARTUP END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -34279,6 +34305,7 @@ examples
  voidT ifcKitMakeSourceF( tin0S& tin0P , strokeS*& psttSourceP , const strokeS* const pstt1IdsP , const strokeS* const pstt1ValuesP ) ;
  voidT ifcKitUpdateKitF( tin0S& tin0P , const strokeS* const psttExeP , const strokeS* const psttRcP , const strokeS* const psttResP ) ;
 
+/* commands: IdeaNet (tm) */
  countT inetCreateSubscriptionF( tin0S& tin0P , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP , const countT idBookP = 1 ) ;
  voidT  inetBookSubscriberConfigureExeF( tin0S& tin0P , strokeS*& psttLongExeP , const strokeS* const psttEmailP ) ;
 
@@ -34784,8 +34811,8 @@ examples
  //voidT strIfcLogoF( tin0S& tin0P , strokeS*& psttP , const measureT mScaleP = 1 , const countT csttExtraP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34160.etherC.strIfcLogoF!||
  static voidT strDumpIF( tin0S& tin0P , strokeS*& psttP , const byteT* pbP , const countT cbP , const flagsT flagsP = flSTRdUMP_null , countT mPerLineP = 0 , const countT mPerGroupP = 0 , const byteT bReadableP = 0 , const countT mPerGrouprP = 0 ) ;
- voidT strUnDumpF( tin0S& tin0P , byteT*& pbP , countT& cbP , const strokeS* const psttP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34179.etherC.strDumpIF!||
+ voidT strUnDumpF( tin0S& tin0P , byteT*& pbP , countT& cbP , const strokeS* const psttP ) ;
  static voidT strDumpStrokesIF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttInP , const strokeS* const psttDelimiterP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3419f.etherC.strDumpStrokesIF!||
  countT strBisectF( tin0S& tin0P , strokeS*& psttPart1P , strokeS*& psttPart2P , const strokeS* const psttBigP , const strokeS* const psttDelimiterP = 0 , const countT idP = 1 , const flagsT flagsP = flSTRbISECT_null , const countT csttExtraP = 0 ) ;
@@ -49253,13 +49280,13 @@ i am nonconformant in that all of my member function definitions are in a single
 /**/
 /*1*/class _export ideaNetSubscriptionC/*1*/
 {
-    etherC&      ether   ;
-    textC        tEmail  ;
-    textC        tSecret ;
-    countT       timeC1  ;
-    sCountT      timeC2  ;
-    countT idBook  ;
-    countT idSub   ;
+    etherC&     ether   ;
+    textC       tEmail  ;
+    textC       tSecret ;
+    countT      timeC1  ;
+    sCountT     timeC2  ;
+    countT      idBook  ;
+    countT      idSub   ;
 
     public :
 

@@ -4256,6 +4256,184 @@
         "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
         "\r\n"
         "Class: etherC\r\n"
+        "Author: \"ifcKitMakeSourceF_o4@4@4@\"\r\n"
+        "\r\n"
+        "Subject: Command word \"ifcKitMakeSourceF_o4@4@4@\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"ifcKitMakeSourceF_o4@4@4@\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  3:    strokeS*         pstt1ValuesP\r\n"
+        "    Pop  2:    strokeS*         pstt1IdsP\r\n"
+        "    Pop  1:    strokeS*         psttSourceP\r\n"
+        "\r\n"
+        "    Push 1:    strokeS*         psttSourceP\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"ifcKitMakeSourceF_o4@4@4@\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "ifcKitMakeSourceF_o4@4@4@" ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
+        "Author: \"ifcKitUpdateKitF_o4@4@4@\"\r\n"
+        "\r\n"
+        "Subject: Command word \"ifcKitUpdateKitF_o4@4@4@\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"ifcKitUpdateKitF_o4@4@4@\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  3:    strokeS*         psttResP\r\n"
+        "    Pop  2:    strokeS*         psttRcP\r\n"
+        "    Pop  1:    strokeS*         psttExeP\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"ifcKitUpdateKitF_o4@4@4@\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "ifcKitUpdateKitF_o4@4@4@" ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
+        "Author: \"inetCreateSubscriptionF_o@4@3\"\r\n"
+        "\r\n"
+        "Subject: Command word \"inetCreateSubscriptionF_o@4@3\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"inetCreateSubscriptionF_o@4@3\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  3:    countT           idBookP                         (defaults to 1)\r\n"
+        "    Pop  2:    strokeS*         psttEmailP\r\n"
+        "    Pop  1:    ideaNetSubscript pSubP\r\n"
+        "\r\n"
+        "    Push 1:    ideaNetSubscript pSubP\r\n"
+        "    Push 2:    countT           noName\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"inetCreateSubscriptionF_o@4@3\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "inetCreateSubscriptionF_o@4@3" ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
+        "Author: \"inetBookSubscriberConfigureExeF_o4@4@\"\r\n"
+        "\r\n"
+        "Subject: Command word \"inetBookSubscriberConfigureExeF_o4@4@\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"inetBookSubscriberConfigureExeF_o4@4@\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  2:    strokeS*         psttEmailP\r\n"
+        "    Pop  1:    strokeS*         psttLongExeP\r\n"
+        "\r\n"
+        "    Push 1:    strokeS*         psttLongExeP\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"inetBookSubscriberConfigureExeF_o4@4@\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "inetBookSubscriberConfigureExeF_o4@4@" ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
         "Author: \"ifcSortaF_o61@33337\"\r\n"
         "\r\n"
         "Subject: Command word \"ifcSortaF_o61@33337\"\r\n"
@@ -10241,6 +10419,51 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strDecodeF_o4@1@" ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
+        "Author: \"strUnDumpF_o1@34@\"\r\n"
+        "\r\n"
+        "Subject: Command word \"strUnDumpF_o1@34@\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"strUnDumpF_o1@34@\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  3:    strokeS*         psttP\r\n"
+        "    Pop  2:    countT           cbP\r\n"
+        "    Pop  1:    byteT*           pbP\r\n"
+        "\r\n"
+        "    Push 1:    byteT*           pbP\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"strUnDumpF_o1@34@\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "strUnDumpF_o1@34@" ) ;
    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }

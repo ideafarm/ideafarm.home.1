@@ -775,6 +775,38 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
+    TN( tNameSoixlOld , "ifcKitMakeSourceF_o4@4@4@" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)ifcKitMakeSourceF_o4P4P4P_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
+    TN( tNameSoixlOld , "ifcKitUpdateKitF_o4@4@4@" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)ifcKitUpdateKitF_o4P4P4P_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
+    TN( tNameSoixlOld , "inetCreateSubscriptionF_o@4@3" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)inetCreateSubscriptionF_oP4P3_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
+    TN( tNameSoixlOld , "inetBookSubscriberConfigureExeF_o4@4@" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)inetBookSubscriberConfigureExeF_o4P4P_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
     TN( tNameSoixlOld , "ifcSortaF_o61@33337" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
@@ -1860,6 +1892,14 @@
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
     *_pSwSoixlOldApi = (countT)strDecodeF_o4P1P_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
+    TN( tNameSoixlOld , "strUnDumpF_o1@34@" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)strUnDumpF_o1P34P_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

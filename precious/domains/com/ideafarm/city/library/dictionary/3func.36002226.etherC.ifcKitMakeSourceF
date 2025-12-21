@@ -74,8 +74,16 @@
 
     SCOOP
 
-    ZE( countT , cValue ) ; ZE( countT , csttValue ) ; if( !bWoValue ) { FORsTRINGSiN1( pstt1ValuesP ) { cValue ++ ; csttValue += psttc1->idAdam ; } }
-    ZE( countT , cId    ) ; ZE( countT , csttId    ) ; if( !bWoId    ) { FORsTRINGSiN1( pstt1IdsP    ) { cId    ++ ; csttId    += psttc1->idAdam ; } }
+    else if( pstt1ValuesP  ) {                                 cValue = 1 ; csttValue  = pstt1ValuesP->idAdam ;   }
+    if( !bWoValue          ) { FORsTRINGSiN1( pstt1ValuesP ) { cValue  ++ ; csttValue +=       psttc1->idAdam ; } }
+    ZE( countT , csttValue ) ;
+    ZE( countT , cValue    ) ;
+
+    else if( pstt1IdsP     ) {                                 cId    = 1 ; csttId     =    pstt1IdsP->idAdam ;   }
+    if( !bWoId             ) { FORsTRINGSiN1( pstt1IdsP    ) { cId     ++ ; csttId    +=       psttc1->idAdam ; } }
+    ZE( countT , csttId    ) ;
+    ZE( countT , cId       ) ;
+
     const boolT bWoValue = !ISsTRINGoFsTRINGS( pstt1ValuesP ) ;
     const boolT bWoId    = !ISsTRINGoFsTRINGS( pstt1IdsP    ) ;
 {

@@ -1,6 +1,4 @@
 
-#define TIMEnAPdURINGsERVICEsTARTUP ( TOCK << 5 )
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -331,7 +329,7 @@ class   /*ff*/booksC/*ff*/                                              ; /*ff*/
 class   /*ff*/pageC/*ff*/                                               ; /*ff*//**//*ff*/
 class   /*ff*/branchPageC/*ff*/                                         ; /*ff*//**//*ff*/
 class   /*ff*/jotC/*ff*/                                                ; /*ff*//**//*ff*/
-struct  /*ff*/glassS/*ff*/                                            ; /*ff*//**//*ff*/
+struct  /*ff*/glassS/*ff*/                                              ; /*ff*//**//*ff*/
 struct  /*ff*/fireGroupS/*ff*/                                          ; /*ff*//**//*ff*/
 struct  /*ff*/doC/*ff*/                                                 ; /*ff*//**//*ff*/
 class   /*ff*/refCounterC/*ff*/                                         ; /*ff*//**//*ff*/
@@ -11771,7 +11769,6 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200123.ifcidtypejobcourse END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200124.ifcidadam BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -11921,7 +11918,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TOOLrANDOMiPV6                                       0x510008bf
 #define ifcIDaDAM_TOOLmAKEkITsOURCEfILE                                0x510008c3
 #define ifcIDaDAM_TOOLuPDATEkIT                                        0x510008c5
-#define ifcIDaDAM_TOOLiDEAnETbOOKeMAIL                                    0x510008c6
+#define ifcIDaDAM_TOOLiDEAnETbOOKeMAIL                                 0x510008c6
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
@@ -11987,7 +11984,6 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_SCRATCH1e                                            0x5101201e
 #define ifcIDaDAM_SCRATCH1f                                            0x5101201f
 /*3*/
-
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
