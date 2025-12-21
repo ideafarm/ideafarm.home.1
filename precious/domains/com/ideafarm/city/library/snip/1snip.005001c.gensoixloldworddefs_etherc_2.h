@@ -2189,45 +2189,6 @@ voidT inetCreateSubscriptionF_oP4P3_GF( tin0S& tin0P , etherC& etherP , soulC& s
     SOIXLoLDtESTeMPTY( 0x0 , etherC )
     SOIXLoLDtESTtYPE( 0x0 , etherC )
     ZE( ideaNetSubscriptionC* , pSubP ) ;
-    if( !POOP ) { slP >> pSubP ; ___( pSubP ) ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttEmailP ) ;
-    if( !POOP ) { slP >> psttEmailP ; ___( psttEmailP ) ; idArgNext ++ ; }
-
-    ZE( countT , idBookP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                idBookP = 1 ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tin0P , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-                if( !POOP ) { slP >> idBookP ; idArgNext ++ ; }
-            }
-        }
-    }
-
-    ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.inetCreateSubscriptionF( tin0P , pSubP , psttEmailP , idBookP ) ;
-    etherP.delF( tin0P , psttEmailP ) ;
-
-    if( !POOP ) slP << pSubP ;
-    etherP.delF( tin0P , pSubP ) ;
-
-    slP << noName ;
 }
 
 voidT inetBookSubscriberConfigureExeF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
