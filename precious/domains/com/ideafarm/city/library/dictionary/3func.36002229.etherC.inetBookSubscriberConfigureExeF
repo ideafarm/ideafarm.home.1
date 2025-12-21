@@ -23,7 +23,7 @@
 
         TN( tLongRes , "///ideafarm/tmp/ideanet.key." ) ; tLongRes += TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".res") ;
         TN( tLongRc  , "///ideafarm/tmp/ideanet.key." ) ; tLongRc  += TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".rc" ) ;
-        TN( tLongExe , "///ideafarm/tmp/ideanet.key." ) ; tLongExe += TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".exe") ;
+        TN( tLongExe , "///d/ideafarm.shared/"        ) ; tLongExe += TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/ideanet/ideanet.key." ) ; tLongExe += TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".exe") ;
 
         }
             delF( tin0P , psttd ) ;
@@ -42,7 +42,7 @@
         soulC soulSub( tin0P , *this , TAG( TAGiDnULL ) ) ;
 
         traceF( tin0P , T("registering [email,dump]:    ")+tEmail+tb4+tEmailDump+tb4+tLongSoul ) ;
-        TN( tLongSoul , "" ) ; tLongSoul = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/ideanet/sub.01.00000001.")+TfORsTRING(idSub)+tDot+tEmailDump+T(".soulC") ;
+        TN( tLongSoul , "" ) ; tLongSoul = T("///d/ideafarm.shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/ideanet/sub.01.00000001.")+TfORsTRING(idSub)+tDot+tEmailDump+T(".soulC") ;
     {
     if( pSub )
     countT idSub = inetCreateSubscriptionF( tin0P , pSub , tEmail , 1 ) ; ___( pSub ) ;
