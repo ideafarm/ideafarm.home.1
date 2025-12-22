@@ -12,27 +12,34 @@
     delF( tin0P , psttmExe ) ;
 
     __( value ) ;
-    third.dosExecPgmF( tin0P , countTC() , countTC() , value , countTC() , T("wrc.exe") , tArgs , flPROCESShIRE_null ) ;
+    third.dosExecPgmF( tin0P , countTC() , countTC() , value , countTC() , tLongOSFN_Com , tArgs , flPROCESShIRE_null ) ;
     ZE( countT , value ) ;
 
-    traceF( tin0P , T("ifcKitUpdateKitF [args]:    ")+tArgs ) ;
+    traceF( tin0P , T("ifcKitUpdateKitF [args]:    ")+tArgs         ) ;
+    traceF( tin0P , T("ifcKitUpdateKitF  [exe]:    ")+tLongOSFN_Com ) ;
 
     TN( tArgs , "-q " ) ; tArgs += tLongOSFN_Rc+tb+tLongOSFN_Exe+T(" -fo=")+tLongOSFN_Res ;
 
+    TN( tLongOSFN_Com , "" ) ; tLongOSFN_Com = T(osfnCom) ;
     TN( tLongOSFN_Res , "" ) ; tLongOSFN_Res = T(osfnRes) ;
     TN( tLongOSFN_Rc  , "" ) ; tLongOSFN_Rc  = T(osfnRc ) ;
     TN( tLongOSFN_Exe , "" ) ; tLongOSFN_Exe = T(osfnExe) ;
 
+    osFileNameC osfnCom( tin0P , third , T(psttmCom) ) ;
     osFileNameC osfnRes( tin0P , third , T(psttmRes) ) ;
     osFileNameC osfnRc(  tin0P , third , T(psttmRc ) ) ;
     osFileNameC osfnExe( tin0P , third , T(psttmExe) ) ;
 
-    diskMapFileNameF( tin0P , psttmRes , psttResP ) ; ___( psttmRes ) ;
-    diskMapFileNameF( tin0P , psttmRc  , psttRcP  ) ; ___( psttmRc  ) ;
-    diskMapFileNameF( tin0P , psttmExe , psttExeP ) ; ___( psttmExe ) ;
-    ZE( strokeS* , psttmRes ) ;
-    ZE( strokeS* , psttmRc  ) ;
-    ZE( strokeS* , psttmExe ) ;
+    diskMapFileNameF( tin0P , psttmCom , tLongResCompiler ) ; ___( psttmCom ) ;
+    diskMapFileNameF( tin0P , psttmRes , psttResP         ) ; ___( psttmRes ) ;
+    diskMapFileNameF( tin0P , psttmRc  , psttRcP          ) ; ___( psttmRc  ) ;
+    diskMapFileNameF( tin0P , psttmExe , psttExeP         ) ; ___( psttmExe ) ;
+    ZE( strokeS* , psttmCompiler ) ;
+    ZE( strokeS* , psttmRes      ) ;
+    ZE( strokeS* , psttmRc       ) ;
+    ZE( strokeS* , psttmExe      ) ;
+
+    TN( tLongResCompiler , "///ideafarm/precious/domains/com/ideafarm/city/workshop/watcom/binnt/wrc.exe" ) ;
 
     TN( tb , " " ) ;
 
