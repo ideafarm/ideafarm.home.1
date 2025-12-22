@@ -12,7 +12,9 @@
     delF( tin0P , psttmExe ) ;
 
     __( rc ) ;
+    traceF( tin0P , T("ifcKitUpdateKitF / called  c_systemIF [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     countT rc = thirdC::c_systemIF( tin0P , tCmd ) ;
+    traceF( tin0P , T("ifcKitUpdateKitF / calling c_systemIF [tCmd]:    ")+tCmd ) ;
     traceF( tin0P , T("ifcKitUpdateKitF [cmd]:    ")+tCmd ) ;
 
     TN( tCmd , "wrc -q " ) ; tCmd += tLongOSFN_Rc+tb+tLongOSFN_Exe+T(" -fo=")+tLongOSFN_Res ;
