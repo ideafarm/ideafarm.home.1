@@ -339,6 +339,19 @@ DONE( tmWorkF )
                                                             //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                             //******************************************************************************************************************************************************************************************************************************************************************************************************
 
+                                                            }
+                                                                etThread.delF( tin0P , pstt01WildList ) ;
+                                                                etThread.diskZipF( tin0P , tLongIdeaNetZip , pstt01WildList , 0 , 0 , 0 , 0 , ifcIDzIPPER_INFOZIP ) ;
+                                                                etThread.strMakeF( tin0P , LF , pstt01WildList , tLongIdeaNetExe ) ; ___( pstt01WildList ) ;
+                                                                ZE( strokeS* , pstt01WildList ) ;
+
+                                                                etThread.delF( tin0P , psttz ) ;
+                                                                tLongIdeaNetZip = T(psttz) ;
+                                                                etThread.strReplaceF( tin0P , psttz , tLongIdeaNetExe , T(".exe") , T(".zip") ) ; ___( psttz ) ;
+                                                                ZE( strokeS* , psttz ) ;
+                                                            {
+                                                            TN( tLongIdeaNetZip , "" ) ;
+
                                                             etRock.traceF( tin0P , T("configuring an IdeaNet (tm) key exe for this user [tLongIdeaNetExe]:    ")+tLongIdeaNetExe ) ;
                                                             }
                                                                 etThread.delF( tin0P , psttLongExe ) ;
