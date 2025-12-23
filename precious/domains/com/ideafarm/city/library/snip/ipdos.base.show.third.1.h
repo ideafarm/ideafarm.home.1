@@ -1,4 +1,22 @@
 
+
+#define MIMEhEADER_TEXT                                                             \
+                                                                                    \
+        "--IdeaFarmMimeBoundary\r\n"                                                \
+        "Content-Type: text/plain; charset=\"us-ascii\"\r\n"                        \
+        "Content-Transfer-Encoding: 7bit\r\n"                                       \
+        "\r\n"
+
+#define MIMEhEADER_FILE(shortP)                                                     \
+                                                                                    \
+        "--IdeaFarmMimeBoundary\r\n"                                                \
+        "Content-Type: text/plain; name=\"" shortP "\"\r\n"                         \
+        "Content-Description: " shortP "\r\n"                                       \
+        "Content-Disposition: attachment; filename=\"" shortP "\"\r\n"              \
+        "Content-Transfer-Encoding: base64\r\n"                                     \
+        "\r\n"
+
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -33322,6 +33340,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*3*/
 #define flBOXcpUTf_FILEnAME                  0xe000019b
+#define flBOXcpUTf_SMTPmIME                  0xe000029b
 /*3*/
 #define flBOXcpUTf_null    0xe000009b
 

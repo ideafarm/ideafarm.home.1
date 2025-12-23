@@ -38,7 +38,7 @@ DONE( tmWorkF )
             DEL( pInfo ) ;
             }
                 }
-                    //etThread.traceF( tin0P , (!F(flagsFail)?T("aok"):T("flagsFail:")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)) ) ;
+                    /**/etThread.traceF( tin0P , (!F(flagsFail)?T("aok"):T("flagsFail:")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)) ) ;
 
 #endif
                     }
@@ -78,7 +78,7 @@ DONE( tmWorkF )
 
                     TN( tWhere , "" ) ; tWhere = bFailPermanent
 
-                    //etThread.traceF( tin0P , T("moving the file") ) ;
+                    /**/etThread.traceF( tin0P , T("moving the file") ) ;
 
                     }
                         flagsFail |= flFAIL_COULDnOTgETsHORTfILEnAME ;
@@ -86,15 +86,15 @@ DONE( tmWorkF )
                     {
                     if( POOP )
 
-                    //etThread.traceF( tin0P , T("cleaning up 3") ) ;
+                    /**/etThread.traceF( tin0P , T("cleaning up 3") ) ;
 
                     }
-                        //etThread.traceF( tin0P , T("unknown error") ) ;
+                        /**/etThread.traceF( tin0P , T("unknown error") ) ;
                         flagsFail |= flFAIL_UNKNOWNeRROR ;
                         POOPR
                     {
                     if( POOP )
-                    //etThread.traceF( tin0P , T("cleaning up 2") ) ;
+                    /**/etThread.traceF( tin0P , T("cleaning up 2") ) ;
 
                     }
                         stBc.purgeF( tin0P ) ;
@@ -103,34 +103,34 @@ DONE( tmWorkF )
 
                         etThread.delF( tin0P , psttFileBody ) ;
 
-                        //etThread.traceF( tin0P , T("cleaning up 1") ) ;
+                        /**/etThread.traceF( tin0P , T("cleaning up 1") ) ;
                         etThread( tin0P , pStkEmailRelay ) ;
                         etThread.delF( tin0P , psttHost ) ;
                         etThread.delF( tin0P , psttFrom ) ;
                         }
                             }
                                 }
-                                    //etThread.traceF( tin0P , T("end of handling list ")+TF2(offs,flFORMAT_NObIGITvALUES) ) ;
+                                    /**/etThread.traceF( tin0P , T("end of handling list ")+TF2(offs,flFORMAT_NObIGITvALUES) ) ;
                                     }
                                         while( ~hWalk ) ;
                                         }
-                                            //etThread.traceF( tin0P , T("end of recipient \"")+T(psttr)+T("\"") ) ;
+                                            /**/etThread.traceF( tin0P , T("end of recipient \"")+T(psttr)+T("\"") ) ;
                                             etThread.delF( tin0P , psttBccLine ) ;
 
-                                            //etThread.traceF( tin0P , T("destroyed socket") ) ;
+                                            /**/etThread.traceF( tin0P , T("destroyed socket") ) ;
                                             }
-                                                //etThread.traceF( tin0P , T("destroying socket") ) ;
+                                                /**/etThread.traceF( tin0P , T("destroying socket") ) ;
                                                 }
                                                     break ;
                                                     etThread.delF( tin0P , psttBccLine ) ;
-                                                    //etThread.traceF( tin0P , T("writing quit: failed") ) ;
+                                                    /**/etThread.traceF( tin0P , T("writing quit: failed") ) ;
                                                     flagsFail |= flFAIL_QUITcOMMANDrEJECTED ;
                                                     POOPR
                                                 {
                                                 if( POOP )
                                                 sockc.verifyReplyF( tin0P , 221 ) ;
                                                 sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                                                //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                                /**/etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
                                                 tSay = T("quit\r\n") ;
 
                                                 //}
@@ -214,17 +214,28 @@ DONE( tmWorkF )
                                                     }
                                                        break ;
                                                        etThread.delF( tin0P , psttBccLine ) ;
-                                                       //etThread.traceF( tin0P , T("call to writeBodySnipFromFileF failed [psttFileBody]: ")+T(psttFileBody) ) ;
+                                                       /**/etThread.traceF( tin0P , T("call to writeBodySnipFromFileF failed [psttFileBody]: ")+T(psttFileBody) ) ;
                                                        POOPR
                                                     {
                                                     if( POOP )
+
+                                                    }
+                                                        sockc.writeF( tin0P , (osTextT*)tBodyEpilog , tBodyEpilog.csF( tin0P ) ) ;
+                                                        ) ;
+                                                    
+                                                            "--IdeaFarmMimeBoundary\r\n"
+                                                            "\r\n"
+                                                    
+                                                        TN( tBodyEpilog ,
+                                                    {
+                                                    if( bMime )
 
                                                     }
                                                         }
                                                             }
                                                                 break ;
                                                                 etThread.delF( tin0P , psttBccLine ) ;
-                                                                //etThread.traceF( tin0P , T("call to writeBodySnipFromFileF failed [psttc1]: ")+T(psttc1) ) ;
+                                                                /**/etThread.traceF( tin0P , T("call to writeBodySnipFromFileF failed [psttc1]: ")+T(psttc1) ) ;
                                                                 POOPR
                                                             {
                                                             if( POOP )
@@ -236,8 +247,14 @@ DONE( tmWorkF )
                                                     if( !ISsTRINGoFsTRINGS( psttFileBody ) ) { __( writeBodySnipFromFileF( tin0P , etThread , sockc , psttFileBody , flagsFail ) ) ; }
 
                                                     }
+                                                        sockc.writeF( tin0P , (osTextT*)tMimeHeaders , tMimeHeaders.csF( tin0P ) ) ;
+                                                        TN( tMimeHeaders , "MIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"IdeaFarmMimeBoundary\"\r\n" ) ;
+                                                    {
+                                                    if( bMime )
+
+                                                    }
                                                         sockc.writeF( tin0P , (osTextT*)tHeaders , tHeaders.csF( tin0P ) ) ;
-                                                        //etThread.traceF( tin0P , T("[tHeaders]: ")+tHeaders ) ;
+                                                        /**/etThread.traceF( tin0P , T("[tHeaders]: ")+tHeaders ) ;
                                                         TN( tHeaders , "" ) ; tHeaders = (!bIncoming?tFrToCcOutgoing:tFrToCcIncoming)+T(psttBccLine) ;
                                                     {
                                                 {
@@ -245,80 +262,80 @@ DONE( tmWorkF )
                                                 }
                                                     break ;
                                                     etThread.delF( tin0P , psttBccLine ) ;
-                                                    //etThread.traceF( tin0P , T("writing data cmd: failed") ) ;
+                                                    /**/etThread.traceF( tin0P , T("writing data cmd: failed") ) ;
                                                     flagsFail |= flFAIL_DATAcOMMANDrREJECTED ;
                                                     POOPR
                                                 {
                                                 if( POOP )
                                                 sockc.verifyReplyF( tin0P , 354 ) ;
                                                 sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                                                //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                                /**/etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
                                                 tSay = T("data\r\n") ;
 
                                                 }
                                                     break ;
                                                     etThread.delF( tin0P , psttBccLine ) ;
-                                                    //etThread.traceF( tin0P , T("writing rcpt to: failed") ) ;
+                                                    /**/etThread.traceF( tin0P , T("writing rcpt to: failed") ) ;
                                                     flagsFail |= flFAIL_RCPTtOrEJECTED ;
                                                     POOPR
                                                 {
                                                 if( POOP )
                                                 sockc.verifyReplyF( tin0P , 250 ) ;
                                                 sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                                                //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                                /**/etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
                                                 tSay = T("rcpt to:<")+T(psttr)+T(">\r\n") ;
 
                                                 }
                                                     break ;
                                                     etThread.delF( tin0P , psttBccLine ) ;
-                                                    //etThread.traceF( tin0P , T("mail from: failed") ) ;
+                                                    /**/etThread.traceF( tin0P , T("mail from: failed") ) ;
                                                     flagsFail |= flFAIL_MAILfROMrEJECTED ;
                                                     POOPR
                                                 {
                                                 if( POOP )
                                                 sockc.verifyReplyF( tin0P , 250 ) ;
                                                 sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                                                //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                                /**/etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
                                                 tSay = T("mail from:<")+T(psttFrom)+T(">\r\n") ;
 
                                                 }
                                                     }
                                                         break ;
                                                         etThread.delF( tin0P , psttBccLine ) ;
-                                                        //etThread.traceF( tin0P , T("credentials (password) rejected") ) ;
+                                                        /**/etThread.traceF( tin0P , T("credentials (password) rejected") ) ;
                                                         flagsFail |= flFAIL_STARTtlsrEJECTED ;
                                                         POOPR
                                                     {
                                                     if( POOP )
                                                     sockc.verifyReplyF( tin0P , 235 ) ;
                                                     sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                                                    //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                                    /**/etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
                                                     tSay = tPassword+T("\r\n") ;
 
                                                     }
                                                         break ;
                                                         etThread.delF( tin0P , psttBccLine ) ;
-                                                        //etThread.traceF( tin0P , T("credentials (user) rejected") ) ;
+                                                        /**/etThread.traceF( tin0P , T("credentials (user) rejected") ) ;
                                                         flagsFail |= flFAIL_STARTtlsrEJECTED ;
                                                         POOPR
                                                     {
                                                     if( POOP )
                                                     sockc.verifyReplyF( tin0P , 334 ) ;
                                                     sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                                                    //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                                    /**/etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
                                                     tSay = tUser+T("\r\n") ;
 
                                                     }
                                                         break ;
                                                         etThread.delF( tin0P , psttBccLine ) ;
-                                                        //etThread.traceF( tin0P , T("auth login rejected") ) ;
+                                                        /**/etThread.traceF( tin0P , T("auth login rejected") ) ;
                                                         flagsFail |= flFAIL_STARTtlsrEJECTED ;
                                                         POOPR
                                                     {
                                                     if( POOP )
                                                     sockc.verifyReplyF( tin0P , 334 ) ;
                                                     sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                                                    //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                                    /**/etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
                                                     //tSay = T("auth login ")+tUser+T("\r\n")+tPassword+T("\r\n") ;
                                                     tSay = T("auth login\r\n") ;
                                                 {
@@ -335,7 +352,7 @@ DONE( tmWorkF )
                                                     }
                                                         break ;
                                                         etThread.delF( tin0P , psttBccLine ) ;
-                                                        //etThread.traceF( tin0P , T("hello rejected: ")+tHelloVerb+T(" ")+tHelloMyName ) ;
+                                                        /**/etThread.traceF( tin0P , T("hello rejected: ")+tHelloVerb+T(" ")+tHelloMyName ) ;
                                                         flagsFail |= flFAIL_HELLOrEJECTED ;
                                                         POOPR
                                                     {
@@ -349,14 +366,14 @@ DONE( tmWorkF )
                                                     }
                                                         break ;
                                                         etThread.delF( tin0P , psttBccLine ) ;
-                                                        //etThread.traceF( tin0P , T("starttls rejected") ) ;
+                                                        /**/etThread.traceF( tin0P , T("starttls rejected") ) ;
                                                         flagsFail |= flFAIL_STARTtlsrEJECTED ;
                                                         POOPR
                                                     {
                                                     if( POOP )
                                                     sockc.verifyReplyF( tin0P , 220 ) ;
                                                     sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                                                    //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                                    /**/etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
                                                     tSay = T("starttls\r\n") ;
                                                 {
                                                 if( bTls )
@@ -371,33 +388,33 @@ DONE( tmWorkF )
                                                 }
                                                     break ;
                                                     etThread.delF( tin0P , psttBccLine ) ;
-                                                    //etThread.traceF( tin0P , T("hello rejected: ")+tHelloVerb+T(" ")+tHelloMyName ) ;
+                                                    /**/etThread.traceF( tin0P , T("hello rejected: ")+tHelloVerb+T(" ")+tHelloMyName ) ;
                                                     flagsFail |= flFAIL_HELLOrEJECTED ;
                                                     POOPR
                                                 {
                                                 if( POOP )
                                                 sockc.verifyReplyF( tin0P , 250 ) ;
                                                 sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                                                //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                                /**/etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
 
                                                 //}
                                                 //    break ;
                                                 //    etThread.delF( tin0P , psttBccLine ) ;
-                                                //    //etThread.traceF( tin0P , T("hello accepted: ")+tHelloVerb+T(" ")+tHelloMyName ) ;
+                                                //    /**/etThread.traceF( tin0P , T("hello accepted: ")+tHelloVerb+T(" ")+tHelloMyName ) ;
                                                 //    flagsFail |= flFAIL_HELLOaCCEPTED ;
                                                 //    POOPR
                                                 //{
                                                 //if( POOP )
                                                 //sockc.verifyReplyF( tin0P , 502 ) ;
                                                 //sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                                                //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                                /**/etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
 //#if defined( NEVERdEFINED )
                                                 TN( tSay , "" ) ; tSay = ( tHelloVerb+T(" ")+tHelloMyName+T("\r\n") ) ;
 
                                                 }
                                                     break ;
                                                     etThread.delF( tin0P , psttBccLine ) ;
-                                                    //etThread.traceF( tin0P , T("connecting: failed") ) ;
+                                                    /**/etThread.traceF( tin0P , T("connecting: failed") ) ;
                                                     flagsFail |= flFAIL_COULDnOTcONNECT ;
                                                     POOPR
                                                 {
@@ -405,7 +422,7 @@ DONE( tmWorkF )
 
                                                 sockc.verifyReplyF( tin0P , 220 ) ;
                                                 sockc.connectF( tin0P , idPort , hidServer ) ;
-                                                //etThread.traceF( tin0P , T("connecting to port ")+TF4(idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+                                                /**/etThread.traceF( tin0P , T("connecting to port ")+TF4(idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
 
                                                 }
                                                     etThread.delF( tin0P , pstt1w ) ;
@@ -432,7 +449,7 @@ DONE( tmWorkF )
 
                                                                                 }
                                                                                     bOk = 0 ;
-                                                                                    //etThread.traceF( tin0P , T("unexpected  (expected \"login\")") ) ;
+                                                                                    /**/etThread.traceF( tin0P , T("unexpected  (expected \"login\")") ) ;
                                                                                 {
                                                                                 if( etThread.strCompareF( tin0P , psttc1 , T("login") ) )
                                                                             {
@@ -442,7 +459,7 @@ DONE( tmWorkF )
 
                                                                                 }
                                                                                     bOk = 0 ;
-                                                                                    //etThread.traceF( tin0P , T("unexpected  (expected \"auth\")") ) ;
+                                                                                    /**/etThread.traceF( tin0P , T("unexpected  (expected \"auth\")") ) ;
                                                                                 {
                                                                                 if( etThread.strCompareF( tin0P , psttc1 , T("auth") ) )
                                                                             {
@@ -453,7 +470,7 @@ DONE( tmWorkF )
                                                                                 else bTls = 1 ;
                                                                                 }
                                                                                     bOk = 0 ;
-                                                                                    //etThread.traceF( tin0P , T("unexpected  (expected \"starttls\")") ) ;
+                                                                                    /**/etThread.traceF( tin0P , T("unexpected  (expected \"starttls\")") ) ;
                                                                                 {
                                                                                 if( etThread.strCompareF( tin0P , psttc1 , T("starttls") ) )
                                                                             {
@@ -469,7 +486,7 @@ DONE( tmWorkF )
                                                                                 else tHelloVerb = T("ehlo") ;
                                                                                 }
                                                                                     bOk = 0 ;
-                                                                                    //etThread.traceF( tin0P , T("unexpected  (expected \"ehlo\")") ) ;
+                                                                                    /**/etThread.traceF( tin0P , T("unexpected  (expected \"ehlo\")") ) ;
                                                                                 {
                                                                                 if( etThread.strCompareF( tin0P , psttc1 , T("ehlo") ) )
                                                                             {
@@ -487,7 +504,7 @@ DONE( tmWorkF )
                                                                 else idFormat = 1 ;
                                                                 }
                                                                     bOk = 0 ;
-                                                                    //etThread.traceF( tin0P , T("unexpected  (expected \"1\")") ) ;
+                                                                    /**/etThread.traceF( tin0P , T("unexpected  (expected \"1\")") ) ;
                                                                 {
                                                                 if( etThread.strCompareF( tin0P , psttc1 , T("1") ) )
                                                             {
@@ -496,14 +513,14 @@ DONE( tmWorkF )
                                                                 break ;
                                                                 }
                                                                     bOk = 0 ;
-                                                                    //etThread.traceF( tin0P , T("unexpected  (expected \"format\")") ) ;
+                                                                    /**/etThread.traceF( tin0P , T("unexpected  (expected \"format\")") ) ;
                                                                 {
                                                                 if( etThread.strCompareF( tin0P , psttc1 , T("format") ) )
                                                             {
                                                             case 1 :
                                                         {
                                                         switch( ++ idw )
-                                                        //etThread.traceF( tin0P , T("protocol word: ")+T(psttc1) ) ;
+                                                        /**/etThread.traceF( tin0P , T("protocol word: ")+T(psttc1) ) ;
                                                     {
                                                     FORsTRINGSiN1( pstt1w )
                                                     boolT bOk = 1 ;
@@ -522,7 +539,7 @@ DONE( tmWorkF )
 
                                                 }
                                                     etThread.delF( tin0P , psttServer ) ;
-                                                    //etThread.traceF( tin0P , T("[psttServer,hidServer,tProtocol]:    ")+T(psttServer)+T("    ")+T(hidServer)+T("    ")+tProtocol ) ;
+                                                    /**/etThread.traceF( tin0P , T("[psttServer,hidServer,tProtocol]:    ")+T(psttServer)+T("    ")+T(hidServer)+T("    ")+tProtocol ) ;
 
                                                     }
                                                         tProtocol = T(psttzProtocol) ;
@@ -531,7 +548,7 @@ DONE( tmWorkF )
                                                     {
                                                     else if( swProtocol.idSlotOfLeverF( tin0P , (countT)psttServer ) )
                                                     }
-                                                        //etThread.traceF( tin0P , T("override [tProtocol]: ")+tProtocol ) ;
+                                                        /**/etThread.traceF( tin0P , T("override [tProtocol]: ")+tProtocol ) ;
                                                         tProtocol = tProtocolOverride ;
                                                     {
                                                     if( tProtocolOverride.csF( tin0P ) )
@@ -541,7 +558,7 @@ DONE( tmWorkF )
                                                     }
                                                         break ;
                                                         etThread.delF( tin0P , psttServer ) ;
-                                                        //etThread.traceF( tin0P , T("unauthorized smtp relay server: ")+T(psttServer) ) ;
+                                                        /**/etThread.traceF( tin0P , T("unauthorized smtp relay server: ")+T(psttServer) ) ;
                                                         flagsFail |= flFAIL_UNAUTHORIZEDrELAYsERVER ;
                                                         POOPR
                                                     {
@@ -552,7 +569,7 @@ DONE( tmWorkF )
                                                         }
                                                             }
                                                                 break ;
-                                                                //etThread.traceF( tin0P , T("authorized [psttServer]: ")+T(psttServer) ) ;
+                                                                /**/etThread.traceF( tin0P , T("authorized [psttServer]: ")+T(psttServer) ) ;
                                                                 bOk = 1 ;
                                                             {
                                                             if( !etThread.strCompareF( tin0P , psttc1 , psttServer ) )
@@ -562,7 +579,7 @@ DONE( tmWorkF )
                                                     {
                                                     ZE( boolT , bOk ) ;
 
-                                                    //etThread.traceF( tin0P , T("[psttServer]: ")+T(psttServer) ) ;
+                                                    /**/etThread.traceF( tin0P , T("[psttServer]: ")+T(psttServer) ) ;
 
                                                     etThread.delF( tin0P , psttMxExclude ) ;
                                                     etThread.delF( tin0P , psttRelayServer ) ;
@@ -643,14 +660,14 @@ DONE( tmWorkF )
                                             IFsCRATCHoK
                                             ZE( strokeS* , psttBccLine ) ;
 
-                                            //etThread.traceF( tin0P , T("beginning of recipient \"")+T(psttr)+T("\"") ) ;
+                                            /**/etThread.traceF( tin0P , T("beginning of recipient \"")+T(psttr)+T("\"") ) ;
                                             strokeS* psttr = (strokeS*)ppzStk[ offs ]->downF( tin0P , hWalk ) ;
                                         {
                                         do
                                         handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                     {
                                     if( *ppzStk[ offs ] )
-                                    //etThread.traceF( tin0P , T("beginning of handling ")+TF2(*ppzStk[offs],flFORMAT_NObIGITvALUES)+T(" recipients for list ")+TF2(offs,flFORMAT_NObIGITvALUES) ) ;
+                                    /**/etThread.traceF( tin0P , T("beginning of handling ")+TF2(*ppzStk[offs],flFORMAT_NObIGITvALUES)+T(" recipients for list ")+TF2(offs,flFORMAT_NObIGITvALUES) ) ;
                                 {
                                 for( countT offs = 0 ; offs < 3 && !flagsFail ; offs ++ )
                                 stackC* ppzStk[] = { &stTo , &stCc , &stBc } ;
@@ -836,6 +853,23 @@ DONE( tmWorkF )
                         //{
                         //if( psttFileBody && psttFileBody->idAdam > CSpREFIX )
 
+                        }
+                            etThread.delF( tin0P , psttCmd ) ;
+                            }
+                                }
+                                    etThread.traceF( tin0P , T("i will insert MIME headers.  The body must contain MIME sections delimited by \"IdeaFarmMimeBoundary\"") ) ;
+                                    bMime = 1 ;
+                                {
+                                if( !etThread.strCompareF( tin0P , psttCmd , T("!mime") ) )
+                            {
+                            if( psttCmd )
+                            sIn >> psttCmd ; ___( psttCmd ) ;
+                            ZE( strokeS* , psttCmd ) ;
+                        {
+                        else while( sIn )                                        //20251222@1836: ADDED TO SUPPORT OPTIONAL COMMANDS
+                        if( !sIn ) etThread.traceF( tin0P , T("i will not insert MIME headers since no commands were pushed into the input soulC.") ) ;
+                        ZE( boolT , bMime ) ;
+
                         sIn >> psttFileBody ; ___( psttFileBody ) ;
                         ZE( strokeS* , psttFileBody ) ;
 
@@ -875,12 +909,12 @@ DONE( tmWorkF )
                             etThread.delF( tin0P , pstti ) ;
                             }
                                 tProtocolOverride = T(pstti) ;
-                                //etThread.traceF( tin0P , T("protocol override [server, name, protocol]: ")+T(psttHost)+T("    ")+T(psttProtocolName)+T("    ")+T(pstti) ) ;
+                                /**/etThread.traceF( tin0P , T("protocol override [server, name, protocol]: ")+T(psttHost)+T("    ")+T(psttProtocolName)+T("    ")+T(pstti) ) ;
                             {
                             else
                             if( !pstti || !pstti->idAdam ) /*;*/etThread.traceF( tin0P , T("not found [tKey]: ")+tKey ) ;
                             etThread.querySettingF( tin0P , pstti , tKey  ) ; ___( pstti ) ;
-                            //etThread.traceF( tin0P , T("query override protocol [tKey]: ")+tKey ) ;
+                            /**/etThread.traceF( tin0P , T("query override protocol [tKey]: ")+tKey ) ;
                             TN( tKey , "" ) ; tKey = T("!ipdos.smtp.relay..")+T(psttHost)+T("..")+T(psttProtocolName) ;
                             ZE( strokeS* , pstti ) ;
                         {
@@ -888,8 +922,8 @@ DONE( tmWorkF )
                         TN( tProtocolOverride , "" ) ;
 
                         }
-                            //etThread.traceF( tin0P , T("after parsing [psttProtocolName]: ")+T(psttProtocolName) ) ;
-                            //etThread.traceF( tin0P , T("after parsing [psttHost]: ")+T(psttHost) ) ;
+                            /**/etThread.traceF( tin0P , T("after parsing [psttProtocolName]: ")+T(psttProtocolName) ) ;
+                            /**/etThread.traceF( tin0P , T("after parsing [psttHost]: ")+T(psttHost) ) ;
                             etThread.delF( tin0P , pstt1w ) ;
                             }
                                 }
@@ -904,7 +938,7 @@ DONE( tmWorkF )
                             etThread.strWordsF( tin0P , pstt1w , psttHost , sttq , T("[]") ) ; ___( pstt1w ) ;
                             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                             ZE( strokeS* , pstt1w ) ;
-                            //etThread.traceF( tin0P , T("parsing [psttHost]: ")+T(psttHost) ) ;
+                            /**/etThread.traceF( tin0P , T("parsing [psttHost]: ")+T(psttHost) ) ;
                         {
                         ZE( strokeS* , psttProtocolName ) ;
 
@@ -932,9 +966,9 @@ DONE( tmWorkF )
                     IFsCRATCHoK{}
 
                     ZE( flagsT , flagsFail ) ;
-                    //etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | mailing out ")+T((strokeS*)tIfoName)+T(": ") ) ;
+                    /**/etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | mailing out ")+T((strokeS*)tIfoName)+T(": ") ) ;
 
-                    //etThread.traceF( tin0P , tShort ) ;
+                    /**/etThread.traceF( tin0P , tShort ) ;
 
                     }
                         etThread.delF( tin0P , psttShort ) ;
@@ -971,7 +1005,7 @@ DONE( tmWorkF )
                 DEL( pInfo ) ;
                 }
                     }
-                        //etThread.traceF( tin0P , tShort ) ;
+                        /**/etThread.traceF( tin0P , tShort ) ;
                         etThread.diskMoveFileOrDirF( tin0P , tToSend+tShort , pInfo->psttIfoName ) ;
 
                         }
@@ -1108,7 +1142,7 @@ DONE( tmWorkF )
         }
             ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , bProcessAccessLogs ? ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER : ifcIDaDAM_CLOUD , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
 
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bProcessAccessLogs]:    ")+TF2(bProcessAccessLogs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bProcessAccessLogs]:    ")+TF2(bProcessAccessLogs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttProcessAccessLogs ) ;
@@ -1128,16 +1162,16 @@ DONE( tmWorkF )
             }
                 homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ROOThEAL ;
                 ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_HEALaRCHIVES , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-                //etThread.traceF( tin0P , T("ROOTmAILoUT: hiring ifcIDaDAM_HEALaRCHIVES") ) ;
+                /**/etThread.traceF( tin0P , T("ROOTmAILoUT: hiring ifcIDaDAM_HEALaRCHIVES") ) ;
             {
             else
-            if( bNoHeal ) ;//etThread.traceF( tin0P , T("ROOTmAILoUT: NOT hiring ifcIDaDAM_HEALaRCHIVES") ) ;
+            if( bNoHeal ) /*;*/etThread.traceF( tin0P , T("ROOTmAILoUT: NOT hiring ifcIDaDAM_HEALaRCHIVES") ) ;
 
             //20240325@1619: HEALaRCHIVES IS ALWAYS LAUNCHED, AS MARKETING POLICY ("BARTERWARE")
             //20240320@2127: TO WORK AROUND A BUG, HEALaRCHIVES IS ONLY LAUNCHED WHEN EXPLICITLY COMMANDED
             //20221229@1429: HEALaRCHIVES IS ALWAYS LAUNCHED, AS MARKETING POLICY ("BARTERWARE")
 
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bNoHeal]:    ")+TF2(bNoHeal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bNoHeal]:    ")+TF2(bNoHeal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttHeal ) ;
@@ -1157,7 +1191,7 @@ DONE( tmWorkF )
 
         }
             if( bServeSmtp ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_ROOTsMTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bServeSmtp]:    ")+TF2(bServeSmtp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bServeSmtp]:    ")+TF2(bServeSmtp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             //20190730@0808: MOVED TO HERE BUT NOT TESTED.  IDEAFARM.COM CURRENTLY USES GOOGLE.COM'S SMTP SERVER TO RELAY OUTGOING EMAIL
 
             }
@@ -1178,7 +1212,7 @@ DONE( tmWorkF )
                 //U::ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_3BANG , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( !bNoServeBang )
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bNoServeBang]:    ")+TF2(bNoServeBang,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bNoServeBang]:    ")+TF2(bNoServeBang,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttServeBang ) ;
@@ -1196,7 +1230,7 @@ DONE( tmWorkF )
                 ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_REMOTEdESKTOPoPENhOUSE , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( tPass.csF( tin0P ) )
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bRdpOpenHouse]:    ")+T(tPass.csF(tin0P)?"yes":"no") ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bRdpOpenHouse]:    ")+T(tPass.csF(tin0P)?"yes":"no") ) ;
 
             }
                 etThread.delF( tin0P , psttPass ) ;
@@ -1216,7 +1250,7 @@ DONE( tmWorkF )
                 ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_UDPfILEcATCHER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bCatchUdpFiles )
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bCatchUdpFiles]:    ")+TF2(bCatchUdpFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bCatchUdpFiles]:    ")+TF2(bCatchUdpFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttCatchUdpFiles ) ;
@@ -1236,7 +1270,7 @@ DONE( tmWorkF )
                 ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_ICISbOT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bICISBot )
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bICISBot]:    ")+TF2(bICISBot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bICISBot]:    ")+TF2(bICISBot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttBot ) ;
@@ -1253,7 +1287,7 @@ DONE( tmWorkF )
                 ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_WELCOMER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bWelcomer )
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bWelcomer]:    ")+TF2(bWelcomer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bWelcomer]:    ")+TF2(bWelcomer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttEat ) ;
@@ -1270,7 +1304,7 @@ DONE( tmWorkF )
                 ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_DNS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bDns )
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bDns]:    ")+TF2(bDns,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bDns]:    ")+TF2(bDns,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttEat ) ;
@@ -1287,7 +1321,7 @@ DONE( tmWorkF )
                 ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_ADMINISTRATOR , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bAdministrator )
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bAdministrator]:    ")+TF2(bAdministrator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bAdministrator]:    ")+TF2(bAdministrator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttEat ) ;
@@ -1304,7 +1338,7 @@ DONE( tmWorkF )
                 ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_WEBhOOKnOTICEfILER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bFileWebhookNotices )
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bFileWebhookNotices]:    ")+TF2(bFileWebhookNotices,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bFileWebhookNotices]:    ")+TF2(bFileWebhookNotices,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttEat ) ;
@@ -1325,7 +1359,7 @@ DONE( tmWorkF )
             {
             if( bServeHttp )
             //etThread.trace F( tin0P , T("debug 6.4") ) ;
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bServeHttp]:    ")+TF2(bServeHttp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bServeHttp]:    ")+TF2(bServeHttp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 //etThread.trace F( tin0P , T("debug 6.5") ) ;
@@ -1349,7 +1383,7 @@ DONE( tmWorkF )
 
         }
             if( bGorillaHttpReporter ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_GORILLAhTTPiDEAFARMcOMrEPORTER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaHttpReporter]:    ")+TF2(bGorillaHttpReporter,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaHttpReporter]:    ")+TF2(bGorillaHttpReporter,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttGorillaHttpReporter ) ;
@@ -1363,7 +1397,7 @@ DONE( tmWorkF )
 
         }
             if( bGorillaHttp ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_GORILLAhTTPiDEAFARMcOM , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaHttp]:    ")+TF2(bGorillaHttp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaHttp]:    ")+TF2(bGorillaHttp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttGorillaHttp ) ;
@@ -1377,7 +1411,7 @@ DONE( tmWorkF )
 
         }
             if( bHire ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_QUERYsTRIPEeVENTS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bHire]:    ")+TF2(bHire,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bHire]:    ")+TF2(bHire,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttv ) ;
@@ -1389,7 +1423,7 @@ DONE( tmWorkF )
 
         }
             if( bGorillaWebhooks ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_GORILLAwEBHOOKS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-            //etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaWebhooks]:    ")+TF2(bGorillaWebhooks,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaWebhooks]:    ")+TF2(bGorillaWebhooks,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 etThread.delF( tin0P , psttGorillaWebhooks ) ;
@@ -1401,7 +1435,7 @@ DONE( tmWorkF )
 
         //}
         //    if( bDo ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_TOOLrANDOMiPV6 , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-        //    //etThread.traceF( tin0P , T("ROOTmAILoUT: [bDo]:    ")+TF2(bDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //    /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bDo]:    ")+TF2(bDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         //
         //    }
         //        etThread.delF( tin0P , psttDo ) ;
@@ -1413,7 +1447,7 @@ DONE( tmWorkF )
         //THIS DOES NOT WORK ; APPARENTLY netsh interface IS INEFFECTIVE (SILENTLY FAILS) WHEN RUN WITHIN THE CONTEXT OF A SERVICE ; SO THIS IS DONE (CURRENTLY MANUALLY) BY LAUNCHING ipv6.bat
 
         //ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_UDPeCHO , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-        //etThread.traceF( tin0P , T("ROOTmAILoUT: hiring ifcIDaDAM_UDPeCHO") ) ;
+        /**/etThread.traceF( tin0P , T("ROOTmAILoUT: hiring ifcIDaDAM_UDPeCHO") ) ;
         //U::20230611@1304: DISABLED TO UNCLUTTER STFU TRACE FILE.  UDPeCHO WORKS AND CAN BE ENABLED HERE FOR FURTHER TESTING AND DEVELOPMENT
 
         //etThread.trace F( tin0P , T("debug 9") ) ;
@@ -1421,7 +1455,7 @@ DONE( tmWorkF )
     if( !bSandbox )
     //etThread.trace F( tin0P , T("debug [bSandbox]:    ")+TF2(bSandbox,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-    bSandbox = 0 ;
+    //bSandbox = 0 ;
     boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 
 //    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
