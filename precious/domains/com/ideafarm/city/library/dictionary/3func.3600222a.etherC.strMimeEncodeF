@@ -1,0 +1,100 @@
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+}
+    }
+        }
+            postP[ offo ++ ] = *(osTextT*)tPad ;
+            postP[ offo ++ ] = *(osTextT*)tPad ;
+            postP[ offo ++ ] = *(osTextT*)TF4(vv2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
+            postP[ offo ++ ] = *(osTextT*)TF4(vv1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
+
+            countT vv2 = vvIn >> 0x0c & 0x3f ;
+            countT vv1 = vvIn >> 0x12        ;
+        {
+        else
+        }
+            postP[ offo ++ ] = *(osTextT*)tPad ;
+            postP[ offo ++ ] = *(osTextT*)TF4(vv3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
+            postP[ offo ++ ] = *(osTextT*)TF4(vv2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
+            postP[ offo ++ ] = *(osTextT*)TF4(vv1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
+
+            countT vv3 = vvIn >> 0x06 & 0x3f ;
+            countT vv2 = vvIn >> 0x0c & 0x3f ;
+            countT vv1 = vvIn >> 0x12        ;
+        {
+        else if( cBytes == 2 )
+        }
+            postP[ offo ++ ] = *(osTextT*)TF4(vv4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
+            postP[ offo ++ ] = *(osTextT*)TF4(vv3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
+            postP[ offo ++ ] = *(osTextT*)TF4(vv2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
+            postP[ offo ++ ] = *(osTextT*)TF4(vv1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
+
+            countT vv4 = vvIn         & 0x3f ;
+            countT vv3 = vvIn >> 0x06 & 0x3f ;
+            countT vv2 = vvIn >> 0x0c & 0x3f ;
+            countT vv1 = vvIn >> 0x12        ;
+        {
+        if( cBytes >= 3 )
+
+        }
+            if( cBytes > 2 ) pbIn[ 0 ] = pbP[ offi + 2 ] ;
+            if( cBytes > 1 ) pbIn[ 1 ] = pbP[ offi + 1 ] ;
+                             pbIn[ 2 ] = pbP[ offi     ] ;
+            byteT* pbIn = (byteT*)&vvIn ;
+        {
+        ZE( countT , vvIn ) ;
+
+        countT cBytes = cbP - offi ;
+    {
+    for( countT offi = 0 ; offi < cbP ; offi += 3 )
+    TN( tPad , "=" ) ;
+    ZE( countT , offo ) ;
+
+    memSetF( tin0P , postP , cba ) ;
+    newF( tin0P , LF , postP , cba ) ; ___( postP ) ;     // MORE THAN NEEDED ; THE "3 +" IS TO ENSURE SPACE FOR TRAILING NULL AND OO PAD CHARS WHEN INPUT IS A SINGLE BYTE
+    countT cba =  3 + 2 * cbP ;
+
+    }
+        if( POOP ) return ;
+        __Z( cbP ) ;
+        __Z( pbP ) ;
+        __NZ( postP ) ;
+        if( POOP ) return ;
+    {
+    IFbEcAREFUL
+{
+/*1*/voidT etherC::strMimeEncodeF( tin0S& tin0P , osTextT*& postP , const byteT* const pbP , const countT cbP )/*1*/
+
+//U:: THIS WORKS BUT IS NOT OPTIMIZED ; FOR LARGE INPUT BLOBS, AVOIDING strokeS STRING AND textC PROCESSING WILL SPEED ME UP A LOT
+
+// 
+//    output string.
+//    characters.  The character referenced by the index is placed in the
+//    Each 6-bit group is used as an index into an array of 64 printable
+// 
+//    alphabet.
+//    of which is translated into a single character in the base 64
+//    These 24 bits are then treated as 4 concatenated 6-bit groups, each
+//    24-bit input group is formed by concatenating 3 8-bit input groups.
+//    strings of 4 encoded characters.  Proceeding from left to right, a
+// The encoding process represents 24-bit groups of input bits as output
+// 
+//  FROM RFC 4648:
+// 
+
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
