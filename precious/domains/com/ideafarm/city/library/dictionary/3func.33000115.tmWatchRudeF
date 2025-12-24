@@ -20,22 +20,27 @@ DONE( tmWatchRudeF )
             }
                 }                                                                                                                                               //
                     if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE ) ) scDozeChange = 1 ;                                           //     IF CLEAR THEN SET
+                    _IO_
                 {                                                                                                                                               //
                 else if( offPeriodModulo == processGlobal2I.cDozeSprint )                                                                                       //  IF END OF SPRINT
                 }                                                                                                                                               //
                     else if(  processGlobal2I.cDozeSprint &&    F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE   ) scDozeChange = - 1 ;    //     ELSE IF     SPRINT AND SET   THEN CLEAR
                          if( !processGlobal2I.cDozeSprint && !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE ) ) scDozeChange =   1 ;    //          IF NOT SPRINT AND CLEAR THEN SET
+                    _IO_
                 {                                                                                                                                               //
                 if( !offPeriodModulo )                                                                                                                          //  IF ZE'TH PERIOD
+                _IO_
             {                                                                                                                                                   //
             else                                                                                                                                                // ELSE (ENABLED)
             }                                                                                                                                                   //
                 if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_DOZEmAYBE ) scDozeChange = - 1 ;                                                  //   IF SET THEN CLEAR
+                _IO_
             {                                                                                                                                                   //
             if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_ENABLEdOZING ) )                                                                   // IF NOT ENABLED
                                                                                                                                                                 //
             ZE( sCountT , scDozeChange ) ;
             countT offPeriodModulo = ++ idPeriod % PERIODSpERdOZEcYCLE ;
+            _IO_
         {
 
         _IO_
@@ -77,7 +82,10 @@ DONE( tmWatchRudeF )
     //   
     // OBJECTIVE
 
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
+    }
+        etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
+        _IO_
+    {
 
     }
         sgnWatchRudeReady.giveF( tin0P ) ;
@@ -85,6 +93,7 @@ DONE( tmWatchRudeF )
 
         signC& sgnWindowsReady   = *(signC*)pTaskP->c2 ;
         signC& sgnWatchRudeReady = *(signC*)pTaskP->c1 ;
+        _IO_
     {
     //I CANNOT JUST LAUNCH tmWatchF LATER BECAUSE THAT WOULD CHANGE idThread VALUES FOR SYSTEM THREADS (MY idThread WOULD DEPEND UPON WINDOWING AND PROBABLY ALSO ON A RACE CONDITION INVOLVING THREAD STARTUP)
     //THIS BLOCK IS TO ENSURE THAT tmWindowsF AND tmAnimateSadamsF GET STARTED BEFORE I CHECK FOR THEIR PRESENCE
