@@ -31066,6 +31066,7 @@ private :
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011a8.thirdc.openssl_shutdownif!||
 
   static osTextT* openSslHmac_hmacIF( tin0S& tin0P , const osTextT* postSecretP , countT costSecretP , const osTextT* postRawP , countT costRawP , osTextT* postScratchP , countT* pCostScratchP ) ;
+  static voidT openSslEncryptBase64IF( tin0S& tin0P ) ;
 
 /* commands: sockets */
 
@@ -34460,6 +34461,7 @@ examples
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021de.etherc.openssl_shutdownf!||
 
   voidT openSslHmacF( tin0S& tin0P , strokeS*& psttP , const osTextT* postSecretP , countT costSecretP , const osTextT* postRawP , countT costRawP ) ;
+  voidT openSslEncryptBase64F( tin0S& tin0P ) ;
 
 /* commands: sockets */
 
