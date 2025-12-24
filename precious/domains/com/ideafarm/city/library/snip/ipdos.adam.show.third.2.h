@@ -34557,7 +34557,7 @@ examples
  voidT statisticsF( tin0S& tin0P , measureT& minP , measureT& maxP , measureT& meanP , measureT& medianP , measureT& stdDeviationP , stackC& stXP ) ;
 
 /* commands: strings */
- voidT strMimeEncodeF( tin0S& tin0P , osTextT*& postP , const byteT* const pbP , const countT cbP ) ;
+ countT strMimeEncodeF( tin0S& tin0P , osTextT*& postP , const byteT* const pbP , const countT cbP ) ;
  voidT strHearF( tin0S& tin0P , strokeS*& psttP , strokeS*& psttUnwantedP , const countT csttWantedP = 0 ) ;
  voidT strAbridgeF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttOldP = 0 , const strokeS* const psttDelimiterP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34034.etherC.strAbridgeF!||
