@@ -9,6 +9,7 @@
 }
     return offo ;
 
+    traceF( tin0P , T("strMimeEncodeF [cbIn,cbOut]:    ")+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     }
         }
             postP[ offo ++ ] = *(osTextT*)tPad ;
@@ -55,7 +56,9 @@
         countT cBytes = cbP - offi ;
     {
     for( countT offi = 0 ; offi < cbP ; offi += 3 )
+    traceF( tin0P , T("strMimeEncodeF [cbIn]:    ")+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     TN( tPad , "=" ) ;
+    TN( tb4  , "    " ) ;
     ZE( countT , offo ) ;
 
     memSetF( tin0P , postP , cba ) ;
