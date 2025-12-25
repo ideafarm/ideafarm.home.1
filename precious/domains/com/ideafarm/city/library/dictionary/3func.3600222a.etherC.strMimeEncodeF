@@ -43,8 +43,8 @@
 
     }
         }
-            c4Result = ifcHireF( tin0P , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , tArgs ) ;
-            TN( tArgs , "" ) ; tArgs = T("!maxValue 0 !hireLater ")+tosExe+tArgs ;
+            c4Result = ifcHireF( tin0P , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , tArgsOuter ) ;
+            TN( tArgsOuter , "" ) ; tArgsOuter = T("!maxValue 0 !hireLater ")+tosExe+tArgsInner ;
             _IO_
         {
         countT& osPid = c4Result.c2 ;
@@ -52,7 +52,7 @@
         count4S c4Result ;
     {
 
-    TN( tArgs , " " ) ; tArgs += T(osfnOut)+tb+T(osfnIn) ;
+    TN( tArgsInner , " " ) ; tArgsInner += T(osfnOut)+tb+T(osfnIn) ;
     }
         tosExe = T(osfnExe) ;
         delF( tin0P , psttm ) ;
