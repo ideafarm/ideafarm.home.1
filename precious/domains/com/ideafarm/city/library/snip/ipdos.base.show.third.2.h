@@ -4554,6 +4554,54 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200626.TIMEnAPdURINGsERVICEsTARTUP END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200627.MIMEhEADER BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*MIMEhEADER*//*1*/
+
+#define MIMEhEADER_TEXT                                                             \
+                                                                                    \
+        "--IdeaFarmMimeBoundary\r\n"                                                \
+        "Content-Type: text/plain; charset=\"us-ascii\"\r\n"                        \
+        "Content-Transfer-Encoding: 7bit\r\n"                                       \
+        "\r\n"
+
+#define MIMEhEADER_FILElITERAL(shortP)                                              \
+                                                                                    \
+        "--IdeaFarmMimeBoundary\r\n"                                                \
+        "Content-Type: text/plain; name=\"" shortP "\"\r\n"                         \
+        "Content-Description: " shortP "\r\n"                                       \
+        "Content-Disposition: attachment; filename=\"" shortP "\"\r\n"              \
+        "Content-Transfer-Encoding: base64\r\n"                                     \
+        "\r\n"
+
+#define MIMEhEADER_FILEtEXTeXPRESSION(shortP)                                       \
+                                                                                    \
+        T("--IdeaFarmMimeBoundary\r\n"                                              \
+        "Content-Type: text/plain; name=\"")+T((shortP))+T("\"\r\n"                 \
+        "Content-Description: ")+T((shortP))+T("\r\n"                               \
+        "Content-Disposition: attachment; filename=\"")+T((shortP))+T("\"\r\n"      \
+        "Content-Transfer-Encoding: base64\r\n"                                     \
+        "\r\n")
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200627.MIMEhEADER END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -34559,7 +34607,6 @@ examples
  voidT statisticsF( tin0S& tin0P , measureT& minP , measureT& maxP , measureT& meanP , measureT& medianP , measureT& stdDeviationP , stackC& stXP ) ;
 
 /* commands: strings */
- countT strMimeEncodeF( tin0S& tin0P , osTextT*& postP , const byteT* const pbP , const countT cbP ) ;
  voidT strHearF( tin0S& tin0P , strokeS*& psttP , strokeS*& psttUnwantedP , const countT csttWantedP = 0 ) ;
  voidT strAbridgeF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttOldP = 0 , const strokeS* const psttDelimiterP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34034.etherC.strAbridgeF!||
@@ -34850,6 +34897,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021df.etherc.strfilematchf!||
  voidT strEncodeBlobToRFC4648F( tin0S& tin0P , strokeS*& psttP , const byteT* pbP , const countT cbP ) ;
  voidT strDecodeBlobFromRFC4648F( tin0S& tin0P , byteT*& pbP , countT& cbP , const strokeS* const psttP ) ;
+ countT strMimeEncodeF( tin0S& tin0P , osTextT*& postP , const byteT* const pbP , const countT cbP ) ;
 
 /* stroke string specifications a.k.a. regular expressions */
  boolT sssTestF( tin0S& tin0P , boolT& bDoNotAdvanceBigP , const strokeS* const psttSmallP , const strokeS* const psttBigP , const countT idsDoP , countT& idbDoP , const strokeS* const psttBlackP , const strokeS* const psttPunctuationP ) ;

@@ -1255,6 +1255,14 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
+    TN( tNameSoixlOld , "openSslEncryptBase64F_o" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)openSslEncryptBase64F_o_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
     TN( tNameSoixlOld , "sockBindF_ob3d3" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
@@ -1932,6 +1940,14 @@
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
     *_pSwSoixlOldApi = (countT)strDecodeBlobFromRFC4648F_o1P34P_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
+    TN( tNameSoixlOld , "strMimeEncodeF_o2@1@3" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)strMimeEncodeF_o2P1P3_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

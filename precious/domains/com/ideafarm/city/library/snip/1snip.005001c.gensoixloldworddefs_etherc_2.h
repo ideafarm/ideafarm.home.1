@@ -2180,15 +2180,6 @@ voidT ifcKitUpdateKitF_o4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , 
 
 voidT inetCreateSubscriptionF_oP4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0x0 , etherC )
-    SOIXLoLDtESTtYPE( 0x0 , etherC )
-    ZE( ideaNetSubscriptionC* , pSubP ) ;
 }
 
 voidT inetBookSubscriberConfigureExeF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )

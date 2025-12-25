@@ -313,6 +313,8 @@ voidT openSslTls_waveByeF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , co
 
 voidT openSslHmacF_o4P2P32P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
+voidT openSslEncryptBase64F_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
 voidT sockBindF_ob3d3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT sockCancelF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
@@ -482,6 +484,8 @@ voidT strFileMatchF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
 voidT strEncodeBlobToRFC4648F_o4P1P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT strDecodeBlobFromRFC4648F_o1P34P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT strMimeEncodeF_o2P1P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT sssTestF_o64P4P334P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
