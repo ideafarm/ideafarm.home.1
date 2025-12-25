@@ -1,5 +1,14 @@
 
 
+#define MIMEhEADER_FILEtEXTeXPRESSION(shortP)                                       \
+                                                                                    \
+        "--IdeaFarmMimeBoundary\r\n"                                                \
+        "Content-Type: text/plain; name=\""+T(shortP)+T("\"\r\n"                    \
+        "Content-Description: ")+T(shortP)+T("\r\n"                                 \
+        "Content-Disposition: attachment; filename=\"")+T(shortP)+T("\"\r\n"        \
+        "Content-Transfer-Encoding: base64\r\n"                                     \
+        "\r\n"
+
 #define MIMEhEADER_TEXT                                                             \
                                                                                     \
         "--IdeaFarmMimeBoundary\r\n"                                                \
@@ -7,7 +16,7 @@
         "Content-Transfer-Encoding: 7bit\r\n"                                       \
         "\r\n"
 
-#define MIMEhEADER_FILE(shortP)                                                     \
+#define MIMEhEADER_FILElITERAL(shortP)                                              \
                                                                                     \
         "--IdeaFarmMimeBoundary\r\n"                                                \
         "Content-Type: text/plain; name=\"" shortP "\"\r\n"                         \

@@ -262,7 +262,7 @@ DONE( tmWorkF )
                                                             timeS timeN ;
 
                                                             ) ;
-                                                                MIMEhEADER_FILE( "confidential.ideanet.ideafarm.zip" )
+                                                                MIMEhEADER_FILEtEXTeXPRESSION( (strokeS*)tShortIdeaNetZip ) ""
                                                                 "go to http://admissions.ideafarm.com/ and click: \"[Click here to manage your subscription]\".\r\n"
                                                                 "unless you think that this email is spam.  To terminate or modify the subscription that you just paid for,\r\n"
                                                                 "The anti-spam link at the bottom appears at the end of all email sent from IDEAFARM.COM.  Please do NOT click it\r\n"
@@ -374,9 +374,9 @@ DONE( tmWorkF )
                                                                 }
                                                                     }
                                                                         etThread.delF( tin0P , pstts ) ;
-                                                                        tShortIdeaNetExe = T(pstts) ;
+                                                                        tShortIdeaNetZip = T(pstts) ;
                                                                         etThread.delF( tin0P , psttnu ) ;
-                                                                        etThread.strBisectF( tin0P , psttnu , pstts , tLongIdeaNetExe , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( pstts ) ;
+                                                                        etThread.strBisectF( tin0P , psttnu , pstts , tLongIdeaNetZip , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( pstts ) ;
                                                                         ZE( strokeS* , pstts ) ;
                                                                         ZE( strokeS* , psttnu ) ;
                                                                     {
@@ -385,7 +385,7 @@ DONE( tmWorkF )
                                                                     etThread.delF( tin0P , psttz ) ;
                                                                     etThread.boxPutF( tin0P , tLongIdeaNetMime , postMime , costMime ) ;
                                                                     tLongIdeaNetMime = T(psttz) ;
-                                                                    etThread.strReplaceF( tin0P , psttz , tLongIdeaNetExe , T(".exe") , T(".base64") ) ; ___( psttz ) ;
+                                                                    etThread.strReplaceF( tin0P , psttz , tLongIdeaNetZip , T(".zip") , T(".base64") ) ; ___( psttz ) ;
                                                                     ZE( strokeS* , psttz ) ;
 
                                                                     countT costMime = etThread.strMimeEncodeF( tin0P , postMime , pbZip , cbZip ) ; ___( postMime ) ;
@@ -398,7 +398,7 @@ DONE( tmWorkF )
                                                                 ZE( byteT* , pbZip ) ;
                                                             {
                                                             TN( tLongIdeaNetMime , "" ) ;
-                                                            TN( tShortIdeaNetExe , "" ) ;
+                                                            TN( tShortIdeaNetZip , "" ) ;
 
                                                             }
                                                                 etThread.delF( tin0P , pstt01WildList ) ;
