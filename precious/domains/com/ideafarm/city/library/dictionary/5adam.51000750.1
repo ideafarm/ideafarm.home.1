@@ -627,9 +627,15 @@ DONE( tmWorkF )
 
                                                 socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
 
-                                                countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
-                                                countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
-                                                countT timeAllowedConnected = TICK >> 2 ;
+                                                countT idleTimeAllowedWrite = TICK << 4 ;
+                                                countT idleTimeAllowedRead  = TICK << 4 ;
+                                                countT timeAllowedConnected = TICK << 4 ;   // WO IFC HOUR (ABOUT 90_9 FOREIGN MINUTES)
+
+                                                //countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
+                                                //countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
+                                                //countT timeAllowedConnected = TICK >> 2 ;
+                                                //THESE TIMEOUTS DON'T WORK WHEN THE EMAIL IS LARGE (DUE TO ATTACHMENTS)
+
                                                 //countT idleTimeAllowedWrite = TOCK * 0x10 ;
                                                 //countT idleTimeAllowedRead  = TOCK * 0x10 ;
 
