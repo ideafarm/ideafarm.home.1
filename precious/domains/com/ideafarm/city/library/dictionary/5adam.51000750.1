@@ -1730,6 +1730,13 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
                 DEL( pInfo ) ;
                 }
                     }
+                        }
+                            etherP.traceF( tin0P , T("!exception / write failed while writing body") ) ;
+                            flagsFailP |= flFAIL_DATAbODYfILEtOOlARGEoRwRITEfAILED ;
+                            POOPR
+                        {
+                        if( POOP )
+
                         etherP.delF( tin0P , posti ) ;
                         }
                             }
@@ -1767,7 +1774,7 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
                                 countT cNibble = costa < cToDo ? costa : cToDo ;
                                 _IO_
                             {
-                            while( cToDo )
+                            while( !POOP && cToDo )
                             boolT bNew = 1 ;
                             _IO_
                         {
@@ -1777,7 +1784,7 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
             
                         const countT costa = TOCK < cToDo ? TOCK : cToDo ;
                         countT cToDo = pInfo->cbUsed ;
-                        //CONoUTrAW3( "writing data: body file is " , pInfo->cbUsed , " bytes\r\n" ) ;
+                        etherP.traceF( tin0P , T("writing data: body file is ")+TF2(pInfo->cbUsed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" bytes") ) ;
                         _IO_
                     {
                     if( !bFail )
@@ -1785,19 +1792,20 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
                     }
                         bFail = 1 ;
                         DEL( pInfo ) ;
-                        //CONoUTrAW( "writing data: body file is too large\r\n" ) ;
-                        flagsFailP |= flFAIL_DATAbODYfILEtOOlARGE ;
+                        etherP.traceF( tin0P , T("!exception / writing data: body file is too large") ) ;
+                        flagsFailP |= flFAIL_DATAbODYfILEtOOlARGEoRwRITEfAILED ;
                         POOPR
                         _IO_
                     {
-                    if( pInfo->cbUsedHigh )
+                    if( POOP )
+                    __NZ( pInfo->cbUsedHigh ) ;
                     _IO_
                 {
                 if( !bFail && pInfo )
         
                 }
                     bFail = 1 ;
-                    //CONoUTrAW( "writing data: could not get info for body file\r\n" ) ;
+                    etherP.traceF( tin0P , T("!exception / writing data: could not get info for body file") ) ;
                     flagsFailP |= flFAIL_DATAcANNOTgETbODYfILEiNFO ;
                     POOPR
                     _IO_
@@ -1811,7 +1819,7 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
     
             }
                 bFail = 1 ;
-                //CONoUTrAW( "writing data: could not open the body file\r\n" ) ;
+                etherP.traceF( tin0P , T("!exception / writing data: could not open the body file") ) ;
                 flagsFailP |= flFAIL_DATAcANNOToPENfILE ;
                 POOPR
                 _IO_
@@ -1819,9 +1827,9 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
             if( POOP )
             ((tin1S&)tin0P).pEtScratch->fileOpenF( tin0P , hFileBody , countTC() , psttFileBodyP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO ) ;
             handleC hFileBody( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
-            //CONoUTrAW( T("opening body file\r\n") ) ;
+            etherP.traceF( tin0P , T("opening body file") ) ;
 
-            SCOOPS
+            SCOOPS    //U::  <-------------------------- DT'OR OF THIS scoopC INSTANCE DETECTS IMPOTENT etScratch
             _IO_
         {
         IFsCRATCHoK
@@ -1900,7 +1908,7 @@ voidT queryEmailFromIdAccountF( tin0S& tin0P , strokeS*& psttP , const countT cP
 #define flFAIL_STARTtlsrEJECTED                     0xe40000ff
 #define flFAIL_UNAUTHORIZEDrELAYsERVER              0xe20000ff
 #define flFAIL_DATAfILEdOESnOTeXIST                 0xe10000ff
-#define flFAIL_DATAbODYfILEtOOlARGE                 0xe08000ff
+#define flFAIL_DATAbODYfILEtOOlARGEoRwRITEfAILED    0xe08000ff
 #define flFAIL_DATAcANNOTgETbODYfILEiNFO            0xe04000ff
 #define flFAIL_DATAcANNOToPENfILE                   0xe02000ff
 #define flFAIL_COULDnOTmOVEfILE                     0xe01000ff
