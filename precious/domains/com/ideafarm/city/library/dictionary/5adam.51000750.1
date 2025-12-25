@@ -53,6 +53,7 @@ DONE( tmWorkF )
                         if( !bFailPermanent && !( F(flagsFail) ) )
 
                         SCOOPS
+                        _IO_
                     {
                     IFsCRATCHoK                               //20201010@1520: ADDED WITHOUT ANALYSIS TO PREVENT ACCUMULATION OF FILES
 #if defined( NEVERdEFINED )
@@ -671,6 +672,7 @@ DONE( tmWorkF )
                                 {
                                 for( countT offs = 0 ; offs < 3 && !flagsFail ; offs ++ )
                                 stackC* ppzStk[] = { &stTo , &stCc , &stBc } ;
+                                _IO_
                             {
                             if( !( F(flagsFail) & flFAIL_DURINGpARSING ) )
 
@@ -731,6 +733,7 @@ DONE( tmWorkF )
                                 //MAPPING GLOBAL ALIASES
 
                                 SCOOPS
+                                _IO_
                             {
                             IFsCRATCHoK
                             TN( tFrToCcIncoming , "" ) ;
@@ -833,6 +836,7 @@ DONE( tmWorkF )
                             {
                             TN( tNameIn , "" ) ;
                             TN( tNameOut , "" ) ;
+                            _IO_
                         {
                         if( pStkEmailRelay )
                         etThread( tin0P , pStkEmailRelay , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay ) ;
@@ -865,6 +869,7 @@ DONE( tmWorkF )
                             if( psttCmd )
                             sIn >> psttCmd ; ___( psttCmd ) ;
                             ZE( strokeS* , psttCmd ) ;
+                            _IO_
                         {
                         else while( sIn )                                        //20251222@1836: ADDED TO SUPPORT OPTIONAL COMMANDS
                         if( !sIn ) etThread.traceF( tin0P , T("i will not insert MIME headers since no commands were pushed into the input soulC.") ) ;
@@ -897,6 +902,7 @@ DONE( tmWorkF )
                             {
                             for( countT off = 0 ; off < 3 ; off ++ )
                             stackC* ppzStk[] = { &stTo , &stCc , &stBc } ;
+                            _IO_
                         {
                         countT csttFrToCc = psttFrom->idAdam ;
                         countT cFrToCcLines = 1 ;
@@ -917,6 +923,7 @@ DONE( tmWorkF )
                             /**/etThread.traceF( tin0P , T("query override protocol [tKey]: ")+tKey ) ;
                             TN( tKey , "" ) ; tKey = T("!ipdos.smtp.relay..")+T(psttHost)+T("..")+T(psttProtocolName) ;
                             ZE( strokeS* , pstti ) ;
+                            _IO_
                         {
                         if( psttProtocolName && psttProtocolName->idAdam )
                         TN( tProtocolOverride , "" ) ;
@@ -947,6 +954,7 @@ DONE( tmWorkF )
 
                         sIn >> psttHost ; ___( psttHost ) ;
                         ZE( strokeS* , psttHost ) ;
+                        _IO_
                     {
                     if( !( F(flagsFail) & flFAIL_COULDnOTgETsHADOW ) )
                     ZE( boolT , bFailPermanent ) ;
@@ -985,6 +993,7 @@ DONE( tmWorkF )
                 if( !bDir )
 
                 const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
+                _IO_
             {
             else
             }
@@ -995,6 +1004,7 @@ DONE( tmWorkF )
 
             etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tToSend ) ;
             ZE( infoFileS* , pInfo ) ;
+            _IO_
         {
         do
         handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
@@ -1033,6 +1043,7 @@ DONE( tmWorkF )
 
                 etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tNotSent ) ;
                 ZE( infoFileS* , pInfo ) ;
+                _IO_
             {
             do
             handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
@@ -1071,6 +1082,7 @@ DONE( tmWorkF )
                     ZE( strokeS* , pstti ) ;
                 {
                 ZE( strokeS* , pstt1i ) ;
+                _IO_
             {
 
             }
@@ -1084,10 +1096,12 @@ DONE( tmWorkF )
                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                 {
                 countT cFlavors = swProtocol.cFlavorsF( tin0P ) ;
+                _IO_
             {
 
             timeL2 = timeN2 ;
             timeL1 = timeN1 ;
+            _IO_
         {
         if( timeE2 || timeE1 > TICK )
 
@@ -1098,6 +1112,7 @@ DONE( tmWorkF )
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
+        _IO_
     {
     while( !ether && !etThread )
     switchC swProtocol( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzLeverProtocol ) ;
@@ -1150,6 +1165,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttProcessAccessLogs ) ; etThread.querySettingF( tin0P , psttProcessAccessLogs , T("!ipdos.process.access.logs")  ) ; ___( psttProcessAccessLogs ) ;
             {
             ZE( boolT , bProcessAccessLogs ) ;
+            _IO_
         {
     //#if defined( NEVERdEFINED )
     //U:: ENABLE IN PRODUCTION (THIS WORKS BUT IS DISABLED TO FIND AN UNRELATED BUG)
@@ -1183,6 +1199,7 @@ DONE( tmWorkF )
             ZE( boolT , bNoHeal ) ;
 
             //etThread.trace F( tin0P , T("debug 1") ) ;
+            _IO_
         {
 
         //#if defined( NEVERdEFINED )
@@ -1200,6 +1217,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttServeSmtp ) ; etThread.querySettingF( tin0P , psttServeSmtp , T("!ipdos.serve.smtp")  ) ; ___( psttServeSmtp ) ;
             {
             ZE( boolT , bServeSmtp ) ;
+            _IO_
         {
 
         //etThread.trace F( tin0P , T("debug 3") ) ;
@@ -1220,6 +1238,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttServeBang ) ; etThread.querySettingF( tin0P , psttServeBang , T("!ipdos.serve.bang")  ) ; ___( psttServeBang ) ;
             {
             ZE( boolT , bNoServeBang ) ;
+            _IO_
         {
 
         //etThread.trace F( tin0P , T("debug 4") ) ;
@@ -1238,6 +1257,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttPass ) ; etThread.querySettingF( tin0P , psttPass , T("!ipdos.barracuda.firewall.credentials64")  ) ; ___( psttPass ) ;
             {
             TN( tPass , "" ) ;
+            _IO_
         {
 
         //etThread.trace F( tin0P , T("debug 5") ) ;
@@ -1258,6 +1278,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttCatchUdpFiles ) ; etThread.querySettingF( tin0P , psttCatchUdpFiles , T("!ipdos.catch.udp.files")  ) ; ___( psttCatchUdpFiles ) ;
             {
             ZE( boolT , bCatchUdpFiles ) ;
+            _IO_
         {
     #if defined( NEVERdEFINED )
 
@@ -1278,6 +1299,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttBot ) ; etThread.querySettingF( tin0P , psttBot , T("!ipdos.icis.bot")  ) ; ___( psttBot ) ;
             {
             ZE( boolT , bICISBot ) ;
+            _IO_
         {
 
         }
@@ -1295,6 +1317,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.hire.welcomer")  ) ; ___( psttEat ) ;
             {
             ZE( boolT , bWelcomer ) ;
+            _IO_
         {
 
         }
@@ -1312,6 +1335,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.hire.dns")  ) ; ___( psttEat ) ;
             {
             ZE( boolT , bDns ) ;
+            _IO_
         {
 
         }
@@ -1329,6 +1353,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.hire.administrator")  ) ; ___( psttEat ) ;
             {
             ZE( boolT , bAdministrator ) ;
+            _IO_
         {
 
         }
@@ -1346,6 +1371,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.file.webhook.notices")  ) ; ___( psttEat ) ;
             {
             ZE( boolT , bFileWebhookNotices ) ;
+            _IO_
         {
 
         }
@@ -1356,6 +1382,7 @@ DONE( tmWorkF )
                 //etThread.trace F( tin0P , T("debug 6.2") ) ;
                 ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_ROOThTTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
                 //etThread.trace F( tin0P , T("debug 6.3") ) ;
+                _IO_
             {
             if( bServeHttp )
             //etThread.trace F( tin0P , T("debug 6.4") ) ;
@@ -1371,10 +1398,12 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttServeHttp ) ; etThread.querySettingF( tin0P , psttServeHttp , T("!ipdos.serve.http")  ) ; ___( psttServeHttp ) ;
                 //((tin1S&)tin0P).pc Utility[ 0 ] ++ ; //U::
                 //etThread.trace F( tin0P , T("debug 6.8") ) ;
+                _IO_
             {
             //etThread.trace F( tin0P , T("debug 6.9") ) ;
             ZE( boolT , bServeHttp ) ;
             //etThread.trace F( tin0P , T("debug 6.a") ) ;
+            _IO_
         {
 
         //etThread.trace F( tin0P , T("debug 7") ) ;
@@ -1391,6 +1420,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttGorillaHttpReporter ) ; etThread.querySettingF( tin0P , psttGorillaHttpReporter , T("!ipdos.gorilla.http.reporter")  ) ; ___( psttGorillaHttpReporter ) ;
             {
             ZE( boolT , bGorillaHttpReporter ) ;
+            _IO_
         {
 
         //etThread.trace F( tin0P , T("debug 8") ) ;
@@ -1405,6 +1435,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttGorillaHttp ) ; etThread.querySettingF( tin0P , psttGorillaHttp , T("!ipdos.gorilla.http")  ) ; ___( psttGorillaHttp ) ;
             {
             ZE( boolT , bGorillaHttp ) ;
+            _IO_
         {
 
         #if defined( NEVERdEFINED )
@@ -1419,6 +1450,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttv ) ; etThread.querySettingF( tin0P , psttv , T("!ipdos.query.stripe.events")  ) ; ___( psttv ) ;
             {
             ZE( boolT , bHire ) ;
+            _IO_
         {
 
         }
@@ -1431,6 +1463,7 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttGorillaWebhooks ) ; etThread.querySettingF( tin0P , psttGorillaWebhooks , T("!ipdos.gorilla.webhooks")  ) ; ___( psttGorillaWebhooks ) ;
             {
             ZE( boolT , bGorillaWebhooks ) ;
+            _IO_
         {
 
         //}
@@ -1451,6 +1484,7 @@ DONE( tmWorkF )
         //U::20230611@1304: DISABLED TO UNCLUTTER STFU TRACE FILE.  UDPeCHO WORKS AND CAN BE ENABLED HERE FOR FURTHER TESTING AND DEVELOPMENT
 
         //etThread.trace F( tin0P , T("debug 9") ) ;
+        _IO_
     {
     if( !bSandbox )
     //etThread.trace F( tin0P , T("debug [bSandbox]:    ")+TF2(bSandbox,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1460,6 +1494,7 @@ DONE( tmWorkF )
 
 //    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 //    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    _IO_
 {
 if( pTaskP )
 TASK( tmWorkF )
@@ -1487,6 +1522,7 @@ TASK( tmWorkF )
 
                         countT cToDo = pInfo->cbUsed ;
                         //CONoUTrAW3( "writing data: body file is " , pInfo->cbUsed , " bytes\r\n" ) ;
+                        _IO_
                     {
                     if( !bFail )
     
@@ -1497,6 +1533,7 @@ TASK( tmWorkF )
                         POOPR
                     {
                     if( pInfo->cbUsedHigh )
+                    _IO_
                 {
                 if( !bFail && pInfo )
         
@@ -1522,8 +1559,10 @@ TASK( tmWorkF )
             //CONoUTrAW( T("opening body file\r\n") ) ;
 
             SCOOPS
+            _IO_
         {
         IFsCRATCHoK
+        _IO_
     {
     else
     }
@@ -1539,8 +1578,10 @@ TASK( tmWorkF )
             ZE( countT , idl ) ;
             countT idf = tLit.csF( tin0P ) + 1 ;
             ZE( strokeS* , psttb ) ;
+            _IO_
         {
         if( tLit.csF( tin0P ) < psttFileBodyP->idAdam )
+        _IO_
     {
     if( 1 == etherP.strIdF( tin0P , tLit , psttFileBodyP ) )
     TN( tLit , "!literal:" ) ;
@@ -1595,6 +1636,7 @@ boolT getBodySnipFromFileF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , co
                                 cToDo -= cNibble ;
                                 etherP.fileReadF( tin0P , posti , cNibble , hFileBody ) ;
                                 countT cNibble = costa < cToDo ? costa : cToDo ;
+                                _IO_
                             {
                             while( cToDo )
                             boolT bNew = 1 ;
@@ -1606,6 +1648,7 @@ boolT getBodySnipFromFileF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , co
                         const countT costa = TOCK < cToDo ? TOCK : cToDo ;
                         countT cToDo = pInfo->cbUsed ;
                         //CONoUTrAW3( "writing data: body file is " , pInfo->cbUsed , " bytes\r\n" ) ;
+                        _IO_
                     {
                     if( !bFail )
     
@@ -1616,6 +1659,7 @@ boolT getBodySnipFromFileF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , co
                         POOPR
                     {
                     if( pInfo->cbUsedHigh )
+                    _IO_
                 {
                 if( !bFail && pInfo )
         
@@ -1627,6 +1671,7 @@ boolT getBodySnipFromFileF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , co
                 if( POOP )
                 ((tin1S&)tin0P).pEtScratch->diskFileQueryF( tin0P , pInfo , hFileBody ) ; ___( pInfo ) ;
                 ZE( infoFileS* , pInfo ) ;
+                _IO_
             {
             if( !bFail )
     
@@ -1641,8 +1686,10 @@ boolT getBodySnipFromFileF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , co
             //CONoUTrAW( T("opening body file\r\n") ) ;
 
             SCOOPS
+            _IO_
         {
         IFsCRATCHoK
+        _IO_
     {
     else
     }
@@ -1661,6 +1708,7 @@ boolT getBodySnipFromFileF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , co
         {
         if( tLit.csF( tin0P ) < psttFileBodyP->idAdam )
         //CONoUTrAW( T("sending literal value\r\n") ) ;
+        _IO_
     {
     if( 1 == etherP.strIdF( tin0P , tLit , psttFileBodyP ) )
     TN( tLit , "!literal:" ) ;
@@ -1710,15 +1758,18 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
                                     {
                                     switch( posti[ offi ] )
                                     sockP.writeF( tin0P , posti + offi , 1 ) ;
+                                    _IO_
                                 {
                                 for( countT offi = 0 ; offi < cNibble ; offi ++ )
             
                                 cToDo -= cNibble ;
                                 etherP.fileReadF( tin0P , posti , cNibble , hFileBody ) ;
                                 countT cNibble = costa < cToDo ? costa : cToDo ;
+                                _IO_
                             {
                             while( cToDo )
                             boolT bNew = 1 ;
+                            _IO_
                         {
                         if( posti )
                         etherP.newF( tin0P , LF , posti , costa ) ; ___( posti ) ;
@@ -1727,6 +1778,7 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
                         const countT costa = TOCK < cToDo ? TOCK : cToDo ;
                         countT cToDo = pInfo->cbUsed ;
                         //CONoUTrAW3( "writing data: body file is " , pInfo->cbUsed , " bytes\r\n" ) ;
+                        _IO_
                     {
                     if( !bFail )
     
@@ -1736,8 +1788,10 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
                         //CONoUTrAW( "writing data: body file is too large\r\n" ) ;
                         flagsFailP |= flFAIL_DATAbODYfILEtOOlARGE ;
                         POOPR
+                        _IO_
                     {
                     if( pInfo->cbUsedHigh )
+                    _IO_
                 {
                 if( !bFail && pInfo )
         
@@ -1746,10 +1800,12 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
                     //CONoUTrAW( "writing data: could not get info for body file\r\n" ) ;
                     flagsFailP |= flFAIL_DATAcANNOTgETbODYfILEiNFO ;
                     POOPR
+                    _IO_
                 {
                 if( POOP )
                 ((tin1S&)tin0P).pEtScratch->diskFileQueryF( tin0P , pInfo , hFileBody ) ; ___( pInfo ) ;
                 ZE( infoFileS* , pInfo ) ;
+                _IO_
             {
             if( !bFail )
     
@@ -1758,6 +1814,7 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
                 //CONoUTrAW( "writing data: could not open the body file\r\n" ) ;
                 flagsFailP |= flFAIL_DATAcANNOToPENfILE ;
                 POOPR
+                _IO_
             {
             if( POOP )
             ((tin1S&)tin0P).pEtScratch->fileOpenF( tin0P , hFileBody , countTC() , psttFileBodyP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO ) ;
@@ -1765,13 +1822,16 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
             //CONoUTrAW( T("opening body file\r\n") ) ;
 
             SCOOPS
+            _IO_
         {
         IFsCRATCHoK
+        _IO_
     {
     else
     }
         bFail = 1 ;
         flagsFailP |= flFAIL_DATAfILEdOESnOTeXIST ;
+        _IO_
     {
     else if( !etherP.diskFileExistsF( tin0P , psttFileBodyP ) )
     }
@@ -1783,15 +1843,18 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
             ZE( countT , idl ) ;
             countT idf = tLit.csF( tin0P ) + 1 ;
             ZE( strokeS* , psttb ) ;
+            _IO_
         {
         if( tLit.csF( tin0P ) < psttFileBodyP->idAdam )
         //CONoUTrAW( T("sending literal value\r\n") ) ;
+        _IO_
     {
     if( 1 == etherP.strIdF( tin0P , tLit , psttFileBodyP ) )
     TN( tLit , "!literal:" ) ;
 
     //etherP.traceF( tin0P , T("processing body file \"")+T(psttFileBodyP)+T("\"") ) ;
     ZE( boolT , bFail ) ;
+    _IO_
 {
 boolT writeBodySnipFromFileF( tin0S& tin0P , etherC& etherP , socketC& sockP , const strokeS* const psttFileBodyP , flagsT& flagsFailP )
 
@@ -1821,12 +1884,14 @@ boolT writeBodySnipFromFileF( tin0S& tin0P , etherC& etherP , socketC& sockP , c
         socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
+        _IO_
     {
     IFsCRATCHoK
 
     if( POOP ) return ;
     __NZ( psttP ) ;
     if( POOP ) return ;
+    _IO_
 {
 voidT queryEmailFromIdAccountF( tin0S& tin0P , strokeS*& psttP , const countT cPassAccountSP )
 //DUPLICATE CODE: b750104 3a50104
