@@ -229,9 +229,12 @@ DONE( tmWorkF )
                                                         }
                                                             }
                                                                 timeL = timeN ;
-                                                                etThread.delF( tin0P , postMime ) ;
-                                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com/")+T(psttValueEmail) , postAll , costAll , 0 , 0 , 0 , flOPENdETAILS_null , flBOXcpUTf_SMTPmIME ) ;
+                                                                etRock.traceF( tin0P , T("posted  [tLong]:    ")+tLong ) ;
+                                                                etThread.boxPutF( tin0P , tLong , postAll , costAll , 0 , 0 , 0 , flOPENdETAILS_null , flBOXcpUTf_SMTPmIME ) ;
+                                                                etRock.traceF( tin0P , T("posting [tLong]:    ")+tLong ) ;
+                                                                TN( tLong , "" ) ; tLong = T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com/")+T(psttValueEmail) ;
                                                             
+                                                                etThread.delF( tin0P , postMime ) ;
                                                                 __( postc - postAll - costa ) ;
                                                                 *( postc ++ ) = 0 ;                                    
                                                                        costCopy = costMime               ; thirdC::c_memcpyIF( tin0P , postc , postMime  , costCopy ) ; postc += costCopy ;
@@ -245,9 +248,11 @@ DONE( tmWorkF )
                                                                 countT         costAll = tSubject.csF( tin0P ) + tBodyText.csF( tin0P ) + costMime ;
                                                                 ZE( osTextT* , postAll ) ;
 
+                                                                etRock.traceF( tin0P , T("got     [long]:    ")+tLongIdeaNetMime ) ;
                                                                 etThread.boxGetShadowF( tin0P , postMime , costMime , tLongIdeaNetMime ) ; ___( postMime ) ;
                                                                 ZE( countT   , costMime ) ;
                                                                 ZE( osTextT* , postMime ) ;
+                                                                etRock.traceF( tin0P , T("reading [long]:    ")+tLongIdeaNetMime ) ;
                                                             {
                                                             if( !bFail0 || timeE.time2 || timeE.time1 > ( TICK << 4 ) )
 
