@@ -229,9 +229,25 @@ DONE( tmWorkF )
                                                         }
                                                             }
                                                                 timeL = timeN ;
-                                                                //etRock.traceF( tin0P , T("debug / 0") ) ;
-                                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com/")+T(psttValueEmail)+T("") , tThankYou ) ;
-                                                                //etRock.traceF( tin0P , T("debug / 1") ) ;
+                                                                etThread.delF( tin0P , postMime ) ;
+                                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com/")+T(psttValueEmail) , postAll , costAll , 0 , 0 , 0 , flOPENdETAILS_null , flBOXcpUTf_SMTPmIME ) ;
+                                                            
+                                                                __( postc - postAll - costa ) ;
+                                                                *( postc ++ ) = 0 ;                                    
+                                                                       costCopy = costMime               ; thirdC::c_memcpyIF( tin0P , postc , postMime  , costCopy ) ; postc += costCopy ;
+                                                                       costCopy = tBodyText.csF( tin0P ) ; thirdC::c_memcpyIF( tin0P , postc , tBodyText , costCopy ) ; postc += costCopy ;
+                                                                countT costCopy = tSubject.csF(  tin0P ) ; thirdC::c_memcpyIF( tin0P , postc , tSubject  , costCopy ) ; postc += costCopy ;
+                                                                osTextT* postc = postAll ;
+
+                                                                etThread.newF( tin0P , LF , postAll , costa ) ; ___( postAll ) ;
+                                                                countT costa = costAll + 1 ;
+
+                                                                countT         costAll = tSubject.csF( tin0P ) + tBodyText.csF( tin0P ) + costMime ;
+                                                                ZE( osTextT* , postAll ) ;
+
+                                                                etThread.boxGetShadowF( tin0P , postMime , costMime , tLongIdeaNetMime ) ; ___( postMime ) ;
+                                                                ZE( countT   , costMime ) ;
+                                                                ZE( osTextT* , postMime ) ;
                                                             {
                                                             if( !bFail0 || timeE.time2 || timeE.time1 > ( TICK << 4 ) )
 
@@ -246,24 +262,30 @@ DONE( tmWorkF )
                                                             timeS timeN ;
 
                                                             ) ;
+                                                                MIMEhEADER_FILE( "confidential.ideanet.ideafarm.zip" )
                                                                 "go to http://admissions.ideafarm.com/ and click: \"[Click here to manage your subscription]\".\r\n"
                                                                 "unless you think that this email is spam.  To terminate or modify the subscription that you just paid for,\r\n"
                                                                 "The anti-spam link at the bottom appears at the end of all email sent from IDEAFARM.COM.  Please do NOT click it\r\n"
-                                                            tThankYou += T(
+                                                                "\r\n"
+                                                                "running MS Windows.  See IDEAFARM.COM for instructions.\r\n"
+                                                                "this file to others; it is for your personal use only.  This file can only be used on a personal computer\r\n"
+                                                                "web pages on IDEANET.IDEAFARM.COM.  This file is customized to contain secret credentials.  Do not disclose\r\n"
+                                                                "The attached ZIP file contains an \"IdeaFarm (tm) IdeaNet (tm) Key File\".  With it, you can access private\r\n"
+                                                            tBodyText += T(
 
                                                             }
                                                                 ) ;
 
                                                                     "We have been notified and will contact you via email if necessary.\r\n\r\n"
 
-                                                                tThankYou += T(
+                                                                tBodyText += T(
 
                                                                 }
                                                                     ) ;
 
                                                                         "    [students and faculty]:    ")+tValueError3+T("\r\n"
 
-                                                                    tThankYou += T(
+                                                                    tBodyText += T(
                                                                 {
                                                                 if( bFail3 )
 
@@ -272,7 +294,7 @@ DONE( tmWorkF )
 
                                                                         "    [courtship workshops]:     ")+tValueError2+T("\r\n"
 
-                                                                    tThankYou += T(
+                                                                    tBodyText += T(
                                                                 {
                                                                 if( bFail2 )
 
@@ -281,7 +303,7 @@ DONE( tmWorkF )
 
                                                                         "    [visitors]:                ")+tValueError1+T("\r\n"
 
-                                                                    tThankYou += T(
+                                                                    tBodyText += T(
                                                                 {
                                                                 if( bFail1 )
 
@@ -290,7 +312,7 @@ DONE( tmWorkF )
                                                                     : "Your payment has been received but this automated system could not generate some of your invite(s):\r\n\r\n"
                                                                     ? "Your payment has been received but this automated system cannot process your order right now.\r\nWe will retry until it is processed and will keep you informed.\r\n\r\n"
 
-                                                                tThankYou += T( bFail0
+                                                                tBodyText += T( bFail0
                                                             {
                                                             if( bFail0 || bFail1 || bFail2 || bFail3 )
 
@@ -308,9 +330,10 @@ DONE( tmWorkF )
                                                                 "    [age (raw)]:     ")+T(psttValueAge)+T("\r\n"
                                                                 "    [email]:         ")+T(psttValueEmail)+T("\r\n"
                                                                 +T("Payment received for:\r\n\r\n"
-                                                                "Subject: Notification from IDEAFARM.COM:  ORDER PROCESSED\r\n\r\nThank you for ")+tForWhat
+                                                                "Thank you for ")+tForWhat
+                                                                MIMEhEADER_TEXT
 
-                                                            else tThankYou = T(
+                                                            else tBodyText = T(
                                                             ) ;
                                                                 "\r\n\r\n"
                                                                 //"    [hawker]:        ")+T(psttValueHawker)+T(
@@ -319,10 +342,16 @@ DONE( tmWorkF )
                                                                 "    [age (raw)]:     ")+T(psttValueAge)+T("\r\n"
                                                                 "    [email]:         ")+T(psttValueEmail)+T("\r\n"
                                                                 +T("Payment received for:\r\n\r\n"
-                                                                "Subject: Notification from IDEAFARM.COM:  ORDER PROCESSING DELAYED\r\n\r\nThank you for ")+tForWhat
+                                                                "Thank you for ")+tForWhat
+                                                                MIMEhEADER_TEXT
 
-                                                            if( bFail0 ) tThankYou = T(
-                                                            TN( tThankYou , "" ) ;
+                                                            if( bFail0 ) tBodyText = T(
+                                                            TN( tBodyText , "" ) ;
+
+                                                            ) ;
+                                                                : "Subject: Notification from IDEAFARM.COM:  ORDER PROCESSED\r\n"
+                                                                ? "Subject: Notification from IDEAFARM.COM:  ORDER PROCESSING DELAYED\r\n"
+                                                            TN( tSubject  , bFail0
 
                                                             else           tForWhat = T("paying your entry fee for self-monitored chat.\r\n\r\n") ;
                                                             if( bStudent ) tForWhat = T("registering as a student on IDEAFARM.COM.\r\n\r\n") ;
@@ -343,9 +372,19 @@ DONE( tmWorkF )
                                                                 etThread.delF( tin0P , pbZip ) ;
 
                                                                 }
+                                                                    }
+                                                                        etThread.delF( tin0P , pstts ) ;
+                                                                        tShortIdeaNetExe = T(pstts) ;
+                                                                        etThread.delF( tin0P , psttnu ) ;
+                                                                        etThread.strBisectF( tin0P , psttnu , pstts , tLongIdeaNetExe , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( pstts ) ;
+                                                                        ZE( strokeS* , pstts ) ;
+                                                                        ZE( strokeS* , psttnu ) ;
+                                                                    {
+
                                                                     etThread.delF( tin0P , postMime ) ;
                                                                     etThread.delF( tin0P , psttz ) ;
-                                                                    etThread.boxPutF( tin0P , psttz , postMime , costMime ) ;
+                                                                    etThread.boxPutF( tin0P , tLongIdeaNetMime , postMime , costMime ) ;
+                                                                    tLongIdeaNetMime = T(psttz) ;
                                                                     etThread.strReplaceF( tin0P , psttz , tLongIdeaNetExe , T(".exe") , T(".base64") ) ; ___( psttz ) ;
                                                                     ZE( strokeS* , psttz ) ;
 
@@ -358,6 +397,8 @@ DONE( tmWorkF )
                                                                 ZE( countT , cbZip ) ;
                                                                 ZE( byteT* , pbZip ) ;
                                                             {
+                                                            TN( tLongIdeaNetMime , "" ) ;
+                                                            TN( tShortIdeaNetExe , "" ) ;
 
                                                             }
                                                                 etThread.delF( tin0P , pstt01WildList ) ;
