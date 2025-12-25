@@ -3,7 +3,7 @@
 #define MIMEhEADER_FILEtEXTeXPRESSION(shortP)                                       \
                                                                                     \
         "--IdeaFarmMimeBoundary\r\n"                                                \
-        "Content-Type: text/plain; name=\""+T(shortP)+T("\"\r\n"                    \
+        "Content-Type: text/plain; name=\"")+T(shortP)+T("\"\r\n"                   \
         "Content-Description: ")+T(shortP)+T("\r\n"                                 \
         "Content-Disposition: attachment; filename=\"")+T(shortP)+T("\"\r\n"        \
         "Content-Transfer-Encoding: base64\r\n"                                     \
