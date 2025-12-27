@@ -20,9 +20,9 @@
                         }
                             ((tin1S&)tin0P).pEtScratch->delF( tin0P , posti ) ;
                             }
-                                CONoUTrAW( tSay ) ;
+                                ((tin1S&)tin0P).pEther->traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
-                                TN( tSay , "\r\n" ) ; tSay += T(postNameP)+T(" [idLine,idCol]: ")+TF4(idLine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T("(")+TF4(idCol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(")    ")+T(posti+offCurrentLine)+T("\r\n") ;
+                                TN( tSay , "" ) ; tSay += T(postNameP)+T(" [idLine,idCol]: ")+TF4(idLine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T("(")+TF4(idCol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(")    ")+T(posti+offCurrentLine)+tCRLF ;
 
                                 while( posti[ offCurrentLine ] == ' ' ) offCurrentLine ++ ;
 
@@ -30,7 +30,7 @@
                             {
                             else
                             }
-                                CONoUTrAW( "." ) ;
+                                CONoUTrAW( "." ) ;  // VISUAL FEEDBACK IF RUNNING IN A CONSOLE WINDOW, BUT NO FEEDBACK INTO TRACE FILE
                             {
                             if( !idLine )
 
@@ -91,17 +91,13 @@
                                 {
                                 else
                                 }
-                                    CONoUTrAW( "\r\n" ) ;
-                                    CONoUTrAW( postNameP ) ;
-                                    CONoUTrAW( "\r\nfile is null length [postNameP]:    " ) ;
+                                    ((tin1S&)tin0P).pEther->traceF( tin0P , T("file is null length [postNameP]:    ")+T(postNameP)+tCRLF , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                 {
                                 else if( !posti || !costi )
 
                                 }
-                                    CONoUTrAW( "\r\n" ) ;
-                                    CONoUTrAW( postNameP ) ;
-                                    CONoUTrAW( "\r\nerror: could read file [postNameP]:    " ) ;
-                                    POOPR ;
+                                    ((tin1S&)tin0P).pEther->traceF( tin0P , T("!exception / could read file [postNameP]:    ")+T(postNameP)+tCRLF , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                    POOPRqUIET ;
                                 {
                                 if( POOP )
 
@@ -109,9 +105,7 @@
                             {
                             else
                             }
-                                CONoUTrAW( "\r\n" ) ;
-                                CONoUTrAW( postNameP ) ;
-                                CONoUTrAW( "\r\nerror: file is too large for me to scan [postNameP]:    " ) ;
+                                ((tin1S&)tin0P).pEther->traceF( tin0P , T("file is too large for me to scan [postNameP]:    ")+T(postNameP)+tCRLF , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                             {
                             if( pInfo->cbUsedHigh || !pInfo->cbUsed | pInfo->cbUsed > TICK )
                             ZE( countT , idCol ) ;
@@ -122,10 +116,8 @@
                         {
                         else if( pInfo && ( pInfo->cbUsedHigh || pInfo->cbUsed ) )
                         }
-                            CONoUTrAW( "\r\n" ) ;
-                            CONoUTrAW( postNameP ) ;
-                            CONoUTrAW( "\r\nerror: could not obtain file info for [postNameP]:    " ) ;
-                            POOPR ;
+                            ((tin1S&)tin0P).pEther->traceF( tin0P , T("!exception / could not obtain file info [postNameP]:    ")+T(postNameP)+tCRLF , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            POOPRqUIET ;
                         {
                         if( POOP )
                     
@@ -134,12 +126,11 @@
                     {
                     else
                     }
-                        CONoUTrAW( "\r\n" ) ;
-                        CONoUTrAW( postNameP ) ;
-                        CONoUTrAW( "\r\nerror: could not open a read handle for file [postNameP]:    " ) ;
-                        POOPR
+                        ((tin1S&)tin0P).pEther->traceF( tin0P , T("!exception / could not open a read handle for file [postNameP]:    ")+T(postNameP)+tCRLF , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        POOPRqUIET
                     {
                     if( POOP )
+                    TN( tCRLF , "\r\n" ) ;
 
                     fileC fi( tin0P , postNameP , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
 
