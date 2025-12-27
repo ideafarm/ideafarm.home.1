@@ -396,6 +396,11 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
 
     osTextT postt[ TUCK << 1 + 1 ] ;
 
+    etThread.traceF( tin0P , T("[index,type]:    ")+TF2(luidIndex,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+tb4+TF3(luidType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+    //etThread.traceF( tin0P , T("[index,type]:    ")+TF2(luidIndex,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(luidType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+    countT   luidType  = pc1->Luid.Info.IfType       ;
+    countT   luidIndex = pc1->Luid.Info.NetLuidIndex ;
+
     TN( tCurly , pc1->AdapterName ) ;
 {
 while( pc1 )
@@ -411,7 +416,7 @@ const osTextT* postv = pcap_lib_version() ;
 
   TN( tSayDescription  , "    [description] :    "     ) ;
   TN( tSayName         , "    [name]        :    "     ) ;
-  TN( tSayFriendlyName , "[friendlyName]:    "         ) ;
+  TN( tSayFriendlyName , "    [friendlyName]:    "     ) ;
   TN( tWantCurly       , ""                            ) ;
 
   TN( tWantFriendly    , "Wi-Fi"                       ) ;
