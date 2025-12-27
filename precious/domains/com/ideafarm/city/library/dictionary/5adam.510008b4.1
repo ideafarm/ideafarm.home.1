@@ -399,12 +399,12 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
     TN( tCurly , pc1->AdapterName ) ;
 {
 while( pc1 )
-IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
+static IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
 nicNameC nnMeOnWanted ;
 
 ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
 unsigned long cba = sizeof pInfo ; 
-IP_ADAPTER_ADDRESSES pInfo[ 0x10 ] ;
+static IP_ADAPTER_ADDRESSES pInfo[ 0x10 ] ;
 
 etThread.traceF( tin0P , T(postv) ) ;
 const osTextT* postv = pcap_lib_version() ;
