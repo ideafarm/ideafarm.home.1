@@ -16514,9 +16514,10 @@ these flag values are used by oo flagsT objects
 #define ifcIDtYPEhANDLE_OPENSSLkEYpAIR      0xdddd0594
 #define ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE   0xdddd0595
 #define ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC    0xdddd0596
+#define ifcIDtYPEhANDLE_NETWORKiNTERFACE    0xdddd0597
 /*3*/
 #define ifcIDtYPEhANDLE_min     0xdddd0564
-#define ifcIDtYPEhANDLE_max     0xdddd0596
+#define ifcIDtYPEhANDLE_max     0xdddd0597
 
 
 //

@@ -4682,6 +4682,7 @@ it is illegal to refer to this symbol in the definition of an adam
         #include <ntsecapi>
         //#include <multimon.h>
         #include <userenv.h>
+        #include <iphlpapi.h>
 
         //COMMENTED OUT BECAUSE VALUES COLLIDE WITH VALUES IN WATCOM'S HEADERS
         //#include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\windows\ntstatus.h"
@@ -31047,6 +31048,7 @@ private :
  static countT osHireThenMonitorIF( tin0S& tin0P , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP ) ;
  static voidT osOldTimeFromUnixTimeIF( tin0S& tin0P , boolT& isDaylightSavingsTimeP , countT& yDayP , countT& wDayP , countT& yearP , countT& monthP , countT& mDayP , countT& hourP , countT& minuteP , countT& secondP , const countT secondsIntoUnixEpochP ) ;
  voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const nicNameC& nnP , const osTextT* const postDescriptionP = 0 ) ;
+ voidT osOpenNetworkInterfaceF( tin0S& tin0P , handleC& handleP , const osTextT* const postFriendlyNameP , countT cInterfacesMaxP = 0x10 ) ;
 
 /* commands: math */
 
@@ -34482,6 +34484,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34030.etherC.reportProcessNamePidF!||
  voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const nicNameC& nnP , const strokeS* const psttDescriptionP = 0 , const strokeS* const psttTraceP = 0 ) ;
  voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , stackC& stNnP , const strokeS* const psttDescriptionP = 0 , const strokeS* const psttTraceP = 0 ) ;
+ voidT osOpenNetworkInterfaceF( tin0S& tin0P , handleC& handleP , const strokeS* const psttFriendlyNameP , countT cInterfacesMaxP = 0x10 ) ;
 
 /* openssl: foreign encryption */
 
@@ -49361,3 +49364,6 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetSubscriptionC : 1snip.150001d3.ideaNetSubscriptionC END
+
+/*1*/countT _export unicodeLengthF( const unTextT* puntP ) ;/*1*/
+/*1*/boolT _export unicodeToAnsiF( byteT* pbOutP , const countT cbOutP , const byteT* pbInP , countT cInP ) ;/*1*/

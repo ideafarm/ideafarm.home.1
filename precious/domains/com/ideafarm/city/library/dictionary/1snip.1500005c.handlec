@@ -98,10 +98,10 @@
 
  public :
 
- HANDLEaPPnOTEScOUNTcLASS c2AppNote                      ; //NOT USED BY ANY FUNCTIONALITY RELATED TO OPENING OR CLOSING THE HANDLE; USED TO STORE INFORMATION ABOUT THE BACKING OBJECT THAT IS NEEDED TO USE THAT OBJECT; EXAMPLE: NUMBER OF ROWS IN A BITMAP OBJECT
+ HANDLEaPPnOTEScOUNTcLASS c2AppNote                      ; //NORMALLY (UNLESS osh == - 1) NOT USED BY ANY FUNCTIONALITY RELATED TO OPENING OR CLOSING THE HANDLE; USED TO STORE INFORMATION ABOUT THE BACKING OBJECT THAT IS NEEDED TO USE THAT OBJECT; EXAMPLE: NUMBER OF ROWS IN A BITMAP OBJECT
  countT                   cNote                          ;
  countT                   osPidOwner                     ;
- countT                   osh                            ;
+ countT                   osh                            ; // SPECIAL VALUE - 1 INDICATES THAT THE HANDLE VALUE IS STORED IN c2AppNote
  countT                   oshInvalid                     ;
  const countT             idType                         ;                                   
  const osTextT*           const postName                 ;
