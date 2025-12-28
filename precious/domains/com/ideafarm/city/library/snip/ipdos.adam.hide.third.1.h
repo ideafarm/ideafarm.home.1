@@ -1,4 +1,18 @@
 
+
+#define SWAB3(cP)                               \
+                                                \
+    (                                           \
+        (count02T)                              \
+        (                                       \
+            ( (cP) &     0xff ) << 0x10         \
+            |                                   \
+            ( (cP) &   0xff00 )                 \
+            |                                   \
+            ( (cP) & 0xff0000 ) >> 0x10         \
+        )                                       \
+    )
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
