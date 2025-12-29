@@ -16,7 +16,7 @@
             }
                 }
                     break ;
-                    (HANDLEaPPnOTEScOUNTcLASS&)handleP = *(HANDLEaPPnOTEScOUNTcLASS*)&pc1->Luid ;
+                    (HANDLEaPPnOTEScOUNTcLASS&)handleP = *(HANDLEaPPnOTEScOUNTcLASS*)( (byteT*)&pc1->Luid + sizeof( countT ) ) ;        //20251228@2249: "+ sizeof( countT )" IS A WORKAROUND OF AN APPARENT COMPILATION BUG, TO OBTAIN THE CORRECT LUID VALUE
                     handleP.osF( ifcIDtYPEhANDLE_NETWORKiNTERFACE , (countT)( -1 ) ) ;
                 {
                 if( !thirdC::c_strcmpIF( tin0P , postFriendlyNameP , postb ) )
