@@ -29174,7 +29174,7 @@ can be used for sCountC as well as measureT and sCountT and countT
 /**/
 /*1*//*HANDLEaPPnOTEScOUNTcLASS*//*1*/
 
-#define HANDLEaPPnOTEScOUNTcLASS count2S
+#define HANDLEaPPnOTEScOUNTcLASS count3S
 
 
 //

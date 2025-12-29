@@ -379,9 +379,9 @@
 
                 }
                     }
-                        c2AppNote.c2 = PCPiDbOOKnOW[ 1 ] ;
-                        c2AppNote.c1 = offWrote ;
-                        HANDLEaPPnOTEScOUNTcLASS& c2AppNote = *phWroteP ;
+                        c3AppNote.c2 = PCPiDbOOKnOW[ 1 ] ;
+                        c3AppNote.c1 = offWrote ;
+                        HANDLEaPPnOTEScOUNTcLASS& c3AppNote = *phWroteP ;
                         phWroteP->osF( ifcIDtYPEhANDLE_BOOKS , FINGERnEG_HANDLEbOOKSjOT , 0 , cbDone1 + cbDone2 ) ;
                         _IO_
                     {
@@ -408,7 +408,7 @@
 
                 }
                     if( POOP ) break ;
-                    __( *PCPiDbOOKnOW != 1 ) ; // IDbOOK VALUES ARE UNLIMITED.  BUT ONLY LENGTH 1 IDbOOK VALUES CAN BE STORED WITHIN A handleC.  FOR MORE CAPACITY, INCREASE THE SIZE OF handleC::c2AppNote
+                    __( *PCPiDbOOKnOW != 1 ) ; // IDbOOK VALUES ARE UNLIMITED.  BUT ONLY LENGTH 1 IDbOOK VALUES CAN BE STORED WITHIN A handleC.  FOR MORE CAPACITY, INCREASE THE SIZE OF handleC::c3AppNote
                     _IO_
                 {
                 if( phWroteP ) // MUST BE CHECKED AGAIN HERE BECAUSE PCPiDbOOKnOW MIGHT HAVE CHANGED SINCE ENTERING ME
@@ -545,7 +545,7 @@
             for( countT offr = 0 ; offr < sizeof ((tin123S&)tin0P).pBookMark / sizeof ((tin123S&)tin0P).pBookMark[ 0 ] ; offr ++ )        //ENFORCES RULE: THREAD IS NOT ALLOWED TO WRITE TO A booksC OBJECT WHILE HOLDING A SMARTPOINTER INTO THAT booksC OBJECT
         {
         }
-            __( *PCPiDbOOKnOW != 1 ) ; // IDbOOK VALUES ARE UNLIMITED.  BUT ONLY LENGTH 1 IDbOOK VALUES CAN BE STORED WITHIN A handleC.  FOR MORE CAPACITY, INCREASE THE SIZE OF handleC::c2AppNote
+            __( *PCPiDbOOKnOW != 1 ) ; // IDbOOK VALUES ARE UNLIMITED.  BUT ONLY LENGTH 1 IDbOOK VALUES CAN BE STORED WITHIN A handleC.  FOR MORE CAPACITY, INCREASE THE SIZE OF handleC::c3AppNote
             __NZ( !bAllOrNone && !bAllOrSome && !bSetRemaining ) ;                             // COMPLAIN IF NOT ALLoRnONE AND NOT ALLoRsOME AND NOT SETrEMAINING  U:: 20231106@1519: WHY IS bSetRemaining INSPECTED HERE?
             boolT bSetRemaining = F(flagsP) & flBOOKScwRITE_SETrEMAINING ;
             boolT bAllOrSome    = F(flagsP) & flBOOKScwRITE_ALLoRsOME    ;

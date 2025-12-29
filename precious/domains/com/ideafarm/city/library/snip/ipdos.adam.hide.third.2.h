@@ -18132,7 +18132,7 @@ examples
  countT                   osh                            ;
  countT                   osPidOwner                     ;
  countT                   cNote                          ;
- HANDLEaPPnOTEScOUNTcLASS c2AppNote                      ; //NOT USED BY ANY FUNCTIONALITY RELATED TO OPENING OR CLOSING THE HANDLE; USED TO STORE INFORMATION ABOUT THE BACKING OBJECT THAT IS NEEDED TO USE THAT OBJECT; EXAMPLE: NUMBER OF ROWS IN A BITMAP OBJECT
+ HANDLEaPPnOTEScOUNTcLASS c3AppNote                      ; //NOT USED BY ANY FUNCTIONALITY RELATED TO OPENING OR CLOSING THE HANDLE; USED TO STORE INFORMATION ABOUT THE BACKING OBJECT THAT IS NEEDED TO USE THAT OBJECT; EXAMPLE: NUMBER OF ROWS IN A BITMAP OBJECT
 
  public :
 
@@ -18186,34 +18186,34 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34011.handleC.operator_notnot!||
  voidT resetF( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.handleC.resetF!||
- inline operator const HANDLEaPPnOTEScOUNTcLASS&( voidT ) const { return c2AppNote ; }
- inline operator       HANDLEaPPnOTEScOUNTcLASS&( voidT )       { return c2AppNote ; }
+ inline operator const HANDLEaPPnOTEScOUNTcLASS&( voidT ) const { return c3AppNote ; }
+ inline operator       HANDLEaPPnOTEScOUNTcLASS&( voidT )       { return c3AppNote ; }
  inline countT idTypeF( voidT ) const { return idType ; }
  inline countT cNoteF( voidT ) const { return cNote ; }
 
  inline operator >>( handle1000C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh                                                                  ; resetF() ; }
  inline operator >>( handle0100C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; }                hP.cNote = cNote                                               ; resetF() ; }
  inline operator >>( handle1100C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh ; hP.cNote = cNote                                               ; resetF() ; }
- inline operator >>( handle0010C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; }                                   hP.c1 = c2AppNote.c1                        ; resetF() ; }
- inline operator >>( handle1010C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh                    ; hP.c1 = c2AppNote.c1                        ; resetF() ; }
- inline operator >>( handle0110C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; }                hP.cNote = cNote ; hP.c1 = c2AppNote.c1                        ; resetF() ; }
- inline operator >>( handle1110C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh ; hP.cNote = cNote ; hP.c1 = c2AppNote.c1                        ; resetF() ; }
- inline operator >>( handle0011C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; }                                   hP.c1 = c2AppNote.c1 ; hP.c2 = c2AppNote.c2 ; resetF() ; }
- inline operator >>( handle1011C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh                    ; hP.c1 = c2AppNote.c1 ; hP.c2 = c2AppNote.c2 ; resetF() ; }
- inline operator >>( handle0111C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; }                hP.cNote = cNote ; hP.c1 = c2AppNote.c1 ; hP.c2 = c2AppNote.c2 ; resetF() ; }
- inline operator >>( handle1111C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh ; hP.cNote = cNote ; hP.c1 = c2AppNote.c1 ; hP.c2 = c2AppNote.c2 ; resetF() ; }
+ inline operator >>( handle0010C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; }                                   hP.c1 = c3AppNote.c1                        ; resetF() ; }
+ inline operator >>( handle1010C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh                    ; hP.c1 = c3AppNote.c1                        ; resetF() ; }
+ inline operator >>( handle0110C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; }                hP.cNote = cNote ; hP.c1 = c3AppNote.c1                        ; resetF() ; }
+ inline operator >>( handle1110C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh ; hP.cNote = cNote ; hP.c1 = c3AppNote.c1                        ; resetF() ; }
+ inline operator >>( handle0011C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; }                                   hP.c1 = c3AppNote.c1 ; hP.c2 = c3AppNote.c2 ; resetF() ; }
+ inline operator >>( handle1011C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh                    ; hP.c1 = c3AppNote.c1 ; hP.c2 = c3AppNote.c2 ; resetF() ; }
+ inline operator >>( handle0111C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; }                hP.cNote = cNote ; hP.c1 = c3AppNote.c1 ; hP.c2 = c3AppNote.c2 ; resetF() ; }
+ inline operator >>( handle1111C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh ; hP.cNote = cNote ; hP.c1 = c3AppNote.c1 ; hP.c2 = c3AppNote.c2 ; resetF() ; }
 
  inline operator <<( handle1000C& hP ) { tin0S& tin0P = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tin0P ) ; osh = hP.osh                                                                  ; }
  inline operator <<( handle0100C& hP ) { tin0S& tin0P = *pTinF() ;                                                                                                                                                       ; cNote = hP.cNote                                               ; }
  inline operator <<( handle1100C& hP ) { tin0S& tin0P = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tin0P ) ; osh = hP.osh ; cNote = hP.cNote                                               ; }
- inline operator <<( handle0010C& hP ) { tin0S& tin0P = *pTinF() ;                                                                                                                                                                          ; c2AppNote.c1 = hP.c1                        ; }
- inline operator <<( handle1010C& hP ) { tin0S& tin0P = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tin0P ) ; osh = hP.osh                    ; c2AppNote.c1 = hP.c1                        ; }
- inline operator <<( handle0110C& hP ) { tin0S& tin0P = *pTinF() ;                                                                                                                                                       ; cNote = hP.cNote ; c2AppNote.c1 = hP.c1                        ; }
- inline operator <<( handle1110C& hP ) { tin0S& tin0P = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tin0P ) ; osh = hP.osh ; cNote = hP.cNote ; c2AppNote.c1 = hP.c1                        ; }
- inline operator <<( handle0011C& hP ) { tin0S& tin0P = *pTinF() ;                                                                                                                                                                          ; c2AppNote.c1 = hP.c1 ; c2AppNote.c2 = hP.c2 ; }
- inline operator <<( handle1011C& hP ) { tin0S& tin0P = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tin0P ) ; osh = hP.osh                    ; c2AppNote.c1 = hP.c1 ; c2AppNote.c2 = hP.c2 ; }
- inline operator <<( handle0111C& hP ) { tin0S& tin0P = *pTinF() ;                                                                                                                                                       ; cNote = hP.cNote ; c2AppNote.c1 = hP.c1 ; c2AppNote.c2 = hP.c2 ; }
- inline operator <<( handle1111C& hP ) { tin0S& tin0P = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tin0P ) ; osh = hP.osh ; cNote = hP.cNote ; c2AppNote.c1 = hP.c1 ; c2AppNote.c2 = hP.c2 ; }
+ inline operator <<( handle0010C& hP ) { tin0S& tin0P = *pTinF() ;                                                                                                                                                                          ; c3AppNote.c1 = hP.c1                        ; }
+ inline operator <<( handle1010C& hP ) { tin0S& tin0P = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tin0P ) ; osh = hP.osh                    ; c3AppNote.c1 = hP.c1                        ; }
+ inline operator <<( handle0110C& hP ) { tin0S& tin0P = *pTinF() ;                                                                                                                                                       ; cNote = hP.cNote ; c3AppNote.c1 = hP.c1                        ; }
+ inline operator <<( handle1110C& hP ) { tin0S& tin0P = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tin0P ) ; osh = hP.osh ; cNote = hP.cNote ; c3AppNote.c1 = hP.c1                        ; }
+ inline operator <<( handle0011C& hP ) { tin0S& tin0P = *pTinF() ;                                                                                                                                                                          ; c3AppNote.c1 = hP.c1 ; c3AppNote.c2 = hP.c2 ; }
+ inline operator <<( handle1011C& hP ) { tin0S& tin0P = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tin0P ) ; osh = hP.osh                    ; c3AppNote.c1 = hP.c1 ; c3AppNote.c2 = hP.c2 ; }
+ inline operator <<( handle0111C& hP ) { tin0S& tin0P = *pTinF() ;                                                                                                                                                       ; cNote = hP.cNote ; c3AppNote.c1 = hP.c1 ; c3AppNote.c2 = hP.c2 ; }
+ inline operator <<( handle1111C& hP ) { tin0S& tin0P = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tin0P ) ; osh = hP.osh ; cNote = hP.cNote ; c3AppNote.c1 = hP.c1 ; c3AppNote.c2 = hP.c2 ; }
 
  static countT cInstancesIF( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34015.handleC.cInstancesIF!||

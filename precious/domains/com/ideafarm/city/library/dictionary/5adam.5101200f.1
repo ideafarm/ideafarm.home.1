@@ -35,7 +35,11 @@ static    countT rc = CreateUnicastIpAddressEntry( &ipRow ) ;
     //ipRow.ValidLifetime       = 120 ;
     //ipRow.SuffixOrigin        = IpSuffixOriginManual ;
     //ipRow.PrefixOrigin        = IpPrefixOriginManual ;
+
     ipRow.InterfaceLuid         = *(NET_LUID*)(count04T*)&(const HANDLEaPPnOTEScOUNTcLASS&)hInterface ;
+
+    if( cbLuid ) ;
+    static countT cbLuid = sizeof ipRow.InterfaceLuid ;
 
     InitializeUnicastIpAddressEntry( &ipRow ) ;
 static    MIB_UNICASTIPADDRESS_ROW ipRow ;
@@ -44,6 +48,7 @@ static    nicNameC nnNew = socketC::nicNameIF( tin0P , etThread , T("fe80::747e:
 
 //static    nicNameC nnNew( 0x33221100 , 0x77665544 , 0xbbaa9988 , 0xffeeddcc ) ;
 
+    //etThread.osOpenNetworkInterfaceF( tin0P , hInterface , T("ideanet") ) ;
     etThread.osOpenNetworkInterfaceF( tin0P , hInterface , T("Wi-Fi") ) ;
     handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
 {

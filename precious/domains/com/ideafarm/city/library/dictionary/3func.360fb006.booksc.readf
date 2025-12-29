@@ -134,8 +134,8 @@
 
                     }
                         }
-                            pBook->writeF( tin0P , flResult , (byteT*)&c2AppNote , cb1 , 0 , countTC() , flBOOK0cwRITE_ALLoRnONE | flBOOK0cwRITE_PURGEiFfULL ) ;
-                            countT cb1 = sizeof c2AppNote ;
+                            pBook->writeF( tin0P , flResult , (byteT*)&c3AppNote , cb1 , 0 , countTC() , flBOOK0cwRITE_ALLoRnONE | flBOOK0cwRITE_PURGEiFfULL ) ;
+                            countT cb1 = sizeof c3AppNote ;
                             ZE( flagsT , flResult ) ;
                             bookC* pBook = (bookC*)phCursorP->osF( ifcIDtYPEhANDLE_BOOKSrEADcURSOR ) ;
                         {
@@ -144,7 +144,7 @@
 
                         //if( ((tin123S&)tin0P).pc Utility[ 0 ] ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("booksC::readF / U::  [pbzSnip,cbzSnip]:    ")+tb4+TF2((countT)pbzSnip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbzSnip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                        BOOKnOW.readF( tin0P , pbzSnip , cbzSnip , c2AppNote.c1 ) ;
+                        BOOKnOW.readF( tin0P , pbzSnip , cbzSnip , c3AppNote.c1 ) ;
                         cbzSnip = cbToDo ;
                     {
                     if( cbToDo || bNullRead )
@@ -185,7 +185,7 @@
                 }
                     if( POOP ) break ;
                     __Z( cbToDo ) ;                                                                                                         // SHOULD BE IMPOSSIBLE
-                    cbToDo = head.cbUsed - head.cbFill - c2AppNote.c1 ;
+                    cbToDo = head.cbUsed - head.cbFill - c3AppNote.c1 ;
                 {
                 if( cbToDo == - 1 )                                             // -1 INDICATES THAT CALLER WANTS ME TO RETURN THE REMAINDER OF THE BOOK
 
@@ -203,20 +203,20 @@
                 }
                     }
                         }
-                            pBook->writeF( tin0P , flResult , (byteT*)&c2AppNote , cb1 , 0 , countTC() , flBOOK0cwRITE_ALLoRnONE | flBOOK0cwRITE_PURGEiFfULL ) ;
-                            countT cb1 = sizeof c2AppNote ;
+                            pBook->writeF( tin0P , flResult , (byteT*)&c3AppNote , cb1 , 0 , countTC() , flBOOK0cwRITE_ALLoRnONE | flBOOK0cwRITE_PURGEiFfULL ) ;
+                            countT cb1 = sizeof c3AppNote ;
                             ZE( flagsT , flResult ) ;
                             bookC* pBook = (bookC*)phCursorP->osF( ifcIDtYPEhANDLE_BOOKSrEADcURSOR ) ;
                         {
                         if( phCursorP && ~*phCursorP )          //PSEUDOdUPLICATEcODE: 360fb006 360fb006
 
-                        c2AppNote.c2 = pcpOffIdBookWant[ 2 ] ;
-                        c2AppNote.c1 = pcpOffIdBookWant[ 1 ] ;
+                        c3AppNote.c2 = pcpOffIdBookWant[ 2 ] ;
+                        c3AppNote.c1 = pcpOffIdBookWant[ 1 ] ;
                         handleP.osF( ifcIDtYPEhANDLE_BOOKS , FINGERnEG_HANDLEbOOKSjOT ) ;
 
                         handleP.closeIfF() ;
 
-                        __Z( pcpOffIdBookWant[ 2 ] ) ;                                                                                              // ONLY LENGTH 1 IDbOOK STRINGS ARE ALLOWED.  FOR MORE CAPACITY, EDIT THIS CODE AND INCREASE THE SIZE OF handleC::c2AppNote
+                        __Z( pcpOffIdBookWant[ 2 ] ) ;                                                                                              // ONLY LENGTH 1 IDbOOK STRINGS ARE ALLOWED.  FOR MORE CAPACITY, EDIT THIS CODE AND INCREASE THE SIZE OF handleC::c3AppNote
                         pcpOffIdBookWant[ 2 ] ++ ;
                         pcpOffIdBookWant[ 1 ] = 0 ;
 
@@ -228,7 +228,7 @@
                                 cbToDo = 0 ;
                             {
                             if( POOP || pcpOffIdBookWant[ 2 ] >= pcpIdBookMax[ 1 ] )
-                            __( pcpIdBookMax[ 0 ] - 1 ) ;                                                                                           // ONLY LENGTH 1 IDbOOK STRINGS ARE ALLOWED.  FOR MORE CAPACITY, EDIT THIS CODE AND INCREASE THE SIZE OF handleC::c2AppNote
+                            __( pcpIdBookMax[ 0 ] - 1 ) ;                                                                                           // ONLY LENGTH 1 IDbOOK STRINGS ARE ALLOWED.  FOR MORE CAPACITY, EDIT THIS CODE AND INCREASE THE SIZE OF handleC::c3AppNote
                             idBookMinMaxF( tin0P , pcpIdBookMin , pcpIdBookMax , flBOOKScsELECT_null , &bQuit ) ;
                         {
                         if( idStateSpace )
@@ -242,9 +242,9 @@
                     {
                     if( !bNowCursorNextBook && head.cbUsed < head.cbBody )
                 {
-                else if( c2AppNote.c1 == offe )
+                else if( c3AppNote.c1 == offe )
                 if( POOP ) break ;
-                __( offe        < c2AppNote.c1 ) ;
+                __( offe        < c3AppNote.c1 ) ;
                 __( head.cbUsed < head.cbFill  ) ;
                 countT offe = head.cbUsed - head.cbFill ;
                 bookHeadS& head = BOOKnOW ;
@@ -394,8 +394,8 @@
 
             //LOAD THE BOOK THAT I WANT TO READ FROM
 
-            countT pcpOffIdBookWant[] = { 2 , c2AppNote.c1 , c2AppNote.c2 } ;
-            HANDLEaPPnOTEScOUNTcLASS& c2AppNote = handleP ;
+            countT pcpOffIdBookWant[] = { 2 , c3AppNote.c1 , c3AppNote.c2 } ;
+            HANDLEaPPnOTEScOUNTcLASS& c3AppNote = handleP ;
 
             //if( ((tin123S&)tin0P).pc Utility[ 0 ] ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("booksC::readF / U:: c [pbP,cbP]:    ")+tb4+TF2((countT)pbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {                                                                                                                                       //20140508@1952: LOOP NOW ALSO IS USED TO BLOCK IF I WANT TO CHANGE BOOKS AND THE CURRENT BOOK HAS A PENDING SMART POINTER
@@ -417,20 +417,20 @@
         if( bQuit ) handleP.resetF() ;
 
         }
-            c2AppNote.c2 = pcpIdBookMin && pcpIdBookMin[ 0 ] == 1 ? pcpIdBookMin[ 1 ] : 1 ; //20210705@0924: NO CHANGE TO MY CODE SINCE IT ALREADY TESTS WHETHER pcpIdBookMin
+            c3AppNote.c2 = pcpIdBookMin && pcpIdBookMin[ 0 ] == 1 ? pcpIdBookMin[ 1 ] : 1 ; //20210705@0924: NO CHANGE TO MY CODE SINCE IT ALREADY TESTS WHETHER pcpIdBookMin
 
-            //c2AppNote.c2 = PCPiDbOOKnOW[ 1 ] ;  //20140831@1232: CHANGED WITHOUT ANALYSIS SO THAT NULL HANDLE WILL DEFAULT TO BEGINNING OF WOTH BOOK RATHER THAN CURRENT BOOK
-            c2AppNote.c1 = 0 ;
+            //c3AppNote.c2 = PCPiDbOOKnOW[ 1 ] ;  //20140831@1232: CHANGED WITHOUT ANALYSIS SO THAT NULL HANDLE WILL DEFAULT TO BEGINNING OF WOTH BOOK RATHER THAN CURRENT BOOK
+            c3AppNote.c1 = 0 ;
 
             if( idStateSpace ) idBookMinMaxF( tin0P , pcpIdBookMin , pcpIdBookMax , flBOOKScsELECT_null , &bQuit ) ;  //20210705@0924: idBookMinMaxF NOW NO LONGER SETS IMPOTENCE IF QUITTING AND NO BOOK EVER FOUND
             ZE( countT* , pcpIdBookMax ) ;
             ZE( countT* , pcpIdBookMin ) ;
         {
-        if( !c2AppNote.c2 ) // 20140427@1312: IF CALLER HAS INITIALIZED c2AppNote.c2 THEN I WILL USE THEM ; THIS ENABLES CALLER TO BEGIN READING AT A POINT OTHER THAN THE BEGINNING OF THE WOTH BOOK
+        if( !c3AppNote.c2 ) // 20140427@1312: IF CALLER HAS INITIALIZED c3AppNote.c2 THEN I WILL USE THEM ; THIS ENABLES CALLER TO BEGIN READING AT A POINT OTHER THAN THE BEGINNING OF THE WOTH BOOK
 
-        c2AppNote = cursor ;
+        c3AppNote = cursor ;
 
-        HANDLEaPPnOTEScOUNTcLASS& c2AppNote = handleP ;
+        HANDLEaPPnOTEScOUNTcLASS& c3AppNote = handleP ;
         handleP.osF( ifcIDtYPEhANDLE_BOOKS , FINGERnEG_HANDLEbOOKSjOT ) ;
     {
     if( !handleP )
@@ -489,7 +489,7 @@
         {
         if( !phCursorP )
         FV( flBOOKScrEAD , flagsP ) ;
-        __( *PCPiDbOOKnOW != 1 ) ; // IDbOOK VALUES ARE UNLIMITED.  BUT ONLY LENGTH 1 IDbOOK VALUES CAN BE STORED WITHIN A handleC.  FOR MORE CAPACITY, INCREASE THE SIZE OF handleC::c2AppNote
+        __( *PCPiDbOOKnOW != 1 ) ; // IDbOOK VALUES ARE UNLIMITED.  BUT ONLY LENGTH 1 IDbOOK VALUES CAN BE STORED WITHIN A handleC.  FOR MORE CAPACITY, INCREASE THE SIZE OF handleC::c3AppNote
         __( !((tin1S&)tin0P).pPoolUse ) ; // booksC INSTANCES CAN BE CT/DT AND WRITTEN TO EARLY AND LATE, BUT readF CAN ONLY BE CALLED WHEN PUSE EXISTS
         //__Z( cbP ) ;
         __NZ( pbP ) ;
