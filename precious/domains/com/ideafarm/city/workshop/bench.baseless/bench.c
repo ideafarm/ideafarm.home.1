@@ -1,27 +1,25 @@
 
-#if defined( NEVERdEFINED )
+//#if defined( NEVERdEFINED )
 
+union sizeIs_c_bad_4_U
+{
+    unsigned long long aa ;
+    struct
+    {
+        unsigned long long     ii1 : 24 ;
+        unsigned long long     ii2 : 24 ;
+        unsigned long long     ii3 :  9 ;
+    } ii ;
+} ;
 
-
-
-
-int OPENSSL_init_ssl(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
-//typedef UINT64 uint64_t;
-
-
-
-
-
-#endif
-
-#pragma aux (cdecl) OPENSSL_init_ssl ;
-
-#include <windows.h>
-#include <openssl\ssl.h>
-
+//#endif
 
 int main( void )
 {
-    OPENSSL_init_ssl( OPENSSL_INIT_LOAD_SSL_STRINGS , 0 ) ;
+    unsigned cb = 0 ;
+    sizeIs_c_bad_4_U foo ;
+
+    //cb = sizeof foo ;
+
     return 0 ;
 }
