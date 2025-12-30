@@ -38,10 +38,10 @@
 /*1*//*ifcIDtYPEeCHOpACKET*//*1*/
 
 /*3*/
-#define ifcIDtYPEeCHOpACKET_ECHO              0xdddd1216
-#define ifcIDtYPEeCHOpACKET_ECHOrEPLY         0xdddd1217
+#define ifcIDtYPEeCHOpACKET_ECHO              ((countT)0xdddd1216)
+#define ifcIDtYPEeCHOpACKET_ECHOrEPLY         ((countT)0xdddd1217)
 /*3*/
-#define ifcIDtYPEeCHOpACKET_min     ((countT)0xdddd1216
+#define ifcIDtYPEeCHOpACKET_min     ((countT)0xdddd1216)
 #define ifcIDtYPEeCHOpACKET_max     ((countT)0xdddd1217)                                                               
 
 
@@ -71,15 +71,15 @@
 //CS:CODEsYNC: 510007e9 112005be
 
 /*3*/
-#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE1          0xdddd1218
-#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE2          0xdddd1219
-#define ifcIDiMPOTENCEmEMcMP_LATHbYTE1          0xdddd121a
-#define ifcIDiMPOTENCEmEMcMP_LATHbYTE2          0xdddd121b
-#define ifcIDiMPOTENCEmEMcMP_COMPARE0           0xdddd121c
-#define ifcIDiMPOTENCEmEMcMP_COMPARE1           0xdddd121d
-#define ifcIDiMPOTENCEmEMcMP_COMPARE2           0xdddd121e
+#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE1          ((countT)0xdddd1218)
+#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE2          ((countT)0xdddd1219)
+#define ifcIDiMPOTENCEmEMcMP_LATHbYTE1          ((countT)0xdddd121a)
+#define ifcIDiMPOTENCEmEMcMP_LATHbYTE2          ((countT)0xdddd121b)
+#define ifcIDiMPOTENCEmEMcMP_COMPARE0           ((countT)0xdddd121c)
+#define ifcIDiMPOTENCEmEMcMP_COMPARE1           ((countT)0xdddd121d)
+#define ifcIDiMPOTENCEmEMcMP_COMPARE2           ((countT)0xdddd121e)
 /*3*/
-#define ifcIDiMPOTENCEmEMcMP_min     ((countT)0xdddd1218
+#define ifcIDiMPOTENCEmEMcMP_min     ((countT)0xdddd1218)
 #define ifcIDiMPOTENCEmEMcMP_max     ((countT)0xdddd121e)                                                               
 
 
@@ -107,8 +107,8 @@
 /*1*//*flRESTARTrEPORT*//*1*/
 
 /*3*/
-#define flSTRiDmATCHINGf_IGNOREeSCAPEDhITS   0xe0000118
-#define flSTRiDmATCHINGf_BACKSLASH           0xe0000218
+#define flSTRiDmATCHINGf_IGNOREeSCAPEDhITS   ((countT)0xe0000118)
+#define flSTRiDmATCHINGf_BACKSLASH           ((countT)0xe0000218)
 /*3*/
 #define flSTRiDmATCHINGf_null    ((countT)0xe0000018)
 
@@ -245,9 +245,9 @@
 //CODEsYNC: 00100df 0010055
 
 /*3*/
-#define flTHREADmODEwHERE_REGISTEREDwITHwHERE                                           0xe0000119
-#define flTHREADmODEwHERE_WHEREiSwATCHING                                               0xe0000219
-#define flTHREADmODEwHERE_NOwHERE                                                       0xe0000419
+#define flTHREADmODEwHERE_REGISTEREDwITHwHERE                                           ((countT)0xe0000119)
+#define flTHREADmODEwHERE_WHEREiSwATCHING                                               ((countT)0xe0000219)
+#define flTHREADmODEwHERE_NOwHERE                                                       ((countT)0xe0000419)
 /*3*/
 #define flTHREADmODEwHERE_null    ((countT)0xe0000019)
 
@@ -467,16 +467,16 @@
 
 
 /*3*/
-#define ifcIDtYPEsTEPrECURSION_PROLOG              0xdddd121f
-#define ifcIDtYPEsTEPrECURSION_CALLpROLOG          0xdddd1220
-#define ifcIDtYPEsTEPrECURSION_CALLpUSH            0xdddd1221
-#define ifcIDtYPEsTEPrECURSION_CALL                0xdddd1222
-#define ifcIDtYPEsTEPrECURSION_CALLpOP             0xdddd1223
-#define ifcIDtYPEsTEPrECURSION_CALLePILOG          0xdddd1224
-#define ifcIDtYPEsTEPrECURSION_EPILOG              0xdddd1225
-#define ifcIDtYPEsTEPrECURSION_DONE                0xdddd1226
+#define ifcIDtYPEsTEPrECURSION_PROLOG              ((countT)0xdddd121f)
+#define ifcIDtYPEsTEPrECURSION_CALLpROLOG          ((countT)0xdddd1220)
+#define ifcIDtYPEsTEPrECURSION_CALLpUSH            ((countT)0xdddd1221)
+#define ifcIDtYPEsTEPrECURSION_CALL                ((countT)0xdddd1222)
+#define ifcIDtYPEsTEPrECURSION_CALLpOP             ((countT)0xdddd1223)
+#define ifcIDtYPEsTEPrECURSION_CALLePILOG          ((countT)0xdddd1224)
+#define ifcIDtYPEsTEPrECURSION_EPILOG              ((countT)0xdddd1225)
+#define ifcIDtYPEsTEPrECURSION_DONE                ((countT)0xdddd1226)
 /*3*/
-#define ifcIDtYPEsTEPrECURSION_min     ((countT)0xdddd121f
+#define ifcIDtYPEsTEPrECURSION_min     ((countT)0xdddd121f)
 #define ifcIDtYPEsTEPrECURSION_max     ((countT)0xdddd1226)                                                               
 
 
@@ -505,10 +505,10 @@
 
 
 /*3*/
-#define IDeRRORsORTAc_STACKnEWLYeXHAUSTED     0xdddd1227
-#define IDeRRORsORTAc_STACKeXHAUSTED          0xdddd1228
+#define IDeRRORsORTAc_STACKnEWLYeXHAUSTED     ((countT)0xdddd1227)
+#define IDeRRORsORTAc_STACKeXHAUSTED          ((countT)0xdddd1228)
 /*3*/
-#define IDeRRORsORTAc_min     ((countT)0xdddd1227
+#define IDeRRORsORTAc_min     ((countT)0xdddd1227)
 #define IDeRRORsORTAc_max     ((countT)0xdddd1228)                                                               
 
 
@@ -594,8 +594,8 @@
 /*1*//*flSORTAc*//*1*/
 
 /*3*/
-#define flSORTAc_CHATTER                 0xe000011a
-#define flSORTAc_NOwORKERS               0xe000021a
+#define flSORTAc_CHATTER                 ((countT)0xe000011a)
+#define flSORTAc_NOwORKERS               ((countT)0xe000021a)
 /*3*/
 #define flSORTAc_null    ((countT)0xe000001a)
 
@@ -624,7 +624,7 @@
 /*1*//*flYIELD*//*1*/
 
 /*3*/
-#define flYIELD_ANYtHREADdESIRE                 0xe000011b
+#define flYIELD_ANYtHREADdESIRE                 ((countT)0xe000011b)
 /*3*/
 #define flYIELD_null    ((countT)0xe000001b)
 
@@ -652,10 +652,10 @@
 /*1*//*flJOTfILEScwRITE*//*1*/
 
 /*3*/
-#define flJOTfILEScwRITE_APPENDpART             0xe000011c
-#define flJOTfILEScwRITE_TOcANcHANGE            0xe000021c
-#define flJOTfILEScwRITE_ALLoRsOME              0xe000041c
-#define flJOTfILEScwRITE_REPLACEfILE            0xe000081c
+#define flJOTfILEScwRITE_APPENDpART             ((countT)0xe000011c)
+#define flJOTfILEScwRITE_TOcANcHANGE            ((countT)0xe000021c)
+#define flJOTfILEScwRITE_ALLoRsOME              ((countT)0xe000041c)
+#define flJOTfILEScwRITE_REPLACEfILE            ((countT)0xe000081c)
 /*3*/
 #define flJOTfILEScwRITE_null    ((countT)0xe000001c)
 
@@ -712,8 +712,8 @@
 /*1*//*flJOTfILEScrEAD*//*1*/
 
 /*3*/
-#define flJOTfILEScrEAD_FROMcANcHANGE            0xe000011d
-#define flJOTfILEScrEAD_BRANCH                   0xe000021d
+#define flJOTfILEScrEAD_FROMcANcHANGE            ((countT)0xe000011d)
+#define flJOTfILEScrEAD_BRANCH                   ((countT)0xe000021d)
 /*3*/
 #define flJOTfILEScrEAD_null    ((countT)0xe000001d)
 
@@ -741,7 +741,7 @@
 /*1*//*flJOTfILEScrEPORT*//*1*/
 
 /*3*/
-#define flJOTfILEScrEPORT_DUMPdATA            0xe000011e
+#define flJOTfILEScrEPORT_DUMPdATA            ((countT)0xe000011e)
 /*3*/
 #define flJOTfILEScrEPORT_null    ((countT)0xe000001e)
 
@@ -796,8 +796,8 @@
 /*1*//*flFLUSHvIEWoFfILE*//*1*/
 
 /*3*/
-#define flFLUSHvIEWoFfILE_UPDATEtIMEmODIFIED 0xe000011f
-#define flFLUSHvIEWoFfILE_WAIT               0xe000021f
+#define flFLUSHvIEWoFfILE_UPDATEtIMEmODIFIED ((countT)0xe000011f)
+#define flFLUSHvIEWoFfILE_WAIT               ((countT)0xe000021f)
 /*3*/
 #define flFLUSHvIEWoFfILE_null    ((countT)0xe000001f)
 
@@ -825,8 +825,8 @@
 /*1*//*flINFOdISK1s*//*1*/
 
 /*3*/
-#define flINFOdISK1s_LOCAL    0xe0000120
-#define flINFOdISK1s_READoNLY 0xe0000220
+#define flINFOdISK1s_LOCAL    ((countT)0xe0000120)
+#define flINFOdISK1s_READoNLY ((countT)0xe0000220)
 /*3*/
 #define flINFOdISK1s_null    ((countT)0xe0000020)
 
@@ -918,7 +918,7 @@
 /*1*//*flFILEoRdIRmOVE*//*1*/
 
 /*3*/
-#define flFILEoRdIRmOVE_DOnOTmAKEdIRiFnEEDED    0xe0000121
+#define flFILEoRdIRmOVE_DOnOTmAKEdIRiFnEEDED    ((countT)0xe0000121)
 /*3*/
 #define flFILEoRdIRmOVE_null    ((countT)0xe0000021)
 
@@ -1029,7 +1029,7 @@
 /*1*//*flFUNNELhORNcrEAD*//*1*/
 
 /*3*/
-#define flFUNNELhORNcrEAD_NOwAIT          0xe0000122
+#define flFUNNELhORNcrEAD_NOwAIT          ((countT)0xe0000122)
 /*3*/
 #define flFUNNELhORNcrEAD_null    ((countT)0xe0000022)
 
@@ -1084,22 +1084,22 @@
 /*1*//*ifcEXITcODE*//*1*/
 
 /*3*/
-#define ifcEXITcODE_THREADaOK                                           0xdddd1229
-#define ifcEXITcODE_THREADiMPOTENT                                      0xdddd122a
-#define ifcEXITcODE_EXITpROCESStOOlOW                                   0xdddd122b
-#define ifcEXITcODE_EXITpROCESSaOK                                      0xdddd122c
-#define ifcEXITcODE_EXITpROCESSiMPOTENT                                 0xdddd122d
-#define ifcEXITcODE_EXITpROCESSsIGNAL                                   0xdddd122e
-#define ifcEXITcODE_EXITpROCESSeXCEPTION                                0xdddd122f
-#define ifcEXITcODE_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP             0xdddd1230
-#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOmE                    0xdddd1231
-#define ifcEXITcODE_EXITpROCESSdTtINSsOMETHINGgRABBED                   0xdddd1232
-#define ifcEXITcODE_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE              0xdddd1233
-#define ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED                         0xdddd1234
-#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOeLDER                 0xdddd1235
-#define ifcEXITcODE_EXITpROCESStOOhIGH                                  0xdddd1236
+#define ifcEXITcODE_THREADaOK                                           ((countT)0xdddd1229)
+#define ifcEXITcODE_THREADiMPOTENT                                      ((countT)0xdddd122a)
+#define ifcEXITcODE_EXITpROCESStOOlOW                                   ((countT)0xdddd122b)
+#define ifcEXITcODE_EXITpROCESSaOK                                      ((countT)0xdddd122c)
+#define ifcEXITcODE_EXITpROCESSiMPOTENT                                 ((countT)0xdddd122d)
+#define ifcEXITcODE_EXITpROCESSsIGNAL                                   ((countT)0xdddd122e)
+#define ifcEXITcODE_EXITpROCESSeXCEPTION                                ((countT)0xdddd122f)
+#define ifcEXITcODE_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP             ((countT)0xdddd1230)
+#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOmE                    ((countT)0xdddd1231)
+#define ifcEXITcODE_EXITpROCESSdTtINSsOMETHINGgRABBED                   ((countT)0xdddd1232)
+#define ifcEXITcODE_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE              ((countT)0xdddd1233)
+#define ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED                         ((countT)0xdddd1234)
+#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOeLDER                 ((countT)0xdddd1235)
+#define ifcEXITcODE_EXITpROCESStOOhIGH                                  ((countT)0xdddd1236)
 /*3*/
-#define ifcEXITcODE_min     ((countT)0xdddd1229
+#define ifcEXITcODE_min     ((countT)0xdddd1229)
 #define ifcEXITcODE_max     ((countT)0xdddd1236)                                                               
 
 
@@ -1133,9 +1133,9 @@ examples
 
 /*1*//*flFILEaTTR2*//*1*/
 /*3*/
-#define flFILEaTTR2_UNPINNED                     0xe0000123
-#define flFILEaTTR2_RECALL_ON_OPEN               0xe0000223
-#define flFILEaTTR2_RECALL_ON_DATA_ACCESS        0xe0000423
+#define flFILEaTTR2_UNPINNED                     ((countT)0xe0000123)
+#define flFILEaTTR2_RECALL_ON_OPEN               ((countT)0xe0000223)
+#define flFILEaTTR2_RECALL_ON_DATA_ACCESS        ((countT)0xe0000423)
 /*3*/
 #define flFILEaTTR2_null    ((countT)0xe0000023)
 
@@ -1374,10 +1374,10 @@ all values that can be returned by GetThreadPriority() (Win32)
 /*1*//*ifcIDzIPPER*//*1*/
 
 /*3*/
-#define ifcIDzIPPER_PKZIPC          0xdddd1237
-#define ifcIDzIPPER_INFOZIP         0xdddd1238
+#define ifcIDzIPPER_PKZIPC          ((countT)0xdddd1237)
+#define ifcIDzIPPER_INFOZIP         ((countT)0xdddd1238)
 /*3*/
-#define ifcIDzIPPER_min     ((countT)0xdddd1237
+#define ifcIDzIPPER_min     ((countT)0xdddd1237)
 #define ifcIDzIPPER_max     ((countT)0xdddd1238)                                                               
 
 
@@ -1405,8 +1405,8 @@ all values that can be returned by GetThreadPriority() (Win32)
 /*1*//*flSIGNc*//*1*/
 
 /*3*/
-#define flSIGNc_FAILiFnAPKINnOTeXIST        0xe0000124
-#define flSIGNc_GIVER                       0xe0000224
+#define flSIGNc_FAILiFnAPKINnOTeXIST        ((countT)0xe0000124)
+#define flSIGNc_GIVER                       ((countT)0xe0000224)
 /*3*/
 #define flSIGNc_null    ((countT)0xe0000024)
 
@@ -1434,7 +1434,7 @@ all values that can be returned by GetThreadPriority() (Win32)
 /**/
 /*1*//*LISTnAMEdICTIONARYmIN*//*1*/
 
-#define LISTnAMEdICTIONARYmIN          0x90000000
+#define LISTnAMEdICTIONARYmIN          ((countT)0x90000000)
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -1459,7 +1459,7 @@ all values that can be returned by GetThreadPriority() (Win32)
 /**/
 /*1*//*LISTnAMEdICTIONARYmAX*//*1*/
 
-#define LISTnAMEdICTIONARYmAX          0x9fffffff
+#define LISTnAMEdICTIONARYmAX          ((countT)0x9fffffff)
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -1484,7 +1484,7 @@ all values that can be returned by GetThreadPriority() (Win32)
 /**/
 /*1*//*LISTnAMEaPPmIN*//*1*/
 
-#define LISTnAMEaPPmIN          0xa0000000
+#define LISTnAMEaPPmIN          ((countT)0xa0000000)
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -1509,7 +1509,7 @@ all values that can be returned by GetThreadPriority() (Win32)
 /**/
 /*1*//*LISTnAMEaPPmAX*//*1*/
 
-#define LISTnAMEaPPmAX          0xafffffff
+#define LISTnAMEaPPmAX          ((countT)0xafffffff)
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -1563,8 +1563,8 @@ all values that can be returned by GetThreadPriority() (Win32)
 /*1*//*flSEXcsTATEsHARED*//*1*/
 
 /*3*/
-#define flSEXcsTATEsHARED_USINGnAPfORdATA                   0xe0000125
-#define flSEXcsTATEsHARED_USINGnAPfORmETA                   0xe0000225
+#define flSEXcsTATEsHARED_USINGnAPfORdATA                   ((countT)0xe0000125)
+#define flSEXcsTATEsHARED_USINGnAPfORmETA                   ((countT)0xe0000225)
 /*3*/
 #define flSEXcsTATEsHARED_null    ((countT)0xe0000025)
 
@@ -2610,11 +2610,11 @@ examples
 /*1*//*ifcIDtYPEtIN*//*1*/
 
 /*3*/
-#define ifcIDtYPEtIN_123        0xdddd1239
-#define ifcIDtYPEtIN_12         0xdddd123a
-#define ifcIDtYPEtIN_1          0xdddd123b
+#define ifcIDtYPEtIN_123        ((countT)0xdddd1239)
+#define ifcIDtYPEtIN_12         ((countT)0xdddd123a)
+#define ifcIDtYPEtIN_1          ((countT)0xdddd123b)
 /*3*/
-#define ifcIDtYPEtIN_min     ((countT)0xdddd1239
+#define ifcIDtYPEtIN_min     ((countT)0xdddd1239)
 #define ifcIDtYPEtIN_max     ((countT)0xdddd123b)
 
 
@@ -4055,15 +4055,15 @@ examples
 /*1*//*ifcIDtYPEaDDRESSuSAGE*//*1*/
 
 /*3*/
-#define ifcIDtYPEaDDRESSuSAGE_CODE        0xdddd123c
-#define ifcIDtYPEaDDRESSuSAGE_DATA        0xdddd123d
-#define ifcIDtYPEaDDRESSuSAGE_STACK       0xdddd123e
-#define ifcIDtYPEaDDRESSuSAGE_PRIVATE     0xdddd123f
-#define ifcIDtYPEaDDRESSuSAGE_SHARED      0xdddd1240
-#define ifcIDtYPEaDDRESSuSAGE_SEX         0xdddd1241
-#define ifcIDtYPEaDDRESSuSAGE_FILE        0xdddd1242
+#define ifcIDtYPEaDDRESSuSAGE_CODE        ((countT)0xdddd123c)
+#define ifcIDtYPEaDDRESSuSAGE_DATA        ((countT)0xdddd123d)
+#define ifcIDtYPEaDDRESSuSAGE_STACK       ((countT)0xdddd123e)
+#define ifcIDtYPEaDDRESSuSAGE_PRIVATE     ((countT)0xdddd123f)
+#define ifcIDtYPEaDDRESSuSAGE_SHARED      ((countT)0xdddd1240)
+#define ifcIDtYPEaDDRESSuSAGE_SEX         ((countT)0xdddd1241)
+#define ifcIDtYPEaDDRESSuSAGE_FILE        ((countT)0xdddd1242)
 /*3*/
-#define ifcIDtYPEaDDRESSuSAGE_min     ((countT)0xdddd123c
+#define ifcIDtYPEaDDRESSuSAGE_min     ((countT)0xdddd123c)
 #define ifcIDtYPEaDDRESSuSAGE_max     ((countT)0xdddd1242)
 
 
@@ -4182,11 +4182,11 @@ examples
 /*1*//*ifcIDsWITCHhTTPrEPLY*//*1*/
 
 /*3*/
-#define ifcIDsWITCHhTTPrEPLY_EXACT           0xdddd1243
-#define ifcIDsWITCHhTTPrEPLY_PREFIX          0xdddd1244
-#define ifcIDsWITCHhTTPrEPLY_ANYWHERE        0xdddd1245
+#define ifcIDsWITCHhTTPrEPLY_EXACT           ((countT)0xdddd1243)
+#define ifcIDsWITCHhTTPrEPLY_PREFIX          ((countT)0xdddd1244)
+#define ifcIDsWITCHhTTPrEPLY_ANYWHERE        ((countT)0xdddd1245)
 /*3*/
-#define ifcIDsWITCHhTTPrEPLY_min     ((countT)0xdddd1243
+#define ifcIDsWITCHhTTPrEPLY_min     ((countT)0xdddd1243)
 #define ifcIDsWITCHhTTPrEPLY_max     ((countT)0xdddd1245)
 
 
@@ -4215,8 +4215,8 @@ examples
 /*1*//*fliWEBhOOKnOTICE*//*1*/
 
 /*3*/
-#define fliWEBhOOKnOTICE_null                   0xe00000ff
-#define fliWEBhOOKnOTICE_NEW                    0xe00001ff
+#define fliWEBhOOKnOTICE_null                   ((countT)0xe00000ff)
+#define fliWEBhOOKnOTICE_NEW                    ((countT)0xe00001ff)
 /*3*/
 
 
@@ -4270,7 +4270,7 @@ examples
 /**/
 /*1*//*PERIODSpERdOZEcYCLE*//*1*/
 
-#define PERIODSpERdOZEcYCLE 0x10
+#define PERIODSpERdOZEcYCLE ((countT)0x10)
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -4338,7 +4338,7 @@ examples
 /*1*//*flLOADmODULE*//*1*/
 
 /*3*/
-#define flLOADmODULE_ASdATA                   0xe0000126
+#define flLOADmODULE_ASdATA                   ((countT)0xe0000126)
 /*3*/
 #define flLOADmODULE_null    ((countT)0xe0000026)
 
@@ -4367,7 +4367,7 @@ examples
 /*1*//*flCIRCLEc*//*1*/
 
 /*3*/
-#define flCIRCLEc_OVERWRITE                   0xe0000127
+#define flCIRCLEc_OVERWRITE                   ((countT)0xe0000127)
 /*3*/
 #define flCIRCLEc_null    ((countT)0xe0000027)
 
@@ -4449,14 +4449,14 @@ examples
 /*1*//*ifcIDsTATUShTTPsERVICE*//*1*/
 
 /*3*/
-#define ifcIDsTATUShTTPsERVICE_UNBORN       0xdddd1246
-#define ifcIDsTATUShTTPsERVICE_AWAKENING    0xdddd1247
-#define ifcIDsTATUShTTPsERVICE_READY        0xdddd1248
-#define ifcIDsTATUShTTPsERVICE_ABORTING     0xdddd1249
-#define ifcIDsTATUShTTPsERVICE_RETIRING     0xdddd124a
-#define ifcIDsTATUShTTPsERVICE_GONE         0xdddd124b
+#define ifcIDsTATUShTTPsERVICE_UNBORN       ((countT)0xdddd1246)
+#define ifcIDsTATUShTTPsERVICE_AWAKENING    ((countT)0xdddd1247)
+#define ifcIDsTATUShTTPsERVICE_READY        ((countT)0xdddd1248)
+#define ifcIDsTATUShTTPsERVICE_ABORTING     ((countT)0xdddd1249)
+#define ifcIDsTATUShTTPsERVICE_RETIRING     ((countT)0xdddd124a)
+#define ifcIDsTATUShTTPsERVICE_GONE         ((countT)0xdddd124b)
 /*3*/
-#define ifcIDsTATUShTTPsERVICE_min     ((countT)0xdddd1246
+#define ifcIDsTATUShTTPsERVICE_min     ((countT)0xdddd1246)
 #define ifcIDsTATUShTTPsERVICE_max     ((countT)0xdddd124b)
 
 
@@ -4511,12 +4511,12 @@ examples
 /*1*//*ifcIDkIT*//*1*/
 
 /*3*/
-#define ifcIDkIT_IDEAnETsUBSCRIBEReNCRYPTED     0xdddd124c
-#define ifcIDkIT_IDEAnETsUBSCRIBEReMAIL         0xdddd124d
-#define ifcIDkIT_IDEAnETsUBSCRIBERiDaCCOUNT     0xdddd124e
-#define ifcIDkIT_IDEAnETsUBSCRIBERsECRET        0xdddd124f
+#define ifcIDkIT_IDEAnETsUBSCRIBEReNCRYPTED     ((countT)0xdddd124c)
+#define ifcIDkIT_IDEAnETsUBSCRIBEReMAIL         ((countT)0xdddd124d)
+#define ifcIDkIT_IDEAnETsUBSCRIBERiDaCCOUNT     ((countT)0xdddd124e)
+#define ifcIDkIT_IDEAnETsUBSCRIBERsECRET        ((countT)0xdddd124f)
 /*3*/
-#define ifcIDkIT_min     ((countT)0xdddd124c
+#define ifcIDkIT_min     ((countT)0xdddd124c)
 #define ifcIDkIT_max     ((countT)0xdddd124f)
 
 
