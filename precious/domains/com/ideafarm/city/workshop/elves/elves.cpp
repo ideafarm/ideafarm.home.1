@@ -2730,8 +2730,6 @@ void elf_obey_C::liveF( void )
                     " file \\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\2*.obj"
                     " file \\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\3*.obj"
 
-                    " library \\tmp\\20230722.2049.vsdll.lib"
-
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\watcom\\lib386\\nt\\shlwapi.lib"
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\watcom\\lib386\\nt\\PowrProf.lib"
                     " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\watcom\\lib386\\nt\\winmm.lib"
@@ -2759,7 +2757,6 @@ void elf_obey_C::liveF( void )
                     " segment '_TEXT' shared"
                     " segment 'CONST' shared"
                     " segment 'CONST2' shared"
-                    " segment 'CONST32' shared"
                     " exp '_rTagF@0'"
                     " exp '_eipF@4'"
         
