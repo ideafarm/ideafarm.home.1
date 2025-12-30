@@ -61,7 +61,8 @@
 #define NAME_SIZE 12
 #define TTY_SIZE  16
 
-#pragma pack(1)
+#pragma pack( __push, 1 )
+
 typedef struct {
     u_char vers;
     u_char type;
@@ -84,6 +85,7 @@ typedef struct {
     u_long id_num;
     struct osockaddr addr;
 } CTL_RESPONSE;
-#pragma pack()
+
+#pragma pack( __pop )
 
 #endif

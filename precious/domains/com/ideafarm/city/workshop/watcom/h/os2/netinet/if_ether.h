@@ -43,7 +43,8 @@
 
 #define SIN_PROXY 1
 
-#pragma pack(1)
+#pragma pack( __push, 1 )
+
 struct sockaddr_inarp {
     u_char  sin_len;
     u_char  sin_family;
@@ -65,6 +66,7 @@ struct  oarptab {
     u_long  at_millisec;
     u_short at_interface;
 };
-#pragma pack()
+
+#pragma pack( __pop )
 
 #endif

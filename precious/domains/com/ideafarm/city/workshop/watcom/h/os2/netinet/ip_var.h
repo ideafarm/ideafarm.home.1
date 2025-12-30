@@ -62,7 +62,8 @@
     { "inetcfg", CTLTYPE_INETCFG }, \
 }
 
-#pragma pack(1)
+#pragma pack( __push, 1 )
+
 struct ipovly {
     caddr_t ih_next, ih_prev;
     u_char  ih_x1;
@@ -94,7 +95,8 @@ struct  ipasfrag {
     struct   ipasfrag *ipf_next;
     struct   ipasfrag *ipf_prev;
 };
-#pragma pack()
+
+#pragma pack( __pop )
 
 struct  ipstat {
     u_long ips_total;

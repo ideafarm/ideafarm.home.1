@@ -104,7 +104,8 @@
 #define icmp_mask  icmp_dun.id_mask
 #define icmp_data  icmp_dun.id_data
 
-#pragma pack(1)
+#pragma pack( __push, 1 )
+
 struct icmp {
     u_char  icmp_type;
     u_char  icmp_code;
@@ -135,6 +136,7 @@ struct icmp {
         char    id_data[1];
     } icmp_dun;
 };
-#pragma pack()
+
+#pragma pack( __pop )
 
 #endif

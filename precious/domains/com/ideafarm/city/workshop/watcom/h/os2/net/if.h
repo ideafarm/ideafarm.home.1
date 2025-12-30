@@ -111,7 +111,8 @@
 
 #define IFNAMSIZ        16
 
-#pragma pack(1)
+#pragma pack( __push, 1 )
+
 struct iftable {
     short  iftIndex;
     char   iftDescr[45];
@@ -216,12 +217,14 @@ struct  ifconf {
         struct  ifreq  *ifcu_req;
     } ifc_ifcu;
 };
-#pragma pack()
+
+#pragma pack( __pop )
 
 #include <net/if_arp.h>
 #include <netinet/in.h>
 
-#pragma pack(1)
+#pragma pack( __push, 1 )
+
 struct  in_aliasreq {
     char   ifra_name[IFNAMSIZ];
     struct sockaddr_in ifra_addr;
@@ -241,7 +244,8 @@ struct  statatreq {
     u_long mask;
     u_long broadcast;
 };
-#pragma pack()
+
+#pragma pack( __pop )
 
 struct ifstat {
     u_long iftLastChange;

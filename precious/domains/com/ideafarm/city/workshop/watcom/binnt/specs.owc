@@ -13,6 +13,9 @@ end
 system begin pharlap
     ARCH i386 -bt=dos
 end
+system begin pharlapext
+    ARCH i386 -bt=dos
+end
 system begin x32r
     ARCH i386 -bt=dos
 end
@@ -40,8 +43,20 @@ end
 system begin windows
     ARCH i86 -bt=windows
 end
+system begin windows1
+    ARCH i86 -bt=windows -dWINVER=0x100
+end
+system begin windows2
+    ARCH i86 -bt=windows -dWINVER=0x200
+end
 system begin windows_dll
     ARCH i86 -bt=windows -bd
+end
+system begin windows1_dll
+    ARCH i86 -bt=windows -dWINVER=0x100 -bd
+end
+system begin windows2_dll
+    ARCH i86 -bt=windows -dWINVER=0x200 -bd
 end
 system begin win_vxd
     ARCH i386
@@ -97,6 +112,9 @@ end
 system begin linuxmips
     ARCH mips -bt=linux
 end
+system begin linuxppc
+    ARCH ppc -bt=linux
+end
 system begin nt
     ARCH i386 -bt=nt
 end
@@ -126,6 +144,15 @@ system begin ntaxp_win
 end
 system begin ntaxp_dll
     ARCH axp -bt=nt -bd
+end
+system begin ntmips
+    ARCH mips -bt=nt
+end
+system begin ntmips_win
+    ARCH mips -bt=nt
+end
+system begin ntmips_dll
+    ARCH mips -bt=nt -bd
 end
 system begin causeway
     ARCH i386 -bt=dos
@@ -168,18 +195,6 @@ system begin zrdx
 end
 system begin dos16m
     ARCH i86 -bt=dos
-end
-system begin zdos
-    ARCH i386 -bt=zdos
-end
-system begin zdosfsd
-    ARCH i386 -bt=zdos
-end
-system begin zdoshwd
-    ARCH i386 -bt=zdos
-end
-system begin zdosdev
-    ARCH i386 -bt=zdos
 end
 system begin rdos
     ARCH i386 -bt=rdos

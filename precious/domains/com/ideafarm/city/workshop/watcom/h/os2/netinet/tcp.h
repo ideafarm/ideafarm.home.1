@@ -90,7 +90,8 @@
 
 typedef u_long tcp_seq;
 
-#pragma pack(1)
+#pragma pack( __push, 1 )
+
 struct tcphdr {
     u_short th_sport;
     u_short th_dport;
@@ -103,6 +104,7 @@ struct tcphdr {
     u_short th_sum;
     u_short th_urp;
 };
-#pragma pack()
+
+#pragma pack( __pop )
 
 #endif

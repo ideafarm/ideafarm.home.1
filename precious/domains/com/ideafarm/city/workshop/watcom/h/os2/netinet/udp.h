@@ -38,13 +38,15 @@
  #pragma read_only_file
 #endif
 
-#pragma pack(1)
+#pragma pack( __push, 1 )
+
 struct udphdr {
     u_short uh_sport;
     u_short uh_dport;
     short   uh_ulen;
     u_short uh_sum;
 };
-#pragma pack()
+
+#pragma pack( __pop )
 
 #endif
