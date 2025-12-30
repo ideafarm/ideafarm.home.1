@@ -14141,7 +14141,7 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 #define flRENDERcYCLINGdETAIL4_ROWsCALEuSEcC              ((countT)0xe4000036)
 #define flRENDERcYCLINGdETAIL4_ROWsCALEuSEcD              ((countT)0xe8000036)
 /*3*/
-#define flRENDERcYCLINGdETAIL4_null    0xe0000036                                                     
+#define flRENDERcYCLINGdETAIL4_null    ((countT)0xe0000036)
 
 
 //
