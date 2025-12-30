@@ -4344,52 +4344,6 @@
         "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
         "\r\n"
         "Class: etherC\r\n"
-        "Author: \"inetCreateSubscriptionF_o@4@3\"\r\n"
-        "\r\n"
-        "Subject: Command word \"inetCreateSubscriptionF_o@4@3\"\r\n"
-        "\r\n"
-        "\r\n"
-        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
-        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
-        "is also an executable SOIL (tm) program.\r\n"
-        "\r\n"
-        "Each manifestation of \"inetCreateSubscriptionF_o@4@3\" uses the current stack in this way:\r\n"
-        "\r\n"
-        "    Pop  3:    countT           idBookP                         (defaults to 1)\r\n"
-        "    Pop  2:    strokeS*         psttEmailP\r\n"
-        "    Pop  1:    ideaNetSubscript pSubP\r\n"
-        "\r\n"
-        "    Push 1:    ideaNetSubscript pSubP\r\n"
-        "    Push 2:    countT           noName\r\n"
-        "\r\n"
-        "To manifest the following example code, drop this document into\r\n"
-        "the Depository:\r\n"
-        "\r\n"
-        "    . on space\r\n"
-        "    . \"Simple example code for \\\"inetCreateSubscriptionF_o@4@3\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
-        "    . off space\r\n"
-
-    ;
-
-    TN( tDoc , postDoc ) ;
-    TN( tNameSoixlOld , "inetCreateSubscriptionF_o@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
-   _psttLeverSoixlOldApi = tNameSoixlOld ;
-   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tin0P ) ;
-}
-
-{
-    osTextT* postDoc =
-
-        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
-        ". off space\r\n"
-        "\r\n"
-        "_______________________________________________________________________________\r\n"
-        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
-        "\r\n"
-        "Class: etherC\r\n"
         "Author: \"inetBookSubscriberConfigureExeF_o4@4@\"\r\n"
         "\r\n"
         "Subject: Command word \"inetBookSubscriberConfigureExeF_o4@4@\"\r\n"
@@ -6341,6 +6295,49 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osFirewallBlockF_o33d4@4@" ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
+        "Author: \"osOpenNetworkInterfaceF_ob4@3\"\r\n"
+        "\r\n"
+        "Subject: Command word \"osOpenNetworkInterfaceF_ob4@3\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"osOpenNetworkInterfaceF_ob4@3\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  3:    countT           cInterfacesMaxP                 (defaults to 0x10)\r\n"
+        "    Pop  2:    strokeS*         psttFriendlyNameP\r\n"
+        "    Pop  1:    handleC          handleP\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"osOpenNetworkInterfaceF_ob4@3\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "osOpenNetworkInterfaceF_ob4@3" ) ;
    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }

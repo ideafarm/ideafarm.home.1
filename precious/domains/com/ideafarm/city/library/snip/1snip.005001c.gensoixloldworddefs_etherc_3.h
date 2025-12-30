@@ -1,22 +1,4 @@
 
-voidT osClipboardReadF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttP ) ;
-    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.osClipboardReadF( tin0P , psttP ) ;
-
-    if( !POOP ) slP << psttP ;
-    etherP.delF( tin0P , psttP ) ;
-}
-
 voidT osClipboardWriteF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -2303,6 +2285,51 @@ voidT osFirewallBlockF_o33d4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP ,
     if( !POOP ) etherP.osFirewallBlockF( tin0P , idLineP , idiFileP , nnP , psttDescriptionP , psttTraceP ) ;
     etherP.delF( tin0P , psttTraceP ) ;
     etherP.delF( tin0P , psttDescriptionP ) ;
+}
+
+voidT osOpenNetworkInterfaceF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
+    handleC handleP( /*GOOEY*/tin0P , TAG( TAGiDnULL ) ) ;
+    if( !POOP ) { handleP << slP ; idArgNext ++ ; }
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttFriendlyNameP ) ;
+    if( !POOP ) { slP >> psttFriendlyNameP ; ___( psttFriendlyNameP ) ; idArgNext ++ ; }
+
+    ZE( countT , cInterfacesMaxP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                cInterfacesMaxP = 0x10 ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tin0P , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+                if( !POOP ) { slP >> cInterfacesMaxP ; idArgNext ++ ; }
+            }
+        }
+    }
+    if( !POOP ) etherP.osOpenNetworkInterfaceF( tin0P , handleP , psttFriendlyNameP , cInterfacesMaxP ) ;
+    etherP.delF( tin0P , psttFriendlyNameP ) ;
 }
 
 voidT openSslTls_setupF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )

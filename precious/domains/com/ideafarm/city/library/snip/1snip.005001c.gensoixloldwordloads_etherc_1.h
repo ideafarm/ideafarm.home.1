@@ -791,14 +791,6 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "inetCreateSubscriptionF_o@4@3" ) ;
-    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)inetCreateSubscriptionF_oP4P3_GF ;
-    _pSwSoixlOldApi->ungrabF( tin0P ) ;
-}
-{
     TN( tNameSoixlOld , "inetBookSubscriberConfigureExeF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
@@ -1156,6 +1148,14 @@
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
     *_pSwSoixlOldApi = (countT)osFirewallBlockF_o33d4P4P_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
+    TN( tNameSoixlOld , "osOpenNetworkInterfaceF_ob4@3" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)osOpenNetworkInterfaceF_ob4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

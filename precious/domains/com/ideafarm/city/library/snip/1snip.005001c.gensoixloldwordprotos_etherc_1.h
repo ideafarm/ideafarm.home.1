@@ -197,8 +197,6 @@ voidT ifcKitMakeSourceF_o4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP ,
 
 voidT ifcKitUpdateKitF_o4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT inetCreateSubscriptionF_oP4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
-
 voidT inetBookSubscriberConfigureExeF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT ifcSortaF_o61P33337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
@@ -288,6 +286,8 @@ voidT osTimeSetF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const stroke
 voidT reportProcessNamePidF_o4P4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT osFirewallBlockF_o33d4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT osOpenNetworkInterfaceF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT openSslTls_setupF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

@@ -2178,10 +2178,6 @@ voidT ifcKitUpdateKitF_o4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , 
     etherP.delF( tin0P , psttExeP ) ;
 }
 
-voidT inetCreateSubscriptionF_oP4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-}
-
 voidT inetBookSubscriberConfigureExeF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -2330,4 +2326,22 @@ voidT osClipboardLetGoF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.osClipboardLetGoF( tin0P ) ;
     if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
+}
+
+voidT osClipboardReadF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+    if( !POOP ) etherP.osClipboardReadF( tin0P , psttP ) ;
+
+    if( !POOP ) slP << psttP ;
+    etherP.delF( tin0P , psttP ) ;
 }
