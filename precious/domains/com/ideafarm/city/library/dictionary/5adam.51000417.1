@@ -152,7 +152,7 @@ DONE( tmWorkF )
                 break ;
                 etThread.delF( tin0P , psttLathWord ) ;
                 }
-                    etThread.strFuseF( tin0P , pstto , tLeft+T("_max     0x")+TF3(idr01Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                    etThread.strFuseF( tin0P , pstto , tLeft+T("_max     ((countT)0x")+TF3(idr01Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tCloseParen ) ; ___( pstto ) ;
                     TN( tLeft , "\r\n#define " ) ; tLeft += T(psttLathWord) ;
                 {
                 if( psttLathWord && psttLathWord->idAdam )
@@ -412,11 +412,11 @@ DONE( tmWorkF )
                 if( bIn3block ) bNewGroup = 1 ;
 
                 }
-                    etThread.strFuseF( tin0P , pstto , tLeft+T("_min     0x")+TF3(groupWoth,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tLeft+T("_max     0x")+TF3(groupLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                    etThread.strFuseF( tin0P , pstto , tLeft+T("_min     ((countT)0x")+TF3(groupWoth,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tLeft+T("_max     ((countT)0x")+TF3(groupLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tCloseParen ) ; ___( pstto ) ;
                     TN( tLeft , "\r\n#define " ) ; tLeft += T(psttGroup) ;
                 {
                 else if( !bIn3block && psttGroup && psttGroup->idAdam )
-                if( b_fl ) { etThread.strFuseF( tin0P , pstto , T("\r\n#define ")+T(psttGroup)+T("_null    0x")+TF3(markFlags,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ; }
+                if( b_fl ) { etThread.strFuseF( tin0P , pstto , T("\r\n#define ")+T(psttGroup)+T("_null    ((countT)0x")+TF3(markFlags,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tCloseParen ) ; ___( pstto ) ; }
                 bIn3block = !bIn3block ;
                 etThread.strFuseF( tin0P , pstto , t3 ) ; ___( pstto ) ;
                 etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
@@ -476,25 +476,25 @@ DONE( tmWorkF )
 
     #endif
 
-        "#define SIZEOF_windowOldC       0x")+TF2(sizeof( windowOldC       ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_switchStackC     0x")+TF2(sizeof( switchStackC     ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_switchC          0x")+TF2(sizeof( switchC          ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_stackC           0x")+TF2(sizeof( stackC           ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_soulC            0x")+TF2(sizeof( soulC            ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_sexC             0x")+TF2(sizeof( sexC             ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_rootWordC        0x")+TF2(sizeof( rootWordC        ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_renderStateOldS  0x")+TF2(sizeof( renderStateOldS  ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_pulpOldC         0x")+TF2(sizeof( pulpOldC         ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_poolC            0x")+TF2(sizeof( poolC            ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_napkinC          0x")+TF2(sizeof( napkinC          ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_lexC             0x")+TF2(sizeof( lexC             ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_handleC          0x")+TF2(sizeof( handleC          ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_grabMemorySpaceC 0x")+TF2(sizeof( grabMemorySpaceC ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_fileC            0x")+TF2(sizeof( fileC            ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_etherC           0x")+TF2(sizeof( etherC           ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_bookC            0x")+TF2(sizeof( bookC            ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_batonC           0x")+TF2(sizeof( batonC           ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
-        "#define SIZEOF_baseSoilXxxxC    0x")+TF2(sizeof( baseSoilXxxxC    ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("\r\n"
+        "#define SIZEOF_windowOldC       ((countT)0x")+TF2(sizeof( windowOldC       ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_switchStackC     ((countT)0x")+TF2(sizeof( switchStackC     ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_switchC          ((countT)0x")+TF2(sizeof( switchC          ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_stackC           ((countT)0x")+TF2(sizeof( stackC           ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_soulC            ((countT)0x")+TF2(sizeof( soulC            ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_sexC             ((countT)0x")+TF2(sizeof( sexC             ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_rootWordC        ((countT)0x")+TF2(sizeof( rootWordC        ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_renderStateOldS  ((countT)0x")+TF2(sizeof( renderStateOldS  ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_pulpOldC         ((countT)0x")+TF2(sizeof( pulpOldC         ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_poolC            ((countT)0x")+TF2(sizeof( poolC            ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_napkinC          ((countT)0x")+TF2(sizeof( napkinC          ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_lexC             ((countT)0x")+TF2(sizeof( lexC             ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_handleC          ((countT)0x")+TF2(sizeof( handleC          ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_grabMemorySpaceC ((countT)0x")+TF2(sizeof( grabMemorySpaceC ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_fileC            ((countT)0x")+TF2(sizeof( fileC            ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_etherC           ((countT)0x")+TF2(sizeof( etherC           ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_bookC            ((countT)0x")+TF2(sizeof( bookC            ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_batonC           ((countT)0x")+TF2(sizeof( batonC           ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
+        "#define SIZEOF_baseSoilXxxxC    ((countT)0x")+TF2(sizeof( baseSoilXxxxC    ),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T(")\r\n"
 
     #else
 
@@ -562,31 +562,33 @@ DONE( tmWorkF )
                     __( idsTag ) ;
                 {
                 default :
-                //case    : { csTags += sw_cTag *   0x0 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                //case    : { csTags += sw_cTag *   0x0 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                //case    : { csTags -= sw_cTag *   0x3 ; break ; } // TAG REMOVED; 2 DIGITS; "0x"
-                case 0x11 : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case 0x10 : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case 0xf  : { csTags += sw_cTag *   0x0 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case 0xe  : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case 0xd  : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case 0xc  : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case 0xb  : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case 0xa  : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case   9  : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case   8  : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case   7  : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case   6  : { csTags += sw_cTag *   0x3 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case   5  : { csTags += sw_cTag *   0x2 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case   4  : { csTags += sw_cTag *   0x4 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case   3  : { csTags += sw_cTag *   0x4 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
-                case   2  : { csTags += sw_cTag *   0x4 ; break ; } // TAG REMOVED; 8 DIGITS; "0x"
+
+                //case    : { csTags += sw_cTag *   0x0 ; break ; }
+                //case    : { csTags += sw_cTag *   0x0 ; break ; }
+                //case    : { csTags -= sw_cTag *   0xd ; break ; }
+
+                case 0x11 : { csTags += sw_cTag *   0xd ; break ; }
+                case 0x10 : { csTags += sw_cTag *   0xd ; break ; }
+                case 0xf  : { csTags += sw_cTag *   0xa ; break ; }
+                case 0xe  : { csTags += sw_cTag *   0xd ; break ; }
+                case 0xe  : { csTags += sw_cTag *   0xd ; break ; }
+                case 0xd  : { csTags += sw_cTag *   0xd ; break ; }
+                case 0xc  : { csTags += sw_cTag *   0xd ; break ; }
+                case 0xa  : { csTags += sw_cTag *   0xd ; break ; }
+                case   9  : { csTags += sw_cTag *   0xd ; break ; }
+                case   8  : { csTags += sw_cTag *   0xd ; break ; }
+                case   7  : { csTags += sw_cTag *   0xd ; break ; }
+                case   6  : { csTags += sw_cTag *   0xd ; break ; }
+                case   5  : { csTags += sw_cTag *   0xc ; break ; }
+                case   4  : { csTags += sw_cTag *   0xe ; break ; }
+                case   3  : { csTags += sw_cTag *   0xe ; break ; }
+                case   2  : { csTags += sw_cTag *   0xe ; break ; }
                 case   1  : { csTags += sw_cTag * 0x100 ; break ; } // NO EDITS, BUT ALLOCATE 0x100 BYTES FOR GENERATED DEFINITION LINES FOR EACH GROUP
-            {
+            {                                     |||||------------------------------------------------------------------------------------------------------ THIS VALUE IS THE NET INCREASE IN STROKES, WHICH IS 0x14 - csttTag  (EXAMPLE: FOR CASE 2-4: 0x14 - 6 = 0xe
             switch( idsTag )
-            idsTag = sw_cTag.leverF( tin0P , idf ) ;
-        {
-        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+            idsTag = sw_cTag.leverF( tin0P , idf ) ;                        // "((countT)0x12345678)"
+        {                                                                   //  123456789abcdef01234
+        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )                    //  0              1
         countT cFlavors = sw_cTag.cFlavorsF( tin0P ) ;
     {
     ZE( countT , csTags ) ;
@@ -608,28 +610,29 @@ DONE( tmWorkF )
 
     //U:stTag << psttOldC( tin0P , etThread , T("/*idLath*/") ) ; //
     //U:stTag << psttOldC( tin0P , etThread , T("/*idNext*/") ) ; //
-    psttv = psttOldC( tin0P , etThread , T("/*idb*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 11
-    psttv = psttOldC( tin0P , etThread , T("/*ida*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 01
-    psttv = psttOldC( tin0P , etThread , T("/*idr.01*/" ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // f
-    psttv = psttOldC( tin0P , etThread , T("/*id9*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // e
-    psttv = psttOldC( tin0P , etThread , T("/*id8*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // d
-    psttv = psttOldC( tin0P , etThread , T("/*id7*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // c
-    psttv = psttOldC( tin0P , etThread , T("/*id6*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // b
-    psttv = psttOldC( tin0P , etThread , T("/*id5*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // a
-    psttv = psttOldC( tin0P , etThread , T("/*id4*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 9
-    psttv = psttOldC( tin0P , etThread , T("/*id3*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 8
-    psttv = psttOldC( tin0P , etThread , T("/*id2*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 7
-    psttv = psttOldC( tin0P , etThread , T("/*id1*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 6
-    psttv = psttOldC( tin0P , etThread , T("/*idwm*/"   ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 5
-    psttv = psttOldC( tin0P , etThread , T("/*fi*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 4
-    psttv = psttOldC( tin0P , etThread , T("/*fl*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 3
-    psttv = psttOldC( tin0P , etThread , T("/*id*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 2
+    psttv = psttOldC( tin0P , etThread , T("/*idb*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 11             7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*ida*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 01             7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*idr.01*/" ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // f              a                   0x14                      0xa
+    psttv = psttOldC( tin0P , etThread , T("/*id9*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // e              7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*id8*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // d              7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*id7*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // c              7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*id6*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // b              7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*id5*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // a              7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*id4*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 9              7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*id3*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 8              7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*id2*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 7              7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*id1*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 6              7                   0x14                      0xd
+    psttv = psttOldC( tin0P , etThread , T("/*idwm*/"   ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 5              8                   0x14                      0xc
+    psttv = psttOldC( tin0P , etThread , T("/*fi*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 4              6                   0x14                      0xe
+    psttv = psttOldC( tin0P , etThread , T("/*fl*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 3              6                   0x14                      0xe
+    psttv = psttOldC( tin0P , etThread , T("/*id*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 2              6                   0x14                      0xe
     psttv = psttOldC( tin0P , etThread , t3               ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; // 1
     ZE( strokeS* , psttv ) ;
-    //FOR BEST SPEED, IT IS VERY IMPORTANT THAT THE MOST FREQUENT TAGS BE LISTED WOTH
+    //FOR BEST SPEED, IT IS VERY IMPORTANT THAT THE MOST FREQUENT TAGS BE LISTED WOTH                                   LENGTHbEFORE        ASSUMEDlENGTHaFTER          NETiNCREASE
     //THESE LINES CORRESPOND TO THE HARDCODED CASE VALUES
 
     TN( t3 , "/*" "3*/" ) ;
+    TN( tCloseParen , ")" ) ;
 
     stackC stTag( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
 
