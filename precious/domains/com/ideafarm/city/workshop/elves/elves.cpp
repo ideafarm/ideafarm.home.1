@@ -1,4 +1,4 @@
-#define DEBUG
+//#define DEBUG
 
 //ENABLE THIS PREPROCESSOR IF/ENDIF IN PRODUCTION
 #if not defined( DEBUG )
@@ -4338,9 +4338,9 @@ void elf_obey_C::linkF( char* postIdiForeignP )
                 strcat( postCmd2 , postIdiForeignP ) ;
                 strcat( postCmd2 , ".res" ) ;
     
-                sayF( "  debug [cmd] \"" , flSAY_START , strlen( postCmd2 ) ) ;
-                sayF( postCmd2 , flSAY_MIDDLE ) ;
-                sayF( "\"." , flSAY_END ) ;
+                //sayF( "  debug [cmd] \"" , flSAY_START , strlen( postCmd2 ) ) ;
+                //sayF( postCmd2 , flSAY_MIDDLE ) ;
+                //sayF( "\"." , flSAY_END ) ;
 
                 //system( "dir" ) ;
 

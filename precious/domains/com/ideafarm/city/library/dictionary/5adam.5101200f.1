@@ -36,14 +36,13 @@ static    countT rc = CreateUnicastIpAddressEntry( &ipRow ) ;
     //ipRow.SuffixOrigin        = IpSuffixOriginManual ;
     //ipRow.PrefixOrigin        = IpPrefixOriginManual ;
 
-    *(count04T*)&ipRow.InterfaceLuid = *(count04T*)&(const HANDLEaPPnOTEScOUNTcLASS&)hInterface ;
-    //*(NET_LUID*)( (byteT*)&ipRow.InterfaceLuid + sizeof( countT ) ) = *(NET_LUID*)(count04T*)&(const HANDLEaPPnOTEScOUNTcLASS&)hInterface ;
+    ipRow.InterfaceLuid       = *(count04T*)&(const HANDLEaPPnOTEScOUNTcLASS&)hInterface ;
 
     if( cbLuid ) ;
     static countT cbLuid = sizeof ipRow.InterfaceLuid ;
 
     InitializeUnicastIpAddressEntry( &ipRow ) ;
-static    MIB_UNICASTIPADDRESS_ROW ipRow ;
+static    MIB_UNICASTIPADDRESS_ROW_WORKAROUND ipRow ;
 
 static    nicNameC nnNew = socketC::nicNameIF( tin0P , etThread , T("fe80::747e:ea02:79e2:9227") ) ;
 
@@ -54,89 +53,48 @@ static    nicNameC nnNew = socketC::nicNameIF( tin0P , etThread , T("fe80::747e:
     handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
 {
 
-hoo.goo.Value = 0x8877665544332211 ;
-hoo.foo.Value = 0x8877665544332211 ;
-
 TODO
 
-hooS hoo ;
+extern "C" unsigned __stdcall CreateUnicastIpAddressEntry(     CONST  MIB_UNICASTIPADDRESS_ROW_WORKAROUND *Row ) ;
 
-;
-}
-    gooU goo ;
-    fooU foo ;
+extern "C" VOID     __stdcall InitializeUnicastIpAddressEntry(       PMIB_UNICASTIPADDRESS_ROW_WORKAROUND  Row ) ;
+
+
+} MIB_UNICASTIPADDRESS_ROW_WORKAROUND , *PMIB_UNICASTIPADDRESS_ROW_WORKAROUND ;
+
+    LARGE_INTEGER    CreationTimeStamp ;
+    SCOPE_ID         ScopeId ;
+    NL_DAD_STATE     DadState ;             // READ ONLY
+
+    BOOLEAN          SkipAsSource ;
+    UINT8            OnLinkPrefixLength ;
+    ULONG            PreferredLifetime ;
+    ULONG            ValidLifetime ;
+    NL_SUFFIX_ORIGIN SuffixOrigin ;
+    NL_PREFIX_ORIGIN PrefixOrigin ;         // READ/WRITE
+
+    NET_IFINDEX      InterfaceIndex ;
+    count04T         InterfaceLuid ;
+    SOCKADDR_INET    Address ;              // KEY FIELDS
 {
-struct hooS
+typedef struct _MIB_UNICASTIPADDRESS_ROW_WORKAROUND
 
-} ;
-    }Info;
-        count04T     IfType:16;                  // equal to IANA IF type
-        count04T     NetLuidIndex:24;
-        count04T     Reserved:24;
-    {
-    struct
-    count04T     Value;
-{
-union gooU
+} MIB_UNICASTIPADDRESS_ROW , *PMIB_UNICASTIPADDRESS_ROW ;
 
-} ;
-    }Info;
-        ULONG64     IfType:16;                  // equal to IANA IF type
-        ULONG64     NetLuidIndex:24;
-        ULONG64     Reserved:24;
-    {
-    struct
-    ULONG64     Value;
-{
-union fooU
+    LARGE_INTEGER    CreationTimeStamp ;
+    SCOPE_ID         ScopeId ;
+    NL_DAD_STATE     DadState ;             // READ ONLY
 
+    BOOLEAN          SkipAsSource ;
+    UINT8            OnLinkPrefixLength ;
+    ULONG            PreferredLifetime ;
+    ULONG            ValidLifetime ;
+    NL_SUFFIX_ORIGIN SuffixOrigin ;
+    NL_PREFIX_ORIGIN PrefixOrigin ;         // READ/WRITE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-extern "C" unsigned __stdcall CreateUnicastIpAddressEntry( CONST MIB_UNICASTIPADDRESS_ROW *Row ) ;
-
-extern "C" VOID __stdcall InitializeUnicastIpAddressEntry( PMIB_UNICASTIPADDRESS_ROW Row ) ;
-
-
-} MIB_UNICASTIPADDRESS_ROW, *PMIB_UNICASTIPADDRESS_ROW;
-    LARGE_INTEGER CreationTimeStamp;
-    SCOPE_ID ScopeId;
-    NL_DAD_STATE DadState;
-    //
-    // Read-Only Fields.
-    //
-
-    BOOLEAN SkipAsSource;
-    UINT8 OnLinkPrefixLength;
-    ULONG PreferredLifetime;
-    ULONG ValidLifetime;
-    NL_SUFFIX_ORIGIN SuffixOrigin;
-    NL_PREFIX_ORIGIN PrefixOrigin;
-    //
-    // Read-Write Fileds.
-    //
-
-    NET_IFINDEX InterfaceIndex;
-    //NET_LUID InterfaceLuid;
-    count04T InterfaceLuid;
-    SOCKADDR_INET Address;
-    //
-    // Key Structure.
-    //
+    NET_IFINDEX      InterfaceIndex ;
+    NET_LUID         InterfaceLuid ;
+    SOCKADDR_INET    Address ;              // KEY FIELDS
 {
 typedef struct _MIB_UNICASTIPADDRESS_ROW
 
