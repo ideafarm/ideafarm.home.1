@@ -63,41 +63,6 @@
 */
 /*
 
-extern "C" unsigned __stdcall CreateUnicastIpAddressEntry(     CONST  ipAddressRowNewS* Row ) ;
-extern "C" VOID     __stdcall InitializeUnicastIpAddressEntry(        ipAddressRowNewS* Row ) ;
-
-//#pragma pack ( pop ) ;
-
-;
-}
-
-    LARGE_INTEGER    CreationTimeStamp ;
-    SCOPE_ID         ScopeId ;
-    byteT            pad5[ 3 ] ;
-    NL_DAD_STATE     DadState ;             // READ ONLY
-    byteT            pad4[ 2 ] ;
-
-    BOOLEAN          SkipAsSource ;
-    UINT8            OnLinkPrefixLength ;
-    ULONG            PreferredLifetime ;
-    ULONG            ValidLifetime ;
-    byteT            pad3[ 3 ] ;
-    NL_SUFFIX_ORIGIN SuffixOrigin ;
-    byteT            pad2[ 3 ] ;
-    NL_PREFIX_ORIGIN PrefixOrigin ;         // READ/WRITE
-
-    NET_IFINDEX      InterfaceIndex ;
-    count04T         InterfaceLuid ;
-    //NET_LUID         InterfaceLuid ;
-    byteT            pad1[ 4 ] ;
-    SOCKADDR_INET    Address ;              // KEY FIELDS
-{
-struct ipAddressRowNewS
-
-//#pragma pack ( 4    ) ;
-//#pragma pack ( push ) ;
-//THESE ARE COMMENTED OUT BECAUSE THEY DON'T APPEAR TO WORK AS INTENDED
-
 //
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
