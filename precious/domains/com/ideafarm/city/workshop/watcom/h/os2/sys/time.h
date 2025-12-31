@@ -75,30 +75,17 @@ struct timeval {
     long tv_usec;
 };
 
-#ifndef _TIMESPEC_DEFINED
- #define _TIMESPEC_DEFINED
-#pragma pack( __push, 4 )
- struct timespec {
-   union {
-     __w_time_t tv_sec;
-     __w_time_t ts_sec;
-   };
-   union {
-     long       tv_nsec;
-     long       ts_nsec;
-   };
- };
-#pragma pack( __pop )
-#endif /* _TIMESPEC_DEFINED */
-
-#pragma pack( __push, 4 )
+#pragma pack(4)
+struct timespec {
+    time_t  ts_sec;
+    long    ts_nsec;
+};
 
 struct  itimerval {
     struct timeval it_interval;
     struct timeval it_value;
 };
-
-#pragma pack( __pop )
+#pragma pack()
 
 struct timezone {
     int tz_minuteswest;

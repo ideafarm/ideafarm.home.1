@@ -103,8 +103,7 @@
 #define IP_MSS    576
 
 
-#pragma pack( __push, 1 )
-
+#pragma pack(1)
 struct ip {
     u_char   ip_hl:4,
              ip_v:4;
@@ -132,7 +131,6 @@ struct  ip_timestamp {
         } ipt_ta[1];
     } ipt_timestamp;
 };
-
-#pragma pack( __pop )
+#pragma pack()
 
 #endif

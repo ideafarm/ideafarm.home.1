@@ -3872,8 +3872,11 @@ void elf_obey_C::assembleF( const char* postGroupP )
 
             { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\"   ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > "              ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
 
-            { char postCmd[ 0x200 ] = "wasm -5p -d1 -ee -q -we -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
-            { char postCmd[ 0x200 ] = "wasm -5p -d1 -ee -q -we -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "wasm -5p -d1 -e -q -we -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "wasm -5p -d1 -e -q -we -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+
+//            { char postCmd[ 0x200 ] = "wasm -5p -d1 -ee -q -we -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.dll\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+//            { char postCmd[ 0x200 ] = "wasm -5p -d1 -ee -q -we -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object.exe\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
             inc02AM( cCompiled ) ;
 
             //system( "rw \\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\*" ) ;

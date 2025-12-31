@@ -148,8 +148,7 @@ struct in_addr {
 
 extern u_short CntInMulti;
 
-#pragma pack( __push, 1 )
-
+#pragma pack(1)
 struct sockaddr_in {
     u_char  sin_len;
     u_char  sin_family;
@@ -167,7 +166,6 @@ struct ip_mreq {
     struct in_addr imr_multiaddr;
     struct in_addr imr_interface;
 };
-
-#pragma pack( __pop )
+#pragma pack()
 
 #endif

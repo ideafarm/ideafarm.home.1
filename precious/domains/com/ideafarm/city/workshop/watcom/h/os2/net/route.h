@@ -128,8 +128,7 @@ struct rt_metrics {
     u_long rmx_filler[4];
 };
 
-#pragma pack( __push, 1 )
-
+#pragma pack(1)
 struct ortentry {
     u_long rt_hash;
     struct sockaddr rt_dst;
@@ -149,8 +148,7 @@ struct rtentries {
     short  netcount;
     struct ortentry rttable[RTENTRY_COUNT];
 };
-
-#pragma pack( __pop )
+#pragma pack()
 
 
 struct  rtstat {
@@ -161,8 +159,7 @@ struct  rtstat {
         short   rts_wildcard;           /* lookups satisfied by a wildcard */
 };
 
-#pragma pack( __push, 1 )
-
+#pragma pack(1)
 struct rt_msghdr {
 #define IFNAMSIZ        16
         u_short rtm_msglen;     /* to skip over non-understood messages */
@@ -181,8 +178,7 @@ struct rt_msghdr {
         char    rtm_name[IFNAMSIZ]; /* new field for subnet routing */
         struct  rt_metrics rtm_rmx; /* metrics themselves */
 };
-
-#pragma pack( __pop )
+#pragma pack()
 
 struct rt_addrinfo {
     int    rti_addrs;

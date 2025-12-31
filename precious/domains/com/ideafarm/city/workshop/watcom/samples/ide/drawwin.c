@@ -2,7 +2,6 @@
 *
 *                            Open Watcom Project
 *
-* Copyright (c) 2002-2020 The Open Watcom Contributors. All Rights Reserved.
 *    Portions Copyright (c) 1983-2002 Sybase, Inc. All Rights Reserved.
 *
 *  ========================================================================
@@ -30,8 +29,8 @@
 ****************************************************************************/
 
 
-#include <windows.h>
 #include <string.h>
+#include <windows.h>
 #include "drawmenu.h"
 #include "button.h"
 #include "room.h"
@@ -62,7 +61,7 @@ static FARPROC three_d_end_Proc = NULL;
 static FARPROC three_d_get_Proc = NULL;
 static FARPROC three_d_set_Proc = NULL;
 
-void ENTRYPOINT three_d_init( void )
+void ENTRYPOINT three_d_init()
 // Use the DLL initialization entry point to load the DLL and get the
 // address of the entry points
 {
@@ -84,7 +83,7 @@ void ENTRYPOINT three_d_init( void )
     _Call16( three_d_init_Proc, "" );
 }
 
-void ENTRYPOINT three_d_fini( void )
+void ENTRYPOINT three_d_fini()
 // Use the DLL finish routine to free up the DLL
 {
     if( hThreedDLL == NULL ) return;
@@ -133,7 +132,8 @@ int ENTRYPOINT three_d_get( three_d_handle handle, three_d_attr attr )
     return( (short) _Call16( three_d_get_Proc, "ww", handle, attr ) );
 }
 
-void ENTRYPOINT three_d_set( three_d_handle handle, three_d_attr attr, int new_val )
+void ENTRYPOINT three_d_set( three_d_handle handle, three_d_attr attr,
+                int new_val )
 {
     if( hThreedDLL == NULL ) return;
     _Call16( three_d_set_Proc, "www", handle, attr, new_val );
@@ -235,8 +235,12 @@ static void make_buttons( HWND hwnd )
     Draw_area.top += max_height + 2;
 }
 
-LRESULT CALLBACK main_proc( HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam )
-{
+LRESULT CALLBACK main_proc(
+    HWND                hwnd,
+    UINT                msg,
+    WPARAM              wparam,
+    LPARAM              lparam
+) {
     WORD                cmd;
 
     switch( msg ) {
@@ -382,8 +386,8 @@ static BOOL init_instance( HANDLE inst, int show )
         CW_USEDEFAULT,                  /* Default vertical position.         */
         CW_USEDEFAULT,                  /* Default width.                     */
         CW_USEDEFAULT,                  /* Default height.                    */
-        (HWND)0,                        /* Overlapped windows have no parent. */
-        (HMENU)0,                       /* Use the window class menu.         */
+        NULL,                           /* Overlapped windows have no parent. */
+        NULL,                           /* Use the window class menu.         */
         inst,                           /* This instance owns this window.    */
         NULL                            /* Pointer not needed.                */
     );
@@ -410,11 +414,11 @@ BOOL init_app( HANDLE inst )
     /* main window.                                                           */
 
     wc.style = 0;
-    wc.lpfnWndProc = main_proc;
+    wc.lpfnWndProc = (WNDPROC) MakeProcInstance( (FARPROC) main_proc, inst );
     wc.cbClsExtra = 0;
     wc.cbWndExtra = 0;
     wc.hInstance = inst;
-    wc.hIcon = LoadIcon(NULL, "DrawIcon");
+    wc.hIcon = LoadIcon(NULL, "DrawIcon" );
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
     wc.hbrBackground = GetStockObject(WHITE_BRUSH);
     wc.lpszMenuName = "DrawMenu";
@@ -426,9 +430,13 @@ BOOL init_app( HANDLE inst )
 
 }
 
-int PASCAL WinMain( HINSTANCE inst, HINSTANCE prev_inst, LPSTR cmd_line, int show )
-/*********************************************************************************/
-{
+int PASCAL WinMain(
+/*****************/
+    HINSTANCE           inst,
+    HINSTANCE           prev_inst,
+    LPSTR               cmd_line,
+    int                 show
+) {
     MSG                 msg;
 
     while( *cmd_line == ' ' ) ++ cmd_line;

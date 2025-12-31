@@ -33,7 +33,7 @@ uint32_t eflags_read( void );
 #pragma aux eflags_read = \
     "pushfd"              \
     "pop  eax"            \
-    __value [__eax] __modify [__eax];
+    value [eax] modify [eax];
 #elif defined( _M_I86 )
 #pragma aux eflags_read = \
     ".386"                \
@@ -41,7 +41,7 @@ uint32_t eflags_read( void );
     "pop  edx"            \
     "mov  ax,dx"          \
     "shr  edx,16"         \
-    __value [__dx __ax] __modify [__dx __ax]
+    value [dx ax] modify [dx ax]
 #else
 #error Unsupported target architecture!
 #endif
@@ -53,7 +53,7 @@ uint32_t eflags_write( uint32_t eflg );
 #pragma aux eflags_write = \
     "push eax"             \
     "popfd"                \
-    __parm [__eax] __modify [];
+    parm [eax] modify [];
 #elif defined( _M_I86 )
 #pragma aux eflags_write = \
     ".386"                \
@@ -61,7 +61,7 @@ uint32_t eflags_write( uint32_t eflg );
     "mov  dx,ax"          \
     "push edx"            \
     "popfd"               \
-    __parm [__dx __ax] __modify [__dx __ax]
+    parm [dx ax] modify [dx ax]
 #else
 #error Unsupported target architecture!
 #endif
@@ -77,7 +77,7 @@ void cpu_id( uint32_t cpuinfo[4], uint32_t infotype );
     "mov  [esi+4],ebx"    \
     "mov  [esi+8],ecx"    \
     "mov  [esi+12],edx"   \
-    __parm [__esi] [__eax] __modify [__ebx __ecx __edx];
+    parm [esi] [eax] modify [ebx ecx edx];
 #elif defined( _M_I86 )
 #pragma aux cpu_id =      \
     ".586"                \
@@ -89,7 +89,7 @@ void cpu_id( uint32_t cpuinfo[4], uint32_t infotype );
     "mov  [di+4],ebx"     \
     "mov  [di+8],ecx"     \
     "mov  [di+12],edx"    \
-    __parm [__di] [__dx __ax] __modify [__bx __cx __dx]
+    parm [di] [dx ax] modify [bx cx dx]
 #else
 #error Unsupported target architecture!
 #endif
@@ -282,7 +282,7 @@ void print_cpuid( int verbose )
     if( max_ext_id > 4 ) {
         for( i = 0; i < CPUID_BRAND_COUNT; ++i ) {
             cpu_id( cpu_info, CPUID_BRAND_1ST + i );
-            memcpy( brand_string + i * sizeof( cpu_info ),
+            memcpy( brand_string + i * sizeof( cpu_info ), 
                     cpu_info, sizeof( cpu_info ) );
         }
         /* Note that the brand string is null-terminated. */

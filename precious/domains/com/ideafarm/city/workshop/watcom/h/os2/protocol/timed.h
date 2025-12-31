@@ -72,8 +72,7 @@
 #define tsp_time   tsp_u.tspu_time
 #define tsp_hopcnt tsp_u.tspu_hopcnt
 
-#pragma pack( __push, 1 )
-
+#pragma pack(1)
 struct tsp {
     u_char  tsp_type;
     u_char  tsp_vers;
@@ -84,8 +83,7 @@ struct tsp {
     } tsp_u;
     char tsp_name[MAXHOSTNAMELEN];
 };
-
-#pragma pack( __pop )
+#pragma pack()
 
 #ifdef TSPTYPES
 char *tsptype[TSPTYPENUMBER] =

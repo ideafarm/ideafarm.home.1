@@ -11,19 +11,21 @@
 // class S.  The compiled call will have three parameters: the first is the
 // "this" pointer and the next two will be the supplied arguments.
 //
-#pragma aux foo_asm =           \
-        "add eax,edx"           \
-        "add eax,ebx"           \
-    __parm [__eax] [__edx] [__ebx] \
-    __value [__eax]
+#pragma aux foo_asm             \
+    = "add eax,edx"             \
+      "add eax,ebx"             \
+    parm[ eax][ edx][ ebx ]     \
+    value [eax]                 \
+    ;
 
 // This pragma will supply the instructions for static member "bar" in
 // class S.
 //
-#pragma aux bar_asm =           \
-        "add eax,edx"           \
-    __parm [__eax] [__edx]      \
-    __value [__eax]
+#pragma aux bar_asm             \
+    = "add eax,edx"             \
+    parm [eax] [edx ]           \
+    value [ eax ]               \
+    ;
 
 // Declare class S with foo and bar as above.  The functions goo and woo are
 // given as equivalent C++ functions coded entirely in C++.

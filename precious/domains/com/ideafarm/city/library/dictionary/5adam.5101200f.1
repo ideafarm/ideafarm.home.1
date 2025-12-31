@@ -53,7 +53,9 @@ static    nicNameC nnNew = socketC::nicNameIF( tin0P , etThread , T("fe80::747e:
     handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
 {
 
+
 TODO
+
 
 extern "C" unsigned __stdcall CreateUnicastIpAddressEntry(     CONST  MIB_UNICASTIPADDRESS_ROW_WORKAROUND *Row ) ;
 
@@ -98,6 +100,76 @@ typedef struct _MIB_UNICASTIPADDRESS_ROW_WORKAROUND
 {
 typedef struct _MIB_UNICASTIPADDRESS_ROW
 
+;
+}
+    byteT                                 pad[ 0x4 ] ;
+    PIP_ADAPTER_DNS_SUFFIX                FirstDnsSuffix ;
+    ULONG                                 Dhcpv6Iaid ;
+    ULONG                                 Dhcpv6ClientDuidLength ;
+    byteT                                 pad3[ 0x2 ] ;
+    BYTE                                  Dhcpv6ClientDuid[ 130 ] ;
+    byteT                                 pad2[ 0x6 ] ;
+    SOCKET_ADDRESS                        Dhcpv6Server ;                                    // DHCP v6 Info.
+
+    TUNNEL_TYPE                           TunnelType ;
+    NET_IF_CONNECTION_TYPE                ConnectionType ;
+    NET_IF_NETWORK_GUID                   NetworkGuid ;
+    NET_IF_COMPARTMENT_ID                 CompartmentId ;
+    SOCKET_ADDRESS                        Dhcpv4Server ;
+    count04T                              Luid ;
+    ULONG                                 Ipv6Metric ;
+    ULONG                                 Ipv4Metric ;
+    PIP_ADAPTER_GATEWAY_ADDRESS_LH        FirstGatewayAddress ;
+    PIP_ADAPTER_WINS_SERVER_ADDRESS_LH    FirstWinsServerAddress ;
+    ULONG64                               ReceiveLinkSpeed ;
+    ULONG64                               TransmitLinkSpeed ;
+
+    PIP_ADAPTER_PREFIX_XP                 FirstPrefix ;
+    ULONG                                 ZoneIndices[16] ;
+    IF_INDEX                              Ipv6IfIndex ;
+    byteT                                 pad1[ 0x3 ] ;
+    IF_OPER_STATUS                        OperStatus ;
+    IFTYPE                                IfType ;
+    ULONG                                 Mtu ;
+    } ;
+        } ;
+            ULONG                         Ipv6ManagedAddressConfigurationSupported : 1 ;
+            ULONG                         Ipv6Enabled : 1 ;
+            ULONG                         Ipv4Enabled : 1 ;
+            ULONG                         NetbiosOverTcpipEnabled : 1 ;
+            ULONG                         Ipv6OtherStatefulConfig : 1 ;
+            ULONG                         NoMulticast : 1 ;
+            ULONG                         ReceiveOnly : 1 ;
+            ULONG                         Dhcpv4Enabled : 1 ;
+            ULONG                         RegisterAdapterSuffix : 1 ;
+            ULONG                         DdnsEnabled : 1 ;
+        {
+        struct
+        ULONG                             Flags ;
+    {
+    union
+    ULONG                                 PhysicalAddressLength ;
+    BYTE                                  PhysicalAddress[ 8 ] ;
+    PWCHAR                                FriendlyName ;
+    PWCHAR                                Description ;
+    PWCHAR                                DnsSuffix ;
+    PIP_ADAPTER_DNS_SERVER_ADDRESS_XP     FirstDnsServerAddress ;
+    PIP_ADAPTER_MULTICAST_ADDRESS_XP      FirstMulticastAddress ;
+    PIP_ADAPTER_ANYCAST_ADDRESS_XP        FirstAnycastAddress ;
+    PIP_ADAPTER_UNICAST_ADDRESS_LH        FirstUnicastAddress ;
+    PCHAR                                 AdapterName ;
+    ipAddressesNewS*                      Next ;
+    } ;
+        } ;
+            IF_INDEX                      IfIndex ;
+            ULONG                         Length ;
+        {
+        struct
+        ULONGLONG                         Alignment ;
+    {
+    union
+{
+struct ipAddressesNewS
 
 /*1*/WAKEhIDE( "example.other.3func.3600222c.etherc.osOpenNetworkInterfaceF" )/*1*/
 /**/
@@ -111,334 +183,4 @@ typedef struct _MIB_UNICASTIPADDRESS_ROW
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-#endif
-
-} MIB_IPINTERFACE_TABLE, *PMIB_IPINTERFACE_TABLE;
-    MIB_IPINTERFACE_ROW Table[ANY_SIZE];
-    ULONG NumEntries;
-typedef struct _MIB_IPINTERFACE_TABLE {
-
-} MIB_IPINTERFACE_ROW, *PMIB_IPINTERFACE_ROW;
-    BOOLEAN DisableDefaultRoutes;
-    //
-    // can be used by VPN clients to restrict Split tunnelling.
-    // Disables using default route on the interface. This flag
-    //
-
-    NL_INTERFACE_OFFLOAD_ROD ReceiveOffload;
-    NL_INTERFACE_OFFLOAD_ROD TransmitOffload;
-
-    ULONG ReachableTime;
-
-    BOOLEAN SupportsRouterDiscovery;
-    BOOLEAN SupportsNeighborDiscovery;
-    BOOLEAN SupportsWakeUpPatterns;
-    BOOLEAN Connected;
-    //
-    // Read Only fields.
-    //
-
-    ULONG NlMtu;
-    ULONG Metric;
-    ULONG SitePrefixLength;
-    ULONG ZoneIndices[ScopeLevelCount]; // Zone part of a SCOPE_ID.
-    ULONG LinkLocalAddressTimeout; // In ms.
-    NL_LINK_LOCAL_ADDRESS_BEHAVIOR LinkLocalAddressBehavior;
-
-    ULONG PathMtuDiscoveryTimeout; // Path MTU discovery timeout (in ms).
-    ULONG RetransmitTime;
-    ULONG BaseReachableTime;
-    ULONG DadTransmits;         // DupAddrDetectTransmits in RFC 4862.
-    NL_ROUTER_DISCOVERY_BEHAVIOR RouterDiscoveryBehavior;
-
-    BOOLEAN AdvertiseDefaultRoute;
-    BOOLEAN OtherStatefulConfigurationSupported;
-    BOOLEAN ManagedAddressConfigurationSupported;
-    BOOLEAN UseNeighborUnreachabilityDetection;
-    BOOLEAN UseAutomaticMetric;
-    BOOLEAN WeakHostReceive;
-    BOOLEAN WeakHostSend;
-    BOOLEAN ForwardingEnabled;
-    BOOLEAN AdvertisingEnabled;
-    //
-    // Fileds currently exposed.
-    //
-
-    ULONG MaxRouterAdvertisementInterval;
-    ULONG MinRouterAdvertisementInterval;
-    ULONG64 InterfaceIdentifier;
-    ULONG MaxReassemblySize;
-    //
-    // Fields currently not exposed.
-    //
-
-    //
-    // Read-Write fields.
-    //
-
-    NET_IFINDEX InterfaceIndex;
-    NET_LUID InterfaceLuid;
-    ADDRESS_FAMILY Family;
-    //
-    // Key Structure;
-    //
-typedef struct _MIB_IPINTERFACE_ROW {
-
-#define ANY_SIZE 6
-
-
-} NL_INTERFACE_OFFLOAD_ROD, *PNL_INTERFACE_OFFLOAD_ROD;
-    BOOLEAN TlGiantSendOffloadSupported : 1;
-    BOOLEAN TlLargeSendOffloadSupported : 1;
-    BOOLEAN FastPathCompatible : 1;
-    BOOLEAN TlStreamOptionsSupported : 1;
-    BOOLEAN TlStreamChecksumSupported : 1;
-    BOOLEAN TlDatagramChecksumSupported : 1;
-    BOOLEAN NlOptionsSupported : 1;
-    BOOLEAN NlChecksumSupported : 1;
-typedef struct _NL_INTERFACE_OFFLOAD_ROD {
-
-
-} NL_LINK_LOCAL_ADDRESS_BEHAVIOR;
-    LinkLocalUnchanged = -1
-    LinkLocalAlwaysOn,          // Always use link locals (default for IPv6).
-                                // Legacy mapping: IPAutoconfigurationEnabled.
-                                // (default for IPv4).
-    LinkLocalDelayed,           // Use link locals only if no other addresses.
-    LinkLocalAlwaysOff = 0,     // Never use link locals.
-typedef enum _NL_LINK_LOCAL_ADDRESS_BEHAVIOR{
-
-
-} NL_ROUTER_DISCOVERY_BEHAVIOR;
-    RouterDiscoveryUnchanged = -1
-    RouterDiscoveryDhcp,
-    RouterDiscoveryEnabled,
-    RouterDiscoveryDisabled = 0,
-typedef enum _NL_ROUTER_DISCOVERY_BEHAVIOR {
-
-
-typedef ULONG NET_IFINDEX, *PNET_IFINDEX;       // Interface Index (ifIndex)
-
-typedef NET_IF_ALIAS* PNET_IF_ALIAS;
-typedef NET_IF_ALIAS_LH NET_IF_ALIAS;
-
-} NET_IF_ALIAS_LH, *PNET_IF_ALIAS_LH;
-    USHORT  ifAliasOffset;  // in bytes, from beginning of this struct
-    USHORT  ifAliasLength;  // in bytes, of ifAlias string
-{
-typedef struct _NET_IF_ALIAS_LH
-
-typedef NET_LUID_LH NET_LUID;
-
-} NET_LUID_LH, *PNET_LUID_LH;
-    }Info;
-        ULONG64     IfType:16;                  // equal to IANA IF type
-        ULONG64     NetLuidIndex:24;
-        ULONG64     Reserved:24;
-    {
-    struct
-    ULONG64     Value;
-{
-typedef union _NET_LUID_LH
-
-#if defined( NEVERdEFINED )
-
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-#endif
-
-}
-    return;
-    }    
-       SetEvent(gCallbackComplete);
-           
-           printf("Received a CallerContext value\n");
-       if (callerContext != NULL)
-       }     
-            printf("IPv4 address:  %s\n", inet_ntoa(ipv4addr) );
-            ipv4addr = sockv4addr.sin_addr;
-            sockv4addr = row->Address.Ipv4;
-       if (addressFamily == AF_INET) {
-       }
-                break;
-                printf("\tAddressFamily: %d\n", addressFamily);
-            default:    
-                break;
-                printf("\tAddressFamily: AF_INET6\n");
-            case AF_INET6:
-                break;
-                printf("\tAddressFamily: AF_INET\n");
-            case AF_INET:
-        switch (addressFamily) {
-        addressFamily = (ADDRESS_FAMILY) row->Address.si_family;
-        printf("NotifyUnicastIpAddressChange received an Add instance\n");
-    if(notificationType == MibAddInstance) {
-    // NOTE: Is there a stronger way to do this?
-    // Ensure that this is the correct notification before setting gCallbackComplete
-    
-    struct in_addr ipv4addr;
-    SOCKADDR_IN sockv4addr;
-    ADDRESS_FAMILY addressFamily; 
-
-{
-void CALLBACK CallCompleted(PVOID callerContext, PMIB_UNICASTIPADDRESS_ROW row, MIB_NOTIFICATION_TYPE notificationType)
-
-
-}
-    exit (0);
-
-    CancelMibChangeNotify2(gCallbackComplete);
-    CancelMibChangeNotify2(gNotifyEvent);
-    printf("Task completed successfully\n");
-    }
-        return status;
-        }
-                break;
-                printf("Wait on event exited with status %d\n", status);
-            default:
-                break;
-                printf("Wait on event timed out\n");
-            case WAIT_TIMEOUT:
-                break;
-                printf("Wait on event was abandoned\n");
-            case WAIT_ABANDONED:
-        {
-        switch(status)
-        CancelMibChangeNotify2(gCallbackComplete);
-        CancelMibChangeNotify2(gNotifyEvent);
-    {
-    if(status != WAIT_OBJECT_0)
-    status = WaitForSingleObject(gCallbackComplete, 6000);
-    // Set timeout to 6 seconds
-        
-        printf("CreateUnicastIpAddressEntry succeeded\n");
-    else
-    }
-        
-        exit (status);
-        }
-                break;
-                printf("CreateUnicastIpAddressEntry returned error: %d\n", status);
-                //NOTE: Is this case needed? If not, we can remove the ErrorExit() function
-            default:
-                break;
-                printf("Error: CreateUnicastIpAddressEntry returned ERROR_OBJECT_ALREADY_EXISTS\n");
-            case ERROR_OBJECT_ALREADY_EXISTS:
-                break;
-                printf("Error: CreateUnicastIpAddressEntry returned ERROR_NOT_SUPPORTED\n");
-            case ERROR_NOT_SUPPORTED:
-                break;
-                printf("Error: CreateUnicastIpAddressEntry returned ERROR_NOT_FOUND\n");
-            case ERROR_NOT_FOUND:
-                break;
-                printf("Error: CreateUnicastIpAddressEntry returned ERROR_INVALID_PARAMETER\n");
-            case ERROR_INVALID_PARAMETER:
-        {
-        switch(status)
-        CancelMibChangeNotify2(gNotifyEvent);
-    {
-    if(status != NO_ERROR)
-    status = CreateUnicastIpAddressEntry(&ipRow);
-
-    NotifyUnicastIpAddressChange(AF_INET, &CallCompleted, NULL, FALSE, &gNotifyEvent);
-    // Use NotifyUnicastIpAddressChange to determine when the address is ready
-    
-    }    
-        exit(1);
-        printf("CreateEvent failed with error: %d\n", GetLastError() );
-    if (gCallbackComplete == NULL) {
-    gCallbackComplete = CreateEvent(NULL, FALSE, FALSE, NULL);
-    // Create a Handle to be notified of IP address changes
-
-    ipRow.Address.Ipv4 = localAddress;
-    ipRow.InterfaceLuid = interfaceLuid;
-
-    InitializeUnicastIpAddressEntry( &ipRow );
-    // Initialize the row
-
-    pIpTable = NULL;    
-    FreeMibTable(pIpTable);
-    
-    localAddress.sin_addr.S_un.S_addr  = ipAddress;
-    localAddress.sin_family            = AF_INET;
-
-    interfaceLuid = pIpTable->Table[0].InterfaceLuid;
-    // Use loopback interface
-
-
-
-    }
-        exit(1);
-        printf("usage: %s IPv4address IPv4mask\n", argv[0]);
-    if (ipMask == INADDR_NONE) {
-    ipMask = inet_addr(argv[2]);
-
-    }
-        exit(1);
-        printf("usage: %s IPv4address IPv4mask\n", argv[0]);
-    if (ipAddress == INADDR_NONE) {
-    ipAddress = inet_addr(argv[1]);
-
-    }
-        exit(1);
-        printf("usage: %s IPv4address IPv4mask\n", argv[0]);
-    if (argc != 3) {
-    // Validate the parameters
-
-    MIB_UNICASTIPADDRESS_ROW ipRow;
-    NET_LUID interfaceLuid;
-
-    SOCKADDR_IN localAddress;
-    DWORD lastError = 0;
-
-    DWORD dwSize = 0;
-
-    DWORD dwRetVal = 0;
-
-    unsigned long ipMask = INADDR_NONE;
-    unsigned long ipAddress = INADDR_NONE;
-    
-    // Declare and initialize variables
-
-int main(int argc, char **argv)  {
-
-    MIB_NOTIFICATION_TYPE notificationType);
-    PMIB_UNICASTIPADDRESS_ROW row, 
-void CALLBACK CallCompleted (VOID *callerContext, 
-
-HANDLE gNotifyEvent;
-HANDLE gCallbackComplete;
-
-#pragma comment(lib, "ws2_32.lib")
-#pragma comment(lib, "iphlpapi.lib")
-// Need to link with Iphlpapi.lib and Ws2_32.lib
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <iphlpapi.h>
-#include <ws2ipdef.h> 
-#include <winsock2.h>
-#include <windows.h>
-
-#endif
-#define WIN32_LEAN_AND_MEAN
-#ifndef WIN32_LEAN_AND_MEAN
-
-#if defined( NEVERdEFINED )
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
-// C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E - C O D E M I N E -
 

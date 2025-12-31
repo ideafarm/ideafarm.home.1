@@ -27,14 +27,14 @@
             osTextT postb[ TUCK << 1 + 1 ] ;
         {
         while( pc1 )
-        IP_ADAPTER_ADDRESSES_WORKAROUND* pc1 = pInfo ;
+        ipAddressesNewS* pc1 = pInfo ;
 
         ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 , (IP_ADAPTER_ADDRESSES*)pInfo , &cba ) ;
     {
     if( pInfo )
     newF( tin0P , LF , (byteT*&)pInfo , cba ) ; ___( pInfo ) ;
-    unsigned long cba = cInterfacesMaxP * sizeof( IP_ADAPTER_ADDRESSES_WORKAROUND ) ; 
-    ZE( IP_ADAPTER_ADDRESSES_WORKAROUND* , pInfo ) ;
+    unsigned long cba = cInterfacesMaxP * sizeof( ipAddressesNewS ) ; 
+    ZE( ipAddressesNewS* , pInfo ) ;
 
     }
         if( POOP ) return ;
@@ -49,72 +49,76 @@
 {
 /*1*/voidT thirdC::osOpenNetworkInterfaceF( tin0S& tin0P , handleC& handleP , const osTextT* const postFriendlyNameP , countT cInterfacesMaxP )/*1*/
 
-
-IP_ADAPTER_ADDRESSES_WORKAROUND ;
+;
 }
-    PIP_ADAPTER_DNS_SUFFIX                   FirstDnsSuffix ;
-    ULONG                                    Dhcpv6Iaid ;
-    ULONG                                    Dhcpv6ClientDuidLength ;
-    BYTE                                     Dhcpv6ClientDuid[MAX_DHCPV6_DUID_LENGTH] ;
-    SOCKET_ADDRESS                           Dhcpv6Server ;
-    TUNNEL_TYPE                              TunnelType ;
-    NET_IF_CONNECTION_TYPE                   ConnectionType ;
-    NET_IF_NETWORK_GUID                      NetworkGuid ;
-    NET_IF_COMPARTMENT_ID                    CompartmentId ;
-    SOCKET_ADDRESS                           Dhcpv4Server ;
-    count04T                                 Luid ;
-    ULONG                                    Ipv6Metric ;
-    ULONG                                    Ipv4Metric ;
-    PIP_ADAPTER_GATEWAY_ADDRESS_LH           FirstGatewayAddress ;
-    PIP_ADAPTER_WINS_SERVER_ADDRESS_LH       FirstWinsServerAddress ;
-    ULONG64                                  ReceiveLinkSpeed ;
-    ULONG64                                  TransmitLinkSpeed ;
-    PIP_ADAPTER_PREFIX_XP                    FirstPrefix ;
-    ULONG                                    ZoneIndices[16] ;
-    IF_INDEX                                 Ipv6IfIndex ;
-    IF_OPER_STATUS                           OperStatus ;
-    IFTYPE                                   IfType ;
-    ULONG                                    Mtu ;
+    byteT                                 pad[ 0x4 ] ;
+    PIP_ADAPTER_DNS_SUFFIX                FirstDnsSuffix ;
+    ULONG                                 Dhcpv6Iaid ;
+    ULONG                                 Dhcpv6ClientDuidLength ;
+    byteT                                 pad3[ 0x2 ] ;
+    BYTE                                  Dhcpv6ClientDuid[ 130 ] ;
+    byteT                                 pad2[ 0x6 ] ;
+    SOCKET_ADDRESS                        Dhcpv6Server ;                                    // DHCP v6 Info.
+
+    TUNNEL_TYPE                           TunnelType ;
+    NET_IF_CONNECTION_TYPE                ConnectionType ;
+    NET_IF_NETWORK_GUID                   NetworkGuid ;
+    NET_IF_COMPARTMENT_ID                 CompartmentId ;
+    SOCKET_ADDRESS                        Dhcpv4Server ;
+    count04T                              Luid ;
+    ULONG                                 Ipv6Metric ;
+    ULONG                                 Ipv4Metric ;
+    PIP_ADAPTER_GATEWAY_ADDRESS_LH        FirstGatewayAddress ;
+    PIP_ADAPTER_WINS_SERVER_ADDRESS_LH    FirstWinsServerAddress ;
+    ULONG64                               ReceiveLinkSpeed ;
+    ULONG64                               TransmitLinkSpeed ;
+
+    PIP_ADAPTER_PREFIX_XP                 FirstPrefix ;
+    ULONG                                 ZoneIndices[16] ;
+    IF_INDEX                              Ipv6IfIndex ;
+    byteT                                 pad1[ 0x3 ] ;
+    IF_OPER_STATUS                        OperStatus ;
+    IFTYPE                                IfType ;
+    ULONG                                 Mtu ;
     } ;
         } ;
-            ULONG                            Ipv6ManagedAddressConfigurationSupported : 1 ;
-            ULONG                            Ipv6Enabled                              : 1 ;
-            ULONG                            Ipv4Enabled                              : 1 ;
-            ULONG                            NetbiosOverTcpipEnabled                  : 1 ;
-            ULONG                            Ipv6OtherStatefulConfig                  : 1 ;
-            ULONG                            NoMulticast                              : 1 ;
-            ULONG                            ReceiveOnly                              : 1 ;
-            ULONG                            Dhcpv4Enabled                            : 1 ;
-            ULONG                            RegisterAdapterSuffix                    : 1 ;
-            ULONG                            DdnsEnabled                              : 1 ;
+            ULONG                         Ipv6ManagedAddressConfigurationSupported : 1 ;
+            ULONG                         Ipv6Enabled : 1 ;
+            ULONG                         Ipv4Enabled : 1 ;
+            ULONG                         NetbiosOverTcpipEnabled : 1 ;
+            ULONG                         Ipv6OtherStatefulConfig : 1 ;
+            ULONG                         NoMulticast : 1 ;
+            ULONG                         ReceiveOnly : 1 ;
+            ULONG                         Dhcpv4Enabled : 1 ;
+            ULONG                         RegisterAdapterSuffix : 1 ;
+            ULONG                         DdnsEnabled : 1 ;
         {
         struct
-        ULONG                                Flags ;
+        ULONG                             Flags ;
     {
     union
-    ULONG                                    PhysicalAddressLength ;
-    BYTE                                     PhysicalAddress[ MAX_ADAPTER_ADDRESS_LENGTH ] ;
-    PWCHAR                                   FriendlyName ;
-    PWCHAR                                   Description ;
-    PWCHAR                                   DnsSuffix ;
-    PIP_ADAPTER_DNS_SERVER_ADDRESS_XP        FirstDnsServerAddress ;
-    PIP_ADAPTER_MULTICAST_ADDRESS_XP         FirstMulticastAddress ;
-    PIP_ADAPTER_ANYCAST_ADDRESS_XP           FirstAnycastAddress ;
-    PIP_ADAPTER_UNICAST_ADDRESS_LH           FirstUnicastAddress ;
-    PCHAR                                    AdapterName ;
-    struct _IP_ADAPTER_ADDRESSES_WORKAROUND* Next ;
+    ULONG                                 PhysicalAddressLength ;
+    BYTE                                  PhysicalAddress[ 8 ] ;
+    PWCHAR                                FriendlyName ;
+    PWCHAR                                Description ;
+    PWCHAR                                DnsSuffix ;
+    PIP_ADAPTER_DNS_SERVER_ADDRESS_XP     FirstDnsServerAddress ;
+    PIP_ADAPTER_MULTICAST_ADDRESS_XP      FirstMulticastAddress ;
+    PIP_ADAPTER_ANYCAST_ADDRESS_XP        FirstAnycastAddress ;
+    PIP_ADAPTER_UNICAST_ADDRESS_LH        FirstUnicastAddress ;
+    PCHAR                                 AdapterName ;
+    ipAddressesNewS*                      Next ;
     } ;
         } ;
-            IF_INDEX                         IfIndex ;
-            ULONG                            Length ;
+            IF_INDEX                      IfIndex ;
+            ULONG                         Length ;
         {
         struct
-        ULONGLONG                            Alignment ;
+        ULONGLONG                         Alignment ;
     {
     union
 {
-typedef struct _IP_ADAPTER_ADDRESSES_WORKAROUND
-
+struct ipAddressesNewS
 
 /**/
 */

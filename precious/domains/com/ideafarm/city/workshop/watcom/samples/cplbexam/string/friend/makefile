@@ -6,7 +6,7 @@
 exes = equal.exe    long.exe  short.exe  shtequal.exe lonequal.exe &
        notequal.exe add.exe   valid.exe  lshift.exe   rshift.exe
 
-all : $(exes) .SYMBOLIC
+all : $(exes) .symbolic
 
 .cpp.exe :
     wcl $[@

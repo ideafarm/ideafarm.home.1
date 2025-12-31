@@ -16,7 +16,7 @@ LFLAGS += debug all
 #
 # Default rules
 #
-.c.obj : .AUTODEPEND
+.c.obj : .autodepend
     wcc386 $(CFLAGS) -bd $<
 
 .csc.ih :
@@ -52,5 +52,5 @@ course.dll : course.ih course.h student.h course.obj
 #
 # Clean rule
 #
-clean : .SYMBOLIC
+clean : .symbolic
     rm -f *.obj *.exe *.dll *.lib *.sc *.h *.ih *.err

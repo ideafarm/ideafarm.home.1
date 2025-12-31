@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-#include <dirent.h>
+#include <direct.h>
 
 void main()
   {

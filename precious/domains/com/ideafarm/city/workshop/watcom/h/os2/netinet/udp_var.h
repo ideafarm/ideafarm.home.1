@@ -63,14 +63,12 @@
 #define ui_ulen  ui_u.uh_ulen
 #define ui_sum   ui_u.uh_sum
 
-#pragma pack( __push, 1 )
-
+#pragma pack(1)
 struct  udpiphdr {
     struct ipovly ui_i;
     struct udphdr ui_u;
 };
-
-#pragma pack( __pop )
+#pragma pack()
 
 struct  udpstat {
     u_long udps_ipackets;

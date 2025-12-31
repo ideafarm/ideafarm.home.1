@@ -5,7 +5,7 @@
 #include <wcskipit.h>
 #include <stdlib.h>
 
-#pragma disable_message( P549 )
+#pragma warning 549 9
 
 const int ElemsPerBlock = 50;
 

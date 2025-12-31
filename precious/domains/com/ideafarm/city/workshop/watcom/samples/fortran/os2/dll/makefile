@@ -17,5 +17,5 @@ dllsamp.dll:	dllsamp.obj
 dllsamp.obj:	dllsamp.for
 	wfc386 -q -bd dllsamp
 
-clean: .SYMBOLIC
+clean: .symbolic
 	rm -f *.obj *.dll *.lib *.exe

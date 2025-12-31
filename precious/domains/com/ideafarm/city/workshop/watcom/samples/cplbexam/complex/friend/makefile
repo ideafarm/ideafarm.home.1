@@ -5,7 +5,7 @@
 
 exes = rshift.exe lshift.exe
 
-all : $(exes) .SYMBOLIC
+all : $(exes) .symbolic
 
 .cpp.exe :
     wcl $[@

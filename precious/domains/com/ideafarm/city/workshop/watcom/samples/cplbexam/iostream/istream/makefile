@@ -11,7 +11,7 @@ TELLG.EXE       RSHCHBUF.EXE    RSHCHAR.EXE     RSHNUM.EXE      CONBUF.EXE   &
 RSHSTRBU.EXE    DESTRUCT.EXE    RSHMAN.EXE      EQISTRM.EXE     EQSTRMBU.EXE &
 GETINSTR.EXE
 
-all : $(exes) .SYMBOLIC
+all : $(exes) .symbolic
 
 .cpp.exe :
     wcl $[@

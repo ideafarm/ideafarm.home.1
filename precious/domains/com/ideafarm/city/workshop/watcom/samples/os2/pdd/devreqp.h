@@ -5,7 +5,11 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#pragma pack(__push,1);
+#if __WATCOMC__ >= 1000
+#pragma pack(push,1);
+#else
+#pragma pack(1);
+#endif
 
 /*
  * Look at \WATCOM\H\OS2\DEVSYM.INC for a description
@@ -120,7 +124,11 @@ typedef enum {
      RP_END
 } REQP_command;
 
-#pragma pack(__pop);
+#if __WATCOMC__ >= 1000
+#pragma pack(pop);
+#else
+#pragma pack();
+#endif
 #ifdef __cplusplus
 };
 #endif

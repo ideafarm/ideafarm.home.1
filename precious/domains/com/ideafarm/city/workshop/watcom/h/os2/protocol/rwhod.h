@@ -43,8 +43,7 @@
 
 #define _PATH_RWHODIR "/var/rwho"
 
-#pragma pack( __push, 1 )
-
+#pragma pack(1)
 struct  outmp {
     char out_line[8];
     char out_name[8];
@@ -65,7 +64,6 @@ struct  whod {
         int    we_idle;
     } wd_we[1024 / sizeof (struct whoent)];
 };
-
-#pragma pack( __pop )
+#pragma pack()
 
 #endif

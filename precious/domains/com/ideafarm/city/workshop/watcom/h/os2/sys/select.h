@@ -40,13 +40,11 @@
 
 #define SI_COLL 0x0001
 
-#pragma pack( __push, 1 )
-
+#pragma pack(1)
 struct selinfo {
     pid_t si_pid;
     short si_flags;
 };
-
-#pragma pack( __pop )
+#pragma pack()
 
 #endif
