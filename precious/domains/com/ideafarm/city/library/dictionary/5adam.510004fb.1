@@ -349,6 +349,10 @@ DONE( tmWorkF )
 
     //U::thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;    // THIS IS SO tmSuspendAllF AND tmSlowAllF AND tmHireF WILL ALWAYS BE ABLE TO SUSPEND AND TO SLOW ALL PROCESSES, EVEN IF ALL CPU RESOURCES ARE PEGGED BY RUDE PROCESSES AND THREADS
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_PUSHY    ) ; //U:: 20250527@1422: WORKAROUND TO DEBUG RUDE CPU PEGGING
+
+    etThread.traceF( tin0P , T("hired netsh to set dadtransmits [value]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.osProcessF( tin0P , countTC() , countTC() , value  , countTC() , T("netsh") , T("netsh interface ipv6 set interface Wi-Fi dadtransmits=3") ) ;
+    ZE( countT , value ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
