@@ -16,37 +16,41 @@ etThread.traceF( tin0P , T("ok") ) ;
     etherC::loafIF( tin0P ) ;
 
     etThread.traceF( tin0P , T("[rc]:    ")+TF4(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
-static    countT rc = CreateUnicastIpAddressEntry( &ipRow ) ;
+    countT rc = CreateUnicastIpAddressEntry( &ipRow ) ;
 
-    }
-        pcTo[ 3 - offi ] = ((tin1S&)tin0P).brcRaw ;
-        BOSdOnOTtEST( WHATgbo , htonl( pcFrom[ offi ] ) )
-    {
-    for( countT offi = 0 ; offi < 4 ; offi ++ )
-    const countT* pcFrom = nnNew ;
-    countT* pcTo   = (countT*)ipRow.Address.Ipv6.sin6_addr.u.Byte ;
+    ipRow.SkipAsSource = 0 ;
+    ipRow.OnLinkPrefixLength = 0x40 ;
+    ipRow.PreferredLifetime = 30 ;
+    ipRow.ValidLifetime = 30 ;
+    ipRow.SuffixOrigin = IpSuffixOriginManual ;
+    ipRow.PrefixOrigin = IpPrefixOriginManual ;
 
+    ipRow.Address.Ipv6.sin6_addr.u.Word[7] = 0x8800 ;
+    ipRow.Address.Ipv6.sin6_addr.u.Word[6] = 0x7700 ;
+    ipRow.Address.Ipv6.sin6_addr.u.Word[5] = 0x6600 ;
+    ipRow.Address.Ipv6.sin6_addr.u.Word[4] = 0x5500 ;
+    ipRow.Address.Ipv6.sin6_addr.u.Word[3] = 0x4400 ;
+    ipRow.Address.Ipv6.sin6_addr.u.Word[2] = 0x3300 ;
+    ipRow.Address.Ipv6.sin6_addr.u.Word[1] = 0x2200 ;
+    ipRow.Address.Ipv6.sin6_addr.u.Word[0] = 0x1100 ;
     ipRow.Address.Ipv6.sin6_family = AF_INET6 ;
+    ipRow.InterfaceLuid = *(count04T*)&(const HANDLEaPPnOTEScOUNTcLASS&)hInterface ;
 
-    //ipRow.DadState            = IpDadStatePreferred ;
-    //ipRow.SkipAsSource        = 0 ;
-    //ipRow.OnLinkPrefixLength  = 0x40 ;
-    //ipRow.PreferredLifetime   = 120 ;
-    //ipRow.ValidLifetime       = 120 ;
-    //ipRow.SuffixOrigin        = IpSuffixOriginManual ;
-    //ipRow.PrefixOrigin        = IpPrefixOriginManual ;
-
-    ipRow.InterfaceLuid       = *(count04T*)&(const HANDLEaPPnOTEScOUNTcLASS&)hInterface ;
-
-    if( cbLuid ) ;
-    static countT cbLuid = sizeof ipRow.InterfaceLuid ;
+    off = (byteT*)&ipRow.CreationTimeStamp - (byteT*)&ipRow ;
+    off = (byteT*)&ipRow.ScopeId - (byteT*)&ipRow;
+    off = (byteT*)&ipRow.DadState - (byteT*)&ipRow;
+    off = (byteT*)&ipRow.SkipAsSource - (byteT*)&ipRow;
+    off = (byteT*)&ipRow.OnLinkPrefixLength - (byteT*)&ipRow;
+    off = (byteT*)&ipRow.PreferredLifetime - (byteT*)&ipRow;
+    off = (byteT*)&ipRow.ValidLifetime - (byteT*)&ipRow;
+    off = (byteT*)&ipRow.SuffixOrigin - (byteT*)&ipRow;
+    off = (byteT*)&ipRow.PrefixOrigin - (byteT*)&ipRow;
+    off = (byteT*)&ipRow.InterfaceIndex - (byteT*)&ipRow;
+    static countT off = (byteT*)&ipRow.InterfaceLuid - (byteT*)&ipRow;
 
     InitializeUnicastIpAddressEntry( &ipRow ) ;
-static    MIB_UNICASTIPADDRESS_ROW_WORKAROUND ipRow ;
 
-static    nicNameC nnNew = socketC::nicNameIF( tin0P , etThread , T("fe80::747e:ea02:79e2:9227") ) ;
-
-//static    nicNameC nnNew( 0x33221100 , 0x77665544 , 0xbbaa9988 , 0xffeeddcc ) ;
+    ipAddressRowNewS ipRow ;
 
     //etThread.osOpenNetworkInterfaceF( tin0P , hInterface , T("ideanet") ) ;
     etThread.osOpenNetworkInterfaceF( tin0P , hInterface , T("Wi-Fi") ) ;
@@ -56,122 +60,36 @@ static    nicNameC nnNew = socketC::nicNameIF( tin0P , etThread , T("fe80::747e:
 
 TODO
 
+extern "C" unsigned __stdcall CreateUnicastIpAddressEntry(     CONST  ipAddressRowNewS* Row ) ;
+extern "C" VOID     __stdcall InitializeUnicastIpAddressEntry(        ipAddressRowNewS* Row ) ;
 
-extern "C" unsigned __stdcall CreateUnicastIpAddressEntry(     CONST  MIB_UNICASTIPADDRESS_ROW_WORKAROUND *Row ) ;
-
-extern "C" VOID     __stdcall InitializeUnicastIpAddressEntry(       PMIB_UNICASTIPADDRESS_ROW_WORKAROUND  Row ) ;
-
-
-} MIB_UNICASTIPADDRESS_ROW_WORKAROUND , *PMIB_UNICASTIPADDRESS_ROW_WORKAROUND ;
+;
+}
 
     LARGE_INTEGER    CreationTimeStamp ;
     SCOPE_ID         ScopeId ;
+    byteT            pad5[ 3 ] ;
     NL_DAD_STATE     DadState ;             // READ ONLY
+    byteT            pad4[ 2 ] ;
 
     BOOLEAN          SkipAsSource ;
     UINT8            OnLinkPrefixLength ;
     ULONG            PreferredLifetime ;
     ULONG            ValidLifetime ;
+    byteT            pad3[ 3 ] ;
     NL_SUFFIX_ORIGIN SuffixOrigin ;
+    byteT            pad2[ 3 ] ;
     NL_PREFIX_ORIGIN PrefixOrigin ;         // READ/WRITE
 
     NET_IFINDEX      InterfaceIndex ;
     count04T         InterfaceLuid ;
+    //NET_LUID         InterfaceLuid ;
+    byteT            pad1[ 4 ] ;
     SOCKADDR_INET    Address ;              // KEY FIELDS
 {
-typedef struct _MIB_UNICASTIPADDRESS_ROW_WORKAROUND
+struct ipAddressRowNewS
 
-} MIB_UNICASTIPADDRESS_ROW , *PMIB_UNICASTIPADDRESS_ROW ;
-
-    LARGE_INTEGER    CreationTimeStamp ;
-    SCOPE_ID         ScopeId ;
-    NL_DAD_STATE     DadState ;             // READ ONLY
-
-    BOOLEAN          SkipAsSource ;
-    UINT8            OnLinkPrefixLength ;
-    ULONG            PreferredLifetime ;
-    ULONG            ValidLifetime ;
-    NL_SUFFIX_ORIGIN SuffixOrigin ;
-    NL_PREFIX_ORIGIN PrefixOrigin ;         // READ/WRITE
-
-    NET_IFINDEX      InterfaceIndex ;
-    NET_LUID         InterfaceLuid ;
-    SOCKADDR_INET    Address ;              // KEY FIELDS
-{
-typedef struct _MIB_UNICASTIPADDRESS_ROW
-
-;
-}
-    byteT                                 pad[ 0x4 ] ;
-    PIP_ADAPTER_DNS_SUFFIX                FirstDnsSuffix ;
-    ULONG                                 Dhcpv6Iaid ;
-    ULONG                                 Dhcpv6ClientDuidLength ;
-    byteT                                 pad3[ 0x2 ] ;
-    BYTE                                  Dhcpv6ClientDuid[ 130 ] ;
-    byteT                                 pad2[ 0x6 ] ;
-    SOCKET_ADDRESS                        Dhcpv6Server ;                                    // DHCP v6 Info.
-
-    TUNNEL_TYPE                           TunnelType ;
-    NET_IF_CONNECTION_TYPE                ConnectionType ;
-    NET_IF_NETWORK_GUID                   NetworkGuid ;
-    NET_IF_COMPARTMENT_ID                 CompartmentId ;
-    SOCKET_ADDRESS                        Dhcpv4Server ;
-    count04T                              Luid ;
-    ULONG                                 Ipv6Metric ;
-    ULONG                                 Ipv4Metric ;
-    PIP_ADAPTER_GATEWAY_ADDRESS_LH        FirstGatewayAddress ;
-    PIP_ADAPTER_WINS_SERVER_ADDRESS_LH    FirstWinsServerAddress ;
-    ULONG64                               ReceiveLinkSpeed ;
-    ULONG64                               TransmitLinkSpeed ;
-
-    PIP_ADAPTER_PREFIX_XP                 FirstPrefix ;
-    ULONG                                 ZoneIndices[16] ;
-    IF_INDEX                              Ipv6IfIndex ;
-    byteT                                 pad1[ 0x3 ] ;
-    IF_OPER_STATUS                        OperStatus ;
-    IFTYPE                                IfType ;
-    ULONG                                 Mtu ;
-    } ;
-        } ;
-            ULONG                         Ipv6ManagedAddressConfigurationSupported : 1 ;
-            ULONG                         Ipv6Enabled : 1 ;
-            ULONG                         Ipv4Enabled : 1 ;
-            ULONG                         NetbiosOverTcpipEnabled : 1 ;
-            ULONG                         Ipv6OtherStatefulConfig : 1 ;
-            ULONG                         NoMulticast : 1 ;
-            ULONG                         ReceiveOnly : 1 ;
-            ULONG                         Dhcpv4Enabled : 1 ;
-            ULONG                         RegisterAdapterSuffix : 1 ;
-            ULONG                         DdnsEnabled : 1 ;
-        {
-        struct
-        ULONG                             Flags ;
-    {
-    union
-    ULONG                                 PhysicalAddressLength ;
-    BYTE                                  PhysicalAddress[ 8 ] ;
-    PWCHAR                                FriendlyName ;
-    PWCHAR                                Description ;
-    PWCHAR                                DnsSuffix ;
-    PIP_ADAPTER_DNS_SERVER_ADDRESS_XP     FirstDnsServerAddress ;
-    PIP_ADAPTER_MULTICAST_ADDRESS_XP      FirstMulticastAddress ;
-    PIP_ADAPTER_ANYCAST_ADDRESS_XP        FirstAnycastAddress ;
-    PIP_ADAPTER_UNICAST_ADDRESS_LH        FirstUnicastAddress ;
-    PCHAR                                 AdapterName ;
-    ipAddressesNewS*                      Next ;
-    } ;
-        } ;
-            IF_INDEX                      IfIndex ;
-            ULONG                         Length ;
-        {
-        struct
-        ULONGLONG                         Alignment ;
-    {
-    union
-{
-struct ipAddressesNewS
-
-/*1*/WAKEhIDE( "example.other.3func.3600222c.etherc.osOpenNetworkInterfaceF" )/*1*/
+/*1*/WAKEhIDE( "doodle.add.address" )/*1*/
 /**/
 */
 /*
@@ -182,5 +100,4 @@ struct ipAddressesNewS
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
 
