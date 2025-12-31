@@ -142,7 +142,7 @@
     "    . osTimeSetF_o       . ?? ")+T(postName)+T("\r\n"
     "    . reportProcessNamePidF_o4@4@4@4@       . ?? ")+T(postName)+T("\r\n"
     "    . osFirewallBlockF_o33d4@4@       . ?? ")+T(postName)+T("\r\n"
-    "    . osOpenNetworkInterfaceF_ob4@3       . ?? ")+T(postName)+T("\r\n"
+    "    . osNicOpenF_ob4@3       . ?? ")+T(postName)+T("\r\n"
     "    . openSslTls_setupF_o       . ?? ")+T(postName)+T("\r\n"
     "    . openSslTls_shutdownF_o       . ?? ")+T(postName)+T("\r\n"
     "    . openSslTls_getContextF_ob4@4@       . ?? ")+T(postName)+T("\r\n"

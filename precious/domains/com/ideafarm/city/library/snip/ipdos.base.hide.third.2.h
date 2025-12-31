@@ -31130,7 +31130,8 @@ private :
  static countT osHireThenMonitorIF( tin0S& tin0P , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP ) ;
  static voidT osOldTimeFromUnixTimeIF( tin0S& tin0P , boolT& isDaylightSavingsTimeP , countT& yDayP , countT& wDayP , countT& yearP , countT& monthP , countT& mDayP , countT& hourP , countT& minuteP , countT& secondP , const countT secondsIntoUnixEpochP ) ;
  voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const nicNameC& nnP , const osTextT* const postDescriptionP = 0 ) ;
- voidT osOpenNetworkInterfaceF( tin0S& tin0P , handleC& handleP , const osTextT* const postFriendlyNameP , countT cInterfacesMaxP = 0x10 ) ;
+ voidT osNicOpenF( tin0S& tin0P , handleC& handleP , const osTextT* const postFriendlyNameP , countT cInterfacesMaxP = 0x10 ) ;
+ voidT osNicAddressAddF( tin0S& tin0P , const handleC& hP , const nicNameC nnP , const countT secondsValidP = - 1 , const countT secondsPreferredP = 0 , const byteT bitsPrefixP = 0x40 ) ;
 
 /* commands: math */
 
@@ -34566,7 +34567,8 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34030.etherC.reportProcessNamePidF!||
  voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const nicNameC& nnP , const strokeS* const psttDescriptionP = 0 , const strokeS* const psttTraceP = 0 ) ;
  voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , stackC& stNnP , const strokeS* const psttDescriptionP = 0 , const strokeS* const psttTraceP = 0 ) ;
- voidT osOpenNetworkInterfaceF( tin0S& tin0P , handleC& handleP , const strokeS* const psttFriendlyNameP , countT cInterfacesMaxP = 0x10 ) ;
+ voidT osNicOpenF( tin0S& tin0P , handleC& handleP , const strokeS* const psttFriendlyNameP , countT cInterfacesMaxP = 0x10 ) ;
+ voidT osNicAddressAddF( tin0S& tin0P , const handleC& hP , const nicNameC nnP , const countT secondsValidP = - 1 , const countT secondsPreferredP = 0 , const byteT bitsPrefixP = 0x40 ) ;
 
 /* openssl: foreign encryption */
 

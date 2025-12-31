@@ -3465,7 +3465,7 @@
 0x360011b9 , 0x00000d89 ,   // 3func.360011b9.thirdc.s_acceptf
 0x360011ba , 0x00000d8a ,   // 3func.360011ba.thirdc.computerLanNameF
 0x360011bb , 0x00000d8b ,   // 3func.360011bb.thirdC.osFirewallBlockF
-0x360011bc , 0x00000d8c ,   // 3func.360011bc.thirdC.osOpenNetworkInterfaceF
+0x360011bc , 0x00000d8c ,   // 3func.360011bc.thirdC.osNicOpenF
 0x36002001 , 0x00000d8d ,   // 3func.36002001.etherc.etherc
 0x36002002 , 0x00000d8e ,   // 3func.36002002.etherc.dt_etherc
 0x36002003 , 0x00000d8f ,   // 3func.36002003.etherc.operator_countt_ref
@@ -3979,7 +3979,7 @@
 0x36002229 , 0x00000f8b ,   // 3func.36002229.etherC.inetBookSubscriberConfigureExeF
 0x3600222a , 0x00000f8c ,   // 3func.3600222a.etherC.strMimeEncodeF
 0x3600222b , 0x00000f8d ,   // 3func.3600222b.etherc.openSslEncryptBase64F
-0x3600222c , 0x00000f8e ,   // 3func.3600222c.etherc.osOpenNetworkInterfaceF
+0x3600222c , 0x00000f8e ,   // 3func.3600222c.etherc.osNicOpenF
 0x36003001 , 0x00000f8f ,   // 3func.36003001.infodisks.infodisks
 0x36003002 , 0x00000f90 ,   // 3func.36003002.infodisks.dt_infodisks
 0x36003003 , 0x00000f91 ,   // 3func.36003003.infodisks.operator_shiftleft

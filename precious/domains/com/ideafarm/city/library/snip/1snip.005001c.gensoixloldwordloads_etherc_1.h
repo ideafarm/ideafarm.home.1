@@ -1151,11 +1151,11 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "osOpenNetworkInterfaceF_ob4@3" ) ;
+    TN( tNameSoixlOld , "osNicOpenF_ob4@3" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osOpenNetworkInterfaceF_ob4P3_GF ;
+    *_pSwSoixlOldApi = (countT)osNicOpenF_ob4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

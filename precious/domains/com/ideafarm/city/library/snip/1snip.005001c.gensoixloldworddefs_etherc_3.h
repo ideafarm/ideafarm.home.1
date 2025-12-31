@@ -2287,7 +2287,7 @@ voidT osFirewallBlockF_o33d4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP ,
     etherP.delF( tin0P , psttDescriptionP ) ;
 }
 
-voidT osOpenNetworkInterfaceF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT osNicOpenF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2328,7 +2328,7 @@ voidT osOpenNetworkInterfaceF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& s
             }
         }
     }
-    if( !POOP ) etherP.osOpenNetworkInterfaceF( tin0P , handleP , psttFriendlyNameP , cInterfacesMaxP ) ;
+    if( !POOP ) etherP.osNicOpenF( tin0P , handleP , psttFriendlyNameP , cInterfacesMaxP ) ;
     etherP.delF( tin0P , psttFriendlyNameP ) ;
 }
 

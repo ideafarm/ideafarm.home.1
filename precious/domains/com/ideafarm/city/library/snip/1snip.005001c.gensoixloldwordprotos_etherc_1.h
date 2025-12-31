@@ -287,7 +287,7 @@ voidT reportProcessNamePidF_o4P4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC&
 
 voidT osFirewallBlockF_o33d4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT osOpenNetworkInterfaceF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT osNicOpenF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT openSslTls_setupF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
