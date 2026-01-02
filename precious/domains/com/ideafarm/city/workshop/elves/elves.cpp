@@ -3132,6 +3132,7 @@ void elf_obey_C::liveF( void )
                 //THIS LIST IS IN REVERSE ORDER OF WHAT WILL APPEAR IN ipdos.h
                 char* ppostFrom[] =
                 {
+                    "1snip.15*.queueC"                                      ,
                     "1snip.15*.ideaNetSubscriptionC"                        ,
                     "1snip.15*.ideaNetC"                                    ,
                     "1snip.15*.s_acceptF_parametersS"                       ,
