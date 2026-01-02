@@ -49452,46 +49452,31 @@ i am nonconformant in that all of my member function definitions are in a single
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetSubscriptionC : 1snip.150001d3.ideaNetSubscriptionC END
 
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
 
 /*1*/class _export queueC/*1*/
 {
-    etherC&   ether                 ;
-    boolT&    bQuit                 ;
-    strokeS*  psttLongIn            ;
-    strokeS*  psttLongArchive       ;
-    stackC    stShort               ;
-    queueCBFT pQueueCBF             ;
-    strokeS*  psttSlash             ;
-    signC     sgnDone_tmWatchQueueF ;
-    fileC*    pFileSerialize        ;
+    etherC&             ether                 ;
+    boolT&              bQuit                 ;
+    strokeS*            psttLongIn            ;
+    strokeS*            psttLongArchive       ;
+    stackC              stShort               ;
+    queueCBFT           pQueueCBF             ;
+    const patternC*     pPattern              ;
+    strokeS*            psttSlash             ;
+    signC               sgnDone_tmWatchQueueF ;
+    fileC*              pFileSerialize        ;
 
     public :
 
     NEWdELcLASSpROTOS
     ~queueC( voidT ) ;
-    queueC( tin0S& tin0P , etherC& etherP , boolT& bQuitP , const strokeS* const psttLongInP , queueCBFT pQueueCBFP = 0 ) ;
+    queueC( tin0S& tin0P , etherC& etherP , boolT& bQuitP , const strokeS* const psttLongInP , queueCBFT pQueueCBFP = 0 , const patternC* pP = 0 ) ;
     queueC& operator <<( const strokeS* const psttLongFileP ) ;
 
-    inline operator etherC&( voidT ) { return ether ; }
+    inline operator         etherC&( voidT )       { return ether    ; }
+    inline operator const patternC*( voidT ) const { return pPattern ; }
 
     friend TASKpROTO( tmWatchQueueF ) ;                                                                                                                                                                                                                             \
 }
 ;
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
 

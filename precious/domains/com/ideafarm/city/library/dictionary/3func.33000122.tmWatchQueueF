@@ -27,7 +27,7 @@ DONE( tmWatchQueueF )
                     {
                     if( !pInfoFile || !pInfoFile->psttIfoName )
 
-                    etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , queueP.psttLongIn , &pat ) ; ___( pInfoFile ) ;
+                    etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , queueP.psttLongIn , &patUse ) ; ___( pInfoFile ) ;
                     ZE( infoFileS* , pInfoFile ) ;
                 {
                 do
@@ -75,18 +75,20 @@ DONE( tmWatchQueueF )
             {
             if( !pInfoFile || !pInfoFile->psttIfoName )
 
-            etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , queueP.psttLongArchive , &pat ) ; ___( pInfoFile ) ;
+            etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , queueP.psttLongArchive , &patUse ) ; ___( pInfoFile ) ;
             ZE( infoFileS* , pInfoFile ) ;
         {
         do
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         handleC hFindFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
     {
-    patternC pat( tin0P , etThread , tPatPrefix , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-    TN( tPatPrefix , "*" ) ;
     // POUR THE ARCHIVE INTO THE INPUT FOLDER, SKIPPING FILES THAT CANNOT BE MOVED
 
-    queueC& queueP = *(queueC*)pTaskP->c1 ;
+    const patternC& patUse = pPatP ? *pPatP : pat ;
+    patternC pat( tin0P , etThread , T("*") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+
+    const patternC* pPatP  = queueP ;
+    queueC&         queueP = *(queueC*)pTaskP->c1 ;
 
     _IO_
 {

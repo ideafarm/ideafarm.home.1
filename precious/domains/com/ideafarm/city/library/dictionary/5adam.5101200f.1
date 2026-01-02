@@ -18,8 +18,10 @@ DONE( tmWorkF )
 }
     bQuit = 1 ;
     etherC::loafIF( tin0P ) ;
-    queueC myQueue( tin0P , etThread , bQuit , tLongQ , myQueueCBF ) ;
+    queueC myQueue( tin0P , etThread , bQuit , tLongQ , myQueueCBF , &pat ) ;
     ZE( boolT , bQuit ) ;
+
+    patternC pat( tin0P , etThread , T("*.soulC") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
 
     TN( tLongQ , "///d/tmp/queue/" ) ;
 {
