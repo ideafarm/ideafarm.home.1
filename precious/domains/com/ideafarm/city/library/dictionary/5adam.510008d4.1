@@ -18,7 +18,7 @@ DONE( tmWorkF )
 }
     bQuit = 1 ;
     etherC::loafIF( tin0P ) ;
-    queueC myQueue( tin0P , etThread , bQuit , tLongSubscriptions , myQueueCBF , &pat ) ;
+    queueC myQueue( tin0P , etThread , bQuit , tLongSubscriptions , myQueueCBF , countTC() , &pat ) ;
     patternC pat( tin0P , etThread , T("*.soulC") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     ZE( boolT , bQuit ) ;
 
@@ -31,7 +31,7 @@ TASK( tmWorkF )
     etherP.traceF( tin0P , T("myQueueCBF [psttLongFileP]:    ")+T(psttLongFileP) ) ;
     etherC& etherP = queueP ;
 {
-voidT myQueueCBF( tin0S& tin0P , queueC& queueP , const strokeS* const psttLongFileP )
+voidT myQueueCBF( tin0S& tin0P , queueC& queueP , const strokeS* const psttLongFileP , const flagsT flagsP , countT& argAppP )
 
 // OBSOLETES 8bf_
 

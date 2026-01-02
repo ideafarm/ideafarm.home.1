@@ -7692,7 +7692,7 @@ typedef boolT (*/*ff*/diskWalkSearchCBFT/*ff*/)( tin0S& tin0P , countT& cDirsP ,
 
 /*1*/typedef countT (*recursionStepCBFT)( recursionSimulatorC& rsP ) ;/*1*/
 
-/*1*/typedef voidT (*queueCBFT)( tin0S& tin0P , queueC& queueP , const strokeS* const psttLongFileP ) ;/*1*/
+/*1*/typedef voidT (*queueCBFT)( tin0S& tin0P , queueC& queueP , const strokeS* const psttLongFileP , const countT flagsP , countT& argAppP ) ;/*1*/
 
 
 //
@@ -49453,6 +49453,26 @@ i am nonconformant in that all of my member function definitions are in a single
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetSubscriptionC : 1snip.150001d3.ideaNetSubscriptionC END
 
 
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
 /*1*/class _export queueC/*1*/
 {
     etherC&             ether                 ;
@@ -49461,6 +49481,7 @@ i am nonconformant in that all of my member function definitions are in a single
     strokeS*            psttLongArchive       ;
     stackC              stShort               ;
     queueCBFT           pQueueCBF             ;
+    countT&             argApp                ;
     const patternC*     pPattern              ;
     strokeS*            psttSlash             ;
     signC               sgnDone_tmWatchQueueF ;
@@ -49470,7 +49491,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     NEWdELcLASSpROTOS
     ~queueC( voidT ) ;
-    queueC( tin0S& tin0P , etherC& etherP , boolT& bQuitP , const strokeS* const psttLongInP , queueCBFT pQueueCBFP = 0 , const patternC* pP = 0 ) ;
+    queueC( tin0S& tin0P , etherC& etherP , boolT& bQuitP , const strokeS* const psttLongInP , queueCBFT pQueueCBFP = 0 , countT& argAppP = countTC() , const patternC* pP = 0 ) ;
     queueC& operator <<( const strokeS* const psttLongFileP ) ;
 
     inline operator         etherC&( voidT )       { return ether    ; }

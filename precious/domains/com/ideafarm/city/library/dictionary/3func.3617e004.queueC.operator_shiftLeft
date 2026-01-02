@@ -11,7 +11,7 @@
     }
         ether.delF( tin0P , psttLongTo ) ;
 
-        if( pQueueCBF ) (*pQueueCBF)( tin0P , *this , psttLongTo ) ;
+        if( pQueueCBF ) (*pQueueCBF)( tin0P , *this , psttLongTo , ids ? flQUEUEcBF_null : flQUEUEcBF_UPDATE , argApp ) ;
 
         __( rcFail ) ;
         }
@@ -40,7 +40,7 @@
         ether.strMakeF( tin0P , LF , psttLongTo , T(psttLongArchive)+tShort ) ; ___( psttLongTo ) ;
         ZE( strokeS* , psttLongTo ) ;
 
-        ether.traceF( tin0P , T(ids?"new     [tShort]:    ":"existed [tShort]:    ")+tShort ) ;
+        //ether.traceF( tin0P , T(ids?"new     [tShort]:    ":"existed [tShort]:    ")+tShort ) ;
 
         if( !ids ) ether.delF( tin0P , posts ) ;
 
