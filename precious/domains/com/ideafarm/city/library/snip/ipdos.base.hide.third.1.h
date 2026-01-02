@@ -39164,7 +39164,6 @@ args
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200423._outstackc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200424._inbatonstackc_ BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -39179,14 +39178,13 @@ args
 
 //CODEsYNCH: 115006a 00103a2
 
-#define _INbATONsTACKc_                                                                                  \
-                                                                                                         \
-    if( pBaton ) pBaton->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                              \
-    else if( !osTidOwner ) osTidOwner = ((tin1S&)tin0P).osTid ;                                                     \
-    else if( osTidOwner != ((tin1S&)tin0P).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) \
-        BLAMMO ;                                                                                         \
-                                                                                                         \
-    _IO_                                                                                                 \
+#define _INbATONsTACKc_                                                                                                                                         \
+                                                                                                                                                                \
+         if( pBaton                                                                                               ) pBaton->grabF( tin0P , TAG( TAGiDnULL ) ) ; \
+    else if( !osTidOwner                                                                                          ) osTidOwner = ((tin1S&)tin0P).osTid ;        \
+    else if( osTidOwner != ((tin1S&)tin0P).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;                                    \
+                                                                                                                                                                \
+    _IO_                                                                                                                                                        \
     /*checkChainF( tin0P ) ;*/
 
 
