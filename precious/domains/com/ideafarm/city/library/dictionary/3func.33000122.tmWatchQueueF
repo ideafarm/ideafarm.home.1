@@ -9,9 +9,9 @@
 DONE( tmWatchQueueF )
 }
     }
-        }
-            if( bWoth ) bWoth = 0 ;
+        if( queueP.idPhase < 3 ) queueP.idPhase ++ ;
 
+        }
             }
                 while( !ether && ~hFindFile && !POOP ) ;
                 }
@@ -27,7 +27,7 @@ DONE( tmWatchQueueF )
                     {
                     if( !pInfoFile || !pInfoFile->psttIfoName )
 
-                    etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , queueP.psttLongIn , &patUse ) ; ___( pInfoFile ) ;
+                    etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , psttzFolder , &patUse ) ; ___( pInfoFile ) ;
                     ZE( infoFileS* , pInfoFile ) ;
                 {
                 do
@@ -35,54 +35,35 @@ DONE( tmWatchQueueF )
                 handleC hFindFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
             {
 
-            //ether.traceF( tin0P , T(bWoth?"starting to watch":"file name change detected") ) ;
+            if( bWait ) etThread.etherC::diskWaitDirF( tin0P , hWait , queueP.bQuit , psttzFolder , TOCK << 0 , flWAITdIR_FILEnAME ) ;
+
             _IO_
         {
-        if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , queueP.bQuit , queueP.psttLongIn , TOCK << 0 , flWAITdIR_FILEnAME ) )
+
+        }
+            }
+                break ;
+                psttzFolder = queueP.psttLongIn ;
+                bWait = 0 ;
+            {
+            case 2 :
+            }
+                break ;
+                psttzFolder = queueP.psttLongArchive ;
+                bWait = 0 ;
+            {
+            case 1 :
+        {
+        switch( queueP.idPhase )
+        boolT bWait = 1 ;
+
+        if( queueP.idPhase == 3 && F(queueP.flagsCt) & flQUEUEc_NOwAIT ) break ;
+
         _IO_
     {
     while( !queueP.bQuit )
     handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
-    boolT bWoth = 1 ;
-
-    }
-        while( !ether && ~hFindFile && !POOP ) ;
-        }
-            DEL( pInfoFile ) ;
-            }
-                }
-                    ether.delF( tin0P , pstts ) ;
-                    }
-                        if( POOP ) { POOPRqUIET }
-                        ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , T(queueP.psttLongIn)+T(pstts) , pInfoFile->psttIfoName , 1 ) ;
-                        SCOOPS
-                        _IO_
-                    {
-                    IFsCRATCHoK
-
-                    ether.delF( tin0P , psttnu ) ;
-                    ether.strBisectF( tin0P , psttnu , pstts , pInfoFile->psttIfoName , queueP.psttSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( pstts ) ;  ___( psttnu ) ;
-                    ZE( strokeS* , pstts  ) ;
-                    ZE( strokeS* , psttnu ) ;
-                {
-                if( !bDir )
-                const boolT bDir = pInfoFile->psttIfoName[ CSpREFIX - 1 + pInfoFile->psttIfoName->idAdam ].idAdam == '/' ;
-            {
-            else
-            }
-                break ;
-                DEL( pInfoFile ) ;
-            {
-            if( !pInfoFile || !pInfoFile->psttIfoName )
-
-            etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , queueP.psttLongArchive , &patUse ) ; ___( pInfoFile ) ;
-            ZE( infoFileS* , pInfoFile ) ;
-        {
-        do
-        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-        handleC hFindFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-    {
-    // POUR THE ARCHIVE INTO THE INPUT FOLDER, SKIPPING FILES THAT CANNOT BE MOVED
+    ZE( const strokeS* , psttzFolder ) ;
 
     const patternC& patUse = pPatP ? *pPatP : pat ;
     patternC pat( tin0P , etThread , T("*") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;

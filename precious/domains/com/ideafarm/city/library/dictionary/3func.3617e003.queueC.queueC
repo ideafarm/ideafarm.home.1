@@ -18,6 +18,7 @@
     ether.diskMapFileNameF( tin0P , psttLongIn , psttLongInP ) ; ___( psttLongIn ) ;
 {
 pFileSerialize( 0 )
+idPhase( 1 ) ,                                              // 1: PASS WO TIME THROUGH archive/ ; 2: DO NOT WAIT, PASS THROUGH ./ ; 3: WAIT, PASS THROUGH ./
 sgnDone_tmWatchQueueF( tin0P , TAG( TAGiDnULL ) ) ,
 psttSlash( 0 ) ,
 pPattern( pP ) ,
@@ -26,9 +27,10 @@ pQueueCBF( pQueueCBFP ) ,
 stShort( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_byteT ) ,
 psttLongArchive( 0 ) ,
 psttLongIn( 0 ) ,
+flagsCt( flagsP ) ,
 bQuit( bQuitP ) ,
 ether( etherP ) ,
-/*1*/queueC::queueC( tin0S& tin0P , etherC& etherP , boolT& bQuitP , const strokeS* const psttLongInP , queueCBFT pQueueCBFP , countT& argAppP , const patternC* pP ) :/*1*/
+/*1*/queueC::queueC( tin0S& tin0P , etherC& etherP , boolT& bQuitP , const strokeS* const psttLongInP , const flagsT flagsP , queueCBFT pQueueCBFP , countT& argAppP , const patternC* pP ) :/*1*/
 
 /**/
 */

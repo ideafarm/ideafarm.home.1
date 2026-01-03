@@ -5265,7 +5265,7 @@ void titleC::freshF( void )
 
     strcat( post001 , TS "(c) Wo'O Ideafarm" TS "IDEAFARM.COM" ) ;
 
-//    SetConsoleTitle( post001 ) ;
+    SetConsoleTitle( post001 ) ;
 
     baton.ungrabF() ;
 }

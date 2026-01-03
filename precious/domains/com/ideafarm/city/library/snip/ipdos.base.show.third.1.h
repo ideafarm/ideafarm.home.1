@@ -1,4 +1,8 @@
 
+
+#define flQUEUEc_NOwAIT                   0xe00001ff
+#define flQUEUEc_null                     0xe00000ff
+
 #define flQUEUEcBF_UPDATE                   0xe00001ff
 #define flQUEUEcBF_null                     0xe00000ff
 
