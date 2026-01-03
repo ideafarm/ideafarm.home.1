@@ -1,5 +1,5 @@
-0xdddd06d8 , "IMPLODE" ,
-0xdddd06d9 , "EXPLODE1" ,
-0xdddd06da , "EXPLODE2" ,
-0xdddd06db , "LEFT" ,
-0xdddd06dc , "RIGHT"
+((countT)0xdddd06d9) , "IMPLODE" ,
+((countT)0xdddd06da) , "EXPLODE1" ,
+((countT)0xdddd06db) , "EXPLODE2" ,
+((countT)0xdddd06dc) , "LEFT" ,
+((countT)0xdddd06dd) , "RIGHT"

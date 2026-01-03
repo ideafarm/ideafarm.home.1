@@ -1,6 +1,6 @@
-0xdddd1246 , "UNBORN" ,
-0xdddd1247 , "AWAKENING" ,
-0xdddd1248 , "READY" ,
-0xdddd1249 , "ABORTING" ,
-0xdddd124a , "RETIRING" ,
-0xdddd124b , "GONE"
+((countT)0xdddd1247) , "UNBORN" ,
+((countT)0xdddd1248) , "AWAKENING" ,
+((countT)0xdddd1249) , "READY" ,
+((countT)0xdddd124a) , "ABORTING" ,
+((countT)0xdddd124b) , "RETIRING" ,
+((countT)0xdddd124c) , "GONE"

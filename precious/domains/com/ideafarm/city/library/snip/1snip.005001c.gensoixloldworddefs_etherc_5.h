@@ -1,4 +1,28 @@
 
+voidT strConvertToLowerCaseF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttFromP ) ;
+    if( !POOP ) { slP >> psttFromP ; ___( psttFromP ) ; idArgNext ++ ; }
+    if( !POOP ) etherP.strConvertToLowerCaseF( tin0P , psttP , psttFromP ) ;
+    etherP.delF( tin0P , psttFromP ) ;
+
+    if( !POOP ) slP << psttP ;
+    etherP.delF( tin0P , psttP ) ;
+}
+
 voidT strConvertToOtherCaseF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -3486,15 +3510,4 @@ voidT traceF_o4P73_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const stroke
     etherP.delF( tin0P , psttP ) ;
 
     slP << noName ;
-}
-
-voidT tracePoolTalliesF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-    if( !POOP ) etherP.tracePoolTalliesF( tin0P ) ;
-    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }

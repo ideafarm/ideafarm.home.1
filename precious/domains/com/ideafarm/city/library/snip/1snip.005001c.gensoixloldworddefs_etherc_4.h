@@ -1,4 +1,34 @@
 
+voidT openSslTls_peekF_o1P3b_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
+    ZE( byteT* , pbP ) ;
+    if( !POOP ) { slP >> pbP ; ___( pbP ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , cbP ) ;
+    if( !POOP ) { slP >> cbP ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
+    handleC hWrapperP( /*GOOEY*/tin0P , TAG( TAGiDnULL ) ) ;
+    if( !POOP ) { hWrapperP << slP ; idArgNext ++ ; }
+
+    ZE( countT , noName ) ;
+    if( !POOP ) noName = etherP.openSslTls_peekF( tin0P , pbP , cbP , hWrapperP ) ;
+    etherP.delF( tin0P , pbP ) ;
+
+    slP << noName ;
+}
+
 voidT openSslTls_waveByeF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -1267,29 +1297,5 @@ voidT strConvertToLowerCaseF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP 
     ZE( strokeS* , psttP ) ;
     if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
     if( !POOP ) etherP.strConvertToLowerCaseF( tin0P , psttP ) ;
-    etherP.delF( tin0P , psttP ) ;
-}
-
-voidT strConvertToLowerCaseF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttP ) ;
-    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttFromP ) ;
-    if( !POOP ) { slP >> psttFromP ; ___( psttFromP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.strConvertToLowerCaseF( tin0P , psttP , psttFromP ) ;
-    etherP.delF( tin0P , psttFromP ) ;
-
-    if( !POOP ) slP << psttP ;
     etherP.delF( tin0P , psttP ) ;
 }

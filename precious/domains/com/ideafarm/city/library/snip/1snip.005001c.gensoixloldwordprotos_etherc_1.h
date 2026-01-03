@@ -289,6 +289,8 @@ voidT osFirewallBlockF_o33d4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP ,
 
 voidT osNicOpenF_ob4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
+voidT osNicAddressAddF_obd331_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
 voidT openSslTls_setupF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT openSslTls_shutdownF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;

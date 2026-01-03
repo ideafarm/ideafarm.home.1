@@ -1159,6 +1159,14 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
+    TN( tNameSoixlOld , "osNicAddressAddF_obd331" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)osNicAddressAddF_obd331_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
     TN( tNameSoixlOld , "openSslTls_setupF_o" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;

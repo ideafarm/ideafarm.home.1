@@ -1,4 +1,15 @@
 
+voidT tracePoolTalliesF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+    if( !POOP ) etherP.tracePoolTalliesF( tin0P ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
+}
+
 voidT traceMemoryGrainRptF_o3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;

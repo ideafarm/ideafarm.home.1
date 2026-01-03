@@ -1,3 +1,3 @@
-0xdddd04d2 , "ANSWER" ,
-0xdddd04d3 , "AUTHORITY" ,
-0xdddd04d4 , "NOTE"
+((countT)0xdddd04d3) , "ANSWER" ,
+((countT)0xdddd04d4) , "AUTHORITY" ,
+((countT)0xdddd04d5) , "NOTE"
