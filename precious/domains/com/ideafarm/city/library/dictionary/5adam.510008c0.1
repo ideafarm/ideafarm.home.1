@@ -89,12 +89,6 @@ DONE( tmWorkF )
 
                 ZE( countT , idEpoch    ) ;
                 ZE( countT , minuteLath ) ;
-
-                ideaNetSubscriptionC sub( tin0P , etThread , idBook , idSub , tSecret , T("foo@goo.com") ) ; ___( pSubP ) ;
-
-                TN( tSecret , "bc2a" "79d2" "dc3d" "4462" "c587" "603e" "c576" "5563" "dd57" "181f" ) ;         //CS:CODEsYNC: 510008c0 510008af
-                //CODED THIS WAY TO AVOID TRIGGERING GITGUARDIAN ; THIS IS A SECRET BUT ONLY FOR TESTING ; NO HARM CAN COME FROM DISCLOSURE
-
                 TN( tb4 , "    " ) ;
 
                 etThread.traceF( tin0P , T("Press the Enter key, and I will stop serving web pages, which will disable your access to IdeaNet (tm):    ") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -153,7 +147,6 @@ DONE( tmWorkF )
         {
         ZE( boolT , bGorilla ) ;
 
-
         }
             etThread.traceF( tin0P , T("This file gives you free access to Book 1.  For Book 1, you are subscriber number [idSub]:    ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n    Subscription id's are dispensed serially, starting with 1.\r\n    Subscribers with low id numbers will be given VIP privileges as the system grows,\r\n    in appreciation for their role as founders.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
@@ -161,6 +154,8 @@ DONE( tmWorkF )
 
             countT              idSub  = sub ;
             TN( tEmail , "" ) ; tEmail = sub ;
+
+            sub.traceF( tin0P ) ;
 
             sub << soulSub ;
 
