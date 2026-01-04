@@ -49537,7 +49537,7 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP ) ;
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP , const strokeS* const psttEmailP ) ;
-    nicNameC nnF( tin0S& tin0P , count04T& hashP , countT minuteP ) ;
+    nicNameC nnF( tin0S& tin0P , count04T& idHostP , countT minuteP ) ;
     voidT    operator >>( soulC& sP ) ;
     voidT    operator <<( soulC& sP ) ;
     voidT    traceF( tin0S& tin0P ) ;
@@ -49588,7 +49588,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     NEWdELcLASSpROTOS
     ~queueC( voidT ) ;
-    queueC( tin0S& tin0P , etherC& etherP , boolT& bQuitP , const strokeS* const psttLongInP , const flagsT flagsP = flQUEUEc_null , queueCBFT pQueueCBFP = 0 , countT& argAppP = countTC() , const patternC* pP = 0 ) ;
+    queueC( tin0S& tin0P , etherC& etherP , const strokeS* const psttLongInP , const flagsT flagsP = flQUEUEc_null , queueCBFT pQueueCBFP = 0 , countT& argAppP = countTC() , const patternC* pP = 0 ) ;
     queueC& operator <<( const strokeS* const psttLongFileP ) ;
 
     inline operator         etherC&( voidT )       { return ether    ; }
