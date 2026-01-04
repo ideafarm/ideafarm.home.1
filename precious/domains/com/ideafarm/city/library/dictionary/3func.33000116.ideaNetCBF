@@ -17,8 +17,8 @@
     etThread.traceF( tin0P , T("ideaNetCBF  [requestDomain]:    ")+tRequestDomain , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
     etThread.traceF( tin0P , T("ideaNetCBF [requestAddress]:    ")+tRequestAddress , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
-    TN( tRequestDomain  , ""        ) ; tRequestDomain  = T("https://")+TF3(pcHash[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcHash[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com/ideanet/")+( tName.csF( tin0P ) == 1 ? tn : tName ) ;
-    TN( tRequestAddress , ""        ) ; tRequestAddress = T("http://[")+tIpv6NowP                                                                                                                                                                                                +T("]/ideanet/")+( tName.csF( tin0P ) == 1 ? tn : tName ) ;
+    TN( tRequestDomain  , ""        ) ; tRequestDomain  = T("https://")+TF3(pcHash[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcHash[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com/")+( tName.csF( tin0P ) == 1 ? tn : tName ) ;
+    TN( tRequestAddress , ""        ) ; tRequestAddress = T("http://[")+tIpv6NowP                                                                                                                                                                                                +T("]/")+( tName.csF( tin0P ) == 1 ? tn : tName ) ;
 
     //CS:CODEsYNC: 510008c0 33000116
     // THE HASH IN THE DOMAIN NAME USES FOREIGN BIGIT ORDERING SO THAT IT CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
