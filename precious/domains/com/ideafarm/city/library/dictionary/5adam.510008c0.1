@@ -48,8 +48,8 @@ DONE( tmWorkF )
                         IFsCRATCHoK
                         cStomp ++ ;
 
-                        TN( tUrl , "" ) ; tUrl  = TF3(pcHash[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcHash[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com//http/ideanet/gorilla.html") ;
-                        countT* pcHash = (countT*)&hashNow ;
+                        TN( tUrl , "" ) ; tUrl  = TF3(pcIdHost[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcIdHost[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com//http/ideanet/gorilla.html") ;
+                        countT* pcIdHost = (countT*)&idHostNow ;
                         //CS:CODEsYNC: 510008c0 33000116
                     {
                     if( bGorilla && !( cSkipStomp && cSkipStomp -- ) && !( idPass % ( TUCK >> 2 ) ) )
@@ -58,8 +58,8 @@ DONE( tmWorkF )
                         etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6Now , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                         tIpv6Now = T(nnNow) ;
-                        nicNameC nnNow = sub.nnF( tin0P , hashNow , minute ) ;
-                        hashNow = 0 ;
+                        nicNameC nnNow = sub.nnF( tin0P , idHostNow , minute ) ;
+                        idHostNow = 0 ;
 
                         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                         ZE( sCountT , timeN2 ) ;
@@ -80,7 +80,7 @@ DONE( tmWorkF )
 
                     ++ idPass ;
                 {
-                while( !bHeardEnterKey && idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY )
+                while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
                 ZE( countT , idPass ) ;
                 countT cSkipStomp = TUCK >> 4 ;
                 countT cSkipPage  = TUCK >> 5 ;
@@ -91,11 +91,10 @@ DONE( tmWorkF )
                 ZE( countT , minuteLath ) ;
                 TN( tb4 , "    " ) ;
 
-                etThread.traceF( tin0P , T("Press the Enter key, and I will stop serving web pages, which will disable your access to IdeaNet (tm):    ") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                etThread.osThreadF( TaRG2cBsTACK( tmHearF , TICK >> 2 ) , (countT)&bHeardEnterKey ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
-                ZE( boolT , bHeardEnterKey ) ;
+                etThread.osThreadF( TaRG2cBsTACK( tmHearF , TICK >> 2 ) , (countT)&flagsMode ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+                flagsT flagsMode = flIDEAnETeXE_null ;
 
-                etThread.traceF( tin0P , T("I am ready to serve web pages.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                etThread.traceF( tin0P , T("I am ready to serve web pages (only to you).") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
             {
             else
             }
@@ -110,10 +109,11 @@ DONE( tmWorkF )
             while( idStatusHttpService < ifcIDsTATUShTTPsERVICE_READY )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6Now , (countT)&hashNow , (countT)&idBook , (countT)&idSub ) ;
+            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6Now , (countT)&idHostNow , (countT)&flagsMode ) ;
             signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
 
-            ZE( count04T , hashNow ) ;
+            flagsT flagsMode = flIDEAnETeXE_null ;
+            ZE( count04T , idHostNow ) ;
             TN( tIpv6Now , ""      ) ;
             ZE( countT , idStatusHttpService ) ;
         {
@@ -148,7 +148,7 @@ DONE( tmWorkF )
         ZE( boolT , bGorilla ) ;
 
         }
-            etThread.traceF( tin0P , T("This file gives you free access to Book 1.  For Book 1, you are subscriber number [idSub]:    ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n    Subscription id's are dispensed serially, starting with 1.\r\n    Subscribers with low id numbers will be given VIP privileges as the system grows,\r\n    in appreciation for their role as founders.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etThread.traceF( tin0P , T("This file gives you access to Book 1.  For Book 1, you are subscriber number [idSub]:    ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n    Subscription id's are dispensed serially, starting with 1.\r\n    Subscribers with low id numbers will be given VIP privileges as the system grows,\r\n    in appreciation for their role as founders.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
             etThread.traceF( tin0P , T("This file is your personal key for access to the IdeaFarm (tm) IdeaNet (tm) Book Publishing System.\r\n    Do not share this file with others.  Abuse will result in suspension or termination of your access.\r\n    You may use this key only if you are the owner of [email]:    ")+tEmail , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
@@ -182,15 +182,40 @@ osTextT postSoulSubDump[ TUCK << 4 ] ;
 
 DONE( tmHearF )
 }
-    bHeardEnterKeyP = 1 ;
+    }
+        etThread.delF( tin0P , psttUnwanted ) ;
+        etThread.delF( tin0P , psttWanted   ) ;
 
-    etThread.delF( tin0P , psttUnwanted ) ;
-    etThread.delF( tin0P , psttWanted ) ;
-    etThread.strHearF( tin0P , psttWanted , psttUnwanted , 0 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
-    ZE( strokeS* , psttUnwanted ) ;
-    ZE( strokeS* , psttWanted ) ;
+        else                                                            {                                            etThread.traceF( tin0P , tHelp                                  , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("q") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_QUIT     ; etThread.traceF( tin0P , T("bye."                             ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("f") , psttWanted ) ) { flagsModeP &= ~( F(flIDEAnETeXE_HTTPS) ) ; etThread.traceF( tin0P , T("i will use \"fast mode\" (http)." ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("s") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_HTTPS    ; etThread.traceF( tin0P , T("i will use \"slow mode\" (https).") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+             if( !etThread.strCompareF( tin0P , T("b") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_BEGIN    ; etThread.traceF( tin0P , T("i will begin."                    ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
 
-    boolT& bHeardEnterKeyP = *(boolT*)pTaskP->c1 ;
+        //etThread.traceF( tin0P , T("[psttUnwanted]:    ")+T(psttUnwanted) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        //etThread.traceF( tin0P , T("[psttWanted]:      ")+T(psttWanted  ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        etThread.strHearF( tin0P , psttWanted , psttUnwanted , 1 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
+        ZE( strokeS* , psttUnwanted ) ;
+        ZE( strokeS* , psttWanted   ) ;
+    {
+    while( !ether && !( F(flagsModeP) & flIDEAnETeXE_QUIT ) )
+
+    etThread.traceF( tin0P , tHelp , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+ 
+    ) ;
+
+        "Press the 'Enter' key, preceded by no keystrokes or any other keystrokes, to view this help.\r\n"
+        "\r\n"
+        "  'q' : Quit .  (I will stop serving pages to your browser.)\r\n"
+        "  'f' : Use \"fast mode\" (http).  No data is encrypted.  Fast because the domain name system is not needed.\r\n"
+        "  's' : Use \"slow mode\" (https).  (Most of the data passing between you and the server is encrypted.)\r\n"
+        "\r\n"
+        "  Case matters; 'X' denotes cap X, while 'x' denotes x.  (Do not key the single quotes.)\r\n"
+        "While I am working, you can enter commands by pressing the 'Enter' key after pressing and releasing wo of the following keys.\r\n"
+
+    TN( tHelp ,
+
+    flagsT& flagsModeP = *(boolT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
 TASK( tmHearF )
@@ -219,13 +244,12 @@ DONE( tmServeHttpF )
         httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTP  , flSOCKETc_null , T("World Wide Web") ) ;
 
         countT cArgApp = (countT)&c9p ;
-        count9S c9p( (countT)&tIpv6NowP , (countT)&hashNowP , (countT)&idBookP , (countT)&idSubP ) ;
+        count9S c9p( (countT)&tIpv6NowP , (countT)&idHostNowP , (countT)&flagsModeP ) ;
     {
     ZE( flagsT , flagsSave ) ;
 
-    countT&   idSubP               =   *(countT*)pTaskP->c5 ;
-    countT&   idBookP              =   *(countT*)pTaskP->c4 ;
-    count04T& hashNowP             = *(count04T*)pTaskP->c3 ;
+    flagsT&   flagsModeP           =   *(flagsT*)pTaskP->c4 ;
+    count04T& idHostNowP           = *(count04T*)pTaskP->c3 ;
     textC&    tIpv6NowP            =    *(textC*)pTaskP->c2 ;
     countT&   idStatusHttpServiceP =   *(countT*)pTaskP->c1 ;
 {
