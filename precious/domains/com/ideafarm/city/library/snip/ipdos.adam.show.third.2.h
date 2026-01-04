@@ -4484,7 +4484,7 @@ examples
 
 /*1*//*IDEAnETiPV6aDDRESSESuSED*//*1*/
 
-#define IDEAnETiPV6aDDRESSESuSED ( TUCK )
+#define IDEAnETiPV6aDDRESSESuSED ( 0    )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
