@@ -49571,7 +49571,7 @@ i am nonconformant in that all of my member function definitions are in a single
 /*1*/class _export queueC/*1*/
 {
     etherC&             ether                 ;
-    boolT&              bQuit                 ;
+    boolT               bQuit                 ;
     const flagsT        flagsCt               ;
     strokeS*            psttLongIn            ;
     strokeS*            psttLongArchive       ;
