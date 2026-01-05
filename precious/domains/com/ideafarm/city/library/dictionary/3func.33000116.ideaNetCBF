@@ -10,11 +10,12 @@
     DEL( prPosts ) ;
     if( prPosts ) meP.pushSnipF( tin0P , stBodyP , *prPosts ) ;
 
-    etThread.strMakeF( tin0P , LF , prPosts , F(flagsModeP) & flIDEAnETeXE_HTTPS ? tRequestDomain : tRequestAddress , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+    etThread.strMakeF( tin0P , LF , prPosts , tUse , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
     ZE( pbRefC* , prPosts ) ;
 
-    etThread.traceF( tin0P , T("ideaNetCBF [requestAddress]:    ")+tRequestAddress , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-    etThread.traceF( tin0P , T("ideaNetCBF  [requestDomain]:    ")+tRequestDomain , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+    etThread.traceF( tin0P , T("ideaNetCBF  [tUse]:    ")+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+
+    TN( tUse , "" ) ; tUse = F(flagsModeP) & flIDEAnETeXE_HTTPS ? tRequestDomain : tRequestAddress ;
 
     TN( tRequestAddress , ""        ) ; tRequestAddress = T("http://[")+tIpv6NowP                                                                                                                                                                                                    +T("]")+( tName.csF( tin0P ) == 1 ? tn : tName ) ;
     TN( tRequestDomain  , ""        ) ; tRequestDomain  = T("https://")+TF3(pcIdHost[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcIdHost[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com")+( tName.csF( tin0P ) == 1 ? tn : tName ) ;
