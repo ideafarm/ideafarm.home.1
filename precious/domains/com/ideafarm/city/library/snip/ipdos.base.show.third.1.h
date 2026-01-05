@@ -1,9 +1,4 @@
 
-#define flIDEAnETeXE_HTTPS                   0xe00004ff
-#define flIDEAnETeXE_QUIT                    0xe00002ff
-#define flIDEAnETeXE_BEGIN                   0xe00001ff
-#define flIDEAnETeXE_null                    0xe00000ff
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"

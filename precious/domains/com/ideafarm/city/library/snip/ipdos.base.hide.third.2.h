@@ -4484,7 +4484,12 @@ examples
 
 /*1*//*IDEAnETiPV6aDDRESSESuSED*//*1*/
 
-#define IDEAnETiPV6aDDRESSESuSED ( 0    )
+
+// IF 0 THEN THE IDhOST VALUE (04 BITS) IS DRAWN PSEUDORANDOMLY FROM A UNIFORM DISTRIBUTION OVER THE ENTIRE SPACE
+//      ELSE THE IDhOST VALUE (04 BITS) IS DRAWN PSEUDORANDOMLY FROM A SPARSE  DISTRIBUTION WITH ONLY THE SPECIFIED NUMBER OF POSSIBLE VALUES
+
+//#define IDEAnETiPV6aDDRESSESuSED ( TUCK )
+  #define IDEAnETiPV6aDDRESSESuSED ( 0    )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -4696,6 +4701,37 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062a.flQUEUEc END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062b.flIDEAnETeXE BEGIN
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*flIDEAnETeXE*//*1*/
+
+/*3*/
+#define flIDEAnETeXE_BEGIN                   ((countT)0xe000012a)
+#define flIDEAnETeXE_QUIT                    ((countT)0xe000022a)
+#define flIDEAnETeXE_HTTPS                   ((countT)0xe000042a)
+/*3*/
+#define flIDEAnETeXE_null    ((countT)0xe000002a)
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062b.flIDEAnETeXE END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -49588,7 +49624,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     NEWdELcLASSpROTOS
     ~queueC( voidT ) ;
-    queueC( tin0S& tin0P , etherC& etherP , const strokeS* const psttLongInP , const flagsT flagsP = flQUEUEc_null , queueCBFT pQueueCBFP = 0 , countT& argAppP = countTC() , const patternC* pP = 0 ) ;
+    queueC( tin0S& tin0P , etherC& etherP , boolT& bQuitP , const strokeS* const psttLongInP , const flagsT flagsP = flQUEUEc_null , queueCBFT pQueueCBFP = 0 , countT& argAppP = countTC() , const patternC* pP = 0 ) ;
     queueC& operator <<( const strokeS* const psttLongFileP ) ;
 
     inline operator         etherC&( voidT )       { return ether    ; }
