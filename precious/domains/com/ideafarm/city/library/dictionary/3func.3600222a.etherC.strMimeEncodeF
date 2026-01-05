@@ -9,7 +9,7 @@
 }
     return offo - 1 ;   //DON'T INCLUDE THE TRAILING 0, WHICH I PUT THERE AS A COURTESY BUT WHICH IS NOT PART OF THE ENCODING
 
-    ZE( countT , costo ) ;
+    traceF( tin0P , T("strMimeEncodeF / [costOut]:    ")+TF2(offo-1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     delF( tin0P , postoRaw ) ;
 
@@ -35,13 +35,16 @@
 
     countT cCRLF = 1 + costoRaw / 76 ;      // RFC 2045 LINE LENGTH LIMIT
 
-    boxGetF( tin0P , postoRaw , costoRaw , tLongMappedOut ) ; ___( postoRaw ) ;
+    traceF( tin0P , T("strMimeEncodeF / got     [costoRaw,tLongMappedOut]:    ")+TF2(costoRaw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongMappedOut ) ;
+    boxGetShadowF( tin0P , postoRaw , costoRaw , tLongMappedOut ) ; ___( postoRaw ) ;               //U:: IN PRODUCTION, USE boxGetF
+    traceF( tin0P , T("strMimeEncodeF / getting [tLongMappedOut]:    ")+tLongMappedOut ) ;
     ZE( countT   , costoRaw ) ;
     ZE( osTextT* , postoRaw ) ;
 
     boxZapF( tin0P , tLongMappedIn ) ;
 
     }
+        traceF( tin0P , T("strMimeEncodeF [c4Result]:    ")+TF2(c4Result.c1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(c4Result.c2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(c4Result.c3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(c4Result.c4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         }
             c4Result = ifcHireF( tin0P , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , tArgsOuter , flHIRE_WAIT ) ;
             TN( tArgsOuter , "" ) ; tArgsOuter = T("!maxValue 0 !hireLater ")+tosExe+tArgsInner ;
@@ -91,68 +94,7 @@
     boxPutUniqueF( tin0P , psttLongIn , T("///ideafarm/tmp/strMimeEncodeF.in") , pbP , cbP ) ; ___( psttLongIn ) ;
     ZE( strokeS* , psttLongIn ) ;
 
-#endif
-
-    return offo ;
-
-    traceF( tin0P , T("strMimeEncodeF [cbIn,cbOut]:    ")+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    }
-        }
-            postP[ offo ++ ] = *(osTextT*)tPad ;
-            postP[ offo ++ ] = *(osTextT*)tPad ;
-            postP[ offo ++ ] = *(osTextT*)TF4(vv2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
-            postP[ offo ++ ] = *(osTextT*)TF4(vv1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
-
-            countT vv2 = vvIn >> 0x0c & 0x3f ;
-            countT vv1 = vvIn >> 0x12        ;
-        {
-        else
-        }
-            postP[ offo ++ ] = *(osTextT*)tPad ;
-            postP[ offo ++ ] = *(osTextT*)TF4(vv3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
-            postP[ offo ++ ] = *(osTextT*)TF4(vv2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
-            postP[ offo ++ ] = *(osTextT*)TF4(vv1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
-
-            countT vv3 = vvIn >> 0x06 & 0x3f ;
-            countT vv2 = vvIn >> 0x0c & 0x3f ;
-            countT vv1 = vvIn >> 0x12        ;
-        {
-        else if( cBytes == 2 )
-        }
-            postP[ offo ++ ] = *(osTextT*)TF4(vv4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
-            postP[ offo ++ ] = *(osTextT*)TF4(vv3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
-            postP[ offo ++ ] = *(osTextT*)TF4(vv2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
-            postP[ offo ++ ] = *(osTextT*)TF4(vv1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_BASE64RFC4648|flFORMAT_NObASE,0,64) ;
-
-            countT vv4 = vvIn         & 0x3f ;
-            countT vv3 = vvIn >> 0x06 & 0x3f ;
-            countT vv2 = vvIn >> 0x0c & 0x3f ;
-            countT vv1 = vvIn >> 0x12        ;
-        {
-        if( cBytes >= 3 )
-
-        }
-            if( cBytes > 2 ) pbIn[ 0 ] = pbP[ offi + 2 ] ;
-            if( cBytes > 1 ) pbIn[ 1 ] = pbP[ offi + 1 ] ;
-                             pbIn[ 2 ] = pbP[ offi     ] ;
-            byteT* pbIn = (byteT*)&vvIn ;
-        {
-        ZE( countT , vvIn ) ;
-
-        countT cBytes = cbP - offi ;
-    {
-    for( countT offi = 0 ; offi < cbP ; offi += 3 )
-    traceF( tin0P , T("strMimeEncodeF [cbIn]:    ")+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    TN( tPad , "=" ) ;
-    TN( tb4  , "    " ) ;
-    ZE( countT , offo ) ;
-
-    memSetF( tin0P , postP , cba ) ;
-    newF( tin0P , LF , postP , cba ) ; ___( postP ) ;     // MORE THAN NEEDED ; THE "3 +" IS TO ENSURE SPACE FOR TRAILING NULL AND OO PAD CHARS WHEN INPUT IS A SINGLE BYTE
-    countT cba =  3 + 2 * cbP ;
-
-#if defined( NEVERdEFINED )
-// KEEP THIS DOODLE CODE AS PSEUDOCODE FOR WHAT I DO; IT WORKS BUT IS EXTREMELY SLOW
+    TN( tb4 , "    " ) ;
 
     }
         if( POOP ) return 0 ;
