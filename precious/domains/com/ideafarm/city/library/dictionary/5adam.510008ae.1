@@ -382,6 +382,7 @@ DONE( tmWorkF )
                                                             }
                                                                 etThread.delF( tin0P , pbZip ) ;
 
+                                                                etThread.traceF( tin0P , T("WELCOMER / 0") ) ;
                                                                 }
                                                                     }
                                                                         etThread.delF( tin0P , pstts ) ;
@@ -394,22 +395,30 @@ DONE( tmWorkF )
 
                                                                     etThread.delF( tin0P , postMime ) ;
                                                                     etThread.delF( tin0P , psttz ) ;
+                                                                    etThread.traceF( tin0P , T("WELCOMER / 1") ) ;
                                                                     etThread.boxPutF( tin0P , tLongIdeaNetMime , postMime , costMime ) ;
+                                                                    etThread.traceF( tin0P , T("WELCOMER / 2") ) ;
                                                                     tLongIdeaNetMime = T(psttz) ;
                                                                     etThread.strReplaceF( tin0P , psttz , tLongIdeaNetZip , T(".zip") , T(".base64") ) ; ___( psttz ) ;
                                                                     ZE( strokeS* , psttz ) ;
 
+                                                                    etThread.traceF( tin0P , T("WELCOMER / 3") ) ;
                                                                     countT costMime = etThread.strMimeEncodeF( tin0P , postMime , pbZip , cbZip ) ; ___( postMime ) ;
+                                                                    etThread.traceF( tin0P , T("WELCOMER / 4") ) ;
                                                                     ZE( osTextT* , postMime ) ;
+                                                                    etThread.traceF( tin0P , T("WELCOMER / 5") ) ;
                                                                 {
                                                                 if( pbZip && cbZip )
 
+                                                                etThread.traceF( tin0P , T("WELCOMER / 6") ) ;
                                                                 etThread.boxGetShadowF( tin0P , pbZip , cbZip , tLongIdeaNetZip ) ; ___( pbZip ) ;
+                                                                etThread.traceF( tin0P , T("WELCOMER / 7") ) ;
                                                                 ZE( countT , cbZip ) ;
                                                                 ZE( byteT* , pbZip ) ;
                                                             {
                                                             TN( tLongIdeaNetMime , "" ) ;
                                                             TN( tShortIdeaNetZip , "" ) ;
+                                                            etThread.traceF( tin0P , T("WELCOMER / 8") ) ;
 
                                                             }
                                                                 etThread.delF( tin0P , pstt01WildList ) ;

@@ -41,12 +41,16 @@
     ZE( countT   , costoRaw ) ;
     ZE( osTextT* , postoRaw ) ;
 
+    traceF( tin0P , T("strMimeEncodeF / 0") ) ;
     boxZapF( tin0P , tLongMappedIn ) ;
+    traceF( tin0P , T("strMimeEncodeF / 1") ) ;
 
     }
         traceF( tin0P , T("strMimeEncodeF [c4Result]:    ")+TF2(c4Result.c1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(c4Result.c2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(c4Result.c3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(c4Result.c4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         }
+            traceF( tin0P , T("strMimeEncodeF / 2") ) ;
             c4Result = ifcHireF( tin0P , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , tArgsOuter , flHIRE_WAIT ) ;
+            traceF( tin0P , T("strMimeEncodeF / 3") ) ;
             TN( tArgsOuter , "" ) ; tArgsOuter = T("!maxValue 0 !hireLater ")+tosExe+tArgsInner ;
             _IO_
         {
@@ -76,6 +80,7 @@
         ZE( strokeS* , psttm ) ;
     {
     TN( tLongMappedOut , "" ) ;
+    traceF( tin0P , T("strMimeEncodeF / 4") ) ;
 
     delF( tin0P , psttLongIn ) ;
     strReplaceF( tin0P , psttLongOut , psttLongIn , T(".in.") , T(".out.") ) ; ___( psttLongOut ) ;
@@ -91,8 +96,10 @@
     {
     TN( tLongMappedIn , "" ) ;
 
+    traceF( tin0P , T("strMimeEncodeF / 5") ) ;
     boxPutUniqueF( tin0P , psttLongIn , T("///ideafarm/tmp/strMimeEncodeF.in") , pbP , cbP ) ; ___( psttLongIn ) ;
     ZE( strokeS* , psttLongIn ) ;
+    traceF( tin0P , T("strMimeEncodeF / 6") ) ;
 
     TN( tb4 , "    " ) ;
 
