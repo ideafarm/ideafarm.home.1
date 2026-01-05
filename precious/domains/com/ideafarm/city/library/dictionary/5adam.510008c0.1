@@ -91,10 +91,20 @@ DONE( tmWorkF )
                 ZE( countT , minuteLath ) ;
                 TN( tb4 , "    " ) ;
 
-                etThread.osThreadF( TaRG2cBsTACK( tmHearF , TICK >> 2 ) , (countT)&flagsMode ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
-                flagsT flagsMode = flIDEAnETeXE_null ;
+                }
+                    }
+                        etThread.traceF( tin0P , T("I am ready to serve web pages (only to you).  Enter the 'b' command to begin.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                        bWoth = 0 ;
+                    {
+                    if( bWoth )
 
-                etThread.traceF( tin0P , T("I am ready to serve web pages (only to you).") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                    ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;                //GIVE tmHearF TIME TO START LISTENING, BECAUSE I DON'T REMEMBER WHAT IT DOES WITH KEYSTROKES MADE BEFORE IT STARTS WORKING
+                {
+                while( !ether && !( F(flagsMode) & flIDEAnETeXE_BEGIN ) )
+                boolT bWoth = 1 ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+                etThread.osThreadF( TaRG2cBsTACK( tmHearF , TICK >> 2 ) , (countT)&flagsMode ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
             {
             else
             }
@@ -215,7 +225,7 @@ DONE( tmHearF )
 
     TN( tHelp ,
 
-    flagsT& flagsModeP = *(boolT*)pTaskP->c1 ;
+    flagsT& flagsModeP = *(flagsT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
 TASK( tmHearF )
