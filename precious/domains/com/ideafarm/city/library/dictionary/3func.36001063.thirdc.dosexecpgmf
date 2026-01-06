@@ -8,6 +8,7 @@
 
 
 }
+    pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
     }
         #endif
 
@@ -36,11 +37,13 @@
                 pidP = pinfo.dwProcessId ;
                 INCoShANDLES
                 INCoShANDLES
+                pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
             {
             else
             }
                 hProcess.closeIfF() ;
                 hThread.closeIfF() ;
+                pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
             {
             if( POOP )
 
@@ -54,8 +57,8 @@
 
             delF( tin0P , postAll ) ;
             }
-                ((tin1S&)tin0P).pEther->traceF( tin0P , T("dosExecPgmF / could not launch process [postAll]:    \"")+T(postAll)+T("\"") ) ;
-                //((tin1S&)tin0P).pEther->traceF( tin0P , T("dosExecPgmF / could not launch process:\r\n\"")+T(postAll)+T("\"") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / could not launch process [postAll]:    \"")+T(postAll)+T("\"") ) ;
+                pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / could not launch process:\r\n\"")+T(postAll)+T("\"") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
                 //LOGrAW( "\"\r\n" ) ;
                 //LOGrAW( postAll ) ;
@@ -76,6 +79,7 @@
                 ((tin1S&)tin0P).pEther->traceF( tin0P , T("dosExecPgmF / CreateProcess / failed [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                 countT rc = POOP ;
+                pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
             {
             if( POOP )
 
@@ -85,8 +89,10 @@
 
                     }
                         }
+                            pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
                             BOSpOOP
                             BOS( WHATsfr , BOSoK , CreateProcess( 0 , postAll , &sa , &sa , bInherit , flags1 , 0 , 0 , (STARTUPINFO*)&sinfo , &pinfo ) )
+                            pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
 
                             boolT bInherit = 0 ;                                               //20250530@1521: THIS IS PROBLEMATIC DUE TO INHERITANCE OF HANDLES THAT HAPPEN TO BE OPEN WHEN I AM CALLED ; IF HANDLE INHERITANCE IS EVER NEEDED, EDIT ME TO OBEY A FLAG THAT TURNS ON INHERITANCE FOR A CALL
                                                                                                //20240731@1430: INHERIT UNLESS I AM CLOAK (W/O ANALYSIS)
@@ -120,6 +126,7 @@
                             unTextT puntUser[     TUCK ] ;
 
                             BLAMMO ; //NOT SUPPORTED AS A MATTER OF POLICY:  CreateProcessWithLogonW IS NOT AVAILABLE TO WINDOWS VERSION 0400 (PLAIN NT) WHICH IS THE DEFAULT REV LEVEL FOR THE WINDOWS VERSION HEADER FILE
+                            pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
                         {
                         if( postUserP )
                         BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
@@ -188,8 +195,10 @@
                         sinfo.StartupInfo.cb = sizeof sinfo ;
                         c_memsetIF( tin0P , (byteT*)&sinfo , sizeof sinfo ) ;
                         STARTUPINFOEX sinfo ;
+                        pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
                     {
                     if( bOk )
+                    pEtherContainsMe->traceF( tin0P , T("dosExecPgmF /  / [bOk]:    ")+TF2(bOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                     }
                         }
@@ -202,13 +211,16 @@
                     if( offNumaNodeValidChosen != NUMA_NO_PREFERRED_NODE )
                     countT offNumaNodeValidChosen = thirdC::osOffNumaNodeValidChosenIF( processGlobal2I.idNumaNode ) ;
                     boolT bOk = 1 ;
+                    pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
                 {
                 if( InitializeProcThreadAttributeList( (_PROC_THREAD_ATTRIBUTE_LIST*)pcInfo2 , 1 , 0 , &cba ) )
 
                 memset( pcInfo2 , 0 , cba ) ;
                 unsigned pcInfo2[ 0x100 / sizeof( unsigned ) ] ;
+                pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
             {
             if( cba < 0x100 )
+            pEtherContainsMe->traceF( tin0P , T("dosExecPgmF /  / [cba]:    ")+TF2((countT)cba,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             c_memsetIF( tin0P , (byteT*)&pinfo , sizeof pinfo ) ;
             PROCESS_INFORMATION pinfo ;
             ZE( osTextT* , postAll ) ;
@@ -228,6 +240,7 @@
 
             flagsT flags1 = CREATE_DEFAULT_ERROR_MODE | NORMAL_PRIORITY_CLASS | EXTENDED_STARTUPINFO_PRESENT ;
             BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
+            pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
 
         #elif defined( __NT__ )
 
@@ -250,6 +263,7 @@
     //LOGrAW( postExeP ) ;
     //LOGrAW( "\r\n" ) ;
     //COMMENT OUT IN PRODUCTION.  TO FIND A BUG
+    pEtherContainsMe->traceF( tin0P , T("dosExecPgmF / ") ) ;
 
 
     }

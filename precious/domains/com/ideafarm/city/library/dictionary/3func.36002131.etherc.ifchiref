@@ -11,6 +11,7 @@
 }
     return c4Result ;
     count4S c4Result( osTid , osPid , value , idDeathType ) ;
+    traceF( tin0P , T("ifcHireF / 0") ) ;
 
     }
         }
@@ -40,18 +41,24 @@
                     #if defined( NEVERdEFINED )
 
                     }
+                        traceF( tin0P , T("ifcHireF / 1") ) ;
                         else                                     osProcessF( tin0P , osTid , osPid , idAdamP                           , T("!idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(F(flProcessHire)&flPROCESShIRE_VISIBLE?tArgsUse:T("!quietConsole ")+tArgsUse) , flProcessHire ) ;
                         if( F(flagsP) & flHIRE_DISPLAYgRAPHICS ) osSessionF( tin0P , osTid , osPid , idAdamP                           , T("!idHome ")+TF1(processGlobal2I.idHome)+tb+tArgsUse , 0 , 0 , 0 , 0 , flSESSION_REGISTERpROCESShANDLE | flSESSION_REGISTERtHREADhANDLE | flSESSION_MAXIMIZE/*flSESSION_MINIMIZE*/ ) ;
+                        traceF( tin0P , T("ifcHireF / 2") ) ;
                     {
                     else
                     }
+                        traceF( tin0P , T("ifcHireF / 3") ) ;
                         else                                     osProcessF( tin0P , osTid , osPid , value , idDeathType , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(F(flProcessHire)&flPROCESShIRE_VISIBLE?tArgsUse:T("!quietConsole ")+tArgsUse) , flProcessHire ) ;
                         if( F(flagsP) & flHIRE_DISPLAYgRAPHICS ) osSessionF( tin0P , osTid , osPid , value , idDeathType , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tb+tArgsUse , 0 , 0 , 0 , 0 , flSESSION_REGISTERpROCESShANDLE | flSESSION_REGISTERtHREADhANDLE | flSESSION_MAXIMIZE/*flSESSION_MINIMIZE*/ ) ;
+                        traceF( tin0P , T("ifcHireF / 4") ) ;
                     {
                     else if( F(flagsP) & flHIRE_WAIT )
                     }
                         delF( tin0P , psttMapped ) ;
+                        traceF( tin0P , T("ifcHireF / 5") ) ;
                         osProcessF( tin0P , osTid , osPid , T("wdw") , T(osfn)+T(" ")+TF3(idAdamP,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T(" !debug !idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+tArgsUse , flProcessHire ) ;
+                        traceF( tin0P , T("ifcHireF / 6") ) ;
                         osFileNameC osfn( tin0P , *this , T(psttMapped) ) ;
                         }
                             delF( tin0P , psttm ) ;
@@ -88,6 +95,7 @@
                     flagsT flProcessHire = F(flagsP) & flHIRE_DISPLAYnONE && !bSandbox
 
                     boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
+                    traceF( tin0P , T("ifcHireF / 7") ) ;
                 {
                 if( !POOP )
             
@@ -125,11 +133,13 @@
                 
                             peekS info2( tin0P , *this , T("!display") ) ;
                             peekS info1( tin0P , *this , T("!debug") ) ;
+                            traceF( tin0P , T("ifcHireF / 8") ) ;
                         {
                         if( pPeekF )
                         __Z( pPeekF ) ;
                         dllEntryF( tin0P , pPeekF , hDll , T("peekF") ) ;
                         ZE( peekFT , pPeekF ) ;
+                        traceF( tin0P , T("ifcHireF / 9") ) ;
                     {
                     if( !POOP )
 
@@ -143,10 +153,12 @@
                     TN( tDebug , "" ) ;
 
                     flagsP &= ~( F( flHIRE_DEBUG | flHIRE_DISPLAYgRAPHICS | flHIRE_DISPLAYtEXT | flHIRE_DISPLAYnONE ) ) ;  // THESE ARE THE FLAGS THAT WILL BE SET "AUTOMATICALLY" I.E. BY QUERYING THE DLL
+                    traceF( tin0P , T("ifcHireF / a") ) ;
                 {
                 if( F(flagsP) & flHIRE_DISPLAYaUTO )
             
                 handleC hDll( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ; //LEAVE THIS OPEN UNTIL AFTER osSessionF/osProcessF RETURNS, SO BASE OS DOES NOT LOAD IT 2 TIMES
+                traceF( tin0P , T("ifcHireF / b") ) ;
             {
             if( /*((tin1S&)tin0P).pag1->idSerialAdam == 1 &&*/ !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_DOnOThIREaDAMS ) ) // SUPPRESSED FOR IN PROCESS KID ADAMS IN ORDER TO MAKE IT EASY TO SWITCH A SYSTEM'S RECONFIGURATON FROM SINGLEPROCESS TO MULTIPROCESS
 
@@ -155,6 +167,7 @@
                 CONoUTrAW( "I am trying to hire ifcIDaDAM_SMUDGEsOIXLoLDdEFS!" ) ;
             {
             if( idAdamP == ifcIDaDAM_SMUDGEsOIXLoLDdEFS ) //U:: REMOVE AFTER TESTING FULL BUILD
+            traceF( tin0P , T("ifcHireF / c") ) ;
         {
         //U:: TO FIND A BUG: if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_DEBUG ) )
 
@@ -166,6 +179,7 @@
         //flagsP |= flHIRE_DEBUG ; //TO FIND A BUG
 
         if( !idAdamP ) idAdamP = ((tin1S&)tin0P).pag1->idAdam ;
+        traceF( tin0P , T("ifcHireF / d") ) ;
     {
     if( !bSandbox )
     ZE( countT , idDeathType ) ;
@@ -190,9 +204,11 @@
         case ifcIDaDAM_EVE     :
         case ifcIDaDAM_ADAM    :
         // THIS IS FOR DEBUGGING CONVENIENCE ; ENABLING AND DISABLING THE case AND default LINES WILL NOT AFFECT PRODUCTION EXECUTION SINCE !fliIDhOME_HOMELESS
+        traceF( tin0P , T("ifcHireF / e") ) ;
     {
     if( bSandbox ) switch( processGlobal1I.idAdamRoot )
     boolT bSandbox = !!( etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ) ;
+    traceF( tin0P , T("ifcHireF / f") ) ;
 
     _IO_
 
