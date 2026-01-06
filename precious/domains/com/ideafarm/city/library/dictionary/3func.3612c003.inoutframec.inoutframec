@@ -317,12 +317,18 @@
                         OStEXTC(  ostoSay , cbStack , '0' ) ;_
                         OStEXTAK( ostoSay , "_9    " ) ;_
                         OStEXTC9( ostoSay , tin1P.osTid ) ;_
-                        OStEXTAK( ostoSay , "\r\nthread stack [osTid,cbStack,perTuckAvailable]:    " ) ;_
+                        OStEXTAK( ostoSay , "    " ) ;_
+                        OStEXTC(  ostoSay , idIn , '0' ) ;_
+                        OStEXTAK( ostoSay , "\r\nthread stack [idIn,osTid,cbStack,perTuckAvailable]:    " ) ;_
                         OStEXT(   ostoSay , TUCK >> 1 ) ;_
                     {
                     THREADmODE3oN( flTHREADmODE3_SUPPRESStHREADsTACKuSAGEiNSPECTION )
+
+                    countT idIn = 1 + incv02AM( idInLath ) ;
+                    static countT idInLath ;
                 {
-                if( perTuckAvailable < 0x20 )
+                if( perTuckAvailable < 0x18 )
+                //B: 621_ GOES BELOW THIS: if( perTuckAvailable < 0x20 )
                 //G:if( perTuckAvailable < 0x18 )
                 //B:TOO SHALLOW (WORKS, BUT PRACTICALLY NO WARNING): if( perTuckAvailable < 0x10 )
 
