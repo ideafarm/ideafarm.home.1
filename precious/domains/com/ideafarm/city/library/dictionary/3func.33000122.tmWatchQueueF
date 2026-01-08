@@ -78,7 +78,8 @@ DONE( tmWatchQueueF )
 
         _IO_
     {
-    while( !queueP.bQuit )
+    while( ++ idIn < 3 || !queueP.bQuit )           // P:PERSONALITY: I ALWAYS DO WO PASS (3 PHASES), EVEN IF queueP IS ALREADY BEING DESTROYED
+    ZE( countT , idIn ) ;
     handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
     ZE( const strokeS* , psttzFolder ) ;
     boolT bTrace = 1 ; //U:: TO FIND A BUG
