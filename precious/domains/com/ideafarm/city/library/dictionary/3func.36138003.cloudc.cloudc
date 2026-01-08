@@ -961,6 +961,8 @@ TASK( tmFreshenFileF )
                 patternC pat( tin0P , etherP , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                 fileNameC fnLike( tin0P , etherP , tLike ) ;
 
+                /**/etRock.traceF( tin0P , T("walkLocalToLoadKvF [tLike]:    ")+tLike ) ;
+
                 jotC& jotFile = !offPass ? jotFile1 : jotFile2 ;
                 jotC& jotDir  = !offPass ? jotDir1  : jotDir2  ;
 
@@ -1020,7 +1022,7 @@ TASK( tmFreshenFileF )
     {
     IFsCRATCHoK
 
-    //etRock.traceF( tin0P , T("cloudC: 7: ============================================================================================================================= loading kvP from ")+T(psttLocalContainerP)+T(" ========================") ) ;
+    etRock.traceF( tin0P , T("cloudC: 7: ============================================================================================================================= loading kvP from ")+T(psttLocalContainerP)+T(" ========================") ) ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 {

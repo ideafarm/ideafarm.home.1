@@ -354,7 +354,7 @@ bSuppressAutoUpdate = 1 ;
 
         }
             etThread.delF( tin0P , psttSuppressPrecious ) ;
-    bSuppressPrecious = 1 ;
+bSuppressPrecious = 1 ;
             bSuppressPrecious = psttSuppressPrecious && !etThread.strCompareF( tin0P , psttSuppressPrecious , T("yes") ) ;
             ZE( strokeS* , psttSuppressPrecious ) ; etThread.querySettingF( tin0P , psttSuppressPrecious , T("!ipdos.suppress.precious")  ) ; ___( psttSuppressPrecious ) ;
         {
@@ -453,7 +453,8 @@ bSuppressAutoUpdate = 1 ;
 
     thirdC::osProcessIdPhaseAdamIF( tin0P , ifcIDpHASEhANDOFFoLD_WORKING ) ;
 
-    ether.osSleepF( tin0P , TIMEnAPdURINGsERVICEsTARTUP ) ;
+    if( !bSandbox ) ether.osSleepF( tin0P , TIMEnAPdURINGsERVICEsTARTUP ) ;
+    boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
