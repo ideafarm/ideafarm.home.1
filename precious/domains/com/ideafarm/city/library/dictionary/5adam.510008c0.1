@@ -93,7 +93,7 @@ DONE( tmWorkF )
 
                 }
                     }
-                        etThread.traceF( tin0P , T("I am ready to serve web pages (only to you).  Enter the 'b' command to begin.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                        etThread.traceF( tin0P , T("I am ready to serve web pages (only to you).  Enter the 'b' command to begin.\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
                         bWoth = 0 ;
                     {
                     if( bWoth )
@@ -199,7 +199,7 @@ DONE( tmHearF )
         etThread.delF( tin0P , psttUnwanted ) ;
         etThread.delF( tin0P , psttWanted   ) ;
 
-        else                                                            {                                            etThread.traceF( tin0P , tHelp                                  , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !ether                                               ) {                                            etThread.traceF( tin0P , tHelp                                  , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
         else if( !etThread.strCompareF( tin0P , T("q") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_QUIT     ; etThread.traceF( tin0P , T("bye."                             ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
         else if( !etThread.strCompareF( tin0P , T("f") , psttWanted ) ) { flagsModeP &= ~( F(flIDEAnETeXE_HTTPS) ) ; etThread.traceF( tin0P , T("i will use \"fast mode\" (http)." ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
         else if( !etThread.strCompareF( tin0P , T("s") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_HTTPS    ; etThread.traceF( tin0P , T("i will use \"slow mode\" (https).") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
