@@ -23,7 +23,7 @@ DONE( tmWorkF )
             }
                 FIREmYSELF
 
-                etThread.traceF( tin0P , T("I am no longer serving web pages.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                etThread.traceF( tin0P , T("\r\nI am no longer serving web pages.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
                 }
                     ++ s ; etThread.osSleepF( tin0P , TUCK >> 6 ) ;
@@ -55,7 +55,7 @@ DONE( tmWorkF )
                     if( bGorilla && !( cSkipStomp && cSkipStomp -- ) && !( idPass % ( TUCK >> 2 ) ) )
 
                     }
-                        etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6Now , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                        //etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6Now , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                         tIpv6Now = T(nnNow) ;
                         nicNameC nnNow = sub.nnF( tin0P , idHostNow , minute ) ;
@@ -74,7 +74,9 @@ DONE( tmWorkF )
                     ZE( countT  , timeN1 ) ;
 
                     }
-                        countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
+                          etThread.traceF( tin0P , T("Opened your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                          countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
+                          etThread.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     {
                     if( cSkipPage && !( -- cSkipPage ) )
 
@@ -126,6 +128,7 @@ DONE( tmWorkF )
             ZE( count04T , idHostNow ) ;
             TN( tIpv6Now , ""      ) ;
             ZE( countT , idStatusHttpService ) ;
+            etThread.traceF( tin0P , T("\r\nPreparing to serve pages to you...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         {
         if( !bQuitEarly )
         ZE( boolT , bAborted ) ;
@@ -199,11 +202,11 @@ DONE( tmHearF )
         etThread.delF( tin0P , psttUnwanted ) ;
         etThread.delF( tin0P , psttWanted   ) ;
 
-        else if( !ether                                               ) {                                            etThread.traceF( tin0P , tHelp                                  , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("q") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_QUIT     ; etThread.traceF( tin0P , T("bye."                             ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("f") , psttWanted ) ) { flagsModeP &= ~( F(flIDEAnETeXE_HTTPS) ) ; etThread.traceF( tin0P , T("i will use \"fast mode\" (http)." ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("s") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_HTTPS    ; etThread.traceF( tin0P , T("i will use \"slow mode\" (https).") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-             if( !etThread.strCompareF( tin0P , T("b") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_BEGIN    ; etThread.traceF( tin0P , T("i will begin."                    ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else                                                            {                                            etThread.traceF( tin0P , tHelp                                      , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("f") , psttWanted ) ) { flagsModeP &= ~( F(flIDEAnETeXE_HTTPS) ) ; etThread.traceF( tin0P , T("I will use \"fast mode\" (http).\r\n" ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("s") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_HTTPS    ; etThread.traceF( tin0P , T("I will use \"slow mode\" (https).\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("b") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_BEGIN    ; etThread.traceF( tin0P , T("Synchronizing...\r\n"                 ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+             if( !psttWanted || !psttWanted->idAdam                   ) { FIREmYSELF }
 
         //etThread.traceF( tin0P , T("[psttUnwanted]:    ")+T(psttUnwanted) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
         //etThread.traceF( tin0P , T("[psttWanted]:      ")+T(psttWanted  ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -217,9 +220,9 @@ DONE( tmHearF )
  
     ) ;
 
-        "Press the 'Enter' key, preceded by no keystrokes or any other keystrokes, to view this help.\r\n"
+        "Press the 'Enter' key, preceded by 'h' or any other keystrokes, to view this help.\r\n"
+        "Press the 'Enter' key, preceded by no keystrokes, to \"fire\" me (to end this program).\r\n"
         "\r\n"
-        "  'q' : Quit .  (I will stop serving pages to your browser.)\r\n"
         "  'f' : Use \"fast mode\" (http).  No data is encrypted.  Fast because the domain name system is not needed.\r\n"
         "  's' : Use \"slow mode\" (https).  (Most of the data passing between you and the server is encrypted.)\r\n"
         "\r\n"
