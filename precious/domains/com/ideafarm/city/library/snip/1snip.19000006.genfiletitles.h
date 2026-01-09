@@ -5370,7 +5370,7 @@
 0x000014fa , "\0\0\0\0voidT httpServerC::storeSnipF( tin0S& tin0P , const countT idSnipP , const textC& tP )" ,
 0x000014fb , "\0\0\0\0voidT httpServerC::storeSnipF( tin0S& tin0P , const strokeS* const psttNameSnipP , const textC& tP )" ,
 0x000014fc , "\0\0\0\0httpServerC_arg1S::~httpServerC_arg1S( voidT )" ,
-0x000014fd , "\0\0\0\0httpServerC_arg1S::httpServerC_arg1S( const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , etherC& etherP , countT& cArgAppP , countT& idStatusHttpServiceP , const countT idPortP , const flagsT flagsSocketP , const strokeS* const psttNameP ) :" ,
+0x000014fd , "\0\0\0\0httpServerC_arg1S::httpServerC_arg1S( const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , etherC& etherP , countT& cArgAppP , countT& idStatusHttpServiceP , const countT idPortP , const flagsT flagsSocketP , const strokeS* const psttNameP , const countT cWorkersP ) :" ,
 0x000014fe , "\0\0\0\0httpServerC_arg2S::httpServerC_arg2S( voidT ) :" ,
 0x000014ff , "\0\0\0\0sessionsC::~sessionsC( voidT )" ,
 0x00001500 , "\0\0\0\0sessionsC::sessionsC( tin0S& tin0P , etherC& etherP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP ) :" ,
