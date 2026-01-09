@@ -41893,10 +41893,11 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
     const countT                idPort              ;
     countT&                     cArgApp             ;
     strokeS*                    psttName            ;
+    const countT                cWorkers            ;
 
     ~httpServerC_arg1S( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.httpServerC_arg1S.dt_httpServerC_arg1S!||
-    httpServerC_arg1S( const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , etherC& etherP , countT& cArgAppP , countT& idStatusHttpServiceP , const countT idPortP = ifcIDpORT_HTTP , const flagsT flagsSocketP = flSOCKETc_null , const strokeS* const psttNameP = 0 ) ;
+    httpServerC_arg1S( const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , etherC& etherP , countT& cArgAppP , countT& idStatusHttpServiceP , const countT idPortP = ifcIDpORT_HTTP , const flagsT flagsSocketP = flSOCKETc_null , const strokeS* const psttNameP = 0 , const countT cWorkersP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.httpServerC_arg1S.httpServerC_arg1S!||
 }
 ;

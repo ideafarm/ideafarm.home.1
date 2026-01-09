@@ -34,7 +34,7 @@
             *( postCR - 1 ) = 0 ;
             }
                 pbUnwantedP[ 1 ] = 0 ;
-                pbUnwantedP[ 0 ] = pbP[ cbP ] ;
+                pbUnwantedP[ 0 ] = (byteT)( cbIn > cbP ? pbP[ cbP ] : 0 ) ;
             {
             if( pbUnwantedP )
             newF( tin0P , LF , pbUnwantedP , 2 ) ; ___( pbUnwantedP ) ;
@@ -44,8 +44,8 @@
             pbP[ cbP ] = 0 ;
             }
                 pbUnwantedP[ 2 ] = 0 ;
-                pbUnwantedP[ 1 ] = pbP[ cbP + 1 ] ;
-                pbUnwantedP[ 0 ] = pbP[ cbP     ] ;
+                pbUnwantedP[ 1 ] = (byteT)( cbIn > cbP + 1 ? pbP[ cbP + 1 ] : 0 ) ;
+                pbUnwantedP[ 0 ] = (byteT)( cbIn > cbP     ? pbP[ cbP     ] : 0 ) ;
             {
             if( pbUnwantedP )
             newF( tin0P , LF , pbUnwantedP , 3 ) ; ___( pbUnwantedP ) ;

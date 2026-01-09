@@ -37,7 +37,7 @@ TELL( "cleaned up" ) ;
         //20190904@1529: RETIRED i1.time1idleTimeoutWrite = i1.time1idleTimeoutRead = TOCK * 0x40 ; //RAW COMMAND SERVERS MUST REPLACE THIS WITH A LARGER VALUE; THIS VALUE ASSUMES WEB BROWSER ONLY NEEDS TO BURST ALL IMAGES FOR A PAGE AND WILL DO SO IMMEDIATELY
         etThread.delF( tin0P , psttName ) ;
 
-        serverInfo2S i2( idPortP , flagsSocketP , psttName , 0 , cArgSys , cArgAppP , 0 , - 8 , /*1U::bState SET TO ZE PROVISIONALLY SO DOOR AND PANIC DOOR CAN BE SERVED BY SAME PROCESS TO MAKE DEVELOPMENT OF THE INTERFACES EASIER; SET TO 1 WHEN THESE DOORS ARE SERVED BY SEPARATE PROCESSES, AS CALLED FOR IN THE DESIGN*/0 , 0 , 0 , 0 , 0 , 0 , &meP.sessions , pnnAllowedStripeP ) ;
+        serverInfo2S i2( idPortP , flagsSocketP , psttName , 0 , cArgSys , cArgAppP , 0 , cWorkersP ? cWorkersP : - 8 , /*1U::bState SET TO ZE PROVISIONALLY SO DOOR AND PANIC DOOR CAN BE SERVED BY SAME PROCESS TO MAKE DEVELOPMENT OF THE INTERFACES EASIER; SET TO 1 WHEN THESE DOORS ARE SERVED BY SEPARATE PROCESSES, AS CALLED FOR IN THE DESIGN*/0 , 0 , 0 , 0 , 0 , 0 , &meP.sessions , pnnAllowedStripeP ) ;
 
         serverInfo1S i1( 0 , 0 , bHandedOff , sgnIdPortReplaced , /*tmcHttpServerWoJobOldF*/ tmcHttpServerWorkerF , countTC() , bQuitP , idStatusHttpServiceP , time1idleTimeoutRead , time1idleTimeoutWrite ) ;
         signC sgnIdPortReplaced( tin0P , TAG( TAGiDnULL ) ) ;
@@ -67,6 +67,7 @@ TELL( "cleaned up" ) ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
+    countT                                      cWorkersP                                  =                                              _c8tp2.c5 ;
     countT&                                     idStatusHttpServiceP                       =                                    *(countT*)_c8tp2.c4 ;
     nicNamesAllowedStripeWebHookNotificationsC* pnnAllowedStripeP                          = (nicNamesAllowedStripeWebHookNotificationsC*)_c8tp2.c3 ;
     strokeS*&                                   psttName                                   =                                 *(strokeS**)&_c8tp2.c2 ;

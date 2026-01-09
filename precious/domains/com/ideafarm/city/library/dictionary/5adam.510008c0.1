@@ -127,17 +127,20 @@ DONE( tmWorkF )
             TN( tIpv6Now , ""      ) ;
             ZE( countT , idStatusHttpService ) ;
         {
+        if( !bQuitEarly )
         ZE( boolT , bAborted ) ;
 
         etThread.delF( tin0P , psttUnwanted ) ;
         etThread.delF( tin0P , psttWanted ) ;
-        etThread.strHearF( tin0P , psttWanted , psttUnwanted , 0 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
+        boolT bQuitEarly = etThread.strCompareF( tin0P , psttWanted , T("ok") ) ;
+        etThread.strHearF( tin0P , psttWanted , psttUnwanted , 2 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
 
         ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
-            "\r\nThis is safe, because I will ignore requests that come from any computers other than yours:    "
-            "\r\nPress the Enter key, and then, when prompted, tell Windows to allow me to serve web pages (to you)."
-            "IdeaFarm (tm) IdeaNet (tm) is a subscribers-only World Wide Web system within the public Internet system."
+            "\r\n  tell Windows to allow this:  "
+            "\r\n  other computers.  Press the Enter key now to quit.  Or, enter \"ok\" to continue, and then, when prompted,"
+            "\r\n  I will serve web pages, but only to you.  This is safe, because I will ignore requests that come from"
+            "\r\nIdeaFarm (tm) IdeaNet (tm) is a subscribers-only World Wide Web system within the public Internet system."
 
         etThread.traceF( tin0P , T(
 
@@ -158,9 +161,9 @@ DONE( tmWorkF )
         ZE( boolT , bGorilla ) ;
 
         }
-            etThread.traceF( tin0P , T("This file gives you access to Book 1.  For Book 1, you are subscriber number [idSub]:    ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n    Subscription id's are dispensed serially, starting with 1.\r\n    Subscribers with low id numbers will be given VIP privileges as the system grows,\r\n    in appreciation for their role as founders.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etThread.traceF( tin0P , T("\r\nThis file gives you access to Book 1.  For Book 1, you are subscriber number ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".  Subscription id's\r\n  are dispensed serially, starting with 1.  Subscribers with low id numbers will be given\r\n  VIP privileges as the system grows, in appreciation for their role as founders.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
-            etThread.traceF( tin0P , T("This file is your personal key for access to the IdeaFarm (tm) IdeaNet (tm) Book Publishing System.\r\n    Do not share this file with others.  Abuse will result in suspension or termination of your access.\r\n    You may use this key only if you are the owner of [email]:    ")+tEmail , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etThread.traceF( tin0P , T("\r\nThis file is your personal key for access to the IdeaFarm (tm) IdeaNet (tm) Book Publishing System.\r\n  Do not share this file with others.  Abuse will result in suspension or termination of your access.\r\n  You may use this key only if you are the owner of email address ")+tEmail , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
             countT              idSub  = sub ;
             TN( tEmail , "" ) ; tEmail = sub ;
@@ -251,7 +254,7 @@ DONE( tmServeHttpF )
 
         cacheC cache( tin0P , etThread ) ;
         httpServerC_arg2S arg2 ;
-        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTP  , flSOCKETc_null , T("World Wide Web") ) ;
+        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTP  , flSOCKETc_null , T("World Wide Web") , 1 ) ;
 
         countT cArgApp = (countT)&c9p ;
         count9S c9p( (countT)&tIpv6NowP , (countT)&idHostNowP , (countT)&flagsModeP ) ;
