@@ -51,7 +51,7 @@ TODO
 DONE( tmWorkF )
 }
     //etherC::loafIF( tin0P ) ;
-    //etThread.trace F( tin0P , T("ok") ) ;
+    //etThread.traceF( tin0P , T("ok") ) ;
 
     }
         }
@@ -64,7 +64,7 @@ DONE( tmWorkF )
                                 }
                                     etThread.delF( tin0P , psttValue ) ;
 
-                                    //etThread.trace F( tin0P , T("********    ") + T(psttPath) + T("   :    ") + T(psttValue) ) ;
+                                    //etThread.traceF( tin0P , T("********    ") + T(psttPath) + T("   :    ") + T(psttValue) ) ;
 
                                     strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                                     psttPath            = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -86,8 +86,8 @@ DONE( tmWorkF )
                             ZE( switchC* , pSwPathValue ) ;
                             ZE( strokeS* , psttPath     ) ;
 
-                            //etThread.trace F( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                            //etThread.trace F( tin0P , T("json response:") ) ;
+                            //etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            //etThread.traceF( tin0P , T("json response:") ) ;
                         {
                         else        
                         }
@@ -122,8 +122,8 @@ DONE( tmWorkF )
                     if( POOP )        
 
                     sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                    //etThread.trace F( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    //etThread.trace F( tin0P , T("request:") ) ;
+                    //etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etThread.traceF( tin0P , T("request:") ) ;
                 
                     TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout/all HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tIdeafarmDotCom+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
                 {
@@ -157,8 +157,8 @@ DONE( tmWorkF )
     {                                                                         // LOGOUT
 
     }
-        ++ s ; ether.osSleepF( tin0P , TICK << 1 ) ;
-        //etThread.trace F( tin0P , T("napping") ) ;
+//      ++ s ; ether.osSleepF( tin0P , TICK << 1 ) ;
+        //etThread.traceF( tin0P , T("napping") ) ;
 
         }
             }
@@ -230,6 +230,7 @@ DONE( tmWorkF )
                                                     if( stMessages )
                                                     countT cstta = thirdC::c_strlenIF( tin0P , postHead ) + thirdC::c_strlenIF( tin0P , postFoot ) ;
 
+                                                    /**/etThread.traceF( tin0P , T("pushed a message") ) ;
                                                     stMessages << pstte ; pstte = 0 ;
                                                     etThread.strMakeF( tin0P , LF , pstte , tEntry ) ; ___( pstte ) ;
                                                     ZE( strokeS* , pstte ) ;
@@ -337,7 +338,7 @@ DONE( tmWorkF )
                                                 switch( offe )
                                                 psttzlPrefix = tPrefix ;
 
-                                                //etThread.trace F( tin0P , T("[prefix]:    ")+tPrefix ) ;
+                                                /**/etThread.traceF( tin0P , T("[prefix]:    ")+tPrefix ) ;
 
                                                 }
                                                     etThread.delF( tin0P , psttSuffix ) ;
@@ -350,9 +351,9 @@ DONE( tmWorkF )
                                                 {
                                                 TN( tSuffix , "" ) ;
 
-                                                // "rooms"/"join"/"!mdggPdOnBbNwmpeHnH:ideafarm.com"/"timeline"/"events"/item.0000000a/"content"/"body"/
+                                                // "rooms"/"join"/"" postIDrOOMuSE ""/"timeline"/"events"/item.0000000a/"content"/"body"/
 
-                                                //etThread.trace F( tin0P , T("********    ") + T(psttPath) + T("   :    ") + ) ;
+                                                //etThread.traceF( tin0P , T("********    ") + T(psttPath) + T("   :    ") +T(psttValue) ) ;
                                                 *pptValue[ offe ] = T(psttValue) ;
                                             {
                                             )
@@ -379,8 +380,8 @@ DONE( tmWorkF )
                                         countT cPathsZ  = sizeof pptPathZ  / sizeof pptPathZ[  0 ] ;
                                         countT cPathsA  = sizeof pptPathA  / sizeof pptPathA[  0 ] ;
                                 
-                                        //etThread.trace F( tin0P , T("--------------------------        [value]:    ")+T(psttValue) ) ;
-                                        //etThread.trace F( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
+                                        //etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) ) ;
+                                        //etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
                                 
                                         strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                                         psttPath            = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -428,10 +429,10 @@ DONE( tmWorkF )
                                     TN( tPathZStart     , ""                                                                                                                     ) ;
                                     TN( tPathZNextBatch , ""                                                                                                                     ) ;
 
-                                    TN( tPathARoomTopic , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item.00000002/\"content\"/\"topic\"/" ) ;                
-                                    TN( tPathAMessage   , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item."                                ) ;
-                                    TN( tPathASender    , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item."                                ) ;
-                                    TN( tPathATime      , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item."                                ) ;
+                                    TN( tPathARoomTopic , "\"rooms\"/\"join\"/\"" postIDrOOMuSE "\"/\"timeline\"/\"events\"/item.00000002/\"content\"/\"topic\"/" ) ;                
+                                    TN( tPathAMessage   , "\"rooms\"/\"join\"/\"" postIDrOOMuSE "\"/\"timeline\"/\"events\"/item."                                ) ;
+                                    TN( tPathASender    , "\"rooms\"/\"join\"/\"" postIDrOOMuSE "\"/\"timeline\"/\"events\"/item."                                ) ;
+                                    TN( tPathATime      , "\"rooms\"/\"join\"/\"" postIDrOOMuSE "\"/\"timeline\"/\"events\"/item."                                ) ;
                                     TN( tPathAEnd       , "\"end\"/"                                                                                                             ) ;
                                     TN( tPathAStart     , "\"start\"/"                                                                                                           ) ;
                                     TN( tPathANextBatch , "\"next_batch\"/"                                                                                                      ) ;
@@ -463,14 +464,14 @@ DONE( tmWorkF )
 
                                 }
                                     etThread.delF( tin0P , psttg ) ;
-                                    //etThread.trace F( tin0P , T("[json file]:    ")+T(psttg) ) ;
+                                    //etThread.traceF( tin0P , T("[json file]:    ")+T(psttg) ) ;
                                     etThread.boxPutGenerationF( tin0P , psttg , T("///ideafarm/tmp/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/json/json.sync") , TOCK , postj , costj , 0 , flOPENdETAILS_null , /*T(".json")*/0 ) ; ___( psttg ) ;
                                     ZE( strokeS* , psttg ) ;
                                 {
                                 if( postj && costj )
 
-                                //etThread.trace F( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                //etThread.trace F( tin0P , T("json response [costj]:    ")+TF2(costj,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE) ) ;
+                                //etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                //etThread.traceF( tin0P , T("json response [costj]:    ")+TF2(costj,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE) ) ;
                             {
                             else        
                             }
@@ -510,15 +511,15 @@ DONE( tmWorkF )
             
                         sockc.writeF( tin0P , (osTextT*)tSay ) ;
                         IFsCRATCHoK{} //U:: TO TRAP A BUG
-                        //etThread.trace F( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                        //etThread.trace F( tin0P , T("request:") ) ;
+                        //etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        //etThread.traceF( tin0P , T("request:") ) ;
 
                         thirdC::c_memsetIF( tin0P , postj , costaj ) ;
                         etThread.newF( tin0P , LF , postj , costaj ) ; ___( postj ) ;
                         countT costaj = TICK ;
                         ZE( osTextT* , postj ) ;
                     
-                        //etThread.trace F( tin0P , T("requesting sync (update)") ) ;
+                        /**/etThread.traceF( tin0P , T("requesting sync (update) [tSay]:    ")+tSay ) ;
 
                         TN( tSay , "" ) ; tSay = T("GET /_matrix/client/v3/sync")+tQuery+T(" HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tIdeafarmDotCom/*+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)*/+T("\r\n\r\n")/*+tBody*/ ;
 
@@ -559,12 +560,14 @@ DONE( tmWorkF )
             nicNameC nnServer ;
         {
 
+#endif
         }
             }
                 }
                     }
                         }
-                            etThread.traceF( tin0P , T("!exception / could not move the student evaluations soil file to publish it to [tShort]:    ")+tShort ) ;
+                            etThread.traceF( tin0P , T("!exception / could not move the classroom soil file to publish it to [tShort]:    ")+tShort ) ;
+                          //etThread.traceF( tin0P , T("!exception / could not move the student evaluations soil file to publish it to [tShort]:    ")+tShort ) ;
                             POOPR
                         {
                         if( POOP )        
@@ -627,19 +630,21 @@ DONE( tmWorkF )
                 etThread.diskFindFileOrDirF( tin0P , pstt1f , tSoilFilePathFrom ) ; ___( pstt1f ) ;
                 ZE( strokeS* , pstt1f ) ;
             {                                                                                                                       // ZAP EACH FILE THAT IS OLDER THAN A FILE ALREADY SEEN ; THIS ONLY ZAPS ALL OF THE OLDER FILES IF THE BASE O.S. PRESENTS THE NAMES IN SORTED ORDER, WHICH IT DOES NOT GUARANTEE TO DO (NTFS)
-            TN( tYoungest , "" ) ; // DELETE ALL BUT THE YOUNGEST bot.kt.student.evaluations.*
+            TN( tYoungest , "" ) ; // DELETE ALL BUT THE YOUNGEST bot.kt.classroom.*
+          //TN( tYoungest , "" ) ; // DELETE ALL BUT THE YOUNGEST bot.kt.student.evaluations.*
 
             timeU2 = timeN2 ;
             timeU1 = timeN1 ;
-            //etThread.trace F( tin0P , T("publish the youngest evaluation soil file [timeE]:    ")+TT(timeE1,timeE2) ) ;
+            //etThread.traceF( tin0P , T("publish the youngest evaluation soil file [timeE]:    ")+TT(timeE1,timeE2) ) ;
         {
         if( timeE2 || timeE1 > ( TICK << 2 ) )                                                                                      // LIMIT PUBLICATION SO THAT PISS (AND THE CPU) IS IDLE AND AVAILABLE FOR OTHER WORK
+#if defined( NEVERdEFINED )
 
         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeU1 , timeU2 ) ;
         sCountT timeE2 = timeN2 ;
         countT  timeE1 = timeN1 ;
 
-        //etThread.trace F( tin0P , T("awakening [timeN]:    ")+TT(timeN1,timeN2) ) ;
+        //etThread.traceF( tin0P , T("awakening [timeN]:    ")+TT(timeN1,timeN2) ) ;
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
@@ -649,7 +654,8 @@ DONE( tmWorkF )
     TN( tSoilFilePathCheck   , "" ) ; tSoilFilePathCheck = T("///ideafarm/IdeaFarm (tm)/")+tUser+T("/1.2. SOIL (tm) Text Files Being Eaten/" ) ;
     TN( tSoilFilePathTo      , "" ) ; tSoilFilePathTo    = T("///ideafarm/IdeaFarm (tm)/")+tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/" ) ;
     TN( tSoilFilePathFrom    , "" ) ; tSoilFilePathFrom  = T("///ideafarm/tmp/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/soil/") ;
-    TN( tSoilFileShortPrefix , "bot.kt.student.evaluations." ) ;
+    TN( tSoilFileShortPrefix , "bot.kt.classroom." ) ;
+  //TN( tSoilFileShortPrefix , "bot.kt.student.evaluations." ) ;
     ZE( sCountT , timeU2 ) ;
     ZE( countT  , timeU1 ) ;        //TIME THAT LATH PUBLICATION OCCURRED
     TN( tValueRoomTopic , "" ) ;
@@ -666,7 +672,8 @@ DONE( tmWorkF )
         "}\r\n"
         "    }\r\n"
         "\r\n"
-        "        \\rStudent Evaluations of ICIS IdeaFarm (tm) College of Imagination Science\r\n"
+        "        \\rClassroom, ICIS IdeaFarm (tm) College of Imagination Science\r\n"
+      //"        \\rStudent Evaluations of ICIS IdeaFarm (tm) College of Imagination Science\r\n"
 
     const osTextT* const postFoot =
 
@@ -677,7 +684,8 @@ DONE( tmWorkF )
         "\r\n"
         "    {namespace: web.root }\r\n"
         "\r\n"
-        "    {folder: ///d/web.evaluations/ }\r\n"
+        "    {folder: ///d/web.classroom/ }\r\n"
+      //"    {folder: ///d/web.evaluations/ }\r\n"
         "\r\n"
         "    {flags: noZip beep}\r\n"
         "\r\n"
@@ -701,7 +709,7 @@ DONE( tmWorkF )
             {
             if( POOP )
         
-            //etThread.trace F( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
+            //etThread.traceF( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
         
             }
                 }
@@ -714,7 +722,7 @@ DONE( tmWorkF )
                             
                                     }
                                         }
-                                            //etThread.trace F( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + ) ;
+                                            //etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + T(psttValue) ) ;
                                             *pptValue[ offe ] = T(psttValue) ;
                                         {
                                         if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
@@ -725,8 +733,8 @@ DONE( tmWorkF )
                                     countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
                                     countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
                             
-                                    //etThread.trace F( tin0P , T("--------------------------        [value]:    ")+T(psttValue) ) ;
-                                    //etThread.trace F( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
+                                    //etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) ) ;
+                                    //etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath) ) ;
                             
                                     strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                                     psttPath            = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -765,8 +773,8 @@ DONE( tmWorkF )
                             ZE( switchC* , pSwPathValue ) ;
                             ZE( strokeS* , psttPath     ) ;
 
-                            //etThread.trace F( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                            //etThread.trace F( tin0P , T("json response:") ) ;
+                            //etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            //etThread.traceF( tin0P , T("json response:") ) ;
                         {
                         else
                         }
@@ -801,8 +809,8 @@ DONE( tmWorkF )
                     if( POOP )        
 
                     sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                    //etThread.trace F( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    //etThread.trace F( tin0P , T("request:") ) ;
+                    //etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etThread.traceF( tin0P , T("request:") ) ;
                 {
                 else
                 }
@@ -839,9 +847,9 @@ DONE( tmWorkF )
             "}\r\n"
             "    \"password\": \"")+tApiPassword+T("\"\r\n"
             "    },\r\n"
-            "        \"user\": \"b.bot.1\"\r\n"
+          //"        \"user\": \"b.bot.1\"\r\n"
           //"        \"user\": \"administrator\"\r\n"
-          //"        \"user\": \"a.1\"\r\n"
+            "        \"user\": \"a.1\"\r\n"
             "        \"type\": \"m.id.user\",\r\n"
             "    {\r\n"
             "    \"identifier\":\r\n"
@@ -853,11 +861,11 @@ DONE( tmWorkF )
         }
             etThread.delF( tin0P , psttApiPassword ) ;
             tApiPassword = T(psttApiPassword) ;
-            //etThread.trace F( tin0P , T("[password]:    ")+T(psttApiPassword) ) ;
+            //etThread.traceF( tin0P , T("[password]:    ")+T(psttApiPassword) ) ;
             if( psttApiPassword && psttApiPassword->idAdam ) tApiPassword = T(psttApiPassword) ;
 
-              ZE( strokeS* , psttApiPassword ) ; etThread.querySettingF( tin0P , psttApiPassword , T("!ipdos.password.matrix.ideafarm.com.b.bot.1"      ) ) ; ___( psttApiPassword ) ;
-            //ZE( strokeS* , psttApiPassword ) ; etThread.querySettingF( tin0P , psttApiPassword , T("!ipdos.password.matrix.ideafarm.com.a.1"          ) ) ; ___( psttApiPassword ) ;
+            //ZE( strokeS* , psttApiPassword ) ; etThread.querySettingF( tin0P , psttApiPassword , T("!ipdos.password.matrix.ideafarm.com.b.bot.1"      ) ) ; ___( psttApiPassword ) ;
+              ZE( strokeS* , psttApiPassword ) ; etThread.querySettingF( tin0P , psttApiPassword , T("!ipdos.password.matrix.ideafarm.com.a.1"          ) ) ; ___( psttApiPassword ) ;
             //ZE( strokeS* , psttApiPassword ) ; etThread.querySettingF( tin0P , psttApiPassword , T("!ipdos.password.matrix.ideafarm.com.administrator") ) ; ___( psttApiPassword ) ;
             //ZE( strokeS* , psttApiPassword ) ; etThread.querySettingF( tin0P , psttApiPassword , T("!ipdos.password.matrix.communick.com.ideafarm"    ) ) ; ___( psttApiPassword ) ;
         {
@@ -890,6 +898,11 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+#define postIDrOOMuSE postIDrOOMcLASSROOM
+
+#define postIDrOOMcLASSROOM   "!xZFAfdZNvjiogHSLff:ideafarm.com"
+#define postIDrOOMeVALUATIONS "!mdggPdOnBbNwmpeHnH:ideafarm.com"
 
 // OBSOLETES: 5adam.5100087b.1
 
