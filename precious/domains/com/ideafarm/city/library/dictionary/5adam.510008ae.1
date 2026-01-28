@@ -2796,7 +2796,9 @@ TASK( tmStayConnectedF )
 }
     //etRock.traceF( tin0P , tSubject ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
-    etherP.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/")+tTo , tSubject+tBody ) ;
+
+    //etherP.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/")+tTo , tSubject+tBody ) ;
+    // THIS IS STFU BECAUSE HOMESERVER WAS DESTROYED ; ENABLE THIS LINE IF A [MATRIX] HOMESERVER EXISTS
 
     TN( tTo      , !bCommunickP ? "factoryreports@ideafarm.com" : "factoryreports@ideafarm.com/support@communick.com" ) ;
     TN( tb4      , "    " ) ;
