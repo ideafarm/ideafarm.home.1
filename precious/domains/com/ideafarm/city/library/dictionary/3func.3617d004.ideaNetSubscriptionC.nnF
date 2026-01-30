@@ -8,22 +8,24 @@
 
 }
     return nicNameC( idHost1 , idHost2 , pcSubnet[ 2 ] , pcSubnet[ 3 ] ) ;
+    
+    if( bRandomSubnetP ) pcSubnet[ 2 ] |= idSubnet ;
+    count02T* pcSubnet = (count02T*)(const count02T*)nnSubnet ;
 
-    const countT* pcSubnet = nnSubnet ;
     nicNameC nnSubnet =  socketC::nicNameIF( tin0P , ether , tSubnet ) ;        //U::O: MAKE THIS A PARAMETER
-
     TN( tSubnet , postARINdELEGATIONiDEAFARMiDEANET ) ;
-    //TN( tSubnet , "2001:19f0:ac00:4cfb::" ) ;
 
     idHostP = (count04T)idHost1 | ( (count04T)idHost2 << 0x20 ) ;
 
     }
+        idSubnet = (count01T)hashF( (byteT*)pSeeds , sizeof pSeeds , idTick ) & 0xfff ;     // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
+        countT idTick = minuteP >> 4 ;
+        countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
 
         }
             idHost2 = hashF( (byteT*)pSeeds , sizeof pSeeds , idHost1 ) ;
             idHost1 = hashF( (byteT*)pSeeds , sizeof pSeeds , minuteP  ) ;
             countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
-            countT seed = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
         {
         else
         }
@@ -33,9 +35,12 @@
             count01T seed = (count01T)( hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) % IDEAnETiPV6aDDRESSESuSED ) ;
         {
         if( modulo )
+
+        countT seed = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
     {
-    ZE( countT , idHost2 ) ;
-    ZE( countT , idHost1 ) ;
+    ZE( countT , idHost2  ) ;
+    ZE( countT , idHost1  ) ;
+    ZE( countT , idSubnet ) ;
 
     //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("nnF [modulo,minute,secret]:    ")+TF2(modulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(minuteP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
     TN( tb4 , "    " ) ;
@@ -48,7 +53,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , count04T& idHostP , countT minuteP )/*1*/
+/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , count04T& idHostP , countT minuteP , boolT bRandomSubnetP )/*1*/
 /**/
 */
 /*
