@@ -153,7 +153,8 @@ DONE( tmWorkF )
 
         #endif
 
-            ifcIDaDAM_SCRATCH0f
+            0x510008d6
+            //ifcIDaDAM_SCRATCH0f
             //ifcIDaDAM_PISS , ifcIDaDAM_ICISbOT
             //ifcIDaDAM_IDEAnET
             //ifcIDaDAM_SCRATCH0f , ifcIDaDAM_IDEAnET
@@ -1335,6 +1336,7 @@ TASK( tmWorkF )
                 case ifcIDaDAM_TOOLrPTeMAIL1                         :
                 case ifcIDaDAM_TOOLrPTeMAIL0                         : // COMMENT THIS LINE OUT TO CAUSE ME TO LAUNCH EMAIL PARSER
 
+                case 0x510008d6                                      :
                 case 0x510008ca                                      :
                 case 0x510008bf                                      :
                 case 0x510008be                                      :
@@ -1464,7 +1466,7 @@ TASK( tmWorkF )
 // THE ADDITION IN osMakeF OF SERIALIZED ACCESS TO THE idCopyLath FILE WAS TO SUPPORT ASYNCHRONOUS (PARALLEL) MAKES AND MIGHT BE THE SOURCE OF NONMONOTONIC GRABBING)
 //U:: 20221022@1516: THE NEW ASYNCHRONOUS CODE IS COMMENTED OUT BECAUSE IT DOES NOT WORK (NONMONOTONIC GRAB AND OTHER BUGS)
 
-#define PRODUCTION
+//#define PRODUCTION
 
 /*1*/WAKEdEBUGsHOWtEXT( "build.eve.refresh.generated.snips" )/*1*/
 /**/
