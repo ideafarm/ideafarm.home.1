@@ -18,7 +18,6 @@
   <li><a href="#NOTES">NOTES</a></li>
   <li><a href="#RETURN-VALUES">RETURN VALUES</a></li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
-  <li><a href="#HISTORY">HISTORY</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
 </ul>
 
@@ -28,12 +27,12 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/bio.h&gt;
+<pre><code> #include &lt;openssl/bio.h&gt;
 
-const BIO_METHOD *BIO_f_prefix(void);
-long BIO_set_prefix(BIO *b, const char *prefix);
-long BIO_set_indent(BIO *b, long indent);
-long BIO_get_indent(BIO *b);</code></pre>
+ const BIO_METHOD *BIO_f_prefix(void);
+ long BIO_set_prefix(BIO *b, const char *prefix);
+ long BIO_set_indent(BIO *b, long indent);
+ long BIO_get_indent(BIO *b);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -57,23 +56,19 @@ long BIO_get_indent(BIO *b);</code></pre>
 
 <p>BIO_f_prefix() returns the prefix BIO method.</p>
 
-<p>BIO_set_prefix() returns 1 if the prefix was correctly set, or &lt;=0 on failure.</p>
+<p>BIO_set_prefix() returns 1 if the prefix was correctly set, or 0 on failure.</p>
 
-<p>BIO_set_indent() returns 1 if the prefix was correctly set, or &lt;=0 on failure.</p>
+<p>BIO_set_indent() returns 1 if the prefix was correctly set, or 0 on failure.</p>
 
-<p>BIO_get_indent() returns the current indentation, or a negative value for failure.</p>
+<p>BIO_get_indent() returns the current indentation.</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man7/bio.7.html">bio(7)</a></p>
-
-<h1 id="HISTORY">HISTORY</h1>
-
-<p>BIO_get_indent(), BIO_set_indent(), BIO_set_prefix() were added in OpenSSL 3.0.</p>
+<p><a href="../man7/bio.html">bio(7)</a></p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2019-2025 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2019 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

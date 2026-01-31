@@ -27,28 +27,28 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/cmp.h&gt;
+<pre><code> #include &lt;openssl/cmp.h&gt;
 
-OSSL_CMP_PKISI *OSSL_CMP_STATUSINFO_new(int status, int fail_info,
-                                        const char *text);
-char *OSSL_CMP_snprint_PKIStatusInfo(const OSSL_CMP_PKISI *statusInfo,
-                                     char *buf, size_t bufsize);
-char *OSSL_CMP_CTX_snprint_PKIStatus(const OSSL_CMP_CTX *ctx, char *buf,
-                                     size_t bufsize);</code></pre>
+ OSSL_CMP_PKISI *OSSL_CMP_STATUSINFO_new(int status, int fail_info,
+                                         const char *text);
+ char *OSSL_CMP_snprint_PKIStatusInfo(const OSSL_CMP_PKISI *statusInfo,
+                                      char *buf, size_t bufsize);
+ char *OSSL_CMP_CTX_snprint_PKIStatus(const OSSL_CMP_CTX *ctx, char *buf,
+                                      size_t bufsize);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
 <p>This is the PKIStatus API for using CMP (Certificate Management Protocol) with OpenSSL.</p>
 
-<p>OSSL_CMP_STATUSINFO_new() creates a new PKIStatusInfo structure and fills in the given values. It sets the status field to <i>status</i>, copies <i>text</i> (unless it is NULL) to statusString, and interprets <i>fail_info</i> as bit pattern for the failInfo field.</p>
+<p>OSSL_CMP_STATUSINFO_new() creates a new PKIStatusInfo structure and fills in the given values. It sets the status field to <b>status</b>, copies <b>text</b> (unless it is NULL) to statusString, and interprets <b>fail_info</b> as bit pattern for the failInfo field.</p>
 
 <p>OSSL_CMP_snprint_PKIStatusInfo() places a human-readable string representing the given statusInfo in the given buffer, with the given maximal length.</p>
 
-<p>OSSL_CMP_CTX_snprint_PKIStatus() places a human-readable string representing the PKIStatusInfo components of the CMP context <i>ctx</i> in the given buffer, with the given maximal length.</p>
+<p>OSSL_CMP_CTX_snprint_PKIStatus() places a human-readable string representing the PKIStatusInfo components of the CMP context <b>ctx</b> in the given buffer, with the given maximal length.</p>
 
 <h1 id="NOTES">NOTES</h1>
 
-<p>CMP is defined in RFC 9810.</p>
+<p>CMP is defined in RFC 4210 (and CRMF in RFC 4211).</p>
 
 <h1 id="RETURN-VALUES">RETURN VALUES</h1>
 
@@ -62,7 +62,7 @@ char *OSSL_CMP_CTX_snprint_PKIStatus(const OSSL_CMP_CTX *ctx, char *buf,
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2007-2021 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2007-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

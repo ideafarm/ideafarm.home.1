@@ -27,20 +27,16 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/srp.h&gt;</code></pre>
+<pre><code> #include &lt;openssl/srp.h&gt;
 
-<p>The following functions have been deprecated since OpenSSL 3.0, and can be hidden entirely by defining <b>OPENSSL_API_COMPAT</b> with a suitable version value, see <a href="https://man7.org/linux/man-pages/man7/openssl_user_macros.7.html">openssl_user_macros(7)</a>:</p>
+ SRP_user_pwd *SRP_user_pwd_new(void);
+ void SRP_user_pwd_free(SRP_user_pwd *user_pwd);
 
-<pre><code>SRP_user_pwd *SRP_user_pwd_new(void);
-void SRP_user_pwd_free(SRP_user_pwd *user_pwd);
-
-int SRP_user_pwd_set1_ids(SRP_user_pwd *user_pwd, const char *id, const char *info);
-void SRP_user_pwd_set_gN(SRP_user_pwd *user_pwd, const BIGNUM *g, const BIGNUM *N);
-int SRP_user_pwd_set0_sv(SRP_user_pwd *user_pwd, BIGNUM *s, BIGNUM *v);</code></pre>
+ int SRP_user_pwd_set1_ids(SRP_user_pwd *user_pwd, const char *id, const char *info);
+ void SRP_user_pwd_set_gN(SRP_user_pwd *user_pwd, const BIGNUM *g, const BIGNUM *N);
+ int SRP_user_pwd_set0_sv(SRP_user_pwd *user_pwd, BIGNUM *s, BIGNUM *v);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
-
-<p>All of the functions described on this page are deprecated. There are no available replacement functions at this time.</p>
 
 <p>The SRP_user_pwd_new() function allocates a structure to store a user verifier record.</p>
 
@@ -60,15 +56,15 @@ int SRP_user_pwd_set0_sv(SRP_user_pwd *user_pwd, BIGNUM *s, BIGNUM *v);</code></
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man1/openssl-srp.1.html">openssl-srp(1)</a>, <a href="https://man7.org/linux/man-pages/man3/SRP_create_verifier.3.html">SRP_create_verifier(3)</a>, <a href="https://man7.org/linux/man-pages/man3/SRP_VBASE_new.3.html">SRP_VBASE_new(3)</a>, <a href="https://man7.org/linux/man-pages/man3/SSL_CTX_set_srp_password.3.html">SSL_CTX_set_srp_password(3)</a></p>
+<p><a href="../man1/openssl-srp.html">openssl-srp(1)</a>, <a href="../man3/SRP_create_verifier.html">SRP_create_verifier(3)</a>, <a href="../man3/SRP_VBASE_new.html">SRP_VBASE_new(3)</a>, <a href="../man3/SSL_CTX_set_srp_password.html">SSL_CTX_set_srp_password(3)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
-<p>These functions were made public in OpenSSL 3.0 and are deprecated.</p>
+<p>These functions were made public in OpenSSL 3.0.</p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2018-2021 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2018 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

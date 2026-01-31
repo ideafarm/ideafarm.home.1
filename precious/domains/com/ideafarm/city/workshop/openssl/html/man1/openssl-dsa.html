@@ -18,7 +18,6 @@
   <li><a href="#OPTIONS">OPTIONS</a></li>
   <li><a href="#EXAMPLES">EXAMPLES</a></li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
-  <li><a href="#HISTORY">HISTORY</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
 </ul>
 
@@ -28,7 +27,7 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><b>openssl</b> <b>dsa</b> [<b>-help</b>] [<b>-inform</b> <b>DER</b>|<b>PEM</b>] [<b>-outform</b> <b>DER</b>|<b>PEM</b>] [<b>-in</b> <i>filename</i>] [<b>-passin</b> <i>arg</i>] [<b>-out</b> <i>filename</i>] [<b>-passout</b> <i>arg</i>] [<b>-aes128</b>] [<b>-aes192</b>] [<b>-aes256</b>] [<b>-aria128</b>] [<b>-aria192</b>] [<b>-aria256</b>] [<b>-camellia128</b>] [<b>-camellia192</b>] [<b>-camellia256</b>] [<b>-des</b>] [<b>-des3</b>] [<b>-idea</b>] [<b>-text</b>] [<b>-noout</b>] [<b>-modulus</b>] [<b>-pubin</b>] [<b>-pubout</b>] [<b>-pvk-strong</b>] [<b>-pvk-weak</b>] [<b>-pvk-none</b>] [<b>-provider</b> <i>name</i>] [<b>-provider-path</b> <i>path</i>] [<b>-provparam</b> <i>[name:]key=value</i>] [<b>-propquery</b> <i>propq</i>]</p>
+<p><b>openssl</b> <b>dsa</b> [<b>-help</b>] [<b>-inform</b> <b>DER</b>|<b>PEM</b>] [<b>-outform</b> <b>DER</b>|<b>PEM</b>] [<b>-in</b> <i>filename</i>] [<b>-passin</b> <i>arg</i>] [<b>-out</b> <i>filename</i>] [<b>-passout</b> <i>arg</i>] [<b>-aes128</b>] [<b>-aes192</b>] [<b>-aes256</b>] [<b>-aria128</b>] [<b>-aria192</b>] [<b>-aria256</b>] [<b>-camellia128</b>] [<b>-camellia192</b>] [<b>-camellia256</b>] [<b>-des</b>] [<b>-des3</b>] [<b>-idea</b>] [<b>-text</b>] [<b>-noout</b>] [<b>-modulus</b>] [<b>-pubin</b>] [<b>-pubout</b>] [<b>-engine</b> <i>id</i>] [<b>-provider</b> <i>name</i>] [<b>-provider_path</b> <i>path</i>]</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -44,18 +43,12 @@
 <p>Print out a usage message.</p>
 
 </dd>
-<dt id="inform-DER-PEM"><b>-inform</b> <b>DER</b>|<b>PEM</b></dt>
+<dt id="inform-DER-PEM--outform-DER-PEM"><b>-inform</b> <b>DER</b>|<b>PEM</b>, <b>-outform</b> <b>DER</b>|<b>PEM</b></dt>
 <dd>
 
-<p>The key input format; unspecified by default. See <a href="https://man7.org/linux/man-pages/man1/openssl-format-options.1.html">openssl-format-options(1)</a> for details.</p>
+<p>The input and formats; the default is <b>PEM</b>. See <a href="../man1/openssl.html">&quot;Format Options&quot; in openssl(1)</a> for details.</p>
 
-</dd>
-<dt id="outform-DER-PEM"><b>-outform</b> <b>DER</b>|<b>PEM</b></dt>
-<dd>
-
-<p>The key output format; the default is <b>PEM</b>. See <a href="https://man7.org/linux/man-pages/man1/openssl-format-options.1.html">openssl-format-options(1)</a> for details.</p>
-
-<p>Private keys are a sequence of <b>ASN.1 INTEGERS</b>: the version (zero), <b>p</b>, <b>q</b>, <b>g</b>, and the public and private key components. Public keys are a <b>SubjectPublicKeyInfo</b> structure with the <b>DSA</b> type.</p>
+<p>Private keys are a sequence of <b>ASN.1 INTEGERS</b>: the version (zero), <b>p</b>, <b>q</b>, <b>g</b>, and the public and and private key components. Public keys are a <b>SubjectPublicKeyInfo</b> structure with the <b>DSA</b> type.</p>
 
 <p>The <b>PEM</b> format also accepts PKCS#8 data.</p>
 
@@ -75,7 +68,7 @@
 <dt id="passin-arg--passout-arg"><b>-passin</b> <i>arg</i>, <b>-passout</b> <i>arg</i></dt>
 <dd>
 
-<p>The password source for the input and output file. For more information about the format of <b>arg</b> see <a href="https://man7.org/linux/man-pages/man1/openssl-passphrase-options.1.html">openssl-passphrase-options(1)</a>.</p>
+<p>The password source for the input and output file. For more information about the format of <b>arg</b> see <a href="../man1/openssl.html">&quot;Pass Phrase Options&quot; in openssl(1)</a>.</p>
 
 </dd>
 <dt id="aes128--aes192--aes256--aria128--aria192--aria256--camellia128--camellia192--camellia256--des--des3--idea"><b>-aes128</b>, <b>-aes192</b>, <b>-aes256</b>, <b>-aria128</b>, <b>-aria192</b>, <b>-aria256</b>, <b>-camellia128</b>, <b>-camellia192</b>, <b>-camellia256</b>, <b>-des</b>, <b>-des3</b>, <b>-idea</b></dt>
@@ -105,7 +98,7 @@
 <dt id="pubin"><b>-pubin</b></dt>
 <dd>
 
-<p>By default, a private key is read from the input. With this option a public key is read instead. If the input contains no public key but a private key, its public part is used.</p>
+<p>By default, a private key is read from the input file. With this option a public key is read instead.</p>
 
 </dd>
 <dt id="pubout"><b>-pubout</b></dt>
@@ -114,81 +107,55 @@
 <p>By default, a private key is output. With this option a public key will be output instead. This option is automatically set if the input is a public key.</p>
 
 </dd>
-<dt id="pvk-strong"><b>-pvk-strong</b></dt>
+<dt id="engine-id"><b>-engine</b> <i>id</i></dt>
 <dd>
 
-<p>Enable &#39;Strong&#39; PVK encoding level (default).</p>
-
-</dd>
-<dt id="pvk-weak"><b>-pvk-weak</b></dt>
-<dd>
-
-<p>Enable &#39;Weak&#39; PVK encoding level.</p>
-
-</dd>
-<dt id="pvk-none"><b>-pvk-none</b></dt>
-<dd>
-
-<p>Don&#39;t enforce PVK encoding.</p>
+<p>See <a href="../man1/openssl.html">&quot;Engine Options&quot; in openssl(1)</a>.</p>
 
 </dd>
 <dt id="provider-name"><b>-provider</b> <i>name</i></dt>
 <dd>
 
 </dd>
-<dt id="provider-path-path"><b>-provider-path</b> <i>path</i></dt>
+<dt id="provider_path-path"><b>-provider_path</b> <i>path</i></dt>
 <dd>
 
-</dd>
-<dt id="provparam-name:-key-value"><b>-provparam</b> <i>[name:]key=value</i></dt>
-<dd>
-
-</dd>
-<dt id="propquery-propq"><b>-propquery</b> <i>propq</i></dt>
-<dd>
-
-<p>See <a href="https://man7.org/linux/man-pages/man1/openssl.1.html">&quot;Provider Options&quot; in openssl(1)</a>, <a href="https://man7.org/linux/man-pages/man7/provider.7.html">provider(7)</a>, and <a href="https://man7.org/linux/man-pages/man7/property.7.html">property(7)</a>.</p>
+<p>See <a href="../man1/openssl.html">&quot;Provider Options&quot; in openssl(1)</a>.</p>
 
 </dd>
 </dl>
 
-<p>The <a href="https://man7.org/linux/man-pages/man1/openssl-pkey.1.html">openssl-pkey(1)</a> command is capable of performing all the operations this command can, as well as supporting other public key types.</p>
-
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
-<p>The documentation for the <a href="https://man7.org/linux/man-pages/man1/openssl-pkey.1.html">openssl-pkey(1)</a> command contains examples equivalent to the ones listed here.</p>
+<p>Examples equivalent to these can be found in the documentation for the non-deprecated <a href="../man1/openssl-pkey.html">openssl-pkey(1)</a> command.</p>
 
 <p>To remove the pass phrase on a DSA private key:</p>
 
-<pre><code>openssl dsa -in key.pem -out keyout.pem</code></pre>
+<pre><code> openssl dsa -in key.pem -out keyout.pem</code></pre>
 
 <p>To encrypt a private key using triple DES:</p>
 
-<pre><code>openssl dsa -in key.pem -des3 -out keyout.pem</code></pre>
+<pre><code> openssl dsa -in key.pem -des3 -out keyout.pem</code></pre>
 
 <p>To convert a private key from PEM to DER format:</p>
 
-<pre><code>openssl dsa -in key.pem -outform DER -out keyout.der</code></pre>
+<pre><code> openssl dsa -in key.pem -outform DER -out keyout.der</code></pre>
 
 <p>To print out the components of a private key to standard output:</p>
 
-<pre><code>openssl dsa -in key.pem -text -noout</code></pre>
+<pre><code> openssl dsa -in key.pem -text -noout</code></pre>
 
 <p>To just output the public part of a private key:</p>
 
-<pre><code>openssl dsa -in key.pem -pubout -out pubkey.pem</code></pre>
+<pre><code> openssl dsa -in key.pem -pubout -out pubkey.pem</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man1/openssl.1.html">openssl(1)</a>, <a href="https://man7.org/linux/man-pages/man1/openssl-pkey.1.html">openssl-pkey(1)</a>, <a href="https://man7.org/linux/man-pages/man1/openssl-dsaparam.1.html">openssl-dsaparam(1)</a>, <a href="https://man7.org/linux/man-pages/man1/openssl-gendsa.1.html">openssl-gendsa(1)</a>, <a href="https://man7.org/linux/man-pages/man1/openssl-rsa.1.html">openssl-rsa(1)</a>, <a href="https://man7.org/linux/man-pages/man1/openssl-genrsa.1.html">openssl-genrsa(1)</a></p>
-
-<h1 id="HISTORY">HISTORY</h1>
-
-<p>The <b>-engine</b> option was removed in OpenSSL 4.0.</p>
+<p><a href="../man1/openssl.html">openssl(1)</a>, <a href="../man1/openssl-pkey.html">openssl-pkey(1)</a>, <a href="../man1/openssl-dsaparam.html">openssl-dsaparam(1)</a>, <a href="../man1/openssl-gendsa.html">openssl-gendsa(1)</a>, <a href="../man1/openssl-rsa.html">openssl-rsa(1)</a>, <a href="../man1/openssl-genrsa.html">openssl-genrsa(1)</a></p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2000-2023 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2000-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

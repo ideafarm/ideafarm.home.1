@@ -28,9 +28,11 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><b>openssl</b> <b>genrsa</b> [<b>-help</b>] [<b>-out</b> <i>filename</i>] [<b>-passout</b> <i>arg</i>] [<b>-aes128</b>] [<b>-aes192</b>] [<b>-aes256</b>] [<b>-aria128</b>] [<b>-aria192</b>] [<b>-aria256</b>] [<b>-camellia128</b>] [<b>-camellia192</b>] [<b>-camellia256</b>] [<b>-des</b>] [<b>-des3</b>] [<b>-idea</b>] [<b>-F4</b>] [<b>-f4</b>] [<b>-3</b>] [<b>-primes</b> <i>num</i>] [<b>-verbose</b>] [<b>-quiet</b>] [<b>-traditional</b>] [<b>-rand</b> <i>files</i>] [<b>-writerand</b> <i>file</i>] [<b>-provider</b> <i>name</i>] [<b>-provider-path</b> <i>path</i>] [<b>-provparam</b> <i>[name:]key=value</i>] [<b>-propquery</b> <i>propq</i>] [<b>numbits</b>]</p>
+<p><b>openssl</b> <b>genrsa</b> [<b>-help</b>] [<b>-out</b> <i>filename</i>] [<b>-passout</b> <i>arg</i>] [<b>-aes128</b>] [<b>-aes192</b>] [<b>-aes256</b>] [<b>-aria128</b>] [<b>-aria192</b>] [<b>-aria256</b>] [<b>-camellia128</b>] [<b>-camellia192</b>] [<b>-camellia256</b>] [<b>-des</b>] [<b>-des3</b>] [<b>-idea</b>] [<b>-F4</b>] [<b>-f4</b>] [<b>-3</b>] [<b>-primes</b> <i>num</i>] [<b>-verbose</b>] [<b>-rand</b> <i>files</i>] [<b>-writerand</b> <i>file</i>] [<b>-engine</b> <i>id</i>] [<b>-provider</b> <i>name</i>] [<b>-provider_path</b> <i>path</i>] [<b>numbits</b>]</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This command has been deprecated. The <a href="../man1/openssl-genpkey.html">openssl-genpkey(1)</a> command should be used instead.</p>
 
 <p>This command generates an RSA private key.</p>
 
@@ -53,7 +55,7 @@
 <dt id="passout-arg"><b>-passout</b> <i>arg</i></dt>
 <dd>
 
-<p>The output file password source. For more information about the format see <a href="https://man7.org/linux/man-pages/man1/openssl-passphrase-options.1.html">openssl-passphrase-options(1)</a>.</p>
+<p>The output file password source. For more information about the format see <a href="../man1/openssl.html">&quot;Pass Phrase Options&quot; in openssl(1)</a>.</p>
 
 </dd>
 <dt id="aes128--aes192--aes256--aria128--aria192--aria256--camellia128--camellia192--camellia256--des--des3--idea"><b>-aes128</b>, <b>-aes192</b>, <b>-aes256</b>, <b>-aria128</b>, <b>-aria192</b>, <b>-aria256</b>, <b>-camellia128</b>, <b>-camellia192</b>, <b>-camellia256</b>, <b>-des</b>, <b>-des3</b>, <b>-idea</b></dt>
@@ -80,40 +82,26 @@
 <p>Print extra details about the operations being performed.</p>
 
 </dd>
-<dt id="quiet"><b>-quiet</b></dt>
-<dd>
-
-<p>Print fewer details about the operations being performed, which may be handy during batch scripts and pipelines.</p>
-
-</dd>
-<dt id="traditional"><b>-traditional</b></dt>
-<dd>
-
-<p>Write the key using the traditional PKCS#1 format instead of the PKCS#8 format.</p>
-
-</dd>
 <dt id="rand-files--writerand-file"><b>-rand</b> <i>files</i>, <b>-writerand</b> <i>file</i></dt>
 <dd>
 
-<p>See <a href="https://man7.org/linux/man-pages/man1/openssl.1.html">&quot;Random State Options&quot; in openssl(1)</a> for details.</p>
+<p>See <a href="../man1/openssl.html">&quot;Random State Options&quot; in openssl(1)</a> for details.</p>
+
+</dd>
+<dt id="engine-id"><b>-engine</b> <i>id</i></dt>
+<dd>
+
+<p>See <a href="../man1/openssl.html">&quot;Engine Options&quot; in openssl(1)</a>.</p>
 
 </dd>
 <dt id="provider-name"><b>-provider</b> <i>name</i></dt>
 <dd>
 
 </dd>
-<dt id="provider-path-path"><b>-provider-path</b> <i>path</i></dt>
+<dt id="provider_path-path"><b>-provider_path</b> <i>path</i></dt>
 <dd>
 
-</dd>
-<dt id="provparam-name:-key-value"><b>-provparam</b> <i>[name:]key=value</i></dt>
-<dd>
-
-</dd>
-<dt id="propquery-propq"><b>-propquery</b> <i>propq</i></dt>
-<dd>
-
-<p>See <a href="https://man7.org/linux/man-pages/man1/openssl.1.html">&quot;Provider Options&quot; in openssl(1)</a>, <a href="https://man7.org/linux/man-pages/man7/provider.7.html">provider(7)</a>, and <a href="https://man7.org/linux/man-pages/man7/property.7.html">property(7)</a>.</p>
+<p>See <a href="../man1/openssl.html">&quot;Provider Options&quot; in openssl(1)</a>.</p>
 
 </dd>
 <dt id="numbits"><b>numbits</b></dt>
@@ -132,15 +120,15 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man1/openssl.1.html">openssl(1)</a>, <a href="https://man7.org/linux/man-pages/man1/openssl-genpkey.1.html">openssl-genpkey(1)</a>, <a href="https://man7.org/linux/man-pages/man1/openssl-gendsa.1.html">openssl-gendsa(1)</a></p>
+<p><a href="../man1/openssl.html">openssl(1)</a>, <a href="../man1/openssl-genpkey.html">openssl-genpkey(1)</a>, <a href="../man1/openssl-gendsa.html">openssl-gendsa(1)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
-<p>The <b>-engine</b> option was removed in OpenSSL 4.0.</p>
+<p>This command was deprecated in OpenSSL 3.0.</p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2000-2023 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2000-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

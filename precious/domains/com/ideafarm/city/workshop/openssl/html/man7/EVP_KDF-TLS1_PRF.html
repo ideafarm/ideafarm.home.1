@@ -23,7 +23,6 @@
   <li><a href="#EXAMPLES">EXAMPLES</a></li>
   <li><a href="#CONFORMING-TO">CONFORMING TO</a></li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
-  <li><a href="#HISTORY">HISTORY</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
 </ul>
 
@@ -36,8 +35,6 @@
 <p>Support for computing the <b>TLS1</b> PRF through the <b>EVP_KDF</b> API.</p>
 
 <p>The EVP_KDF-TLS1_PRF algorithm implements the PRF used by TLS versions up to and including TLS 1.2.</p>
-
-<p>The output is considered to be keying material.</p>
 
 <h2 id="Identity">Identity</h2>
 
@@ -56,7 +53,7 @@
 <dt id="digest-OSSL_KDF_PARAM_DIGEST-UTF8-string">&quot;digest&quot; (<b>OSSL_KDF_PARAM_DIGEST</b>) &lt;UTF8 string&gt;</dt>
 <dd>
 
-<p>These parameters work as described in <a href="https://man7.org/linux/man-pages/man3/EVP_KDF.3.html">&quot;PARAMETERS&quot; in EVP_KDF(3)</a>.</p>
+<p>These parameters work as described in <a href="../man3/EVP_KDF.html">&quot;PARAMETERS&quot; in EVP_KDF(3)</a>.</p>
 
 <p>The <b>OSSL_KDF_PARAM_DIGEST</b> parameter is used to set the message digest associated with the TLS PRF. EVP_md5_sha1() is treated as a special case which uses the PRF algorithm using both <b>MD5</b> and <b>SHA1</b> as used in TLS 1.0 and 1.1.</p>
 
@@ -75,44 +72,12 @@
 </dd>
 </dl>
 
-<p>The OpenSSL FIPS provider also supports the following parameters:</p>
-
-<dl>
-
-<dt id="fips-indicator-OSSL_KDF_PARAM_FIPS_APPROVED_INDICATOR-integer">&quot;fips-indicator&quot; (<b>OSSL_KDF_PARAM_FIPS_APPROVED_INDICATOR</b>) &lt;integer&gt;</dt>
-<dd>
-
-<p>A getter that returns 1 if the operation is FIPS approved, or 0 otherwise. This may be used after calling EVP_KDF_derive. It returns 0 if any &quot;***-check&quot; related parameter is set to 0 and the check fails.</p>
-
-</dd>
-<dt id="ems_check-OSSL_KDF_PARAM_FIPS_EMS_CHECK-integer">&quot;ems_check&quot; (<b>OSSL_KDF_PARAM_FIPS_EMS_CHECK</b>) &lt;integer&gt;</dt>
-<dd>
-
-<p>The default value of 1 causes an error during EVP_KDF_derive() if &quot;master secret&quot; is used instead of &quot;extended master secret&quot; Setting this to zero will ignore the error and set the approved &quot;fips-indicator&quot; to 0. This option breaks FIPS compliance if it causes the approved &quot;fips-indicator&quot; to return 0.</p>
-
-</dd>
-<dt id="digest-check-OSSL_KDF_PARAM_FIPS_DIGEST_CHECK-integer">&quot;digest-check&quot; (<b>OSSL_KDF_PARAM_FIPS_DIGEST_CHECK</b>) &lt;integer&gt;</dt>
-<dd>
-
-<p>The default value of 1 causes an error during EVP_KDF_CTX_set_params() if used digest is not approved. Setting this to zero will ignore the error and set the approved &quot;fips-indicator&quot; to 0. This option breaks FIPS compliance if it causes the approved &quot;fips-indicator&quot; to return 0.</p>
-
-<p>According to SP 800-135r1, the following are approved digest algorithms: SHA2-256, SHA2-384, SHA2-512.</p>
-
-</dd>
-<dt id="key-check-OSSL_KDF_PARAM_FIPS_KEY_CHECK-integer">&quot;key-check&quot; (<b>OSSL_KDF_PARAM_FIPS_KEY_CHECK</b>) &lt;integer&gt;</dt>
-<dd>
-
-<p>The default value of 1 causes an error during EVP_KDF_CTX_set_params() if the length of used key-derivation key (<b>OSSL_KDF_PARAM_SECRET</b>) is shorter than 112 bits. Setting this to zero will ignore the error and set the approved &quot;fips-indicator&quot; to 0. This option breaks FIPS compliance if it causes the approved &quot;fips-indicator&quot; to return 0.</p>
-
-</dd>
-</dl>
-
 <h1 id="NOTES">NOTES</h1>
 
 <p>A context for the TLS PRF can be obtained by calling:</p>
 
-<pre><code>EVP_KDF *kdf = EVP_KDF_fetch(NULL, &quot;TLS1-PRF&quot;, NULL);
-EVP_KDF_CTX *kctx = EVP_KDF_CTX_new(kdf);</code></pre>
+<pre><code> EVP_KDF *kdf = EVP_KDF_fetch(NULL, &quot;TLS1-PRF&quot;, NULL);
+ EVP_KDF_CTX *kctx = EVP_KDF_new_ctx(kdf);</code></pre>
 
 <p>The digest, secret value and seed must be set before a key is derived otherwise an error will occur.</p>
 
@@ -122,26 +87,29 @@ EVP_KDF_CTX *kctx = EVP_KDF_CTX_new(kdf);</code></pre>
 
 <p>This example derives 10 bytes using SHA-256 with the secret key &quot;secret&quot; and seed value &quot;seed&quot;:</p>
 
-<pre><code>EVP_KDF *kdf;
-EVP_KDF_CTX *kctx;
-unsigned char out[10];
-OSSL_PARAM params[4], *p = params;
+<pre><code> EVP_KDF *kdf;
+ EVP_KDF_CTX *kctx;
+ unsigned char out[10];
+ OSSL_PARAM params[4], *p = params;
 
-kdf = EVP_KDF_fetch(NULL, &quot;TLS1-PRF&quot;, NULL);
-kctx = EVP_KDF_CTX_new(kdf);
-EVP_KDF_free(kdf);
+ kdf = EVP_KDF_fetch(NULL, &quot;TLS1-PRF&quot;, NULL);
+ kctx = EVP_KDF_new_ctx(kdf);
+ EVP_KDF_free(kdf);
 
-*p++ = OSSL_PARAM_construct_utf8_string(OSSL_KDF_PARAM_DIGEST,
-                                        SN_sha256, strlen(SN_sha256));
-*p++ = OSSL_PARAM_construct_octet_string(OSSL_KDF_PARAM_SECRET,
-                                         &quot;secret&quot;, (size_t)6);
-*p++ = OSSL_PARAM_construct_octet_string(OSSL_KDF_PARAM_SEED,
-                                         &quot;seed&quot;, (size_t)4);
-*p = OSSL_PARAM_construct_end();
-if (EVP_KDF_derive(kctx, out, sizeof(out), params) &lt;= 0) {
-    error(&quot;EVP_KDF_derive&quot;);
-}
-EVP_KDF_CTX_free(kctx);</code></pre>
+ *p++ = OSSL_PARAM_construct_utf8_string(OSSL_KDF_PARAM_DIGEST,
+                                         SN_sha256, strlen(SN_sha256));
+ *p++ = OSSL_PARAM_construct_octet_string(OSSL_KDF_PARAM_SECRET,
+                                          &quot;secret&quot;, (size_t)6);
+ *p++ = OSSL_PARAM_construct_octet_string(OSSL_KDF_PARAM_SEED,
+                                          &quot;seed&quot;, (size_t)4);
+ *p = OSSL_PARAM_construct_end();
+ if (EVP_KDF_set_ctx_params(kctx, params) &lt;= 0) {
+     error(&quot;EVP_KDF_set_ctx_params&quot;);
+ }
+ if (EVP_KDF_derive(kctx, out, sizeof(out)) &lt;= 0) {
+     error(&quot;EVP_KDF_derive&quot;);
+ }
+ EVP_KDF_free_ctx(kctx);</code></pre>
 
 <h1 id="CONFORMING-TO">CONFORMING TO</h1>
 
@@ -149,15 +117,11 @@ EVP_KDF_CTX_free(kctx);</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man3/EVP_KDF.3.html">EVP_KDF(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_KDF_CTX_new.3.html">EVP_KDF_CTX_new(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_KDF_CTX_free.3.html">EVP_KDF_CTX_free(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_KDF_CTX_set_params.3.html">EVP_KDF_CTX_set_params(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_KDF_derive.3.html">EVP_KDF_derive(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_KDF.3.html">&quot;PARAMETERS&quot; in EVP_KDF(3)</a></p>
-
-<h1 id="HISTORY">HISTORY</h1>
-
-<p>This functionality was added in OpenSSL 3.0.</p>
+<p><a href="../man3/EVP_KDF.html">EVP_KDF(3)</a>, <a href="../man3/EVP_KDF_new_ctx.html">EVP_KDF_new_ctx(3)</a>, <a href="../man3/EVP_KDF_free_ctx.html">EVP_KDF_free_ctx(3)</a>, <a href="../man3/EVP_KDF_set_ctx_params.html">EVP_KDF_set_ctx_params(3)</a>, <a href="../man3/EVP_KDF_derive.html">EVP_KDF_derive(3)</a>, <a href="../man3/EVP_KDF.html">&quot;PARAMETERS&quot; in EVP_KDF(3)</a></p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2018-2024 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2018-2019 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

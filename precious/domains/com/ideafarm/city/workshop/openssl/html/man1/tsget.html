@@ -32,19 +32,19 @@
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>This command can be used for sending a timestamp request, as specified in RFC 3161, to a timestamp server over HTTP or HTTPS and storing the timestamp response in a file. It cannot be used for creating the requests and verifying responses, you have to use <a href="https://man7.org/linux/man-pages/man1/openssl-ts.1.html">openssl-ts(1)</a> to do that. This command can send several requests to the server without closing the TCP connection if more than one requests are specified on the command line.</p>
+<p>This command can be used for sending a timestamp request, as specified in RFC 3161, to a timestamp server over HTTP or HTTPS and storing the timestamp response in a file. It cannot be used for creating the requests and verifying responses, you have to use <a href="../man1/openssl-ts.html">openssl-ts(1)</a> to do that. This command can send several requests to the server without closing the TCP connection if more than one requests are specified on the command line.</p>
 
 <p>This command sends the following HTTP request for each timestamp request:</p>
 
-<pre><code>POST url HTTP/1.1
-User-Agent: OpenTSA tsget.pl/&lt;version&gt;
-Host: &lt;host&gt;:&lt;port&gt;
-Pragma: no-cache
-Content-Type: application/timestamp-query
-Accept: application/timestamp-reply
-Content-Length: length of body
+<pre><code>        POST url HTTP/1.1
+        User-Agent: OpenTSA tsget.pl/&lt;version&gt;
+        Host: &lt;host&gt;:&lt;port&gt;
+        Pragma: no-cache
+        Content-Type: application/timestamp-query
+        Accept: application/timestamp-reply
+        Content-Length: length of body
 
-...binary request specified by the user...</code></pre>
+        ...binary request specified by the user...</code></pre>
 
 <p>It expects a response of type application/timestamp-reply, which is written to a file without any interpretation.</p>
 
@@ -109,13 +109,13 @@ Content-Length: length of body
 <dt id="P-CA_path"><b>-P</b> <i>CA_path</i></dt>
 <dd>
 
-<p>(HTTPS) The path containing the trusted CA certificates to verify the peer&#39;s certificate. The directory must be prepared with <a href="https://man7.org/linux/man-pages/man1/openssl-rehash.1.html">openssl-rehash(1)</a>. Either option <b>-C</b> or option <b>-P</b> must be given in case of HTTPS. (Optional)</p>
+<p>(HTTPS) The path containing the trusted CA certificates to verify the peer&#39;s certificate. The directory must be prepared with <a href="../man1/openssl-rehash.html">openssl-rehash(1)</a>. Either option <b>-C</b> or option <b>-P</b> must be given in case of HTTPS. (Optional)</p>
 
 </dd>
 <dt id="r-files"><b>-r</b> <i>files</i></dt>
 <dd>
 
-<p>See <a href="https://man7.org/linux/man-pages/man1/openssl.1.html">&quot;Random State Options&quot; in openssl(1)</a> for more information.</p>
+<p>See <a href="../man1/openssl.html">&quot;Random State Options&quot; in openssl(1)</a> for more information.</p>
 
 </dd>
 <dt id="g-EGD_socket"><b>-g</b> <i>EGD_socket</i></dt>
@@ -142,39 +142,39 @@ Content-Length: length of body
 
 <p>Get a timestamp response for <i>file1.tsq</i> over HTTP, output is written to <i>file1.tsr</i>:</p>
 
-<pre><code>tsget -h http://tsa.opentsa.org:8080/tsa file1.tsq</code></pre>
+<pre><code>  tsget -h http://tsa.opentsa.org:8080/tsa file1.tsq</code></pre>
 
 <p>Get a timestamp response for <i>file1.tsq</i> and <i>file2.tsq</i> over HTTP showing progress, output is written to <i>file1.reply</i> and <i>file2.reply</i> respectively:</p>
 
-<pre><code>tsget -h http://tsa.opentsa.org:8080/tsa -v -e .reply \
-      file1.tsq file2.tsq</code></pre>
+<pre><code>  tsget -h http://tsa.opentsa.org:8080/tsa -v -e .reply \
+        file1.tsq file2.tsq</code></pre>
 
 <p>Create a timestamp request, write it to <i>file3.tsq</i>, send it to the server and write the response to <i>file3.tsr</i>:</p>
 
-<pre><code>openssl ts -query -data file3.txt -cert | tee file3.tsq \
-      | tsget -h http://tsa.opentsa.org:8080/tsa \
-      -o file3.tsr</code></pre>
+<pre><code>  openssl ts -query -data file3.txt -cert | tee file3.tsq \
+        | tsget -h http://tsa.opentsa.org:8080/tsa \
+        -o file3.tsr</code></pre>
 
 <p>Get a timestamp response for <i>file1.tsq</i> over HTTPS without client authentication:</p>
 
-<pre><code>tsget -h https://tsa.opentsa.org:8443/tsa \
-      -C cacerts.pem file1.tsq</code></pre>
+<pre><code>  tsget -h https://tsa.opentsa.org:8443/tsa \
+        -C cacerts.pem file1.tsq</code></pre>
 
 <p>Get a timestamp response for <i>file1.tsq</i> over HTTPS with certificate-based client authentication (it will ask for the passphrase if <i>client_key.pem</i> is protected):</p>
 
-<pre><code>tsget -h https://tsa.opentsa.org:8443/tsa -C cacerts.pem \
-      -k client_key.pem -c client_cert.pem file1.tsq</code></pre>
+<pre><code>  tsget -h https://tsa.opentsa.org:8443/tsa -C cacerts.pem \
+        -k client_key.pem -c client_cert.pem file1.tsq</code></pre>
 
 <p>You can shorten the previous command line if you make use of the <b>TSGET</b> environment variable. The following commands do the same as the previous example:</p>
 
-<pre><code>TSGET=&#39;-h https://tsa.opentsa.org:8443/tsa -C cacerts.pem \
-      -k client_key.pem -c client_cert.pem&#39;
-export TSGET
-tsget file1.tsq</code></pre>
+<pre><code>  TSGET=&#39;-h https://tsa.opentsa.org:8443/tsa -C cacerts.pem \
+        -k client_key.pem -c client_cert.pem&#39;
+  export TSGET
+  tsget file1.tsq</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="https://man7.org/linux/man-pages/man1/openssl.1.html">openssl(1)</a>, <a href="https://man7.org/linux/man-pages/man1/openssl-ts.1.html">openssl-ts(1)</a>, <a>WWW::Curl::Easy</a>, <a href="https://www.rfc-editor.org/rfc/rfc3161.html">https://www.rfc-editor.org/rfc/rfc3161.html</a></p>
+<p><a href="../man1/openssl.html">openssl(1)</a>, <a href="../man1/openssl-ts.html">openssl-ts(1)</a>, <a>WWW::Curl::Easy</a>, <a href="https://www.rfc-editor.org/rfc/rfc3161.html">https://www.rfc-editor.org/rfc/rfc3161.html</a></p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 

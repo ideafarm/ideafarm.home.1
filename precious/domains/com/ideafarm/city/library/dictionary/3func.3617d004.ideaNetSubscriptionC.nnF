@@ -19,13 +19,15 @@
 
     }
         idSubnet = (count01T)hashF( (byteT*)pSeeds , sizeof pSeeds , idTick ) & 0xfff ;     // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
-        countT idTick = minuteP >> 4 ;
         countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
+        countT seed = hashF( tSecret , tSecret.csF( tin0P ) , idTick ) ;
+        countT idTick = minuteP >> 4 ;
 
         }
             idHost2 = hashF( (byteT*)pSeeds , sizeof pSeeds , idHost1 ) ;
             idHost1 = hashF( (byteT*)pSeeds , sizeof pSeeds , minuteP  ) ;
             countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
+            countT seed = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
         {
         else
         }
@@ -35,8 +37,6 @@
             count01T seed = (count01T)( hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) % IDEAnETiPV6aDDRESSESuSED ) ;
         {
         if( modulo )
-
-        countT seed = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
     {
     ZE( countT , idHost2  ) ;
     ZE( countT , idHost1  ) ;
