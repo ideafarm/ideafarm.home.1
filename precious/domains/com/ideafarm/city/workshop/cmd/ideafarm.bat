@@ -49,7 +49,7 @@ if not %1z == nopausez pause
 %idrive%
 
 rem Visual Studio RUNTIMES ARE NO LONGER NEEDED BECAUSE OPENSSL HAS BEEN UPDATED  (NOT TRUE)
-goto :AFTERvc
+rem goto :AFTERvc
 
 if not exist %idrive%\tmp.ideafarm\vc.installed.txt goto :DOvc
 
