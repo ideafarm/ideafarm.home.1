@@ -21,9 +21,9 @@
         thirdC::c_strcpyIF( tin0P , postFileOrZip , postP ) ;
         thirdC::dosCreatePathIF( tin0P , (osTextT*)postFileOrZip ) ;
         thirdC::c_strcpyIF( tin0P , postFileOrZip , postP ) ;
-        flagsOr = flOPENdETAILS_DOnOTrEGISTER | flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED ;
     {
-    if( !( F(flagsCt) & flFILEc_DOnOTmAKEpATH ) )
+    else
+    if( F(flagsCt) & flFILEc_DOnOTmAKEpATH ) flagsOr = flOPENdETAILS_DOnOTrEGISTER | flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED ;
     ZE( flagsT , flagsOr ) ;
 
     //}
