@@ -10,7 +10,7 @@
 }
     //CONoUTrAW( "\r\ncalled dosOpenIF\r\n" ) ;
     //if( ((tin1S&)tin0P).pEther ) etherC::etRockIF( tin0P ).traceF( tin0P , T("fileC::ctF called  dosOpenIF [POOP,postP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postP) ) ;
-    thirdC::dosOpenIF( tin0P , ((tin1S&)tin0P).pEther , hFile , idOpenResult , postP , idAccessP , idShareP , flagsDetailsP , idHowP , flagsAttribute1P , flagsAttribute2P , 0 , cTriesP ) ;
+    thirdC::dosOpenIF( tin0P , ((tin1S&)tin0P).pEther , hFile , idOpenResult , postP , idAccessP , idShareP , flagsDetailsP | flagsOr , idHowP , flagsAttribute1P , flagsAttribute2P , 0 , cTriesP ) ;
     //if( ((tin1S&)tin0P).pEther ) etherC::etRockIF( tin0P ).traceF( tin0P , T("fileC::ctF calling dosOpenIF [POOP,postP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postP) ) ;
 
     //CONoUTrAW( "\r\ncalling dosOpenIF\r\n" ) ;
@@ -21,8 +21,10 @@
         thirdC::c_strcpyIF( tin0P , postFileOrZip , postP ) ;
         thirdC::dosCreatePathIF( tin0P , (osTextT*)postFileOrZip ) ;
         thirdC::c_strcpyIF( tin0P , postFileOrZip , postP ) ;
+        flagsOr = flOPENdETAILS_DOnOTrEGISTER | flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED ;
     {
     if( !( F(flagsCt) & flFILEc_DOnOTmAKEpATH ) )
+    ZE( flagsT , flagsOr ) ;
 
     //}
     //    OStEXTAK( ostoSay , "\"\r\n" ) ;
