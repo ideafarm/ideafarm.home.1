@@ -276,19 +276,21 @@ etherC::loafIF( tin0P ) ;
 }
     CloseHandle( oshFile ) ;
     }
-        etThread.traceF( tin0P , T("!exception / could not read the fooey file to the router's bird share [rc,postLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postLong) ) ;
+        etThread.traceF( tin0P , T("!exception / could not write the fooey file to the router's bird share [rc,postLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postLong) ) ;
         countT rc = GetLastError() ;
         TN( tb4 , "    " ) ;
     {
-    if( oshFile == INVALID_HANDLE_VALUE )
+    else
+    if( oshFile != INVALID_HANDLE_VALUE ) etThread.traceF( tin0P , T("!exception / yippee! i wrote the fooey file aok to the router's bird share [postLong]:    ")+T(postLong) ) ;
+
     //if( oshFile == INVALID_HANDLE_VALUE ) etThread.traceF( tin0P , T("!exception / could not write the fooey file to the router's bird share [postLong]:    ")+T(postLong) ) ;
-    HANDLE oshFile = CreateFile( postLong , GENERIC_READ , 0 , 0 , OPEN_EXISTING , FILE_ATTRIBUTE_NORMAL , 0 ) ;
-    //HANDLE oshFile = CreateFile( postLong , GENERIC_WRITE , 0 , 0 , CREATE_ALWAYS , FILE_ATTRIBUTE_NORMAL , 0 ) ;
-    const osTextT* const postLong = "\\\\10.0.4.1\\bird\\fooeysandbox" ;
+    //HANDLE oshFile = CreateFile( postLong , GENERIC_READ , 0 , 0 , OPEN_EXISTING , FILE_ATTRIBUTE_NORMAL , 0 ) ;
+    HANDLE oshFile = CreateFile( postLong , GENERIC_WRITE , 0 , 0 , CREATE_ALWAYS , FILE_ATTRIBUTE_NORMAL , 0 ) ;
+    //const osTextT* const postLong = "\\\\10.0.4.1\\bird\\fooeysandbox" ;
     //const osTextT* const postLong = "\\10.0.4.1\fooeysandbox" ;
     //const osTextT* const postLong = "/fooeysandbox" ;
     //const osTextT* const postLong = !bSandbox ? "b:\\fooeysandbox" : "b:\\fooeyservice" ;
-    //const osTextT* const postLong = bSandbox ? "b:\\fooeysandbox" : "b:\\fooeyservice" ;
+    const osTextT* const postLong = bSandbox ? "b:\\fooeysandbox" : "b:\\fooeyservice" ;
     boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 {
 //U:: 20260201@1159: TO DEBUG SAMBA SHARE ACCESS OF router BY go1
