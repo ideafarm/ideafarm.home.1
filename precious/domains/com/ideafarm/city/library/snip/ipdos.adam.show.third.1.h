@@ -44777,8 +44777,9 @@ arguments
 
 /*3*/
 #define flFILEc_DELETE                   ((countT)0xe00001ea)
+#define flFILEc_DOnOTmAKEpATH            ((countT)0xe00002ea)
 /*3*/
-#define flFILEc_null    ((countT)0xe00000ea)
+#define flFILEc_null                     ((countT)0xe00000ea)
 
 
 //
