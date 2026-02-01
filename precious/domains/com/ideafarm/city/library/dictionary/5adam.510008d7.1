@@ -44,7 +44,7 @@ DONE( tmWorkF )
 //    etThread.boxPutF( tin0P , tLong , tSay , tSay.csF( tin0P ) ) ;
 #if !defined( NEVERdEFINED )
 
-            TN( tSay , "" ) ; tSay =  tImage1+tBgpPasswordtImage2+T(nnSubnet48)+tImage3 ;
+            TN( tSay , "" ) ; tSay =  tImage1+tBgpPassword+tImage2+T(nnSubnet48)+tImage3 ;
 
             etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnNow]:    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNow)+tb4+T(nnSubnet36)+tb4+T(nnSubnet48) , flTRACE_NOpREFIX ) ;
 
@@ -87,7 +87,7 @@ DONE( tmWorkF )
     {
     TN( tBgpPassword , "" ) ;
 
-    ;
+    ) ;
 
         "}\r\n"
         "    scan time 5 ;\r\n"
@@ -99,7 +99,7 @@ DONE( tmWorkF )
 
     TN( tImage3 ,
 
-    ;
+    ) ;
 
         "    route "
         "    ipv6 ;\r\n"
@@ -117,7 +117,7 @@ DONE( tmWorkF )
 
     TN( tImage2 ,
 
-    ;
+    ) ;
 
         "    password \""
         "    neighbor       2001:19f0:ffff::1                       as      64515 ;\r\n"
@@ -152,39 +152,3 @@ TASK( tmWorkF )
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
-
-}
-    scan time 5 ;
-{
-protocol device
-
-}
-    route 2602:ff03::/48 via 2001:19f0:ac00:4406:5400:05ff:fee9:27e6 ;
-    ipv6 ;
-{
-protocol static
-
-}
-    } ;
-        export all  ;
-        import none ;
-    ipv6 {
-    graceful restart on ;
-    multihop 2 ;
-    password "9GtHLLhA0JYHZS2G" ;
-    neighbor       2001:19f0:ffff::1                       as      64515 ;
-    source address 2001:19f0:ac00:4406:5400:05ff:fee9:27e6               ;
-    local          2001:19f0:ac00:4406:5400:05ff:fee9:27e6 as 4288000334 ;
-    description    "ideanet" ;
-protocol bgp vultr {
-
-protocol kernel { ipv6 { export all ; } ; }
-
-debug protocols all ;
-
-router id 149.28.204.105 ;
-
-log "/tmp/bird.log" all ;
-
-
