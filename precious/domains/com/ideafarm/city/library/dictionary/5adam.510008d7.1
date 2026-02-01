@@ -20,37 +20,44 @@ DONE( tmWorkF )
         ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
 
         }
-#endif
+            nnSubnet48Lath = nnSubnet48 ;
+
             }
                 }
-                    etRock.traceF( tin0P , T("!exception / could not write to router share ; ignoring [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
-                    POOPRqUIET
-                    countT rc = POOP ;
+                    etThread.traceF( tin0P , T("hired plink to freshen the bird configuration on router [value]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.osProcessF( tin0P , countTC() , countTC() , value  , countTC() , T("plink") , tArgsBirdConfigure ) ;
+                    ZE( countT , value ) ;
                 {
-                else
-                if( !POOP ) etRock.traceF( tin0P , T("i wrote aok to router share [tLong]:    ")+tLong ) ;
-                ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tSay , tSay.csF( tin0P ) ) ;
-                SCOOPS
-                _IO_
+                if( bOk )
+
+                }
+                    }
+                        etRock.traceF( tin0P , T("!exception / could not write to router share ; ignoring [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    else
+                    }
+                        etRock.traceF( tin0P , T("i wrote aok to router share [tLong]:    ")+tLong ) ;
+                        bOk = 1 ;
+                    {
+                    if( !POOP )
+                    ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tSay , tSay.csF( tin0P ) ) ;
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
+                ZE( boolT , bOk ) ;
+
+                TN( tSay , "" ) ; tSay =  tImage1+tBgpPassword+tImage2+T(nnSubnet48)+tImage3 ;
             {
-            IFsCRATCHoK
-#else
+            if( nnSubnet48Lath != nnSubnet48 )
 
-}
-    etThread.fileWriteF( tin0P , fo , tSay , tSay.csF( tin0P ) ) ;
-    fileC fo( tin0P , (strokeS*)tLong , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_DOnOTmAKEpATH , 1 ) ;
-{
+            etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnNow,nnAdvertise]:    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNow)+tb4+T(nnSubnet48) , flTRACE_NOpREFIX ) ;
 
-//    etThread.boxPutF( tin0P , tLong , tSay , tSay.csF( tin0P ) ) ;
-#if defined( NEVERdEFINED )
-
-            TN( tSay , "" ) ; tSay =  tImage1+tBgpPassword+tImage2+T(nnSubnet48)+tImage3 ;
-
-            etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnNow]:    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNow)+tb4+T(nnSubnet36)+tb4+T(nnSubnet48) , flTRACE_NOpREFIX ) ;
-
-            nicNameC nnSubnet36 = nnNow( 0x24 ) ;
+            //nicNameC nnSubnet36 = nnNow( 0x24 ) ;
             nicNameC nnSubnet48 = nnNow( 0x30 ) ;
-            const nicNameC nnNow      = woSub.nnF( tin0P , woHash , minute , 1 ) ;
+            const nicNameC nnNow = woSub.nnF( tin0P , woHash , minute , 1 ) ;
             ZE( count04T , woHash ) ;
 
             minuteLath = minute ;
@@ -69,6 +76,7 @@ DONE( tmWorkF )
         if( !minuteLath )
     {
     while( !ether )
+    nicNameC nnSubnet48Lath ;
     ideaNetSubscriptionC woSub( tin0P , etThread , 1 , 1 , T("foo") , T("goo@hoo") ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , minuteLath ) ;
@@ -80,12 +88,21 @@ DONE( tmWorkF )
     TN( tFilePrefix , "- " ) ;
     TN( tb4 , "    " ) ;
 
+    TN( tArgsBirdConfigure , "" ) ; tArgsBirdConfigure = T("-batch -l root -pw ")+tRouterPassword+T(" 10.0.4.1 \"birdc configure\"") ;
+
     }
         etThread.delF( tin0P , psttv ) ;
         tBgpPassword = T(psttv) ;
         ZE( strokeS* , psttv ) ; etThread.querySettingF( tin0P , psttv , T("!ipdos.ideanet.bgp.password")  ) ; ___( psttv ) ;
     {
     TN( tBgpPassword , "" ) ;
+
+    }
+        etThread.delF( tin0P , psttv ) ;
+        tRouterPassword = T(psttv) ;
+        ZE( strokeS* , psttv ) ; etThread.querySettingF( tin0P , psttv , T("!ipdos.ideanet.router.password")  ) ; ___( psttv ) ;
+    {
+    TN( tRouterPassword , "" ) ;
 
     ) ;
 
