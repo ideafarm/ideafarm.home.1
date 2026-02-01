@@ -272,6 +272,16 @@ DONE( tmWorkF )
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
+etherC::loafIF( tin0P ) ;
+}
+    CloseHandle( oshFile ) ;
+    if( oshFile == INVALID_HANDLE_VALUE ) etThread.traceF( tin0P , T("!exception / could not write the fooey file to the router's bird share [postLong]:    ")+T(postLong) ) ;
+    HANDLE oshFile = CreateFile( postLong , GENERIC_WRITE , 0 , 0 , CREATE_ALWAYS , FILE_ATTRIBUTE_NORMAL , 0 ) ;
+    const osTextT* const postLong = bSandbox ? "b:\\fooeysandbox" : "b:\\fooeyservice" ;
+    boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
+{
+//U:: 20260201@1159: TO DEBUG SAMBA SHARE ACCESS OF router BY go1
+
     _IO_
 {
 if( pTaskP )
