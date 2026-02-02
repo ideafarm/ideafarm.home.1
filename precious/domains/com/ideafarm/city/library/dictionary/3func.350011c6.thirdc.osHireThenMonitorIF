@@ -319,9 +319,22 @@
     ZE( boolT , bOk ) ;
 
     }
-        etherP.ifcHireF( tin0P , psttCommentP , idAdamP , psttArgsP , flHIRE_DISPLAYaUTO | flHIRE_MONITORtHIS , 0 , 0 , 1 , nicNameC() ) ;
+        etherP.ifcHireF( tin0P , psttCommentP , idAdamP , psttArgsP , flHIRE_DISPLAYaUTO | flHIRE_MONITORtHIS , 0 , 0 , 1 , nicNameC() , &hfOut , &hfErr ) ;
+
+        const handleC& hfErr = fErr ;
+        const handleC& hfOut = fOut ;
         _IO_
     {
+
+    }
+        etherP.fileSetPtrF( tin0P , fErr , flSETfILEpTR_END , c2z ) ;
+        etherP.fileSetPtrF( tin0P , fOut , flSETfILEpTR_END , c2z ) ;
+        count2S c2z ;
+    {
+    fileC fErr( tin0P , (strokeS*)tLongErr , ifcOPENaCCESS_W , ifcOPENsHARE_WR , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
+    fileC fOut( tin0P , (strokeS*)tLongOut , ifcOPENaCCESS_W , ifcOPENsHARE_WR , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
+    TN( tLongErr , "///ideafarm/tmp/osHireThenMonitorIF.stderr.ttt" ) ;
+    TN( tLongOut , "///ideafarm/tmp/osHireThenMonitorIF.stdout.ttt" ) ;
 
     etherC& etherP = *((tin1S&)tin0P).pEther ;
 

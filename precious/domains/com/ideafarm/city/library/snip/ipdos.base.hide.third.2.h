@@ -34542,7 +34542,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340ef.etherC.ifcIdCitizenFromExternalEmailF!||
  voidT ifcJobF( tin0S& tin0P , stackC& stCoursesP , const countT idAdamP , soulC& sOrderPrimaryP , stackC& stOrdersP , const strokeS* const psttOldCommentP , countT cTriesP = 0 , const nicNameC nicNameP = nicNameC() ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34141.etherC.ifcJobF!||
- count4S ifcHireF( tin0S& tin0P , const strokeS* const psttOldCommentP , countT idAdamP , const strokeS* const psttArgsP = 0 , flagsT flagsP = flHIRE_null , const countT time1LimitP = 0 , const sCountT time2LimitP = 0 , const countT cTriesP = 0 , nicNameC nicNameP = nicNameC() ) ;
+ count4S ifcHireF( tin0S& tin0P , const strokeS* const psttOldCommentP , countT idAdamP , const strokeS* const psttArgsP = 0 , flagsT flagsP = flHIRE_null , const countT time1LimitP = 0 , const sCountT time2LimitP = 0 , const countT cTriesP = 0 , nicNameC nicNameP = nicNameC() = 0 , const handleC* phOutP = 0 , const handleC* phErrorP = 0 , const handleC* phInP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34131.etherC.ifcHireF!||
  voidT ifcNicknameFromIdCitizenF( tin0S& tin0P , strokeS*& psttP , const countT idP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340d6.etherC.ifcNicknameFromIdCitizenF!||

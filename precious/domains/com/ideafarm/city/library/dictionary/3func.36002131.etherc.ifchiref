@@ -42,14 +42,14 @@
 
                     }
                         //traceF( tin0P , T("ifcHireF / 1") ) ;
-                        else                                     osProcessF( tin0P , osTid , osPid , idAdamP                           , T("!idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(F(flProcessHire)&flPROCESShIRE_VISIBLE?tArgsUse:T("!quietConsole ")+tArgsUse) , flProcessHire ) ;
+                        else                                     osProcessF( tin0P , osTid , osPid , idAdamP                           , T("!idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(F(flProcessHire)&flPROCESShIRE_VISIBLE?tArgsUse:T("!quietConsole ")+tArgsUse) , flProcessHire , phOutP , phErrorP , phInP ) ;
                         if( F(flagsP) & flHIRE_DISPLAYgRAPHICS ) osSessionF( tin0P , osTid , osPid , idAdamP                           , T("!idHome ")+TF1(processGlobal2I.idHome)+tb+tArgsUse , 0 , 0 , 0 , 0 , flSESSION_REGISTERpROCESShANDLE | flSESSION_REGISTERtHREADhANDLE | flSESSION_MAXIMIZE/*flSESSION_MINIMIZE*/ ) ;
                         //traceF( tin0P , T("ifcHireF / 2") ) ;
                     {
                     else
                     }
                         //traceF( tin0P , T("ifcHireF / 3") ) ;
-                        else                                     osProcessF( tin0P , osTid , osPid , value , idDeathType , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(F(flProcessHire)&flPROCESShIRE_VISIBLE?tArgsUse:T("!quietConsole ")+tArgsUse) , flProcessHire ) ;
+                        else                                     osProcessF( tin0P , osTid , osPid , value , idDeathType , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(F(flProcessHire)&flPROCESShIRE_VISIBLE?tArgsUse:T("!quietConsole ")+tArgsUse) , flProcessHire , phOutP , phErrorP , phInP ) ;
                         if( F(flagsP) & flHIRE_DISPLAYgRAPHICS ) osSessionF( tin0P , osTid , osPid , value , idDeathType , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tb+tArgsUse , 0 , 0 , 0 , 0 , flSESSION_REGISTERpROCESShANDLE | flSESSION_REGISTERtHREADhANDLE | flSESSION_MAXIMIZE/*flSESSION_MINIMIZE*/ ) ;
                         //traceF( tin0P , T("ifcHireF / 4 [flagsP]:    ")+TF2(flagsP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
@@ -57,7 +57,7 @@
                     }
                         delF( tin0P , psttMapped ) ;
                         //traceF( tin0P , T("ifcHireF / 5") ) ;
-                        osProcessF( tin0P , osTid , osPid , T("wdw") , T(osfn)+T(" ")+TF3(idAdamP,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T(" !debug !idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+tArgsUse , flProcessHire ) ;
+                        osProcessF( tin0P , osTid , osPid , T("wdw") , T(osfn)+T(" ")+TF3(idAdamP,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T(" !debug !idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+tArgsUse , flProcessHire , phOutP , phErrorP , phInP ) ;
                         //traceF( tin0P , T("ifcHireF / 6") ) ;
                         osFileNameC osfn( tin0P , *this , T(psttMapped) ) ;
                         }
@@ -222,7 +222,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/count4S etherC::ifcHireF( tin0S& tin0P , const strokeS* const psttOldCommentP , countT idAdamP , const strokeS* const psttArgsP , flagsT flagsP , const countT time1LimitP , const sCountT time2LimitP , const countT cTriesP , nicNameC nicNameP )/*1*/
+/*1*/count4S etherC::ifcHireF( tin0S& tin0P , const strokeS* const psttOldCommentP , countT idAdamP , const strokeS* const psttArgsP , flagsT flagsP , const countT time1LimitP , const sCountT time2LimitP , const countT cTriesP , nicNameC nicNameP , const handleC* phOutP , const handleC* phErrorP , const handleC* phInP )/*1*/
 
 /**/
 */
