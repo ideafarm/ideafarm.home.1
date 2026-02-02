@@ -48,7 +48,26 @@ DONE( tmWorkF )
                 IFsCRATCHoK
                 ZE( boolT , bOk ) ;
 
-                TN( tSay , "" ) ; tSay =  tImage1+tBgpPassword+tImage2+T(nnSubnet48)+tImage3 ;
+                tSay += tImage5 ;
+
+                etThread.traceF( tin0P , T("subnets to advertise   (end)" DASH79) ) ;
+                }
+                    while( ~hWalk ) ;
+                    }
+                        tSay += tImage3+T(nnWo)+tImage4 ;
+                        etThread.traceF( tin0P , T("[nnWo]:    ")+T(nnWo)+T("/48") ) ;
+                        nicNameC& nnWo = (nicNameC&)stNnSubnetSay.downF( tin0P , hWalk ) ;
+                    {
+                    do
+                    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                {
+                if( stNnSubnetSay )
+                etThread.traceF( tin0P , T("subnets to advertise (begin)" DASH79) ) ;
+
+                TN( tSay , "" ) ; tSay = tImage1+tBgpPassword+tImage2 ;
+
+                stNnSubnetSay.purgeF( tin0P , 8 ) ;
+                stNnSubnetSay << nnSubnet48 ;
             {
             if( nnSubnet48Lath != nnSubnet48 )
 
@@ -75,6 +94,7 @@ DONE( tmWorkF )
         if( !minuteLath )
     {
     while( !ether )
+    stackC stNnSubnetSay( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
     nicNameC nnSubnet48Lath ;
     ideaNetSubscriptionC woSub( tin0P , etThread , 1 , 1 , T("foo") , T("goo@hoo") ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -111,15 +131,23 @@ DONE( tmWorkF )
         "protocol device\n"
         "\n"
         "}\n"
+
+    TN( tImage5 ,
+
+    ) ;
+
         "/48 via 2001:19f0:ac00:4406:5400:05ff:fee9:27e6 ;\n"
 
-    TN( tImage3 ,
-
-    //U:: ADVERTISE THE 8 MOST RECENT ROUTES
+    TN( tImage4 ,
 
     ) ;
 
         "    route "
+
+    TN( tImage3 ,
+
+    ) ;
+
         "    ipv6 ;\n"
         "{\n"
         "protocol static\n"
