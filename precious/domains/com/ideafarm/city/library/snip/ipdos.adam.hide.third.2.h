@@ -4732,6 +4732,36 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062b.flIDEAnETeXE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062c.postARINdELEGATIONiDEAFARMiDEANET BEGIN
+
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*postARINdELEGATIONiDEAFARMiDEANET*//*1*/
+
+/*3*/
+#define postARINdELEGATIONiDEAFARMiDEANET "2602:ff03::"
+/*3*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062c.postARINdELEGATIONiDEAFARMiDEANET END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -31273,7 +31303,7 @@ private :
  static voidT osOldTimeFromUnixTimeIF( tin0S& tin0P , boolT& isDaylightSavingsTimeP , countT& yDayP , countT& wDayP , countT& yearP , countT& monthP , countT& mDayP , countT& hourP , countT& minuteP , countT& secondP , const countT secondsIntoUnixEpochP ) ;
  voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const nicNameC& nnP , const osTextT* const postDescriptionP = 0 ) ;
  voidT osNicOpenF( tin0S& tin0P , handleC& handleP , const osTextT* const postFriendlyNameP , countT cInterfacesMaxP = 0x10 ) ;
- voidT osNicAddressAddF( tin0S& tin0P , const handleC& hP , const nicNameC nnP , const countT secondsValidP = - 1 , const countT secondsPreferredP = 0 , const byteT bitsPrefixP = 0x30 ) ;
+ voidT osNicAddressAddF( tin0S& tin0P , const handleC& hP , const nicNameC nnP , const countT secondsValidP = - 1 , const countT secondsPreferredP = 0 , const byteT bitsPrefixP = 0x40 ) ;
 
 /* commands: math */
 
@@ -34710,7 +34740,7 @@ examples
  voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const nicNameC& nnP , const strokeS* const psttDescriptionP = 0 , const strokeS* const psttTraceP = 0 ) ;
  voidT osFirewallBlockF( tin0S& tin0P , const countT idLineP , const countT idiFileP , stackC& stNnP , const strokeS* const psttDescriptionP = 0 , const strokeS* const psttTraceP = 0 ) ;
  voidT osNicOpenF( tin0S& tin0P , handleC& handleP , const strokeS* const psttFriendlyNameP , countT cInterfacesMaxP = 0x10 ) ;
- voidT osNicAddressAddF( tin0S& tin0P , const handleC& hP , const nicNameC nnP , const countT secondsValidP = - 1 , const countT secondsPreferredP = 0 , const byteT bitsPrefixP = 0x40 ) ;
+ voidT osNicAddressAddF( tin0S& tin0P , const handleC& hP , const nicNameC nnP , const countT secondsValidP = - 1 , const countT secondsPreferredP = 0 , const byteT bitsPrefixP = 0x30 ) ;
 
 /* openssl: foreign encryption */
 
@@ -49574,7 +49604,7 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP ) ;
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP , const strokeS* const psttEmailP ) ;
-    nicNameC nnF( tin0S& tin0P , count04T& idHostP , countT minuteP , boolT bRandomSubnetP = 0 ) ;
+    nicNameC nnF( tin0S& tin0P , count04T& idHostP , countT minuteP ) ;
     voidT    operator >>( soulC& sP ) ;
     voidT    operator <<( soulC& sP ) ;
     voidT    traceF( tin0S& tin0P ) ;

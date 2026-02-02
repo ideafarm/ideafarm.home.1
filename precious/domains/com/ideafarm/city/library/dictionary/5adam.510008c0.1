@@ -67,7 +67,7 @@ DONE( tmWorkF )
                         minuteLath = minute ;
                     {
                     if( minuteLath != minute )                          // A:ASSUME: THE LIFETIME OF EACH ipv6 ADDRESS IS GREATER THAN RE MINUTES, SO THAT THE ipv6 OF THE LATH MINUTE WILL CONTINUE TO BE VALID WELL AFTER I NO LONGER OBTAIN ITS VALUE
-                    countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE (TO AVOID RACING WITH THE WEB SERVER)
+                    countT minute = ( timeN1 >> 0x14 ) ;                // I CAN NO LONGER USE THE PRIOR MINUTE (TO AVOID RACING WITH THE WEB SERVER, BECAUSE THE /48 PREFIX IS NOW RANDOMIZED
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;

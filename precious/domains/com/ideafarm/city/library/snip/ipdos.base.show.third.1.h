@@ -1,6 +1,4 @@
 
-#define postARINdELEGATIONiDEAFARMiDEANET "2602:ff03::"
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -44779,7 +44777,7 @@ arguments
 #define flFILEc_DELETE                   ((countT)0xe00001ea)
 #define flFILEc_DOnOTmAKEpATH            ((countT)0xe00002ea)
 /*3*/
-#define flFILEc_null                     ((countT)0xe00000ea)
+#define flFILEc_null    ((countT)0xe00000ea)
 
 
 //

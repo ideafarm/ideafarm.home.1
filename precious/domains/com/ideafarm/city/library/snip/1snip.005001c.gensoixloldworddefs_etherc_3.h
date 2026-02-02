@@ -2409,7 +2409,7 @@ voidT osNicAddressAddF_obd331_GF( tin0S& tin0P , etherC& etherP , soulC& slP , c
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
-                bitsPrefixP = 0x40 ;
+                bitsPrefixP = 0x30 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
                 etherP.delF( tin0P , psttNext ) ;

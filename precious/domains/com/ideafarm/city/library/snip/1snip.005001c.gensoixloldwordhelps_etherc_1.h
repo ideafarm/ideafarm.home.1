@@ -6366,7 +6366,7 @@
         "\r\n"
         "Each manifestation of \"osNicAddressAddF_obd331\" uses the current stack in this way:\r\n"
         "\r\n"
-        "    Pop  5:    byteT            bitsPrefixP                     (defaults to 0x40)\r\n"
+        "    Pop  5:    byteT            bitsPrefixP                     (defaults to 0x30)\r\n"
         "    Pop  4:    countT           secondsPreferred                (defaults to 0)\r\n"
         "    Pop  3:    countT           secondsValidP                   (defaults to - 1)\r\n"
         "    Pop  2:    nicNameC         nnP\r\n"
