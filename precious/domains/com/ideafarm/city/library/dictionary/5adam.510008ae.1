@@ -18,7 +18,7 @@ DONE( tmWorkF )
 }
     THREADmODE1rESTORE
     }
-        sgnDone_tmStayConnected.waitF( tin0P ) ;
+        //sgnDone_tmStayConnected.waitF( tin0P ) ;
 
         }
             ++ s ; ether.osSleepF( tin0P , TOCK ) ;
@@ -1659,6 +1659,9 @@ DONE( tmWorkF )
                                                                 //******************************************************************************************************************************************************************************************************************************************************************************************************
                                                             {
                                                             if( psoc )
+
+                                                            bFail3 = bFail2 = bFail1 = bFail0 = 0 ;     // AN IDEAFARM.COM MATRIX HOMESERVER NO LONGER EXISTS, SO THESE FAILURE BOOLEANS ARE NOT USED
+
                                                             //etRock.traceF( tin0P , T(psoc?"server is UP when starting to process an event file [tShort]:    ":"server is DOWN so not processing an event file [tShort]:    ")+tShort ) ;
                                                             grab_psoc.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
@@ -2144,7 +2147,7 @@ DONE( tmWorkF )
         TN( tStar  , "*" ) ;
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-        sgnReady_tmStayConnected.waitF( tin0P ) ;
+        //sgnReady_tmStayConnected.waitF( tin0P ) ;
 
         //******************************************************************************************************************************************************************************************************************************************************************************************************
         //******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -2217,9 +2220,11 @@ DONE( tmWorkF )
         TN( tEatingDot , "eating." ) ;
         TN( tSlash     , "/"       ) ;
 
-        etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmStayConnectedF , sgnDone_tmStayConnected , CBsTACKmIN << 2 ) , (countT)&sgnReady_tmStayConnected , (countT)&tValueAccessToken , (countT)&tValueDeviceId , (countT)&grab_psoc , (countT)&psoc , (countT)pb_sockc , sizeof pb_sockc ) ;
-        signC sgnDone_tmStayConnected( tin0P , TAG( TAGiDnULL ) ) ;
-        signC sgnReady_tmStayConnected( tin0P , TAG( TAGiDnULL ) ) ;
+        //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmStayConnectedF , sgnDone_tmStayConnected , CBsTACKmIN << 2 ) , (countT)&sgnReady_tmStayConnected , (countT)&tValueAccessToken , (countT)&tValueDeviceId , (countT)&grab_psoc , (countT)&psoc , (countT)pb_sockc , sizeof pb_sockc ) ;
+        // DISABLED BECAUSE A [MATRIX] HOMESERVER FOR IDEAFARM.COM NO LONGER EXISTS
+
+        //signC sgnDone_tmStayConnected( tin0P , TAG( TAGiDnULL ) ) ;
+        //signC sgnReady_tmStayConnected( tin0P , TAG( TAGiDnULL ) ) ;
 
         TN( tValueDeviceId    , "" ) ;
         TN( tValueAccessToken , "" ) ;
