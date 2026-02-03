@@ -164,16 +164,6 @@ DONE( tmWorkF )
         ZE( strokeS* , psttWanted ) ;
 
         }
-            }
-                if( !etThread.strCompareF( tin0P , psttc1 , tHeyGorilla ) ) bGorilla = 1 ;
-                etThread.traceF( tin0P , T("[parameter]:    ")+T(psttc1) ) ;
-            {
-            FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tin0P ) )
-            TN( tHeyGorilla , "!gorilla" ) ;
-        {
-        ZE( boolT , bGorilla ) ;
-
-        }
             etThread.traceF( tin0P , T("\r\nThis file gives you access to Book 1.  For Book 1, you are subscriber number ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".  Subscription id's\r\n  are dispensed serially, starting with 1.  Subscribers with low id numbers will be given\r\n  VIP privileges as the system grows, in appreciation for their role as founders.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
             etThread.traceF( tin0P , T("\r\nThis file is your personal key for access to the IdeaFarm (tm) IdeaNet (tm) Book Publishing System.\r\n  Do not share this file with others.  Abuse will result in suspension or termination of your access.\r\n  You may use this key only if you are the owner of email address ")+tEmail , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -193,13 +183,24 @@ DONE( tmWorkF )
             ZE( countT , cbs ) ;
             ZE( byteT* , pbs ) ;
         {
+        if( !bGorilla )
         ideaNetSubscriptionC sub( tin0P , etThread ) ;
 
         TN( tY , "y" ) ;
         TN( tb4 , "    " ) ;
     {
     else
-    if( !LoadStringA( 0 , 101 , postSoulSubDump , sizeof postSoulSubDump ) ) etThread.traceF( tin0P , T("Either this file is not configured (for your email address), or it is corrupted.  Please discard it and obtain a fresh copy by (re)registering your email address at http://ideafarm.com .") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    if( !bGorilla && !LoadStringA( 0 , 101 , postSoulSubDump , sizeof postSoulSubDump ) ) etThread.traceF( tin0P , T("Either this file is not configured (for your email address), or it is corrupted.  Please discard it and obtain a fresh copy by (re)registering your email address at http://ideafarm.com .") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+
+    }
+        }
+            if( !etThread.strCompareF( tin0P , psttc1 , tHeyGorilla ) ) bGorilla = 1 ;
+            etThread.traceF( tin0P , T("[parameter]:    ")+T(psttc1) ) ;
+        {
+        FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tin0P ) )
+        TN( tHeyGorilla , "!gorilla" ) ;
+    {
+    ZE( boolT , bGorilla ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
