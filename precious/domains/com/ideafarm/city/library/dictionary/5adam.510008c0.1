@@ -38,17 +38,23 @@ DONE( tmWorkF )
                             {
                             else
                             if( !POOP ) etRock.traceF( tin0P , T("stomp! aok [idStomp]:    ")+TF2(cStomp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
-                            ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUrl , 1 ) ; ___( posti ) ;
+                            ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 ) ; ___( posti ) ;
                             ZE( countT   , costi ) ;
                             ZE( osTextT* , posti ) ;
-                            etRock.traceF( tin0P , T("stomp! begin [idStomp,url]:    ")+TF2(cStomp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUrl , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
+                            etRock.traceF( tin0P , T("stomp! begin [idStomp,url]:    ")+TF2(cStomp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
                             SCOOPS
                             _IO_
                         {
                         IFsCRATCHoK
                         cStomp ++ ;
 
-                        TN( tUrl , "" ) ; tUrl  = TF3(pcIdHost[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcIdHost[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com//http/ideanet/gorilla.html") ;
+                        TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_HTTPS ? tRequestDomain : tRequestAddress ;
+
+                        TN( tRequestAddress , ""        ) ; tRequestAddress = T("[")+tIpv6Now                                                                                                                                                                                              +T("]//http/ideanet/gorilla.html") ;
+                        TN( tRequestDomain  , ""        ) ; tRequestDomain  = TF3(pcIdHost[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcIdHost[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com//http/ideanet/gorilla.html") ;
+                        // THE HASH IN THE DOMAIN NAME USES FOREIGN BIGIT ORDERING SO THAT IT CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
+
+                        //TN( tUrl , "" ) ; tUrl  = TF3(pcIdHost[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcIdHost[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com//http/ideanet/gorilla.html") ;
                         countT* pcIdHost = (countT*)&idHostNow ;
                         //CS:CODEsYNC: 510008c0 33000116
                     {
