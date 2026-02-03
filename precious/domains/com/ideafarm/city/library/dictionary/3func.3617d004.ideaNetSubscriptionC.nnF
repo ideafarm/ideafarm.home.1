@@ -18,17 +18,20 @@
     nicNameC  nnUse = socketC::nicNameIF( tin0P , ether , tSubnet ) ;
     TN( tSubnet , postARINdELEGATION36iDEAFARMiDEANET ) ;
 
-    //         3         2         1         0
-    //   | |-------| |-------| |-------| |-------|
-    //   |                               |-------| /32 fieldsP.hostRandom
-    //   |                     |-------|           /32 fieldsP.idSub
-    //   |                |--|                     /16 fieldsP.minute
-    //   |                |----------------------| /80 idHost (external view)
-    //   | |------------|                          /48 advertised prefix
-    //   |            |-|                          /12 fieldsP.routeRandom
-    //   |            |--------------------------| /92 idHost (ideanet link view)
-    //   | |---------|                             /36 ARIN delegation
-    //   | 2602:ff03:0eee:0000:006b:6175:5cd7:9a79
+    //       3         2         1         0
+    //    _______   _______   _______   _______ 
+    //   |_______| |_______| |_______| |_______|
+    //
+    //                                 |-------| /32 fieldsP.hostRandom
+    //                       |-------|           /32 fieldsP.idSub
+    //                  |--|                     /16 fieldsP.minute
+    //                  |**********************| /80 idHost (external view)
+    //   |************|                          /48 advertised prefix
+    //              |-|                          /12 fieldsP.routeRandom
+    //              |**************************| /92 idHost (ideanet link view)
+    //   |---------|                             /36 ARIN delegation
+    //
+    //   2602:ff03:0eee:0000:006b:6175:5cd7:9a79
     //
     // EXTERNAL SPECIFICATIONS
 
