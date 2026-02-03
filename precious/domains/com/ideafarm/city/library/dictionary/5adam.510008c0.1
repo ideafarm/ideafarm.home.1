@@ -55,7 +55,7 @@ DONE( tmWorkF )
                         // THE HASH IN THE DOMAIN NAME USES FOREIGN BIGIT ORDERING SO THAT IT CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
 
                         //TN( tUrl , "" ) ; tUrl  = TF3(pcIdHost[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcIdHost[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com//http/ideanet/gorilla.html") ;
-                        countT* pcIdHost = (countT*)&idHostNow ;
+                        countT* pcIdHost = (countT*)&ipv6Fields ;
                         //CS:CODEsYNC: 510008c0 33000116
                     {
                     if( bGorilla && !( cSkipStomp && cSkipStomp -- ) && !( idPass % ( TUCK >> 2 ) ) )
@@ -64,8 +64,8 @@ DONE( tmWorkF )
                         //etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6Now , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                         tIpv6Now = T(nnNow) ;
-                        nicNameC nnNow = sub.nnF( tin0P , idHostNow , minute ) ;
-                        idHostNow = 0 ;
+                        nicNameC nnNow = sub.nnF( tin0P , minute , ipv6Fields ) ;
+                        ipv6Fields = 0 ;
 
                         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                         ZE( sCountT , timeN2 ) ;
@@ -131,11 +131,11 @@ DONE( tmWorkF )
             while( idStatusHttpService < ifcIDsTATUShTTPsERVICE_READY )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6Now , (countT)&idHostNow , (countT)&flagsMode ) ;
+            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6Now , (countT)&ipv6Fields , (countT)&flagsMode ) ;
             signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
 
             flagsT flagsMode = flIDEAnETeXE_null ;
-            ZE( count04T , idHostNow ) ;
+            ideaNetIpv6FieldsS ipv6Fields ;
             TN( tIpv6Now , ""      ) ;
             ZE( countT , idStatusHttpService ) ;
             etThread.traceF( tin0P , T("\r\nPreparing to serve pages to you...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
@@ -270,14 +270,14 @@ DONE( tmServeHttpF )
         httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTP  , flSOCKETc_null , T("World Wide Web") , 1 ) ;
 
         countT cArgApp = (countT)&c9p ;
-        count9S c9p( (countT)&tIpv6NowP , (countT)&idHostNowP , (countT)&flagsModeP ) ;
+        count9S c9p( (countT)&tIpv6NowP , (countT)&ipv6FieldsP , (countT)&flagsModeP ) ;
     {
     ZE( flagsT , flagsSave ) ;
 
-    flagsT&   flagsModeP           =   *(flagsT*)pTaskP->c4 ;
-    count04T& idHostNowP           = *(count04T*)pTaskP->c3 ;
-    textC&    tIpv6NowP            =    *(textC*)pTaskP->c2 ;
-    countT&   idStatusHttpServiceP =   *(countT*)pTaskP->c1 ;
+    flagsT&             flagsModeP           =             *(flagsT*)pTaskP->c4 ;
+    ideaNetIpv6FieldsS& ipv6FieldsP          = *(ideaNetIpv6FieldsS*)pTaskP->c3 ;
+    textC&              tIpv6NowP            =              *(textC*)pTaskP->c2 ;
+    countT&             idStatusHttpServiceP =             *(countT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 TASK( tmServeHttpF )

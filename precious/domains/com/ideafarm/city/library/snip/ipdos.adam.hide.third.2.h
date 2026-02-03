@@ -4732,7 +4732,7 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062b.flIDEAnETeXE END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062c.postARINdELEGATIONiDEAFARMiDEANET BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062c.postARINdELEGATION36iDEAFARMiDEANET BEGIN
 
 
 
@@ -4747,10 +4747,10 @@ examples
 */
 /**/
 
-/*1*//*postARINdELEGATIONiDEAFARMiDEANET*//*1*/
+/*1*//*postARINdELEGATION36iDEAFARMiDEANET*//*1*/
 
 /*3*/
-#define postARINdELEGATIONiDEAFARMiDEANET "2602:ff03::"
+#define postARINdELEGATION36iDEAFARMiDEANET "2602:ff03::"
 /*3*/
 
 
@@ -4761,7 +4761,7 @@ examples
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062c.postARINdELEGATIONiDEAFARMiDEANET END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120062c.postARINdELEGATION36iDEAFARMiDEANET END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -49577,6 +49577,48 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetC : 1snip.150001d2.ideaNetC END
+
+
+
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/struct ideaNetIpv6FieldsS/*1*/
+{
+    count01T routeRandom ;
+    count01T minute      ;
+    countT   idSub       ;      // THIS WILL WRAP ; USE [idSub,hostRandom] TO UNIQUELY IDENTIFY THE SUBSCRIBER
+    countT   hostRandom  ;
+
+    inline ideaNetIpv6FieldsS( voidT ) :
+    routeRandom( 0 ) ,
+    minute( 0 ) ,
+    idSub( 0 ) ,
+    hostRandom( 0 )
+    {}
+
+    inline boolT operator !( voidT ) const { return (boolT)( !routeRandom && !minute && !idSub && !hostRandom ) ; }
+    inline boolT operator ~( voidT ) const { return (boolT)(  routeRandom ||  minute ||  idSub ||  hostRandom ) ; }
+    inline boolT operator =( countT cP )   { if( cP ) { BLAMMOiD( cP ) ; } boolT was = ~(*this) ; idSub = hostRandom = routeRandom = minute = 0 ; return was ; }
+}
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetSubscriptionC : 1snip.150001d3.ideaNetSubscriptionC BEGIN
 
 //
@@ -49604,7 +49646,7 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP ) ;
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP , const strokeS* const psttEmailP ) ;
-    nicNameC nnF( tin0S& tin0P , count04T& idHostP , countT minuteP ) ;
+    nicNameC nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP = ideaNetIpv6FieldsS() ) ;
     voidT    operator >>( soulC& sP ) ;
     voidT    operator <<( soulC& sP ) ;
     voidT    traceF( tin0S& tin0P ) ;

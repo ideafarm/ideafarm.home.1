@@ -7,56 +7,72 @@
 //
 
 }
-    return nicNameC( idHost1 , idHost2 , pcSubnet[ 2 ] , pcSubnet[ 3 ] ) ;
+    return nnUse ;
     
-    pcSubnet[ 2 ] |= idSubnet << 0x10 ;
-    count02T* pcSubnet = (count02T*)(const count02T*)nnSubnet ;
+    pcUse[ 0 ]  =   fieldsP.hostRandom                    ;
+    pcUse[ 1 ]  =   fieldsP.idSub                         ;
+    pcUse[ 2 ] |=   fieldsP.minute                        ;
+    pcUse[ 2 ]  = ( fieldsP.routeRandom & 0xfff ) << 0x10 ;                 // HIGH NIBBLE IS NOT AVAILABLE IN THE ARIN DELEGATION
 
-    nicNameC nnSubnet =  socketC::nicNameIF( tin0P , ether , tSubnet ) ;        //U::O: MAKE THIS A PARAMETER
-    TN( tSubnet , postARINdELEGATIONiDEAFARMiDEANET ) ;
+    count02T* pcUse = (count02T*)(const count02T*)nnUse ;
+    nicNameC  nnUse = socketC::nicNameIF( tin0P , ether , tSubnet ) ;
+    TN( tSubnet , postARINdELEGATION36iDEAFARMiDEANET ) ;
 
-    idHostP = (count04T)idHost1 | ( (count04T)idHost2 << 0x20 ) ;
+    //         3         2         1         0
+    //   | |-------| |-------| |-------| |-------|
+    //   |                               |-------| /32 fieldsP.hostRandom
+    //   |                     |-------|           /32 fieldsP.idSub
+    //   |                |--|                     /16 fieldsP.minute
+    //   |                |----------------------| /80 idHost (external view)
+    //   | |------------|                          /48 advertised prefix
+    //   |            |-|                          /12 fieldsP.routeRandom
+    //   |            |--------------------------| /92 idHost (ideanet link view)
+    //   | |---------|                             /36 ARIN delegation
+    //   | 2602:ff03:0eee:0000:006b:6175:5cd7:9a79
+    //
+    // EXTERNAL SPECIFICATIONS
 
     }
-idSubnet = 0xeee ; //U:: TO FIND A BUG
-        idSubnet = (count01T)hashF( (byteT*)pSeeds , sizeof pSeeds , idTick ) & 0xfff ;     // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
-        countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
-        countT seed = hashF( tSecret , tSecret.csF( tin0P ) , idTick ) ;
-        countT idTick = minuteP >> 4 ;      //CS:CODEsYNC: 3617d004 510008c0
-
-        }
-            idHost2 = hashF( (byteT*)pSeeds , sizeof pSeeds , idHost1 ) ;
-            idHost1 = hashF( (byteT*)pSeeds , sizeof pSeeds , minuteP  ) ;
-            countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
-            countT seed = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
-        {
-        else
-        }
-            idHost2 = hashF( (byteT*)pSeeds , sizeof pSeeds , idHost1 ) ;
-            idHost1 = hashF( (byteT*)pSeeds , sizeof pSeeds , minuteP  ) ;
-            count01T pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ; // THIS ARRAY IS LIMITED TO ONLY A IDEAnETiPV6aDDRESSESuSED OF UNIQUE VALUES
-            count01T seed = (count01T)( hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) % IDEAnETiPV6aDDRESSESuSED ) ;
-        {
-        if( modulo )
+fieldsP.routeRandom = (count01T)0xeee ; //U:: TO FIND A BUG
+               fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , idTick ) & 0xfff )                                            ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
+        countT pSeeds[]            = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
+        countT seed                = hashF( tSecret , tSecret.csF( tin0P ) , idTick )                                                                  ;
+        countT idTick              = minuteP >> 4                                                                                                      ;      //CS:CODEsYNC: 3617d004 510008c0
     {
-    ZE( countT , idHost2  ) ;
-    ZE( countT , idHost1  ) ;
-    ZE( countT , idSubnet ) ;
+
+    }
+               fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , minuteP  ) ;
+        countT pSeeds[]   = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
+        countT seed       = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
+    {
+    else
+    }
+                 fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , minuteP  ) ;
+        count01T pSeeds[]   = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ; // THIS ARRAY IS LIMITED TO ONLY A IDEAnETiPV6aDDRESSESuSED OF UNIQUE VALUES
+        count01T seed       = (count01T)( hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) % IDEAnETiPV6aDDRESSESuSED ) ;
+    {
+    if( modulo )    // THIS WILL NEVER BE USEFUL, BUT IT IS RETAINED BECAUSE IT IS CUTE
 
     //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("nnF [modulo,minute,secret]:    ")+TF2(modulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(minuteP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
     TN( tb4 , "    " ) ;
     countT modulo = IDEAnETiPV6aDDRESSESuSED ;
 
+    fieldsP.idSub = idSub ;
+    fieldsP.minute = (count01T)minuteP ;
+
     }
         if( POOP ) return nicNameC() ;
-        __NZ( idHostP ) ;
+        __( idBook - 1 ) ;                  // TO REDUCE THE NUMBER OF IPV6 ADDRESSES THAT web1 MUST HAVE, EACH SUBSCRIBER USES, TO ACCESS ALL OF HIS BOOKS, THE VALUE THAT I RETURN FOR HIS BOOK 1
+        __NZ( fieldsP ) ;
         if( POOP ) return nicNameC() ;
     {
     IFbEcAREFUL
 {
-/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , count04T& idHostP , countT minuteP )/*1*/
+/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP )/*1*/
 /**/
 */
+ it is illegal to call me for an instance that has an idBook other than 1
+i return the nicNameC value that a subscriber is to use to access the ideanet servers (web1)
 /*
 
 //
@@ -65,3 +81,5 @@ idSubnet = 0xeee ; //U:: TO FIND A BUG
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+
+

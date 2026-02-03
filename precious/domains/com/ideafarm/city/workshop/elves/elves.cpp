@@ -3134,6 +3134,7 @@ void elf_obey_C::liveF( void )
                 {
                     "1snip.15*.queueC"                                      ,
                     "1snip.15*.ideaNetSubscriptionC"                        ,
+                    "1snip.15*.ideaNetIpv6FieldsS"                          ,
                     "1snip.15*.ideaNetC"                                    ,
                     "1snip.15*.s_acceptF_parametersS"                       ,
                     "1snip.15*.oshSocketAcceptedS"                          ,

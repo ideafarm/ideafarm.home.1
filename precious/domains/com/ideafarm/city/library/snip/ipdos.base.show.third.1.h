@@ -423,6 +423,7 @@ struct  /*ff*/s_acceptF_parametersS/*ff*/                               ; /*ff*/
 class   /*ff*/ideaNetC/*ff*/                                            ; /*ff*//**//*ff*/
 class   /*ff*/ideaNetSubscriptionC/*ff*/                                ; /*ff*//**//*ff*/
 class   /*ff*/queueC/*ff*/                                              ; /*ff*//**//*ff*/
+struct  /*ff*/ideaNetIpv6FieldsS/*ff*/                                  ; /*ff*//**//*ff*/
 
 //INCLUDE GENERATED SNIPPETS HERE
 
