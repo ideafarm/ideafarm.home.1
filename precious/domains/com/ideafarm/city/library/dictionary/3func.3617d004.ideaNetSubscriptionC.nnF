@@ -49,15 +49,11 @@
     // EXTERNAL SPECIFICATIONS
 
     }
-    fieldsP.routeRandom = (count01T)( idEpoch & 0xfff ) ; //U:: TO FIND A BUG
-//G:fieldsP.routeRandom = (count01T)( 0xeee           ) ; //U:: TO FIND A BUG
-               fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , idEpoch ) & 0xfff )                                            ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
+fieldsP.routeRandom = (count01T)( idEpoch & 0xfff ) ; //U:: THIS IS GLASS FOR TESTING AND DEBUGGING ; REMOVE IN PRODUCTION
+               fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , idEpoch ) & 0xfff )                                           ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
         countT pSeeds[]            = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
-        countT seed                = hashF( tSecret , tSecret.csF( tin0P ) , idEpoch )                                                                  ;
-        //U::PROD: countT idEpoch              = minuteP >> 4                                                                                                      ;      //CS:CODEsYNC: 3617d004 510008c0
-        //U::G:    countT idEpoch              = minuteP >> 5                                                                                                      ;      //CS:CODEsYNC: 3617d004 510008c0
-        //U::G:    countT idEpoch              = minuteP >> 4                                                                                                      ;      //CS:CODEsYNC: 3617d004 510008c0
-                   countT idEpoch              = minuteP >> 3                                                                                                      ;      //CS:CODEsYNC: 3617d004 510008c0
+        countT seed                = hashF( tSecret , tSecret.csF( tin0P ) , idEpoch )                                                                 ;
+        countT idEpoch             = minuteP >> 4                                                                                                      ; /*THIS IS THE MINIMUM EPOCH; ">>3" DOES NOT WORK*/     //CS:CODEsYNC: 3617d004 510008c0
    {
 
     }
