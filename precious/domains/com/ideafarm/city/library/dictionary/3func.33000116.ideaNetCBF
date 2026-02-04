@@ -24,9 +24,9 @@
         +( tName.csF( tin0P ) == 1 ? tn : tName )
         +T(".ideanet.ideafarm.com")
         +TF3(ipv6FieldsP.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
-        +TF3(ipv6FieldsP.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDash
-        +TF3(ipv6FieldsP.minute     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDash
-        +TF3(ipv6FieldsP.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDash
+        +TF3(ipv6FieldsP.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+        +TF3(ipv6FieldsP.minute     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+        +TF3(ipv6FieldsP.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
          T("https://")
 
     TN( tRequestDomain , "" ) ; tRequestDomain =
@@ -36,7 +36,7 @@
     //CS:CODEsYNC: 510008c0 33000116
 
     TN( tName           , psttNameP ) ;
-    TN( tDash           , "-"       ) ;
+    TN( tUnderScore     , "_"       ) ;
     TN( tn              , ""        ) ;
 
     // storeReplyF( tin0P , ifcIDsWITCHhTTPrEPLY_PREFIX , ifcIDfORMhTTPrEPLY_RAW , T("/1.1/"        ) , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML    , T("") , T("") , T("") , T("") , T("") , T("") , 0 , tSay4 ) ;

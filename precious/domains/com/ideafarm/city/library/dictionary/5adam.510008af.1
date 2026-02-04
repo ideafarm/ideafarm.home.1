@@ -422,7 +422,7 @@ DONE( tmWorkerF )
                                                         {
                                                         FORsTRINGSiN1( pstt1w )
                                                         ZE( countT , idw ) ;
-                                                        countT cWords = etThread.strWordsF( tin0P , pstt1w , psttFields , sttq , gcP.tDash ) ; ___( pstt1w ) ;
+                                                        countT cWords = etThread.strWordsF( tin0P , pstt1w , psttFields , sttq , gcP.tUnderScore ) ; ___( pstt1w ) ;
                                                         ZE( strokeS* , pstt1w ) ;
 
                                                         etThread.strSubstringF( tin0P , psttFields , countTC( 1 ) , sttq , gcP.tDot , tDomainNet ) ; ___( psttFields ) ;           // THE IPV6 FIELDS ARE INCLUDED IN THE DOMAIN SO I CAN VALIDATE (WHICH, FOR SPEED, I DO NOT DO). AND 2. TO PREVENT CACHEING OF STALE IPV6 VALUES
@@ -2319,6 +2319,7 @@ struct gVarS
     tTestTextChallenge(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "testtxt.hidden.ideafarm.com"                                                                                           ) ,
     tDot(                               tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "."                                                                                                                     ) ,
     tDash(                              tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "-"                                                                                                                     ) ,
+    tUnderScore(                        tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "_"                                                                                                                     ) ,
     tb4(                                tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "    "                                                                                                                  ) ,
     tPasswordPrefix(                    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                                                      ) ,
     tDotIdeaNetDomain(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ".ideanet.ideafarm.com"                                                                                                 ) ,
@@ -2393,6 +2394,7 @@ struct gVarS
     textC tTestTextChallenge                    ;
     textC tDot                                  ;
     textC tDash                                 ;
+    textC tUnderScore                           ;
     textC tb4                                   ;
     textC tPasswordPrefix                       ;
     textC tDotIdeaNetDomain                     ;
