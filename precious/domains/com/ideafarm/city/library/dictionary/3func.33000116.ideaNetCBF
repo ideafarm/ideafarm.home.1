@@ -17,8 +17,20 @@
 
     TN( tUse , "" ) ; tUse = F(flagsModeP) & flIDEAnETeXE_HTTPS ? tRequestDomain : tRequestAddress ;
 
-    TN( tRequestAddress , ""        ) ; tRequestAddress = T("http://[")+tIpv6NowP                                                                                                                                                                                                    +T("]")+( tName.csF( tin0P ) == 1 ? tn : tName ) ;
-    TN( tRequestDomain  , ""        ) ; tRequestDomain  = T("https://")+TF3(pcIdHost[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcIdHost[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com")+( tName.csF( tin0P ) == 1 ? tn : tName ) ;
+    TN( tRequestAddress , "" ) ; tRequestAddress = T("http://[")+tIpv6NowP+T("]")+( tName.csF( tin0P ) == 1 ? tn : tName ) ;
+
+    ;
+
+        +( tName.csF( tin0P ) == 1 ? tn : tName )
+        +T(".ideanet.ideafarm.com")
+        +TF3(ipv6FieldsP.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
+        +TF3(ipv6FieldsP.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDash
+        +TF3(ipv6FieldsP.minute     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDash
+        +TF3(ipv6FieldsP.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDash
+         T("https://")
+
+    TN( tRequestDomain , "" ) ; tRequestDomain =
+
     // THE HASH IN THE DOMAIN NAME USES FOREIGN BIGIT ORDERING SO THAT IT CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
 
     //CS:CODEsYNC: 510008c0 33000116
@@ -33,11 +45,9 @@
     // storeReplyF( tin0P , ifcIDsWITCHhTTPrEPLY_EXACT  , ifcIDfORMhTTPrEPLY_RAW , T("/")             , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML    , T("") , T("") , T("") , T("") , T("") , T("") , 0 , tSay1 ) ;
     // FROM ct1F (FOR REFERENCE ONLY)
 
-    countT*   pcIdHost   = (countT*)&idHostNowP ;
-
-    flagsT&   flagsModeP =   *(flagsT*)((count9S*)cArgP)->c3 ;
-    count04T& idHostNowP = *(count04T*)((count9S*)cArgP)->c2 ;
-    textC&    tIpv6NowP  =    *(textC*)((count9S*)cArgP)->c1 ;
+    flagsT&             flagsModeP  =   *(flagsT*)((count9S*)cArgP)->c3 ;
+    ideaNetIpv6FieldsS& ipv6FieldsP = *(count04T*)((count9S*)cArgP)->c2 ;
+    textC&              tIpv6NowP   =    *(textC*)((count9S*)cArgP)->c1 ;
 {
 /*1*/voidT ideaNetCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , osTextT*& postBodyP )/*1*/
 

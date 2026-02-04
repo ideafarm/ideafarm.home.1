@@ -49577,8 +49577,7 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetC : 1snip.150001d2.ideaNetC END
-
-
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetIpv6FieldsS : 1snip.150001d5.ideaNetIpv6FieldsS BEGIN
 
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -49618,7 +49617,7 @@ i am nonconformant in that all of my member function definitions are in a single
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetIpv6FieldsS : 1snip.150001d5.ideaNetIpv6FieldsS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetSubscriptionC : 1snip.150001d3.ideaNetSubscriptionC BEGIN
 
 //
@@ -49647,6 +49646,7 @@ i am nonconformant in that all of my member function definitions are in a single
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP ) ;
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP , const strokeS* const psttEmailP ) ;
     nicNameC nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP = ideaNetIpv6FieldsS() ) ;
+
     voidT    operator >>( soulC& sP ) ;
     voidT    operator <<( soulC& sP ) ;
     voidT    traceF( tin0S& tin0P ) ;

@@ -398,21 +398,38 @@ DONE( tmWorkerF )
                                                 if( ~nnOut )
 
                                                 }
-                                                    nnOut = nicNameC( idHost1 , idHost2 , pcSubnet[ 2 ] , pcSubnet[ 3 ] ) ;
+                                                    pcOut[ 0 ]  =   fieldsP.hostRandom                    ;
+                                                    pcOut[ 1 ]  =   fieldsP.idSub                         ;
+                                                    pcOut[ 2 ] |=   fieldsP.minute                        ;
+                                                    pcOut[ 2 ]  = ( fieldsP.routeRandom & 0xfff ) << 0x10 ;                 // HIGH NIBBLE IS NOT AVAILABLE IN THE ARIN DELEGATION
+                                                    //CS:CODEsYNC: 3617d004 510008af
 
-                                                    countT idHost2 = ((countT*)&idHostQuery)[ 1 ] ;
-                                                    countT idHost1 = ((countT*)&idHostQuery)[ 0 ] ;
+                                                    count02T* pcOut = (count02T*)(const count02T*)nnOut ;
+                                                    nnOut = nnArinDelegation ;
 
-                                                    const countT* pcSubnet = nnSubnet ;
-                                                    nicNameC nnSubnet =  socketC::nicNameIF( tin0P , ether , tSubnet ) ;        //U::O: MAKE THIS A SETTING
-                                                    TN( tSubnet , postARINdELEGATION36iDEAFARMiDEANET ) ;
-                                                    //TN( tSubnet , "2001:19f0:ac00:4cfb::" ) ;
+                                                    }
+                                                        etThread.delF( tin0P , psttFields ) ;
 
-                                                    etThread.delF( tin0P , psttIdh ) ;
-                                                    count04T idHostQuery = etThread.strDigitsToSCount04F( tin0P , psttIdh , 0 , 1 ) ;           // THE IDhOST IS INCLUDED IN THE DOMAIN SO I CAN VALIDATE (WHICH, FOR SPEED, I DO NOT DO). AND 2. TO PREVENT CACHEING OF STALE IPV6 VALUES
-                                                    etThread.strSubstringF( tin0P , psttIdh , countTC( 1 ) , sttq , gcP.tDot , tDomainNet ) ; ___( psttIdh ) ;
-                                                    strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-                                                    ZE( strokeS* , psttIdh ) ;
+                                                        etThread.delF( tin0P , pstt1w ) ;
+                                                        }
+                                                            }
+                                                                case 4 : { fields.hostRandom  =           etThread.strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ; break ; }
+                                                                case 3 : { fields.idSub       =           etThread.strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ; break ; }
+                                                                case 2 : { fields.minute      = (count01T)etThread.strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ; break ; }
+                                                                case 1 : { fields.routeRandom = (count01T)etThread.strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ; break ; }
+                                                            {
+                                                            switch( ++ idw )
+                                                        {
+                                                        FORsTRINGSiN1( pstt1w )
+                                                        ZE( countT , idw ) ;
+                                                        countT cWords = etThread.strWordsF( tin0P , pstt1w , psttFields , sttq , gcP.tDash ) ; ___( pstt1w ) ;
+                                                        ZE( strokeS* , pstt1w ) ;
+
+                                                        etThread.strSubstringF( tin0P , psttFields , countTC( 1 ) , sttq , gcP.tDot , tDomainNet ) ; ___( psttFields ) ;           // THE IPV6 FIELDS ARE INCLUDED IN THE DOMAIN SO I CAN VALIDATE (WHICH, FOR SPEED, I DO NOT DO). AND 2. TO PREVENT CACHEING OF STALE IPV6 VALUES
+                                                        strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                                                        ZE( strokeS* , psttFields ) ;
+                                                    {
+                                                    ideaNetIpv6FieldsS fields ;
                                                 {
                                                 if( bIdeaNet )
                                                 nicNameC nnOut ;
@@ -878,6 +895,9 @@ DONE( tmWorkerF )
     stackC stsRepliesNU( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
     TN( tb4 , "    " ) ;
+
+    nicNameC nnArinDelegation = socketC::nicNameIF( tin0P , ether , tSubnet ) ;
+    TN( tSubnet , postARINdELEGATION36iDEAFARMiDEANET ) ;
 
     stackC&               stNnPeerBlockP             =               *(stackC*)pTaskP->c11 ;
     textC&                tRandomLabelPrefixLagP     =                *(textC*)pTaskP->c01 ;

@@ -66,6 +66,7 @@
 "diskWalkCBFT" , "diskWalkCBFT" ,
 "diskWalkCopyCBFT" , "diskWalkCopyCBFT" ,
 "diskWalkSearchCBFT" , "diskWalkSearchCBFT" ,
+"ideaNetIpv6FieldsS" , "ideaNetIpv6FieldsS" ,
 "queueC" , "queueC" ,
 "ideaNetSubscriptionC" , "ideaNetSubscriptionC" ,
 "ideaNetC" , "ideaNetC" ,
