@@ -398,10 +398,10 @@ DONE( tmWorkerF )
                                                 if( ~nnOut )
 
                                                 }
-                                                    pcOut[ 0 ]  =   fieldsP.hostRandom                    ;
-                                                    pcOut[ 1 ]  =   fieldsP.idSub                         ;
-                                                    pcOut[ 2 ] |=   fieldsP.minute                        ;
-                                                    pcOut[ 2 ]  = ( fieldsP.routeRandom & 0xfff ) << 0x10 ;                 // HIGH NIBBLE IS NOT AVAILABLE IN THE ARIN DELEGATION
+                                                    pcOut[ 0 ]  =   fields.hostRandom                    ;
+                                                    pcOut[ 1 ]  =   fields.idSub                         ;
+                                                    pcOut[ 2 ] |=   fields.minute                        ;
+                                                    pcOut[ 2 ]  = ( fields.routeRandom & 0xfff ) << 0x10 ;                 // HIGH NIBBLE IS NOT AVAILABLE IN THE ARIN DELEGATION
                                                     //CS:CODEsYNC: 3617d004 510008af
 
                                                     count02T* pcOut = (count02T*)(const count02T*)nnOut ;
