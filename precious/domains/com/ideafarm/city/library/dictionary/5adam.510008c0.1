@@ -50,32 +50,37 @@ DONE( tmWorkF )
 
                         TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_HTTPS ? tRequestDomain : tRequestAddress ;
 
-                        TN( tRequestAddress , ""        ) ; tRequestAddress = tIpv6Now                                                                                                                                                                                                      +T("//http/ideanet/gorilla.html") ;
+                        TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowData+T("//http/ideanet/control/gorilla.html") ;
 
                         ;
 
-                            +T(".ideanet.ideafarm.com//http/ideanet/gorilla.html")
-                            +TF3(ipv6Fields.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
-                            +TF3(ipv6Fields.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                            +TF3(ipv6Fields.minute     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                             TF3(ipv6Fields.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                            +T(".ideanet.ideafarm.com//http/ideanet/control/gorilla.html")
+                            +TF3(ipv6FieldsData.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
+                            +TF3(ipv6FieldsData.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                            +TF3(ipv6FieldsData.minute     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                             TF3(ipv6FieldsData.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
 
                         TN( tRequestDomain , "" ) ; tRequestDomain =
 
                         // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
 
-                        //TN( tUrl , "" ) ; tUrl  = TF3(pcIdHost[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcIdHost[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com//http/ideanet/gorilla.html") ;
-                        countT* pcIdHost = (countT*)&ipv6Fields ;
+                        //TN( tUrl , "" ) ; tUrl  = TF3(pcIdHost[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcIdHost[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com//http/ideanet/control/gorilla.html") ;
+                        countT* pcIdHost = (countT*)&ipv6FieldsData ;
                         //CS:CODEsYNC: 510008c0 33000116
                     {
-                    if( bGorilla && !( cSkipStomp && cSkipStomp -- ) && !( idPass % ( TUCK >> 2 ) ) )
+                                 if( bGorilla && !( cSkipStomp && cSkipStomp -- ) && !( idPass % ( TUCK >> 4 ) ) )
+                    //G: (SLOW): if( bGorilla && !( cSkipStomp && cSkipStomp -- ) && !( idPass % ( TUCK >> 2 ) ) )
 
                     }
-                        //etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6Now , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                        //etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6NowData , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
-                        tIpv6Now = T(nnNow) ;
-                        nicNameC nnNow = sub.nnF( tin0P , minute , ipv6Fields ) ;
-                        ipv6Fields = 0 ;
+                        tIpv6NowData    = T(nnNowData   ) ;
+                        tIpv6NowControl = T(nnNowControl) ;
+                        nicNameC nnNowData    = sub.nnF( tin0P , minute , ipv6FieldsData        ) ;
+                        nicNameC nnNowControl = sub.nnF( tin0P , minute , ipv6FieldsControl , 1 ) ;
+
+                        ipv6FieldsData    = 0 ;
+                        ipv6FieldsControl = 0 ;
 
                         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                         ZE( sCountT , timeN2 ) ;
@@ -140,12 +145,14 @@ DONE( tmWorkF )
             while( idStatusHttpService < ifcIDsTATUShTTPsERVICE_READY )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6Now , (countT)&ipv6Fields , (countT)&flagsMode ) ;
+            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6NowControl , (countT)&tIpv6NowData , (countT)&ipv6FieldsControl , (countT)&ipv6FieldsData , (countT)&flagsMode ) ;
             signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
 
             flagsT flagsMode = flIDEAnETeXE_null ;
-            ideaNetIpv6FieldsS ipv6Fields ;
-            TN( tIpv6Now , ""      ) ;
+            ideaNetIpv6FieldsS ipv6FieldsData    ;
+            ideaNetIpv6FieldsS ipv6FieldsControl ;
+            TN( tIpv6NowData    , "" ) ;
+            TN( tIpv6NowControl , "" ) ;
             ZE( countT , idStatusHttpService ) ;
             etThread.traceF( tin0P , T("\r\nPreparing to serve pages to you...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         {
@@ -279,13 +286,15 @@ DONE( tmServeHttpF )
         httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTP  , flSOCKETc_null , T("World Wide Web") , 1 ) ;
 
         countT cArgApp = (countT)&c9p ;
-        count9S c9p( (countT)&tIpv6NowP , (countT)&ipv6FieldsP , (countT)&flagsModeP ) ;
+        count9S c9p( (countT)&tIpv6NowControlP , (countT)&tIpv6NowDataP , (countT)&ipv6FieldsControlP , (countT)&ipv6FieldsDataP , (countT)&flagsModeP ) ;
     {
     ZE( flagsT , flagsSave ) ;
 
-    flagsT&             flagsModeP           =             *(flagsT*)pTaskP->c4 ;
-    ideaNetIpv6FieldsS& ipv6FieldsP          = *(ideaNetIpv6FieldsS*)pTaskP->c3 ;
-    textC&              tIpv6NowP            =              *(textC*)pTaskP->c2 ;
+    flagsT&             flagsModeP           =             *(flagsT*)pTaskP->c6 ;
+    ideaNetIpv6FieldsS& ipv6FieldsDataP      = *(ideaNetIpv6FieldsS*)pTaskP->c5 ;
+    ideaNetIpv6FieldsS& ipv6FieldsControlP   = *(ideaNetIpv6FieldsS*)pTaskP->c4 ;
+    textC&              tIpv6NowDataP        =              *(textC*)pTaskP->c3 ;
+    textC&              tIpv6NowControlP     =              *(textC*)pTaskP->c2 ;
     countT&             idStatusHttpServiceP =             *(countT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
