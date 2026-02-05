@@ -49,7 +49,6 @@
     // EXTERNAL SPECIFICATIONS
 
     }
-fieldsP.routeRandom = (count01T)( idEpoch & 0xfff ) ; //U:: THIS IS GLASS FOR TESTING AND DEBUGGING ; REMOVE IN PRODUCTION
                fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , idEpoch ) & 0xfff )                                           ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
         countT pSeeds[]            = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
         countT seed                = hashF( tSecret , tSecret.csF( tin0P ) , idEpoch )                                                                 ;

@@ -82,11 +82,8 @@ DONE( tmWorkF )
                         ZE( countT  , timeN1 ) ;
                         minuteLath = minute ;
                     {
-                    if( minuteLath != minute )                          // A:ASSUME: THE LIFETIME OF EACH ipv6 ADDRESS IS GREATER THAN RE MINUTES, SO THAT THE ipv6 OF THE LATH MINUTE WILL CONTINUE TO BE VALID WELL AFTER I NO LONGER OBTAIN ITS VALUE
-                    countT minute = ( timeN1 >> 0x14 ) - offMinute  ;   // LAG 1 EPOCH TO USE THE PRIOR PREFIX (TO AVOID RACING WITH THE WEB SERVER)
-
-                    //U::PROD: const countT offMinute = 1 << 4 ;                   //CS:CODEsYNC: 3617d004 510008c0
-                               const countT offMinute = 0      ;                   //CS:CODEsYNC: 3617d004 510008c0
+                    if( minuteLath != minute )
+                    countT minute = ( ( timeN1 - 2 * TOCK ) >> 0x14 ) ;         // "2 * TOCK": ALLOW 2 TOCKS FOR THE BGP SYSTEM TO ESTABLISH CONNECTIVITY USING EACH NEW PREFIX BETWEEN ME (CLIENT) AND THE SERVER
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
