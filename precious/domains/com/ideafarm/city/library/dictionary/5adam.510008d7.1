@@ -54,19 +54,20 @@ DONE( tmWorkF )
                 }
                     while( ~hWalk ) ;
                     }
-                        tSay += tImage3+T(nnWo)+tImage4 ;
-                        etThread.traceF( tin0P , T("[nnWo]:    ")+T(nnWo)+T("/48") ) ;
+                        tSay += tImage3+T(nnWo)+tImage4Data ;
+                        etThread.traceF( tin0P , T("data    [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayData.downF( tin0P , hWalk ) ;
                     {
                     do
                     handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( stNnSubnetSayData )
+
                 }
                     while( ~hWalk ) ;
                     }
-                        tSay += tImage3+T(nnWo)+tImage4 ;
-                        etThread.traceF( tin0P , T("[nnWo]:    ")+T(nnWo)+T("/48") ) ;
+                        tSay += tImage3+T(nnWo)+tImage4Control ;
+                        etThread.traceF( tin0P , T("control [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayControl.downF( tin0P , hWalk ) ;
                     {
                     do
@@ -162,9 +163,15 @@ DONE( tmWorkF )
 
     ) ;
 
-        "/48 via 2001:19f0:ac00:4406:5400:05ff:fee9:27e6 ;\n"
+        "/48 via 2001:19f0:ac00:4406:5400:05ff:fee9:27e6 ;    # DATA\n"
 
-    TN( tImage4 ,
+    TN( tImage4Data ,
+
+    ) ;
+
+        "/48 via 2001:19f0:ac00:4406:5400:05ff:fee9:27e6 ;    # CONTROL\n"
+
+    TN( tImage4Control ,
 
     ) ;
 
