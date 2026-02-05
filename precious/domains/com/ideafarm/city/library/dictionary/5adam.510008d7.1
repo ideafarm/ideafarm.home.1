@@ -20,7 +20,7 @@ DONE( tmWorkF )
         ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
 
         }
-            nnSubnet48Lath = nnSubnet48 ;
+            nnSubnet48DataLath = nnSubnet48Data ;
 
             }
                 }
@@ -56,26 +56,50 @@ DONE( tmWorkF )
                     }
                         tSay += tImage3+T(nnWo)+tImage4 ;
                         etThread.traceF( tin0P , T("[nnWo]:    ")+T(nnWo)+T("/48") ) ;
-                        nicNameC& nnWo = (nicNameC&)stNnSubnetSay.downF( tin0P , hWalk ) ;
+                        nicNameC& nnWo = (nicNameC&)stNnSubnetSayData.downF( tin0P , hWalk ) ;
                     {
                     do
                     handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
-                if( stNnSubnetSay )
+                if( stNnSubnetSayData )
+                }
+                    while( ~hWalk ) ;
+                    }
+                        tSay += tImage3+T(nnWo)+tImage4 ;
+                        etThread.traceF( tin0P , T("[nnWo]:    ")+T(nnWo)+T("/48") ) ;
+                        nicNameC& nnWo = (nicNameC&)stNnSubnetSayControl.downF( tin0P , hWalk ) ;
+                    {
+                    do
+                    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                {
+                if( stNnSubnetSayControl )
                 etThread.traceF( tin0P , T("subnets to advertise (begin)" DASH79) ) ;
 
                 TN( tSay , "" ) ; tSay = tImage1+tBgpPassword+tImage2 ;
-
-                stNnSubnetSay.purgeF( tin0P , 4 ) ;     //U:: 4: to see whether i can do 4 routes
-                stNnSubnetSay << nnSubnet48 ;
             {
-            if( nnSubnet48Lath != nnSubnet48 )
+            if( cChange )
 
-            etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnNow,nnAdvertise]:    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNow)+tb4+T(nnSubnet48) , flTRACE_NOpREFIX ) ;
+            }
+                stNnSubnetSayData.purgeF( tin0P , 2 ) ;
+                stNnSubnetSayData << nnSubnet48Data ;
+                cChange ++ ;
+            {
+            if( nnSubnet48DataLath != nnSubnet48Data )
+            }
+                stNnSubnetSayControl.purgeF( tin0P , 2 ) ;
+                stNnSubnetSayControl << nnSubnet48Control ;
+                cChange ++ ;
+            {
+            if( nnSubnet48ControlLath != nnSubnet48Control )
+            ZE( countT , cChange ) ;
 
-            //nicNameC nnSubnet36 = nnNow( 0x24 ) ;
-            nicNameC nnSubnet48 = nnNow( 0x30 ) ;
-            const nicNameC nnNow = woSub.nnF( tin0P , minute ) ;
+            etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnNowData,nnAdvertise]:       ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   )+tb4+T(nnSubnet48Data   ) , flTRACE_NOpREFIX ) ;
+            etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnNowControl,nnAdvertise]:    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl)+tb4+T(nnSubnet48Control) , flTRACE_NOpREFIX ) ;
+
+            nicNameC nnSubnet48Data     = nnNowData(    0x30 ) ;
+            nicNameC nnSubnet48Control  = nnNowControl( 0x30 ) ;
+            const nicNameC nnNowData    = woSub.nnF( tin0P , minute                            ) ;
+            const nicNameC nnNowControl = woSub.nnF( tin0P , minute , ideaNetIpv6FieldsS() , 1 ) ;
 
             minuteLath = minute ;
         {
@@ -93,10 +117,12 @@ DONE( tmWorkF )
         if( !minuteLath )
     {
     while( !ether )
-    stackC stNnSubnetSay( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
-    nicNameC nnSubnet48Lath ;
+    stackC               stNnSubnetSayData(    tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    stackC               stNnSubnetSayControl( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    nicNameC             nnSubnet48DataLath    ;
+    nicNameC             nnSubnet48ControlLath ;
     ideaNetSubscriptionC woSub( tin0P , etThread , 1 , 1 , T("foo") , T("goo@hoo") ) ;
-    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    sleepC               s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , minuteLath ) ;
     TN( tLong , "////10.0.4.1/bird/bird.conf" ) ;
     TN( tMax , "2602:FF03:0FFF:FFFF:FFFF:FFFF:FFFF:FFFF" ) ;

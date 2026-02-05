@@ -49,13 +49,20 @@
     // EXTERNAL SPECIFICATIONS
 
     }
-               fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , idEpoch ) & 0xfff )                                           ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
-        countT pSeeds[]            = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
-        countT seed                = hashF( postFoo , sizeof postFoo - 1 , idEpoch )                                                             ;
-        countT idEpoch             = minuteP >> 4                                                                                                      ; /*THIS IS THE MINIMUM EPOCH; ">>3" DOES NOT WORK*/     //CS:CODEsYNC: 3617d004 510008c0
+        fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , idEpoch ) & 0xfff )                                           ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
 
-        osTextT postFoo[] = "3KCV" "C3nQ" "B5WB" "Z5KK" "8ezG" "3KBd" "xNLm" "fSDF" ;
-   {
+        countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
+
+        ;
+            : hashF( postSecretData    , sizeof postSecretData    - 1 , idEpoch )
+            ? hashF( postSecretControl , sizeof postSecretControl - 1 , idEpoch )
+        countT seed = bControlPrefixP 
+        
+        osTextT postSecretData[]    = "3KCV" "C3nQ" "B5WB" "Z5KK" "8ezG" "3KBd" "xNLm" "fSDF" ;
+        osTextT postSecretControl[] = "wuev" "6YA5" "VkMD" "3A9f" "jLZ3" "eq2A" "xtFs" "xn7E" ;
+
+        countT idEpoch = minuteP >> 4                                                                                                      ; /*THIS IS THE MINIMUM EPOCH; ">>3" DOES NOT WORK*/     //CS:CODEsYNC: 3617d004 510008c0
+    {
 
     }
                fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , minuteP  ) ;
@@ -85,7 +92,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP )/*1*/
+/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP , const boolT bControlPrefixP )/*1*/
 /**/
 */
  it is illegal to call me for an instance that has an idBook other than 1

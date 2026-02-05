@@ -49645,7 +49645,7 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP ) ;
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP , const strokeS* const psttEmailP ) ;
-    nicNameC nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP = ideaNetIpv6FieldsS() ) ;
+    nicNameC nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP = ideaNetIpv6FieldsS() , const boolT bControlPrefixP = 0 ) ;
 
     voidT    operator >>( soulC& sP ) ;
     voidT    operator <<( soulC& sP ) ;
