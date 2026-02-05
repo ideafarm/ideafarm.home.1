@@ -51,8 +51,10 @@
     }
                fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , idEpoch ) & 0xfff )                                           ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
         countT pSeeds[]            = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
-        countT seed                = hashF( tSecret , tSecret.csF( tin0P ) , idEpoch )                                                                 ;
+        countT seed                = hashF( postFoo , sizeof postFoo - 1 , idEpoch )                                                             ;
         countT idEpoch             = minuteP >> 4                                                                                                      ; /*THIS IS THE MINIMUM EPOCH; ">>3" DOES NOT WORK*/     //CS:CODEsYNC: 3617d004 510008c0
+
+        osTextT postFoo[] = "3KCV" "C3nQ" "B5WB" "Z5KK" "8ezG" "3KBd" "xNLm" "fSDF" ;
    {
 
     }
