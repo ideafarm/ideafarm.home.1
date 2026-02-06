@@ -51,22 +51,22 @@ DONE( tmWorkF )
 
                             TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_HTTPS ? tRequestDomain : tRequestAddress ;
 
-                            TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowControl+T("//http/ideanet/gorilla.html") ;
+                            TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowData+T("//http/ideanet/gorilla.html") ;
 
                             ;
 
                                 +T(".ideanet.ideafarm.com//http/ideanet/gorilla.html")
-                                +TF3(ipv6FieldsControl.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
-                                +TF3(ipv6FieldsControl.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                                +TF3(ipv6FieldsControl.minute     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                                 TF3(ipv6FieldsControl.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                                +TF3(ipv6FieldsData.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
+                                +TF3(ipv6FieldsData.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                                +TF3(ipv6FieldsData.minute     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                                 TF3(ipv6FieldsData.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
 
                             TN( tRequestDomain , "" ) ; tRequestDomain =
 
                             // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
 
                             //TN( tUrl , "" ) ; tUrl  = TF3(pcIdHost[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+TF3(pcIdHost[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".ideanet.ideafarm.com//http/ideanet/control/gorilla.html") ;
-                            countT* pcIdHost = (countT*)&ipv6FieldsControl ;
+                            countT* pcIdHost = (countT*)&ipv6FieldsData ;
                             //CS:CODEsYNC: 510008c0 33000116
                         {
                         // DATA
