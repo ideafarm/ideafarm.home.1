@@ -23,6 +23,16 @@
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
 
+        //  
+        //      The exception value for an unhandled exception that caused the process to terminate.
+        //      The return value from the main or WinMain function of the process.
+        //      The exit value specified in the ExitProcess or TerminateProcess function.
+        //  
+        //  This function returns immediately. If the process has not terminated and the function succeeds, the status returned is STILL_ACTIVE (a macro for STATUS_PENDING (minwinbase.h)). If the process has terminated and the function succeeds, the status returned is one of the following values:
+        //  
+        // Source: https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodeprocess
+        // MEANING OF THE valueP VALUE
+
         }
             ((tin1S&)tin0P).pag4->_thirdC_grab_lOsPid.ungrabF( tin0P ) ;
             ((tin1S&)tin0P).pag1->_thirdC_.pSwProcessHandle->freeF( tin0P ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
