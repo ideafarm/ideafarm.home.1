@@ -43,7 +43,7 @@ DONE( tmWorkF )
                                 etThread.delF( tin0P , posti ) ;
                                 }
                                     }
-                                        etRock.traceF( tin0P , T(bUpControl?"The DATA channel just went DOWN, but the control channel is still up.":"The DATA channel just went DOWN, and the control channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                        etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpControl?"    The DATA channel just went DOWN, but the control channel is still up.":"    The DATA channel just went DOWN, and the control channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                         bUpData = 0 ;
                                     {
                                     if( bUpData )
@@ -54,7 +54,7 @@ DONE( tmWorkF )
                                 else
                                 }
                                     }
-                                        etRock.traceF( tin0P , T(bUpControl?"The DATA channel just came UP, so both control and data are up.":"The DATA channel just came UP, but the control channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                        etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpControl?"    The DATA channel just came UP, so both control and data are up.":"    The DATA channel just came UP, but the control channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                         bUpData = 1 ;
                                     {
                                     if( !bUpData )
@@ -93,7 +93,7 @@ DONE( tmWorkF )
                                 etThread.delF( tin0P , posti ) ;
                                 }
                                     }
-                                        etRock.traceF( tin0P , T(bUpData?"The CONTROL channel just went DOWN, but the data channel is still up.":"The CONTROL channel just went DOWN, and the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                        etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpData?"    The CONTROL channel just went DOWN, but the data channel is still up.":"    The CONTROL channel just went DOWN, and the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                         bUpControl = 0 ;
                                     {
                                     if( bUpControl )
@@ -104,7 +104,7 @@ DONE( tmWorkF )
                                 else
                                 }
                                     }
-                                        etRock.traceF( tin0P , T(bUpData?"The CONTROL channel just came UP, so both control and data are up.":"The CONTROL channel just came UP, but the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                        etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpData?"    The CONTROL channel just came UP, so both control and data are up.":"    The CONTROL channel just came UP, but the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                         bUpControl = 1 ;
                                     {
                                     if( !bUpControl )
