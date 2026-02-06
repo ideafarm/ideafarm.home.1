@@ -29,6 +29,15 @@ DONE( tmWorkF )
                     ++ s ; etThread.osSleepF( tin0P , TUCK >> 6 ) ;
 
                     }
+                        if( rc <= 32 ) etThread.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
+                        // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
+
+                        etThread.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    {
+                    if( bWasDown && bUpControl && bUpData )
+
+                    }
                         }
                             }
                                 etThread.delF( tin0P , posti ) ;
@@ -154,15 +163,7 @@ DONE( tmWorkF )
                     ZE( sCountT , timeN2 ) ;
                     ZE( countT  , timeN1 ) ;
 
-                    }
-//                          if( rc <= 32 ) etThread.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-//                          countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
-//                          // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
-//
-//                          etThread.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-//U:: DO THIS LATER, AFTER HAVE SEEN THAT BOTH CHANNELS (CONTROL AND DATA) ARE WORKING
-                    {
-                    if( cSkipPage && !( -- cSkipPage ) )
+                    const boolT bWasDown = !bUpControl || !bUpData ;
 
                     ++ idPass ;
                 {
