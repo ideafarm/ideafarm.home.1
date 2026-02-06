@@ -33,16 +33,28 @@ DONE( tmWorkF )
                             }
                                 etThread.delF( tin0P , posti ) ;
                                 }
-                                    etRock.traceF( tin0P , T("stomp! (data)    FAIL [idStompData   ,cFail,rc]:    ")+TF2(cStompData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompDataFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                                    }
+                                        etRock.traceF( tin0P , T(bUpControl?"The DATA channel just went DOWN, but the control channel is still up.":"The DATA channel just went DOWN, and the control channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                        bUpData = 0 ;
+                                    {
+                                    if( bUpData )
+//                                    etRock.traceF( tin0P , T("stomp! (data)    FAIL [idStompData   ,cFail,rc]:    ")+TF2(cStompData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompDataFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                     POOPRqUIET
                                     countT rc = POOP ;
                                 {
                                 else
-                                if( !POOP ) ;//etRock.traceF( tin0P , T("stomp! (data)    aok [idStompData   ]:    ")+TF2(cStompData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                                }
+                                    }
+                                        etRock.traceF( tin0P , T(bUpControl?"The DATA channel just came UP, so both control and data are up.":"The DATA channel just came UP, but the control channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                        bUpData = 1 ;
+                                    {
+                                    if( !bUpData )
+                                {
+                                if( !POOP ) //;etRock.traceF( tin0P , T("stomp! (data)    aok [idStompData   ]:    ")+TF2(cStompData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                 ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 ) ; ___( posti ) ;
                                 ZE( countT   , costi ) ;
                                 ZE( osTextT* , posti ) ;
-                                etRock.traceF( tin0P , T("stomp! (data)    begin [idStompData   ,url]:    ")+TF2(cStompData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
+//                                etRock.traceF( tin0P , T("stomp! (data)    begin [idStompData   ,url]:    ")+TF2(cStompData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
                                 SCOOPS
                                 _IO_
                             {
@@ -75,16 +87,28 @@ DONE( tmWorkF )
                             }
                                 etThread.delF( tin0P , posti ) ;
                                 }
-                                    etRock.traceF( tin0P , T("stomp! (control) FAIL [idStompControl,cFail,rc]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompControlFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                                    }
+                                        etRock.traceF( tin0P , T(bUpData?"The CONTROL channel just went DOWN, but the data channel is still up.":"The CONTROL channel just went DOWN, and the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                        bUpControl = 0 ;
+                                    {
+                                    if( bUpControl )
+//                                    etRock.traceF( tin0P , T("stomp! (control) FAIL [idStompControl,cFail,rc]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompControlFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                     POOPRqUIET
                                     countT rc = POOP ;
                                 {
                                 else
-                                if( !POOP ) ;//etRock.traceF( tin0P , T("stomp! (control) aok [idStompControl]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                                }
+                                    }
+                                        etRock.traceF( tin0P , T(bUpData?"The CONTROL channel just came UP, so both control and data are up.":"The CONTROL channel just came UP, but the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                        bUpControl = 1 ;
+                                    {
+                                    if( !bUpControl )
+                                {
+                                if( !POOP ) //;etRock.traceF( tin0P , T("stomp! (control) aok [idStompControl]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                 ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 ) ; ___( posti ) ;
                                 ZE( countT   , costi ) ;
                                 ZE( osTextT* , posti ) ;
-                                etRock.traceF( tin0P , T("stomp! (control) begin [idStompControl,url]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
+//                                etRock.traceF( tin0P , T("stomp! (control) begin [idStompControl,url]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
                                 SCOOPS
                                 _IO_
                             {
@@ -140,11 +164,12 @@ DONE( tmWorkF )
                     ZE( countT  , timeN1 ) ;
 
                     }
-                          if( rc <= 32 ) etThread.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                          countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
-                          // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
-
-                          etThread.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+//                          if( rc <= 32 ) etThread.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+//                          countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
+//                          // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
+//
+//                          etThread.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+//U:: DO THIS LATER, AFTER HAVE SEEN THAT BOTH CHANNELS (CONTROL AND DATA) ARE WORKING
                     {
                     if( cSkipPage && !( -- cSkipPage ) )
 
@@ -152,6 +177,8 @@ DONE( tmWorkF )
                 {
                 while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
                 ZE( countT , idPass ) ;
+                ZE( boolT  , bUpData    ) ;
+                ZE( boolT  , bUpControl ) ;
                 countT cSkipStomp = TUCK >> 4 ;
                 countT cSkipPage  = TUCK >> 5 ;
                 ZE( countT , cStompDataFail    ) ;
