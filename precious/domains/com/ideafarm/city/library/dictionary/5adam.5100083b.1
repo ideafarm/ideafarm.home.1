@@ -18,19 +18,19 @@ DONE( tmWorkF )
 }
     }
         }
-            etThread.traceF( tin0P , T("hired  self [tArgsGross]:    ")+tArgsGross ) ;
+            etRock.traceF( tin0P , T("hired  self [tArgsGross]:    ")+tArgsGross ) ;
             }
                 }
                     thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
-                    etThread.traceF( tin0P , T("setting flMODEpROCESS2_EXITcODEiMPOTENCE") ) ;
+                    etRock.traceF( tin0P , T("setting flMODEpROCESS2_EXITcODEiMPOTENCE") ) ;
                 {
                 if( ifcEXITcODE_EXITpROCESSaOK != rc )
 
-                etThread.traceF( tin0P , T("osHireThenMonitorIF returned [rc,tArgsGross]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tArgsGross ) ;
+                etRock.traceF( tin0P , T("osHireThenMonitorIF returned [rc,tArgsGross]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tArgsGross ) ;
                 countT rc = thirdC::osHireThenMonitorIF( tin0P , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_HIREwITHOUTdEBUGGING") , tArgsGross ) ;
                 _IO_
             {
-            etThread.traceF( tin0P , T("hiring self [tArgsGross]:    ")+tArgsGross ) ;
+            etRock.traceF( tin0P , T("hiring self [tArgsGross]:    ")+tArgsGross ) ;
 
                                           tArgsGross += tb+tArgKeyNameNow+tb+tFile+tb+tArgsNet ;
             if( maxValue                ) tArgsGross += tb+tArgKeyMaxValue+tb+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
@@ -45,10 +45,10 @@ DONE( tmWorkF )
             }
                 }
                     }
-                        etThread.traceF( tin0P , T("waited for the \"received\" sign and am now quitting") ) ;
+                        etRock.traceF( tin0P , T("waited for the \"received\" sign and am now quitting") ) ;
                         sgnReceived.waitF( tin0P ) ;
                         sgnReady.giveF(    tin0P ) ;
-                        etThread.traceF( tin0P , T("giving the \"ready\" sign and waiting for the \"received\" sign") ) ;
+                        etRock.traceF( tin0P , T("giving the \"ready\" sign and waiting for the \"received\" sign") ) ;
 
                         THREADmODE1rESTORE
                         THREADmODE2rESTORE
@@ -108,7 +108,7 @@ DONE( tmWorkF )
                     }
                         //if( bSandbox ) etherC::loafIF( tin0P ) ;
                         thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
-                        etThread.traceF( tin0P , T("!exception: kid process either could not be hired or returned an impermissibly high value [idPoop,value,maxValue]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        etRock.traceF( tin0P , T("!exception: kid process either could not be hired or returned an impermissibly high value [idPoop,value,maxValue]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         TN( tb4 , "    " ) ;
                         POOPRqUIET
                     {                              //HAVING MY PROCESS EXIT CODE CONTAIN DETAILED INFO WOULD COMPLICATE DEBUGGING CODE THAT INSPECTS THE PROCESS EXIT CODE AND DETECTS WHETHER THE EXIT CODE IS WO OF THE EXPECTED (LEGAL) VALUES FOR AN IPDOS (TM) PROCESS
@@ -116,13 +116,13 @@ DONE( tmWorkF )
 
                     if( value > maxValue ) { __( value ) ; }
 
-                    etThread.traceF( tin0P , T("setting [bHiredAOK]:    ")+TF2(bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etRock.traceF( tin0P , T("setting [bHiredAOK]:    ")+TF2(bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     bHiredAOK = !idPoop ;
-                    etThread.traceF( tin0P , T("called  dosExecPgmF [maxValue,idPoop,reportToCell,idReport,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
+                    etRock.traceF( tin0P , T("called  dosExecPgmF [maxValue,idPoop,reportToCell,idReport,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
                     idPoop = POOP ;
                     ((thirdC&)*((tin1S&)tin0P).pEtScratch).dosExecPgmF( tin0P , countTC() , countTC() , value , idDeathType , tFile , tArgsNet , flPROCESShIRE_null ) ;
                     etThread.strokeF( tin0P , T("\r\n") ) ;
-                    etThread.traceF( tin0P , T("calling dosExecPgmF [maxValue,idPoop,reportToCell,idReport,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
+                    etRock.traceF( tin0P , T("calling dosExecPgmF [maxValue,idPoop,reportToCell,idReport,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
                     ZE( countT , idDeathType ) ;        // FOR MS WINDOWS, THIS WILL ALWAYS BE 0
                     ZE( countT , value       ) ;
                     ZE( countT , idPoop      ) ;
@@ -174,7 +174,7 @@ DONE( tmWorkF )
             else if( !etThread.strCompareF( tin0P , psttc1 , tArgKeyIdReport     ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 0 ; bArmedIdReport = 1 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
             else if( !etThread.strCompareF( tin0P , psttc1 , tArgKeyReportToCell ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 1 ; bArmedIdReport = 0 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
                  if( !etThread.strCompareF( tin0P , psttc1 , tArgKeyIgnore       ) ) { bArmedIgnore   = 1 ; bArmedReportToCell  = 0 ; bArmedIdReport = 0 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
-            //etThread.traceF( tin0P , T("param: ")+T(psttc1) ) ;
+            //etRock.traceF( tin0P , T("param: ")+T(psttc1) ) ;
             _IO_                                                                                        //P:PERSONALITY: A HEYkEY (E.G. "!maxValue") HAS NO EFFECT IF FOLLOWED IMMEDIATELY BY ANOTHER HEYkEY
         {
         FORsTRINGSiN1( pstt1Param )
@@ -204,6 +204,8 @@ DONE( tmWorkF )
     ZE( countT , idReport     ) ;
     ZE( countT , reportToCell ) ;
     ZE( countT , maxValue     ) ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
