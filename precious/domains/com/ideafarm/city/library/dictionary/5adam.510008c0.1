@@ -19,24 +19,24 @@ DONE( tmWorkF )
 }
     }
         }
-            etThread.traceF( tin0P , T("\r\nwaited for sgnDone_tmServeHttpF.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+            etRock.traceF( tin0P , T("\r\nwaited for sgnDone_tmServeHttpF.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
             sgnDone_tmServeHttpF.waitF( tin0P ) ;
-            etThread.traceF( tin0P , T("\r\nwaiting for sgnDone_tmServeHttpF.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+            etRock.traceF( tin0P , T("\r\nwaiting for sgnDone_tmServeHttpF.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
             
             }
                 FIREmYSELF
 
-                etThread.traceF( tin0P , T("\r\nI am no longer serving web pages.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                etRock.traceF( tin0P , T("\r\nI am no longer serving web pages.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
                 }
                     ++ s ; etThread.osSleepF( tin0P , TUCK >> 6 ) ;
 
                     }
-                        if( rc <= 32 ) etThread.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        if( rc <= 32 ) etRock.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                         countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
                         // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
 
-                        etThread.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etRock.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     {
                     if( bWasDown && bUpControl && bUpData )
 
@@ -144,7 +144,7 @@ DONE( tmWorkF )
                     if( bGorilla && !( cSkipStomp && cSkipStomp -- ) /*&& !( idPass % ( TUCK >> 4 ) )*/ )
 
                     }
-                        //etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6NowData , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                        //etRock.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+tIpv6NowData , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                         tIpv6NowData    = T(nnNowData   ) ;
                         tIpv6NowControl = T(nnNowControl) ;
@@ -188,7 +188,7 @@ DONE( tmWorkF )
 
                 }
                     }
-                        etThread.traceF( tin0P , T("I am ready to serve web pages (only to you).  Enter the 'b' command to begin.\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                        etRock.traceF( tin0P , T("I am ready to serve web pages (only to you).  Enter the 'b' command to begin.\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
                         bWoth = 0 ;
                     {
                     if( bWoth )
@@ -203,7 +203,7 @@ DONE( tmWorkF )
             {
             else
             }
-                etThread.traceF( tin0P , T("I cannot serve web pages, likely because there is already an http server running on this computer.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                etRock.traceF( tin0P , T("I cannot serve web pages, likely because there is already an http server running on this computer.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
                 bAborted = 1 ;
             {
             if( idStatusHttpService > ifcIDsTATUShTTPsERVICE_READY )
@@ -223,7 +223,7 @@ DONE( tmWorkF )
             TN( tIpv6NowData    , "" ) ;
             TN( tIpv6NowControl , "" ) ;
             ZE( countT , idStatusHttpService ) ;
-            etThread.traceF( tin0P , T("\r\nPreparing to serve pages to you...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+            etRock.traceF( tin0P , T("\r\nPreparing to serve pages to you...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         {
         if( !bQuitEarly )
         ZE( boolT , bAborted ) ;
@@ -240,7 +240,7 @@ DONE( tmWorkF )
             "\r\n  I will serve web pages, but only to you.  This is safe, because I will ignore requests that come from"
             "\r\nIdeaFarm (tm) IdeaNet (tm) is a subscribers-only World Wide Web system within the public Internet system."
 
-        etThread.traceF( tin0P , T(
+        etRock.traceF( tin0P , T(
 
         countT idSub  = 1 ;
         countT idBook = 1 ;
@@ -249,9 +249,9 @@ DONE( tmWorkF )
         ZE( strokeS* , psttWanted ) ;
 
         }
-            etThread.traceF( tin0P , T("\r\nThis file gives you access to Book 1.  For Book 1, you are subscriber number ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".  Subscription id's\r\n  are dispensed serially, starting with 1.  Subscribers with low id numbers will be given\r\n  VIP privileges as the system grows, in appreciation for their role as founders.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etRock.traceF( tin0P , T("\r\nThis file gives you access to Book 1.  For Book 1, you are subscriber number ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".  Subscription id's\r\n  are dispensed serially, starting with 1.  Subscribers with low id numbers will be given\r\n  VIP privileges as the system grows, in appreciation for their role as founders.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
-            etThread.traceF( tin0P , T("\r\nThis file is your personal key for access to the IdeaFarm (tm) IdeaNet (tm) Book Publishing System.\r\n  Do not share this file with others.  Abuse will result in suspension or termination of your access.\r\n  You may use this key only if you are the owner of email address ")+tEmail , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etRock.traceF( tin0P , T("\r\nThis file is your personal key for access to the IdeaFarm (tm) IdeaNet (tm) Book Publishing System.\r\n  Do not share this file with others.  Abuse will result in suspension or termination of your access.\r\n  You may use this key only if you are the owner of email address ")+tEmail , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
             countT              idSub  = sub ;
             TN( tEmail , "" ) ; tEmail = sub ;
@@ -274,18 +274,20 @@ DONE( tmWorkF )
         TN( tb4 , "    " ) ;
     {
     else
-    if( !LoadStringA( 0 , 101 , postSoulSubDump , sizeof postSoulSubDump ) ) etThread.traceF( tin0P , T("Either this file is not configured (for your email address), or it is corrupted.  Please discard it and obtain a fresh copy by (re)registering your email address at http://ideafarm.com .") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    if( !LoadStringA( 0 , 101 , postSoulSubDump , sizeof postSoulSubDump ) ) etRock.traceF( tin0P , T("Either this file is not configured (for your email address), or it is corrupted.  Please discard it and obtain a fresh copy by (re)registering your email address at http://ideafarm.com .") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
     boolT bGorilla = 1 ;
     //}
     //    }
     //        if( !etThread.strCompareF( tin0P , psttc1 , tHeyGorilla ) ) bGorilla = 1 ;
-    //        etThread.traceF( tin0P , T("[parameter]:    ")+T(psttc1) ) ;
+    //        etRock.traceF( tin0P , T("[parameter]:    ")+T(psttc1) ) ;
     //    {
     //    FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tin0P ) )
     //    TN( tHeyGorilla , "!gorilla" ) ;
     //{
     //ZE( boolT , bGorilla ) ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
@@ -298,21 +300,21 @@ DONE( tmHearF )
         etThread.delF( tin0P , psttUnwanted ) ;
         etThread.delF( tin0P , psttWanted   ) ;
 
-        else                                                            {                                            etThread.traceF( tin0P , tHelp                                      , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("f") , psttWanted ) ) { flagsModeP &= ~( F(flIDEAnETeXE_HTTPS) ) ; etThread.traceF( tin0P , T("I will use \"fast mode\" (http).\r\n" ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("s") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_HTTPS    ; etThread.traceF( tin0P , T("I will use \"slow mode\" (https).\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("b") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_BEGIN    ; etThread.traceF( tin0P , T("Synchronizing...\r\n"                 ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else                                                            {                                            etRock.traceF( tin0P , tHelp                                      , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("f") , psttWanted ) ) { flagsModeP &= ~( F(flIDEAnETeXE_HTTPS) ) ; etRock.traceF( tin0P , T("I will use \"fast mode\" (http).\r\n" ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("s") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_HTTPS    ; etRock.traceF( tin0P , T("I will use \"slow mode\" (https).\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("b") , psttWanted ) ) { flagsModeP |=      flIDEAnETeXE_BEGIN    ; etRock.traceF( tin0P , T("Synchronizing...\r\n"                 ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
              if( !psttWanted || !psttWanted->idAdam                   ) { FIREmYSELF }
 
-        //etThread.traceF( tin0P , T("[psttUnwanted]:    ")+T(psttUnwanted) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        //etThread.traceF( tin0P , T("[psttWanted]:      ")+T(psttWanted  ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        //etRock.traceF( tin0P , T("[psttUnwanted]:    ")+T(psttUnwanted) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        //etRock.traceF( tin0P , T("[psttWanted]:      ")+T(psttWanted  ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
         etThread.strHearF( tin0P , psttWanted , psttUnwanted , 1 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
         ZE( strokeS* , psttUnwanted ) ;
         ZE( strokeS* , psttWanted   ) ;
     {
     while( !ether && !( F(flagsModeP) & flIDEAnETeXE_QUIT ) )
 
-    etThread.traceF( tin0P , tHelp , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etRock.traceF( tin0P , tHelp , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
  
     ) ;
 
@@ -327,6 +329,8 @@ DONE( tmHearF )
 
     TN( tHelp ,
 
+    etherC& etRock     = etherC::etRockIF( tin0P ) ;
+
     flagsT& flagsModeP = *(flagsT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
@@ -335,21 +339,21 @@ TASK( tmHearF )
 DONE( tmServeHttpF )
 }
     //THREADmODE2rESTORE0( flagsSave )
-    etThread.traceF( tin0P , T("\r\ntmServeHttpF cleaned up.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+    etRock.traceF( tin0P , T("\r\ntmServeHttpF cleaned up.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
         //THREADmODE2oN0( flTHREADmODE2_UNLOCKpOOLiDENTITY )
         //THREADmODE2sAVE0( flagsSave )
 
-        etThread.traceF( tin0P , T("\r\ntmServeHttpF destroyed server instance.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+        etRock.traceF( tin0P , T("\r\ntmServeHttpF destroyed server instance.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         }
-            etThread.traceF( tin0P , T("\r\ntmServeHttpF destroying server instance.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
-            etThread.traceF( tin0P , T("cleaning up") ) ;
+            etRock.traceF( tin0P , T("\r\ntmServeHttpF destroying server instance.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+
             }
                 ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
             {
             while( !ether && idStatusHttpServiceP <= ifcIDsTATUShTTPsERVICE_READY )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-            etThread.traceF( tin0P , T("loafing") ) ;
+            etRock.traceF( tin0P , T("loafing") ) ;
 
             httpServerC serverU( tin0P , arg1U , arg2 , &cache ) ;
         {
@@ -362,6 +366,8 @@ DONE( tmServeHttpF )
         count9S c9p( (countT)&tIpv6NowControlP , (countT)&tIpv6NowDataP , (countT)&ipv6FieldsControlP , (countT)&ipv6FieldsDataP , (countT)&flagsModeP ) ;
     {
     ZE( flagsT , flagsSave ) ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     flagsT&             flagsModeP           =             *(flagsT*)pTaskP->c6 ;
     ideaNetIpv6FieldsS& ipv6FieldsDataP      = *(ideaNetIpv6FieldsS*)pTaskP->c5 ;
