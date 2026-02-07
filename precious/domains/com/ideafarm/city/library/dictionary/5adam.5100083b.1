@@ -20,7 +20,14 @@ DONE( tmWorkF )
         }
             etThread.traceF( tin0P , T("hired  self [tArgsGross]:    ")+tArgsGross ) ;
             }
-                if( ifcEXITcODE_EXITpROCESSaOK != thirdC::osHireThenMonitorIF( tin0P , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_HIREwITHOUTdEBUGGING") , tArgsGross ) ) thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
+                }
+                    thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
+                    etThread.traceF( tin0P , T("setting flMODEpROCESS2_EXITcODEiMPOTENCE") ) ;
+                {
+                if( ifcEXITcODE_EXITpROCESSaOK != rc )
+
+                etThread.traceF( tin0P , T("osHireThenMonitorIF returned [rc,tArgsGross]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tArgsGross ) ;
+                countT rc = thirdC::osHireThenMonitorIF( tin0P , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_HIREwITHOUTdEBUGGING") , tArgsGross ) ;
                 _IO_
             {
             etThread.traceF( tin0P , T("hiring self [tArgsGross]:    ")+tArgsGross ) ;
