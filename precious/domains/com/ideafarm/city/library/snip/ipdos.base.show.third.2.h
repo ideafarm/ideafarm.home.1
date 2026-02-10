@@ -49604,9 +49604,9 @@ i am nonconformant in that all of my member function definitions are in a single
     hostRandom( 0 )
     {}
 
-    inline boolT operator !( voidT ) const { return (boolT)( !routeRandom && !minute && !idSub && !hostRandom ) ; }
-    inline boolT operator ~( voidT ) const { return (boolT)(  routeRandom ||  minute ||  idSub ||  hostRandom ) ; }
-    inline boolT operator =( countT cP )   { if( cP ) { BLAMMOiD( cP ) ; } boolT was = ~(*this) ; idSub = hostRandom = routeRandom = minute = 0 ; return was ; }
+    inline boolT operator !( voidT ) const { return (boolT)( !routeRandom && !epoch && !idSub && !hostRandom ) ; }
+    inline boolT operator ~( voidT ) const { return (boolT)(  routeRandom ||  epoch ||  idSub ||  hostRandom ) ; }
+    inline boolT operator =( countT cP )   { if( cP ) { BLAMMOiD( cP ) ; } boolT was = ~(*this) ; idSub = hostRandom = routeRandom = epoch = 0 ; return was ; }
 }
 ;
 
