@@ -400,7 +400,7 @@ DONE( tmWorkerF )
                                                 }
                                                     pcOut[ 0 ]  =   fields.hostRandom                    ;
                                                     pcOut[ 1 ]  =   fields.idSub                         ;
-                                                    pcOut[ 2 ] |=   fields.minute                        ;
+                                                    pcOut[ 2 ] |=   fields.epoch                         ;
                                                     pcOut[ 2 ]  = ( fields.routeRandom & 0xfff ) << 0x10 ;                 // HIGH NIBBLE IS NOT AVAILABLE IN THE ARIN DELEGATION
                                                     //CS:CODEsYNC: 3617d004 510008af
 
@@ -415,7 +415,7 @@ DONE( tmWorkerF )
                                                             }
                                                                 case 4 : { fields.hostRandom  =           etThread.strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ; break ; }
                                                                 case 3 : { fields.idSub       =           etThread.strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ; break ; }
-                                                                case 2 : { fields.minute      = (count01T)etThread.strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ; break ; }
+                                                                case 2 : { fields.epoch       = (count01T)etThread.strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ; break ; }
                                                                 case 1 : { fields.routeRandom = (count01T)etThread.strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ; break ; }
                                                             {
                                                             switch( ++ idw )
