@@ -16,13 +16,16 @@ TODO
 
 DONE( tmWorkF )
 }
+    etherC::loafIF( tin0P ) ;
+    etThread.traceF( tin0P , T("ok") ) ;
+
     etThread.delF( tin0P , psttb ) ;
     etThread.traceF( tin0P , psttb , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
     etThread.strReplaceF( tin0P , psttb , 0 , T("\r\n#define DOaLL") , T("\r\n//#define DOaLL") ) ; ___( pstti ) ;
 
     etThread.traceF( tin0P , psttb , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-    etThread.strMakeF( tin0P , psttb , T("abcd\r\n#define DOaLL\r\nefgh") ) ; ___( psttBig ) ;
+    etThread.strMakeF( tin0P , LF , psttb , T("abcd\r\n#define DOaLL\r\nefgh") ) ; ___( psttBig ) ;
     ZE( strokeS* , psttb ) ;
 {
 if( pTaskP )
