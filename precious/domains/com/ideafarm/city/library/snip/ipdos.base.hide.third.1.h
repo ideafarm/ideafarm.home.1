@@ -52337,13 +52337,13 @@ values at and above 00ff are used by spouseC to encode literal byte values
 /**/
 /*1*//*BOSpOOPsET(idImpotenceP)*//*1*/
 
-#define BOSpOOPsET(idImpotenceP)                                                                                                                \
-                                                                                                                                                \
+#define BOSpOOPsET(idImpotenceP)                                                                                                                           \
+                                                                                                                                                           \
     if( ((tin1S&)tin0P).bosFail )                                                                                                                          \
-    {                                                                                                                                           \
+    {                                                                                                                                                      \
         idImpotenceP = ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfUNCTION + ((tin1S&)tin0P).brcQuery - ERROR_INVALID_FUNCTION ;                                   \
         if( idImpotenceP < ifcIDiMPOTENCEbASEeRRORcODE_min || idImpotenceP > ifcIDiMPOTENCEbASEeRRORcODE_max ) idImpotenceP = ((tin1S&)tin0P).brcQuery ;   \
-        if( !idImpotenceP ) idImpotenceP = DDNUMB ;                                                                                             \
+        if( !idImpotenceP ) idImpotenceP = DDNUMB ;                                                                                                        \
     }
 
 

@@ -6104,7 +6104,7 @@
 0x000017d8 , "\0\0\0\0ideaNetC::~ideaNetC( voidT )" ,
 0x000017d9 , "\0\0\0\0ideaNetC::ideaNetC( tin0S& tin0P , etherC& etherP ) :" ,
 0x000017da , "\0\0\0\0ideaNetSubscriptionC::ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP , const strokeS* const psttEmailP ) :" ,
-0x000017db , "\0\0\0\0nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP )" ,
+0x000017db , "\0\0\0\0nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT epochP , ideaNetIpv6FieldsS& fieldsP , const boolT bControlPrefixP )" ,
 0x000017dc , "\0\0\0\0voidT ideaNetSubscriptionC::operator >>( soulC& sP )" ,
 0x000017dd , "\0\0\0\0voidT ideaNetSubscriptionC::operator <<( soulC& sP )" ,
 0x000017de , "\0\0\0\0ideaNetSubscriptionC::ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP ) :" ,
