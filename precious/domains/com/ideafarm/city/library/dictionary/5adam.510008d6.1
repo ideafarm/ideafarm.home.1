@@ -18,21 +18,21 @@ DONE( tmWorkF )
 }
     etherC::loafIF( tin0P ) ;
 
-    etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnMax] :    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tMax , flTRACE_NOpREFIX ) ;
-    etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnNow2]:    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNow2) , flTRACE_NOpREFIX ) ;
-    etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnMin] :    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tMin , flTRACE_NOpREFIX ) ;
+    etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnMax] :    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tMax , flTRACE_NOpREFIX ) ;
+    etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNow2]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNow2) , flTRACE_NOpREFIX ) ;
+    etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnMin] :    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tMin , flTRACE_NOpREFIX ) ;
 
-    etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnNow1]:    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNow1) , flTRACE_NOpREFIX ) ;
+    etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNow1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNow1) , flTRACE_NOpREFIX ) ;
     TN( tMax , "2602:FF03:0FFF:FFFF:FFFF:FFFF:FFFF:FFFF" ) ;
     TN( tMin , "2602:FF03:0000::" ) ;
     TN( tb4 , "    " ) ;
 
-    nicNameC nnNow2 = woSub.nnF( tin0P , minute ) ;
-    nicNameC nnNow1 = woSub.nnF( tin0P , minute ) ;
+    nicNameC nnNow2 = woSub.nnF( tin0P , epoch ) ;
+    nicNameC nnNow1 = woSub.nnF( tin0P , epoch ) ;
 
     ideaNetSubscriptionC woSub( tin0P , etThread , 1 , 1 , T("foo") , T("goo@hoo") ) ;
 
-    countT minute = timeN1 >> 0x14 ;
+    countT epoch = timeN1 >> 0x18 ;
 
     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;

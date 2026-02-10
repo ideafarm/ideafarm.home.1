@@ -23,10 +23,10 @@ DONE( tmWorkF )
             etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
             { queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , addNicAddressCBF , countTC() , &pat ) ; }
             etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
-            minuteLath = minute ;
+            epochLath = epoch ;
         {
-        if( minuteLath != minute )
-        countT minute = timeN1 >> 0x14 ;
+        if( epochLath != epoch )
+        countT epoch = timeN1 >> 0x18 ;
 
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
@@ -34,7 +34,7 @@ DONE( tmWorkF )
     {
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-    ZE( countT , minuteLath ) ;
+    ZE( countT , epochLath ) ;
     TN( tDash , DASH127 ) ;
     patternC pat( tin0P , etThread , T("sub.01.00000001.*.soulC") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
 
@@ -86,14 +86,14 @@ TASK( tmWorkF )
     etherP.osNicOpenF( tin0P , hInterface , T("ideanet") ) ;
     handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
 
-    etherP.traceF( tin0P , T("addNicAddressCBF [minute,nnNowData]:       ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) , flTRACE_NOpREFIX ) ;
-    etherP.traceF( tin0P , T("addNicAddressCBF [minute,nnNowControl]:    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) , flTRACE_NOpREFIX ) ;
-    nicNameC nnNowData    = woSub.nnF( tin0P , minute           ) ;
-    nicNameC nnNowControl = woSub.nnF( tin0P , minute , fnu , 1 ) ;
+    etherP.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) , flTRACE_NOpREFIX ) ;
+    etherP.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) , flTRACE_NOpREFIX ) ;
+    nicNameC nnNowData    = woSub.nnF( tin0P , epoch           ) ;
+    nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , 1 ) ;
     ideaNetIpv6FieldsS fnu ;
     TN( tb4 , "    " ) ;
 
-    countT minute = timeN1 >> 0x14 ;
+    countT epoch = timeN1 >> 0x18 ;
 
     etherP.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;

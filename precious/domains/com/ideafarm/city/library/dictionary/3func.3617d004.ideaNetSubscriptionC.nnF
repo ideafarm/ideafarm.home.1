@@ -11,7 +11,7 @@
     
     pcUse[ 0 ]  =   fieldsP.hostRandom                    ;
     pcUse[ 1 ]  =   fieldsP.idSub                         ;
-    pcUse[ 2 ] |=   fieldsP.minute                        ;
+    pcUse[ 2 ] |=   fieldsP.epoch                         ;
     pcUse[ 2 ]  = ( fieldsP.routeRandom & 0xfff ) << 0x10 ;                 // HIGH NIBBLE IS NOT AVAILABLE IN THE ARIN DELEGATION
     //CS:CODEsYNC: 3617d004 510008af
 
@@ -25,7 +25,7 @@
     //
     //                                 |-------| /32 fieldsP.hostRandom
     //                       |-------|           /32 fieldsP.idSub
-    //                  |--|                     /16 fieldsP.minute
+    //                  |--|                     /16 fieldsP.epoch
     //                  |**********************| /80 idHost (external view)
     //   |************|                          /48 advertised prefix
     //              |-|                          /12 fieldsP.routeRandom
@@ -49,43 +49,38 @@
     // EXTERNAL SPECIFICATIONS
 
     }
-        fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , idEpochPrefix ) & 0xfff )                                           ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
+        fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , epochP ) & 0xfff )                                           ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
 
         countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
 
         ;
-            : hashF( postSecretData    , sizeof postSecretData    - 1 , idEpochPrefix )
-            ? hashF( postSecretControl , sizeof postSecretControl - 1 , idEpochPrefix )
+            : hashF( postSecretData    , sizeof postSecretData    - 1 , epochP )
+            ? hashF( postSecretControl , sizeof postSecretControl - 1 , epochP )
         countT seed = bControlPrefixP 
         
         osTextT postSecretData[]    = "3KCV" "C3nQ" "B5WB" "Z5KK" "8ezG" "3KBd" "xNLm" "fSDF" ;
         osTextT postSecretControl[] = "wuev" "6YA5" "VkMD" "3A9f" "jLZ3" "eq2A" "xtFs" "xn7E" ;
-
-        if( idEpochPrefix - idEpochHost ) { BLAMMOiD( 0x31425364 ) ; }
-        countT idEpochPrefix = minuteP >> 4                                                                                                      ; /*THIS IS THE MINIMUM EPOCH; ">>3" DOES NOT WORK*/     //CS:CODEsYNC: 3617d004 510008c0
     {
 
     }
-               fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , idEpochHost  ) ;
+               fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , epochP  ) ;
         countT pSeeds[]   = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
-        countT seed       = hashF( tSecret , tSecret.csF( tin0P ) , idEpochHost ) ;
+        countT seed       = hashF( tSecret , tSecret.csF( tin0P ) , epochP ) ;
     {
     else
     }
-                 fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , idEpochHost  ) ;
+                 fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , epochP  ) ;
         count01T pSeeds[]   = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ; // THIS ARRAY IS LIMITED TO ONLY A IDEAnETiPV6aDDRESSESuSED OF UNIQUE VALUES
-        count01T seed       = (count01T)( hashF( tSecret , tSecret.csF( tin0P ) , idEpochHost ) % IDEAnETiPV6aDDRESSESuSED ) ;
+        count01T seed       = (count01T)( hashF( tSecret , tSecret.csF( tin0P ) , epochP ) % IDEAnETiPV6aDDRESSESuSED ) ;
     {
     if( modulo )    // THIS WILL NEVER BE USEFUL, BUT IT IS RETAINED BECAUSE IT IS CUTE
 
-    //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("nnF [modulo,minute,secret]:    ")+TF2(modulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idEpochHost,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+    //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("nnF [modulo,epoch,secret]:    ")+TF2(modulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(epochP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
     TN( tb4 , "    " ) ;
     countT modulo = IDEAnETiPV6aDDRESSESuSED ;
 
-    countT idEpochHost = minuteP >> 4 ;     // TO MINIMIZE THE FREQUENCY OF ADDRESS CHANGES, CHANGE THE idHost VALUE ONLY WHEN CHANGING THE PREFIX VALUE
-
     fieldsP.idSub = idSub ;
-    fieldsP.minute = (count01T)minuteP ;
+    fieldsP.epoch = (count01T)epochP ;
 
     }
         if( POOP ) return nicNameC() ;
@@ -95,7 +90,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP , const boolT bControlPrefixP )/*1*/
+/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT epochP , ideaNetIpv6FieldsS& fieldsP , const boolT bControlPrefixP )/*1*/
 /**/
 */
  it is illegal to call me for an instance that has an idBook other than 1

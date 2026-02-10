@@ -74,16 +74,16 @@ DONE( tmWorkF )
 
             }
                 //etThread.traceF( tin0P , T("[time,ipv6]:    ")+TT(timeN1,timeN2)+tb4+T(nnNow) , flTRACE_NOpREFIX ) ;
-                nicNameC nnNow = sub.nnF( tin0P , minute ) ;
+                nicNameC nnNow = sub.nnF( tin0P , epoch ) ;
 
                 etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                 ZE( sCountT , timeN2 ) ;
                 ZE( countT  , timeN1 ) ;
 
-                minuteLath = minute ;
+                epochLath = epoch ;
             {
-            if( minuteLath != minute )                          // A:ASSUME: THE LIFETIME OF EACH ipv6 ADDRESS IS GREATER THAN RE MINUTES, SO THAT THE ipv6 OF THE LATH MINUTE WILL CONTINUE TO BE VALID WELL AFTER I NO LONGER OBTAIN ITS VALUE
-            countT minute = ( timeN1 >> 0x14 ) - 1 ;            // USE THE PRIOR MINUTE
+            if( epochLath != epoch )
+            countT epoch = ( timeN1 >> 0x18 ) ;
 
             etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
@@ -91,7 +91,7 @@ DONE( tmWorkF )
         {
         while( !bHeardEnterKey )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-        ZE( countT , minuteLath ) ;
+        ZE( countT , epochLath ) ;
 
         ideaNetSubscriptionC sub( tin0P , etThread , 1 , 1 , tSecret , T("foo@goo.com") ) ; ___( pSubP ) ;
 

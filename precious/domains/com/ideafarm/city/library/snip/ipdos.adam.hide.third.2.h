@@ -49593,13 +49593,13 @@ i am nonconformant in that all of my member function definitions are in a single
 /*1*/struct ideaNetIpv6FieldsS/*1*/
 {
     count01T routeRandom ;
-    count01T minute      ;
+    count01T epoch       ;
     countT   idSub       ;      // THIS WILL WRAP ; USE [idSub,hostRandom] TO UNIQUELY IDENTIFY THE SUBSCRIBER
     countT   hostRandom  ;
 
     inline ideaNetIpv6FieldsS( voidT ) :
     routeRandom( 0 ) ,
-    minute( 0 ) ,
+    epoch( 0 ) ,
     idSub( 0 ) ,
     hostRandom( 0 )
     {}

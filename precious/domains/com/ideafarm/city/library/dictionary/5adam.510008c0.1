@@ -83,7 +83,7 @@ DONE( tmWorkF )
                                 +T(".ideanet.ideafarm.com//http/ideanet/gorilla.html")
                                 +TF3(ipv6FieldsData.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
                                 +TF3(ipv6FieldsData.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                                +TF3(ipv6FieldsData.minute     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                                +TF3(ipv6FieldsData.epoch     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
                                  TF3(ipv6FieldsData.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
 
                             TN( tRequestDomain , "" ) ; tRequestDomain =
@@ -134,7 +134,7 @@ DONE( tmWorkF )
                                 +T(".ideanet.ideafarm.com//http/ideanet/control/gorilla.html")
                                 +TF3(ipv6FieldsControl.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
                                 +TF3(ipv6FieldsControl.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                                +TF3(ipv6FieldsControl.minute     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                                +TF3(ipv6FieldsControl.epoch     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
                                  TF3(ipv6FieldsControl.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
 
                             TN( tRequestDomain , "" ) ; tRequestDomain =
@@ -150,8 +150,8 @@ DONE( tmWorkF )
 
                         tIpv6NowData    = T(nnNowData   ) ;
                         tIpv6NowControl = T(nnNowControl) ;
-                        nicNameC nnNowData    = sub.nnF( tin0P , minute , ipv6FieldsData        ) ;
-                        nicNameC nnNowControl = sub.nnF( tin0P , minute , ipv6FieldsControl , 1 ) ;
+                        nicNameC nnNowData    = sub.nnF( tin0P , epoch , ipv6FieldsData        ) ;
+                        nicNameC nnNowControl = sub.nnF( tin0P , epoch , ipv6FieldsControl , 1 ) ;
 
                         ipv6FieldsData    = 0 ;
                         ipv6FieldsControl = 0 ;
@@ -159,11 +159,11 @@ DONE( tmWorkF )
                         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                         ZE( sCountT , timeN2 ) ;
                         ZE( countT  , timeN1 ) ;
-                        minuteLath = minute ;
+                        epochLath = epoch ;
                     {
-                    if( minuteLath != minute )
-                    //U:: PROD: countT minute = ( ( timeN1 - 2 * TOCK ) >> 0x14 ) ;         //U:: "2 * TOCK": ALLOW 2 TOCKS FOR THE BGP SYSTEM TO ESTABLISH CONNECTIVITY USING EACH NEW PREFIX BETWEEN ME (CLIENT) AND THE SERVER
-                    countT minute = ( ( timeN1 - 8 * TOCK ) >> 0x14 ) ;             //U:: TO FIND A BUG
+                    if( epochLath != epoch )
+                    //U:: PROD: countT epoch = ( ( timeN1 - 2 * TOCK ) >> 0x18 ) ;         //U:: "2 * TOCK": ALLOW 2 TOCKS FOR THE BGP SYSTEM TO ESTABLISH CONNECTIVITY USING EACH NEW PREFIX BETWEEN ME (CLIENT) AND THE SERVER
+                    countT epoch = ( ( timeN1 - 8 * TOCK ) >> 0x18 ) ;             //U:: TO FIND A BUG
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
@@ -185,7 +185,7 @@ DONE( tmWorkF )
                 ZE( countT , cStompControl     ) ;
 
                 ZE( countT , idEpoch    ) ;
-                ZE( countT , minuteLath ) ;
+                ZE( countT , epochLath ) ;
                 TN( tUnderScore , "_" ) ;
                 TN( tb4 , "    " ) ;
 

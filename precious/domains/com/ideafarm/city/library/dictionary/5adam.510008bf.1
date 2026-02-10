@@ -29,7 +29,7 @@ for( countT offs = 0 ; offs < sizeof ppSub / sizeof ppSub[ 0 ] ; offs ++ )
                 handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
             {
 
-            nicNameC nnNow = ppSub[ offs ]->nnF( tin0P , minute ) ;
+            nicNameC nnNow = ppSub[ offs ]->nnF( tin0P , epoch ) ;
         {
         for( countT offs = 0 ; offs < sizeof ppSub / sizeof ppSub[ 0 ] ; offs ++ )
 
@@ -38,10 +38,10 @@ for( countT offs = 0 ; offs < sizeof ppSub / sizeof ppSub[ 0 ] ; offs ++ )
         ZE( countT  , timeN1 ) ;
 
         etThread.traceF( tin0P , tDash ) ;
-        minuteLath = minute ;
+        epochLath = epoch ;
     {
-    if( minuteLath != minute )
-    countT minute = timeN1 >> 0x14 ;
+    if( epochLath != epoch )
+    countT epoch = timeN1 >> 0x18 ;
 
     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
@@ -49,7 +49,7 @@ for( countT offs = 0 ; offs < sizeof ppSub / sizeof ppSub[ 0 ] ; offs ++ )
 {
 while( !ether )
 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-ZE( countT , minuteLath ) ;
+ZE( countT , epochLath ) ;
 TN( tDash , DASH127 ) ;
 
 }

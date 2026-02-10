@@ -103,19 +103,19 @@ DONE( tmWorkF )
             if( nnSubnet48ControlLath != nnSubnet48Control )
             ZE( countT , cChange ) ;
 
-            etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnNowData,nnAdvertise]:       ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   )+tb4+T(nnSubnet48Data   ) , flTRACE_NOpREFIX ) ;
-            etThread.traceF( tin0P , T("addNicAddressCBF [minute,nnNowControl,nnAdvertise]:    ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl)+tb4+T(nnSubnet48Control) , flTRACE_NOpREFIX ) ;
+            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowData,nnAdvertise]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   )+tb4+T(nnSubnet48Data   ) , flTRACE_NOpREFIX ) ;
+            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowControl,nnAdvertise]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl)+tb4+T(nnSubnet48Control) , flTRACE_NOpREFIX ) ;
 
             nicNameC nnSubnet48Data     = nnNowData(    0x30 ) ;
             nicNameC nnSubnet48Control  = nnNowControl( 0x30 ) ;
-            const nicNameC nnNowData    = woSub.nnF( tin0P , minute           ) ;
-            const nicNameC nnNowControl = woSub.nnF( tin0P , minute , fnu , 1 ) ;
+            const nicNameC nnNowData    = woSub.nnF( tin0P , epoch           ) ;
+            const nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , 1 ) ;
             ideaNetIpv6FieldsS fnu ;
 
-            minuteLath = minute ;
+            epochLath = epoch ;
         {
-        if( minuteLath != minute )
-        countT minute = timeN1 >> 0x14 ;
+        if( epochLath != epoch )
+        countT epoch = timeN1 >> 0x18 ;
 
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
@@ -125,7 +125,7 @@ DONE( tmWorkF )
             etThread.traceF( tin0P , T("addNicAddressCBF [       nnMax] :          ")+tMax , flTRACE_NOpREFIX ) ;
             etThread.traceF( tin0P , T("addNicAddressCBF [       nnMin] :          ")+tMin , flTRACE_NOpREFIX ) ;
         {
-        if( !minuteLath )
+        if( !epochLath )
     {
     while( !ether )
     stackC               stNnSubnetSayData(    tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
@@ -134,7 +134,7 @@ DONE( tmWorkF )
     nicNameC             nnSubnet48ControlLath ;
     ideaNetSubscriptionC woSub( tin0P , etThread , 1 , 1 , T("foo") , T("goo@hoo") ) ;
     sleepC               s( tin0P , TAG( TAGiDnULL ) ) ;
-    ZE( countT , minuteLath ) ;
+    ZE( countT , epochLath ) ;
     TN( tLong , "////10.0.4.1/bird/bird.conf" ) ;
     TN( tMax , "2602:FF03:0FFF:FFFF:FFFF:FFFF:FFFF:FFFF" ) ;
     TN( tMin , "2602:FF03:0000::" ) ;
