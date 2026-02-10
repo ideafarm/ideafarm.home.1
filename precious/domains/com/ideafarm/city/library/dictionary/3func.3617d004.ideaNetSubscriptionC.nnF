@@ -49,37 +49,40 @@
     // EXTERNAL SPECIFICATIONS
 
     }
-        fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , idEpoch ) & 0xfff )                                           ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
+        fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , idEpochPrefix ) & 0xfff )                                           ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
 
         countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
 
         ;
-            : hashF( postSecretData    , sizeof postSecretData    - 1 , idEpoch )
-            ? hashF( postSecretControl , sizeof postSecretControl - 1 , idEpoch )
+            : hashF( postSecretData    , sizeof postSecretData    - 1 , idEpochPrefix )
+            ? hashF( postSecretControl , sizeof postSecretControl - 1 , idEpochPrefix )
         countT seed = bControlPrefixP 
         
         osTextT postSecretData[]    = "3KCV" "C3nQ" "B5WB" "Z5KK" "8ezG" "3KBd" "xNLm" "fSDF" ;
         osTextT postSecretControl[] = "wuev" "6YA5" "VkMD" "3A9f" "jLZ3" "eq2A" "xtFs" "xn7E" ;
 
-        countT idEpoch = minuteP >> 4                                                                                                      ; /*THIS IS THE MINIMUM EPOCH; ">>3" DOES NOT WORK*/     //CS:CODEsYNC: 3617d004 510008c0
+        if( idEpochPrefix - idEpochHost ) { BLAMMOiD( 0x31425364 ) ; }
+        countT idEpochPrefix = minuteP >> 4                                                                                                      ; /*THIS IS THE MINIMUM EPOCH; ">>3" DOES NOT WORK*/     //CS:CODEsYNC: 3617d004 510008c0
     {
 
     }
-               fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , minuteP  ) ;
+               fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , idEpochHost  ) ;
         countT pSeeds[]   = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
-        countT seed       = hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) ;
+        countT seed       = hashF( tSecret , tSecret.csF( tin0P ) , idEpochHost ) ;
     {
     else
     }
-                 fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , minuteP  ) ;
+                 fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , idEpochHost  ) ;
         count01T pSeeds[]   = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ; // THIS ARRAY IS LIMITED TO ONLY A IDEAnETiPV6aDDRESSESuSED OF UNIQUE VALUES
-        count01T seed       = (count01T)( hashF( tSecret , tSecret.csF( tin0P ) , minuteP ) % IDEAnETiPV6aDDRESSESuSED ) ;
+        count01T seed       = (count01T)( hashF( tSecret , tSecret.csF( tin0P ) , idEpochHost ) % IDEAnETiPV6aDDRESSESuSED ) ;
     {
     if( modulo )    // THIS WILL NEVER BE USEFUL, BUT IT IS RETAINED BECAUSE IT IS CUTE
 
-    //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("nnF [modulo,minute,secret]:    ")+TF2(modulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(minuteP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+    //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("nnF [modulo,minute,secret]:    ")+TF2(modulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idEpochHost,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
     TN( tb4 , "    " ) ;
     countT modulo = IDEAnETiPV6aDDRESSESuSED ;
+
+    countT idEpochHost = minuteP >> 4 ;     // TO MINIMIZE THE FREQUENCY OF ADDRESS CHANGES, CHANGE THE idHost VALUE ONLY WHEN CHANGING THE PREFIX VALUE
 
     fieldsP.idSub = idSub ;
     fieldsP.minute = (count01T)minuteP ;
