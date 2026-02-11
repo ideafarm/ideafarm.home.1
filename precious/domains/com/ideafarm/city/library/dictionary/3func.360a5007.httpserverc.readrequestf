@@ -340,8 +340,9 @@
             //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
             }
                 }
-                    thirdC::dosSleepWinkIF( tin0P , 8 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
-                    /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / wink") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
+                    /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / winked") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
+                    //thirdC::dosSleepWinkIF( tin0P , 8 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
+                    /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / winking") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
                 {
                 if( !bEnd )
 
@@ -386,7 +387,8 @@
                     osTextT* poste = thirdC::c_strstrIF( tin0P , postc , "\r\n\r\n" ) ;
                     /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / got mouthful [delta,cMouthfulsUsed]:    ")+TF3(delta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+TF2(cMouthfulsBegin-cMouthfulsAllowed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
                 {
-                if( delta )
+                else
+                if( !delta ) /*;*/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / got 0 bytes") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
 
                 }
                     }
@@ -401,6 +403,7 @@
                 {
                 IFsCRATCHoK
                 ZE( countT , delta ) ;
+                /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / reading a mouthful") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
             {
             while( !bEnd && costRemain )
             countT cMouthfulsBegin = cMouthfulsAllowed ;
