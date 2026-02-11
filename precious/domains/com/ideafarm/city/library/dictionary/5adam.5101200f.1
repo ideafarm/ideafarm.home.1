@@ -16,17 +16,25 @@ TODO
 
 DONE( tmWorkF )
 }
-    etherC::loafIF( tin0P ) ;
+    //etherC::loafIF( tin0P ) ;
     etThread.traceF( tin0P , T("ok") ) ;
 
     etThread.delF( tin0P , psttb ) ;
-    etThread.traceF( tin0P , psttb , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etThread.boxPutF( tin0P , (strokeS*)tLongOut , tOut , tOut.csF( tin0P ) ) ;
+    TN( tOut , psttb ) ;
 
-    etThread.strReplaceF( tin0P , psttb , 0 , T("\r\n#define DOaLL") , T("\r\n//#define DOaLL") ) ; ___( pstti ) ;
+    etThread.strReplaceF( tin0P , psttb , 0 , T("\r\n#define DOaLL") , T("\r\n//#define DOaLL") ) ; ___( psttb ) ;
 
-    etThread.traceF( tin0P , psttb , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-    etThread.strMakeF( tin0P , LF , psttb , T("abcd\r\n#define DOaLL\r\nefgh") ) ; ___( psttBig ) ;
+    etThread.delF( tin0P , posti ) ;
+    etThread.strMakeFromOsTextF( tin0P , psttb , posti ) ; ___( psttb ) ;
     ZE( strokeS* , psttb ) ;
+
+    etThread.boxGetShadowF( tin0P , posti , costi , tLongIn ) ;
+    ZE( countT   , costi ) ;
+    ZE( osTextT* , posti ) ;
+
+    TN( tLongOut , "///d/tmp/foo.ttt" ) ;
+    TN( tLongIn  , "///d/ideafarm.home.1/precious/domains/com/ideafarm/city/library/dictionary/5adam.510008dd.1" ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
