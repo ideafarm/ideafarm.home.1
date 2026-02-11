@@ -339,7 +339,11 @@
             /**/ether.traceF( tin0P , tSayClientPrefix+T("got     headPlus") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
             //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
             }
-                if( !bEnd ) thirdC::dosSleepWinkIF( tin0P , 8 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
+                }
+                    thirdC::dosSleepWinkIF( tin0P , 8 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
+                    /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / wink") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
+                {
+                if( !bEnd )
 
                 }
                     break ;
@@ -365,7 +369,7 @@
                     costHead += delta ;
 
                     }
-ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / got header [cMouthfulsUsed]:    ")+TF2(cMouthfulsBegin-cMouthfulsAllowed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
+                        /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / got header [cMouthfulsUsed]:    ")+TF2(cMouthfulsBegin-cMouthfulsAllowed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
 
                         *poste = 0 ;
                         delta = poste - postcWas ;
@@ -380,6 +384,7 @@ ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / got header [cMouthfulsU
                     osTextT* postcWas = postc ;
 
                     osTextT* poste = thirdC::c_strstrIF( tin0P , postc , "\r\n\r\n" ) ;
+                    /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / got mouthful [delta,cMouthfulsUsed]:    ")+TF3(delta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+TF2(cMouthfulsBegin-cMouthfulsAllowed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
                 {
                 if( delta )
 
@@ -391,18 +396,16 @@ ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / got header [cMouthfulsU
                         POOPRqUIET
                     {
                     if( POOP )
-//U::PROD:                    delta = psoP->readF( tin0P , postc , costRemain , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK , TOCK << 1 ) ;     //20250320@2055: ADDED TIMEOUT ; TIMEOUT IS QUICK TO PREVENT DDOS
-/*ideanet*/                   delta = psoP->readF( tin0P , postc , costRemain , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK , TOCK >> 4 ) ;     //20250320@2055: ADDED TIMEOUT ; TIMEOUT IS QUICK TO PREVENT DDOS
+                    delta = psoP->readF( tin0P , postc , costRemain , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK , TOCK << 1 ) ;     //20250320@2055: ADDED TIMEOUT ; TIMEOUT IS QUICK TO PREVENT DDOS
                     SCOOPS
                 {
                 IFsCRATCHoK
                 ZE( countT , delta ) ;
             {
             while( !bEnd && costRemain )
-countT cMouthfulsBegin = cMouthfulsAllowed ;
+            countT cMouthfulsBegin = cMouthfulsAllowed ;
             ZE( countT , idLoop ) ;
             countT cMouthfulsAllowed = TUCK >> 3 ;      // ">> 5" FAILS WITH GORILLA BUT WORKS WITH STRIPE
-//countT cMouthfulsAllowed = TICK >> 0 ;
             ZE( boolT , bEnd ) ;
             countT   costRemain = costaHeadPlus ;        
             osTextT* postc      = postHeadPlus  ;
