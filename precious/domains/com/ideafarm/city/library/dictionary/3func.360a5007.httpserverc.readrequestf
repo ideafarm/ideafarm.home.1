@@ -340,9 +340,12 @@
             //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
             }
                 }
-                    /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / winked") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
-                    //thirdC::dosSleepWinkIF( tin0P , 8 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
-                    /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / winking") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
+                    }
+                        /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / winked") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
+                        thirdC::dosSleepWinkIF( tin0P , 2 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
+                        /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / winking") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
+                    {
+                    if( !( idLoop % 0x10 ) )
                 {
                 if( !bEnd )
 
@@ -404,6 +407,7 @@
                 IFsCRATCHoK
                 ZE( countT , delta ) ;
                 /**/ether.traceF( tin0P , tSayClientPrefix+T("readRequestF / reading a mouthful") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM /*| flTRACE_NOpREFIX*/ ) ;
+                ++ idLoop ;
             {
             while( !bEnd && costRemain )
             countT cMouthfulsBegin = cMouthfulsAllowed ;
