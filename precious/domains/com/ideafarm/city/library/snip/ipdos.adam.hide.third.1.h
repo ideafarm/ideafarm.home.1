@@ -11921,7 +11921,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TOOLmAKEkITsOURCEfILE                                ((countT)0x510008c3)
 #define ifcIDaDAM_TOOLuPDATEkIT                                        ((countT)0x510008c5)
 #define ifcIDaDAM_TOOLiDEAnETbOOKeMAIL                                 ((countT)0x510008c6)
-#define ifcIDaDAM_IDEAnETiPV6                                          ((countT)0x510008d4)
+#define ifcIDaDAM_IDEAnETaDDnICaDDRESSES                               ((countT)0x510008d4)
 #define ifcIDaDAM_IDEAnETcONTROLrOUTER                                 ((countT)0x510008d7)
 #define ifcIDaDAM_STARTER1                                             ((countT)0x51001001)
 #define ifcIDaDAM_STARTER2                                             ((countT)0x51001002)
