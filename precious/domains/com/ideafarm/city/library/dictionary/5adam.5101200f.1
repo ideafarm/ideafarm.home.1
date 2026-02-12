@@ -72,7 +72,9 @@ etThread.traceF( tin0P , T("ok") ) ;
                                     TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
                                     TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
 
+
                                     }
+if( !pIcmpv6 ) continue ;
                                         }
                                             icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
                                         {
