@@ -227,7 +227,7 @@ if( !pIcmpv6 ) continue ;
                                                 //      
 
                                             {
-                                            while( !pTcp && !bQuit && pbNextHead )
+                                            while( !pTcp && !pUdp && !pIcmpv6 && !bQuit && pbNextHead )
                                             ZE( boolT , bQuit ) ;
                                             byteT* pbNextHead = (byteT*)pIpv6HeadRaw + sizeof head ;
 
@@ -244,7 +244,6 @@ if( !pIcmpv6 ) continue ;
                                         else if( pIpv6HeadRaw )
                                         }
                                             }
-                                                case 58 : { pIcmpv6 = (icmpv6HeadRawS*)( (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
                                                 case 17 : { pUdp    = (udpHeadRawS*)(    (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
                                                 case  6 : { pTcp    = (tcpHeadRawS*)(    (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
                                             {
