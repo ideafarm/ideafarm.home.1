@@ -4720,7 +4720,8 @@ examples
 /*3*/
 #define flIDEAnETeXE_BEGIN                   ((countT)0xe000012a)
 #define flIDEAnETeXE_QUIT                    ((countT)0xe000022a)
-#define flIDEAnETeXE_HTTPS                   ((countT)0xe000042a)
+#define flIDEAnETeXE_USEdNS                  ((countT)0xe000042a)
+#define flIDEAnETeXE_METERED                 ((countT)0xe000082a)
 /*3*/
 #define flIDEAnETeXE_null    ((countT)0xe000002a)
 
