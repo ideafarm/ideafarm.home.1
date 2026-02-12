@@ -309,6 +309,7 @@ DONE( tmHearF )
         etThread.delF( tin0P , psttWanted   ) ;
 
         etRock.traceF( tin0P , tModesNow , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        tModesNow += tcrlf ;
         tModesNow += tb + ( F(flagsModeP) & flIDEAnETeXE_METERED ? tModeMetered : tModeFree    ) ;
         tModesNow +=        F(flagsModeP) & flIDEAnETeXE_USEdNS  ? tModeName    : tModeAddress   ;
         TN( tModesNow , "Current modes:    " ) ;
@@ -351,11 +352,13 @@ DONE( tmHearF )
     TN( tHelp ,
 
     etRock.traceF( tin0P , tModesNow , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    tModesNow += tcrlf ;
     tModesNow += tb + ( F(flagsModeP) & flIDEAnETeXE_METERED ? tModeMetered : tModeFree    ) ;
     tModesNow +=        F(flagsModeP) & flIDEAnETeXE_USEdNS  ? tModeName    : tModeAddress   ;
     TN( tModesNow , "Current modes:    " ) ;
     //CS:CODEsYNC: 510008c0 510008c0
 
+    TN( tcrlf        , "\r\n" ) ;
     TN( tb           , " " ) ;
     TN( tModeName    , "name"    ) ;
     TN( tModeMetered , "metered" ) ;
