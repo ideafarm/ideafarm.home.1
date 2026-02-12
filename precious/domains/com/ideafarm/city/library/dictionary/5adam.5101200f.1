@@ -32,6 +32,11 @@ etThread.traceF( tin0P , T("ok") ) ;
                                     }
                                         }
                                             break ;
+                                            etThread.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol , flTRACE_NOpREFIX ) ;
+                                        {
+                                        case 58 :
+                                        }
+                                            break ;
                                             etThread.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tbDashesUDP+tb4+tData , flTRACE_NOpREFIX ) ;
                                         {
                                         case 17 :
@@ -68,6 +73,10 @@ etThread.traceF( tin0P , T("ok") ) ;
                                     TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
 
                                     }
+                                        }
+                                            icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
+                                        {
+                                        else if( pIcmpv6 )
                                         }
                                             etThread.delF( tin0P , psttData ) ;
                                             tData = T(psttData) ;
@@ -178,6 +187,12 @@ etThread.traceF( tin0P , T("ok") ) ;
                                                     case 60 :
                                                     case 43 :
                                                     case 0  :
+
+                                                    }
+                                                        break ;
+                                                        pIcmpv6 = (icmpv6HeadRawS*)pbNextHead ;
+                                                    {
+                                                    case 58 :
                                                     }
                                                         break ;
                                                         pUdp = (udpHeadRawS*)pbNextHead ;
@@ -227,8 +242,9 @@ etThread.traceF( tin0P , T("ok") ) ;
                                         else if( pIpv6HeadRaw )
                                         }
                                             }
-                                                case 17 : { pUdp = (udpHeadRawS*)( (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
-                                                case  6 : { pTcp = (tcpHeadRawS*)( (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
+                                                case 58 : { pIcmpv6 = (icmpv6HeadRawS*)( (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
+                                                case 17 : { pUdp    = (udpHeadRawS*)(    (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
+                                                case  6 : { pTcp    = (tcpHeadRawS*)(    (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
                                             {
                                             switch( protocol )
 
@@ -242,9 +258,10 @@ etThread.traceF( tin0P , T("ok") ) ;
                                             ipv4HeadRawS head = *pIpv4HeadRaw ;
                                         {
                                         if( pIpv4HeadRaw )
-                                        ZE( const byteT* , pbDataEnd ) ;
-                                        ZE( udpHeadRawS* , pUdp ) ;
-                                        ZE( tcpHeadRawS* , pTcp ) ;
+                                        ZE( const byteT*    , pbDataEnd ) ;
+                                        ZE( icmpv6HeadRawS* , pIcmpv6   ) ;
+                                        ZE( udpHeadRawS*    , pUdp      ) ;
+                                        ZE( tcpHeadRawS*    , pTcp      ) ;
                                     {
                                     ZE( boolT  , bIPv6 ) ;
                                     ZE( countT , protocol ) ;
@@ -984,6 +1001,29 @@ osTextT* ppostProtocol[] =
 
 
 
+
+
+
+;
+}
+    count01T checksum ;
+    byteT    code     ;
+    byteT    type     ;
+{
+struct icmpv6HeadRawS
+
+//      
+//            |                                                               |
+//            +                         Message Body                          +
+//            |                                                               |
+//            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//            |     Type      |     Code      |          Checksum             |
+//            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//             0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+//             0                   1                   2                   3
+//      
+//      ICMPv6 HEADER FORMAT    (RFC 4443)
+//      
 
 ;
 }
