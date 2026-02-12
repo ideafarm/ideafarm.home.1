@@ -55,10 +55,10 @@
     ZE( boolT , bDone ) ;
 
     __( rc ) ;
-    if( rc && pEtherContainsMe ) pEtherContainsMe->traceF( tin0P , T("s_getHostByNameF [rc]:    ")+(rc==WSAHOST_NOT_FOUND?T("WSAHOST_NOT_FOUND"):TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED))+T(" / ")+T(postP) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+    if( rc && pEtherContainsMe ) pEtherContainsMe->traceF( tin0P , T("s_getHostByNameF [rc]:    ")+(rc==WSAHOST_NOT_FOUND?T("WSAHOST_NOT_FOUND"):TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED))+T(" / ")+T(postP) , /*flTRACE_ IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM*/flTRACE_null ) ;
     }
         Sleep( 100 ) ;
-        if( pEtherContainsMe ) pEtherContainsMe->traceF( tin0P , T("s_getHostByNameF / WSATRY_AGAIN / ")+T(postP) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+        if( pEtherContainsMe ) pEtherContainsMe->traceF( tin0P , T("s_getHostByNameF / WSATRY_AGAIN / ")+T(postP) , /*flTRACE_ IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM*/flTRACE_null ) ;
         if( rc != WSATRY_AGAIN ) break ;
         rc = c_getaddrinfoF( (byteT*)pca , sizeof pca , postP ) ;
     {
