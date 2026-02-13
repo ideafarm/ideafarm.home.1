@@ -36,14 +36,32 @@ DONE( tmWorkF )
                         }
                             }
                                 }
+                                    ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+
+                                    if( c135NewQuery > 0x10 && c135NewQuery >> 1 > c136NewResponse ) etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
+                                    sCountT scDone = pcap_dispatch( pHandle , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
+
                                     }
-                                        ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+                                         c136NewResponse = c135NewQuery = 0 ;
+                                         timeS2 = timeN2 ;
+                                         timeS1 = timeN1 ;
                                     {
-                                    //if( scDone >= 0 && scDone < TUCK )
-                                    sCountT scDone = pcap_dispatch( pHandle , TUCK , pcapCBF , (unsigned char*)"foo" ) ;
+                                    if( timeE2 || timeE1 > TICK >> 4 )
+
+                                    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeS1 , timeS2 ) ;
+                                    sCountT timeE2 = timeN2 ; 
+                                    countT  timeE1 = timeN1 ; 
+
+                                    etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+                                    ZE( sCountT , timeN2 ) ;
+                                    ZE( countT  , timeN1 ) ;
                                 {
                                 while( !ether )
                                 sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
+
+                                etThread.osTimeNowF( tin0P , timeS1 , timeS2 ) ;
+                                ZE( sCountT , timeS2 ) ;
+                                ZE( countT  , timeS1 ) ;
     
                                 pcapCBF_p_tFINoN      = &tFINoN      ;
                                 pcapCBF_p_tFINoFF     = &tFINoFF     ;
@@ -372,7 +390,15 @@ countT idPort ;
         }
             }
                 bReport = 1 ;
-                tData = T("[type,code]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ;
+
+                tData = T("[type,code,c136Response,c135Query,c136NewResponse,c135NewQuery]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xe)+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xe)+TF3(c136Response,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135Query,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ;
+
+                }
+                    case 136 : { c136Response ++ ; c136NewResponse ++ ; break ; }
+                    case 135 : { c135Query    ++ ; c135NewQuery    ++ ; break ; }
+                {
+                switch( pIcmpv6->type )
+
                 icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
             {
             /*else*/ if( pIcmpv6 )
@@ -638,6 +664,11 @@ countT idPort ;
     tin0S&    tin0P         = *pcapCBF_pTin0         ;
 {
 void __cdecl pcapCBF( u_char* postUserP , const pcap_pkthdr* pInfo3HeaderP , const u_char* pInfo3DataP )
+
+countT    c136NewResponse ;
+countT    c135NewQuery    ;
+countT    c136Response    ;
+countT    c135Query       ;
 
 textC*    pcapCBF_p_tFINoN      ;
 textC*    pcapCBF_p_tFINoFF     ;
@@ -1567,6 +1598,8 @@ struct loopHeadS
 //      
 //      https://www.tcpdump.org/linktypes/LINKTYPE_NULL.html
 //      
+
+#define CpACKETSiNbATCH ( TUCK >> 4 )
 
 #include <iphlpapi.h>
 
