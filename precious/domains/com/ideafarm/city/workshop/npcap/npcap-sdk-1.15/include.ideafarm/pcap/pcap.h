@@ -378,7 +378,9 @@ struct pcap_addr {
 	struct sockaddr *dstaddr;	/* P2P destination address for that address */
 };
 
-typedef void (*pcap_handler)(u_char *, const struct pcap_pkthdr *,
+//typedef void (*pcap_handler)(u_char *, const struct pcap_pkthdr *,
+//			     const u_char *);
+typedef void (__cdecl *pcap_handler)(u_char *, const struct pcap_pkthdr *,
 			     const u_char *);
 
 /*
