@@ -346,10 +346,11 @@ countT idPort ;
         TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
         TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
     {
-    if( !pIcmpv6 )
+    if( bReport )
 
     }
         }
+            bReport = 1 ;
             tData = T("[type,code]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ;
             icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
         {
@@ -539,6 +540,7 @@ countT idPort ;
         ZE( udpHeadRawS*    , pUdp      ) ;
         ZE( tcpHeadRawS*    , pTcp      ) ;
     {
+    ZE( boolT  , bReport ) ;
     ZE( boolT  , bIPv6 ) ;
     ZE( countT , protocol ) ;
     ZE( boolT  , bACK ) ;
