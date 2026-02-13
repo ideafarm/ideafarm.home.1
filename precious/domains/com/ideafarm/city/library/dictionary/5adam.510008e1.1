@@ -28,9 +28,15 @@ etRock.traceF( tin0P , T("ok") ) ;
                     }
                         }
                             }
-                                pcap_dispatch( pHandle , TUCK , pcapCBF , (unsigned char*)"foo" ) ;
+                                }
+                                    ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+                                {
+                                if( scDone >= 0 && scDone < TUCK )
+                                sCountT scDone = pcap_dispatch( pHandle , TUCK , pcapCBF , (unsigned char*)"foo" ) ;
                             {
                             while( !ether )
+                            sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
+
                             pcapCBF_p_tFINoN      = &tFINoN      ;
                             pcapCBF_p_tFINoFF     = &tFINoFF     ;
                             pcapCBF_p_tSYNoN      = &tSYNoN      ;
@@ -305,253 +311,255 @@ countT idPort ;
     }
         }
             }
-                break ;
-                etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
-            {
-            case 58 :
-            }
-                break ;
-                etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tbDashesUDP+tb4+tData , flTRACE_NOpREFIX ) ;
-            {
-            case 17 :
-            }
-                break ;
-                etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,flags,idSerial,idSerialExpected,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tFlags+tb4+tIdSerial+tb4+tIdSerialExpected+tb4+tData , flTRACE_NOpREFIX ) ;
-            {
-            case 6 :
-        {
-        switch( protocol )
-
-        ;
-                : tn
-                ? tb32
-            : bToMe
-            ? tb64
-        TN( tIndent2 , "" ) ; tIndent2 = bFromMe
-
-        ;
-                : tb64
-                ? tb32
-            : bToMe
-            ? tn
-        TN( tIndent1 , "" ) ; tIndent1 = pcapCBF_idLinkType == osIDlINKtYPE_NULL || bFromMe
-
-        boolT bToMe   = nnMeOnWanted == nnDest   ;
-        boolT bFromMe = nnMeOnWanted == nnSource ;
-
-        TN( tIdSerialExpected , "        " ) ; if( bACK ) tIdSerialExpected = TF3(idSerialExpected,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
-        TN( tIdSerial         , "" ) ; tIdSerial = TF3(idSerial,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
-
-        TN( tProtocol    , ppostProtocol[ protocol ] ) ; while( tProtocol.csF( tin0P ) < 0x18 ) tProtocol += tb ;
-        TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
-        TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
-    {
-    if( bReport )
-
-    }
-        }
-            bReport = 1 ;
-            tData = T("[type,code]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ;
-            icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
-        {
-        else if( pIcmpv6 )
-        }
-            etThread.delF( tin0P , psttData ) ;
-            tData = T(psttData) ;
-
-            }
-                pbd ++ ;
                 }
-                    etThread.strFuseF( tin0P , psttData , T(post2) ) ;
-                    osTextT post2[] = { *pbd , 0 } ;
+                    break ;
+                    etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
                 {
-                if( *pbd >= 0x20 && *pbd < 0x7e )
-            {
-            while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
-            const byteT* pbd = pbData ;
-
-            etThread.strMakeF( tin0P , LF , psttData , 0 , cbData > TUCK ? TUCK : cbData ) ; ___( psttData ) ;
-            ZE( strokeS* , psttData ) ;
-
-            countT cbData = pbDataEnd - pbData ;                                            //I IGNORE cbDataGross, RELYING INSTEAD ON THE IP HEADER
-            const byteT* pbData    = (byteT*)( (countT*)pUdp + sizeof( udpHeadRawS ) ) ;
-
-            idpDestination = udp.u.swabbed.idpDestination ;
-            idpSource      = udp.u.swabbed.idpSource      ;
-
-            udp.swabF() ;
-            udpHeadRawS udp = *pUdp ;
-        {
-        else if( pUdp )
-        }
-            etThread.delF( tin0P , psttData ) ;
-            tData = T(psttData) ;
-
-            }
-                pbd ++ ;
+                case 58 :
                 }
-                    etThread.strFuseF( tin0P , psttData , T(post2) ) ;
-                    osTextT post2[] = { *pbd , 0 } ;
+                    break ;
+                    etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tbDashesUDP+tb4+tData , flTRACE_NOpREFIX ) ;
                 {
-                if( *pbd >= 0x20 && *pbd < 0x7e )
-            {
-            while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
-            const byteT* pbd = pbData ;
-
-            etThread.strMakeF( tin0P , LF , psttData , 0 , cbData > TUCK ? TUCK : cbData ) ; ___( psttData ) ;
-            ZE( strokeS* , psttData ) ;
-
-            countT cbData = pbDataEnd - pbData ;
-            const byteT* pbData    = (byteT*)( (countT*)pTcp + tcp.u.swabbed.hCounts ) ;
-
-            idpDestination = tcp.u.swabbed.idpDestination ;
-            idpSource      = tcp.u.swabbed.idpSource      ;
-
-            }
-                idSerialExpected = tcp.u.swabbed.idSerialExpected ;
-                bACK = 1 ;
-            {
-            if( tcp.u.swabbed.bACK )
-            idSerial = tcp.u.swabbed.idSerial ;
-
-            tFlags += tb + ( tcp.u.swabbed.bFIN ? tFINoN : tFINoFF ) ;
-            tFlags += tb + ( tcp.u.swabbed.bSYN ? tSYNoN : tSYNoFF ) ;
-            tFlags += tb + ( tcp.u.swabbed.bRST ? tRSToN : tRSToFF ) ;
-            tFlags += tb + ( tcp.u.swabbed.bPSH ? tPSHoN : tPSHoFF ) ;
-            tFlags += tb + ( tcp.u.swabbed.bACK ? tACKoN : tACKoFF ) ;
-            tFlags += tb + ( tcp.u.swabbed.bURG ? tURGoN : tURGoFF ) ;
-            tFlags += tb + ( tcp.u.swabbed.bECE ? tECEoN : tECEoFF ) ;
-            tFlags +=        tcp.u.swabbed.bCWR ? tCWRoN : tCWRoFF   ;
-
-            tcp.swabF() ;
-            tcpHeadRawS tcp = *pTcp ;
-        {
-        if( pTcp )
-
-        }
-            }
+                case 17 :
                 }
-                    }
-                        break ;
-                        bQuit = 1 ;
-                    {
-                    default :
-                    }
-                        break ;
-                                                            // THIS IS A SECURITY ATTACK SURFACE ; AN ATTACKER CAN HIDE FROM ME BY INSERTING AN IPv6 EXTENSION HEADER TO CAUSE ME TO IGNORE THE PACKET ; SO I AM GOING TO TRACE THIS PACKET
-                        pbNextHead  = 0 ;                   // I GIVE UP; AS OF THIS WRITING, ALL OF THE VALUES FOR protocol OTHER THAN 6 (TCP) ARRIVE HERE, BECAUSE I DON'T NEED TO SNIFF THEM AND IT IS SAFER TO IGNORE THEM THAN RISK INCORRECTLY PARSING THEM
-                    {
-                    case 139 :
-                    case  50 :
-                    case  44 :
-                    //}
-                    //    break ;
-                    //    pbNextHead += ( pbNextHead[ 1 ] + 1 ) * ( 2 * sizeof( countT) ) ;
-                    //    protocol    =   pbNextHead[ 0 ] ;
-                    //{
-                    case 140 :
-                    case 135 :
-                    //}
-                    //    break ;
-                    //    pbNextHead += ( pbNextHead[ 1 ] + 2 ) * sizeof( countT) ;       // NOT SURE; SEE RFC
-                    //    protocol    =   pbNextHead[ 0 ] ;
-                    //{
-                    case 51 :
-                    //}
-                    //    break ;
-                    //    pbNextHead +=   pbNextHead[ 1 ] + 1 ;
-                    //    protocol    =   pbNextHead[ 0 ] ;
-                    //{
-                    case 60 :
-                    case 43 :
-                    case 0  :
-
-                    }
-                        break ;
-                        pIcmpv6 = (icmpv6HeadRawS*)pbNextHead ;
-                    {
-                    case 58 :
-                    }
-                        break ;
-                        pUdp = (udpHeadRawS*)pbNextHead ;
-                    {
-                    case 17 /*UDP*/ :
-                    }
-                        break ;
-                        pTcp = (tcpHeadRawS*)pbNextHead ;
-                    {
-                    case 6 /*TCP*/ :
+                    break ;
+                    etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,flags,idSerial,idSerialExpected,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tFlags+tb4+tIdSerial+tb4+tIdSerialExpected+tb4+tData , flTRACE_NOpREFIX ) ;
                 {
-                switch( protocol )
-
-                //      
-                //      0    *   IPv6 Hop-by-Hop Option                  [RFC8200]
-                //      43   *   Routing Header for IPv6                 [RFC8200][RFC5095]
-                //      44   *   Fragment Header for IPv6                [RFC8200]
-                //      50   *   Encapsulating Security Payload          [RFC4303]
-                //      51   *   Authentication Header                   [RFC4302]
-                //      60   *   Destination Options for IPv6            [RFC8200]
-                //      135  *   Mobility Header                         [RFC6275]
-                //      139  *   Host Identity Protocol                  [RFC7401]
-                //      140  *   Shim6 Protocol                          [RFC5533]
-                //      253  -   Use for experimentation and testing     [RFC3692][RFC4727]
-                //      254  -   Use for experimentation and testing     [RFC3692][RFC4727]
-                //      
-                //      ipv6 extension header types
-                //      
-                //      https://www.iana.org/assignments/ipv6-parameters/ipv6-parameters.xhtml
-                //      
-
-            {
-            while( !pTcp && !pUdp && !pIcmpv6 && !bQuit && pbNextHead )
-            ZE( boolT , bQuit ) ;
-            byteT* pbNextHead = (byteT*)pIpv6HeadRaw + sizeof head ;
-
-            pbDataEnd = (byteT*)pIpv6HeadRaw + sizeof head + head.u.swabbed.cbGramNet ;
-
-            protocol = head.u.swabbed.idNextHeader ;
-            nnDest   = nicNameC( head.u.swabbed.pcDestination[ 0 ] , head.u.swabbed.pcDestination[ 1 ] , head.u.swabbed.pcDestination[ 2 ] , head.u.swabbed.pcDestination[ 3 ] ) ;
-            nnSource = nicNameC( head.u.swabbed.pcSource[      0 ] , head.u.swabbed.pcSource[      1 ] , head.u.swabbed.pcSource[      2 ] , head.u.swabbed.pcSource[      3 ] ) ;
-
-            head.swabF() ;
-            ipv6HeadRawS head = *pIpv6HeadRaw ;
-            bIPv6 = 1 ;
-        {
-        else if( pIpv6HeadRaw )
-        }
-            }
-                case 17 : { pUdp    = (udpHeadRawS*)(    (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
-                case  6 : { pTcp    = (tcpHeadRawS*)(    (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
+                case 6 :
             {
             switch( protocol )
 
-            pbDataEnd = (byteT*)pIpv4HeadRaw + head.u.swabbed.hCounts * sizeof( countT ) + head.u.swabbed.cbGramNet ;
+            ;
+                    : tn
+                    ? tb32
+                : bToMe
+                ? tb64
+            TN( tIndent2 , "" ) ; tIndent2 = bFromMe
 
-            protocol = head.u.swabbed.protocol ;
-            nnDest   = nicNameC( head.u.swabbed.ipv4Destination ) ;
-            nnSource = nicNameC( head.u.swabbed.ipv4Source      ) ;
+            ;
+                    : tb64
+                    ? tb32
+                : bToMe
+                ? tn
+            TN( tIndent1 , "" ) ; tIndent1 = pcapCBF_idLinkType == osIDlINKtYPE_NULL || bFromMe
 
-            head.swabF() ;
-            ipv4HeadRawS head = *pIpv4HeadRaw ;
+            boolT bToMe   = nnMeOnWanted == nnDest   ;
+            boolT bFromMe = nnMeOnWanted == nnSource ;
+
+            TN( tIdSerialExpected , "        " ) ; if( bACK ) tIdSerialExpected = TF3(idSerialExpected,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
+            TN( tIdSerial         , "" ) ; tIdSerial = TF3(idSerial,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
+
+            TN( tProtocol    , ppostProtocol[ protocol ] ) ; while( tProtocol.csF( tin0P ) < 0x18 ) tProtocol += tb ;
+            TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
+            TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
         {
-        if( pIpv4HeadRaw )
-        ZE( const byteT*    , pbDataEnd ) ;
-        ZE( icmpv6HeadRawS* , pIcmpv6   ) ;
-        ZE( udpHeadRawS*    , pUdp      ) ;
-        ZE( tcpHeadRawS*    , pTcp      ) ;
+        if( bReport )
+
+        }
+            }
+                bReport = 1 ;
+                tData = T("[type,code]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ;
+                icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
+            {
+            /*else*/ if( pIcmpv6 )
+            //}
+            //    etThread.delF( tin0P , psttData ) ;
+            //    tData = T(psttData) ;
+            //
+            //    }
+            //        pbd ++ ;
+            //        }
+            //            etThread.strFuseF( tin0P , psttData , T(post2) ) ;
+            //            osTextT post2[] = { *pbd , 0 } ;
+            //        {
+            //        if( *pbd >= 0x20 && *pbd < 0x7e )
+            //    {
+            //    while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
+            //    const byteT* pbd = pbData ;
+            //
+            //    etThread.strMakeF( tin0P , LF , psttData , 0 , cbData > TUCK ? TUCK : cbData ) ; ___( psttData ) ;
+            //    ZE( strokeS* , psttData ) ;
+            //
+            //    countT cbData = pbDataEnd - pbData ;                                            //I IGNORE cbDataGross, RELYING INSTEAD ON THE IP HEADER
+            //    const byteT* pbData    = (byteT*)( (countT*)pUdp + sizeof( udpHeadRawS ) ) ;
+            //
+            //    idpDestination = udp.u.swabbed.idpDestination ;
+            //    idpSource      = udp.u.swabbed.idpSource      ;
+            //
+            //    udp.swabF() ;
+            //    udpHeadRawS udp = *pUdp ;
+            //{
+            //else if( pUdp )
+            //}
+            //    etThread.delF( tin0P , psttData ) ;
+            //    tData = T(psttData) ;
+            //
+            //    }
+            //        pbd ++ ;
+            //        }
+            //            etThread.strFuseF( tin0P , psttData , T(post2) ) ;
+            //            osTextT post2[] = { *pbd , 0 } ;
+            //        {
+            //        if( *pbd >= 0x20 && *pbd < 0x7e )
+            //    {
+            //    while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
+            //    const byteT* pbd = pbData ;
+            //
+            //    etThread.strMakeF( tin0P , LF , psttData , 0 , cbData > TUCK ? TUCK : cbData ) ; ___( psttData ) ;
+            //    ZE( strokeS* , psttData ) ;
+            //
+            //    countT cbData = pbDataEnd - pbData ;
+            //    const byteT* pbData    = (byteT*)( (countT*)pTcp + tcp.u.swabbed.hCounts ) ;
+            //
+            //    idpDestination = tcp.u.swabbed.idpDestination ;
+            //    idpSource      = tcp.u.swabbed.idpSource      ;
+            //
+            //    }
+            //        idSerialExpected = tcp.u.swabbed.idSerialExpected ;
+            //        bACK = 1 ;
+            //    {
+            //    if( tcp.u.swabbed.bACK )
+            //    idSerial = tcp.u.swabbed.idSerial ;
+            //
+            //    tFlags += tb + ( tcp.u.swabbed.bFIN ? tFINoN : tFINoFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bSYN ? tSYNoN : tSYNoFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bRST ? tRSToN : tRSToFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bPSH ? tPSHoN : tPSHoFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bACK ? tACKoN : tACKoFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bURG ? tURGoN : tURGoFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bECE ? tECEoN : tECEoFF ) ;
+            //    tFlags +=        tcp.u.swabbed.bCWR ? tCWRoN : tCWRoFF   ;
+            //
+            //    tcp.swabF() ;
+            //    tcpHeadRawS tcp = *pTcp ;
+            //{
+            //if( pTcp )
+
+            }
+                }
+                    }
+                        }
+                            break ;
+                            bQuit = 1 ;
+                        {
+                        default :
+                        }
+                            break ;
+                                                                // THIS IS A SECURITY ATTACK SURFACE ; AN ATTACKER CAN HIDE FROM ME BY INSERTING AN IPv6 EXTENSION HEADER TO CAUSE ME TO IGNORE THE PACKET ; SO I AM GOING TO TRACE THIS PACKET
+                            pbNextHead  = 0 ;                   // I GIVE UP; AS OF THIS WRITING, ALL OF THE VALUES FOR protocol OTHER THAN 6 (TCP) ARRIVE HERE, BECAUSE I DON'T NEED TO SNIFF THEM AND IT IS SAFER TO IGNORE THEM THAN RISK INCORRECTLY PARSING THEM
+                        {
+                        case 139 :
+                        case  50 :
+                        case  44 :
+                        //}
+                        //    break ;
+                        //    pbNextHead += ( pbNextHead[ 1 ] + 1 ) * ( 2 * sizeof( countT) ) ;
+                        //    protocol    =   pbNextHead[ 0 ] ;
+                        //{
+                        case 140 :
+                        case 135 :
+                        //}
+                        //    break ;
+                        //    pbNextHead += ( pbNextHead[ 1 ] + 2 ) * sizeof( countT) ;       // NOT SURE; SEE RFC
+                        //    protocol    =   pbNextHead[ 0 ] ;
+                        //{
+                        case 51 :
+                        //}
+                        //    break ;
+                        //    pbNextHead +=   pbNextHead[ 1 ] + 1 ;
+                        //    protocol    =   pbNextHead[ 0 ] ;
+                        //{
+                        case 60 :
+                        case 43 :
+                        case 0  :
+
+                        }
+                            break ;
+                            pIcmpv6 = (icmpv6HeadRawS*)pbNextHead ;
+                        {
+                        case 58 :
+                        }
+                            break ;
+                            pUdp = (udpHeadRawS*)pbNextHead ;
+                        {
+                        case 17 /*UDP*/ :
+                        }
+                            break ;
+                            pTcp = (tcpHeadRawS*)pbNextHead ;
+                        {
+                        case 6 /*TCP*/ :
+                    {
+                    switch( protocol )
+
+                    //      
+                    //      0    *   IPv6 Hop-by-Hop Option                  [RFC8200]
+                    //      43   *   Routing Header for IPv6                 [RFC8200][RFC5095]
+                    //      44   *   Fragment Header for IPv6                [RFC8200]
+                    //      50   *   Encapsulating Security Payload          [RFC4303]
+                    //      51   *   Authentication Header                   [RFC4302]
+                    //      60   *   Destination Options for IPv6            [RFC8200]
+                    //      135  *   Mobility Header                         [RFC6275]
+                    //      139  *   Host Identity Protocol                  [RFC7401]
+                    //      140  *   Shim6 Protocol                          [RFC5533]
+                    //      253  -   Use for experimentation and testing     [RFC3692][RFC4727]
+                    //      254  -   Use for experimentation and testing     [RFC3692][RFC4727]
+                    //      
+                    //      ipv6 extension header types
+                    //      
+                    //      https://www.iana.org/assignments/ipv6-parameters/ipv6-parameters.xhtml
+                    //      
+                {
+                while( !pTcp && !pUdp && !pIcmpv6 && !bQuit && pbNextHead )
+                ZE( boolT , bQuit ) ;
+                byteT* pbNextHead = (byteT*)pIpv6HeadRaw + sizeof head ;
+
+                pbDataEnd = (byteT*)pIpv6HeadRaw + sizeof head + head.u.swabbed.cbGramNet ;
+
+                protocol = head.u.swabbed.idNextHeader ;
+                nnDest   = nicNameC( head.u.swabbed.pcDestination[ 0 ] , head.u.swabbed.pcDestination[ 1 ] , head.u.swabbed.pcDestination[ 2 ] , head.u.swabbed.pcDestination[ 3 ] ) ;
+                nnSource = nicNameC( head.u.swabbed.pcSource[      0 ] , head.u.swabbed.pcSource[      1 ] , head.u.swabbed.pcSource[      2 ] , head.u.swabbed.pcSource[      3 ] ) ;
+
+                head.swabF() ;
+                ipv6HeadRawS head = *pIpv6HeadRaw ;
+                bIPv6 = 1 ;
+            {
+            //else if( pIpv6HeadRaw )
+            //}
+            //    }
+            //        case 17 : { pUdp    = (udpHeadRawS*)(    (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
+            //        case  6 : { pTcp    = (tcpHeadRawS*)(    (countT*)pIpv4HeadRaw + head.u.swabbed.hCounts ) ; break ; }
+            //    {
+            //    switch( protocol )
+            //
+            //    pbDataEnd = (byteT*)pIpv4HeadRaw + head.u.swabbed.hCounts * sizeof( countT ) + head.u.swabbed.cbGramNet ;
+            //
+            //    protocol = head.u.swabbed.protocol ;
+            //    nnDest   = nicNameC( head.u.swabbed.ipv4Destination ) ;
+            //    nnSource = nicNameC( head.u.swabbed.ipv4Source      ) ;
+            //
+            //    head.swabF() ;
+            //    ipv4HeadRawS head = *pIpv4HeadRaw ;
+            //{
+            //if( pIpv4HeadRaw )
+            ZE( const byteT*    , pbDataEnd ) ;
+            ZE( icmpv6HeadRawS* , pIcmpv6   ) ;
+            ZE( udpHeadRawS*    , pUdp      ) ;
+            ZE( tcpHeadRawS*    , pTcp      ) ;
+        {
+        ZE( boolT  , bReport ) ;
+        ZE( boolT  , bIPv6 ) ;
+        ZE( countT , protocol ) ;
+        ZE( boolT  , bACK ) ;
+        ZE( countT , idSerialExpected ) ;
+        ZE( countT , idSerial         ) ;
+        ZE( countT , idpDestination   ) ;
+        ZE( countT , idpSource        ) ;
+        nicNameC nnDest   ;
+        nicNameC nnSource ;
+        TN( tData  , "" ) ;
+        TN( tFlags , "" ) ;
     {
-    ZE( boolT  , bReport ) ;
-    ZE( boolT  , bIPv6 ) ;
-    ZE( countT , protocol ) ;
-    ZE( boolT  , bACK ) ;
-    ZE( countT , idSerialExpected ) ;
-    ZE( countT , idSerial         ) ;
-    ZE( countT , idpDestination   ) ;
-    ZE( countT , idpSource        ) ;
-    nicNameC nnDest   ;
-    nicNameC nnSource ;
-    TN( tData  , "" ) ;
-    TN( tFlags , "" ) ;
+    if( pIpv6HeadRaw )
 
     }
         }
