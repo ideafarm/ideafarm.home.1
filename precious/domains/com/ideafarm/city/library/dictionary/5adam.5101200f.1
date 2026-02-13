@@ -32,7 +32,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                                     }
                                         }
                                             break ;
-                                            etThread.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol , flTRACE_NOpREFIX ) ;
+                                            etThread.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
                                         {
                                         case 58 :
                                         }
@@ -76,6 +76,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                                     }
 if( !pIcmpv6 ) continue ;
                                         }
+                                            tData = T("[type,code]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ;
                                             icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
                                         {
                                         else if( pIcmpv6 )
