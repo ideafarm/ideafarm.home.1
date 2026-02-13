@@ -26,7 +26,7 @@ DONE( tmWorkF )
         pcap_freealldevs( pInfo ) ; pInfo = 0 ;
     
         }
-            pcDevice = pcDevice->next ;
+            pcNic = pcNic->next ;
     
             }
                 }
@@ -41,7 +41,7 @@ DONE( tmWorkF )
                                     etRock.traceF( tin0P , T("napping [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                     if( c135NewQuery > 0x10 && c135NewQuery >> 1 > c136NewResponse ) etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
-                                    sCountT scDone = pcap_dispatch( pHandle , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
+                                    sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
 
                                     }
                                          c136NewResponse = c135NewQuery = 0 ;
@@ -60,6 +60,8 @@ DONE( tmWorkF )
                                 {
                                 while( !ether )
                                 sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
+
+                                etThread.osThreadF( TaRG2cBsTACK( tmInterruptLoopF , CBsTACKmIN << 1 ) , (countT)poshNic ) ;
 
                                 etThread.osTimeNowF( tin0P , timeS1 , timeS2 ) ;
                                 ZE( sCountT , timeS2 ) ;
@@ -97,7 +99,7 @@ DONE( tmWorkF )
                             {
                             if( !rc )
     
-                            rc = pcap_set_datalink( pHandle , idLinkType ) ;
+                            rc = pcap_set_datalink( poshNic , idLinkType ) ;
                         {
                         if( idLinkType != - 1 )
     
@@ -115,34 +117,32 @@ DONE( tmWorkF )
                     {
                     if( rc )
     
-                    rc = pcap_list_datalinks( pHandle , &pInfo2 ) ;
+                    rc = pcap_list_datalinks( poshNic , &pInfo2 ) ;
                     ZE( int* , pInfo2 ) ;
                 {
                 if( !rc )
-                rc = pcap_activate(           pHandle        ) ;
-                rc = pcap_set_timeout(        pHandle , 2000 ) ;
-              //rc = pcap_set_immediate_mode( pHandle , 1    ) ;
+                rc = pcap_activate(           poshNic        ) ;
+                rc = pcap_set_timeout(        poshNic , 2000 ) ;
+              //rc = pcap_set_immediate_mode( poshNic , 1    ) ;
     
-                etRock.traceF( tin0P , T(pHandle?"aok":"nope") ) ;
-                pcap_t* pHandle = pcap_create( pcDevice->name , postError ) ;
+                etRock.traceF( tin0P , T(poshNic?"aok":"nope") ) ;
+                pcap_t* poshNic = pcap_create( pcNic->name , postError ) ;
                 etRock.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------") ) ;
             {
             if( etThread.strIdF( tin0P , tWantCurly , tName ) || !etThread.strCompareF( tin0P , tName , tWantExactName ) )
-            etRock.traceF( tin0P , T("description    :    ")+T(pcDevice->description) ) ;
+            etRock.traceF( tin0P , T("description    :    ")+T(pcNic->description) ) ;
             etRock.traceF( tin0P , T("wantName       :    ")+tWantExactName ) ;
             etRock.traceF( tin0P , T("name           :    ")+tName ) ;
-            etRock.traceF( tin0P , T("idDevice       :    ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            TN( tName , pcDevice->name ) ;
+            etRock.traceF( tin0P , T("idNic          :    ")+TF2(++idNic,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            TN( tName , pcNic->name ) ;
         {
-        while( pcDevice )
-        ZE( countT , idDevice ) ;
-        pcDevice = pInfo ;
-        pcap_if_t* pcDevice ;
+        while( pcNic )
+        ZE( countT , idNic ) ;
+        pcNic = pInfo ;
+        pcap_if_t* pcNic ;
     
         int rc = pcap_findalldevs( &pInfo , postError ) ;
         pcap_if_t* pInfo ;
-    
-        //thirdC::c_systemIF( tin0P , "cls" ) ;
     {
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -222,7 +222,7 @@ DONE( tmWorkF )
     //TN( tWantFriendly    , "Loopback Pseudo-Interface 1" ) ;
     
       TN( tWantExactName   , ""                            ) ;
-    //TN( tWantExactName   , "\\Device\\NPF_Loopback"      ) ;
+    //TN( tWantExactName   , "\\Nic\\NPF_Loopback"      ) ;
     
     TN( tFINoN  , "FIN" ) ;
     TN( tFINoFF , "---" ) ;
@@ -265,6 +265,19 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+DONE( tmInterruptLoopF )
+}
+    }
+        pcap_breakloop( poshNicP ) ;                    //DONE AFTER THE NAP SO AS TO NOT INTERFERE WITH THE INITIAL MOMENTS OF THE WO'TH CALL TO pcap_dispatch, JUST TO BE SAFE
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;    //A:ASSUME: LONG ENOUGH TO ALLOW WOTH CALL TO pcap_dispatch TO GET STARTED BEFORE pcap_breakloop SETS ITS FLAG
+    {
+    while( !ether )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    pcap_t* poshNicP = (pcap_t*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmInterruptLoopF )
 
 DONE( tmAcceptF )
 }
