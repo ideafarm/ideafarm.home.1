@@ -621,7 +621,8 @@ PCAP_AVAILABLE_0_4
 PCAP_API int	pcap_loop(pcap_t *, int, pcap_handler, u_char *);
 
 PCAP_AVAILABLE_0_4
-PCAP_API int	pcap_dispatch(pcap_t *, int, pcap_handler, u_char *);
+//PCAP_API int          pcap_dispatch(pcap_t *, int, pcap_handler, u_char *);
+           int __cdecl  pcap_dispatch(pcap_t *, int, pcap_handler, u_char *);
 
 PCAP_AVAILABLE_0_4
 PCAP_API const u_char *pcap_next(pcap_t *, struct pcap_pkthdr *);

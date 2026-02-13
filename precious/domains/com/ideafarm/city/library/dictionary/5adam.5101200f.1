@@ -28,12 +28,37 @@ etRock.traceF( tin0P , T("ok") ) ;
                     }
                         }
                             }
-                                pcap_dispatch( pHandle , TUCK , pcapCBF , "foo" ) ;
+                                pcap_dispatch( pHandle , TUCK , pcapCBF , (unsigned char*)"foo" ) ;
                             {
                             while( !ether )
-                            pEtRock   = &etRock   ;
-                            pEtThread = &etThread ;
-                            pTin0     = &tin0P    ;
+                            pcapCBF_p_tFINoN      = &tFINoN      ;
+                            pcapCBF_p_tFINoFF     = &tFINoFF     ;
+                            pcapCBF_p_tSYNoN      = &tSYNoN      ;
+                            pcapCBF_p_tSYNoFF     = &tSYNoFF     ;
+                            pcapCBF_p_tRSToN      = &tRSToN      ;
+                            pcapCBF_p_tRSToFF     = &tRSToFF     ;
+                            pcapCBF_p_tPSHoN      = &tPSHoN      ;
+                            pcapCBF_p_tPSHoFF     = &tPSHoFF     ;
+                            pcapCBF_p_tACKoN      = &tACKoN      ;
+                            pcapCBF_p_tACKoFF     = &tACKoFF     ;
+                            pcapCBF_p_tURGoN      = &tURGoN      ;
+                            pcapCBF_p_tURGoFF     = &tURGoFF     ;
+                            pcapCBF_p_tECEoN      = &tECEoN      ;
+                            pcapCBF_p_tECEoFF     = &tECEoFF     ;
+                            pcapCBF_p_tCWRoN      = &tCWRoN      ;
+                            pcapCBF_p_tCWRoFF     = &tCWRoFF     ;
+                            pcapCBF_p_tbDashesUDP = &tbDashesUDP ;
+                            pcapCBF_p_tCloseParen = &tCloseParen ;
+                            pcapCBF_p_tOpenParen  = &tOpenParen  ;
+                            pcapCBF_p_tb64        = &tb64        ;
+                            pcapCBF_p_tb32        = &tb32        ;
+                            pcapCBF_p_tb4         = &tb4         ;
+                            pcapCBF_p_tb          = &tb          ;
+                            pcapCBF_p_tn          = &tn          ;
+                            pcapCBF_idLinkType    = idLinkType   ;
+                            pcapCBF_pEtRock       = &etRock      ;
+                            pcapCBF_pEtThread     = &etThread    ;
+                            pcapCBF_pTin0         = &tin0P       ;
                             etRock.traceF( tin0P , T("receiving header/data images") ) ;
                         {
                         if( !rc )
@@ -87,12 +112,10 @@ etRock.traceF( tin0P , T("ok") ) ;
 {
 while( !ether )
 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+pcapCBF_p_idPacket = &idPacket ;
 ZE( countT , idPacket ) ;
 
 char postError[ PCAP_ERRBUF_SIZE ] ;
-
-#define osIDlINKtYPE_ETHERNET 1
-#define osIDlINKtYPE_NULL     0
 
 }
     pc1 = pc1->Next ;
@@ -145,6 +168,7 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
 {
 while( pc1 )
 static IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
+pnnMeOnWanted = &nnMeOnWanted ;
 nicNameC nnMeOnWanted ;
 
 ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
@@ -309,7 +333,7 @@ countT idPort ;
             ? tb32
         : bToMe
         ? tn
-    TN( tIndent1 , "" ) ; tIndent1 = idLinkType == osIDlINKtYPE_NULL || bFromMe
+    TN( tIndent1 , "" ) ; tIndent1 = pcapCBF_idLinkType == osIDlINKtYPE_NULL || bFromMe
 
     boolT bToMe   = nnMeOnWanted == nnDest   ;
     boolT bFromMe = nnMeOnWanted == nnSource ;
@@ -537,7 +561,7 @@ countT idPort ;
         const byteT* pbMACSource      =             pbc ; pbc += 6 ;
         const byteT* pbMACDestination =             pbc ; pbc += 6 ;
     {
-    else if( idLinkType == osIDlINKtYPE_ETHERNET )
+    else if( pcapCBF_idLinkType == osIDlINKtYPE_ETHERNET )
     }
         }
             case 0x1e : { pIpv6HeadRaw = (ipv6HeadRawS*)( pbc + sizeof( loopHeadS ) /*- 2*/ ) ; break ; }         //U::"- 2" TO MAKE IT WORK (MYSTERY)
@@ -550,21 +574,79 @@ countT idPort ;
 
         const loopHeadS* pLoopHead = (const loopHeadS*)pbc ;
     {
-    if( idLinkType == osIDlINKtYPE_NULL )
+    if( pcapCBF_idLinkType == osIDlINKtYPE_NULL )
     ZE( const ipv6HeadRawS* , pIpv6HeadRaw ) ;
     ZE( const ipv4HeadRawS* , pIpv4HeadRaw ) ;
 
     pbc = (byteT*)pInfo3DataP ;
     byteT* pbc ;
 
-    etherC& etRock   = *pEtRock   ;
-    etherC& etThread = *pEtThread ;
-    tin0S& tin0P     = *pTin0     ;
+    textC&  tFINoN          = *pcapCBF_p_tFINoN      ;
+    textC&  tFINoFF         = *pcapCBF_p_tFINoFF     ;
+    textC&  tSYNoN          = *pcapCBF_p_tSYNoN      ;
+    textC&  tSYNoFF         = *pcapCBF_p_tSYNoFF     ;
+    textC&  tRSToN          = *pcapCBF_p_tRSToN      ;
+    textC&  tRSToFF         = *pcapCBF_p_tRSToFF     ;
+    textC&  tPSHoN          = *pcapCBF_p_tPSHoN      ;
+    textC&  tPSHoFF         = *pcapCBF_p_tPSHoFF     ;
+    textC&  tACKoN          = *pcapCBF_p_tACKoN      ;
+    textC&  tACKoFF         = *pcapCBF_p_tACKoFF     ;
+    textC&  tURGoN          = *pcapCBF_p_tURGoN      ;
+    textC&  tURGoFF         = *pcapCBF_p_tURGoFF     ;
+    textC&  tECEoN          = *pcapCBF_p_tECEoN      ;
+    textC&  tECEoFF         = *pcapCBF_p_tECEoFF     ;
+    textC&  tCWRoN          = *pcapCBF_p_tCWRoN      ;
+    textC&  tCWRoFF         = *pcapCBF_p_tCWRoFF     ;
+    textC&  tbDashesUDP     = *pcapCBF_p_tbDashesUDP ;
+    textC&  tCloseParen     = *pcapCBF_p_tCloseParen ;
+    textC&  tOpenParen      = *pcapCBF_p_tOpenParen  ;
+    textC&  tb64            = *pcapCBF_p_tb64        ;
+    textC&  tb32            = *pcapCBF_p_tb32        ;
+    textC&  tb4             = *pcapCBF_p_tb4         ;
+    textC&  tb              = *pcapCBF_p_tb          ;
+    textC&  tn              = *pcapCBF_p_tn          ;
+
+    countT&   idPacket      = *pcapCBF_p_idPacket    ;
+    nicNameC& nnMeOnWanted  = *pnnMeOnWanted         ;
+    etherC&   etRock        = *pcapCBF_pEtRock       ;
+    etherC&   etThread      = *pcapCBF_pEtThread     ;
+    tin0S&    tin0P         = *pcapCBF_pTin0         ;
 {
-void pcapCBF( u_char* postUserP , const pcap_pkthdr* pInfo3HeaderP , const u_char* pInfo3DataP ) ;
-etherC* pEtRock   ;
-etherC* pEtThread ;
-tin0S*  pTin0     ;
+void pcapCBF( u_char* postUserP , const pcap_pkthdr* pInfo3HeaderP , const u_char* pInfo3DataP )
+
+textC*    pcapCBF_p_tFINoN      ;
+textC*    pcapCBF_p_tFINoFF     ;
+textC*    pcapCBF_p_tSYNoN      ;
+textC*    pcapCBF_p_tSYNoFF     ;
+textC*    pcapCBF_p_tRSToN      ;
+textC*    pcapCBF_p_tRSToFF     ;
+textC*    pcapCBF_p_tPSHoN      ;
+textC*    pcapCBF_p_tPSHoFF     ;
+textC*    pcapCBF_p_tACKoN      ;
+textC*    pcapCBF_p_tACKoFF     ;
+textC*    pcapCBF_p_tURGoN      ;
+textC*    pcapCBF_p_tURGoFF     ;
+textC*    pcapCBF_p_tECEoN      ;
+textC*    pcapCBF_p_tECEoFF     ;
+textC*    pcapCBF_p_tCWRoN      ;
+textC*    pcapCBF_p_tCWRoFF     ;
+textC*    pcapCBF_p_tbDashesUDP ;
+textC*    pcapCBF_p_tCloseParen ;
+textC*    pcapCBF_p_tOpenParen  ;
+textC*    pcapCBF_p_tb64        ;
+textC*    pcapCBF_p_tb32        ;
+textC*    pcapCBF_p_tb4         ;
+textC*    pcapCBF_p_tb          ;
+textC*    pcapCBF_p_tn          ;
+countT*   pcapCBF_p_idPacket    ;
+nicNameC* pnnMeOnWanted         ;
+etherC*   pcapCBF_pEtRock       ;
+etherC*   pcapCBF_pEtThread     ;
+tin0S*    pcapCBF_pTin0         ;
+countT    pcapCBF_idLinkType    ;
+
+#define osIDlINKtYPE_ETHERNET 1
+#define osIDlINKtYPE_NULL     0
 
 ;
 }
