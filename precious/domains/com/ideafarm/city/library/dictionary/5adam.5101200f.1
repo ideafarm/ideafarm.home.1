@@ -304,50 +304,51 @@ countT idPort ;
 }
     }
         }
-            break ;
-            etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
+            }
+                break ;
+                etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
+            {
+            case 58 :
+            }
+                break ;
+                etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tbDashesUDP+tb4+tData , flTRACE_NOpREFIX ) ;
+            {
+            case 17 :
+            }
+                break ;
+                etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,flags,idSerial,idSerialExpected,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tFlags+tb4+tIdSerial+tb4+tIdSerialExpected+tb4+tData , flTRACE_NOpREFIX ) ;
+            {
+            case 6 :
         {
-        case 58 :
-        }
-            break ;
-            etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tbDashesUDP+tb4+tData , flTRACE_NOpREFIX ) ;
-        {
-        case 17 :
-        }
-            break ;
-            etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,flags,idSerial,idSerialExpected,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tFlags+tb4+tIdSerial+tb4+tIdSerialExpected+tb4+tData , flTRACE_NOpREFIX ) ;
-        {
-        case 6 :
+        switch( protocol )
+
+        ;
+                : tn
+                ? tb32
+            : bToMe
+            ? tb64
+        TN( tIndent2 , "" ) ; tIndent2 = bFromMe
+
+        ;
+                : tb64
+                ? tb32
+            : bToMe
+            ? tn
+        TN( tIndent1 , "" ) ; tIndent1 = pcapCBF_idLinkType == osIDlINKtYPE_NULL || bFromMe
+
+        boolT bToMe   = nnMeOnWanted == nnDest   ;
+        boolT bFromMe = nnMeOnWanted == nnSource ;
+
+        TN( tIdSerialExpected , "        " ) ; if( bACK ) tIdSerialExpected = TF3(idSerialExpected,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
+        TN( tIdSerial         , "" ) ; tIdSerial = TF3(idSerial,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
+
+        TN( tProtocol    , ppostProtocol[ protocol ] ) ; while( tProtocol.csF( tin0P ) < 0x18 ) tProtocol += tb ;
+        TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
+        TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
     {
-    switch( protocol )
-
-    ;
-            : tn
-            ? tb32
-        : bToMe
-        ? tb64
-    TN( tIndent2 , "" ) ; tIndent2 = bFromMe
-
-    ;
-            : tb64
-            ? tb32
-        : bToMe
-        ? tn
-    TN( tIndent1 , "" ) ; tIndent1 = pcapCBF_idLinkType == osIDlINKtYPE_NULL || bFromMe
-
-    boolT bToMe   = nnMeOnWanted == nnDest   ;
-    boolT bFromMe = nnMeOnWanted == nnSource ;
-
-    TN( tIdSerialExpected , "        " ) ; if( bACK ) tIdSerialExpected = TF3(idSerialExpected,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
-    TN( tIdSerial         , "" ) ; tIdSerial = TF3(idSerial,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
-
-    TN( tProtocol    , ppostProtocol[ protocol ] ) ; while( tProtocol.csF( tin0P ) < 0x18 ) tProtocol += tb ;
-    TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
-    TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
-
+    if( !pIcmpv6 )
 
     }
-        //if( !pIcmpv6 ) continue ;
         }
             tData = T("[type,code]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ;
             icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
