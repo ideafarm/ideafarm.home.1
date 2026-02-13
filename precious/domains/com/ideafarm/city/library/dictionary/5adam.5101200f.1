@@ -303,7 +303,11 @@ if( !pIcmpv6 ) continue ;
                                     pbc = (byteT*)pInfo3Data ;
                                     byteT* pbc ;
                                 {
-                                if( rc == 1 )
+                                else
+                                }
+                                    countT foo = 2 ;
+                                {
+                                if( rc != 1 )
 
                                 rc = pcap_next_ex( pHandle , &pInfo3Header , &pInfo3Data ) ;
                                 pInfo3Data = 0 ;
