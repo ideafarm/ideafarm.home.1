@@ -1,6 +1,6 @@
 
 //
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -9,228 +9,242 @@
                             
 REST
 
-etherC::loafIF( tin0P ) ;
-etRock.traceF( tin0P , T("ok") ) ;
+sgnDone_tmWorkF.waitF( tin0P ) ;
+ether.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
 
+TODO
+
+DONE( tmWorkF )
 }
-    ++ s ; ether.osSleepF( tin0P , TOCK ) ;
-
-    pcap_freealldevs( pInfo ) ; pInfo = 0 ;
-
+    etherC::loafIF( tin0P ) ;
+    etRock.traceF( tin0P , T("ok") ) ;
+    
     }
-        pcDevice = pcDevice->next ;
-
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+    
+        pcap_freealldevs( pInfo ) ; pInfo = 0 ;
+    
         }
+            pcDevice = pcDevice->next ;
+    
             }
-                pcap_free_datalinks( pInfo2 ) ;
-
                 }
+                    pcap_free_datalinks( pInfo2 ) ;
+    
                     }
                         }
                             }
                                 }
-                                    ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+                                    }
+                                        ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+                                    {
+                                    if( scDone >= 0 && scDone < TUCK )
+                                    sCountT scDone = pcap_dispatch( pHandle , TUCK , pcapCBF , (unsigned char*)"foo" ) ;
                                 {
-                                if( scDone >= 0 && scDone < TUCK )
-                                sCountT scDone = pcap_dispatch( pHandle , TUCK , pcapCBF , (unsigned char*)"foo" ) ;
+                                while( !ether )
+                                sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
+    
+                                pcapCBF_p_tFINoN      = &tFINoN      ;
+                                pcapCBF_p_tFINoFF     = &tFINoFF     ;
+                                pcapCBF_p_tSYNoN      = &tSYNoN      ;
+                                pcapCBF_p_tSYNoFF     = &tSYNoFF     ;
+                                pcapCBF_p_tRSToN      = &tRSToN      ;
+                                pcapCBF_p_tRSToFF     = &tRSToFF     ;
+                                pcapCBF_p_tPSHoN      = &tPSHoN      ;
+                                pcapCBF_p_tPSHoFF     = &tPSHoFF     ;
+                                pcapCBF_p_tACKoN      = &tACKoN      ;
+                                pcapCBF_p_tACKoFF     = &tACKoFF     ;
+                                pcapCBF_p_tURGoN      = &tURGoN      ;
+                                pcapCBF_p_tURGoFF     = &tURGoFF     ;
+                                pcapCBF_p_tECEoN      = &tECEoN      ;
+                                pcapCBF_p_tECEoFF     = &tECEoFF     ;
+                                pcapCBF_p_tCWRoN      = &tCWRoN      ;
+                                pcapCBF_p_tCWRoFF     = &tCWRoFF     ;
+                                pcapCBF_p_tbDashesUDP = &tbDashesUDP ;
+                                pcapCBF_p_tCloseParen = &tCloseParen ;
+                                pcapCBF_p_tOpenParen  = &tOpenParen  ;
+                                pcapCBF_p_tb64        = &tb64        ;
+                                pcapCBF_p_tb32        = &tb32        ;
+                                pcapCBF_p_tb4         = &tb4         ;
+                                pcapCBF_p_tb          = &tb          ;
+                                pcapCBF_p_tn          = &tn          ;
+                                pcapCBF_idLinkType    = idLinkType   ;
+                                pcapCBF_pEtRock       = &etRock      ;
+                                pcapCBF_pEtThread     = &etThread    ;
+                                pcapCBF_pTin0         = &tin0P       ;
+                                etRock.traceF( tin0P , T("receiving header/data images") ) ;
                             {
-                            while( !ether )
-                            sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
-
-                            pcapCBF_p_tFINoN      = &tFINoN      ;
-                            pcapCBF_p_tFINoFF     = &tFINoFF     ;
-                            pcapCBF_p_tSYNoN      = &tSYNoN      ;
-                            pcapCBF_p_tSYNoFF     = &tSYNoFF     ;
-                            pcapCBF_p_tRSToN      = &tRSToN      ;
-                            pcapCBF_p_tRSToFF     = &tRSToFF     ;
-                            pcapCBF_p_tPSHoN      = &tPSHoN      ;
-                            pcapCBF_p_tPSHoFF     = &tPSHoFF     ;
-                            pcapCBF_p_tACKoN      = &tACKoN      ;
-                            pcapCBF_p_tACKoFF     = &tACKoFF     ;
-                            pcapCBF_p_tURGoN      = &tURGoN      ;
-                            pcapCBF_p_tURGoFF     = &tURGoFF     ;
-                            pcapCBF_p_tECEoN      = &tECEoN      ;
-                            pcapCBF_p_tECEoFF     = &tECEoFF     ;
-                            pcapCBF_p_tCWRoN      = &tCWRoN      ;
-                            pcapCBF_p_tCWRoFF     = &tCWRoFF     ;
-                            pcapCBF_p_tbDashesUDP = &tbDashesUDP ;
-                            pcapCBF_p_tCloseParen = &tCloseParen ;
-                            pcapCBF_p_tOpenParen  = &tOpenParen  ;
-                            pcapCBF_p_tb64        = &tb64        ;
-                            pcapCBF_p_tb32        = &tb32        ;
-                            pcapCBF_p_tb4         = &tb4         ;
-                            pcapCBF_p_tb          = &tb          ;
-                            pcapCBF_p_tn          = &tn          ;
-                            pcapCBF_idLinkType    = idLinkType   ;
-                            pcapCBF_pEtRock       = &etRock      ;
-                            pcapCBF_pEtThread     = &etThread    ;
-                            pcapCBF_pTin0         = &tin0P       ;
-                            etRock.traceF( tin0P , T("receiving header/data images") ) ;
+                            if( !rc )
+    
+                            rc = pcap_set_datalink( pHandle , idLinkType ) ;
                         {
-                        if( !rc )
-
-                        rc = pcap_set_datalink( pHandle , idLinkType ) ;
-                    {
-                    if( idLinkType != - 1 )
-
-                    }
+                        if( idLinkType != - 1 )
+    
                         }
-                            break ;
-                            idLinkType = idMaybe ;
+                            }
+                                break ;
+                                idLinkType = idMaybe ;
+                            {
+                            if( idMaybe == osIDlINKtYPE_NULL /*LOOPBACK*/ || idMaybe == osIDlINKtYPE_ETHERNET )
+                            etRock.traceF( tin0P , T("link layer header type:    ")+TF2(idMaybe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            countT idMaybe = pInfo2[ offa ] ;
                         {
-                        if( idMaybe == osIDlINKtYPE_NULL /*LOOPBACK*/ || idMaybe == osIDlINKtYPE_ETHERNET )
-                        etRock.traceF( tin0P , T("link layer header type:    ")+TF2(idMaybe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        countT idMaybe = pInfo2[ offa ] ;
+                        for( countT offa = 0 ; offa < rc ; offa ++ )
+                        countT idLinkType = - 1 ;
                     {
-                    for( countT offa = 0 ; offa < rc ; offa ++ )
-                    countT idLinkType = - 1 ;
+                    if( rc )
+    
+                    rc = pcap_list_datalinks( pHandle , &pInfo2 ) ;
+                    ZE( int* , pInfo2 ) ;
                 {
-                if( rc )
-
-                rc = pcap_list_datalinks( pHandle , &pInfo2 ) ;
-                ZE( int* , pInfo2 ) ;
+                if( !rc )
+                rc = pcap_activate(           pHandle        ) ;
+                rc = pcap_set_timeout(        pHandle , 2000 ) ;
+              //rc = pcap_set_immediate_mode( pHandle , 1    ) ;
+    
+                etRock.traceF( tin0P , T(pHandle?"aok":"nope") ) ;
+                pcap_t* pHandle = pcap_create( pcDevice->name , postError ) ;
+                etRock.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------") ) ;
             {
-            if( !rc )
-            rc = pcap_activate(           pHandle        ) ;
-            rc = pcap_set_timeout(        pHandle , 2000 ) ;
-          //rc = pcap_set_immediate_mode( pHandle , 1    ) ;
-
-            etRock.traceF( tin0P , T(pHandle?"aok":"nope") ) ;
-            pcap_t* pHandle = pcap_create( pcDevice->name , postError ) ;
-            etRock.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------") ) ;
+            if( etThread.strIdF( tin0P , tWantCurly , tName ) || !etThread.strCompareF( tin0P , tName , tWantExactName ) )
+            etRock.traceF( tin0P , T("description    :    ")+T(pcDevice->description) ) ;
+            etRock.traceF( tin0P , T("wantName       :    ")+tWantExactName ) ;
+            etRock.traceF( tin0P , T("name           :    ")+tName ) ;
+            etRock.traceF( tin0P , T("idDevice       :    ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            TN( tName , pcDevice->name ) ;
         {
-        if( etThread.strIdF( tin0P , tWantCurly , tName ) || !etThread.strCompareF( tin0P , tName , tWantExactName ) )
-        etRock.traceF( tin0P , T("description    :    ")+T(pcDevice->description) ) ;
-        etRock.traceF( tin0P , T("wantName       :    ")+tWantExactName ) ;
-        etRock.traceF( tin0P , T("name           :    ")+tName ) ;
-        etRock.traceF( tin0P , T("idDevice       :    ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        TN( tName , pcDevice->name ) ;
+        while( pcDevice )
+        ZE( countT , idDevice ) ;
+        pcDevice = pInfo ;
+        pcap_if_t* pcDevice ;
+    
+        int rc = pcap_findalldevs( &pInfo , postError ) ;
+        pcap_if_t* pInfo ;
+    
+        //thirdC::c_systemIF( tin0P , "cls" ) ;
     {
-    while( pcDevice )
-    ZE( countT , idDevice ) ;
-    pcDevice = pInfo ;
-    pcap_if_t* pcDevice ;
-
-    int rc = pcap_findalldevs( &pInfo , postError ) ;
-    pcap_if_t* pInfo ;
-
-    //thirdC::c_systemIF( tin0P , "cls" ) ;
-{
-while( !ether )
-sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-pcapCBF_p_idPacket = &idPacket ;
-ZE( countT , idPacket ) ;
-
-char postError[ PCAP_ERRBUF_SIZE ] ;
-
-}
-    pc1 = pc1->Next ;
-
+    while( !ether )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    pcapCBF_p_idPacket = &idPacket ;
+    ZE( countT , idPacket ) ;
+    
+    char postError[ PCAP_ERRBUF_SIZE ] ;
+    
     }
-        pc2 = pc2->Next ;
-
+        pc1 = pc1->Next ;
+    
         }
-            etRock.traceF( tin0P , T("    [nnMe]        :    ")+T(nnMe)+(bWanted?tb4+T("wanted"):tn) ) ;
-
-            if( bWanted && !nnMeOnWanted )  nnMeOnWanted = nnMe ;       //ONLY SUPPORTS A SINGLE ADDRESS ON THE WANTED ADAPTER
-
-            nicNameC nnMe( nnv ) ;
-            countT nnv = SWAB4( *(countT*)pbv ) ;
-            byteT* pbv = (byteT*)pc2->Address.lpSockaddr->sa_data + 2 ;        //U:: THE "+ 2" IS NEEDED TO GET TO THE IPV4 VALUE, BUT I DO NOT KNOW WHY (CONJ: THE DEF OF THE STRUCTURE HAS CHANGED AND I AM USING AN OBSOLETE VERSION)
+            pc2 = pc2->Next ;
+    
+            }
+                etRock.traceF( tin0P , T("    [nnMe]        :    ")+T(nnMe)+(bWanted?tb4+T("wanted"):tn) ) ;
+    
+                if( bWanted && !nnMeOnWanted )  nnMeOnWanted = nnMe ;       //ONLY SUPPORTS A SINGLE ADDRESS ON THE WANTED ADAPTER
+    
+                nicNameC nnMe( nnv ) ;
+                countT nnv = SWAB4( *(countT*)pbv ) ;
+                byteT* pbv = (byteT*)pc2->Address.lpSockaddr->sa_data + 2 ;        //U:: THE "+ 2" IS NEEDED TO GET TO THE IPV4 VALUE, BUT I DO NOT KNOW WHY (CONJ: THE DEF OF THE STRUCTURE HAS CHANGED AND I AM USING AN OBSOLETE VERSION)
+            {
+            if( pc2->Address.lpSockaddr->sa_family == AF_INET )
         {
-        if( pc2->Address.lpSockaddr->sa_family == AF_INET )
-    {
-    while( pc2 )
-    IP_ADAPTER_UNICAST_ADDRESS_LH* pc2 = pc1->FirstUnicastAddress ;
-
-    if( cunt <= TUCK && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) ) etRock.traceF( tin0P , tSayDescription+T(postt) ) ;
-    cunt = unicodeLengthF( punt ) ;
-    punt = (unTextT*)pc1->Description ;
-
-    etRock.traceF( tin0P , tSayName+T(pc1->AdapterName) ) ;
-
-    }
+        while( pc2 )
+        IP_ADAPTER_UNICAST_ADDRESS_LH* pc2 = pc1->FirstUnicastAddress ;
+    
+        if( cunt <= TUCK && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) ) etRock.traceF( tin0P , tSayDescription+T(postt) ) ;
+        cunt = unicodeLengthF( punt ) ;
+        punt = (unTextT*)pc1->Description ;
+    
+        etRock.traceF( tin0P , tSayName+T(pc1->AdapterName) ) ;
+    
         }
-            tWantCurly = tCurly ;
-            bWanted = 1 ;
+            }
+                tWantCurly = tCurly ;
+                bWanted = 1 ;
+            {
+            if( !etThread.strCompareF( tin0P , tWantFriendly , T(postt) ) )
+            etRock.traceF( tin0P , tSayFriendlyName+tFriendly ) ;
+            TN( tFriendly , postt ) ;
         {
-        if( !etThread.strCompareF( tin0P , tWantFriendly , T(postt) ) )
-        etRock.traceF( tin0P , tSayFriendlyName+tFriendly ) ;
-        TN( tFriendly , postt ) ;
+        if( cunt < sizeof postt && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) )
+        ZE( boolT , bWanted ) ;
+        countT   cunt = unicodeLengthF( punt ) ;
+        unTextT* punt = (unTextT*)pc1->FriendlyName ;
+    
+        osTextT postt[ TUCK << 1 + 1 ] ;
+    
+        etRock.traceF( tin0P , T("[index,type]:    ")+TF2(luidIndex,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+tb4+TF3(luidType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+        //etRock.traceF( tin0P , T("[index,type]:    ")+TF2(luidIndex,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(luidType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+        countT   luidType  = pc1->Luid.Info.IfType       ;
+        countT   luidIndex = pc1->Luid.Info.NetLuidIndex ;
+    
+        TN( tCurly , pc1->AdapterName ) ;
     {
-    if( cunt < sizeof postt && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) )
-    ZE( boolT , bWanted ) ;
-    countT   cunt = unicodeLengthF( punt ) ;
-    unTextT* punt = (unTextT*)pc1->FriendlyName ;
+    while( pc1 )
+    static IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
+    pnnMeOnWanted = &nnMeOnWanted ;
+    nicNameC nnMeOnWanted ;
+    
+    ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
+    unsigned long cba = sizeof pInfo ; 
+    static IP_ADAPTER_ADDRESSES pInfo[ 0x10 ] ;
+    
+    etRock.traceF( tin0P , T(postv) ) ;
+    const osTextT* postv = pcap_lib_version() ;
+    
+      TN( tSayDescription  , "    [description] :    "     ) ;
+      TN( tSayName         , "    [name]        :    "     ) ;
+      TN( tSayFriendlyName , "    [friendlyName]:    "     ) ;
+      TN( tWantCurly       , ""                            ) ;
+    
+      TN( tWantFriendly    , "ideanet"                     ) ;
+    //TN( tWantFriendly    , "outer"                       ) ;
+    //TN( tWantFriendly    , "Loopback Pseudo-Interface 1" ) ;
+    
+      TN( tWantExactName   , ""                            ) ;
+    //TN( tWantExactName   , "\\Device\\NPF_Loopback"      ) ;
+    
+    TN( tFINoN  , "FIN" ) ;
+    TN( tFINoFF , "---" ) ;
+    TN( tSYNoN  , "SYN" ) ;
+    TN( tSYNoFF , "---" ) ;
+    TN( tRSToN  , "RST" ) ;
+    TN( tRSToFF , "---" ) ;
+    TN( tPSHoN  , "PSH" ) ;
+    TN( tPSHoFF , "---" ) ;
+    TN( tACKoN  , "ACK" ) ;
+    TN( tACKoFF , "---" ) ;
+    TN( tURGoN  , "URG" ) ;
+    TN( tURGoFF , "---" ) ;
+    TN( tECEoN  , "ECE" ) ;
+    TN( tECEoFF , "---" ) ;
+    TN( tCWRoN  , "CWR" ) ;
+    TN( tCWRoFF , "---" ) ;
+    
+    TN( tbDashesUDP , "-------------------------------------------------------" ) ;
+    TN( tCloseParen , ")" ) ;
+    TN( tOpenParen , "(" ) ;
+    TN( tb64 , "                                                                      " ) ;
+    TN( tb32 , "                                   " ) ;
+    TN( tb4 , "    " ) ;
+    TN( tb  , " "    ) ;
+    TN( tn  , ""    ) ;
+    
+    //if( cProtocol != TUCK ) { BLAMMOiD( 0xff00ff00 ) ; }
+    etRock.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
+    
+    etThread.osThreadF( TaRG2cBsTACK( tmAcceptF , CBsTACKmIN << 1 ) ) ;
+    
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-    osTextT postt[ TUCK << 1 + 1 ] ;
+    ether.osSleepF( tin0P , TIMEnAPdURINGsERVICEsTARTUP ) ;
 
-    etRock.traceF( tin0P , T("[index,type]:    ")+TF2(luidIndex,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+tb4+TF3(luidType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
-    //etRock.traceF( tin0P , T("[index,type]:    ")+TF2(luidIndex,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(luidType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
-    countT   luidType  = pc1->Luid.Info.IfType       ;
-    countT   luidIndex = pc1->Luid.Info.NetLuidIndex ;
-
-    TN( tCurly , pc1->AdapterName ) ;
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 {
-while( pc1 )
-static IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
-pnnMeOnWanted = &nnMeOnWanted ;
-nicNameC nnMeOnWanted ;
-
-ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
-unsigned long cba = sizeof pInfo ; 
-static IP_ADAPTER_ADDRESSES pInfo[ 0x10 ] ;
-
-etRock.traceF( tin0P , T(postv) ) ;
-const osTextT* postv = pcap_lib_version() ;
-
-  TN( tSayDescription  , "    [description] :    "     ) ;
-  TN( tSayName         , "    [name]        :    "     ) ;
-  TN( tSayFriendlyName , "    [friendlyName]:    "     ) ;
-  TN( tWantCurly       , ""                            ) ;
-
-  TN( tWantFriendly    , "ideanet"                     ) ;
-//TN( tWantFriendly    , "outer"                       ) ;
-//TN( tWantFriendly    , "Loopback Pseudo-Interface 1" ) ;
-
-  TN( tWantExactName   , ""                            ) ;
-//TN( tWantExactName   , "\\Device\\NPF_Loopback"      ) ;
-
-TN( tFINoN  , "FIN" ) ;
-TN( tFINoFF , "---" ) ;
-TN( tSYNoN  , "SYN" ) ;
-TN( tSYNoFF , "---" ) ;
-TN( tRSToN  , "RST" ) ;
-TN( tRSToFF , "---" ) ;
-TN( tPSHoN  , "PSH" ) ;
-TN( tPSHoFF , "---" ) ;
-TN( tACKoN  , "ACK" ) ;
-TN( tACKoFF , "---" ) ;
-TN( tURGoN  , "URG" ) ;
-TN( tURGoFF , "---" ) ;
-TN( tECEoN  , "ECE" ) ;
-TN( tECEoFF , "---" ) ;
-TN( tCWRoN  , "CWR" ) ;
-TN( tCWRoFF , "---" ) ;
-
-TN( tbDashesUDP , "-------------------------------------------------------" ) ;
-TN( tCloseParen , ")" ) ;
-TN( tOpenParen , "(" ) ;
-TN( tb64 , "                                                                      " ) ;
-TN( tb32 , "                                   " ) ;
-TN( tb4 , "    " ) ;
-TN( tb  , " "    ) ;
-TN( tn  , ""    ) ;
-
-//if( cProtocol != TUCK ) { BLAMMOiD( 0xff00ff00 ) ; }
-etRock.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
-
-etThread.osThreadF( TaRG2cBsTACK( tmAcceptF , CBsTACKmIN << 1 ) ) ;
-
-etherC& etRock = etherC::etRockIF( tin0P ) ;
-
-TODO
+if( pTaskP )
+TASK( tmWorkF )
 
 DONE( tmAcceptF )
 }
@@ -1568,5 +1582,5 @@ struct loopHeadS
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
