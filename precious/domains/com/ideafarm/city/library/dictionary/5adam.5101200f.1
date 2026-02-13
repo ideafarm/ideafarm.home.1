@@ -10,7 +10,7 @@
 REST
 
 etherC::loafIF( tin0P ) ;
-etThread.traceF( tin0P , T("ok") ) ;
+etRock.traceF( tin0P , T("ok") ) ;
 
 }
     ++ s ; ether.osSleepF( tin0P , TOCK ) ;
@@ -32,17 +32,17 @@ etThread.traceF( tin0P , T("ok") ) ;
                                     }
                                         }
                                             break ;
-                                            etThread.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
+                                            etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_NOpREFIX ) ;
                                         {
                                         case 58 :
                                         }
                                             break ;
-                                            etThread.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tbDashesUDP+tb4+tData , flTRACE_NOpREFIX ) ;
+                                            etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tbDashesUDP+tb4+tData , flTRACE_NOpREFIX ) ;
                                         {
                                         case 17 :
                                         }
                                             break ;
-                                            etThread.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,flags,idSerial,idSerialExpected,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tFlags+tb4+tIdSerial+tb4+tIdSerialExpected+tb4+tData , flTRACE_NOpREFIX ) ;
+                                            etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,flags,idSerial,idSerialExpected,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tFlags+tb4+tIdSerial+tb4+tIdSerialExpected+tb4+tData , flTRACE_NOpREFIX ) ;
                                         {
                                         case 6 :
                                     {
@@ -310,14 +310,16 @@ if( !pIcmpv6 ) continue ;
                                 {
                                 if( rc == 1 )
 
+                                etRock.traceF( tin0P , T("called  pcap_next_ex [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 rc = pcap_next_ex( pHandle , &pInfo3Header , &pInfo3Data ) ;
+                                etRock.traceF( tin0P , T("calling pcap_next_ex") ) ;
                                 pInfo3Data = 0 ;
                                 ZE( const u_char* , pInfo3Data   ) ;
                                 pInfo3Header = 0 ;
                                 ZE( pcap_pkthdr*  , pInfo3Header ) ;
                             {
                             while( !ether )
-                            etThread.traceF( tin0P , T("receiving header/data images") ) ;
+                            etRock.traceF( tin0P , T("receiving header/data images") ) ;
                         {
                         if( !rc )
 
@@ -331,7 +333,7 @@ if( !pIcmpv6 ) continue ;
                             idLinkType = idMaybe ;
                         {
                         if( idMaybe == osIDlINKtYPE_NULL /*LOOPBACK*/ || idMaybe == osIDlINKtYPE_ETHERNET )
-                        etThread.traceF( tin0P , T("link layer header type:    ")+TF2(idMaybe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        etRock.traceF( tin0P , T("link layer header type:    ")+TF2(idMaybe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         countT idMaybe = pInfo2[ offa ] ;
                     {
                     for( countT offa = 0 ; offa < rc ; offa ++ )
@@ -347,15 +349,15 @@ if( !pIcmpv6 ) continue ;
             rc = pcap_set_timeout(        pHandle , 2000 ) ;
           //rc = pcap_set_immediate_mode( pHandle , 1    ) ;
 
-            etThread.traceF( tin0P , T(pHandle?"aok":"nope") ) ;
+            etRock.traceF( tin0P , T(pHandle?"aok":"nope") ) ;
             pcap_t* pHandle = pcap_create( pcDevice->name , postError ) ;
-            etThread.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------") ) ;
+            etRock.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------") ) ;
         {
         if( etThread.strIdF( tin0P , tWantCurly , tName ) || !etThread.strCompareF( tin0P , tName , tWantExactName ) )
-        etThread.traceF( tin0P , T("description    :    ")+T(pcDevice->description) ) ;
-        etThread.traceF( tin0P , T("wantName       :    ")+tWantExactName ) ;
-        etThread.traceF( tin0P , T("name           :    ")+tName ) ;
-        etThread.traceF( tin0P , T("idDevice       :    ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etRock.traceF( tin0P , T("description    :    ")+T(pcDevice->description) ) ;
+        etRock.traceF( tin0P , T("wantName       :    ")+tWantExactName ) ;
+        etRock.traceF( tin0P , T("name           :    ")+tName ) ;
+        etRock.traceF( tin0P , T("idDevice       :    ")+TF2(++idDevice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         TN( tName , pcDevice->name ) ;
     {
     while( pcDevice )
@@ -384,7 +386,7 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
         pc2 = pc2->Next ;
 
         }
-            etThread.traceF( tin0P , T("    [nnMe]        :    ")+T(nnMe)+(bWanted?tb4+T("wanted"):tn) ) ;
+            etRock.traceF( tin0P , T("    [nnMe]        :    ")+T(nnMe)+(bWanted?tb4+T("wanted"):tn) ) ;
 
             if( bWanted && !nnMeOnWanted )  nnMeOnWanted = nnMe ;       //ONLY SUPPORTS A SINGLE ADDRESS ON THE WANTED ADAPTER
 
@@ -397,11 +399,11 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
     while( pc2 )
     IP_ADAPTER_UNICAST_ADDRESS_LH* pc2 = pc1->FirstUnicastAddress ;
 
-    if( cunt <= TUCK && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) ) etThread.traceF( tin0P , tSayDescription+T(postt) ) ;
+    if( cunt <= TUCK && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) ) etRock.traceF( tin0P , tSayDescription+T(postt) ) ;
     cunt = unicodeLengthF( punt ) ;
     punt = (unTextT*)pc1->Description ;
 
-    etThread.traceF( tin0P , tSayName+T(pc1->AdapterName) ) ;
+    etRock.traceF( tin0P , tSayName+T(pc1->AdapterName) ) ;
 
     }
         }
@@ -409,7 +411,7 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
             bWanted = 1 ;
         {
         if( !etThread.strCompareF( tin0P , tWantFriendly , T(postt) ) )
-        etThread.traceF( tin0P , tSayFriendlyName+tFriendly ) ;
+        etRock.traceF( tin0P , tSayFriendlyName+tFriendly ) ;
         TN( tFriendly , postt ) ;
     {
     if( cunt < sizeof postt && !unicodeToAnsiF( postt , sizeof postt , (byteT*)punt , cunt ) )
@@ -419,8 +421,8 @@ char postError[ PCAP_ERRBUF_SIZE ] ;
 
     osTextT postt[ TUCK << 1 + 1 ] ;
 
-    etThread.traceF( tin0P , T("[index,type]:    ")+TF2(luidIndex,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+tb4+TF3(luidType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
-    //etThread.traceF( tin0P , T("[index,type]:    ")+TF2(luidIndex,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(luidType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+    etRock.traceF( tin0P , T("[index,type]:    ")+TF2(luidIndex,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+tb4+TF3(luidType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+    //etRock.traceF( tin0P , T("[index,type]:    ")+TF2(luidIndex,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(luidType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
     countT   luidType  = pc1->Luid.Info.IfType       ;
     countT   luidIndex = pc1->Luid.Info.NetLuidIndex ;
 
@@ -434,7 +436,7 @@ ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
 unsigned long cba = sizeof pInfo ; 
 static IP_ADAPTER_ADDRESSES pInfo[ 0x10 ] ;
 
-etThread.traceF( tin0P , T(postv) ) ;
+etRock.traceF( tin0P , T(postv) ) ;
 const osTextT* postv = pcap_lib_version() ;
 
   TN( tSayDescription  , "    [description] :    "     ) ;
@@ -476,10 +478,12 @@ TN( tb  , " "    ) ;
 TN( tn  , ""    ) ;
 
 //if( cProtocol != TUCK ) { BLAMMOiD( 0xff00ff00 ) ; }
-etThread.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etRock.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
 
 etThread.osThreadF( TaRG2cBsTACK( tmAcceptF , CBsTACKmIN << 1 ) ) ;
+
+etherC& etRock = etherC::etRockIF( tin0P ) ;
 
 TODO
 
