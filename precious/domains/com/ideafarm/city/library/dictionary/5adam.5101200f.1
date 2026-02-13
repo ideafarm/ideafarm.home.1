@@ -277,7 +277,11 @@ if( !pIcmpv6 ) continue ;
                                     TN( tFlags , "" ) ;
 
                                     }
-                                        if( idType == 0x800 ) pIpv4HeadRaw   = (const ipv4HeadRawS*)pbc ;
+                                        }
+                                            case 0x86dd : { pIpv6HeadRaw = (const ipv6HeadRawS*)pbc ; break ; }
+                                            case 0x0800 : { pIpv4HeadRaw = (const ipv4HeadRawS*)pbc ; break ; }
+                                        {
+                                        switch( idType )
 
                                         count01T     idType           = *(count01T*)pbc ; pbc += 2 ; idType = SWAB2( idType ) ;
                                         const byteT* pbMACSource      =             pbc ; pbc += 6 ;
