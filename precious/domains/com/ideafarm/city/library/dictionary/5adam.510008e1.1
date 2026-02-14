@@ -42,7 +42,21 @@ DONE( tmWorkF )
                                         etRock.traceF( tin0P , T("napping [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                         if( c135NewQuery > 0x10 && c135NewQuery >> 1 > c136NewResponse ) etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
+
+                                        }
+                                            etRock.traceF( tin0P , T("pcap_dispatch to finish the buffer contents [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
+
+                                            }
+                                                ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+                                            {
+                                            while( cNewInterruptions % 2 )
+                                        {
+                                        if( cNewInterruptions )
+
+                                        etRock.traceF( tin0P , T("pcap_dispatch primary call [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
+                                        cNewInterruptions = 0 ;
 
                                         }
                                              c136NewResponse = c135NewQuery = 0 ;
@@ -62,7 +76,8 @@ DONE( tmWorkF )
                                     while( !ether )
                                     sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
 
-                                    //etThread.osThreadF( TaRG2cBsTACK( tmInterruptLoopF , CBsTACKmIN << 1 ) , (countT)poshNic ) ;
+                                    etThread.osThreadF( TaRG2cBsTACK( tmInterruptLoopF , CBsTACKmIN << 1 ) , (countT)poshNic , (countT)&cNewInterruptions ) ;
+                                    ZE( countT , cNewInterruptions ) ;
 
                                     etThread.osTimeNowF( tin0P , timeS1 , timeS2 ) ;
                                     ZE( sCountT , timeS2 ) ;
@@ -280,14 +295,18 @@ TASK( tmWorkF )
 DONE( tmInterruptLoopF )
 }
     }
+        ++ cNewInterruptionsP ;
         pcap_breakloop( poshNicP ) ;                    //DONE AFTER THE NAP SO AS TO NOT INTERFERE WITH THE INITIAL MOMENTS OF THE WO'TH CALL TO pcap_dispatch, JUST TO BE SAFE
-        ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;    //A:ASSUME: LONG ENOUGH TO ALLOW WOTH CALL TO pcap_dispatch TO GET STARTED BEFORE pcap_breakloop SETS ITS FLAG
+        ++ cNewInterruptionsP ;
+        ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;    //A:ASSUME: LONG ENOUGH TO ALLOW WOTH CALL TO pcap_dispatch TO GET STARTED BEFORE pcap_breakloop SETS ITS FLAG
     {
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-    pcap_t* poshNicP = (pcap_t*)pTaskP->c1 ;
+
+    countT& cNewInterruptionsP = *(countT*)pTaskP->c2 ;
+    pcap_t* poshNicP           =  (pcap_t*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmInterruptLoopF )
 
 DONE( tmAcceptF )
@@ -426,7 +445,7 @@ countT idPort ;
 
                 icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
             {
-            else if( pIcmpv6 )
+            /*else*/ if( pIcmpv6 )
             //}
             //    etThread.delF( tin0P , psttData ) ;
             //    tData = T(psttData) ;
@@ -455,51 +474,51 @@ countT idPort ;
             //    udpHeadRawS udp = *pUdp ;
             //{
             //else if( pUdp )
-            }
-                bReport = 1 ;
-                etThread.delF( tin0P , psttData ) ;
-                tData = T(psttData) ;
-            
-                }
-                    pbd ++ ;
-                    }
-                        etThread.strFuseF( tin0P , psttData , T(post2) ) ;
-                        osTextT post2[] = { *pbd , 0 } ;
-                    {
-                    if( *pbd >= 0x20 && *pbd < 0x7e )
-                {
-                while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
-                const byteT* pbd = pbData ;
-            
-                etThread.strMakeF( tin0P , LF , psttData , 0 , cbData > TUCK ? TUCK : cbData ) ; ___( psttData ) ;
-                ZE( strokeS* , psttData ) ;
-            
-                countT cbData = pbDataEnd - pbData ;
-                const byteT* pbData    = (byteT*)( (countT*)pTcp + tcp.u.swabbed.hCounts ) ;
-            
-                idpDestination = tcp.u.swabbed.idpDestination ;
-                idpSource      = tcp.u.swabbed.idpSource      ;
-            
-                }
-                    idSerialExpected = tcp.u.swabbed.idSerialExpected ;
-                    bACK = 1 ;
-                {
-                if( tcp.u.swabbed.bACK )
-                idSerial = tcp.u.swabbed.idSerial ;
-            
-                tFlags += tb + ( tcp.u.swabbed.bFIN ? tFINoN : tFINoFF ) ;
-                tFlags += tb + ( tcp.u.swabbed.bSYN ? tSYNoN : tSYNoFF ) ;
-                tFlags += tb + ( tcp.u.swabbed.bRST ? tRSToN : tRSToFF ) ;
-                tFlags += tb + ( tcp.u.swabbed.bPSH ? tPSHoN : tPSHoFF ) ;
-                tFlags += tb + ( tcp.u.swabbed.bACK ? tACKoN : tACKoFF ) ;
-                tFlags += tb + ( tcp.u.swabbed.bURG ? tURGoN : tURGoFF ) ;
-                tFlags += tb + ( tcp.u.swabbed.bECE ? tECEoN : tECEoFF ) ;
-                tFlags +=        tcp.u.swabbed.bCWR ? tCWRoN : tCWRoFF   ;
-            
-                tcp.swabF() ;
-                tcpHeadRawS tcp = *pTcp ;
-            {
-            if( pTcp )
+            //}
+            //    bReport = 1 ;
+            //    etThread.delF( tin0P , psttData ) ;
+            //    tData = T(psttData) ;
+            //
+            //    }
+            //        pbd ++ ;
+            //        }
+            //            etThread.strFuseF( tin0P , psttData , T(post2) ) ;
+            //            osTextT post2[] = { *pbd , 0 } ;
+            //        {
+            //        if( *pbd >= 0x20 && *pbd < 0x7e )
+            //    {
+            //    while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
+            //    const byteT* pbd = pbData ;
+            //
+            //    etThread.strMakeF( tin0P , LF , psttData , 0 , cbData > TUCK ? TUCK : cbData ) ; ___( psttData ) ;
+            //    ZE( strokeS* , psttData ) ;
+            //
+            //    countT cbData = pbDataEnd - pbData ;
+            //    const byteT* pbData    = (byteT*)( (countT*)pTcp + tcp.u.swabbed.hCounts ) ;
+            //
+            //    idpDestination = tcp.u.swabbed.idpDestination ;
+            //    idpSource      = tcp.u.swabbed.idpSource      ;
+            //
+            //    }
+            //        idSerialExpected = tcp.u.swabbed.idSerialExpected ;
+            //        bACK = 1 ;
+            //    {
+            //    if( tcp.u.swabbed.bACK )
+            //    idSerial = tcp.u.swabbed.idSerial ;
+            //
+            //    tFlags += tb + ( tcp.u.swabbed.bFIN ? tFINoN : tFINoFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bSYN ? tSYNoN : tSYNoFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bRST ? tRSToN : tRSToFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bPSH ? tPSHoN : tPSHoFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bACK ? tACKoN : tACKoFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bURG ? tURGoN : tURGoFF ) ;
+            //    tFlags += tb + ( tcp.u.swabbed.bECE ? tECEoN : tECEoFF ) ;
+            //    tFlags +=        tcp.u.swabbed.bCWR ? tCWRoN : tCWRoFF   ;
+            //
+            //    tcp.swabF() ;
+            //    tcpHeadRawS tcp = *pTcp ;
+            //{
+            //if( pTcp )
 
             }
                 }
