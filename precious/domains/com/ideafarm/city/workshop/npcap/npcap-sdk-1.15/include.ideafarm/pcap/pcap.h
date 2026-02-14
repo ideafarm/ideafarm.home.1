@@ -641,7 +641,8 @@ PCAP_AVAILABLE_0_4
 PCAP_API int	pcap_stats(pcap_t *, struct pcap_stat *);
 
 PCAP_AVAILABLE_0_4
-PCAP_API int	pcap_setfilter(pcap_t *, struct bpf_program *);
+//PCAP_API int         pcap_setfilter(pcap_t *, struct bpf_program *);
+           int __cdecl pcap_setfilter(pcap_t *, struct bpf_program *);
 
 PCAP_AVAILABLE_0_9
 PCAP_API int	pcap_setdirection(pcap_t *, pcap_direction_t);
@@ -671,8 +672,8 @@ PCAP_AVAILABLE_0_4
 PCAP_API void	pcap_perror(pcap_t *, const char *);
 
 PCAP_AVAILABLE_0_4
-PCAP_API int	pcap_compile(pcap_t *, struct bpf_program *, const char *, int,
-	    bpf_u_int32);
+//PCAP_API int         pcap_compile(pcap_t *, struct bpf_program *, const char *, int, bpf_u_int32);
+           int __cdecl pcap_compile(pcap_t *, struct bpf_program *, const char *, int, bpf_u_int32);
 
 PCAP_AVAILABLE_0_5
 PCAP_DEPRECATED("use pcap_open_dead(), pcap_compile() and pcap_close()")

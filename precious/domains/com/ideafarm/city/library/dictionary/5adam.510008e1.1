@@ -36,36 +36,45 @@ DONE( tmWorkF )
                         }
                             }
                                 }
-                                    etRock.traceF( tin0P , T("napped") ) ;
-                                    ++ s ; ether.osSleepF( tin0P , TOCK << 4 ) ;
-                                    etRock.traceF( tin0P , T("napping [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-                                    if( c135NewQuery > 0x10 && c135NewQuery >> 1 > c136NewResponse ) etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
-                                    sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
-
                                     }
-                                         c136NewResponse = c135NewQuery = 0 ;
-                                         timeS2 = timeN2 ;
-                                         timeS1 = timeN1 ;
+                                        etRock.traceF( tin0P , T("napped") ) ;
+                                        ++ s ; ether.osSleepF( tin0P , TOCK << 4 ) ;
+                                        etRock.traceF( tin0P , T("napping [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                        if( c135NewQuery > 0x10 && c135NewQuery >> 1 > c136NewResponse ) etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
+                                        sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
+
+                                        }
+                                             c136NewResponse = c135NewQuery = 0 ;
+                                             timeS2 = timeN2 ;
+                                             timeS1 = timeN1 ;
+                                        {
+                                        if( timeE2 || timeE1 > TICK >> 4 )
+
+                                        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeS1 , timeS2 ) ;
+                                        sCountT timeE2 = timeN2 ; 
+                                        countT  timeE1 = timeN1 ; 
+
+                                        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+                                        ZE( sCountT , timeN2 ) ;
+                                        ZE( countT  , timeN1 ) ;
                                     {
-                                    if( timeE2 || timeE1 > TICK >> 4 )
+                                    while( !ether )
+                                    sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
 
-                                    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeS1 , timeS2 ) ;
-                                    sCountT timeE2 = timeN2 ; 
-                                    countT  timeE1 = timeN1 ; 
+                                    etThread.osThreadF( TaRG2cBsTACK( tmInterruptLoopF , CBsTACKmIN << 1 ) , (countT)poshNic ) ;
 
-                                    etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
-                                    ZE( sCountT , timeN2 ) ;
-                                    ZE( countT  , timeN1 ) ;
+                                    etThread.osTimeNowF( tin0P , timeS1 , timeS2 ) ;
+                                    ZE( sCountT , timeS2 ) ;
+                                    ZE( countT  , timeS1 ) ;
                                 {
-                                while( !ether )
-                                sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
-
-                                etThread.osThreadF( TaRG2cBsTACK( tmInterruptLoopF , CBsTACKmIN << 1 ) , (countT)poshNic ) ;
-
-                                etThread.osTimeNowF( tin0P , timeS1 , timeS2 ) ;
-                                ZE( sCountT , timeS2 ) ;
-                                ZE( countT  , timeS1 ) ;
+                                )
+                                    !pcap_setfilter( poshNic , &byteCodes )
+                                    &&
+                                    !pcap_compile( poshNic , &byteCodes , "icmp6[icmp6type] = icmp6-neighborsolicit or icmp6[icmp6type] = icmp6-neighboradvert" , 1 , 0 )
+                                (
+                                if
+                                bpf_program byteCodes ;
     
                                 pcapCBF_p_tFINoN      = &tFINoN      ;
                                 pcapCBF_p_tFINoFF     = &tFINoFF     ;
