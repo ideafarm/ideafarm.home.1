@@ -32,5 +32,5 @@ wlink.exe system nt op q op map=ideanet.map op mangle debug all name ideanet    
 
 dir
 
-if not exist d:\tmp md d:\tmp
-copy ideanet.exe d:\tmp\ideanet.unconfigured.exe
+if not exist \tmp md \tmp
+copy ideanet.exe \tmp\ideanet.unconfigured.exe
