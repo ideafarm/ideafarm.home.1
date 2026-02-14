@@ -165,8 +165,8 @@ DONE( tmWorkF )
 
                         tIpv6NowData    = T(nnNowData   ) ;
                         tIpv6NowControl = T(nnNowControl) ;
-                        nicNameC nnNowData    = sub.nnF( tin0P , epoch , ipv6FieldsData        ) ;
-                        nicNameC nnNowControl = sub.nnF( tin0P , epoch , ipv6FieldsControl , 1 ) ;
+                        nicNameC nnNowData    = sub.nnF( tin0P , epochUse , ipv6FieldsData        ) ;
+                        nicNameC nnNowControl = sub.nnF( tin0P , epochUse , ipv6FieldsControl , 1 ) ;
 
                         ipv6FieldsData    = 0 ;
                         ipv6FieldsControl = 0 ;
@@ -174,11 +174,22 @@ DONE( tmWorkF )
                         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                         ZE( sCountT , timeN2 ) ;
                         ZE( countT  , timeN1 ) ;
-                        epochLath = epoch ;
+                        epochUseLath = epochUse ;
                     {
-                    if( epochLath != epoch )
-                    //U:: PROD: countT epoch = ( ( timeN1 - 2 * TOCK ) >> 0x18 ) ;         //U:: "2 * TOCK": ALLOW 2 TOCKS FOR THE BGP SYSTEM TO ESTABLISH CONNECTIVITY USING EACH NEW PREFIX BETWEEN ME (CLIENT) AND THE SERVER
-                    countT epoch = ( ( timeN1 - 8 * TOCK ) >> 0x18 ) ;             //U:: TO FIND A BUG
+                    if( epochUseLath != epochUse )
+
+                    CONoUTrAW3F( "\r                                      \rTocks remaining in epoch:    " , tockRemain , "." ) ;
+
+                    countT tockRemain      = time1TrueRemain >> 0x10 ;
+                    countT time1TrueRemain = time1TrueEnd - timeN1 ;
+                    countT time1TrueEnd    = ( epochTrue + 1 ) << 0x18 ;
+                    countT time1TrueStart  =   epochTrue       << 0x18 ;
+
+                    //U:: PROD: countT epochUse  = ( timeN1 - 2 * TOCK ) >> 0x18 ;         //U:: "2 * TOCK": ALLOW 2 TOCKS FOR THE BGP SYSTEM TO ESTABLISH CONNECTIVITY USING EACH NEW PREFIX BETWEEN ME (CLIENT) AND THE SERVER
+                                countT epochUse  = ( timeN1 - 8 * TOCK ) >> 0x18 ;         //U:: TO FIND A BUG
+
+
+                                countT epochTrue =   timeN1              >> 0x18 ;         //U:: TO FIND A BUG
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
@@ -199,8 +210,8 @@ DONE( tmWorkF )
                 ZE( countT , cStompData        ) ;
                 ZE( countT , cStompControl     ) ;
 
-                ZE( countT , idEpoch    ) ;
-                ZE( countT , epochLath ) ;
+                ZE( countT , idEpoch      ) ;
+                ZE( countT , epochUseLath ) ;
                 TN( tUnderScore , "_" ) ;
                 TN( tb4 , "    " ) ;
 

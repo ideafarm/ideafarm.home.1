@@ -18206,6 +18206,18 @@ if cBitsP is f then 01 bits is indicated
     }
 
 
+#define CONoUTrAW3F(post1P,cP,post2P)                                                                                       \
+                                                                                                                            \
+    {                                                                                                                       \
+        OStEXT(   ostoBuf , 0x140 )                                                                                         \
+        OStEXTA(  ostoBuf , post1P ) ;                                                                                      \
+        OStEXTCF( ostoBuf , cP , 0 ) ;                                                                                      \
+        OStEXTA(  ostoBuf , post2P ) ;                                                                                      \
+        thirdC::dosWriteStdOutIF( ostoBuf ) ;                                                                               \
+    }
+
+
+
 //
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.

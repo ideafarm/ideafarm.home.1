@@ -71,7 +71,9 @@ DONE( tmWorkF )
                                 )
                                     !pcap_setfilter( poshNic , &byteCodes )
                                     &&
-                                    !pcap_compile( poshNic , &byteCodes , "icmp6[icmp6type] = icmp6-neighborsolicit or icmp6[icmp6type] = icmp6-neighboradvert" , 1 , 0 )
+                                    //!pcap_compile( poshNic , &byteCodes , "icmp6[icmp6type] = icmp6-neighborsolicit or icmp6[icmp6type] = icmp6-neighboradvert" , 1 , 0 )
+                                    //!pcap_compile( poshNic , &byteCodes , "icmp6" , 1 , 0 )
+                                      !pcap_compile( poshNic , &byteCodes , "tcp or icmp6" , 0 , 0 )
                                 (
                                 if
                                 bpf_program byteCodes ;
@@ -414,7 +416,6 @@ countT idPort ;
         }
             }
                 bReport = 1 ;
-
                 tData = T("[type,code,c136Response,c135Query,c136NewResponse,c135NewQuery]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF3(c136Response,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135Query,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ;
 
                 }
@@ -425,7 +426,7 @@ countT idPort ;
 
                 icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
             {
-            /*else*/ if( pIcmpv6 )
+            else if( pIcmpv6 )
             //}
             //    etThread.delF( tin0P , psttData ) ;
             //    tData = T(psttData) ;
@@ -454,50 +455,51 @@ countT idPort ;
             //    udpHeadRawS udp = *pUdp ;
             //{
             //else if( pUdp )
-            //}
-            //    etThread.delF( tin0P , psttData ) ;
-            //    tData = T(psttData) ;
-            //
-            //    }
-            //        pbd ++ ;
-            //        }
-            //            etThread.strFuseF( tin0P , psttData , T(post2) ) ;
-            //            osTextT post2[] = { *pbd , 0 } ;
-            //        {
-            //        if( *pbd >= 0x20 && *pbd < 0x7e )
-            //    {
-            //    while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
-            //    const byteT* pbd = pbData ;
-            //
-            //    etThread.strMakeF( tin0P , LF , psttData , 0 , cbData > TUCK ? TUCK : cbData ) ; ___( psttData ) ;
-            //    ZE( strokeS* , psttData ) ;
-            //
-            //    countT cbData = pbDataEnd - pbData ;
-            //    const byteT* pbData    = (byteT*)( (countT*)pTcp + tcp.u.swabbed.hCounts ) ;
-            //
-            //    idpDestination = tcp.u.swabbed.idpDestination ;
-            //    idpSource      = tcp.u.swabbed.idpSource      ;
-            //
-            //    }
-            //        idSerialExpected = tcp.u.swabbed.idSerialExpected ;
-            //        bACK = 1 ;
-            //    {
-            //    if( tcp.u.swabbed.bACK )
-            //    idSerial = tcp.u.swabbed.idSerial ;
-            //
-            //    tFlags += tb + ( tcp.u.swabbed.bFIN ? tFINoN : tFINoFF ) ;
-            //    tFlags += tb + ( tcp.u.swabbed.bSYN ? tSYNoN : tSYNoFF ) ;
-            //    tFlags += tb + ( tcp.u.swabbed.bRST ? tRSToN : tRSToFF ) ;
-            //    tFlags += tb + ( tcp.u.swabbed.bPSH ? tPSHoN : tPSHoFF ) ;
-            //    tFlags += tb + ( tcp.u.swabbed.bACK ? tACKoN : tACKoFF ) ;
-            //    tFlags += tb + ( tcp.u.swabbed.bURG ? tURGoN : tURGoFF ) ;
-            //    tFlags += tb + ( tcp.u.swabbed.bECE ? tECEoN : tECEoFF ) ;
-            //    tFlags +=        tcp.u.swabbed.bCWR ? tCWRoN : tCWRoFF   ;
-            //
-            //    tcp.swabF() ;
-            //    tcpHeadRawS tcp = *pTcp ;
-            //{
-            //if( pTcp )
+            }
+                bReport = 1 ;
+                etThread.delF( tin0P , psttData ) ;
+                tData = T(psttData) ;
+            
+                }
+                    pbd ++ ;
+                    }
+                        etThread.strFuseF( tin0P , psttData , T(post2) ) ;
+                        osTextT post2[] = { *pbd , 0 } ;
+                    {
+                    if( *pbd >= 0x20 && *pbd < 0x7e )
+                {
+                while( psttData[ 2 ].idAdam && pbd < pbDataEnd )
+                const byteT* pbd = pbData ;
+            
+                etThread.strMakeF( tin0P , LF , psttData , 0 , cbData > TUCK ? TUCK : cbData ) ; ___( psttData ) ;
+                ZE( strokeS* , psttData ) ;
+            
+                countT cbData = pbDataEnd - pbData ;
+                const byteT* pbData    = (byteT*)( (countT*)pTcp + tcp.u.swabbed.hCounts ) ;
+            
+                idpDestination = tcp.u.swabbed.idpDestination ;
+                idpSource      = tcp.u.swabbed.idpSource      ;
+            
+                }
+                    idSerialExpected = tcp.u.swabbed.idSerialExpected ;
+                    bACK = 1 ;
+                {
+                if( tcp.u.swabbed.bACK )
+                idSerial = tcp.u.swabbed.idSerial ;
+            
+                tFlags += tb + ( tcp.u.swabbed.bFIN ? tFINoN : tFINoFF ) ;
+                tFlags += tb + ( tcp.u.swabbed.bSYN ? tSYNoN : tSYNoFF ) ;
+                tFlags += tb + ( tcp.u.swabbed.bRST ? tRSToN : tRSToFF ) ;
+                tFlags += tb + ( tcp.u.swabbed.bPSH ? tPSHoN : tPSHoFF ) ;
+                tFlags += tb + ( tcp.u.swabbed.bACK ? tACKoN : tACKoFF ) ;
+                tFlags += tb + ( tcp.u.swabbed.bURG ? tURGoN : tURGoFF ) ;
+                tFlags += tb + ( tcp.u.swabbed.bECE ? tECEoN : tECEoFF ) ;
+                tFlags +=        tcp.u.swabbed.bCWR ? tCWRoN : tCWRoFF   ;
+            
+                tcp.swabF() ;
+                tcpHeadRawS tcp = *pTcp ;
+            {
+            if( pTcp )
 
             }
                 }
