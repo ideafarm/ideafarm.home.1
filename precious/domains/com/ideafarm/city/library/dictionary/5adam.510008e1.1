@@ -37,12 +37,11 @@ DONE( tmWorkF )
                             }
                                 }
                                     }
-                                        etRock.traceF( tin0P , T("napped") ) ;
                                         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-                                        etRock.traceF( tin0P , T("napping [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                         if( c135NewQuery > 0x10 && c135NewQuery >> 1 > c136NewResponse ) etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
 
+                                        if( scDone > 0 ) etRock.traceF( tin0P , T("[scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
                                         //cNewInterruptions = 0 ;
 
