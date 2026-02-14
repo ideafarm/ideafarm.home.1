@@ -68,15 +68,15 @@ DONE( tmWorkF )
                                     ZE( sCountT , timeS2 ) ;
                                     ZE( countT  , timeS1 ) ;
                                 {
-                                //)
-                                //    !pcap_setfilter( poshNic , &byteCodes )
-                                //    &&
-                                //    //!pcap_compile( poshNic , &byteCodes , "icmp6[icmp6type] = icmp6-neighborsolicit or icmp6[icmp6type] = icmp6-neighboradvert" , 1 , 0 )
-                                //    //!pcap_compile( poshNic , &byteCodes , "icmp6" , 1 , 0 )
-                                //      !pcap_compile( poshNic , &byteCodes , "tcp or icmp6" , 0 , 0 )
-                                //(
-                                //if
-                                //bpf_program byteCodes ;
+                                )
+                                    !pcap_setfilter( poshNic , &byteCodes )
+                                    &&
+                                    //!pcap_compile( poshNic , &byteCodes , "icmp6[icmp6type] = icmp6-neighborsolicit or icmp6[icmp6type] = icmp6-neighboradvert" , 1 , 0 )
+                                    //!pcap_compile( poshNic , &byteCodes , "icmp6" , 1 , 0 )
+                                      !pcap_compile( poshNic , &byteCodes , "tcp or icmp6" , 0 , 0 )
+                                (
+                                if
+                                bpf_program byteCodes ;
     
                                 pcapCBF_p_tFINoN      = &tFINoN      ;
                                 pcapCBF_p_tFINoFF     = &tFINoFF     ;
