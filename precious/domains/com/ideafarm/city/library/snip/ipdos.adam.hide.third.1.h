@@ -1,4 +1,9 @@
 
+#define ifcIDtYPErOUTE_DATA                     1
+#define ifcIDtYPErOUTE_CONTROL                  2
+#define ifcIDtYPErOUTE_DECOYbGPtABLE            3
+#define ifcIDtYPErOUTE_DECOYsUBSCRIBER          4
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"

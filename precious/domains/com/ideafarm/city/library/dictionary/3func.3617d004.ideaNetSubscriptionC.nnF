@@ -53,13 +53,21 @@
 
         countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
 
-        ;
-            : hashF( postSecretData    , sizeof postSecretData    - 1 , epochP )
-            ? hashF( postSecretControl , sizeof postSecretControl - 1 , epochP )
-        countT seed = bControlPrefixP 
-        
-        osTextT postSecretData[]    = "3KCV" "C3nQ" "B5WB" "Z5KK" "8ezG" "3KBd" "xNLm" "fSDF" ;
-        osTextT postSecretControl[] = "wuev" "6YA5" "VkMD" "3A9f" "jLZ3" "eq2A" "xtFs" "xn7E" ;
+        countT seed = hashF( pbSecretUse , cbSecretUse , epochP ) ;
+
+        }
+            case ifcIDtYPErOUTE_DECOYsUBSCRIBER : pbSecretUse = pbSecretP          ; cbSecretUse = cbSecretP                     ;
+            case ifcIDtYPErOUTE_DECOYbGPtABLE   : pbSecretUse = postSecretDecoyBgp ; cbSecretUse = sizeof postSecretDecoyBgp - 1 ;
+            case ifcIDtYPErOUTE_CONTROL         : pbSecretUse = postSecretControl  ; cbSecretUse = sizeof postSecretControl  - 1 ;
+            case ifcIDtYPErOUTE_DATA            : pbSecretUse = postSecretData     ; cbSecretUse = sizeof postSecretData     - 1 ;
+        {
+        switch( idTypeRouteP )
+        ZE( countT       , cbSecretUse ) ;
+        ZE( const byteT* , pbSecretUse ) ;
+
+        osTextT postSecretDecoyBgp[] = "JzfK" "GTgR" "qQ2G" "nFt4" "eBX8" "xVHh" "8hub" "HgdG" ;
+        osTextT postSecretControl[]  = "wuev" "6YA5" "VkMD" "3A9f" "jLZ3" "eq2A" "xtFs" "xn7E" ;
+        osTextT postSecretData[]     = "3KCV" "C3nQ" "B5WB" "Z5KK" "8ezG" "3KBd" "xNLm" "fSDF" ;
     {
 
     }
@@ -84,13 +92,24 @@
 
     }
         if( POOP ) return nicNameC() ;
+        }
+            __NZ( cbSecretP ) ;
+            __NZ( pbSecretP ) ;
+        {
+        else
+        }
+            __Z( cbSecretP ) ;
+            __Z( pbSecretP ) ;
+        {
+        if( idTypeRouteP == ifcIDtYPErOUTE_DECOYsUBSCRIBER )
+        __Z( idTypeRouteP ) ;
         __( idBook - 1 ) ;                  // TO REDUCE THE NUMBER OF IPV6 ADDRESSES THAT web1 MUST HAVE, EACH SUBSCRIBER USES, TO ACCESS ALL OF HIS BOOKS, THE VALUE THAT I RETURN FOR HIS BOOK 1
         __NZ( fieldsP ) ;
         if( POOP ) return nicNameC() ;
     {
     IFbEcAREFUL
 {
-/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT epochP , ideaNetIpv6FieldsS& fieldsP , const boolT bControlPrefixP )/*1*/
+/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT epochP , ideaNetIpv6FieldsS& fieldsP , const countT idTypeRouteP , const byteT* const pbSecretP , const countT cbSecretP )/*1*/
 /**/
 */
  it is illegal to call me for an instance that has an idBook other than 1
