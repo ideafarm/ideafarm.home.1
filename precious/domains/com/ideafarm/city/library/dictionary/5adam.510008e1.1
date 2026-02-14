@@ -39,7 +39,34 @@ DONE( tmWorkF )
                                     }
                                         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 
-                                        if( c135NewQuery > 0x10 && c135NewQuery >> 1 > c136NewResponse ) etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
+                                        }
+                                            }
+                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/")+tTo , tSubject+tBody ) ;
+
+                                                TN( tTo      , "factoryreports@ideafarm.com" ) ;
+                                                TN( tb4      , "    " ) ;
+                                                TN( tBody    , "IDEAnETgEIGERcOUNTER has noticed that many unanswered ICMPv6 host solicitations are arriving.\r\n\r\n" ) ;
+                                                TN( tSubject , "Subject: Flood attack detected.\r\n" ) ;
+                                            {
+                                            if( !( idNotifyLath ++ ) )
+                                                            
+                                            etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
+                                        {
+                                        else
+                                        }
+                                            }
+                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/")+tTo , tSubject+tBody ) ;
+
+                                                TN( tTo      , "factoryreports@ideafarm.com" ) ;
+                                                TN( tb4      , "    " ) ;
+                                                TN( tBody    , "IDEAnETgEIGERcOUNTER has noticed that almost all ICMPv6 host solicitations are being answered\r\nso the attack appears to have ended.\r\n\r\n" ) ;
+                                                TN( tSubject , "Subject: End of flood attack detected.\r\n" ) ;
+
+                                                idNotifyLath = 0 ;
+                                            {
+                                            if( idNotifyLath )
+                                        {
+                                        if( c135NewQuery <= 0x10 || c135NewQuery >> 1 <= c136NewResponse )
 
                                         if( scDone > 0 ) etRock.traceF( tin0P , T("[scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
@@ -61,6 +88,7 @@ DONE( tmWorkF )
                                         ZE( countT  , timeN1 ) ;
                                     {
                                     while( !ether )
+                                    ZE( countT , idNotifyLath ) ;
                                     sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
 
                                     etThread.osTimeNowF( tin0P , timeS1 , timeS2 ) ;
