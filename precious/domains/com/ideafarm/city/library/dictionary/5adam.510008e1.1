@@ -38,23 +38,11 @@ DONE( tmWorkF )
                                 }
                                     }
                                         etRock.traceF( tin0P , T("napped") ) ;
-                                        ++ s ; ether.osSleepF( tin0P , TOCK << 4 ) ;
+                                        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
                                         etRock.traceF( tin0P , T("napping [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                         if( c135NewQuery > 0x10 && c135NewQuery >> 1 > c136NewResponse ) etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
 
-                                        //}
-                                        //    etRock.traceF( tin0P , T("pcap_dispatch to finish the buffer contents [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                        //    scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
-                                        //
-                                        //    }
-                                        //        ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
-                                        //    {
-                                        //    while( cNewInterruptions % 2 )
-                                        //{
-                                        //if( cNewInterruptions )
-
-                                        etRock.traceF( tin0P , T("pcap_dispatch [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
                                         //cNewInterruptions = 0 ;
 
@@ -75,9 +63,6 @@ DONE( tmWorkF )
                                     {
                                     while( !ether )
                                     sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
-
-                                    //etThread.osThreadF( TaRG2cBsTACK( tmInterruptLoopF , CBsTACKmIN << 1 ) , (countT)poshNic , (countT)&cNewInterruptions ) ;
-                                    //ZE( countT , cNewInterruptions ) ;
 
                                     etThread.osTimeNowF( tin0P , timeS1 , timeS2 ) ;
                                     ZE( sCountT , timeS2 ) ;
@@ -149,10 +134,8 @@ DONE( tmWorkF )
                 if( !rc )
                 rc |= pcap_activate(    poshNic                 ) ;
                 rc |= pcap_setnonblock( poshNic , 1 , postError ) ;
+                rc  = pcap_set_timeout( poshNic , 1000          ) ;
                 char postError[ PCAP_ERRBUF_SIZE ] ;
-
-                //rc = pcap_set_timeout(        poshNic , 2000 ) ;
-                //rc = pcap_set_immediate_mode( poshNic , 1    ) ;
     
                 etRock.traceF( tin0P , T(poshNic?"aok":"nope") ) ;
                 pcap_t* poshNic = pcap_create( pcNic->name , postError ) ;
@@ -165,7 +148,7 @@ DONE( tmWorkF )
             etRock.traceF( tin0P , T("idNic          :    ")+TF2(++idNic,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             TN( tName , pcNic->name ) ;
         {
-        while( pcNic )
+        if( !rc ) while( pcNic )
         ZE( countT , idNic ) ;
         pcNic = pInfo ;
         pcap_if_t* pcNic ;
@@ -283,8 +266,6 @@ DONE( tmWorkF )
     etRock.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
     
-    etThread.osThreadF( TaRG2cBsTACK( tmAcceptF , CBsTACKmIN << 1 ) ) ;
-    
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     ether.osSleepF( tin0P , TIMEnAPdURINGsERVICEsTARTUP ) ;
@@ -311,81 +292,6 @@ DONE( tmInterruptLoopF )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmInterruptLoopF )
-
-DONE( tmAcceptF )
-}
-    etherC::loafIF( tin0P ) ;
-
-    }
-        }
-            thThread.s_writeF( tin0P , handleJob , tSay2 , tSay2.csF( tin0P ) ) ;
-
-            TN( tSay2 , "" ) ; tSay2 = tSay+TF2(idw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
-        {
-        for( countT idw = 1 ; idw <= 8 ; idw ++ )
-
-        TN( tSay , "\r\nhow now brown cow! [idWrite]:    " ) ;
-
-        etThread.traceF( tin0P , T("[nnPeerClient,protocol]:    ")+T(nnPeer)+tb4+T(nnPeer.isIPv4F()?"4   ":"   6") ) ;
-        thThread.s_acceptF( tin0P , handleJob , idPortPeer , nnPeer , handleServer , countTC() ) ;
-        ZE( countT , idPortPeer ) ;
-        nicNameC nnPeer ;
-        handleC handleJob( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
-    {
-
-    etThread.osThreadF( TaRG2cBsTACK( tmClientF , CBsTACKmIN << 1 ) ) ;
-
-    etThread.traceF( tin0P , T("listening [idp]:    ")+TF4(idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) ) ;
-    thThread.s_listenF( tin0P , handleServer ) ;
-    idPort = thThread.s_bindF( tin0P , handleServer ) ;
-    thThread.s_socketIF( tin0P , handleServer ) ;
-    handleC handleServer( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
-
-    TN( tb4 , "    " ) ;
-
-    thirdC& thThread = etThread ;
-{
-if( pTaskP )
-TASK( tmAcceptF )
-
-DONE( tmClientF )
-}
-    }
-        }
-            //etThread.traceF( tin0P , T("received: ")+T(postIn) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-
-            countT cbIn = thScratch.s_readF( tin0P , postIn , sizeof postIn , handleClient , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK , 0 , 0 , ifcIDmODEsOCKETS_NOTeNCRYPTED ) ;
-        {
-        while( !ether && !POOP )
-
-        osTextT postIn[ TUCK ] ;
-
-        etThread.traceF( tin0P , T("connected") ) ;
-        thScratch.s_connectF( tin0P , handleClient , idPort , nnServer ) ;
-        etThread.traceF( tin0P , T("connecting") ) ;
-
-        etThread.traceF( tin0P , T("client [idp]:    ")+TF4(idpMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) ) ;
-        countT idpMe = thScratch.s_bindF( tin0P , handleClient ) ;
-
-        thScratch.s_socketIF( tin0P , handleClient ) ;
-        handleC handleClient( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
-
-        thirdC& thScratch = *((tin1S&)tin0P).pEtScratch ;
-
-        SCOOPS
-    {
-    IFsCRATCHoK
-
-    nicNameC nnServer = socketC::nicNameIF( tin0P , etThread , T("::1") ) ;
-
-    ether.osSleepF( tin0P , TOCK << 1 ) ;
-
-    thirdC& thThread = etThread ;
-{
-if( pTaskP )
-TASK( tmClientF )
-
-countT idPort ;
 
 }
     }
