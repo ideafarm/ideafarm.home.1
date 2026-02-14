@@ -71,9 +71,9 @@ DONE( tmWorkF )
                                 )
                                     !pcap_setfilter( poshNic , &byteCodes )
                                     &&
-                                    //!pcap_compile( poshNic , &byteCodes , "icmp6[icmp6type] = icmp6-neighborsolicit or icmp6[icmp6type] = icmp6-neighboradvert" , 1 , 0 )
+                                    !pcap_compile( poshNic , &byteCodes , "icmp6[icmp6type] = icmp6-neighborsolicit or icmp6[icmp6type] = icmp6-neighboradvert" , 1 , 0 )
                                     //!pcap_compile( poshNic , &byteCodes , "icmp6" , 1 , 0 )
-                                      !pcap_compile( poshNic , &byteCodes , "tcp or icmp6" , 0 , 0 )
+                                    //G:!pcap_compile( poshNic , &byteCodes , "tcp or icmp6" , 0 , 0 )
                                 (
                                 if
                                 bpf_program byteCodes ;
