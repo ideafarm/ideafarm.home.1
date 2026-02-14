@@ -43,20 +43,20 @@ DONE( tmWorkF )
 
                                         if( c135NewQuery > 0x10 && c135NewQuery >> 1 > c136NewResponse ) etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
 
-                                        }
-                                            etRock.traceF( tin0P , T("pcap_dispatch to finish the buffer contents [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
+                                        //}
+                                        //    etRock.traceF( tin0P , T("pcap_dispatch to finish the buffer contents [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        //    scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
+                                        //
+                                        //    }
+                                        //        ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+                                        //    {
+                                        //    while( cNewInterruptions % 2 )
+                                        //{
+                                        //if( cNewInterruptions )
 
-                                            }
-                                                ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
-                                            {
-                                            while( cNewInterruptions % 2 )
-                                        {
-                                        if( cNewInterruptions )
-
-                                        etRock.traceF( tin0P , T("pcap_dispatch primary call [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        etRock.traceF( tin0P , T("pcap_dispatch [scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)"foo" ) ;
-                                        cNewInterruptions = 0 ;
+                                        //cNewInterruptions = 0 ;
 
                                         }
                                              c136NewResponse = c135NewQuery = 0 ;
@@ -76,8 +76,8 @@ DONE( tmWorkF )
                                     while( !ether )
                                     sleepC s( tin0P , TAG( TAGiDnULL )  ) ;
 
-                                    etThread.osThreadF( TaRG2cBsTACK( tmInterruptLoopF , CBsTACKmIN << 1 ) , (countT)poshNic , (countT)&cNewInterruptions ) ;
-                                    ZE( countT , cNewInterruptions ) ;
+                                    //etThread.osThreadF( TaRG2cBsTACK( tmInterruptLoopF , CBsTACKmIN << 1 ) , (countT)poshNic , (countT)&cNewInterruptions ) ;
+                                    //ZE( countT , cNewInterruptions ) ;
 
                                     etThread.osTimeNowF( tin0P , timeS1 , timeS2 ) ;
                                     ZE( sCountT , timeS2 ) ;
@@ -147,9 +147,12 @@ DONE( tmWorkF )
                     ZE( int* , pInfo2 ) ;
                 {
                 if( !rc )
-                rc = pcap_activate(           poshNic        ) ;
-                rc = pcap_set_timeout(        poshNic , 2000 ) ;
-              //rc = pcap_set_immediate_mode( poshNic , 1    ) ;
+                rc |= pcap_activate(    poshNic                 ) ;
+                rc |= pcap_setnonblock( poshNic , 1 , postError ) ;
+                char postError[ PCAP_ERRBUF_SIZE ] ;
+
+                //rc = pcap_set_timeout(        poshNic , 2000 ) ;
+                //rc = pcap_set_immediate_mode( poshNic , 1    ) ;
     
                 etRock.traceF( tin0P , T(poshNic?"aok":"nope") ) ;
                 pcap_t* poshNic = pcap_create( pcNic->name , postError ) ;

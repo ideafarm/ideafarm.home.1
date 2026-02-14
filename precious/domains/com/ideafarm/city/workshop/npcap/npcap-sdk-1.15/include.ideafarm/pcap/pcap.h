@@ -651,7 +651,8 @@ PCAP_AVAILABLE_0_7
 PCAP_API int	pcap_getnonblock(pcap_t *, char *);
 
 PCAP_AVAILABLE_0_7
-PCAP_API int	pcap_setnonblock(pcap_t *, int, char *);
+//PCAP_API int         pcap_setnonblock(pcap_t *, int, char *);
+           int __cdecl pcap_setnonblock(pcap_t *, int, char *);
 
 PCAP_AVAILABLE_0_9
 PCAP_API int	pcap_inject(pcap_t *, const void *, size_t);
