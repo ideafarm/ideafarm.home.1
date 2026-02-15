@@ -65,58 +65,65 @@ DONE( tmWorkF )
                 }
                     while( ~hWalk ) ;
                     }
-                        tSay += tImage3+T(nnWo)+tImage4BitsVia+tEpoch+tImage4DecoyBgp ;
+                        tSay += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4DecoyBgp ;
                         etThread.traceF( tin0P , T("decoyBgp    [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayDecoyBgp.downF( tin0P , hWalk ) ;
+                        tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
                     {
                     do
                     handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    countT epochPlate = epoch + 1 - stNnSubnetSayDecoyBgp ;
                 {
                 if( stNnSubnetSayDecoyBgp )
 
                 }
                     while( ~hWalk ) ;
                     }
-                        tSay += tImage3+T(nnWo)+tImage4BitsVia+tEpoch+tImage4Data ;
+                        tSay += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4Data ;
                         etThread.traceF( tin0P , T("data        [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayData.downF( tin0P , hWalk ) ;
+                        tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
                     {
                     do
                     handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    countT epochPlate = epoch + 1 - stNnSubnetSayData ;
                 {
                 if( stNnSubnetSayData )
 
                 }
                     while( ~hWalk ) ;
                     }
-                        tSay += tImage3+T(nnWo)+tImage4BitsVia+tEpoch+tImage4Control ;
+                        tSay += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4Control ;
                         etThread.traceF( tin0P , T("control     [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayControl.downF( tin0P , hWalk ) ;
+                        tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
                     {
                     do
                     handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    countT epochPlate = epoch + 1 - stNnSubnetSayControl ;
                 {
                 if( stNnSubnetSayControl )
                 etThread.traceF( tin0P , T("subnets to advertise (begin)" DASH79) ) ;
+                TN( tEpochPlate , "" ) ;
 
                 TN( tSay , "" ) ; tSay = tImage1+tBgpPassword+tImage2 ;
             {
             if( cChange )
 
             }
-                stNnSubnetSayDecoyBgp.purgeF( tin0P , 4 ) ;
+                stNnSubnetSayDecoyBgp.purgeF( tin0P , CePOCHSkEEP ) ;
                 stNnSubnetSayDecoyBgp << nnSubnet48DecoyBgp ;
                 cChange ++ ;
             {
             if( nnSubnet48DecoyBgpLath != nnSubnet48DecoyBgp )
             }
-                stNnSubnetSayData.purgeF( tin0P , 4 ) ;
+                stNnSubnetSayData.purgeF( tin0P , CePOCHSkEEP ) ;
                 stNnSubnetSayData << nnSubnet48Data ;
                 cChange ++ ;
             {
             if( nnSubnet48DataLath != nnSubnet48Data )
             }
-                stNnSubnetSayControl.purgeF( tin0P , 4 ) ;      // MUST KEEP EACH ROUTE FOR ENOUGH TIME TO NOT TRIGGER ROUTE FLAPPING DETECTION ; FUTURE CODE CAN USE THESE ROUTES AS ALTERNATIVES DURING AN ATTACK
+                stNnSubnetSayControl.purgeF( tin0P , CePOCHSkEEP ) ;
                 stNnSubnetSayControl << nnSubnet48Control ;
                 cChange ++ ;
             {
@@ -135,8 +142,6 @@ DONE( tmWorkF )
             const nicNameC nnNowControl  = woSub.nnF( tin0P , epoch , fnu1 , ifcIDtYPErOUTE_CONTROL       ) ;
             ideaNetIpv6FieldsS fnu2 ;
             ideaNetIpv6FieldsS fnu1 ;
-
-            TN( tEpoch , "" ) ; tEpoch = TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 
             epochLath = epoch ;
         {
@@ -270,6 +275,9 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+#define CePOCHSkEEP ( 4 )
+// MUST KEEP EACH ROUTE FOR ENOUGH TIME TO NOT TRIGGER ROUTE FLAPPING DETECTION ; FUTURE CODE CAN USE THESE ROUTES AS ALTERNATIVES DURING AN ATTACK
 
 /*1*/WAKEhIDE( "ifcIDaDAM_IDEAnETcONTROLrOUTER" )/*1*/
 /**/
