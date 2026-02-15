@@ -66,7 +66,7 @@ DONE( tmWorkF )
                     while( ~hWalk ) ;
                     }
                         tSay += tImage3+T(nnWo)+tImage4DecoyBgp ;
-                        etThread.traceF( tin0P , T("data    [nnWo]:    ")+T(nnWo)+T("/48") ) ;
+                        etThread.traceF( tin0P , T("decoyBgp    [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayDecoyBgp.downF( tin0P , hWalk ) ;
                     {
                     do
@@ -78,7 +78,7 @@ DONE( tmWorkF )
                     while( ~hWalk ) ;
                     }
                         tSay += tImage3+T(nnWo)+tImage4Data ;
-                        etThread.traceF( tin0P , T("data    [nnWo]:    ")+T(nnWo)+T("/48") ) ;
+                        etThread.traceF( tin0P , T("data        [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayData.downF( tin0P , hWalk ) ;
                     {
                     do
@@ -90,7 +90,7 @@ DONE( tmWorkF )
                     while( ~hWalk ) ;
                     }
                         tSay += tImage3+T(nnWo)+tImage4Control ;
-                        etThread.traceF( tin0P , T("control [nnWo]:    ")+T(nnWo)+T("/48") ) ;
+                        etThread.traceF( tin0P , T("control     [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayControl.downF( tin0P , hWalk ) ;
                     {
                     do
@@ -104,19 +104,19 @@ DONE( tmWorkF )
             if( cChange )
 
             }
-                stNnSubnetSayDecoyBgp.purgeF( tin0P , 4 ) ;
+                stNnSubnetSayDecoyBgp.purgeF( tin0P , 1 ) ;
                 stNnSubnetSayDecoyBgp << nnSubnet48DecoyBgp ;
                 cChange ++ ;
             {
             if( nnSubnet48DecoyBgpLath != nnSubnet48DecoyBgp )
             }
-                stNnSubnetSayData.purgeF( tin0P , 4 ) ;
+                stNnSubnetSayData.purgeF( tin0P , 1 ) ;
                 stNnSubnetSayData << nnSubnet48Data ;
                 cChange ++ ;
             {
             if( nnSubnet48DataLath != nnSubnet48Data )
             }
-                stNnSubnetSayControl.purgeF( tin0P , 4 ) ;
+                stNnSubnetSayControl.purgeF( tin0P , 1 ) ;      //U:: 1 DURING CRAFTWORK ; PERHAPS 2 OR MORE IN PRODUCTION
                 stNnSubnetSayControl << nnSubnet48Control ;
                 cChange ++ ;
             {
