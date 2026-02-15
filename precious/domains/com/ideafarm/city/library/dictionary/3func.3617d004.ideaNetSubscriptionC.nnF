@@ -56,10 +56,10 @@
         countT seed = hashF( pbSecretUse , cbSecretUse , epochP ) ;
 
         }
-            case ifcIDtYPErOUTE_DECOYsUBSCRIBER : pbSecretUse = pbSecretP          ; cbSecretUse = cbSecretP                     ;
-            case ifcIDtYPErOUTE_DECOYbGPtABLE   : pbSecretUse = postSecretDecoyBgp ; cbSecretUse = sizeof postSecretDecoyBgp - 1 ;
-            case ifcIDtYPErOUTE_CONTROL         : pbSecretUse = postSecretControl  ; cbSecretUse = sizeof postSecretControl  - 1 ;
-            case ifcIDtYPErOUTE_DATA            : pbSecretUse = postSecretData     ; cbSecretUse = sizeof postSecretData     - 1 ;
+            case ifcIDtYPErOUTE_DECOYsUBSCRIBER : { pbSecretUse = pbSecretP          ; cbSecretUse = cbSecretP                     ; break ; }
+            case ifcIDtYPErOUTE_DECOYbGPtABLE   : { pbSecretUse = postSecretDecoyBgp ; cbSecretUse = sizeof postSecretDecoyBgp - 1 ; break ; }
+            case ifcIDtYPErOUTE_CONTROL         : { pbSecretUse = postSecretControl  ; cbSecretUse = sizeof postSecretControl  - 1 ; break ; }
+            case ifcIDtYPErOUTE_DATA            : { pbSecretUse = postSecretData     ; cbSecretUse = sizeof postSecretData     - 1 ; break ; }
         {
         switch( idTypeRouteP )
         ZE( countT       , cbSecretUse ) ;
