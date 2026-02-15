@@ -178,18 +178,8 @@ DONE( tmWorkF )
                     {
                     if( epochUseLath != epochUse )
 
-                    CONoUTrAW3( "\r                                      \rTocks remaining in epoch:    " , tockRemain , "." ) ;
-
-                    countT tockRemain      = time1TrueRemain >> 0x10 ;
-                    countT time1TrueRemain = time1TrueEnd - timeN1 ;
-                    countT time1TrueEnd    = ( epochTrue + 1 ) << 0x18 ;
-                    countT time1TrueStart  =   epochTrue       << 0x18 ;
-
                     //U:: PROD: countT epochUse  = ( timeN1 - 2 * TOCK ) >> 0x18 ;         //U:: "2 * TOCK": ALLOW 2 TOCKS FOR THE BGP SYSTEM TO ESTABLISH CONNECTIVITY USING EACH NEW PREFIX BETWEEN ME (CLIENT) AND THE SERVER
                                 countT epochUse  = ( timeN1 - 8 * TOCK ) >> 0x18 ;         //U:: TO FIND A BUG
-
-
-                                countT epochTrue =   timeN1              >> 0x18 ;         //U:: TO FIND A BUG
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
@@ -215,6 +205,8 @@ DONE( tmWorkF )
                 TN( tUnderScore , "_" ) ;
                 TN( tb4 , "    " ) ;
 
+                etThread.osThreadF( TaRG2cBsTACK( tmClockF , CBsTACKmIN << 2 ) ) ;
+
                 }
                     }
                         etRock.traceF( tin0P , T("I am ready to serve web pages (only to you).  Enter the 'b' command to begin.\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
@@ -228,7 +220,7 @@ DONE( tmWorkF )
                 boolT bWoth = 1 ;
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                etThread.osThreadF( TaRG2cBsTACK( tmHearF , TICK >> 2 ) , (countT)&flagsMode , (countT)&cTestRequestsPending ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+                etThread.osThreadF( TaRG2cBsTACK( tmHearF , CBsTACKmIN << 2 ) , (countT)&flagsMode , (countT)&cTestRequestsPending ) ;
             {
             else
             }
@@ -310,6 +302,31 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+DONE( tmClockF )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+
+        CONoUTrAW3( "\r                                      \rTocks remaining in epoch:    " , tockRemain , "." ) ;
+
+        countT tockRemain      = time1TrueRemain >> 0x10 ;
+        countT time1TrueRemain = time1TrueEnd - timeN1 ;
+
+        countT time1TrueEnd    = ( epochTrue + 1 ) << 0x18 ;
+        countT time1TrueStart  =   epochTrue       << 0x18 ;
+
+        countT epochTrue = timeN1 >> 0x18 ;
+
+        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+        ZE( sCountT , timeN2 ) ;
+        ZE( countT  , timeN1 ) ;
+    {
+    while( !ether )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+{
+if( pTaskP )
+TASK( tmClockF )
 
 osTextT postSoulSubDump[ TUCK << 4 ] ;
 
