@@ -20,8 +20,9 @@ DONE( tmWorkF )
         ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
 
         }
-            nnSubnet48DataLath    = nnSubnet48Data    ;
-            nnSubnet48ControlLath = nnSubnet48Control ;
+            nnSubnet48DecoyBgpLath = nnSubnet48DecoyBgp ;
+            nnSubnet48DataLath     = nnSubnet48Data     ;
+            nnSubnet48ControlLath  = nnSubnet48Control  ;
 
             }
                 //}
@@ -60,6 +61,19 @@ DONE( tmWorkF )
                 tSay += tImage5 ;
 
                 etThread.traceF( tin0P , T("subnets to advertise   (end)" DASH79) ) ;
+
+                }
+                    while( ~hWalk ) ;
+                    }
+                        tSay += tImage3+T(nnWo)+tImage4DecoyBgp ;
+                        etThread.traceF( tin0P , T("data    [nnWo]:    ")+T(nnWo)+T("/48") ) ;
+                        nicNameC& nnWo = (nicNameC&)stNnSubnetSayDecoyBgp.downF( tin0P , hWalk ) ;
+                    {
+                    do
+                    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                {
+                if( stNnSubnetSayDecoyBgp )
+
                 }
                     while( ~hWalk ) ;
                     }
@@ -90,6 +104,12 @@ DONE( tmWorkF )
             if( cChange )
 
             }
+                stNnSubnetSayDecoyBgp.purgeF( tin0P , 4 ) ;
+                stNnSubnetSayDecoyBgp << nnSubnet48DecoyBgp ;
+                cChange ++ ;
+            {
+            if( nnSubnet48DecoyBgpLath != nnSubnet48DecoyBgp )
+            }
                 stNnSubnetSayData.purgeF( tin0P , 4 ) ;
                 stNnSubnetSayData << nnSubnet48Data ;
                 cChange ++ ;
@@ -103,13 +123,16 @@ DONE( tmWorkF )
             if( nnSubnet48ControlLath != nnSubnet48Control )
             ZE( countT , cChange ) ;
 
-            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowData,nnAdvertise]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   )+tb4+T(nnSubnet48Data   ) , flTRACE_NOpREFIX ) ;
-            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowControl,nnAdvertise]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl)+tb4+T(nnSubnet48Control) , flTRACE_NOpREFIX ) ;
+            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowDecoyBgp,nnAdvertise]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowDecoyBgp)+tb4+T(nnSubnet48DecoyBgp) , flTRACE_NOpREFIX ) ;
+            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowData,nnAdvertise]:        ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData    )+tb4+T(nnSubnet48Data    ) , flTRACE_NOpREFIX ) ;
+            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowControl,nnAdvertise]:     ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl )+tb4+T(nnSubnet48Control ) , flTRACE_NOpREFIX ) ;
 
-            nicNameC nnSubnet48Data     = nnNowData(    0x30 ) ;
-            nicNameC nnSubnet48Control  = nnNowControl( 0x30 ) ;
-            const nicNameC nnNowData    = woSub.nnF( tin0P , epoch                                ) ;
-            const nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_CONTROL ) ;
+            nicNameC nnSubnet48DecoyBgp  = nnNowDecoyBgp(    0x30 ) ;
+            nicNameC nnSubnet48Data      = nnNowData(        0x30 ) ;
+            nicNameC nnSubnet48Control   = nnNowControl(     0x30 ) ;
+            const nicNameC nnNowDecoyBgp = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_DECOYbGPtABLE ) ;
+            const nicNameC nnNowData     = woSub.nnF( tin0P , epoch                                      ) ;
+            const nicNameC nnNowControl  = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_CONTROL       ) ;
             ideaNetIpv6FieldsS fnu ;
 
             epochLath = epoch ;
@@ -128,10 +151,12 @@ DONE( tmWorkF )
         if( !epochLath )
     {
     while( !ether )
-    stackC               stNnSubnetSayData(    tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
-    stackC               stNnSubnetSayControl( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
-    nicNameC             nnSubnet48DataLath    ;
-    nicNameC             nnSubnet48ControlLath ;
+    stackC               stNnSubnetSayDecoyBgp( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    stackC               stNnSubnetSayData(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    stackC               stNnSubnetSayControl(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    nicNameC             nnSubnet48DecoyBgpLath ;
+    nicNameC             nnSubnet48DataLath     ;
+    nicNameC             nnSubnet48ControlLath  ;
     ideaNetSubscriptionC woSub( tin0P , etThread , 1 , 1 , T("foo") , T("goo@hoo") ) ;
     sleepC               s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , epochLath ) ;
@@ -169,6 +194,12 @@ DONE( tmWorkF )
         "}\n"
 
     TN( tImage5 ,
+
+    ) ;
+
+        "/48 via 2001:19f0:ac00:4406:5400:05ff:fee9:27e6 ;    # DECOYbGP\n"
+
+    TN( tImage4DecoyBgp ,
 
     ) ;
 
