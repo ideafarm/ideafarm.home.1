@@ -168,9 +168,9 @@ DONE( tmWorkF )
                         etRock.traceF( tin0P , TT(timeN1,timeN2)+ T(" [ipv6Control,ipv6Data]:    ")+tIpv6NowControl+tb4+tIpv6NowData , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                         }
-                            etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [tim1Sticky]:    ")+TF2(time1Sticky,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-//                            time1Sticky = (countT)( ( (count04T)time1PerEpoch * TUCK ) / perTuckSticky ) ;                              // NEVER  STICKY FOR THE LATH 01 PERTUCK OF THE EPOCH, TO ENSURE THAT EVERY CLIENT HAS SOME ACCESS TO THE CURRENT PREFIX
 time1Sticky = TOCK << 1 ;
+                            etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [tim1Sticky,perTuckSticky]:    ")+TF2(time1Sticky,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSticky,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                            time1Sticky = (countT)( ( (count04T)time1PerEpoch * TUCK ) / perTuckSticky ) ;                              // NEVER  STICKY FOR THE LATH 01 PERTUCK OF THE EPOCH, TO ENSURE THAT EVERY CLIENT HAS SOME ACCESS TO THE CURRENT PREFIX
                             count04T perTuckSticky = 0x10 + ipv6FieldsControl.hostRandom % ( TUCK - 0x20 ) ;        /* [0x10,0xf0) */   // ALWAYS STICKY FOR THE WOTH 01 PERTUCK OF THE EPOCH, TO ALLOW 2 TOCKS FOR THE BGP SYSTEM TO ESTABLISH CONNECTIVITY USING EACH NEW PREFIX BETWEEN ME (CLIENT) AND THE SERVER
                         {
                         else
