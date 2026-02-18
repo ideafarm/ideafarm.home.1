@@ -1115,7 +1115,7 @@ DONE( tmRandomizeWebhookDomainPrefixF )
                     //etRock.traceF( tin0P , T("request:") ) ;
 
                     mySettingsUse.grabMe.ungrabF( tin0P ) ;
-                    TN( tSay , "" ) ; tSay = T("POST ")+tPathEndpoint+mySettingsUse.tStripeIdObjectWebhookDestinationTest+T("?url=https%3A%2F%2F")+tRandomLabelPrefixP+T("-3DFg.hidden.ideafarm.com%2Fnobot%2Fnotify%2Fstripe.20240206%401123 HTTP/1.1\r\nAuthorization: Bearer ")+mySettingsUse.tStripeApiKeyTest+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
+                    TN( tSay , "" ) ; tSay = T("POST ")+tPathEndpoint+mySettingsUse.tStripeIdObjectWebhookDestinationLive+T("?url=https%3A%2F%2F")+tRandomLabelPrefixP+T("-3DFg.hidden.ideafarm.com%2Fnobot%2Fnotify%2Fstripe.20240206%401123 HTTP/1.1\r\nAuthorization: Bearer ")+mySettingsUse.tStripeApiKeyLive+T("\r\nHost: api.stripe.com\r\nStripe-Version: 2024-06-20\r\n\r\n") ;
                     mySettingsUse.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                     }
@@ -1903,13 +1903,21 @@ TASK( tmFreshSettingsF )
     //etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
     //etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
 
-    //etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tIpGorilla1,tIpDns1,tStripeApiKeyTest,tStripeIdObjectWebhookDestinationTest]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tIpGorilla1+T("\"    \"")+tIpDns1+T("\"    \"")+tStripeApiKeyTest+T("\"    \"")+tStripeIdObjectWebhookDestinationTest ) ;
+    //etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tIpGorilla1,tIpDns1,tStripeApiKeyLive,tStripeApiKeyTest,tStripeIdObjectWebhookDestinationLive,tStripeIdObjectWebhookDestinationTest]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tIpGorilla1+T("\"    \"")+tIpDns1+T("\"    \"")+tStripeApiKeyLive+T("\"    \"")+tStripeApiKeyTest+T("\"    \"")+tStripeIdObjectWebhookDestinationLive+T("\"    \"")+tStripeIdObjectWebhookDestinationTest ) ;
 
     //etRock.traceF( tin0P , T("[tStripeIdObjectWebhookDestinationTest]:    ")+tStripeIdObjectWebhookDestinationTest ) ;
+    //etRock.traceF( tin0P , T("[tStripeIdObjectWebhookDestinationLive]:    ")+tStripeIdObjectWebhookDestinationLive ) ;
     }
         etherMe.delF( tin0P , psttEat ) ;
         tStripeIdObjectWebhookDestinationTest = T(psttEat) ;
         ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.stripe.idobject.webhook.destination.test")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tStripeIdObjectWebhookDestinationLive = T(psttEat) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.stripe.idobject.webhook.destination.live")  ) ; ___( psttEat ) ;
         _IO_
     {
 
@@ -1918,6 +1926,14 @@ TASK( tmFreshSettingsF )
         etherMe.delF( tin0P , psttEat ) ;
         tStripeApiKeyTest = T(psttEat) ;
         ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.stripe.api.key.test")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    //etRock.traceF( tin0P , T("[tStripeApiKeyLive]:    ")+tStripeApiKeyLive ) ;
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tStripeApiKeyLive = T(psttEat) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.stripe.api.key.live")  ) ; ___( psttEat ) ;
         _IO_
     {
 
@@ -2143,7 +2159,11 @@ voidT mySettingsS::zapF( tin0S& tin0P )
     ) ;
         !tStripeIdObjectWebhookDestinationTest.csF( tin0P )
         ||
+        !tStripeIdObjectWebhookDestinationLive.csF( tin0P )
+        ||
         !tStripeApiKeyTest.csF( tin0P )
+        ||
+        !tStripeApiKeyLive.csF( tin0P )
         ||
         !tDomainRootAllowed8.csF( tin0P )
         ||
@@ -2194,7 +2214,9 @@ cDomainRootAllowed(                    0                                        
 cnnSubnetTrusted(                      0                                                                  ) ,
 pnnSubnetTrusted(                      0                                                                  ) ,
 tStripeIdObjectWebhookDestinationTest( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tStripeIdObjectWebhookDestinationLive( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tStripeApiKeyTest(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tStripeApiKeyLive(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tTestTextResponse(                     tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "abcdefgh"               ) ,
 tNnTrusted(                            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
 tDomainRootAllowed8(                   tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
@@ -2425,7 +2447,9 @@ struct gConstS
     textC* const pptDomainRootAllowed[ 8 ]             ;
 
     textC        tStripeIdObjectWebhookDestinationTest ;
+    textC        tStripeIdObjectWebhookDestinationLive ;
     textC        tStripeApiKeyTest                     ;
+    textC        tStripeApiKeyLive                     ;
 
     textC        tTestTextResponse                     ;
 
