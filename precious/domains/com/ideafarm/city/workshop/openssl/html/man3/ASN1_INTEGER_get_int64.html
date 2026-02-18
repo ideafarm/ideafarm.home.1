@@ -29,28 +29,28 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code> #include &lt;openssl/asn1.h&gt;
+<pre><code>#include &lt;openssl/asn1.h&gt;
 
- int ASN1_INTEGER_get_int64(int64_t *pr, const ASN1_INTEGER *a);
- long ASN1_INTEGER_get(const ASN1_INTEGER *a);
+int ASN1_INTEGER_get_int64(int64_t *pr, const ASN1_INTEGER *a);
+long ASN1_INTEGER_get(const ASN1_INTEGER *a);
 
- int ASN1_INTEGER_set_int64(ASN1_INTEGER *a, int64_t r);
- int ASN1_INTEGER_set(const ASN1_INTEGER *a, long v);
+int ASN1_INTEGER_set_int64(ASN1_INTEGER *a, int64_t r);
+int ASN1_INTEGER_set(ASN1_INTEGER *a, long v);
 
- int ASN1_INTEGER_get_uint64(uint64_t *pr, const ASN1_INTEGER *a);
- int ASN1_INTEGER_set_uint64(ASN1_INTEGER *a, uint64_t r);
+int ASN1_INTEGER_get_uint64(uint64_t *pr, const ASN1_INTEGER *a);
+int ASN1_INTEGER_set_uint64(ASN1_INTEGER *a, uint64_t r);
 
- ASN1_INTEGER *BN_to_ASN1_INTEGER(const BIGNUM *bn, ASN1_INTEGER *ai);
- BIGNUM *ASN1_INTEGER_to_BN(const ASN1_INTEGER *ai, BIGNUM *bn);
+ASN1_INTEGER *BN_to_ASN1_INTEGER(const BIGNUM *bn, ASN1_INTEGER *ai);
+BIGNUM *ASN1_INTEGER_to_BN(const ASN1_INTEGER *ai, BIGNUM *bn);
 
- int ASN1_ENUMERATED_get_int64(int64_t *pr, const ASN1_ENUMERATED *a);
- long ASN1_ENUMERATED_get(const ASN1_ENUMERATED *a);
+int ASN1_ENUMERATED_get_int64(int64_t *pr, const ASN1_ENUMERATED *a);
+long ASN1_ENUMERATED_get(const ASN1_ENUMERATED *a);
 
- int ASN1_ENUMERATED_set_int64(ASN1_ENUMERATED *a, int64_t r);
- int ASN1_ENUMERATED_set(ASN1_ENUMERATED *a, long v);
+int ASN1_ENUMERATED_set_int64(ASN1_ENUMERATED *a, int64_t r);
+int ASN1_ENUMERATED_set(ASN1_ENUMERATED *a, long v);
 
- ASN1_ENUMERATED *BN_to_ASN1_ENUMERATED(BIGNUM *bn, ASN1_ENUMERATED *ai);
- BIGNUM *ASN1_ENUMERATED_to_BN(ASN1_ENUMERATED *ai, BIGNUM *bn);</code></pre>
+ASN1_ENUMERATED *BN_to_ASN1_ENUMERATED(const BIGNUM *bn, ASN1_ENUMERATED *ai);
+BIGNUM *ASN1_ENUMERATED_to_BN(const ASN1_ENUMERATED *ai, BIGNUM *bn);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -78,7 +78,7 @@
 
 <h1 id="NOTES">NOTES</h1>
 
-<p>In general an <b>ASN1_INTEGER</b> or <b>ASN1_ENUMERATED</b> type can contain an integer of almost arbitrary size and so cannot always be represented by a C <b>int64_t</b> type. However in many cases (for example version numbers) they represent small integers which can be more easily manipulated if converted to an appropriate C integer type.</p>
+<p>In general an <b>ASN1_INTEGER</b> or <b>ASN1_ENUMERATED</b> type can contain an integer of almost arbitrary size and so cannot always be represented by a C <b>int64_t</b> type. However, in many cases (for example version numbers) they represent small integers which can be more easily manipulated if converted to an appropriate C integer type.</p>
 
 <h1 id="BUGS">BUGS</h1>
 
@@ -96,7 +96,7 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="../man3/ERR_get_error.html">ERR_get_error(3)</a></p>
+<p><a href="https://man7.org/linux/man-pages/man3/ERR_get_error.3.html">ERR_get_error(3)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
@@ -104,7 +104,7 @@
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2015-2018 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2015-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

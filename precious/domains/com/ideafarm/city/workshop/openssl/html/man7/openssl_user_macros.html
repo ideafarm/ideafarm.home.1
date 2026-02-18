@@ -23,7 +23,7 @@
 
 <h1 id="NAME">NAME</h1>
 
-<p>openssl_user_macros, OPENSSL_API_COMPAT - User defined macros</p>
+<p>openssl_user_macros, OPENSSL_API_COMPAT, OPENSSL_NO_DEPRECATED - User defined macros</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -98,20 +98,30 @@
 </dd>
 </dl>
 
-<p>If not set, this macro will default to <code>30000</code>.</p>
+<p>If <b>OPENSSL_API_COMPAT</b> is undefined, this default value is used in its place: <code>40000</code></p>
 
 </dd>
 <dt id="OPENSSL_NO_DEPRECATED"><b>OPENSSL_NO_DEPRECATED</b></dt>
 <dd>
 
-<p>If this macro is defined, all deprecated public symbols in all OpenSSL versions up to and including the version given by <b>OPENSSL_API_COMPAT</b> will be hidden.</p>
+<p>If this macro is defined, all deprecated public symbols in all OpenSSL versions up to and including the version given by <b>OPENSSL_API_COMPAT</b> (or the default value given above, when <b>OPENSSL_API_COMPAT</b> isn&#39;t defined) will be hidden.</p>
+
+</dd>
+<dt id="OPENSSL_ENGINE_STUBS"><b>OPENSSL_ENGINE_STUBS</b></dt>
+<dd>
+
+<p>ENGINE API, as defined in openssl/engine.h, was permanently removed in OpenSSL 4.0.</p>
+
+<p>The user application can use the define <b>OPENSSL_ENGINE_STUBS</b> to enable stub macros for API ENGINE functions. It should temporarily help the easy transition of applications without source code modifications.</p>
+
+<p>Note that all stub macros emulate API function failures; they will not restore the removed API even if the <b>OPENSSL_API_COMPAT</b> define is used.</p>
 
 </dd>
 </dl>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2018-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2018-2021 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

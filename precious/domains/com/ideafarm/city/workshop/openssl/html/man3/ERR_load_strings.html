@@ -26,13 +26,13 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code> #include &lt;openssl/err.h&gt;
+<pre><code>#include &lt;openssl/err.h&gt;
 
- void ERR_load_strings(int lib, ERR_STRING_DATA str[]);
+int ERR_load_strings(int lib, ERR_STRING_DATA *str);
 
- int ERR_get_next_error_library(void);
+int ERR_get_next_error_library(void);
 
- unsigned long ERR_PACK(int lib, int func, int reason);</code></pre>
+unsigned long ERR_PACK(int lib, int func, int reason);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -40,11 +40,11 @@
 
 <p><b>str</b> is an array of error string data:</p>
 
-<pre><code> typedef struct ERR_string_data_st
- {
-     unsigned long error;
-     char *string;
- } ERR_STRING_DATA;</code></pre>
+<pre><code>typedef struct ERR_string_data_st
+{
+    unsigned long error;
+    char *string;
+} ERR_STRING_DATA;</code></pre>
 
 <p>The error code is generated from the library number and a function and reason code: <b>error</b> = ERR_PACK(<b>lib</b>, <b>func</b>, <b>reason</b>). ERR_PACK() is a macro.</p>
 
@@ -54,11 +54,11 @@
 
 <h1 id="RETURN-VALUES">RETURN VALUES</h1>
 
-<p>ERR_load_strings() returns no value. ERR_PACK() return the error code. ERR_get_next_error_library() returns zero on failure, otherwise a new library number.</p>
+<p>ERR_load_strings() returns 1 for success and 0 for failure. ERR_PACK() returns the error code. ERR_get_next_error_library() returns zero on failure, otherwise a new library number.</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="../man3/ERR_load_strings.html">ERR_load_strings(3)</a></p>
+<p><a href="https://man7.org/linux/man-pages/man3/ERR_load_strings.3.html">ERR_load_strings(3)</a></p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 

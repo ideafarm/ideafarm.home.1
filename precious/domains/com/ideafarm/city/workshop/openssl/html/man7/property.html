@@ -45,12 +45,12 @@
 
 <p>A <i>user defined</i> property name is similar, but it <b>must</b> consist of two or more C-style identifiers, separated by periods. The last identifier in the name can be considered the &#39;true&#39; property name, which is prefixed by some sort of &#39;namespace&#39;. Providers for example could include their name in the prefix and use property names like</p>
 
-<pre><code>  &lt;provider_name&gt;.&lt;property_name&gt;
-  &lt;provider_name&gt;.&lt;algorithm_name&gt;.&lt;property_name&gt;</code></pre>
+<pre><code>&lt;provider_name&gt;.&lt;property_name&gt;
+&lt;provider_name&gt;.&lt;algorithm_name&gt;.&lt;property_name&gt;</code></pre>
 
 <h2 id="Properties">Properties</h2>
 
-<p>A <i>property</i> is a <i>name=value</i> pair. A <i>property definition</i> is a sequence of comma separated properties. There can be any number of properties in a definition. For example: &quot;&quot; defines a null property definition; &quot;my.foo=bar&quot; defines a property named <i>my.foo</i> which has a string value <i>bar</i> and &quot;iteration.count=3&quot; defines a property named <i>iteration.count</i> which has a numeric value of <i>3</i>. The full syntax for property definitions appears below.</p>
+<p>A <i>property</i> is a <i>name=value</i> pair. A <i>property definition</i> is a sequence of comma separated properties. There can be any number of properties in a definition, however each name must be unique. For example: &quot;&quot; defines an empty property definition (i.e., no restriction); &quot;my.foo=bar&quot; defines a property named <i>my.foo</i> which has a string value <i>bar</i> and &quot;iteration.count=3&quot; defines a property named <i>iteration.count</i> which has a numeric value of <i>3</i>. The full syntax for property definitions appears below.</p>
 
 <h2 id="Implementations">Implementations</h2>
 
@@ -58,7 +58,7 @@
 
 <h2 id="Queries">Queries</h2>
 
-<p>A <i>property query clause</i> is a single conditional test. For example, &quot;fips=yes&quot;, &quot;provider!=default&quot; or &quot;?iteration.count!=3&quot;. The first two represent mandatory clauses, such clauses <b>must</b> match for any algorithm to even be under consideration. The third clause represents an optional clause. Matching such clauses is not a requirement, but any additional optional match counts in favor of the algorithm. More details about that in the <b>Lookups</b> section. A <i>property query</i> is a sequence of comma separated property query clauses. The full syntax for property queries appears below, but the available syntactic features are:</p>
+<p>A <i>property query clause</i> is a single conditional test. For example, &quot;fips=yes&quot;, &quot;provider!=default&quot; or &quot;?iteration.count=3&quot;. The first two represent mandatory clauses, such clauses <b>must</b> match for any algorithm to even be under consideration. The third clause represents an optional clause. Matching such clauses is not a requirement, but any additional optional match counts in favor of the algorithm. More details about that in the <b>Lookups</b> section. A <i>property query</i> is a sequence of comma separated property query clauses. It is an error if a property name appears in more than one query clause. The full syntax for property queries appears below, but the available syntactic features are:</p>
 
 <ul>
 
@@ -102,17 +102,19 @@
 
 <p>The lexical syntax in EBNF is given by:</p>
 
-<pre><code> Definition     ::= PropertyName ( &#39;=&#39; Value )? 
-                        ( &#39;,&#39; PropertyName ( &#39;=&#39; Value )? )*
- Query          ::= PropertyQuery ( &#39;,&#39; PropertyQuery )*
- PropertyQuery  ::= &#39;-&#39; PropertyName
-                  | &#39;?&#39;? ( PropertyName (( &#39;=&#39; | &#39;!=&#39; ) Value)?)
- Value          ::= NumberLiteral | StringLiteral
- StringLiteral  ::= QuotedString | UnquotedString
- QuotedString   ::= &#39;&quot;&#39; [^&quot;]* &#39;&quot;&#39; | &quot;&#39;&quot; [^&#39;]* &quot;&#39;&quot;
- UnquotedString ::= [^{space},]+
- NumberLiteral  ::= &#39;0&#39; ( [0-7]* | &#39;x&#39; [0-9A-Fa-f]+ ) | &#39;-&#39;? [1-9] [0-9]+
- PropertyName   ::= [A-Z] [A-Z0-9_]* ( &#39;.&#39; [A-Z] [A-Z0-9_]* )*</code></pre>
+<pre><code>Definition     ::= PropertyName ( &#39;=&#39; Value )?
+                       ( &#39;,&#39; PropertyName ( &#39;=&#39; Value )? )*
+Query          ::= PropertyQuery ( &#39;,&#39; PropertyQuery )*
+PropertyQuery  ::= &#39;-&#39; PropertyName
+                 | &#39;?&#39;? ( PropertyName (( &#39;=&#39; | &#39;!=&#39; ) Value)?)
+Value          ::= NumberLiteral | StringLiteral
+StringLiteral  ::= QuotedString | UnquotedString
+QuotedString   ::= &#39;&quot;&#39; [^&quot;]* &#39;&quot;&#39; | &quot;&#39;&quot; [^&#39;]* &quot;&#39;&quot;
+UnquotedString ::= [A-Za-z] [^{space},]+
+NumberLiteral  ::= &#39;0&#39; ( [0-7]* | &#39;x&#39; [0-9A-Fa-f]+ ) | &#39;-&#39;? [1-9] [0-9]+
+PropertyName   ::= [A-Za-z] [A-Za-z0-9_]* ( &#39;.&#39; [A-Za-z] [A-Za-z0-9_]* )*</code></pre>
+
+<p>The flavour of EBNF being used is defined by: <a href="https://www.w3.org/TR/2010/REC-xquery-20101214/#EBNFNotation">https://www.w3.org/TR/2010/REC-xquery-20101214/#EBNFNotation</a>.</p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
@@ -120,7 +122,7 @@
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2019-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2019-2023 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

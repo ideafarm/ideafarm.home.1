@@ -27,17 +27,21 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code> #include &lt;openssl/x509.h&gt;
+<pre><code>#include &lt;openssl/x509.h&gt;
 
- X509 *X509_load_http(const char *url, BIO *bio, BIO *rbio, int timeout);
- X509_CRL *X509_CRL_load_http(const char *url, BIO *bio, BIO *rbio, int timeout);
+X509 *X509_load_http(const char *url, BIO *bio, BIO *rbio, int timeout);
+X509_CRL *X509_CRL_load_http(const char *url, BIO *bio, BIO *rbio, int timeout);</code></pre>
 
- #define X509_http_nbio(url)
- #define X509_CRL_http_nbio(url)</code></pre>
+<p>The following macros have been deprecated since OpenSSL 3.0, and can be hidden entirely by defining <b>OPENSSL_API_COMPAT</b> with a suitable version value, see <a href="https://man7.org/linux/man-pages/man7/openssl_user_macros.7.html">openssl_user_macros(7)</a>:</p>
+
+<pre><code>#define X509_http_nbio(rctx, pcert)
+#define X509_CRL_http_nbio(rctx, pcrl)</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
 <p>X509_load_http() and X509_CRL_load_http() loads a certificate or a CRL, respectively, in ASN.1 format using HTTP from the given <b>url</b>.</p>
+
+<p>Maximum size of the HTTP response is 100 kB for certificates and 32 MB for CRLs and hard coded in the functions.</p>
 
 <p>If <b>bio</b> is given and <b>rbio</b> is NULL then this BIO is used instead of an internal one for connecting, writing the request, and reading the response. If both <b>bio</b> and <b>rbio</b> are given (which may be memory BIOs, for instance) then no explicit connection is attempted, <b>bio</b> is used for writing the request, and <b>rbio</b> for reading the response.</p>
 
@@ -51,15 +55,15 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="../man3/OSSL_HTTP_get_asn1.html">OSSL_HTTP_get_asn1(3)</a></p>
+<p><a href="https://man7.org/linux/man-pages/man3/OSSL_HTTP_get.3.html">OSSL_HTTP_get(3)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
-<p>X509_load_http() and X509_CRL_load_http() were added in OpenSSL 3.0.</p>
+<p>X509_load_http() and X509_CRL_load_http() were added in OpenSSL 3.0. X509_http_nbio() and X509_CRL_http_nbio() were deprecated in OpenSSL 3.0.</p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2019-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2019-2021 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

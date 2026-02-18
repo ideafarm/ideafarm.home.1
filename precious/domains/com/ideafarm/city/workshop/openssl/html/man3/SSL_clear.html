@@ -27,9 +27,9 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code> #include &lt;openssl/ssl.h&gt;
+<pre><code>#include &lt;openssl/ssl.h&gt;
 
- int SSL_clear(SSL *ssl);</code></pre>
+int SSL_clear(SSL *ssl);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -37,13 +37,15 @@
 
 <h1 id="NOTES">NOTES</h1>
 
-<p>SSL_clear is used to prepare an SSL object for a new connection. While all settings are kept, a side effect is the handling of the current SSL session. If a session is still <b>open</b>, it is considered bad and will be removed from the session cache, as required by RFC2246. A session is considered open, if <a href="../man3/SSL_shutdown.html">SSL_shutdown(3)</a> was not called for the connection or at least <a href="../man3/SSL_set_shutdown.html">SSL_set_shutdown(3)</a> was used to set the SSL_SENT_SHUTDOWN state.</p>
+<p>SSL_clear is used to prepare an SSL object for a new connection. While all settings are kept, a side effect is the handling of the current SSL session. If a session is still <b>open</b>, it is considered bad and will be removed from the session cache, as required by RFC2246. A session is considered open, if <a href="https://man7.org/linux/man-pages/man3/SSL_shutdown.3.html">SSL_shutdown(3)</a> was not called for the connection or at least <a href="https://man7.org/linux/man-pages/man3/SSL_set_shutdown.3.html">SSL_set_shutdown(3)</a> was used to set the SSL_SENT_SHUTDOWN state.</p>
 
-<p>If a session was closed cleanly, the session object will be kept and all settings corresponding. This explicitly means, that e.g. the special method used during the session will be kept for the next handshake. So if the session was a TLSv1 session, a SSL client object will use a TLSv1 client method for the next handshake and a SSL server object will use a TLSv1 server method, even if TLS_*_methods were chosen on startup. This will might lead to connection failures (see <a href="../man3/SSL_new.html">SSL_new(3)</a>) for a description of the method&#39;s properties.</p>
+<p>If a session was closed cleanly, the session object will be kept and all settings corresponding. This explicitly means, that e.g. the special method used during the session will be kept for the next handshake. So if the session was a TLSv1 session, an SSL client object will use a TLSv1 client method for the next handshake and an SSL server object will use a TLSv1 server method, even if TLS_*_methods were chosen on startup. This will might lead to connection failures (see <a href="https://man7.org/linux/man-pages/man3/SSL_new.3.html">SSL_new(3)</a>) for a description of the method&#39;s properties.</p>
+
+<p>This function is not supported on QUIC SSL objects and returns failure if called on such an object.</p>
 
 <h1 id="WARNINGS">WARNINGS</h1>
 
-<p>SSL_clear() resets the SSL object to allow for another connection. The reset operation however keeps several settings of the last sessions (some of these settings were made automatically during the last handshake). It only makes sense for a new connection with the exact same peer that shares these settings, and may fail if that peer changes its settings between connections. Use the sequence <a href="../man3/SSL_get_session.html">SSL_get_session(3)</a>; <a href="../man3/SSL_new.html">SSL_new(3)</a>; <a href="../man3/SSL_set_session.html">SSL_set_session(3)</a>; <a href="../man3/SSL_free.html">SSL_free(3)</a> instead to avoid such failures (or simply <a href="../man3/SSL_free.html">SSL_free(3)</a>; <a href="../man3/SSL_new.html">SSL_new(3)</a> if session reuse is not desired).</p>
+<p>SSL_clear() resets the SSL object to allow for another connection. The reset operation however keeps several settings of the last sessions (some of these settings were made automatically during the last handshake). It only makes sense for a new connection with the exact same peer that shares these settings, and may fail if that peer changes its settings between connections. Use the sequence <a href="https://man7.org/linux/man-pages/man3/SSL_get_session.3.html">SSL_get_session(3)</a>; <a href="https://man7.org/linux/man-pages/man3/SSL_new.3.html">SSL_new(3)</a>; <a href="https://man7.org/linux/man-pages/man3/SSL_set_session.3.html">SSL_set_session(3)</a>; <a href="https://man7.org/linux/man-pages/man3/SSL_free.3.html">SSL_free(3)</a> instead to avoid such failures (or simply <a href="https://man7.org/linux/man-pages/man3/SSL_free.3.html">SSL_free(3)</a>; <a href="https://man7.org/linux/man-pages/man3/SSL_new.3.html">SSL_new(3)</a> if session reuse is not desired).</p>
 
 <h1 id="RETURN-VALUES">RETURN VALUES</h1>
 
@@ -65,11 +67,11 @@
 </dd>
 </dl>
 
-<p><a href="../man3/SSL_new.html">SSL_new(3)</a>, <a href="../man3/SSL_free.html">SSL_free(3)</a>, <a href="../man3/SSL_shutdown.html">SSL_shutdown(3)</a>, <a href="../man3/SSL_set_shutdown.html">SSL_set_shutdown(3)</a>, <a href="../man3/SSL_CTX_set_options.html">SSL_CTX_set_options(3)</a>, <a href="../man7/ssl.html">ssl(7)</a>, <a href="../man3/SSL_CTX_set_client_cert_cb.html">SSL_CTX_set_client_cert_cb(3)</a></p>
+<p><a href="https://man7.org/linux/man-pages/man3/SSL_new.3.html">SSL_new(3)</a>, <a href="https://man7.org/linux/man-pages/man3/SSL_free.3.html">SSL_free(3)</a>, <a href="https://man7.org/linux/man-pages/man3/SSL_shutdown.3.html">SSL_shutdown(3)</a>, <a href="https://man7.org/linux/man-pages/man3/SSL_set_shutdown.3.html">SSL_set_shutdown(3)</a>, <a href="https://man7.org/linux/man-pages/man3/SSL_CTX_set_options.3.html">SSL_CTX_set_options(3)</a>, <a href="https://man7.org/linux/man-pages/man7/ssl.7.html">ssl(7)</a>, <a href="https://man7.org/linux/man-pages/man3/SSL_CTX_set_client_cert_cb.3.html">SSL_CTX_set_client_cert_cb(3)</a></p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2000-2016 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2000-2023 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

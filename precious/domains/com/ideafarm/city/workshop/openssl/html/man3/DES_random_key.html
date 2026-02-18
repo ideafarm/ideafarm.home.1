@@ -29,95 +29,95 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code> #include &lt;openssl/des.h&gt;</code></pre>
+<pre><code>#include &lt;openssl/des.h&gt;</code></pre>
 
-<p>Deprecated since OpenSSL 3.0, can be hidden entirely by defining <b>OPENSSL_API_COMPAT</b> with a suitable version value, see <a href="../man7/openssl_user_macros.html">openssl_user_macros(7)</a>:</p>
+<p>The following functions have been deprecated since OpenSSL 3.0, and can be hidden entirely by defining <b>OPENSSL_API_COMPAT</b> with a suitable version value, see <a href="https://man7.org/linux/man-pages/man7/openssl_user_macros.7.html">openssl_user_macros(7)</a>:</p>
 
-<pre><code> void DES_random_key(DES_cblock *ret);
+<pre><code>void DES_random_key(DES_cblock *ret);
 
- int DES_set_key(const_DES_cblock *key, DES_key_schedule *schedule);
- int DES_key_sched(const_DES_cblock *key, DES_key_schedule *schedule);
- int DES_set_key_checked(const_DES_cblock *key, DES_key_schedule *schedule);
- void DES_set_key_unchecked(const_DES_cblock *key, DES_key_schedule *schedule);
+int DES_set_key(const_DES_cblock *key, DES_key_schedule *schedule);
+int DES_key_sched(const_DES_cblock *key, DES_key_schedule *schedule);
+int DES_set_key_checked(const_DES_cblock *key, DES_key_schedule *schedule);
+void DES_set_key_unchecked(const_DES_cblock *key, DES_key_schedule *schedule);
 
- void DES_set_odd_parity(DES_cblock *key);
- int DES_is_weak_key(const_DES_cblock *key);
+void DES_set_odd_parity(DES_cblock *key);
+int DES_is_weak_key(const_DES_cblock *key);
 
- void DES_ecb_encrypt(const_DES_cblock *input, DES_cblock *output,
-                      DES_key_schedule *ks, int enc);
- void DES_ecb2_encrypt(const_DES_cblock *input, DES_cblock *output,
-                       DES_key_schedule *ks1, DES_key_schedule *ks2, int enc);
- void DES_ecb3_encrypt(const_DES_cblock *input, DES_cblock *output,
-                       DES_key_schedule *ks1, DES_key_schedule *ks2,
-                       DES_key_schedule *ks3, int enc);
+void DES_ecb_encrypt(const_DES_cblock *input, DES_cblock *output,
+                     DES_key_schedule *ks, int enc);
+void DES_ecb2_encrypt(const_DES_cblock *input, DES_cblock *output,
+                      DES_key_schedule *ks1, DES_key_schedule *ks2, int enc);
+void DES_ecb3_encrypt(const_DES_cblock *input, DES_cblock *output,
+                      DES_key_schedule *ks1, DES_key_schedule *ks2,
+                      DES_key_schedule *ks3, int enc);
 
- void DES_ncbc_encrypt(const unsigned char *input, unsigned char *output,
+void DES_ncbc_encrypt(const unsigned char *input, unsigned char *output,
+                      long length, DES_key_schedule *schedule, DES_cblock *ivec,
+                      int enc);
+void DES_cfb_encrypt(const unsigned char *in, unsigned char *out,
+                     int numbits, long length, DES_key_schedule *schedule,
+                     DES_cblock *ivec, int enc);
+void DES_ofb_encrypt(const unsigned char *in, unsigned char *out,
+                     int numbits, long length, DES_key_schedule *schedule,
+                     DES_cblock *ivec);
+void DES_pcbc_encrypt(const unsigned char *input, unsigned char *output,
+                      long length, DES_key_schedule *schedule, DES_cblock *ivec,
+                      int enc);
+void DES_cfb64_encrypt(const unsigned char *in, unsigned char *out,
                        long length, DES_key_schedule *schedule, DES_cblock *ivec,
-                       int enc);
- void DES_cfb_encrypt(const unsigned char *in, unsigned char *out,
-                      int numbits, long length, DES_key_schedule *schedule,
-                      DES_cblock *ivec, int enc);
- void DES_ofb_encrypt(const unsigned char *in, unsigned char *out,
-                      int numbits, long length, DES_key_schedule *schedule,
-                      DES_cblock *ivec);
- void DES_pcbc_encrypt(const unsigned char *input, unsigned char *output,
+                       int *num, int enc);
+void DES_ofb64_encrypt(const unsigned char *in, unsigned char *out,
                        long length, DES_key_schedule *schedule, DES_cblock *ivec,
-                       int enc);
- void DES_cfb64_encrypt(const unsigned char *in, unsigned char *out,
-                        long length, DES_key_schedule *schedule, DES_cblock *ivec,
-                        int *num, int enc);
- void DES_ofb64_encrypt(const unsigned char *in, unsigned char *out,
-                        long length, DES_key_schedule *schedule, DES_cblock *ivec,
-                        int *num);
+                       int *num);
 
- void DES_xcbc_encrypt(const unsigned char *input, unsigned char *output,
-                       long length, DES_key_schedule *schedule, DES_cblock *ivec,
-                       const_DES_cblock *inw, const_DES_cblock *outw, int enc);
+void DES_xcbc_encrypt(const unsigned char *input, unsigned char *output,
+                      long length, DES_key_schedule *schedule, DES_cblock *ivec,
+                      const_DES_cblock *inw, const_DES_cblock *outw, int enc);
 
- void DES_ede2_cbc_encrypt(const unsigned char *input, unsigned char *output,
-                           long length, DES_key_schedule *ks1,
-                           DES_key_schedule *ks2, DES_cblock *ivec, int enc);
- void DES_ede2_cfb64_encrypt(const unsigned char *in, unsigned char *out,
-                             long length, DES_key_schedule *ks1,
-                             DES_key_schedule *ks2, DES_cblock *ivec,
-                             int *num, int enc);
- void DES_ede2_ofb64_encrypt(const unsigned char *in, unsigned char *out,
-                             long length, DES_key_schedule *ks1,
-                             DES_key_schedule *ks2, DES_cblock *ivec, int *num);
+void DES_ede2_cbc_encrypt(const unsigned char *input, unsigned char *output,
+                          long length, DES_key_schedule *ks1,
+                          DES_key_schedule *ks2, DES_cblock *ivec, int enc);
+void DES_ede2_cfb64_encrypt(const unsigned char *in, unsigned char *out,
+                            long length, DES_key_schedule *ks1,
+                            DES_key_schedule *ks2, DES_cblock *ivec,
+                            int *num, int enc);
+void DES_ede2_ofb64_encrypt(const unsigned char *in, unsigned char *out,
+                            long length, DES_key_schedule *ks1,
+                            DES_key_schedule *ks2, DES_cblock *ivec, int *num);
 
- void DES_ede3_cbc_encrypt(const unsigned char *input, unsigned char *output,
-                           long length, DES_key_schedule *ks1,
-                           DES_key_schedule *ks2, DES_key_schedule *ks3,
-                           DES_cblock *ivec, int enc);
- void DES_ede3_cfb64_encrypt(const unsigned char *in, unsigned char *out,
-                             long length, DES_key_schedule *ks1,
-                             DES_key_schedule *ks2, DES_key_schedule *ks3,
-                             DES_cblock *ivec, int *num, int enc);
- void DES_ede3_ofb64_encrypt(const unsigned char *in, unsigned char *out,
-                             long length, DES_key_schedule *ks1,
-                             DES_key_schedule *ks2, DES_key_schedule *ks3,
-                             DES_cblock *ivec, int *num);
+void DES_ede3_cbc_encrypt(const unsigned char *input, unsigned char *output,
+                          long length, DES_key_schedule *ks1,
+                          DES_key_schedule *ks2, DES_key_schedule *ks3,
+                          DES_cblock *ivec, int enc);
+void DES_ede3_cfb64_encrypt(const unsigned char *in, unsigned char *out,
+                            long length, DES_key_schedule *ks1,
+                            DES_key_schedule *ks2, DES_key_schedule *ks3,
+                            DES_cblock *ivec, int *num, int enc);
+void DES_ede3_ofb64_encrypt(const unsigned char *in, unsigned char *out,
+                            long length, DES_key_schedule *ks1,
+                            DES_key_schedule *ks2, DES_key_schedule *ks3,
+                            DES_cblock *ivec, int *num);
 
- DES_LONG DES_cbc_cksum(const unsigned char *input, DES_cblock *output,
-                        long length, DES_key_schedule *schedule,
-                        const_DES_cblock *ivec);
- DES_LONG DES_quad_cksum(const unsigned char *input, DES_cblock output[],
-                         long length, int out_count, DES_cblock *seed);
- void DES_string_to_key(const char *str, DES_cblock *key);
- void DES_string_to_2keys(const char *str, DES_cblock *key1, DES_cblock *key2);
+DES_LONG DES_cbc_cksum(const unsigned char *input, DES_cblock *output,
+                       long length, DES_key_schedule *schedule,
+                       const_DES_cblock *ivec);
+DES_LONG DES_quad_cksum(const unsigned char *input, DES_cblock output[],
+                        long length, int out_count, DES_cblock *seed);
+void DES_string_to_key(const char *str, DES_cblock *key);
+void DES_string_to_2keys(const char *str, DES_cblock *key1, DES_cblock *key2);
 
- char *DES_fcrypt(const char *buf, const char *salt, char *ret);
- char *DES_crypt(const char *buf, const char *salt);</code></pre>
+char *DES_fcrypt(const char *buf, const char *salt, char *ret);
+char *DES_crypt(const char *buf, const char *salt);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>All of the functions described on this page are deprecated. Applications should instead use <a href="../man3/EVP_EncryptInit_ex.html">EVP_EncryptInit_ex(3)</a>, <a href="../man3/EVP_EncryptUpdate.html">EVP_EncryptUpdate(3)</a> and <a href="../man3/EVP_EncryptFinal_ex.html">EVP_EncryptFinal_ex(3)</a> or the equivalently named decrypt functions.</p>
+<p>All of the functions described on this page are deprecated. Applications should instead use <a href="https://man7.org/linux/man-pages/man3/EVP_EncryptInit_ex.3.html">EVP_EncryptInit_ex(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_EncryptUpdate.3.html">EVP_EncryptUpdate(3)</a> and <a href="https://man7.org/linux/man-pages/man3/EVP_EncryptFinal_ex.3.html">EVP_EncryptFinal_ex(3)</a> or the equivalently named decrypt functions.</p>
 
 <p>This library contains a fast implementation of the DES encryption algorithm.</p>
 
 <p>There are two phases to the use of DES encryption. The first is the generation of a <i>DES_key_schedule</i> from a key, the second is the actual encryption. A DES key is of type <i>DES_cblock</i>. This type consists of 8 bytes with odd parity. The least significant bit in each byte is the parity bit. The key schedule is an expanded form of the key; it is used to speed the encryption process.</p>
 
-<p>DES_random_key() generates a random key. The random generator must be seeded when calling this function. If the automatic seeding or reseeding of the OpenSSL CSPRNG fails due to external circumstances (see <a href="../man7/RAND.html">RAND(7)</a>), the operation will fail. If the function fails, 0 is returned.</p>
+<p>DES_random_key() generates a random key. The random generator must be seeded when calling this function. If the automatic seeding or reseeding of the OpenSSL CSPRNG fails due to external circumstances (see <a href="https://man7.org/linux/man-pages/man7/RAND.7.html">RAND(7)</a>), the operation will fail. If the function fails, 0 is returned.</p>
 
 <p>Before a DES key can be used, it must be converted into the architecture dependent <i>DES_key_schedule</i> via the DES_set_key_checked() or DES_set_key_unchecked() function.</p>
 
@@ -161,7 +161,7 @@
 
 <p>The following functions are included in the DES library for compatibility with the MIT Kerberos library.</p>
 
-<p>DES_cbc_cksum() produces an 8 byte checksum based on the input stream (via CBC encryption). The last 4 bytes of the checksum are returned and the complete 8 bytes are placed in <i>output</i>. This function is used by Kerberos v4. Other applications should use <a href="../man3/EVP_DigestInit.html">EVP_DigestInit(3)</a> etc. instead.</p>
+<p>DES_cbc_cksum() produces an 8 byte checksum based on the input stream (via CBC encryption). The last 4 bytes of the checksum are returned and the complete 8 bytes are placed in <i>output</i>. This function is used by Kerberos v4. Other applications should use <a href="https://man7.org/linux/man-pages/man3/EVP_DigestInit.3.html">EVP_DigestInit(3)</a> etc. instead.</p>
 
 <p>DES_quad_cksum() is a Kerberos v4 function. It returns a 4 byte checksum from the input bytes. The algorithm can be iterated over the input, depending on <i>out_count</i>, 1, 2, 3 or 4 times. If <i>output</i> is non-NULL, the 8 bytes generated by each pass are written into <i>output</i>.</p>
 
@@ -187,13 +187,15 @@
 
 <p>The <b>des</b> library was written to be source code compatible with the MIT Kerberos library.</p>
 
-<p>Applications should use the higher level functions <a href="../man3/EVP_EncryptInit.html">EVP_EncryptInit(3)</a> etc. instead of calling these functions directly.</p>
+<p>Applications should use the higher level functions <a href="https://man7.org/linux/man-pages/man3/EVP_EncryptInit.3.html">EVP_EncryptInit(3)</a> etc. instead of calling these functions directly.</p>
 
-<p>Single-key DES is insecure due to its short key size. ECB mode is not suitable for most applications; see <a href="../man7/des_modes.html">des_modes(7)</a>.</p>
+<p>Single-key DES is insecure due to its short key size. ECB mode is not suitable for most applications; see <a href="https://man7.org/linux/man-pages/man7/des_modes.7.html">des_modes(7)</a>.</p>
 
 <h1 id="RETURN-VALUES">RETURN VALUES</h1>
 
-<p>DES_set_key(), DES_key_sched(), DES_set_key_checked() and DES_is_weak_key() return 0 on success or negative values on error.</p>
+<p>DES_set_key(), DES_key_sched(), and DES_set_key_checked() return 0 on success or negative values on error.</p>
+
+<p>DES_is_weak_key() returns 1 if the passed key is a weak key, 0 if it is ok.</p>
 
 <p>DES_cbc_cksum() and DES_quad_cksum() return 4-byte integer representing the last 4 bytes of the checksum of the input.</p>
 
@@ -201,7 +203,7 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="../man7/des_modes.html">des_modes(7)</a>, <a href="../man3/EVP_EncryptInit.html">EVP_EncryptInit(3)</a></p>
+<p><a href="https://man7.org/linux/man-pages/man7/des_modes.7.html">des_modes(7)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_EncryptInit.3.html">EVP_EncryptInit(3)</a></p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
