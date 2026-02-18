@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ASN1_BIT_STRING_get_length</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#RETURN-VALUES">RETURN VALUES</a></li>
+  <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>ASN1_BIT_STRING_set1, ASN1_BIT_STRING_get_length - ASN1_BIT_STRING accessors</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>#include &lt;openssl/asn1.h&gt;
+
+int ASN1_BIT_STRING_get_length(const ASN1_BIT_STRING *bitstr, size_t *length, int *unused_bits);
+int ASN1_BIT_STRING_set1(ASN1_BIT_STRING *bitstr, const uint8_t *data, size_t length, int unused_bits);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The ASN.1 BIT STRING type holds a bit string of arbitrary bit length. In the distinguished encoding rules DER, its bits are encoded in groups of eight, leaving between zero and seven bits of the last octet unused. If there are unused bits, they must all be set to zero.</p>
+
+<p>ASN1_BIT_STRING_get_length() returns the number of octets in <i>bitstr</i> containing bit values in <i>length</i> and the number of unused bits in the last octet in <i>unused_bits</i>. The value returned in <i>unused_bits</i> is guaranteed to be between 0 and 7, inclusive.</p>
+
+<p>ASN1_BIT_STRING_set1() sets the type of <i>bitstr</i> to <i>V_ASN1_BIT_STRING</i> and its octets to the bits in the byte string <i>data</i> of length <i>length</i> octets, making sure that the last <i>unused_bits</i> bits in the last byte are zero.</p>
+
+<h1 id="RETURN-VALUES">RETURN VALUES</h1>
+
+<p>ASN1_BIT_STRING_get_length() returns 1 on success or 0 if the encoding of <i>bitstr</i> is internally inconsistent, or if one of <i>bitstr</i>, <i>length</i>, or <i>unused_bits</i> is NULL.</p>
+
+<p>ASN1_BIT_STRING_set1() returns 1 on success or 0 if memory allocation fails or if <i>bitstr</i> is NULL , <i>length</i> is too large, <i>length</i>is zero and <i>unused_bits</i> is nonzero, <i>unused_bits</i> is less than 0 or greater than 7, or any unused bit in the last octet of <i>data</i> is nonzero.</p>
+
+<h1 id="COPYRIGHT">COPYRIGHT</h1>
+
+<p>Copyright 2025 The OpenSSL Project Authors. All Rights Reserved.</p>
+
+<p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
+
+
+</body>
+
+</html>
+
+

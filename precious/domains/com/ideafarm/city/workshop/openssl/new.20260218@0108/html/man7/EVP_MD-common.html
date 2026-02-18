@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>EVP_MD-common</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>EVP_MD-common - The OpenSSL EVP_MD implementations, common things</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>All the OpenSSL EVP_MD implementations understand the following <a href="https://man7.org/linux/man-pages/man3/OSSL_PARAM.3.html">OSSL_PARAM(3)</a> entries that are gettable with <a href="https://man7.org/linux/man-pages/man3/EVP_MD_get_params.3.html">EVP_MD_get_params(3)</a>, as well as these:</p>
+
+<dl>
+
+<dt id="blocksize-OSSL_DIGEST_PARAM_BLOCK_SIZE-unsigned-integer">&quot;blocksize&quot; (<b>OSSL_DIGEST_PARAM_BLOCK_SIZE</b>) &lt;unsigned integer&gt;</dt>
+<dd>
+
+<p>The digest block size. The length of the &quot;blocksize&quot; parameter should not exceed that of a <b>size_t</b>.</p>
+
+<p>This value can also be retrieved with <a href="https://man7.org/linux/man-pages/man3/EVP_MD_get_block_size.3.html">EVP_MD_get_block_size(3)</a>.</p>
+
+</dd>
+<dt id="size-OSSL_DIGEST_PARAM_SIZE-unsigned-integer">&quot;size&quot; (<b>OSSL_DIGEST_PARAM_SIZE</b>) &lt;unsigned integer&gt;</dt>
+<dd>
+
+<p>The digest output size. The length of the &quot;size&quot; parameter should not exceed that of a <b>size_t</b>.</p>
+
+<p>This value can also be retrieved with <a href="https://man7.org/linux/man-pages/man3/EVP_MD_get_size.3.html">EVP_MD_get_size(3)</a>.</p>
+
+</dd>
+<dt id="flags-OSSL_DIGEST_PARAM_FLAGS-unsigned-integer">&quot;flags&quot; (<b>OSSL_DIGEST_PARAM_FLAGS</b>) &lt;unsigned integer&gt;</dt>
+<dd>
+
+<p>Diverse flags that describe exceptional behaviour for the digest.</p>
+
+<p>The length of the &quot;flags&quot; parameter should equal that of an <b>unsigned long int</b>.</p>
+
+<p>Several flags can be or&#39;d together. The available flags are:</p>
+
+<dl>
+
+<dt id="EVP_MD_FLAG_ONESHOT">EVP_MD_FLAG_ONESHOT</dt>
+<dd>
+
+<p>This digest method can only handle one block of input.</p>
+
+</dd>
+<dt id="EVP_MD_FLAG_XOF">EVP_MD_FLAG_XOF</dt>
+<dd>
+
+<p>This digest method is an extensible-output function (XOF) and supports the <b>EVP_MD_CTRL_XOF_LEN</b> control.</p>
+
+</dd>
+<dt id="EVP_MD_FLAG_DIGALGID_NULL">EVP_MD_FLAG_DIGALGID_NULL</dt>
+<dd>
+
+<p>When setting up a DigestAlgorithmIdentifier, this flag will have the parameter set to NULL by default. Use this for PKCS#1. <i>Note: if combined with EVP_MD_FLAG_DIGALGID_ABSENT, the latter will override.</i></p>
+
+</dd>
+<dt id="EVP_MD_FLAG_DIGALGID_ABSENT">EVP_MD_FLAG_DIGALGID_ABSENT</dt>
+<dd>
+
+<p>When setting up a DigestAlgorithmIdentifier, this flag will have the parameter be left absent by default. <i>Note: if combined with EVP_MD_FLAG_DIGALGID_NULL, the latter will be overridden.</i></p>
+
+</dd>
+<dt id="EVP_MD_FLAG_DIGALGID_CUSTOM">EVP_MD_FLAG_DIGALGID_CUSTOM</dt>
+<dd>
+
+<p>Custom DigestAlgorithmIdentifier handling via ctrl, with <b>EVP_MD_FLAG_DIGALGID_ABSENT</b> as default. <i>Note: if combined with EVP_MD_FLAG_DIGALGID_NULL, the latter will be overridden.</i> Currently unused.</p>
+
+</dd>
+<dt id="EVP_MD_FLAG_FIPS">EVP_MD_FLAG_FIPS</dt>
+<dd>
+
+<p>This digest method is suitable for use in FIPS mode. Currently unused.</p>
+
+</dd>
+</dl>
+
+<p>This value can also be retrieved with <a href="https://man7.org/linux/man-pages/man3/EVP_MD_get_flags.3.html">EVP_MD_get_flags(3)</a>.</p>
+
+</dd>
+</dl>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://man7.org/linux/man-pages/man3/EVP_DigestInit.3.html">&quot;PARAMETERS&quot; in EVP_DigestInit(3)</a>, <a href="https://man7.org/linux/man-pages/man3/EVP_MD_get_params.3.html">EVP_MD_get_params(3)</a>, <a href="https://man7.org/linux/man-pages/man7/provider-digest.7.html">provider-digest(7)</a></p>
+
+<h1 id="COPYRIGHT">COPYRIGHT</h1>
+
+<p>Copyright 2020-2024 The OpenSSL Project Authors. All Rights Reserved.</p>
+
+<p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
+
+
+</body>
+
+</html>
+
+
