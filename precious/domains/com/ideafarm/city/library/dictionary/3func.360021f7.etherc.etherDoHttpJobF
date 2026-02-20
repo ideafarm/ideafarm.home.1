@@ -191,7 +191,7 @@
                             /**/traceF( tin0P , tSayClientPrefix+T("writing from snips") ) ;
                             TELL( "writing reply 2" ) ;
 
-LOGrAW( POSTS( postsReply ) ) ;
+                            //LOGrAW( POSTS( postsReply ) ) ;
 
                             /**/traceF( tin0P , tSayClientPrefix+T(POSTS(postsReply)) ) ;
 
@@ -1156,6 +1156,78 @@ LOGrAW( POSTS( postsReply ) ) ;
                         //if( bClose ) /*;*/traceF( tin0P , tSayClientPrefix+TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    closing connection") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
                         }
+                            /**/traceF( tin0P , tSayClientPrefix+T("wrote   from webroot") ) ;
+                            }
+                                }
+                                    bClose = 1 ;
+                                    /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF: could not write to socket 980") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                                    POOPRqUIET
+                                {
+                                else
+                                if( !POOP ) /*;*/traceF( tin0P , tSayClientPrefix+T("wrote reply from webroot") ) ;
+                                psoP->writeF( tin0P , (osTextT*)tReply , tReply.csF( tin0P ) ) ;
+                                SCOOPS
+                            {
+                            IFsCRATCHoK
+                            /**/traceF( tin0P , tSayClientPrefix+T("writing from webroot") ) ;
+
+                            TN( tReply , "" ) ; tReply = T("HTTP/1.1 200 OK\r\nServer: IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System (tm)\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(costi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+T(posti) ;
+                        {
+                        else
+                        }
+                            /**/traceF( tin0P , tSayClientPrefix+T("wrote   from webroot (not found)") ) ;
+                            }
+                                }
+                                    /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF: could not write to socket 1004") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                                    POOPRqUIET
+                                {
+                                else
+                                if( !POOP ) /*;*/traceF( tin0P , tSayClientPrefix+T("wrote reply from webroot (not found)") ) ;
+                                psoP->writeF( tin0P , (osTextT*)tReply , tReply.csF( tin0P ) ) ;
+                                SCOOPS
+                            {
+                            IFsCRATCHoK
+                            /**/traceF( tin0P , tSayClientPrefix+T("writing from archive (not found)") ) ;
+
+                            TN( tReply , "" ) ; tReply = T("HTTP/1.1 404 Not Found\r\nServer: IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System (tm)\r\nContent-Type: text")+T("\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
+
+                            TN( tBody , "The page (or other resource) that you requested does not exist here.\r\n\r\nIf you think that this is our error, please let us know.\r\n" ) ;
+                        {
+                        if( !posti || !costi )
+                        
+                        }
+                            }
+                                bClose = 1 ;
+                                /**/traceF( tin0P , tSayClientPrefix+T("etherDoHttpJobF: unknown file request [tLongWant]:    ")+tLongWant , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                                POOPRqUIET
+                            {
+                            if( POOP )
+                            boxGetShadowF( tin0P , posti , costi , tLongWant ) ; ___( posti ) ;
+                            SCOOPS
+                        {
+                        IFsCRATCHoK
+                        ZE( countT   , costi ) ;
+                        ZE( osTextT* , posti ) ;
+
+                        }
+                            delF( tin0P , pstts ) ;
+                            tLongWant = T("///ideafarm/webroot/")+T(pstts) ;
+                            strSubstringF( tin0P , pstts , idf , idl , psttName ) ; ___( pstts ) ;
+                            ZE( countT , idl ) ;
+                            countT idf = 7 ;
+                            ZE( strokeS* , pstts ) ;
+                        {
+                        TN( tLongWant , "" ) ;
+
+                        _IO_
+                    {
+                    else if( bFileWebRoot )
+                    }
+                        if( bDeadman1 ) /*;*/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / u") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                      /**/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / u") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                        //if( bClose ) /*;*/traceF( tin0P , tSayClientPrefix+TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    closing connection") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+
+                        }
                             DEL( pFW ) ;
                             }
                                 }
@@ -1536,7 +1608,7 @@ LOGrAW( POSTS( postsReply ) ) ;
                 ;
                                 : ifcIDtRACEdIVERT_7
                                 ? ifcIDtRACEdIVERT_6
-                            : !bFileArchive && !bFileChallenge
+                            : !bFileArchive && !bFileChallenge && !bFileWebRoot
                             ? ifcIDtRACEdIVERT_5
                         : !strCompareF( tin0P , psttName , tSlash )
                         ? ifcIDtRACEdIVERT_4
@@ -1546,8 +1618,11 @@ LOGrAW( POSTS( postsReply ) ) ;
                 //CS:CODEsYNC: 360021f7 3600212d
 
                 }
-                    bFileArchive   = 1 == strIdF( tin0P , tPattern          , psttName ) ;
+                    bFileWebRoot   = 1 == strIdF( tin0P , tPatternWebRoot   , psttName ) ;
+                    bFileArchive   = 1 == strIdF( tin0P , tPatternArchive   , psttName ) ;
                     bFileChallenge = 1 == strIdF( tin0P , tPatternChallenge , psttName ) ;
+
+                    TN( tPatternWebRoot , "/file/" ) ;
 
                     TN( tPatternChallenge , "/.well-known/acme-challenge/" ) ;
                     // "/.well-known/acme-challenge/ZkmjsTYwqPtrWqTRu-3VunoLb_X656Tg8iILtFL8ZWE"
@@ -1566,13 +1641,14 @@ LOGrAW( POSTS( postsReply ) ) ;
                         +S2(sa_SSSaND,sc_ccSSS)
                         T("")
 
-                    TN( tPattern , "" ) ; tPattern =
+                    TN( tPatternArchive , "" ) ; tPatternArchive =
                     // "2013/!ideafarm."
                     //  yyyy
                     _IO_
                 {
                 if( !bDeadman1 && !bDeadman2 && psttName->idAdam )
-                ZE( boolT , bFileArchive ) ;
+                ZE( boolT , bFileWebRoot   ) ;
+                ZE( boolT , bFileArchive   ) ;
                 ZE( boolT , bFileChallenge ) ;
 
                 }
