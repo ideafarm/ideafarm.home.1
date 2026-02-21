@@ -1,4 +1,6 @@
 
+#define BITSsHIFTiDEAnETePOCH ( 0x16 )
+
 #define ifcIDtYPErOUTE_DATA                     1
 #define ifcIDtYPErOUTE_CONTROL                  2
 #define ifcIDtYPErOUTE_DECOYbGPtABLE            3

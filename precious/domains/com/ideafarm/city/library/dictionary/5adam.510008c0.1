@@ -194,8 +194,8 @@ DONE( tmWorkF )
                     {
                     if( epochUseLath != epochUse )
 
-                    countT epochUse  = ( timeN1 - time1Sticky ) >> 0x18 ;
-                    countT epochTrue =   timeN1                 >> 0x18 ;
+                    countT epochUse  = ( timeN1 - time1Sticky ) >> BITSsHIFTiDEAnETePOCH ;
+                    countT epochTrue =   timeN1                 >> BITSsHIFTiDEAnETePOCH ;
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
@@ -207,7 +207,7 @@ DONE( tmWorkF )
                 {
                 while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
                 ZE( countT , time1Sticky ) ;
-                const countT time1PerEpoch = 1 << 0x18 ;
+                const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
                 ZE( countT , idPass ) ;
                 ZE( boolT  , bUpData    ) ;
                 ZE( boolT  , bUpControl ) ;
@@ -332,10 +332,10 @@ DONE( tmClockF )
         countT tockRemain      = time1TrueRemain >> 0x10 ;
         countT time1TrueRemain = time1TrueEnd - timeN1 ;
 
-        countT time1TrueEnd    = ( epochTrue + 1 ) << 0x18 ;
-        countT time1TrueStart  =   epochTrue       << 0x18 ;
+        countT time1TrueEnd    = ( epochTrue + 1 ) << BITSsHIFTiDEAnETePOCH ;
+        countT time1TrueStart  =   epochTrue       << BITSsHIFTiDEAnETePOCH ;
 
-        countT epochTrue = timeN1 >> 0x18 ;
+        countT epochTrue = timeN1 >> BITSsHIFTiDEAnETePOCH ;
 
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
