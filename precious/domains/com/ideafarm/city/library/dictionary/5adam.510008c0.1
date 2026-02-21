@@ -171,14 +171,14 @@ DONE( tmWorkF )
                             //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [tim1Sticky,perTuckSticky]:    ")+TF2(time1Sticky,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSticky,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                             time1Sticky = (countT)( ( (count04T)time1PerEpoch * perTuckSticky ) / TUCK ) ;                              // NEVER  STICKY FOR THE LATH 01 PERTUCK OF THE EPOCH, TO ENSURE THAT EVERY CLIENT HAS SOME ACCESS TO THE CURRENT PREFIX
                             count04T perTuckSticky = 0x10 + ipv6FieldsControl.hostRandom % ( TUCK - 0x20 ) ;        /* [0x10,0xf0) */   // ALWAYS STICKY FOR THE WOTH 01 PERTUCK OF THE EPOCH, TO ALLOW 2 TOCKS FOR THE BGP SYSTEM TO ESTABLISH CONNECTIVITY USING EACH NEW PREFIX BETWEEN ME (CLIENT) AND THE SERVER
-                        {
+                        {                                                                                                               // DISCRETE STEPS SO THAT THE SEQUENCE OF time1Sticky VALUES WILL BE QUASI UNIQUE FOR EACH SUBSCRIBER, SO CAN SERVE AS A SIGNATURE FOR IDENTIFYING A SUBSCRIBER ATTACKER
                         else
                         }
                             //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Sticky to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                             time1Sticky = 0 ;
                         {
                         if( !bUpControl || !bUpData )
-                                                                                                                                        // DISCRETE STEPS SO THAT THE SEQUENCE OF time1Sticky VALUES WILL BE QUASI UNIQUE FOR EACH SUBSCRIBER, SO CAN SERVE AS A SIGNATURE FOR IDENTIFYING A SUBSCRIBER ATTACKER
+
                         tIpv6NowData    = T(nnNowData   ) ;                                                                             // P:PERSONALITY: SUBSCRIBER ATTACKER CANNOT FULLY USE HIS WIRE WITHOUT LEAVING HIS SIGNATURE ON THE ATTACK
                         tIpv6NowControl = T(nnNowControl) ;
                         nicNameC nnNowData    = sub.nnF( tin0P , epochUse , ipv6FieldsData                             ) ;
