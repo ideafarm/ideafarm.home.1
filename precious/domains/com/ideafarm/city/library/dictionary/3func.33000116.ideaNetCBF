@@ -17,11 +17,11 @@
 
     TN( tUse , "" ) ; tUse = F(flagsModeP) & flIDEAnETeXE_USEdNS ? tRequestDomain : tRequestAddress ;
 
-    TN( tRequestAddress , "" ) ; tRequestAddress = T("http://[")+tIpv6NowUse+T("]")+( tName.csF( tin0P ) == 1 ? tn : tName ) ;
+    TN( tRequestAddress , "" ) ; tRequestAddress = T("http://[")+tIpv6NowUse+T("]")+tName ;
 
     ;
 
-        +( tName.csF( tin0P ) == 1 ? tn : tName )
+        +tName
         +T(".ideanet.ideafarm.com")
         +TF3(ipv6FieldsUse.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
         +TF3(ipv6FieldsUse.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
@@ -35,15 +35,9 @@
 
     //CS:CODEsYNC: 510008c0 33000116
 
-    TN( tName           , psttNameP ) ;
+    TN( tName           , psttNameP ) ; tName = T("/file")+T(psttNameP) ;
     TN( tUnderScore     , "_"       ) ;
     TN( tn              , ""        ) ;
-
-    // storeReplyF( tin0P , ifcIDsWITCHhTTPrEPLY_PREFIX , ifcIDfORMhTTPrEPLY_RAW , T("/1.1/"        ) , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML    , T("") , T("") , T("") , T("") , T("") , T("") , 0 , tSay4 ) ;
-    // storeReplyF( tin0P , ifcIDsWITCHhTTPrEPLY_EXACT  , ifcIDfORMhTTPrEPLY_RAW , T("/1.1/toc.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML    , T("") , T("") , T("") , T("") , T("") , T("") , 0 , tSay3 ) ;
-    // storeReplyF( tin0P , ifcIDsWITCHhTTPrEPLY_EXACT  , ifcIDfORMhTTPrEPLY_RAW , T("/1.1"         ) , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML    , T("") , T("") , T("") , T("") , T("") , T("") , 0 , tSay2 ) ;
-    // storeReplyF( tin0P , ifcIDsWITCHhTTPrEPLY_EXACT  , ifcIDfORMhTTPrEPLY_RAW , T("/")             , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML    , T("") , T("") , T("") , T("") , T("") , T("") , 0 , tSay1 ) ;
-    // FROM ct1F (FOR REFERENCE ONLY)
 
     ideaNetIpv6FieldsS& ipv6FieldsUse = bControl ? ipv6FieldsControlP : ipv6FieldsDataP ;
     textC&              tIpv6NowUse   = bControl ?   tIpv6NowControlP :   tIpv6NowDataP ;
