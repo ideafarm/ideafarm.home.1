@@ -6149,8 +6149,8 @@
                 flagsT flagsReport  = flETHERsOILrEPORT_null ;
                 flagsT flagsPutFile = flBRANCHspUTfILEf_null ;
                 flagsT flagsLoad    = flBRANCHslOADf_null ;
-                soulC soulBody( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.body" , CBjOTbOOKdEFAULT << 3 ) ; // IF LINT THEN RETAINS WHITE SPACE AND MIGHT HAVE ERROR FLAG MARKS ; IF REPORT THEN OMITS WHITE SPACE OTHER THAN INDENT BLANKS
-                soulC soulValue( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.value" , CBjOTbOOKdEFAULT << 3 ) ; // USED TO ELIMINATE 02 BIT ADDRESS SPACE CAPACITY CONSTRAINT FOR HUGE VALUE STRINGS
+                soulC soulBody( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.body"   , CBjOTdATAeTHERsOILf ) ; // IF LINT THEN RETAINS WHITE SPACE AND MIGHT HAVE ERROR FLAG MARKS ; IF REPORT THEN OMITS WHITE SPACE OTHER THAN INDENT BLANKS
+                soulC soulValue( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.value" , CBjOTdATAeTHERsOILf ) ; // USED TO ELIMINATE 02 BIT ADDRESS SPACE CAPACITY CONSTRAINT FOR HUGE VALUE STRINGS
                 stackC stFileType(   tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE  , ifcSTACKtYPE_PTR_strokeS ) ; // FORMAT EXAMPLE: mp3
                 stackC stTimeMinMax( tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY | flSTACKc_BLOB , 2 * sizeof( strokeS* ) ) ; // FORMAT EXAMPLE: 20130711@1401 20130711@1401
                 countT idKtrMode = ifcIDmODEpUTfILE_OTHER ;
@@ -6269,7 +6269,7 @@
             //traceF( tin0P , T("etherSoilF / setting up to handle ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" words") ) ;
 
             countT cWords = strWordsF( tin0P , soulWords , soulInP , sttq , tMarks , F(flagsP) & flETHERsOILf_CONSUMEiNPUT ? flSTRwORDS_DELIMITERS|flSTRwORDS_SPLITaTmARK|flSTRwORDS_CONSUMEiNPUT : flSTRwORDS_DELIMITERS|flSTRwORDS_SPLITaTmARK ) ;
-            soulC soulWords( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.words" , CBjOTbOOKdEFAULT << 3 ) ;              // 20241020@1700: CBjOTbOOKdEFAULT << 0 OVERFLOWED % 01 PERTUCK WITH web.root.ideafarm.soil THAT IS 44KB BYTES
+            soulC soulWords( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.words" , CBjOTdATAeTHERsOILf ) ;
 
             //traceF( tin0P , T("etherSoilF / loading soulWords") ) ;                                                       //U:: 20241020@1700: SET THE CAPACITY OF MY soulC INSTANCES BY INSPECTING THE SIZE OF THE INPUT FILE
 
@@ -6590,7 +6590,7 @@
             boolT bWantNative = idModeP == ifcIDmODEeTHERsOIL_NATIVEfROMaSCII ;
 
             strFuseF( tin0P , soult1 , soulInP , 0 , S1C( '\\' ) , T("[]") ) ; //U::ADD THIS API TO etherC
-            soulC soult1( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.t1" ) ;
+            soulC soult1( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.t1" , CBjOTdATAeTHERsOILf ) ;
             //if( bTrace ) trace F( tin0P , T("etherSoilF / setting up 1 / ifcIDmODEeTHERsOIL_NATIVEfROMaSCII / 2") ) ;
 
             TN( tBar          , "|"    ) ; TN( tmBar             , "" ) ; tmBar             = T("")+S2(sa_MARKsYSTEMbREAK,sc_MARKsYSTEM) ;
@@ -7156,7 +7156,8 @@
                                         //traceF( tin0P , T("[idIndentMinInKtrBody]:    ")+TF2(idIndentMinInKtrBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         delF( tin0P , pstt1Line ) ;
                                         }
-                                            if( idIndentMinInKtrBody > idWoth ) idIndentMinInKtrBody = idWoth ;
+                                                idIndentMinInKtrBody = idWoth ;
+                                            if( idWoth && idIndentMinInKtrBody > idWoth )
                                             //traceF( tin0P , T("line in body [idWoth]:    ")+TF2(idWoth,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttc1)+T("\"") ) ;
                                             countT idWoth = strIdAnyF( tin0P , 0 , flSTRmATCH_null , countTC( 1 ) , sttq , tb , psttc1 , 0 , 1 , flSTRiDaNY_NOT ) ;
                                             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
@@ -7329,7 +7330,7 @@
     switch( idModeP )
     ZE( boolT  , bRepeat ) ;
     ZE( countT , cFlag1 ) ;
-    soulC soulOut( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.out" ) ;
+    soulC soulOut( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.out" , CBjOTdATAeTHERsOILf ) ;
     TN( tb , " " ) ;
     TN( tcr , "\r\n" ) ;
 

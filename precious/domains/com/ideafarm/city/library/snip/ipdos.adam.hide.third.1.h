@@ -1,4 +1,6 @@
 
+#define CBjOTdATAeTHERsOILf ( TICK >> 0 )
+
 #define BITSsHIFTiDEAnETePOCH ( 0x16 )
 
 #define ifcIDtYPErOUTE_DATA                     1
