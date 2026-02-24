@@ -396,6 +396,7 @@ TASK( tmInterruptLoopF )
                     }
                         break ;
                         }
+#endif
                             }
                                 }
                                     etRock.traceF( tin0P , T("could not add nicName [rc,nicName]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
@@ -412,7 +413,7 @@ TASK( tmInterruptLoopF )
 
                             etThread.osNicOpenF( tin0P , hInterface , T("ideanet") ) ;
                             handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
-
+#if defined( NEVERdEFINED )
                             //U::DO THIS ONLY IF ON A LIST OF APPROVED NN VALUES
 
                             pstNnRequested->sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
