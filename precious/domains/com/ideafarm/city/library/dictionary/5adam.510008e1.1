@@ -398,13 +398,13 @@ TASK( tmInterruptLoopF )
                         }
                             }
                                 }
-                                    etRock.traceF( tin0P , T("could not add nicName [rc,nicName]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnDest) ) ;
+                                    etRock.traceF( tin0P , T("could not add nicName [rc,nicName]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
                                     POOPRqUIET
                                     countT rc = POOP ;
                                 {
                                 else
-                                if( !POOP ) etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnDest) ) ;
-                                ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnDest , 30 * 60 , 0 , 0x30 ) ;
+                                if( !POOP ) etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
+                                ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 30 * 60 , 0 , 0x30 ) ;
                                 SCOOPS
                                 _IO_
                             {
@@ -415,19 +415,21 @@ TASK( tmInterruptLoopF )
 
                             //U::DO THIS ONLY IF ON A LIST OF APPROVED NN VALUES
 
-                            pstNnRequested->sinkF( tin0P , countTC() , nnDest , flSTACKsINK_UNIQUE ) ;
+                            pstNnRequested->sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
 
                             bReport = 1 ;
                             c135Query ++ ; c135NewQuery ++ ;
                         {
-                        if( nnIdeaNetSubnet == nnSubnet36Dest )
-                        nicNameC nnSubnet36Dest = nnDest( 0x24 ) ;
+                        if( nnIdeaNetSubnet == nnSubnet36Target )
+                        nicNameC nnSubnet36Target = nnTarget( 0x24 ) ;
+
+                        nicNameC nnTarget = *(nicNameC*)icmpv6Type135.pcTarget ;
+                        icmpv6Type135.swabF() ;
+                        icmpv6Type135S icmpv6Type135 = *(icmpv6Type135S*)pIcmpv6 ;
                     {
                     case 135 :                                              // HOST SOLICITATION
                 {
                 switch( pIcmpv6->type )
-
-                icmpv6HeadRawS icmpv6 = *pIcmpv6 ;
             {
             /*else*/ if( pIcmpv6 )
             //}
@@ -1181,11 +1183,25 @@ osTextT* ppostProtocol[] =
 //    ASSIGNED INTERNET PROTOCOL NUMBERS
 //    
 
-
-
-
-
-
+;
+}
+    }
+        }
+                                         pbRaw[ offMax - offs ] = save ;
+                         pbRaw[ offs ] = pbRaw[ offMax - offs ]        ;
+            byteT save = pbRaw[ offs ]                                 ;
+        {
+        for( countT offs = 0 ; offs < offStop ; offs ++ )
+        byteT* pbRaw = (byteT*)pcTarget ;
+        countT offStop = 1 + offMax >> 1 ;                  //        1   1   2   2   3   3   4   4
+        countT offMax  = sizeof pcTarget - 1 ;              //        0   1   2   3   4   5   6   7
+    {                                                       // CASES
+    inline voidT swabF( voidT )                             // FOR EVEN NUMBER OF BYTES, EFFICIENT ; FOR ODD NUMBER OF BYTES, SWITCHES THE MIDDLE BYTE WITH ITSELF
+    
+    countT   pcTarget[ 4 ] ;
+    count02T reserved      ;
+{
+struct icmpv6Type135S : public icmpv6HeadRawS
 
 ;
 }
