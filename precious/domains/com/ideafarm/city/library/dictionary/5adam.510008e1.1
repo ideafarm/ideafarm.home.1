@@ -187,6 +187,10 @@ DONE( tmWorkF )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     pcapCBF_p_idPacket = &idPacket ;
     ZE( countT , idPacket ) ;
+
+    pstNnRequested = &stNnRequested ;
+    stackC stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+    nnIdeaNetSubnet = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::") ) ;
     
     char postError[ PCAP_ERRBUF_SIZE ] ;
     
@@ -328,7 +332,7 @@ TASK( tmInterruptLoopF )
                     break ;
                     etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_null ) ;
                 {
-                case 58 :
+                case 58 : // ICMPv6
                 }
                     break ;
                     etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tbDashesUDP+tb4+tData , flTRACE_NOpREFIX ) ;
@@ -370,12 +374,56 @@ TASK( tmInterruptLoopF )
 
         }
             }
-                bReport = 1 ;
                 tData = T("[type,code,c136Response,c135Query,c136NewResponse,c135NewQuery]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF3(c136Response,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135Query,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ;
 
                 }
-                    case 136 : { c136Response ++ ; c136NewResponse ++ ; break ; }
-                    case 135 : { c135Query    ++ ; c135NewQuery    ++ ; break ; }
+                    }
+                        break ;
+                        }
+                            pstNnRequested->ungrabF( tin0P ) ;
+                            if( ids ) pstNnRequested->extractF( 0 , tin0P ) ;
+                            pstNnRequested->sinkF( tin0P , ids , nnSource , flSTACKsINK_QUERY ) ;
+                            pstNnRequested->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                            ZE( countT , ids ) ;
+
+                            bReport = 1 ;
+                            c136Response ++ ; c136NewResponse ++ ;
+                        {
+                        if( nnIdeaNetSubnet == nnSubnet36Source )
+                        nicNameC nnSubnet36Source = nnSource( 0x24 ) ;
+                    {
+                    case 136 :                                              // HOST ADVERTISEMENT
+                    }
+                        break ;
+                        }
+                            }
+                                }
+                                    etRock.traceF( tin0P , T("could not add nicName [rc,nicName]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnDest) ) ;
+                                    POOPRqUIET
+                                    countT rc = POOP ;
+                                {
+                                else
+                                if( !POOP ) etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnDest) ) ;
+                                ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnDest , 30 * 60 , 0 , 0x30 ) ;
+                                SCOOPS
+                                _IO_
+                            {
+                            IFsCRATCHoK
+
+                            etThread.osNicOpenF( tin0P , hInterface , T("ideanet") ) ;
+                            handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
+
+                            //U::DO THIS ONLY IF ON A LIST OF APPROVED NN VALUES
+
+                            pstNnRequested->sinkF( tin0P , countTC() , nnDest , flSTACKsINK_UNIQUE ) ;
+
+                            bReport = 1 ;
+                            c135Query ++ ; c135NewQuery ++ ;
+                        {
+                        if( nnIdeaNetSubnet == nnSubnet36Dest )
+                        nicNameC nnSubnet36Dest = nnDest( 0x24 ) ;
+                    {
+                    case 135 :                                              // HOST SOLICITATION
                 {
                 switch( pIcmpv6->type )
 
@@ -645,6 +693,9 @@ TASK( tmInterruptLoopF )
     tin0S&    tin0P         = *pcapCBF_pTin0         ;
 {
 void __cdecl pcapCBF( u_char* postUserP , const pcap_pkthdr* pInfo3HeaderP , const u_char* pInfo3DataP )
+
+stackC*   pstNnRequested ;
+nicNameC  nnIdeaNetSubnet ;
 
 countT    c136NewResponse ;
 countT    c135NewQuery    ;
