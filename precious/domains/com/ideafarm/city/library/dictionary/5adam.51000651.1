@@ -709,7 +709,7 @@ DONE( tmObeySoilF )
 
                                     cDo -= costBite ;
                                     while( postzBite[ costBite - 1 ] == '\\' ) costBite -- ; // LATH MUST NOT BE ESCAPE CHAR
-                                    countT costBite = cDo <= TOCK ? cDo : TOCK ;
+                                    countT costBite = cDo <= CBjOTdATAiNPUT ? cDo : CBjOTdATAiNPUT ;
 
                                     //etThread.traceF( tin0P , T("loading soulAsciiIn [cDo]: ")+TF2(cDo,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                                     _IO_
@@ -735,19 +735,19 @@ DONE( tmObeySoilF )
                                 ZE( strokeS* , pstti ) ;                                                                  // INSPECT AND PERHAPS ANNOTATE
                                 _IO_
                             {       
-                            if( costiP <= TOCK )
+                            if( costiP <= CBjOTdATAiNPUT )
 
-                            soulC soulAsciiIn( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.in" ) ;
+                            soulC soulAsciiIn( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.in" , CBjOTdATAiNPUT ) ;
                             //etThread.traceF( tin0P , T("loading soulAsciiIn") ) ;
                             _IO_
                         {
-                        soulC soulPrepared( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.prepared" ) ;
+                        soulC soulPrepared( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.prepared" , CBjOTdATAiNPUT ) ;
                         _IO_
                     {
-                    soulC soulNativeIn( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.native.in" ) ;
+                    soulC soulNativeIn( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.native.in" , CBjOTdATAiNPUT ) ;
                     _IO_
                 {
-                soulC soulNativeLint( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.native.lint" ) ;
+                soulC soulNativeLint( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.native.lint" , CBjOTdATAiNPUT ) ;
                 ZE( boolT , bAbort ) ;
                 _IO_
             {
@@ -975,6 +975,13 @@ boolT myCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQui
 // IF AN EXCESSIVELY LARGE FILE IS DROPPED, IT WILL BOUNCE IMMEDIATELY TO THE ERROR FOLDER
 //
 // NOTE 1: AVOIDING POOL OVERFLOW
+
+#define CBjOTdATAiNPUT ( TICK >> 0 )
+
+// THE CODE CAN BE ENHANCED IF NECESSARY TO SUPPORT CALCULATION OF THE kt-code CONTENT REGARDLESS OF INPUT SIZE
+// TO KEEP THE CODE SIMPLE, THE kt-code CONTENT WILL NOT BE CALCULATED WHEN THE INPUT IS SPLIT DUE TO BEING LARGER THAN THIS SIZE
+// FOR KTR SOUL FILES, IF THE FILE IS THIS SIZE OR LESS, THEN THE RESULTING HTML DISPLAY WILL INCLUDE A "kt-code" LINK
+// 20260223@2147:
 
 /*1*/WAKEhIDE( "ifcIDaDAM_PISS" )/*1*/
 
