@@ -40,7 +40,7 @@ DONE( tmWorkF )
                                         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 
                                         if( scDone > 0 ) etRock.traceF( tin0P , T("[scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                        sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)&etRock ) ;
+                                        sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)&cbfParm ) ;
                                         //cNewInterruptions = 0 ;
 
                                         }
@@ -204,6 +204,11 @@ DONE( tmWorkF )
     //if( cProtocol != TUCK ) { BLAMMOiD( 0xff00ff00 ) ; }
     etRock.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
+
+    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF , CBsTACKmIN << 1 ) , (countT)&stNnRequested ) ;
+
+    cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested ) ;
+    stackC   stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
@@ -215,12 +220,51 @@ DONE( tmWorkF )
 if( pTaskP )
 TASK( tmWorkF )
 
+DONE( tmAddAddressF )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+
+        }
+            }
+                }
+                    }
+                        etRock.traceF( tin0P , T("could not add nicName [rc,nicName]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    else
+                    if( !POOP ) etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
+                    ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 30 * 60 , 0 , 0x30 ) ;
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
+
+                stNnRequestedP >> nnTarget ;
+                nicNameC          nnTarget ;
+            {
+            while( stNnRequestedP )
+
+            etThread.osNicOpenF( tin0P , hInterface , T("ideanet") ) ;
+            handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
+        {
+        if( stNnRequestedP )
+    {
+    while( !ether )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    TN( tb4 , "    " ) ;
+
+    stackC& stNnRequestedP = *(stackC*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmAddAddressF )
+
 }
     }
         }
             }
-                //U:: PUSH nnTarget TO A CIRCULAR BUFFER THAT IS PROCESSED BY ANOTHER THREAD
-
+                stNnRequested.sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
                 etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
             {
             if( nnIdeaNetSubnet == nnSubnet36Target )
@@ -287,8 +331,13 @@ TASK( tmWorkF )
     pbc = (byteT*)pInfo3DataP ;
     byteT* pbc ;
 
-    etherC& etRock = *(etherC*)postUserNotUsedP ;
-    TINSL
+    stackC& stNnRequested = *cbfParmP.pstNnRequested ;
+    etherC& etRock        = *cbfParmP.pEtRock        ;
+    etherC& etThread      = *cbfParmP.pEtThread      ;
+    etherC& ether         = *cbfParmP.pEther         ;
+    tin0S&  tin0P         = *cbfParmP.pTin0          ;
+
+    cbfParmS& cbfParmP = *(cbfParmS*)postUserNotUsedP ;
 {
 void __cdecl pcapCBF( u_char* postUserNotUsedP , const pcap_pkthdr* pInfo3HeaderNotUsedP , const u_char* pInfo3DataP )
 
@@ -743,6 +792,25 @@ osTextT* ppostProtocol[] =
 //    https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
 //    ASSIGNED INTERNET PROTOCOL NUMBERS
 //    
+
+;
+}
+    }
+    {
+    pstNnRequested( &stNnRequestedP )
+    pEtRock(        &etRockP        ) ,
+    pEtThread(      &etThreadP      ) ,
+    pEther(         &etherP         ) ,
+    pTin0(          &tin0P          ) ,
+    inline cbfParmS( tin0S& tin0P , etherC& etherP , etherC& etThreadP , etherC& etRockP , stackC& stNnRequestedP ) :
+
+    stackC* pstNnRequested ;
+    etherC* pEtRock        ;
+    etherC* pEtThread      ;
+    etherC* pEther         ;
+    tin0S*  pTin0          ;
+{
+struct cbfParmS
 
 ;
 }
