@@ -459,7 +459,8 @@ PCAP_AVAILABLE_1_0
 PCAP_API int	pcap_set_snaplen(pcap_t *, int);
 
 PCAP_AVAILABLE_1_0
-PCAP_API int	pcap_set_promisc(pcap_t *, int);
+//PCAP_API int         pcap_set_promisc(pcap_t *, int);
+           int __cdecl pcap_set_promisc(pcap_t *, int);
 
 PCAP_AVAILABLE_1_0
 PCAP_API int	pcap_can_set_rfmon(pcap_t *);
