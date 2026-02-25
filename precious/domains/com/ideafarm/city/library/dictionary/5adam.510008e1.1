@@ -648,7 +648,7 @@ TASK( tmInterruptLoopF )
     }
         }
             case 0x86dd : { pIpv6HeadRaw = (const ipv6HeadRawS*)pbc ; break ; }
-            case 0x0800 : { pIpv4HeadRaw = (const ipv4HeadRawS*)pbc ; break ; }
+            //case 0x0800 : { pIpv4HeadRaw = (const ipv4HeadRawS*)pbc ; break ; }
         {
         switch( idType )
 
@@ -663,7 +663,7 @@ TASK( tmInterruptLoopF )
             case 0x1c :
             case 0x18 :
 
-            case 0x2 : { pIpv4HeadRaw = (ipv4HeadRawS*)( pbc + sizeof( loopHeadS ) ) ; break ; }
+            //case 0x2 : { pIpv4HeadRaw = (ipv4HeadRawS*)( pbc + sizeof( loopHeadS ) ) ; break ; }
         {
         switch( pLoopHead->protocol )
 
@@ -671,7 +671,7 @@ TASK( tmInterruptLoopF )
     {
     if( pcapCBF_idLinkType == osIDlINKtYPE_NULL )
     ZE( const ipv6HeadRawS* , pIpv6HeadRaw ) ;
-    ZE( const ipv4HeadRawS* , pIpv4HeadRaw ) ;
+    //ZE( const ipv4HeadRawS* , pIpv4HeadRaw ) ;
 
     pbc = (byteT*)pInfo3DataP ;
     byteT* pbc ;
@@ -707,7 +707,7 @@ TASK( tmInterruptLoopF )
     etherC&   etThread      = *pcapCBF_pEtThread     ;
     tin0S&    tin0P         = *pcapCBF_pTin0         ;
 {
-void __cdecl pcapCBF( u_char* postUserP , const pcap_pkthdr* pInfo3HeaderP , const u_char* pInfo3DataP )
+void __cdecl pcapCBF( u_char* postUserNotUsedP , const pcap_pkthdr* pInfo3HeaderNotUsedP , const u_char* pInfo3DataP )
 
 stackC*   pstNnRequested ;
 nicNameC  nnIdeaNetSubnet ;
