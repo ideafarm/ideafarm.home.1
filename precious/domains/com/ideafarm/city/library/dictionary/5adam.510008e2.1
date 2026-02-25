@@ -205,13 +205,14 @@ DONE( tmWorkF )
     etRock.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnRequested , (countT)&stNnApproved1 , (countT)&stNnApproved2 ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnRequested , (countT)&stNnApproved1 , (countT)&stNnApproved2 , (countT)&bksGeiger ) ;
     etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 )                          , (countT)&stNnApproved1 , (countT)&stNnApproved2 ) ;
 
-    cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested ) ;
-    stackC   stNnApproved2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
-    stackC   stNnApproved1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
-    stackC   stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+    cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested , bksGeiger ) ;
+    booksC bksGeiger( tin0P , TAG( TAGiDnULL ) , "geiger" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER , TICK << 0 ) ;
+    stackC stNnApproved2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+    stackC stNnApproved1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+    stackC stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
@@ -277,14 +278,28 @@ DONE( tmAddAddressF )
                             countT rc = POOP ;
                         {
                         else
-                        if( !POOP ) etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
+                        }
+                            bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
+                            geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_NNtARGETaDDEDaOK , sizeof nnTarget ) ;
+
+                            //etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
+                        {
+                        if( !POOP )
                         ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 4 * 60 , 0 , 48 ) ;
                         SCOOPS
                         _IO_
                     {
                     IFsCRATCHoK
+
+                    bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
+                    geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_NNtARGETaCCEPTED , sizeof nnTarget ) ;
                 {
-                if( stNnApproved1P( nnTarget ) || stNnApproved2P( nnTarget ) )      // DURING THE STICKY INTERVAL AT THE BEGINNING OF EACH EPOCH, THE CLIENT WILL USE THE NICNAME VALUES FOR THE PRECEDING EPOCH
+                else
+                }
+                    bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
+                    geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_NNtARGETrEJECTED , sizeof nnTarget ) ;
+                {
+                if( !stNnApproved1P( nnTarget ) && !stNnApproved2P( nnTarget ) )      // DURING THE STICKY INTERVAL AT THE BEGINNING OF EACH EPOCH, THE CLIENT WILL USE THE NICNAME VALUES FOR THE PRECEDING EPOCH
 
                 stNnRequestedP >> nnTarget ;
                 nicNameC          nnTarget ;
@@ -300,6 +315,7 @@ DONE( tmAddAddressF )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tb4 , "    " ) ;
 
+    booksC& bksGeigerP     = *(booksC*)pTaskP->c4 ;
     stackC& stNnApproved2P = *(stackC*)pTaskP->c3 ;
     stackC& stNnApproved1P = *(stackC*)pTaskP->c2 ;
     stackC& stNnRequestedP = *(stackC*)pTaskP->c1 ;
@@ -340,10 +356,17 @@ voidT sinkNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
     }
         }
             }
-                stNnRequested.sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
-                etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
+                stNnRequestedP.sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
+                //etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
+                bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
+                geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET , sizeof nnTarget ) ;
             {
-            if( nnIdeaNetSubnet == nnSubnet36Target )
+            else
+            }
+                bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
+                geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYnOTiDEAnETsUBNET , sizeof nnTarget ) ;
+            {
+            if( nnIdeaNetSubnet != nnSubnet36Target )
             nicNameC nnSubnet36Target = nnTarget( 0x24 ) ;
 
             nicNameC nnTarget = *(nicNameC*)icmpv6Type135.pcTarget ;
@@ -407,11 +430,12 @@ voidT sinkNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
     pbc = (byteT*)pInfo3DataP ;
     byteT* pbc ;
 
-    stackC& stNnRequested = *cbfParmP.pstNnRequested ;
-    etherC& etRock        = *cbfParmP.pEtRock        ;
-    etherC& etThread      = *cbfParmP.pEtThread      ;
-    etherC& ether         = *cbfParmP.pEther         ;
-    tin0S&  tin0P         = *cbfParmP.pTin0          ;
+    booksC& bksGeigerP     = *cbfParmP.pBksGeiger      ;
+    stackC& stNnRequestedP = *cbfParmP.pStkNnRequested ;
+    etherC& etRock         = *cbfParmP.pEtRock         ;
+    etherC& etThread       = *cbfParmP.pEtThread       ;
+    etherC& ether          = *cbfParmP.pEther          ;
+    tin0S&  tin0P          = *cbfParmP.pTin0           ;
 
     cbfParmS& cbfParmP = *(cbfParmS*)postUserNotUsedP ;
 {
@@ -423,6 +447,31 @@ countT    pcapCBF_idLinkType    ;
 
 #define osIDlINKtYPE_ETHERNET 1
 #define osIDlINKtYPE_NULL     0
+
+;
+}
+    }
+        etherP.osTimeNowF( tin0P , timeEvent1 , timeEvent2 ) ;
+        putNegAM( finger , FINGERnEG_geigerEvent ) ;
+    {
+    cbBodyEvent( cbBodyEventP )
+    idTypeEvent( idTypeEventP ) ,
+    timeEvent2( 0 ) ,
+    timeEvent1( 0 ) ,
+    idFormat( 1 ) ,
+    finger( 0 ) ,
+    inline geigerEventHeadS( tin0S& tin0P , etherC& etherP , countT idTypeEventP , countT cbBodyEventP ) :
+
+    public :
+
+    countT  cbBodyEvent ;
+    countT  idTypeEvent ;
+    sCountT timeEvent2  ;
+    countT  timeEvent1  ;
+    countT  idFormat    ;
+    countT  finger      ;
+{
+class geigerEventHeadS
 
 ;
 }
@@ -873,18 +922,20 @@ osTextT* ppostProtocol[] =
 }
     }
     {
-    pstNnRequested( &stNnRequestedP )
-    pEtRock(        &etRockP        ) ,
-    pEtThread(      &etThreadP      ) ,
-    pEther(         &etherP         ) ,
-    pTin0(          &tin0P          ) ,
-    inline cbfParmS( tin0S& tin0P , etherC& etherP , etherC& etThreadP , etherC& etRockP , stackC& stNnRequestedP ) :
+    pBksGeiger(      &bksGeigerP     )
+    pStkNnRequested( &stNnRequestedP ) ,
+    pEtRock(         &etRockP        ) ,
+    pEtThread(       &etThreadP      ) ,
+    pEther(          &etherP         ) ,
+    pTin0(           &tin0P          ) ,
+    inline cbfParmS( tin0S& tin0P , etherC& etherP , etherC& etThreadP , etherC& etRockP , stackC& stNnRequestedP , booksC& bksGeigerP ) :
 
-    stackC* pstNnRequested ;
-    etherC* pEtRock        ;
-    etherC* pEtThread      ;
-    etherC* pEther         ;
-    tin0S*  pTin0          ;
+    booksC* pBksGeiger      ;
+    stackC* pStkNnRequested ;
+    etherC* pEtRock         ;
+    etherC* pEtThread       ;
+    etherC* pEther          ;
+    tin0S*  pTin0           ;
 {
 struct cbfParmS
 
@@ -1374,6 +1425,12 @@ struct loopHeadS
 //      
 //      https://www.tcpdump.org/linktypes/LINKTYPE_NULL.html
 //      
+
+#define ifcIDtYPEgEIGEReVENT_NNtARGETaDDEDaOK                5
+#define ifcIDtYPEgEIGEReVENT_NNtARGETaCCEPTED                4
+#define ifcIDtYPEgEIGEReVENT_NNtARGETrEJECTED                3
+#define ifcIDtYPEgEIGEReVENT_ICMPV6qUERYnOTiDEAnETsUBNET     2  
+#define ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET        1
 
 #define CpACKETSiNbATCH ( TUCK << 2 )
 

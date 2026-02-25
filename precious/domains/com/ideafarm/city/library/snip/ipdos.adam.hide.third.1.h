@@ -10052,9 +10052,10 @@ flHIRE_SHOW
 #define FINGERnEG_listingC                                  ((countT)-(sCountT)((countT)0xcccc0072))
 #define FINGERnEG_WEBhOOKnOTICES                            ((countT)-(sCountT)((countT)0xcccc0073))
 #define FINGERnEG_IDEAnETsUBSCRIPTIONcsOUL                  ((countT)-(sCountT)((countT)0xcccc0074))
+#define FINGERnEG_geigerEvent                               ((countT)-(sCountT)((countT)0xcccc0075))
 /*3*/
 #define FINGERnEG_min     ((countT)0xcccc0001)
-#define FINGERnEG_max     ((countT)0xcccc0074)
+#define FINGERnEG_max     ((countT)0xcccc0075)
 
 //CS:CODEsYNC: 510004FB 112000EF
 
