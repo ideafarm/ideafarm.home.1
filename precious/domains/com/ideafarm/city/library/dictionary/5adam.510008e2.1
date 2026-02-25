@@ -205,12 +205,13 @@ DONE( tmWorkF )
     etRock.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnApproved , (countT)&stNnRequested ) ;
-    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 ) , (countT)&stNnApproved                          ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnRequested , (countT)&stNnApproved1 , (countT)&stNnApproved2 ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 )                          , (countT)&stNnApproved1 , (countT)&stNnApproved2 ) ;
 
     cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested ) ;
+    stackC   stNnApproved2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+    stackC   stNnApproved1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     stackC   stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
-    stackC   stNnApproved(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
@@ -229,12 +230,19 @@ DONE( tmListApprovedAddressesF )
 
         }
             etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
-            { queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , sinkNnApprovedCBF , argApp , &pat ) ; }
+            }
+                queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , sinkNnApprovedCBF , argApp , &pat ) ;
+                countT argApp = (countT)&stNnApprovedUse ;
+            {
             etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
-            epochLath = epoch ;
-            stNnApprovedP.purgeF( tin0P ) ;
+            stNnApprovedUse.purgeF( tin0P ) ;
+
+            epochLath  = epoch ;
         {
         if( epochLath != epoch )
+
+        stackC& stNnApprovedUse = epoch % 2 ? stNnApproved1P : stNnApproved2P ;
+
         countT epoch = timeN1 >> BITSsHIFTiDEAnETePOCH ;
 
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
@@ -248,10 +256,10 @@ DONE( tmListApprovedAddressesF )
     patternC pat( tin0P , etThread , T("sub.01.00000001.*.soulC") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tLongSubscriptions , "" ) ; tLongSubscriptions = T("////go1/" "d/ideafarm.shared/")+TfORsTRING(ifcIDaDAM_WELCOMER)+T("/ideanet/") ;
 
-    stackC& stNnApprovedP = *(stackC*)pTaskP->c1 ;
-    countT  argApp        =           pTaskP->c1 ;
+    stackC& stNnApproved2P = *(stackC*)pTaskP->c2 ;
+    stackC& stNnApproved1P = *(stackC*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmListApprovedAddressesF )
 
 DONE( tmAddAddressF )
@@ -270,13 +278,13 @@ DONE( tmAddAddressF )
                         {
                         else
                         if( !POOP ) etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
-                        ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 30 * 60 , 0 , 0x30 ) ;
+                        ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 4 * 60 , 0 , 48 ) ;
                         SCOOPS
                         _IO_
                     {
                     IFsCRATCHoK
                 {
-                if( stNnApprovedP( nnTarget ) )
+                if( stNnApproved1P( nnTarget ) || stNnApproved2P( nnTarget ) )      // DURING THE STICKY INTERVAL AT THE BEGINNING OF EACH EPOCH, THE CLIENT WILL USE THE NICNAME VALUES FOR THE PRECEDING EPOCH
 
                 stNnRequestedP >> nnTarget ;
                 nicNameC          nnTarget ;
@@ -292,18 +300,19 @@ DONE( tmAddAddressF )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tb4 , "    " ) ;
 
-    stackC& stNnRequestedP = *(stackC*)pTaskP->c2 ;
-    stackC& stNnApprovedP  = *(stackC*)pTaskP->c1 ;
+    stackC& stNnApproved2P = *(stackC*)pTaskP->c3 ;
+    stackC& stNnApproved1P = *(stackC*)pTaskP->c2 ;
+    stackC& stNnRequestedP = *(stackC*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 TASK( tmAddAddressF )
 
 }
-    stNnApprovedP.sinkF( tin0P , countTC() , nnNowData    , flSTACKsINK_UNIQUE ) ;
-    stNnApprovedP.sinkF( tin0P , countTC() , nnNowControl , flSTACKsINK_UNIQUE ) ;
+    stNnApprovedUseP.sinkF( tin0P , countTC() , nnNowData    , flSTACKsINK_UNIQUE ) ;
+    stNnApprovedUseP.sinkF( tin0P , countTC() , nnNowControl , flSTACKsINK_UNIQUE ) ;
 
-    etherP.traceF( tin0P , T("sinkNnApprovedCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) , flTRACE_NOpREFIX ) ;
-    etherP.traceF( tin0P , T("sinkNnApprovedCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) , flTRACE_NOpREFIX ) ;
+    etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) , flTRACE_NOpREFIX ) ;
+    etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) , flTRACE_NOpREFIX ) ;
     nicNameC nnNowData    = woSub.nnF( tin0P , epoch                                ) ;
     nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_CONTROL ) ;
     ideaNetIpv6FieldsS fnu ;
@@ -321,9 +330,9 @@ TASK( tmAddAddressF )
     etherP.boxGetShadowF( tin0P , soulSub , psttLongFileP ) ;
     soulC soulSub( tin0P , etherP , TAG( TAGiDnULL ) ) ;
 
-    stackC& stNnApprovedP = *(stackC*)argAppP ;
-    etherC& etRock        = etherC::etRockIF( tin0P ) ;
-    etherC& etherP        = queueP ;
+    stackC& stNnApprovedUseP = *(stackC*)argAppP ;
+    etherC& etRock           = etherC::etRockIF( tin0P ) ;
+    etherC& etherP           = queueP ;
 {
 voidT sinkNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const psttLongFileP , const countT flagsP , countT& argAppP )
 
@@ -1384,134 +1393,3 @@ struct loopHeadS
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
-
-#endif
-
-                        }
-                            }
-                                etRock.traceF( tin0P , T("could not add nicName [rc,nicName]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
-                                POOPRqUIET
-                                countT rc = POOP ;
-                            {
-                            else
-                            if( !POOP ) etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
-                            ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 30 * 60 , 0 , 0x30 ) ;
-                            SCOOPS
-                            _IO_
-                        {
-                        IFsCRATCHoK
-
-                        etThread.osNicOpenF( tin0P , hInterface , T("ideanet") ) ;
-                        handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
-
-        }
-            }
-                }
-                    break ;
-                    etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tData , flTRACE_null ) ;
-                {
-                case 58 : // ICMPv6
-                }
-                    break ;
-                    etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,data]                                :    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tbDashesUDP+tb4+tData , flTRACE_NOpREFIX ) ;
-                {
-                case 17 :
-                }
-                    break ;
-                    etRock.traceF( tin0P , T("[idPacket,source(idp),dest(idp),protocol,flags,idSerial,idSerialExpected,data]:    ")+TF3(++idPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tIndent1+tb4+tSource+tb4+tDestination+tIndent2+tb4+tProtocol+tb4+tFlags+tb4+tIdSerial+tb4+tIdSerialExpected+tb4+tData , flTRACE_NOpREFIX ) ;
-                {
-                case 6 :
-            {
-            switch( protocol )
-
-            ;
-                    : tn
-                    ? tb32
-                : bToMe
-                ? tb64
-            TN( tIndent2 , "" ) ; tIndent2 = bFromMe
-
-            ;
-                    : tb64
-                    ? tb32
-                : bToMe
-                ? tn
-            TN( tIndent1 , "" ) ; tIndent1 = pcapCBF_idLinkType == osIDlINKtYPE_NULL || bFromMe
-
-            boolT bToMe   = nnMeOnWanted == nnDest   ;
-            boolT bFromMe = nnMeOnWanted == nnSource ;
-
-            TN( tIdSerialExpected , "        " ) ; if( bACK ) tIdSerialExpected = TF3(idSerialExpected,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
-            TN( tIdSerial         , "" ) ; tIdSerial = TF3(idSerial,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8) ;
-
-            TN( tProtocol    , ppostProtocol[ protocol ] ) ; while( tProtocol.csF( tin0P ) < 0x18 ) tProtocol += tb ;
-            TN( tDestination , ""                        ) ; tDestination = T(nnDest  ) ; while( tDestination.csF( tin0P ) < 0x18 ) tDestination += tb ; tDestination += tOpenParen+TF4(idpDestination,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
-            TN( tSource      , ""                        ) ; tSource      = T(nnSource) ; while( tSource     .csF( tin0P ) < 0x18 ) tSource      += tb ; tSource      += tOpenParen+TF4(idpSource     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)+tCloseParen ;
-        {
-        if( bReport )
-
-            tData = T("[type,code,bRouter,bSolicited,bOverride,nnTarget,c136Response,c135Query,c136NewResponse,c135NewQuery]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(bRouter?"    ROUTER":"          ")+T(bSolicited?"    SOLICITED":"             ")+T(bOverride?"    OVERRIDE    ":"                ")+T(nnTarget)+tb4+TF3(c136Response,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135Query,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ;
-
-
-                //U::DO THIS ONLY IF ON A LIST OF APPROVED NN VALUES
-
-                pstNnRequested->sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
-
-                bReport = 1 ;
-                c135Query ++ ; c135NewQuery ++ ;
-
-            nnDest   = nicNameC( head.u.swabbed.pcDestination[ 0 ] , head.u.swabbed.pcDestination[ 1 ] , head.u.swabbed.pcDestination[ 2 ] , head.u.swabbed.pcDestination[ 3 ] ) ;
-            nnSource = nicNameC( head.u.swabbed.pcSource[      0 ] , head.u.swabbed.pcSource[      1 ] , head.u.swabbed.pcSource[      2 ] , head.u.swabbed.pcSource[      3 ] ) ;
-
-            pbDataEnd = (byteT*)pIpv6HeadRaw + sizeof head + head.u.swabbed.cbGramNet ;
-        ZE( const byteT*    , pbDataEnd ) ;
-
-        ZE( udpHeadRawS*    , pUdp      ) ;
-        ZE( tcpHeadRawS*    , pTcp      ) ;
-
-        ZE( boolT  , bReport ) ;
-        ZE( boolT  , bIPv6 ) ;
-        ZE( boolT  , bACK ) ;
-        ZE( countT , idSerialExpected ) ;
-        ZE( countT , idSerial         ) ;
-        ZE( countT , idpDestination   ) ;
-        ZE( countT , idpSource        ) ;
-        nicNameC nnDest   ;
-        nicNameC nnSource ;
-        TN( tData  , "" ) ;
-        TN( tFlags , "" ) ;
-
-    textC&  tFINoN          = *pcapCBF_p_tFINoN      ;
-    textC&  tFINoFF         = *pcapCBF_p_tFINoFF     ;
-    textC&  tSYNoN          = *pcapCBF_p_tSYNoN      ;
-    textC&  tSYNoFF         = *pcapCBF_p_tSYNoFF     ;
-    textC&  tRSToN          = *pcapCBF_p_tRSToN      ;
-    textC&  tRSToFF         = *pcapCBF_p_tRSToFF     ;
-    textC&  tPSHoN          = *pcapCBF_p_tPSHoN      ;
-    textC&  tPSHoFF         = *pcapCBF_p_tPSHoFF     ;
-    textC&  tACKoN          = *pcapCBF_p_tACKoN      ;
-    textC&  tACKoFF         = *pcapCBF_p_tACKoFF     ;
-    textC&  tURGoN          = *pcapCBF_p_tURGoN      ;
-    textC&  tURGoFF         = *pcapCBF_p_tURGoFF     ;
-    textC&  tECEoN          = *pcapCBF_p_tECEoN      ;
-    textC&  tECEoFF         = *pcapCBF_p_tECEoFF     ;
-    textC&  tCWRoN          = *pcapCBF_p_tCWRoN      ;
-    textC&  tCWRoFF         = *pcapCBF_p_tCWRoFF     ;
-    textC&  tbDashesUDP     = *pcapCBF_p_tbDashesUDP ;
-    textC&  tCloseParen     = *pcapCBF_p_tCloseParen ;
-    textC&  tOpenParen      = *pcapCBF_p_tOpenParen  ;
-    textC&  tb64            = *pcapCBF_p_tb64        ;
-    textC&  tb32            = *pcapCBF_p_tb32        ;
-    textC&  tb4             = *pcapCBF_p_tb4         ;
-    textC&  tb              = *pcapCBF_p_tb          ;
-    textC&  tn              = *pcapCBF_p_tn          ;
-
-    countT&   idPacket      = *pcapCBF_p_idPacket    ;
-    nicNameC& nnMeOnWanted  = *pnnMeOnWanted         ;
-    etherC&   etRock        = *pcapCBF_pEtRock       ;
-    etherC&   etThread      = *pcapCBF_pEtThread     ;
-    tin0S&    tin0P         = *pcapCBF_pTin0         ;
-
-#if defined( NEVERdEFINED )
-
