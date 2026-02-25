@@ -25,20 +25,6 @@ DONE( tmWorkF )
             nnSubnet48ControlLath  = nnSubnet48Control  ;
 
             }
-                //}
-                //    }
-                //        else                                            { ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ; }
-                //        if( c4Result.c3 == ifcEXITcODE_EXITpROCESSaOK ) break ;
-                //
-                //        etThread.traceF( tin0P , T("hired  plink to freshen the bird configuration on router [value]:    ")+TF2(c4Result.c3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                //        count4S c4Result = etThread.ifcHireF( tin0P , T("ifcIDaDAM_IDEAnETcONTROLrOUTER") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!hireLater plink.exe ")+tArgsBirdConfigure , flHIRE_DISPLAYnONE | flHIRE_WAIT ) ;
-                //        etThread.traceF( tin0P , T("hiring plink to freshen the bird configuration on router") ) ;
-                //    {
-                //    while( !ether )
-                //{
-                //if( bOk )
-                //20260208@1059: THIS IS NOW DONE ON router BY A DAEMON ; SEE FILES: /etc/bird/freshen.sh AND /etc/systemd/system/freshen-bird.service
-
                 }
                     }
                         etRock.traceF( tin0P , T("!exception / could not write to router share ; ignoring [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
@@ -223,8 +209,7 @@ DONE( tmWorkF )
 
     ) ;
 
-        //"/48 via 2001:19f0:ac00:4406:5400:05ff:fee9:27e6 { preference = 100 ; } ;    #    EPOCH    "
-        "/48 via 2001:19f0:ac00:4406:5400:05ff:fee9:27e6 ;    #    EPOCH    "
+        "/48 via " postROUTERiPV6oUTER " ;    #    EPOCH    "
 
     TN( tImage4BitsVia ,
 
@@ -257,8 +242,8 @@ DONE( tmWorkF )
 
         "    password \""
         "    neighbor       2001:19f0:ffff::1                       as      64515 ;\n"
-        "    source address 2001:19f0:ac00:4406:5400:05ff:fee9:27e6               ;\n"
-        "    local          2001:19f0:ac00:4406:5400:05ff:fee9:27e6 as 4288000334 ;\n"
+        "    source address " postROUTERiPV6oUTER "               ;\n"
+        "    local          " postROUTERiPV6oUTER " as 4288000334 ;\n"
         "    description    \"ideanet\" ;\n"
         "protocol bgp vultr {\n"
         "\n"
@@ -266,7 +251,7 @@ DONE( tmWorkF )
         "\n"
         "debug protocols all ;\n"
         "\n"
-        "router id 149.28.204.105 ;\n"
+        "router id " postROUTERiPV4oUTER " ;\n"
         "\n"
         "log \"/tmp/bird.log\" all ;\n"
         "\n"
@@ -277,6 +262,9 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+#define postROUTERiPV6oUTER "2001:19f0:ac00:3fe3:5400:05ff:fef6:f696"
+#define postROUTERiPV4oUTER "45.32.128.179"
 
 #define CePOCHSkEEP ( 0x8 )
 // MUST KEEP EACH ROUTE FOR ENOUGH TIME TO NOT TRIGGER ROUTE FLAPPING DETECTION ; FUTURE CODE CAN USE THESE ROUTES AS ALTERNATIVES DURING AN ATTACK
