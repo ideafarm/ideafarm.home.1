@@ -374,7 +374,7 @@ TASK( tmInterruptLoopF )
 
         }
             }
-                tData = T("[type,code,c136Response,c135Query,c136NewResponse,c135NewQuery]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF3(c136Response,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135Query,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ;
+                tData = T("[type,code,bRouter,bSolicited,bOverride,nnTarget,c136Response,c135Query,c136NewResponse,c135NewQuery]:    ")+TF4(pIcmpv6->type,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4(pIcmpv6->code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(bRouter?"    ROUTER":"          ")+T(bSolicited?"    SOLICITED":"             ")+T(bOverride?"    OVERRIDE    ":"                ")+T(nnTarget)+tb4+TF3(c136Response,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135Query,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ;
 
                 }
                     }
@@ -389,8 +389,16 @@ TASK( tmInterruptLoopF )
                             bReport = 1 ;
                             c136Response ++ ; c136NewResponse ++ ;
                         {
-                        if( nnIdeaNetSubnet == nnSubnet36Source )
-                        nicNameC nnSubnet36Source = nnSource( 0x24 ) ;
+                        if( nnIdeaNetSubnet == nnSubnet36Target )
+                        nicNameC nnSubnet36Target = nnTarget( 0x24 ) ;
+
+                        bOverride  = icmpv6Type136.bOverride  ;
+                        bSolicited = icmpv6Type136.bSolicited ;
+                        bRouter    = icmpv6Type136.bRouter    ;
+
+                        nnTarget = *(nicNameC*)icmpv6Type135.pcTarget ;
+                        icmpv6Type136.swabF() ;
+                        icmpv6Type136S icmpv6Type136 = *(icmpv6Type136S*)pIcmpv6 ;
                     {
                     case 136 :                                              // HOST ADVERTISEMENT
                     }
@@ -424,13 +432,17 @@ TASK( tmInterruptLoopF )
                         if( nnIdeaNetSubnet == nnSubnet36Target )
                         nicNameC nnSubnet36Target = nnTarget( 0x24 ) ;
 
-                        nicNameC nnTarget = *(nicNameC*)icmpv6Type135.pcTarget ;
+                        nnTarget = *(nicNameC*)icmpv6Type135.pcTarget ;
                         icmpv6Type135.swabF() ;
                         icmpv6Type135S icmpv6Type135 = *(icmpv6Type135S*)pIcmpv6 ;
                     {
                     case 135 :                                              // HOST SOLICITATION
                 {
                 switch( pIcmpv6->type )
+                ZE( boolT , bOverride  ) ;
+                ZE( boolT , bSolicited ) ;
+                ZE( boolT , bRouter    ) ;
+                nicNameC nnTarget ;
             {
             /*else*/ if( pIcmpv6 )
             //}
@@ -1183,6 +1195,29 @@ osTextT* ppostProtocol[] =
 //    https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
 //    ASSIGNED INTERNET PROTOCOL NUMBERS
 //    
+
+;
+}
+    }
+        }
+                                         pbRaw[ offMax - offs ] = save ;
+                         pbRaw[ offs ] = pbRaw[ offMax - offs ]        ;
+            byteT save = pbRaw[ offs ]                                 ;
+        {
+        for( countT offs = 0 ; offs < offStop ; offs ++ )
+        byteT* pbRaw = (byteT*)pcTarget ;
+        countT offStop = 1 + offMax >> 1 ;                  //        1   1   2   2   3   3   4   4
+        countT offMax  = sizeof pcTarget - 1 ;              //        0   1   2   3   4   5   6   7
+    {                                                       // CASES
+    inline voidT swabF( voidT )                             // FOR EVEN NUMBER OF BYTES, EFFICIENT ; FOR ODD NUMBER OF BYTES, SWITCHES THE MIDDLE BYTE WITH ITSELF
+    
+    countT   pcTarget[ 4 ] ;
+    count02T reserved      : 0x1d ;
+    count02T bOverride     :    1 ;
+    count02T bSolicited    :    1 ;
+    count02T bRouter       :    1 ;
+{
+struct icmpv6Type136S : public icmpv6HeadRawS
 
 ;
 }
