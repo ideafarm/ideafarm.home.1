@@ -205,10 +205,12 @@ DONE( tmWorkF )
     etRock.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF , CBsTACKmIN << 1 ) , (countT)&stNnRequested ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnApproved , (countT)&stNnRequested ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 ) , (countT)&stNnApproved                          ) ;
 
     cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested ) ;
     stackC   stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+    stackC   stNnApproved(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
@@ -220,6 +222,38 @@ DONE( tmWorkF )
 if( pTaskP )
 TASK( tmWorkF )
 
+DONE( tmListApprovedAddressesF )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
+
+        }
+            etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
+            { queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , sinkNnApprovedCBF , argApp , &pat ) ; }
+            etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
+            epochLath = epoch ;
+            stNnApprovedP.purgeF( tin0P ) ;
+        {
+        if( epochLath != epoch )
+        countT epoch = timeN1 >> BITSsHIFTiDEAnETePOCH ;
+
+        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+        ZE( sCountT , timeN2 ) ;
+        ZE( countT  , timeN1 ) ;
+    {
+    while( !ether )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    ZE( countT , epochLath ) ;
+    TN( tDash , DASH127 ) ;
+    patternC pat( tin0P , etThread , T("sub.01.00000001.*.soulC") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+    TN( tLongSubscriptions , "" ) ; tLongSubscriptions = T("////go1/" "d/ideafarm.shared/")+TfORsTRING(ifcIDaDAM_WELCOMER)+T("/ideanet/") ;
+
+    stackC& stNnApprovedP = *(stackC*)pTaskP->c1 ;
+    countT  argApp        =           pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmListApprovedAddressesF )
+
 DONE( tmAddAddressF )
 }
     }
@@ -229,17 +263,20 @@ DONE( tmAddAddressF )
             }
                 }
                     }
-                        etRock.traceF( tin0P , T("could not add nicName [rc,nicName]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
-                        POOPRqUIET
-                        countT rc = POOP ;
+                        }
+                            etRock.traceF( tin0P , T("could not add nicName [rc,nicName]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
+                            POOPRqUIET
+                            countT rc = POOP ;
+                        {
+                        else
+                        if( !POOP ) etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
+                        ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 30 * 60 , 0 , 0x30 ) ;
+                        SCOOPS
+                        _IO_
                     {
-                    else
-                    if( !POOP ) etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
-                    ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 30 * 60 , 0 , 0x30 ) ;
-                    SCOOPS
-                    _IO_
+                    IFsCRATCHoK
                 {
-                IFsCRATCHoK
+                if( stNnApprovedP( nnTarget ) )
 
                 stNnRequestedP >> nnTarget ;
                 nicNameC          nnTarget ;
@@ -255,10 +292,40 @@ DONE( tmAddAddressF )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tb4 , "    " ) ;
 
-    stackC& stNnRequestedP = *(stackC*)pTaskP->c1 ;
+    stackC& stNnRequestedP = *(stackC*)pTaskP->c2 ;
+    stackC& stNnApprovedP  = *(stackC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
 TASK( tmAddAddressF )
+
+}
+    stNnApprovedP.sinkF( tin0P , countTC() , nnNowData    , flSTACKsINK_UNIQUE ) ;
+    stNnApprovedP.sinkF( tin0P , countTC() , nnNowControl , flSTACKsINK_UNIQUE ) ;
+
+    etherP.traceF( tin0P , T("sinkNnApprovedCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) , flTRACE_NOpREFIX ) ;
+    etherP.traceF( tin0P , T("sinkNnApprovedCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) , flTRACE_NOpREFIX ) ;
+    nicNameC nnNowData    = woSub.nnF( tin0P , epoch                                ) ;
+    nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_CONTROL ) ;
+    ideaNetIpv6FieldsS fnu ;
+    TN( tb4 , "    " ) ;
+
+    countT epoch = timeN1 >> BITSsHIFTiDEAnETePOCH ;
+
+    etherP.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+    ZE( sCountT , timeN2 ) ;
+    ZE( countT  , timeN1 ) ;
+
+    woSub <<( soulSub ) ;
+    ideaNetSubscriptionC woSub( tin0P , etherP ) ;
+
+    etherP.boxGetShadowF( tin0P , soulSub , psttLongFileP ) ;
+    soulC soulSub( tin0P , etherP , TAG( TAGiDnULL ) ) ;
+
+    stackC& stNnApprovedP = *(stackC*)argAppP ;
+    etherC& etRock        = etherC::etRockIF( tin0P ) ;
+    etherC& etherP        = queueP ;
+{
+voidT sinkNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const psttLongFileP , const countT flagsP , countT& argAppP )
 
 }
     }
