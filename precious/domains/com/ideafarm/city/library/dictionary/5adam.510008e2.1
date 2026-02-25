@@ -39,41 +39,11 @@ DONE( tmWorkF )
                                     }
                                         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 
-                                        }
-                                            }
-                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/")+tTo , tSubject+tBody ) ;
-
-                                                TN( tTo      , "factoryreports@ideafarm.com" ) ;
-                                                TN( tb4      , "    " ) ;
-                                                TN( tBody    , "IDEAnETgEIGERcOUNTER has noticed that many unanswered ICMPv6 host solicitations are arriving.\r\n\r\n" ) ;
-                                                TN( tSubject , "Subject: Flood attack detected.\r\n" ) ;
-                                            {
-                                            if( !( idNotifyLath ++ ) )
-                                                            
-                                            etRock.traceF( tin0P , T("attck detected [c136NewResponse,c135NewQuery]:    ")+TF3(c136NewResponse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc)+TF3(c135NewQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0xc) ) ;
-                                        {
-                                        else
-                                        }
-                                            }
-                                                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/")+tTo , tSubject+tBody ) ;
-
-                                                TN( tTo      , "factoryreports@ideafarm.com" ) ;
-                                                TN( tb4      , "    " ) ;
-                                                TN( tBody    , "IDEAnETgEIGERcOUNTER has noticed that almost all ICMPv6 host solicitations are being answered\r\nso the attack appears to have ended.\r\n\r\n" ) ;
-                                                TN( tSubject , "Subject: End of flood attack detected.\r\n" ) ;
-
-                                                idNotifyLath = 0 ;
-                                            {
-                                            if( idNotifyLath )
-                                        {
-                                        if( c135NewQuery <= 0x10 || c135NewQuery >> 1 <= c136NewResponse )
-
                                         if( scDone > 0 ) etRock.traceF( tin0P , T("[scDone]:    ")+TF2((countT)scDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         sCountT scDone = pcap_dispatch( poshNic , CpACKETSiNbATCH , pcapCBF , (unsigned char*)&etRock ) ;
                                         //cNewInterruptions = 0 ;
 
                                         }
-                                             c136NewResponse = c135NewQuery = 0 ;
                                              timeS2 = timeN2 ;
                                              timeS1 = timeN1 ;
                                         {
@@ -104,35 +74,6 @@ DONE( tmWorkF )
                                 (
                                 if
                                 bpf_program byteCodes ;
-    
-                                pcapCBF_p_tFINoN      = &tFINoN      ;
-                                pcapCBF_p_tFINoFF     = &tFINoFF     ;
-                                pcapCBF_p_tSYNoN      = &tSYNoN      ;
-                                pcapCBF_p_tSYNoFF     = &tSYNoFF     ;
-                                pcapCBF_p_tRSToN      = &tRSToN      ;
-                                pcapCBF_p_tRSToFF     = &tRSToFF     ;
-                                pcapCBF_p_tPSHoN      = &tPSHoN      ;
-                                pcapCBF_p_tPSHoFF     = &tPSHoFF     ;
-                                pcapCBF_p_tACKoN      = &tACKoN      ;
-                                pcapCBF_p_tACKoFF     = &tACKoFF     ;
-                                pcapCBF_p_tURGoN      = &tURGoN      ;
-                                pcapCBF_p_tURGoFF     = &tURGoFF     ;
-                                pcapCBF_p_tECEoN      = &tECEoN      ;
-                                pcapCBF_p_tECEoFF     = &tECEoFF     ;
-                                pcapCBF_p_tCWRoN      = &tCWRoN      ;
-                                pcapCBF_p_tCWRoFF     = &tCWRoFF     ;
-                                pcapCBF_p_tbDashesUDP = &tbDashesUDP ;
-                                pcapCBF_p_tCloseParen = &tCloseParen ;
-                                pcapCBF_p_tOpenParen  = &tOpenParen  ;
-                                pcapCBF_p_tb64        = &tb64        ;
-                                pcapCBF_p_tb32        = &tb32        ;
-                                pcapCBF_p_tb4         = &tb4         ;
-                                pcapCBF_p_tb          = &tb          ;
-                                pcapCBF_p_tn          = &tn          ;
-                                pcapCBF_idLinkType    = idLinkType   ;
-                                pcapCBF_pEtRock       = &etRock      ;
-                                pcapCBF_pEtThread     = &etThread    ;
-                                pcapCBF_pTin0         = &tin0P       ;
                                 etRock.traceF( tin0P , T("receiving header/data images") ) ;
                             {
                             if( !rc )
@@ -186,11 +127,8 @@ DONE( tmWorkF )
     {
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-    pcapCBF_p_idPacket = &idPacket ;
     ZE( countT , idPacket ) ;
 
-    pstNnRequested = &stNnRequested ;
-    stackC stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     nnIdeaNetSubnet = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::") ) ;
     
     char postError[ PCAP_ERRBUF_SIZE ] ;
@@ -203,8 +141,6 @@ DONE( tmWorkF )
     
             }
                 etRock.traceF( tin0P , T("    [nnMe]        :    ")+T(nnMe)+(bWanted?tb4+T("wanted"):tn) ) ;
-    
-                if( bWanted && !nnMeOnWanted )  nnMeOnWanted = nnMe ;       //ONLY SUPPORTS A SINGLE ADDRESS ON THE WANTED ADAPTER
     
                 nicNameC nnMe( nnv ) ;
                 countT nnv = SWAB4( *(countT*)pbv ) ;
@@ -246,8 +182,6 @@ DONE( tmWorkF )
     {
     while( pc1 )
     static IP_ADAPTER_ADDRESSES* pc1 = pInfo ;
-    pnnMeOnWanted = &nnMeOnWanted ;
-    nicNameC nnMeOnWanted ;
     
     ULONG cAddresses = GetAdaptersAddresses( AF_INET , 0 , 0 ,  pInfo , &cba ) ;
     unsigned long cba = sizeof pInfo ; 
@@ -256,42 +190,14 @@ DONE( tmWorkF )
     etRock.traceF( tin0P , T(postv) ) ;
     const osTextT* postv = pcap_lib_version() ;
     
-      TN( tSayDescription  , "    [description] :    "     ) ;
-      TN( tSayName         , "    [name]        :    "     ) ;
-      TN( tSayFriendlyName , "    [friendlyName]:    "     ) ;
-      TN( tWantCurly       , ""                            ) ;
+    TN( tSayDescription  , "    [description] :    "     ) ;
+    TN( tSayName         , "    [name]        :    "     ) ;
+    TN( tSayFriendlyName , "    [friendlyName]:    "     ) ;
+    TN( tWantCurly       , ""                            ) ;
+    TN( tWantFriendly    , "ideanet"                     ) ;
+    TN( tWantExactName   , ""                            ) ;
     
-      TN( tWantFriendly    , "ideanet"                     ) ;
-    //TN( tWantFriendly    , "outer"                       ) ;
-    //TN( tWantFriendly    , "Loopback Pseudo-Interface 1" ) ;
-    
-      TN( tWantExactName   , ""                            ) ;
-    //TN( tWantExactName   , "\\Nic\\NPF_Loopback"      ) ;
-    
-    TN( tFINoN  , "FIN" ) ;
-    TN( tFINoFF , "---" ) ;
-    TN( tSYNoN  , "SYN" ) ;
-    TN( tSYNoFF , "---" ) ;
-    TN( tRSToN  , "RST" ) ;
-    TN( tRSToFF , "---" ) ;
-    TN( tPSHoN  , "PSH" ) ;
-    TN( tPSHoFF , "---" ) ;
-    TN( tACKoN  , "ACK" ) ;
-    TN( tACKoFF , "---" ) ;
-    TN( tURGoN  , "URG" ) ;
-    TN( tURGoFF , "---" ) ;
-    TN( tECEoN  , "ECE" ) ;
-    TN( tECEoFF , "---" ) ;
-    TN( tCWRoN  , "CWR" ) ;
-    TN( tCWRoFF , "---" ) ;
-    
-    TN( tbDashesUDP , "-------------------------------------------------------" ) ;
-    TN( tCloseParen , ")" ) ;
-    TN( tOpenParen , "(" ) ;
-    TN( tb64 , "                                                                      " ) ;
-    TN( tb32 , "                                   " ) ;
     TN( tb4 , "    " ) ;
-    TN( tb  , " "    ) ;
     TN( tn  , ""    ) ;
     
     //if( cProtocol != TUCK ) { BLAMMOiD( 0xff00ff00 ) ; }
@@ -314,7 +220,7 @@ TASK( tmWorkF )
             }
                 //U:: PUSH nnTarget TO A CIRCULAR BUFFER THAT IS PROCESSED BY ANOTHER THREAD
 
-                etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) ) ;
+                etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
             {
             if( nnIdeaNetSubnet == nnSubnet36Target )
             nicNameC nnSubnet36Target = nnTarget( 0x24 ) ;
@@ -384,43 +290,9 @@ TASK( tmWorkF )
     TINSL
 {
 void __cdecl pcapCBF( u_char* postUserNotUsedP , const pcap_pkthdr* pInfo3HeaderNotUsedP , const u_char* pInfo3DataP )
-stackC*   pstNnRequested ;
+
 nicNameC  nnIdeaNetSubnet ;
 
-countT    c136NewResponse ;
-countT    c135NewQuery    ;
-countT    c136Response    ;
-countT    c135Query       ;
-
-textC*    pcapCBF_p_tFINoN      ;
-textC*    pcapCBF_p_tFINoFF     ;
-textC*    pcapCBF_p_tSYNoN      ;
-textC*    pcapCBF_p_tSYNoFF     ;
-textC*    pcapCBF_p_tRSToN      ;
-textC*    pcapCBF_p_tRSToFF     ;
-textC*    pcapCBF_p_tPSHoN      ;
-textC*    pcapCBF_p_tPSHoFF     ;
-textC*    pcapCBF_p_tACKoN      ;
-textC*    pcapCBF_p_tACKoFF     ;
-textC*    pcapCBF_p_tURGoN      ;
-textC*    pcapCBF_p_tURGoFF     ;
-textC*    pcapCBF_p_tECEoN      ;
-textC*    pcapCBF_p_tECEoFF     ;
-textC*    pcapCBF_p_tCWRoN      ;
-textC*    pcapCBF_p_tCWRoFF     ;
-textC*    pcapCBF_p_tbDashesUDP ;
-textC*    pcapCBF_p_tCloseParen ;
-textC*    pcapCBF_p_tOpenParen  ;
-textC*    pcapCBF_p_tb64        ;
-textC*    pcapCBF_p_tb32        ;
-textC*    pcapCBF_p_tb4         ;
-textC*    pcapCBF_p_tb          ;
-textC*    pcapCBF_p_tn          ;
-countT*   pcapCBF_p_idPacket    ;
-nicNameC* pnnMeOnWanted         ;
-etherC*   pcapCBF_pEtRock       ;
-etherC*   pcapCBF_pEtThread     ;
-tin0S*    pcapCBF_pTin0         ;
 countT    pcapCBF_idLinkType    ;
 
 #define osIDlINKtYPE_ETHERNET 1
