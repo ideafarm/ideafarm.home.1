@@ -1,4 +1,4 @@
-#define DEBUG
+//#define DEBUG
 
 //ENABLE THIS PREPROCESSOR IF/ENDIF IN PRODUCTION
 #if not defined( DEBUG )
@@ -3132,6 +3132,7 @@ void elf_obey_C::liveF( void )
                 //THIS LIST IS IN REVERSE ORDER OF WHAT WILL APPEAR IN ipdos.h
                 char* ppostFrom[] =
                 {
+                    "1snip.15*.geigerEventHeadS"                            ,
                     "1snip.15*.queueC"                                      ,
                     "1snip.15*.ideaNetSubscriptionC"                        ,
                     "1snip.15*.ideaNetIpv6FieldsS"                          ,
