@@ -270,34 +270,44 @@ DONE( tmEatGeigerEventsF )
 }
     }
         if( bDelete1 ) etThread.delF( tin0P , *(byteT**)&pbi1 ) ;
+
         }
+            if( bDelete2 ) etThread.delF( tin0P , *(byteT**)&pbi2 ) ;
             }
-                if( bDelete2 ) etThread.delF( tin0P , *(byteT**)&pbi2 ) ;
-                }
-                    head.traceF( tin0P , tSay ) ;
-                    TN( tSay , "" ) ; tSay = T(nnTarget) + (!bControl?tn:T("    CONTROL")) + (!bData?tn:T("    DATA")) + (!bDecoy?tn:T("    DECOY")) ;
+                head.traceF( tin0P , tSay ) ;
+                TN( tSay , "" ) ; tSay = T(nnTarget) + (!bControl?tn:T("    CONTROL")) + (!bData?tn:T("    DATA")) + (!bDecoy?tn:T("    DECOY")) ;
 
-                    boolT bDecoy   = !!stNnSubnetSayDecoyBgpP( nnSubnetTarget ) ;
-                    boolT bData    = !!stNnSubnetSayDataP(     nnSubnetTarget ) ;
-                    boolT bControl = !!stNnSubnetSayControlP(  nnSubnetTarget ) ;
+                boolT bDecoy   = !!stNnSubnetSayDecoyBgpP( nnSubnetTarget ) ;
+                boolT bData    = !!stNnSubnetSayDataP(     nnSubnetTarget ) ;
+                boolT bControl = !!stNnSubnetSayControlP(  nnSubnetTarget ) ;
 
-                    nicNameC  nnSubnetTarget = nnTarget( 48 ) ;
-                    nicNameC& nnTarget       = *(nicNameC*)pbi2 ;
-                {
-                if( cbi2 == sizeof( nicNameC ) )
-                boolT bDelete2 = bksGeiger.readF( tin0P , pbi2 , cbi2 , hRead ) ;
-                countT cbi2 = sizeof( nicNameC ) ;
-                ZE( const byteT* , pbi2 ) ;
+                nicNameC  nnSubnetTarget = nnTarget( 48 ) ;
+                nicNameC& nnTarget       = *(nicNameC*)pbi2 ;
             {
-            if( head.cbBodyEvent == sizeof( nicNameC ) )
-            geigerEventHeadS& head = *(geigerEventHeadS*)pbi1 ;
+            if( cbi2 == sizeof( nicNameC ) )
+            boolT bDelete2 = bksGeiger.readF( tin0P , pbi2 , cbi2 , hRead ) ;
+            countT cbi2 = sizeof( nicNameC ) ;
+            ZE( const byteT* , pbi2 ) ;
         {
-        if( cbi1 == sizeof( geigerEventHeadS ) )
+        if( head.cbBodyEvent == sizeof( nicNameC ) )
+        geigerEventHeadS& head = *(geigerEventHeadS*)pbi1 ;
+
+        }
+            continue ;
+            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+            hRead = hReadSave ;
+        {
+        if( !pbi1 || cbi1 != cbi1Save )
+
         boolT bDelete1 = bksGeiger.readF( tin0P , pbi1 , cbi1 , hRead ) ;
-        countT cbi1 = sizeof( geigerEventHeadS ) ;
         ZE( const byteT* , pbi1 ) ;
+
+        handleC hReadSave = hRead ;
+        countT cbi1Save = cbi1 ;
+        countT cbi1 = sizeof( geigerEventHeadS ) ;
     {
     while( !ether )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
     TN( tn  , ""     ) ;
     TN( tb4 , "    " ) ;
