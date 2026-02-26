@@ -148,9 +148,9 @@ DONE( tmWorkF )
 
     etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) , (countT)&stNnSubnetSayControl , (countT)&stNnSubnetSayData , (countT)&stNnSubnetSayDecoyBgp ) ;
 
-    stackC               stNnSubnetSayDecoyBgp( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
-    stackC               stNnSubnetSayData(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
-    stackC               stNnSubnetSayControl(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    stackC               stNnSubnetSayDecoyBgp( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    stackC               stNnSubnetSayData(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    stackC               stNnSubnetSayControl(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
     nicNameC             nnSubnet48DecoyBgpLath ;
     nicNameC             nnSubnet48DataLath     ;
     nicNameC             nnSubnet48ControlLath  ;
@@ -275,11 +275,55 @@ DONE( tmEatGeigerEventsF )
             if( bDelete2 ) etThread.delF( tin0P , *(byteT**)&pbi2 ) ;
             }
                 head.traceF( tin0P , tSay ) ;
-                TN( tSay , "" ) ; tSay = T(nnTarget) + (!bControl?tn:T("    CONTROL")) + (!bData?tn:T("    DATA")) + (!bDecoy?tn:T("    DECOY")) ;
+                TN( tSay , "" ) ; tSay = T(nnTarget) + (!bControl?tn:T("    CONTROL")) + (!bData?tn:T("    DATA")) + (!bDecoyBgp?tn:T("    DECOYbGP")) ;
 
-                boolT bDecoy   = !!stNnSubnetSayDecoyBgpP( nnSubnetTarget ) ;
-                boolT bData    = !!stNnSubnetSayDataP(     nnSubnetTarget ) ;
-                boolT bControl = !!stNnSubnetSayControlP(  nnSubnetTarget ) ;
+                }
+                    while( ~hWalk ) ;
+                    }
+                        }
+                            break ;
+                            bDecoyBgp = 1 ;
+                        {
+                        if( nnWo == nnTarget )
+                        nicNameC& nnWo = (nicNameC&)stNnSubnetSayDecoyBgpP.downF( tin0P , hWalk ) ;
+                    {
+                    do
+                    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                {
+                if( stNnSubnetSayDecoyBgpP )
+                ZE( boolT , bDecoyBgp ) ;
+
+                }
+                    while( ~hWalk ) ;
+                    }
+                        }
+                            break ;
+                            bData = 1 ;
+                        {
+                        if( nnWo == nnTarget )
+                        nicNameC& nnWo = (nicNameC&)stNnSubnetSayDataP.downF( tin0P , hWalk ) ;
+                    {
+                    do
+                    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                {
+                if( stNnSubnetSayDataP )
+                ZE( boolT , bData ) ;
+
+                }
+                    while( ~hWalk ) ;
+                    }
+                        }
+                            break ;
+                            bControl = 1 ;
+                        {
+                        if( nnWo == nnTarget )
+                        nicNameC& nnWo = (nicNameC&)stNnSubnetSayControlP.downF( tin0P , hWalk ) ;
+                    {
+                    do
+                    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                {
+                if( stNnSubnetSayControlP )
+                ZE( boolT , bControl ) ;
 
                 nicNameC  nnSubnetTarget = nnTarget( 48 ) ;
                 nicNameC& nnTarget       = *(nicNameC*)pbi2 ;
