@@ -9,14 +9,18 @@
                             
 REST
 
+/**/etRock.traceF( tin0P , T("\r\nA0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 sgnDone_tmWorkF.waitF( tin0P ) ;
 etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK >> 2 ) ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
 signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
+
+etherC& etRock = etherC::etRockIF( tin0P ) ;
 
 TODO
 
 DONE( tmWorkF )
 }
+    /**/etRock.traceF( tin0P , T("\r\nB0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
         }
             //etRock.traceF( tin0P , T("\r\nwaited for sgnDone_tmServeHttpF.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
@@ -339,6 +343,7 @@ TASK( tmWorkF )
 
 DONE( tmClockF )
 }
+    /**/etRock.traceF( tin0P , T("\r\nC0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 
@@ -366,6 +371,7 @@ osTextT postSoulSubDump[ TUCK << 4 ] ;
 
 DONE( tmHearF )
 }
+    /**/etRock.traceF( tin0P , T("\r\nD0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
         etThread.delF( tin0P , psttUnwanted ) ;
         etThread.delF( tin0P , psttWanted   ) ;
@@ -436,15 +442,18 @@ TASK( tmHearF )
 
 DONE( tmServeHttpF )
 }
+    /**/etRock.traceF( tin0P , T("\r\nE0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     //THREADmODE2rESTORE0( flagsSave )
     //etRock.traceF( tin0P , T("\r\ntmServeHttpF cleaned up.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
+        /**/etRock.traceF( tin0P , T("\r\nE1\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         //THREADmODE2oN0( flTHREADmODE2_UNLOCKpOOLiDENTITY )
         //THREADmODE2sAVE0( flagsSave )
 
         //etRock.traceF( tin0P , T("\r\ntmServeHttpF destroyed server instance.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         }
             //etRock.traceF( tin0P , T("\r\ntmServeHttpF destroying server instance.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+            /**/etRock.traceF( tin0P , T("\r\nE2\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
             }
                 ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
