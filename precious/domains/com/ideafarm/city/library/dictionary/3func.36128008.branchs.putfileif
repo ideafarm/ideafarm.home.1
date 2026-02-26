@@ -398,13 +398,13 @@
 //U::                                    etherP.strFuseF( tin0P , psttOutWhite , tFileShortWhite , &sOutWhite ) ;
 //U::                                    etherP.strFuseF( tin0P , psttOutBlack , tFileShortBlack , &sOutBlack ) ;
 //U::                                {
-//U::                                if( pP.tBodyProlog_70Black.csF( tin0P ) && pP.idMode != ifcIDmODEpUTfILE_ROOT && pP.idMode != ifcIDmODEpUTfILE_ABOUT )
+//U::                                if( pP.tBodyProlog_70Black.csF( tin0P ) && pP.idMode != ifcIDmODEpUTfILE_ROOT && pP.idMode != ifcIDmODEpUTfILE_ABOUT && pP.idMode != ifcIDmODEpUTfILE_IDEAnET )
 //U::
 //U::                                }
 //U::                                    etherP.strFuseF( tin0P , psttOutWhite , T(psttNameSpaceP)+pP.thSlash , &sOutWhite ) ;
 //U::                                    etherP.strFuseF( tin0P , psttOutBlack , T(psttNameSpaceP)+pP.thSlash , &sOutBlack ) ;
 //U::                                {
-//U::                                if( psttNameSpaceP && pP.tBodyProlog_70Black.csF( tin0P ) && pP.idMode != ifcIDmODEpUTfILE_ROOT && pP.idMode != ifcIDmODEpUTfILE_ABOUT )
+//U::                                if( psttNameSpaceP && pP.tBodyProlog_70Black.csF( tin0P ) && pP.idMode != ifcIDmODEpUTfILE_ROOT && pP.idMode != ifcIDmODEpUTfILE_ABOUT && pP.idMode != ifcIDmODEpUTfILE_IDEAnET )
 
                                 etherP.strFuseF( tin0P , psttOutWhite , pP.tBodyProlog_70White , &sOutWhite ) ;
                                 //etRock.traceF( tin0P , TP("",cNestP)+T("U::/I/ K") ) ; //U::TO FIND A BUG (TRACE SQUEEZE)
@@ -419,6 +419,37 @@
                                 }
                                     etherP.strFuseF( tin0P , psttOutWhite , tFileShortBlack , &sOutWhite ) ; //INTENTIONALLY THE OTHER COLOR
                                     etherP.strFuseF( tin0P , psttOutBlack , tFileShortWhite , &sOutBlack ) ; //INTENTIONALLY THE OTHER COLOR
+
+                                    }
+                                        etherP.strFuseF( tin0P , psttOutWhite , tAbsoluteIdeaNet , &sOutWhite ) ; //INTENTIONALLY THE OTHER COLOR
+                                        etherP.strFuseF( tin0P , psttOutBlack , tAbsoluteIdeaNet , &sOutBlack ) ; //INTENTIONALLY THE OTHER COLOR
+
+                                        etherP.delF( tin0P , psttPart2 ) ;
+                                        etherP.delF( tin0P , psttPart1 ) ;
+                                        }
+                                            etherP.delF( tin0P , pstts ) ;
+                                            }
+                                                etherP.delF( tin0P , psttWant ) ;
+                                                tAbsoluteIdeaNet = T("http://[::1]")+T(psttWant)+TF2(idEditionP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+pP.thSlash ;
+                                                etherP.delF( tin0P , psttNU ) ;
+                                                etherP.strBisectF( tin0P , psttWant , psttNU , pstts , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttWant ) ; ___( psttNU ) ;
+                                                ZE( strokeS* , psttNU   ) ;
+                                                ZE( strokeS* , psttWant ) ;
+                                            {
+                                            if( pstts )
+                                            etherP.strSubstringF( tin0P , pstts , idf , countTC() , psttPart1 ) ; ___( pstts ) ;
+                                            countT idf = idHit ;
+                                            ZE( strokeS* , pstts ) ;
+                                        {
+                                        if( idHit )
+                                        countT idHit = etherP.strIdF( tin0P , T("/ideanet/") , psttPart1 ) ;
+                                        TN( tAbsoluteIdeaNet , "" ) ;
+
+                                        etherP.strBisectF( tin0P , psttPart1 , psttPart2 , pP.psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPart1 ) ; ___( psttPart2 ) ;
+                                        ZE( strokeS* , psttPart2 ) ;
+                                        ZE( strokeS* , psttPart1 ) ;
+                                    {
+                                    if( pP.idMode == ifcIDmODEpUTfILE_IDEAnET )
                                 {
                                 if( pP.tBodyProlog_50.csF( tin0P ) )
                                 //etRock.traceF( tin0P , TP("",cNestP)+T("U::/I/ O") ) ; //U::TO FIND A BUG (TRACE SQUEEZE)
@@ -552,6 +583,7 @@
                                     + ( pP.tBodyProlog_70Black.csF( tin0P ) >= pP.tBodyProlog_70White.csF( tin0P ) ? pP.tBodyProlog_70Black.csF( tin0P ) : pP.tBodyProlog_70White.csF( tin0P ) )
                                     + pP.tBodyProlog_60.csF( tin0P )
                                     + ( tFileShortBlack.csF( tin0P ) >= tFileShortWhite.csF( tin0P ) ? tFileShortBlack.csF( tin0P ) : tFileShortWhite.csF( tin0P ) )
+                                    + ( pP.idMode == ifcIDmODEpUTfILE_IDEAnET ? TUCK : 0 )
                                     + pP.tBodyProlog_50.csF( tin0P )
                                     + ( pP.tBodyProlog_40Black.csF( tin0P ) >= pP.tBodyProlog_40White.csF( tin0P ) ? pP.tBodyProlog_40Black.csF( tin0P ) : pP.tBodyProlog_40White.csF( tin0P ) )
                                     + pP.tBodyProlog_30.csF( tin0P )
@@ -1755,10 +1787,12 @@
 
 }
     }
+
         etherP.delF( tin0P , psttPart2 ) ;
         etherP.delF( tin0P , psttPart1 ) ;
         tFileShortWhiteP = tFileTinyP+(bRoot?T(".white"):pP.thDotZDot+T("white.")+TF3(B(br).hashv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+pP.thDot+TF3(B(br).hashId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8))+T(".html") ;
         tFileShortBlackP = tFileTinyP+(bRoot?pP.tn      :pP.thDotZDot+T("black.")+TF3(B(br).hashv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+pP.thDot+TF3(B(br).hashId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8))+T(".html") ;
+
         tFileTinyP  = T(psttPart2) ;
         tFilePathP  = T(psttPart1)+TF2(idEditionP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+(cNestP==1?pP.tn:pP.thSlash+pP.thLeaf)+pP.thSlash ;
         etherP.strBisectF( tin0P , psttPart1 , psttPart2 , pP.psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPart1 ) ; ___( psttPart2 ) ;

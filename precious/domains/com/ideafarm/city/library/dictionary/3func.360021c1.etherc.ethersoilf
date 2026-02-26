@@ -1594,6 +1594,8 @@
 /*N2U*/                                                             : ifcIDmODEpUTfILE_OTHER //U:: SET AN ERROR AND REFUSE TO PROCESS THE INPUT
 /*N2U*/                                                             ? ifcIDmODEpUTfILE_OTHER
 /*N2U*/                                                             : !strCompareF( tin0P , psttvt , tValueKtrModeOther )
+/*N2U*/                                                             ? ifcIDmODEpUTfILE_IDEAnET
+/*N2U*/                                                             : !strCompareF( tin0P , psttvt , tValueKtrModeIdeaNet )
 /*N2U*/                                                             ? ifcIDmODEpUTfILE_IPDOS
 /*N2U*/                                                             : !strCompareF( tin0P , psttvt , tValueKtrModeIpdos )
 /*N2U*/                                                             ? ifcIDmODEpUTfILE_PAY
@@ -5483,6 +5485,7 @@
 /*N1D*/                                                                 GETsETTING( *this , psttnu2 , T("!ktr.banner2.ipdos") )
 /*N1D*/                                                                 GETsETTING( *this , psttnu1 , T("!ktr.banner1.ipdos") )
 /*N1D*/                                                             {
+/*N1D*/                                                             case ifcIDmODEpUTfILE_IDEAnET      :
 /*N1D*/                                                             case ifcIDmODEpUTfILE_IPDOS        :
 /*N1D*/                                                             }
 /*N1D*/                                                                 break ;
@@ -6128,6 +6131,7 @@
                 ZE( countT , waitStepModulo1 ) ;
 
                 TN( tValueKtrModeOther       , "other"          ) ;
+                TN( tValueKtrModeIdeaNet     , "ideanet"        ) ;
                 TN( tValueKtrModeIpdos       , "ipdos"          ) ;
                 TN( tValueKtrModePay         , "pay"            ) ;
                 TN( tValueKtrModeWo          , "wo"             ) ;

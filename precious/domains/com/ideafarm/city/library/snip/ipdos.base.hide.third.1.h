@@ -46633,10 +46633,11 @@ i do not verify that the naked idJot value is valid
 #define ifcIDmODEpUTfILE_BUNDLE       ((countT)0xdddd0bff)
 #define ifcIDmODEpUTfILE_PAY          ((countT)0xdddd0c00)
 #define ifcIDmODEpUTfILE_IPDOS        ((countT)0xdddd0c01)
-#define ifcIDmODEpUTfILE_OTHER        ((countT)0xdddd0c02)
+#define ifcIDmODEpUTfILE_IDEAnET      ((countT)0xdddd0c02)
+#define ifcIDmODEpUTfILE_OTHER        ((countT)0xdddd0c03)
 /*3*/
 #define ifcIDmODEpUTfILE_min     ((countT)0xdddd0bf6)
-#define ifcIDmODEpUTfILE_max     ((countT)0xdddd0c02)
+#define ifcIDmODEpUTfILE_max     ((countT)0xdddd0c03)
 
 
 //
