@@ -275,8 +275,13 @@ DONE( tmEatGeigerEventsF )
             if( bDelete2 ) etThread.delF( tin0P , *(byteT**)&pbi2 ) ;
             }
                 head.traceF( tin0P , tSay ) ;
-                TN( tSay , "" ) ; tSay = T(nnTarget) + (!bControl?tn:T("    CONTROL")) + (!bData?tn:T("    DATA")) + (!bDecoyBgp?tn:T("    DECOYbGP")) ;
 
+                if( bDecoyBgp )   tSay += T("    DECOYbGP") ;
+                if( bData     )   tSay += T("    DATA"    ) ;
+                if( bControl  )   tSay += T("    CONTROL" ) ;
+                TN( tSay , "" ) ; tSay  = T(nnTarget      ) ;
+
+                stNnSubnetSayDecoyBgpP.ungrabF( tin0P ) ;
                 }
                     while( ~hWalk ) ;
                     }
@@ -292,8 +297,10 @@ DONE( tmEatGeigerEventsF )
                     handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( stNnSubnetSayDecoyBgpP )
+                stNnSubnetSayDecoyBgpP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 ZE( boolT , bDecoyBgp ) ;
 
+                stNnSubnetSayDataP.ungrabF( tin0P ) ;
                 }
                     while( ~hWalk ) ;
                     }
@@ -308,8 +315,10 @@ DONE( tmEatGeigerEventsF )
                     handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( stNnSubnetSayDataP )
+                stNnSubnetSayDataP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 ZE( boolT , bData ) ;
 
+                stNnSubnetSayControlP.ungrabF( tin0P ) ;
                 }
                     while( ~hWalk ) ;
                     }
@@ -324,6 +333,7 @@ DONE( tmEatGeigerEventsF )
                     handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( stNnSubnetSayControlP )
+                stNnSubnetSayControlP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 ZE( boolT , bControl ) ;
 
                 nicNameC  nnSubnetTarget = nnTarget( 48 ) ;
