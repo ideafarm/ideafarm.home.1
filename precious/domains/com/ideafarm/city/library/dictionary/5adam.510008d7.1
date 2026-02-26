@@ -145,6 +145,9 @@ DONE( tmWorkF )
         if( !epochLath )
     {
     while( !ether )
+
+    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) , (countT)&stNnSubnetSayControl , (countT)&stNnSubnetSayData , (countT)&stNnSubnetSayDecoyBgp ) ;
+
     stackC               stNnSubnetSayDecoyBgp( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
     stackC               stNnSubnetSayData(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
     stackC               stNnSubnetSayControl(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
@@ -258,8 +261,6 @@ DONE( tmWorkF )
 
     TN( tImage1 ,
 
-    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) ) ;
-
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
 if( pTaskP )
@@ -273,9 +274,15 @@ DONE( tmEatGeigerEventsF )
             }
                 if( bDelete2 ) etThread.delF( tin0P , *(byteT**)&pbi2 ) ;
                 }
-                    head.traceF( tin0P , tTarget ) ;
-                    TN( tTarget , "" ) ; tTarget = T(nnTarget) ;
-                    nicNameC& nnTarget = *(nicNameC*)pbi2 ;
+                    head.traceF( tin0P , tSay ) ;
+                    TN( tSay , "" ) ; tSay = T(nnTarget) + (!bControl?tn:T("    CONTROL")) + (!bData?tn:T("    DATA")) + (!bDecoy?tn:T("    DECOY")) ;
+
+                    boolT bDecoy   = !!stNnSubnetSayDecoyBgpP( nnSubnetTarget ) ;
+                    boolT bData    = !!stNnSubnetSayDataP(     nnSubnetTarget ) ;
+                    boolT bControl = !!stNnSubnetSayControlP(  nnSubnetTarget ) ;
+
+                    nicNameC  nnSubnetTarget = nnTarget( 48 ) ;
+                    nicNameC& nnTarget       = *(nicNameC*)pbi2 ;
                 {
                 if( cbi2 == sizeof( nicNameC ) )
                 boolT bDelete2 = bksGeiger.readF( tin0P , pbi2 , cbi2 , hRead ) ;
@@ -292,10 +299,16 @@ DONE( tmEatGeigerEventsF )
     {
     while( !ether )
     handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+    TN( tn  , ""     ) ;
+    TN( tb4 , "    " ) ;
 
     booksC bksGeiger( tin0P , TAG( TAGiDnULL ) , "geiger" ) ;
+
+    stackC& stNnSubnetSayDecoyBgpP = *(stackC*)pTaskP->c3 ;
+    stackC& stNnSubnetSayDataP     = *(stackC*)pTaskP->c2 ;
+    stackC& stNnSubnetSayControlP  = *(stackC*)pTaskP->c1 ;
 {
-if( pTaskP )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 TASK( tmEatGeigerEventsF )
 
 #define postROUTERiPV6oUTER "2001:19f0:ac00:4406:5400:05ff:fee9:27e6"
