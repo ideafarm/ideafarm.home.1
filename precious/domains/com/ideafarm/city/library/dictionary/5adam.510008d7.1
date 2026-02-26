@@ -258,10 +258,45 @@ DONE( tmWorkF )
 
     TN( tImage1 ,
 
+    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) ) ;
+
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+DONE( tmEatGeigerEventsF )
+}
+    }
+        if( bDelete1 ) etThread.delF( tin0P , *(byteT**)&pbi1 ) ;
+        }
+            }
+                if( bDelete2 ) etThread.delF( tin0P , *(byteT**)&pbi2 ) ;
+                }
+                    head.traceF( tin0P , tTarget ) ;
+                    TN( tTarget , "" ) ; tTarget = T(nnTarget) ;
+                    nicNameC& nnTarget = *(nicNameC*)pbi2 ;
+                {
+                if( cbi2 == sizeof( nicNameC ) )
+                boolT bDelete2 = bksGeiger.readF( tin0P , pbi2 , cbi2 , hRead ) ;
+                countT cbi2 = sizeof( nicNameC ) ;
+                ZE( const byteT* , pbi2 ) ;
+            {
+            if( head.cbBodyEvent == sizeof( nicNameC ) )
+            geigerEventHeadS& head = *(geigerEventHeadS*)pbi1 ;
+        {
+        if( cbi1 == sizeof( geigerEventHeadS ) )
+        boolT bDelete1 = bksGeiger.readF( tin0P , pbi1 , cbi1 , hRead ) ;
+        countT cbi1 = sizeof( geigerEventHeadS ) ;
+        ZE( const byteT* , pbi1 ) ;
+    {
+    while( !ether )
+    handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+
+    booksC bksGeiger( tin0P , TAG( TAGiDnULL ) , "geiger" ) ;
+{
+if( pTaskP )
+TASK( tmEatGeigerEventsF )
 
 #define postROUTERiPV6oUTER "2001:19f0:ac00:4406:5400:05ff:fee9:27e6"
 #define postROUTERiPV4oUTER "149.28.204.105"

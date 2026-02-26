@@ -49716,3 +49716,57 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.queueC : 1snip.150001d4.queueC END
+
+
+
+
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/struct geigerEventHeadS/*1*/
+{
+    countT  finger      ;
+    countT  idFormat    ;
+    countT  timeEvent1  ;
+    sCountT timeEvent2  ;
+    countT  idTypeEvent ;
+    countT  cbBodyEvent ;
+
+    public :
+
+    inline geigerEventHeadS( tin0S& tin0P , etherC& etherP , countT idTypeEventP , countT cbBodyEventP ) :
+    finger( 0 ) ,
+    idFormat( 1 ) ,
+    timeEvent1( 0 ) ,
+    timeEvent2( 0 ) ,
+    idTypeEvent( idTypeEventP ) ,
+    cbBodyEvent( cbBodyEventP )
+    {
+        putNegAM( finger , FINGERnEG_geigerEvent ) ;
+        etherP.osTimeNowF( tin0P , timeEvent1 , timeEvent2 ) ;
+    }
+
+    inline voidT traceF( tin0S& tin0P , const strokeS* const psttDataP = 0 )
+    {
+        etherC& etRock = etherC::etRockIF( tin0P ) ;
+        TN( tb4 , "    " ) ;
+        etRock.traceF( tin0P , T("geigerEventHeadS [time,idType,cbBody]:    ")+TT(timeEvent1,timeEvent2)+tb4+TF2(idTypeEvent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbBodyEvent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+(!psttDataP?T(""):tb4+T(psttDataP)) ) ;
+    }
+}
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
