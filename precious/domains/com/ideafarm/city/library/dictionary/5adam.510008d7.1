@@ -282,6 +282,7 @@ DONE( tmEatGeigerEventsF )
                     }
                         }
                             break ;
+                            cNewDecoyHits ++ ;
                             bDecoyBgp = 1 ;
                         {
                         if( nnWo == nnTarget )
@@ -332,6 +333,20 @@ DONE( tmEatGeigerEventsF )
             boolT bDelete2 = bksGeiger.readF( tin0P , pbi2 , cbi2 , hRead ) ;
             countT cbi2 = sizeof( nicNameC ) ;
             ZE( const byteT* , pbi2 ) ;
+
+            }
+                cNewDecoyHits = 0 ;
+
+                }
+                    etThread.traceF( tin0P , T("detected attack that is using bgp table [cNewDecoyHits]:    ")+TF2(cNewDecoyHits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                {
+                if( cNewDecoyHits > TUCK )
+
+                epochLath  = epoch ;
+            {
+            if( epochLath != epoch )
+
+            countT epoch = head.timeEvent1 >> BITSsHIFTiDEAnETePOCH ;
         {
         if( head.cbBodyEvent == sizeof( nicNameC ) )
         geigerEventHeadS& head = *(geigerEventHeadS*)pbi1 ;
@@ -351,6 +366,8 @@ DONE( tmEatGeigerEventsF )
         countT cbi1 = sizeof( geigerEventHeadS ) ;
     {
     while( !ether )
+    ZE( countT , cNewDecoyHits ) ;
+    ZE( countT , epochLath ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
     TN( tn  , ""     ) ;
