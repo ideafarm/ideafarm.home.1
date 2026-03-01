@@ -324,17 +324,26 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 TASK( tmAddAddressF )
 
 }
-    stNnApprovedUseP.sinkF( tin0P , countTC() , nnNowData    , flSTACKsINK_UNIQUE ) ;
-    stNnApprovedUseP.sinkF( tin0P , countTC() , nnNowControl , flSTACKsINK_UNIQUE ) ;
+    }
+        stNnApprovedUseP.sinkF( tin0P , countTC() , nnNowData    , flSTACKsINK_UNIQUE ) ;
+        stNnApprovedUseP.sinkF( tin0P , countTC() , nnNowControl , flSTACKsINK_UNIQUE ) ;
 
-    etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) , flTRACE_NOpREFIX ) ;
-    etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) , flTRACE_NOpREFIX ) ;
-    nicNameC nnNowData    = woSub.nnF( tin0P , epoch                                ) ;
-    nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_CONTROL ) ;
-    ideaNetIpv6FieldsS fnu ;
-    TN( tb4 , "    " ) ;
+        etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) , flTRACE_NOpREFIX ) ;
+        etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) , flTRACE_NOpREFIX ) ;
+        nicNameC nnNowData    = woSub.nnF( tin0P , epoch                                ) ;
+        nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_CONTROL ) ;
+        ideaNetIpv6FieldsS fnu ;
+        TN( tb4 , "    " ) ;
+    {
+    for( countT epoch = epochUseWoth ; epoch <= epochUseLath ; epoch ++ )
 
-    countT epoch = timeN1 >> BITSsHIFTiDEAnETePOCH ;
+    countT epochUseWoth = ( ( timeN1 - time1PerEpoch * EPOCHSsIGNATUREmAX ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+    countT epochUseLath = ( ( timeN1                                      ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+
+    const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
+
+    // IF BITSsHIFTiDEAnETePOCH IS DEFINED TO BE ( 0x14 ), THEN EACH EPOCH IS 02 TOCK, SO EACH PREFIX, AND EACH ADDRESS, MUST LIVE FOR AT LEAST 1 1/8 TICK
+    // WITH THESE VALUES {2,6}, CLIENTS WILL HAVE EFFECTIVE EPOCHS WITHIN [LAG2,LAG8], SO EACH PREFIX, AND EACH ADDRESS, MUST LIVE FOR AT LEAST 9 EPOCHS
 
     etherP.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
