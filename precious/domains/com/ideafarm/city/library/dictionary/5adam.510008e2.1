@@ -284,8 +284,8 @@ DONE( tmAddAddressF )
 
                             //etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
                         {
-                        if( !POOP )
-                        ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 8 * 60 , 0 , 48 ) ;           //20260227@1042: "8 * 60" <-- "4 * 60" BECAUSE 4 MINUTES WAS OBSERVED TO RESULT IN ONLY 6 SECONDS OF OVERLAP
+                        if( !POOP )                                                                                                  //20260301@1033: 30_9 MINUTES BECAUSE SIGNATURE RANGE IS NOW 6 EPOCHS, PLUS 2 ALLOWED FOR BGP PROPOGATION = 8 EPOCHS
+                        ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 30 * 60 , 0 , 48 ) ;           //20260227@1042: "8 * 60" <-- "4 * 60" BECAUSE 4 MINUTES WAS OBSERVED TO RESULT IN ONLY 6 SECONDS OF OVERLAP
                         SCOOPS
                         _IO_
                     {

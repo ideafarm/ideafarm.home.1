@@ -55,8 +55,8 @@ DONE( tmWorkF )
                                     etThread.delF( tin0P , posti ) ;
                                     }
                                         }
-                                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Sticky to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-                                            time1Sticky = 0 ;
+                                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                                            time1Signature = 0 ;
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpControl?"    The DATA channel just went DOWN, but the control channel is still up.":"    The DATA channel just went DOWN, and the control channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpData = 0 ;
                                         {
@@ -108,8 +108,8 @@ DONE( tmWorkF )
                                     etThread.delF( tin0P , posti ) ;
                                     }
                                         }
-                                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Sticky to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-                                            time1Sticky = 0 ;
+                                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                                            time1Signature = 0 ;
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpData?"    The CONTROL channel just went DOWN, but the data channel is still up.":"    The CONTROL channel just went DOWN, and the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpControl = 0 ;
                                         {
@@ -178,14 +178,25 @@ DONE( tmWorkF )
                         //etRock.traceF( tin0P , TT(timeN1,timeN2)+ T(" [ipv6Control,ipv6Data]:    ")+tIpv6NowControl+tb4+tIpv6NowData , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                         }
-                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [tim1Sticky,perTuckSticky]:    ")+TF2(time1Sticky,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSticky,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-                            time1Sticky = (countT)( ( (count04T)time1PerEpoch * perTuckSticky ) / TUCK ) ;                              // NEVER  STICKY FOR THE LATH 01 PERTUCK OF THE EPOCH, TO ENSURE THAT EVERY CLIENT HAS SOME ACCESS TO THE CURRENT PREFIX
-                            count04T perTuckSticky = 0x10 + ipv6FieldsControl.hostRandom % ( TUCK - 0x20 ) ;        /* [0x10,0xf0) */   // ALWAYS STICKY FOR THE WOTH 01 PERTUCK OF THE EPOCH, TO ALLOW 2 TOCKS FOR THE BGP SYSTEM TO ESTABLISH CONNECTIVITY USING EACH NEW PREFIX BETWEEN ME (CLIENT) AND THE SERVER
-                        {                                                                                                               // DISCRETE STEPS SO THAT THE SEQUENCE OF time1Sticky VALUES WILL BE QUASI UNIQUE FOR EACH SUBSCRIBER, SO CAN SERVE AS A SIGNATURE FOR IDENTIFYING A SUBSCRIBER ATTACKER
+                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [tim1Signature,perTuckSignature]:    ")+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+
+                            ) ;
+                                / TUCK
+                                )
+                                    (count04T)time1PerEpoch * EPOCHSsIGNATUREmAX * perTuckSignature
+                                (
+                            (
+                            time1Signature = (countT)
+
+                            count04T perTuckSignature = ipv6FieldsControl.hostRandom % TUCK ;
+
+                            // THE RANDOMNESS OF THE LENGTH OF THE SIGNATURE TIME ADJUSTMENT CREATES A SIGNATURE THAT CAN BE USED TO IDENTIFY AN ATTACKER WHO IS SNIFFING HIS WIRE TO DISCOVER THE PREFIX TO ATTACK
+                            // DISCRETE STEPS SO THAT THE SEQUENCE OF time1Signature VALUES WILL BE QUASI UNIQUE FOR EACH SUBSCRIBER, SO CAN SERVE AS A SIGNATURE FOR IDENTIFYING A SUBSCRIBER ATTACKER
+                        {
                         else
                         }
-                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Sticky to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-                            time1Sticky = 0 ;
+                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                            time1Signature = 0 ;
                         {
                         if( !bUpControl || !bUpData )
 
@@ -209,8 +220,7 @@ DONE( tmWorkF )
                     {
                     if( epochUseLath != epochUse )
 
-                    countT epochUse  = ( timeN1 - time1Sticky ) >> BITSsHIFTiDEAnETePOCH ;
-                    countT epochTrue =   timeN1                 >> BITSsHIFTiDEAnETePOCH ;
+                    countT epochUse = ( ( timeN1 - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
@@ -221,7 +231,7 @@ DONE( tmWorkF )
                     ++ idPass ;
                 {
                 while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
-                ZE( countT , time1Sticky ) ;
+                ZE( countT , time1Signature ) ;
                 const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
                 ZE( countT , idPass ) ;
                 ZE( boolT  , bUpData    ) ;
@@ -237,8 +247,6 @@ DONE( tmWorkF )
                 ZE( countT , epochUseLath ) ;
                 TN( tUnderScore , "_" ) ;
                 TN( tb4 , "    " ) ;
-
-                //etThread.osThreadF( TaRG2cBsTACK( tmClockF , CBsTACKmIN << 2 ) ) ;
 
                 }
                     }
@@ -340,32 +348,6 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
-
-DONE( tmClockF )
-}
-    /**/etRock.traceF( tin0P , T("\r\nC0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
-    }
-        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
-
-        CONoUTrAW3( "\r                                      \rTocks remaining in epoch:    " , tockRemain , "." ) ;
-
-        countT tockRemain      = time1TrueRemain >> 0x10 ;
-        countT time1TrueRemain = time1TrueEnd - timeN1 ;
-
-        countT time1TrueEnd    = ( epochTrue + 1 ) << BITSsHIFTiDEAnETePOCH ;
-        countT time1TrueStart  =   epochTrue       << BITSsHIFTiDEAnETePOCH ;
-
-        countT epochTrue = timeN1 >> BITSsHIFTiDEAnETePOCH ;
-
-        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
-        ZE( sCountT , timeN2 ) ;
-        ZE( countT  , timeN1 ) ;
-    {
-    while( !ether )
-    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-{
-if( pTaskP )
-TASK( tmClockF )
 
 osTextT postSoulSubDump[ TUCK << 4 ] ;
 
@@ -488,6 +470,12 @@ TASK( tmServeHttpF )
 
 // LIKE 8bc BUT DNS SERVER REPLACED WITH HTTP SERVER
 // OBSOLETES: 8bc_
+
+#define EPOCHSsIGNATUREmAX             6
+#define EPOCHSaLLOWEDfORbGPpROPOGATION 2
+
+// IF BITSsHIFTiDEAnETePOCH IS DEFINED TO BE ( 0x14 ), THEN EACH EPOCH IS 02 TOCK, SO EACH PREFIX, AND EACH ADDRESS, MUST LIVE FOR AT LEAST 1 1/8 TICK
+// WITH THESE VALUES {2,6}, CLIENTS WILL HAVE EFFECTIVE EPOCHS WITHIN [LAG2,LAG8], SO EACH PREFIX, AND EACH ADDRESS, MUST LIVE FOR AT LEAST 9 EPOCHS
 
 //#define DUMMYsUB
 //ENABLE THIS LINE FOR DEBUGGING (USES DUMMY SUBSCRIPTION RATHER THAN A RESOURCE)
