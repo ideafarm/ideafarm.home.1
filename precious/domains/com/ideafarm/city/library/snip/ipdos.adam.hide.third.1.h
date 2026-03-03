@@ -1,5 +1,5 @@
 
-#define EPOCHSsIGNATUREmAX             6
+#define EPOCHSsIGNATUREmAX             0x10
 
 #define EPOCHSaLLOWEDfORbGPpROPOGATION 2
 
