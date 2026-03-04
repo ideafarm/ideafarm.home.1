@@ -12,18 +12,21 @@
         }
             __1
             __( idActionP ) ;
+            _IO_
         {
         default:
         }
             break ;
             dec02AM( ((tin1S&)tin0P).pag1->_etherC_.cEnabledWhere ) ;
             THREADmODEwHEREoFF( flTHREADmODEwHERE_WHEREiSwATCHING )
+            _IO_
         {
         case ifcIDaCTIONwHERE_UNWATCH :
         }
             break ;
             THREADmODEwHEREoN( flTHREADmODEwHERE_WHEREiSwATCHING )
             inc02AM( ((tin1S&)tin0P).pag1->_etherC_.cEnabledWhere ) ;
+            _IO_
         {
         case ifcIDaCTIONwHERE_WATCH :
         }
@@ -35,6 +38,7 @@
             THREADmODEwHEREoFF( flTHREADmODEwHERE_REGISTEREDwITHwHERE )
             __Z( cWhereSetup ) ;
             ((tin1S&)tin0P).pag4->_etherC_grabWhere.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+            _IO_
         {
         case ifcIDaCTIONwHERE_UNREGISTERtHREAD :
         }
@@ -50,6 +54,7 @@
             ZE( countT , off ) ;
             __Z( cWhereSetup ) ;
             ((tin1S&)tin0P).pag4->_etherC_grabWhere.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+            _IO_
         {
         case ifcIDaCTIONwHERE_REGISTERtHREAD :
         }
@@ -58,11 +63,15 @@
             delF( tin0P , (countT*&)((tin1S&)tin0P).pag1->_etherC_.ppTinWhere ) ;
             THREADmODE1rESTORE
             DEL( ((tin1S&)tin0P).pag1->_etherC_.pSgnDone_tmWhere ) ;
-            ((tin1S&)tin0P).pag1->_etherC_.pSgnDone_tmWhere->waitF( tin0P ) ;
+            }
+                ((tin1S&)tin0P).pag1->_etherC_.pSgnDone_tmWhere->waitF( tin0P ) ;
+                _IO_
+            {
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             ((tin1S&)tin0P).pag1->_etherC_.bQuitWhere = 1 ;
             __( !( cWhereSetup -- ) ) ;
             ((tin1S&)tin0P).pag4->_etherC_grabWhere.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+            _IO_
         {
         case ifcIDaCTIONwHERE_SHUTDOWN :
         }
@@ -71,7 +80,10 @@
             __( cWhereSetup ++ ) ;
             THREADmODEwHERErESTORE
             THREADmODE1rESTORE                                                                            // CBsTACK IS MINIMIZED
-            sgnReady.waitF( tin0P ) ;
+            }
+                sgnReady.waitF( tin0P ) ;
+                _IO_
+            {
             osThreadF( TaRG3sGNdONEcBsTACK( tmWhereF , *((tin1S&)tin0P).pag1->_etherC_.pSgnDone_tmWhere , CBsTACKmIN << 4 ) , (countT)&((tin1S&)tin0P).pag1->_etherC_.bQuitWhere , (countT)&sgnReady , (countT)&((tin1S&)tin0P).pag1->_etherC_.cEnabledWhere , (countT)&((tin1S&)tin0P).pag1->_etherC_.idTypeReportWhere , (countT)((tin1S&)tin0P).pag1->_etherC_.ppTinWhere , (countT)&((tin1S&)tin0P).pag1->_etherC_.cThreadsMaxWhere , (countT)&((tin1S&)tin0P).pag4->_etherC_grabWhere ) ;
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             THREADmODEwHEREoN( flTHREADmODEwHERE_NOwHERE )
@@ -81,6 +93,7 @@
             newF( tin0P , LF , (countT*&)((tin1S&)tin0P).pag1->_etherC_.ppTinWhere , ((tin1S&)tin0P).pag1->_etherC_.cThreadsMaxWhere ) ; ___( ((tin1S&)tin0P).pag1->_etherC_.ppTinWhere ) ;
             ((tin1S&)tin0P).pag1->_etherC_.cThreadsMaxWhere = cThreadsMaxP ;
             ((tin1S&)tin0P).pag4->_etherC_grabWhere.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+            _IO_
         {
         case ifcIDaCTIONwHERE_SETUP :
     {
