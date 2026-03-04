@@ -8,55 +8,78 @@
 
 DONE( tmWatchQueueF )
 }
+    etRock.traceF( tin0P , T("tmWatchQueueF / 0") ) ; //U::
     }
+        etRock.traceF( tin0P , T("tmWatchQueueF / 1") ) ; //U::
         if( queueP.idPhase < 3 ) queueP.idPhase ++ ;
 
         }
-            }
-                ((tin123S&)tin0P).where.idWhat2 = 0 ;
-                etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_SHUTDOWN ) ;
-                etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
-                etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;
-                bTrace = 0 ;
-            {
-            if( bTrace )
+            etRock.traceF( tin0P , T("tmWatchQueueF / 2") ) ; //U::
+            //}
+            //    ((tin123S&)tin0P).where.idWhat2 = 0 ;
+            //    etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_SHUTDOWN ) ;
+            //    etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
+            //    etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;
+            //    bTrace = 0 ;
+            //{
+            //if( bTrace )
 
             }
+                etRock.traceF( tin0P , T("tmWatchQueueF / 3") ) ; //U::
                 while( !ether && ~hFindFile && !POOP ) ;
                 }
                     DEL( pInfoFile ) ;
                     }
-                        if( !bDir ) queueP << pInfoFile->psttIfoName ;
+                        etRock.traceF( tin0P , T("tmWatchQueueF / 4") ) ; //U::
+                        }
+                            etRock.traceF( tin0P , T("tmWatchQueueF / 5") ) ; //U::
+                            queueP << pInfoFile->psttIfoName ;
+                            etRock.traceF( tin0P , T("tmWatchQueueF / 6") ) ; //U::
+                        {
+                        if( !bDir )
                         const boolT bDir = pInfoFile->psttIfoName[ CSpREFIX - 1 + pInfoFile->psttIfoName->idAdam ].idAdam == '/' ;
+                        etRock.traceF( tin0P , T("tmWatchQueueF / 7") ) ; //U::
                     {
                     else
                     }
                         break ;
+                        etRock.traceF( tin0P , T("tmWatchQueueF / 8") ) ; //U::
                         DEL( pInfoFile ) ;
+                        etRock.traceF( tin0P , T("tmWatchQueueF / 9") ) ; //U::
                     {
                     if( !pInfoFile || !pInfoFile->psttIfoName )
 
+                    etRock.traceF( tin0P , T("tmWatchQueueF / a") ) ; //U::
                     etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , psttzFolder , &patUse ) ; ___( pInfoFile ) ;
+                    etRock.traceF( tin0P , T("tmWatchQueueF / b") ) ; //U::
                     ZE( infoFileS* , pInfoFile ) ;
                 {
                 do
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 handleC hFindFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                etRock.traceF( tin0P , T("tmWatchQueueF / c") ) ; //U::
             {
+
+            //}
+            //    etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;
+            //    etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
+            //    etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , 1 ) ;
+            //    ((tin123S&)tin0P).where.idWhat2 = - 1 ;
+            //{
+            //if( bTrace )
 
             }
-                etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;
-                etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
-                etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , 1 ) ;
-                ((tin123S&)tin0P).where.idWhat2 = - 1 ;
+                etRock.traceF( tin0P , T("tmWatchQueueF / d") ) ; //U::
+                etThread.etherC::diskWaitDirF( tin0P , hWait , queueP.bQuit , psttzFolder , TOCK << 0 , flWAITdIR_FILEnAME ) ;
+                etRock.traceF( tin0P , T("tmWatchQueueF / e") ) ; //U::
             {
-            if( bTrace )
+            if( bWait )
 
-            if( bWait ) etThread.etherC::diskWaitDirF( tin0P , hWait , queueP.bQuit , psttzFolder , TOCK << 0 , flWAITdIR_FILEnAME ) ;
-
+            etRock.traceF( tin0P , T("tmWatchQueueF / f") ) ; //U::
             _IO_
         {
 
+        etRock.traceF( tin0P , T("tmWatchQueueF / g") ) ; //U::
         }
             }
                 break ;
@@ -73,22 +96,27 @@ DONE( tmWatchQueueF )
         {
         switch( queueP.idPhase )
         boolT bWait = 1 ;
+        etRock.traceF( tin0P , T("tmWatchQueueF / h") ) ; //U::
 
         if( queueP.idPhase == 3 && F(queueP.flagsCt) & flQUEUEc_NOwAIT ) break ;
 
         _IO_
     {
     while( ++ idIn < 3 || !queueP.bQuit )           // P:PERSONALITY: I ALWAYS DO WO PASS (3 PHASES), EVEN IF queueP IS ALREADY BEING DESTROYED
+    etRock.traceF( tin0P , T("tmWatchQueueF / i") ) ; //U::
     ZE( countT , idIn ) ;
     handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
     ZE( const strokeS* , psttzFolder ) ;
-    boolT bTrace = 1 ; //U:: TO FIND A BUG
+    //boolT bTrace = 1 ; //U:: TO FIND A BUG
 
     const patternC& patUse = pPatP ? *pPatP : pat ;
     patternC pat( tin0P , etThread , T("*") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
 
     const patternC* pPatP  = queueP ;
     queueC&         queueP = *(queueC*)pTaskP->c1 ;
+
+    etRock.traceF( tin0P , T("tmWatchQueueF / j") ) ; //U::
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     _IO_
 {
