@@ -116,9 +116,9 @@ DONE( tmWorkF )
             if( nnSubnet48ControlLath != nnSubnet48Control )
             ZE( countT , cChange ) ;
 
-            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowDecoyBgp,nnAdvertise]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowDecoyBgp)+tb4+T(nnSubnet48DecoyBgp) , flTRACE_NOpREFIX ) ;
-            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowData,nnAdvertise]:        ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData    )+tb4+T(nnSubnet48Data    ) , flTRACE_NOpREFIX ) ;
-            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowControl,nnAdvertise]:     ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl )+tb4+T(nnSubnet48Control ) , flTRACE_NOpREFIX ) ;
+            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowDecoyBgp,nnAdvertise]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowDecoyBgp)+tb4+T(nnSubnet48DecoyBgp) ) ;
+            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowData,nnAdvertise]:        ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData    )+tb4+T(nnSubnet48Data    ) ) ;
+            etThread.traceF( tin0P , T("addNicAddressCBF [epoch,nnNowControl,nnAdvertise]:     ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl )+tb4+T(nnSubnet48Control ) ) ;
 
             nicNameC nnSubnet48DecoyBgp  = nnNowDecoyBgp(    0x30 ) ;
             nicNameC nnSubnet48Data      = nnNowData(        0x30 ) ;
@@ -138,11 +138,11 @@ DONE( tmWorkF )
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
 
-        }
-            etThread.traceF( tin0P , T("addNicAddressCBF [       nnMax] :          ")+tMax , flTRACE_NOpREFIX ) ;
-            etThread.traceF( tin0P , T("addNicAddressCBF [       nnMin] :          ")+tMin , flTRACE_NOpREFIX ) ;
-        {
-        if( !epochLath )
+        //}
+        //    etThread.traceF( tin0P , T("addNicAddressCBF [       nnMax] :          ")+tMax , flTRACE_NOpREFIX ) ;
+        //    etThread.traceF( tin0P , T("addNicAddressCBF [       nnMin] :          ")+tMin , flTRACE_NOpREFIX ) ;
+        //{
+        //if( !epochLath )
     {
     while( !ether )
 
