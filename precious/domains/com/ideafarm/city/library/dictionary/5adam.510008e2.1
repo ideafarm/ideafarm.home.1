@@ -233,10 +233,15 @@ DONE( tmListApprovedAddressesF )
             etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
             }
                 queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , sinkNnApprovedCBF , argApp , &pat ) ;
-                countT argApp = (countT)&stNnApprovedUse ;
+                countT  argApp = (countT)&c3App ;
+                count3S c3App( (countT)&stNnApprovedUse , (countT)&psttlEmail , (countT)&swsIdBookIdSubByEmail ) ;
             {
             etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
             stNnApprovedUse.purgeF( tin0P ) ;
+
+            switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttlEmail , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook
+            ZE( strokeS* , psttlEmail ) ;
+            //U:: MAKE THIS sws DATA VISIBLE TO MYSELF AND TO OTHER PROCESSES ON ALL WEB* IdeaNet (tm) HOSTS
 
             epochLath  = epoch ;
         {
@@ -364,15 +369,26 @@ TASK( tmAddAddressF )
     {
     switch( woSub.idBookF( tin0P ) )
 
+    swsIdBookIdSubByEmailP.sinkF( tin0P , countTC() , c2Wo ) ;
+    psttlEmailP = tEmail ;
+    count2S c2Wo( idBook , idSub ) ;
+
+    countT idSub  = woSub.idSubF(  tin0P ) ;
+    countT idBook = woSub.idBookF( tin0P ) ;
+    TN( tEmail , "" ) ; tEmail = woSub ;
+
     woSub <<( soulSub ) ;
     ideaNetSubscriptionC woSub( tin0P , etherP ) ;
 
     etherP.boxGetShadowF( tin0P , soulSub , psttLongFileP ) ;
     soulC soulSub( tin0P , etherP , TAG( TAGiDnULL ) ) ;
 
-    stackC& stNnApprovedUseP = *(stackC*)argAppP ;
-    etherC& etRock           = etherC::etRockIF( tin0P ) ;
-    etherC& etherP           = queueP ;
+    switchStackC& swsIdBookIdSubByEmailP = *(switchStackC*)c3App.c3  ;
+    strokeS*&     psttlEmailP            =     *(strokeS**)c3App.c2  ;
+    switchStackC& stNnApprovedUseP       = *(switchStackC*)c3App.c1  ;
+    count3S&      c3App                  = *(count3S*)argAppP        ;
+    etherC&       etRock                 = etherC::etRockIF( tin0P ) ;
+    etherC&       etherP                 = queueP                    ;
 {
 voidT sinkNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const psttLongFileP , const countT flagsP , countT& argAppP )
 
