@@ -49775,8 +49775,9 @@ i am nonconformant in that all of my member function definitions are in a single
     voidT    operator <<( soulC& sP ) ;
     voidT    traceF( tin0S& tin0P ) ;
 
-    inline   operator textC(  voidT ) const { return tEmail ; }
-    inline   operator countT( voidT ) const { return idSub  ; }
+    inline   operator textC(  voidT        ) const { return tEmail ; }
+    inline   countT idBookF(  tin0S& tin0P ) const { return idBook ; }
+    inline   countT idSubF(   tin0S& tin0P ) const { return idSub  ; }
 }
 ;
 
