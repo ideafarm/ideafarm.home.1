@@ -211,9 +211,6 @@ DONE( tmWorkF )
     cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested , bksGeiger ) ;
     booksC bksGeiger( tin0P , TAG( TAGiDnULL ) , "geiger" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER , TICK << 0 ) ;
 
-    etRock.traceF( tin0P , T("tmWorkF [&stNnApproved2]:    ")+TF2((countT)&stNnApproved2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etRock.traceF( tin0P , T("tmWorkF [&stNnApproved1]:    ")+TF2((countT)&stNnApproved1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
     stackC stNnApproved2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     stackC stNnApproved1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     stackC stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
@@ -269,10 +266,6 @@ DONE( tmListApprovedAddressesF )
     TN( tDash , DASH127 ) ;
     patternC pat( tin0P , etThread , T("sub.01.00000001.*.soulC") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tLongSubscriptions , "" ) ; tLongSubscriptions = T("////go1/" "d/ideafarm.shared/")+TfORsTRING(ifcIDaDAM_WELCOMER)+T("/ideanet/") ;
-
-    etRock.traceF( tin0P , T("tmListApprovedAddressesF [&stNnApproved2P]:    ")+TF2((countT)&stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etRock.traceF( tin0P , T("tmListApprovedAddressesF [&stNnApproved1P]:    ")+TF2((countT)&stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etherC&       etRock                 = etherC::etRockIF( tin0P ) ;
 
     stackC& stNnApproved2P = *(stackC*)pTaskP->c2 ;
     stackC& stNnApproved1P = *(stackC*)pTaskP->c1 ;
@@ -331,10 +324,6 @@ DONE( tmAddAddressF )
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tb4 , "    " ) ;
-
-    etRock.traceF( tin0P , T("tmAddAddressF [&stNnApproved2P]:    ")+TF2((countT)&stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etRock.traceF( tin0P , T("tmAddAddressF [&stNnApproved1P]:    ")+TF2((countT)&stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     booksC& bksGeigerP     = *(booksC*)pTaskP->c4 ;
     stackC& stNnApproved2P = *(stackC*)pTaskP->c3 ;
