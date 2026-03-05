@@ -232,7 +232,6 @@ DONE( tmListApprovedAddressesF )
         ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
 
         }
-            stNnApprovedUse.ungrabF( tin0P ) ;
             etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
             THREADmODE1rESTORE
             }
@@ -243,7 +242,6 @@ DONE( tmListApprovedAddressesF )
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
             stNnApprovedUse.purgeF( tin0P ) ;
-            stNnApprovedUse.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
             switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttlEmail , flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook
             ZE( strokeS* , psttlEmail ) ;
