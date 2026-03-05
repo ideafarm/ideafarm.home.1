@@ -21159,20 +21159,20 @@ for each previous absentee
 //20160526@2157: DOUBLED TO ( TOCK << 4 ) FROM ( TOCK << 3 ) BECAUSE ADDED GRAB LIST TO EXCEPTION REPORT
 //20191010@0755: DOUBLED TO ( TOCK << 5 ) BECAUSE booksC::writeF EXHAUSTED TLS WHILE DELETING bookC INSTANCE
 
-//#define CB tLSmAIN ( TOCK << 5 )
+#define CBtLSmAIN ( TOCK << 5 )
 
 //20240912@2252: TUNING OPTIMIZATION OF TLS SIZES
-//B:#define CB tLSmAIN ( TUCK << 1 )
-//B:#define CB tLSmAIN ( TUCK << 4 )
-//G:#define CB tLSmAIN ( TOCK << 0 )
-//B:#define CB tLSmAIN ( TOCK >> 2 )
-//B:#define CB tLSmAIN ( TOCK >> 1 )
+//B:#define CBtLSmAIN ( TUCK << 1 )
+//B:#define CBtLSmAIN ( TUCK << 4 )
+//G:#define CBtLSmAIN ( TOCK << 0 )
+//B:#define CBtLSmAIN ( TOCK >> 2 )
+//B:#define CBtLSmAIN ( TOCK >> 1 )
 
 //20240916@1616:
-//G:#define CB tLSmAIN ( TOCK >> 0 )
-//G:#define CB tLSmAIN ( TOCK >> 2 )
-//G:#define CB tLSmAIN ( TOCK >> 4 )
-//G:#define CB tLSmAIN ( TOCK >> 8 )
+//G:#define CBtLSmAIN ( TOCK >> 0 )
+//G:#define CBtLSmAIN ( TOCK >> 2 )
+//G:#define CBtLSmAIN ( TOCK >> 4 )
+//G:#define CBtLSmAIN ( TOCK >> 8 )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.

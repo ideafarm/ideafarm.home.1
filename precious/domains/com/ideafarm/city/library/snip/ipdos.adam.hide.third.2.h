@@ -30070,7 +30070,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 
 /*1*/struct _export tlsStackFrame123S/*1*/
 {
-    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+    //byteT                   pbTls[ CBtLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
     //const countT            fingerTlsEnd ;
       tallyC                  tallyKid ;
     //zapC                    zap_pbTls ;
@@ -30124,7 +30124,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 
 /*1*/struct _export tlsStackFrame12S/*1*/
 {
-    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+    //byteT                   pbTls[ CBtLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
     //const countT            fingerTlsEnd ;
       tallyC                  tallyKid ;
     //zapC                    zap_pbTls ;
@@ -30178,7 +30178,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 
 /*1*/struct _export tlsStackFrame1S/*1*/
 {
-    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+    //byteT                   pbTls[ CBtLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
     //const countT            fingerTlsEnd ;
       tallyC                  tallyKid ;
     //zapC                    zap_pbTls ;
@@ -42739,7 +42739,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     //byteT                           pb_bOsCallIMonitor[   CBzOMBIEbATONc ] ;
     //byteT                           pb_bOsCallISharedMem[ CBzOMBIEbATONc ] ;
     //byteT                           pb_bPoolRpt[          CBzOMBIEbATONc ] ;
-    //byteT                           pbTlsMain[  sizeof( tlsHeaderS ) + CB tLSmAIN ] ;
+    byteT                           pbTlsMain[  sizeof( tlsHeaderS ) + CBtLSmAIN ] ;
     countT                          pcDebug[ TUCK << 1 ] ; //NOT USED IN PRODUCTION ; AVAILABLE FOR DEBUGGING
     countT*                         pcDebug2 ;             //NOT USED IN PRODUCTION ; AVAILABLE FOR DEBUGGING
     osTextT                         postDllsLoaded[ TOCK ] ;
