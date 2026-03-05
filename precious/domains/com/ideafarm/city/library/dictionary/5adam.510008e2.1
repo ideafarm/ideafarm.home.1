@@ -210,6 +210,10 @@ DONE( tmWorkF )
 
     cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested , bksGeiger ) ;
     booksC bksGeiger( tin0P , TAG( TAGiDnULL ) , "geiger" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER , TICK << 0 ) ;
+
+    etRock.traceF( tin0P , T("tmWorkF [&stNnApproved2]:    ")+TF2((countT)&stNnApproved2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etRock.traceF( tin0P , T("tmWorkF [&stNnApproved1]:    ")+TF2((countT)&stNnApproved1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
     stackC stNnApproved2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     stackC stNnApproved1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     stackC stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
@@ -230,6 +234,7 @@ DONE( tmListApprovedAddressesF )
         ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
 
         }
+            stNnApprovedUse.ungrabF( tin0P ) ;
             etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
             }
                 queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , sinkNnApprovedCBF , argApp , &pat ) ;
@@ -238,6 +243,7 @@ DONE( tmListApprovedAddressesF )
             {
             etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
             stNnApprovedUse.purgeF( tin0P ) ;
+            stNnApprovedUse.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
             switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttlEmail , flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook
             ZE( strokeS* , psttlEmail ) ;
@@ -247,6 +253,7 @@ DONE( tmListApprovedAddressesF )
         {
         if( epochLath != epoch )
 
+        etRock.traceF( tin0P , T("tmListApprovedAddressesF [&stNnApprovedUse]:    ")+TF2((countT)&stNnApprovedUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         stackC& stNnApprovedUse = epoch % 2 ? stNnApproved1P : stNnApproved2P ;
 
         countT epoch = timeN1 >> BITSsHIFTiDEAnETePOCH ;
@@ -261,6 +268,10 @@ DONE( tmListApprovedAddressesF )
     TN( tDash , DASH127 ) ;
     patternC pat( tin0P , etThread , T("sub.01.00000001.*.soulC") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tLongSubscriptions , "" ) ; tLongSubscriptions = T("////go1/" "d/ideafarm.shared/")+TfORsTRING(ifcIDaDAM_WELCOMER)+T("/ideanet/") ;
+
+    etRock.traceF( tin0P , T("tmListApprovedAddressesF [&stNnApproved2P]:    ")+TF2((countT)&stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etRock.traceF( tin0P , T("tmListApprovedAddressesF [&stNnApproved1P]:    ")+TF2((countT)&stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etherC&       etRock                 = etherC::etRockIF( tin0P ) ;
 
     stackC& stNnApproved2P = *(stackC*)pTaskP->c2 ;
     stackC& stNnApproved1P = *(stackC*)pTaskP->c1 ;
@@ -320,12 +331,16 @@ DONE( tmAddAddressF )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tb4 , "    " ) ;
 
+    etRock.traceF( tin0P , T("tmAddAddressF [&stNnApproved2P]:    ")+TF2((countT)&stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etRock.traceF( tin0P , T("tmAddAddressF [&stNnApproved1P]:    ")+TF2((countT)&stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
     booksC& bksGeigerP     = *(booksC*)pTaskP->c4 ;
     stackC& stNnApproved2P = *(stackC*)pTaskP->c3 ;
     stackC& stNnApproved1P = *(stackC*)pTaskP->c2 ;
     stackC& stNnRequestedP = *(stackC*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 TASK( tmAddAddressF )
 
 }
@@ -383,6 +398,8 @@ TASK( tmAddAddressF )
 
     etherP.boxGetShadowF( tin0P , soulSub , psttLongFileP ) ;
     soulC soulSub( tin0P , etherP , TAG( TAGiDnULL ) ) ;
+
+    etRock.traceF( tin0P , T("sinkNnApprovedCBF [&stNnApprovedUseP]:    ")+TF2((countT)&stNnApprovedUseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     switchStackC& swsIdBookIdSubByEmailP = *(switchStackC*)c3App.c3  ;
     strokeS*&     psttlEmailP            =     *(strokeS**)c3App.c2  ;
