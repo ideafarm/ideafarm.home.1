@@ -369,9 +369,10 @@ TASK( tmAddAddressF )
     {
     switch( woSub.idBookF( tin0P ) )
 
-    swsIdBookIdSubByEmailP.sinkF( tin0P , countTC() , c2Wo ) ;
+    swsIdBookIdSubByEmailP.ungrabF( tin0P ) ;
+    swsIdBookIdSubByEmailP.sinkF( tin0P , countTC() , count2S( idBook , idSub ) ) ;
     psttlEmailP = tEmail ;
-    count2S c2Wo( idBook , idSub ) ;
+    swsIdBookIdSubByEmailP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     countT idSub  = woSub.idSubF(  tin0P ) ;
     countT idBook = woSub.idBookF( tin0P ) ;
