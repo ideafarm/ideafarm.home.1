@@ -56,8 +56,12 @@ THREADmODE3rESTORE
             countVSP vsp1Lath = listC::countIF( tin0P , myRecord , count2S( LISTnAMEsYS_PROCESSrEPORTfIELD10 ) ) ;                                               // THIS OBTAINS SHARED READ/WRITE ACCESS TO A       FIELD (A LISTING) THAT CAN BE USED UNTIL THE countVSP INSTANCE IS DESTROYED
         {
 
-        recordC myRecord( tin0P , pcNameRecord , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC1 ) ;                                                                                                   // THIS OPENS THE SPECIFIED RECORD, WHICH IS JUST A LIST
-        countT  pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD , LISTnAMEsYS_PROCESSrEPORT , 0 } ;               // THIS CAN BE ANY VALID LIST NAME
+        recordC myRecord( tin0P , pcNameRecord , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC1 ) ;                                                                 // THIS OPENS THE SPECIFIED RECORD, WHICH IS JUST A LIST
+
+        countT  pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LNA( ((tin1S&)tin0P).pag1->idAdam ) , 0 } ;                                  // THIS CAN BE ANY VALID LIST NAME
+
+        //countT  pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD , LISTnAMEsYS_PROCESSrEPORT , 0 } ;
+        //20260305@1203: THE PROCESSrEPORT PORTION OF THIS NAME CAUSES CT OF myRecord TO BLOCK
 
         //((tin1S&)tin0P).pc Utility[ 0 ] -- ;
         puseC   puseHT( tin0P , ifcIDpOOL_HOMEtEMP ) ;                                                                                               // THIS poolC INSTANCE USES BACKING MEMORY THAT IS SHARED BY ALL PROCESSES IN THIS IPDOS (TM) HOME

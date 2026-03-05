@@ -17,69 +17,18 @@ THREADmODE2rESTORE
 THREADmODE3rESTORE
 
 }
-    }
-        }
-            ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
-            etThread.traceF( tin0P , T("napping with record grabbed") ) ;                                                                            // THIS IS BAD CODING STYLE AND IS DONE HERE ONLY TO DEMONSTRATE THE EFFECT OF FAILING TO IMMEDIATELY DESTROY A recordC INSTANCE
-        {
-        if( idCell == 2 )
+    countT*  pc1 = vsp1Lath ;
+    countVSP vsp1Lath = listC::countIF( tin0P , myRecord , count2S( LISTnAMEsYS_PROCESSrEPORTfIELD10 ) ) ;
 
-        }
-            }
-                ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
-                etThread.traceF( tin0P , T("napping with field references retained") ) ;
-            {
-            if( idCell == 2 )
+    recordC myRecord( tin0P , pcNameRecord , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC1 ) ;
+    countT  pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD , 0 } ;
 
-            etThread.traceF( tin0P , T("[" /*"idPass,"*/ "*pc1,*pc2" /*",flagsRC1,flagsRC2"*/ "]:    ")/*+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4*/+TF3(*pc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(*pc2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)/*+tb4+TF3(flagsRC1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(flagsRC2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)*/ ) ;
-
-            }
-                if( cbWas == setIfEqualsAM( *pc2 , cbNow , cbWas ) ) break ;
-                countT cbNow = cbWas + delta2 ;
-                countT cbWas = *pc2 ;
-            {
-            for(;;)
-            //DO THIS ATOMICALLY: *pc2 += delta2 ;
-
-            }
-                if( cbWas == setIfEqualsAM( *pc1 , cbNow , cbWas ) ) break ;
-                countT cbNow = cbWas + delta1 ;
-                countT cbWas = *pc1 ;
-            {
-            for(;;)
-            //DO THIS ATOMICALLY: *pc1 += delta1 ;
-
-            countT*  pc2 = vsp2Lath ;
-            countT*  pc1 = vsp1Lath ;
-
-            countVSP vsp2Lath = listC::countIF( tin0P , myRecord , count2S( LISTnAMEsYS_PROCESSrEPORTfIELD20 ) ) ;                                               // THIS OBTAINS SHARED READ/WRITE ACCESS TO ANOTHER FIELD (A LISTING) THAT CAN BE USED UNTIL THE countVSP INSTANCE IS DESTROYED
-            countVSP vsp1Lath = listC::countIF( tin0P , myRecord , count2S( LISTnAMEsYS_PROCESSrEPORTfIELD10 ) ) ;                                               // THIS OBTAINS SHARED READ/WRITE ACCESS TO A       FIELD (A LISTING) THAT CAN BE USED UNTIL THE countVSP INSTANCE IS DESTROYED
-        {
-
-        recordC myRecord( tin0P , pcNameRecord , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC1 ) ;                                                                                                   // THIS OPENS THE SPECIFIED RECORD, WHICH IS JUST A LIST
-        countT  pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD , LISTnAMEsYS_PROCESSrEPORT , 0 } ;               // THIS CAN BE ANY VALID LIST NAME
-
-        //((tin1S&)tin0P).pc Utility[ 0 ] -- ;
-        puseC   puseHT( tin0P , ifcIDpOOL_HOMEtEMP ) ;                                                                                               // THIS poolC INSTANCE USES BACKING MEMORY THAT IS SHARED BY ALL PROCESSES IN THIS IPDOS (TM) HOME
-        //((tin1S&)tin0P).pc Utility[ 0 ] ++ ;
-
-        _IO_
-    {
-    for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
+    puseC   puseHT( tin0P , ifcIDpOOL_HOMEtEMP ) ;
 {
-while( !ether )
-sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-
-const countT delta2 = idCell % 2 ? 1 : - 1 ;
-const countT delta1 = idCell % 2 ? 1 : - 1 ;
 
 THREADmODE3oN( flTHREADmODE3_ALLOWwRITEABLEpOINTERgET )
 THREADmODE2oN( flTHREADmODE2_UNLOCKpOOLiDENTITY       )
 THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING   )
-
-etThread.traceF( tin0P , T("[idCell]:  ")+TF2(idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-const countT idCell = ((tin1S&)tin0P).pag1->idCell ;
-TN( tb4 , "    " ) ;
 
 TODO
 
