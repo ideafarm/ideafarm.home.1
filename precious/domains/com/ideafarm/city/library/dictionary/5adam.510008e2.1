@@ -217,7 +217,8 @@ DONE( tmWorkF )
     
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-    ether.osSleepF( tin0P , TIMEnAPdURINGsERVICEsTARTUP ) ;
+    if( !bSandbox ) ether.osSleepF( tin0P , TIMEnAPdURINGsERVICEsTARTUP ) ;
+    boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
