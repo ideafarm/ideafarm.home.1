@@ -251,7 +251,6 @@ DONE( tmListApprovedAddressesF )
             ZE( strokeS* , psttlEmail ) ;
             //U:: MAKE THIS sws DATA VISIBLE TO MYSELF AND TO OTHER PROCESSES ON ALL WEB* IdeaNet (tm) HOSTS
 
-            etRock.traceF( tin0P , T("tmListApprovedAddressesF [&stNnApprovedUse]:    ")+TF2((countT)&stNnApprovedUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             stackC& stNnApprovedUse = epoch % 2 ? stNnApproved1P : stNnApproved2P ;
 
             epochLath  = epoch ;
@@ -401,11 +400,9 @@ TASK( tmAddAddressF )
     etherP.boxGetShadowF( tin0P , soulSub , psttLongFileP ) ;
     soulC soulSub( tin0P , etherP , TAG( TAGiDnULL ) ) ;
 
-    etRock.traceF( tin0P , T("sinkNnApprovedCBF [&stNnApprovedUseP]:    ")+TF2((countT)&stNnApprovedUseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
     switchStackC& swsIdBookIdSubByEmailP = *(switchStackC*)c3App.c3  ;
     strokeS*&     psttlEmailP            =     *(strokeS**)c3App.c2  ;
-    switchStackC& stNnApprovedUseP       = *(switchStackC*)c3App.c1  ;
+    stackC&       stNnApprovedUseP       =       *(stackC*)c3App.c1  ;
     count3S&      c3App                  = *(count3S*)argAppP        ;
     etherC&       etRock                 = etherC::etRockIF( tin0P ) ;
     etherC&       etherP                 = queueP                    ;
