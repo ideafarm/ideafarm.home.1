@@ -35,10 +35,12 @@ DONE( tmWatchQueueF )
                             etRock.traceF( tin0P , T("tmWatchQueueF / 5") ) ; //U::
                             queueP << pInfoFile->psttIfoName ;
                             etRock.traceF( tin0P , T("tmWatchQueueF / 6") ) ; //U::
+                            _IO_
                         {
                         if( !bDir )
                         const boolT bDir = pInfoFile->psttIfoName[ CSpREFIX - 1 + pInfoFile->psttIfoName->idAdam ].idAdam == '/' ;
                         etRock.traceF( tin0P , T("tmWatchQueueF / 7") ) ; //U::
+                        _IO_
                     {
                     else
                     }
@@ -46,6 +48,7 @@ DONE( tmWatchQueueF )
                         etRock.traceF( tin0P , T("tmWatchQueueF / 8") ) ; //U::
                         DEL( pInfoFile ) ;
                         etRock.traceF( tin0P , T("tmWatchQueueF / 9") ) ; //U::
+                        _IO_
                     {
                     if( !pInfoFile || !pInfoFile->psttIfoName )
 
@@ -53,11 +56,13 @@ DONE( tmWatchQueueF )
                     etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , psttzFolder , &patUse ) ; ___( pInfoFile ) ;
                     etRock.traceF( tin0P , T("tmWatchQueueF / b") ) ; //U::
                     ZE( infoFileS* , pInfoFile ) ;
+                    _IO_
                 {
                 do
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 handleC hFindFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
                 etRock.traceF( tin0P , T("tmWatchQueueF / c") ) ; //U::
+                _IO_
             {
 
             //}
@@ -72,6 +77,7 @@ DONE( tmWatchQueueF )
                 etRock.traceF( tin0P , T("tmWatchQueueF / d") ) ; //U::
                 etThread.etherC::diskWaitDirF( tin0P , hWait , queueP.bQuit , psttzFolder , TOCK << 0 , flWAITdIR_FILEnAME ) ;
                 etRock.traceF( tin0P , T("tmWatchQueueF / e") ) ; //U::
+                _IO_
             {
             if( bWait )
 
