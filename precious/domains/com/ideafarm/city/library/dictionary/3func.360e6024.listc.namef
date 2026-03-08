@@ -58,7 +58,17 @@
     if( !idP ) name = idName ;
     ZE( countT , name ) ;
 
-    if( !( flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
+    //U::PROD: if( !( flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
+
+if( !( flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
+
+if( debug3 ) { BLAMMO ; }
+debug3 = !debug2 ;
+debug2 = debug1 & fliLISTINGc_MIXINlIST ;
+debug1 = flagsi ;
+static countT debug3 ;
+static countT debug2 ;
+static countT debug1 ;
 
     //O: _IO_
 {
