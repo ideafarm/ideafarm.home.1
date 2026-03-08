@@ -219,9 +219,6 @@ DONE( tmWorkF )
 
     if( !bSandbox ) ether.osSleepF( tin0P , TIMEnAPdURINGsERVICEsTARTUP ) ;
     boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
-
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
-    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
@@ -232,7 +229,7 @@ DONE( tmListApprovedAddressesF )
         ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
 
         }
-            etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
+            etThread.traceF( tin0P , tDash ) ;
             THREADmODE1rESTORE
             }
                 queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , sinkNnApprovedCBF , argApp , &pat ) ;
@@ -240,7 +237,7 @@ DONE( tmListApprovedAddressesF )
                 count3S c3App( (countT)&stNnApprovedUse , (countT)&psttlEmail , (countT)&swsIdBookIdSubByEmail ) ;
             {
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
-            etThread.traceF( tin0P , tDash , flTRACE_NOpREFIX ) ;
+            etThread.traceF( tin0P , tDash ) ;
             stNnApprovedUse.purgeF( tin0P ) ;
 
             switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttlEmail , flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook

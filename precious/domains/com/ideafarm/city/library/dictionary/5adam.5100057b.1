@@ -101,8 +101,8 @@ DONE( tmWorkF )
 
     ether.osSleepF( tin0P , TIMEnAPdURINGsERVICEsTARTUP ) ;
 
-//    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
-//    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ; // "RUDE" SO THAT I RESPOND TO GORILLA WITH CONSISTENT "REAL TIME" SPEED ; THIS CREATES AN ATTACK SURFACE ; CPU SPINNING *MUST* BE PREVENTED (IMPOTENCE CPU SPIN BUGS, DDOS HTTP FLOOD ATTACKS)
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
