@@ -49184,46 +49184,6 @@ i am nonconformant in that all of my member function definitions are in a single
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listingOfSetC : 1snip.150001ac.listingOfSetC BEGIN
 
 
-//
-// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export listingOfSetC : public listingC , public offStateListingSetC/*1*/
-{
-    protected :
-
-    inline listingOfSetC( tin0S& tin0P , const flagsT flagsP = flLISTINGc_null ) :
-    offStateListingSetC() ,
-    listingC( tin0P , flagsP )
-    {}
-
-    public :
-
-    inline listingOfSetC( tin0S& tin0P , const listOfSetC& listDadP , const flagsT flagsP = flLISTINGc_null ) :
-    offStateListingSetC() ,
-    listingC( tin0P , *(listC*)&listDadP , flagsP )
-    {}
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listingOfSetC : 1snip.150001ac.listingOfSetC END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSetC : 1snip.150001ad.listOfSetC BEGIN
-
 
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -49243,14 +49203,16 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
 
     inline listOfSetC( tin0S& tin0P , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :        // ILLEGAL TO CALL THIS EXCEPT BY poolC::face_poolC_S::face_poolC_S TO CONSTRUCT A SINGLE ROOT listC FOR EACH POOL
-    offStateListingSetC() ,
-    listC( tin0P , idNameP , flagsP )
-    {}
+    listC( tin0P , idNameP , flagsP ) ,
+    offStateListingSetC()
+    {
+    }
 
     inline listOfSetC( tin0S& tin0P , const listOfSetC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
-    offStateListingSetC() ,
-    listC( tin0P , *(listC*)&listDadP , idNameP , flagsP )
-    {}
+    listC( tin0P , *(listC*)&listDadP , idNameP , flagsP ) ,
+    offStateListingSetC()
+    {
+    }
 }
 ;
 
@@ -49261,6 +49223,47 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+
+
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export listingOfSetC : public listingC , public offStateListingSetC/*1*/
+{
+    protected :
+
+    inline listingOfSetC( tin0S& tin0P , const flagsT flagsP = flLISTINGc_null ) :
+    listingC( tin0P , flagsP ) ,
+    offStateListingSetC()
+    {
+    }
+
+    public :
+
+    inline listingOfSetC( tin0S& tin0P , const listOfSetC& listDadP , const flagsT flagsP = flLISTINGc_null ) :
+    listingC( tin0P , *(listC*)&listDadP , flagsP ) ,
+    offStateListingSetC()
+    {
+    }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSetC : 1snip.150001ad.listOfSetC END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listingOfSet_countT_C : 1snip.150001ae.listingOfSet_countT_C BEGIN
