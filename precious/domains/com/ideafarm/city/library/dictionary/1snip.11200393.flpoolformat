@@ -13,6 +13,27 @@
 #define flPOOLfORMAT_NOTES                        /*fl*/
 /*3*/
 
+
+// 
+//    eliminate listOfSetC::openIF
+//   play
+//       "set" will also invite applications other than to "transactions"; it is more general
+//       the ideal meaning is "part of an atomic transaction", but transaction is too long of a word
+//      this is short and indicates that the listing is part of a set of listings
+//     decision: use "set"
+//    i want something shorter than "transact", like "set" or "atomic" or "element"
+//    i want the class names to all begin with list; e.g. rename transactedListC to listTransactedC
+//    i want the listC::openIF and listC::walkF functions to be used for both listC and transactedListC
+//    but the naming is a mess and inheritance is not fully used
+//    new classes have been defined to facilitate atomic transactions
+//   think
+//  playcraft
+//  objective: glass , elegance
+// !subjob C: polish the new class nams for the new transactions classes, and exploit inheritance fully
+// 
+// MEANING AND PURPOSE OF flPOOLfORMAT_SETS: FACILITATE AN ATOMIC TRANSACTION CONSISTING OF MULTIPLE listingC UPDATES TO A poolC INSTANCE
+//
+
 /**/
 /*1*//*flPOOLfORMAT*//*1*/
 */
