@@ -237,8 +237,10 @@ DONE( tmListApprovedAddressesF )
                 count3S c3App( (countT)&stNnApprovedUse , (countT)&psttlEmail , (countT)&swsIdBookIdSubByEmail ) ;
             {
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
-            etThread.traceF( tin0P , tDash ) ;
+            etRock.traceF( tin0P , tDash ) ;
+            etRock.traceF( tin0P , T("purged  [epoch%2,stNnApproved1,stNnApproved2]:    ")+TF2(epoch%2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             stNnApprovedUse.purgeF( tin0P ) ;
+            etRock.traceF( tin0P , T("purging [epoch%2,stNnApproved1,stNnApproved2]:    ")+TF2(epoch%2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttlEmail , flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook
             ZE( strokeS* , psttlEmail ) ;
@@ -308,7 +310,7 @@ DONE( tmAddAddressF )
                     }
                         while( ~hWalk ) ;
                         }
-                            etRock.traceF( tin0P , T("    stNnApproved2 [nicName]:    ")+T(nnWo) ) ;
+//                            etRock.traceF( tin0P , T("    stNnApproved2 [nicName]:    ")+T(nnWo) ) ;
                             nicNameC& nnWo = (nicNameC&)stNnApproved2P.downF( tin0P , hWalk ) ;
                         {
                         do
@@ -320,7 +322,7 @@ DONE( tmAddAddressF )
                     }
                         while( ~hWalk ) ;
                         }
-                            etRock.traceF( tin0P , T("    stNnApproved1 [nicName]:    ")+T(nnWo) ) ;
+//                            etRock.traceF( tin0P , T("    stNnApproved1 [nicName]:    ")+T(nnWo) ) ;
                             nicNameC& nnWo = (nicNameC&)stNnApproved1P.downF( tin0P , hWalk ) ;
                         {
                         do

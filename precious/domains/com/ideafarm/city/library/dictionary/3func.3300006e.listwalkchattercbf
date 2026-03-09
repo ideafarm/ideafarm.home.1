@@ -52,7 +52,7 @@
                                     else            
                                     if( !(const byteT*)vspo ) { ((tin1S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2(pczHe[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
                 
-                                    if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tin0P , pczHe[ offo ] ) ;
+                                    if( bUseDictionary && LISTnAMEdICTIONARYmIN <= pczHe[ offo ] && pczHe[ offo ] <= LISTnAMEdICTIONARYmAX ) vspo = listC::dictionaryQueryFromIdIF( tin0P , pczHe[ offo ] ) ;
                                     blobVSP vspo ;
                                 {
                                 else
@@ -102,7 +102,7 @@
                                 else            
                                 if( !(const byteT*)vspo ) { ((tin1S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2(pczValue[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
             
-                                if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tin0P , pczValue[ offo ] ) ;
+                                if( bUseDictionary && LISTnAMEdICTIONARYmIN <= pczValue[ offo ] && pczValue[ offo ] <= LISTnAMEdICTIONARYmAX ) vspo = listC::dictionaryQueryFromIdIF( tin0P , pczValue[ offo ] ) ;
                                 blobVSP vspo ;
                             {
                             else
@@ -210,7 +210,7 @@
                     if( (const byteT*)vspbName ) postzName = (const byteT*)vspbName ;
                     vspbName = listC::dictionaryQueryFromIdIF( tin0P , cName ) ;
                 {
-                else if( bUseDictionary && cName )
+                else if( bUseDictionary && cName && LISTnAMEdICTIONARYmIN <= cName && cName <= LISTnAMEdICTIONARYmAX )
                 if( postzMap ) postzName = postzMap ;
 
                 }
@@ -344,8 +344,7 @@
                 if( !POOP )
 
                 { puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ; PUSE( tin0P , *(byteT**)&pcSquished ) ; }
-                ((tin123S&)tin0P).tlsDelF( LF , *(byteT**)&pczName ) ;
-                //{ puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ; PUSE( tin0P , *(byteT**)&pczName ) ; }
+                { puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ; PUSE( tin0P , *(byteT**)&pczName    ) ; }
                 }
                     else ((tin1S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(bSquishedValue?"VALUE(":"ILLEGALnAME(")+TF2(idName,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(")") ) ;
                     }

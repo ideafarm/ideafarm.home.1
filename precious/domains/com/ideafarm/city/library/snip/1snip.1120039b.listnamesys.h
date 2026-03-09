@@ -1,4 +1,3 @@
-((countT)0x80000001) , "min" ,
 ((countT)0x80000001) , "ROOT" ,
 ((countT)0x80000002) , "ROOTsYSTEM1" ,
 ((countT)0x80000003) , "ROOTsYSTEM2" ,
@@ -57,5 +56,4 @@
 ((countT)0x80000038) , "PROCESSrEPORTfIELDf0" ,
 ((countT)0x80000039) , "PROCESSrEPORTfIELD01" ,
 ((countT)0x8000003a) , "SETS" ,
-((countT)0x8000003b) , "SETsTATE" ,
-((countT)0x8000003b) , "max"
+((countT)0x8000003b) , "SETsTATE"
