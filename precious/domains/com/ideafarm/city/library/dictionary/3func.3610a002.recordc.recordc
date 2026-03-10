@@ -9,7 +9,6 @@
 
 }
     }
-#endif
         }
             THREADmODE3rESTORE
             *(countT*)vspIdgAccessBegun = idgAccess ;                                                                                                       // ... STORE MY idgAccess IN FIELD IDGaCCESSbEGUN OF RECORD pczNameP
@@ -18,10 +17,9 @@
             countVSP vspIdgAccessBegun = listC::countIF( tin0P , hList , count2S( LISTnAMEsYS_IDGaCCESSbEGUN ) ) ;
         {
         if( !POOP && idgAccess )                                                                                                                            // IF !POOP AND pczNameP IS NOT THE globals RECORD ...
-#if defined( NEVERdEFINED )
 
         }
-#endif
+//#endif
             }
                 while(       !idgAccess ) ;
                 do *(countT*)&idgAccess = 1 + incv02AM( *pcIdgAccessBegun ) ;
@@ -29,15 +27,16 @@
                 THREADmODE3rESTORE
                 countT*  pcIdgAccessBegun = vspIdgAccessBegun ;
                 THREADmODE3oN( flTHREADmODE3_ALLOWwRITEABLEpOINTERgET )
+
                 countVSP vspIdgAccessBegun = listC::countIF( tin0P , globals , count2S( LISTnAMEsYS_IDGaCCESSbEGUN ) ) ;
             {
             if( !POOP )
-#if defined( NEVERdEFINED )
+//#if defined( NEVERdEFINED )
 
             __( (const countT&)(const poopC&)globals ) ;
-            recordC globals( tin0P , count4S( LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD ) , flLISToPEN_null , idGrabLayerP ) ;
+            recordC globals( tin0P , count4S( LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM8 , LISTnAMEsYS_GLOBALrECORD ) , flLISToPEN_null , idGrabLayerP ) ;
         {
-        if( !POOP && ( pczNameP[ 0 ] != LISTnAMEsYS_ROOT || pczNameP[ 1 ] != LISTnAMEsYS_ROOTaPPLICATION || pczNameP[ 2 ] != LISTnAMEsYS_GLOBALrECORD || pczNameP[ 3 ] ) )        // IF pczNameP DOES NOT NAME THE GLOBALS RECORD (TO AVOID INFINITE RECURSION) ...
+        if( !POOP && ( pczNameP[ 0 ] != LISTnAMEsYS_ROOT || pczNameP[ 1 ] != LISTnAMEsYS_ROOTsYSTEM8 ) )                                                    // TO AVOID RECURSION AND ALSO TO AVOID BLOCKING TRYING TO GRAB THE KID OF LISTnAMEsYS_ROOTsYSTEM8 THAT I JUST GRABBED
 
         }
             __( !hList ) ;

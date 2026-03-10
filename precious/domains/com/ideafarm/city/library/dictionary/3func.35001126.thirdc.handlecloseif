@@ -622,20 +622,22 @@
                 //{
                 //else if( ((tin1S&)tin0P).pc Utility[ 0 ] && ((tin1S&)tin0P).pag1->idAdam == ifcIDaDAM_ 2GLASS2 )
                 }
-                    //}
-                    //    CONoUTrAW( ostoSay ) ;
-                    //    //PUSE( tin0P , postName ) ;
-                    //    //OStEXTA(  ostoSay , postName ) ;
-                    //    OStEXTC(  ostoSay , pListing->nameF() , 0 ) ;
-                    //    OStEXTAK( ostoSay , " | ----- " ) ;
-                    //    OStEXTC(  ostoSay , ((tin1S&)tin0P).glass.idThread , 0 ) ;
-                    //    OStEXTAK( ostoSay , "\r\n" ) ;
-                    //    OStEXT(   ostoSay , TUCK << 1 ) ;
-                    //
-                    //    //getListNameGF( tin0P , postName , pListing->nameF() ) ; ___( postName ) ;
-                    //    //ZE( osTextT* , postName ) ;
-                    //{
-                    //if( pListing->flagsF() & fliLISTINGc_MIXINlIST )
+                    }
+                        CONoUTrAW( ostoSay ) ;
+                        PUSE( tin0P , postName ) ;
+                        puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ;
+                        OStEXTA(  ostoSay , postName ) ;
+                        OStEXTAK( ostoSay , "    " ) ;
+                        OStEXTC(  ostoSay , pListing->nameF() , 0 ) ;
+                        OStEXTAK( ostoSay , " | ----- " ) ;
+                        OStEXTC(  ostoSay , ((tin1S&)tin0P).glass.idThread , 0 ) ;
+                        OStEXTAK( ostoSay , "\r\n" ) ;
+                        OStEXT(   ostoSay , TUCK << 1 ) ;
+                    
+                        getListNameGF( tin0P , postName , pListing->nameF() ) ; ___( postName ) ;
+                        ZE( osTextT* , postName ) ;
+                    {
+                    if( ((tin123S&)tin0P).pcUtility[ 0 ] && pListing->flagsF() & fliLISTINGc_MIXINlIST )
 
                     //}
                     //    etherC::etRockIF( tin0P ).traceF( tin0P , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
@@ -646,21 +648,18 @@
                     //{
                     //if( ((tin1S&)tin0P).pc Utility[ 0 ] && ((tin1S&)tin0P).pag1->idAdam == ifcIDaDAM_ 2GLASS2 )
 
-
                     //etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
-                    OStEXTAK( ostoSay , " --   ungrabbed" ) ;
+                    //OStEXTAK( ostoSay , " --   ungrabbed" ) ;
                     //U:: TO FIND A BUG
 
                     grabitx.ungrabF( tin0P ) ; //FOR APPLICATION CODING CONVENIENCE; AS OF THIS WRITING THERE IS NO WAY TO EXPLICITLY UNGRAB A LIST THAT HAS BEEN OPENED AND KEPT OPEN EXCEPT TO MAKE SURE THAT THE LATH LIST WALK DOES NOT SPECIFY THE "DO NOT UNGRAB LIST" FLAG
 
-
                     //etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
                     //THESE HAVE TRIGGERED DEADLOCK WHEN CAUSES A NEW bookC INSTANCE TO BE CT'D; ENABLE WHEN traceF IS ENHANCED TO AVOID CREATING bookC INSTANCES
-                    OStEXTAK( ostoSay , " : --   ungrabbing" ) ;
-                    OStEXTCF( ostoSay , (countT)&pListing->flagsRefF() , '0' ) ;
-                    OStEXT(   ostoSay , TUCK << 2 ) ;
+                    //OStEXTAK( ostoSay , " : --   ungrabbing" ) ;
+                    //OStEXTCF( ostoSay , (countT)&pListing->flagsRefF() , '0' ) ;
+                    //OStEXT(   ostoSay , TUCK << 2 ) ;
                     //U:: TO FIND A BUG
-
 
                     _IO_
                 {

@@ -14,11 +14,16 @@ etThread.traceF( tin0P , T("ok") ) ;
 
 THREADmODE2rESTORE
 }
-    //listC::chatterIF( tin0P ) ;
+#endif
+    etRock.traceF( tin0P , T("end of chatter") ) ;
+    listC::chatterIF( tin0P ) ;
+    etRock.traceF( tin0P , T("after deleting record") ) ;
 
-    //listC::deleteIF( tin0P , pcNameRecord ) ;
+    listC::deleteIF( tin0P , pcNameRecord ) ;
 
     listC::chatterIF( tin0P ) ;
+    etRock.traceF( tin0P , T("before deleting record") ) ;
+#if defined( NEVERdEFINED )
 
     }
         recordC myRecord( tin0P , pcNameRecord , flLISToPEN_null ) ;
@@ -30,27 +35,13 @@ THREADmODE2rESTORE
 {
 THREADmODE2oN( flTHREADmODE2_UNLOCKpOOLiDENTITY )
 
-     countT pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LNA( 0x1111 ) , 0 } ;
-
-//B: countT pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LNA( 0x1111 ) , 0 } ;
-//G: countT pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LNA( 0x1111 ) , LNA( 0x2222 ) , 0 } ;
-//G: countT pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LNA( 0x1111 ) , LNA( 0x2222 ) , LNA( 0x3333 ) , LNA( 0x4444 ) , LNA( 0x5555 ) , LNA( 0x6666 ) , LNA( 0x7777 ) , LNA( 0x8888 ) , 0 } ;
-//B: BLOCKS: countT pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LNA( 0x1234 ) , 0 } ;
+countT pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LNA( 0x1111 ) , 0 } ;
 
 etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-#endif
-
-THREADmODE1rESTORE
-THREADmODE3rESTORE
-THREADmODE3oN( flTHREADmODE3_ALLOWwRITEABLEpOINTERgET )
-THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING   )
-
-#if defined( NEVERdEFINED )
-
 TODO
 
-/*1*/WAKEsHOWtEXT( "minimal.sameo.of.example.simplest.interprocess.communication.using.listC" )/*1*/
+/*1*/WAKEsHOWtEXT( "dut.for.recordC.glass.code" )/*1*/
 /**/
 */
 /*
