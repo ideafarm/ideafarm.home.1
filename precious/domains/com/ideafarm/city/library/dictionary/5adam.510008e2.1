@@ -226,29 +226,41 @@ TASK( tmWorkF )
 DONE( tmListApprovedAddressesF )
 }
     }
-        ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
+        }
+            ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
+            _IO_
+        {
 
         }
             etThread.traceF( tin0P , tDash ) ;
             THREADmODE1rESTORE
             }
-                queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , sinkNnApprovedCBF , argApp , &pat ) ;
+                }
+                    queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , sinkNnApprovedCBF , argApp , &pat ) ;
+                    _IO_
+                {
                 countT  argApp = (countT)&c3App ;
                 count3S c3App( (countT)&stNnApprovedUse , (countT)&psttlEmail , (countT)&swsIdBookIdSubByEmail ) ;
+                _IO_
             {
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
-            etRock.traceF( tin0P , tDash ) ;
-            etRock.traceF( tin0P , T("purged  [epoch%2,stNnApproved1,stNnApproved2]:    ")+TF2(epoch%2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            stNnApprovedUse.purgeF( tin0P ) ;
-            etRock.traceF( tin0P , T("purging [epoch%2,stNnApproved1,stNnApproved2]:    ")+TF2(epoch%2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
+            }
+                etRock.traceF( tin0P , tDash ) ;
+                etRock.traceF( tin0P , T("purged  [epoch%2,stNnApproved1,stNnApproved2]:    ")+TF2(epoch%2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                stNnApprovedUse.purgeF( tin0P ) ;
+                etRock.traceF( tin0P , T("purging [epoch%2,stNnApproved1,stNnApproved2]:    ")+TF2(epoch%2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                _IO_
+            {
             switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttlEmail , flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook
-            ZE( strokeS* , psttlEmail ) ;
             //U:: MAKE THIS sws DATA VISIBLE TO MYSELF AND TO OTHER PROCESSES ON ALL WEB* IdeaNet (tm) HOSTS
+            ZE( strokeS* , psttlEmail ) ;
 
             stackC& stNnApprovedUse = epoch % 2 ? stNnApproved1P : stNnApproved2P ;
 
             epochLath  = epoch ;
+            _IO_
         {
         if( epochLath != epoch )
 
@@ -257,6 +269,7 @@ DONE( tmListApprovedAddressesF )
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
+        _IO_
     {
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -268,6 +281,7 @@ DONE( tmListApprovedAddressesF )
 
     stackC& stNnApproved2P = *(stackC*)pTaskP->c2 ;
     stackC& stNnApproved1P = *(stackC*)pTaskP->c1 ;
+    _IO_
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmListApprovedAddressesF )
