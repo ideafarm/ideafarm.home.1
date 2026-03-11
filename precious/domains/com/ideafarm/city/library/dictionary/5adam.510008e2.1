@@ -232,32 +232,33 @@ DONE( tmListApprovedAddressesF )
         {
 
         }
+            }
+                stNnApprovedUse.sinkF( tin0P , countTC() , nnWo , flSTACKsINK_UNIQUE ) ;
+                stNnApprovedNew >>                         nnWo ;
+                nicNameC nnWo ;
+            {
+            while( stNnApprovedNew )
+
+            stNnApprovedUse.purgeF( tin0P ) ;
+            stackC& stNnApprovedUse = epoch % 2 ? stNnApproved1P : stNnApproved2P ;
+
             etThread.traceF( tin0P , tDash ) ;
             THREADmODE1rESTORE
             }
                 }
-                    queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , sinkNnApprovedCBF , argApp , &pat ) ;
+                    queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , pushNnApprovedCBF , argApp , &pat ) ;
+                    etRock.traceF( tin0P , tDash ) ;
                     _IO_
                 {
                 countT  argApp = (countT)&c3App ;
-                count3S c3App( (countT)&stNnApprovedUse , (countT)&psttlEmail , (countT)&swsIdBookIdSubByEmail ) ;
+                count3S c3App( (countT)&stNnApprovedNew , (countT)&psttlEmail , (countT)&swsIdBookIdSubByEmail ) ;
                 _IO_
             {
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
-
-            }
-                etRock.traceF( tin0P , tDash ) ;
-                etRock.traceF( tin0P , T("purged  [epoch%2,stNnApproved1,stNnApproved2]:    ")+TF2(epoch%2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                stNnApprovedUse.purgeF( tin0P ) ;
-                etRock.traceF( tin0P , T("purging [epoch%2,stNnApproved1,stNnApproved2]:    ")+TF2(epoch%2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-                _IO_
-            {
-            switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttlEmail , flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook
-            //U:: MAKE THIS sws DATA VISIBLE TO MYSELF AND TO OTHER PROCESSES ON ALL WEB* IdeaNet (tm) HOSTS
+            stackC       stNnApprovedNew(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_nicNameC ) ;
+            switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttlEmail , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook
             ZE( strokeS* , psttlEmail ) ;
-
-            stackC& stNnApprovedUse = epoch % 2 ? stNnApproved1P : stNnApproved2P ;
+            //U:: MAKE THIS sws DATA VISIBLE TO MYSELF AND TO OTHER PROCESSES ON ALL WEB* IdeaNet (tm) HOSTS
 
             epochLath  = epoch ;
             _IO_
@@ -390,8 +391,8 @@ TASK( tmAddAddressF )
         }
             break ;
             }
-                stNnApprovedUseP.sinkF( tin0P , countTC() , nnNowData    , flSTACKsINK_UNIQUE ) ;
-                stNnApprovedUseP.sinkF( tin0P , countTC() , nnNowControl , flSTACKsINK_UNIQUE ) ;
+                stNnApprovedNewP << nnNowData    ;
+                stNnApprovedNewP << nnNowControl ;
 
                 etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) ) ;
                 etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) ) ;
@@ -418,10 +419,8 @@ TASK( tmAddAddressF )
     {
     switch( woSub.idBookF( tin0P ) )
 
-    swsIdBookIdSubByEmailP.ungrabF( tin0P ) ;
     swsIdBookIdSubByEmailP.sinkF( tin0P , countTC() , count2S( idBook , idSub ) ) ;
     psttlEmailP = tEmail ;
-    swsIdBookIdSubByEmailP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     countT idSub  = woSub.idSubF(  tin0P ) ;
     countT idBook = woSub.idBookF( tin0P ) ;
@@ -435,12 +434,12 @@ TASK( tmAddAddressF )
 
     switchStackC& swsIdBookIdSubByEmailP = *(switchStackC*)c3App.c3  ;
     strokeS*&     psttlEmailP            =     *(strokeS**)c3App.c2  ;
-    stackC&       stNnApprovedUseP       =       *(stackC*)c3App.c1  ;
+    stackC&       stNnApprovedNewP       =       *(stackC*)c3App.c1  ;
     count3S&      c3App                  = *(count3S*)argAppP        ;
     etherC&       etRock                 = etherC::etRockIF( tin0P ) ;
     etherC&       etherP                 = queueP                    ;
 {
-voidT sinkNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const psttLongFileP , const countT flagsP , countT& argAppP )
+voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const psttLongFileP , const countT flagsP , countT& argAppP )
 
 }
     }
