@@ -17,34 +17,36 @@ listC::deleteIF( tin0P , pczList ) ;
 //listC::chatterIF( tin0P ) ;
 
 }
-    SAYfIELDoUT( "field1" ) ;
+    }
+        if( !bDone ) SAYfIELDoUT( "\r\n" ) ;
 
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_notEqual_C( "dddd" ) , LF ) ;
-
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_equal_C( "dddd" ) +  _fe_ok_equal_C( "eeeee" ) , LF ) ;
-
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_equal_C( "dddd" ) , LF ) ;
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_above_C( "dddd" ) , LF ) ;
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_below_C( "dddd" ) , LF ) ;
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_out_C( "d" , "f" ) , LF ) ;
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_in_C( "d" , "f" ) , LF ) ;
-    
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_notEqual_C( 8 ) , LF ) ;
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_equal_C( 8 ) +  _fe_ok_above_C( 8  , LF)) ;
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_equal_C( 8 ) , LF ) ;
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_above_C( 8 ) , LF ) ;
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_below_C( 8 ) , LF ) ;
-    //listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_out_C( 4 , 0xc ) , LF ) ;
-      listC::fieldIF( tin0P , pOut , hRec , pczField1 ,  _fe_queryC() +  _fe_ok_in_C(  4 , 6 ) , LF ) ;
-
-static  fieldEditParamInC goo = foo1 + foo2 ;
-static  _fe_ok_in_C foo2(  4 , 6 ) ;
-static  _fe_queryC  foo1 ;
+        }
+            default  : { bDone = 1                                                                                                                                                                                                                    ; break ; }
+            case 0xe : { CONoUTrAW( "\r\n_fe_ok_notEqual_C( \"dddd\" )" )                            ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_notEqual_C( "dddd" )                           , LF ) ; break ; }
+            case 0xd : { CONoUTrAW( "\r\n_fe_ok_equal_C( \"dddd\" ) + _fe_ok_equal_C( \"eeeee\" )" ) ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_equal_C( "dddd" ) + _fe_ok_equal_C( "eeeee" )  , LF ) ; break ; }
+            case 0xc : { CONoUTrAW( "\r\n_fe_ok_equal_C( \"dddd\" )" )                               ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_equal_C( "dddd" )                              , LF ) ; break ; }
+            case 0xb : { CONoUTrAW( "\r\n_fe_ok_above_C( \"dddd\" )" )                               ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_above_C( "dddd" )                              , LF ) ; break ; }
+            case 0xa : { CONoUTrAW( "\r\n_fe_ok_below_C( \"dddd\" )" )                               ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_below_C( "dddd" )                              , LF ) ; break ; }
+            case 0x9 : { CONoUTrAW( "\r\n_fe_ok_out_C( \"d\" , \"f\" )" )                            ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_out_C( "d" , "f" )                             , LF ) ; break ; }
+            case 0x8 : { CONoUTrAW( "\r\n_fe_ok_in_C( \"d\" , \"f\" )" )                             ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_in_C( "d" , "f" )                              , LF ) ; break ; }
+            case 0x7 : { CONoUTrAW( "\r\n_fe_ok_notEqual_C( 8 )" )                                   ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_notEqual_C( 8 )                                , LF ) ; break ; }
+            case 0x6 : { CONoUTrAW( "\r\n_fe_ok_equal_C( 8 ) + _fe_ok_above_C( 8 )" )                ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_equal_C( 8 ) + _fe_ok_above_C( 8 )             , LF ) ; break ; }
+            case 0x5 : { CONoUTrAW( "\r\n_fe_ok_equal_C( 8 )" )                                      ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_equal_C( 8 )                                   , LF ) ; break ; }
+            case 0x4 : { CONoUTrAW( "\r\n_fe_ok_above_C( 8 )" )                                      ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_above_C( 8 )                                   , LF ) ; break ; }
+            case 0x3 : { CONoUTrAW( "\r\n_fe_ok_below_C( 8 )" )                                      ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_below_C( 8 )                                   , LF ) ; break ; }
+            case 0x2 : { CONoUTrAW( "\r\n_fe_ok_out_C( 4 , 0xc )" )                                  ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_out_C( 4 , 0xc )                               , LF ) ; break ; }
+            case 0x1 : { CONoUTrAW( "\r\n_fe_ok_in_C( 4 , 6 )" )                                     ; listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_queryC() + _fe_modeAllC() + _fe_ok_in_C( 4 , 6 )                                  , LF ) ; break ; }
+        {
+        switch( ++ idQuery )
+    {
+    while( !bDone )
+    ZE( boolT  , bDone   ) ;
+    ZE( countT , idQuery ) ;
 
     }
         }
             DELlIST( fieldEditParamOutC , pOut ) ;
-//            puseC puseAT( tin0P , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+            puseC puseAT( tin0P , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
             listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_pushC( postv[ offv ] ) , LF ) ;
         {
         for( countT offv = 0 ; offv < sizeof postv / sizeof postv[ 0 ] ; offv ++ )
@@ -63,10 +65,10 @@ static  _fe_queryC  foo1 ;
 
         }
             DELlIST( fieldEditParamOutC , pOut ) ;
-//            puseC puseAT( tin0P , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+            puseC puseAT( tin0P , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
             listC::fieldIF( tin0P , pOut , hRec , pczField1 , _fe_pushC( vv ) , LF ) ;
         {
-        for( countT vv = 1 ; vv <= 0x8 ; vv ++ )
+        for( countT vv = 1 ; vv <= 0x10 ; vv ++ )
     {
     ZE( fieldEditParamOutC* , pOut ) ;
     
@@ -85,7 +87,7 @@ grabitC grabitx( tin0P , TAG( TAGiDnULL ) ) ;
 TODO
 
 // 
-// 
+// 20260311@1117: POLISHED + TESTED AOK
 // 
 // 2011.12.31: TESTED AOK
 // 

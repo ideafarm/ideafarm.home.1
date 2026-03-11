@@ -38277,36 +38277,37 @@ i avoid recursion by zeing out the pNextP member before deleting each instance i
 */
 /*1*//*SAYfIELDoUT(postP)*//*1*/
 
-#define SAYfIELDoUT(postP)                                                                                                                                  \
-                                                                                                                                                            \
-    CONoUTrAW( postP ) ;                                                                                                                                    \
-    CONoUTrAW( ": " ) ;                                                                                                                                     \
-    if( !pOut ) { CONoUTrAW( "no value\r\n" ) ; }                                                                                                           \
-    else                                                                                                                                                    \
-    {                                                                                                                                                       \
-        fieldEditParamOutC* pCursor = pOut ;                                                                                                                \
-        while( pCursor )                                                                                                                                    \
-        {                                                                                                                                                   \
-                 if( (const  countT*)pCursor->vspCount        ) { CONoUTrAW3( "" , *(const countT*)pCursor->vspCount , "\r\n" ) ; }                         \
-            else if( (const osTextT*)pCursor->vspBlob ) { CONoUTrAW( "\"" ) ; CONoUTrAW( (const osTextT*)pCursor->vspBlob ) ; CONoUTrAW( "\"\r\n" ) ; }     \
-            else if( (const  countT*)pCursor->vspCountString  )                                                                                             \
-            {                                                                                                                                               \
-                const countT* pcv = pCursor->vspCountString ;                                                                                               \
-                                                                                                                                                            \
-                OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                \
-                ZE( countT , offi ) ;                                                                                                                       \
-                while( pcv[ offi ] )                                                                                                                        \
-                {                                                                                                                                           \
-                    OStEXTC( ostoSay , pcv[ offi ++ ] , 0 ) ;                                                                                               \
-                    if( pcv[ offi ] ) { OStEXTAK( ostoSay , "/" ) ; }                                                                                       \
-                }                                                                                                                                           \
-                OStEXTAK( ostoSay , "\r\n" ) ;                                                                                                              \
-                CONoUTrAW( ostoSay ) ;                                                                                                                      \
-            }                                                                                                                                               \
-            pCursor = pCursor->pNext ;                                                                                                                      \
-        }                                                                                                                                                   \
-    }                                                                                                                                                       \
-    DELlIST( fieldEditParamOutC , pOut ) ;
+#define SAYfIELDoUT(postP)                                                                                                                                      \
+                                                                                                                                                                \
+    {                                                                                                                                                           \
+        CONoUTrAW( postP ) ;                                                                                                                                    \
+        if( !pOut ) { CONoUTrAW( "no value\r\n" ) ; }                                                                                                           \
+        else                                                                                                                                                    \
+        {                                                                                                                                                       \
+            fieldEditParamOutC* pCursor = pOut ;                                                                                                                \
+            while( pCursor )                                                                                                                                    \
+            {                                                                                                                                                   \
+                     if( (const  countT*)pCursor->vspCount        ) { CONoUTrAW3( "" , *(const countT*)pCursor->vspCount , "\r\n" ) ; }                         \
+                else if( (const osTextT*)pCursor->vspBlob         ) { CONoUTrAW( "\"" ) ; CONoUTrAW( (const osTextT*)pCursor->vspBlob ) ; CONoUTrAW( "\"\r\n" ) ; }     \
+                else if( (const  countT*)pCursor->vspCountString  )                                                                                             \
+                {                                                                                                                                               \
+                    const countT* pcv = pCursor->vspCountString ;                                                                                               \
+                                                                                                                                                                \
+                    OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                           \
+                    ZE( countT , offi ) ;                                                                                                                       \
+                    while( pcv[ offi ] )                                                                                                                        \
+                    {                                                                                                                                           \
+                        OStEXTC( ostoSay , pcv[ offi ++ ] , 0 ) ;                                                                                               \
+                        if( pcv[ offi ] ) { OStEXTAK( ostoSay , "/" ) ; }                                                                                       \
+                    }                                                                                                                                           \
+                    OStEXTAK( ostoSay , "\r\n" ) ;                                                                                                              \
+                    CONoUTrAW( ostoSay ) ;                                                                                                                      \
+                }                                                                                                                                               \
+                pCursor = pCursor->pNext ;                                                                                                                      \
+            }                                                                                                                                                   \
+        }                                                                                                                                                       \
+        DELlIST( fieldEditParamOutC , pOut ) ;                                                                                                                  \
+    }
 
 
 //
