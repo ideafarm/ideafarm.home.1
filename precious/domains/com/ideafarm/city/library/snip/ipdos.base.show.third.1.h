@@ -34482,6 +34482,27 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*flPOOLfORMAT*//*1*/
 /**/
 
+//
+// MEANING AND PURPOSE OF flPOOLfORMAT_SETS: FACILITATE AN ATOMIC TRANSACTION CONSISTING OF MULTIPLE listingC UPDATES TO A poolC INSTANCE
+// 
+// !subjob C: polish the new class nams for the new transactions classes, and exploit inheritance fully
+//  objective: glass , elegance
+//  playcraft
+//   think
+//    new classes have been defined to facilitate atomic transactions
+//    but the naming is a mess and inheritance is not fully used
+//    i want the listC::openIF and listC::walkF functions to be used for both listC and transactedListC
+//    i want the class names to all begin with list; e.g. rename transactedListC to listTransactedC
+//    i want something shorter than "transact", like "set" or "atomic" or "element"
+//     decision: use "set"
+//      this is short and indicates that the listing is part of a set of listings
+//       the ideal meaning is "part of an atomic transaction", but transaction is too long of a word
+//       "set" will also invite applications other than to "transactions"; it is more general
+//   play
+//    eliminate listOfSetC::openIF
+// 
+
+
 /*3*/
 #define flPOOLfORMAT_NOTES                        ((countT)0xe00001a4)
 #define flPOOLfORMAT_SETS                         ((countT)0xe00002a4)

@@ -33276,32 +33276,32 @@ struct _export _fe_pushNullCountC        : public fieldEditParamInC { inline _fe
 struct _export _fe_pushNullBlobC         : public fieldEditParamInC { inline _fe_pushNullBlobC(         voidT                          ) { flags      = flFIELDeDIT_PUSHnULLbLOB                                         ; } } ;
 struct _export _fe_pushNullCountStrzC    : public fieldEditParamInC { inline _fe_pushNullCountStrzC(    voidT                          ) { flags      = flFIELDeDIT_PUSHnULLcOUNTsTRZ                                    ; } } ;
 struct _export _fe_deleteC               : public fieldEditParamInC { inline _fe_deleteC(               voidT                          ) { flags      = flFIELDeDIT_DELETE                                               ; } } ;
-struct _export  _fe_queryC                : public fieldEditParamInC { inline  _fe_queryC(                voidT                          ) { flags      = flFIELDeDIT_QUERY                                                ; } } ;
+struct _export _fe_queryC                : public fieldEditParamInC { inline  _fe_queryC(               voidT                          ) { flags      = flFIELDeDIT_QUERY                                                ; } } ;
 
 struct _export _fe_ok_out_C              : public fieldEditParamInC
 {
     inline _fe_ok_out_C( countT minP , countT maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) out_countT_C( pBool_countT_ok , minP , maxP ) ) ;
+        out_countT_C* pnu = new( 0 , tin0P , LF ) out_countT_C( pBool_countT_ok , minP , maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline _fe_ok_out_C( byteT* minP , byteT* maxP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) out_byteTstrz_C( pBool_blob_ok , minP , maxP , cEltP ) ) ;
+        out_byteTstrz_C* pnu = new( 0 , tin0P , LF ) out_byteTstrz_C( pBool_blob_ok , minP , maxP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline _fe_ok_out_C( countT* minP , countT* maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) out_countTstrz_C( pBool_countTstrz_ok , minP , maxP ) ) ;
+        out_countTstrz_C* pnu = new( 0 , tin0P , LF ) out_countTstrz_C( pBool_countTstrz_ok , minP , maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline _fe_ok_out_C( const listingC& minP , const listingC& maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) out_countT_C( pBool_listingC_ptr_ok , (countT)&minP , (countT)&maxP ) ) ;
+        out_countT_C* pnu = new( 0 , tin0P , LF ) out_countT_C( pBool_listingC_ptr_ok , (countT)&minP , (countT)&maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33311,25 +33311,25 @@ struct _export _fe_no_out_C              : public fieldEditParamInC
     inline _fe_no_out_C( countT minP , countT maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) out_countT_C( pBool_countT_no , minP , maxP ) ) ;
+        out_countT_C* pnu = new( 0 , tin0P , LF ) out_countT_C( pBool_countT_no , minP , maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline _fe_no_out_C( byteT* minP , byteT* maxP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) out_byteTstrz_C( pBool_blob_no , minP , maxP , cEltP ) ) ;
+        out_byteTstrz_C* pnu = new( 0 , tin0P , LF ) out_byteTstrz_C( pBool_blob_no , minP , maxP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline _fe_no_out_C( countT* minP , countT* maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) out_countTstrz_C( pBool_countTstrz_no , minP , maxP ) ) ;
+        out_countTstrz_C* pnu = new( 0 , tin0P , LF ) out_countTstrz_C( pBool_countTstrz_no , minP , maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline _fe_no_out_C( const listingC& minP , const listingC& maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) out_countT_C( pBool_listingC_ptr_no , (countT)&minP , (countT)&maxP ) ) ;
+        out_countT_C* pnu = new( 0 , tin0P , LF ) out_countT_C( pBool_listingC_ptr_no , (countT)&minP , (countT)&maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33339,25 +33339,25 @@ struct _export _fe_ok_in_C              : public fieldEditParamInC
     inline _fe_ok_in_C( countT minP , countT maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) in_countT_C( pBool_countT_ok , minP , maxP ) ) ;
+        in_countT_C* pnu = new( 0 , tin0P , LF ) in_countT_C( pBool_countT_ok , minP , maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline _fe_ok_in_C( byteT* minP , byteT* maxP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) in_byteTstrz_C( pBool_blob_ok , minP , maxP , cEltP ) ) ;
+        in_byteTstrz_C* pnu = new( 0 , tin0P , LF ) in_byteTstrz_C( pBool_blob_ok , minP , maxP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline _fe_ok_in_C( countT* minP , countT* maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) in_countTstrz_C( pBool_countTstrz_ok , minP , maxP ) ) ;
+        in_countTstrz_C* pnu = new( 0 , tin0P , LF ) in_countTstrz_C( pBool_countTstrz_ok , minP , maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline _fe_ok_in_C( const listingC& minP , const listingC& maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) in_countT_C( pBool_listingC_ptr_ok , (countT)&minP , (countT)&maxP ) ) ;
+        in_countT_C* pnu = new( 0 , tin0P , LF ) in_countT_C( pBool_listingC_ptr_ok , (countT)&minP , (countT)&maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33367,25 +33367,25 @@ struct _export _fe_no_in_C              : public fieldEditParamInC
     inline _fe_no_in_C( countT minP , countT maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) in_countT_C( pBool_countT_no , minP , maxP ) ) ;
+        in_countT_C* pnu = new( 0 , tin0P , LF ) in_countT_C( pBool_countT_no , minP , maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline _fe_no_in_C( byteT* minP , byteT* maxP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) in_byteTstrz_C( pBool_blob_no , minP , maxP , cEltP ) ) ;
+        in_byteTstrz_C* pnu = new( 0 , tin0P , LF ) in_byteTstrz_C( pBool_blob_no , minP , maxP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline _fe_no_in_C( countT* minP , countT* maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) in_countTstrz_C( pBool_countTstrz_no , minP , maxP ) ) ;
+        in_countTstrz_C* pnu = new( 0 , tin0P , LF ) in_countTstrz_C( pBool_countTstrz_no , minP , maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline _fe_no_in_C( const listingC& minP , const listingC& maxP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) in_countT_C( pBool_listingC_ptr_no , (countT)&minP , (countT)&maxP ) ) ;
+        in_countT_C* pnu = new( 0 , tin0P , LF ) in_countT_C( pBool_listingC_ptr_no , (countT)&minP , (countT)&maxP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33395,25 +33395,25 @@ struct _export _fe_ok_above_C              : public fieldEditParamInC
     inline _fe_ok_above_C( countT testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) above_countT_C( pBool_countT_ok , testP ) ) ;
+        above_countT_C* pnu = new( 0 , tin0P , LF ) above_countT_C( pBool_countT_ok , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline _fe_ok_above_C( byteT* testP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) above_byteTstrz_C( pBool_blob_ok , testP , cEltP ) ) ;
+        above_byteTstrz_C* pnu = new( 0 , tin0P , LF ) above_byteTstrz_C( pBool_blob_ok , testP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline _fe_ok_above_C( countT* testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) above_countTstrz_C( pBool_countTstrz_ok , testP ) ) ;
+        above_countTstrz_C* pnu = new( 0 , tin0P , LF ) above_countTstrz_C( pBool_countTstrz_ok , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline _fe_ok_above_C( const listingC& testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) above_countT_C( pBool_listingC_ptr_ok , (countT)&testP ) ) ;
+        above_countT_C* pnu = new( 0 , tin0P , LF ) above_countT_C( pBool_listingC_ptr_ok , (countT)&testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33423,25 +33423,25 @@ struct _export _fe_no_above_C              : public fieldEditParamInC
     inline _fe_no_above_C( countT testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) above_countT_C( pBool_countT_no , testP ) ) ;
+        above_countT_C* pnu = new( 0 , tin0P , LF ) above_countT_C( pBool_countT_no , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline _fe_no_above_C( byteT* testP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) above_byteTstrz_C( pBool_blob_no , testP , cEltP ) ) ;
+        above_byteTstrz_C* pnu = new( 0 , tin0P , LF ) above_byteTstrz_C( pBool_blob_no , testP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline _fe_no_above_C( countT* testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) above_countTstrz_C( pBool_countTstrz_no , testP ) ) ;
+        above_countTstrz_C* pnu = new( 0 , tin0P , LF ) above_countTstrz_C( pBool_countTstrz_no , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline _fe_no_above_C( const listingC& testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) above_countT_C( pBool_listingC_ptr_no , (countT)&testP ) ) ;
+        above_countT_C* pnu = new( 0 , tin0P , LF ) above_countT_C( pBool_listingC_ptr_no , (countT)&testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33451,25 +33451,25 @@ struct _export _fe_ok_below_C              : public fieldEditParamInC
     inline _fe_ok_below_C( countT testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) below_countT_C( pBool_countT_ok , testP ) ) ;
+        below_countT_C* pnu = new( 0 , tin0P , LF ) below_countT_C( pBool_countT_ok , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline _fe_ok_below_C( byteT* testP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) below_byteTstrz_C( pBool_blob_ok , testP , cEltP ) ) ;
+        below_byteTstrz_C* pnu = new( 0 , tin0P , LF ) below_byteTstrz_C( pBool_blob_ok , testP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline _fe_ok_below_C( countT* testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) below_countTstrz_C( pBool_countTstrz_ok , testP ) ) ;
+        below_countTstrz_C* pnu = new( 0 , tin0P , LF ) below_countTstrz_C( pBool_countTstrz_ok , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline _fe_ok_below_C( const listingC& testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) below_countT_C( pBool_listingC_ptr_ok , (countT)&testP ) ) ;
+        below_countT_C* pnu = new( 0 , tin0P , LF ) below_countT_C( pBool_listingC_ptr_ok , (countT)&testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33479,25 +33479,25 @@ struct _export _fe_no_below_C              : public fieldEditParamInC
     inline _fe_no_below_C( countT testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) below_countT_C( pBool_countT_no , testP ) ) ;
+        below_countT_C* pnu = new( 0 , tin0P , LF ) below_countT_C( pBool_countT_no , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline _fe_no_below_C( byteT* testP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) below_byteTstrz_C( pBool_blob_no , testP , cEltP ) ) ;
+        below_byteTstrz_C* pnu = new( 0 , tin0P , LF ) below_byteTstrz_C( pBool_blob_no , testP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline _fe_no_below_C( countT* testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) below_countTstrz_C( pBool_countTstrz_no , testP ) ) ;
+        below_countTstrz_C* pnu = new( 0 , tin0P , LF ) below_countTstrz_C( pBool_countTstrz_no , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline _fe_no_below_C( const listingC& testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) below_countT_C( pBool_listingC_ptr_no , (countT)&testP ) ) ;
+        below_countT_C* pnu = new( 0 , tin0P , LF ) below_countT_C( pBool_listingC_ptr_no , (countT)&testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33507,25 +33507,25 @@ struct _export _fe_ok_equal_C              : public fieldEditParamInC
     inline _fe_ok_equal_C( countT testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) equal_countT_C( pBool_countT_ok , testP ) ) ;
+        equal_countT_C* pnu = new( 0 , tin0P , LF ) equal_countT_C( pBool_countT_ok , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline _fe_ok_equal_C( byteT* testP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) equal_byteTstrz_C( pBool_blob_ok , testP , cEltP ) ) ;
+        equal_byteTstrz_C* pnu = new( 0 , tin0P , LF ) equal_byteTstrz_C( pBool_blob_ok , testP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline _fe_ok_equal_C( countT* testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) equal_countTstrz_C( pBool_countTstrz_ok , testP ) ) ;
+        equal_countTstrz_C* pnu = new( 0 , tin0P , LF ) equal_countTstrz_C( pBool_countTstrz_ok , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline _fe_ok_equal_C( const listingC& testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) equal_countT_C( pBool_listingC_ptr_ok , (countT)&testP ) ) ;
+        equal_countT_C* pnu = new( 0 , tin0P , LF ) equal_countT_C( pBool_listingC_ptr_ok , (countT)&testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33535,25 +33535,25 @@ struct _export _fe_no_equal_C              : public fieldEditParamInC
     inline _fe_no_equal_C( countT testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) equal_countT_C( pBool_countT_no , testP ) ) ;
+        equal_countT_C* pnu = new( 0 , tin0P , LF ) equal_countT_C( pBool_countT_no , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline _fe_no_equal_C( byteT* testP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) equal_byteTstrz_C( pBool_blob_no , testP , cEltP ) ) ;
+        equal_byteTstrz_C* pnu = new( 0 , tin0P , LF ) equal_byteTstrz_C( pBool_blob_no , testP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline _fe_no_equal_C( countT* testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) equal_countTstrz_C( pBool_countTstrz_no , testP ) ) ;
+        equal_countTstrz_C* pnu = new( 0 , tin0P , LF ) equal_countTstrz_C( pBool_countTstrz_no , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline _fe_no_equal_C( const listingC& testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) equal_countT_C( pBool_listingC_ptr_no , (countT)&testP ) ) ;
+        equal_countT_C* pnu = new( 0 , tin0P , LF ) equal_countT_C( pBool_listingC_ptr_no , (countT)&testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33563,25 +33563,25 @@ struct _export  _fe_ok_notEqual_C              : public fieldEditParamInC
     inline  _fe_ok_notEqual_C( countT testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) notEqual_countT_C( pBool_countT_ok , testP ) ) ;
+        notEqual_countT_C* pnu = new( 0 , tin0P , LF ) notEqual_countT_C( pBool_countT_ok , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline  _fe_ok_notEqual_C( byteT* testP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) notEqual_byteTstrz_C( pBool_blob_ok , testP , cEltP ) ) ;
+        notEqual_byteTstrz_C* pnu = new( 0 , tin0P , LF ) notEqual_byteTstrz_C( pBool_blob_ok , testP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline  _fe_ok_notEqual_C( countT* testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) notEqual_countTstrz_C( pBool_countTstrz_ok , testP ) ) ;
+        notEqual_countTstrz_C* pnu = new( 0 , tin0P , LF ) notEqual_countTstrz_C( pBool_countTstrz_ok , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline  _fe_ok_notEqual_C( const listingC& testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) notEqual_countT_C( pBool_listingC_ptr_ok , (countT)&testP ) ) ;
+        notEqual_countT_C* pnu = new( 0 , tin0P , LF ) notEqual_countT_C( pBool_listingC_ptr_ok , (countT)&testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -33591,25 +33591,25 @@ struct _export  _fe_no_notEqual_C              : public fieldEditParamInC
     inline  _fe_no_notEqual_C( countT testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) notEqual_countT_C( pBool_countT_no , testP ) ) ;
+        notEqual_countT_C* pnu = new( 0 , tin0P , LF ) notEqual_countT_C( pBool_countT_no , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNT ;
     }
     inline  _fe_no_notEqual_C( byteT* testP , countT cEltP = 0 )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) notEqual_byteTstrz_C( pBool_blob_no , testP , cEltP ) ) ;
+        notEqual_byteTstrz_C* pnu = new( 0 , tin0P , LF ) notEqual_byteTstrz_C( pBool_blob_no , testP , cEltP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_BLOB ;
     }
     inline  _fe_no_notEqual_C( countT* testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) notEqual_countTstrz_C( pBool_countTstrz_no , testP ) ) ;
+        notEqual_countTstrz_C* pnu = new( 0 , tin0P , LF ) notEqual_countTstrz_C( pBool_countTstrz_no , testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_COUNTsTRZ ;
     }
     inline  _fe_no_notEqual_C( const listingC& testP )
     {
         TINSL
-        ___( new( 0 , tin0P , LF ) notEqual_countT_C( pBool_listingC_ptr_no , (countT)&testP ) ) ;
+        notEqual_countT_C* pnu = new( 0 , tin0P , LF ) notEqual_countT_C( pBool_listingC_ptr_no , (countT)&testP ) ; ___( pnu ) ;
         flagsTypeMask |= flFIELDeDITtYPEmASK_LISTINGsp ;
     }
 } ;
@@ -49217,8 +49217,8 @@ i am nonconformant in that all of my member function definitions are in a single
 /*1*/class _export offStateListingSetC/*1*/
 {
     protected :
-
-    countT offState ;
+                                                    // CRAFTWORK TO IMPLEMENT ATOMIC TRANSACTIONS (SETS OF listingC CHANGES TO A poolC INSTANCE) WAS INTERRUPTED AND IS UNFINISHED (AS OF 20260309@1135)
+    countT offState ;                               // INTENDED TO POINT TO A LOCATION WITHIN THE CURRENT poolC INSTANCE THAT FUNCTIONS AS A BOOLEAN TO INDICATE WHETHER A SET OF listingC INSTANCES ARE "COMMITTED"
 
     public :
 
