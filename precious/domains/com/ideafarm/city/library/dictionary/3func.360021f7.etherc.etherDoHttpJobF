@@ -914,9 +914,26 @@
                                                 if( bDeadman1 ) /*;*/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / l") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                               /**/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / l") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                                                 }
-                                                    /**/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / called REPLY.pCBF") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
-                                                    (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swQuery , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueries , psttAgent , postBody ) ;
-                                                    /**/traceF( tin0P , tSayClientPrefix+T("U:: etherDoHttpJobF / calling REPLY.pCBF") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                                                    }
+                                                        }
+                                                            /**/traceF( tin0P , tSay , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                                                            _IO_
+                                                        {
+                                                        TN( tSay , "" ) ; tSay = tSayClientPrefix+T("U:: etherDoHttpJobF / called REPLY.pCBF") ;
+                                                        _IO_
+                                                    {
+                                                    }
+                                                        (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swQuery , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueries , psttAgent , postBody ) ;
+                                                        _IO_
+                                                    {
+                                                    }
+                                                        }
+                                                            /**/traceF( tin0P , tSay , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+                                                            _IO_
+                                                        {
+                                                        TN( tSay , "" ) ; tSay = tSayClientPrefix+T("U:: etherDoHttpJobF / calling REPLY.pCBF") ;
+                                                        _IO_
+                                                    {
                                                     _IO_
                                                 {
                                                 if( !bQuickReply && REPLY.pCBF )
