@@ -4929,7 +4929,7 @@ examples
 
 /*1*//*EPOCHSsIGNATUREmAX*//*1*/
 
-#define EPOCHSsIGNATUREmAX             0x1
+#define EPOCHSsIGNATUREmAX             0x10
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
