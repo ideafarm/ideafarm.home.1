@@ -18,6 +18,7 @@ DONE( tmWorkF )
 }
     }
         sThrow.writeF( tin0P , 9999 , nnTarget , postSay , sizeof postSay - 1 ) ;
+        pc02Target[ 0 ] ++ ;
     {
     while( !ether )
 
@@ -26,7 +27,8 @@ DONE( tmWorkF )
     sThrow.bindF( tin0P ) ;
     socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
-    nicNameC nnTarget = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::3") ) ;
+    count02T* pc02Target = nnTarget ;
+    nicNameC nnTarget = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::") ) ;
 
     _IO_
 {
