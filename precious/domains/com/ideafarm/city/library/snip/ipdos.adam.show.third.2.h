@@ -4902,7 +4902,7 @@ examples
 
 /*1*//*EPOCHSaLLOWEDfORbGPpROPOGATION*//*1*/
 
-#define EPOCHSaLLOWEDfORbGPpROPOGATION 2
+#define EPOCHSaLLOWEDfORbGPpROPOGATION 0
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -4929,7 +4929,7 @@ examples
 
 /*1*//*EPOCHSsIGNATUREmAX*//*1*/
 
-#define EPOCHSsIGNATUREmAX             0x10
+#define EPOCHSsIGNATUREmAX             0x1
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
