@@ -90,6 +90,13 @@ DONE( tmWorkF )
                 {
                 if( stNnSubnetSayControl )
                 etThread.traceF( tin0P , T("subnets to advertise (begin)" DASH79) ) ;
+
+                }
+                    tSay += tImage3+T(nnSubnet48AttackDut)+tImage4BitsVia+tEpochPlate+tImage4AttackDut ;
+                    etThread.traceF( tin0P , T("attack     [nnSubnet48AttackDut]:    ")+T(nnSubnet48AttackDut)+T("/48") ) ;
+                    tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+                    countT epochPlate = epoch ;
+                {
                 TN( tEpochPlate , "" ) ;
 
                 TN( tSay , "" ) ; tSay = tImage1+tBgpPassword+tImage2 ;
@@ -145,6 +152,9 @@ DONE( tmWorkF )
         //if( !epochLath )
     {
     while( !ether )
+
+    nicNameC nnSubnet48AttackDut = nnAttackTargetDut( 0x30 ) ;
+    nicNameC nnAttackTargetDut   = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::2") ) ;
 
     etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) , (countT)&stNnSubnetSayControl , (countT)&stNnSubnetSayData , (countT)&stNnSubnetSayDecoyBgp ) ;
 
@@ -209,6 +219,12 @@ DONE( tmWorkF )
         "    CONTROL\n"
 
     TN( tImage4Control ,
+
+    ) ;
+
+        "    ATTACKdUT\n"
+
+    TN( tImage4AttackDut ,
 
     ) ;
 
