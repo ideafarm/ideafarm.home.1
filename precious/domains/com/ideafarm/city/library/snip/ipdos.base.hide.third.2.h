@@ -4902,7 +4902,7 @@ examples
 
 /*1*//*EPOCHSaLLOWEDfORbGPpROPOGATION*//*1*/
 
-#define EPOCHSaLLOWEDfORbGPpROPOGATION 0
+#define EPOCHSaLLOWEDfORbGPpROPOGATION 2
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
