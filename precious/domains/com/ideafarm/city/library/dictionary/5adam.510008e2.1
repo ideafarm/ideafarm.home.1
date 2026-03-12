@@ -354,7 +354,8 @@ DONE( tmAddAddressF )
                     bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
                     geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_NNtARGETrEJECTED , sizeof nnTarget ) ;
                 {
-                if( !stNnApproved1P( nnTarget ) && !stNnApproved2P( nnTarget ) )
+                else if( !stNnApproved1P( nnTarget ) && !stNnApproved2P( nnTarget ) )
+                if( nnTarget == nnMe || nnTarget == nnRouter ) ;
 
                 stNnRequestedP >> nnTarget ;
                 nicNameC          nnTarget ;
@@ -368,6 +369,8 @@ DONE( tmAddAddressF )
     {
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    nicNameC nnMe     = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::2") ) ;
+    nicNameC nnRouter = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::1") ) ;
     TN( tb4 , "    " ) ;
 
     booksC& bksGeigerP     = *(booksC*)pTaskP->c4 ;
