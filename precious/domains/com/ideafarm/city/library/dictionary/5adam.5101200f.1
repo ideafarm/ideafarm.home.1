@@ -30,6 +30,9 @@ DONE( tmWorkF )
     count02T* pc02Target = (count02T*)(const count02T*)nnTarget ;
     nicNameC nnTarget = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::") ) ;
 
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+
     _IO_
 {
 if( pTaskP )
