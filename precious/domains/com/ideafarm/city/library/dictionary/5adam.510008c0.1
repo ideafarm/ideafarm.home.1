@@ -33,14 +33,15 @@ DONE( tmWorkF )
                 etRock.traceF( tin0P , T("\r\nI am no longer serving web pages.\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
                 }
-                    ++ s ; etThread.osSleepF( tin0P , TUCK >> 6 ) ;
+                    ++ s ; etRock.osSleepF( tin0P , TOCK >> 3 ) ;
+                    CONoUTrAW( "." ) ;
 
                     }
                         if( rc <= 32 ) etRock.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                         countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet/0/root/3/root.html" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
                         // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
-
                         etRock.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        //CS:CODEsYNC: 510008c0 510008c0
                     {
                     #endif
                         if( idPass == 1 )
@@ -340,6 +341,9 @@ DONE( tmWorkF )
         if( !LoadStringA( 0 , 101 , postSoulSubDump , sizeof postSoulSubDump ) ) etRock.traceF( tin0P , T("Either this file is not configured (for your email address), or it is corrupted.  Please discard it and obtain a fresh copy by (re)registering your email address at http://ideafarm.com .") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
     #if !defined( DUMMYsUB )
 
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
+
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
 if( pTaskP )
@@ -362,6 +366,14 @@ DONE( tmHearF )
         //CS:CODEsYNC: 510008c0 510008c0
 
         else                                                            {                                                    etRock.traceF( tin0P , tHelp                                                                                                                                              , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        }
+            if( rc <= 32 ) etRock.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet/0/root/3/root.html" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
+            // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
+            etRock.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            //CS:CODEsYNC: 510008c0 510008c0
+        {
+        else if( !etThread.strCompareF( tin0P , T("v") , psttWanted ) )
         else if( !etThread.strCompareF( tin0P , T("t") , psttWanted ) ) { boolT bDo = F(flagsModeP) & flIDEAnETeXE_METERED ; if( bDo ) inc02AM( cTestRequestsPendingP ) ; etRock.traceF( tin0P , T(bDo?"I will test my connectivity with IdeaNet (tm).\r\n":"Ignored because I am in free mode.\r\n" ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
         else if( !etThread.strCompareF( tin0P , T("n") , psttWanted ) ) {       flagsModeP |=      flIDEAnETeXE_USEdNS     ; etRock.traceF( tin0P , T("I will use \"name mode\" (https).\r\n"              )                                                                                           , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
         else if( !etThread.strCompareF( tin0P , T("m") , psttWanted ) ) {       flagsModeP |=      flIDEAnETeXE_METERED    ; etRock.traceF( tin0P , T("I will limit my use of data transmission.\r\n"      )                                                                                           , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
@@ -385,6 +397,7 @@ DONE( tmHearF )
         "Press the 'Enter' key, preceded by 'h' or any other keystrokes, to view this help.\r\n"
         "Press the 'Enter' key, preceded by no keystrokes, to \"fire\" me (to close/end this program).\r\n"
         "\r\n"
+        "  'v' : View IdeaFarm (tm) IdeaNet (tm) root page, by opening browser.\r\n"
         "  't' : Test the connection channels.\r\n"
         "  'n' : Use \"name mode\" (https).  (Most of the data passing between you and the server is encrypted.)\r\n"
         "  'm' : Use \"metered mode\".  (Use this mode if you pay for data communication or if data transmission is limited.)\r\n"
