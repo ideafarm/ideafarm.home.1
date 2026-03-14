@@ -27,31 +27,31 @@ DONE( tmWorkF )
             }
                 }
                     }
-                        etRock.traceF( tin0P , T("!exception / could not write to router share ; ignoring [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                        etRock.traceF( tin0P , T("!exception / could not write to router share ; ignoring [rc,tLongBird]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongBird ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
                     else
                     }
-                        etRock.traceF( tin0P , T("i wrote aok to router share [tLong]:    ")+tLong ) ;
+                        etRock.traceF( tin0P , T("i wrote aok to router share [tLongBird]:    ")+tLongBird ) ;
                         bOk = 1 ;
                     {
                     if( !POOP )
-                    ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tSay , tSay.csF( tin0P ) ) ;
+                    ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLongBird , tSayBird , tSayBird.csF( tin0P ) ) ;
                     SCOOPS
                     _IO_
                 {
                 IFsCRATCHoK
                 ZE( boolT , bOk ) ;
 
-                tSay += tImage5 ;
+                tSayBird += tImage5 ;
 
                 etThread.traceF( tin0P , T("subnets to advertise   (end)" DASH79) ) ;
 
                 }
                     while( ~hWalk ) ;
                     }
-                        tSay += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4DecoyBgp ;
+                        tSayBird += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4DecoyBgp ;
                         etThread.traceF( tin0P , T("decoyBgp    [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayDecoyBgp.downF( tin0P , hWalk ) ;
                         tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
@@ -65,7 +65,7 @@ DONE( tmWorkF )
                 }
                     while( ~hWalk ) ;
                     }
-                        tSay += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4Data ;
+                        tSayBird += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4Data ;
                         etThread.traceF( tin0P , T("data        [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayData.downF( tin0P , hWalk ) ;
                         tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
@@ -79,7 +79,7 @@ DONE( tmWorkF )
                 }
                     while( ~hWalk ) ;
                     }
-                        tSay += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4Control ;
+                        tSayBird += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4Control ;
                         etThread.traceF( tin0P , T("control     [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayControl.downF( tin0P , hWalk ) ;
                         tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
@@ -92,14 +92,15 @@ DONE( tmWorkF )
                 etThread.traceF( tin0P , T("subnets to advertise (begin)" DASH79) ) ;
 
                 }
-                    tSay += tImage3+T(nnSubnet48AttackDut)+tImage4BitsVia+tEpochPlate+tImage4AttackDut ;
+                    tSayBird += tImage3+T(nnSubnet48AttackDut)+tImage4BitsVia+tEpochPlate+tImage4AttackDut ;
                     etThread.traceF( tin0P , T("attack     [nnSubnet48AttackDut]:    ")+T(nnSubnet48AttackDut)+T("/48") ) ;
                     tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
                     countT epochPlate = epoch ;
                 {
                 TN( tEpochPlate , "" ) ;
 
-                TN( tSay , "" ) ; tSay = tImage1+tBgpPassword+tImage2 ;
+                TN( tSayUfw  , "" ) ; tSayUfw  = T("kilroy was here") ;
+                TN( tSayBird , "" ) ; tSayBird = tImage1+tBgpPassword+tImage2 ;
             {
             if( cChange )
 
@@ -167,7 +168,8 @@ DONE( tmWorkF )
     ideaNetSubscriptionC woSub( tin0P , etThread , 1 , 1 , T("foo") , T("goo@hoo") ) ;
     sleepC               s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , epochLath ) ;
-    TN( tLong , "////10.0.4.1/bird/bird.conf" ) ;
+    TN( tLongUfw  , "////10.0.4.1/ufw/nu.conf.craftwork" ) ;
+    TN( tLongBird , "////10.0.4.1/bird/bird.conf" ) ;
     TN( tMax , "2602:FF03:0FFF:FFFF:FFFF:FFFF:FFFF:FFFF" ) ;
     TN( tMin , "2602:FF03:0000::" ) ;
     TN( tDash , DASH127 ) ;
