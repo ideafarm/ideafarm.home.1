@@ -20,6 +20,20 @@ DONE( tmWorkF )
         ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
 
         }
+            swTallyPrefix.ungrabF( tin0P ) ;
+            swTallyPrefix.freeAllF( tin0P ) ;
+            }
+                etRock.traceF( tin0P , T("[epoch,idPrefix,cSolicitations]:    ")+TF3(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(idlPrefix,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF2(cSolicitations,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        
+                countT cSolicitations = swTallyPrefix ;
+                idlPrefix = swTallyPrefix.leverF( tin0P , idf ) ;
+        
+                _IO_
+            {
+            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+            countT cFlavors = swTallyPrefix.cFlavorsF( tin0P ) ;
+            swTallyPrefix.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
             nnSubnet48DecoyBgpLath = nnSubnet48DecoyBgp ;
             nnSubnet48DataLath     = nnSubnet48Data     ;
             nnSubnet48ControlLath  = nnSubnet48Control  ;
@@ -253,7 +267,9 @@ DONE( tmWorkF )
     nicNameC nnSubnet48AttackDut = nnAttackTargetDut( 0x30 ) ;
     nicNameC nnAttackTargetDut   = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::2") ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) /*, (countT)&stNnSubnetSayControl , (countT)&stNnSubnetSayData , (countT)&stNnSubnetSayDecoyBgp*/ ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) , (countT)&idlPrefix , (countT)&swTallyPrefix /*, (countT)&stNnSubnetSayControl , (countT)&stNnSubnetSayData , (countT)&stNnSubnetSayDecoyBgp*/ ) ;
+    switchC swTallyPrefix( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idlPrefix ) ;
+    ZE( countT , idlPrefix ) ;
 
     stackC               stNnSubnetSayDecoyBgp( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
     stackC               stNnSubnetSayData(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
@@ -513,6 +529,11 @@ DONE( tmEatGeigerEventsF )
 
                 //nicNameC  nnSubnetTarget = nnTarget( 48 ) ;
 
+                swTallyPrefixP.ungrabF( tin0P ) ;
+                swTallyPrefixP ++ ;
+                idlPrefixP = idPrefix ;
+                swTallyPrefixP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
                 etRock.traceF( tin0P , tSayIdPrefix+TF2(idPrefix,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
 
                 countT idPrefix = pct[ 2 ] & 0xfff ;
@@ -570,8 +591,12 @@ DONE( tmEatGeigerEventsF )
     //stackC& stNnSubnetSayDecoyBgpP = *(stackC*)pTaskP->c3 ;
     //stackC& stNnSubnetSayDataP     = *(stackC*)pTaskP->c2 ;
     //stackC& stNnSubnetSayControlP  = *(stackC*)pTaskP->c1 ;
+
+
+    switchC& swTallyPrefixP = *(switchC*)pTaskP->c2 ;
+    countT&  idlPrefixP     =  *(countT*)pTaskP->c1 ;
 {
-if( pTaskP /*&& pTaskP->c1 && pTaskP->c2 && pTaskP->c3*/ )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmEatGeigerEventsF )
 
 #define postROUTERiPV6oUTER "2001:19f0:ac00:4406:5400:05ff:fee9:27e6"
