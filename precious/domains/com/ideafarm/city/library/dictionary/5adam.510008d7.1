@@ -44,14 +44,14 @@ DONE( tmWorkF )
                 IFsCRATCHoK
                 ZE( boolT , bOk ) ;
 
-                tSayBird += tImage5 ;
+                tSayBird += tBirdImage5 ;
 
                 etThread.traceF( tin0P , T("subnets to advertise   (end)" DASH79) ) ;
 
                 }
                     while( ~hWalk ) ;
                     }
-                        tSayBird += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4DecoyBgp ;
+                        tSayBird += tBirdImage3+T(nnWo)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4DecoyBgp ;
                         etThread.traceF( tin0P , T("decoyBgp    [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayDecoyBgp.downF( tin0P , hWalk ) ;
                         tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
@@ -65,7 +65,7 @@ DONE( tmWorkF )
                 }
                     while( ~hWalk ) ;
                     }
-                        tSayBird += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4Data ;
+                        tSayBird += tBirdImage3+T(nnWo)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4Data ;
                         etThread.traceF( tin0P , T("data        [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayData.downF( tin0P , hWalk ) ;
                         tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
@@ -79,7 +79,7 @@ DONE( tmWorkF )
                 }
                     while( ~hWalk ) ;
                     }
-                        tSayBird += tImage3+T(nnWo)+tImage4BitsVia+tEpochPlate+tImage4Control ;
+                        tSayBird += tBirdImage3+T(nnWo)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4Control ;
                         etThread.traceF( tin0P , T("control     [nnWo]:    ")+T(nnWo)+T("/48") ) ;
                         nicNameC& nnWo = (nicNameC&)stNnSubnetSayControl.downF( tin0P , hWalk ) ;
                         tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
@@ -92,15 +92,15 @@ DONE( tmWorkF )
                 etThread.traceF( tin0P , T("subnets to advertise (begin)" DASH79) ) ;
 
                 }
-                    tSayBird += tImage3+T(nnSubnet48AttackDut)+tImage4BitsVia+tEpochPlate+tImage4AttackDut ;
+                    tSayBird += tBirdImage3+T(nnSubnet48AttackDut)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4AttackDut ;
                     etThread.traceF( tin0P , T("attack     [nnSubnet48AttackDut]:    ")+T(nnSubnet48AttackDut)+T("/48") ) ;
                     tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
                     countT epochPlate = epoch ;
                 {
                 TN( tEpochPlate , "" ) ;
 
-                TN( tSayUfw  , "" ) ; tSayUfw  = T("kilroy was here") ;
-                TN( tSayBird , "" ) ; tSayBird = tImage1+tBgpPassword+tImage2 ;
+                TN( tSayUfw  , "" ) ; tSayUfw  = tUfwPrefix + tUfwSuffix ;
+                TN( tSayBird , "" ) ; tSayBird = tBirdImage1+tBirdBgpPassword+tBirdImage2 ;
             {
             if( cChange )
 
@@ -177,21 +177,85 @@ DONE( tmWorkF )
     TN( tFilePrefix , "- " ) ;
     TN( tb4 , "    " ) ;
 
-    TN( tArgsBirdConfigure , "" ) ; tArgsBirdConfigure = T("-batch -l root -pw ")+tRouterPassword+T(" 10.0.4.1 \"birdc configure\"") ;
+
+    ) ;
+
+        "\r\n"
+        "COMMIT\r\n"
+        "### END RATE LIMITING ###\r\n"
+        "-A ufw6-user-limit-accept -j ACCEPT\r\n"
+        "-A ufw6-user-limit -j REJECT\r\n"
+        "-A ufw6-user-limit -m limit --limit 3/minute -j LOG --log-prefix "[UFW LIMIT BLOCK] "\r\n"
+        "### RATE LIMITING ###\r\n"
+        "\r\n"
+        "### END LOGGING ###\r\n"
+        "-A ufw6-logging-allow -j LOG --log-prefix "[UFW ALLOW] " -m limit --limit 3/min --limit-burst 10\r\n"
+        "-A ufw6-logging-deny -j LOG --log-prefix "[UFW BLOCK] " -m limit --limit 3/min --limit-burst 10\r\n"
+        "-I ufw6-logging-deny -m conntrack --ctstate INVALID -j RETURN -m limit --limit 3/min --limit-burst 10\r\n"
+        "-A ufw6-after-logging-forward -j LOG --log-prefix "[UFW BLOCK] " -m limit --limit 3/min --limit-burst 10\r\n"
+        "-A ufw6-after-logging-input -j LOG --log-prefix "[UFW BLOCK] " -m limit --limit 3/min --limit-burst 10\r\n"
+        "### LOGGING ###\r\n"
+        "\r\n"
+        "### END RULES ###\r\n"
+        "\r\n"
+
+    TN( tUfwSuffix ,
+
+//  -A ufw6-user-forward -i enp1s0 -o enp9s0 -p udp -d 2602:ff03::/36 --dport 9999 -j ACCEPT
+//  ### tuple ### route:allow udp 9999 2602:ff03::/36 any ::/0 in_enp1s0!out_enp9s0
+//  
+//  -A ufw6-user-input -i enp8s0 -p tcp -m multiport --dports 139,445 -j ACCEPT -m comment --comment 'dapp_Samba'
+//  ### tuple ### allow tcp 139,445 ::/0 any ::/0 Samba - in_enp8s0
+//  
+//  -A ufw6-user-input -i enp8s0 -p udp -m multiport --dports 137,138 -j ACCEPT -m comment --comment 'dapp_Samba'
+//  ### tuple ### allow udp 137,138 ::/0 any ::/0 Samba - in_enp8s0
+//  
+//  -A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d 2602:ff03::/36 -j ACCEPT
+//  ### tuple ### route:allow tcp 80,443 2602:ff03::/36 any ::/0 in_enp1s0!out_enp9s0
+//  
+// EXAMPLE RULES GENERATED BY UFW (THESE USE /36 RATHER THAN /48)
+//  
+
+    ) ;
+
+        "\r\n"
+        "### RULES ###\r\n"
+        ":ufw6-user-limit-accept - [0:0]\r\n"
+        ":ufw6-user-limit - [0:0]\r\n"
+        ":ufw6-logging-allow - [0:0]\r\n"
+        ":ufw6-logging-deny - [0:0]\r\n"
+        ":ufw6-after-logging-forward - [0:0]\r\n"
+        ":ufw6-after-logging-output - [0:0]\r\n"
+        ":ufw6-after-logging-input - [0:0]\r\n"
+        ":ufw6-user-logging-forward - [0:0]\r\n"
+        ":ufw6-user-logging-output - [0:0]\r\n"
+        ":ufw6-user-logging-input - [0:0]\r\n"
+        ":ufw6-before-logging-forward - [0:0]\r\n"
+        ":ufw6-before-logging-output - [0:0]\r\n"
+        ":ufw6-before-logging-input - [0:0]\r\n"
+        ":ufw6-user-forward - [0:0]\r\n"
+        ":ufw6-user-output - [0:0]\r\n"
+        ":ufw6-user-input - [0:0]\r\n"
+        "*filter\r\n"
+        "\r\n"
+
+    TN( tUfwPrefix ,
+
+    TN( tBirgArgsBirdConfigure , "" ) ; tBirgArgsBirdConfigure = T("-batch -l root -pw ")+tBirdRouterPassword+T(" 10.0.4.1 \"birdc configure\"") ;
 
     }
         etThread.delF( tin0P , psttv ) ;
-        tBgpPassword = T(psttv) ;
+        tBirdBgpPassword = T(psttv) ;
         ZE( strokeS* , psttv ) ; etThread.querySettingF( tin0P , psttv , T("!ipdos.ideanet.bgp.password")  ) ; ___( psttv ) ;
     {
-    TN( tBgpPassword , "" ) ;
+    TN( tBirdBgpPassword , "" ) ;
 
     }
         etThread.delF( tin0P , psttv ) ;
-        tRouterPassword = T(psttv) ;
+        tBirdRouterPassword = T(psttv) ;
         ZE( strokeS* , psttv ) ; etThread.querySettingF( tin0P , psttv , T("!ipdos.ideanet.router.password")  ) ; ___( psttv ) ;
     {
-    TN( tRouterPassword , "" ) ;
+    TN( tBirdRouterPassword , "" ) ;
 
     ) ;
 
@@ -202,43 +266,43 @@ DONE( tmWorkF )
         "\n"
         "}\n"
 
-    TN( tImage5 ,
+    TN( tBirdImage5 ,
 
     ) ;
 
         "    DECOYbGP\n"
 
-    TN( tImage4DecoyBgp ,
+    TN( tBirdImage4DecoyBgp ,
 
     ) ;
 
         "    DATA\n"
 
-    TN( tImage4Data ,
+    TN( tBirdImage4Data ,
 
     ) ;
 
         "    CONTROL\n"
 
-    TN( tImage4Control ,
+    TN( tBirdImage4Control ,
 
     ) ;
 
         "    ATTACKdUT\n"
 
-    TN( tImage4AttackDut ,
+    TN( tBirdImage4AttackDut ,
 
     ) ;
 
         "/48 via " postROUTERiPV6oUTER " ;    #    EPOCH    "
 
-    TN( tImage4BitsVia ,
+    TN( tBirdImage4BitsVia ,
 
     ) ;
 
         "    route "
 
-    TN( tImage3 ,
+    TN( tBirdImage3 ,
 
     ) ;
 
@@ -257,7 +321,7 @@ DONE( tmWorkF )
         "    multihop 2 ;\n"
         "\" ;\n"
 
-    TN( tImage2 ,
+    TN( tBirdImage2 ,
 
     ) ;
 
@@ -277,7 +341,7 @@ DONE( tmWorkF )
         "log \"/tmp/bird.log\" all ;\n"
         "\n"
 
-    TN( tImage1 ,
+    TN( tBirdImage1 ,
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
