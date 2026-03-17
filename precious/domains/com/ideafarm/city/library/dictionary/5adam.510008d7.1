@@ -20,20 +20,6 @@ DONE( tmWorkF )
         ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
 
         }
-            swTallyPrefix.ungrabF( tin0P ) ;
-            swTallyPrefix.freeAllF( tin0P ) ;
-            }
-                etRock.traceF( tin0P , T("[epoch,idPrefix,cSolicitations]:    ")+TF3(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(idlPrefix,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF2(cSolicitations,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        
-                countT cSolicitations = swTallyPrefix ;
-                idlPrefix = swTallyPrefix.leverF( tin0P , idf ) ;
-        
-                _IO_
-            {
-            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swTallyPrefix.cFlavorsF( tin0P ) ;
-            swTallyPrefix.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-
             nnSubnet48DecoyBgpLath = nnSubnet48DecoyBgp ;
             nnSubnet48DataLath     = nnSubnet48Data     ;
             nnSubnet48ControlLath  = nnSubnet48Control  ;
@@ -115,6 +101,10 @@ DONE( tmWorkF )
                             etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4DecoyBgp ) ; ___( psttl ) ;
                             ZE( strokeS* , psttl ) ;
 
+                            stIdPrefixDecoyBgp.sinkF( tin0P , countTC() , idPrefix , flSTACKsINK_UNIQUE ) ;
+                            countT idPrefix = ( pcWo[ 2 ] & 0xfff0000 ) >> 0x10 ;
+                            const countT* pcWo = nnWo ;           
+
                             etThread.traceF( tin0P , T("decoyBgp    [nnWo]:    ")+tNnWo+T("/48") ) ;
                             TN( tNnWo , "" ) ; tNnWo = T(nnWo) ;
                             nicNameC& nnWo = (nicNameC&)stNnSubnetSayDecoyBgp.downF( tin0P , hWalk ) ;
@@ -124,6 +114,8 @@ DONE( tmWorkF )
                         handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         countT epochPlate = epoch + 1 - stNnSubnetSayDecoyBgp ;
                         ZE( countT , cAllowed ) ;
+
+                        stIdPrefixDecoyBgp.purgeF( tin0P ) ;
                     {
                     if( stNnSubnetSayDecoyBgp )
 
@@ -151,6 +143,10 @@ DONE( tmWorkF )
 
                             etThread.traceF( tin0P , T("data        [nnWo]:    ")+tNnWo+T("/48") ) ;
 
+                            stIdPrefixData.sinkF( tin0P , countTC() , idPrefix , flSTACKsINK_UNIQUE ) ;
+                            countT idPrefix = ( pcWo[ 2 ] & 0xfff0000 ) >> 0x10 ;
+                            const countT* pcWo = nnWo ;           
+
                             TN( tNnWo , "" ) ; tNnWo = T(nnWo) ;
                             nicNameC& nnWo = (nicNameC&)stNnSubnetSayData.downF( tin0P , hWalk ) ;
                             tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
@@ -158,6 +154,8 @@ DONE( tmWorkF )
                         do
                         handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         countT epochPlate = epoch + 1 - stNnSubnetSayData ;
+
+                        stIdPrefixData.purgeF( tin0P ) ;
                     {
                     if( stNnSubnetSayData )
 
@@ -185,6 +183,10 @@ DONE( tmWorkF )
 
                             etThread.traceF( tin0P , T("control     [nnWo]:    ")+tNnWo+T("/48") ) ;
 
+                            stIdPrefixControl.sinkF( tin0P , countTC() , idPrefix , flSTACKsINK_UNIQUE ) ;
+                            countT idPrefix = ( pcWo[ 2 ] & 0xfff0000 ) >> 0x10 ;
+                            const countT* pcWo = nnWo ;           
+
                             TN( tNnWo , "" ) ; tNnWo = T(nnWo) ;
                             nicNameC& nnWo = (nicNameC&)stNnSubnetSayControl.downF( tin0P , hWalk ) ;
                             tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
@@ -192,6 +194,8 @@ DONE( tmWorkF )
                         do
                         handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         countT epochPlate = epoch + 1 - stNnSubnetSayControl ;
+
+                        stIdPrefixControl.purgeF( tin0P ) ;
                     {
                     if( stNnSubnetSayControl )
                     etThread.traceF( tin0P , T("subnets to advertise (begin)" DASH79) ) ;
@@ -247,6 +251,29 @@ DONE( tmWorkF )
             ideaNetIpv6FieldsS fnu2 ;
             ideaNetIpv6FieldsS fnu1 ;
 
+            swTallyPrefix.ungrabF( tin0P ) ;
+            swTallyPrefix.freeAllF( tin0P ) ;
+            }
+                etRock.traceF( tin0P , T("[epoch,type,idPrefix,cSolicitations]:    ")+TF3(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tType+tb4+TF3(idlPrefix,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF2(cSolicitations,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                if( bDecoyBgp ) tType += T("DECOYbGP") ;
+                if( bData     ) tType += T("DATA    ") ;
+                if( bControl  ) tType += T("CONTROL ") ;
+                TN( tType , "" ) ;
+
+                boolT bDecoyBgp = stIdPrefixDecoyBgp( idlPrefix ) ;
+                boolT bData     = stIdPrefixData(     idlPrefix ) ;
+                boolT bControl  = stIdPrefixControl(  idlPrefix ) ;
+        
+                countT cSolicitations = swTallyPrefix ;
+                idlPrefix = swTallyPrefix.leverF( tin0P , idf ) ;
+        
+                _IO_
+            {
+            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+            countT cFlavors = swTallyPrefix.cFlavorsF( tin0P ) ;
+            swTallyPrefix.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
             epochLath = epoch ;
         {
         if( epochLath != epoch )
@@ -267,10 +294,13 @@ DONE( tmWorkF )
     nicNameC nnSubnet48AttackDut = nnAttackTargetDut( 0x30 ) ;
     nicNameC nnAttackTargetDut   = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::2") ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) , (countT)&idlPrefix , (countT)&swTallyPrefix /*, (countT)&stNnSubnetSayControl , (countT)&stNnSubnetSayData , (countT)&stNnSubnetSayDecoyBgp*/ ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) , (countT)&idlPrefix , (countT)&swTallyPrefix , (countT)&stIdPrefixControl , (countT)&stIdPrefixData , (countT)&stIdPrefixDecoyBgp ) ;
     switchC swTallyPrefix( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idlPrefix ) ;
     ZE( countT , idlPrefix ) ;
 
+    stackC               stIdPrefixDecoyBgp( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    stackC               stIdPrefixData(     tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    stackC               stIdPrefixControl(  tin0P , etThread , TAG( TAGiDnULL ) ) ;
     stackC               stNnSubnetSayDecoyBgp( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
     stackC               stNnSubnetSayData(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
     stackC               stNnSubnetSayControl(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
@@ -587,15 +617,13 @@ DONE( tmEatGeigerEventsF )
 
     booksC bksGeiger( tin0P , TAG( TAGiDnULL ) , "geiger" ) ;
 
-    //stackC& stNnSubnetSayDecoyBgpP = *(stackC*)pTaskP->c3 ;
-    //stackC& stNnSubnetSayDataP     = *(stackC*)pTaskP->c2 ;
-    //stackC& stNnSubnetSayControlP  = *(stackC*)pTaskP->c1 ;
-
-
-    switchC& swTallyPrefixP = *(switchC*)pTaskP->c2 ;
-    countT&  idlPrefixP     =  *(countT*)pTaskP->c1 ;
+    //stackC&  stIdPrefixDecoyBgpP =  *(stackC*)pTaskP->c5 ;
+    //stackC&  stIdPrefixDataP     =  *(stackC*)pTaskP->c4 ;
+    //stackC&  stIdPrefixControlP  =  *(stackC*)pTaskP->c3 ;
+    switchC& swTallyPrefixP      = *(switchC*)pTaskP->c2 ;
+    countT&  idlPrefixP          =  *(countT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 /*&& pTaskP->c3 && pTaskP->c4 && pTaskP->c5*/ )
 TASK( tmEatGeigerEventsF )
 
 #define postROUTERiPV6oUTER "2001:19f0:ac00:4406:5400:05ff:fee9:27e6"
