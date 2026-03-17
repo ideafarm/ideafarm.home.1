@@ -77,6 +77,11 @@ DONE( tmWorkF )
 
                 }
                     }
+                    {
+                    if( cDecoySwarm )
+                    // THESE DECOY PREFIXES MUST EXHIBIT THE SAME BEHAVIOR AND BE INDISTINGUISHABLE FROM THE OTHER ADVERTISED PREFIXES ; IN PARTICULAR, THEY MUST HAVE THE SAME LIFETIMES
+
+                    }
                         while( ~hWalk ) ;
                         }
                             }
@@ -200,15 +205,17 @@ DONE( tmWorkF )
                     if( stNnSubnetSayControl )
                     etThread.traceF( tin0P , T("subnets to advertise (begin)" DASH79) ) ;
 
-                    }
-                        stSortedBirdLines.sinkF( tin0P , countTC() , psttl ) ;
-                        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnSubnet48AttackDut)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4AttackDut ) ; ___( psttl ) ;
-                        ZE( strokeS* , psttl ) ;
+                    //}
+                    //    stSortedBirdLines.sinkF( tin0P , countTC() , psttl ) ;
+                    //    etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnSubnet48AttackDut)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4AttackDut ) ; ___( psttl ) ;
+                    //    ZE( strokeS* , psttl ) ;
+                    //
+                    //    etThread.traceF( tin0P , T("attack     [nnSubnet48AttackDut]:    ")+T(nnSubnet48AttackDut)+T("/48") ) ;
+                    //    tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+                    //    countT epochPlate = epoch ;
+                    //{
+                    //DISABLE THIS IN PRODUCTION ; THIS IS ONLY FOR TESTING (RUN A GORILLA ON go1)
 
-                        etThread.traceF( tin0P , T("attack     [nnSubnet48AttackDut]:    ")+T(nnSubnet48AttackDut)+T("/48") ) ;
-                        tEpochPlate = TF2(epochPlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
-                        countT epochPlate = epoch ;
-                    {
                     TN( tEpochPlate , "" ) ;
                 {
                 stackC stSortedBirdLines( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;      // BIRD CONFIGURATION LINES ARE SORTED IN ORDER TO CONCEAL WHICH LINES ARE DECOYS ; OTHERWISE AN ATTACKER WITH REAL TIME ACCESS TO BGP MIGHT BE ABLE TO SEE THE ORDER IN WHICH THE PREFIXES ARE ADVERTISED ; BGP PROBABLY SORTS EARLY BY IPv6 VALUE, BUT WE DO IT HERE, TOO, JUST TO MAKE SURE
@@ -262,6 +269,23 @@ DONE( tmWorkF )
                 if( bControl            ) tType += T(" CONTROL ") ;
                 TN( tType , "" ) ;
 
+                }
+                    }
+                        etRock.traceF( tin0P , T("---- [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                        else                     cDecoySwarm   = 0 ;
+                        if( cDecoySwarm > 0x10 ) cDecoySwarm >>= 1 ;
+                    {
+                    else if( cSolicitations < TUCK << 4 )
+                    }
+                        etRock.traceF( tin0P , T("++++ [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        else               cDecoySwarm <<= 1    ;
+                        if( !cDecoySwarm ) cDecoySwarm   = 0x10 ;
+                    {
+                    if( cSolicitations > TUCK << 5 )
+                {
+                if( bDecoyBgp )
+
                 boolT bDecoyBgp = stIdPrefixDecoyBgp( idlPrefix ) ;
                 boolT bData     = stIdPrefixData(     idlPrefix ) ;
                 boolT bControl  = stIdPrefixControl(  idlPrefix ) ;
@@ -274,6 +298,7 @@ DONE( tmWorkF )
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
             countT cFlavors = swTallyPrefix.cFlavorsF( tin0P ) ;
             swTallyPrefix.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+            ZE( countT , cDecoySwarm ) ;
 
             epochLath = epoch ;
         {
