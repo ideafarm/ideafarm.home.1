@@ -256,9 +256,10 @@ DONE( tmWorkF )
             }
                 etRock.traceF( tin0P , T("[epoch,type,idPrefix,cSolicitations]:    ")+TF3(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tType+tb4+TF3(idlPrefix,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF2(cSolicitations,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                if( bDecoyBgp ) tType += T("DECOYbGP") ;
-                if( bData     ) tType += T("DATA    ") ;
-                if( bControl  ) tType += T("CONTROL ") ;
+                if( !tType.csF( tin0P ) ) tType  = T("         ") ;
+                if( bDecoyBgp           ) tType += T(" DECOYbGP") ;
+                if( bData               ) tType += T(" DATA    ") ;
+                if( bControl            ) tType += T(" CONTROL ") ;
                 TN( tType , "" ) ;
 
                 boolT bDecoyBgp = stIdPrefixDecoyBgp( idlPrefix ) ;
@@ -294,13 +295,14 @@ DONE( tmWorkF )
     nicNameC nnSubnet48AttackDut = nnAttackTargetDut( 0x30 ) ;
     nicNameC nnAttackTargetDut   = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::2") ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) , (countT)&idlPrefix , (countT)&swTallyPrefix , (countT)&stIdPrefixControl , (countT)&stIdPrefixData , (countT)&stIdPrefixDecoyBgp ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) , (countT)&idlPrefix , (countT)&swTallyPrefix /*, (countT)&stIdPrefixControl , (countT)&stIdPrefixData , (countT)&stIdPrefixDecoyBgp*/ ) ;
     switchC swTallyPrefix( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idlPrefix ) ;
     ZE( countT , idlPrefix ) ;
 
-    stackC               stIdPrefixDecoyBgp( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE ) ;
-    stackC               stIdPrefixData(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE ) ;
-    stackC               stIdPrefixControl(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE ) ;
+    stackC               stIdPrefixDecoyBgp( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE | flSTACKc_DOnOTsERIALIZE ) ;
+    stackC               stIdPrefixData(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE | flSTACKc_DOnOTsERIALIZE ) ;
+    stackC               stIdPrefixControl(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE | flSTACKc_DOnOTsERIALIZE ) ;
+
     stackC               stNnSubnetSayDecoyBgp( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
     stackC               stNnSubnetSayData(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
     stackC               stNnSubnetSayControl(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
