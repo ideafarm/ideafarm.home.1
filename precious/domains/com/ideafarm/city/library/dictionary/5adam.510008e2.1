@@ -394,22 +394,48 @@ TASK( tmAddAddressF )
         }
             break ;
             }
-                stNnApprovedNewP << nnNowData    ;
-                stNnApprovedNewP << nnNowControl ;
+                }
+                    stNnApprovedNewP << nnNowData    ;
+                    stNnApprovedNewP << nnNowControl ;
+                    //etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) ) ;
+                    //etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) ) ;
+                    nicNameC nnNowData    = woSub.nnF( tin0P , epoch                                ) ;
+                    nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_CONTROL ) ;
+                    ideaNetIpv6FieldsS fnu ;
+                    //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                {
+                for( countT epoch = 0 ; epoch <= epochUseLath ; epoch ++ )
 
-                //etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) ) ;
-                //etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) ) ;
-                nicNameC nnNowData    = woSub.nnF( tin0P , epoch                                ) ;
-                nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_CONTROL ) ;
-                ideaNetIpv6FieldsS fnu ;
-                TN( tb4 , "    " ) ;
+                }
+                    stNnApprovedNewP << nnNowData    ;
+                    stNnApprovedNewP << nnNowControl ;
+                    //etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) ) ;
+                    //etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) ) ;
+                    nicNameC nnNowData    = woSub.nnF( tin0P , epoch                                ) ;
+                    nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_CONTROL ) ;
+                    ideaNetIpv6FieldsS fnu ;
+                    //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                {
+                for( countT epoch = epochUseWoth ; epoch < epochsPerDay ; epoch ++ )
             {
-            for( countT epoch = epochUseWoth ; epoch <= epochUseLath ; epoch ++ )
+            else
+            }
+                }
+                    stNnApprovedNewP << nnNowData    ;
+                    stNnApprovedNewP << nnNowControl ;
+                    //etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowData]:       ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowData   ) ) ;
+                    //etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowControl]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowControl) ) ;
+                    nicNameC nnNowData    = woSub.nnF( tin0P , epoch                                ) ;
+                    nicNameC nnNowControl = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_CONTROL ) ;
+                    ideaNetIpv6FieldsS fnu ;
+                    //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                {
+                for( countT epoch = epochUseWoth ; epoch <= epochUseLath ; epoch ++ )
+            {
+            if( epochUseWoth < epochUseLath )
 
             countT epochUseWoth = ( ( timeN1 - time1PerEpoch * EPOCHSsIGNATUREmAX ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
             countT epochUseLath = ( ( timeN1                                      ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
-
-            const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
 
             // EACH PREFIX, AND EACH ADDRESS, MUST LIVE LONG ENOUGH TO EXIST UNTIL IT WILL NO LONGER BE USED
             // IF BITSsHIFTiDEAnETePOCH IS DEFINED TO BE ( 0x14 ), THEN EACH EPOCH IS 02 TOCK
@@ -434,6 +460,11 @@ TASK( tmAddAddressF )
 
     etherP.boxGetShadowF( tin0P , soulSub , psttLongFileP ) ;
     soulC soulSub( tin0P , etherP , TAG( TAGiDnULL ) ) ;
+
+    etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epochsPerDay]:    ")+TF2(epochsPerDay,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    const countT epochsPerDay = (countT)(    ( (count04T)TICK << 0x8 )    /    time1PerEpoch    ) ;
+    const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
+    TN( tb4 , "    " ) ;
 
     switchStackC& swsIdBookIdSubByEmailP = *(switchStackC*)c3App.c3  ;
     strokeS*&     psttlEmailP            =     *(strokeS**)c3App.c2  ;
