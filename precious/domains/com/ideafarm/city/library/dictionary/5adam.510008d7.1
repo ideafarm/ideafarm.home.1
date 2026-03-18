@@ -306,7 +306,7 @@ DONE( tmWorkF )
             ZE( countT , cChange ) ;
 
             }
-                cDecoySwarm = TUCK >> 0 ;
+                cDecoySwarm = MAXsWARM ;
                 bTestSwarm = 0 ;
             {
             if( bTestSwarm )
@@ -326,14 +326,14 @@ DONE( tmWorkF )
                     }
                         etRock.traceF( tin0P , T("---- [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                        else                     cDecoySwarm   = 0 ;
-                        if( cDecoySwarm > 0x10 ) cDecoySwarm >>= 1 ;
+                        else                                   cDecoySwarm   = 0 ;
+                        if( cDecoySwarm >= ( MINsWARM << 1 ) ) cDecoySwarm >>= 1 ;
                     {
-                    else if( cDecoySwarm && cSolicitations < TUCK << 4 )
+                    else if( cDecoySwarm && cSolicitations < ( TUCK >> 2 ) )
                     }
                         etRock.traceF( tin0P , T("++++ [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        else if( cDecoySwarm <= ( MAXsWARM >> 1 ) ) cDecoySwarm <<= 1    ;                                                          //P:PERSONALITY: LIMIT SWARM TO A TUCK OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
-                        if(     !cDecoySwarm                      ) cDecoySwarm   = 0x10 ;
+                        else if( cDecoySwarm <= ( MAXsWARM >> 1 ) ) cDecoySwarm <<= 1        ;                                                          //P:PERSONALITY: LIMIT SWARM TO A TUCK OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
+                        if(     !cDecoySwarm                      ) cDecoySwarm   = MINsWARM ;
                     {
                     if( cSolicitations > TUCK )
                 {
@@ -717,7 +717,8 @@ DONE( tmEatGeigerEventsF )
 if( pTaskP && pTaskP->c1 && pTaskP->c2 /*&& pTaskP->c3 && pTaskP->c4 && pTaskP->c5*/ )
 TASK( tmEatGeigerEventsF )
 
-#define MAXsWARM ( TUCK >> 5 )
+#define MAXsWARM ( TUCK >> 4 )
+#define MINsWARM ( TUCK >> 6 )
 
 #define postROUTERiPV6oUTER "2001:19f0:ac00:4406:5400:05ff:fee9:27e6"
 #define postROUTERiPV4oUTER "149.28.204.105"
