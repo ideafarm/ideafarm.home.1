@@ -332,8 +332,8 @@ DONE( tmWorkF )
                     else if( cDecoySwarm && cSolicitations < TUCK << 4 )
                     }
                         etRock.traceF( tin0P , T("++++ [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        else               cDecoySwarm <<= 1    ;
-                        if( !cDecoySwarm ) cDecoySwarm   = 0x10 ;
+                        else if( cDecoySwarm <= ( TUCK >> 1 ) ) cDecoySwarm <<= 1    ;                                                          //P:PERSONALITY: LIMIT SWARM TO A TUCK OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
+                        if(     !cDecoySwarm                  ) cDecoySwarm   = 0x10 ;
                     {
                     if( cSolicitations > TUCK )
                 {
