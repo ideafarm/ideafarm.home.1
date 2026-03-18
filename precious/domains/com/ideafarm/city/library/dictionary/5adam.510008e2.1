@@ -297,7 +297,7 @@ DONE( tmAddAddressF )
                 }
                     }
                         }
-                            //etRock.traceF( tin0P , T("could not add nicName [rc,nicName]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
+                            etRock.traceF( tin0P , T("could not add nicName [rc,nicName]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
                             POOPRqUIET
                             countT rc = POOP ;
                         {
@@ -306,7 +306,7 @@ DONE( tmAddAddressF )
                             bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
                             geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_NNtARGETaDDEDaOK , sizeof nnTarget ) ;
 
-                            //etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
+                            etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
                         {
                         if( !POOP )                                                                                                  //20260301@1033: 30_9 MINUTES BECAUSE SIGNATURE RANGE IS NOW 6 EPOCHS, PLUS 2 ALLOWED FOR BGP PROPOGATION = 8 EPOCHS
                         ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 30 * 60 , 0 , 48 ) ;           //20260227@1042: "8 * 60" <-- "4 * 60" BECAUSE 4 MINUTES WAS OBSERVED TO RESULT IN ONLY 6 SECONDS OF OVERLAP
@@ -350,6 +350,8 @@ DONE( tmAddAddressF )
                     //
                     //stNnApproved2P.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     //stNnApproved1P.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                    etRock.traceF( tin0P , T("rejecting [nnTarget]:    ")+T(nnTarget) ) ;
 
                     bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
                     geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_NNtARGETrEJECTED , sizeof nnTarget ) ;
