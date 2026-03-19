@@ -123,9 +123,9 @@ DONE( tmWorkF )
                             }
                                 ) ;
 
-                                    "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\r\n"
-                                    "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\r\n"
-                                    "\r\n"
+                                    "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                                    "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                                    "\n"
 
                                 tSayUfw += T(
 
@@ -165,9 +165,9 @@ DONE( tmWorkF )
                         }
                             ) ;
 
-                                "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\r\n"
-                                "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\r\n"
-                                "\r\n"
+                                "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                                "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                                "\n"
 
                             tSayUfw += T(
 
@@ -205,9 +205,9 @@ DONE( tmWorkF )
                         }
                             ) ;
 
-                                "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\r\n"
-                                "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\r\n"
-                                "\r\n"
+                                "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                                "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                                "\n"
 
                             tSayUfw += T(
 
@@ -404,62 +404,61 @@ DONE( tmWorkF )
     TN( tFilePrefix , "- " ) ;
     TN( tb4 , "    " ) ;
 
-
     ) ;
 
-        "\r\n"
-        "COMMIT\r\n"
-        "### END RATE LIMITING ###\r\n"
-        "-A ufw6-user-limit-accept -j ACCEPT\r\n"
-        "-A ufw6-user-limit -j REJECT\r\n"
-        "-A ufw6-user-limit -m limit --limit 3/minute -j LOG --log-prefix \"[UFW LIMIT BLOCK] \"\r\n"
-        "### RATE LIMITING ###\r\n"
-        "\r\n"
-        "### END LOGGING ###\r\n"
-        "-A ufw6-logging-allow -j LOG --log-prefix \"[UFW ALLOW] \" -m limit --limit 3/min --limit-burst 10\r\n"
-        "-A ufw6-logging-deny -j LOG --log-prefix \"[UFW BLOCK] \" -m limit --limit 3/min --limit-burst 10\r\n"
-        "-I ufw6-logging-deny -m conntrack --ctstate INVALID -j RETURN -m limit --limit 3/min --limit-burst 10\r\n"
-        "-A ufw6-after-logging-forward -j LOG --log-prefix \"[UFW BLOCK] \" -m limit --limit 3/min --limit-burst 10\r\n"
-        "-A ufw6-after-logging-input -j LOG --log-prefix \"[UFW BLOCK] \" -m limit --limit 3/min --limit-burst 10\r\n"
-        "### LOGGING ###\r\n"
-        "\r\n"
-        "### END RULES ###\r\n"
-        "\r\n"
+        "\n"
+        "COMMIT\n"
+        "### END RATE LIMITING ###\n"
+        "-A ufw6-user-limit-accept -j ACCEPT\n"
+        "-A ufw6-user-limit -j REJECT\n"
+        "-A ufw6-user-limit -m limit --limit 3/minute -j LOG --log-prefix \"[UFW LIMIT BLOCK] \"\n"
+        "### RATE LIMITING ###\n"
+        "\n"
+        "### END LOGGING ###\n"
+        "-A ufw6-logging-allow -j LOG --log-prefix \"[UFW ALLOW] \" -m limit --limit 3/min --limit-burst 10\n"
+        "-A ufw6-logging-deny -j LOG --log-prefix \"[UFW BLOCK] \" -m limit --limit 3/min --limit-burst 10\n"
+        "-I ufw6-logging-deny -m conntrack --ctstate INVALID -j RETURN -m limit --limit 3/min --limit-burst 10\n"
+        "-A ufw6-after-logging-forward -j LOG --log-prefix \"[UFW BLOCK] \" -m limit --limit 3/min --limit-burst 10\n"
+        "-A ufw6-after-logging-input -j LOG --log-prefix \"[UFW BLOCK] \" -m limit --limit 3/min --limit-burst 10\n"
+        "### LOGGING ###\n"
+        "\n"
+        "### END RULES ###\n"
+        "\n"
 
     TN( tUfwSuffix ,
 
     ) ;
 
-        //"-A ufw6-user-forward -i enp1s0 -o enp9s0 -p udp -d 2602:ff03::/36 --dport 9999 -j ACCEPT\r\n"
-        //"### tuple ### route:allow udp 9999 2602:ff03::/36 any ::/0 in_enp1s0!out_enp9s0\r\n"
-        //" \r\n"
+        //"-A ufw6-user-forward -i enp1s0 -o enp9s0 -p udp -d 2602:ff03::/36 --dport 9999 -j ACCEPT\n"
+        //"### tuple ### route:allow udp 9999 2602:ff03::/36 any ::/0 in_enp1s0!out_enp9s0\n"
+        //" \n"
         //U:: REMOVE IN PRODUCTION ; THIS IS FOR TESTING MITIGATION OF A NEIGHBOR CACHE FLOOD ATTACK
 
-        "-A ufw6-user-input -i enp8s0 -p tcp -m multiport --dports 139,445 -j ACCEPT -m comment --comment 'dapp_Samba'\r\n"
-        "### tuple ### allow tcp 139,445 ::/0 any ::/0 Samba - in_enp8s0\r\n"
-        " \r\n"
-        "-A ufw6-user-input -i enp8s0 -p udp -m multiport --dports 137,138 -j ACCEPT -m comment --comment 'dapp_Samba'\r\n"
-        "### tuple ### allow udp 137,138 ::/0 any ::/0 Samba - in_enp8s0\r\n"
-        "\r\n"
-        "### RULES ###\r\n"
-        ":ufw6-user-limit-accept - [0:0]\r\n"
-        ":ufw6-user-limit - [0:0]\r\n"
-        ":ufw6-logging-allow - [0:0]\r\n"
-        ":ufw6-logging-deny - [0:0]\r\n"
-        ":ufw6-after-logging-forward - [0:0]\r\n"
-        ":ufw6-after-logging-output - [0:0]\r\n"
-        ":ufw6-after-logging-input - [0:0]\r\n"
-        ":ufw6-user-logging-forward - [0:0]\r\n"
-        ":ufw6-user-logging-output - [0:0]\r\n"
-        ":ufw6-user-logging-input - [0:0]\r\n"
-        ":ufw6-before-logging-forward - [0:0]\r\n"
-        ":ufw6-before-logging-output - [0:0]\r\n"
-        ":ufw6-before-logging-input - [0:0]\r\n"
-        ":ufw6-user-forward - [0:0]\r\n"
-        ":ufw6-user-output - [0:0]\r\n"
-        ":ufw6-user-input - [0:0]\r\n"
-        "*filter\r\n"
-        "\r\n"
+        "-A ufw6-user-input -i enp8s0 -p tcp -m multiport --dports 139,445 -j ACCEPT -m comment --comment 'dapp_Samba'\n"
+        "### tuple ### allow tcp 139,445 ::/0 any ::/0 Samba - in_enp8s0\n"
+        " \n"
+        "-A ufw6-user-input -i enp8s0 -p udp -m multiport --dports 137,138 -j ACCEPT -m comment --comment 'dapp_Samba'\n"
+        "### tuple ### allow udp 137,138 ::/0 any ::/0 Samba - in_enp8s0\n"
+        "\n"
+        "### RULES ###\n"
+        ":ufw6-user-limit-accept - [0:0]\n"
+        ":ufw6-user-limit - [0:0]\n"
+        ":ufw6-logging-allow - [0:0]\n"
+        ":ufw6-logging-deny - [0:0]\n"
+        ":ufw6-after-logging-forward - [0:0]\n"
+        ":ufw6-after-logging-output - [0:0]\n"
+        ":ufw6-after-logging-input - [0:0]\n"
+        ":ufw6-user-logging-forward - [0:0]\n"
+        ":ufw6-user-logging-output - [0:0]\n"
+        ":ufw6-user-logging-input - [0:0]\n"
+        ":ufw6-before-logging-forward - [0:0]\n"
+        ":ufw6-before-logging-output - [0:0]\n"
+        ":ufw6-before-logging-input - [0:0]\n"
+        ":ufw6-user-forward - [0:0]\n"
+        ":ufw6-user-output - [0:0]\n"
+        ":ufw6-user-input - [0:0]\n"
+        "*filter\n"
+        "\n"
 
     TN( tUfwPrefix ,
 
