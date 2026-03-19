@@ -46,7 +46,7 @@ DONE( tmWorkF )
                     #endif
                         if( idPass == 1 )
                     #else
-                        if( bWasDown && bUpControl && bUpData )
+                        if( bWasDown /*&& bUpControl*/ && bUpData )
                     #if !defined( DUMMYsUB )
 
                     }
@@ -105,57 +105,57 @@ DONE( tmWorkF )
                             {
                             // DATA
 
-                            }
-                                }
-                                    etThread.delF( tin0P , posti ) ;
-                                    }
-                                        }
-                                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-                                            time1Signature = 0 ;
-                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpData?"    The CONTROL channel just went DOWN, but the data channel is still up.":"    The CONTROL channel just went DOWN, and the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpControl = 0 ;
-                                        {
-                                        if( bUpControl )
-                                        //etRock.traceF( tin0P , T("stomp! (control) FAIL [idStompControl,cFail,rc]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompControlFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
-                                        POOPRqUIET
-                                        countT rc = POOP ;
-                                    {
-                                    else
-                                    }
-                                        }
-                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpData?"    The CONTROL channel just came UP, so both control and data are up.":"    The CONTROL channel just came UP, but the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpControl = 1 ;
-                                        {
-                                        if( !bUpControl )
-                                        //etRock.traceF( tin0P , T("stomp! (control) aok [idStompControl]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
-                                    {
-                                    if( !POOP )
-                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 ) ; ___( posti ) ;
-                                    ZE( countT   , costi ) ;
-                                    ZE( osTextT* , posti ) ;
-                                    //etRock.traceF( tin0P , T("stomp! (control) begin [idStompControl,url]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
-                                    SCOOPS
-                                    _IO_
-                                {
-                                IFsCRATCHoK
-                                cStompControl ++ ;
-                            
-                                TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_USEdNS ? tRequestDomain : tRequestAddress ;
-                            
-                                TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowControl+T("//http/ideanet/control/gorilla.html") ;
-                            
-                                ;
-                            
-                                    +T(".ideanet.ideafarm.com//http/ideanet/control/gorilla.html")
-                                    +TF3(ipv6FieldsControl.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
-                                    +TF3(ipv6FieldsControl.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                                    +TF3(ipv6FieldsControl.epoch     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                                     TF3(ipv6FieldsControl.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                            
-                                TN( tRequestDomain , "" ) ; tRequestDomain =
-                            
-                                // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
-                            {
+                            //}
+                            //    }
+                            //        etThread.delF( tin0P , posti ) ;
+                            //        }
+                            //            }
+                            //                //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                            //                time1Signature = 0 ;
+                            //                etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpData?"    The CONTROL channel just went DOWN, but the data channel is still up.":"    The CONTROL channel just went DOWN, and the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                            //                bUpControl = 0 ;
+                            //            {
+                            //            if( bUpControl )
+                            //            //etRock.traceF( tin0P , T("stomp! (control) FAIL [idStompControl,cFail,rc]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompControlFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                            //            POOPRqUIET
+                            //            countT rc = POOP ;
+                            //        {
+                            //        else
+                            //        }
+                            //            }
+                            //                etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpData?"    The CONTROL channel just came UP, so both control and data are up.":"    The CONTROL channel just came UP, but the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                            //                bUpControl = 1 ;
+                            //            {
+                            //            if( !bUpControl )
+                            //            //etRock.traceF( tin0P , T("stomp! (control) aok [idStompControl]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                            //        {
+                            //        if( !POOP )
+                            //        ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 ) ; ___( posti ) ;
+                            //        ZE( countT   , costi ) ;
+                            //        ZE( osTextT* , posti ) ;
+                            //        //etRock.traceF( tin0P , T("stomp! (control) begin [idStompControl,url]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
+                            //        SCOOPS
+                            //        _IO_
+                            //    {
+                            //    IFsCRATCHoK
+                            //    cStompControl ++ ;
+                            //
+                            //    TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_USEdNS ? tRequestDomain : tRequestAddress ;
+                            //
+                            //    TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowControl+T("//http/ideanet/control/gorilla.html") ;
+                            //
+                            //    ;
+                            //
+                            //        +T(".ideanet.ideafarm.com//http/ideanet/control/gorilla.html")
+                            //        +TF3(ipv6FieldsControl.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
+                            //        +TF3(ipv6FieldsControl.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                            //        +TF3(ipv6FieldsControl.epoch     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                            //         TF3(ipv6FieldsControl.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                            //
+                            //    TN( tRequestDomain , "" ) ; tRequestDomain =
+                            //
+                            //    // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
+                            //{
                             // CONTROL
 
                         #if !defined( DUMMYsUB )
@@ -169,8 +169,8 @@ DONE( tmWorkF )
                             !( F(flagsMode) & flIDEAnETeXE_METERED )
                             ||
                             !bUpData
-                            ||
-                            !bUpControl
+                            //||
+                            //!bUpControl
                         (
                         &&
                         !( cSkipStomp && cSkipStomp -- )
@@ -195,7 +195,7 @@ DONE( tmWorkF )
                             //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                             time1Signature = 0 ;
                         {
-                        if( !bUpControl || !bUpData )
+                        if( /*!bUpControl ||*/ !bUpData )
 
                         tIpv6NowData    = T(nnNowData   ) ;                                                                             // P:PERSONALITY: SUBSCRIBER ATTACKER CANNOT FULLY USE HIS WIRE WITHOUT LEAVING HIS SIGNATURE ON THE ATTACK
                         tIpv6NowControl = T(nnNowControl) ;
@@ -223,7 +223,7 @@ DONE( tmWorkF )
                     ZE( sCountT , timeN2 ) ;
                     ZE( countT  , timeN1 ) ;
 
-                    const boolT bWasDown = !bUpControl || !bUpData ;
+                    const boolT bWasDown = /*!bUpControl ||*/ !bUpData ;
 
                     ++ idPass ;
                 {

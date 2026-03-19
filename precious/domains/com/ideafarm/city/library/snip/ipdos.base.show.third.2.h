@@ -4813,8 +4813,7 @@ examples
 /**/
 /*1*//*BITSsHIFTiDEAnETePOCH*//*1*/
 
-//AOK: #define BITSsHIFTiDEAnETePOCH ( 0x16 )
-#define BITSsHIFTiDEAnETePOCH ( 0x14 )
+#define BITSsHIFTiDEAnETePOCH ( 0x1a )
 
 
 //
@@ -4902,7 +4901,7 @@ examples
 
 /*1*//*EPOCHSaLLOWEDfORbGPpROPOGATION*//*1*/
 
-#define EPOCHSaLLOWEDfORbGPpROPOGATION 2
+#define EPOCHSaLLOWEDfORbGPpROPOGATION 0
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -4929,7 +4928,7 @@ examples
 
 /*1*//*EPOCHSsIGNATUREmAX*//*1*/
 
-#define EPOCHSsIGNATUREmAX             0x10
+#define EPOCHSsIGNATUREmAX             0x1
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
