@@ -430,9 +430,9 @@ DONE( tmWorkF )
 
     ) ;
 
-        "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p udp -d 2602:ff03::/36 --dport 9999 -j ACCEPT\r\n"
-        "### tuple ### route:allow udp 9999 2602:ff03::/36 any ::/0 in_enp1s0!out_enp9s0\r\n"
-        " \r\n"
+        //"-A ufw6-user-forward -i enp1s0 -o enp9s0 -p udp -d 2602:ff03::/36 --dport 9999 -j ACCEPT\r\n"
+        //"### tuple ### route:allow udp 9999 2602:ff03::/36 any ::/0 in_enp1s0!out_enp9s0\r\n"
+        //" \r\n"
         //U:: REMOVE IN PRODUCTION ; THIS IS FOR TESTING MITIGATION OF A NEIGHBOR CACHE FLOOD ATTACK
 
         "-A ufw6-user-input -i enp8s0 -p tcp -m multiport --dports 139,445 -j ACCEPT -m comment --comment 'dapp_Samba'\r\n"
