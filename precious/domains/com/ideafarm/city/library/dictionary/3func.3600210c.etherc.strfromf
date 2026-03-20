@@ -81,6 +81,18 @@
             ZE( boolT , bCompress ) ;
 
             }
+                lengthMax = length4 ;
+                offuMax = 4 ;
+            {
+            if( length4 > length0 )
+
+            }
+                lengthMax = length3 ;
+                offuMax = 3 ;
+            {
+            if( length3 > length0 )
+
+            }
                 lengthMax = length2 ;
                 offuMax = 2 ;
             {
@@ -99,6 +111,16 @@
             if( pcOffLath[ 0 ] != -1 )
             ZE( countT , lengthMax ) ;
             countT offuMax = -1 ;                                 //P:PERSONALITY: TIES GO TO THE LEFTMOST STRING OF 0'S BEING COMPRESSED WITH "::"
+
+            ;
+                : pcOffWoth[ 4 ] - pcOffLath[ 4 ] + 1 ;
+                ? 0
+            countT length4 = pcOffLath[ 4 ] == -1
+
+            ;
+                : pcOffWoth[ 3 ] - pcOffLath[ 3 ] + 1 ;
+                ? 0
+            countT length3 = pcOffLath[ 3 ] == -1
 
             ;
                 : pcOffWoth[ 2 ] - pcOffLath[ 2 ] + 1 ;
@@ -137,13 +159,13 @@
                                 BLAMMOiD( 0xeeeeeeee ) ;
                                 _IO_
                             {
-                            if( ++ offu > 2 )
+                            if( ++ offu > 4 )
                             _IO_
                         {
-                        if( offLathUse != -1 )
+                        if( offv < 7 && !pc01v[ offv + 1 ] )
                         _IO_
-                    {
-                    if( pc01v[ offv ] )
+                    {                                                           // offu (AFTER) : 0 1 1 2 2 3 3 4
+                    if( pc01v[ offv ]  )                                        // PERVERSE CASE: 0:7:0:5:0:3:0:1
                     _IO_
                 {
 
@@ -152,12 +174,12 @@
                 _IO_
             {
             for( offv = 7 ; offv > -1 ; offv -- )
-            countT offu ;
-            sCountT offv ;
+            ZE( countT , offu ) ;
+            ZE( sCountT , offv ) ;
             count01T* pc01v = (count01T*)pcv ;
-            countT pcOffLath[] = { -1 , -1 , -1 } ;               // "LATH": RIGHTMOST IN THE TEXT REPRESENTATION, SO 0 IF THE LOW  ORDER NIBBLE IS 0
-            countT pcOffWoth[] = { -1 , -1 , -1 } ;               // "WOTH": LEFTMOST  IN THE TEXT REPRESENTATION, SO 7 IF THE HIGH ORDER NIBBLE IS 0
-            // FIND ALL STRINGS OF MULTIPLE 0 ; (THERE CAN BE AT MOST 3)
+            countT pcOffLath[] = { -1 , -1 , -1 , -1 , -1 } ;               // "LATH": RIGHTMOST IN THE TEXT REPRESENTATION, SO 0 IF THE LOW  ORDER NIBBLE IS 0
+            countT pcOffWoth[] = { -1 , -1 , -1 , -1 , -1 } ;               // "WOTH": LEFTMOST  IN THE TEXT REPRESENTATION, SO 7 IF THE HIGH ORDER NIBBLE IS 0
+            // FIND ALL STRINGS OF 0 ; (THERE CAN BE AT MOST 4)
             _IO_
         {
         else
