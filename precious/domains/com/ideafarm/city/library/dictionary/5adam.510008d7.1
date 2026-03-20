@@ -435,12 +435,6 @@ boolT bTestSwarm = 0 ;
         //" \n"
         //U:: REMOVE IN PRODUCTION ; THIS IS FOR TESTING MITIGATION OF A NEIGHBOR CACHE FLOOD ATTACK
 
-        "-A ufw6-user-input -i enp8s0 -p tcp -m multiport --dports 139,445 -j ACCEPT -m comment --comment 'dapp_Samba'\n"
-        "### tuple ### allow tcp 139,445 ::/0 any ::/0 Samba - in_enp8s0\n"
-        " \n"
-        "-A ufw6-user-input -i enp8s0 -p udp -m multiport --dports 137,138 -j ACCEPT -m comment --comment 'dapp_Samba'\n"
-        "### tuple ### allow udp 137,138 ::/0 any ::/0 Samba - in_enp8s0\n"
-        "\n"
         "### RULES ###\n"
         ":ufw6-user-limit-accept - [0:0]\n"
         ":ufw6-user-limit - [0:0]\n"
