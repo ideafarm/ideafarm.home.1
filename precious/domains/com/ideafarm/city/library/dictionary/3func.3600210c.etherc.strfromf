@@ -9,7 +9,6 @@
 
 }
     }
-        if( stEach ) { strFuseF( tin0P , psttP , psttSeparator ) ; ___( psttP ) ; }
         if( !bLong ) break ;
         delF( tin0P , psttw ) ;_WQ
         strFuseF( tin0P , psttP , psttw ) ; ___( psttP ) ;_WQ
@@ -22,7 +21,7 @@
     }
         while( ~handle ) ;_WQ
         }
-            if( psttw ) csAll += psttw->idAdam + ( ~handle ? psttSeparator->idAdam : 0 ) ;_WQ
+            csAll += psttw->idAdam                                    ;_WQ
             strokeS* psttw = (strokeS*)stEach.downF( tin0P , handle ) ;_WQ
         {
         do
@@ -32,13 +31,113 @@
 
     }
         }
-            stEach << psttw ;_WQ
-            strFromF( tin0P , psttw , pcv[ off ] , bLong ? flFormatLong : flFormatShort , /*csP*/8 , radixP ) ; ___( psttw ) ;_WQ
-            ZE( strokeS* , psttw ) ;_WQ
+            }
+                stEach << psttw ;_WQ
+                strMakeF( tin0P , LF , psttw , T("::") ) ; ___( psttw ) ;_WQ
+                ZE( strokeS* , psttw ) ;_WQ
+            {
+            if( bCompress )
 
-            if( !bLong && off ) continue ;
+            }
+                }
+                    }
+                        stEach << psttw ;_WQ
+                        strFromF( tin0P , psttw , pc01v[ offv ] , flFormatLong , 0 , radixP ) ; ___( psttw ) ;_WQ
+                        ZE( strokeS* , psttw ) ;_WQ
+
+                        }
+                            stEach << psttw ;_WQ
+                            strMakeF( tin0P , LF , psttw , tSeparator ) ; ___( psttw ) ;_WQ
+                            ZE( strokeS* , psttw ) ;_WQ
+                        {
+                        if( offv != 7 ) 
+                    {
+                    if( !bCompress )
+
+                    if( offv == pcOffWoth[ offuMax ] ) bCompress = 1 ;
+                {
+                else
+                }
+                    stEach << psttw ;_WQ
+                    strFromF( tin0P , psttw , pc01v[ offv ] , flFormatLong , 0 , radixP ) ; ___( psttw ) ;_WQ
+                    psttw = 0 ;
+
+                    stEach << psttw ;_WQ
+                    strMakeF( tin0P , LF , psttw , T("::") ) ; ___( psttw ) ;_WQ
+                    ZE( strokeS* , psttw ) ;_WQ
+                    bCompress = 0 ;
+                {
+                if( bCompress && pc01v[ offv ] )
+            {
+            for( offv = 7 ; offv > -1 ; offv -- )
+            ZE( boolT , bCompress ) ;
+
+            }
+                lengthMax = length2 ;
+                offuMax = 2 ;
+            {
+            if( length2 > length0 )
+
+            }
+                lengthMax = length1 ;
+                offuMax = 1 ;
+            {
+            if( length1 > length0 )
+
+            }
+                lengthMax = length0 ;
+                offuMax = 0 ;
+            {
+            if( pcOffLath[ 0 ] != -1 )
+            ZE( countT , lengthMax ) ;
+            countT offuMax = -1 ;                                 //P:PERSONALITY: TIES GO TO THE LEFTMOST STRING OF 0'S BEING COMPRESSED WITH "::"
+
+            ;
+                : pcOffWoth[ 2 ] - pcOffLath[ 2 ] + 1 ;
+                ? 0
+            countT length2 = pcOffLath[ 2 ] == -1
+
+            ;
+                : pcOffWoth[ 1 ] - pcOffLath[ 1 ] + 1 ;
+                ? 0
+            countT length1 = pcOffLath[ 1 ] == -1
+
+            ;
+                : pcOffWoth[ 0 ] - pcOffLath[ 0 ] + 1 ;
+                ? 0
+            countT length0 = pcOffLath[ 0 ] == -1
+
+            // IDENTIFY THE LONGEST STRING OF 0'S
+
+            }
+                }
+                                           offLathUse = offv ;
+                    if( offWothUse == -1 ) offWothUse = offv ;
+                {
+                else
+                }
+                    if( offLathUse != -1 ) offu ++ ;
+                {
+                if( pc01v[ offv ] )
+
+                countT& offLathUse = pcOffLath[ offu ] ;
+                countT& offWothUse = pcOffWoth[ offu ] ;
+            {
+            for( offv = 7 ; offv > -1 ; offv -- )
+            countT offu ;
+            sCountT offv ;
+            count01T* pc01v = (count01T*)pcv ;
+            countT pcOffLath[] = { -1 , -1 , -1 } ;               // "LATH": RIGHTMOST IN THE TEXT REPRESENTATION, SO 0 IF THE LOW  ORDER NIBBLE IS 0
+            countT pcOffWoth[] = { -1 , -1 , -1 } ;               // "WOTH": LEFTMOST  IN THE TEXT REPRESENTATION, SO 7 IF THE HIGH ORDER NIBBLE IS 0
+            // FIND ALL STRINGS OF MULTIPLE 0 ; (THERE CAN BE AT MOST 3)
         {
-        for( sCountT off = 3 ; off >= 0 ; off -- )
+        else
+        }
+            stEach << psttw ;_WQ
+            strFromF( tin0P , psttw , pcv[ 0 ] , flFormatShort , /*csP*/8 , radixP ) ; ___( psttw ) ;_WQ
+            ZE( strokeS* , psttw ) ;_WQ
+        {
+        if( !bLong )
 
         }
             }
@@ -57,11 +156,12 @@
     stackC stEach( tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;_WQ
     boolT bLong = 1 ;_WQ
 
-    flagsT flFormatLong  = F(flFormatP) ? flFormatP : flFORMAT_COLONEDhEX    ;_WQ
+    flagsT flFormatLong  = F(flFormatP) ? flFormatP : flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_FOREIGN ;_WQ
     flagsT flFormatShort = F(flFormatP) ? flFormatP : flFORMAT_DOTTEDdECIMAL ;_WQ
 
-    const strokeS* const psttSeparator = psttSeparatorP ? psttSeparatorP : tSeparator ;_WQ
-    TN( tSeparator , ":" ) ; //CHANGED FROM "/" TO "." ON 2003JUNE9 ; CHANGED FROM "." TO ":" AT 20210223@1106
+    if( psttSeparatorP ) tSeparator = T(psttSeparatorP) ;
+    TN( tSeparator , ":" ) ;                                            //CHANGED FROM "/" TO "." ON 2003JUNE9 ; CHANGED FROM "." TO ":" AT 20210223@1106
+    TN( tb4 , "    " ) ;
 
     _IO_
 
