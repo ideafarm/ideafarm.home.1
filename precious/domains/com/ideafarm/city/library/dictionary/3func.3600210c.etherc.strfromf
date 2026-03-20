@@ -14,6 +14,7 @@
         strFuseF( tin0P , psttP , psttw ) ; ___( psttP ) ;_WQ
         stEach >> psttw ;_WQ
         ZE( strokeS* , psttw ) ;_WQ
+        _IO_
     {
     while( stEach )
     strMakeF( tin0P , LF , psttP , T("") , csAll ) ; //CALLER MUST TAG ___( psttP ) ;_WQ
@@ -26,6 +27,7 @@
         {
         do
         handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;_WQ
+        _IO_
     {
     countT csAll = csttExtraP ;_WQ
 
@@ -35,6 +37,7 @@
                 stEach << psttw ;_WQ
                 strMakeF( tin0P , LF , psttw , T("::") ) ; ___( psttw ) ;_WQ
                 ZE( strokeS* , psttw ) ;_WQ
+                _IO_
             {
             if( bCompress )
 
@@ -49,12 +52,15 @@
                             stEach << psttw ;_WQ
                             strMakeF( tin0P , LF , psttw , tSeparator ) ; ___( psttw ) ;_WQ
                             ZE( strokeS* , psttw ) ;_WQ
+                            _IO_
                         {
                         if( offv != 7 ) 
+                        _IO_
                     {
                     if( !bCompress )
 
                     if( offv == pcOffWoth[ offuMax ] ) bCompress = 1 ;
+                    _IO_
                 {
                 else
                 }
@@ -66,8 +72,10 @@
                     strMakeF( tin0P , LF , psttw , T("::") ) ; ___( psttw ) ;_WQ
                     ZE( strokeS* , psttw ) ;_WQ
                     bCompress = 0 ;
+                    _IO_
                 {
                 if( bCompress && pc01v[ offv ] )
+                _IO_
             {
             for( offv = 7 ; offv > -1 ; offv -- )
             ZE( boolT , bCompress ) ;
@@ -122,6 +130,7 @@
 
                 countT& offLathUse = pcOffLath[ offu ] ;
                 countT& offWothUse = pcOffWoth[ offu ] ;
+                _IO_
             {
             for( offv = 7 ; offv > -1 ; offv -- )
             countT offu ;
@@ -130,12 +139,14 @@
             countT pcOffLath[] = { -1 , -1 , -1 } ;               // "LATH": RIGHTMOST IN THE TEXT REPRESENTATION, SO 0 IF THE LOW  ORDER NIBBLE IS 0
             countT pcOffWoth[] = { -1 , -1 , -1 } ;               // "WOTH": LEFTMOST  IN THE TEXT REPRESENTATION, SO 7 IF THE HIGH ORDER NIBBLE IS 0
             // FIND ALL STRINGS OF MULTIPLE 0 ; (THERE CAN BE AT MOST 3)
+            _IO_
         {
         else
         }
             stEach << psttw ;_WQ
             strFromF( tin0P , psttw , pcv[ 0 ] , flFormatShort , /*csP*/8 , radixP ) ; ___( psttw ) ;_WQ
             ZE( strokeS* , psttw ) ;_WQ
+            _IO_
         {
         if( !bLong )
 
@@ -149,9 +160,11 @@
                 if( off > 1 ) break ;
             {
             if( pcv[ off ] )
+            _IO_
         {
         for( countT off = 3 ; off ; off -- )
         countT* pcv = (countT*)&nicNameP ;_WQ
+        _IO_
     {
     stackC stEach( tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;_WQ
     boolT bLong = 1 ;_WQ
