@@ -59,7 +59,7 @@
                     {
                     if( !bCompress )
 
-                    if( offv == pcOffWoth[ offuMax ] ) bCompress = 1 ;
+                    if( offuMax != -1 && offv == pcOffWoth[ offuMax ] ) bCompress = 1 ;
                     _IO_
                 {
                 else
@@ -79,6 +79,12 @@
             {
             for( offv = 7 ; offv > -1 ; offv -- )
             ZE( boolT , bCompress ) ;
+
+            }
+                offuMax   = -1 ;
+                lengthMax = 0  ;
+            {
+            if( lengthMax == 1 )
 
             }
                 lengthMax = length4 ;
@@ -109,7 +115,7 @@
                 offuMax = 0 ;
             {
             if( pcOffLath[ 0 ] != -1 )
-            ZE( countT , lengthMax ) ;
+            ZE( countT , lengthMax ) ;                            //P:PERSONALITY: IF THE LONGEST STRING IS ONLY LENGTH 1 THEN NO COMPRESSION
             countT offuMax = -1 ;                                 //P:PERSONALITY: TIES GO TO THE LEFTMOST STRING OF 0'S BEING COMPRESSED WITH "::"
 
             ;
