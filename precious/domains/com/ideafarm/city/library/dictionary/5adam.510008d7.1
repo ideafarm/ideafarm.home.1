@@ -27,6 +27,24 @@ DONE( tmWorkF )
             }
                 }
                     }
+                        etRock.traceF( tin0P , T("!exception / could not write to firewall configuration sign file ; ignoring [rc,tLongUfwSign]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongUfwSign ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    else
+                    }
+                        etRock.traceF( tin0P , T("i wrote aok to firewall configuration sign file [tLongUfwSign]:    ")+tLongUfwSign ) ;
+                        bOk = 1 ;
+                    {
+                    if( !POOP )
+                    ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLongUfwSign , tSayUfwSign , tSayUfwSign.csF( tin0P ) ) ;
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
+
+                }
+                    }
                         etRock.traceF( tin0P , T("!exception / could not write to firewall configuration ; ignoring [rc,tLongUfw]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongUfw ) ;
                         POOPRqUIET
                         countT rc = POOP ;
@@ -396,8 +414,10 @@ boolT bTestSwarm = 0 ;
     ideaNetSubscriptionC woSub( tin0P , etThread , 1 , 1 , T("foo") , T("goo@hoo") ) ;
     sleepC               s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , epochLath ) ;
-    TN( tLongUfw  , "////10.0.4.1/ufw/user6.rules" ) ;
-    TN( tLongBird , "////10.0.4.1/bird/bird.conf" ) ;
+    TN( tSayUfwSign   , "My timestamp changes immediately after web1 has modified file user6.rules\nTo decide when to call ufw reload, watch me, not user6.rules\nbecause ufw reload opens that file with write access.\n" ) ;
+    TN( tLongUfwSign  , "////10.0.4.1/ufw/user6.rules.changed.when.i.change" ) ;
+    TN( tLongUfw      , "////10.0.4.1/ufw/user6.rules" ) ;
+    TN( tLongBird     , "////10.0.4.1/bird/bird.conf" ) ;
     TN( tMax , "2602:FF03:0FFF:FFFF:FFFF:FFFF:FFFF:FFFF" ) ;
     TN( tMin , "2602:FF03:0000::" ) ;
     TN( tDash , DASH127 ) ;
