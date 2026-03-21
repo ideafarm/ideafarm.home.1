@@ -204,7 +204,7 @@ DONE( tmWorkF )
                     //    }
                     //        else               stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
                     //        if( idPrefix % 2 ) stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
-                    //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4DecoySwarm ) ; ___( psttl ) ;
+                    //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+(idPrefix%2?t1BirdImage4BitsVia:t2BirdImage4BitsVia)+tEpochPlate+tBirdImage4DecoySwarm ) ; ___( psttl ) ;
                     //        ZE( strokeS* , psttl ) ;
                     //
                     //        etThread.traceF( tin0P , T("decoySwarm [nnWo]:    ")+tNnWo+T("/48") ) ;
@@ -257,7 +257,7 @@ DONE( tmWorkF )
                     //
                     //        else               stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
                     //        if( idPrefix % 2 ) stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
-                    //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4DecoyBgp ) ; ___( psttl ) ;
+                    //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+(idPrefix%2?t1BirdImage4BitsVia:t2BirdImage4BitsVia)+tEpochPlate+tBirdImage4DecoyBgp ) ; ___( psttl ) ;
                     //        ZE( strokeS* , psttl ) ;
                     //
                     //        stIdPrefixDecoyBgp.sinkF( tin0P , countTC() , idPrefix , flSTACKsINK_UNIQUE ) ;
@@ -306,7 +306,7 @@ DONE( tmWorkF )
                             //  
 
                             stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;
-                            etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+tNnWo+tBirdImage4BitsVia+tEpochPlate+tBirdImage4Data ) ; ___( psttl ) ;
+                            etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+tNnWo+t1BirdImage4BitsVia+tEpochPlate+tBirdImage4Data ) ; ___( psttl ) ;
                             ZE( strokeS* , psttl ) ;
 
                             etThread.traceF( tin0P , T("data        [nnWo]:    ")+tNnWo+T("/48") ) ;
@@ -354,7 +354,7 @@ DONE( tmWorkF )
                     //        //  
                     //
                     //        stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;
-                    //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4Control ) ; ___( psttl ) ;
+                    //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+t2BirdImage4BitsVia+tEpochPlate+tBirdImage4Control ) ; ___( psttl ) ;
                     //        ZE( strokeS* , psttl ) ;
                     //
                     //        etThread.traceF( tin0P , T("control     [nnWo]:    ")+tNnWo+T("/48") ) ;
@@ -378,7 +378,7 @@ DONE( tmWorkF )
 
                     //}
                     //    stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;
-                    //    etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnSubnet48AttackDut)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4AttackDut ) ; ___( psttl ) ;
+                    //    etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnSubnet48AttackDut)+t2BirdImage4BitsVia+tEpochPlate+tBirdImage4AttackDut ) ; ___( psttl ) ;
                     //    ZE( strokeS* , psttl ) ;
                     //
                     //    etThread.traceF( tin0P , T("attack     [nnSubnet48AttackDut]:    ")+T(nnSubnet48AttackDut)+T("/48") ) ;
@@ -394,8 +394,8 @@ DONE( tmWorkF )
 
                 TN( tSay2Ufw  , "" ) ; tSay2Ufw  = tUfwPrefix ;
                 TN( tSay1Ufw  , "" ) ; tSay1Ufw  = tUfwPrefix ;
-                TN( tSay2Bird , "" ) ; tSay2Bird = tBirdImage1+tBirdBgpPassword+tBirdImage2 ;
-                TN( tSay1Bird , "" ) ; tSay1Bird = tBirdImage1+tBirdBgpPassword+tBirdImage2 ;
+                TN( tSay2Bird , "" ) ; tSay2Bird = t2BirdImage1+tBirdBgpPassword+tBirdImage2 ;
+                TN( tSay1Bird , "" ) ; tSay1Bird = t1BirdImage1+tBirdBgpPassword+tBirdImage2 ;
             {
             if( cChange )
 
@@ -659,9 +659,15 @@ boolT bTestSwarm = 0 ;
 
     ) ;
 
-        "/48 via " postROUTERiPV6oUTER " ;    #    EPOCH    "
+        "/48 via " postROUTER2iPV6oUTER " ;    #    EPOCH    "
 
-    TN( tBirdImage4BitsVia ,
+    TN( t2BirdImage4BitsVia ,
+
+    ) ;
+
+        "/48 via " postROUTER1iPV6oUTER " ;    #    EPOCH    "
+
+    TN( t1BirdImage4BitsVia ,
 
     ) ;
 
@@ -692,8 +698,8 @@ boolT bTestSwarm = 0 ;
 
         "    password \""
         "    neighbor       2001:19f0:ffff::1                       as      64515 ;\n"
-        "    source address " postROUTERiPV6oUTER "               ;\n"
-        "    local          " postROUTERiPV6oUTER " as 4288000334 ;\n"
+        "    source address " postROUTER2iPV6oUTER "               ;\n"
+        "    local          " postROUTER2iPV6oUTER " as 4288000334 ;\n"
         "    description    \"ideanet\" ;\n"
         "protocol bgp vultr {\n"
         "\n"
@@ -701,12 +707,32 @@ boolT bTestSwarm = 0 ;
         "\n"
         "debug protocols all ;\n"
         "\n"
-        "router id " postROUTERiPV4oUTER " ;\n"
+        "router id " postROUTER2iPV4oUTER " ;\n"
         "\n"
         "log \"/tmp/bird.log\" all ;\n"
         "\n"
 
-    TN( tBirdImage1 ,
+    TN( t2BirdImage1 ,
+
+    ) ;
+
+        "    password \""
+        "    neighbor       2001:19f0:ffff::1                       as      64515 ;\n"
+        "    source address " postROUTER1iPV6oUTER "               ;\n"
+        "    local          " postROUTER1iPV6oUTER " as 4288000334 ;\n"
+        "    description    \"ideanet\" ;\n"
+        "protocol bgp vultr {\n"
+        "\n"
+        "protocol kernel { ipv6 { export all ; } ; }\n"
+        "\n"
+        "debug protocols all ;\n"
+        "\n"
+        "router id " postROUTER1iPV4oUTER " ;\n"
+        "\n"
+        "log \"/tmp/bird.log\" all ;\n"
+        "\n"
+
+    TN( t1BirdImage1 ,
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
@@ -857,8 +883,11 @@ TASK( tmEatGeigerEventsF )
 #define MAXsWARM ( TUCK >> 4 )
 #define MINsWARM ( TUCK >> 6 )
 
-#define postROUTERiPV6oUTER "2001:19f0:ac02:08a6:5400:06ff:fe04:51b6"
-#define postROUTERiPV4oUTER "45.77.185.197"
+#define postROUTER2iPV6oUTER "2001:19f0:ac02:0b7f:5400:06ff:fe04:ec80"
+#define postROUTER2iPV4oUTER "104.207.150.11"
+
+#define postROUTER1iPV6oUTER "2001:19f0:ac02:08a6:5400:06ff:fe04:51b6"
+#define postROUTER1iPV4oUTER "45.77.185.197"
 
 //U::PROD: #define CePOCHSkEEP ( EPOCHSaLLOWEDfORbGPpROPOGATION + EPOCHSsIGNATUREmAX + 4 )
 #define CePOCHSkEEP ( EPOCHSaLLOWEDfORbGPpROPOGATION + EPOCHSsIGNATUREmAX )
