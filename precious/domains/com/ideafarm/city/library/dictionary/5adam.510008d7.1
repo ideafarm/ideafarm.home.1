@@ -185,17 +185,25 @@ DONE( tmWorkF )
                 }
                     etThread.delF( tin0P , psttl ) ;
                     tSay2Bird += T(psttl) ;
-                    tSay1Bird += T(psttl) ;
-                    stSortedBirdLines >> psttl ;
+                    stSortedBirdLines2 >> psttl ;
                     ZE( strokeS* , psttl ) ;
                 {
-                while( stSortedBirdLines )
+                while( stSortedBirdLines2 )
+
+                }
+                    etThread.delF( tin0P , psttl ) ;
+                    tSay1Bird += T(psttl) ;
+                    stSortedBirdLines1 >> psttl ;
+                    ZE( strokeS* , psttl ) ;
+                {
+                while( stSortedBirdLines1 )
 
                 }
                     //}
                     //    while( ~hWalk ) ;
                     //    }
-                    //        stSortedBirdLines.sinkF( tin0P , countTC() , psttl ) ;
+                    //        else               stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
+                    //        if( idPrefix % 2 ) stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
                     //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4DecoySwarm ) ; ___( psttl ) ;
                     //        ZE( strokeS* , psttl ) ;
                     //
@@ -217,21 +225,26 @@ DONE( tmWorkF )
                     //    while( ~hWalk ) ;
                     //    }
                     //        }
-                    //            ) ;
+                    //            }
+                    //                ) ;
                     //
-                    //                "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
-                    //                "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
-                    //                "\n"
+                    //                    "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                    //                    "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                    //                    "\n"
                     //
-                    //            tSay2Ufw += T(
+                    //                tSay2Ufw += T(
+                    //            {
+                    //            else
+                    //            }
+                    //                ) ;
                     //
-                    //            ) ;
+                    //                    "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                    //                    "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                    //                    "\n"
                     //
-                    //                "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
-                    //                "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
-                    //                "\n"
-                    //
-                    //            tSay1Ufw += T(
+                    //                tSay1Ufw += T(
+                    //            {
+                    //            if( idPrefix % 2 ) 
                     //
                     //            //  
                     //            //  -A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d 2602:ff03::/36 -j ACCEPT
@@ -242,7 +255,8 @@ DONE( tmWorkF )
                     //        {
                     //        if( !( cAllowed ++ ) )      // ALLOW PACKETS FROM WO DECOY PREFIX TO GET THROUGH SO THAT GEIGER CAN DETECT ATTACKS THAT ARE USING THE BGP ROUTING TABLE
                     //
-                    //        stSortedBirdLines.sinkF( tin0P , countTC() , psttl ) ;
+                    //        else               stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
+                    //        if( idPrefix % 2 ) stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
                     //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4DecoyBgp ) ; ___( psttl ) ;
                     //        ZE( strokeS* , psttl ) ;
                     //
@@ -267,13 +281,14 @@ DONE( tmWorkF )
                     }
                         while( ~hWalk ) ;
                         }
-                            ) ;
-
-                                "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
-                                "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
-                                "\n"
-
-                            tSay2Ufw += T(
+                            //) ;
+                            //
+                            //    "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                            //    "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                            //    "\n"
+                            //
+                            //tSay2Ufw += T(
+                            //DATA PREFIXES ONLY GO TO router-1
 
                             ) ;
 
@@ -290,7 +305,7 @@ DONE( tmWorkF )
                             // EXAMPLE RULES GENERATED BY UFW (THESE USE /36 RATHER THAN /48)
                             //  
 
-                            stSortedBirdLines.sinkF( tin0P , countTC() , psttl ) ;
+                            stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;
                             etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+tNnWo+tBirdImage4BitsVia+tEpochPlate+tBirdImage4Data ) ; ___( psttl ) ;
                             ZE( strokeS* , psttl ) ;
 
@@ -338,7 +353,7 @@ DONE( tmWorkF )
                     //        // EXAMPLE RULES GENERATED BY UFW (THESE USE /36 RATHER THAN /48)
                     //        //  
                     //
-                    //        stSortedBirdLines.sinkF( tin0P , countTC() , psttl ) ;
+                    //        stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;
                     //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4Control ) ; ___( psttl ) ;
                     //        ZE( strokeS* , psttl ) ;
                     //
@@ -362,7 +377,7 @@ DONE( tmWorkF )
                     etThread.traceF( tin0P , T("subnets to advertise (begin)" DASH79) ) ;
 
                     //}
-                    //    stSortedBirdLines.sinkF( tin0P , countTC() , psttl ) ;
+                    //    stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;
                     //    etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnSubnet48AttackDut)+tBirdImage4BitsVia+tEpochPlate+tBirdImage4AttackDut ) ; ___( psttl ) ;
                     //    ZE( strokeS* , psttl ) ;
                     //
@@ -374,7 +389,8 @@ DONE( tmWorkF )
 
                     TN( tEpochPlate , "" ) ;
                 {
-                stackC stSortedBirdLines( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;      // BIRD CONFIGURATION LINES ARE SORTED IN ORDER TO CONCEAL WHICH LINES ARE DECOYS ; OTHERWISE AN ATTACKER WITH REAL TIME ACCESS TO BGP MIGHT BE ABLE TO SEE THE ORDER IN WHICH THE PREFIXES ARE ADVERTISED ; BGP PROBABLY SORTS EARLY BY IPv6 VALUE, BUT WE DO IT HERE, TOO, JUST TO MAKE SURE
+                stackC stSortedBirdLines2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;      // BIRD CONFIGURATION LINES ARE SORTED IN ORDER TO CONCEAL WHICH LINES ARE DECOYS ; OTHERWISE AN ATTACKER WITH REAL TIME ACCESS TO BGP MIGHT BE ABLE TO SEE THE ORDER IN WHICH THE PREFIXES ARE ADVERTISED ; BGP PROBABLY SORTS EARLY BY IPv6 VALUE, BUT WE DO IT HERE, TOO, JUST TO MAKE SURE
+                stackC stSortedBirdLines1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;      // BIRD CONFIGURATION LINES ARE SORTED IN ORDER TO CONCEAL WHICH LINES ARE DECOYS ; OTHERWISE AN ATTACKER WITH REAL TIME ACCESS TO BGP MIGHT BE ABLE TO SEE THE ORDER IN WHICH THE PREFIXES ARE ADVERTISED ; BGP PROBABLY SORTS EARLY BY IPv6 VALUE, BUT WE DO IT HERE, TOO, JUST TO MAKE SURE
 
                 TN( tSay2Ufw  , "" ) ; tSay2Ufw  = tUfwPrefix ;
                 TN( tSay1Ufw  , "" ) ; tSay1Ufw  = tUfwPrefix ;
