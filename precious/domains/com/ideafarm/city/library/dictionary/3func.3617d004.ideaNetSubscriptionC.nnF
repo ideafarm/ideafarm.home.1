@@ -56,10 +56,10 @@
         countT seed = hashF( pbSecretUse , cbSecretUse , epochP ) ;
 
         }
-            case ifcIDtYPErOUTE_DECOYsUBSCRIBER : { pbSecretUse = pbSecretP          ; cbSecretUse = cbSecretP                     ; break ; }
-            case ifcIDtYPErOUTE_DECOYbGPtABLE   : { pbSecretUse = postSecretDecoyBgp ; cbSecretUse = sizeof postSecretDecoyBgp - 1 ; break ; }
-            case ifcIDtYPErOUTE_CONTROL         : { pbSecretUse = postSecretControl  ; cbSecretUse = sizeof postSecretControl  - 1 ; break ; }
-            case ifcIDtYPErOUTE_DATA            : { pbSecretUse = postSecretData     ; cbSecretUse = sizeof postSecretData     - 1 ; break ; }
+            case ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu : { pbSecretUse = pbSecretP          ; cbSecretUse = cbSecretP                     ; break ; }
+            case ifcIDtYPErOUTE_BGPdECOY                 : { pbSecretUse = postSecretDecoyBgp ; cbSecretUse = sizeof postSecretDecoyBgp - 1 ; break ; }
+            case ifcIDtYPErOUTE_ROUTER2                  : { pbSecretUse = postSecretControl  ; cbSecretUse = sizeof postSecretControl  - 1 ; break ; }
+            case ifcIDtYPErOUTE_ROUTER1                  : { pbSecretUse = postSecretData     ; cbSecretUse = sizeof postSecretData     - 1 ; break ; }
         {
         switch( idTypeRouteP )
         ZE( countT       , cbSecretUse ) ;
@@ -99,7 +99,7 @@
             __Z( cbSecretP ) ;
             __Z( pbSecretP ) ;
         {
-        if( idTypeRouteP == ifcIDtYPErOUTE_DECOYsUBSCRIBER )
+        if( idTypeRouteP == ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu )
         __Z( idTypeRouteP ) ;
         __( idBook - 1 ) ;                  // TO REDUCE THE NUMBER OF IPV6 ADDRESSES THAT web1 MUST HAVE, EACH SUBSCRIBER USES, TO ACCESS ALL OF HIS BOOKS, THE VALUE THAT I RETURN FOR HIS BOOK 1
         __NZ( fieldsP ) ;

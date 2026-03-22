@@ -39,15 +39,15 @@
     TN( tUnderScore     , "_"       ) ;
     TN( tn              , ""        ) ;
 
-    ideaNetIpv6FieldsS& ipv6FieldsUse = bControl ? ipv6FieldsControlP : ipv6FieldsDataP ;
-    textC&              tIpv6NowUse   = bControl ?   tIpv6NowControlP :   tIpv6NowDataP ;
-    boolT bControl = 1 == etThread.strIdF( tin0P , T("/ideanet/control/") , psttNameP ) ; 
+    ideaNetIpv6FieldsS& ipv6FieldsUse = bRouter1 ? ipv6FieldsRouter1P : ipv6FieldsRouter2P ;
+    textC&              tIpv6NowUse   = bRouter1 ?   tIpv6NowRouter1P :   tIpv6NowRouter2P ;
+    boolT bRouter1 = 1 == etThread.strIdF( tin0P , T("/ideanet/router1/") , psttNameP ) ; 
 
     flagsT&             flagsModeP         =             *(flagsT*)((count9S*)cArgP)->c5 ;
-    ideaNetIpv6FieldsS& ipv6FieldsDataP    = *(ideaNetIpv6FieldsS*)((count9S*)cArgP)->c4 ;
-    ideaNetIpv6FieldsS& ipv6FieldsControlP = *(ideaNetIpv6FieldsS*)((count9S*)cArgP)->c3 ;
-    textC&              tIpv6NowDataP      =              *(textC*)((count9S*)cArgP)->c2 ;
-    textC&              tIpv6NowControlP   =              *(textC*)((count9S*)cArgP)->c1 ;
+    ideaNetIpv6FieldsS& ipv6FieldsRouter2P = *(ideaNetIpv6FieldsS*)((count9S*)cArgP)->c4 ;
+    ideaNetIpv6FieldsS& ipv6FieldsRouter1P = *(ideaNetIpv6FieldsS*)((count9S*)cArgP)->c3 ;
+    textC&              tIpv6NowRouter2P   =              *(textC*)((count9S*)cArgP)->c2 ;
+    textC&              tIpv6NowRouter1P   =              *(textC*)((count9S*)cArgP)->c1 ;
 {
 /*1*/voidT ideaNetCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , osTextT*& postBodyP )/*1*/
 

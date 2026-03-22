@@ -38,7 +38,7 @@ DONE( tmWorkF )
 
                     }
                         if( rc <= 32 ) etRock.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                        countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet/0/root/3/root.html" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
+                        countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet/router1/0/root/3/root.html" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
                         // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
                         etRock.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                         //CS:CODEsYNC: 510008c0 510008c0
@@ -46,64 +46,11 @@ DONE( tmWorkF )
                     #endif
                         if( idPass == 1 )
                     #else
-                        if( bWasDown /*&& bUpControl*/ && bUpData )
+                        if( bWasDown /*&& bUpRouter2*/ && bUpRouter1 )
                     #if !defined( DUMMYsUB )
 
                     }
                         #endif
-
-                            }
-                                }
-                                    etThread.delF( tin0P , posti ) ;
-                                    }
-                                        }
-                                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-                                            time1Signature = 0 ;
-                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpControl?"    The DATA channel just went DOWN, but the control channel is still up.":"    The DATA channel just went DOWN, and the control channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpData = 0 ;
-                                        {
-                                        if( bUpData )
-                                        etRock.traceF( tin0P , T("stomp! (data)    FAIL [epochUse,idStompData   ,cFail,rc]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompDataFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
-                                        POOPRqUIET
-                                        countT rc = POOP ;
-                                    {
-                                    else
-                                    }
-                                        }
-                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpControl?"    The DATA channel just came UP, so both control and data are up.":"    The DATA channel just came UP, but the control channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpData = 1 ;
-                                        {
-                                        if( !bUpData )
-                                        etRock.traceF( tin0P , T("stomp! (data)    aok [epochUse,idStompData   ]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
-                                    {
-                                    if( !POOP )
-                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 ) ; ___( posti ) ;
-                                    ZE( countT   , costi ) ;
-                                    ZE( osTextT* , posti ) ;
-                                    etRock.traceF( tin0P , T("stomp! (data)    begin [epochUse,idStompData   ,url]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
-                                    SCOOPS
-                                    _IO_
-                                {
-                                IFsCRATCHoK
-                                cStompData ++ ;
-
-                                TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_USEdNS ? tRequestDomain : tRequestAddress ;
-
-                                TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowData+T("//http/ideanet/gorilla.html") ;
-
-                                ;
-
-                                    +T(".ideanet.ideafarm.com//http/ideanet/gorilla.html")
-                                    +TF3(ipv6FieldsData.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
-                                    +TF3(ipv6FieldsData.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                                    +TF3(ipv6FieldsData.epoch     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                                     TF3(ipv6FieldsData.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-
-                                TN( tRequestDomain , "" ) ; tRequestDomain =
-
-                                // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
-                            {
-                            // DATA
 
                             //}
                             //    }
@@ -112,51 +59,104 @@ DONE( tmWorkF )
                             //            }
                             //                //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                             //                time1Signature = 0 ;
-                            //                etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpData?"    The CONTROL channel just went DOWN, but the data channel is still up.":"    The CONTROL channel just went DOWN, and the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                            //                bUpControl = 0 ;
+                            //                etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just went DOWN, but the router1 channel is still up.":"    The router2 channel just went DOWN, and the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                            //                bUpRouter2 = 0 ;
                             //            {
-                            //            if( bUpControl )
-                            //            //etRock.traceF( tin0P , T("stomp! (control) FAIL [idStompControl,cFail,rc]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompControlFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                            //            if( bUpRouter2 )
+                            //            //etRock.traceF( tin0P , T("stomp! (router2) FAIL [idStompRouter2,cFail,rc]:    ")+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompRouter2Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                             //            POOPRqUIET
                             //            countT rc = POOP ;
                             //        {
                             //        else
                             //        }
                             //            }
-                            //                etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpData?"    The CONTROL channel just came UP, so both control and data are up.":"    The CONTROL channel just came UP, but the data channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                            //                bUpControl = 1 ;
+                            //                etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router2 and router1 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                            //                bUpRouter2 = 1 ;
                             //            {
-                            //            if( !bUpControl )
-                            //            //etRock.traceF( tin0P , T("stomp! (control) aok [idStompControl]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                            //            if( !bUpRouter2 )
+                            //            //etRock.traceF( tin0P , T("stomp! (router2) aok [idStompRouter2]:    ")+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                             //        {
                             //        if( !POOP )
                             //        ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 ) ; ___( posti ) ;
                             //        ZE( countT   , costi ) ;
                             //        ZE( osTextT* , posti ) ;
-                            //        //etRock.traceF( tin0P , T("stomp! (control) begin [idStompControl,url]:    ")+TF2(cStompControl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
+                            //        //etRock.traceF( tin0P , T("stomp! (router2) begin [idStompRouter2,url]:    ")+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
                             //        SCOOPS
                             //        _IO_
                             //    {
                             //    IFsCRATCHoK
-                            //    cStompControl ++ ;
+                            //    cStompRouter2 ++ ;
                             //
                             //    TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_USEdNS ? tRequestDomain : tRequestAddress ;
                             //
-                            //    TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowControl+T("//http/ideanet/control/gorilla.html") ;
+                            //    TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowRouter2+T("//http/ideanet/router2/gorilla.html") ;
                             //
                             //    ;
                             //
-                            //        +T(".ideanet.ideafarm.com//http/ideanet/control/gorilla.html")
-                            //        +TF3(ipv6FieldsControl.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
-                            //        +TF3(ipv6FieldsControl.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                            //        +TF3(ipv6FieldsControl.epoch     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                            //         TF3(ipv6FieldsControl.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                            //        +T(".ideanet.ideafarm.com//http/ideanet/router2/gorilla.html")
+                            //        +TF3(ipv6FieldsRouter2.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
+                            //        +TF3(ipv6FieldsRouter2.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                            //        +TF3(ipv6FieldsRouter2.epoch     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                            //         TF3(ipv6FieldsRouter2.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
                             //
                             //    TN( tRequestDomain , "" ) ; tRequestDomain =
                             //
                             //    // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
                             //{
-                            // CONTROL
+                            // ROUTER2
+
+                            }
+                                }
+                                    etThread.delF( tin0P , posti ) ;
+                                    }
+                                        }
+                                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                                            time1Signature = 0 ;
+                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just went DOWN, but the router2 channel is still up.":"    The router1 channel just went DOWN, and the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            bUpRouter1 = 0 ;
+                                        {
+                                        if( bUpRouter1 )
+                                        etRock.traceF( tin0P , T("stomp! (router1)    FAIL [epochUse,idStompRouter1   ,cFail,rc]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompRouter1Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                                        POOPRqUIET
+                                        countT rc = POOP ;
+                                    {
+                                    else
+                                    }
+                                        }
+                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router2 and router1 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            bUpRouter1 = 1 ;
+                                        {
+                                        if( !bUpRouter1 )
+                                        etRock.traceF( tin0P , T("stomp! (router1)    aok [epochUse,idStompRouter1   ]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                                    {
+                                    if( !POOP )
+                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 ) ; ___( posti ) ;
+                                    ZE( countT   , costi ) ;
+                                    ZE( osTextT* , posti ) ;
+                                    etRock.traceF( tin0P , T("stomp! (router1)    begin [epochUse,idStompRouter1   ,url]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
+                                    SCOOPS
+                                    _IO_
+                                {
+                                IFsCRATCHoK
+                                cStompRouter1 ++ ;
+
+                                TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_USEdNS ? tRequestDomain : tRequestAddress ;
+
+                                TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowRouter1+T("//http/ideanet/router1/gorilla.html") ;
+
+                                ;
+
+                                    +T(".ideanet.ideafarm.com//http/ideanet/router1/gorilla.html")
+                                    +TF3(ipv6FieldsRouter1.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
+                                    +TF3(ipv6FieldsRouter1.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                                    +TF3(ipv6FieldsRouter1.epoch     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                                     TF3(ipv6FieldsRouter1.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+
+                                TN( tRequestDomain , "" ) ; tRequestDomain =
+
+                                // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
+                            {
+                            // ROUTER1
 
                         #if !defined( DUMMYsUB )
                     {
@@ -168,9 +168,9 @@ DONE( tmWorkF )
                             ||
                             !( F(flagsMode) & flIDEAnETeXE_METERED )
                             ||
-                            !bUpData
+                            //!bUpRouter2
                             //||
-                            //!bUpControl
+                            !bUpRouter1
                         (
                         &&
                         !( cSkipStomp && cSkipStomp -- )
@@ -178,14 +178,14 @@ DONE( tmWorkF )
                     if
 
                     }
-                        //etRock.traceF( tin0P , TT(timeN1,timeN2)+ T(" [ipv6Control,ipv6Data]:    ")+tIpv6NowControl+tb4+tIpv6NowData , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                        //etRock.traceF( tin0P , TT(timeN1,timeN2)+ T(" [ipv6Router1,ipv6Router2]:    ")+tIpv6NowRouter1+tb4+tIpv6NowRouter2 , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                         }
                             //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [tim1Signature,perTuckSignature]:    ")+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                             time1Signature = (countT)(    ( (count04T)time1PerEpoch * EPOCHSsIGNATUREmAX * perTuckSignature )    /    TUCK    ) ;
 
-                            count04T perTuckSignature = ipv6FieldsControl.hostRandom % TUCK ;
+                            count04T perTuckSignature = ipv6FieldsRouter1.hostRandom % TUCK ;
 
                             // THE RANDOMNESS OF THE LENGTH OF THE SIGNATURE TIME ADJUSTMENT CREATES A SIGNATURE THAT CAN BE USED TO IDENTIFY AN ATTACKER WHO IS SNIFFING HIS WIRE TO DISCOVER THE PREFIX TO ATTACK
                             // DISCRETE STEPS SO THAT THE SEQUENCE OF time1Signature VALUES WILL BE QUASI UNIQUE FOR EACH SUBSCRIBER, SO CAN SERVE AS A SIGNATURE FOR IDENTIFYING A SUBSCRIBER ATTACKER
@@ -195,20 +195,20 @@ DONE( tmWorkF )
                             //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                             time1Signature = 0 ;
                         {
-                        if( /*!bUpControl ||*/ !bUpData )
+                        if( !bUpRouter1 /*|| !bUpRouter2*/ )
 
-                        tIpv6NowData    = T(nnNowData   ) ;                                                                             // P:PERSONALITY: SUBSCRIBER ATTACKER CANNOT FULLY USE HIS WIRE WITHOUT LEAVING HIS SIGNATURE ON THE ATTACK
-                        tIpv6NowControl = T(nnNowControl) ;
+                        tIpv6NowRouter2 = T(nnNowRouter2) ;
+                        tIpv6NowRouter1 = T(nnNowRouter1) ;                                                                             // P:PERSONALITY: SUBSCRIBER ATTACKER CANNOT FULLY USE HIS WIRE WITHOUT LEAVING HIS SIGNATURE ON THE ATTACK
                         #endif
-                            nicNameC nnNowData    ;
-                            nicNameC nnNowControl ;
+                            nicNameC nnNowRouter2 ;
+                            nicNameC nnNowRouter1 ;
                         #else
-                            nicNameC nnNowData    = sub.nnF( tin0P , epochUse , ipv6FieldsData                             ) ;
-                            nicNameC nnNowControl = sub.nnF( tin0P , epochUse , ipv6FieldsControl , ifcIDtYPErOUTE_CONTROL ) ;
+                            nicNameC nnNowRouter2 = sub.nnF( tin0P , epochUse , ipv6FieldsRouter2 , ifcIDtYPErOUTE_ROUTER2 ) ;
+                            nicNameC nnNowRouter1 = sub.nnF( tin0P , epochUse , ipv6FieldsRouter1                          ) ;
                         #if !defined( DUMMYsUB )
 
-                        ipv6FieldsData    = 0 ;
-                        ipv6FieldsControl = 0 ;
+                        ipv6FieldsRouter2 = 0 ;
+                        ipv6FieldsRouter1 = 0 ;
 
                         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                         ZE( sCountT , timeN2 ) ;
@@ -223,7 +223,7 @@ DONE( tmWorkF )
                     ZE( sCountT , timeN2 ) ;
                     ZE( countT  , timeN1 ) ;
 
-                    const boolT bWasDown = /*!bUpControl ||*/ !bUpData ;
+                    const boolT bWasDown = !bUpRouter1 /*|| !bUpRouter2*/ ;
 
                     ++ idPass ;
                 {
@@ -231,14 +231,14 @@ DONE( tmWorkF )
                 ZE( countT , time1Signature ) ;
                 const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
                 ZE( countT , idPass ) ;
-                ZE( boolT  , bUpData    ) ;
-                ZE( boolT  , bUpControl ) ;
+                ZE( boolT  , bUpRouter2 ) ;
+                ZE( boolT  , bUpRouter1 ) ;
                 countT cSkipStomp = TUCK >> 4 ;
                 countT cSkipPage  = TUCK >> 5 ;
-                ZE( countT , cStompDataFail    ) ;
-                ZE( countT , cStompControlFail ) ;
-                ZE( countT , cStompData        ) ;
-                ZE( countT , cStompControl     ) ;
+                ZE( countT , cStompRouter2Fail ) ;
+                ZE( countT , cStompRouter1Fail ) ;
+                ZE( countT , cStompRouter2     ) ;
+                ZE( countT , cStompRouter1     ) ;
 
                 ZE( countT , idEpoch      ) ;
                 ZE( countT , epochUseLath ) ;
@@ -273,16 +273,16 @@ DONE( tmWorkF )
             while( idStatusHttpService < ifcIDsTATUShTTPsERVICE_READY )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6NowControl , (countT)&tIpv6NowData , (countT)&ipv6FieldsControl , (countT)&ipv6FieldsData , (countT)&flagsMode ) ;
+            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6NowRouter1 , (countT)&tIpv6NowRouter2 , (countT)&ipv6FieldsRouter1 , (countT)&ipv6FieldsRouter2 , (countT)&flagsMode ) ;
             signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
 
             ZE( countT , cTestRequestsPending ) ;
             flagsT flagsMode = flIDEAnETeXE_METERED ;
             //flagsT flagsMode = flIDEAnETeXE_USEdNS | flIDEAnETeXE_METERED ;
-            ideaNetIpv6FieldsS ipv6FieldsData    ;
-            ideaNetIpv6FieldsS ipv6FieldsControl ;
-            TN( tIpv6NowData    , "" ) ;
-            TN( tIpv6NowControl , "" ) ;
+            ideaNetIpv6FieldsS ipv6FieldsRouter2 ;
+            ideaNetIpv6FieldsS ipv6FieldsRouter1 ;
+            TN( tIpv6NowRouter2 , "" ) ;
+            TN( tIpv6NowRouter1 , "" ) ;
             ZE( countT , idStatusHttpService ) ;
             etRock.traceF( tin0P , T("\r\nPreparing to serve pages to you...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         {
@@ -368,7 +368,7 @@ DONE( tmHearF )
         else                                                            {                                                    etRock.traceF( tin0P , tHelp                                                                                                                                                                               , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
         }
             if( rc <= 32 ) etRock.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-            countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet/0/root/3/root.html" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
+            countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet/router1/0/root/3/root.html" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
             // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
             etRock.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
             //CS:CODEsYNC: 510008c0 510008c0
@@ -461,17 +461,17 @@ DONE( tmServeHttpF )
         httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTP  , flSOCKETc_null , T("World Wide Web") , 4 ) ;      // 4 WORKERS TO ENSURE THAT CAN KEEP UP WITH REQUESTS FROM BROWSER, INCLUDING FOR PAGE ICON
 
         countT cArgApp = (countT)&c9p ;
-        count9S c9p( (countT)&tIpv6NowControlP , (countT)&tIpv6NowDataP , (countT)&ipv6FieldsControlP , (countT)&ipv6FieldsDataP , (countT)&flagsModeP ) ;
+        count9S c9p( (countT)&tIpv6NowRouter1P , (countT)&tIpv6NowRouter2P , (countT)&ipv6FieldsRouter1P , (countT)&ipv6FieldsRouter2P , (countT)&flagsModeP ) ;
     {
     ZE( flagsT , flagsSave ) ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     flagsT&             flagsModeP           =             *(flagsT*)pTaskP->c6 ;
-    ideaNetIpv6FieldsS& ipv6FieldsDataP      = *(ideaNetIpv6FieldsS*)pTaskP->c5 ;
-    ideaNetIpv6FieldsS& ipv6FieldsControlP   = *(ideaNetIpv6FieldsS*)pTaskP->c4 ;
-    textC&              tIpv6NowDataP        =              *(textC*)pTaskP->c3 ;
-    textC&              tIpv6NowControlP     =              *(textC*)pTaskP->c2 ;
+    ideaNetIpv6FieldsS& ipv6FieldsRouter2P   = *(ideaNetIpv6FieldsS*)pTaskP->c4 ;
+    ideaNetIpv6FieldsS& ipv6FieldsRouter1P   = *(ideaNetIpv6FieldsS*)pTaskP->c5 ;
+    textC&              tIpv6NowRouter2P     =              *(textC*)pTaskP->c2 ;
+    textC&              tIpv6NowRouter1P     =              *(textC*)pTaskP->c3 ;
     countT&             idStatusHttpServiceP =             *(countT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )

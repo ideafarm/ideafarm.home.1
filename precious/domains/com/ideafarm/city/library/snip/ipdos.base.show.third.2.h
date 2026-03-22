@@ -4841,10 +4841,10 @@ examples
 /*1*//*ifcIDtYPErOUTE*//*1*/
 
 /*3*/
-#define ifcIDtYPErOUTE_DATA            ((countT)0xdddd1252)
-#define ifcIDtYPErOUTE_CONTROL         ((countT)0xdddd1253)
-#define ifcIDtYPErOUTE_DECOYbGPtABLE   ((countT)0xdddd1254)
-#define ifcIDtYPErOUTE_DECOYsUBSCRIBER ((countT)0xdddd1255)
+#define ifcIDtYPErOUTE_ROUTER1            ((countT)0xdddd1252)
+#define ifcIDtYPErOUTE_ROUTER2         ((countT)0xdddd1253)
+#define ifcIDtYPErOUTE_BGPdECOY   ((countT)0xdddd1254)
+#define ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu ((countT)0xdddd1255)
 /*3*/
 #define ifcIDtYPErOUTE_min     ((countT)0xdddd1252)
 #define ifcIDtYPErOUTE_max     ((countT)0xdddd1255)
@@ -49826,7 +49826,7 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP ) ;
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP , const strokeS* const psttEmailP ) ;
-    nicNameC nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP = ideaNetIpv6FieldsS() , const countT idTypeRouteP = ifcIDtYPErOUTE_DATA , const byteT* const pbSecretP = 0 , const countT cbSecretP = 0 ) ;
+    nicNameC nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP = ideaNetIpv6FieldsS() , const countT idTypeRouteP = ifcIDtYPErOUTE_ROUTER1 , const byteT* const pbSecretP = 0 , const countT cbSecretP = 0 ) ;
 
     voidT    operator >>( soulC& sP ) ;
     voidT    operator <<( soulC& sP ) ;
