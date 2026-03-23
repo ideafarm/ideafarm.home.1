@@ -309,7 +309,7 @@ DONE( tmAddAddressF )
                             etRock.traceF( tin0P , T("added nicName aok [nicName]:    ")+T(nnTarget) ) ;
                         {
                         if( !POOP )                                                                                                  //20260301@1033: 30_9 MINUTES BECAUSE SIGNATURE RANGE IS NOW 6 EPOCHS, PLUS 2 ALLOWED FOR BGP PROPOGATION = 8 EPOCHS
-                        ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 30 * 60 , 0 , 48 ) ;           //20260227@1042: "8 * 60" <-- "4 * 60" BECAUSE 4 MINUTES WAS OBSERVED TO RESULT IN ONLY 6 SECONDS OF OVERLAP
+                        ((tin1S&)tin0P).pEtScratch->osNicAddressAddF( tin0P , hInterface , nnTarget , 30 * 60 , 0 , 36 ) ;           //20260227@1042: "8 * 60" <-- "4 * 60" BECAUSE 4 MINUTES WAS OBSERVED TO RESULT IN ONLY 6 SECONDS OF OVERLAP
                         SCOOPS
                         _IO_
                     {
@@ -357,7 +357,7 @@ DONE( tmAddAddressF )
                     geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_NNtARGETrEJECTED , sizeof nnTarget ) ;
                 {
                 else if( !stNnApproved1P( nnTarget ) && !stNnApproved2P( nnTarget ) )
-                if( nnTarget == nnMe || nnTarget == nnRouter ) ;
+                if( nnTarget == nnMe || nnTarget == nnRouter1 || nnTarget == nnRouter2 ) ;
 
                 stNnRequestedP >> nnTarget ;
                 nicNameC          nnTarget ;
@@ -371,8 +371,9 @@ DONE( tmAddAddressF )
     {
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-    nicNameC nnMe     = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::2") ) ;
-    nicNameC nnRouter = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::1") ) ;
+    nicNameC nnMe      = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::1:1") ) ;
+    nicNameC nnRouter2 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::2"  ) ) ;
+    nicNameC nnRouter1 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::1"  ) ) ;
     TN( tb4 , "    " ) ;
 
     booksC& bksGeigerP     = *(booksC*)pTaskP->c4 ;
