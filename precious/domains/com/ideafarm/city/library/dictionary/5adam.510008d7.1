@@ -323,7 +323,6 @@ DONE( tmWorkF )
 // ----------- DUT ------------------------------------------------------------------------------------------------------------------
 // ----------- DUT ------------------------------------------------------------------------------------------------------------------
 // ----------- DUT ------------------------------------------------------------------------------------------------------------------
-#endif
                     }
                         ) ;
                 
@@ -344,11 +343,34 @@ DONE( tmWorkF )
                         const countT* pcWo = nnWo ;           
                 
                         TN( tNnWo , "" ) ; tNnWo = T(nnWo) ;
-                        nicNameC& nnWo = nnSubnet48Dut ;
+                        nicNameC& nnWo = nnSubnet48Dut2 ;
                         tEpochPlate = TF2(epochPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
                         countT epochPlate = epoch + 1 - stNnSubnetSayRouter2 ;
                     {
-#if defined( NEVERdEFINED )
+                    }
+                        ) ;
+                
+                            "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                            "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                            "\n"
+                
+                        tSay1Ufw += T(
+                
+                        stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;
+                        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+t1BirdImage4BitsVia+tEpochPlate+tBirdImage4Router1 ) ; ___( psttl ) ;
+                        ZE( strokeS* , psttl ) ;
+                
+                        etThread.traceF( tin0P , T("router1     [nnWo]:    ")+tNnWo+T("/48") ) ;
+                
+                        stIdPrefixRouter1.sinkF( tin0P , countTC() , idPrefix , flSTACKsINK_UNIQUE ) ;
+                        countT idPrefix = ( pcWo[ 2 ] & 0xfff0000 ) >> 0x10 ;
+                        const countT* pcWo = nnWo ;           
+                
+                        TN( tNnWo , "" ) ; tNnWo = T(nnWo) ;
+                        nicNameC& nnWo = nnSubnet48Dut1 ;
+                        tEpochPlate = TF2(epochPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+                        countT epochPlate = epoch + 1 - stNnSubnetSayRouter2 ;
+                    {
 // +++++++++++ DUT ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++ DUT ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++ DUT ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -528,7 +550,8 @@ DONE( tmWorkF )
     //boolT bTestSwarm = 1 ;
 boolT bTestSwarm = 0 ;
 
-//nicNameC nnSubnet48Dut = socketC::nicNameIF( tin0P , etThread , T("2602:ff03:222::") ) ;
+nicNameC nnSubnet48Dut2 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03:800::") ) ;
+nicNameC nnSubnet48Dut1 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::") ) ;
 
     ranUniC ruIdPrefix( tin0P , (measure04T)0xfff , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
