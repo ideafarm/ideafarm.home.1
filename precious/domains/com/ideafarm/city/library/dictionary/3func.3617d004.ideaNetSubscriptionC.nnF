@@ -28,7 +28,7 @@
     //                  |--|                     /16 fieldsP.epoch
     //                  |**********************| /80 idHost (external view)
     //   |************|                          /48 advertised prefix
-    //              |-|                          /12 fieldsP.routeRandom
+    //              |-|                          /12 fieldsP.routeRandom (including the router selector bit)
     //              |**************************| /92 idHost (ideanet link view)
     //   |---------|                             /36 ARIN delegation
     //
@@ -49,7 +49,8 @@
     // EXTERNAL SPECIFICATIONS
 
     }
-        fieldsP.routeRandom = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , epochP ) & 0xfff )                                           ;      // "0xfff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
+        if( idTypeRouteP == ifcIDtYPErOUTE_ROUTER2 ) fieldsP.routeRandom |= (count01T)(                                                    0x800 ) ;        // THE HIGH BIT (BIT AT OFFSET 36) IS USED TO SELECT WHICH /37 PREFIX TO USE ; IF CLEAR THEN THE PREFIX WILL BE ADVERTISED BY router1; IF SET THEN router2
+                                                     fieldsP.routeRandom  = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , epochP ) & 0x7ff ) ;        // "0x7ff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
 
         countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
 
