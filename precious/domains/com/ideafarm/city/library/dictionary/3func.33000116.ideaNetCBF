@@ -41,6 +41,10 @@
 
     ideaNetIpv6FieldsS& ipv6FieldsUse = bRouter1 ? ipv6FieldsRouter1P : ipv6FieldsRouter2P ;
     textC&              tIpv6NowUse   = bRouter1 ?   tIpv6NowRouter1P :   tIpv6NowRouter2P ;
+
+bRouter1 = !( idIn % 5 ) ;
+countT idIn = incv02AM( idInLath ) ;
+static countT idInLath ;
     boolT bRouter1 = 1 == etThread.strIdF( tin0P , T("/ideanet/router1/") , psttNameP ) ; 
 
     flagsT&             flagsModeP         =             *(flagsT*)((count9S*)cArgP)->c5 ;
