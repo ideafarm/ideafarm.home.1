@@ -38,7 +38,7 @@ DONE( tmWorkF )
 
                     }
                         if( rc <= 32 ) etRock.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                        countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet/router1/0/root/3/root.html" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
+                        countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet/0/root/3/root.html" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
                         // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
                         etRock.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                         //CS:CODEsYNC: 510008c0 510008c0
@@ -46,7 +46,7 @@ DONE( tmWorkF )
                     #endif
                         if( idPass == 1 )
                     #else
-                        if( bWasDown /*&& bUpRouter2*/ && bUpRouter1 )
+                        if( bWasDown && bUpRouter2 && bUpRouter1 )
                     #if !defined( DUMMYsUB )
 
                     }
@@ -70,7 +70,7 @@ DONE( tmWorkF )
                                     else
                                     }
                                         }
-                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router2 and router1 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router1 and router2 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter2 = 1 ;
                                         {
                                         if( !bUpRouter2 )
@@ -96,7 +96,7 @@ DONE( tmWorkF )
                                     +T(".ideanet.ideafarm.com//http/ideanet/router2/gorilla.html")
                                     +TF3(ipv6FieldsRouter2.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
                                     +TF3(ipv6FieldsRouter2.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                                    +TF3(ipv6FieldsRouter2.epoch     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                                    +TF3(ipv6FieldsRouter2.epoch      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
                                      TF3(ipv6FieldsRouter2.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
                             
                                 TN( tRequestDomain , "" ) ; tRequestDomain =
@@ -123,7 +123,7 @@ DONE( tmWorkF )
                                     else
                                     }
                                         }
-                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router2 and router1 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router1 and router2 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter1 = 1 ;
                                         {
                                         if( !bUpRouter1 )
@@ -149,7 +149,7 @@ DONE( tmWorkF )
                                     +T(".ideanet.ideafarm.com//http/ideanet/router1/gorilla.html")
                                     +TF3(ipv6FieldsRouter1.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
                                     +TF3(ipv6FieldsRouter1.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
-                                    +TF3(ipv6FieldsRouter1.epoch     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
+                                    +TF3(ipv6FieldsRouter1.epoch      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
                                      TF3(ipv6FieldsRouter1.routeRandom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
 
                                 TN( tRequestDomain , "" ) ; tRequestDomain =
@@ -168,8 +168,6 @@ DONE( tmWorkF )
                             ||
                             !( F(flagsMode) & flIDEAnETeXE_METERED )
                             ||
-                            //!bUpRouter2
-                            //||
                             !bUpRouter1
                         (
                         &&
@@ -195,7 +193,7 @@ DONE( tmWorkF )
                             //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                             time1Signature = 0 ;
                         {
-                        if( !bUpRouter1 /*|| !bUpRouter2*/ )
+                        if( !bUpRouter1 || !bUpRouter2 )
 
                         tIpv6NowRouter2 = T(nnNowRouter2) ;
                         tIpv6NowRouter1 = T(nnNowRouter1) ;                                                                             // P:PERSONALITY: SUBSCRIBER ATTACKER CANNOT FULLY USE HIS WIRE WITHOUT LEAVING HIS SIGNATURE ON THE ATTACK
@@ -278,7 +276,6 @@ DONE( tmWorkF )
 
             ZE( countT , cTestRequestsPending ) ;
             flagsT flagsMode = flIDEAnETeXE_METERED ;
-            //flagsT flagsMode = flIDEAnETeXE_USEdNS | flIDEAnETeXE_METERED ;
             ideaNetIpv6FieldsS ipv6FieldsRouter2 ;
             ideaNetIpv6FieldsS ipv6FieldsRouter1 ;
             TN( tIpv6NowRouter2 , "" ) ;
@@ -368,7 +365,7 @@ DONE( tmHearF )
         else                                                            {                                                    etRock.traceF( tin0P , tHelp                                                                                                                                                                               , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
         }
             if( rc <= 32 ) etRock.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-            countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet/router1/0/root/3/root.html" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
+            countT rc = (countT)ShellExecuteA( 0 , 0 , "http://[::1]/ideanet/0/root/3/root.html" , 0 , 0 , SW_SHOW ) ;     //U:: MOVE SUPPORT FOR THIS INTO thirdC etherC
             // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
             etRock.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
             //CS:CODEsYNC: 510008c0 510008c0
