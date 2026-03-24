@@ -234,8 +234,8 @@ DONE( tmWorkF )
                     //            }
                     //                ) ;
                     //
-                    //                    "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
-                    //                    "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                    //                    "-A ufw6-user-forward -i enp1s0 -o enp10s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                    //                    "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp10s0\n"
                     //                    "\n"
                     //
                     //                tSay2Ufw += T(
@@ -289,8 +289,8 @@ DONE( tmWorkF )
                         }
                             ) ;
                     
-                                "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
-                                "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                                "-A ufw6-user-forward -i enp1s0 -o enp10s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                                "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp10s0\n"
                                 "\n"
                     
                             tSay2Ufw += T(
@@ -329,11 +329,12 @@ DONE( tmWorkF )
 // ----------- DUT ------------------------------------------------------------------------------------------------------------------
 // ----------- DUT ------------------------------------------------------------------------------------------------------------------
 // ----------- DUT ------------------------------------------------------------------------------------------------------------------
+#endif
                     }
                         ) ;
                 
-                            "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
-                            "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                            "-A ufw6-user-forward -i enp1s0 -o enp10s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                            "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp10s0\n"
                             "\n"
                 
                         tSay2Ufw += T(
@@ -377,6 +378,7 @@ DONE( tmWorkF )
                         tEpochPlate = TF2(epochPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
                         countT epochPlate = epoch + 1 - stNnSubnetSayRouter2 ;
                     {
+#if defined( NEVERdEFINED )
 // +++++++++++ DUT ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++ DUT ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++ DUT ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -556,8 +558,8 @@ DONE( tmWorkF )
     //boolT bTestSwarm = 1 ;
 boolT bTestSwarm = 0 ;
 
-nicNameC nnSubnet48Dut2 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03:800::") ) ;
-nicNameC nnSubnet48Dut1 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::") ) ;
+//nicNameC nnSubnet48Dut2 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03:800::") ) ;
+//nicNameC nnSubnet48Dut1 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::") ) ;
 
     ranUniC ruIdPrefix( tin0P , (measure04T)0xfff , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
