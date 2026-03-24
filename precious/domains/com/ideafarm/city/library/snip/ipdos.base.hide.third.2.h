@@ -4813,6 +4813,18 @@ examples
 /**/
 /*1*//*BITSsHIFTiDEAnETePOCH*//*1*/
 
+// 4 EPOCHS PER TICK
+//AOK: #define BITSsHIFTiDEAnETePOCH ( 0x16 )
+
+
+// 01 EPOCHS PER TICK
+//U::PROD: #define BITSsHIFTiDEAnETePOCH ( 0x14 )
+
+
+// 1 EPOCHS PER TICK
+//#define BITSsHIFTiDEAnETePOCH ( 0x18 )
+
+// 04 EPOCHS PER DAY ; EACH EPOCH IS 4 TICKS
 #define BITSsHIFTiDEAnETePOCH ( 0x1a )
 
 
@@ -4841,10 +4853,10 @@ examples
 /*1*//*ifcIDtYPErOUTE*//*1*/
 
 /*3*/
-#define ifcIDtYPErOUTE_ROUTER1            ((countT)0xdddd1252)
-#define ifcIDtYPErOUTE_ROUTER2         ((countT)0xdddd1253)
-#define ifcIDtYPErOUTE_BGPdECOY   ((countT)0xdddd1254)
-#define ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu ((countT)0xdddd1255)
+#define ifcIDtYPErOUTE_ROUTER1                      ((countT)0xdddd1252)
+#define ifcIDtYPErOUTE_ROUTER2                      ((countT)0xdddd1253)
+#define ifcIDtYPErOUTE_BGPdECOY                     ((countT)0xdddd1254)
+#define ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu     ((countT)0xdddd1255)
 /*3*/
 #define ifcIDtYPErOUTE_min     ((countT)0xdddd1252)
 #define ifcIDtYPErOUTE_max     ((countT)0xdddd1255)
@@ -4902,6 +4914,7 @@ examples
 /*1*//*EPOCHSaLLOWEDfORbGPpROPOGATION*//*1*/
 
 #define EPOCHSaLLOWEDfORbGPpROPOGATION 0
+//U::PROD: #define EPOCHSaLLOWEDfORbGPpROPOGATION 2
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -4929,6 +4942,7 @@ examples
 /*1*//*EPOCHSsIGNATUREmAX*//*1*/
 
 #define EPOCHSsIGNATUREmAX             0x1
+//U::PROD: #define EPOCHSsIGNATUREmAX             0x10
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
