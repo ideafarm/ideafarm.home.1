@@ -547,7 +547,7 @@ DONE( tmWorkF )
 
         boolT bTrue = !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) ;
 
-        countT epochLate = ( ( timeN1 - time1LateBegin ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+        countT epochLate = ( ( timeN1 - time1TrueMidpoint ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
         countT epochTrue = ( ( timeN1                  ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
 
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
@@ -561,8 +561,9 @@ DONE( tmWorkF )
         //if( !epochTrueLath )
     {
     while( !ether )
-    const countT time1LateBegin = time1PerEpoch >> 2 ;
-    const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
+    const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
+    const countT time1LateBegin    = time1PerEpoch >> 2 ;
+    const countT time1PerEpoch     = 1 << BITSsHIFTiDEAnETePOCH ;
     //boolT bTestSwarm = 1 ;
 boolT bTestSwarm = 0 ;
 

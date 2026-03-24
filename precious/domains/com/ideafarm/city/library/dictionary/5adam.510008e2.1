@@ -195,7 +195,6 @@ DONE( tmWorkF )
     TN( tSayName         , "    [name]        :    "     ) ;
     TN( tSayFriendlyName , "    [friendlyName]:    "     ) ;
     TN( tWantCurly       , ""                            ) ;
-    TN( tWantFriendly    , !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) ? "ideanet-1" : "ideanet-2" ) ;
     TN( tWantExactName   , ""                            ) ;
     
     TN( tb4 , "    " ) ;
@@ -215,15 +214,21 @@ DONE( tmWorkF )
     stackC stNnApproved1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     stackC stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
 
+    TN( tWantFriendly , bTrue ? "ideanet-1" : "ideanet-2" ) ;
+
     }
-        etThread.delF( tin0P , psttLanName ) ;
-        tLanName = T(psttLanName) ;
-        etThread.computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
-        ZE( strokeS* , psttLanName ) ;
+        bTrue = !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) ;
+        }
+            etThread.delF( tin0P , psttLanName ) ;
+            tLanName = T(psttLanName) ;
+            etThread.computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
+            ZE( strokeS* , psttLanName ) ;
+        {
+        TN( tLanName     , ""     ) ;
+        //TN( tLanNameWeb2 , "WEB2" ) ;
+        TN( tLanNameWeb1 , "WEB1" ) ;
     {
-    TN( tLanName     , ""     ) ;
-    TN( tLanNameWeb2 , "WEB2" ) ;
-    TN( tLanNameWeb1 , "WEB1" ) ;
+    ZE( boolT , bTrue ) ;
     
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
@@ -275,7 +280,7 @@ DONE( tmListApprovedAddressesF )
         {
         if( epochLath != epoch )
 
-        countT epoch = timeN1 >> BITSsHIFTiDEAnETePOCH ;
+        countT epoch = ( timeN1 - time1Adjust ) >> BITSsHIFTiDEAnETePOCH ;
 
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
@@ -290,6 +295,24 @@ DONE( tmListApprovedAddressesF )
     patternC pat( tin0P , etThread , T("sub.01.00000001.*.soulC") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tLongSubscriptions , "" ) ; tLongSubscriptions = T("////go1/" "d/ideafarm.shared/")+TfORsTRING(ifcIDaDAM_WELCOMER)+T("/ideanet/") ;
 
+    const countT time1Adjust = bTrue ? 0 : time1TrueMidpoint ;
+    const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
+    const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
+
+    }
+        bTrue = !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) ;
+        }
+            etThread.delF( tin0P , psttLanName ) ;
+            tLanName = T(psttLanName) ;
+            etThread.computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
+            ZE( strokeS* , psttLanName ) ;
+        {
+        TN( tLanName     , ""     ) ;
+        //TN( tLanNameWeb2 , "WEB2" ) ;
+        TN( tLanNameWeb1 , "WEB1" ) ;
+    {
+    ZE( boolT , bTrue ) ;
+    
     stackC& stNnApproved2P = *(stackC*)pTaskP->c2 ;
     stackC& stNnApproved1P = *(stackC*)pTaskP->c1 ;
     _IO_
@@ -386,17 +409,21 @@ DONE( tmAddAddressF )
     nicNameC nnRouter1 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::1"  ) ) ;
     TN( tb4 , "    " ) ;
 
-    TN( tWantFriendly , !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) ? "ideanet-1" : "ideanet-2" ) ;
+    TN( tWantFriendly , bTrue ? "ideanet-1" : "ideanet-2" ) ;
 
     }
-        etThread.delF( tin0P , psttLanName ) ;
-        tLanName = T(psttLanName) ;
-        etThread.computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
-        ZE( strokeS* , psttLanName ) ;
+        bTrue = !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) ;
+        }
+            etThread.delF( tin0P , psttLanName ) ;
+            tLanName = T(psttLanName) ;
+            etThread.computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
+            ZE( strokeS* , psttLanName ) ;
+        {
+        TN( tLanName     , ""     ) ;
+        //TN( tLanNameWeb2 , "WEB2" ) ;
+        TN( tLanNameWeb1 , "WEB1" ) ;
     {
-    TN( tLanName     , ""     ) ;
-    TN( tLanNameWeb2 , "WEB2" ) ;
-    TN( tLanNameWeb1 , "WEB1" ) ;
+    ZE( boolT , bTrue ) ;
     
     booksC& bksGeigerP     = *(booksC*)pTaskP->c4 ;
     stackC& stNnApproved2P = *(stackC*)pTaskP->c3 ;
@@ -427,7 +454,7 @@ TASK( tmAddAddressF )
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
                 {
-                for( countT epoch = 0 ; epoch <= epochUseLateLath ; epoch ++ )
+                for( countT epoch = 0 ; epoch <= epochLateLath ; epoch ++ )
 
                 }
                     stNnApprovedNewP << nnNowRouter2 ;
@@ -436,7 +463,7 @@ TASK( tmAddAddressF )
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
                 {
-                for( countT epoch = epochUseLateWoth ; epoch < epochsPerDay ; epoch ++ )
+                for( countT epoch = epochLateWoth ; epoch < epochsPerDay ; epoch ++ )
             {
             else
             }
@@ -447,47 +474,47 @@ TASK( tmAddAddressF )
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
                 {
-                for( countT epoch = epochUseLateWoth ; epoch <= epochUseLateLath ; epoch ++ )
+                for( countT epoch = epochLateWoth ; epoch <= epochLateLath ; epoch ++ )
             {
-            if( epochUseLateWoth < epochUseLateLath )
+            if( epochLateWoth < epochLateLath )
 
             }
                 }
                     stNnApprovedNewP << nnNowRouter1 ;
                     etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
-                    nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch                                ) ;
+                    nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
                 {
-                for( countT epoch = 0 ; epoch <= epochUseTrueLath ; epoch ++ )
+                for( countT epoch = 0 ; epoch <= epochTrueLath ; epoch ++ )
 
                 }
                     stNnApprovedNewP << nnNowRouter1 ;
                     etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
-                    nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch                                ) ;
+                    nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
                 {
-                for( countT epoch = epochUseTrueWoth ; epoch < epochsPerDay ; epoch ++ )
+                for( countT epoch = epochTrueWoth ; epoch < epochsPerDay ; epoch ++ )
             {
             else
             }
                 }
                     stNnApprovedNewP << nnNowRouter1 ;
                     etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
-                    nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch                                ) ;
+                    nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
                 {
-                for( countT epoch = epochUseTrueWoth ; epoch <= epochUseTrueLath ; epoch ++ )
+                for( countT epoch = epochTrueWoth ; epoch <= epochTrueLath ; epoch ++ )
             {
-            if( epochUseTrueWoth < epochUseTrueLath )
+            if( epochTrueWoth < epochTrueLath )
 
-            countT epochUseLateWoth = ( ( timeN1 - time1LateBegin - time1PerEpoch * EPOCHSsIGNATUREmAX ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
-            countT epochUseLateLath = ( ( timeN1 - time1LateBegin                                      ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+            countT epochLateWoth = ( ( timeN1 - time1TrueMidpoint - time1PerEpoch * EPOCHSsIGNATUREmAX ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+            countT epochLateLath = ( ( timeN1 - time1TrueMidpoint                                      ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
 
-            countT epochUseTrueWoth = ( ( timeN1                  - time1PerEpoch * EPOCHSsIGNATUREmAX ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
-            countT epochUseTrueLath = ( ( timeN1                                                       ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+            countT epochTrueWoth = ( ( timeN1                     - time1PerEpoch * EPOCHSsIGNATUREmAX ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+            countT epochTrueLath = ( ( timeN1                                                          ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
 
             // EACH PREFIX, AND EACH ADDRESS, MUST LIVE LONG ENOUGH TO EXIST UNTIL IT WILL NO LONGER BE USED
             // IF BITSsHIFTiDEAnETePOCH IS DEFINED TO BE ( 0x14 ), THEN EACH EPOCH IS 02 TOCK
@@ -500,7 +527,7 @@ TASK( tmAddAddressF )
     {
     switch( woSub.idBookF( tin0P ) )
 
-    const countT time1LateBegin = time1PerEpoch >> 2 ;
+    const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
 
     swsIdBookIdSubByEmailP.sinkF( tin0P , countTC() , count2S( idBook , idSub ) ) ;
     psttlEmailP = tEmail ;

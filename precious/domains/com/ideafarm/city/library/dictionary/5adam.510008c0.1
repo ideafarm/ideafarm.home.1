@@ -210,9 +210,9 @@ DONE( tmWorkF )
                         ZE( sCountT , timeN2 ) ;
                         ZE( countT  , timeN1 ) ;
 
-                        epochMeUseLateLath = epochMeUseLate ;
+                        epochHeLateLath = epochHeLate ;
                     {
-                    if( epochMeUseLateLath != epochMeUseLate )
+                    if( epochHeLateLath != epochHeLate )
 
                     }
                         etRock.traceF( tin0P , T("[nnNowRouter1]:    ")+tIpv6NowRouter1 , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
@@ -230,15 +230,15 @@ DONE( tmWorkF )
                         ZE( sCountT , timeN2 ) ;
                         ZE( countT  , timeN1 ) ;
 
-                        epochMeUseTrueLath = epochMeUseTrue ;
+                        epochHeTrueLath = epochHeTrue ;
                     {
-                    if( epochMeUseTrueLath != epochMeUseTrue )
+                    if( epochHeTrueLath != epochHeTrue )
 
-                    countT epochMeUseLate   = ( ( timeN1 - time1LateBegin - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
-                    countT epochMeUseTrue   = ( ( timeN1                  - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+                    countT epochMeUseLate   = ( ( timeN1 - time1TrueMidpoint - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+                    countT epochMeUseTrue   = ( ( timeN1                     - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
 
-                    countT epochHeLate      = ( ( timeN1 - time1LateBegin                  ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
-                    countT epochHeTrue      = ( ( timeN1                                   ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+                    countT epochHeLate      = ( ( timeN1 - time1TrueMidpoint                  ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+                    countT epochHeTrue      = ( ( timeN1                                      ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
 
                     etRock.traceF( tin0P , T("[bTrue,time1PerEpoch,time1HeIntoEpoch]:    ")+T(bTrue?"TRUE    ":"LATE    ")+TF2(time1PerEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time1HeIntoEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                     bTrue = time1HeIntoEpoch > time1LateBegin && time1HeIntoEpoch < time1LateEnd ;                    //P:PERSONALITY: USE THE TRUE CHANNEL IFF (IF AND ONLY IF) NOT CLOSE TO THE TIME OF THE LATH OR THE NEXT CHANGE IN THE TRUE EPOCH ; THIS IS TO AVOID USING A ROUTER WHILE IT IS RELOADING ITS UFW FIREWALL RULES
@@ -254,9 +254,10 @@ DONE( tmWorkF )
                 {
                 while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
                 ZE( countT , time1Signature ) ;
-                const countT time1LateEnd   = 3 * time1LateBegin ;
-                const countT time1LateBegin = time1PerEpoch >> 2 ;
-                const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
+                const countT time1LateEnd      = 3 * time1LateBegin ;
+                const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
+                const countT time1LateBegin    = time1PerEpoch >> 2 ;
+                const countT time1PerEpoch     = 1 << BITSsHIFTiDEAnETePOCH ;
                 ZE( countT , idPass ) ;
                 ZE( boolT  , bUpRouter2 ) ;
                 ZE( boolT  , bUpRouter1 ) ;
@@ -267,9 +268,9 @@ DONE( tmWorkF )
                 ZE( countT , cStompRouter2     ) ;
                 ZE( countT , cStompRouter1     ) ;
 
-                ZE( countT , idEpoch      ) ;
-                ZE( countT , epochMeUseLateLath ) ;
-                ZE( countT , epochMeUseTrueLath ) ;
+                ZE( countT , idEpoch           ) ;
+                ZE( countT , epochHeLateLath   ) ;
+                ZE( countT , epochHeTrueLath   ) ;
                 TN( tUnderScore , "_" ) ;
                 TN( tb4 , "    " ) ;
                 TN( tb , " " ) ;
