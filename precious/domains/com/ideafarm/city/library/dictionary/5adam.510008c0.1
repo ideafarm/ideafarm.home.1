@@ -178,7 +178,7 @@ DONE( tmWorkF )
                     if
 
                     }
-                        etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [time1Signature,perTuckSignature]:    ")+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                        //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [time1Signature,perTuckSignature]:    ")+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                         time1Signature = (countT)(    ( (count04T)time1PerEpoch * EPOCHSsIGNATUREmAX * perTuckSignature )    /    TUCK    ) ;
 
@@ -236,7 +236,6 @@ DONE( tmWorkF )
 
                     countT epochMeUseLate   = ( ( timeN1 - time1TrueMidpoint - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
                     countT epochMeUseTrue   = ( ( timeN1                     - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
-time1Signature = 0 ;
 
                     countT epochHeLate      = ( ( timeN1 - time1TrueMidpoint                  ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
                     countT epochHeTrue      = ( ( timeN1                                      ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
