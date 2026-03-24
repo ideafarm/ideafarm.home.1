@@ -195,7 +195,7 @@ DONE( tmWorkF )
     TN( tSayName         , "    [name]        :    "     ) ;
     TN( tSayFriendlyName , "    [friendlyName]:    "     ) ;
     TN( tWantCurly       , ""                            ) ;
-    TN( tWantFriendly    , "ideanet-2"                   ) ;
+    TN( tWantFriendly    , !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) ? "ideanet-1" : "ideanet-2" ) ;
     TN( tWantExactName   , ""                            ) ;
     
     TN( tb4 , "    " ) ;
@@ -214,6 +214,16 @@ DONE( tmWorkF )
     stackC stNnApproved2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     stackC stNnApproved1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     stackC stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+
+    }
+        etThread.delF( tin0P , psttLanName ) ;
+        tLanName = T(psttLanName) ;
+        etThread.computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
+        ZE( strokeS* , psttLanName ) ;
+    {
+    TN( tLanName     , ""     ) ;
+    TN( tLanNameWeb2 , "WEB2" ) ;
+    TN( tLanNameWeb1 , "WEB1" ) ;
     
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
@@ -364,7 +374,7 @@ DONE( tmAddAddressF )
             {
             while( stNnRequestedP )
 
-            etThread.osNicOpenF( tin0P , hInterface , T("ideanet-2") ) ;
+            etThread.osNicOpenF( tin0P , hInterface , tWantFriendly ) ;
             handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
         {
         if( stNnRequestedP )
@@ -376,6 +386,18 @@ DONE( tmAddAddressF )
     nicNameC nnRouter1 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::1"  ) ) ;
     TN( tb4 , "    " ) ;
 
+    TN( tWantFriendly , !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) ? "ideanet-1" : "ideanet-2" ) ;
+
+    }
+        etThread.delF( tin0P , psttLanName ) ;
+        tLanName = T(psttLanName) ;
+        etThread.computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
+        ZE( strokeS* , psttLanName ) ;
+    {
+    TN( tLanName     , ""     ) ;
+    TN( tLanNameWeb2 , "WEB2" ) ;
+    TN( tLanNameWeb1 , "WEB1" ) ;
+    
     booksC& bksGeigerP     = *(booksC*)pTaskP->c4 ;
     stackC& stNnApproved2P = *(stackC*)pTaskP->c3 ;
     stackC& stNnApproved1P = *(stackC*)pTaskP->c2 ;
