@@ -39,14 +39,10 @@
     TN( tUnderScore     , "_"       ) ;
     TN( tn              , ""        ) ;
 
-    ideaNetIpv6FieldsS& ipv6FieldsUse = bRouter1 ? ipv6FieldsRouter1P : ipv6FieldsRouter2P ;
-    textC&              tIpv6NowUse   = bRouter1 ?   tIpv6NowRouter1P :   tIpv6NowRouter2P ;
+    ideaNetIpv6FieldsS& ipv6FieldsUse = bTrueP ? ipv6FieldsRouter1P : ipv6FieldsRouter2P ;
+    textC&              tIpv6NowUse   = bTrueP ?   tIpv6NowRouter1P :   tIpv6NowRouter2P ;
 
-bRouter1 = !( idIn % 5 ) ;
-countT idIn = incv02AM( idInLath ) ;
-static countT idInLath ;
-    boolT bRouter1 = 1 == etThread.strIdF( tin0P , T("/ideanet/router1/") , psttNameP ) ; 
-
+    flagsT&             bTrueP             =              *(boolT*)((count9S*)cArgP)->c6 ;
     flagsT&             flagsModeP         =             *(flagsT*)((count9S*)cArgP)->c5 ;
     ideaNetIpv6FieldsS& ipv6FieldsRouter2P = *(ideaNetIpv6FieldsS*)((count9S*)cArgP)->c4 ;
     ideaNetIpv6FieldsS& ipv6FieldsRouter1P = *(ideaNetIpv6FieldsS*)((count9S*)cArgP)->c3 ;
