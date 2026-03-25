@@ -9,7 +9,7 @@
                             
 REST
 
-/**/etRock.traceF( tin0P , T("\r\nA0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+//etRock.traceF( tin0P , T("\r\nA0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 sgnDone_tmWorkF.waitF( tin0P ) ;
 etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK >> 2 ) ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
 signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
@@ -20,7 +20,7 @@ TODO
 
 DONE( tmWorkF )
 }
-    /**/etRock.traceF( tin0P , T("\r\nB0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+    //etRock.traceF( tin0P , T("\r\nB0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
         }
             //etRock.traceF( tin0P , T("\r\nwaited for sgnDone_tmServeHttpF.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
@@ -59,7 +59,8 @@ DONE( tmWorkF )
                                         }
                                             //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                                             time1Signature = 0 ;
-                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just went DOWN, but the router1 channel is still up.":"    The router2 channel just went DOWN, and the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            else         bStfu2 = 1 ;
+                                            if( !bTrue ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just went DOWN, but the router1 channel is still up.":"    The router2 channel just went DOWN, and the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter2 = 0 ;
                                         {
                                         if( bUpRouter2 )
@@ -70,7 +71,8 @@ DONE( tmWorkF )
                                     else
                                     }
                                         }
-                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router1 and router2 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            else          bStfu2 = 0 ;
+                                            if( !bStfu2 ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router1 and router2 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter2 = 1 ;
                                         {
                                         if( !bUpRouter2 )
@@ -112,7 +114,8 @@ DONE( tmWorkF )
                                         }
                                             //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                                             time1Signature = 0 ;
-                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just went DOWN, but the router2 channel is still up.":"    The router1 channel just went DOWN, and the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            else        bStfu1 = 1 ;
+                                            if( bTrue ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just went DOWN, but the router2 channel is still up.":"    The router1 channel just went DOWN, and the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter1 = 0 ;
                                         {
                                         if( bUpRouter1 )
@@ -123,7 +126,8 @@ DONE( tmWorkF )
                                     else
                                     }
                                         }
-                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router1 and router2 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            else          bStfu1 = 0 ;
+                                            if( !bStfu1 ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router1 and router2 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter1 = 1 ;
                                         {
                                         if( !bUpRouter1 )
@@ -195,7 +199,7 @@ DONE( tmWorkF )
                     if( !bUpRouter1 || !bUpRouter2 )
 
                     }
-                        etRock.traceF( tin0P , T("[nnNowRouter2]:    ")+tIpv6NowRouter2 , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                        //etRock.traceF( tin0P , T("[nnNowRouter2]:    ")+tIpv6NowRouter2 , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                         tIpv6NowRouter2 = T(nnNowRouter2) ;                                                                             // P:PERSONALITY: SUBSCRIBER ATTACKER CANNOT FULLY USE HIS WIRE WITHOUT LEAVING HIS SIGNATURE ON THE ATTACK
                         #endif
@@ -215,7 +219,7 @@ DONE( tmWorkF )
                     if( epochHeLateLath != epochHeLate )
 
                     }
-                        etRock.traceF( tin0P , T("[nnNowRouter1]:    ")+tIpv6NowRouter1 , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                        //etRock.traceF( tin0P , T("[nnNowRouter1]:    ")+tIpv6NowRouter1 , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
                         tIpv6NowRouter1 = T(nnNowRouter1) ;                                                                             // P:PERSONALITY: SUBSCRIBER ATTACKER CANNOT FULLY USE HIS WIRE WITHOUT LEAVING HIS SIGNATURE ON THE ATTACK
                         #endif
@@ -240,7 +244,7 @@ DONE( tmWorkF )
                     countT epochHeLate      = ( ( timeN1 - time1TrueMidpoint                  ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
                     countT epochHeTrue      = ( ( timeN1                                      ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
 
-                    etRock.traceF( tin0P , T("[bTrue,time1PerEpoch,time1HeIntoEpoch]:    ")+T(bTrue?"TRUE    ":"LATE    ")+TF3(time1PerEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(time1HeIntoEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                    //etRock.traceF( tin0P , T("[bTrue,time1PerEpoch,time1HeIntoEpoch]:    ")+T(bTrue?"TRUE    ":"LATE    ")+TF3(time1PerEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(time1HeIntoEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                     bTrue = time1HeIntoEpoch > time1LateBegin && time1HeIntoEpoch < time1LateEnd ;                    //P:PERSONALITY: USE THE TRUE CHANNEL IFF (IF AND ONLY IF) NOT CLOSE TO THE TIME OF THE LATH OR THE NEXT CHANGE IN THE TRUE EPOCH ; THIS IS TO AVOID USING A ROUTER WHILE IT IS RELOADING ITS UFW FIREWALL RULES
                     countT time1HeIntoEpoch = timeN1 - ( ( timeN1 >> BITSsHIFTiDEAnETePOCH ) << BITSsHIFTiDEAnETePOCH ) ;
 
@@ -253,6 +257,8 @@ DONE( tmWorkF )
                     ++ idPass ;
                 {
                 while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
+                ZE( boolT , bStfu2 ) ;
+                ZE( boolT , bStfu1 ) ;
                 ZE( countT , time1Signature ) ;
                 const countT time1LateEnd      = 3 * time1LateBegin ;
                 const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
@@ -383,7 +389,7 @@ osTextT postSoulSubDump[ TUCK << 4 ] ;
 
 DONE( tmHearF )
 }
-    /**/etRock.traceF( tin0P , T("\r\nD0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+    //etRock.traceF( tin0P , T("\r\nD0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
         etThread.delF( tin0P , psttUnwanted ) ;
         etThread.delF( tin0P , psttWanted   ) ;
@@ -463,18 +469,18 @@ TASK( tmHearF )
 
 DONE( tmServeHttpF )
 }
-    /**/etRock.traceF( tin0P , T("\r\nE0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+    //etRock.traceF( tin0P , T("\r\nE0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     //THREADmODE2rESTORE0( flagsSave )
     //etRock.traceF( tin0P , T("\r\ntmServeHttpF cleaned up.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
-        /**/etRock.traceF( tin0P , T("\r\nE1\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+        //etRock.traceF( tin0P , T("\r\nE1\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         //THREADmODE2oN0( flTHREADmODE2_UNLOCKpOOLiDENTITY )
         //THREADmODE2sAVE0( flagsSave )
 
         //etRock.traceF( tin0P , T("\r\ntmServeHttpF destroyed server instance.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         }
             //etRock.traceF( tin0P , T("\r\ntmServeHttpF destroying server instance.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
-            /**/etRock.traceF( tin0P , T("\r\nE2\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+            //etRock.traceF( tin0P , T("\r\nE2\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
             }
                 ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
