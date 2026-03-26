@@ -46,7 +46,7 @@ DONE( tmWorkF )
                     #endif
                         if( idPass == 1 )
                     #else
-                        if( bWasDown && bUpRouter2 && bUpRouter1 )
+                        if( bWasDownWhileLive && bUpRouter2 && bUpRouter1 )
                     #if !defined( DUMMYsUB )
 
                     }
@@ -244,6 +244,12 @@ DONE( tmWorkF )
                     countT epochHeLate      = ( ( timeN1 - time1TrueMidpoint                  ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
                     countT epochHeTrue      = ( ( timeN1                                      ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
 
+                    ;
+                        ( !bTrue && !bUpRouter2 )
+                        ||
+                        ( bTrue && !bUpRouter1 )
+                    const boolT bWasDownWhileLive =
+
                     //etRock.traceF( tin0P , T("[bTrue,time1PerEpoch,time1HeIntoEpoch]:    ")+T(bTrue?"TRUE    ":"LATE    ")+TF3(time1PerEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(time1HeIntoEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                     bTrue = time1HeIntoEpoch > time1LateBegin && time1HeIntoEpoch < time1LateEnd ;                    //P:PERSONALITY: USE THE TRUE CHANNEL IFF (IF AND ONLY IF) NOT CLOSE TO THE TIME OF THE LATH OR THE NEXT CHANGE IN THE TRUE EPOCH ; THIS IS TO AVOID USING A ROUTER WHILE IT IS RELOADING ITS UFW FIREWALL RULES
                     countT time1HeIntoEpoch = timeN1 - ( ( timeN1 >> BITSsHIFTiDEAnETePOCH ) << BITSsHIFTiDEAnETePOCH ) ;
@@ -251,8 +257,6 @@ DONE( tmWorkF )
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
                     ZE( countT  , timeN1 ) ;
-
-                    const boolT bWasDown = !bUpRouter1 /*|| !bUpRouter2*/ ;
 
                     ++ idPass ;
                 {
