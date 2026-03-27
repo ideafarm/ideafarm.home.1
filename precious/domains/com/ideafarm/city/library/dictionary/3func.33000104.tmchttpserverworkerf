@@ -61,6 +61,7 @@ DONE( tmcHttpServerWorkerF )
                                 TN( tb4 , "    " ) ;
                                 _IO_
                             {
+                            if( !bQuitP && !bAbortP )
                             etThread.osTimeNowF( tin0P , jobP.timeDoJob1 , jobP.timeDoJob2 ) ;
 
                             _IO_
@@ -185,8 +186,8 @@ DONE( tmcHttpServerWorkerF )
 
     countT& cWorkerP = *(countT*)pTaskP->c4 ;
     stackC& stJobP   = *(stackC*)pTaskP->c3 ;
-//boolT&  bAbortP  = *(countT*)pTaskP->c2 ;
-//countT& bQuitP   = *(countT*)pTaskP->c1 ;
+    boolT&  bAbortP  = *(countT*)pTaskP->c2 ;
+    countT& bQuitP   = *(countT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 
