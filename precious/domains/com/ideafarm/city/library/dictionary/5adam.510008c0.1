@@ -42,11 +42,13 @@ DONE( tmWorkF )
                         // "If the function succeeds, it returns a value greater than 32."  (https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
                         etRock.traceF( tin0P , T("Opening your browser...\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                         //CS:CODEsYNC: 510008c0 510008c0
+
+                        bOpenBrowserWhenUpUp = 0 ;
                     {
                     #endif
                         if( idPass == 1 )
                     #else
-                        if( bWasDownWhileLive && bUpRouter2 && bUpRouter1 )
+                        if( bOpenBrowserWhenUpUp && bUpRouter1 && bUpRouter2 )
                     #if !defined( DUMMYsUB )
 
                     }
@@ -79,7 +81,7 @@ DONE( tmWorkF )
                                         //etRock.traceF( tin0P , T("stomp! (router2) aok [idStompRouter2                    ]:    ")+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                     {
                                     if( !POOP )
-                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK >> 0 ) ; ___( posti ) ;
+                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 1 ) ; ___( posti ) ;
                                     ZE( countT   , costi ) ;
                                     ZE( osTextT* , posti ) ;
                                     //etRock.traceF( tin0P ,     T("stomp! (router2) begin [idStompRouter2,url              ]:    ")+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
@@ -134,7 +136,7 @@ DONE( tmWorkF )
                                         //etRock.traceF( tin0P , T("stomp! (router1) aok   [epochMeUseTrue,idStompRouter1         ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                     {
                                     if( !POOP )
-                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK >> 0 ) ; ___( posti ) ;
+                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 1 ) ; ___( posti ) ;
                                     ZE( countT   , costi ) ;
                                     ZE( osTextT* , posti ) ;
                                     //etRock.traceF( tin0P ,     T("stomp! (router1) begin [epochMeUseTrue,idStompRouter1,url     ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
@@ -244,11 +246,11 @@ DONE( tmWorkF )
                     countT epochHeLate      = ( ( timeN1 - time1TrueMidpoint                  ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
                     countT epochHeTrue      = ( ( timeN1                                      ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
 
-                    ;
-                        ( !bTrue && !bUpRouter2 )
-                        ||
-                        ( bTrue && !bUpRouter1 )
-                    const boolT bWasDownWhileLive =
+                    //;
+                    //    ( !bTrue && !bUpRouter2 )
+                    //    ||
+                    //    ( bTrue && !bUpRouter1 )
+                    //const boolT bWasDownWhileLive =
 
                     //etRock.traceF( tin0P , T("[bTrue,time1PerEpoch,time1HeIntoEpoch]:    ")+T(bTrue?"TRUE    ":"LATE    ")+TF3(time1PerEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(time1HeIntoEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                     bTrue = time1HeIntoEpoch > time1LateBegin && time1HeIntoEpoch < time1LateEnd ;                    //P:PERSONALITY: USE THE TRUE CHANNEL IFF (IF AND ONLY IF) NOT CLOSE TO THE TIME OF THE LATH OR THE NEXT CHANGE IN THE TRUE EPOCH ; THIS IS TO AVOID USING A ROUTER WHILE IT IS RELOADING ITS UFW FIREWALL RULES
@@ -261,6 +263,7 @@ DONE( tmWorkF )
                     ++ idPass ;
                 {
                 while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
+                boolT bOpenBrowserWhenUpUp = 1 ;
                 ZE( boolT , bStfu2 ) ;
                 ZE( boolT , bStfu1 ) ;
                 ZE( countT , time1Signature ) ;
