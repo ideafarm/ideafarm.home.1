@@ -10,16 +10,16 @@
 DONE( tmcHttpServerWorkerF )
 
 }
-    /**/etRock.traceF( tin0P , T("U:: / 0 / [cSession]:    ")+TF2(*p_cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+    if( p_cSession ) /*;*/etRock.traceF( tin0P , T("U:: / 0 / [cSession]:    ")+TF2(*p_cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
     dec02AM( cWorkerP ) ;
     etThread.osThreadSwitchingDesireF( tin0P , idDesireOld ) ;
 
     }
-        /**/etRock.traceF( tin0P , T("U:: / 1 / [cSession]:    ")+TF2(*p_cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+        if( p_cSession ) /*;*/etRock.traceF( tin0P , T("U:: / 1 / [cSession]:    ")+TF2(*p_cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
         }
-            /**/etRock.traceF( tin0P , T("U:: / 2 / [cSession]:    ")+TF2(*p_cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+            if( p_cSession ) /*;*/etRock.traceF( tin0P , T("U:: / 2 / [cSession]:    ")+TF2(*p_cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
             }
                 }
@@ -152,7 +152,7 @@ if( !p_cSession ) p_cSession = &jobP.cSession ;
             else
             }
                 break ;
-                bDone = 1 ;
+                if( bQuitP || bAbortP ) bDone = 1 ;
                 stJobP.ungrabF( tin0P ) ;
                 /**/etRock.traceF( tin0P , T("ungrabbing stJobP because empty") ) ;
             {
@@ -162,7 +162,6 @@ if( !p_cSession ) p_cSession = &jobP.cSession ;
             stJobP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
         for(;;)
-//while( !bQuitP && !bAbortP )
 
         /**/etRock.traceF( tin0P , T("waited for a push to stJobP") ) ;
         stJobP.waitF( tin0P ) ;
@@ -170,7 +169,6 @@ if( !p_cSession ) p_cSession = &jobP.cSession ;
     {
     while( !bDone )
     ZE( boolT , bDone ) ;
-//while( !bQuitP && !bAbortP )
 
     nicNameC nnGorillaOuterOk1 = socketC::nicNameIF( tin0P , etThread , tNnGorillaOuter ) ;
 
