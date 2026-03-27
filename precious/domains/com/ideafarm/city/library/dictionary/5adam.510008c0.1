@@ -73,8 +73,8 @@ DONE( tmWorkF )
                                     else
                                     }
                                         }
-                                            else          bStfu2 = 0 ;
-                                            if( !bStfu2 ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router1 and router2 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            else                                  bStfu2 = 0 ;
+                                            if( !bStfu2 || bOpenBrowserWhenUpUp ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router1 and router2 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter2 = 1 ;
                                         {
                                         if( !bUpRouter2 )
@@ -128,8 +128,8 @@ DONE( tmWorkF )
                                     else
                                     }
                                         }
-                                            else          bStfu1 = 0 ;
-                                            if( !bStfu1 ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router1 and router2 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            else                                  bStfu1 = 0 ;
+                                            if( !bStfu1 || bOpenBrowserWhenUpUp ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router1 and router2 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter1 = 1 ;
                                         {
                                         if( !bUpRouter1 )
@@ -263,7 +263,7 @@ DONE( tmWorkF )
                     ++ idPass ;
                 {
                 while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
-                boolT bOpenBrowserWhenUpUp = 1 ;
+                boolT bOpenBrowserWhenUpUp = 1 ;                                                                            // WILL ALSO BE USED TO INDICATE "EARLY"
                 ZE( boolT , bStfu2 ) ;
                 ZE( boolT , bStfu1 ) ;
                 ZE( countT , time1Signature ) ;
