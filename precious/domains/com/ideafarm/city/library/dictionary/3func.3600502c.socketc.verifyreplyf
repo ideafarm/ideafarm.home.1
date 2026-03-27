@@ -8,36 +8,39 @@
 
 
 }
+    return rcActual ;
+
     dec02AM( cFunctionsPending ) ;
     }
         pEther->delF( tin0P , psttReply ) ;
         }
             __1
-            __( rc ) ;
+            __( rcActual ) ;
     
             //LOGrAW( tSay ) ;
             CONoUTrAW( tSay ) ;
             //
             TN( tSay , "" ) ; tSay = T("\r\nunexpected telnet reply: \"")+T(psttReply)+T("\"\r\n") ;
         {
-        else if( rcP != rc )
+        else if( rcP != rcActual )
         }
             pEther->delF( tin0P , psttw ) ;
             pEther->strokeF( tin0P , T(psttw)+T(" :::: ")+T(psttReply) ) ;
-            pEther->strFromF( tin0P , psttw , rc ) ; ___( psttw ) ;
+            pEther->strFromF( tin0P , psttw , rcActual ) ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
         {
         if( rcP == -1 )
 
-        //pEther->traceF( tin0P , T("[reply]: ")+T(psttReply) ) ;
+        /**/pEther->traceF( tin0P , T("[rc,reply]:    ")+TF2(rcActual,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttReply) ) ;
+        /**/TN( tb4 , "    " ) ;
 
-        countT rc = readWoReplyF( tin0P , psttReply , csttEstimateP ) ; ___( psttReply ) ;
+        rcActual = readWoReplyF( tin0P , psttReply , csttEstimateP ) ; ___( psttReply ) ;
         ZE( strokeS* , psttReply ) ;
         _IO_
     
         }
             }
-                return ;
+                return 0 ;
                 dec02AM( cFunctionsPending ) ;
             {
             if( POOP )
@@ -46,8 +49,9 @@
         SCOOPP
     {
     inc02AM( cFunctionsPending ) ;
+    ZE( countT , rcActual ) ;
 {
-/*1*/voidT socketC::verifyReplyF( tin0S& tin0P , const countT rcP , countT csttEstimateP )/*1*/
+/*1*/countT socketC::verifyReplyF( tin0S& tin0P , const countT rcP , countT csttEstimateP )/*1*/
 
 /**/
 */

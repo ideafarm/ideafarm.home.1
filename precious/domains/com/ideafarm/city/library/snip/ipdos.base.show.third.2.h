@@ -36273,7 +36273,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34018.socketC.readMsgOkF!||
  voidT readMsgNokF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34019.socketC.readMsgNokF!||
- voidT verifyReplyF( tin0S& tin0P , const countT rcP , countT csttEstimateP = 0 ) ;
+ countT verifyReplyF( tin0S& tin0P , const countT rcP , countT csttEstimateP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3402c.socketC.verifyReplyF!||
 
 /* operators */
