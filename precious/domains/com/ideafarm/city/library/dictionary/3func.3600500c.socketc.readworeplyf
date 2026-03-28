@@ -34,7 +34,7 @@
                         replyCode = pEther->strDigitsToSCountF( tin0P , T(postLine) , 0xa , 1 ) ;
                         postLine[ 3 ] = 0 ;
                     {
-                    if( postLine[ 3 ] == ' ' )
+                    if( postLine[ 3 ] == ' ' || postLine[ 3 ] == '-' )                                  //20260327@1731: ADDED '-' BECAUSE SMTP2GO.COM STARTED PUTTING A '-' THERE
 
                     offo = 0 ;
                     pEther->strFuseF( tin0P , psttP , T(postLine) ) ;
