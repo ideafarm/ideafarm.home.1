@@ -18,17 +18,60 @@ DONE( tmWorkF )
 }
     etherC::loafIF( tin0P ) ;
 
+#endif
+
+#if defined( NEVERdEFINED )
+
+
+    emailSendNowF( tin0P , etThread , soulEmail ) ;
+    emailComposeF( tin0P , etThread , soulEmail , T("mySubject") , T("myBody") , T("IDEAFARM.COM <factories@ideafarm.com>") , T("Foo <foo@ideafarm.com>") , pstt1To ) ;
+
+    etThread.strFuseSeparateF( tin0P , pstt1To , T("Me2 <me2@ideafarm.com>") ) ;
+    etThread.strFuseSeparateF( tin0P , pstt1To , T("Me1 <me1@ideafarm.com>") ) ;
+    etThread.strMakeF( tin0P , LF , pstt1To , 0 , TUCK << 4 ) ; ___( pstt1To ) ;
+    ZE( strokeS* , pstt1To ) ;
+
+    soulC soulEmail( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+{
+if( pTaskP )
+TASK( tmWorkF )
+
+
+
+}
+    soulP << pstt1BccP    ;
+    soulP << pstt1CcP     ;
+    soulP << pstt1ToP     ;
+    soulP << psttReplyToP ;
+    soulP << psttFromP    ;
+    soulP << psttBodyP    ;
+    soulP << psttSubjectP ;
+
+    }
+        if( POOP ) return ;
+        __( !pstt1ToP && !pstt1CcP && !pstt1BccP ) ;
+        __Z( psttBodyP ) ;
+        __Z( psttSubjectP ) ;
+        __Z( psttFromP ) ;
+        __( soulP ) ;
+        if( POOP ) return ;
+    {
+    IFbEcAREFUL
+{
+voidT emailComposeF( tin0S& tin0P , etherC& etherP , soulC& soulP , const strokeS* const psttSubjectP , const strokeS* const psttBodyP , const strokeS* const psttFromP , const strokeS* const psttReplyToP , const strokeS* const pstt1ToP = 0 , const strokeS* const pstt1CcP = 0 , const strokeS* const pstt1BccP = 0 )
+
+}
     DEL( pSwPathValue ) ;
     }
         }
-            etThread.delF( tin0P , psttValue ) ;
+            etherP.delF( tin0P , psttValue ) ;
     
             }
                 }
                     etRock.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] ) ;
                     *pptValue[ offe ] = T(psttValue) ;
                 {
-                if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                if( !etherP.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
             {
             for( countT offe = 0 ; offe < cPaths ; offe ++ )
     
@@ -169,45 +212,158 @@ DONE( tmWorkF )
 
     countT costBody = tBody.csF( tin0P ) ;
 
+    etherP.delF( tin0P , pstt1Bcc    ) ;
+    etherP.delF( tin0P , pstt1Cc     ) ;
+    etherP.delF( tin0P , pstt1To     ) ;
+    etherP.delF( tin0P , psttFrom    ) ;
+    etherP.delF( tin0P , psttBody    ) ;
+    etherP.delF( tin0P , psttSubject ) ;
+
+    tBody += T("}\r\n") ;
+
+    }
+        ) ;
+
+            "    ]\r\n"
+            "        }\r\n"
+            "            \"mimetype\": \"application/text\"\r\n"                                                                            // application/zip
+            "            \"fileblob\": \"VGhhbmsgeW91LCBKZXN1cywgZm9yIGNvbWluZyB0byB0ZWFjaCB1cyBob3cgdG8gbGl2ZSE=\",\r\n"
+            "            \"filename\": \"foo.txt\",\r\n"
+            "        {\r\n"
+            "    [\r\n"
+            "    \"attachments\":\r\n"
+
+        tBody += T(
+    {
+    if( soulP )
+
+    }
+        else         tBody += T(",\r\n") ;
+        if( !soulP ) tBody += T("\r\n") ;
+
+        ) ;
+
+            "    ]"
+            "        }\r\n"
+            "            \"value\": \"")+T(psttReplyTo)+T("\"\r\n"
+            "            \"header\": \"Reply-To\",\r\n"
+            "        {\r\n"
+            "    [\r\n"
+            "    \"custom_headers\":\r\n"
+
+        tBody += T(
+    {
+    if( psttReplyTo )
+
+    else                         tBody += T(",\r\n") ;
+    if( !psttReplyTo && !soulP ) tBody += T("\r\n") ;
+
     ) ;
     
-        "}\r\n"
-        "    ]\r\n"
-        "        }\r\n"
-        "            \"mimetype\": \"application/text\"\r\n"                                                                            // application/zip
-        "            \"fileblob\": \"VGhhbmsgeW91LCBKZXN1cywgZm9yIGNvbWluZyB0byB0ZWFjaCB1cyBob3cgdG8gbGl2ZSE=\",\r\n"
-        "            \"filename\": \"foo.txt\",\r\n"
-        "        {\r\n"
-        "    [\r\n"
-        "    \"attachments\":\r\n"
-        "    ],\r\n"
-        "        }\r\n"
-        "            \"value\": \"support@ideafarm.com\"\r\n"
-        "            \"header\": \"Reply-To\",\r\n"
-        "        {\r\n"
-        "    [\r\n"
-        "    \"custom_headers\":\r\n"
-        "    \"html_body\": \"Thank you, Jesus, for coming to teach us how to live!\",\r\n"
-        "    \"subject\": \"fiddle\",\r\n"
-        "    \"to\": [\"Wo <wo@ideafarm.com>\"],\r\n"
-        "    \"sender\": \"IDEAFARM.COM <factories@ideafarm.com>\",\r\n"
+        "    \"html_body\": \"")+T(psttBody)+T("\""
+        "    \"subject\": \"")+T(psttSubject)+T("\",\r\n"
+    
+    tBody += T(
+
+    }
+        }
+            tBody += T("],\r\n") ;
+            }
+                tBody += T("\"")+T(psttc1)+T("\"") ;
+                else        tBody += T(",") ;
+                if( bWoth ) bWoth = 0 ;
+            {
+            FORsTRINGSiN1( pstt1Bcc )
+            boolT bWoth = 1 ;
+            tBody += T("    \"bcc\": [") ;
+        {
+        else
+        if( !ISsTRINGoFsTRINGS( pstt1Bcc ) ) tBody += T("    \"bcc\": [\"")+T(pstt1Bcc)+T("\"],\r\n") ;
+    {
+    if( pstt1Bcc )
+
+    }
+        }
+            tBody += T("],\r\n") ;
+            }
+                tBody += T("\"")+T(psttc1)+T("\"") ;
+                else        tBody += T(",") ;
+                if( bWoth ) bWoth = 0 ;
+            {
+            FORsTRINGSiN1( pstt1Cc )
+            boolT bWoth = 1 ;
+            tBody += T("    \"cc\": [") ;
+        {
+        else
+        if( !ISsTRINGoFsTRINGS( pstt1Cc  ) ) tBody += T("    \"cc\": [\"")+T(pstt1Cc)+T("\"],\r\n") ;
+    {
+    if( pstt1Cc )
+
+    }
+        }
+            tBody += T("],\r\n") ;
+            }
+                tBody += T("\"")+T(psttc1)+T("\"") ;
+                else        tBody += T(",") ;
+                if( bWoth ) bWoth = 0 ;
+            {
+            FORsTRINGSiN1( pstt1To )
+            boolT bWoth = 1 ;
+            tBody += T("    \"to\": [") ;
+        {
+        else
+        if( !ISsTRINGoFsTRINGS( pstt1To  ) ) tBody += T("    \"to\": [\"")+T(pstt1To)+T("\"],\r\n") ;
+    {
+    if( pstt1To )
+
+    ) ;
+        
+        "    \"sender\": \"")+T(psttFrom)+T("\",\r\n"
         "    \"fastaccept\": true,\r\n"
         "    \"api_key\": \"")+tApiKey+T("\",\r\n"
         "{\r\n"
     
     TN( tBody , "" ) ; tBody = T(
 
+    soulP >>       pstt1Bcc      ;
+    ZE( strokeS* , pstt1Bcc    ) ;
+
+    soulP >>       pstt1Cc       ;
+    ZE( strokeS* , pstt1Cc     ) ;
+
+    soulP >>       pstt1To       ;
+    ZE( strokeS* , pstt1To     ) ;
+
+    soulP >>       psttReplyTo   ;
+    ZE( strokeS* , psttReplyTo ) ;
+
+    soulP >>       psttFrom      ;
+    ZE( strokeS* , psttFrom    ) ;
+
+    soulP >>       psttBody      ;
+    ZE( strokeS* , psttBody    ) ;
+
+    soulP >>       psttSubject   ;
+    ZE( strokeS* , psttSubject ) ;
+
     }
         etRock.traceF( tin0P , T("[tApiKey]:    ")+tApiKey ) ;
-        etThread.delF( tin0P , pstts ) ;
+        etherP.delF( tin0P , pstts ) ;
         if( pstts && pstts->idAdam ) tApiKey = T(pstts) ;
 
-        ZE( strokeS* , pstts ) ; etThread.querySettingF( tin0P , pstts , T("!ipdos.smtp2go.api.key" ) ) ; ___( pstts ) ;
+        ZE( strokeS* , pstts ) ; etherP.querySettingF( tin0P , pstts , T("!ipdos.smtp2go.api.key" ) ) ; ___( pstts ) ;
     {
     TN( tApiKey , "" ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    }
+        if( POOP ) return ;
+        __( soulP < 7 ) ;
+        if( POOP ) return ;
+    {
+    IFbEcAREFUL
 {
-if( pTaskP )
-TASK( tmWorkF )
+voidT emailSendNowF( tin0S& tin0P , etherC& etherP , soulC& soulP )
 
 /*1*/WAKEhIDE( "doodle.smtp2go.send.email.via.api" )/*1*/
 /**/
