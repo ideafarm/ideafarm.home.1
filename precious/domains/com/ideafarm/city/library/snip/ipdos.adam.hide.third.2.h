@@ -35345,7 +35345,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021df.etherc.strfilematchf!||
  voidT strEncodeBlobToRFC4648F( tin0S& tin0P , strokeS*& psttP , const byteT* pbP , const countT cbP ) ;
  voidT strDecodeBlobFromRFC4648F( tin0S& tin0P , byteT*& pbP , countT& cbP , const strokeS* const psttP ) ;
- countT strMimeEncodeF( tin0S& tin0P , osTextT*& postP , const byteT* const pbP , const countT cbP ) ;
+ countT strMimeEncodeF( tin0S& tin0P , osTextT*& postP , const byteT* const pbP , const countT cbP , countT costLineMaxP = 0 ) ;
 
 /* stroke string specifications a.k.a. regular expressions */
  boolT sssTestF( tin0S& tin0P , boolT& bDoNotAdvanceBigP , const strokeS* const psttSmallP , const strokeS* const psttBigP , const countT idsDoP , countT& idbDoP , const strokeS* const psttBlackP , const strokeS* const psttPunctuationP ) ;

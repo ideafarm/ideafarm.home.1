@@ -18,15 +18,12 @@ DONE( tmWorkF )
 }
     etherC::loafIF( tin0P ) ;
 
-#endif
-
-#if defined( NEVERdEFINED )
-
-
     emailSendNowF( tin0P , etThread , soulEmail ) ;
-    emailComposeF( tin0P , etThread , soulEmail , T("mySubject") , T("myBody") , T("IDEAFARM.COM <factories@ideafarm.com>") , T("Foo <foo@ideafarm.com>") , pstt1To ) ;
+    emailAttachF(  tin0P , etThread , soulEmail , T("goo.ttt") , T("application/text") , "ijklmnop" , 8 ) ;
+    emailAttachF(  tin0P , etThread , soulEmail , T("foo.ttt") , T("application/text") , "abcdefgh" , 8 ) ;
+    emailComposeF( tin0P , etThread , soulEmail , T("mySubject") , T("myBody") , T("IDEAFARM.COM <factories@ideafarm.com>") , 0/*T("Foo <foo@ideafarm.com>")*/ , pstt1To ) ;
 
-    etThread.strFuseSeparateF( tin0P , pstt1To , T("Me2 <me2@ideafarm.com>") ) ;
+    //etThread.strFuseSeparateF( tin0P , pstt1To , T("Me2 <me2@ideafarm.com>") ) ;
     etThread.strFuseSeparateF( tin0P , pstt1To , T("Me1 <me1@ideafarm.com>") ) ;
     etThread.strMakeF( tin0P , LF , pstt1To , 0 , TUCK << 4 ) ; ___( pstt1To ) ;
     ZE( strokeS* , pstt1To ) ;
@@ -35,8 +32,6 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
-
-
 
 }
     soulP << pstt1BccP    ;
@@ -59,6 +54,24 @@ TASK( tmWorkF )
     IFbEcAREFUL
 {
 voidT emailComposeF( tin0S& tin0P , etherC& etherP , soulC& soulP , const strokeS* const psttSubjectP , const strokeS* const psttBodyP , const strokeS* const psttFromP , const strokeS* const psttReplyToP , const strokeS* const pstt1ToP = 0 , const strokeS* const pstt1CcP = 0 , const strokeS* const pstt1BccP = 0 )
+
+}
+    soulP.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_byteTptr , pbP , cbP ) ;
+    soulP << psttMimeTypeP ;
+    soulP << psttShortP    ;
+
+    }
+        if( POOP ) return ;
+        __Z( cbP ) ;
+        __Z( pbP ) ;
+        __Z( psttMimeTypeP ) ;
+        __Z( psttShortP ) ;
+        __( soulP < 7 ) ;
+        if( POOP ) return ;
+    {
+    IFbEcAREFUL
+{
+voidT emailAttachF( tin0S& tin0P , etherC& etherP , soulC& soulP , const strokeS* const psttShortP , const strokeS* const psttMimeTypeP , const byteT* const pbP , const countT cbP )
 
 }
     DEL( pSwPathValue ) ;
@@ -225,17 +238,58 @@ voidT emailComposeF( tin0S& tin0P , etherC& etherP , soulC& soulP , const stroke
         ) ;
 
             "    ]\r\n"
-            "        }\r\n"
-            "            \"mimetype\": \"application/text\"\r\n"                                                                            // application/zip
-            "            \"fileblob\": \"VGhhbmsgeW91LCBKZXN1cywgZm9yIGNvbWluZyB0byB0ZWFjaCB1cyBob3cgdG8gbGl2ZSE=\",\r\n"
-            "            \"filename\": \"foo.txt\",\r\n"
-            "        {\r\n"
+
+        tBody += T(
+
+        }
+            etherP.delF( tin0P , pbi          ) ;
+            etherP.delF( tin0P , psttMimeType ) ;
+            etherP.delF( tin0P , psttShort    ) ;
+
+            }
+                etherP.delF( tin0P , postMime ) ;
+                ) ;
+
+                    "        }\r\n"
+                    "            \"fileblob\": \"")+T(postMime)+T("\"\r\n"
+                    "            \"mimetype\": \"")+T(psttMimeType)+T("\",\r\n"
+                    "            \"filename\": \"")+T(psttShort)+T("\",\r\n"
+
+                tBody += T(
+
+                }
+                    tBody += T("        {\r\n") ;
+                    bWoth = 0 ;
+                {
+                else
+                if( !bWoth ) tBody += T("        ,{\r\n") ;
+
+                countT costMime = etherP.strMimeEncodeF( tin0P , postMime , pbi , cbi , -1 ) ; ___( postMime ) ;
+                ZE( osTextT* , postMime ) ;
+            {
+            if( pbi && cbi )
+
+            soulP.shiftRightF( tin0P , pbi , cbi , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbi ) ;
+            ZE( countT , cbi ) ;
+            ZE( byteT* , pbi ) ;
+
+            soulP >> psttMimeType ;
+            ZE( strokeS* , psttMimeType ) ;
+
+            soulP >> psttShort ;
+            ZE( strokeS* , psttShort ) ;
+        {
+        while( soulP )
+        boolT bWoth = 1 ;
+
+        ) ;
+
             "    [\r\n"
             "    \"attachments\":\r\n"
 
         tBody += T(
     {
-    if( soulP )
+    if( soulP )                                             //U::O: USE osTextT, NOT strokeS, FOR THIS BLOCK, TO AVOID SLOW PROCESSING OF postMime
 
     }
         else         tBody += T(",\r\n") ;
@@ -364,6 +418,8 @@ voidT emailComposeF( tin0S& tin0P , etherC& etherP , soulC& soulP , const stroke
     IFbEcAREFUL
 {
 voidT emailSendNowF( tin0S& tin0P , etherC& etherP , soulC& soulP )
+
+
 
 /*1*/WAKEhIDE( "doodle.smtp2go.send.email.via.api" )/*1*/
 /**/

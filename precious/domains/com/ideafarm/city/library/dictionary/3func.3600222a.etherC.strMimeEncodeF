@@ -16,15 +16,19 @@
     }
         __( offo - costa ) ;
         postP[ offo ++ ] = 0 ;
-        postP[ offo ++ ] = '\n' ;
-        postP[ offo ++ ] = '\r' ;
+        }
+            postP[ offo ++ ] = '\n' ;
+            postP[ offo ++ ] = '\r' ;
+        {
+        if( !bRaw )
+
         }
             postP[ offo ++ ] = postoRaw[ offi ] ;
             }
                 postP[ offo ++ ] = '\n' ;
                 postP[ offo ++ ] = '\r' ;
             {
-            if( offi && !( offi % 76 ) )
+            if( !bRaw && offi && !( offi % costLineMaxP ) )
         {
         for( countT offi = 0 ; offi < costoRaw ; offi ++ )
     {
@@ -33,7 +37,7 @@
     newF( tin0P , LF , postP , costa ) ; ___( postP ) ;
     countT costa = costoRaw + 1 + ( cCRLF << 1 ) ;
 
-    countT cCRLF = 1 + costoRaw / 76 ;      // RFC 2045 LINE LENGTH LIMIT
+    countT cCRLF = bRaw ? 0 : 1 + costoRaw / costLineMaxP ;      // RFC 2045 LINE LENGTH LIMIT
 
     traceF( tin0P , T("strMimeEncodeF / got     [costoRaw,tLongMappedOut]:    ")+TF2(costoRaw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongMappedOut ) ;
     boxGetShadowF( tin0P , postoRaw , costoRaw , tLongMappedOut ) ; ___( postoRaw ) ;               //U:: IN PRODUCTION, USE boxGetF
@@ -103,6 +107,9 @@
 
     TN( tb4 , "    " ) ;
 
+    const boolT bRaw = costLineMaxP == - 1 ;
+    if( !costLineMaxP ) costLineMaxP = 76 ;
+
     }
         if( POOP ) return 0 ;
         __Z( cbP ) ;
@@ -112,7 +119,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/countT etherC::strMimeEncodeF( tin0S& tin0P , osTextT*& postP , const byteT* const pbP , const countT cbP )/*1*/
+/*1*/countT etherC::strMimeEncodeF( tin0S& tin0P , osTextT*& postP , const byteT* const pbP , const countT cbP , countT costLineMaxP )/*1*/
 
 // 
 //  RFC 4648
@@ -120,6 +127,14 @@
 
 /**/
 */
+  any other value: line length will be limited to that value
+  -1: no formatting is done
+  0: defaults to 79
+ costLineMaxP
+ cbP
+ pbP
+parameters
+i obtain a mime base64 encoding, optionally formatted to obey the RFC 4648 line length limit
 /*
 
 //
