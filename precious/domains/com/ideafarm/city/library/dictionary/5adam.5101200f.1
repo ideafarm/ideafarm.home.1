@@ -19,8 +19,9 @@ DONE( tmWorkF )
     etherC::loafIF( tin0P ) ;
 
     emailSendNowF( tin0P , etThread , soulEmail ) ;
-    emailAttachF(  tin0P , etThread , soulEmail , T("goo.ttt") , T("application/text") , "ijklmnop" , 8 ) ;
-    emailAttachF(  tin0P , etThread , soulEmail , T("foo.ttt") , T("application/text") , "abcdefgh" , 8 ) ;
+    emailAttachF(  tin0P , etThread , soulEmail , T("tick.ttt") , T("application/text") , pbTick , sizeof pbTick ) ;
+    //emailAttachF(  tin0P , etThread , soulEmail , T("goo.ttt") , T("application/text") , "ijklmnop" , 8 ) ;
+    //emailAttachF(  tin0P , etThread , soulEmail , T("foo.ttt") , T("application/text") , "abcdefgh" , 8 ) ;
     emailComposeF( tin0P , etThread , soulEmail , T("mySubject") , T("myBody") , T("IDEAFARM.COM <factories@ideafarm.com>") , 0/*T("Foo <foo@ideafarm.com>")*/ , pstt1To ) ;
 
     //etThread.strFuseSeparateF( tin0P , pstt1To , T("Me2 <me2@ideafarm.com>") ) ;
@@ -32,6 +33,8 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+byteT pbTick[ TICK ] ;
 
 }
     soulP << pstt1BccP    ;
@@ -120,6 +123,7 @@ voidT emailAttachF( tin0S& tin0P , etherC& etherP , soulC& soulP , const strokeS
     {
     if( pSwPathValue )
 
+    etherP.delF( tin0P , postBody ) ;
     }        
         }
             }
@@ -172,8 +176,9 @@ voidT emailAttachF( tin0S& tin0P , etherC& etherP , soulC& soulP , const strokeS
                     countT rc = POOP ;
                 {
                 if( POOP )
-                psoGo->writeF( tin0P , (osTextT*)tSay ) ;
-                //etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                psoGo->writeF( tin0P , postBody             , costBody                ) ;
+                psoGo->writeF( tin0P , (osTextT*)tSayPrefix , tSayPrefix.csF( tin0P ) ) ;
+                //etRock.traceF( tin0P , tSayPrefix , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                 //etRock.traceF( tin0P , T("request:") ) ;
             
                 //******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -219,186 +224,213 @@ voidT emailAttachF( tin0S& tin0P , etherC& etherP , soulC& soulP , const strokeS
     TN( tValueFoo , "" ) ;
     TN( tPathFoo , "fookey" ) ;
 
-    etRock.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etRock.traceF( tin0P , tSayPrefix , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
-    TN( tSay , "" ) ; tSay = T("POST /v3/email/send HTTP/1.1\r\nHost: api.smtp2go.com\r\nContent-Type: application/json\r\naccept: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
-
-    countT costBody = tBody.csF( tin0P ) ;
-
-    etherP.delF( tin0P , pstt1Bcc    ) ;
-    etherP.delF( tin0P , pstt1Cc     ) ;
-    etherP.delF( tin0P , pstt1To     ) ;
-    etherP.delF( tin0P , psttFrom    ) ;
-    etherP.delF( tin0P , psttBody    ) ;
-    etherP.delF( tin0P , psttSubject ) ;
-
-    tBody += T("}\r\n") ;
+    TN( tSayPrefix , "" ) ; tSayPrefix = T("POST /v3/email/send HTTP/1.1\r\nHost: api.smtp2go.com\r\nContent-Type: application/json\r\naccept: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
 
     }
-        ) ;
+        CONoUTrAW( "\r\n" ) ;
+        CONoUTrAW( postBody ) ;
+        CONoUTrAW( "\r\n" ) ;
 
-            "    ]\r\n"
+        costBody = thirdC::c_strlenIF( tin0P , postBody ) ;
 
-        tBody += T(
+        etherP.delF( tin0P , pstt1Bcc    ) ;
+        etherP.delF( tin0P , pstt1Cc     ) ;
+        etherP.delF( tin0P , pstt1To     ) ;
+        etherP.delF( tin0P , psttFrom    ) ;
+        etherP.delF( tin0P , psttEmailBody    ) ;
+        etherP.delF( tin0P , psttSubject ) ;
 
         }
-            etherP.delF( tin0P , pbi          ) ;
-            etherP.delF( tin0P , psttMimeType ) ;
-            etherP.delF( tin0P , psttShort    ) ;
-
             }
-                etherP.delF( tin0P , postMime ) ;
-                ) ;
-
-                    "        }\r\n"
-                    "            \"fileblob\": \"")+T(postMime)+T("\"\r\n"
-                    "            \"mimetype\": \"")+T(psttMimeType)+T("\",\r\n"
-                    "            \"filename\": \"")+T(psttShort)+T("\",\r\n"
-
-                tBody += T(
+                thirdC::c_strcatIF( tin0P , postBody , "    ]\r\n}\r\n" ) ;
 
                 }
-                    tBody += T("        {\r\n") ;
-                    bWoth = 0 ;
+                    etherP.delF( tin0P , pbi          ) ;
+                    etherP.delF( tin0P , psttMimeType ) ;
+                    etherP.delF( tin0P , psttShort    ) ;
+
+                    }
+                        etherP.delF( tin0P , postMime ) ;
+
+                        ) ;
+
+                            "        }\r\n"
+                            "\"\r\n"
+
+                        thirdC::c_strcatIF( tin0P , postBody , 
+                        thirdC::c_strcatIF( tin0P , postBody , postMime ) ;
+                        thirdC::c_strcatIF( tin0P , postBody , tSay     ) ;
+
+                        ) ;
+
+                            "            \"fileblob\": \""
+                            "            \"mimetype\": \"")+T(psttMimeType)+T("\",\r\n"
+                            "            \"filename\": \"")+T(psttShort)+T("\",\r\n"
+
+                        tSay += T(
+
+                        }
+                            tSay  = T("        {\r\n") ;
+                            bWoth = 0 ;
+                        {
+                        else
+                        if( !bWoth ) tSay = T("        ,{\r\n") ;
+
+                        TN( tSay , "" ) ;
+
+                        countT costMime = etherP.strMimeEncodeF( tin0P , postMime , pbi , cbi , -1 ) ; ___( postMime ) ;
+                        ZE( osTextT* , postMime ) ;
+                    {
+                    if( pbi && cbi )
+
+                    soulP.shiftRightF( tin0P , pbi , cbi , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbi ) ;
+                    ZE( countT , cbi ) ;
+                    ZE( byteT* , pbi ) ;
+
+                    soulP >> psttMimeType ;
+                    ZE( strokeS* , psttMimeType ) ;
+
+                    soulP >> psttShort ;
+                    ZE( strokeS* , psttShort ) ;
                 {
-                else
-                if( !bWoth ) tBody += T("        ,{\r\n") ;
+                while( soulP )
+                boolT bWoth = 1 ;
 
-                countT costMime = etherP.strMimeEncodeF( tin0P , postMime , pbi , cbi , -1 ) ; ___( postMime ) ;
-                ZE( osTextT* , postMime ) ;
+                ) ;
+
+                    "    [\r\n"
+                    "    \"attachments\":\r\n"
+
+                thirdC::c_strcatIF( tin0P , postBody ,
             {
-            if( pbi && cbi )
+            else
+            if( !soulP ) thirdC::c_strcatIF( tin0P , postBody , "}\r\n" ) ;
 
-            soulP.shiftRightF( tin0P , pbi , cbi , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbi ) ;
-            ZE( countT , cbi ) ;
-            ZE( byteT* , pbi ) ;
-
-            soulP >> psttMimeType ;
-            ZE( strokeS* , psttMimeType ) ;
-
-            soulP >> psttShort ;
-            ZE( strokeS* , psttShort ) ;
+            thirdC::c_strcpyIF( tin0P , postBody , tBodyPrefix ) ;
         {
-        while( soulP )
-        boolT bWoth = 1 ;
+        if( postBody )
+        etherP.newF( tin0P , LF , postBody , cbNeeded64 + tBodyPrefix.csF( tin0P ) + TUCK ) ; ___( postBody ) ;
+
+        }
+            cbNeeded64 = ( cbn / 3 + 1 ) << 2 ;
+            countT cbn = soulP.cbF( tin0P ) ;
+        {
+        if( soulP )
+        ZE( countT , cbNeeded64 ) ;
+
+        }
+            else         tBodyPrefix += T(",\r\n") ;
+            if( !soulP ) tBodyPrefix += T("\r\n") ;
+
+            ) ;
+
+                "    ]"
+                "        }\r\n"
+                "            \"value\": \"")+T(psttReplyTo)+T("\"\r\n"
+                "            \"header\": \"Reply-To\",\r\n"
+                "        {\r\n"
+                "    [\r\n"
+                "    \"custom_headers\":\r\n"
+
+            tBodyPrefix += T(
+        {
+        if( psttReplyTo )
+
+        else                         tBodyPrefix += T(",\r\n") ;
+        if( !psttReplyTo && !soulP ) tBodyPrefix += T("\r\n") ;
 
         ) ;
-
-            "    [\r\n"
-            "    \"attachments\":\r\n"
-
-        tBody += T(
-    {
-    if( soulP )                                             //U::O: USE osTextT, NOT strokeS, FOR THIS BLOCK, TO AVOID SLOW PROCESSING OF postMime
-
-    }
-        else         tBody += T(",\r\n") ;
-        if( !soulP ) tBody += T("\r\n") ;
-
-        ) ;
-
-            "    ]"
-            "        }\r\n"
-            "            \"value\": \"")+T(psttReplyTo)+T("\"\r\n"
-            "            \"header\": \"Reply-To\",\r\n"
-            "        {\r\n"
-            "    [\r\n"
-            "    \"custom_headers\":\r\n"
-
-        tBody += T(
-    {
-    if( psttReplyTo )
-
-    else                         tBody += T(",\r\n") ;
-    if( !psttReplyTo && !soulP ) tBody += T("\r\n") ;
-
-    ) ;
-    
-        "    \"html_body\": \"")+T(psttBody)+T("\""
-        "    \"subject\": \"")+T(psttSubject)+T("\",\r\n"
-    
-    tBody += T(
-
-    }
-        }
-            tBody += T("],\r\n") ;
-            }
-                tBody += T("\"")+T(psttc1)+T("\"") ;
-                else        tBody += T(",") ;
-                if( bWoth ) bWoth = 0 ;
-            {
-            FORsTRINGSiN1( pstt1Bcc )
-            boolT bWoth = 1 ;
-            tBody += T("    \"bcc\": [") ;
-        {
-        else
-        if( !ISsTRINGoFsTRINGS( pstt1Bcc ) ) tBody += T("    \"bcc\": [\"")+T(pstt1Bcc)+T("\"],\r\n") ;
-    {
-    if( pstt1Bcc )
-
-    }
-        }
-            tBody += T("],\r\n") ;
-            }
-                tBody += T("\"")+T(psttc1)+T("\"") ;
-                else        tBody += T(",") ;
-                if( bWoth ) bWoth = 0 ;
-            {
-            FORsTRINGSiN1( pstt1Cc )
-            boolT bWoth = 1 ;
-            tBody += T("    \"cc\": [") ;
-        {
-        else
-        if( !ISsTRINGoFsTRINGS( pstt1Cc  ) ) tBody += T("    \"cc\": [\"")+T(pstt1Cc)+T("\"],\r\n") ;
-    {
-    if( pstt1Cc )
-
-    }
-        }
-            tBody += T("],\r\n") ;
-            }
-                tBody += T("\"")+T(psttc1)+T("\"") ;
-                else        tBody += T(",") ;
-                if( bWoth ) bWoth = 0 ;
-            {
-            FORsTRINGSiN1( pstt1To )
-            boolT bWoth = 1 ;
-            tBody += T("    \"to\": [") ;
-        {
-        else
-        if( !ISsTRINGoFsTRINGS( pstt1To  ) ) tBody += T("    \"to\": [\"")+T(pstt1To)+T("\"],\r\n") ;
-    {
-    if( pstt1To )
-
-    ) ;
         
-        "    \"sender\": \"")+T(psttFrom)+T("\",\r\n"
-        "    \"fastaccept\": true,\r\n"
-        "    \"api_key\": \"")+tApiKey+T("\",\r\n"
-        "{\r\n"
-    
-    TN( tBody , "" ) ; tBody = T(
+            "    \"html_body\": \"")+T(psttEmailBody)+T("\""
+            "    \"subject\": \"")+T(psttSubject)+T("\",\r\n"
+        
+        tBodyPrefix += T(
 
-    soulP >>       pstt1Bcc      ;
-    ZE( strokeS* , pstt1Bcc    ) ;
+        }
+            }
+                tBodyPrefix += T("],\r\n") ;
+                }
+                    tBodyPrefix += T("\"")+T(psttc1)+T("\"") ;
+                    else        tBodyPrefix += T(",") ;
+                    if( bWoth ) bWoth = 0 ;
+                {
+                FORsTRINGSiN1( pstt1Bcc )
+                boolT bWoth = 1 ;
+                tBodyPrefix += T("    \"bcc\": [") ;
+            {
+            else
+            if( !ISsTRINGoFsTRINGS( pstt1Bcc ) ) tBodyPrefix += T("    \"bcc\": [\"")+T(pstt1Bcc)+T("\"],\r\n") ;
+        {
+        if( pstt1Bcc )
 
-    soulP >>       pstt1Cc       ;
-    ZE( strokeS* , pstt1Cc     ) ;
+        }
+            }
+                tBodyPrefix += T("],\r\n") ;
+                }
+                    tBodyPrefix += T("\"")+T(psttc1)+T("\"") ;
+                    else        tBodyPrefix += T(",") ;
+                    if( bWoth ) bWoth = 0 ;
+                {
+                FORsTRINGSiN1( pstt1Cc )
+                boolT bWoth = 1 ;
+                tBodyPrefix += T("    \"cc\": [") ;
+            {
+            else
+            if( !ISsTRINGoFsTRINGS( pstt1Cc  ) ) tBodyPrefix += T("    \"cc\": [\"")+T(pstt1Cc)+T("\"],\r\n") ;
+        {
+        if( pstt1Cc )
 
-    soulP >>       pstt1To       ;
-    ZE( strokeS* , pstt1To     ) ;
+        }
+            }
+                tBodyPrefix += T("],\r\n") ;
+                }
+                    tBodyPrefix += T("\"")+T(psttc1)+T("\"") ;
+                    else        tBodyPrefix += T(",") ;
+                    if( bWoth ) bWoth = 0 ;
+                {
+                FORsTRINGSiN1( pstt1To )
+                boolT bWoth = 1 ;
+                tBodyPrefix += T("    \"to\": [") ;
+            {
+            else
+            if( !ISsTRINGoFsTRINGS( pstt1To  ) ) tBodyPrefix += T("    \"to\": [\"")+T(pstt1To)+T("\"],\r\n") ;
+        {
+        if( pstt1To )
 
-    soulP >>       psttReplyTo   ;
-    ZE( strokeS* , psttReplyTo ) ;
+        ) ;
+            
+            "    \"sender\": \"")+T(psttFrom)+T("\",\r\n"
+            "    \"fastaccept\": true,\r\n"
+            "    \"api_key\": \"")+tApiKey+T("\",\r\n"
+            "{\r\n"
+        
+        TN( tBodyPrefix , "" ) ; tBodyPrefix = T(
+    {
+    ZE( countT   , costBody ) ;
+    ZE( osTextT* , postBody ) ;
 
-    soulP >>       psttFrom      ;
-    ZE( strokeS* , psttFrom    ) ;
+    soulP >>       pstt1Bcc        ;
+    ZE( strokeS* , pstt1Bcc      ) ;
 
-    soulP >>       psttBody      ;
-    ZE( strokeS* , psttBody    ) ;
+    soulP >>       pstt1Cc         ;
+    ZE( strokeS* , pstt1Cc       ) ;
 
-    soulP >>       psttSubject   ;
-    ZE( strokeS* , psttSubject ) ;
+    soulP >>       pstt1To         ;
+    ZE( strokeS* , pstt1To       ) ;
+
+    soulP >>       psttReplyTo     ;
+    ZE( strokeS* , psttReplyTo   ) ;
+
+    soulP >>       psttFrom        ;
+    ZE( strokeS* , psttFrom      ) ;
+
+    soulP >>       psttEmailBody   ;
+    ZE( strokeS* , psttEmailBody ) ;
+
+    soulP >>       psttSubject     ;
+    ZE( strokeS* , psttSubject   ) ;
 
     }
         etRock.traceF( tin0P , T("[tApiKey]:    ")+tApiKey ) ;
