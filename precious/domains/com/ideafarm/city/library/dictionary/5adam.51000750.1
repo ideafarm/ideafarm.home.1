@@ -1161,7 +1161,7 @@ DONE( tmWorkF )
 
     //#endif
         }
-            ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , bProcessAccessLogs ? ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER : ifcIDaDAM_CLOUD , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
+            ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , bProcessAccessLogs ? ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER : ifcIDaDAM_CLOUD , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
 
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bProcessAccessLogs]:    ")+TF2(bProcessAccessLogs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
@@ -1183,7 +1183,7 @@ DONE( tmWorkF )
         }
             }
                 homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ROOThEAL ;
-                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_HEALaRCHIVES , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_HEALaRCHIVES , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
                 /**/etThread.traceF( tin0P , T("ROOTmAILoUT: hiring ifcIDaDAM_HEALaRCHIVES") ) ;
             {
             else
@@ -1213,7 +1213,7 @@ DONE( tmWorkF )
         //etThread.trace F( tin0P , T("debug 2") ) ;
 
         }
-            if( bServeSmtp ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_ROOTsMTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            if( bServeSmtp ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_ROOTsMTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bServeSmtp]:    ")+TF2(bServeSmtp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             //20190730@0808: MOVED TO HERE BUT NOT TESTED.  IDEAFARM.COM CURRENTLY USES GOOGLE.COM'S SMTP SERVER TO RELAY OUTGOING EMAIL
 
@@ -1232,8 +1232,8 @@ DONE( tmWorkF )
             }
                 //U::homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ROOTbANG ;
 
-                //U::ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_GORILLAbANG , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-                //U::ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_3BANG , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                //U::ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_GORILLAbANG , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                //U::ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_3BANG , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( !bNoServeBang )
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bNoServeBang]:    ")+TF2(bNoServeBang,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1252,7 +1252,7 @@ DONE( tmWorkF )
         }
             }
                 homeS::homeIF().flagsAdams |= flHOMEsaDAMS_RDPoPENhOUSE ;
-                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_REMOTEdESKTOPoPENhOUSE , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_REMOTEdESKTOPoPENhOUSE , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( tPass.csF( tin0P ) )
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bRdpOpenHouse]:    ")+T(tPass.csF(tin0P)?"yes":"no") ) ;
@@ -1272,8 +1272,8 @@ DONE( tmWorkF )
         }
             }
                 homeS::homeIF().flagsAdams |= flHOMEsaDAMS_UDPfILEcATCHER ;
-                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_UDPfILErECEIVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_UDPfILEcATCHER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_UDPfILErECEIVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_UDPfILEcATCHER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bCatchUdpFiles )
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bCatchUdpFiles]:    ")+TF2(bCatchUdpFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1294,7 +1294,7 @@ DONE( tmWorkF )
             }
                 homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ICISbOT ;
 
-                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_ICISbOT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_ICISbOT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bICISBot )
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bICISBot]:    ")+TF2(bICISBot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1312,7 +1312,7 @@ DONE( tmWorkF )
             }
                 homeS::homeIF().flagsAdams |= flHOMEsaDAMS_WELCOMER ;
 
-                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_WELCOMER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_WELCOMER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bWelcomer )
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bWelcomer]:    ")+TF2(bWelcomer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1330,7 +1330,7 @@ DONE( tmWorkF )
             }
                 homeS::homeIF().flagsAdams |= flHOMEsaDAMS_DNS ;
 
-                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_DNS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_DNS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bDns )
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bDns]:    ")+TF2(bDns,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1348,7 +1348,7 @@ DONE( tmWorkF )
             }
                 homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ADMINISTRATOR ;
 
-                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_ADMINISTRATOR , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_ADMINISTRATOR , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bAdministrator )
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bAdministrator]:    ")+TF2(bAdministrator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1366,7 +1366,7 @@ DONE( tmWorkF )
             }
                 homeS::homeIF().flagsAdams |= flHOMEsaDAMS_FILEwEBHOOKnOTICES ;
 
-                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_WEBhOOKnOTICEfILER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_WEBhOOKnOTICEfILER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             {
             if( bFileWebhookNotices )
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bFileWebhookNotices]:    ")+TF2(bFileWebhookNotices,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1386,7 +1386,7 @@ DONE( tmWorkF )
                 //etThread.trace F( tin0P , T("debug 6.1") ) ;
                 homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ROOThTTPsERVER ;
                 //etThread.trace F( tin0P , T("debug 6.2") ) ;
-                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_ROOThTTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_ROOThTTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
                 //etThread.trace F( tin0P , T("debug 6.3") ) ;
                 _IO_
             {
@@ -1417,7 +1417,7 @@ DONE( tmWorkF )
         #endif
 
         }
-            if( bGorillaHttpReporter ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_GORILLAhTTPiDEAFARMcOMrEPORTER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            if( bGorillaHttpReporter ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_GORILLAhTTPiDEAFARMcOMrEPORTER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaHttpReporter]:    ")+TF2(bGorillaHttpReporter,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
@@ -1432,7 +1432,7 @@ DONE( tmWorkF )
         //etThread.trace F( tin0P , T("debug 8") ) ;
 
         }
-            if( bGorillaHttp ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_GORILLAhTTPiDEAFARMcOM , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            if( bGorillaHttp ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_GORILLAhTTPiDEAFARMcOM , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaHttp]:    ")+TF2(bGorillaHttp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
@@ -1447,7 +1447,7 @@ DONE( tmWorkF )
         #if defined( NEVERdEFINED )
 
         }
-            if( bHire ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_QUERYsTRIPEeVENTS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            if( bHire ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_QUERYsTRIPEeVENTS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bHire]:    ")+TF2(bHire,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
@@ -1460,7 +1460,7 @@ DONE( tmWorkF )
         {
 
         }
-            if( bGorillaWebhooks ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_GORILLAwEBHOOKS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            if( bGorillaWebhooks ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_GORILLAwEBHOOKS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaWebhooks]:    ")+TF2(bGorillaWebhooks,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
@@ -1473,7 +1473,7 @@ DONE( tmWorkF )
         {
 
         }
-            if( bDo ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_IDEAnETcONTROLrOUTER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            if( bDo ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_IDEAnETcONTROLrOUTER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT / IDEAnETcONTROLrOUTER [bDo]:    ")+TF2(bDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
@@ -1486,7 +1486,7 @@ DONE( tmWorkF )
         {
 
         }
-            if( bDo ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_IDEAnETaDDnICaDDRESSES , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            if( bDo ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_IDEAnETaDDnICaDDRESSES , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bDo]:    ")+TF2(bDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         
             }
@@ -1498,7 +1498,7 @@ DONE( tmWorkF )
         {
 
         }
-            if( bDo ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_IDEAnETgEIGERcOUNTER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            if( bDo ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_IDEAnETgEIGERcOUNTER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
             /**/etThread.traceF( tin0P , T("ROOTmAILoUT: ifcIDaDAM_IDEAnETgEIGERcOUNTER [bDo]:    ")+TF2(bDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         
             }
@@ -1509,7 +1509,7 @@ DONE( tmWorkF )
             ZE( boolT , bDo ) ;
         {
 
-        //ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUT") , ifcIDaDAM_UDPeCHO , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+        //ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_UDPeCHO , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
         /**/etThread.traceF( tin0P , T("ROOTmAILoUT: hiring ifcIDaDAM_UDPeCHO") ) ;
         //U::20230611@1304: DISABLED TO UNCLUTTER STFU TRACE FILE.  UDPeCHO WORKS AND CAN BE ENABLED HERE FOR FURTHER TESTING AND DEVELOPMENT
 
@@ -1955,7 +1955,7 @@ voidT queryEmailFromIdAccountF( tin0S& tin0P , strokeS*& psttP , const countT cP
 #define flFAIL_DURINGpARSING                        0xe00002ff
 #define flFAIL_COULDnOTgETsHADOW                    0xe00001ff
 
-/*1*/WAKEhIDE( "ifcIDaDAM_ROOTmAILoUT" )/*1*/
+/*1*/WAKEhIDE( "ifcIDaDAM_ROOTmAILoUToLD" )/*1*/
 
 /**/
 */
