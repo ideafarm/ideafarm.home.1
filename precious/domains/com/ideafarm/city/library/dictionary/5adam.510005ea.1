@@ -893,7 +893,7 @@ DONE( tmWatch05TallyF )
                         ++ s ; ether.osSleepF( tin0P , TOCK << 5 ) ; //GIVE MAILoUT TIME TO SEND THIS
                         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                         
-                        etThread.emailFactoryReportF( tin0P , tSay ) ;
+                        etThread.emailFactoryReportOldF( tin0P , tSay ) ;
                         etThread.traceF( tin0P , tSay , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                         TELL( tSay ) ;
                         TN( tSay , "sending suicide note: nothing new done and no more forgiving, so will reboot after short nap" ) ;
@@ -917,9 +917,9 @@ DONE( tmWatch05TallyF )
                 }
                     home.flagsUtility |= flHOMEsuTILITY_SNAPsHOT ;
 
-                    if( cForgive == CfORGIVE - 1 ) etThread.emailFactoryReportF( tin0P , tSay ) ;
+                    if( cForgive == CfORGIVE - 1 ) etThread.emailFactoryReportOldF( tin0P , tSay ) ;
 
-                    //if( !( cForgive % 4 ) ) etThread.emailFactoryReportF( tin0P , tSay ) ;
+                    //if( !( cForgive % 4 ) ) etThread.emailFactoryReportOldF( tin0P , tSay ) ;
 
                     etThread.traceF( tin0P , tSay , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
@@ -951,7 +951,7 @@ DONE( tmWatch05TallyF )
                 }
                     cForgive = CfORGIVE ;
 
-                    etThread.emailFactoryReportF( tin0P , tSay ) ;
+                    etThread.emailFactoryReportOldF( tin0P , tSay ) ;
                     etThread.traceF( tin0P , tSay , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
         
                     ;
@@ -975,7 +975,7 @@ DONE( tmWatch05TallyF )
                 if( cForgive < CfORGIVE )
 
                 }
-                    etThread.emailFactoryReportF( tin0P , tSay ) ;
+                    etThread.emailFactoryReportOldF( tin0P , tSay ) ;
                     etThread.traceF( tin0P , tSay , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                     TN( tSay , "http service detected" ) ;
                 {

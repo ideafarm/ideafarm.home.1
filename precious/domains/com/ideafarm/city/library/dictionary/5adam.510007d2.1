@@ -25,12 +25,12 @@ etThread.traceF( tin0P , T("ok") ) ;
             }
                 }
                     etThread.traceF( tin0P , T("could not close RDP") ) ;
-                    etThread.emailFactoryReportF( tin0P , T("RDP Open House") , T("Could not close RDP.") ) ;
+                    etThread.emailFactoryReportOldF( tin0P , T("RDP Open House") , T("Could not close RDP.") ) ;
                 {
                 else
                 }
                     etThread.traceF( tin0P , T("closed RDP aok") ) ;
-                    etThread.emailFactoryReportF( tin0P , T("RDP Open House") , T("Closed RDP aok.") ) ;
+                    etThread.emailFactoryReportOldF( tin0P , T("RDP Open House") , T("Closed RDP aok.") ) ;
                 {
                 if( bOk )
                 bOk = sendCommandF( tin0P , etThread , tHeadEnable , tBodyEnable ) ;
@@ -41,12 +41,12 @@ etThread.traceF( tin0P , T("ok") ) ;
 
                 }
                     etThread.traceF( tin0P , T("could not open RDP") ) ;
-                    etThread.emailFactoryReportF( tin0P , T("RDP Open House") , T("Could not open RDP.") ) ;
+                    etThread.emailFactoryReportOldF( tin0P , T("RDP Open House") , T("Could not open RDP.") ) ;
                 {
                 else
                 }
                     etThread.traceF( tin0P , T("opened RDP aok") ) ;
-                    etThread.emailFactoryReportF( tin0P , T("RDP Open House") , T("Opened RDP aok.") ) ;
+                    etThread.emailFactoryReportOldF( tin0P , T("RDP Open House") , T("Opened RDP aok.") ) ;
                 {
                 if( bOk )
                 boolT bOk = sendCommandF( tin0P , etThread , tHeadDisable , tBodyDisable ) ;
@@ -54,7 +54,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             {
             else
             }
-                etThread.emailFactoryReportF( tin0P , T("RDP Open House") , T("I did not receive the correct secret, so will not open RDP.") ) ;
+                etThread.emailFactoryReportOldF( tin0P , T("RDP Open House") , T("I did not receive the correct secret, so will not open RDP.") ) ;
                 etThread.traceF( tin0P , T("i did not receive the correct secret, so will not open RDP.") ) ;
             {
             if( /*!bAlways &&*/ !etThread.diskFileExistsF( tin0P , tFileSecretReceived ) )
@@ -63,8 +63,8 @@ etThread.traceF( tin0P , T("ok") ) ;
             ++ s ; ether.osSleepF( tin0P , TICK << 1 ) ;
 
             etThread.traceF( tin0P , T("napping for 2 tick before opening rdp") ) ;
-            //U:: PROD: etThread.emailFactoryReportF( tin0P , T("RDP Open House") , T("RDP will open in 2 tick, for 1 tick, but only if you click this link:  http://www.ideafarm.com/admin.rdp.open.house?secret=")+tSecret ) ;
-            etThread.emailFactoryReportF( tin0P , T("RDP Open House") , T("RDP will open in 2 tick, for 1 tick, but only if you click this link:  http://38.111.147.102/admin.rdp.open.house?secret=")+tSecret ) ; //U:: WORKAROUND TO FIND A BUG
+            //U:: PROD: etThread.emailFactoryReportOldF( tin0P , T("RDP Open House") , T("RDP will open in 2 tick, for 1 tick, but only if you click this link:  http://www.ideafarm.com/admin.rdp.open.house?secret=")+tSecret ) ;
+            etThread.emailFactoryReportOldF( tin0P , T("RDP Open House") , T("RDP will open in 2 tick, for 1 tick, but only if you click this link:  http://38.111.147.102/admin.rdp.open.house?secret=")+tSecret ) ; //U:: WORKAROUND TO FIND A BUG
 
             TN( tSecret , "" ) ; tSecret = TF2(secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 

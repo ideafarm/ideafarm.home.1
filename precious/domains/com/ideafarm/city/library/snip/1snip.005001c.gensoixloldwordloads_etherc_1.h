@@ -495,11 +495,11 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "emailFactoryReportF_o4@4@" ) ;
+    TN( tNameSoixlOld , "emailFactoryReportOldF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)emailFactoryReportF_o4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)emailFactoryReportOldF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

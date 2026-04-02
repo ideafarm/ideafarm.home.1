@@ -1268,13 +1268,13 @@ etThread.traceF( tin0P , T("setting flHOMEs_KILLsELFiMMEDIATELY") ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
 
-etThread.emailFactoryReportF( tin0P , T("dying in 1/2 hour") ) ;
+etThread.emailFactoryReportOldF( tin0P , T("dying in 1/2 hour") ) ;
 
 }
     ++ s ; ether.osSleepF( tin0P , TICK << 7 ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    if( !cDo ) etThread.emailFactoryReportF( tin0P , T("dying in 1/2 day") ) ;
+    if( !cDo ) etThread.emailFactoryReportOldF( tin0P , T("dying in 1/2 day") ) ;
 {
 while( cDo -- )
 countT cDo = 8 ;
@@ -1287,14 +1287,14 @@ DONE( tmTestImpotenceF )
 
 }
     __1
-    etThread.emailFactoryReportF( tin0P , T("testing impotence") ) ;
+    etThread.emailFactoryReportOldF( tin0P , T("testing impotence") ) ;
 {
 if( !ether )
 
 ++ s ; ether.osSleepF( tin0P , TOCK << 4 ) ;
 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-etThread.emailFactoryReportF( tin0P , T("i will test impotence after napping TOCK << 4") ) ;
+etThread.emailFactoryReportOldF( tin0P , T("i will test impotence after napping TOCK << 4") ) ;
 
 TASK( tmTestImpotenceF )
 

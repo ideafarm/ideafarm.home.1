@@ -3927,7 +3927,7 @@
 0x00000f57 , "\0\0\0\0voidT etherC::strFromIdJotF( tin0S& tin0P , strokeS*& psttP , const countT idJotP , const countT cbJotStringDecodePrefixP )" ,
 0x00000f58 , "\0\0\0\0voidT etherC::diskWalkSearchF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const strokeS* const psttP , const osTextT* const postFindP , const flagsT flagsP , diskWalkSearchCBFT pCbfP , countT* pcArgP )" ,
 0x00000f59 , "\0\0\0\0strokeS*& etherC::ether_psttEarlyFolder_F( tin0S& tin0P )" ,
-0x00000f5a , "\0\0\0\0voidT etherC::emailFactoryReportF( tin0S& tin0P , const strokeS* const psttSubjectP , const strokeS* const psttBodyP )" ,
+0x00000f5a , "\0\0\0\0voidT etherC::emailFactoryReportOldF( tin0S& tin0P , const strokeS* const psttSubjectP , const strokeS* const psttBodyP )" ,
 0x00000f5b , "\0\0\0\0voidT etherC::boxPutUniqueF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttLikeP , soulC& soulP , countT cOpenTriesP , const strokeS* const psttSuffixP , const flagsT flagsOpenDetailsP )" ,
 0x00000f5c , "\0\0\0\0countT etherC::ifcIdCopyF( tin0S& tin0P , countT cNameP , const countT cTriesP )" ,
 0x00000f5d , "\0\0\0\0countT etherC::strIdOptimizedClosureF( tin0S& tin0P , stackC* const pstMatchP , const flagsT flagsMatchP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* psttSmallP , const strokeS* psttBigP , const flagsT flagsP , const flagsT* pFlagsOverrideP , const countT* pcMinOverrideP , const countT* pcMaxOverrideP , const countT idLastP , sCountT idP )" ,

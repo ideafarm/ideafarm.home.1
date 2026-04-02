@@ -3927,7 +3927,7 @@
 0x360021e4 , 0x00000f57 ,   // 3func.360021e4.etherc.strFromIdJotF
 0x360021e5 , 0x00000f58 ,   // 3func.360021e5.etherc.diskWalkSearchF
 0x360021e6 , 0x00000f59 ,   // 3func.360021e6.etherc.ether_psttEarlyFolder_f
-0x360021e7 , 0x00000f5a ,   // 3func.360021e7.etherc.emailFactoryReportF
+0x360021e7 , 0x00000f5a ,   // 3func.360021e7.etherc.emailFactoryReportOldF
 0x360021e8 , 0x00000f5b ,   // 3func.360021e8.etherc.boxputuniquef
 0x360021e9 , 0x00000f5c ,   // 3func.360021e9.etherc.ifcIdCopyF
 0x360021ea , 0x00000f5d ,   // 3func.360021ea.etherc.strIdOptimizedClosureF

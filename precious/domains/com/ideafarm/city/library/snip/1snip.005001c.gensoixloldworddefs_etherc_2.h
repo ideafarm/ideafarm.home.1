@@ -837,7 +837,7 @@ voidT dnsFormatQueryF_o1P34P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , c
     etherP.delF( tin0P , pbP ) ;
 }
 
-voidT emailFactoryReportF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT emailFactoryReportOldF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -873,7 +873,7 @@ voidT emailFactoryReportF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP ,
             }
         }
     }
-    if( !POOP ) etherP.emailFactoryReportF( tin0P , psttSubjectP , psttBodyP ) ;
+    if( !POOP ) etherP.emailFactoryReportOldF( tin0P , psttSubjectP , psttBodyP ) ;
     etherP.delF( tin0P , psttBodyP ) ;
     etherP.delF( tin0P , psttSubjectP ) ;
 }

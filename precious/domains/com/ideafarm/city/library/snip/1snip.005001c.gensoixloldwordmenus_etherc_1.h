@@ -60,7 +60,7 @@
     "    . dllOpenF_ob4@37       . ?? ")+T(postName)+T("\r\n"
     "    . dnsNicNamesF_o4@4@3       . ?? ")+T(postName)+T("\r\n"
     "    . dnsFormatQueryF_o1@34@3       . ?? ")+T(postName)+T("\r\n"
-    "    . emailFactoryReportF_o4@4@       . ?? ")+T(postName)+T("\r\n"
+    "    . emailFactoryReportOldF_o4@4@       . ?? ")+T(postName)+T("\r\n"
     "    . strokeF_o4@       . ?? ")+T(postName)+T("\r\n"
     "    . paperTitleF_o4@       . ?? ")+T(postName)+T("\r\n"
     "    . fileOpenF_ob34@33737733       . ?? ")+T(postName)+T("\r\n"

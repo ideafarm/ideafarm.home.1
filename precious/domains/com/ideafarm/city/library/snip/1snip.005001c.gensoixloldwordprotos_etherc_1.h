@@ -123,7 +123,7 @@ voidT dnsNicNamesF_o4P4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
 
 voidT dnsFormatQueryF_o1P34P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT emailFactoryReportF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT emailFactoryReportOldF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT strokeF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
