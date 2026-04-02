@@ -34649,6 +34649,9 @@ examples
 /* email */
  voidT emailFactoryReportF( tin0S& tin0P , const strokeS* const psttSubjectP , const strokeS* const psttBodyP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021e7.etherc.emailFactoryReportF!||
+ voidT emailSendNowF( tin0S& tin0P , soulC& soulP ) ;
+ voidT emailAttachF( tin0S& tin0P , soulC& soulP , const strokeS* const psttShortP , const strokeS* const psttMimeTypeP , const byteT* const pbP , const countT cbP ) ;
+ voidT emailComposeF( tin0S& tin0P , soulC& soulP , const strokeS* const psttSubjectP , const strokeS* const psttBodyP , const strokeS* const psttFromP , const strokeS* const psttReplyToP , const strokeS* const pstt1ToP , const strokeS* const pstt1CcP = 0 , const strokeS* const pstt1BccP = 0 ) ;
 
 /* commands: faces */
  voidT strokeF( tin0S& tin0P , const strokeS* psttP ) ;
