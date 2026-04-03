@@ -34652,6 +34652,7 @@ examples
  voidT emailSendNowF( tin0S& tin0P , soulC& soulP ) ;
  voidT emailAttachF( tin0S& tin0P , soulC& soulP , const strokeS* const psttShortP , const strokeS* const psttMimeTypeP , const byteT* const pbP , const countT cbP ) ;
  voidT emailComposeF( tin0S& tin0P , soulC& soulP , const strokeS* const psttSubjectP , const strokeS* const psttBodyP , const strokeS* const psttFromP , const strokeS* const psttReplyToP , const strokeS* const pstt1ToP , const strokeS* const pstt1CcP = 0 , const strokeS* const pstt1BccP = 0 ) ;
+ voidT emailSendLaterF( tin0S& tin0P , soulC& soulP ) ;
 
 /* commands: faces */
  voidT strokeF( tin0S& tin0P , const strokeS* psttP ) ;
