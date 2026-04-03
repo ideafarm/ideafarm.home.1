@@ -1,4 +1,6 @@
 
+#define ifcIDaDAM_EMAILsENDlATER                                       ((countT)0x510008ec)
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -11789,7 +11791,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 
 // 20141208@2007: IdeaFarm (tm) Bundle:                 ifcIDaDAM_2GLASS2                     ifcIDaDAM_MEMBRANEgLASS                        ifcIDaDAM_WATCH ifcIDaDAM_HOMEfLAGS                        ifcIDaDAM_PISS ifcIDaDAM_CLOUD
 
-// 20221229@1416: IdeaFarm (tm) Bundle: ifcIDaDAM_CLOAK ifcIDaDAM_2GLASS2 ifcIDaDAM_HOMEfLAGS ifcIDaDAM_MEMBRANEgLASS ifcIDaDAM_PREPARElISTS ifcIDaDAM_WATCH                     ifcIDaDAM_WATCHiDLEcPU ifcIDaDAM_PISS ifcIDaDAM_CLOUD ifcIDaDAM_SNAPwORDS ifcIDaDAM_TIME ifcIDaDAM_ROOTmAILoUToLD ifcIDaDAM_ROOThTTPsERVER ifcIDaDAM_HEALaRCHIVES
+// 20221229@1416: IdeaFarm (tm) Bundle: ifcIDaDAM_CLOAK ifcIDaDAM_2GLASS2 ifcIDaDAM_HOMEfLAGS ifcIDaDAM_MEMBRANEgLASS ifcIDaDAM_PREPARElISTS ifcIDaDAM_WATCH                     ifcIDaDAM_WATCHiDLEcPU ifcIDaDAM_PISS ifcIDaDAM_CLOUD ifcIDaDAM_SNAPwORDS ifcIDaDAM_TIME ifcIDaDAM_EMAILsENDlATER ifcIDaDAM_ROOThTTPsERVER ifcIDaDAM_HEALaRCHIVES
 
 //RETIRED 2011.02.14: #define ifcIDaDAM_CONSOLE                                               ((countT)0x510004fe)
                                                                             
@@ -11885,7 +11887,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_ACCESSeVENTS7rEPORTbYcONTAINERuRI                    ((countT)0x51000747)
 #define ifcIDaDAM_ACCESSeVENTS8aUDITbOOKS                              ((countT)0x51000748)
 #define ifcIDaDAM_TOOLwALKsEARCH                                       ((countT)0x5100074e)
-#define ifcIDaDAM_ROOTmAILoUToLD                                          ((countT)0x51000750)
+#define ifcIDaDAM_ROOTmAILoUToLD                                       ((countT)0x51000750)
 #define ifcIDaDAM_GORILLAhTTPiDEAFARMcOM                               ((countT)0x51000752)
 #define ifcIDaDAM_GORILLAhTTPiDEAFARMcOMrEPORTER                       ((countT)0x51000754)
 #define ifcIDaDAM_WATCHiDLEcPU                                         ((countT)0x51000757)

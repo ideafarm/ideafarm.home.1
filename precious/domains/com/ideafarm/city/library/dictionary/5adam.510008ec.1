@@ -1,0 +1,600 @@
+
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+REST
+
+sgnDone_tmWorkF.waitF( tin0P ) ;
+ether.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
+
+TODO
+
+DONE( tmWorkF )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+    {
+    while( cWorkers )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    etherC::loafIF( tin0P ) ;
+
+    ether.osThreadF( TaRG2cBsTACK( tmWorkerF , TICK ) , (countT)&cWorkers ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+    inc02AM( cWorkers ) ;
+    ZE( countT , cWorkers ) ;
+
+    }
+        //}
+        //    ++ s ; ether.osSleepF( tin0P , TOCK * 0x10 ) ; //TO AVOID LOADING SERVER DURING SYSTEM GEN
+        //    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        //{
+
+        //#endif
+
+    //#endif
+        }
+            ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , bProcessAccessLogs ? ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER : ifcIDaDAM_CLOUD , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
+
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bProcessAccessLogs]:    ")+TF2(bProcessAccessLogs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttProcessAccessLogs ) ;
+        //        bProcessAccessLogs = psttProcessAccessLogs && !etThread.strCompareF( tin0P , psttProcessAccessLogs , T("yes") ) ;
+                ZE( strokeS* , psttProcessAccessLogs ) ; etThread.querySettingF( tin0P , psttProcessAccessLogs , T("!ipdos.process.access.logs")  ) ; ___( psttProcessAccessLogs ) ;
+            {
+            ZE( boolT , bProcessAccessLogs ) ;
+            _IO_
+        {
+    //#if defined( NEVERdEFINED )
+    //U:: ENABLE IN PRODUCTION (THIS WORKS BUT IS DISABLED TO FIND AN UNRELATED BUG)
+
+        //#endif
+
+        //etThread.trace F( tin0P , T("debug 0") ) ;
+
+        }
+            }
+                homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ROOThEAL ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_HEALaRCHIVES , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                /**/etThread.traceF( tin0P , T("ROOTmAILoUT: hiring ifcIDaDAM_HEALaRCHIVES") ) ;
+            {
+            else
+            if( bNoHeal ) /*;*/etThread.traceF( tin0P , T("ROOTmAILoUT: NOT hiring ifcIDaDAM_HEALaRCHIVES") ) ;
+
+            //20240325@1619: HEALaRCHIVES IS ALWAYS LAUNCHED, AS MARKETING POLICY ("BARTERWARE")
+            //20240320@2127: TO WORK AROUND A BUG, HEALaRCHIVES IS ONLY LAUNCHED WHEN EXPLICITLY COMMANDED
+            //20221229@1429: HEALaRCHIVES IS ALWAYS LAUNCHED, AS MARKETING POLICY ("BARTERWARE")
+
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bNoHeal]:    ")+TF2(bNoHeal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttHeal ) ;
+                bNoHeal = psttHeal && !etThread.strCompareF( tin0P , psttHeal , T("no") ) ;
+                //((tin1S&)tin0P).pc Utility[ 0 ] -- ; //U::
+                ZE( strokeS* , psttHeal ) ; etThread.querySettingF( tin0P , psttHeal , T("!ipdos.heal")  ) ; ___( psttHeal ) ;
+                //((tin1S&)tin0P).pc Utility[ 0 ] ++ ; //U::
+            {
+            ZE( boolT , bNoHeal ) ;
+
+            //etThread.trace F( tin0P , T("debug 1") ) ;
+            _IO_
+        {
+
+        //#if defined( NEVERdEFINED )
+
+        //etThread.trace F( tin0P , T("debug 2") ) ;
+
+        }
+            if( bServeSmtp ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_ROOTsMTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bServeSmtp]:    ")+TF2(bServeSmtp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //20190730@0808: MOVED TO HERE BUT NOT TESTED.  IDEAFARM.COM CURRENTLY USES GOOGLE.COM'S SMTP SERVER TO RELAY OUTGOING EMAIL
+
+            }
+                etThread.delF( tin0P , psttServeSmtp ) ;
+                bServeSmtp = psttServeSmtp && !etThread.strCompareF( tin0P , psttServeSmtp , T("yes") ) ;
+                ZE( strokeS* , psttServeSmtp ) ; etThread.querySettingF( tin0P , psttServeSmtp , T("!ipdos.serve.smtp")  ) ; ___( psttServeSmtp ) ;
+            {
+            ZE( boolT , bServeSmtp ) ;
+            _IO_
+        {
+
+        //etThread.trace F( tin0P , T("debug 3") ) ;
+
+        }
+            }
+                //U::homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ROOTbANG ;
+
+                //U::ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_GORILLAbANG , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                //U::ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_3BANG , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            {
+            if( !bNoServeBang )
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bNoServeBang]:    ")+TF2(bNoServeBang,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttServeBang ) ;
+                bNoServeBang = psttServeBang && !etThread.strCompareF( tin0P , psttServeBang , T("no") ) ;
+                ZE( strokeS* , psttServeBang ) ; etThread.querySettingF( tin0P , psttServeBang , T("!ipdos.serve.bang")  ) ; ___( psttServeBang ) ;
+            {
+            ZE( boolT , bNoServeBang ) ;
+            _IO_
+        {
+
+        //etThread.trace F( tin0P , T("debug 4") ) ;
+
+        }
+            }
+                homeS::homeIF().flagsAdams |= flHOMEsaDAMS_RDPoPENhOUSE ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_REMOTEdESKTOPoPENhOUSE , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            {
+            if( tPass.csF( tin0P ) )
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bRdpOpenHouse]:    ")+T(tPass.csF(tin0P)?"yes":"no") ) ;
+
+            }
+                etThread.delF( tin0P , psttPass ) ;
+                if( psttPass && psttPass->idAdam ) tPass = T(psttPass) ;
+                ZE( strokeS* , psttPass ) ; etThread.querySettingF( tin0P , psttPass , T("!ipdos.barracuda.firewall.credentials64")  ) ; ___( psttPass ) ;
+            {
+            TN( tPass , "" ) ;
+            _IO_
+        {
+
+        //etThread.trace F( tin0P , T("debug 5") ) ;
+
+    #endif
+        }
+            }
+                homeS::homeIF().flagsAdams |= flHOMEsaDAMS_UDPfILEcATCHER ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_UDPfILErECEIVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_UDPfILEcATCHER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            {
+            if( bCatchUdpFiles )
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bCatchUdpFiles]:    ")+TF2(bCatchUdpFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttCatchUdpFiles ) ;
+                bCatchUdpFiles = !psttCatchUdpFiles || etThread.strCompareF( tin0P , psttCatchUdpFiles , T("no") ) ;
+                ZE( strokeS* , psttCatchUdpFiles ) ; etThread.querySettingF( tin0P , psttCatchUdpFiles , T("!ipdos.catch.udp.files")  ) ; ___( psttCatchUdpFiles ) ;
+            {
+            ZE( boolT , bCatchUdpFiles ) ;
+            _IO_
+        {
+    #if defined( NEVERdEFINED )
+
+        //etThread.trace F( tin0P , T("debug 6") ) ;
+
+        }
+            }
+                homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ICISbOT ;
+
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_ICISbOT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            {
+            if( bICISBot )
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bICISBot]:    ")+TF2(bICISBot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttBot ) ;
+                bICISBot = psttBot && !etThread.strCompareF( tin0P , psttBot , T("yes") ) ;
+                ZE( strokeS* , psttBot ) ; etThread.querySettingF( tin0P , psttBot , T("!ipdos.icis.bot")  ) ; ___( psttBot ) ;
+            {
+            ZE( boolT , bICISBot ) ;
+            _IO_
+        {
+
+        }
+            }
+                homeS::homeIF().flagsAdams |= flHOMEsaDAMS_WELCOMER ;
+
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_WELCOMER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            {
+            if( bWelcomer )
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bWelcomer]:    ")+TF2(bWelcomer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttEat ) ;
+                bWelcomer = psttEat && !etThread.strCompareF( tin0P , psttEat , T("yes") ) ;
+                ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.hire.welcomer")  ) ; ___( psttEat ) ;
+            {
+            ZE( boolT , bWelcomer ) ;
+            _IO_
+        {
+
+        }
+            }
+                homeS::homeIF().flagsAdams |= flHOMEsaDAMS_DNS ;
+
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_DNS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            {
+            if( bDns )
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bDns]:    ")+TF2(bDns,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttEat ) ;
+                bDns = psttEat && !etThread.strCompareF( tin0P , psttEat , T("yes") ) ;
+                ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.hire.dns")  ) ; ___( psttEat ) ;
+            {
+            ZE( boolT , bDns ) ;
+            _IO_
+        {
+
+        }
+            }
+                homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ADMINISTRATOR ;
+
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_ADMINISTRATOR , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            {
+            if( bAdministrator )
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bAdministrator]:    ")+TF2(bAdministrator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttEat ) ;
+                bAdministrator = psttEat && !etThread.strCompareF( tin0P , psttEat , T("yes") ) ;
+                ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.hire.administrator")  ) ; ___( psttEat ) ;
+            {
+            ZE( boolT , bAdministrator ) ;
+            _IO_
+        {
+
+        }
+            }
+                homeS::homeIF().flagsAdams |= flHOMEsaDAMS_FILEwEBHOOKnOTICES ;
+
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_WEBhOOKnOTICEfILER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            {
+            if( bFileWebhookNotices )
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bFileWebhookNotices]:    ")+TF2(bFileWebhookNotices,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttEat ) ;
+                bFileWebhookNotices = psttEat && !etThread.strCompareF( tin0P , psttEat , T("yes") ) ;
+                ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.file.webhook.notices")  ) ; ___( psttEat ) ;
+            {
+            ZE( boolT , bFileWebhookNotices ) ;
+            _IO_
+        {
+
+        }
+            //etThread.trace F( tin0P , T("debug 6.0") ) ;
+            }
+                //etThread.trace F( tin0P , T("debug 6.1") ) ;
+                homeS::homeIF().flagsAdams |= flHOMEsaDAMS_ROOThTTPsERVER ;
+                //etThread.trace F( tin0P , T("debug 6.2") ) ;
+                ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_ROOThTTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                //etThread.trace F( tin0P , T("debug 6.3") ) ;
+                _IO_
+            {
+            if( bServeHttp )
+            //etThread.trace F( tin0P , T("debug 6.4") ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bServeHttp]:    ")+TF2(bServeHttp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                //etThread.trace F( tin0P , T("debug 6.5") ) ;
+                etThread.delF( tin0P , psttServeHttp ) ;
+                //etThread.trace F( tin0P , T("debug 6.6") ) ;
+                bServeHttp = psttServeHttp && !etThread.strCompareF( tin0P , psttServeHttp , T("yes") ) ;
+                //etThread.trace F( tin0P , T("debug 6.7") ) ;
+                //((tin1S&)tin0P).pc Utility[ 0 ] -- ; //U::
+                ZE( strokeS* , psttServeHttp ) ; etThread.querySettingF( tin0P , psttServeHttp , T("!ipdos.serve.http")  ) ; ___( psttServeHttp ) ;
+                //((tin1S&)tin0P).pc Utility[ 0 ] ++ ; //U::
+                //etThread.trace F( tin0P , T("debug 6.8") ) ;
+                _IO_
+            {
+            //etThread.trace F( tin0P , T("debug 6.9") ) ;
+            ZE( boolT , bServeHttp ) ;
+            //etThread.trace F( tin0P , T("debug 6.a") ) ;
+            _IO_
+        {
+
+        //etThread.trace F( tin0P , T("debug 7") ) ;
+
+        #endif
+
+        }
+            if( bGorillaHttpReporter ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_GORILLAhTTPiDEAFARMcOMrEPORTER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaHttpReporter]:    ")+TF2(bGorillaHttpReporter,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttGorillaHttpReporter ) ;
+                bGorillaHttpReporter = psttGorillaHttpReporter && !etThread.strCompareF( tin0P , psttGorillaHttpReporter , T("yes") ) ;
+                ZE( strokeS* , psttGorillaHttpReporter ) ; etThread.querySettingF( tin0P , psttGorillaHttpReporter , T("!ipdos.gorilla.http.reporter")  ) ; ___( psttGorillaHttpReporter ) ;
+            {
+            ZE( boolT , bGorillaHttpReporter ) ;
+            _IO_
+        {
+
+        //etThread.trace F( tin0P , T("debug 8") ) ;
+
+        }
+            if( bGorillaHttp ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_GORILLAhTTPiDEAFARMcOM , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaHttp]:    ")+TF2(bGorillaHttp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttGorillaHttp ) ;
+                bGorillaHttp = psttGorillaHttp && !etThread.strCompareF( tin0P , psttGorillaHttp , T("yes") ) ;
+                ZE( strokeS* , psttGorillaHttp ) ; etThread.querySettingF( tin0P , psttGorillaHttp , T("!ipdos.gorilla.http")  ) ; ___( psttGorillaHttp ) ;
+            {
+            ZE( boolT , bGorillaHttp ) ;
+            _IO_
+        {
+
+        #if defined( NEVERdEFINED )
+
+        }
+            if( bHire ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_QUERYsTRIPEeVENTS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bHire]:    ")+TF2(bHire,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttv ) ;
+                bHire = psttv && !etThread.strCompareF( tin0P , psttv , T("yes") ) ;
+                ZE( strokeS* , psttv ) ; etThread.querySettingF( tin0P , psttv , T("!ipdos.query.stripe.events")  ) ; ___( psttv ) ;
+            {
+            ZE( boolT , bHire ) ;
+            _IO_
+        {
+
+        }
+            if( bGorillaWebhooks ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_GORILLAwEBHOOKS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bGorillaWebhooks]:    ")+TF2(bGorillaWebhooks,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttGorillaWebhooks ) ;
+                bGorillaWebhooks = psttGorillaWebhooks && !etThread.strCompareF( tin0P , psttGorillaWebhooks , T("yes") ) ;
+                ZE( strokeS* , psttGorillaWebhooks ) ; etThread.querySettingF( tin0P , psttGorillaWebhooks , T("!ipdos.gorilla.webhooks")  ) ; ___( psttGorillaWebhooks ) ;
+            {
+            ZE( boolT , bGorillaWebhooks ) ;
+            _IO_
+        {
+
+        }
+            if( bDo ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_IDEAnETcONTROLrOUTER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT / IDEAnETcONTROLrOUTER [bDo]:    ")+TF2(bDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                etThread.delF( tin0P , psttv ) ;
+                bDo = psttv && !etThread.strCompareF( tin0P , psttv , T("yes") ) ;
+                ZE( strokeS* , psttv ) ; etThread.querySettingF( tin0P , psttv , T("!ipdos.ideanet.control.router")  ) ; ___( psttv ) ;
+            {
+            ZE( boolT , bDo ) ;
+            _IO_
+        {
+
+        }
+            if( bDo ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_IDEAnETaDDnICaDDRESSES , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: [bDo]:    ")+TF2(bDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        
+            }
+                etThread.delF( tin0P , psttDo ) ;
+                bDo = psttDo && !etThread.strCompareF( tin0P , psttDo , T("yes") ) ;
+                ZE( strokeS* , psttDo ) ; etThread.querySettingF( tin0P , psttDo , T("!ipdos.random.ipv6.ideanet")  ) ; ___( psttDo ) ;
+            {
+            ZE( boolT , bDo ) ;
+        {
+
+        }
+            if( bDo ) ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_IDEAnETgEIGERcOUNTER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+            /**/etThread.traceF( tin0P , T("ROOTmAILoUT: ifcIDaDAM_IDEAnETgEIGERcOUNTER [bDo]:    ")+TF2(bDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        
+            }
+                etThread.delF( tin0P , psttDo ) ;
+                bDo = psttDo && !etThread.strCompareF( tin0P , psttDo , T("yes") ) ;
+                ZE( strokeS* , psttDo ) ; etThread.querySettingF( tin0P , psttDo , T("!ipdos.ideanet.geiger.counter")  ) ; ___( psttDo ) ;
+            {
+            ZE( boolT , bDo ) ;
+        {
+
+        //ether.ifcHireF( tin0P , T("ifcIDaDAM_ROOTmAILoUToLD") , ifcIDaDAM_UDPeCHO , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+        /**/etThread.traceF( tin0P , T("ROOTmAILoUT: hiring ifcIDaDAM_UDPeCHO") ) ;
+        //U::20230611@1304: DISABLED TO UNCLUTTER STFU TRACE FILE.  UDPeCHO WORKS AND CAN BE ENABLED HERE FOR FURTHER TESTING AND DEVELOPMENT
+
+        //etThread.trace F( tin0P , T("debug 9") ) ;
+        _IO_
+    {
+    if( !bSandbox )
+    //etThread.trace F( tin0P , T("debug [bSandbox]:    ")+TF2(bSandbox,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+    //bSandbox = 0 ;
+    boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE    ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+{
+if( pTaskP )
+TASK( tmWorkF )
+
+DONE( tmWorkerF )
+}
+    dec02AM( cWorkersP ) ;
+
+    }
+        }
+            ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+
+            while( !ether && ~hFindEmail && !POOP ) ;
+            }
+                DEL( pInfo ) ;
+                }
+                    }
+                        }
+                            }
+                                }
+                                    }
+                                        }
+                                            break ;
+                                            etRock.traceF( tin0P , T("    file moved aok to sentAok") ) ;
+                                        {
+                                        else
+                                        }
+                                            ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+                                            flagsFail |= flFAILeMAILsENDlATER_COULDnOTmOVEfILEtOsENTaOK ;
+                                            POOPRqUIET ;
+                                        {
+                                        if( POOP )
+                                        ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tFolderSentAok+tShort , tLongEating , 1 ) ;
+                                        SCOOPS
+                                    {
+                                    IFsCRATCHoK
+                                {
+                                while( !ether )
+                            {
+                            else
+                            }
+                                }
+                                    }
+                                        }
+                                            break ;
+                                            etRock.traceF( tin0P , T("    file moved aok to retryLater") ) ;
+                                        {
+                                        else
+                                        }
+                                            ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+                                            flagsFail |= flFAILeMAILsENDlATER_COULDnOTmOVEfILEtOrETRYlATER ;
+                                            POOPRqUIET ;
+                                        {
+                                        if( POOP )
+                                        ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tFolderRetryLater+tShort , tLongEating , 1 ) ;
+                                        SCOOPS
+                                    {
+                                    IFsCRATCHoK
+                                {
+                                while( !ether )
+                            {
+                            if( F(flagsFail) )
+
+                            }
+                                }
+                                    else etRock.traceF( tin0P , T("    email sent aok") ) ;
+                                    }
+                                        flagsFail |= flFAILeMAILsENDlATER_COULDnOTsENDeMAILnOW ;
+                                        POOPRqUIET ;
+                                    {
+                                    if( POOP )
+                                    ((tin1S&)tin0P).pEtScratch->emailSendNowF( tin0P , soulEmail ) ;
+                                    SCOOPS
+                                {
+                                IFsCRATCHoK
+                                etRock.traceF( tin0P , T("    file read aok") ) ;
+                            {
+                            if( !F(flagsFail) )
+
+                            }
+                                }
+                                    flagsFail |= flFAILeMAILsENDlATER_COULDnOTrEADsOULfILE ;
+                                    POOPRqUIET ;
+                                {
+                                if( POOP )
+                                ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , soulEmail , tLongEating , 1 ) ;
+                                SCOOPS
+                            {
+                            IFsCRATCHoK
+                            soulC soulEmail( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                        {
+                        if( !F(flagsFail) )
+
+                        }
+                            }
+                                flagsFail |= flFAILeMAILsENDlATER_COULDnOTmOVEfILE ;
+                                POOPRqUIET ;
+                            {
+                            if( POOP )
+                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tLongEating , tLong , 1 ) ;
+                            SCOOPS
+                        {
+                        IFsCRATCHoK
+                        flagsT flagsFail = flFAILeMAILsENDlATER_null ;
+
+                        etRock.traceF( tin0P , tShort ) ;
+
+                        TN( tLongEating , "" ) ; tLongEating = tFolderEmailsToSend+tEatingDot+tShort ;
+                        }
+                            etThread.delF( tin0P , psttShort ) ;
+                            tShort = T(psttShort) ;
+                            etThread.delF( tin0P , psttnu ) ;
+                            etThread.strBisectF( tin0P , psttnu , psttShort , tLong , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                            ZE( strokeS* , psttShort ) ;
+                            ZE( strokeS* , psttnu ) ;
+                        {
+                        TN( tShort , "" ) ;
+                        TN( tLong , pInfo->psttIfoName ) ;
+
+                        _IO_
+                    {
+                    if( !bDir )
+
+                    const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
+                    _IO_
+                {
+                else
+                }
+                    break ;
+                    DEL( pInfo ) ;
+                {
+                if( !pInfo || !pInfo->psttIfoName )
+
+                etThread.diskFindFileOrDirF( tin0P , pInfo , hFindEmail , tFolderEmailsToSend , &patEmailSoul ) ;
+                ZE( infoFileS* , pInfo ) ;
+                _IO_
+            {
+            do
+            handleC hFindEmail( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            IFsCRATCHoK{}
+        {
+        while( !ether && !etThread )
+        ZE( countT , idCycle ) ;
+        TN( tStar  , "*" ) ;
+        TN( tSlash  , "/" ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+        patternC patEmailSoul( tin0P , etThread , tPatternEmailSoul , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+        TN( tPatternEmailSoul , "" ) ; tPatternEmailSoul = T("email.*.soulC") ;
+
+        }
+            etThread.delF( tin0P , psttLanName ) ;
+            tLanName = T(psttLanName) ;
+            etThread.computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
+            ZE( strokeS* , psttLanName ) ;
+        {
+        TN( tLanName , "" ) ;
+
+        TN( tEatingDot , "eating." ) ;
+    {
+
+    TN( tFolderSentAok    , "" ) ; tFolderSentAok    = tFolderEmailsToSend+T("sent.aok/"   ) ;
+    TN( tFolderRetryLater , "" ) ; tFolderRetryLater = tFolderEmailsToSend+T("retry.later/") ;
+
+    etRock.traceF( tin0P , tFolderEmailsToSend ) ;
+    }
+        etThread.delF( tin0P , pstts ) ;
+        if( pstts && pstts->idAdam ) tFolderEmailsToSend = T(pstts) ;
+        ZE( strokeS* , pstts ) ; etThread.querySettingF( tin0P , pstts , T("!ipdos.outgoing.email.folder" ) ) ; ___( pstts ) ;
+    {
+    TN( tFolderEmailsToSend , "///ideafarm/shared/email.to.send/" ) ;
+
+    countT& cWorkersP = *(countT*)pTaskP->c1 ;
+
+    _IO_
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmWorkerF )
+
+#define flFAILeMAILsENDlATER_COULDnOTmOVEfILEtOsENTaOK      0xe00010ff
+#define flFAILeMAILsENDlATER_COULDnOTmOVEfILEtOrETRYlATER   0xe00008ff
+#define flFAILeMAILsENDlATER_COULDnOTsENDeMAILnOW           0xe00004ff
+#define flFAILeMAILsENDlATER_COULDnOTrEADsOULfILE           0xe00002ff
+#define flFAILeMAILsENDlATER_COULDnOTmOVEfILE               0xe00001ff
+#define flFAILeMAILsENDlATER_null                           0xe00000ff
+
+/*1*/WAKEhIDE( "ifcIDaDAM_EMAILsENDlATER" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
