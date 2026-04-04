@@ -34,7 +34,6 @@ DONE( tmWorkF )
 
                 }
                     ++ s ; etRock.osSleepF( tin0P , TOCK >> 1 ) ;
-                    CONoUTrAW( "." ) ;
 
                     }
                         if( rc <= 32 ) etRock.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -61,11 +60,10 @@ DONE( tmWorkF )
                                         }
                                             //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                                             time1Signature = 0 ;
-                                            else         bStfu2 = 1 ;
-                                            if( !bTrue ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just went DOWN, but the router1 channel is still up.":"    The router2 channel just went DOWN, and the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just went DOWN, but the router1 channel is still up.":"    The router2 channel just went DOWN, and the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter2 = 0 ;
                                         {
-                                        if( bUpRouter2 )
+                                        if( bUpRouter2 && !bTrue )
                                         //etRock.traceF( tin0P , T("stomp! (router2) FAIL [idStompRouter2,cFail,rc          ]:    ")+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompRouter2Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                         POOPRqUIET
                                         countT rc = POOP ;
@@ -73,15 +71,16 @@ DONE( tmWorkF )
                                     else
                                     }
                                         }
-                                            else                                  bStfu2 = 0 ;
-                                            if( !bStfu2 || bOpenBrowserWhenUpUp ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router1 and router2 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router1 and router2 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter2 = 1 ;
                                         {
                                         if( !bUpRouter2 )
                                         //etRock.traceF( tin0P , T("stomp! (router2) aok [idStompRouter2                    ]:    ")+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                     {
                                     if( !POOP )
+                                    CONoUTrAW( "}" ) ;
                                     ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 1 ) ; ___( posti ) ;
+                                    CONoUTrAW( "{" ) ;
                                     ZE( countT   , costi ) ;
                                     ZE( osTextT* , posti ) ;
                                     //etRock.traceF( tin0P ,     T("stomp! (router2) begin [idStompRouter2,url              ]:    ")+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
@@ -116,11 +115,10 @@ DONE( tmWorkF )
                                         }
                                             //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                                             time1Signature = 0 ;
-                                            else        bStfu1 = 1 ;
-                                            if( bTrue ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just went DOWN, but the router2 channel is still up.":"    The router1 channel just went DOWN, and the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just went DOWN, but the router2 channel is still up.":"    The router1 channel just went DOWN, and the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter1 = 0 ;
                                         {
-                                        if( bUpRouter1 )
+                                        if( bUpRouter1 && bTrue )
                                         //etRock.traceF( tin0P , T("stomp! (router1) FAIL  [epochMeUseTrue,idStompRouter1,cFail,rc]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompRouter1Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                         POOPRqUIET
                                         countT rc = POOP ;
@@ -128,15 +126,16 @@ DONE( tmWorkF )
                                     else
                                     }
                                         }
-                                            else                                  bStfu1 = 0 ;
-                                            if( !bStfu1 || bOpenBrowserWhenUpUp ) etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router1 and router2 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
+                                            etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router1 and router2 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter1 = 1 ;
                                         {
                                         if( !bUpRouter1 )
                                         //etRock.traceF( tin0P , T("stomp! (router1) aok   [epochMeUseTrue,idStompRouter1         ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                     {
                                     if( !POOP )
+                                    CONoUTrAW( "]" ) ;
                                     ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 1 ) ; ___( posti ) ;
+                                    CONoUTrAW( "[" ) ;
                                     ZE( countT   , costi ) ;
                                     ZE( osTextT* , posti ) ;
                                     //etRock.traceF( tin0P ,     T("stomp! (router1) begin [epochMeUseTrue,idStompRouter1,url     ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
@@ -263,17 +262,15 @@ DONE( tmWorkF )
                     ++ idPass ;
                 {
                 while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
-                boolT bOpenBrowserWhenUpUp = 1 ;                                                                            // WILL ALSO BE USED TO INDICATE "EARLY"
-                ZE( boolT , bStfu2 ) ;
-                ZE( boolT , bStfu1 ) ;
+                boolT bOpenBrowserWhenUpUp = 1 ;
                 ZE( countT , time1Signature ) ;
                 const countT time1LateEnd      = 3 * time1LateBegin ;
                 const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
                 const countT time1LateBegin    = time1PerEpoch >> 2 ;
                 const countT time1PerEpoch     = 1 << BITSsHIFTiDEAnETePOCH ;
                 ZE( countT , idPass ) ;
-                ZE( boolT  , bUpRouter2 ) ;
-                ZE( boolT  , bUpRouter1 ) ;
+                ZE( boolT  , bUpRouter2 ) ;             //P:PERSONALITY: WILL NOT BE RESET IF STOMP FAILS WHILE  bTrue BECAUSE SUCH A FAILURE IS EXPECTED
+                ZE( boolT  , bUpRouter1 ) ;             //P:PERSONALITY: WILL NOT BE RESET IF STOMP FAILS WHILE !bTrue BECAUSE SUCH A FAILURE IS EXPECTED
                 countT cSkipStomp = TUCK >> 4 ;
                 countT cSkipPage  = TUCK >> 5 ;
                 ZE( countT , cStompRouter2Fail ) ;
