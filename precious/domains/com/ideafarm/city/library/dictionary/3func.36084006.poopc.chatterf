@@ -9,9 +9,10 @@
 
 }
     }
-        etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+        etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT | flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
-        OStEXTC(  ostoSay , idSubType , ' ' ) ;
+        else         { OStEXTC( ostoSay , idSubType , ' ' ) ; }
+        if( postRc ) { OStEXTA( ostoSay , postRc          ) ; }
         OStEXTAK( ostoSay , "    " ) ;
         OStEXTC(  ostoSay , idiFileGrunt , ' ' ) ;
         OStEXTAK( ostoSay , "    " ) ;
@@ -22,6 +23,8 @@
         OStEXTC(  ostoSay , idLineP , ' ' ) ;
         OStEXTA(  ostoSay , ( F(flags) & flPOOP_SMELLY ? "poopC sniff sniff [idLineChatter,idiFileChatter,idLineGrunt,idiFileGrunt,idSubType]:    " : "poopC [idLineChatter,idiFileChatter,idLineGrunt,idiFileGrunt,idSubType]:    " ) ) ;
         OStEXT(   ostoSay , TUCK << 2 ) ;
+
+        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( idSubType ) ;
     {
     if( ((tin1S&)tin0P).pEther )
 

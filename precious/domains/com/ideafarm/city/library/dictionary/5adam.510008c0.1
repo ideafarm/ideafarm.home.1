@@ -138,7 +138,7 @@ DONE( tmWorkF )
                                     CONoUTrAW( "[" ) ;
                                     ZE( countT   , costi ) ;
                                     ZE( osTextT* , posti ) ;
-                                    //etRock.traceF( tin0P ,     T("stomp! (router1) begin [epochMeUseTrue,idStompRouter1,url     ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
+                                    if( bChatter ) etRock.traceF( tin0P ,     T("stomp! (router1) begin [epochMeUseTrue,idStompRouter1,url     ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUse , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM  ) ;
                                     SCOOPS
                                     _IO_
                                 {
@@ -195,9 +195,11 @@ DONE( tmWorkF )
                     else
                     }
                         //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                        bChatter       = 1 ;
                         time1Signature = 0 ;
                     {
                     if( !bUpRouter1 || !bUpRouter2 )
+                    ZE( boolT , bChatter ) ;
 
                     }
                         //etRock.traceF( tin0P , T("[nnNowRouter2]:    ")+tIpv6NowRouter2 , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
