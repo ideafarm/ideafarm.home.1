@@ -242,7 +242,7 @@
     "    . strFileMatchF_o4@4@       . ?? ")+T(postName)+T("\r\n"
     "    . strEncodeBlobToRFC4648F_o4@1@3       . ?? ")+T(postName)+T("\r\n"
     "    . strDecodeBlobFromRFC4648F_o1@34@       . ?? ")+T(postName)+T("\r\n"
-    "    . strMimeEncodeF_o2@1@3       . ?? ")+T(postName)+T("\r\n"
+    "    . strMimeEncodeF_o2@1@33       . ?? ")+T(postName)+T("\r\n"
     "    . sssTestF_o64@4@334@4@       . ?? ")+T(postName)+T("\r\n"
     "    . winAppendTitleF_o4@b       . ?? ")+T(postName)+T("\r\n"
     "    . winPostMessageAfterNapF_o3b333       . ?? ")+T(postName)+T("\r\n"

@@ -1951,11 +1951,11 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "strMimeEncodeF_o2@1@3" ) ;
+    TN( tNameSoixlOld , "strMimeEncodeF_o2@1@33" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strMimeEncodeF_o2P1P3_GF ;
+    *_pSwSoixlOldApi = (countT)strMimeEncodeF_o2P1P33_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

@@ -487,7 +487,7 @@ voidT strEncodeBlobToRFC4648F_o4P1P3_GF( tin0S& tin0P , etherC& etherP , soulC& 
 
 voidT strDecodeBlobFromRFC4648F_o1P34P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT strMimeEncodeF_o2P1P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT strMimeEncodeF_o2P1P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT sssTestF_o64P4P334P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

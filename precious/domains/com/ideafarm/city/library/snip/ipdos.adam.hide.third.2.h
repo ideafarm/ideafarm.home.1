@@ -4817,7 +4817,7 @@ examples
 //AOK: #define BITSsHIFTiDEAnETePOCH ( 0x16 )
 
 
-// 01 EPOCHS PER TICK
+// 01 EPOCHS PER TICK (PRODUCTION)
 #define BITSsHIFTiDEAnETePOCH ( 0x14 )
 
 
@@ -34649,9 +34649,9 @@ examples
 /* email */
  voidT emailFactoryReportOldF( tin0S& tin0P , const strokeS* const psttSubjectP , const strokeS* const psttBodyP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021e7.etherc.emailFactoryReportOldF!||
- voidT emailSendNowF( tin0S& tin0P , soulC& soulP ) ;
- voidT emailAttachF( tin0S& tin0P , soulC& soulP , const strokeS* const psttShortP , const strokeS* const psttMimeTypeP , const byteT* const pbP , const countT cbP ) ;
  voidT emailComposeF( tin0S& tin0P , soulC& soulP , const strokeS* const psttSubjectP , const strokeS* const psttBodyP , const strokeS* const psttFromP , const strokeS* const psttReplyToP , const strokeS* const pstt1ToP , const strokeS* const pstt1CcP = 0 , const strokeS* const pstt1BccP = 0 ) ;
+ voidT emailAttachF( tin0S& tin0P , soulC& soulP , const strokeS* const psttShortP , const strokeS* const psttMimeTypeP , const byteT* const pbP , const countT cbP ) ;
+ voidT emailSendNowF( tin0S& tin0P , soulC& soulP ) ;
  voidT emailSendLaterF( tin0S& tin0P , soulC& soulP ) ;
 
 /* commands: faces */

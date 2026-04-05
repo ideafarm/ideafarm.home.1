@@ -3139,7 +3139,7 @@ voidT strDecodeBlobFromRFC4648F_o1P34P_GF( tin0S& tin0P , etherC& etherP , soulC
     etherP.delF( tin0P , pbP ) ;
 }
 
-voidT strMimeEncodeF_o2P1P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strMimeEncodeF_o2P1P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -3162,8 +3162,32 @@ voidT strMimeEncodeF_o2P1P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , con
     ZE( countT , cbP ) ;
     if( !POOP ) { slP >> cbP ; idArgNext ++ ; }
 
+    ZE( countT , costLineMaxP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                costLineMaxP = 0 ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tin0P , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+                if( !POOP ) { slP >> costLineMaxP ; idArgNext ++ ; }
+            }
+        }
+    }
+
     ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.strMimeEncodeF( tin0P , postP , pbP , cbP ) ;
+    if( !POOP ) noName = etherP.strMimeEncodeF( tin0P , postP , pbP , cbP , costLineMaxP ) ;
     etherP.delF( tin0P , pbP ) ;
 
     if( !POOP ) slP << postP ;
