@@ -1,9 +1,9 @@
-//#define DEBUG
+#define DEBUG
 
 //ENABLE THIS PREPROCESSOR IF/ENDIF IN PRODUCTION
-#if not defined( DEBUG )
+//#if not defined( DEBUG )
     #define RELEASE
-#endif
+//#endif
 
 #define TELL
 
