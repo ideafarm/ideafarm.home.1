@@ -21,8 +21,12 @@
         __1
         #endif
 
-            __( ((tin1S&)tin0P).brcRaw - WSABASEERR ) ;
-            BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
+            }
+                __( ((tin1S&)tin0P).brcRaw - WSABASEERR ) ;
+                BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
+            {
+            else
+            if( oshRc ) { __( oshRc - WSABASEERR ) ; }
 
         #elif defined( __NT__ )
 
@@ -53,7 +57,11 @@
                 ++ s ;
 
                 #endif
-                    if( ((tin1S&)tin0P).brcLath == WSAENOTSOCK - WSABASEERR ) break ; //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP          20241123@2154: W/O ANALYSIS, ADDED "- WSABASEERR"
+                    }
+                        break ;
+                        oshRc = ((tin1S&)tin0P).brcLath ;
+                    {
+                    if( ((tin1S&)tin0P).brcLath == WSAENOTSOCK - WSABASEERR ) //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP          20241123@2154: W/O ANALYSIS, ADDED "- WSABASEERR"
                 #elif defined( __NT__ )
                     //U:
                 #if defined( __OS2__ )
@@ -142,6 +150,7 @@
         do
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
+    ZE( countT , oshRc ) ;
     boolT bFail = 1 ;
     boolT bNoQuitEarly = !cTriesP ;
     boolT bNoQuit = cTriesP == - 1 ;
