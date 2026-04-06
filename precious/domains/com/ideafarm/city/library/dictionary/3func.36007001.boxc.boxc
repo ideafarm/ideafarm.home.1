@@ -231,6 +231,7 @@
     else if( psttHost->idAdam && !ether.strCompareF( tin0P , psttType , T("pop") ) )
     }
         }
+            __( idImpotenceLath ) ;
             while( bNoQuitEarly || ( cDo && -- cDo ) ) ;
             }
                 }
@@ -259,12 +260,14 @@
                             }
                                 DEL( pSControl ) ;
                                 POOPRqUIET
+                                idImpotenceLath = POOP ;
                                 /**/ether.traceF( tin0P , T("boxC::boxC / http / could not connect [nn]: ")+T(pNicName[offi]) ) ;
                             {
                             else
                             }
                                 break ;
                                 bConnected = 1 ;
+                                idImpotenceLath = 0 ;
                                 pSControl->etherF( tin0P , ether ) ;
                                 //ether.traceF( tin0P , T("boxC::boxC / http / connected [nn]: ")+T(pNicName[offi]) ) ;
                             {
@@ -285,7 +288,11 @@
                         for( countT offi = 0 ; offi < cNicName ; offi ++ )
                     {
                     else
-                    if( POOP ) { POOPRqUIET ; }
+                    }
+                        POOPRqUIET
+                        idImpotenceLath = POOP ;
+                    {
+                    if( POOP )
 
                     __Z( cNicName ) ;
                     __Z( pNicName ) ;
@@ -299,6 +306,7 @@
             {
             do
             countT cDo = cOpenTries ;
+            ZE( countT , idImpotenceLath ) ;
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
             boolT bNoQuitEarly = !cOpenTries ;
