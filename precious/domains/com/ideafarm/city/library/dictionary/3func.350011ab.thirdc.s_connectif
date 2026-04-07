@@ -34,15 +34,17 @@
             {
             else
             }
-                thirdC::dosSleepIF( tin0P , TUCK * 0x40 ) ;
-                ++ s ;
-
                 #endif
                     }
                         break ;
                         oshRc = ((tin1S&)tin0P).brcLath ;
                     {
-                    //20260406@1825: DO IT UNCONDITIONALLY        if( ((tin1S&)tin0P).brcLath == WSAENOTSOCK - WSABASEERR ) //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP          20241123@2154: W/O ANALYSIS, ADDED "- WSABASEERR"
+                    )
+                        ((tin1S&)tin0P).brcLath == WSAETIMEDOUT - WSABASEERR
+                        ||
+                        ((tin1S&)tin0P).brcLath == WSAENOTSOCK  - WSABASEERR                  // THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP          20241123@2154: W/O ANALYSIS, ADDED "- WSABASEERR"
+                    (
+                    if
                 #elif defined( __NT__ )
                     //U:
                 #if defined( __OS2__ )
