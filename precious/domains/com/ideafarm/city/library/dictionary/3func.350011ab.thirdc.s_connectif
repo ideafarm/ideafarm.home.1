@@ -9,15 +9,14 @@
 
 }
     }
-        __1
-
         #endif
 
             __1
-            __( oshRc ) ;
+            __( osRc ) ;
 
         #elif defined( __NT__ )
 
+            __1
             __( ((tin1S&)tin0P).brcRaw - SOCBASEERR ) ;
             BOSdOnOTtEST( WHATgbo , sock_errno() )
 
@@ -30,21 +29,12 @@
         }
             }
                 break ;
-                bFail = 0 ;
+                osRc = bFail = 0 ;
             {
             else
             }
                 #endif
-                    }
-                        break ;
-                        oshRc = ((tin1S&)tin0P).brcLath ;
-                    {
-                    )
-                        ((tin1S&)tin0P).brcLath == WSAETIMEDOUT - WSABASEERR
-                        ||
-                        ((tin1S&)tin0P).brcLath == WSAENOTSOCK  - WSABASEERR                  // THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP          20241123@2154: W/O ANALYSIS, ADDED "- WSABASEERR"
-                    (
-                    if
+                    osRc = ((tin1S&)tin0P).brcLath ;
                 #elif defined( __NT__ )
                     //U:
                 #if defined( __OS2__ )
@@ -58,7 +48,7 @@
         do
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
-    ZE( countT , oshRc ) ;
+    ZE( countT , osRc ) ;
     boolT bFail = 1 ;
     boolT bNoQuitEarly = !cTriesP ;
     boolT bNoQuit = cTriesP == - 1 ;
