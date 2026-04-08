@@ -16929,6 +16929,7 @@ TASKpART0PROTO( tmWatchRudeF ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.poopC.resetF!||
  voidT chatterF( tin0S& tin0P , const countT idLineP , const countT idiFileP ) const ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.poopC.chatterF!||
+ voidT chatterF( tin0S& tin0P , osTextT* const postP , const countT costaP ) const ;
  inline flagsT flagsF( voidT ) const { return flags ; }
  inline countT idLineGruntF( voidT ) const { return idLineGrunt ; }
  inline countT idiFileGruntF( voidT ) const { return idiFileGrunt ; }
