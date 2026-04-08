@@ -4814,7 +4814,7 @@ examples
 /*1*//*BITSsHIFTiDEAnETePOCH*//*1*/
 
 // 4 EPOCHS PER TICK
-#define BITSsHIFTiDEAnETePOCH ( 0x16 )
+//#define BITSsHIFTiDEAnETePOCH ( 0x16 )
 
 
 // 01 EPOCHS PER TICK (PRODUCTION)
@@ -4822,7 +4822,7 @@ examples
 
 
 // 1 EPOCHS PER TICK
-//#define BITSsHIFTiDEAnETePOCH ( 0x18 )
+#define BITSsHIFTiDEAnETePOCH ( 0x18 )
 
 // 04 EPOCHS PER DAY ; EACH EPOCH IS 4 TICKS
 //#define BITSsHIFTiDEAnETePOCH ( 0x1a )
@@ -4913,7 +4913,7 @@ examples
 
 /*1*//*EPOCHSaLLOWEDfORbGPpROPOGATION*//*1*/
 
-#define EPOCHSaLLOWEDfORbGPpROPOGATION 2
+#define EPOCHSaLLOWEDfORbGPpROPOGATION 1
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -4940,7 +4940,7 @@ examples
 
 /*1*//*EPOCHSsIGNATUREmAX*//*1*/
 
-#define EPOCHSsIGNATUREmAX             0x10
+#define EPOCHSsIGNATUREmAX             0x1
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
