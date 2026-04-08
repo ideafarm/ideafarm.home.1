@@ -191,10 +191,9 @@ DONE( tmWorkF )
                     }
                         //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [time1Signature,perTuckSignature]:    ")+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
-time1Signature = 0 ;
                         time1Signature = (countT)(    ( (count04T)time1PerEpoch * EPOCHSsIGNATUREmAX * perTuckSignature )    /    TUCK    ) ;
 
-                        count04T perTuckSignature = ipv6FieldsRouter1.hostRandom % TUCK ;
+                        count04T perTuckSignature = TUCK /*ipv6FieldsRouter1.hostRandom % TUCK*/ ;
 
                         // THE RANDOMNESS OF THE LENGTH OF THE SIGNATURE TIME ADJUSTMENT CREATES A SIGNATURE THAT CAN BE USED TO IDENTIFY AN ATTACKER WHO IS SNIFFING HIS WIRE TO DISCOVER THE PREFIX TO ATTACK
                         // DISCRETE STEPS SO THAT THE SEQUENCE OF time1Signature VALUES WILL BE QUASI UNIQUE FOR EACH SUBSCRIBER, SO CAN SERVE AS A SIGNATURE FOR IDENTIFYING A SUBSCRIBER ATTACKER
