@@ -60,6 +60,7 @@ DONE( tmWorkF )
                                     }
                                         }
                                             if( bChatter ) etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                                            cEpochsNoSignature = EPOCHSsIGNATUREmAX ;
                                             time1Signature = 0 ;
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just went DOWN, but the router1 channel is still up.":"    The router2 channel just went DOWN, and the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter2 = 0 ;
@@ -118,6 +119,7 @@ DONE( tmWorkF )
                                     }
                                         }
                                             if( bChatter ) etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                                            cEpochsNoSignature = EPOCHSsIGNATUREmAX ;
                                             time1Signature = 0 ;
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just went DOWN, but the router2 channel is still up.":"    The router1 channel just went DOWN, and the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouter1 = 0 ;
@@ -199,10 +201,11 @@ perTuckSignature = TUCK ;
                         // THE RANDOMNESS OF THE LENGTH OF THE SIGNATURE TIME ADJUSTMENT CREATES A SIGNATURE THAT CAN BE USED TO IDENTIFY AN ATTACKER WHO IS SNIFFING HIS WIRE TO DISCOVER THE PREFIX TO ATTACK
                         // DISCRETE STEPS SO THAT THE SEQUENCE OF time1Signature VALUES WILL BE QUASI UNIQUE FOR EACH SUBSCRIBER, SO CAN SERVE AS A SIGNATURE FOR IDENTIFYING A SUBSCRIBER ATTACKER
                     {
-                    else
+                    else if( !cEpochsNoSignature )
                     }
                         //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                         //bChatter       = 1 ;
+                        cEpochsNoSignature = EPOCHSsIGNATUREmAX ;
                         time1Signature = 0 ;
                     {
                     if( !bUpRouter1 || !bUpRouter2 )
@@ -244,6 +247,8 @@ perTuckSignature = TUCK ;
                         ZE( sCountT , timeN2 ) ;
                         ZE( countT  , timeN1 ) ;
 
+                        if( cEpochsNoSignature ) cEpochsNoSignature -- ;
+
                         epochHeTrueLath = epochHeTrue ;
                     {
                     if( epochHeTrueLath != epochHeTrue )
@@ -273,6 +278,7 @@ etThread.winSetTitleF( tin0P , T("[epochHeTrue,epochMeUseTrue]:    ")+TF2(epochH
                     ++ idPass ;
                 {
                 while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
+                ZE( countT , cEpochsNoSignature ) ;
                 boolT bOpenBrowserWhenUpUp = 1 ;
                 ZE( countT , time1Signature ) ;
                 const countT time1LateEnd      = 3 * time1LateBegin ;
