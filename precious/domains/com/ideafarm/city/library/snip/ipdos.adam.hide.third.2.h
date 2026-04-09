@@ -4814,7 +4814,7 @@ examples
 /*1*//*BITSsHIFTiDEAnETePOCH*//*1*/
 
 
-#define BITSsHIFTiDEAnETePOCH ( 0x17 )
+#define BITSsHIFTiDEAnETePOCH ( 0x15 )
 
 
 //
