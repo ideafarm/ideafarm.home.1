@@ -4814,7 +4814,7 @@ examples
 /*1*//*BITSsHIFTiDEAnETePOCH*//*1*/
 
 
-#define BITSsHIFTiDEAnETePOCH ( 0x16 )
+#define BITSsHIFTiDEAnETePOCH ( 0x17 )
 
 
 //
@@ -31709,6 +31709,7 @@ private :
  voidT winSetTextAlignF( tin0S& tin0P , const handleC& hDrawP , const countT idCmdP = idcTEXTaLIGN_CELLbASE ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34095.thirdC.winSetTextAlignF!||
  boolT winSetTitleF( tin0S& tin0P , const osTextT* const postP , const handleC& hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ) ;
+ boolT winGetTitleF( tin0S& tin0P , osTextT* const postP , const countT costaP , const handleC& hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3408d.thirdC.winSetTitleF!||
  boolT winShowWindowF( tin0S& tin0P , const handleC& handleP , const countT idCmdP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34092.thirdC.winShowWindowF!||
@@ -35356,6 +35357,7 @@ examples
  voidT winPostMessageAfterNapF( tin0S& tin0P , const countT time1P , const handleC& hWindowP , const countT idCmdP , const countT arg1P = 0 , const countT arg2P = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340f8.etherC.winPostMessageAfterNapF!||
  boolT winSetTitleF( tin0S& tin0P , const strokeS* const psttP , const handleC& hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ) ;
+ boolT winGetTitleF( tin0S& tin0P , strokeS*& psttP , const handleC& hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34102.etherC.winSetTitleF!||
 /**/
 
