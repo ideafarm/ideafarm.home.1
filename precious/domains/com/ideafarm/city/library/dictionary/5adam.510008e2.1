@@ -510,11 +510,11 @@ TASK( tmAddAddressF )
             {
             if( epochTrueWoth < epochTrueLath )
 
-            countT epochLateWoth = ( ( timeN1 - time1TrueMidpoint - time1PerEpoch * EPOCHSsIGNATUREmAX ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
-            countT epochLateLath = ( ( timeN1 - time1TrueMidpoint                                      ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+            countT epochLateWoth = ( ( timeN1 - time1TrueMidpoint - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+            countT epochLateLath = ( ( timeN1 - time1TrueMidpoint                                              ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
 
-            countT epochTrueWoth = ( ( timeN1                     - time1PerEpoch * EPOCHSsIGNATUREmAX ) >> BITSsHIFTiDEAnETePOCH ) ;
-            countT epochTrueLath = ( ( timeN1                                                          ) >> BITSsHIFTiDEAnETePOCH ) ;
+            countT epochTrueWoth = ( ( timeN1                     - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
+            countT epochTrueLath = ( ( timeN1                                                                  ) >> BITSsHIFTiDEAnETePOCH ) ;
 
             // EACH PREFIX, AND EACH ADDRESS, MUST LIVE LONG ENOUGH TO EXIST UNTIL IT WILL NO LONGER BE USED
             // IF BITSsHIFTiDEAnETePOCH IS DEFINED TO BE ( 0x14 ), THEN EACH EPOCH IS 02 TOCK
