@@ -83,7 +83,7 @@ DONE( tmWorkF )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router2) aok   [epochMeUseLate,idStompRouter2         ]:    ")+TF2(epochMeUseLate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                     {
                                     if( !POOP )
-                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 4 ) ; ___( posti ) ;
+                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 1 ) ; ___( posti ) ;
                                     CONoUTrAW( "(" ) ;
                                     ZE( countT   , costi ) ;
                                     ZE( osTextT* , posti ) ;
@@ -142,7 +142,7 @@ DONE( tmWorkF )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router1) aok   [epochMeUseTrue,idStompRouter1         ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                     {
                                     if( !POOP )
-                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 4 ) ; ___( posti ) ;
+                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 1 ) ; ___( posti ) ;
                                     CONoUTrAW( "[" ) ;
                                     ZE( countT   , costi ) ;
                                     ZE( osTextT* , posti ) ;
@@ -193,10 +193,9 @@ DONE( tmWorkF )
                     }
                         //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [time1Signature,perTuckSignature]:    ")+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
-//time1Signature = (countT)(    ( (count04T)time1PerEpoch * ( EPOCHSsIGNATUREmAX - 1 ) * perTuckSignature )    /    TUCK    ) ;
                         time1Signature = (countT)(    ( (count04T)time1PerEpoch * EPOCHSsIGNATUREmAX * perTuckSignature )    /    TUCK    ) ;
 
-perTuckSignature = TUCK ;
+//perTuckSignature = TUCK ;
                         count04T perTuckSignature = ipv6FieldsRouter1.hostRandom % TUCK ;
 
                         // THE RANDOMNESS OF THE LENGTH OF THE SIGNATURE TIME ADJUSTMENT CREATES A SIGNATURE THAT CAN BE USED TO IDENTIFY AN ATTACKER WHO IS SNIFFING HIS WIRE TO DISCOVER THE PREFIX TO ATTACK
@@ -267,7 +266,7 @@ perTuckSignature = TUCK ;
                     {
                     if( epochHeTrueLath != epochHeTrue )
 
-etThread.winSetTitleF( tin0P , T("[epochHeTrue,epochMeUseTrue,bTrue,cEpochsNoSignature,time1Signature]:    ")+TF2(epochHeTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bTrue?"    TRUE    ":"    LATE    ")+TF2(cEpochsNoSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//etThread.winSetTitleF( tin0P , T("[epochHeTrue,epochMeUseTrue,bTrue,cEpochsNoSignature,time1Signature]:    ")+TF2(epochHeTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bTrue?"    TRUE    ":"    LATE    ")+TF2(cEpochsNoSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                     countT epochMeUseLate   = ( ( timeN1 - time1TrueMidpoint - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
                     countT epochMeUseTrue   = ( ( timeN1                     - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
