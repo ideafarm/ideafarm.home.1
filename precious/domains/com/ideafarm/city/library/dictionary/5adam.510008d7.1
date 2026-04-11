@@ -247,26 +247,28 @@ DONE( tmWorkF )
                 // ******************************************************************************************************************************************************************************************************************************************************************************************************
 
                 }
-                    //}
-                    //    while( ~hWalk ) ;
-                    //    }
-                    //        else               stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
-                    //        if( idPrefix % 2 ) stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
-                    //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+(idPrefix%2?t1BirdImage4BitsVia:t2BirdImage4BitsVia)+tEpochPlate+tBirdImage4DecoySwarm ) ; ___( psttl ) ;
-                    //        ZE( strokeS* , psttl ) ;
-                    //
-                    //        etThread.traceF( tin0P , T("decoySwarm [nnWo]:    ")+tNnWo+T("/48") ) ;
-                    //
-                    //        TN( tNnWo , "" ) ; tNnWo = T(nnWo) ;
-                    //        nicNameC nnWo( 0 , 0 , idpWo << 0x10 , 0x2602ff03 ) ;
-                    //        countT idpWo = stIdPrefixDecoySwarm.downF( tin0P , hWalk ) ;
-                    //        tEpochPlate = TF2(epochUsePlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
-                    //    {
-                    //    do
-                    //    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                    //    countT epochUsePlate = epochUse ;
-                    //{
-                    //if( stIdPrefixDecoySwarm )
+                    }
+                        while( ~hWalk ) ;
+                        }
+                            else               stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
+                            if( idPrefix % 2 ) stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
+                            etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+(idPrefix%2?t1BirdImage4BitsVia:t2BirdImage4BitsVia)+tEpochPlate+tBirdImage4DecoySwarm ) ; ___( psttl ) ;
+                            ZE( strokeS* , psttl ) ;
+
+                            countT idPrefix = ( pcWo[ 2 ] & 0xfff0000 ) >> 0x10 ;
+                            const countT* pcWo = nnWo ;           
+                    
+                            etThread.traceF( tin0P , T("decoySwarm [nnWo]:    ")+tNnWo+T("/48") ) ;
+                            TN( tNnWo , "" ) ; tNnWo = T(nnWo) ;
+                            nicNameC nnWo( 0 , 0 , idpWo << 0x10 , 0x2602ff03 ) ;
+                            countT idpWo = stIdPrefixDecoySwarm.downF( tin0P , hWalk ) ;
+                            tEpochPlate = TF2(epochUsePlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+                        {
+                        do
+                        handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        countT epochUsePlate = epochUse ;
+                    {
+                    if( stIdPrefixDecoySwarm )
                     // THESE DECOY PREFIXES MUST EXHIBIT THE SAME BEHAVIOR AND BE INDISTINGUISHABLE FROM THE OTHER ADVERTISED PREFIXES ; IN PARTICULAR, THEY MUST HAVE THE SAME LIFETIMES
 
                     // ******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -281,62 +283,62 @@ DONE( tmWorkF )
                     // ******************************************************************************************************************************************************************************************************************************************************************************************************
                     // ******************************************************************************************************************************************************************************************************************************************************************************************************
 
-                    //}
-                    //    while( ~hWalk ) ;
-                    //    }
-                    //        }
-                    //            }
-                    //                ) ;
-                    //
-                    //                    "-A ufw6-user-forward -i enp1s0 -o enp10s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
-                    //                    "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp10s0\n"
-                    //                    "\n"
-                    //
-                    //                tSay2Ufw += T(
-                    //            {
-                    //            else
-                    //            }
-                    //                ) ;
-                    //
-                    //                    "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
-                    //                    "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
-                    //                    "\n"
-                    //
-                    //                tSay1Ufw += T(
-                    //            {
-                    //            if( idPrefix % 2 ) 
-                    //
-                    //            //  
-                    //            //  -A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d 2602:ff03::/36 -j ACCEPT
-                    //            //  ### tuple ### route:allow tcp 80,443 2602:ff03::/36 any ::/0 in_enp1s0!out_enp9s0
-                    //            //  
-                    //            // EXAMPLE RULES GENERATED BY UFW (THESE USE /36 RATHER THAN /48)
-                    //            //  
-                    //        {
-                    //        if( !( cAllowed ++ ) )      // ALLOW PACKETS FROM WO DECOY PREFIX TO GET THROUGH SO THAT GEIGER CAN DETECT ATTACKS THAT ARE USING THE BGP ROUTING TABLE
-                    //
-                    //        else               stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
-                    //        if( idPrefix % 2 ) stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
-                    //        etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+(idPrefix%2?t1BirdImage4BitsVia:t2BirdImage4BitsVia)+tEpochPlate+tBirdImage4BgpDecoy ) ; ___( psttl ) ;
-                    //        ZE( strokeS* , psttl ) ;
-                    //
-                    //        stIdPrefixBgpDecoy.sinkF( tin0P , countTC() , idPrefix , flSTACKsINK_UNIQUE ) ;
-                    //        countT idPrefix = ( pcWo[ 2 ] & 0xfff0000 ) >> 0x10 ;
-                    //        const countT* pcWo = nnWo ;           
-                    //
-                    //        etThread.traceF( tin0P , T("decoyBgp    [nnWo]:    ")+tNnWo+T("/48") ) ;
-                    //        TN( tNnWo , "" ) ; tNnWo = T(nnWo) ;
-                    //        nicNameC& nnWo = (nicNameC&)stNnSubnetSayBgpDecoy.downF( tin0P , hWalk ) ;
-                    //        tEpochPlate = TF2(epochUsePlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
-                    //    {
-                    //    do
-                    //    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                    //    countT epochUsePlate = epochUse + 1 - stNnSubnetSayBgpDecoy ;
-                    //    ZE( countT , cAllowed ) ;
-                    //
-                    //    stIdPrefixBgpDecoy.purgeF( tin0P ) ;
-                    //{
-                    //if( stNnSubnetSayBgpDecoy )
+                    }
+                        while( ~hWalk ) ;
+                        }
+                            }
+                                }
+                                    ) ;
+                    
+                                        "-A ufw6-user-forward -i enp1s0 -o enp10s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                                        "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp10s0\n"
+                                        "\n"
+                    
+                                    tSay2Ufw += T(
+                                {
+                                else
+                                }
+                                    ) ;
+                    
+                                        "-A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d ")+tNnWo+T("/48 -j ACCEPT\n"
+                                        "### tuple ### route:allow tcp 80,443 ")+tNnWo+T("/48 any ::/0 in_enp1s0!out_enp9s0\n"
+                                        "\n"
+                    
+                                    tSay1Ufw += T(
+                                {
+                                if( idPrefix % 2 ) 
+                    
+                                //  
+                                //  -A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d 2602:ff03::/36 -j ACCEPT
+                                //  ### tuple ### route:allow tcp 80,443 2602:ff03::/36 any ::/0 in_enp1s0!out_enp9s0
+                                //  
+                                // EXAMPLE RULES GENERATED BY UFW (THESE USE /36 RATHER THAN /48)
+                                //  
+                            {
+                            if( !( cAllowed ++ ) )      // ALLOW PACKETS FROM WO DECOY PREFIX TO GET THROUGH SO THAT GEIGER CAN DETECT ATTACKS THAT ARE USING THE BGP ROUTING TABLE
+                    
+                            else               stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
+                            if( idPrefix % 2 ) stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
+                            etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+(idPrefix%2?t1BirdImage4BitsVia:t2BirdImage4BitsVia)+tEpochPlate+tBirdImage4BgpDecoy ) ; ___( psttl ) ;
+                            ZE( strokeS* , psttl ) ;
+                    
+                            stIdPrefixBgpDecoy.sinkF( tin0P , countTC() , idPrefix , flSTACKsINK_UNIQUE ) ;
+                            countT idPrefix = ( pcWo[ 2 ] & 0xfff0000 ) >> 0x10 ;
+                            const countT* pcWo = nnWo ;           
+                    
+                            etThread.traceF( tin0P , T("decoyBgp    [nnWo]:    ")+tNnWo+T("/48") ) ;
+                            TN( tNnWo , "" ) ; tNnWo = T(nnWo) ;
+                            nicNameC& nnWo = (nicNameC&)stNnSubnetSayBgpDecoy.downF( tin0P , hWalk ) ;
+                            tEpochPlate = TF2(epochUsePlate++,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+                        {
+                        do
+                        handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        countT epochUsePlate = epochUse + 1 - stNnSubnetSayBgpDecoy ;
+                        ZE( countT , cAllowed ) ;
+                    
+                        stIdPrefixBgpDecoy.purgeF( tin0P ) ;
+                    {
+                    if( stNnSubnetSayBgpDecoy )
 
                     // ******************************************************************************************************************************************************************************************************************************************************************************************************
                     // ******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -672,22 +674,22 @@ DONE( tmWorkF )
                 if( bRouter2            ) tType += T(" ROUTER2 ") ;
                 TN( tType , "" ) ;
 
-                //}
-                //    }
-                //        etRock.traceF( tin0P , T("---- [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                //
-                //        else                                   cDecoySwarm   = 0 ;
-                //        if( cDecoySwarm >= ( MINsWARM << 1 ) ) cDecoySwarm >>= 1 ;
-                //    {
-                //    else if( cDecoySwarm && cSolicitations < ( TUCK >> 2 ) )
-                //    }
-                //        etRock.traceF( tin0P , T("++++ [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                //        else if( cDecoySwarm <= ( MAXsWARM >> 1 ) ) cDecoySwarm <<= 1        ;                                                          //P:PERSONALITY: LIMIT SWARM TO A TUCK OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
-                //        if(     !cDecoySwarm                      ) cDecoySwarm   = MINsWARM ;
-                //    {
-                //    if( cSolicitations > TUCK )
-                //{
-                //if( bBgpDecoy )
+                }
+                    }
+                        etRock.traceF( tin0P , T("---- [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                
+                        else                                   cDecoySwarm   = 0 ;
+                        if( cDecoySwarm >= ( MINsWARM << 1 ) ) cDecoySwarm >>= 1 ;
+                    {
+                    else if( cDecoySwarm && cSolicitations < ( TUCK >> 2 ) )
+                    }
+                        etRock.traceF( tin0P , T("++++ [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        else if( cDecoySwarm <= ( MAXsWARM >> 1 ) ) cDecoySwarm <<= 1        ;                                                          //P:PERSONALITY: LIMIT SWARM TO A TUCK OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
+                        if(     !cDecoySwarm                      ) cDecoySwarm   = MINsWARM ;
+                    {
+                    if( cSolicitations > TUCK )
+                {
+                if( bBgpDecoy )
 
                 boolT bBgpDecoy = stIdPrefixBgpDecoy( idlPrefix ) ;
                 boolT bRouter1  = stIdPrefixRouter1(  idlPrefix ) ;
