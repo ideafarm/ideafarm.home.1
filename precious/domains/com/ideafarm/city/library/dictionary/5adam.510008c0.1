@@ -195,7 +195,6 @@ DONE( tmWorkF )
 
                         time1Signature = (countT)(    ( (count04T)time1PerEpoch * EPOCHSsIGNATUREmAX * perTuckSignature )    /    TUCK    ) ;
 
-//perTuckSignature = TUCK ;
                         count04T perTuckSignature = ipv6FieldsRouter1.hostRandom % TUCK ;
 
                         // THE RANDOMNESS OF THE LENGTH OF THE SIGNATURE TIME ADJUSTMENT CREATES A SIGNATURE THAT CAN BE USED TO IDENTIFY AN ATTACKER WHO IS SNIFFING HIS WIRE TO DISCOVER THE PREFIX TO ATTACK
@@ -266,7 +265,7 @@ DONE( tmWorkF )
                     {
                     if( epochHeTrueLath != epochHeTrue )
 
-//etThread.winSetTitleF( tin0P , T("[epochHeTrue,epochMeUseTrue,bTrue,cEpochsNoSignature,time1Signature]:    ")+TF2(epochHeTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bTrue?"    TRUE    ":"    LATE    ")+TF2(cEpochsNoSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.winSetTitleF( tin0P , tWindowTitlePrefix+T("[time1HeRemainingInEpochTrue,epochHeTrue,epochMeUseTrue,bTrue,cEpochsNoSignature,time1Signature]:    ")+TF3(time1HeRemainingInEpochTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF2(epochHeTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bTrue?"    TRUE    ":"    LATE    ")+TF2(cEpochsNoSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                     countT epochMeUseLate   = ( ( timeN1 - time1TrueMidpoint - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
                     countT epochMeUseTrue   = ( ( timeN1                     - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
@@ -280,9 +279,11 @@ DONE( tmWorkF )
                     //    ( bTrue && !bUpRouter1 )
                     //const boolT bWasDownWhileLive =
 
-                    //etRock.traceF( tin0P , T("[bTrue,time1PerEpoch,time1HeIntoEpoch]:    ")+T(bTrue?"TRUE    ":"LATE    ")+TF3(time1PerEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(time1HeIntoEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-                    bTrue = time1HeIntoEpoch > time1LateBegin && time1HeIntoEpoch < time1LateEnd ;                    //P:PERSONALITY: USE THE TRUE CHANNEL IFF (IF AND ONLY IF) NOT CLOSE TO THE TIME OF THE LATH OR THE NEXT CHANGE IN THE TRUE EPOCH ; THIS IS TO AVOID USING A ROUTER WHILE IT IS RELOADING ITS UFW FIREWALL RULES
-                    countT time1HeIntoEpoch = timeN1 - ( ( timeN1 >> BITSsHIFTiDEAnETePOCH ) << BITSsHIFTiDEAnETePOCH ) ;
+                    countT time1HeRemainingInEpochTrue = time1PerEpoch - time1HeIntoEpochTrue ;
+
+                    //etRock.traceF( tin0P , T("[bTrue,time1PerEpoch,time1HeIntoEpochTrue]:    ")+T(bTrue?"TRUE    ":"LATE    ")+TF3(time1PerEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(time1HeIntoEpochTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                    bTrue = time1HeIntoEpochTrue > time1LateBegin && time1HeIntoEpochTrue < time1LateEnd ;                    //P:PERSONALITY: USE THE TRUE CHANNEL IFF (IF AND ONLY IF) NOT CLOSE TO THE TIME OF THE LATH OR THE NEXT CHANGE IN THE TRUE EPOCH ; THIS IS TO AVOID USING A ROUTER WHILE IT IS RELOADING ITS UFW FIREWALL RULES
+                    countT time1HeIntoEpochTrue = timeN1 - ( ( timeN1 >> BITSsHIFTiDEAnETePOCH ) << BITSsHIFTiDEAnETePOCH ) ;
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
@@ -308,7 +309,14 @@ DONE( tmWorkF )
                 ZE( countT , cStompRouter2     ) ;
                 ZE( countT , cStompRouter1     ) ;
 
-                ZE( countT , idEpoch           ) ;
+                }
+                    etThread.delF( tin0P , pstti ) ;
+                    tWindowTitlePrefix = T(pstti)+tb4 ;
+                    boolT bOk = etThread.winGetTitleF( tin0P , pstti ) ; ___( pstti ) ;
+                    ZE( strokeS* , pstti ) ;
+                {
+                TN( tWindowTitlePrefix , "" ) ;
+
                 ZE( countT , epochHeLateLath   ) ;
                 ZE( countT , epochHeTrueLath   ) ;
                 TN( tUnderScore , "_" ) ;
@@ -372,9 +380,6 @@ DONE( tmWorkF )
             "\r\nIdeaFarm (tm) IdeaNet (tm) is a subscribers-only World Wide Web system within the public Internet system."
 
         etRock.traceF( tin0P , T(
-
-        //countT idSub  = 1 ;
-        //countT idBook = 1 ;
 
         ZE( strokeS* , psttUnwanted ) ;
         ZE( strokeS* , psttWanted ) ;
