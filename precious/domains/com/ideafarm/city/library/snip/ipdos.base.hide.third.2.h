@@ -4844,11 +4844,12 @@ examples
 /*3*/
 #define ifcIDtYPErOUTE_ROUTER1                      ((countT)0xdddd1252)
 #define ifcIDtYPErOUTE_ROUTER2                      ((countT)0xdddd1253)
-#define ifcIDtYPErOUTE_BGPdECOY                     ((countT)0xdddd1254)
-#define ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu     ((countT)0xdddd1255)
+#define ifcIDtYPErOUTE_BGPdECOY1                    ((countT)0xdddd1254)
+#define ifcIDtYPErOUTE_BGPdECOY2                    ((countT)0xdddd1255)
+#define ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu     ((countT)0xdddd1256)
 /*3*/
 #define ifcIDtYPErOUTE_min     ((countT)0xdddd1252)
-#define ifcIDtYPErOUTE_max     ((countT)0xdddd1255)
+#define ifcIDtYPErOUTE_max     ((countT)0xdddd1256)
 
 
 //

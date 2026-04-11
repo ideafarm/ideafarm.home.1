@@ -49,18 +49,19 @@
     // EXTERNAL SPECIFICATIONS
 
     }
-        if( idTypeRouteP == ifcIDtYPErOUTE_ROUTER2 ) fieldsP.routeRandom |= (count01T)(                                                    0x800 ) ;        // THE HIGH BIT (BIT AT OFFSET 36) IS USED TO SELECT WHICH /37 PREFIX TO USE ; IF CLEAR THEN THE PREFIX WILL BE ADVERTISED BY router1; IF SET THEN router2
-                                                     fieldsP.routeRandom  = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , epochP ) & 0x7ff ) ;        // "0x7ff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
+        if( idTypeRouteP == ifcIDtYPErOUTE_ROUTER2 || idTypeRouteP == ifcIDtYPErOUTE_BGPdECOY2 ) fieldsP.routeRandom |= (count01T)(                                                    0x800 ) ;        // THE HIGH BIT (BIT AT OFFSET 36) IS USED TO SELECT WHICH /37 PREFIX TO USE ; IF CLEAR THEN THE PREFIX WILL BE ADVERTISED BY router1; IF SET THEN router2
+                                                                                                 fieldsP.routeRandom  = (count01T)( hashF( (byteT*)pSeeds , sizeof pSeeds , epochP ) & 0x7ff ) ;        // "0x7ff": 3 NIBBLES ARE AVAILABLE TO RANDOMIZE A /48 PREFIX IF THE ARIN DELEGATION IS A /36 BLOCK
 
         countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
 
         countT seed = hashF( pbSecretUse , cbSecretUse , epochP ) ;
 
         }
-            case ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu : { pbSecretUse = pbSecretP          ; cbSecretUse = cbSecretP                     ; break ; }
-            case ifcIDtYPErOUTE_BGPdECOY                 : { pbSecretUse = postSecretDecoyBgp ; cbSecretUse = sizeof postSecretDecoyBgp - 1 ; break ; }
-            case ifcIDtYPErOUTE_ROUTER2                  : { pbSecretUse = postSecretControl  ; cbSecretUse = sizeof postSecretControl  - 1 ; break ; }
-            case ifcIDtYPErOUTE_ROUTER1                  : { pbSecretUse = postSecretData     ; cbSecretUse = sizeof postSecretData     - 1 ; break ; }
+            case ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu : { pbSecretUse = pbSecretP           ; cbSecretUse = cbSecretP                      ; break ; }
+            case ifcIDtYPErOUTE_BGPdECOY2                : { pbSecretUse = postSecretDecoyBgp2 ; cbSecretUse = sizeof postSecretDecoyBgp2 - 1 ; break ; }
+            case ifcIDtYPErOUTE_BGPdECOY1                : { pbSecretUse = postSecretDecoyBgp1 ; cbSecretUse = sizeof postSecretDecoyBgp1 - 1 ; break ; }
+            case ifcIDtYPErOUTE_ROUTER2                  : { pbSecretUse = postSecretRouter2   ; cbSecretUse = sizeof postSecretRouter2   - 1 ; break ; }
+            case ifcIDtYPErOUTE_ROUTER1                  : { pbSecretUse = postSecretRouter1   ; cbSecretUse = sizeof postSecretRouter1   - 1 ; break ; }
         {
         switch( idTypeRouteP )
         ZE( countT       , cbSecretUse ) ;
