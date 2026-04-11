@@ -33,7 +33,7 @@ DONE( tmWorkF )
                 etRock.traceF( tin0P , T("\r\nI am no longer serving web pages.\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
                 }
-                    ++ s ; etRock.osSleepF( tin0P , TOCK >> 1 ) ;
+                    ++ s ; etRock.osSleepF( tin0P , TOCK >> 2 ) ;
 
                     }
                         if( rc <= 32 ) etRock.traceF( tin0P , T("I was not able to open your browser [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -265,7 +265,7 @@ DONE( tmWorkF )
                     {
                     if( epochHeTrueLath != epochHeTrue )
 
-                    etThread.winSetTitleF( tin0P , tWindowTitlePrefix+T("[time1HeRemainingInEpochTrue,epochHeTrue,epochMeUseTrue,bTrue,cEpochsNoSignature,time1Signature]:    ")+TF3(time1HeRemainingInEpochTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF2(epochHeTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bTrue?"    TRUE    ":"    LATE    ")+TF2(cEpochsNoSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.winSetTitleF( tin0P , tWindowTitlePrefix+T("[tockHeRemainingInEpochTrue,epochHeTrue,epochMeUseTrue,bTrue,cEpochsNoSignature,time1Signature]:    ")+TF3(tockHeRemainingInEpochTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tb4+TF2(epochHeTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bTrue?"    TRUE    ":"    LATE    ")+TF2(cEpochsNoSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                     countT epochMeUseLate   = ( ( timeN1 - time1TrueMidpoint - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
                     countT epochMeUseTrue   = ( ( timeN1                     - time1Signature ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
@@ -279,7 +279,7 @@ DONE( tmWorkF )
                     //    ( bTrue && !bUpRouter1 )
                     //const boolT bWasDownWhileLive =
 
-                    countT time1HeRemainingInEpochTrue = time1PerEpoch - time1HeIntoEpochTrue ;
+                    countT tockHeRemainingInEpochTrue = ( time1PerEpoch - time1HeIntoEpochTrue ) >> 0x10 ;
 
                     //etRock.traceF( tin0P , T("[bTrue,time1PerEpoch,time1HeIntoEpochTrue]:    ")+T(bTrue?"TRUE    ":"LATE    ")+TF3(time1PerEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(time1HeIntoEpochTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                     bTrue = time1HeIntoEpochTrue > time1LateBegin && time1HeIntoEpochTrue < time1LateEnd ;                    //P:PERSONALITY: USE THE TRUE CHANNEL IFF (IF AND ONLY IF) NOT CLOSE TO THE TIME OF THE LATH OR THE NEXT CHANGE IN THE TRUE EPOCH ; THIS IS TO AVOID USING A ROUTER WHILE IT IS RELOADING ITS UFW FIREWALL RULES
