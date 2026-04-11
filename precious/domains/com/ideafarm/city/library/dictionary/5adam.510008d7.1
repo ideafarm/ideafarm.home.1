@@ -107,7 +107,7 @@ DONE( tmWorkF )
                     IFsCRATCHoK
                     //etRock.traceF( tin0P , T("4 / bird.conf") ) ;
                 {
-                else if( !etThread.strCompareF( tin0P , tLanName , tLanNameWeb2 ) )
+                else if( !bTrue )
                 }
                     //etRock.traceF( tin0P , T("0 / done") ) ;
                     //}
@@ -189,7 +189,7 @@ DONE( tmWorkF )
                     IFsCRATCHoK
                     //etRock.traceF( tin0P , T("4 / bird.conf") ) ;
                 {
-                if( !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) )
+                if( bTrue )
 
                 //etRock.traceF( tin0P , T("00000000000000000000000000000000 [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
 
@@ -222,7 +222,7 @@ DONE( tmWorkF )
                     stSortedBirdLines2 >> psttl ;
                     ZE( strokeS* , psttl ) ;
                 {
-                if( !etThread.strCompareF( tin0P , tLanName , tLanNameWeb2 ) ) while( stSortedBirdLines2 )
+                if( !bTrue ) while( stSortedBirdLines2 )
 
                 }
                     etThread.delF( tin0P , psttl ) ;
@@ -230,7 +230,7 @@ DONE( tmWorkF )
                     stSortedBirdLines1 >> psttl ;
                     ZE( strokeS* , psttl ) ;
                 {
-                if( !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) ) while( stSortedBirdLines1 )
+                if( bTrue ) while( stSortedBirdLines1 )
 
                 //etRock.traceF( tin0P , T("11111111111111111111111111111111 [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
 
@@ -250,8 +250,8 @@ DONE( tmWorkF )
                     }
                         while( ~hWalk ) ;
                         }
-                            else               stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
-                            if( idPrefix % 2 ) stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
+                            stSortedBirdLinesUse.sinkF( tin0P , countTC() , psttl ) ;
+
                             etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+(idPrefix%2?t1BirdImage4BitsVia:t2BirdImage4BitsVia)+tEpochPlate+tBirdImage4DecoySwarm ) ; ___( psttl ) ;
                             ZE( strokeS* , psttl ) ;
 
@@ -267,9 +267,14 @@ DONE( tmWorkF )
                         do
                         handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         countT epochUsePlate = epochUse ;
+
+                        ;
+                            : stSortedBirdLines2
+                            ? stSortedBirdLines1
+                        stackC& stSortedBirdLinesUse = bTrue
                     {
                     if( stIdPrefixDecoySwarm )
-                    // THESE DECOY PREFIXES MUST EXHIBIT THE SAME BEHAVIOR AND BE INDISTINGUISHABLE FROM THE OTHER ADVERTISED PREFIXES ; IN PARTICULAR, THEY MUST HAVE THE SAME LIFETIMES
+                    // THESE DECOY PREFIXES MUST EXHIBIT THE SAME BEHAVIOR AND BE INDISTINGUISHABLE FROM THE OTHER ADVERTISED PREFIXES ; IN PARTICULAR, THEY MUST HAVE THE SAME LIFETIMES AND THE SAME HI BIT (0 FOR WEB1, 1 FOR WEB2)
 
                     // ******************************************************************************************************************************************************************************************************************************************************************************************************
                     // ******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -390,7 +395,7 @@ DONE( tmWorkF )
                     
                         stIdPrefixRouter2.purgeF( tin0P ) ;
                     {
-                    if( stNnSubnetSayRouter2 && !etThread.strCompareF( tin0P , tLanName , tLanNameWeb2 ) )
+                    if( stNnSubnetSayRouter2 && !bTrue )
                     etThread.traceF( tin0P , T("subnets to advertise (begin)" DASH79) ) ;
 
                     //etRock.traceF( tin0P , T("22222222222222222222222222222222 [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
@@ -530,7 +535,7 @@ DONE( tmWorkF )
 
                         stIdPrefixRouter1.purgeF( tin0P ) ;
                     {
-                    if( stNnSubnetSayRouter1 && !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) )
+                    if( stNnSubnetSayRouter1 && bTrue )
 
                     //etRock.traceF( tin0P , T("33333333333333333333333333333333 [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
 
@@ -595,14 +600,14 @@ DONE( tmWorkF )
                 stNnSubnetSayRouter2 << nnSubnet48Router2 ;
                 cChange ++ ;
             {
-            if( nnSubnet48Router2Lath != nnSubnet48Router2 && !etThread.strCompareF( tin0P , tLanName , tLanNameWeb2 ) )
+            if( nnSubnet48Router2Lath != nnSubnet48Router2 && !bTrue )
 
             }
                 stNnSubnetSayRouter1.purgeF( tin0P , CePOCHSkEEP ) ;
                 stNnSubnetSayRouter1 << nnSubnet48Router1 ;
                 cChange ++ ;
             {
-            if( nnSubnet48Router1Lath != nnSubnet48Router1 && !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) )
+            if( nnSubnet48Router1Lath != nnSubnet48Router1 && bTrue )
 
             etThread.traceF( tin0P , T("IDEAnETcONTROLrOUTER [epochUse,nnNowBgpDecoy,nnAdvertise]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowBgpDecoy)+tb4+T(nnSubnet48BgpDecoy) ) ;
             etThread.traceF( tin0P , T("IDEAnETcONTROLrOUTER [epochUse,nnNowRouter2,nnAdvertise]:     ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2 )+tb4+T(nnSubnet48Router2 ) ) ;
@@ -639,8 +644,18 @@ DONE( tmWorkF )
                 countT old     = stIdPrefixDecoySwarm ;
                 cChange ++ ;
             {
-            if(    stIdPrefixDecoySwarm > cDecoySwarm )
-            while( stIdPrefixDecoySwarm < cDecoySwarm ) { cChange ++ ; stIdPrefixDecoySwarm << ( (countT)ruIdPrefix & 0xfff ) ; }           //"& 0xfff" IS REDUNDANT SINCE THE RANGE OF ruIdPrefix is [0,0xfff]
+            if( stIdPrefixDecoySwarm > cDecoySwarm )
+
+            }
+                stIdPrefixDecoySwarm << idp ;
+
+                ;
+                    : ( (countT)ruIdPrefix & 0x7ff ) | 0x800                                       //"& 0xfff" IS REDUNDANT SINCE THE RANGE OF ruIdPrefix is [0,0x7ff]
+                    ? ( (countT)ruIdPrefix & 0x7ff )                                               //"& 0xfff" IS REDUNDANT SINCE THE RANGE OF ruIdPrefix is [0,0x7ff]
+                countT idp = bTrue
+                cChange ++ ;
+            {
+            while( stIdPrefixDecoySwarm < cDecoySwarm )
             ZE( countT , cChange ) ;
 
             //etRock.traceF( tin0P , T("66666666666666666666666666666666 [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
@@ -747,13 +762,12 @@ DONE( tmWorkF )
     const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
     const countT time1LateBegin    = time1PerEpoch >> 2 ;
     const countT time1PerEpoch     = 1 << BITSsHIFTiDEAnETePOCH ;
-    //boolT bTestSwarm = 1 ;
-boolT bTestSwarm = 0 ;
+    boolT bTestSwarm = 1 ;
 
 //nicNameC nnSubnet48Dut2 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03:800::") ) ;
 //nicNameC nnSubnet48Dut1 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::") ) ;
 
-    ranUniC ruIdPrefix( tin0P , (measure04T)0xfff , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
+    ranUniC ruIdPrefix( tin0P , (measure04T)0x7ff , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
     nicNameC nnSubnet48AttackDut = nnAttackTargetDut( 0x30 ) ;
     nicNameC nnAttackTargetDut   = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::2") ) ;
