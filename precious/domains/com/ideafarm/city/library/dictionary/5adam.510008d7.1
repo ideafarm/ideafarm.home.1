@@ -717,10 +717,10 @@ DONE( tmWorkF )
                 else if( cDecoySwarm && cSolicitationsDecoyTrapMax < ( TUCK >> 2 ) )
                 }
                     etRock.traceF( tin0P , T("++++ [cDecoySwarm,cSolicitationsDecoyTrapMax,cSolicitationsAllDecoyTrap]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    else if( cDecoySwarm <= ( MAXsWARM >> 1 ) ) cDecoySwarm <<= 1        ;                                                          //P:PERSONALITY: LIMIT SWARM TO A TUCK OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
+                    else if( cDecoySwarm <= ( MAXsWARM >> 1 ) ) cDecoySwarm <<= 1        ;                                                          //P:PERSONALITY: LIMIT SWARM TO A MAXsWARM OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
                     if(     !cDecoySwarm                      ) cDecoySwarm   = MINsWARM ;
-                {
-                if( cSolicitationsDecoyTrapMax > TUCK )
+                {                                                                                                                                   //P:PERSONALITY: I ALSO IGNORE SURGES IN HITS TO CHANNEL PREFIXES (ROUTER1 ROUTER2) BECAUSE SUCH A SURGE INDICATES THAT THE ATTACKER IS USING A SUBSCRIPTION(S) AND, IF SO, SWARM WON'T HELP
+                if( cSolicitationsDecoyTrapMax > TUCK )                                                                                             //P:PERSONALITY: I RESPOND ONLY TO HITS TO DECOY, BECAUSE HITS TO DECOY SHOW THAT THE ATTACKER IS USING THE BGP TABLE RATHER THAN JUST SOLICITING RANDOM HOST ID VALUES ; HITS TO SWARM SHOW THE FEROCITY OF THE ATTACK, BUT ROUTER'S FIREWALL FILTERS OUT PRACTICALLY ALL OF SUCH AN ATTACK
 
                 etRock.traceF( tin0P , T("solicitation tallies [cSolicitationsAll,cSolicitationsAllDecoySwarm,cSolicitationsAllRouter1,cSolicitationsAllRouter2,cSolicitationsAllDecoyTrap,cSolicitationsDecoyTrapMax]:    ")+TF2(cSolicitationsAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
@@ -763,7 +763,6 @@ DONE( tmWorkF )
                 ZE( countT , cSolicitationsAllRouter1   ) ;
                 ZE( countT , cSolicitationsAll          ) ;
             {
-            ZE( countT , cDecoySwarm ) ;
 
             //etRock.traceF( tin0P , T("++++++++++++++++++++++++++++++++ [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
 
@@ -804,6 +803,7 @@ DONE( tmWorkF )
         //if( !epochTrueLath )
     {
     while( !ether )
+    ZE( countT , cDecoySwarm ) ;
     const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
     const countT time1LateBegin    = time1PerEpoch >> 2 ;
     const countT time1PerEpoch     = 1 << BITSsHIFTiDEAnETePOCH ;
