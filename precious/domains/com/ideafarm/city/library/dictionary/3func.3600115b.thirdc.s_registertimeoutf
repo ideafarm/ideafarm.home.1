@@ -14,6 +14,8 @@
         }
             pks->timeExpire2 = timeEN2 ;
             pks->timeExpire1 = timeEN1 ;
+            pks->timeToLive2 = time2P ;
+            pks->timeToLive1 = time1P ;
         {
         if( timeEN2 < pks->timeExpire2 || ( timeEN2 == pks->timeExpire2 && timeEN1 < pks->timeExpire1 ) )
         osTimeSubtractF( tin0P , timeEN1 , timeEN2 , pks->timeExpire1 , pks->timeExpire2 ) ;
@@ -28,6 +30,8 @@
     }
         osTimeAddIF( tin0P , pks->timeExpire1 , pks->timeExpire2 , time1P , time2P ) ;
         osTimeNowF(  tin0P , pks->timeExpire1 , pks->timeExpire2                   ) ;
+        pks->timeToLive2 = time2P ;
+        pks->timeToLive1 = time1P ;
     {
     if( !incv02AM( pks->cRef ) )
     pks = (killSocketS*)&(countT&)*((tin1S&)tin0P).pag1->_thirdC_.pSwKillSocket ;

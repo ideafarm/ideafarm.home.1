@@ -717,25 +717,22 @@ DONE( tmWorkF )
                 TN( tType , "" ) ;
 
                 }
-                    }
-                        etRock.traceF( tin0P , T("---- [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                
-                        else                                   cDecoySwarm   = 0 ;
-                        if( cDecoySwarm >= ( MINsWARM << 1 ) ) cDecoySwarm >>= 1 ;
-                    {
-                    else if( cDecoySwarm && cSolicitations < ( TUCK >> 2 ) )
-                    }
-                        etRock.traceF( tin0P , T("++++ [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        else if( cDecoySwarm <= ( MAXsWARM >> 1 ) ) cDecoySwarm <<= 1        ;                                                          //P:PERSONALITY: LIMIT SWARM TO A TUCK OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
-                        if(     !cDecoySwarm                      ) cDecoySwarm   = MINsWARM ;
-                    {
-                    if( cSolicitations > TUCK )
+                    etRock.traceF( tin0P , T("---- [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            
+                    else                                   cDecoySwarm   = 0 ;
+                    if( cDecoySwarm >= ( MINsWARM << 1 ) ) cDecoySwarm >>= 1 ;
                 {
-                if( bDecoyTrap )
+                else if( cDecoySwarm && cSolicitations < ( TUCK >> 2 ) )
+                }
+                    etRock.traceF( tin0P , T("++++ [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    else if( cDecoySwarm <= ( MAXsWARM >> 1 ) ) cDecoySwarm <<= 1        ;                                                          //P:PERSONALITY: LIMIT SWARM TO A TUCK OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
+                    if(     !cDecoySwarm                      ) cDecoySwarm   = MINsWARM ;
+                {
+                if( bDecoyTrap && cSolicitations > TUCK )
 
                 boolT bDecoyTrap = stIdPrefixDecoyTrap( idlPrefix ) ;
-                boolT bRouter1  = stIdPrefixRouter1(  idlPrefix ) ;
-                boolT bRouter2  = stIdPrefixRouter2(  idlPrefix ) ;
+                boolT bRouter1   = stIdPrefixRouter1(   idlPrefix ) ;
+                boolT bRouter2   = stIdPrefixRouter2(   idlPrefix ) ;
         
                 countT cSolicitations = swTallyPrefix ;
                 idlPrefix = swTallyPrefix.leverF( tin0P , idf ) ;

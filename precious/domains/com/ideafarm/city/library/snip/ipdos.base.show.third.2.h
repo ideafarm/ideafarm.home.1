@@ -26119,7 +26119,6 @@ examples
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.lexC : 1snip.1500007d.lexc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.killSocketS : 1snip.1500007b.killsockets BEGIN
 
-
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -26139,6 +26138,8 @@ examples
  boolT        bKilled ;
  countT       timeExpire1 ;
  sCountT      timeExpire2 ;
+ countT       timeToLive1 ;
+ sCountT      timeToLive2 ;
 
 /**/
 }
