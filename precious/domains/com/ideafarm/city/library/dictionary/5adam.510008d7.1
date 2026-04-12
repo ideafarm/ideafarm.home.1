@@ -722,7 +722,9 @@ DONE( tmWorkF )
                 {
                 if( cSolicitationsDecoyTrapMax > TUCK )
 
-                etRock.traceF( tin0P , T("solicitation tallies [cSolicitationsAll,cSolicitationsAllRouter1,cSolicitationsAllRouter2,cSolicitationsAllDecoyTrap,cSolicitationsDecoyTrapMax]:    ")+TF2(cSolicitationsAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etRock.traceF( tin0P , T("solicitation tallies [cSolicitationsAll,cSolicitationsAllDecoySwarm,cSolicitationsAllRouter1,cSolicitationsAllRouter2,cSolicitationsAllDecoyTrap,cSolicitationsDecoyTrapMax]:    ")+TF2(cSolicitationsAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                countT cSolicitationsAllDecoySwarm = cSolicitationsAll - cSolicitationsAllRouter1 - cSolicitationsAllRouter2 - cSolicitationsAllDecoyTrap ;     // A:ASSUME: NO OTHER KINDS OF PREFIXES WILL GENERATE SOLICITATION TALLIES
 
                 }
                     swTallyPrefix.ungrabF( tin0P ) ;
@@ -1155,7 +1157,7 @@ DONE( tmEatGeigerEventsF )
 
             countT epochTrue = head.timeEvent1 >> BITSsHIFTiDEAnETePOCH ;
         {
-        if( head.cbBodyEvent == sizeof( nicNameC ) )
+        if( head.cbBodyEvent == sizeof( nicNameC ) && head.idTypeEvent == ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET )
         geigerEventHeadS& head = *(geigerEventHeadS*)pbi1 ;
 
         }

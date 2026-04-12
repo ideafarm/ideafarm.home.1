@@ -1,4 +1,20 @@
 
+
+#define ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET        1
+#define ifcIDtYPEgEIGEReVENT_ICMPV6qUERYnOTiDEAnETsUBNET     2
+#define ifcIDtYPEgEIGEReVENT_NNtARGETrEJECTED                3
+#define ifcIDtYPEgEIGEReVENT_NNtARGETaCCEPTED                4
+#define ifcIDtYPEgEIGEReVENT_NNtARGETaDDEDaOK                5
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
