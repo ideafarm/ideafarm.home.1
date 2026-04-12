@@ -700,6 +700,7 @@ DONE( tmWorkF )
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
 
             }
+                etRock.traceF( tin0P , T("TEST [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 cDecoySwarm = MAXsWARM ;
                 bTestSwarm = 0 ;
             {
@@ -716,8 +717,9 @@ DONE( tmWorkF )
                 if( bRouter2            ) tType += T(" ROUTER2  ") ;
                 TN( tType , "" ) ;
 
+                else etRock.traceF( tin0P , T("KEEP [cDecoySwarm,]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 }
-                    etRock.traceF( tin0P , T("---- [cDecoySwarm]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etRock.traceF( tin0P , T("---- [cDecoySwarm,cSolicitations]:    ")+TF2(cDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitations,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             
                     else                                   cDecoySwarm   = 0 ;
                     if( cDecoySwarm >= ( MINsWARM << 1 ) ) cDecoySwarm >>= 1 ;
