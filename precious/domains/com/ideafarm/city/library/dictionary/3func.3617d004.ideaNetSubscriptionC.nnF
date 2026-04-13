@@ -15,6 +15,8 @@
     pcUse[ 2 ]  = ( fieldsP.routeRandom & 0xfff ) << 0x10 ;                 // HIGH NIBBLE IS NOT AVAILABLE IN THE ARIN DELEGATION
     //CS:CODEsYNC: 3617d004 510008af
 
+    //U::20260413@1142: CRAFT CODE IN nnF TO ENSURE THAT routeRandom VALUES ARE UNIQUE ACROSS ifcIDtYPErOUTE_*
+
     count02T* pcUse = (count02T*)(const count02T*)nnUse ;
     nicNameC  nnUse = socketC::nicNameIF( tin0P , ether , tSubnet ) ;
     TN( tSubnet , postARINdELEGATION36iDEAFARMiDEANET ) ;
@@ -57,11 +59,11 @@
         countT seed = hashF( pbSecretUse , cbSecretUse , epochP ) ;
 
         }
-            case ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu  : { pbSecretUse = pbSecretP           ; cbSecretUse = cbSecretP                      ; break ; }
-            case ifcIDtYPErOUTE_DECOYtRAP2                : { pbSecretUse = postSecretDecoyBgp2 ; cbSecretUse = sizeof postSecretDecoyBgp2 - 1 ; break ; }
-            case ifcIDtYPErOUTE_DECOYtRAP1                : { pbSecretUse = postSecretDecoyBgp1 ; cbSecretUse = sizeof postSecretDecoyBgp1 - 1 ; break ; }
-            case ifcIDtYPErOUTE_ROUTER2                   : { pbSecretUse = postSecretRouter2   ; cbSecretUse = sizeof postSecretRouter2   - 1 ; break ; }
-            case ifcIDtYPErOUTE_ROUTER1                   : { pbSecretUse = postSecretRouter1   ; cbSecretUse = sizeof postSecretRouter1   - 1 ; break ; }
+            case ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu  : { pbSecretUse = pbSecretP            ; cbSecretUse = cbSecretP                       ; break ; }
+            case ifcIDtYPErOUTE_DECOYtRAP2                : { pbSecretUse = postSecretDecoyTrap2 ; cbSecretUse = sizeof postSecretDecoyTrap2 - 1 ; break ; }
+            case ifcIDtYPErOUTE_DECOYtRAP1                : { pbSecretUse = postSecretDecoyTrap1 ; cbSecretUse = sizeof postSecretDecoyTrap1 - 1 ; break ; }
+            case ifcIDtYPErOUTE_ROUTER2                   : { pbSecretUse = postSecretRouter2    ; cbSecretUse = sizeof postSecretRouter2    - 1 ; break ; }
+            case ifcIDtYPErOUTE_ROUTER1                   : { pbSecretUse = postSecretRouter1    ; cbSecretUse = sizeof postSecretRouter1    - 1 ; break ; }
         {
         switch( idTypeRouteP )
         ZE( countT       , cbSecretUse ) ;

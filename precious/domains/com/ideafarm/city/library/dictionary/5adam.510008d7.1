@@ -317,7 +317,7 @@ DONE( tmWorkF )
                     
                                     tSay1Ufw += T(
                                 {
-                                if( idPrefix % 2 ) 
+                                if( bTrue ) 
                     
                                 //  
                                 //  -A ufw6-user-forward -i enp1s0 -o enp9s0 -p tcp -m multiport --dports 80,443 -d 2602:ff03::/36 -j ACCEPT
@@ -328,9 +328,8 @@ DONE( tmWorkF )
                             {
                             if( !( cAllowed ++ ) )      // ALLOW PACKETS FROM WO DECOY PREFIX TO GET THROUGH SO THAT GEIGER CAN DETECT ATTACKS THAT ARE USING THE BGP ROUTING TABLE
                     
-                            else               stSortedBirdLines2.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
-                            if( idPrefix % 2 ) stSortedBirdLines1.sinkF( tin0P , countTC() , psttl ) ;           //RANDOMIZE SO SOME GO TO 1 AND SOME GO TO 2, TO PREVENT ATTACKER FROM BEING ABLE TO IDENTIFY router-1 AND LIMIT HIS ATTACK TO PREFIXES ADVERTIZED BY router-1
-                            etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+(idPrefix%2?t1BirdImage4BitsVia:t2BirdImage4BitsVia)+tEpochPlate+tBirdImage4DecoyTrap ) ; ___( psttl ) ;
+                            stSortedBirdLinesUse.sinkF( tin0P , countTC() , psttl ) ;
+                            etThread.strMakeF( tin0P , LF , psttl , tBirdImage3+T(nnWo)+tUseBirdImage4BitsVia+tEpochPlate+tBirdImage4DecoyTrap ) ; ___( psttl ) ;
                             ZE( strokeS* , psttl ) ;
                     
                             stIdPrefixDecoyTrap.sinkF( tin0P , countTC() , idPrefix , flSTACKsINK_UNIQUE ) ;
@@ -605,6 +604,45 @@ DONE( tmWorkF )
             if( cChange )
 
             }
+                stIdPrefixDecoySwarm.purgeF( tin0P , cRetain ) ;
+                cChange ++ ;
+
+                countT cRetain = cDecoySwarmWanted + ( excess >> 1 ) ;                                                                    //P:PERSONALITY: HALF LIFE == 1 EPOCH, SO EXCESS IS GRADUALLY ELIMINATED EACH EPOCH
+                countT excess  = old - cDecoySwarmWanted ;
+                countT old     = stIdPrefixDecoySwarm ;
+            {
+            if( stIdPrefixDecoySwarm > cDecoySwarmWanted )
+
+            }
+                }
+                    stIdPrefixDecoySwarm << idp ;
+                    cChange ++ ;
+                {
+                if( !stIdPrefixRouter1( idpTry ) && !stIdPrefixRouter2( idpTry ) )
+
+                ;
+                    : ( (countT)ruIdPrefix & 0x7ff ) | 0x800                                       //"& 0xfff" IS REDUNDANT SINCE THE RANGE OF ruIdPrefix is [0,0x7ff]
+                    ? ( (countT)ruIdPrefix & 0x7ff )                                               //"& 0xfff" IS REDUNDANT SINCE THE RANGE OF ruIdPrefix is [0,0x7ff]
+                countT idpTry = bTrue
+            {
+            while( stIdPrefixDecoySwarm < cDecoySwarmWanted )
+            ZE( countT , cChange ) ;
+
+            //etRock.traceF( tin0P , T("66666666666666666666666666666666 [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
+
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ****                                 *****************************************************************************************************************************************************************************************************************************************************************
+            // ****  LOAD PREFIXES FOR DECOY SWARM  *****************************************************************************************************************************************************************************************************************************************************************
+            // ****                                 *****************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+
+            }
                 stNnSubnetSayDecoyTrap.purgeF( tin0P , CePOCHSkEEP ) ;
                 stNnSubnetSayDecoyTrap << nnSubnet48DecoyTrap2 ;
                 cChange ++ ;
@@ -617,6 +655,28 @@ DONE( tmWorkF )
                 cChange ++ ;
             {
             if( nnSubnet48DecoyTrap1Lath != nnSubnet48DecoyTrap1 && bTrue )
+
+            etThread.traceF( tin0P , T("IDEAnETcONTROLrOUTER [epochUse,nnNowDecoyTrap2,nnAdvertise]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowDecoyTrap2)+tb4+T(nnSubnet48DecoyTrap2) ) ;
+            etThread.traceF( tin0P , T("IDEAnETcONTROLrOUTER [epochUse,nnNowDecoyTrap1,nnAdvertise]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowDecoyTrap1)+tb4+T(nnSubnet48DecoyTrap1) ) ;
+
+            nicNameC nnSubnet48DecoyTrap2 = nnNowDecoyTrap2( 48 ) ;
+            nicNameC nnSubnet48DecoyTrap1 = nnNowDecoyTrap1( 48 ) ;
+            const nicNameC nnNowDecoyTrap2 = woSub.nnF( tin0P , epochUse , fnu3 , ifcIDtYPErOUTE_DECOYtRAP2 ) ;
+            const nicNameC nnNowDecoyTrap1 = woSub.nnF( tin0P , epochUse , fnu2 , ifcIDtYPErOUTE_DECOYtRAP1 ) ;
+            ideaNetIpv6FieldsS fnu3 ;
+            ideaNetIpv6FieldsS fnu2 ;
+
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ****                               *******************************************************************************************************************************************************************************************************************************************************************
+            // ****  LOAD PREFIXES FOR DECOYtRAP  *******************************************************************************************************************************************************************************************************************************************************************
+            // ****                               *******************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
+            // ******************************************************************************************************************************************************************************************************************************************************************************************************
 
             }
                 stNnSubnetSayRouter2.purgeF( tin0P , CePOCHSkEEP ) ;
@@ -632,21 +692,13 @@ DONE( tmWorkF )
             {
             if( nnSubnet48Router1Lath != nnSubnet48Router1 && bTrue )
 
-            etThread.traceF( tin0P , T("IDEAnETcONTROLrOUTER [epochUse,nnNowDecoyTrap2,nnAdvertise]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowDecoyTrap2)+tb4+T(nnSubnet48DecoyTrap2) ) ;
-            etThread.traceF( tin0P , T("IDEAnETcONTROLrOUTER [epochUse,nnNowDecoyTrap1,nnAdvertise]:    ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowDecoyTrap1)+tb4+T(nnSubnet48DecoyTrap1) ) ;
             etThread.traceF( tin0P , T("IDEAnETcONTROLrOUTER [epochUse,nnNowRouter2,nnAdvertise]:      ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2  )+tb4+T(nnSubnet48Router2  ) ) ;
             etThread.traceF( tin0P , T("IDEAnETcONTROLrOUTER [epochUse,nnNowRouter1,nnAdvertise]:      ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1  )+tb4+T(nnSubnet48Router1  ) ) ;
 
-            nicNameC nnSubnet48DecoyTrap2 = nnNowDecoyTrap2( 48 ) ;
-            nicNameC nnSubnet48DecoyTrap1 = nnNowDecoyTrap1( 48 ) ;
             nicNameC nnSubnet48Router2   = nnNowRouter2(   48 ) ;
             nicNameC nnSubnet48Router1   = nnNowRouter1(   48 ) ;
-            const nicNameC nnNowDecoyTrap2 = woSub.nnF( tin0P , epochUse , fnu3 , ifcIDtYPErOUTE_DECOYtRAP2 ) ;
-            const nicNameC nnNowDecoyTrap1 = woSub.nnF( tin0P , epochUse , fnu2 , ifcIDtYPErOUTE_DECOYtRAP1 ) ;
             const nicNameC nnNowRouter2   = woSub.nnF( tin0P , epochUse , fnu1 , ifcIDtYPErOUTE_ROUTER2    ) ;
             const nicNameC nnNowRouter1   = woSub.nnF( tin0P , epochUse                                    ) ;
-            ideaNetIpv6FieldsS fnu3 ;
-            ideaNetIpv6FieldsS fnu2 ;
             ideaNetIpv6FieldsS fnu1 ;
 
             //etRock.traceF( tin0P , T("55555555555555555555555555555555 [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
@@ -655,45 +707,9 @@ DONE( tmWorkF )
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
-            // ****                                                   ***********************************************************************************************************************************************************************************************************************************************
-            // ****  LOAD PREFIXES FOR DECOYtRAP , ROUTER1 , ROUTER2  ***********************************************************************************************************************************************************************************************************************************************
-            // ****                                                   ***********************************************************************************************************************************************************************************************************************************************
-            // ******************************************************************************************************************************************************************************************************************************************************************************************************
-            // ******************************************************************************************************************************************************************************************************************************************************************************************************
-            // ******************************************************************************************************************************************************************************************************************************************************************************************************
-            // ******************************************************************************************************************************************************************************************************************************************************************************************************
-
-            }
-                stIdPrefixDecoySwarm.purgeF( tin0P , cRetain ) ;
-                cChange ++ ;
-
-                countT cRetain = cDecoySwarmWanted + ( excess >> 1 ) ;                                                                    //P:PERSONALITY: HALF LIFE == 1 EPOCH, SO EXCESS IS GRADUALLY ELIMINATED EACH EPOCH
-                countT excess  = old - cDecoySwarmWanted ;
-                countT old     = stIdPrefixDecoySwarm ;
-            {
-            if( stIdPrefixDecoySwarm > cDecoySwarmWanted )
-
-            }
-                stIdPrefixDecoySwarm << idp ;
-
-                ;
-                    : ( (countT)ruIdPrefix & 0x7ff ) | 0x800                                       //"& 0xfff" IS REDUNDANT SINCE THE RANGE OF ruIdPrefix is [0,0x7ff]
-                    ? ( (countT)ruIdPrefix & 0x7ff )                                               //"& 0xfff" IS REDUNDANT SINCE THE RANGE OF ruIdPrefix is [0,0x7ff]
-                countT idp = bTrue
-                cChange ++ ;
-            {
-            while( stIdPrefixDecoySwarm < cDecoySwarmWanted )
-            ZE( countT , cChange ) ;
-
-            //etRock.traceF( tin0P , T("66666666666666666666666666666666 [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
-
-            // ******************************************************************************************************************************************************************************************************************************************************************************************************
-            // ******************************************************************************************************************************************************************************************************************************************************************************************************
-            // ******************************************************************************************************************************************************************************************************************************************************************************************************
-            // ******************************************************************************************************************************************************************************************************************************************************************************************************
-            // ****                             *********************************************************************************************************************************************************************************************************************************************************************
-            // ****  LOAD DECOY SWARM PREFIXES  *********************************************************************************************************************************************************************************************************************************************************************
-            // ****                             *********************************************************************************************************************************************************************************************************************************************************************
+            // ****                                       ***********************************************************************************************************************************************************************************************************************************************************
+            // ****  LOAD PREFIXES FOR ROUTER1 , ROUTER2  ***********************************************************************************************************************************************************************************************************************************************************
+            // ****                                       ***********************************************************************************************************************************************************************************************************************************************************
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -734,8 +750,8 @@ DONE( tmWorkF )
                         //
                         //if( !tType.csF( tin0P ) ) tType  = T("          ") ;
                         //if( bDecoyTrap          ) tType += T(" DECOYtRAP") ;
-                        //if( bRouter1            ) tType += T(" ROUTER1  ") ;
                         //if( bRouter2            ) tType += T(" ROUTER2  ") ;
+                        //if( bRouter1            ) tType += T(" ROUTER1  ") ;
                         //TN( tType , "" ) ;
                         //TO USE THIS CODE, SET THE BOOLEANS THAT ARE NEEDED
 
@@ -817,23 +833,22 @@ DONE( tmWorkF )
     nicNameC nnSubnet48AttackDut = nnAttackTargetDut( 0x30 ) ;
     nicNameC nnAttackTargetDut   = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::2") ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) , (countT)&idlPrefix , (countT)&swTallyPrefix /*, (countT)&stIdPrefixRouter2 , (countT)&stIdPrefixRouter1 , (countT)&stIdPrefixDecoyTrap*/ ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmEatGeigerEventsF , CBsTACKmIN << 1 ) , (countT)&idlPrefix , (countT)&swTallyPrefix /*, (countT)&stIdPrefixRouter1 , (countT)&stIdPrefixRouter2 , (countT)&stIdPrefixDecoyTrap*/ ) ;
     switchC swTallyPrefix( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idlPrefix ) ;
     ZE( countT , idlPrefix ) ;
 
     stackC               stIdPrefixDecoySwarm(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE | flSTACKc_DOnOTsERIALIZE | flSTACKc_FIFO ) ;
-
     stackC               stIdPrefixDecoyTrap(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE | flSTACKc_DOnOTsERIALIZE                 ) ;
-    stackC               stIdPrefixRouter1(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE | flSTACKc_DOnOTsERIALIZE                 ) ;
     stackC               stIdPrefixRouter2(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE | flSTACKc_DOnOTsERIALIZE                 ) ;
+    stackC               stIdPrefixRouter1(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE | flSTACKc_DOnOTsERIALIZE                 ) ;
 
     stackC               stNnSubnetSayDecoyTrap( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
-    stackC               stNnSubnetSayRouter1(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
-    stackC               stNnSubnetSayRouter2(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    stackC               stNnSubnetSayRouter2(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    stackC               stNnSubnetSayRouter1(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
     nicNameC             nnSubnet48DecoyTrap2Lath ;
     nicNameC             nnSubnet48DecoyTrap1Lath ;
-    nicNameC             nnSubnet48Router1Lath     ;
     nicNameC             nnSubnet48Router2Lath  ;
+    nicNameC             nnSubnet48Router1Lath     ;
     ideaNetSubscriptionC woSub( tin0P , etThread , 1 , 1 , T("foo") , T("goo@hoo") ) ;
     sleepC               s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , epochLateLath ) ;
@@ -945,15 +960,15 @@ DONE( tmWorkF )
 
     ) ;
 
-        "    ROUTER1\n"
-
-    TN( tBirdImage4Router1 ,
-
-    ) ;
-
         "    ROUTER2\n"
 
     TN( tBirdImage4Router2 ,
+
+    ) ;
+
+        "    ROUTER1\n"
+
+    TN( tBirdImage4Router1 ,
 
     ) ;
 
@@ -1065,8 +1080,8 @@ DONE( tmEatGeigerEventsF )
                 //head.traceF( tin0P , tSay ) ;
                 //
                 //if( bDecoyTrap )   tSay += T("    DECOYtRAP") ;
-                //if( bRouter1  )   tSay += T("    ROUTER1  " ) ;
                 //if( bRouter2  )   tSay += T("    ROUTER2  " ) ;
+                //if( bRouter1  )   tSay += T("    ROUTER1  " ) ;
                 //TN( tSay , "" ) ; tSay  = T(nnTarget      ) ;
                 //
                 //stNnSubnetSayDecoyTrapP.ungrabF( tin0P ) ;
@@ -1088,24 +1103,6 @@ DONE( tmEatGeigerEventsF )
                 //stNnSubnetSayDecoyTrapP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 //ZE( boolT , bDecoyTrap ) ;
                 //
-                //stNnSubnetSayRouter1P.ungrabF( tin0P ) ;
-                //}
-                //    while( ~hWalk ) ;
-                //    }
-                //        }
-                //            break ;
-                //            bRouter1 = 1 ;
-                //        {
-                //        if( nnWo == nnTarget )
-                //        nicNameC& nnWo = (nicNameC&)stNnSubnetSayRouter1P.downF( tin0P , hWalk ) ;
-                //    {
-                //    do
-                //    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                //{
-                //if( stNnSubnetSayRouter1P )
-                //stNnSubnetSayRouter1P.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                //ZE( boolT , bRouter1 ) ;
-                //
                 //stNnSubnetSayRouter2P.ungrabF( tin0P ) ;
                 //}
                 //    while( ~hWalk ) ;
@@ -1123,6 +1120,24 @@ DONE( tmEatGeigerEventsF )
                 //if( stNnSubnetSayRouter2P )
                 //stNnSubnetSayRouter2P.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 //ZE( boolT , bRouter2 ) ;
+                //
+                //stNnSubnetSayRouter1P.ungrabF( tin0P ) ;
+                //}
+                //    while( ~hWalk ) ;
+                //    }
+                //        }
+                //            break ;
+                //            bRouter1 = 1 ;
+                //        {
+                //        if( nnWo == nnTarget )
+                //        nicNameC& nnWo = (nicNameC&)stNnSubnetSayRouter1P.downF( tin0P , hWalk ) ;
+                //    {
+                //    do
+                //    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                //{
+                //if( stNnSubnetSayRouter1P )
+                //stNnSubnetSayRouter1P.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                //ZE( boolT , bRouter1 ) ;
                 //THIS IS CPU EXPENSIVE
 
                 //nicNameC nnSubnetTarget = nnTarget( 48 ) ;
@@ -1187,8 +1202,8 @@ DONE( tmEatGeigerEventsF )
     booksC bksGeiger( tin0P , TAG( TAGiDnULL ) , "geiger" ) ;
 
     //stackC&  stIdPrefixDecoyTrapP =  *(stackC*)pTaskP->c5 ;
-    //stackC&  stIdPrefixRouter1P  =  *(stackC*)pTaskP->c4 ;
-    //stackC&  stIdPrefixRouter2P  =  *(stackC*)pTaskP->c3 ;
+    //stackC&  stIdPrefixRouter2P  =  *(stackC*)pTaskP->c4 ;
+    //stackC&  stIdPrefixRouter1P  =  *(stackC*)pTaskP->c3 ;
     switchC& swTallyPrefixP      = *(switchC*)pTaskP->c2 ;
     countT&  idlPrefixP          =  *(countT*)pTaskP->c1 ;
 {
