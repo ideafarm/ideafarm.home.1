@@ -57,7 +57,7 @@
         countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
 
         countT seed = hashF( pbSecretForPrefixUse , cbSecretForPrefixUse , epochP ) ;
-        *(countT*)pbSecretForPrefixUse += nonceUse ;
+        if( nonceUse ) *(countT*)pbSecretForPrefixUse += nonceUse ;
 
         }
             case ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu  : { pbSecretForPrefixUse = pbSecretForPrefixP            ; cbSecretForPrefixUse = cbSecretForPrefixP                       ; break ; }
@@ -87,7 +87,7 @@
             ideaNetIpv6FieldsS f2 ;
             ideaNetIpv6FieldsS f1 ;
         {
-        if( idTypeRouteP == ifcIDtYPErOUTE_DECOYtRAP1 || idTypeRouteP == ifcIDtYPErOUTE_DECOYtRAP2 )
+        if( ( idTypeRouteP == ifcIDtYPErOUTE_DECOYtRAP1 || idTypeRouteP == ifcIDtYPErOUTE_DECOYtRAP2 ) && nonceForPrefixP == -1 )
         ZE( countT , nonceUse ) ;
     {
 
