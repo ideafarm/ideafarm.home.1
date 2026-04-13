@@ -49810,7 +49810,6 @@ i am nonconformant in that all of my member function definitions are in a single
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetIpv6FieldsS : 1snip.150001d5.ideaNetIpv6FieldsS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetSubscriptionC : 1snip.150001d3.ideaNetSubscriptionC BEGIN
-
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -49825,7 +49824,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     etherC&     ether   ;
     textC       tEmail  ;
-    textC       tSecret ;
+    textC       tSecretForIdHost ;
     countT      timeC1  ;
     sCountT     timeC2  ;
     countT      idBook  ;
@@ -49835,8 +49834,8 @@ i am nonconformant in that all of my member function definitions are in a single
 
     NEWdELcLASSpROTOS
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP ) ;
-    ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretP , const strokeS* const psttEmailP ) ;
-    nicNameC nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP = ideaNetIpv6FieldsS() , const countT idTypeRouteP = ifcIDtYPErOUTE_ROUTER1 , const byteT* const pbSecretP = 0 , const countT cbSecretP = 0 , const countT nonceForPrefixP = 0 ) ;
+    ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretForIdHostP , const strokeS* const psttEmailP ) ;
+    nicNameC nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP = ideaNetIpv6FieldsS() , const countT idTypeRouteP = ifcIDtYPErOUTE_ROUTER1 , const byteT* const pbSecretForPrefixP = 0 , const countT cbSecretForPrefixP = 0 , const countT nonceForPrefixP = 0 ) ;
 
     voidT    operator >>( soulC& sP ) ;
     voidT    operator <<( soulC& sP ) ;
