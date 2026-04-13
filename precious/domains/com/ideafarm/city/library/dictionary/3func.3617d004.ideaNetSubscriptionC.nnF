@@ -56,36 +56,57 @@
 
         countT pSeeds[] = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
 
-        countT seed = hashF( pbSecretUse , cbSecretUse , epochP ) ;
+        countT seed = hashF( pbSecretForPrefixUse , cbSecretForPrefixUse , epochP ) ;
+        *(countT*)pbSecretForPrefixUse += nonceUse ;
 
         }
-            case ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu  : { pbSecretUse = pbSecretP            ; cbSecretUse = cbSecretP                       ; break ; }
-            case ifcIDtYPErOUTE_DECOYtRAP2                : { pbSecretUse = postSecretDecoyTrap2 ; cbSecretUse = sizeof postSecretDecoyTrap2 - 1 ; break ; }
-            case ifcIDtYPErOUTE_DECOYtRAP1                : { pbSecretUse = postSecretDecoyTrap1 ; cbSecretUse = sizeof postSecretDecoyTrap1 - 1 ; break ; }
-            case ifcIDtYPErOUTE_ROUTER2                   : { pbSecretUse = postSecretRouter2    ; cbSecretUse = sizeof postSecretRouter2    - 1 ; break ; }
-            case ifcIDtYPErOUTE_ROUTER1                   : { pbSecretUse = postSecretRouter1    ; cbSecretUse = sizeof postSecretRouter1    - 1 ; break ; }
+            case ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu  : { pbSecretForPrefixUse = pbSecretForPrefixP            ; cbSecretForPrefixUse = cbSecretForPrefixP                       ; break ; }
+            case ifcIDtYPErOUTE_DECOYtRAP2                : { pbSecretForPrefixUse = postSecretForPrefixDecoyTrap2 ; cbSecretForPrefixUse = sizeof postSecretForPrefixDecoyTrap2 - 1 ; break ; }
+            case ifcIDtYPErOUTE_DECOYtRAP1                : { pbSecretForPrefixUse = postSecretForPrefixDecoyTrap1 ; cbSecretForPrefixUse = sizeof postSecretForPrefixDecoyTrap1 - 1 ; break ; }
+            case ifcIDtYPErOUTE_ROUTER2                   : { pbSecretForPrefixUse = postSecretForPrefixRouter2    ; cbSecretForPrefixUse = sizeof postSecretForPrefixRouter2    - 1 ; break ; }
+            case ifcIDtYPErOUTE_ROUTER1                   : { pbSecretForPrefixUse = postSecretForPrefixRouter1    ; cbSecretForPrefixUse = sizeof postSecretForPrefixRouter1    - 1 ; break ; }
         {
         switch( idTypeRouteP )
-        ZE( countT       , cbSecretUse ) ;
-        ZE( const byteT* , pbSecretUse ) ;
+        ZE( countT       , cbSecretForPrefixUse ) ;
+        ZE( const byteT* , pbSecretForPrefixUse ) ;
 
         #include "D:\ideafarm.work\txt\secrets\secrets.ideaNetSubscriptionC.nnF.h"
+
+        }
+            }
+                else                                                                           nonceUse ++ ;
+                if( fTry.routeRandom != f1.routeRandom && fTry.routeRandom != f2.routeRandom ) break       ;
+
+                const nicNameC nnNowRouterTry = nnF( tin0P , epochP , fTry , idTypeRouteP , 0 , 0 , nonceUse ) ;
+                ideaNetIpv6FieldsS fTry ;
+            {
+            for(;;)            
+
+            const nicNameC nnNowRouter2 = nnF( tin0P , epochP , f2 , ifcIDtYPErOUTE_ROUTER2 ) ;
+            const nicNameC nnNowRouter1 = nnF( tin0P , epochP , f1 , ifcIDtYPErOUTE_ROUTER1 ) ;
+            ideaNetIpv6FieldsS f2 ;
+            ideaNetIpv6FieldsS f1 ;
+        {
+        if( idTypeRouteP == ifcIDtYPErOUTE_DECOYtRAP1 || idTypeRouteP == ifcIDtYPErOUTE_DECOYtRAP2 )
+        ZE( countT , nonceUse ) ;
     {
 
+    //P:PERSONALITY: I ENSURE THAT, FOR GIVEN epochP, THE VALUE OF routeRandom IS UNIQUE ACROSS idTypeRouteP VALUES ; ROUTER1 AND ROUTER2 WILL ALWAYS BE UNIQUE DUE TO THE HIGH BIT ; DECOYtRAP1 AND DECOYtRAP2 ARE ADJUSTED AS NEEDED TO AVOID COLLIDING WITH ROUTER1 AND ROUTER2
+
     }
-               fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , epochP  ) ;
+        fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , epochP  ) ;
         countT pSeeds[]   = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ;
-        countT seed       = hashF( tSecret , tSecret.csF( tin0P ) , epochP ) ;
+        countT seed       = hashF( tSecretForIdHost , tSecretForIdHost.csF( tin0P ) , epochP ) ;
     {
     else
     }
-                 fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , epochP  ) ;
+        fieldsP.hostRandom = hashF( (byteT*)pSeeds , sizeof pSeeds , epochP  ) ;
         count01T pSeeds[]   = { seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed , seed } ; // THIS ARRAY IS LIMITED TO ONLY A IDEAnETiPV6aDDRESSESuSED OF UNIQUE VALUES
-        count01T seed       = (count01T)( hashF( tSecret , tSecret.csF( tin0P ) , epochP ) % IDEAnETiPV6aDDRESSESuSED ) ;
+        count01T seed       = (count01T)( hashF( tSecretForIdHost , tSecretForIdHost.csF( tin0P ) , epochP ) % IDEAnETiPV6aDDRESSESuSED ) ;
     {
     if( modulo )    // THIS WILL NEVER BE USEFUL, BUT IT IS RETAINED BECAUSE IT IS CUTE ; 20260215@1205: THIS WILL BE USEFUL IN GENERATING DECOY PREFIXES THAT, IF ATTACKED, WILL IDENTIFY THE ATTACKING SUBSCRIBER
 
-    //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("nnF [modulo,epoch,secret]:    ")+TF2(modulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(epochP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret , /*flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM |*/ flTRACE_NOpREFIX ) ;
+    //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("nnF [modulo,epoch,secret]:    ")+TF2(modulo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(epochP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecretForIdHost , /*flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM |*/ flTRACE_NOpREFIX ) ;
     TN( tb4 , "    " ) ;
     countT modulo = IDEAnETiPV6aDDRESSESuSED ;
 
@@ -95,13 +116,13 @@
     }
         if( POOP ) return nicNameC() ;
         }
-            __NZ( cbSecretP ) ;
-            __NZ( pbSecretP ) ;
+            __NZ( cbSecretForPrefixP ) ;
+            __NZ( pbSecretForPrefixP ) ;
         {
         else
         }
-            __Z( cbSecretP ) ;
-            __Z( pbSecretP ) ;
+            __Z( cbSecretForPrefixP ) ;
+            __Z( pbSecretForPrefixP ) ;
         {
         if( idTypeRouteP == ifcIDtYPErOUTE_EXPLICITsECREToVERRIDEnu )
         __Z( idTypeRouteP ) ;
@@ -111,9 +132,11 @@
     {
     IFbEcAREFUL
 {
-/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT epochP , ideaNetIpv6FieldsS& fieldsP , const countT idTypeRouteP , const byteT* const pbSecretP , const countT cbSecretP )/*1*/
+/*1*/nicNameC ideaNetSubscriptionC::nnF( tin0S& tin0P , countT epochP , ideaNetIpv6FieldsS& fieldsP , const countT idTypeRouteP , const byteT* const pbSecretForPrefixP , const countT cbSecretForPrefixP , const countT nonceForPrefixP )/*1*/
 /**/
 */
+  i call myself recursively with such values
+ it is illegal to call me with a nonceForPrefixP other than 0
  it is illegal to call me for an instance that has an idBook other than 1
 i return the nicNameC value that a subscriber is to use to access the ideanet servers (web1)
 /*
@@ -124,5 +147,3 @@ i return the nicNameC value that a subscriber is to use to access the ideanet se
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
-

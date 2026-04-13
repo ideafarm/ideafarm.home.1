@@ -759,9 +759,10 @@ DONE( tmWorkF )
                             if( cSolicitationsDecoyTrapMax < cSolicitations ) cSolicitationsDecoyTrapMax = cSolicitations ;
                             cSolicitationsAllDecoyTrap += cSolicitations ;
                         {
-                        if( stIdPrefixDecoyTrap( idlPrefix ) )
-                        if( stIdPrefixRouter2(   idlPrefix ) ) cSolicitationsAllRouter2   += cSolicitations ;
-                        if( stIdPrefixRouter1(   idlPrefix ) ) cSolicitationsAllRouter1   += cSolicitations ;
+                        else if( stIdPrefixDecoyTrap( idlPrefix ) )
+                        else if( stIdPrefixRouter2(   idlPrefix ) ) cSolicitationsAllRouter2   += cSolicitations ;
+                             if( stIdPrefixRouter1(   idlPrefix ) ) cSolicitationsAllRouter1   += cSolicitations ;
+                        // TALLY THIS IN EXACTLY WO CATEGORY ; idlPrefix CAN BE IN MORE THAN WO stPrefix* INSTANCE EVEN IF UNIQUE FOR A GIVEN EPOCH BECAUSE EACH INSTANCE CONTAINS VALUES FOR MULTIPLE EPOCHS
                 
                         cSolicitationsAll += cSolicitations ;
                         countT cSolicitations = swTallyPrefix ;
