@@ -723,20 +723,39 @@ DONE( tmWorkF )
             if( bTestSwarm )
 
             }
-                else etRock.traceF( tin0P , T("KEEP [cDecoySwarmWanted,cSolicitationsDecoyTrapMax,cSolicitationsAllDecoyTrap]:    ")+TF2(cDecoySwarmWanted,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                else etRock.traceF( tin0P , T("KEEP 2 [cDecoySwarmWanted,cSolicitationsDecoyTrapMax,cSolicitationsAllDecoyTrap]:    ")+TF2(cDecoySwarmWanted,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 }
-                    etRock.traceF( tin0P , T("---- [cDecoySwarmWanted,cSolicitationsDecoyTrapMax,cSolicitationsAllDecoyTrap]:    ")+TF2(cDecoySwarmWanted,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            
-                    else                                   cDecoySwarmWanted   = 0 ;
-                    if( cDecoySwarmWanted >= ( MINsWARM << 1 ) ) cDecoySwarmWanted >>= 1 ;
+                    }
+                        etRock.traceF( tin0P , T("================================ attack ended ================================") ) ;
+                        bAttackInProgress = 0        ;
+                    {
+                    if( bAttackInProgress )
+
+                    else etRock.traceF( tin0P , T("KEEP 1 [cDecoySwarmWanted,cSolicitationsDecoyTrapMax,cSolicitationsAllDecoyTrap]:    ")+TF2(cDecoySwarmWanted,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    }
+                        etRock.traceF( tin0P , T("---- [cDecoySwarmWanted,cSolicitationsDecoyTrapMax,cSolicitationsAllDecoyTrap]:    ")+TF2(cDecoySwarmWanted,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                
+                        else                                         cDecoySwarmWanted   = 0 ;
+                        if( cDecoySwarmWanted >= ( MINsWARM << 1 ) ) cDecoySwarmWanted >>= 1 ;
+                    {
+                    if( cDecoySwarmWanted )
                 {
-                else if( cDecoySwarmWanted && cSolicitationsDecoyTrapMax < ( TUCK >> 2 ) )
+                else if( cSolicitationsDecoyTrapMax < ( TUCK >> 2 ) )       /*NO ATTACK*/
                 }
                     etRock.traceF( tin0P , T("++++ [cDecoySwarmWanted,cSolicitationsDecoyTrapMax,cSolicitationsAllDecoyTrap]:    ")+TF2(cDecoySwarmWanted,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    else if( cDecoySwarmWanted <= ( MAXsWARM >> 1 ) ) cDecoySwarmWanted <<= 1        ;                                                          //P:PERSONALITY: LIMIT SWARM TO A MAXsWARM OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
-                    if(     !cDecoySwarmWanted                      ) cDecoySwarmWanted   = MINsWARM ;
+                    else if(  cDecoySwarmWanted <= ( MAXsWARM >> 1 ) ) cDecoySwarmWanted <<= 1        ;                                                          //P:PERSONALITY: LIMIT SWARM TO A MAXsWARM OF PREFIXES TO PREVENT OBNOXIOUS BGP BEHAVIOR
+                    else if( !cDecoySwarmWanted                      ) cDecoySwarmWanted   = MINsWARM ;
+                    }
+                        etRock.traceF( tin0P , T("================================ attack begun ================================") ) ;
+                        cDecoySwarmWanted = MAXsWARM ;                                                                                              // THIS SWARM EXISTS FOR ONLY 1 EPOCH TO AVOID TRIGGERING UPSTREAM NULLROUTING (IF THE ATTACK IS MASSIVE) ; THESE PREFIXES WILL TRIGGER ROUTE FLAPPING PENALTIES, BUT THAT'S A DON'T CARE SINCE THEY WILL NOT BE USED AGAIN ; DOING THIS FREQUENTLY COULD IMPOSE SIGNIFICANT CPU COSTS ON THE BGP SYSTEM
+                        bFlashMaxSwarm    = 1        ;                                                                                              //P:PERSONALITY: AT THE BEGINNING OF AN ATTACK, I FLASH A MAXIMUM SWARM FOR A SINGLE EPOCH IN ORDER TO INVESTIGATE HOW MANY PACKETS ARE BEING THROWN TO RANDOM PREFIXES WITHIN THE IDEANET /36 DELEGATION
+                        bAttackInProgress = 1        ;
+                    {
+                    if( !bAttackInProgress )
                 {                                                                                                                                   //P:PERSONALITY: I ALSO IGNORE SURGES IN HITS TO CHANNEL PREFIXES (ROUTER1 ROUTER2) BECAUSE SUCH A SURGE INDICATES THAT THE ATTACKER IS USING A SUBSCRIPTION(S) AND, IF SO, SWARM WON'T HELP
-                if( cSolicitationsDecoyTrapMax > TUCK )                                                                                             //P:PERSONALITY: I RESPOND ONLY TO HITS TO DECOY, BECAUSE HITS TO DECOY SHOW THAT THE ATTACKER IS USING THE BGP TABLE RATHER THAN JUST SOLICITING RANDOM HOST ID VALUES ; HITS TO SWARM SHOW THE FEROCITY OF THE ATTACK, BUT ROUTER'S FIREWALL FILTERS OUT PRACTICALLY ALL OF SUCH AN ATTACK
+                if( cSolicitationsDecoyTrapMax > TUCK )                     /*ATTACK*/                                                              //P:PERSONALITY: I RESPOND ONLY TO HITS TO DECOY, BECAUSE HITS TO DECOY SHOW THAT THE ATTACKER IS USING THE BGP TABLE RATHER THAN JUST SOLICITING RANDOM HOST ID VALUES ; HITS TO SWARM SHOW THE FEROCITY OF THE ATTACK, BUT ROUTER'S FIREWALL FILTERS OUT PRACTICALLY ALL OF SUCH AN ATTACK
+
+                if( bFlashMaxSwarm ) bFlashMaxSwarm = cDecoySwarmWanted = 0 ;
 
                 etRock.traceF( tin0P , T("solicitation tallies [cSolicitationsAll,cSolicitationsAllDecoySwarm,cSolicitationsAllRouter1,cSolicitationsAllRouter2,cSolicitationsAllDecoyTrap,cSolicitationsDecoyTrapMax]:    ")+TF2(cSolicitationsAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
@@ -820,6 +839,8 @@ DONE( tmWorkF )
         //if( !epochTrueLath )
     {
     while( !ether )
+    ZE( boolT  , bAttackInProgress ) ;
+    ZE( boolT  , bFlashMaxSwarm ) ;
     ZE( countT , cDecoySwarmWanted ) ;
     const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
     const countT time1LateBegin    = time1PerEpoch >> 2 ;
@@ -1211,7 +1232,7 @@ DONE( tmEatGeigerEventsF )
 if( pTaskP && pTaskP->c1 && pTaskP->c2 /*&& pTaskP->c3 && pTaskP->c4 && pTaskP->c5*/ )
 TASK( tmEatGeigerEventsF )
 
-#define MAXsWARM ( TUCK >> 2 )
+#define MAXsWARM ( TUCK >> 0 )
 #define MINsWARM ( TUCK >> 4 )
 
 #define postROUTER2iPV6oUTER "2001:19f0:ac01:1038:5400:06ff:fe05:b149"
