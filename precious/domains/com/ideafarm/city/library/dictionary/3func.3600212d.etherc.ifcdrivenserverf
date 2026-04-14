@@ -306,7 +306,7 @@
                                                                 if( cJobsHighWater < cJobsNow )
                                                                 countT cJobsNow = stJob ;
 
-                                                                new( 0 , tin0P , (byteT*)&(countT&)stJob[ 1 ] , sizeof( taskDrivenServerJobS ) ) taskDrivenServerJobS( tin0P , *this , tSayClientPrefix , idSessionLath , lever_idSession , sw_pso , cSession , info2P.cArgSys , lever_nnPeer , sw_cSessionWithPeer , sessions , nnPeer , timeAccepted1 , timeAccepted2 , timeJobCreated1 , timeJobCreated2 ) ;
+                                                                taskDrivenServerJobS& newJob = *new( 0 , tin0P , (byteT*)&(countT&)stJob[ 1 ] , sizeof( taskDrivenServerJobS ) ) taskDrivenServerJobS( tin0P , *this , tSayClientPrefix , idSessionLath , lever_idSession , sw_pso , cSession , info2P.cArgSys , lever_nnPeer , sw_cSessionWithPeer , sessions , nnPeer , timeAccepted1 , timeAccepted2 , timeJobCreated1 , timeJobCreated2 ) ;
                                                                 stJob << (byteT*)0 ;
                                                                 /*if( !bPeerIsGorilla )*/ etRock.traceF( tin0P , tSayClientPrefix+T("ifcDrivenServerF pushing a job [cJobsHighWater,cPlatesBefore]:    ")+TF2(cJobsHighWater,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null ) ;
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -331,6 +331,7 @@
 
                                                             TN( tSayClientPrefix , "" ) ; tSayClientPrefix = *pptSayModulo[ idClient % 0x10 ]+TF3(idClient,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0x9)+T(nnPeer)+T("(")+TF2(idpPeer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(")")+tb4+T("| ") ;
                                                             ++ idClient ;
+CONoUTrAW5( "\r\nifcDrivenServerF / ++++ [idSession,cSession]    " , idSessionLath , "    " , cSession , "" ) ;
                                                             inc02AM( cSession ) ;
                                                             _IO_
                                                         {
