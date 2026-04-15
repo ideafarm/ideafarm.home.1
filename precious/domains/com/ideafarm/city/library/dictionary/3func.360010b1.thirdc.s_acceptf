@@ -10,10 +10,12 @@
 }
     }
         }
-            etRock.traceF( tin0P , T("s_acceptF / closed handle because bRefuseP is set / 2") ) ;
+            etRock.traceF( tin0P , T("s_acceptF / closed handle because bRefuseP or bRefuse is set / 2") ) ;
             hClientP.closeIfF() ;
         {
-        if( bRefuseP )
+        if( bRefuseP || bRefuse )
+
+        boolT bRefuse = F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM && nicNameP != nicNameC( 1 , 0 , 0 , 0 ) ;
 
 etRock.traceF( tin0P , T("s_acceptF / [nnPeer]:    ")+T(nicNameP) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
     
