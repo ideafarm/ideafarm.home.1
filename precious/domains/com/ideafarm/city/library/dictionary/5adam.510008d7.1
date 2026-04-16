@@ -627,6 +627,7 @@ DONE( tmWorkF )
             {
             while( stIdPrefixDecoySwarm < cDecoySwarmWanted )
 
+cDecoySwarmWanted = 0 ;
             if( cDecoySwarmWanted > cRouteSlotsRemaining ) cDecoySwarmWanted = cRouteSlotsRemaining ;
 
             /**/etRock.traceF( tin0P , T("55555555555555555555555555555555 [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
@@ -644,6 +645,8 @@ DONE( tmWorkF )
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
 
             cRouteSlotsRemaining -= stNnSubnetSayDecoyTrap ;
+
+stNnSubnetSayDecoyTrap.purgeF( tin0P ) ;
 
             }
                 stNnSubnetSayDecoyTrap.purgeF( tin0P , CePOCHSkEEP ) ;
