@@ -627,6 +627,8 @@ DONE( tmWorkF )
             {
             while( stIdPrefixDecoySwarm < cDecoySwarmWanted )
 
+            if( cDecoySwarmWanted > cRouteSlotsRemaining ) cDecoySwarmWanted = cRouteSlotsRemaining ;
+
             /**/etRock.traceF( tin0P , T("55555555555555555555555555555555 [epochUse]:    ")+TF3(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
 
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
@@ -640,6 +642,8 @@ DONE( tmWorkF )
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
+
+            cRouteSlotsRemaining -= stNnSubnetSayDecoyTrap ;
 
             }
                 stNnSubnetSayDecoyTrap.purgeF( tin0P , CePOCHSkEEP ) ;
@@ -681,6 +685,8 @@ DONE( tmWorkF )
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
             // ******************************************************************************************************************************************************************************************************************************************************************************************************
 
+            cRouteSlotsRemaining -= stNnSubnetSayRouter1 + stNnSubnetSayRouter2 ;
+
             }
                 stNnSubnetSayRouter2.purgeF( tin0P , CePOCHSkEEP ) ;
                 stNnSubnetSayRouter2 << nnSubnet48Router2 ;
@@ -697,6 +703,8 @@ DONE( tmWorkF )
             if( nnSubnet48Router1Lath != nnSubnet48Router1 && bTrue )
             ZE( countT , cChange ) ;
 //etThread.traceF( tin0P , T("U:: / 5") ) ;
+
+            countT cRouteSlotsRemaining = MAXrOUTESaLL ;
 
             etThread.traceF( tin0P , T("IDEAnETcONTROLrOUTER [epochUse,nnNowRouter2,nnAdvertise]:      ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2  )+tb4+T(nnSubnet48Router2  ) ) ;
             etThread.traceF( tin0P , T("IDEAnETcONTROLrOUTER [epochUse,nnNowRouter1,nnAdvertise]:      ")+TF2(epochUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1  )+tb4+T(nnSubnet48Router1  ) ) ;
@@ -1237,6 +1245,9 @@ DONE( tmEatGeigerEventsF )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 /*&& pTaskP->c3 && pTaskP->c4 && pTaskP->c5*/ )
 TASK( tmEatGeigerEventsF )
+
+#define MAXrOUTESaLL 100
+// VULTR LIMIT IS 101_9
 
 #define MAXsWARM ( TUCK >> 2 )
 //B1: #define MAXsWARM ( TUCK >> 1 )
