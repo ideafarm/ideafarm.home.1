@@ -49882,7 +49882,6 @@ i am nonconformant in that all of my member function definitions are in a single
     strokeS*            psttSlash             ;
     signC               sgnDone_tmWatchQueueF ;
     countT              idPhase               ;
-    fileC*              pFileSerialize        ;
 
     public :
 
