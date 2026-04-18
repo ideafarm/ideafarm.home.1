@@ -253,16 +253,17 @@ DONE( tmListApprovedAddressesF )
                 nicNameC nnWo ;
             {
             while( stNnApprovedNew )
+            etRock.traceF( tin0P , T("loading [stNnApprovedNew]:    ")+TF2((countT)stNnApprovedNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             stNnApprovedUse.purgeF( tin0P ) ;
             stackC& stNnApprovedUse = epoch % 2 ? stNnApproved1P : stNnApproved2P ;
 
-            //etThread.traceF( tin0P , tDash ) ;
+            etThread.traceF( tin0P , tDash ) ;
             THREADmODE1rESTORE
             }
                 }
                     queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , pushNnApprovedCBF , argApp , &pat ) ;
-                    //etRock.traceF( tin0P , tDash ) ;
+                    etRock.traceF( tin0P , tDash ) ;
                     _IO_
                 {
                 countT  argApp = (countT)&c3App ;
@@ -278,7 +279,7 @@ DONE( tmListApprovedAddressesF )
             epochLath  = epoch ;
             _IO_
         {
-        if( epochLath != epoch )                                                    //P:PERSONALITY: IF A CLIENT KEY IS OPENED IMMEDIATELY AFTER PAYMENT, ITS STARTUP WIL NOT COMPLETE UNTIL IT HAS STOMPED DURING AN EPOCH TRANSITION ON ALL WEB* SERVERS (CURRENTLY WEB1-TRUE AND WEB2-LATE) ; THIS HAS NO PRACTICAL SIGNIFICANCE BECAUSE CLIENT KEYS ARE DELIVERED VIA EMAIL, WHICH TAKES MORE THAN 2 EPOCHS
+        if( epochLath != epoch )                                                    //P:PERSONALITY: IF A CLIENT KEY IS OPENED IMMEDIATELY AFTER PAYMENT, ITS STARTUP WILL NOT COMPLETE UNTIL IT HAS STOMPED DURING AN EPOCH TRANSITION ON ALL WEB* SERVERS (CURRENTLY WEB1-TRUE AND WEB2-LATE) ; THIS HAS NO PRACTICAL SIGNIFICANCE BECAUSE CLIENT KEYS ARE DELIVERED VIA EMAIL, WHICH TAKES MORE THAN 2 EPOCHS
 
         countT epoch = ( timeN1 - time1Adjust ) >> BITSsHIFTiDEAnETePOCH ;
 
@@ -384,7 +385,7 @@ DONE( tmAddAddressF )
                     //stNnApproved2P.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     //stNnApproved1P.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-                    etRock.traceF( tin0P , T("rejecting [nnTarget]:    ")+T(nnTarget) ) ;
+                    etRock.traceF( tin0P , T("rejecting [stNnApproved1P,stNnApproved2P,nnTarget]:    ")+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
 
                     bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
                     geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_NNtARGETrEJECTED , sizeof nnTarget ) ;
