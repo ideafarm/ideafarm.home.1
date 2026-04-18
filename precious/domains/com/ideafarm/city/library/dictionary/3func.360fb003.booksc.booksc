@@ -254,7 +254,7 @@
 
     //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->trace F( tin0P , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": ")+T(postShort)+T(": ")+T("ct + [offBookBackNow,CbOOKsLOTS]:    ")+TF2(offBookBackNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(CbOOKsLOTS,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
 
-    const osTextT* const postShortOrLongUse = processGlobal1I.idAdamRoot == ifcIDaDAM_IDEAnET ? 0 : postShortOrLongP ;
+    const osTextT* const postShortOrLongUse = F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ? 0 : postShortOrLongP ;
 {
 bFill( bFillP )
 psttFindLike( 0 ) ,
@@ -262,7 +262,7 @@ ppcpIdBook( 0 ) ,
 cKeepInactive( cKeepInactiveP ) ,
 grabBookNow( tin0P , idLineCtP , idiFileCtP , pbBitsCtP , flGRABc_NOTjEALOUS | flGRABc_SNEAKYlOVER | flGRABc_SHARElAYER , ifcIDgRABlAYER_bBOOKSc ) , // flGRABc_SHARElAYER: NEEDED BECAUSE booksC::writeF CAN CALL ITSELF RECURSIVELY DUE TO TELEMETRY WHEN CHANGING bookC INSTANCES
 idMemorySpace( idMemorySpaceP ) ,
-idStateSpace( !idStateSpaceP || processGlobal1I.idAdamRoot == ifcIDaDAM_IDEAnET ? 0 : idStateSpaceP ) ,
+idStateSpace( !idStateSpaceP || F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ? 0 : idStateSpaceP ) ,
 cbBodyNew( cbP ) ,
 postBookNameScratch( 0 ) ,
 ) ,
