@@ -204,14 +204,14 @@ DONE( tmWorkF )
     etRock.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnRequested , (countT)&stNnApproved1 , (countT)&stNnApproved2 , (countT)&bksGeiger ) ;
-    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 )                          , (countT)&stNnApproved1 , (countT)&stNnApproved2 ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnRequested , (countT)&stNnApprovedA , (countT)&stNnApprovedB , (countT)&bksGeiger ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 )                          , (countT)&stNnApprovedA , (countT)&stNnApprovedB ) ;
 
     cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested , bksGeiger ) ;
     booksC bksGeiger( tin0P , TAG( TAGiDnULL ) , "geiger" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , TICK << 4 ) ;
 
-    stackC stNnApproved2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
-    stackC stNnApproved1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+    stackC stNnApprovedB( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+    stackC stNnApprovedA( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
     stackC stNnRequested( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
 
     TN( tWantFriendly , bTrue ? "ideanet-1" : "ideanet-2" ) ;
@@ -256,7 +256,7 @@ DONE( tmListApprovedAddressesF )
             etRock.traceF( tin0P , T("loading [stNnApprovedNew]:    ")+TF2((countT)stNnApprovedNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             stNnApprovedUse.purgeF( tin0P ) ;
-            stackC& stNnApprovedUse = epoch % 2 ? stNnApproved1P : stNnApproved2P ;
+            stackC& stNnApprovedUse = epoch % 2 ? stNnApprovedAP : stNnApprovedBP ;
 
             etThread.traceF( tin0P , tDash ) ;
             THREADmODE1rESTORE
@@ -314,8 +314,8 @@ DONE( tmListApprovedAddressesF )
     {
     ZE( boolT , bTrue ) ;
     
-    stackC& stNnApproved2P = *(stackC*)pTaskP->c2 ;
-    stackC& stNnApproved1P = *(stackC*)pTaskP->c1 ;
+    stackC& stNnApprovedBP = *(stackC*)pTaskP->c2 ;
+    stackC& stNnApprovedAP = *(stackC*)pTaskP->c1 ;
     _IO_
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
@@ -354,43 +354,43 @@ DONE( tmAddAddressF )
                 {
                 else
                 }
-                    stNnApproved1P.ungrabF( tin0P ) ;
-                    stNnApproved2P.ungrabF( tin0P ) ;
+                    stNnApprovedAP.ungrabF( tin0P ) ;
+                    stNnApprovedBP.ungrabF( tin0P ) ;
                     
                     }
                         while( ~hWalk ) ;
                         }
-                            etRock.traceF( tin0P , T("    stNnApproved2 [nicName]:    ")+T(nnWo) ) ;
-                            nicNameC& nnWo = (nicNameC&)stNnApproved2P.downF( tin0P , hWalk ) ;
+                            etRock.traceF( tin0P , T("    stNnApprovedB [nicName]:    ")+T(nnWo) ) ;
+                            nicNameC& nnWo = (nicNameC&)stNnApprovedBP.downF( tin0P , hWalk ) ;
                         {
                         do
                         handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     {
                     else
-                    if( !stNnApproved2P ) etRock.traceF( tin0P , T("    stNnApproved2P is empty") ) ;
+                    if( !stNnApprovedBP ) etRock.traceF( tin0P , T("    stNnApprovedBP is empty") ) ;
                     
                     }
                         while( ~hWalk ) ;
                         }
-                            etRock.traceF( tin0P , T("    stNnApproved1 [nicName]:    ")+T(nnWo) ) ;
-                            nicNameC& nnWo = (nicNameC&)stNnApproved1P.downF( tin0P , hWalk ) ;
+                            etRock.traceF( tin0P , T("    stNnApprovedA [nicName]:    ")+T(nnWo) ) ;
+                            nicNameC& nnWo = (nicNameC&)stNnApprovedAP.downF( tin0P , hWalk ) ;
                         {
                         do
                         handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     {
                     else
-                    if( !stNnApproved1P ) etRock.traceF( tin0P , T("    stNnApproved1P is empty") ) ;
-                    etRock.traceF( tin0P , T("rejecting [stNnApproved1,stNnApproved2,nnTarget]:    ")+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
+                    if( !stNnApprovedAP ) etRock.traceF( tin0P , T("    stNnApprovedAP is empty") ) ;
+                    etRock.traceF( tin0P , T("rejecting [stNnApprovedA,stNnApprovedB,nnTarget]:    ")+TF2((countT)stNnApprovedAP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApprovedBP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
                     
-                    stNnApproved2P.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                    stNnApproved1P.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                    stNnApprovedBP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                    stNnApprovedAP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-                    etRock.traceF( tin0P , T("rejecting [stNnApproved1P,stNnApproved2P,nnTarget]:    ")+TF2((countT)stNnApproved1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApproved2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
+                    etRock.traceF( tin0P , T("rejecting [stNnApprovedAP,stNnApprovedBP,nnTarget]:    ")+TF2((countT)stNnApprovedAP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stNnApprovedBP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnTarget) ) ;
 
                     bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
                     geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_NNtARGETrEJECTED , sizeof nnTarget ) ;
                 {
-                else if( !stNnApproved1P( nnTarget ) && !stNnApproved2P( nnTarget ) )
+                else if( !stNnApprovedAP( nnTarget ) && !stNnApprovedBP( nnTarget ) )
                 if( nnTarget == nnMe || nnTarget == nnRouter1 || nnTarget == nnRouter2 ) ;
 
                 stNnRequestedP >> nnTarget ;
@@ -427,8 +427,8 @@ DONE( tmAddAddressF )
     ZE( boolT , bTrue ) ;
     
     booksC& bksGeigerP     = *(booksC*)pTaskP->c4 ;
-    stackC& stNnApproved2P = *(stackC*)pTaskP->c3 ;
-    stackC& stNnApproved1P = *(stackC*)pTaskP->c2 ;
+    stackC& stNnApprovedBP = *(stackC*)pTaskP->c3 ;
+    stackC& stNnApprovedAP = *(stackC*)pTaskP->c2 ;
     stackC& stNnRequestedP = *(stackC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
