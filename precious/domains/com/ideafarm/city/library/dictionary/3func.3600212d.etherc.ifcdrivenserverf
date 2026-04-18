@@ -709,7 +709,7 @@
                                                         (
                                                         bPeerIsGorilla =
 
-                                                        if( nnPeer != nnSelfIpv6 && F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) bPeerIsIntruder = 1 ;
+                                                        if( nnPeer != nnSelfIpv6 && processGlobal1I.idAdamRoot == ifcIDaDAM_IDEAnET ) bPeerIsIntruder = 1 ;
 
                                                         }
                                                             //etRock.traceF( tin0P , T("ifcDrivenServerF / queue is growing [cQueuedMax]:    ")+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null ) ;
@@ -966,7 +966,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
 
                                 ZE( countT , idAccept ) ;
 
-                                if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) ) pzTh = new( 0 , tin0P , pb_th , sizeof pb_th ) threadC( tin0P , *this , TAG( TAGiDnULL ) , tmLoadSilentF , cArg_tmLoadSilent , flTHREADlAUNCH_SHOWpONY , CBsTACKmIN << 1 ) ;
+                                if( processGlobal1I.idAdamRoot != ifcIDaDAM_IDEAnET ) pzTh = new( 0 , tin0P , pb_th , sizeof pb_th ) threadC( tin0P , *this , TAG( TAGiDnULL ) , tmLoadSilentF , cArg_tmLoadSilent , flTHREADlAUNCH_SHOWpONY , CBsTACKmIN << 1 ) ;
                                 ZE( threadC* , pzTh ) ;
                                 byteT pb_th[ sizeof( threadC ) ] ;
                                 TELL( "server: launching thread tmLoadSilentF" )
@@ -1144,7 +1144,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
             _IO_
         {
         else
-        if( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) bAllowAllPeers = 1 ;
+        if( processGlobal1I.idAdamRoot == ifcIDaDAM_IDEAnET ) bAllowAllPeers = 1 ;
         ZE( boolT , bAllowAllPeers ) ;
 
         const boolT bHttp    = info2P.idPortHint == ifcIDpORT_HTTP ;

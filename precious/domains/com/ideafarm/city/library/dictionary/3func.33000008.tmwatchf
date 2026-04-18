@@ -149,7 +149,7 @@ DONE( tmWatchF )
         etThread.diskFileOrDirDeleteF( tin0P , tDirBlammo , flFILEoRdIRdELETE_RECURSE , 1 ) ;
         _IO_
     {
-    if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) && etThread.diskFileExistsF( tin0P , tDirBlammo+T("*") ) )
+    if( processGlobal1I.idAdamRoot != ifcIDaDAM_IDEAnET && etThread.diskFileExistsF( tin0P , tDirBlammo+T("*") ) )
     //DUPLICATE CODE: 33000008 33000008
 
     //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -496,7 +496,7 @@ DONE( tmWatchF )
             //etRock.traceF( tin0P , T("setting/resetting control flags") ) ;
             _IO_
         {
-        if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) && !( idCycle % ( TUCK >> 3 ) ) )
+        if( processGlobal1I.idAdamRoot != ifcIDaDAM_IDEAnET && !( idCycle % ( TUCK >> 3 ) ) )
         
         //**********************************************************************************************************************************************************************************************************************************************************************************
         //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -791,7 +791,7 @@ DONE( tmWatchF )
             etThread.diskFileOrDirDeleteF( tin0P , tDirBlammo , flFILEoRdIRdELETE_RECURSE , 1 ) ;
             _IO_
         {
-        if( !(F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM) && !( idCycle % ( TUCK >> 4 ) ) && etThread.diskFileExistsF( tin0P , tDirBlammo+T("*") ) )
+        if( !(processGlobal1I.idAdamRoot == ifcIDaDAM_IDEAnET) && !( idCycle % ( TUCK >> 4 ) ) && etThread.diskFileExistsF( tin0P , tDirBlammo+T("*") ) )
         //DUPLICATE CODE: 33000008 33000008
 
         //**********************************************************************************************************************************************************************************************************************************************************************************
@@ -872,7 +872,7 @@ DONE( tmWatchF )
         tFileControlTraceOn  = T("///ideafarm/controls/")+tUser+T("/on"  "/in.out.trace.txt") ;
         tFileControlTraceOff = T("///ideafarm/controls/")+tUser+T("/off" "/in.out.trace.txt") ;
     {
-    if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ) )
+    if( processGlobal1I.idAdamRoot != ifcIDaDAM_IDEAnET )
     TN( tFileControlTraceOn  , ""  ) ;
     TN( tFileControlTraceOff , ""  ) ;
     TN( tUser , thirdC::postUserNameIF() ) ;
