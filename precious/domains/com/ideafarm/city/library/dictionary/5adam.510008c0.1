@@ -20,6 +20,18 @@ TODO
 
 DONE( tmWorkF )
 }
+    }
+        etThread.delF( tin0P , pstt1To ) ;
+        etThread.emailSendLaterF( tin0P , soulEmail ) ;
+        etThread.emailComposeF( tin0P , soulEmail , T("IDEAnET Notice: Gorilla is dying") , T("The IDEAnET gorilla process is ending.") , T("IDEAFARM.COM <factories@ideafarm.com>") , 0 , pstt1To ) ;
+        etThread.strFuseSeparateF( tin0P , pstt1To , T("Tech Master <tech.master@ideafarm.com>") ) ;
+        etThread.strMakeF( tin0P , LF , pstt1To , 0 , TUCK << 4 ) ; ___( pstt1To ) ;
+        ZE( strokeS* , pstt1To ) ;
+
+        soulC soulEmail( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    {
+    if( !bKey )
+
     //etRock.traceF( tin0P , T("\r\nB0\r\n") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
         }
@@ -191,17 +203,48 @@ DONE( tmWorkF )
                     if
 
                     }
-                        //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [time1Signature,perTuckSignature]:    ")+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                        }
+                            //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" set [time1Signature,perTuckSignature]:    ")+TF2(time1Signature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)perTuckSignature,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
 
-                        time1Signature = (countT)(    ( (count04T)time1PerEpoch * EPOCHSsIGNATUREmAX * perTuckSignature )    /    TUCK    ) ;
+                            time1Signature = (countT)(    ( (count04T)time1PerEpoch * EPOCHSsIGNATUREmAX * perTuckSignature )    /    TUCK    ) ;
 
-                        count04T perTuckSignature = ipv6FieldsRouter1.hostRandom % TUCK ;
+                            count04T perTuckSignature = ipv6FieldsRouter1.hostRandom % TUCK ;
 
-                        // THE RANDOMNESS OF THE LENGTH OF THE SIGNATURE TIME ADJUSTMENT CREATES A SIGNATURE THAT CAN BE USED TO IDENTIFY AN ATTACKER WHO IS SNIFFING HIS WIRE TO DISCOVER THE PREFIX TO ATTACK
-                        // DISCRETE STEPS SO THAT THE SEQUENCE OF time1Signature VALUES WILL BE QUASI UNIQUE FOR EACH SUBSCRIBER, SO CAN SERVE AS A SIGNATURE FOR IDENTIFYING A SUBSCRIBER ATTACKER
+                            // THE RANDOMNESS OF THE LENGTH OF THE SIGNATURE TIME ADJUSTMENT CREATES A SIGNATURE THAT CAN BE USED TO IDENTIFY AN ATTACKER WHO IS SNIFFING HIS WIRE TO DISCOVER THE PREFIX TO ATTACK
+                            // DISCRETE STEPS SO THAT THE SEQUENCE OF time1Signature VALUES WILL BE QUASI UNIQUE FOR EACH SUBSCRIBER, SO CAN SERVE AS A SIGNATURE FOR IDENTIFYING A SUBSCRIBER ATTACKER
+                        {
+                        if( !cEpochsNoSignature )
+
+                        }
+                            etThread.delF( tin0P , pstt1To ) ;
+                            etThread.emailSendLaterF( tin0P , soulEmail ) ;
+                            etThread.emailComposeF( tin0P , soulEmail , T("IDEAnET notice:  Both channels are now up") , T("A run of unexpected channel failures has ended.") , T("IDEAFARM.COM <factories@ideafarm.com>") , 0 , pstt1To ) ;
+                            etThread.strFuseSeparateF( tin0P , pstt1To , T("Tech Master <tech.master@ideafarm.com>") ) ;
+                            etThread.strMakeF( tin0P , LF , pstt1To , 0 , TUCK << 4 ) ; ___( pstt1To ) ;
+                            ZE( strokeS* , pstt1To ) ;
+
+                            soulC soulEmail( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+
+                            bDownNoticeSent = 0 ;
+                        {
+                        if( bDownNoticeSent )
                     {
-                    else if( !cEpochsNoSignature )
+                    else
                     }
+                        }
+                            etThread.delF( tin0P , pstt1To ) ;
+                            etThread.emailSendLaterF( tin0P , soulEmail ) ;
+                            etThread.emailComposeF( tin0P , soulEmail , T("IDEAnET notice:  Unexpected stomp failure") , T("A channel (router1 or router2) failed when it was on duty.") , T("IDEAFARM.COM <factories@ideafarm.com>") , 0 , pstt1To ) ;
+                            etThread.strFuseSeparateF( tin0P , pstt1To , T("Tech Master <tech.master@ideafarm.com>") ) ;
+                            etThread.strMakeF( tin0P , LF , pstt1To , 0 , TUCK << 4 ) ; ___( pstt1To ) ;
+                            ZE( strokeS* , pstt1To ) ;
+
+                            soulC soulEmail( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+
+                            bDownNoticeSent = 1 ;
+                        {
+                        if( !bKey && !bDownNoticeSent )
+
                         //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                         bChatter       = 1 ;
                         cEpochsNoSignature = EPOCHSnOsIGNATURE ;
@@ -428,6 +471,19 @@ DONE( tmWorkF )
         else
         if( !LoadStringA( 0 , 101 , postSoulSubDump , sizeof postSoulSubDump ) ) etRock.traceF( tin0P , T("Either this file is not configured (for your email address), or it is corrupted.  Please discard it and obtain a fresh copy by (re)registering your email address at http://ideafarm.com .") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
     #if !defined( DUMMYsUB )
+
+    }
+        etThread.delF( tin0P , pstt1To ) ;
+        etThread.emailSendLaterF( tin0P , soulEmail ) ;
+        etThread.emailComposeF( tin0P , soulEmail , T("IDEAnET notice: Gorilla is awakening") , T("The IDEAnET gorilla process is awakening.") , T("IDEAFARM.COM <factories@ideafarm.com>") , 0 , pstt1To ) ;
+        etThread.strFuseSeparateF( tin0P , pstt1To , T("Tech Master <tech.master@ideafarm.com>") ) ;
+        etThread.strMakeF( tin0P , LF , pstt1To , 0 , TUCK << 4 ) ; ___( pstt1To ) ;
+        ZE( strokeS* , pstt1To ) ;
+
+        soulC soulEmail( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    {
+    if( !bKey )
+    ZE( boolT , bDownNoticeSent ) ;
 
     const boolT bKey = F(processGlobal2S::_processGlobal2I_IF()._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ;
 
