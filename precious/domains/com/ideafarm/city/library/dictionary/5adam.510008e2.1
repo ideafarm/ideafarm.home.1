@@ -262,6 +262,7 @@ DONE( tmListApprovedAddressesF )
             THREADmODE1rESTORE
             }
                 }
+                    pushNnApprovedCBF( tin0P , myQueue , 0 , flQUEUEc_null , argApp ) ;                                                     // THIS REGISTERS APPROVED nicNameC VALUES FOR THE IDEANET CLIENT KEY GORILLA
                     queueC myQueue( tin0P , etThread , tLongSubscriptions , flQUEUEc_NOwAIT , pushNnApprovedCBF , argApp , &pat ) ;
                     etRock.traceF( tin0P , tDash ) ;
                     _IO_
@@ -271,6 +272,7 @@ DONE( tmListApprovedAddressesF )
                 _IO_
             {
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
+
             stackC       stNnApprovedNew(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , ifcSTACKtYPE_nicNameC ) ;
             switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , psttlEmail , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook
             ZE( strokeS* , psttlEmail ) ;
@@ -537,11 +539,21 @@ TASK( tmAddAddressF )
     countT idBook = woSub.idBookF( tin0P ) ;
     TN( tEmail , "" ) ; tEmail = woSub ;
 
-    woSub <<( soulSub ) ;
+    }
+        woSub <<( soulSub ) ;
+        etherP.boxGetShadowF( tin0P , soulSub , psttLongFileP ) ;
+        soulC soulSub( tin0P , etherP , TAG( TAGiDnULL ) ) ;
+    {
+    else
+    }
+        DEL( pSub ) ;
+        woSub = *pSub ;
+        __Z( pSub ) ;
+        etherP.inetCreateSubscriptionF( tin0P , pSub ) ; ___( pSub ) ;
+        ZE( ideaNetSubscriptionC* , pSub ) ;
+    {
+    if( !psttLongFileP )
     ideaNetSubscriptionC woSub( tin0P , etherP ) ;
-
-    etherP.boxGetShadowF( tin0P , soulSub , psttLongFileP ) ;
-    soulC soulSub( tin0P , etherP , TAG( TAGiDnULL ) ) ;
 
     etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epochsPerDay]:    ")+TF2(epochsPerDay,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT epochsPerDay = (countT)(    ( (count04T)TICK << 0x8 )    /    time1PerEpoch    ) ;

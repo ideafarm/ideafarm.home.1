@@ -34798,8 +34798,8 @@ examples
  voidT ifcKitUpdateKitF( tin0S& tin0P , const strokeS* const psttExeP , const strokeS* const psttRcP , const strokeS* const psttResP ) ;
 
 /* commands: IdeaNet (tm) */
- countT inetCreateSubscriptionF( tin0S& tin0P , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP , const countT idBookP = 1 ) ;
- voidT  inetBookSubscriberConfigureExeF( tin0S& tin0P , strokeS*& psttLongExeP , const strokeS* const psttEmailP = 0 ) ;
+ countT inetCreateSubscriptionF( tin0S& tin0P , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP = 0 , const countT idBookP = 1 ) ;
+ voidT  inetBookSubscriberConfigureExeF( tin0S& tin0P , strokeS*& psttLongExeP , const strokeS* const psttEmailP ) ;
 
 /* commands: sorting */
  voidT ifcSortaF( tin0S& tin0P , const boolT& bQuitP , byteT* const pbArrayP , const countT cbArrayP , const countT cbSuffixP , const countT cbPrefixP , const countT cbKeyP , const flagsT flagsP = flSORTAc_null ) ;
@@ -49837,6 +49837,7 @@ i am nonconformant in that all of my member function definitions are in a single
     ideaNetSubscriptionC( tin0S& tin0P , etherC& etherP , const countT idBookP , const countT idSubP , const strokeS* const psttSecretForIdHostP , const strokeS* const psttEmailP ) ;
     nicNameC nnF( tin0S& tin0P , countT minuteP , ideaNetIpv6FieldsS& fieldsP = ideaNetIpv6FieldsS() , const countT idTypeRouteP = ifcIDtYPErOUTE_ROUTER1 , const byteT* const pbSecretForPrefixP = 0 , const countT cbSecretForPrefixP = 0 , const countT nonceForPrefixP = -1 ) ;
 
+    voidT    operator  =( ideaNetSubscriptionC& subP ) ;
     voidT    operator >>( soulC& sP ) ;
     voidT    operator <<( soulC& sP ) ;
     voidT    traceF( tin0S& tin0P ) ;
