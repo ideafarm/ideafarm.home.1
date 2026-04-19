@@ -24,7 +24,7 @@ DONE( tmWorkF )
     }
         }
             //etRock.traceF( tin0P , T("\r\nwaited for sgnDone_tmServeHttpF.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
-            sgnDone_tmServeHttpF.waitF( tin0P ) ;
+            if( bKey ) sgnDone_tmServeHttpF.waitF( tin0P ) ;
             //etRock.traceF( tin0P , T("\r\nwaiting for sgnDone_tmServeHttpF.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
             
             }
@@ -291,9 +291,9 @@ DONE( tmWorkF )
 
                     ++ idPass ;
                 {
-                while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) )
+                while( idStatusHttpService <= ifcIDsTATUShTTPsERVICE_READY && !( F(flagsMode) & flIDEAnETeXE_QUIT ) && !ether )
                 ZE( countT , cEpochsNoSignature ) ;
-                boolT bOpenBrowserWhenUpUp = 1 ;
+                boolT bOpenBrowserWhenUpUp = bKey ;
                 ZE( countT , time1Signature ) ;
                 const countT time1LateEnd      = 3 * time1LateBegin ;
                 const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
@@ -336,7 +336,7 @@ DONE( tmWorkF )
                 boolT bWoth = 1 ;
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                etThread.osThreadF( TaRG2cBsTACK( tmHearF , CBsTACKmIN << 2 ) , (countT)&flagsMode , (countT)&cTestRequestsPending ) ;
+                if( bKey ) etThread.osThreadF( TaRG2cBsTACK( tmHearF , CBsTACKmIN << 2 ) , (countT)&flagsMode , (countT)&cTestRequestsPending ) ;
             {
             else
             }
@@ -348,15 +348,15 @@ DONE( tmWorkF )
             }
                 ++ s ; ether.osSleepF( tin0P ) ;
             {
-            while( idStatusHttpService < ifcIDsTATUShTTPsERVICE_READY )
+            if( bKey ) while( idStatusHttpService < ifcIDsTATUShTTPsERVICE_READY )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6NowRouter1 , (countT)&tIpv6NowRouter2 , (countT)&ipv6FieldsRouter1 , (countT)&ipv6FieldsRouter2 , (countT)&flagsMode , (countT)&bTrue ) ;
+            if( bKey ) etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6NowRouter1 , (countT)&tIpv6NowRouter2 , (countT)&ipv6FieldsRouter1 , (countT)&ipv6FieldsRouter2 , (countT)&flagsMode , (countT)&bTrue ) ;
             signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
             ZE( boolT , bTrue ) ;
 
             ZE( countT , cTestRequestsPending ) ;
-            flagsT flagsMode = flIDEAnETeXE_METERED ;
+            flagsT flagsMode = bKey ? flIDEAnETeXE_METERED : flIDEAnETeXE_BEGIN ;
             ideaNetIpv6FieldsS ipv6FieldsRouter2 ;
             ideaNetIpv6FieldsS ipv6FieldsRouter1 ;
             TN( tIpv6NowRouter2 , "" ) ;
@@ -367,22 +367,26 @@ DONE( tmWorkF )
         if( !bQuitEarly )
         ZE( boolT , bAborted ) ;
 
-        etThread.delF( tin0P , psttUnwanted ) ;
-        etThread.delF( tin0P , psttWanted ) ;
-        boolT bQuitEarly = etThread.strCompareF( tin0P , psttWanted , T("ok") ) ;
-        etThread.strHearF( tin0P , psttWanted , psttUnwanted , 2 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
+        }
+            etThread.delF( tin0P , psttUnwanted ) ;
+            etThread.delF( tin0P , psttWanted ) ;
+            bQuitEarly = etThread.strCompareF( tin0P , psttWanted , T("ok") ) ;
+            etThread.strHearF( tin0P , psttWanted , psttUnwanted , 2 ) ; ___( psttWanted ) ; ___( psttUnwanted ) ;
 
-        ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
-            "\r\n  tell Windows to allow this:  "
-            "\r\n  other computers.  Press the Enter key now to quit.  Or, enter \"ok\" to continue, and then, when prompted,"
-            "\r\n  I will serve web pages, but only to you.  This is safe, because I will ignore requests that come from"
-            "\r\nIdeaFarm (tm) IdeaNet (tm) is a subscribers-only World Wide Web system within the public Internet system."
+                "\r\n  tell Windows to allow this:  "
+                "\r\n  other computers.  Press the Enter key now to quit.  Or, enter \"ok\" to continue, and then, when prompted,"
+                "\r\n  I will serve web pages, but only to you.  This is safe, because I will ignore requests that come from"
+                "\r\nIdeaFarm (tm) IdeaNet (tm) is a subscribers-only World Wide Web system within the public Internet system."
 
-        etRock.traceF( tin0P , T(
+            etRock.traceF( tin0P , T(
 
-        ZE( strokeS* , psttUnwanted ) ;
-        ZE( strokeS* , psttWanted ) ;
+            ZE( strokeS* , psttUnwanted ) ;
+            ZE( strokeS* , psttWanted ) ;
+        {
+        if( bKey )
+        ZE( boolT , bQuitEarly ) ;
 
         }
             etRock.traceF( tin0P , T("\r\nThis file gives you access to Book 1.  For Book 1, you are subscriber number ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".  Subscription id's\r\n  are dispensed serially, starting with 1.  Subscribers with low id numbers will be given\r\n  VIP privileges as the system grows, in appreciation for their role as founders.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -424,6 +428,8 @@ DONE( tmWorkF )
         else
         if( !LoadStringA( 0 , 101 , postSoulSubDump , sizeof postSoulSubDump ) ) etRock.traceF( tin0P , T("Either this file is not configured (for your email address), or it is corrupted.  Please discard it and obtain a fresh copy by (re)registering your email address at http://ideafarm.com .") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
     #if !defined( DUMMYsUB )
+
+    const boolT bKey = F(processGlobal2S::_processGlobal2I_IF()._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ;
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
