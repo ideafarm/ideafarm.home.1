@@ -34799,7 +34799,7 @@ examples
 
 /* commands: IdeaNet (tm) */
  countT inetCreateSubscriptionF( tin0S& tin0P , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP , const countT idBookP = 1 ) ;
- voidT  inetBookSubscriberConfigureExeF( tin0S& tin0P , strokeS*& psttLongExeP , const strokeS* const psttEmailP ) ;
+ voidT  inetBookSubscriberConfigureExeF( tin0S& tin0P , strokeS*& psttLongExeP , const strokeS* const psttEmailP = 0 ) ;
 
 /* commands: sorting */
  voidT ifcSortaF( tin0S& tin0P , const boolT& bQuitP , byteT* const pbArrayP , const countT cbArrayP , const countT cbSuffixP , const countT cbPrefixP , const countT cbKeyP , const flagsT flagsP = flSORTAc_null ) ;

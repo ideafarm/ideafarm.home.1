@@ -9,23 +9,33 @@
 }
     return idSub ;
 
-    pSubP = new( 0 , tin0P , LF ) ideaNetSubscriptionC( tin0P , *this , 1 , idSub , tSecret , tEmail ) ; ___( pSubP ) ;
+    pSubP = new( 0 , tin0P , LF ) ideaNetSubscriptionC( tin0P , *this , idBookP , idSub , tSecret , tEmail ) ; ___( pSubP ) ;
 
-    traceF( tin0P , T("[idBookP,idSub,generatedSecret]:    ")+TF2(idBookP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret ) ;
     }
-        delF( tin0P , psttMac ) ;
-        tSecret = T(psttMac) ;
-        openSslHmacF( tin0P , psttMac , tEmail , tEmail.csF( tin0P ) , (byteT*)&timeN1 , sizeof timeN1 ) ; ___( psttMac ) ;
-        ZE( strokeS* , psttMac ) ;
+        traceF( tin0P , T("[idBookP,idSub,generatedSecret]:    ")+TF2(idBookP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tSecret ) ;
+        }
+            delF( tin0P , psttMac ) ;
+            tSecret = T(psttMac) ;
+            openSslHmacF( tin0P , psttMac , tEmail , tEmail.csF( tin0P ) , (byteT*)&timeN1 , sizeof timeN1 ) ; ___( psttMac ) ;
+            ZE( strokeS* , psttMac ) ;
+        {
+
+        TN( tb4    , "    " ) ;
+
+        osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+        ZE( sCountT , timeN2 ) ;
+        ZE( countT  , timeN1 ) ;
     {
-    TN( tSecret , "" ) ;
-
+    else
+    }
+        delF( tin0P , pstts ) ;
+        tEmail  = T("ideanet.gorilla@ideafarm.com") ;
+        tSecret = T(pstts) ;
+        ZE( strokeS* , pstts ) ; querySettingF( tin0P , pstts , T("!ipdos.ideanet.gorilla.secret")  ) ; ___( pstts ) ;
+    {
+    if( !psttEmailP )
     TN( tEmail , psttEmailP ) ;
-    TN( tb4    , "    " ) ;
-
-    osTimeNowF( tin0P , timeN1 , timeN2 ) ;
-    ZE( sCountT , timeN2 ) ;
-    ZE( countT  , timeN1 ) ;
+    TN( tSecret , "" ) ;
 
     }
         fileWriteF(  tin0P , fileCount , (byteT*)&idSubLath , sizeof idSubLath ) ;
@@ -53,10 +63,7 @@
             IFsCRATCHoK
             countT cbr = sizeof idSubLath ;
         {
-        else
-        }
-        {
-        if( bNewFile )
+        if( !bNewFile )
         ZE( countT , idSubLath ) ;
 
         const boolT bNewFile = ifcOPENrESULT_CREATED == fileCount.idOpenResultF( tin0P  ) ;
@@ -64,12 +71,22 @@
 
         TN( tLongIdSubLath , "" ) ; tLongIdSubLath = T("///d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_TOOLiDEAnETbOOKeMAIL)+T("/idBookP.00000001.idSub.lath.bin") ;
     {
+    else
+    if( !psttEmailP ) idSub = -1 ;          // MULTIPLE GORILLAS CAN BE SUPPORTED USING -2 , -3 , -4 , ...
     ZE( countT , idSub ) ;
 {
 /*1*/countT etherC::inetCreateSubscriptionF( tin0S& tin0P , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP , const countT idBookP )/*1*/
 
 /**/
 */
+/*1*/countT etherC::inetCreateSubscriptionF( tin0S& tin0P , ideaNetSubscriptionC*& pSubP , const strokeS* const psttEmailP , const countT idBookP )/*1*/
+ idBookP
+  if 0 then i create a subscription that can be used by the gorilla adam flavor of ifcIDaDAM_IDEAnET
+  normally is not 0
+ psttEmailP
+ pSubP
+ tin0P
+parameters
 /*
 
 //
