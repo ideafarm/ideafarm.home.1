@@ -26,8 +26,10 @@
     barryC*                 pBarryUtility ;                         // NOT REFERENCED BY tin123S OR BY IPDOS SYSTEM CODE ; AVAILABLE FOR USE BY APPLICATION CODE
     countT                  cPoolDropDt ;
     countT                  cPoolDropCt ;
-    countT                  valueExpectedByInOut ;
-    countT*                 pcWatchedByInOut ;
+    flagsT                  flagsTriggerActions    ;     // FLAGS THAT SPECIFY THE ACTION(S) TO TAKE AND WHETHER THE ACTIONS ARE TRIGGERED BY EQUALS OR NOT EQUALS
+    countT                  vvTriggerTest          ;     // VALUE FOR RHS OF EXPRESSION THAT, IF TRUE, CAUSES ACTION
+    countT                  idTriggerCondition     ;     // CONDITION THAT CAUSES ACTION ( == , != , < , <= , >= , > )
+    countT*                 ppcTriggerLook[ 0x4 ]  ;     // ARRAY OF ADDRESSES FOR *inOutFrameC TO INSPECT
     flagsT                  flagsTrace_soulC ; //FLAGS MUST INCLUDE flTRACEsOULc_ON AND MUST NOT SPECIFY flTRACEsOULc_PURGE
     countT                  cArmTrace_soulC ; //APP CODE CAN SET THIS: 0:DISARMED; -1:traceF WILL BE CALLED FOR ALL SUBSEQUENT soulC NEW'D OR RETRIEVED FROM RECYCLING; N:COUNTDOWN TO THE NEW/RETRIEVED INSTANCE TO CALL traceF FOR
     countT                  ccExitsWhere ; //EXISTS SO CODE IN ADAM DEF CAN SEE THIS GLOBALS ARRAY

@@ -1,4 +1,19 @@
 
+
+#define flTRIGGERaCTION_NAP             0xe00008ff
+#define flTRIGGERaCTION_IMPOTENCE       0xe00004ff
+#define flTRIGGERaCTION_BLAMMO          0xe00002ff
+#define flTRIGGERaCTION_TRACE           0xe00001ff
+#define flTRIGGERaCTION_null            0xe00000ff
+
+
+#define ifcIDcONDITIONtRIGGER_GT        6
+#define ifcIDcONDITIONtRIGGER_GE        5
+#define ifcIDcONDITIONtRIGGER_LE        4
+#define ifcIDcONDITIONtRIGGER_LT        3
+#define ifcIDcONDITIONtRIGGER_NE        2
+#define ifcIDcONDITIONtRIGGER_EQ        1
+
 #define BLAMMOiD4(id1P,id2P,id3P,id4P) thirdC::blammoIF( LF , 0 , 0 , (countT)(id1P) , (countT)(id2P) , (countT)(id3P) , (countT)(id4P) ) ;
 
 

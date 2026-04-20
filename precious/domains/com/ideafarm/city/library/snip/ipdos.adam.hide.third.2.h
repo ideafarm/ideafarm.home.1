@@ -28902,8 +28902,10 @@ struct bookMarkOldS
     countT                  ccExitsWhere ; //EXISTS SO CODE IN ADAM DEF CAN SEE THIS GLOBALS ARRAY
     countT                  cArmTrace_soulC ; //APP CODE CAN SET THIS: 0:DISARMED; -1:traceF WILL BE CALLED FOR ALL SUBSEQUENT soulC NEW'D OR RETRIEVED FROM RECYCLING; N:COUNTDOWN TO THE NEW/RETRIEVED INSTANCE TO CALL traceF FOR
     flagsT                  flagsTrace_soulC ; //FLAGS MUST INCLUDE flTRACEsOULc_ON AND MUST NOT SPECIFY flTRACEsOULc_PURGE
-    countT*                 pcWatchedByInOut ;
-    countT                  valueExpectedByInOut ;
+    countT*                 ppcTriggerLook[ 0x4 ] ;     // ARRAY OF ADDRESSES FOR *inOutFrameC TO INSPECT
+    countT                  idTriggerCondition     ;     // CONDITION THAT CAUSES ACTION ( == , != , < , <= , >= , > )
+    countT                  vvTriggerTest          ;     // VALUE FOR RHS OF EXPRESSION THAT, IF TRUE, CAUSES ACTION
+    flagsT                  flagsTriggerActions    ;     // FLAGS THAT SPECIFY THE ACTION(S) TO TAKE AND WHETHER THE ACTIONS ARE TRIGGERED BY EQUALS OR NOT EQUALS
     countT                  cPoolDropCt ;
     countT                  cPoolDropDt ;
     barryC*                 pBarryUtility ;                         // NOT REFERENCED BY tin123S OR BY IPDOS SYSTEM CODE ; AVAILABLE FOR USE BY APPLICATION CODE
@@ -42728,7 +42730,6 @@ base class to make a derived class of objects easily contained by a stackC objec
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.addressRangeS : 1snip.150001ce.addressRangeS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.processGlobal2S : 1snip.150000c2.processglobal2s BEGIN
 
-
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -42813,8 +42814,10 @@ base class to make a derived class of objects easily contained by a stackC objec
     byteT                           pbBkTelemetryScratchRoot[ SIZEOF_bookC ] ;
     fireGroupS                      pFireGroup[ CfIREgROUPS ] ;
     const flagsT                    flagsCpuFeatures ;
-    countT*                         pcWatchedByInOut ;
-    countT                          valueExpectedByInOut ;
+    countT*                         ppcTriggerLook[ 0x10 ] ;     // ARRAY OF ADDRESSES FOR *inOutFrameC TO INSPECT
+    countT                          idTriggerCondition     ;     // CONDITION THAT CAUSES ACTION ( == , != , < , <= , >= , > )
+    countT                          vvTriggerTest          ;     // VALUE FOR RHS OF EXPRESSION THAT, IF TRUE, CAUSES ACTION
+    flagsT                          flagsTriggerActions    ;     // FLAGS THAT SPECIFY THE ACTION(S) TO TAKE AND WHETHER THE ACTIONS ARE TRIGGERED BY EQUALS OR NOT EQUALS
     //thisLifiS                     pThisLifi[ TOCK ] ; //COMMENT THIS OUT IN PRODUCTION
     const countT                    cbAllocationGrain ;
     byteT                           pbEarlyGrain[ 1 + ( TOCK >> 1 ) / SB ] ; // A:ASSUME: ADDRESSES AT OR ABOVE BM_HIGH ARE NOT ACCESSIBLE (WIN32) ; A:ASSUME: cbAllocationGrain is TOCK

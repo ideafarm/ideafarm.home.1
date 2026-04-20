@@ -53,21 +53,57 @@
         tin123P.where.idWhat1 = ifcIDwHAT_GOiNoUTfRAMED ;_
         }
             _MOLE
-            //}
-            //    }
-            //        BLAMMO ;_
-            //        LOGrAW5( "_IO_ process global [valueExpectedByInOut,*pcWatchedByInOut]: " , pg1.valueExpectedByInOut , " != " , *pg1.pcWatchedByInOut , "\r\n" ) ;_
-            //    {
-            //    if( pg1.pcWatchedByInOut && *pg1.pcWatchedByInOut != pg1.valueExpectedByInOut )
-            //    processGlobal2S& pg1 = processGlobal2S::_processGlobal2I_IF() ;_
-            //{
-            //
-            //}
-            //    BLAMMO ;_
-            //    LOGrAW5( "_IO_ tin0P [valueExpectedByInOut,*pcWatchedByInOut]: " , tin1P.valueExpectedByInOut , " != " , *tin1P.pcWatchedByInOut , "\r\n" ) ;_
-            //{
-            //if( tin1P.pcWatchedByInOut && *tin1P.pcWatchedByInOut != tin1P.valueExpectedByInOut )
-            //
+
+            }
+                if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_NAP       ) { Sleep( 1000 * 10 )                                                                                                       ; }
+                if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_IMPOTENCE ) { __( 0xbbbaaddd )                                                                                                         ; }
+                if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_BLAMMO    ) { BLAMMOiD( 0xbbbaaddd )                                                                                                   ; }
+                if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_TRACE     ) { if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("inOutFrameC thread trigger condition is true") ) ; }
+            {
+            if( bHit2 ) ;
+
+            }
+                if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_NAP       ) { Sleep( 1000 * 10 )                                                                                                        ; }
+                if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_IMPOTENCE ) { __( 0xbbbaaddd )                                                                                                          ; }
+                if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_BLAMMO    ) { BLAMMOiD( 0xbbbaaddd )                                                                                                    ; }
+                if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_TRACE     ) { if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("inOutFrameC process trigger condition is true") ) ; }
+            {
+            if( bHit1 ) ;
+
+            }
+                }
+                    }
+                        case ifcIDcONDITIONtRIGGER_GT : { if( *tin1P.ppcTriggerLook[ offt ] >  tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+                        case ifcIDcONDITIONtRIGGER_GE : { if( *tin1P.ppcTriggerLook[ offt ] >= tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+                        case ifcIDcONDITIONtRIGGER_LE : { if( *tin1P.ppcTriggerLook[ offt ] <= tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+                        case ifcIDcONDITIONtRIGGER_LT : { if( *tin1P.ppcTriggerLook[ offt ] <  tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+                        case ifcIDcONDITIONtRIGGER_NE : { if( *tin1P.ppcTriggerLook[ offt ] != tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+                        case ifcIDcONDITIONtRIGGER_EQ : { if( *tin1P.ppcTriggerLook[ offt ] == tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+                    {
+                    switch( tin1P.idTriggerCondition )
+                {
+                if( tin1P.ppcTriggerLook[ offt ] && F(tin1P.flagsTriggerActions) )
+            {
+            for( countT offt = 0 ; !bHit2 && offt < sizeof tin1P.ppcTriggerLook / sizeof tin1P.ppcTriggerLook[ 0 ] ; offt ++ )
+            ZE( boolT , bHit2 ) ;
+
+            }
+                }
+                    }
+                        case ifcIDcONDITIONtRIGGER_GT : { if( *processGlobal2I.ppcTriggerLook[ offt ] >  processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+                        case ifcIDcONDITIONtRIGGER_GE : { if( *processGlobal2I.ppcTriggerLook[ offt ] >= processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+                        case ifcIDcONDITIONtRIGGER_LE : { if( *processGlobal2I.ppcTriggerLook[ offt ] <= processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+                        case ifcIDcONDITIONtRIGGER_LT : { if( *processGlobal2I.ppcTriggerLook[ offt ] <  processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+                        case ifcIDcONDITIONtRIGGER_NE : { if( *processGlobal2I.ppcTriggerLook[ offt ] != processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+                        case ifcIDcONDITIONtRIGGER_EQ : { if( *processGlobal2I.ppcTriggerLook[ offt ] == processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+                    {
+                    switch( processGlobal2I.idTriggerCondition )
+                {
+                if( processGlobal2I.ppcTriggerLook[ offt ] && F(processGlobal2I.flagsTriggerActions) )
+            {
+            for( countT offt = 0 ; !bHit1 && offt < sizeof processGlobal2I.ppcTriggerLook / sizeof processGlobal2I.ppcTriggerLook[ 0 ] ; offt ++ )
+            ZE( boolT , bHit1 ) ;
+
             //}
             //    }
             //        BLAMMO ;_
