@@ -443,15 +443,40 @@ DONE( tmWatchF )
             //etRock.traceF( tin0P , T("cancelled  sockets that are timed out idle") ) ;
             stIdleTimeouters.ungrabF( tin0P ) ;
             }
+((tin123S&)tin0P).pcUtility[ 1 ] = 0 ;
+
                 while( !POOP && !etThread && !stIdleTimeouters.third && ~handle ) ;
                 }
-                    if( pso ) pso->cancelIfTimedOutF( tin0P ) ;
-                    __Z( pso ) ;
-                    socketC* pso = (socketC*)stIdleTimeouters.downF( tin0P , handle ) ;
+                    }
+                        { _IO_ if( POOP ) ; }
+                        if( pso ) pso->cancelIfTimedOutF( tin0P ) ;
+                        { _IO_ if( POOP ) ; }
+                        _IO_
+                    {
+                    }
+                        { _IO_ if( POOP ) ; }
+                        __Z( pso ) ;
+                        { _IO_ if( POOP ) ; }
+                        _IO_
+                    {
+                    }
+                        { _IO_ if( POOP ) ; }
+                        pso = (socketC*)stIdleTimeouters.downF( tin0P , handle ) ;
+                        { _IO_ if( POOP ) ; }
+                        _IO_
+                    {
+                    ZE( socketC* , pso ) ;
+
+                    { _IO_ if( POOP ) ; }
+
+((tin123S&)tin0P).pcUtility[ 1 ] ++ ;
                     _IO_
                 {
                 do
                 handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+
+((tin123S&)tin0P).pcUtility[ 1 ] = 0 ;
+
                 _IO_
             {
             if( !etThread && stIdleTimeouters )
