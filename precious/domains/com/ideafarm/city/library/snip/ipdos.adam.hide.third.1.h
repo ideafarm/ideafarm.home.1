@@ -1,4 +1,6 @@
 
+#define BLAMMOiD4(id1P,id2P,id3P,id4P) thirdC::blammoIF( LF , 0 , 0 , (countT)(id1P) , (countT)(id2P) , (countT)(id3P) , (countT)(id4P) ) ;
+
 
 #define ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET        1
 #define ifcIDtYPEgEIGEReVENT_ICMPV6qUERYnOTiDEAnETsUBNET     2

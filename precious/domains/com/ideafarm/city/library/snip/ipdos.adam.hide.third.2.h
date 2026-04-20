@@ -28862,7 +28862,7 @@ struct bookMarkOldS
     countT                  brcLath ;  // LATH NONZE RETURN CODE FROM A BOS (BASE OPERATING SYSTEM, E.G. WIN32) CALL ON THIS THREAD
     countT                  idLine_brcLath ;
     countT                  idiFile_brcLath ;
-    countT                  idBlammo ;
+    countT                  pIdBlammo[ 4 ] ;
     flagsT                  flagsThreadMode1 ;
     flagsT                  flagsThreadMode2 ;
     flagsT                  flagsThreadMode3 ;
@@ -31873,7 +31873,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34190.thirdC.postExeFileNameIF!||
  static const osTextT* postExeFileSuffixIF( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011b3.thirdc.postexefilesuffixif!||
- static voidT blammoIF( const countT idLineP , const countT idiFileP , const countT idLineCtP = 0 , const countT idiFileCtP = 0 , const countT idBlammoP = 0 ) ;
+ static voidT blammoIF( const countT idLineP , const countT idiFileP , const countT idLineCtP = 0 , const countT idiFileCtP = 0 , const countT idBlammo1P = 0 , const countT idBlammo2P = 0 , const countT idBlammo3P = 0 , const countT idBlammo4P = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34167.thirdC.blammoIF!||
  static voidT inOutChatterIfIF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34168.thirdC.inOutChatterIF!||
@@ -42832,7 +42832,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     countT                          idiFileBlammo   ;
     countT                          idLineBlammoCt  ;
     countT                          idiFileBlammoCt ;
-    countT                          idBlammo        ;
+    countT                          pIdBlammo[ 4 ]  ;
     byteT                           pbAddressBitsAll[     ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
     byteT                           pbAddressBitsCode[    ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
     byteT                           pbAddressBitsData[    ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
@@ -42999,7 +42999,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     countT                      idiFileBlammo ;
     countT                      idLineBlammoCt ;
     countT                      idiFileBlammoCt ;
-    countT                      idBlammo ;
+    countT                      pIdBlammo[ 4 ] ;
     const countT                idAdam ;
     const countT                idCell ;
     countT                      idEventSadamsLath ;
