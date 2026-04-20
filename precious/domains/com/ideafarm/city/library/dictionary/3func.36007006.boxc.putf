@@ -75,7 +75,9 @@
 etRock.traceF( tin0P , T("putF (inner) called  fileOpenF / U:: / 0 [psttMapped]:    ")+T(psttMapped) ) ;
                 ether.fileOpenF( tin0P , handle , flagsResult , psttMapped , ifcOPENaCCESS_WR , 0 , flagsOpenDetails | flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR , 0 , 0 , 0 , cOpenTries ) ;
 etRock.traceF( tin0P , T("putF (inner) called  diskMakeDirIfNeededF / U:: / 1 [bMade,psttMapped]:    ")+TF2(bMade,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttMapped) ) ;
+((tin123S&)tin0P).pcUtility[ 0 ] -- ;
                 boolT bMade = ether.diskMakeDirIfNeededF( tin0P , psttMapped ) ;
+((tin123S&)tin0P).pcUtility[ 0 ] ++ ;
 etRock.traceF( tin0P , T("putF (inner) calling diskMakeDirIfNeededF / U:: / 2 [psttMapped]:    ")+T(psttMapped) ) ;
 etherC& etRock = etherC::etRockIF( tin0P ) ;
                 ZE( countT , flagsResult ) ;
