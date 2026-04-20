@@ -9,6 +9,7 @@
 
 }
     return bMade ;
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / 0 / [bMade,psttFileOrDirP]:    ")+TF2(bMade,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttFileOrDirP) ) ;
     }
         }
             }
@@ -17,16 +18,24 @@
             {
     
             else { __( idSlash ) ; }
-            else if( idSlash == 5 ) bMade = !diskMakeDirStupidlyF( tin0P , psttDir ) ; //ROOT DIRECTORY SPECIFIED. THIS JUST VERIFIES THAT THE DRIVE EXISTS
             }
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / 1 / [psttFileOrDirP]:    ")+T(psttFileOrDirP) ) ;
+                bMade = !diskMakeDirStupidlyF( tin0P , psttDir ) ; //ROOT DIRECTORY SPECIFIED. THIS JUST VERIFIES THAT THE DRIVE EXISTS
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / 2 / [psttFileOrDirP]:    ")+T(psttFileOrDirP) ) ;
+            {
+            else if( idSlash == 5 )
+            }
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / 3 / [psttFileOrDirP]:    ")+T(psttFileOrDirP) ) ;
                 }
                     delF( tin0P , pstt1b ) ;
                     _IO_
                 {
 
                 }
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / 4 / [psttFileOrDirP]:    ")+T(psttFileOrDirP) ) ;
                     bMade = !diskMakeDirF( tin0P , psttDir ) ;
                     _IO_
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / 5 / [psttFileOrDirP]:    ")+T(psttFileOrDirP) ) ;
                 {
                 if( !bFound && !POOP )
     
@@ -39,6 +48,7 @@
                     else
                     if( psttc1[ CSpREFIX - 1 + psttc1->idAdam ].idAdam == '/' ) bFound = 1 ;
                     _IO_
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / 6 / [psttFileOrDirP]:    ")+T(psttFileOrDirP) ) ;
                 {
                 FORsTRINGSiN1( pstt1b )
                 ZE( boolT , bFound ) ;
@@ -49,6 +59,7 @@
                 patternC pat( tin0P , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                 fileNameC fnLike( tin0P , *this , psttDir ) ;
                 _IO_
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / 7 / [psttFileOrDirP]:    ")+T(psttFileOrDirP) ) ;
             {
             if( idSlash > ( bLan ? 8 : 5 ) )
 
@@ -65,6 +76,7 @@
             countT idf = 1 ;
             ZE( strokeS* , psttDir ) ;
             _IO_
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / 8 / [psttFileOrDirP]:    ")+T(psttFileOrDirP) ) ;
         {
         if( idSlash )
 
@@ -73,10 +85,14 @@
 
         //boolT bDir = psttFileOrDirP[ CSpREFIX - 1 + psttFileOrDirP->idAdam ].idAdam == '/' ;
         _IO_
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / 9 / [psttFileOrDirP]:    ")+T(psttFileOrDirP) ) ;
     {
     if( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM )
     ZE( boolT , bMade ) ;
     _IO_
+
+etRock.traceF( tin0P , T("diskMakeDirIfNeededF / U:: / a / [psttFileOrDirP]:    ")+T(psttFileOrDirP) ) ;
+etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     //LOGrAW( T("diskMakeDirIfNeededF [psttFileOrDirP]:    \"")+T(psttFileOrDirP)+T("\"\r\n") ) ; //U::
 
