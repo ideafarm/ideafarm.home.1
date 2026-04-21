@@ -50809,6 +50809,7 @@ after i return, that countT object will contain 1
 #define flTHREADmODE4_ARMoPENsSL                                                        ((countT)0xe0004010)
 #define flTHREADmODE4_DOnOTfREEsSLcONTEXT                                               ((countT)0xe0008010)
 #define flTHREADmODE4_TINiSnOTiNpOOL                                                    ((countT)0xe0010010)
+#define flTHREADmODE4_NOtRIGGERaCTION                                                   ((countT)0xe0020010)
 /*3*/
 #define flTHREADmODE4_null    ((countT)0xe0000010)
 
