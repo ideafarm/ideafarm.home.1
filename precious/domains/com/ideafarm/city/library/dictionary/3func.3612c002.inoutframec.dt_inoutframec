@@ -221,66 +221,67 @@
             {
             if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(tin1P.flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( tin123P.where.idDirty % 2 ) )
 
-            }
-                }
-                    THREADmODE4rESTORE
-                    if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_NAP       ) { Sleep( 1000 * 10 )                                                                                                        ; }
-                    if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_IMPOTENCE ) { __( 0xbbbaaddd )                                                                                                          ; }
-                    if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_BLAMMO    ) { BLAMMOiD( 0xbbbaaddd )                                                                                                    ; }
-
-                    //if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_TRACE     ) { if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("~inOutFrameC thread trigger condition is true") ) ; }
-                    //U:: CAUSES STACK OVERFLOW DUE TO RECURSION
-                    THREADmODE4oN( flTHREADmODE4_NOtRIGGERaCTION )
-                {
-                if( bHit2 )
-                
-                }
-                    THREADmODE4rESTORE
-                    if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_NAP       ) { Sleep( 1000 * 10 )                                                                                                         ; }
-                    if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_IMPOTENCE ) { __( 0xbbbaaddd )                                                                                                           ; }
-                    if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_BLAMMO    ) { BLAMMOiD( 0xbbbaaddd )                                                                                                     ; }
-
-                    //if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_TRACE     ) { if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("~inOutFrameC process trigger condition is true") ) ; }
-                    //U:: CAUSES STACK OVERFLOW DUE TO RECURSION
-                    THREADmODE4oN( flTHREADmODE4_NOtRIGGERaCTION )
-                {
-                if( bHit1 )
-                
-                }
-                    }
-                        }
-                            case ifcIDcONDITIONtRIGGER_GT : { if( *tin1P.ppcTriggerLook[ offt ] >  tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
-                            case ifcIDcONDITIONtRIGGER_GE : { if( *tin1P.ppcTriggerLook[ offt ] >= tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
-                            case ifcIDcONDITIONtRIGGER_LE : { if( *tin1P.ppcTriggerLook[ offt ] <= tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
-                            case ifcIDcONDITIONtRIGGER_LT : { if( *tin1P.ppcTriggerLook[ offt ] <  tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
-                            case ifcIDcONDITIONtRIGGER_NE : { if( *tin1P.ppcTriggerLook[ offt ] != tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
-                            case ifcIDcONDITIONtRIGGER_EQ : { if( *tin1P.ppcTriggerLook[ offt ] == tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
-                        {
-                        switch( tin1P.idTriggerCondition )
-                    {
-                    if( tin1P.ppcTriggerLook[ offt ] && F(tin1P.flagsTriggerActions) )
-                {
-                for( countT offt = 0 ; !bHit2 && offt < sizeof tin1P.ppcTriggerLook / sizeof tin1P.ppcTriggerLook[ 0 ] ; offt ++ )
-                ZE( boolT , bHit2 ) ;
-                
-                }
-                    }
-                        }
-                            case ifcIDcONDITIONtRIGGER_GT : { if( *processGlobal2I.ppcTriggerLook[ offt ] >  processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
-                            case ifcIDcONDITIONtRIGGER_GE : { if( *processGlobal2I.ppcTriggerLook[ offt ] >= processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
-                            case ifcIDcONDITIONtRIGGER_LE : { if( *processGlobal2I.ppcTriggerLook[ offt ] <= processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
-                            case ifcIDcONDITIONtRIGGER_LT : { if( *processGlobal2I.ppcTriggerLook[ offt ] <  processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
-                            case ifcIDcONDITIONtRIGGER_NE : { if( *processGlobal2I.ppcTriggerLook[ offt ] != processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
-                            case ifcIDcONDITIONtRIGGER_EQ : { if( *processGlobal2I.ppcTriggerLook[ offt ] == processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
-                        {
-                        switch( processGlobal2I.idTriggerCondition )
-                    {
-                    if( processGlobal2I.ppcTriggerLook[ offt ] && F(processGlobal2I.flagsTriggerActions) )
-                {
-                for( countT offt = 0 ; !bHit1 && offt < sizeof processGlobal2I.ppcTriggerLook / sizeof processGlobal2I.ppcTriggerLook[ 0 ] ; offt ++ )
-                ZE( boolT , bHit1 ) ;
-            {
-            if( !( F(((tin1S&)tin0P).flagsThreadMode4) & flTHREADmODE4_NOtRIGGERaCTION ) )
+            //}
+            //    }
+            //        THREADmODE4rESTORE
+            //        if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_NAP       ) { Sleep( 1000 * 10 )                                                                                                        ; }
+            //        if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_IMPOTENCE ) { __( 0xbbbaaddd )                                                                                                          ; }
+            //        if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_BLAMMO    ) { BLAMMOiD( 0xbbbaaddd )                                                                                                    ; }
+            //
+            //        //if( F(tin1P.flagsTriggerActions) & flTRIGGERaCTION_TRACE     ) { if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("~inOutFrameC thread trigger condition is true") ) ; }
+            //        //U:: CAUSES STACK OVERFLOW DUE TO RECURSION
+            //        THREADmODE4oN( flTHREADmODE4_NOtRIGGERaCTION )
+            //    {
+            //    if( bHit2 )
+            //    
+            //    }
+            //        THREADmODE4rESTORE
+            //        if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_NAP       ) { Sleep( 1000 * 10 )                                                                                                         ; }
+            //        if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_IMPOTENCE ) { __( 0xbbbaaddd )                                                                                                           ; }
+            //        if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_BLAMMO    ) { BLAMMOiD( 0xbbbaaddd )                                                                                                     ; }
+            //
+            //        //if( F(processGlobal2I.flagsTriggerActions) & flTRIGGERaCTION_TRACE     ) { if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("~inOutFrameC process trigger condition is true") ) ; }
+            //        //U:: CAUSES STACK OVERFLOW DUE TO RECURSION
+            //        THREADmODE4oN( flTHREADmODE4_NOtRIGGERaCTION )
+            //    {
+            //    if( bHit1 )
+            //    
+            //    }
+            //        }
+            //            }
+            //                case ifcIDcONDITIONtRIGGER_GT : { if( *tin1P.ppcTriggerLook[ offt ] >  tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+            //                case ifcIDcONDITIONtRIGGER_GE : { if( *tin1P.ppcTriggerLook[ offt ] >= tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+            //                case ifcIDcONDITIONtRIGGER_LE : { if( *tin1P.ppcTriggerLook[ offt ] <= tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+            //                case ifcIDcONDITIONtRIGGER_LT : { if( *tin1P.ppcTriggerLook[ offt ] <  tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+            //                case ifcIDcONDITIONtRIGGER_NE : { if( *tin1P.ppcTriggerLook[ offt ] != tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+            //                case ifcIDcONDITIONtRIGGER_EQ : { if( *tin1P.ppcTriggerLook[ offt ] == tin1P.vvTriggerTest ) bHit2 = 1 ; break ; }
+            //            {
+            //            switch( tin1P.idTriggerCondition )
+            //        {
+            //        if( tin1P.ppcTriggerLook[ offt ] && F(tin1P.flagsTriggerActions) )
+            //    {
+            //    for( countT offt = 0 ; !bHit2 && offt < sizeof tin1P.ppcTriggerLook / sizeof tin1P.ppcTriggerLook[ 0 ] ; offt ++ )
+            //    ZE( boolT , bHit2 ) ;
+            //    
+            //    }
+            //        }
+            //            }
+            //                case ifcIDcONDITIONtRIGGER_GT : { if( *processGlobal2I.ppcTriggerLook[ offt ] >  processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+            //                case ifcIDcONDITIONtRIGGER_GE : { if( *processGlobal2I.ppcTriggerLook[ offt ] >= processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+            //                case ifcIDcONDITIONtRIGGER_LE : { if( *processGlobal2I.ppcTriggerLook[ offt ] <= processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+            //                case ifcIDcONDITIONtRIGGER_LT : { if( *processGlobal2I.ppcTriggerLook[ offt ] <  processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+            //                case ifcIDcONDITIONtRIGGER_NE : { if( *processGlobal2I.ppcTriggerLook[ offt ] != processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+            //                case ifcIDcONDITIONtRIGGER_EQ : { if( *processGlobal2I.ppcTriggerLook[ offt ] == processGlobal2I.vvTriggerTest ) bHit1 = 1 ; break ; }
+            //            {
+            //            switch( processGlobal2I.idTriggerCondition )
+            //        {
+            //        if( processGlobal2I.ppcTriggerLook[ offt ] && F(processGlobal2I.flagsTriggerActions) )
+            //    {
+            //    for( countT offt = 0 ; !bHit1 && offt < sizeof processGlobal2I.ppcTriggerLook / sizeof processGlobal2I.ppcTriggerLook[ 0 ] ; offt ++ )
+            //    ZE( boolT , bHit1 ) ;
+            //{
+            //if( !( F(((tin1S&)tin0P).flagsThreadMode4) & flTHREADmODE4_NOtRIGGERaCTION ) )
+            //THIS CODE WORKS BUT IS COMMENTED OUT FOR SPEED ; SEE socketC::socketC AND socketC::~socketC FOR EXAMPLE APPLICATION CODE
         {
         if( F(flagsCt) & flINoUTfRAMEc_REGISTERcALLnEST )
 
