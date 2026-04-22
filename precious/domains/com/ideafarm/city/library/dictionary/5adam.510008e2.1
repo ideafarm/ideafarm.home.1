@@ -573,15 +573,20 @@ voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
     }
         }
             }
-                stNnRequestedP.sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
-                etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) /*, flTRACE_null , ifcIDtRACEdIVERT_1*/ ) ;
-                bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
-                geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET , sizeof nnTarget ) ;
+                }
+                    stNnRequestedP.sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
+                    etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) /*, flTRACE_null , ifcIDtRACEdIVERT_1*/ ) ;
+                    bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
+                    geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET , sizeof nnTarget ) ;
+                {
+                if( idSub == -1 || idSub == 1 )     //U:: ALL LEGAL idSub VALUES MUST BE ACCEPTED HERE
+                countT        idSub = pct[ 1 ] ;
+                const countT* pct   = nnTarget ;           
             {
             else
             }
-                bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
-                geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYnOTiDEAnETsUBNET , sizeof nnTarget ) ;
+                //bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
+                //geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYnOTiDEAnETsUBNET , sizeof nnTarget ) ;
             {
             if( nnIdeaNetSubnet != nnSubnet36Target )
             nicNameC nnSubnet36Target = nnTarget( 0x24 ) ;
