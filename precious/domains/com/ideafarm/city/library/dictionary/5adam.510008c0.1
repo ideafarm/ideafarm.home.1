@@ -379,7 +379,7 @@ DONE( tmWorkF )
                 boolT bWoth = 1 ;
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                if( bKey ) etThread.osThreadF( TaRG2cBsTACK( tmHearF , CBsTACKmIN << 2 ) , (countT)&flagsMode , (countT)&cTestRequestsPending ) ;
+                if( bKey ) etThread.osThreadF( TaRG2cBsTACK( tmHearF , CBsTACKmIN << 2 ) , (countT)&flagsMode , (countT)&flagsModeHttp , (countT)&cTestRequestsPending ) ;
             {
             else
             }
@@ -394,7 +394,8 @@ DONE( tmWorkF )
             if( bKey ) while( idStatusHttpService < ifcIDsTATUShTTPsERVICE_READY )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            if( bKey ) etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6NowRouter1 , (countT)&tIpv6NowRouter2 , (countT)&ipv6FieldsRouter1 , (countT)&ipv6FieldsRouter2 , (countT)&flagsMode , (countT)&bTrue ) ;
+            if( bKey ) etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6NowRouter1 , (countT)&tIpv6NowRouter2 , (countT)&ipv6FieldsRouter1 , (countT)&ipv6FieldsRouter2 , (countT)&flagsModeHttp , (countT)&bTrue ) ;
+            flagsT flagsModeHttp = flMODEsERVER_CHATTY ;
             signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
             ZE( boolT , bTrue ) ;
 
@@ -507,8 +508,9 @@ DONE( tmHearF )
 
         etRock.traceF( tin0P , tModesNow , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
         tModesNow += tcrlf ;
-        tModesNow += tb + ( F(flagsModeP) & flIDEAnETeXE_METERED ? tModeMetered : tModeFree    ) ;
-        tModesNow +=        F(flagsModeP) & flIDEAnETeXE_USEdNS  ? tModeName    : tModeAddress   ;
+        tModesNow += tb + ( F(flagsModeHttpP) & flMODEsERVER_CHATTY  ? tModeChatty  : tModeSTFU    ) ;
+        tModesNow += tb + ( F(flagsModeP    ) & flIDEAnETeXE_METERED ? tModeMetered : tModeFree    ) ;
+        tModesNow +=        F(flagsModeP    ) & flIDEAnETeXE_USEdNS  ? tModeName    : tModeAddress  ;
         TN( tModesNow , "Current modes:    " ) ;
         //CS:CODEsYNC: 510008c0 510008c0
 
@@ -522,11 +524,13 @@ DONE( tmHearF )
         {
         else if( !etThread.strCompareF( tin0P , T("v") , psttWanted ) )
         else if( !etThread.strCompareF( tin0P , T("t") , psttWanted ) ) { boolT bDo = F(flagsModeP) & flIDEAnETeXE_METERED ; if( bDo ) inc02AM( cTestRequestsPendingP ) ; etRock.traceF( tin0P , T(bDo?"I will test my connectivity with IdeaNet (tm).\r\n":"Ignored because I am in free mode, so testing is continuously done.\r\n" ) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("n") , psttWanted ) ) {       flagsModeP |=      flIDEAnETeXE_USEdNS     ; etRock.traceF( tin0P , T("I will use \"name mode\" (https).\r\n"              )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("m") , psttWanted ) ) {       flagsModeP |=      flIDEAnETeXE_METERED    ; etRock.traceF( tin0P , T("I will limit my use of data transmission.\r\n"      )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("f") , psttWanted ) ) {       flagsModeP &= ~( F(flIDEAnETeXE_METERED) ) ; etRock.traceF( tin0P , T("I will use data transmission freely.\r\n"           )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("b") , psttWanted ) ) {       flagsModeP |=      flIDEAnETeXE_BEGIN      ; etRock.traceF( tin0P , T("Synchronizing...\r\n"                               )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
-        else if( !etThread.strCompareF( tin0P , T("a") , psttWanted ) ) {       flagsModeP &= ~( F(flIDEAnETeXE_USEdNS) )  ; etRock.traceF( tin0P , T("I will use \"address mode\" (http).\r\n"            )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("s") , psttWanted ) ) {       flagsModeP &= ~( F(flIDEAnETeXE_CHATTY) )  ; etRock.traceF( tin0P , T("I will \"STFU\", no longer informing you of events.\r\n" )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("n") , psttWanted ) ) {       flagsModeP |=      flIDEAnETeXE_USEdNS     ; etRock.traceF( tin0P , T("I will use \"name mode\" (https).\r\n"                   )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("m") , psttWanted ) ) {       flagsModeP |=      flIDEAnETeXE_METERED    ; etRock.traceF( tin0P , T("I will limit my use of data transmission.\r\n"           )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("f") , psttWanted ) ) {       flagsModeP &= ~( F(flIDEAnETeXE_METERED) ) ; etRock.traceF( tin0P , T("I will use data transmission freely.\r\n"                )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("c") , psttWanted ) ) {       flagsModeP |=      flIDEAnETeXE_CHATTY     ; etRock.traceF( tin0P , T("I will be \"chatty\", informing you of events.\r\n"      )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("b") , psttWanted ) ) {       flagsModeP |=      flIDEAnETeXE_BEGIN      ; etRock.traceF( tin0P , T("Synchronizing...\r\n"                                    )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
+        else if( !etThread.strCompareF( tin0P , T("a") , psttWanted ) ) {       flagsModeP &= ~( F(flIDEAnETeXE_USEdNS) )  ; etRock.traceF( tin0P , T("I will use \"address mode\" (http).\r\n"                 )                                                                                                                            , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; }
              if( !psttWanted || !psttWanted->idAdam                   ) { FIREmYSELF }
 
         //etRock.traceF( tin0P , T("[psttUnwanted]:    ")+T(psttUnwanted) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -546,10 +550,13 @@ DONE( tmHearF )
         "\r\n"
         "  'v' : View the IdeaFarm (tm) IdeaNet (tm) Knowledge Tree book distribution system root page, by opening browser.\r\n"
         "  't' : Test the connection channels.  (Only useful when in metered mode.)\r\n"
+        "  's' : \"STFU\", no longer notifying when an event occurs.\r\n"
         "  'n' : Use \"name mode\" (https).  (Most of the data passing between you and the server is encrypted.)\r\n"
         "  'm' : Use \"metered mode\".  (Use this mode if you pay for data communication or if data transmission is limited.)\r\n"
         "  'h' : Display this help information.\r\n"
         "  'f' : Use \"free mode\".  (Use this mode if your connection has free and unlimited data.)\r\n"
+        "  'c' : Be \"chatty\", notifying when an event occurs.\r\n"
+        "  'b' : Begin accepting requests from browsers on this computer.\r\n"
         "  'a' : Use \"address mode\" (http).  No data is encrypted.  More robust against system attack, because the domain name system is not needed.\r\n"
         "\r\n"
         "  Case matters; 'X' denotes cap X, while 'x' denotes x.  (Do not key the single quotes.)\r\n"
@@ -567,15 +574,18 @@ DONE( tmHearF )
     TN( tcrlf        , "\r\n" ) ;
     TN( tb           , " " ) ;
     TN( tModeName    , "name"    ) ;
+    TN( tModeSTFU    , "stfu"    ) ;
+    TN( tModeChatty  , "chatty"  ) ;
     TN( tModeMetered , "metered" ) ;
     TN( tModeFree    , "free"    ) ;
     TN( tModeAddress , "address" ) ;
     etherC& etRock     = etherC::etRockIF( tin0P ) ;
 
-    countT& cTestRequestsPendingP = *(countT*)pTaskP->c2 ;
+    countT& cTestRequestsPendingP = *(countT*)pTaskP->c3 ;
+    flagsT& flagsModeHttpP        = *(flagsT*)pTaskP->c2 ;
     flagsT& flagsModeP            = *(flagsT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 TASK( tmHearF )
 
 DONE( tmServeHttpF )
@@ -605,17 +615,17 @@ DONE( tmServeHttpF )
 
         cacheC cache( tin0P , etThread ) ;
         httpServerC_arg2S arg2 ;
-        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , ifcIDpORT_HTTP  , flSOCKETc_null , T("World Wide Web") , 4 ) ;      // 4 WORKERS TO ENSURE THAT CAN KEEP UP WITH REQUESTS FROM BROWSER, INCLUDING FOR PAGE ICON
+        httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , flagsModeHttpP , ifcIDpORT_HTTP  , flSOCKETc_null , T("World Wide Web") , 4 ) ;      // 4 WORKERS TO ENSURE THAT CAN KEEP UP WITH REQUESTS FROM BROWSER, INCLUDING FOR PAGE ICON
 
         countT cArgApp = (countT)&c9p ;
-        count9S c9p( (countT)&tIpv6NowRouter1P , (countT)&tIpv6NowRouter2P , (countT)&ipv6FieldsRouter1P , (countT)&ipv6FieldsRouter2P , (countT)&flagsModeP , (countT)&bTrueP ) ;
+        count9S c9p( (countT)&tIpv6NowRouter1P , (countT)&tIpv6NowRouter2P , (countT)&ipv6FieldsRouter1P , (countT)&ipv6FieldsRouter2P , (countT)&bTrueP ) ;
     {
     ZE( flagsT , flagsSave ) ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     boolT&              bTrueP               =              *(boolT*)pTaskP->c7 ;
-    flagsT&             flagsModeP           =             *(flagsT*)pTaskP->c6 ;
+    flagsT&             flagsModeHttpP       =             *(flagsT*)pTaskP->c6 ;
     ideaNetIpv6FieldsS& ipv6FieldsRouter2P   = *(ideaNetIpv6FieldsS*)pTaskP->c5 ;
     ideaNetIpv6FieldsS& ipv6FieldsRouter1P   = *(ideaNetIpv6FieldsS*)pTaskP->c4 ;
     textC&              tIpv6NowRouter2P     =              *(textC*)pTaskP->c3 ;

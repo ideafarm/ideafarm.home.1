@@ -31739,7 +31739,7 @@ private :
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3403f.thirdC.s_socketIF!||
 
  /* connection */
-  voidT s_acceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP = 0 , s_acceptF_parametersS* pP = 0 ) ;
+  boolT s_acceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP = 0 , s_acceptF_parametersS* pP = 0 ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340b1.thirdC.s_acceptF!||
   voidT s_acceptF( tin0S& tin0P , s_acceptF_parametersS& pP ) ;
   voidT s_connectF( tin0S& tin0P , handleC& handleP , const countT idPortP , const nicNameC nicNameP = nicNameC() , countT cTriesP = 0 , countT time1P = 0 , const sCountT time2P = 0 ) ;
@@ -35140,7 +35140,7 @@ examples
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341a8.etherC.chokeAttackerF!||
 
  /* connection */
-  voidT sockAcceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP = 0 , s_acceptF_parametersS* pP = 0 ) ;
+  boolT sockAcceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP = 0 , s_acceptF_parametersS* pP = 0 ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34119.etherC.sockAcceptF!||
   voidT sockConnectF( tin0S& tin0P , handleC& handleP , const countT idPortP , const nicNameC nicNameP = nicNameC() , countT cTriesP = 0 , const countT time1P = 0 , const sCountT time2P = 0 ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3403f.etherC.sockConnectF!||
@@ -36346,7 +36346,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34028.socketC.etherF!||
 
 /* commands: connecting */
- voidT acceptF( tin0S& tin0P , socketC*& pSocketP , countT& idPortP , nicNameC& nicNameP , boolT& bRefuseP , s_acceptF_parametersS* pParamsP = 0 ) ;
+ boolT acceptF( tin0S& tin0P , socketC*& pSocketP , countT& idPortP , nicNameC& nicNameP , boolT& bRefuseP , s_acceptF_parametersS* pParamsP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401f.socketC.acceptF!||
  countT bindF( tin0S& tin0P , const countT idPortP = 0 , const nicNameC nicNameP = nicNameC() , const countT cTriesP = 0 , const boolT bInUseOkP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.socketC.bindF!||
@@ -40242,7 +40242,6 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.serverInfo1S : 1snip.15000056.serverinfo1s END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.serverInfo2S : 1snip.15000057.serverinfo2s BEGIN
 
-
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -40259,6 +40258,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
 {
 /**/
  
+    flagsT&                                     flagsMode        ;
     const countT                                idPortHint       ;
     const flagsT                                flagsSocket      ;
     strokeS*                                    psttName         ;
@@ -40278,7 +40278,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
 
     ~serverInfo2S( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.serverInfo2S.dt_serverInfo2S!||
-    serverInfo2S( const countT idPortHintP = 0 , const countT flagsSocketP = flSOCKETc_null , const strokeS* const psttNameP = 0 , countT cSessionMaxP = 0 , const countT cArgSysP = 0 , const countT cArgAppP = 0 , countT time1graceP = 0 , countT cWorkersP = 0 , const boolT bStateP = 1 , const countT cbdVaryingP = 0 , translateStateFT translateStateFP = 0 , const strokeS* const psttSuffixP = 0 , stateFT stateBeginFP = 0 , stateFT stateEndFP = 0 , sessionsC* const pSessionsP = 0 , nicNamesAllowedStripeWebHookNotificationsC* pnnAllowedStripeP = 0 ) ;
+    serverInfo2S( flagsT& flagsModeP , const countT idPortHintP = 0 , const flagsT flagsSocketP = flSOCKETc_null , const strokeS* const psttNameP = 0 , countT cSessionMaxP = 0 , const countT cArgSysP = 0 , const countT cArgAppP = 0 , countT time1graceP = 0 , countT cWorkersP = 0 , const boolT bStateP = 1 , const countT cbdVaryingP = 0 , translateStateFT translateStateFP = 0 , const strokeS* const psttSuffixP = 0 , stateFT stateBeginFP = 0 , stateFT stateEndFP = 0 , sessionsC* const pSessionsP = 0 , nicNamesAllowedStripeWebHookNotificationsC* pnnAllowedStripeP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.serverInfo2S.serverInfo2S!||
 
 /**/
@@ -42243,7 +42243,6 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.httpServerC : 1snip.150000b7.httpserverc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.httpServerC_arg1S : 1snip.150000b8.httpserverc_arg1s BEGIN
 
-
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -42266,10 +42265,11 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
     countT&                     cArgApp             ;
     strokeS*                    psttName            ;
     const countT                cWorkers            ;
+    flagsT&                     flagsMode           ;
 
     ~httpServerC_arg1S( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.httpServerC_arg1S.dt_httpServerC_arg1S!||
-    httpServerC_arg1S( const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , etherC& etherP , countT& cArgAppP , countT& idStatusHttpServiceP , const countT idPortP = ifcIDpORT_HTTP , const flagsT flagsSocketP = flSOCKETc_null , const strokeS* const psttNameP = 0 , const countT cWorkersP = 0 ) ;
+    httpServerC_arg1S( const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , etherC& etherP , countT& cArgAppP , countT& idStatusHttpServiceP , flagsT& flagsModeP , const countT idPortP = ifcIDpORT_HTTP , const flagsT flagsSocketP = flSOCKETc_null , const strokeS* const psttNameP = 0 , const countT cWorkersP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.httpServerC_arg1S.httpServerC_arg1S!||
 }
 ;

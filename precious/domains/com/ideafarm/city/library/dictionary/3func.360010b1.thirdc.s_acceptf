@@ -8,15 +8,12 @@
 
 
 }
-    }
-        }
-            //etRock.traceF( tin0P , T("s_acceptF / closed handle because bRefuseP or bRefuse is set / 2") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-            hClientP.closeIfF() ;
-        {
-        if( bRefuseP || bRefuse )
+    return bRefusedForeign ;
 
-        //if( bRefuse ) etRock.traceF( tin0P , T("s_acceptF / refusing [nnPeer]:    ")+T(nicNameP) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
-        boolT bRefuse = processGlobal1I.idAdamRoot == ifcIDaDAM_IDEAnET && nicNameP != nicNameC( 1 , 0 , 0 , 0 ) ;
+    }
+        if( bRefuseP || bRefusedForeign ) hClientP.closeIfF() ;
+
+        bRefusedForeign = processGlobal1I.idAdamRoot == ifcIDaDAM_IDEAnET && nicNameP != nicNameC( 1 , 0 , 0 , 0 ) ;
 
         //etRock.traceF( tin0P , T("s_acceptF / [nnPeer]:    ")+T(nicNameP) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
     
@@ -48,6 +45,7 @@
         etRock.traceF( tin0P , T("s_acceptF / i just became impotent") ) ;
     {
     if( POOP )
+    ZE( boolT , bRefusedForeign ) ;
 
     __Z( hClientP ) ;
     }
@@ -118,18 +116,18 @@
     sockaddr_in6 info ;                                                                                                                 // USED IFF !pParamsP
 
     }
-        if( POOP ) return ;
+        if( POOP ) return 0 ;
         IFsIMULATEoFFLINEpOOP
         }
             __Z( handleP ) ;
         {
         if( !pParamsP )
-        if( POOP ) return ;
+        if( POOP ) return 0 ;
     {
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::s_acceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP , s_acceptF_parametersS* pParamsP )/*1*/
+/*1*/boolT thirdC::s_acceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP , s_acceptF_parametersS* pParamsP )/*1*/
 
 /**/
 */
