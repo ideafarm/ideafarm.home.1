@@ -497,6 +497,8 @@ voidT winPostMessageAfterNapF_o3b333_GF( tin0S& tin0P , etherC& etherP , soulC& 
 
 voidT winSetTitleF_o4Pb_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
+voidT winGetTitleF_o4Pb_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
 voidT cioSetupF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT cioSetQuitF_o6_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;

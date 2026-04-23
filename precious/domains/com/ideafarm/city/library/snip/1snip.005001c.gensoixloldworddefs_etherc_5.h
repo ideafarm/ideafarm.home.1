@@ -3408,6 +3408,53 @@ voidT winSetTitleF_o4Pb_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const s
     slP << noName ;
 }
 
+voidT winGetTitleF_o4Pb_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+
+    handleC hWindowP( /*FOOEY*/tin0P , TAG( TAGiDnULL ) ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+           pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tin0P , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
+                SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
+                if( !POOP ) { hWindowP << slP ; idArgNext ++ ; }
+            }
+        }
+    }
+
+    ZE( boolT , noName ) ;
+    if( !POOP ) noName = etherP.winGetTitleF( tin0P , psttP , hWindowP ) ;
+
+    if( !POOP ) slP << psttP ;
+    etherP.delF( tin0P , psttP ) ;
+
+    slP << noName ;
+}
+
 voidT cioSetupF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -3447,91 +3494,4 @@ voidT cioSetArgF_o3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strok
     ZE( countT , cArgP ) ;
     if( !POOP ) { slP >> cArgP ; idArgNext ++ ; }
     if( !POOP ) etherP.cioSetArgF( tin0P , cArgP ) ;
-}
-
-voidT traceF_o4P73_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    ZE( strokeS* , psttP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                psttP = 0 ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tin0P , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-                if( !POOP ) { slP >> psttP ; idArgNext ++ ; }
-            }
-        }
-    }
-
-    ZE( flagsT , flagsP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0x0 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                flagsP = flTRACE_null ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tin0P , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0x0 , etherC )
-                if( !POOP ) { slP >> flagsP ; idArgNext ++ ; }
-            }
-        }
-    }
-
-    ZE( countT , idDivertP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                idDivertP = ifcIDtRACEdIVERT_0 ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tin0P , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-                if( !POOP ) { slP >> idDivertP ; idArgNext ++ ; }
-            }
-        }
-    }
-
-    ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.traceF( tin0P , psttP , flagsP , idDivertP ) ;
-    etherP.delF( tin0P , psttP ) ;
-
-    slP << noName ;
 }

@@ -4813,8 +4813,29 @@ examples
 /**/
 /*1*//*BITSsHIFTiDEAnETePOCH*//*1*/
 
+// 2 EPOCHS PER TICK
+//#define BITSsHIFTiDEAnETePOCH ( 0x17 )
 
+// 4 EPOCHS PER TICK
+//#define BITSsHIFTiDEAnETePOCH ( 0x16 )
+
+
+//20260409@1714: CHANNELS GO DOWN
+// THIS IS PROBABLY OPTIMAL SINCE 2 EPOCHS ARE ALMOST 90 FOREIGN SECONDS (FOR PROPOGATION)
+// THIS ALLOWS 21 FOREIGN SECONDS FOR EACH ROUTER TO COMPLETE RECONFIGURATION
+//PRODUCTION: 8 EPOCHS PER TICK ; 42.1875 FOREIGN SECONDS PER EPOCH
 #define BITSsHIFTiDEAnETePOCH ( 0x15 )
+
+
+// 01 EPOCHS PER TICK ; 21.09 FOREIGN SECONDS PER EPOCH
+//#define BITSsHIFTiDEAnETePOCH ( 0x14 )
+
+
+// 1 EPOCHS PER TICK
+//#define BITSsHIFTiDEAnETePOCH ( 0x18 )
+
+// 04 EPOCHS PER DAY ; EACH EPOCH IS 4 TICKS
+//#define BITSsHIFTiDEAnETePOCH ( 0x1a )
 
 
 //
@@ -4941,6 +4962,137 @@ examples
 
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200632.EPOCHSsIGNATUREmAX END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200633.ifcIDtYPEgEIGEReVENT BEGIN
+
+
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*ifcIDtYPEgEIGEReVENT*//*1*/
+
+/*3*/
+#define ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET        ((countT)0xdddd1257)
+#define ifcIDtYPEgEIGEReVENT_ICMPV6qUERYnOTiDEAnETsUBNET     ((countT)0xdddd1258)
+#define ifcIDtYPEgEIGEReVENT_NNtARGETrEJECTED                ((countT)0xdddd1259)
+#define ifcIDtYPEgEIGEReVENT_NNtARGETaCCEPTED                ((countT)0xdddd125a)
+#define ifcIDtYPEgEIGEReVENT_NNtARGETaDDEDaOK                ((countT)0xdddd125b)
+/*3*/
+#define ifcIDtYPEgEIGEReVENT_min     ((countT)0xdddd1257)
+#define ifcIDtYPEgEIGEReVENT_max     ((countT)0xdddd125b)
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200633.ifcIDtYPEgEIGEReVENT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200634.blammoid4 BEGIN
+
+
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010211.1.0.html\"\>definition\</A\>
+*/
+/**/
+
+/*1*//*BLAMMOiD4(id1P,id2P,id3P,id4P)*//*1*/
+
+#define BLAMMOiD4(id1P,id2P,id3P,id4P) thirdC::blammoIF( LF , 0 , 0 , (countT)(id1P) , (countT)(id2P) , (countT)(id3P) , (countT)(id4P) ) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200634.blammoid4 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200635.ifcIDcONDITIONtRIGGER BEGIN
+
+
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*ifcIDcONDITIONtRIGGER*//*1*/
+
+/*3*/
+#define ifcIDcONDITIONtRIGGER_EQ        ((countT)0xdddd125c)
+#define ifcIDcONDITIONtRIGGER_NE        ((countT)0xdddd125d)
+#define ifcIDcONDITIONtRIGGER_LT        ((countT)0xdddd125e)
+#define ifcIDcONDITIONtRIGGER_LE        ((countT)0xdddd125f)
+#define ifcIDcONDITIONtRIGGER_GE        ((countT)0xdddd1260)
+#define ifcIDcONDITIONtRIGGER_GT        ((countT)0xdddd1261)
+/*3*/
+#define ifcIDcONDITIONtRIGGER_min     ((countT)0xdddd125c)
+#define ifcIDcONDITIONtRIGGER_max     ((countT)0xdddd1261)
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200635.ifcIDcONDITIONtRIGGER END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200636.flTRIGGERaCTION BEGIN
+
+
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*flTRIGGERaCTION*//*1*/
+
+/*3*/
+#define flTRIGGERaCTION_TRACE           ((countT)0xe000012b)
+#define flTRIGGERaCTION_BLAMMO          ((countT)0xe000022b)
+#define flTRIGGERaCTION_IMPOTENCE       ((countT)0xe000042b)
+#define flTRIGGERaCTION_NAP             ((countT)0xe000082b)
+/*3*/
+#define flTRIGGERaCTION_null    ((countT)0xe000002b)
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200636.flTRIGGERaCTION END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -26119,6 +26271,7 @@ examples
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.lexC : 1snip.1500007d.lexc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.killSocketS : 1snip.1500007b.killsockets BEGIN
 
+
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -28902,7 +29055,7 @@ struct bookMarkOldS
     countT                  ccExitsWhere ; //EXISTS SO CODE IN ADAM DEF CAN SEE THIS GLOBALS ARRAY
     countT                  cArmTrace_soulC ; //APP CODE CAN SET THIS: 0:DISARMED; -1:traceF WILL BE CALLED FOR ALL SUBSEQUENT soulC NEW'D OR RETRIEVED FROM RECYCLING; N:COUNTDOWN TO THE NEW/RETRIEVED INSTANCE TO CALL traceF FOR
     flagsT                  flagsTrace_soulC ; //FLAGS MUST INCLUDE flTRACEsOULc_ON AND MUST NOT SPECIFY flTRACEsOULc_PURGE
-    countT*                 ppcTriggerLook[ 0x4 ] ;     // ARRAY OF ADDRESSES FOR *inOutFrameC TO INSPECT
+    countT*                 ppcTriggerLook[ 0x4 ]  ;     // ARRAY OF ADDRESSES FOR *inOutFrameC TO INSPECT
     countT                  idTriggerCondition     ;     // CONDITION THAT CAUSES ACTION ( == , != , < , <= , >= , > )
     countT                  vvTriggerTest          ;     // VALUE FOR RHS OF EXPRESSION THAT, IF TRUE, CAUSES ACTION
     flagsT                  flagsTriggerActions    ;     // FLAGS THAT SPECIFY THE ACTION(S) TO TAKE AND WHETHER THE ACTIONS ARE TRIGGERED BY EQUALS OR NOT EQUALS
@@ -31713,8 +31866,8 @@ private :
  voidT winSetTextAlignF( tin0S& tin0P , const handleC& hDrawP , const countT idCmdP = idcTEXTaLIGN_CELLbASE ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34095.thirdC.winSetTextAlignF!||
  boolT winSetTitleF( tin0S& tin0P , const osTextT* const postP , const handleC& hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ) ;
- boolT winGetTitleF( tin0S& tin0P , osTextT* const postP , const countT costaP , const handleC& hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3408d.thirdC.winSetTitleF!||
+ boolT winGetTitleF( tin0S& tin0P , osTextT* const postP , const countT costaP , const handleC& hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ) ;
  boolT winShowWindowF( tin0S& tin0P , const handleC& handleP , const countT idCmdP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34092.thirdC.winShowWindowF!||
  voidT winSizeF( tin0S& tin0P , countT& cColP , countT& cRowP , const handleC& hWindowP ) ;
@@ -35361,8 +35514,8 @@ examples
  voidT winPostMessageAfterNapF( tin0S& tin0P , const countT time1P , const handleC& hWindowP , const countT idCmdP , const countT arg1P = 0 , const countT arg2P = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340f8.etherC.winPostMessageAfterNapF!||
  boolT winSetTitleF( tin0S& tin0P , const strokeS* const psttP , const handleC& hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ) ;
- boolT winGetTitleF( tin0S& tin0P , strokeS*& psttP , const handleC& hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34102.etherC.winSetTitleF!||
+ boolT winGetTitleF( tin0S& tin0P , strokeS*& psttP , const handleC& hWindowP = handleC( *pTinF() , TAGnOtIN( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ) ;
 /**/
 
  static boolT rangerF( tin0S& tin0P , const byteT*& pbMinP , const byteT*& pbMaxP , const byteT* const pbAtP ) ;
@@ -42730,6 +42883,7 @@ base class to make a derived class of objects easily contained by a stackC objec
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.addressRangeS : 1snip.150001ce.addressRangeS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.processGlobal2S : 1snip.150000c2.processglobal2s BEGIN
 
+
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -49813,6 +49967,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetIpv6FieldsS : 1snip.150001d5.ideaNetIpv6FieldsS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ideaNetSubscriptionC : 1snip.150001d3.ideaNetSubscriptionC BEGIN
+
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //

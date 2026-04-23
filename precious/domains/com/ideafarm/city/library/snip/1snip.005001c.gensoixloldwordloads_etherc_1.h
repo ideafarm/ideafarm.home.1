@@ -1991,6 +1991,14 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
+    TN( tNameSoixlOld , "winGetTitleF_o4@b" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)winGetTitleF_o4Pb_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
     TN( tNameSoixlOld , "cioSetupF_o" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;

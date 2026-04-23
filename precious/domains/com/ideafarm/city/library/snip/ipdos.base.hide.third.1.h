@@ -1,37 +1,4 @@
 
-
-#define flTRIGGERaCTION_NAP             0xe00008ff
-#define flTRIGGERaCTION_IMPOTENCE       0xe00004ff
-#define flTRIGGERaCTION_BLAMMO          0xe00002ff
-#define flTRIGGERaCTION_TRACE           0xe00001ff
-#define flTRIGGERaCTION_null            0xe00000ff
-
-
-#define ifcIDcONDITIONtRIGGER_GT        6
-#define ifcIDcONDITIONtRIGGER_GE        5
-#define ifcIDcONDITIONtRIGGER_LE        4
-#define ifcIDcONDITIONtRIGGER_LT        3
-#define ifcIDcONDITIONtRIGGER_NE        2
-#define ifcIDcONDITIONtRIGGER_EQ        1
-
-#define BLAMMOiD4(id1P,id2P,id3P,id4P) thirdC::blammoIF( LF , 0 , 0 , (countT)(id1P) , (countT)(id2P) , (countT)(id3P) , (countT)(id4P) ) ;
-
-
-#define ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET        1
-#define ifcIDtYPEgEIGEReVENT_ICMPV6qUERYnOTiDEAnETsUBNET     2
-#define ifcIDtYPEgEIGEReVENT_NNtARGETrEJECTED                3
-#define ifcIDtYPEgEIGEReVENT_NNtARGETaCCEPTED                4
-#define ifcIDtYPEgEIGEReVENT_NNtARGETaDDEDaOK                5
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -22277,6 +22244,9 @@ it is illegal to refer to this symbol anywhere but in the exception handler code
 //
 
 /*
+i instantiate a buffer of osTextT of size costaP that can receive (by appending) osTextT strings and osTextT representations of countT values
+ unlike the support for strokeS strings, i can be used early and late, when no poolC instance exists
+ the buffer is preceded by a finger value and followed by oo finger values plus re countT values (pointer to the buffer, size of the buffer, and current cursor)
 */
 /**/
 

@@ -247,6 +247,7 @@
     "    . winAppendTitleF_o4@b       . ?? ")+T(postName)+T("\r\n"
     "    . winPostMessageAfterNapF_o3b333       . ?? ")+T(postName)+T("\r\n"
     "    . winSetTitleF_o4@b       . ?? ")+T(postName)+T("\r\n"
+    "    . winGetTitleF_o4@b       . ?? ")+T(postName)+T("\r\n"
     "    . cioSetupF_o       . ?? ")+T(postName)+T("\r\n"
     "    . cioSetQuitF_o6       . ?? ")+T(postName)+T("\r\n"
     "    . cioSetArgF_o3       . ?? ")+T(postName)+T("\r\n"
