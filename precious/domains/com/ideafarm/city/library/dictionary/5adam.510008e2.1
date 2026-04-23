@@ -440,10 +440,12 @@ TASK( tmAddAddressF )
     }
         }
             break ;
+            _IO_
         {
         default :    // SUBSCRIPTION FOR ACCESS TO A PARTICULAR BOOK TITLE
         }
             break ;
+            _IO_
         {
         case 2 :    // SUBSCRIPTION FOR ACCESS TO THE CONTENT OF IdeaFarm (tm) IdeaNet (tm)
         }
@@ -451,31 +453,43 @@ TASK( tmAddAddressF )
 
             }
                 }
-                    stNnApprovedNewP << nnNowRouter2 ;
+                    }
+                        stNnApprovedNewP << nnNowRouter2 ;
+                        _IO_
+                    {
                     etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter2]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2) ) ;
                     nicNameC nnNowRouter2 = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_ROUTER2 ) ;
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                    _IO_
                 {
                 for( countT epoch = 0 ; epoch <= epochLateLath ; epoch ++ )
 
                 }
-                    stNnApprovedNewP << nnNowRouter2 ;
+                    }
+                        stNnApprovedNewP << nnNowRouter2 ;
+                        _IO_
+                    {
                     etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter2]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2) ) ;
                     nicNameC nnNowRouter2 = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_ROUTER2 ) ;
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                    _IO_
                 {
                 for( countT epoch = epochLateWoth ; epoch < epochsPerDay ; epoch ++ )
             {
             else
             }
                 }
-                    stNnApprovedNewP << nnNowRouter2 ;
+                    }
+                        stNnApprovedNewP << nnNowRouter2 ;
+                        _IO_
+                    {
                     etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter2]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2) ) ;
                     nicNameC nnNowRouter2 = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_ROUTER2 ) ;
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                    _IO_
                 {
                 for( countT epoch = epochLateWoth ; epoch <= epochLateLath ; epoch ++ )
             {
@@ -483,33 +497,47 @@ TASK( tmAddAddressF )
 
             }
                 }
-                    stNnApprovedNewP << nnNowRouter1 ;
+                    }
+                        stNnApprovedNewP << nnNowRouter1 ;
+                        _IO_
+                    {
                     etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
                     nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                    _IO_
                 {
                 for( countT epoch = 0 ; epoch <= epochTrueLath ; epoch ++ )
 
                 }
-                    stNnApprovedNewP << nnNowRouter1 ;
+                    }
+                        stNnApprovedNewP << nnNowRouter1 ;
+                        _IO_
+                    {
                     etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
                     nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                    _IO_
                 {
                 for( countT epoch = epochTrueWoth ; epoch < epochsPerDay ; epoch ++ )
+                _IO_
             {
             else
             }
                 }
-                    stNnApprovedNewP << nnNowRouter1 ;
+                    }
+                        stNnApprovedNewP << nnNowRouter1 ;
+                        _IO_
+                    {
                     etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
                     nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
                     ideaNetIpv6FieldsS fnu ;
                     //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                    _IO_
                 {
                 for( countT epoch = epochTrueWoth ; epoch <= epochTrueLath ; epoch ++ )
+                _IO_
             {
             if( epochTrueWoth < epochTrueLath )
 
@@ -525,6 +553,7 @@ TASK( tmAddAddressF )
             etherP.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT  , timeN1 ) ;
+            _IO_
         {
         case 1 :    // SUBSCRIPTION FOR KEY FILE
     {
@@ -543,6 +572,7 @@ TASK( tmAddAddressF )
         woSub <<( soulSub ) ;
         etherP.boxGetShadowF( tin0P , soulSub , psttLongFileP ) ;
         soulC soulSub( tin0P , etherP , TAG( TAGiDnULL ) ) ;
+        _IO_
     {
     else
     }
@@ -551,6 +581,7 @@ TASK( tmAddAddressF )
         __Z( pSub ) ;
         etherP.inetCreateSubscriptionF( tin0P , pSub ) ; ___( pSub ) ;
         ZE( ideaNetSubscriptionC* , pSub ) ;
+        _IO_
     {
     if( !psttLongFileP )
     ideaNetSubscriptionC woSub( tin0P , etherP ) ;
@@ -566,6 +597,7 @@ TASK( tmAddAddressF )
     count3S&      c3App                  = *(count3S*)argAppP        ;
     etherC&       etRock                 = etherC::etRockIF( tin0P ) ;
     etherC&       etherP                 = queueP                    ;
+    _IO_
 {
 voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const psttLongFileP , const countT flagsP , countT& argAppP )
 
