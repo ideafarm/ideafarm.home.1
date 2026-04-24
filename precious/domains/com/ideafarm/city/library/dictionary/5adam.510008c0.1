@@ -394,7 +394,7 @@ DONE( tmWorkF )
             if( bKey ) while( idStatusHttpService < ifcIDsTATUShTTPsERVICE_READY )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            if( bKey ) etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6NowRouter1 , (countT)&tIpv6NowRouter2 , (countT)&ipv6FieldsRouter1 , (countT)&ipv6FieldsRouter2 , (countT)&flagsModeHttp , (countT)&bTrue ) ;
+            if( bKey ) etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6NowRouter1 , (countT)&tIpv6NowRouter2 , (countT)&ipv6FieldsRouter1 , (countT)&ipv6FieldsRouter2 , (countT)&flagsMode , (countT)&flagsModeHttp , (countT)&bTrue ) ;
             flagsT flagsModeHttp = flMODEsERVER_CHATTY ;
             signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
             ZE( boolT , bTrue ) ;
@@ -618,14 +618,15 @@ DONE( tmServeHttpF )
         httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , idStatusHttpServiceP , flagsModeHttpP , ifcIDpORT_HTTP  , flSOCKETc_null , T("World Wide Web") , 4 ) ;      // 4 WORKERS TO ENSURE THAT CAN KEEP UP WITH REQUESTS FROM BROWSER, INCLUDING FOR PAGE ICON
 
         countT cArgApp = (countT)&c9p ;
-        count9S c9p( (countT)&tIpv6NowRouter1P , (countT)&tIpv6NowRouter2P , (countT)&ipv6FieldsRouter1P , (countT)&ipv6FieldsRouter2P , (countT)&bTrueP ) ;
+        count9S c9p( (countT)&tIpv6NowRouter1P , (countT)&tIpv6NowRouter2P , (countT)&ipv6FieldsRouter1P , (countT)&ipv6FieldsRouter2P , (countT)&flagsModeP , (countT)&bTrueP ) ;
     {
     ZE( flagsT , flagsSave ) ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-    boolT&              bTrueP               =              *(boolT*)pTaskP->c7 ;
-    flagsT&             flagsModeHttpP       =             *(flagsT*)pTaskP->c6 ;
+    boolT&              bTrueP               =              *(boolT*)pTaskP->c8 ;
+    flagsT&             flagsModeHttpP       =             *(flagsT*)pTaskP->c7 ;
+    flagsT&             flagsModeP           =             *(flagsT*)pTaskP->c6 ;
     ideaNetIpv6FieldsS& ipv6FieldsRouter2P   = *(ideaNetIpv6FieldsS*)pTaskP->c5 ;
     ideaNetIpv6FieldsS& ipv6FieldsRouter1P   = *(ideaNetIpv6FieldsS*)pTaskP->c4 ;
     textC&              tIpv6NowRouter2P     =              *(textC*)pTaskP->c3 ;
