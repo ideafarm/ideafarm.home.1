@@ -204,10 +204,13 @@ DONE( tmWorkF )
     etRock.traceF( tin0P , T("[cProtocol]:    ")+TF2(cProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnRequested , (countT)&stNnApprovedA , (countT)&stNnApprovedB , (countT)&bksGeiger ) ;
-    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 )                          , (countT)&stNnApprovedA , (countT)&stNnApprovedB ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnRequested , (countT)&stNnApprovedA , (countT)&stNnApprovedB , (countT)&bksGeiger , (countT)&epochAllowWoth , (countT)&epochAllowLath ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 )                          , (countT)&stNnApprovedA , (countT)&stNnApprovedB , (countT)&tallyIgnored ) ;
 
-    cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested , bksGeiger ) ;
+    cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested , bksGeiger, epochAllowWoth , epochAllowLath , tallyIgnored ) ;
+    ZE( countT , tallyIgnored   ) ;
+    ZE( countT , epochAllowLath ) ;
+    ZE( countT , epochAllowWoth ) ;
     booksC bksGeiger( tin0P , TAG( TAGiDnULL ) , "geiger" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , TICK << 4 ) ;
 
     stackC stNnApprovedB( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
@@ -279,6 +282,9 @@ DONE( tmListApprovedAddressesF )
             //U:: MAKE THIS sws DATA VISIBLE TO MYSELF AND TO OTHER PROCESSES ON ALL WEB* IdeaNet (tm) HOSTS
 
             epochLath  = epoch ;
+
+            tallyIgnoredP = 0 ;
+            etRock.traceF( tin0P , T("solicitations [epoch,tallyIgnored]:    ")+TF2(epochLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(tallyIgnoredP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             _IO_
         {
         if( epochLath != epoch )                                                    //P:PERSONALITY: IF A CLIENT KEY IS OPENED IMMEDIATELY AFTER PAYMENT, ITS STARTUP WILL NOT COMPLETE UNTIL IT HAS STOMPED DURING AN EPOCH TRANSITION ON ALL WEB* SERVERS (CURRENTLY WEB1-TRUE AND WEB2-LATE) ; THIS HAS NO PRACTICAL SIGNIFICANCE BECAUSE CLIENT KEYS ARE DELIVERED VIA EMAIL, WHICH TAKES MORE THAN 2 EPOCHS
@@ -315,7 +321,10 @@ DONE( tmListApprovedAddressesF )
         TN( tLanNameWeb1 , "WEB1" ) ;
     {
     ZE( boolT , bTrue ) ;
-    
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
+
+    countT& tallyIgnoredP  = *(countT*)pTaskP->c3 ;
     stackC& stNnApprovedBP = *(stackC*)pTaskP->c2 ;
     stackC& stNnApprovedAP = *(stackC*)pTaskP->c1 ;
     _IO_
@@ -326,7 +335,7 @@ TASK( tmListApprovedAddressesF )
 DONE( tmAddAddressF )
 }
     }
-        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 3 ) ;
 
         }
             }
@@ -404,8 +413,31 @@ DONE( tmAddAddressF )
             handleC hInterface( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_NETWORKiNTERFACE ) ;
         {
         if( stNnRequestedP )
+
+        }
+            }
+                epochAllowWothP = ( ( timeN1 - time1TrueMidpoint - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
+                epochAllowLathP = ( ( timeN1 - time1TrueMidpoint                                              ) >> BITSsHIFTiDEAnETePOCH ) ;
+            {
+            else
+            }
+                epochAllowWothP = ( ( timeN1                     - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
+                epochAllowLathP = ( ( timeN1                                                                  ) >> BITSsHIFTiDEAnETePOCH ) ;
+            {
+            if( bTrue )
+
+            epochLath = epoch ;
+        {
+        if( epochLath != epoch )
+
+        countT epoch = ( timeN1 - time1Adjust ) >> BITSsHIFTiDEAnETePOCH ;
+
+        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+        ZE( sCountT , timeN2 ) ;
+        ZE( countT  , timeN1 ) ;
     {
     while( !ether )
+    ZE( countT , epochLath ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     nicNameC nnMe      = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::1:1") ) ;
     nicNameC nnRouter2 = socketC::nicNameIF( tin0P , etThread , T("2602:ff03::2"  ) ) ;
@@ -413,6 +445,10 @@ DONE( tmAddAddressF )
     TN( tb4 , "    " ) ;
 
     TN( tWantFriendly , bTrue ? "ideanet-1" : "ideanet-2" ) ;
+
+    const countT time1Adjust = bTrue ? 0 : time1TrueMidpoint ;
+    const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
+    const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
 
     }
         bTrue = !etThread.strCompareF( tin0P , tLanName , tLanNameWeb1 ) ;
@@ -428,10 +464,12 @@ DONE( tmAddAddressF )
     {
     ZE( boolT , bTrue ) ;
     
-    booksC& bksGeigerP     = *(booksC*)pTaskP->c4 ;
-    stackC& stNnApprovedBP = *(stackC*)pTaskP->c3 ;
-    stackC& stNnApprovedAP = *(stackC*)pTaskP->c2 ;
-    stackC& stNnRequestedP = *(stackC*)pTaskP->c1 ;
+    countT& epochAllowLathP = *(countT*)pTaskP->c6 ;
+    countT& epochAllowWothP = *(countT*)pTaskP->c5 ;
+    booksC& bksGeigerP      = *(booksC*)pTaskP->c4 ;
+    stackC& stNnApprovedBP  = *(stackC*)pTaskP->c3 ;
+    stackC& stNnApprovedAP  = *(stackC*)pTaskP->c2 ;
+    stackC& stNnRequestedP  = *(stackC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 TASK( tmAddAddressF )
@@ -541,11 +579,12 @@ TASK( tmAddAddressF )
             {
             if( epochTrueWoth < epochTrueLath )
 
-            countT epochLateWoth = ( ( timeN1 - time1TrueMidpoint - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
-            countT epochLateLath = ( ( timeN1 - time1TrueMidpoint                                              ) >> BITSsHIFTiDEAnETePOCH ) - EPOCHSaLLOWEDfORbGPpROPOGATION ;
+            countT epochLateWoth = ( ( timeN1 - time1TrueMidpoint - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
+            countT epochLateLath = ( ( timeN1 - time1TrueMidpoint                                              ) >> BITSsHIFTiDEAnETePOCH ) ;
 
             countT epochTrueWoth = ( ( timeN1                     - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
             countT epochTrueLath = ( ( timeN1                                                                  ) >> BITSsHIFTiDEAnETePOCH ) ;
+            //CS:CODEsYNC: 510008e2 510008e2
 
             // EACH PREFIX, AND EACH ADDRESS, MUST LIVE LONG ENOUGH TO EXIST UNTIL IT WILL NO LONGER BE USED
             // IF BITSsHIFTiDEAnETePOCH IS DEFINED TO BE ( 0x14 ), THEN EACH EPOCH IS 02 TOCK
@@ -606,12 +645,18 @@ voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
         }
             }
                 }
-                    stNnRequestedP.sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
-                    etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) /*, flTRACE_null , ifcIDtRACEdIVERT_1*/ ) ;
-                    bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
-                    geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET , sizeof nnTarget ) ;
+                    }
+                        stNnRequestedP.sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
+                        etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) /*, flTRACE_null , ifcIDtRACEdIVERT_1*/ ) ;
+                        bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
+                        geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET , sizeof nnTarget ) ;
+                    {
+                    else
+                    if( epoch < epochAllowWothP || epochAllowLathP < epoch ) tallyIgnoredP ++ ;
+                    countT epoch = pct[ 2 ] & 0xffff ;
                 {
-                if( idSub == -1 || idSub == 1 )     //U:: ALL LEGAL idSub VALUES MUST BE ACCEPTED HERE
+                else
+                if( idSub != -1 && idSub != 1 ) tallyIgnoredP ++ ;              //U:: ALL LEGAL idSub VALUES MUST BE ACCEPTED HERE
                 countT        idSub = pct[ 1 ] ;
                 const countT* pct   = nnTarget ;           
             {
@@ -619,6 +664,7 @@ voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
             }
                 //bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
                 //geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYnOTiDEAnETsUBNET , sizeof nnTarget ) ;
+                tallyIgnoredP ++ ;
             {
             if( nnIdeaNetSubnet != nnSubnet36Target )
             nicNameC nnSubnet36Target = nnTarget( 0x24 ) ;
@@ -684,12 +730,15 @@ voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
     pbc = (byteT*)pInfo3DataP ;
     byteT* pbc ;
 
-    booksC& bksGeigerP     = *cbfParmP.pBksGeiger      ;
-    stackC& stNnRequestedP = *cbfParmP.pStkNnRequested ;
-    etherC& etRock         = *cbfParmP.pEtRock         ;
-    etherC& etThread       = *cbfParmP.pEtThread       ;
-    etherC& ether          = *cbfParmP.pEther          ;
-    tin0S&  tin0P          = *cbfParmP.pTin0           ;
+    countT& tallyIgnoredP   = *cbfParmP.pTallyIgnored   ;
+    countT& epochAllowLathP = *cbfParmP.pEpochAllowLath ;
+    countT& epochAllowWothP = *cbfParmP.pEpochAllowWoth ;
+    booksC& bksGeigerP      = *cbfParmP.pBksGeiger      ;
+    stackC& stNnRequestedP  = *cbfParmP.pStkNnRequested ;
+    etherC& etRock          = *cbfParmP.pEtRock         ;
+    etherC& etThread        = *cbfParmP.pEtThread       ;
+    etherC& ether           = *cbfParmP.pEther          ;
+    tin0S&  tin0P           = *cbfParmP.pTin0           ;
 
     cbfParmS& cbfParmP = *(cbfParmS*)postUserNotUsedP ;
 {
@@ -1151,20 +1200,26 @@ osTextT* ppostProtocol[] =
 }
     }
     {
-    pBksGeiger(      &bksGeigerP     )
-    pStkNnRequested( &stNnRequestedP ) ,
-    pEtRock(         &etRockP        ) ,
-    pEtThread(       &etThreadP      ) ,
-    pEther(          &etherP         ) ,
-    pTin0(           &tin0P          ) ,
-    inline cbfParmS( tin0S& tin0P , etherC& etherP , etherC& etThreadP , etherC& etRockP , stackC& stNnRequestedP , booksC& bksGeigerP ) :
+    pTallyIgnored(   &tallyIgnoredP   )
+    pEpochAllowLath( &epochAllowLathP ) ,
+    pEpochAllowWoth( &epochAllowWothP ) ,
+    pBksGeiger(      &bksGeigerP      ) ,
+    pStkNnRequested( &stNnRequestedP  ) ,
+    pEtRock(         &etRockP         ) ,
+    pEtThread(       &etThreadP       ) ,
+    pEther(          &etherP          ) ,
+    pTin0(           &tin0P           ) ,
+    inline cbfParmS( tin0S& tin0P , etherC& etherP , etherC& etThreadP , etherC& etRockP , stackC& stNnRequestedP , booksC& bksGeigerP , countT& epochAllowWothP , countT& epochAllowLathP , countT& tallyIgnoredP ) :
 
-    booksC* pBksGeiger      ;
-    stackC* pStkNnRequested ;
-    etherC* pEtRock         ;
-    etherC* pEtThread       ;
-    etherC* pEther          ;
-    tin0S*  pTin0           ;
+    countT* pTallyIgnored    ;
+    countT* pEpochAllowLath  ;
+    countT* pEpochAllowWoth  ;
+    booksC* pBksGeiger       ;
+    stackC* pStkNnRequested  ;
+    etherC* pEtRock          ;
+    etherC* pEtThread        ;
+    etherC* pEther           ;
+    tin0S*  pTin0            ;
 {
 struct cbfParmS
 
