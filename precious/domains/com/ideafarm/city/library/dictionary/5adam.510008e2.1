@@ -276,6 +276,8 @@ DONE( tmListApprovedAddressesF )
             {
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
+            //U:: switchC sw_pNnApprovedNewByIdSub
+
             stackC       stNnApprovedNew(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , ifcSTACKtYPE_nicNameC ) ;
             switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , psttlEmail , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook
             ZE( strokeS* , psttlEmail ) ;
@@ -490,49 +492,64 @@ TASK( tmAddAddressF )
             break ;
 
             }
+                etThread.delF( tin0P , pnnOK ) ;
                 }
                     }
                         }
-                            stNnApprovedNewP << nnNowRouter2 ;
+                            }
+                                pnnOK[ offo ++ ]  = nnNowRouter1 ;
+                                stNnApprovedNewP << nnNowRouter2 ;
+                                _IO_
+                            {
+                            etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter2]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2) ) ;
+                            nicNameC nnNowRouter2 = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_ROUTER2 ) ;
+                            ideaNetIpv6FieldsS fnu ;
+                            //CS:CODEsYNC: 510008e2 510008e2 510008e2
                             _IO_
                         {
-                        etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter2]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2) ) ;
-                        nicNameC nnNowRouter2 = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_ROUTER2 ) ;
-                        ideaNetIpv6FieldsS fnu ;
-                        //CS:CODEsYNC: 510008e2 510008e2 510008e2
-                        _IO_
-                    {
-                    for( countT epoch = 0 ; epoch <= epochLateLath ; epoch ++ )
+                        for( countT epoch = 0 ; epoch <= epochLateLath ; epoch ++ )
 
-                    }
                         }
-                            stNnApprovedNewP << nnNowRouter2 ;
+                            }
+                                pnnOK[ offo ++ ]  = nnNowRouter1 ;
+                                stNnApprovedNewP << nnNowRouter2 ;
+                                _IO_
+                            {
+                            etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter2]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2) ) ;
+                            nicNameC nnNowRouter2 = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_ROUTER2 ) ;
+                            ideaNetIpv6FieldsS fnu ;
+                            //CS:CODEsYNC: 510008e2 510008e2 510008e2
                             _IO_
                         {
-                        etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter2]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2) ) ;
-                        nicNameC nnNowRouter2 = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_ROUTER2 ) ;
-                        ideaNetIpv6FieldsS fnu ;
-                        //CS:CODEsYNC: 510008e2 510008e2 510008e2
-                        _IO_
+                        for( countT epoch = epochLateWoth ; epoch < epochsPerDay ; epoch ++ )
                     {
-                    for( countT epoch = epochLateWoth ; epoch < epochsPerDay ; epoch ++ )
-                {
-                else
-                }
+                    else
                     }
                         }
-                            stNnApprovedNewP << nnNowRouter2 ;
+                            }
+                                pnnOK[ offo ++ ]  = nnNowRouter1 ;
+                                stNnApprovedNewP << nnNowRouter2 ;
+                                _IO_
+                            {
+                            etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter2]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2) ) ;
+                            nicNameC nnNowRouter2 = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_ROUTER2 ) ;
+                            ideaNetIpv6FieldsS fnu ;
+                            //CS:CODEsYNC: 510008e2 510008e2 510008e2
                             _IO_
                         {
-                        etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter2]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter2) ) ;
-                        nicNameC nnNowRouter2 = woSub.nnF( tin0P , epoch , fnu , ifcIDtYPErOUTE_ROUTER2 ) ;
-                        ideaNetIpv6FieldsS fnu ;
-                        //CS:CODEsYNC: 510008e2 510008e2 510008e2
-                        _IO_
+                        for( countT epoch = epochLateWoth ; epoch <= epochLateLath ; epoch ++ )
                     {
-                    for( countT epoch = epochLateWoth ; epoch <= epochLateLath ; epoch ++ )
+                    if( epochLateWoth < epochLateLath )
                 {
-                if( epochLateWoth < epochLateLath )
+                if( pnnOK )
+
+                ZE( countT , offo ) ;
+                etThread.newF( tin0P , LF , pnnOK , cnnOK ) ; ___( pnnOK ) ;
+                ZE( nicNameC* , pnnOK ) ;
+                countT cnnOk = 1 + epochTrueLath - epochTrueWoth ;
+
+                countT epochLateWoth = ( ( timeN1 - time1TrueMidpoint - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
+                countT epochLateLath = ( ( timeN1 - time1TrueMidpoint                                              ) >> BITSsHIFTiDEAnETePOCH ) ;
 
                 //****************************************************************************************************************************************************************************************************************************************************************************************************************
                 //****                                                  **********************************************************************************************************************************************************************************************************************************************************
@@ -542,51 +559,66 @@ TASK( tmAddAddressF )
             {
             else
             }
+                etThread.delF( tin0P , pnnOK ) ;
                 }
                     }
                         }
-                            stNnApprovedNewP << nnNowRouter1 ;
+                            }
+                                pnnOK[ offo ++ ]  = nnNowRouter1 ;
+                                stNnApprovedNewP << nnNowRouter1 ;
+                                _IO_
+                            {
+                            etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
+                            nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
+                            ideaNetIpv6FieldsS fnu ;
+                            //CS:CODEsYNC: 510008e2 510008e2 510008e2
                             _IO_
                         {
-                        etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
-                        nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
-                        ideaNetIpv6FieldsS fnu ;
-                        //CS:CODEsYNC: 510008e2 510008e2 510008e2
-                        _IO_
-                    {
-                    for( countT epoch = 0 ; epoch <= epochTrueLath ; epoch ++ )
+                        for( countT epoch = 0 ; epoch <= epochTrueLath ; epoch ++ )
 
-                    }
                         }
-                            stNnApprovedNewP << nnNowRouter1 ;
+                            }
+                                pnnOK[ offo ++ ]  = nnNowRouter1 ;
+                                stNnApprovedNewP << nnNowRouter1 ;
+                                _IO_
+                            {
+                            etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
+                            nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
+                            ideaNetIpv6FieldsS fnu ;
+                            //CS:CODEsYNC: 510008e2 510008e2 510008e2
                             _IO_
                         {
-                        etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
-                        nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
-                        ideaNetIpv6FieldsS fnu ;
-                        //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                        for( countT epoch = epochTrueWoth ; epoch < epochsPerDay ; epoch ++ )
                         _IO_
                     {
-                    for( countT epoch = epochTrueWoth ; epoch < epochsPerDay ; epoch ++ )
-                    _IO_
-                {
-                else
-                }
+                    else
                     }
                         }
-                            stNnApprovedNewP << nnNowRouter1 ;
+                            }
+                                pnnOK[ offo ++ ]  = nnNowRouter1 ;
+                                stNnApprovedNewP << nnNowRouter1 ;
+                                _IO_
+                            {
+                            etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
+                            nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
+                            ideaNetIpv6FieldsS fnu ;
+                            //CS:CODEsYNC: 510008e2 510008e2 510008e2
                             _IO_
                         {
-                        etRock.traceF( tin0P , T("sinkNnApprovedUseCBF [epoch,nnNowRouter1]:    ")+TF2(epoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnNowRouter1   ) ) ;
-                        nicNameC nnNowRouter1 = woSub.nnF( tin0P , epoch ) ;
-                        ideaNetIpv6FieldsS fnu ;
-                        //CS:CODEsYNC: 510008e2 510008e2 510008e2
+                        for( countT epoch = epochTrueWoth ; epoch <= epochTrueLath ; epoch ++ )
                         _IO_
                     {
-                    for( countT epoch = epochTrueWoth ; epoch <= epochTrueLath ; epoch ++ )
-                    _IO_
+                    if( epochTrueWoth < epochTrueLath )
                 {
-                if( epochTrueWoth < epochTrueLath )
+                if( pnnOK )
+
+                ZE( countT , offo ) ;
+                etThread.newF( tin0P , LF , pnnOK , cnnOK ) ; ___( pnnOK ) ;
+                ZE( nicNameC* , pnnOK ) ;
+                countT cnnOk = 1 + epochTrueLath - epochTrueWoth ;
+
+                countT epochTrueWoth = ( ( timeN1                     - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
+                countT epochTrueLath = ( ( timeN1                                                                  ) >> BITSsHIFTiDEAnETePOCH ) ;
 
                 //****************************************************************************************************************************************************************************************************************************************************************************************************************
                 //****                                                  **********************************************************************************************************************************************************************************************************************************************************
@@ -601,13 +633,6 @@ TASK( tmAddAddressF )
             //****  THIS IS A BOOK 1 SUB FILE  *******************************************************************************************************************************************************************************************************************************************************************************
             //****                             *******************************************************************************************************************************************************************************************************************************************************************************
             //****************************************************************************************************************************************************************************************************************************************************************************************************************
-
-            countT epochLateWoth = ( ( timeN1 - time1TrueMidpoint - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
-            countT epochLateLath = ( ( timeN1 - time1TrueMidpoint                                              ) >> BITSsHIFTiDEAnETePOCH ) ;
-
-            countT epochTrueWoth = ( ( timeN1                     - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
-            countT epochTrueLath = ( ( timeN1                                                                  ) >> BITSsHIFTiDEAnETePOCH ) ;
-            //CS:CODEsYNC: 510008e2 510008e2
 
             // EACH PREFIX, AND EACH ADDRESS, MUST LIVE LONG ENOUGH TO EXIST UNTIL IT WILL NO LONGER BE USED
             // IF BITSsHIFTiDEAnETePOCH IS DEFINED TO BE ( 0x14 ), THEN EACH EPOCH IS 02 TOCK
