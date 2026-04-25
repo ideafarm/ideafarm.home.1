@@ -340,11 +340,6 @@ DONE( tmListApprovedAddressesF )
             ZE( strokeS* , psttlEmail ) ;
             //U:: MAKE THIS sws DATA VISIBLE TO MYSELF AND TO OTHER PROCESSES ON ALL WEB* IdeaNet (tm) HOSTS
 
-            epochLath  = epoch ;
-
-            tallyIgnoredP = 0 ;
-            etRock.traceF( tin0P , T("solicitations [epoch,tallyIgnored]:    ")+TF2(epochLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(tallyIgnoredP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
             }
                 sw_pNnApprovedNewByIdSub.ungrabF( tin0P ) ;
                 sw_pNnApprovedNewByIdSub.freeAllF( tin0P ) ;
@@ -359,6 +354,11 @@ DONE( tmListApprovedAddressesF )
                 sw_pNnApprovedNewByIdSub.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
             //CS:CODEsYNC: 510008e2 510008e2
+
+            epochLath  = epoch ;
+
+            tallyIgnoredP = 0 ;
+            etRock.traceF( tin0P , T("solicitations [epoch,tallyIgnored]:    ")+TF2(epochLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(tallyIgnoredP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             _IO_
         {
@@ -846,6 +846,7 @@ voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
                     boolT bFail1 = !bGorilla && idSub > idSubMaxP ;
                     grab_pnnAllOKP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
+                if( pnnAllOKP )
                 ZE( boolT , bOk ) ;
 
                 boolT bGorilla = idSub == -1 ;
