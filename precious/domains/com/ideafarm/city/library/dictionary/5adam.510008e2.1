@@ -279,10 +279,11 @@ DONE( tmListApprovedAddressesF )
                 sw_pNnApprovedNewByIdSub.ungrabF( tin0P ) ;
                 }
                     thirdC::c_memcpyIF( tin0P , (byteT*)pnnTo , (byteT*)pnnFrom , cnnOK_lockedP * sizeof( nicNameC ) ) ;
-                    nicNameC* pnnTo   = pnnAllOK_new + idSubLever * cnnOK_lockedP ;
+                    nicNameC* pnnTo   = pnnAllOK_new + ( bGorilla ? 0 : idSubLever * cnnOK_lockedP ) ;
                     nicNameC* pnnFrom = (nicNameC*)(countT&)sw_pNnApprovedNewByIdSub ;
 
-                    if( idSubLever > idSubMax_new ) { BLAMMOiD( 0x77773333 ) ; }
+                    if( !bGorilla && idSubLever > idSubMax_new ) { BLAMMOiD( 0x77773333 ) ; }
+                    boolT bGorilla = idSubLever == -1 ;
                     idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
