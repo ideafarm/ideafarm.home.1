@@ -205,13 +205,18 @@ DONE( tmWorkF )
     const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
 
     etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnRequested , (countT)&stNnApprovedA , (countT)&stNnApprovedB , (countT)&bksGeiger , (countT)&epochAllowWoth , (countT)&epochAllowLath ) ;
-    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 )                          , (countT)&stNnApprovedA , (countT)&stNnApprovedB , (countT)&tallyIgnored , (countT)&cnnOK_locked ) ;
-    ZE( countT , cnnOK_locked ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 )                          , (countT)&stNnApprovedA , (countT)&stNnApprovedB , (countT)&tallyIgnored , (countT)&cnnOK_locked , (countT)&cnnAllOK , (countT)&pnnAllOK , (countT)&grab_pnnAllOK ) ;
 
-    cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested , bksGeiger, epochAllowWoth , epochAllowLath , tallyIgnored ) ;
-    ZE( countT , tallyIgnored   ) ;
-    ZE( countT , epochAllowLath ) ;
-    ZE( countT , epochAllowWoth ) ;
+    cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested , bksGeiger, epochAllowWoth , epochAllowLath , tallyIgnored , cnnOK_locked , cnnAllOK , pnnAllOK , idSubMax , grab_pnnAllOK ) ;
+
+    grabC grab_pnnAllOK( tin0P , TAG( TAGiDnULL ) ) ;
+    ZE( countT    , idSubMax       ) ;
+    ZE( nicNameC* , pnnAllOK       ) ;
+    ZE( countT    , cnnAllOK       ) ;
+    ZE( countT    , cnnOK_locked   ) ;
+    ZE( countT    , tallyIgnored   ) ;
+    ZE( countT    , epochAllowLath ) ;
+    ZE( countT    , epochAllowWoth ) ;
     booksC bksGeiger( tin0P , TAG( TAGiDnULL ) , "geiger" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , TICK << 4 ) ;
 
     stackC stNnApprovedB( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
@@ -265,25 +270,42 @@ DONE( tmListApprovedAddressesF )
 
         }
             }
-                etThread.delF( tin0P , pnnAllOK ) ;
-                //U:: LOAD THIS ARRAY AND THEN MAKE IT VISIBLE TO THE PCAP CALLBACK SO THAT INCOMING ADDRESSES CAN BE VALIDATED
-                etThread.newF( tin0P , LF , pnnAllOK , cnnAllOK ) ; ___( pnnAllOK ) ;
-                ZE( nicNameC* , pnnAllOK ) ;
-                countT cnnAllOK = ( 1 + idSubMax ) * cnnOK_lockedP ;     // ROW 0 IS FOR idSub -1 (GO1 CLIENT KEY GORILLA); ROWS 1-S ARE FOR SUBSCRIBERS [1,S]
+                grab_pnnAllOKP.ungrabF( tin0P ) ;
+                pnnAllOKP = pnnAllOK_new ;
+                cnnAllOKP = cnnAllOK_new ;
+                idSubMaxP = idSubMax_new ;
+                grab_pnnAllOKP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                sw_pNnApprovedNewByIdSub.ungrabF( tin0P ) ;
+                }
+                    thirdC::c_memcpyIF( tin0P , (byteT*)pnnTo , (byteT*)pnnFrom , cnnOK_lockedP * sizeof( nicNameC ) ) ;
+                    nicNameC* pnnTo   = pnnAllOK_new + idSubLever * cnnOK_lockedP ;
+                    nicNameC* pnnFrom = (nicNameC*)(countT&)sw_pNnApprovedNewByIdSub ;
+
+                    if( idSubLever > idSubMax_new ) { BLAMMOiD( 0x77773333 ) ; }
+                    idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
+                {
+                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
+                sw_pNnApprovedNewByIdSub.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                etThread.newF( tin0P , LF , pnnAllOK_new , cnnAllOK_new ) ; ___( pnnAllOK_new ) ;
+                countT cnnAllOK_new = ( 1 + idSubMax_new ) * cnnOK_lockedP ;     // ROW 0 IS FOR idSub -1 (GO1 CLIENT KEY GORILLA); ROWS 1-S ARE FOR SUBSCRIBERS [1,S]
+                ZE( nicNameC* , pnnAllOK_new ) ;
             {
-            if( idSubMax && cnnOK_lockedP )
+            if( idSubMax_new && cnnOK_lockedP )
 
             }
                 sw_pNnApprovedNewByIdSub.ungrabF( tin0P ) ;
                 }
-                    if( idSubLever != -1 && idSubMax < idSubLever ) idSubMax = idSubLever ;
+                    if( idSubLever != -1 && idSubMax_new < idSubLever ) idSubMax_new = idSubLever ;
                     idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                 countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
                 sw_pNnApprovedNewByIdSub.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
-            ZE( countT , idSubMax ) ;
+            ZE( countT , idSubMax_new ) ;
 
             }
                 stNnApprovedUse.sinkF( tin0P , countTC() , nnWo , flSTACKsINK_UNIQUE ) ;
@@ -379,13 +401,17 @@ DONE( tmListApprovedAddressesF )
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-    countT& cnnOK_lockedP  = *(countT*)pTaskP->c4 ;
-    countT& tallyIgnoredP  = *(countT*)pTaskP->c3 ;
-    stackC& stNnApprovedBP = *(stackC*)pTaskP->c2 ;
-    stackC& stNnApprovedAP = *(stackC*)pTaskP->c1 ;
+    grabC&     grab_pnnAllOKP   =     *(grabC*)pTaskP->c8 ;
+    countT&    idSubMaxP        =    *(countT*)pTaskP->c7 ;
+    nicNameC*& pnnAllOKP        = *(nicNameC**)pTaskP->c6 ;
+    countT&    cnnAllOKP        =    *(countT*)pTaskP->c5 ;
+    countT&    cnnOK_lockedP    =    *(countT*)pTaskP->c4 ;
+    countT&    tallyIgnoredP    =    *(countT*)pTaskP->c3 ;
+    stackC&    stNnApprovedBP   =    *(stackC*)pTaskP->c2 ;
+    stackC&    stNnApprovedAP   =    *(stackC*)pTaskP->c1 ;
     _IO_
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 )
 TASK( tmListApprovedAddressesF )
 
 DONE( tmAddAddressF )
@@ -793,19 +819,36 @@ voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
         }
             }
                 }
-                    }
-                        stNnRequestedP.sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
-                        etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) /*, flTRACE_null , ifcIDtRACEdIVERT_1*/ ) ;
-                        bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
-                        geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET , sizeof nnTarget ) ;
-                    {
-                    else
-                    if( epoch < epochAllowWothP || epochAllowLathP < epoch ) tallyIgnoredP ++ ;
-                    countT epoch = pct[ 2 ] & 0xffff ;
+                    stNnRequestedP.sinkF( tin0P , countTC() , nnTarget , flSTACKsINK_UNIQUE ) ;
+                    etRock.traceF( tin0P , T("solicitation [nnTarget]:    ")+T(nnTarget) /*, flTRACE_null , ifcIDtRACEdIVERT_1*/ ) ;
+                    bksGeigerP.writeF( tin0P , (byteT*)&event , sizeof event , (byteT*)&nnTarget , sizeof nnTarget , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
+                    geigerEventHeadS event( tin0P , etThread , ifcIDtYPEgEIGEReVENT_ICMPV6qUERYiDEAnETsUBNET , sizeof nnTarget ) ;
                 {
                 else
-                if( idSub != -1 && idSub != 1 ) tallyIgnoredP ++ ;              //U:: ALL LEGAL idSub VALUES MUST BE ACCEPTED HERE
-                countT        idSub = pct[ 1 ] ;
+                if( !bOk ) tallyIgnoredP ++ ;
+
+                }
+                    grab_pnnAllOKP.ungrabF( tin0P ) ;
+                    }
+                        }
+                            }
+                                break ;
+                                bOk = 1 ;
+                            {
+                            if( nnTarget == pnnRow[ offc ] )
+                        {
+                        for( countT offc = 0 ; offc < cnnOK_lockedP ; offc ++ )
+                        nicNameC* pnnRow = pnnAllOKP + idSub * cnnOK_lockedP ;
+                    {                
+                    if( !bFail1 && !bFail2 )
+                    boolT bFail2 = epoch < epochAllowWothP || epochAllowLathP < epoch ;
+                    boolT bFail1 = idSub != -1 && idSub > idSubMaxP ;
+                    grab_pnnAllOKP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                {
+                ZE( boolT , bOk ) ;
+
+                countT idSub = pct[ 1 ] ;
+                countT epoch = pct[ 2 ] & 0xffff ;
                 const countT* pct   = nnTarget ;           
             {
             else
@@ -877,6 +920,12 @@ voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
 
     pbc = (byteT*)pInfo3DataP ;
     byteT* pbc ;
+
+    grabC&     grab_pnnAllOKP = cbfParmP.grab_pnnAllOK  ;
+    countT&    idSubMaxP      = cbfParmP.idSubMax       ;
+    nicNameC*& pnnAllOKP      = cbfParmP.pnnAllOK       ;
+    countT&    cnnAllOKP      = cbfParmP.cnnAllOK       ;
+    countT&    cnnOK_lockedP  = cbfParmP.cnnOK_locked   ;
 
     countT& tallyIgnoredP   = *cbfParmP.pTallyIgnored   ;
     countT& epochAllowLathP = *cbfParmP.pEpochAllowLath ;
@@ -1348,7 +1397,13 @@ osTextT* ppostProtocol[] =
 }
     }
     {
-    pTallyIgnored(   &tallyIgnoredP   )
+    grab_pnnAllOK( grab_pnnAllOKP )
+    idSubMax( idSubMaxP ) ,
+    pnnAllOK( pnnAllOKP ) ,
+    cnnAllOK( cnnAllOKP ) ,
+    cnnOK_locked( cnnOK_lockedP ) ,
+
+    pTallyIgnored(   &tallyIgnoredP   ) ,
     pEpochAllowLath( &epochAllowLathP ) ,
     pEpochAllowWoth( &epochAllowWothP ) ,
     pBksGeiger(      &bksGeigerP      ) ,
@@ -1357,7 +1412,13 @@ osTextT* ppostProtocol[] =
     pEtThread(       &etThreadP       ) ,
     pEther(          &etherP          ) ,
     pTin0(           &tin0P           ) ,
-    inline cbfParmS( tin0S& tin0P , etherC& etherP , etherC& etThreadP , etherC& etRockP , stackC& stNnRequestedP , booksC& bksGeigerP , countT& epochAllowWothP , countT& epochAllowLathP , countT& tallyIgnoredP ) :
+    inline cbfParmS( tin0S& tin0P , etherC& etherP , etherC& etThreadP , etherC& etRockP , stackC& stNnRequestedP , booksC& bksGeigerP , countT& epochAllowWothP , countT& epochAllowLathP , countT& tallyIgnoredP , countT& cnnOK_lockedP , countT& cnnAllOKP , nicNameC*& pnnAllOKP , countT& idSubMaxP , grabC& grab_pnnAllOKP ) :
+
+    grabC&     grab_pnnAllOK ;
+    countT&    idSubMax      ;
+    nicNameC*& pnnAllOK      ;
+    countT&    cnnAllOK      ;
+    countT&    cnnOK_locked  ;
 
     countT* pTallyIgnored    ;
     countT* pEpochAllowLath  ;
