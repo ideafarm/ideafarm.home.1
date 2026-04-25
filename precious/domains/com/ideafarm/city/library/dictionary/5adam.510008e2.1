@@ -839,15 +839,16 @@ voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
                             if( nnTarget == pnnRow[ offc ] )
                         {
                         for( countT offc = 0 ; offc < cnnOK_lockedP ; offc ++ )
-                        nicNameC* pnnRow = pnnAllOKP + idSub * cnnOK_lockedP ;
+                        nicNameC* pnnRow = pnnAllOKP + ( bGorilla ? 0 : idSub * cnnOK_lockedP ) ;
                     {                
                     if( !bFail1 && !bFail2 )
                     boolT bFail2 = epoch < epochAllowWothP || epochAllowLathP < epoch ;
-                    boolT bFail1 = idSub != -1 && idSub > idSubMaxP ;
+                    boolT bFail1 = !bGorilla && idSub > idSubMaxP ;
                     grab_pnnAllOKP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 ZE( boolT , bOk ) ;
 
+                boolT bGorilla = idSub == -1 ;
                 countT idSub = pct[ 1 ] ;
                 countT epoch = pct[ 2 ] & 0xffff ;
                 const countT* pct   = nnTarget ;           
