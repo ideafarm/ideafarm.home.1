@@ -243,6 +243,17 @@ TASK( tmWorkF )
 
 DONE( tmListApprovedAddressesF )
 }
+    sw_pNnApprovedNewByIdSub.freeAllF( tin0P ) ;
+    }
+        etThread.delF( tin0P , pnnOK ) ;
+        nicNameC*& pnnOK = (nicNameC*&)(countT&)sw_pNnApprovedNewByIdSub ;
+        idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
+        _IO_
+    {
+    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+    countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
+    //CS:CODEsYNC: 510008e2 510008e2
+
     }
         }
             ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
@@ -270,13 +281,12 @@ DONE( tmListApprovedAddressesF )
                     etRock.traceF( tin0P , tDash ) ;
                     _IO_
                 {
-                countT  argApp = (countT)&c4App ;
-                count4S c4App( (countT)&stNnApprovedNew , (countT)&psttlEmail , (countT)&swsIdBookIdSubByEmail , bTrue ) ;
+                countT  argApp = (countT)&c6App ;
+                count6S c6App( bTrue , (countT)&stNnApprovedNew , (countT)&psttlEmail , (countT)&swsIdBookIdSubByEmail , (countT)&idSubLever , (countT)&sw_pNnApprovedNewByIdSub ) ;
+
                 _IO_
             {
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
-
-            //U:: switchC sw_pNnApprovedNewByIdSub
 
             stackC       stNnApprovedNew(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , ifcSTACKtYPE_nicNameC ) ;
             switchStackC swsIdBookIdSubByEmail( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , psttlEmail , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_SINKrEVERSE , ifcSTACKtYPE_count2S ) ;  // flSTACKc_SINKrEVERSE IS FOR EFFICIENCY, SINCE NTFS WILL ALMOST ALWAYS PRESENT FILES IN INCREASING ORDER OF idBook
@@ -287,6 +297,18 @@ DONE( tmListApprovedAddressesF )
 
             tallyIgnoredP = 0 ;
             etRock.traceF( tin0P , T("solicitations [epoch,tallyIgnored]:    ")+TF2(epochLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(tallyIgnoredP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            sw_pNnApprovedNewByIdSub.freeAllF( tin0P ) ;
+            }
+                etThread.delF( tin0P , pnnOK ) ;
+                nicNameC*& pnnOK = (nicNameC*&)(countT&)sw_pNnApprovedNewByIdSub ;
+                idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
+                _IO_
+            {
+            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+            countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
+            //CS:CODEsYNC: 510008e2 510008e2
+
             _IO_
         {
         if( epochLath != epoch )                                                    //P:PERSONALITY: IF A CLIENT KEY IS OPENED IMMEDIATELY AFTER PAYMENT, ITS STARTUP WILL NOT COMPLETE UNTIL IT HAS STOMPED DURING AN EPOCH TRANSITION ON ALL WEB* SERVERS (CURRENTLY WEB1-TRUE AND WEB2-LATE) ; THIS HAS NO PRACTICAL SIGNIFICANCE BECAUSE CLIENT KEYS ARE DELIVERED VIA EMAIL, WHICH TAKES MORE THAN 2 EPOCHS
@@ -305,6 +327,9 @@ DONE( tmListApprovedAddressesF )
     TN( tb4 , "    " ) ;
     patternC pat( tin0P , etThread , T("sub.01.00000001.*.soulC") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tLongSubscriptions , "" ) ; tLongSubscriptions = T("////go1/" "d/ideafarm.shared/")+TfORsTRING(ifcIDaDAM_WELCOMER)+T("/ideanet/") ;
+
+    switchC sw_pNnApprovedNewByIdSub( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKrEVERSE , idSubLever ) ;
+    ZE( countT , idSubLever ) ;
 
     const countT time1Adjust = bTrue ? 0 : time1TrueMidpoint ;
     const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
@@ -492,12 +517,11 @@ TASK( tmAddAddressF )
             break ;
 
             }
-                etThread.delF( tin0P , pnnOK ) ;
                 }
                     }
                         }
                             }
-                                pnnOK[ offo ++ ]  = nnNowRouter1 ;
+                                pnnOK[ offo ++ ]  = nnNowRouter2 ;
                                 stNnApprovedNewP << nnNowRouter2 ;
                                 _IO_
                             {
@@ -511,7 +535,7 @@ TASK( tmAddAddressF )
 
                         }
                             }
-                                pnnOK[ offo ++ ]  = nnNowRouter1 ;
+                                pnnOK[ offo ++ ]  = nnNowRouter2 ;
                                 stNnApprovedNewP << nnNowRouter2 ;
                                 _IO_
                             {
@@ -527,7 +551,7 @@ TASK( tmAddAddressF )
                     }
                         }
                             }
-                                pnnOK[ offo ++ ]  = nnNowRouter1 ;
+                                pnnOK[ offo ++ ]  = nnNowRouter2 ;
                                 stNnApprovedNewP << nnNowRouter2 ;
                                 _IO_
                             {
@@ -540,13 +564,21 @@ TASK( tmAddAddressF )
                         for( countT epoch = epochLateWoth ; epoch <= epochLateLath ; epoch ++ )
                     {
                     if( epochLateWoth < epochLateLath )
+                    ZE( countT , offo ) ;
                 {
                 if( pnnOK )
 
-                ZE( countT , offo ) ;
-                etThread.newF( tin0P , LF , pnnOK , cnnOK ) ; ___( pnnOK ) ;
-                ZE( nicNameC* , pnnOK ) ;
-                countT cnnOk = 1 + epochTrueLath - epochTrueWoth ;
+                etherP.newF( tin0P , LF , pnnOK , cnnOK ) ; ___( pnnOK ) ;
+
+                }
+                    etherP.delF( tin0P , pnnOK ) ;
+                    etRock.traceF( tin0P , T("!exception / multiple book 1 subscription files found for the same idSub [idSub]:    ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                {
+                if( pnnOK )
+                nicNameC*& pnnOK = (nicNameC*&)(countT&)sw_pNnApprovedNewByIdSubP  ;
+                idSubLeverP = idSub ;
+
+                countT cnnOK = 1 + epochLateLath - epochLateWoth ;
 
                 countT epochLateWoth = ( ( timeN1 - time1TrueMidpoint - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
                 countT epochLateLath = ( ( timeN1 - time1TrueMidpoint                                              ) >> BITSsHIFTiDEAnETePOCH ) ;
@@ -559,7 +591,6 @@ TASK( tmAddAddressF )
             {
             else
             }
-                etThread.delF( tin0P , pnnOK ) ;
                 }
                     }
                         }
@@ -609,13 +640,22 @@ TASK( tmAddAddressF )
                         _IO_
                     {
                     if( epochTrueWoth < epochTrueLath )
+                    ZE( countT , offo ) ;
                 {
                 if( pnnOK )
 
-                ZE( countT , offo ) ;
-                etThread.newF( tin0P , LF , pnnOK , cnnOK ) ; ___( pnnOK ) ;
-                ZE( nicNameC* , pnnOK ) ;
-                countT cnnOk = 1 + epochTrueLath - epochTrueWoth ;
+                etherP.newF( tin0P , LF , pnnOK , cnnOK ) ; ___( pnnOK ) ;
+
+                }
+                    etherP.delF( tin0P , pnnOK ) ;
+                    etRock.traceF( tin0P , T("!exception / multiple book 1 subscription files found for the same idSub [idSub]:    ")+TF2(idSub,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                {
+                if( pnnOK )
+
+                nicNameC*& pnnOK = (nicNameC*&)(countT&)sw_pNnApprovedNewByIdSubP  ;
+                idSubLeverP = idSub ;
+
+                countT cnnOK = 1 + epochTrueLath - epochTrueWoth ;
 
                 countT epochTrueWoth = ( ( timeN1                     - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
                 countT epochTrueLath = ( ( timeN1                                                                  ) >> BITSsHIFTiDEAnETePOCH ) ;
@@ -698,11 +738,14 @@ TASK( tmAddAddressF )
     const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
     TN( tb4 , "    " ) ;
 
-    boolT         bTrueP                 =                 c4App.c4  ;
-    switchStackC& swsIdBookIdSubByEmailP = *(switchStackC*)c4App.c3  ;
-    strokeS*&     psttlEmailP            =     *(strokeS**)c4App.c2  ;
-    stackC&       stNnApprovedNewP       =       *(stackC*)c4App.c1  ;
-    count4S&      c4App                  = *(count4S*)argAppP        ;
+    switchC&      sw_pNnApprovedNewByIdSubP =      *(switchC*)c6App.c6 ;
+    countT&       idSubLeverP               =       *(countT*)c6App.c5 ;
+    switchStackC& swsIdBookIdSubByEmailP    = *(switchStackC*)c6App.c4 ;
+    strokeS*&     psttlEmailP               =     *(strokeS**)c6App.c3 ;
+    stackC&       stNnApprovedNewP          =       *(stackC*)c6App.c2 ;
+    boolT         bTrueP                    =                 c6App.c1 ;
+
+    count6S&      c6App                  = *(count6S*)argAppP        ;
     etherC&       etRock                 = etherC::etRockIF( tin0P ) ;
     etherC&       etherP                 = queueP                    ;
     _IO_
