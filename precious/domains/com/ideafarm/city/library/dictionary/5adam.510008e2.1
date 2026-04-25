@@ -244,6 +244,7 @@ TASK( tmWorkF )
 
 DONE( tmListApprovedAddressesF )
 }
+    sw_pNnApprovedNewByIdSub.ungrabF( tin0P ) ;
     sw_pNnApprovedNewByIdSub.freeAllF( tin0P ) ;
     }
         etThread.delF( tin0P , pnnOK ) ;
@@ -253,6 +254,7 @@ DONE( tmListApprovedAddressesF )
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
     countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
+    sw_pNnApprovedNewByIdSub.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     //CS:CODEsYNC: 510008e2 510008e2
 
     }
@@ -270,12 +272,14 @@ DONE( tmListApprovedAddressesF )
             if( !cnnOK_lockedP ) BLAMMOiD( 0x42424242 ) ;
 
             }
+                sw_pNnApprovedNewByIdSub.ungrabF( tin0P ) ;
                 }
                     if( idSubLever != -1 && idSubMax < idSubLever ) idSubMax = idSubLever ;
                     idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                 countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
+                sw_pNnApprovedNewByIdSub.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
             ZE( countT , idSubMax ) ;
 
@@ -317,6 +321,7 @@ DONE( tmListApprovedAddressesF )
             etRock.traceF( tin0P , T("solicitations [epoch,tallyIgnored]:    ")+TF2(epochLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(tallyIgnoredP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
+                sw_pNnApprovedNewByIdSub.ungrabF( tin0P ) ;
                 sw_pNnApprovedNewByIdSub.freeAllF( tin0P ) ;
                 }
                     etThread.delF( tin0P , pnnOK ) ;
@@ -326,6 +331,7 @@ DONE( tmListApprovedAddressesF )
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                 countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
+                sw_pNnApprovedNewByIdSub.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
             //CS:CODEsYNC: 510008e2 510008e2
 
@@ -348,7 +354,7 @@ DONE( tmListApprovedAddressesF )
     patternC pat( tin0P , etThread , T("sub.01.00000001.*.soulC") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tLongSubscriptions , "" ) ; tLongSubscriptions = T("////go1/" "d/ideafarm.shared/")+TfORsTRING(ifcIDaDAM_WELCOMER)+T("/ideanet/") ;
 
-    switchC sw_pNnApprovedNewByIdSub( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKrEVERSE , idSubLever ) ;
+    switchC sw_pNnApprovedNewByIdSub( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idSubLever ) ;
     ZE( countT , idSubLever ) ;
 
     const countT time1Adjust = bTrue ? 0 : time1TrueMidpoint ;
@@ -538,6 +544,7 @@ TASK( tmAddAddressF )
             break ;
 
             }
+                sw_pNnApprovedNewByIdSubP.ungrabF( tin0P ) ;
                 }
                     }
                         }
@@ -598,6 +605,7 @@ TASK( tmAddAddressF )
                 if( pnnOK )
                 nicNameC*& pnnOK = (nicNameC*&)(countT&)sw_pNnApprovedNewByIdSubP  ;
                 idSubLeverP = idSub ;
+                sw_pNnApprovedNewByIdSubP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                 countT cnnOK = 1 + epochLateLath - epochLateWoth ;
 
@@ -612,6 +620,7 @@ TASK( tmAddAddressF )
             {
             else
             }
+                sw_pNnApprovedNewByIdSubP.ungrabF( tin0P ) ;
                 }
                     }
                         }
@@ -675,6 +684,7 @@ TASK( tmAddAddressF )
 
                 nicNameC*& pnnOK = (nicNameC*&)(countT&)sw_pNnApprovedNewByIdSubP  ;
                 idSubLeverP = idSub ;
+                sw_pNnApprovedNewByIdSubP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                 else if(  cnnOK_lockedP != cnnOK ) BLAMMOiD( 0x37373737 ) ;
                      if( !cnnOK_lockedP          ) cnnOK_lockedP = cnnOK  ;
