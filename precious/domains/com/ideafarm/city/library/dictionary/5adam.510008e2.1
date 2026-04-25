@@ -205,7 +205,8 @@ DONE( tmWorkF )
     const countT cProtocol = sizeof ppostProtocol / sizeof ppostProtocol[ 0 ] ;
 
     etThread.osThreadF( TaRG2cBsTACK( tmAddAddressF            , CBsTACKmIN << 1 ) , (countT)&stNnRequested , (countT)&stNnApprovedA , (countT)&stNnApprovedB , (countT)&bksGeiger , (countT)&epochAllowWoth , (countT)&epochAllowLath ) ;
-    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 )                          , (countT)&stNnApprovedA , (countT)&stNnApprovedB , (countT)&tallyIgnored ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmListApprovedAddressesF , CBsTACKmIN << 1 )                          , (countT)&stNnApprovedA , (countT)&stNnApprovedB , (countT)&tallyIgnored , (countT)&cnnOK_locked ) ;
+    ZE( countT , cnnOK_locked ) ;
 
     cbfParmS cbfParm( tin0P , ether , etThread , etRock , stNnRequested , bksGeiger, epochAllowWoth , epochAllowLath , tallyIgnored ) ;
     ZE( countT , tallyIgnored   ) ;
@@ -261,6 +262,23 @@ DONE( tmListApprovedAddressesF )
         {
 
         }
+            etThread.delF( tin0P , pnnAllOK ) ;
+            //U:: LOAD THIS ARRAY AND THEN MAKE IT VISIBLE TO THE PCAP CALLBACK SO THAT INCOMING ADDRESSES CAN BE VALIDATED
+            etThread.newF( tin0P , LF , pnnAllOK , cnnAllOK ) ; ___( pnnAllOK ) ;
+            ZE( nicNameC* , pnnAllOK ) ;
+            countT cnnAllOK = ( 1 + idSubMax ) * cnnOK_lockedP ;     // ROW 0 IS FOR idSub -1 (GO1 CLIENT KEY GORILLA); ROWS 1-S ARE FOR SUBSCRIBERS [1,S]
+            if( !cnnOK_lockedP ) BLAMMOiD( 0x42424242 ) ;
+
+            }
+                }
+                    if( idSubLever != -1 && idSubMax < idSubLever ) idSubMax = idSubLever ;
+                    idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
+                {
+                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
+            {
+            ZE( countT , idSubMax ) ;
+
             }
                 stNnApprovedUse.sinkF( tin0P , countTC() , nnWo , flSTACKsINK_UNIQUE ) ;
                 stNnApprovedNew >>                         nnWo ;
@@ -281,8 +299,8 @@ DONE( tmListApprovedAddressesF )
                     etRock.traceF( tin0P , tDash ) ;
                     _IO_
                 {
-                countT  argApp = (countT)&c6App ;
-                count6S c6App( bTrue , (countT)&stNnApprovedNew , (countT)&psttlEmail , (countT)&swsIdBookIdSubByEmail , (countT)&idSubLever , (countT)&sw_pNnApprovedNewByIdSub ) ;
+                countT  argApp = (countT)&c7App ;
+                count7S c7App( bTrue , (countT)&stNnApprovedNew , (countT)&psttlEmail , (countT)&swsIdBookIdSubByEmail , (countT)&idSubLever , (countT)&sw_pNnApprovedNewByIdSub , (countT)&cnnOK_lockedP ) ;
 
                 _IO_
             {
@@ -298,15 +316,17 @@ DONE( tmListApprovedAddressesF )
             tallyIgnoredP = 0 ;
             etRock.traceF( tin0P , T("solicitations [epoch,tallyIgnored]:    ")+TF2(epochLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(tallyIgnoredP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-            sw_pNnApprovedNewByIdSub.freeAllF( tin0P ) ;
             }
-                etThread.delF( tin0P , pnnOK ) ;
-                nicNameC*& pnnOK = (nicNameC*&)(countT&)sw_pNnApprovedNewByIdSub ;
-                idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
-                _IO_
+                sw_pNnApprovedNewByIdSub.freeAllF( tin0P ) ;
+                }
+                    etThread.delF( tin0P , pnnOK ) ;
+                    nicNameC*& pnnOK = (nicNameC*&)(countT&)sw_pNnApprovedNewByIdSub ;
+                    idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
+                    _IO_
+                {
+                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
             {
-            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
             //CS:CODEsYNC: 510008e2 510008e2
 
             _IO_
@@ -351,12 +371,13 @@ DONE( tmListApprovedAddressesF )
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
+    countT& cnnOK_lockedP  = *(countT*)pTaskP->c4 ;
     countT& tallyIgnoredP  = *(countT*)pTaskP->c3 ;
     stackC& stNnApprovedBP = *(stackC*)pTaskP->c2 ;
     stackC& stNnApprovedAP = *(stackC*)pTaskP->c1 ;
     _IO_
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 TASK( tmListApprovedAddressesF )
 
 DONE( tmAddAddressF )
@@ -655,6 +676,8 @@ TASK( tmAddAddressF )
                 nicNameC*& pnnOK = (nicNameC*&)(countT&)sw_pNnApprovedNewByIdSubP  ;
                 idSubLeverP = idSub ;
 
+                else if(  cnnOK_lockedP != cnnOK ) BLAMMOiD( 0x37373737 ) ;
+                     if( !cnnOK_lockedP          ) cnnOK_lockedP = cnnOK  ;
                 countT cnnOK = 1 + epochTrueLath - epochTrueWoth ;
 
                 countT epochTrueWoth = ( ( timeN1                     - time1PerEpoch * ( EPOCHSsIGNATUREmAX + 1 ) ) >> BITSsHIFTiDEAnETePOCH ) ;
@@ -738,14 +761,15 @@ TASK( tmAddAddressF )
     const countT time1PerEpoch = 1 << BITSsHIFTiDEAnETePOCH ;
     TN( tb4 , "    " ) ;
 
-    switchC&      sw_pNnApprovedNewByIdSubP =      *(switchC*)c6App.c6 ;
-    countT&       idSubLeverP               =       *(countT*)c6App.c5 ;
-    switchStackC& swsIdBookIdSubByEmailP    = *(switchStackC*)c6App.c4 ;
-    strokeS*&     psttlEmailP               =     *(strokeS**)c6App.c3 ;
-    stackC&       stNnApprovedNewP          =       *(stackC*)c6App.c2 ;
-    boolT         bTrueP                    =                 c6App.c1 ;
+    countT&       cnnOK_lockedP             =       *(countT*)c7App.c7 ;
+    switchC&      sw_pNnApprovedNewByIdSubP =      *(switchC*)c7App.c6 ;
+    countT&       idSubLeverP               =       *(countT*)c7App.c5 ;
+    switchStackC& swsIdBookIdSubByEmailP    = *(switchStackC*)c7App.c4 ;
+    strokeS*&     psttlEmailP               =     *(strokeS**)c7App.c3 ;
+    stackC&       stNnApprovedNewP          =       *(stackC*)c7App.c2 ;
+    boolT         bTrueP                    =                 c7App.c1 ;
 
-    count6S&      c6App                  = *(count6S*)argAppP        ;
+    count7S&      c7App                  = *(count7S*)argAppP        ;
     etherC&       etRock                 = etherC::etRockIF( tin0P ) ;
     etherC&       etherP                 = queueP                    ;
     _IO_
