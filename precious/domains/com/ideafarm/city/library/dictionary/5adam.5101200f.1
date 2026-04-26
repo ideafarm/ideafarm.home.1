@@ -22,16 +22,18 @@ DONE( tmWorkF )
             etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
             timeS timeN ;
         {
-
+        else
         }
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnTo1 , (byteT*)&timeN , sizeof timeN ) ;
             etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
             timeS timeN ;
         {
+        if( ( ++ idCycle ) % 2 )
 
-        ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
     {
     while( !ether )
+    ZE( countT , idCycle ) ;
     nicNameC nnTo2 = socketC::nicNameIF( tin0P , etThread , T("10.0.3.1") ) ;
     nicNameC nnTo1 = socketC::nicNameIF( tin0P , etThread , T("10.0.2.1") ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
