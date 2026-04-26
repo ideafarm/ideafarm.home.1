@@ -774,9 +774,9 @@ DONE( tmWorkF )
 
                 if( bFlashMaxSwarm ) bFlashMaxSwarm = cDecoySwarmWanted = 0 ;
 
-                etRock.traceF( tin0P , T("solicitation tallies [cSolicitationsAll,cSolicitationsAllRandomHost,cSolicitationsAllRouter1,cSolicitationsAllRouter2,cSolicitationsAllDecoyTrap,cSolicitationsDecoyTrapMax]:    ")+TF3(cSolicitationsAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cSolicitationsAllDecoySwarm,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cSolicitationsAllRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cSolicitationsAllRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
+                etRock.traceF( tin0P , T("solicitation tallies [cSolicitationsAll,cSolicitationsAllRandomHost,cSolicitationsAllRouter1,cSolicitationsAllRouter2,cSolicitationsAllDecoyTrap,cSolicitationsDecoyTrapMax]:    ")+TF3(cSolicitationsAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cSolicitationsAllRandomHost,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cSolicitationsAllRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cSolicitationsAllRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cSolicitationsAllDecoyTrap,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cSolicitationsDecoyTrapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
 
-                countT cSolicitationsAllDecoySwarm = cSolicitationsAll - cSolicitationsAllRouter1 - cSolicitationsAllRouter2 - cSolicitationsAllDecoyTrap ;     // A:ASSUME: NO OTHER KINDS OF PREFIXES WILL GENERATE SOLICITATION TALLIES ; THIS IS NOT EXACTLY TRUE SINCE WILL SEE SOLICITATIONS FOR 2602:ff03::1 AND 2602:ff03::2, WHICH ARE THE PERMANENT IPV6 ADDRESSES OF THE ROUTER AND THE WEB SERVER ON EACH VPC LAN
+                countT cSolicitationsAllRandomHost = cSolicitationsAll - cSolicitationsAllRouter1 - cSolicitationsAllRouter2 - cSolicitationsAllDecoyTrap ;     // A:ASSUME: NO OTHER KINDS OF PREFIXES WILL GENERATE SOLICITATION TALLIES ; THIS IS NOT EXACTLY TRUE SINCE WILL SEE SOLICITATIONS FOR 2602:ff03::1 AND 2602:ff03::2, WHICH ARE THE PERMANENT IPV6 ADDRESSES OF THE ROUTER AND THE WEB SERVER ON EACH VPC LAN
 
                 }
                     swTallyPrefix.ungrabF( tin0P ) ;
