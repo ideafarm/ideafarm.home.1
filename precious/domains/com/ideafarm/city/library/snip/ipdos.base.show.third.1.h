@@ -1,4 +1,7 @@
 
+#define CePOCHSfUDGE 4
+#define CePOCHSkEEP ( 2 + EPOCHSsIGNATUREmAX + EPOCHSaLLOWEDfORbGPpROPOGATION + CePOCHSfUDGE )
+
 #define flMODEsERVER_CHATTY           0xe00001ff
 #define flMODEsERVER_null             0xe00000ff
 
