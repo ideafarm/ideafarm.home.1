@@ -75,18 +75,21 @@ DONE( tmCatchF )
                 break ;
                 }
                     }
-                        //etThread.traceF( tin0P , /*T("[nnHe,idpHe,pTime[0],pTime[1],pTime[2],timeR1,timeR2,timeE1,timeE2,scError]:    ")+T(nnHe)+tb4+TF3(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+*/TT(pTime[0].time1,pTime[0].time2)+tb4+TT(pTime[1].time1,pTime[1].time2)+tb4+TT(pTime[2].time1,pTime[2].time2)+tb4+TT(timeR1,timeR2)+tb4+TT(timeE1,timeE2)+tb4+TF3(scError,flFORMAT_NObIGITvALUES,8)+tb4+TF3(meanError,flFORMAT_NObIGITvALUES,8) , flTRACE_NOpREFIX ) ;
+                        etThread.traceF( tin0P , /*T("[nnHe,idpHe,pTime[0],pTime[1],pTime[2],timeR1,timeR2,timeE1,timeE2,scErrorPeers]:    ")+T(nnHe)+tb4+TF3(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+*/TT(pTime[0].time1,pTime[0].time2)+tb4+TT(pTime[1].time1,pTime[1].time2)+tb4+TT(pTime[2].time1,pTime[2].time2)+tb4+TT(timeR1,timeR2)+tb4+TT(timeE1,timeE2)+tb4+TF3(scErrorPeers,flFORMAT_NObIGITvALUES,8)+tb4+TF3(meanErrorPeers,flFORMAT_NObIGITvALUES,8) , flTRACE_NOpREFIX ) ;
+
+                        sCountT meanErrorPeers = accumulatorPeers / cAccumulatedPeers ;
+                        cAccumulatedPeers ++ ;
+                        accumulatorPeers += scErrorPeers ;
+                        sCountT scErrorPeers = timeE1 - meanErrorSelf ;
                     {
                     else
                     }
-                        etThread.traceF( tin0P , /*T("[nnHe,idpHe,pTime[0],pTime[1],pTime[2],timeR1,timeR2,timeE1,timeE2,scError]:    ")+T(nnHe)+tb4+TF3(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+*/TT(pTime[0].time1,pTime[0].time2)+tb4+TT(pTime[1].time1,pTime[1].time2)+tb4+TT(pTime[2].time1,pTime[2].time2)+tb4+TT(timeR1,timeR2)+tb4+TT(timeE1,timeE2)+tb4+TF3(scError,flFORMAT_NObIGITvALUES,8)+tb4+TF3(meanError,flFORMAT_NObIGITvALUES,8) , flTRACE_NOpREFIX ) ;
+                        meanErrorSelf = accumulatorSelf / cAccumulatedSelf ;        //A:ASSUME: THIS IS AN UNBIASED ESTIMATOR OF THE ERROR INTRODUCED BY CPU EXECUTION TIME
+                        cAccumulatedSelf ++ ;
+                        accumulatorSelf += scErrorSelf ;
+                        sCountT scErrorSelf = timeE1 ;
                     {
-                    if( nnMeInnerP != nnHe )
-
-                    sCountT meanError = accumulator / cAccumulated ;
-                    cAccumulated ++ ;
-                    accumulator += scError ;
-                    sCountT scError = timeE1 ;
+                    if( nnMeInnerP == nnHe )
 
                     etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , pTime[ 0 ].time1 , pTime[ 0 ].time2 ) ;  // timeE IS ORIGIN'S ERROR RELATIVE TO PEER, TAKEN TO BE TRUE
                     sCountT timeE2 = timeP2 ;
@@ -142,8 +145,12 @@ DONE( tmCatchF )
         ZE( byteT* , pbi ) ;
     {
     while( !ether && !etThread )
-    ZE( sCountT , cAccumulated ) ;
-    ZE( sCountT , accumulator ) ;
+    ZE( sCountT , meanErrorPeers    ) ;
+    ZE( sCountT , meanErrorSelf     ) ;
+    ZE( sCountT , cAccumulatedPeers ) ;
+    ZE( sCountT , cAccumulatedSelf  ) ;
+    ZE( sCountT , accumulatorPeers  ) ;
+    ZE( sCountT , accumulatorSelf   ) ;
     TN( tSay , "" ) ; 
     TN( tb4 , "    " ) ;
     const timeS timeZe ;
