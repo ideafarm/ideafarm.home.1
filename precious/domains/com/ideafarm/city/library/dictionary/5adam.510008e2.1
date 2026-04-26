@@ -929,20 +929,19 @@ voidT pushNnApprovedCBF( tin0S& tin0P , queueC& queueP , const strokeS* const ps
     pbc = (byteT*)pInfo3DataP ;
     byteT* pbc ;
 
-    grabC&     grab_pnnAllOKP = cbfParmP.grab_pnnAllOK  ;
-    countT&    idSubMaxP      = cbfParmP.idSubMax       ;
-    nicNameC*& pnnAllOKP      = cbfParmP.pnnAllOK       ;
-    countT&    cnnAllOKP      = cbfParmP.cnnAllOK       ;
-
-    countT& tallyIgnoredP   = *cbfParmP.pTallyIgnored   ;
-    countT& epochAllowLathP = *cbfParmP.pEpochAllowLath ;
-    countT& epochAllowWothP = *cbfParmP.pEpochAllowWoth ;
-    booksC& bksGeigerP      = *cbfParmP.pBksGeiger      ;
-    stackC& stNnRequestedP  = *cbfParmP.pStkNnRequested ;
-    etherC& etRock          = *cbfParmP.pEtRock         ;
-    etherC& etThread        = *cbfParmP.pEtThread       ;
-    etherC& ether           = *cbfParmP.pEther          ;
-    tin0S&  tin0P           = *cbfParmP.pTin0           ;
+    grabC&     grab_pnnAllOKP  = cbfParmP.grab_pnnAllOK  ;
+    countT&    idSubMaxP       = cbfParmP.idSubMax       ;
+    nicNameC*& pnnAllOKP       = cbfParmP.pnnAllOK       ;
+    countT&    cnnAllOKP       = cbfParmP.cnnAllOK       ;
+    countT&    tallyIgnoredP   = cbfParmP.tallyIgnored   ;
+    countT&    epochAllowLathP = cbfParmP.epochAllowLath ;
+    countT&    epochAllowWothP = cbfParmP.epochAllowWoth ;
+    booksC&    bksGeigerP      = cbfParmP.bksGeiger      ;
+    stackC&    stNnRequestedP  = cbfParmP.stkNnRequested ;
+    etherC&    etRock          = cbfParmP.etRock         ;
+    etherC&    etThread        = cbfParmP.etThread       ;
+    etherC&    ether           = cbfParmP.ether          ;
+    tin0S&     tin0P           = cbfParmP.tin0           ;
 
     cbfParmS& cbfParmP = *(cbfParmS*)postUserNotUsedP ;
 {
@@ -1408,32 +1407,30 @@ osTextT* ppostProtocol[] =
     idSubMax( idSubMaxP ) ,
     pnnAllOK( pnnAllOKP ) ,
     cnnAllOK( cnnAllOKP ) ,
-
-    pTallyIgnored(   &tallyIgnoredP   ) ,
-    pEpochAllowLath( &epochAllowLathP ) ,
-    pEpochAllowWoth( &epochAllowWothP ) ,
-    pBksGeiger(      &bksGeigerP      ) ,
-    pStkNnRequested( &stNnRequestedP  ) ,
-    pEtRock(         &etRockP         ) ,
-    pEtThread(       &etThreadP       ) ,
-    pEther(          &etherP          ) ,
-    pTin0(           &tin0P           ) ,
+    tallyIgnored(   tallyIgnoredP   ) ,
+    epochAllowLath( epochAllowLathP ) ,
+    epochAllowWoth( epochAllowWothP ) ,
+    bksGeiger(      bksGeigerP      ) ,
+    stkNnRequested( stNnRequestedP  ) ,
+    etRock(         etRockP         ) ,
+    etThread(       etThreadP       ) ,
+    ether(          etherP          ) ,
+    tin0(           tin0P           ) ,
     inline cbfParmS( tin0S& tin0P , etherC& etherP , etherC& etThreadP , etherC& etRockP , stackC& stNnRequestedP , booksC& bksGeigerP , countT& epochAllowWothP , countT& epochAllowLathP , countT& tallyIgnoredP , countT& cnnAllOKP , nicNameC*& pnnAllOKP , countT& idSubMaxP , grabC& grab_pnnAllOKP ) :
 
-    grabC&     grab_pnnAllOK ;
-    countT&    idSubMax      ;
-    nicNameC*& pnnAllOK      ;
-    countT&    cnnAllOK      ;
-
-    countT* pTallyIgnored    ;
-    countT* pEpochAllowLath  ;
-    countT* pEpochAllowWoth  ;
-    booksC* pBksGeiger       ;
-    stackC* pStkNnRequested  ;
-    etherC* pEtRock          ;
-    etherC* pEtThread        ;
-    etherC* pEther           ;
-    tin0S*  pTin0            ;
+    grabC&     grab_pnnAllOK  ;
+    countT&    idSubMax       ;
+    nicNameC*& pnnAllOK       ;
+    countT&    cnnAllOK       ;
+    countT&    tallyIgnored   ;
+    countT&    epochAllowLath ;
+    countT&    epochAllowWoth ;
+    booksC&    bksGeiger      ;
+    stackC&    stkNnRequested ;
+    etherC&    etRock         ;
+    etherC&    etThread       ;
+    etherC&    ether          ;
+    tin0S&     tin0           ;
 {
 struct cbfParmS
 
