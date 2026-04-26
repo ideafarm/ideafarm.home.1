@@ -84,6 +84,7 @@ DONE( tmCatchF )
                     {
                     else
                     }
+meanErrorSelf = DEBUGbIAS ;
                         //meanErrorSelf = accumulatorSelf / cAccumulatedSelf ;        //A:ASSUME: THIS IS AN UNBIASED ESTIMATOR OF THE ERROR INTRODUCED BY CPU EXECUTION TIME
                         //cAccumulatedSelf ++ ;
                         //accumulatorSelf += scErrorSelf ;
@@ -165,6 +166,8 @@ DONE( tmCatchF )
 {
 if( pTaskP && pTaskP->c1 )
 TASK( tmCatchF )
+
+#define DEBUGbIAS ( 0x50 )
 
 /*1*/WAKEhIDE( "doodle coherent time" )/*1*/
 /**/
