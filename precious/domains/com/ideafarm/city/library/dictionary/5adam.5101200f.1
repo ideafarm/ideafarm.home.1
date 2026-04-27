@@ -19,6 +19,7 @@ DONE( tmWorkF )
     }
         }
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnGo1 , (byteT*)&timeN , sizeof timeN ) ;
+            etThread.traceF( tin0P , T("launching [time]:    ")+TT(timeN.time1,timeN.time2) , flTRACE_NOpREFIX ) ;
 
             else                     timeN.time1 = 0x22 ;
             if( nnMeInner == nnGo1 ) timeN.time1 = 0x33 ;
@@ -209,6 +210,7 @@ CODEmINE:
                 if( nnMeInnerP == nnHe )
             {
             if( cbi == sizeof pTimeRecord )
+            etThread.traceF( tin0P , T("receiving [time]:    ")+TT(pTimeIn->time1,pTimeIn->time2) , flTRACE_NOpREFIX ) ;
         {
         if( !( cbi % sizeof( timeS ) ) )
 
