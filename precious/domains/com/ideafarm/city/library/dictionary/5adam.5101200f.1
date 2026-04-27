@@ -172,15 +172,21 @@ CODEmINE:
             {
             else
             }
-                etThread.traceF( tin0P , T("time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
+                }
+                    etThread.traceF( tin0P , T("time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
 
-                etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , pTimeRecord[ 1 ].time1 , pTimeRecord[ 1 ].time2 ) ;         // timeB IS THE TIME TAKEN BY THE PEER   TO WRITE ALL OF ITS ENTRIES IN THE RECORD
-                sCountT timeB2 = pTimeRecord[ TIMESiNrECORD - 1 ].time2 ;
-                countT  timeB1 = pTimeRecord[ TIMESiNrECORD - 1 ].time1 ;
+                    etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , pTimeRecord[ 1 ].time1 , pTimeRecord[ 1 ].time2 ) ;         // timeB IS THE TIME TAKEN BY THE PEER   TO WRITE ALL OF ITS ENTRIES IN THE RECORD
+                    sCountT timeB2 = pTimeRecord[ TIMESiNrECORD - 1 ].time2 ;
+                    countT  timeB1 = pTimeRecord[ TIMESiNrECORD - 1 ].time1 ;
 
-                etThread.osTimeSubtractF( tin0P , timeA1 , timeA2 , pTimeRecord[ 0 ].time1 , pTimeRecord[ 0 ].time2 ) ;         // timeA IS THE TIME TAKEN BY THE ORIGIN TO WRITE ALL OF ITS ENTRIES IN THE RECORD
-                sCountT timeA2 = pTimeRecord[ TIMESiNrECORD - 2 ].time2 ;
-                countT  timeA1 = pTimeRecord[ TIMESiNrECORD - 2 ].time1 ;
+                    etThread.osTimeSubtractF( tin0P , timeA1 , timeA2 , pTimeRecord[ 0 ].time1 , pTimeRecord[ 0 ].time2 ) ;         // timeA IS THE TIME TAKEN BY THE ORIGIN TO WRITE ALL OF ITS ENTRIES IN THE RECORD
+                    sCountT timeA2 = pTimeRecord[ TIMESiNrECORD - 2 ].time2 ;
+                    countT  timeA1 = pTimeRecord[ TIMESiNrECORD - 2 ].time1 ;
+                {
+                else
+                }
+                {
+                if( nnMeInnerP == nnHe )
             {
             if( cbi == sizeof pTimeRecord )
         {
