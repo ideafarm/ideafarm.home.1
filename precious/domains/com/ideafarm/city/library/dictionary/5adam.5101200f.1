@@ -71,11 +71,13 @@ DONE( tmCatchF )
     }
         etThread.delF( tin0P , pbi ) ;
         }
+#endif
+--------------------------------------------------------------------------------------------------------
             }
                 break ;
                 }
                     }
-                        etThread.traceF( tin0P , /*T("[nnHe,idpHe,pTime[0],pTime[1],pTime[2],timeR1,timeR2,timeE1,scErrorPeers,timeE2,meanErrorPeers,meanErrorSelf]:    ")+T(nnHe)+tb4+TF3(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+*/TT(pTime[0].time1,pTime[0].time2)+tb4+TT(pTime[1].time1,pTime[1].time2)+tb4+TT(pTime[2].time1,pTime[2].time2)+tb4+TT(timeR1,timeR2)+tb4+TT(timeE1,timeE2)+tb4+TF3(scErrorPeers,flFORMAT_NObIGITvALUES,8)+tb4+TF3(meanErrorPeers,flFORMAT_NObIGITvALUES,8)+tb4+TF3(meanErrorSelf,flFORMAT_NObIGITvALUES,8) , flTRACE_NOpREFIX ) ;
+                        etThread.traceF( tin0P , /*T("[nnHe,idpHe,pTimeIn[0],pTimeIn[1],pTimeIn[2],timeR1,timeR2,timeE1,scErrorPeers,timeE2,meanErrorPeers,meanErrorSelf]:    ")+T(nnHe)+tb4+TF3(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+*/TT(pTimeIn[0].time1,pTimeIn[0].time2)+tb4+TT(pTimeIn[1].time1,pTimeIn[1].time2)+tb4+TT(pTimeIn[2].time1,pTimeIn[2].time2)+tb4+TT(timeR1,timeR2)+tb4+TT(timeE1,timeE2)+tb4+TF3(scErrorPeers,flFORMAT_NObIGITvALUES,8)+tb4+TF3(meanErrorPeers,flFORMAT_NObIGITvALUES,8)+tb4+TF3(meanErrorSelf,flFORMAT_NObIGITvALUES,8) , flTRACE_NOpREFIX ) ;
 
                         sCountT meanErrorPeers = accumulatorPeers / cAccumulatedPeers ;
                         cAccumulatedPeers ++ ;
@@ -92,52 +94,82 @@ meanErrorSelf = DEBUGbIAS ;
                     {
                     if( nnMeInnerP == nnHe )
 
-                    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , pTime[ 0 ].time1 , pTime[ 0 ].time2 ) ;  // timeE IS ORIGIN'S ERROR RELATIVE TO PEER, TAKEN TO BE TRUE
+                    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , pTimeIn[ 0 ].time1 , pTimeIn[ 0 ].time2 ) ;  // timeE IS ORIGIN'S ERROR RELATIVE TO PEER, TAKEN TO BE TRUE
                     sCountT timeE2 = timeP2 ;
                     countT  timeE1 = timeP1 ;
 
-                    sCountT timeP2 = pTime[ 1 ].time2 ;
-                    countT  timeP1 = pTime[ 1 ].time1 - timeR1 ;    // timeP  IS ESTIMATE OF PEER'S TIME WHEN ORIGIN SET pTime[ 0 ]
+                    sCountT timeP2 = pTimeIn[ 1 ].time2 ;
+                    countT  timeP1 = pTimeIn[ 1 ].time1 - timeR1 ;    // timeP  IS ESTIMATE OF PEER'S TIME WHEN ORIGIN SET pTimeIn[ 0 ]
                     timeR1 >>= 1 ;                                  // timeR1 IS ESTIMATE OF WO WAY TRANSIT TIME
                 {
                 if( !timeR2 )
-                etThread.osTimeSubtractF( tin0P , timeR1 , timeR2 , pTime[ 0 ].time1 , pTime[ 0 ].time2 ) ;  // timeR IS ROUNDTRIP TIME
-                sCountT timeR2 = pTime[2].time2 ;
-                countT  timeR1 = pTime[2].time1 ;
+                etThread.osTimeSubtractF( tin0P , timeR1 , timeR2 , pTimeIn[ 0 ].time1 , pTimeIn[ 0 ].time2 ) ;  // timeR IS ROUNDTRIP TIME
+                sCountT timeR2 = pTimeIn[2].time2 ;
+                countT  timeR1 = pTimeIn[2].time1 ;
 
-                // pTime[ 2 ] IS ORIGIN TIME ENDED
-                // pTime[ 1 ] IS PEER   TIME RECEIVED
-                // pTime[ 0 ] IS ORIGIN TIME STARTED
+                // pTimeIn[ 2 ] IS ORIGIN TIME ENDED
+                // pTimeIn[ 1 ] IS PEER   TIME RECEIVED
+                // pTimeIn[ 0 ] IS ORIGIN TIME STARTED
             {
             case sizeof( timeS ) * 3 :
             }
                 break ;
-                //etThread.traceF( tin0P , /*T("[nnHe,idpHe,pTime[0],pTime[1],timeE1,timeE2]:    ")+T(nnHe)+tb4+TF3(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+*/TT(pTime[0].time1,pTime[0].time2)+tb4+TT(pTime[1].time1,pTime[1].time2)+tb4+TT(timeE1,timeE2) , flTRACE_NOpREFIX ) ;
-                etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , pTime[ 0 ].time1 , pTime[ 0 ].time2 ) ;
-                sCountT timeE2 = pTime[1].time2 ;
-                countT  timeE1 = pTime[1].time1 ;
+                //etThread.traceF( tin0P , /*T("[nnHe,idpHe,pTimeIn[0],pTimeIn[1],timeE1,timeE2]:    ")+T(nnHe)+tb4+TF3(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+*/TT(pTimeIn[0].time1,pTimeIn[0].time2)+tb4+TT(pTimeIn[1].time1,pTimeIn[1].time2)+tb4+TT(timeE1,timeE2) , flTRACE_NOpREFIX ) ;
+                etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , pTimeIn[ 0 ].time1 , pTimeIn[ 0 ].time2 ) ;
+                sCountT timeE2 = pTimeIn[1].time2 ;
+                countT  timeE1 = pTimeIn[1].time1 ;
 
                 sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)pTime3 , sizeof pTime3 ) ;
                 etThread.osTimeNowF( tin0P , pTime3[2].time1 , pTime3[2].time2 ) ;
                 pTime3[ 2 ] = timeZe     ;
-                pTime3[ 1 ] = pTime[ 1 ] ;
-                pTime3[ 0 ] = pTime[ 0 ] ;
+                pTime3[ 1 ] = pTimeIn[ 1 ] ;
+                pTime3[ 0 ] = pTimeIn[ 0 ] ;
                 timeS pTime3[ 3 ] ;
             {
             case sizeof( timeS ) * 2 :
             }
                 break ;
-                //etThread.traceF( tin0P , /*T("[nnHe,idpHe,pTime[0]]:    ")+T(nnHe)+tb4+TF3(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+*/TT(pTime[0].time1,pTime[0].time2) , flTRACE_NOpREFIX ) ;
+                //etThread.traceF( tin0P , /*T("[nnHe,idpHe,pTimeIn[0]]:    ")+T(nnHe)+tb4+TF3(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+*/TT(pTimeIn[0].time1,pTimeIn[0].time2) , flTRACE_NOpREFIX ) ;
                 sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)pTime2 , sizeof pTime2 ) ;
                 etThread.osTimeNowF( tin0P , pTime2[1].time1 , pTime2[1].time2 ) ;
                 pTime2[ 1 ] = timeZe     ;
-                pTime2[ 0 ] = pTime[ 0 ] ;
+                pTime2[ 0 ] = pTimeIn[ 0 ] ;
                 timeS pTime2[ 2 ] ;
             {
             case sizeof( timeS ) :
         {
         switch( cbi )
-        timeS* pTime = (timeS*)pbi ;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CODEmINE:
+#if defined( NEVERdEFINED )
+
+        }
+            }
+                sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)pTimeRecord , ( offt + 1 ) * sizeof( timeS ) ) ;
+                etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
+
+                                                            pTimeRecord[ offt ] = timeZe          ;
+                for( offt = 0 ; offt < cTimesIn ; offt ++ ) pTimeRecord[ offt ] = pTimeIn[ offt ] ;
+                ZE( countT , offt ) ;
+                countT cTimesIn = cbi / sizeof( timeS ) ;
+            {
+            else
+            }
+                etThread.traceF( tin0P , T("time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
+
+                etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , pTimeRecord[ 1 ].time1 , pTimeRecord[ 1 ].time2 ) ;         // timeB IS THE TIME TAKEN BY THE PEER   TO WRITE ALL OF ITS ENTRIES IN THE RECORD
+                sCountT timeB2 = pTimeRecord[ TIMESiNrECORD - 1 ].time2 ;
+                countT  timeB1 = pTimeRecord[ TIMESiNrECORD - 1 ].time1 ;
+
+                etThread.osTimeSubtractF( tin0P , timeA1 , timeA2 , pTimeRecord[ 0 ].time1 , pTimeRecord[ 0 ].time2 ) ;         // timeA IS THE TIME TAKEN BY THE ORIGIN TO WRITE ALL OF ITS ENTRIES IN THE RECORD
+                sCountT timeA2 = pTimeRecord[ TIMESiNrECORD - 2 ].time2 ;
+                countT  timeA1 = pTimeRecord[ TIMESiNrECORD - 2 ].time1 ;
+            {
+            if( cbi == sizeof pTimeRecord )
+        {
+        if( !( cbi % sizeof( timeS ) ) )
+
+        timeS* pTimeIn = (timeS*)pbi ;
         //etThread.traceF( tin0P , T("[cbi]:    ")+TF3(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
         sCatch.readF( tin0P , pbi , cbi , idpHe , nnHe ) ; ___( pbi ) ;
         nicNameC nnHe ;
@@ -146,6 +178,7 @@ meanErrorSelf = DEBUGbIAS ;
         ZE( byteT* , pbi ) ;
     {
     while( !ether && !etThread )
+    timeS pTimeRecord[ TIMESiNrECORD ] ;                 // MUST BE AT LEAST 4 ELEMENTS ; 4 ELEMENTS CONTAINS 1 ROUNDTRIP FOR ORIGINATOR AND 1 ROUNDTRIP FOR PEER
     ZE( sCountT , meanErrorPeers    ) ;
     ZE( sCountT , meanErrorSelf     ) ;
     ZE( sCountT , cAccumulatedPeers ) ;
@@ -162,10 +195,12 @@ meanErrorSelf = DEBUGbIAS ;
     if( ifcPORToLD2_CATCH != sCatch.bindF( tin0P , ifcPORToLD2_CATCH ) ) { BLAMMOiD( 0x33311333 ) ; }
     socketC sCatch( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
-    nicNameC nnMeInnerP = *(nicNameC*)pTaskP->c1 ;
+    nicNameC nnMeInnerP = *(nicNameC*)pTaskP+>c1 ;
 {
-if( pTaskP && pTaskP->c1 )
+if( pTaskP && pTaskP+>c1 )
 TASK( tmCatchF )
+
+#define TIMESiNrECORD ( 0x10 )
 
 #define DEBUGbIAS ( 0x50 )
 
@@ -178,5 +213,5 @@ TASK( tmCatchF )
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992+2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
