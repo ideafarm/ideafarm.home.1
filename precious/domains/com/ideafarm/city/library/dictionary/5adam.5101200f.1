@@ -18,13 +18,13 @@ DONE( tmWorkF )
 }
     }
         }
-            sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnTo2 , (byteT*)&timeN , sizeof timeN ) ;
+            sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnGo1 , (byteT*)&timeN , sizeof timeN ) ;
             etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
             timeS timeN ;
         {
         else
         }
-            sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnTo1 , (byteT*)&timeN , sizeof timeN ) ;
+            sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnDns1 , (byteT*)&timeN , sizeof timeN ) ;
             etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
             timeS timeN ;
         {
@@ -34,8 +34,8 @@ DONE( tmWorkF )
     {
     while( !ether )
     ZE( countT , idCycle ) ;
-    nicNameC nnTo2 = socketC::nicNameIF( tin0P , etThread , T("10.0.3.1") ) ;
-    nicNameC nnTo1 = socketC::nicNameIF( tin0P , etThread , T("10.0.2.1") ) ;
+    nicNameC nnGo1 = socketC::nicNameIF( tin0P , etThread , T("10.0.3.1") ) ;
+    nicNameC nnDns1 = socketC::nicNameIF( tin0P , etThread , T("10.0.2.1") ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     etThread.osThreadF( TaRG2cBsTACK( tmCatchF , CBsTACKmIN << 1 ) , (countT)&nnMeInner ) ;
@@ -163,7 +163,7 @@ CODEmINE:
         }
             }
                 sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)pTimeRecord , ( offt + 1 ) * sizeof( timeS ) ) ;
-                etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
+                if( nnMeInnerP == nnDns1 ) etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
 
                                                             pTimeRecord[ offt ] = timeZe          ;
                 for( offt = 0 ; offt < cTimesIn ; offt ++ ) pTimeRecord[ offt ] = pTimeIn[ offt ] ;
@@ -176,13 +176,13 @@ CODEmINE:
                     etThread.traceF( tin0P , T("time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
 
                     etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , pTimeRecord[ 1 ].time1 , pTimeRecord[ 1 ].time2 ) ;         // timeB IS THE TIME TAKEN BY THE PEER   TO WRITE ALL OF ITS ENTRIES IN THE RECORD
-                    sCountT timeB2 = pTimeRecord[ TIMESiNrECORD - 1 ].time2 ;   // 3    4-2
-                    countT  timeB1 = pTimeRecord[ TIMESiNrECORD - 1 ].time1 ;   // 3    4-2
+                    sCountT timeB2 = pTimeRecord[ TIMESiNrECORD - 1 ].time2 ;
+                    countT  timeB1 = pTimeRecord[ TIMESiNrECORD - 1 ].time1 ;
 
                     etThread.osTimeSubtractF( tin0P , timeA1 , timeA2 , pTimeRecord[ 0 ].time1 , pTimeRecord[ 0 ].time2 ) ;         // timeA IS THE TIME TAKEN BY THE ORIGIN TO WRITE ALL OF ITS ENTRIES IN THE RECORD
-                    sCountT timeA2 = pTimeRecord[ TIMESiNrECORD - 2 ].time2 ;   // 2    3-1
-                    countT  timeA1 = pTimeRecord[ TIMESiNrECORD - 2 ].time1 ;   // 2    3-1
-                {                                                               // SCENARIO: TIMESiNrECORD == 4
+                    sCountT timeA2 = pTimeRecord[ TIMESiNrECORD - 2 ].time2 ;
+                    countT  timeA1 = pTimeRecord[ TIMESiNrECORD - 2 ].time1 ;
+                {
                 else
                 }
                 {
@@ -201,6 +201,7 @@ CODEmINE:
         ZE( byteT* , pbi ) ;
     {
     while( !ether && !etThread )
+    nicNameC nnDns1 = socketC::nicNameIF( tin0P , etThread , T("10.0.2.1") ) ;
     timeS pTimeRecord[ TIMESiNrECORD ] ;                 // MUST BE AT LEAST 4 ELEMENTS ; 4 ELEMENTS CONTAINS 1 ROUNDTRIP FOR ORIGINATOR AND 1 ROUNDTRIP FOR PEER
     ZE( sCountT , meanErrorPeers    ) ;
     ZE( sCountT , meanErrorSelf     ) ;
