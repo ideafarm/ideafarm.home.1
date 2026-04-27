@@ -8,10 +8,10 @@
 
 
 }
-    timeFromMsIF( tin0P , time1P , time2P , ms ) ;
+    timeFromMsIF( tin0P , time1P , time2P , ms ) ;              //U:: ENHANCE THIS FUNCTION TO DETECT WRAPPING OF timeGetTime AND TO THEN RETURN THE CORRECT ELAPSED TIME ; DO THIS BY USING A countT MEMBER OF tin0P TO STORE CARRY COUNT (I.E. EFFECTIVELY EXPAND timeGetTime() TO RETURN A count04T)
     #endif
         ms = ((tin1S&)tin0P).brcRaw ;
-        BOSdOnOTtEST( WHATgbo , timeGetTime() )
+        BOSdOnOTtEST( WHATgbo , timeGetTime() )                 //U:: THIS IS ONLY VALID IF timeGetTime() HAS NOT WRAPPED (EVERY 49 DAYS)
     #elif defined( __NT__ )
         BOSpOOP
         BOSI( WHATgbo , BOSfAIL , DosQuerySysInfo( QSV_MS_COUNT , QSV_MS_COUNT , &ms , sizeof ms ) )
