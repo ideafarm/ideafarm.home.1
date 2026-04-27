@@ -186,15 +186,15 @@ CODEmINE:
 
 
                     }
-                        etThread.traceF( tin0P , tb4+TT(pTimeRecord[offt].time1,pTimeRecord[offt].time2) , flTRACE_NOpREFIX ) ;
+                        etThread.traceF( tin0P , tb4+TT(pTimeIn[offt].time1,pTimeIn[offt].time2) , flTRACE_NOpREFIX ) ;
                     {
                     for( countT offt = 0 ; offt < TIMESiNrECORD ; offt ++ )
 
-                    etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , pTimeRecord[ 1 ].time1 , pTimeRecord[ 1 ].time2 ) ;         // timeB IS THE TIME TAKEN BY THE PEER TO WRITE ALL OF ITS ENTRIES IN THE RECORD
-                    sCountT timeB2 = pTimeRecord[ TIMESiNrECORD - 1 ].time2 ;
-                    countT  timeB1 = pTimeRecord[ TIMESiNrECORD - 1 ].time1 ;
+                    etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , pTimeIn[ 1 ].time1 , pTimeIn[ 1 ].time2 ) ;         // timeB IS THE TIME TAKEN BY THE PEER TO WRITE ALL OF ITS ENTRIES IN THE RECORD
+                    sCountT timeB2 = pTimeIn[ TIMESiNrECORD - 1 ].time2 ;
+                    countT  timeB1 = pTimeIn[ TIMESiNrECORD - 1 ].time1 ;
 
-                    etThread.osTimeSubtractF( tin0P , timeA1 , timeA2 , pTimeRecord[ 0 ].time1 , pTimeRecord[ 0 ].time2 ) ;         // timeA IS THE TIME TAKEN BY THE ORIGIN (ME) TO RECEIVE THE COMPLETED LIST OF PAIRS
+                    etThread.osTimeSubtractF( tin0P , timeA1 , timeA2 , pTimeIn[ 0 ].time1 , pTimeIn[ 0 ].time2 ) ;         // timeA IS THE TIME TAKEN BY THE ORIGIN (ME) TO RECEIVE THE COMPLETED LIST OF PAIRS
                     sCountT timeA2 = timeEnd.time2 ;
                     countT  timeA1 = timeEnd.time1 ;
 
@@ -222,6 +222,7 @@ CODEmINE:
     {
     while( !ether && !etThread )
     nicNameC nnGo1 = socketC::nicNameIF( tin0P , etThread , T("10.0.3.1") ) ;
+    thirdC::c_memsetIF( tin0P , (byteT*)pTimeRecord , sizeof pTimeRecord ) ;
     timeS pTimeRecord[ TIMESiNrECORD ] ;                 // MUST BE AT LEAST 4 ELEMENTS ; 4 ELEMENTS CONTAINS 1 ROUNDTRIP FOR ORIGINATOR AND 1 ROUNDTRIP FOR PEER
     ZE( sCountT , meanErrorPeers    ) ;
     ZE( sCountT , meanErrorSelf     ) ;
