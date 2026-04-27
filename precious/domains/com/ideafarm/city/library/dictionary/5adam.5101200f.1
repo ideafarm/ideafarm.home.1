@@ -19,6 +19,8 @@ DONE( tmWorkF )
     }
         }
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnGo1 , (byteT*)&timeN , sizeof timeN ) ;
+
+            else                     timeN.time1 = 0x22 ;
             if( nnMeInner == nnGo1 ) etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
             timeS timeN ;
         {
@@ -163,6 +165,8 @@ CODEmINE:
         }
             }
                 sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)pTimeRecord , ( offt + 1 ) * sizeof( timeS ) ) ;
+
+                else                      pTimeRecord[ offt ].time1 = 0x22222222 ;
                 if( nnMeInnerP == nnGo1 ) etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
 
                                                             pTimeRecord[ offt ] = timeZe          ;
@@ -229,7 +233,7 @@ CODEmINE:
 if( pTaskP && pTaskP->c1 )
 TASK( tmCatchF )
 
-#define TIMESiNrECORD ( 0x4 )
+#define TIMESiNrECORD ( 0x2 )
 //MUST BE EVEN, SO THAT THE ORIGIN WRITES THE WOTH AND THE PEER WRITES THE LATH
 
 #define DEBUGbIAS ( 0x50 )
