@@ -28349,6 +28349,7 @@ code may use setIfZeAM on *(countT*)this
     const countT        idMe ;
     countT              idSerialLath ;
     countT              idCellLath ;
+    count04T            ticksPerMs ;
     count04T            osTicksAtCt ;
     countT              timeBoot1 ;
     sCountT             timeBoot2 ;
@@ -31177,7 +31178,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34015.thirdC.msFromTimeIF!||
  static countT secondsFromTimeIF( tin0S& tin0P , const countT time1P , const sCountT time2P = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34044.thirdC.secondsFromTimeIF!||
- static voidT timeFromMsIF( tin0S& tin0P , countT& time1P , sCountT& time2P , const countT msP ) ;
+ static voidT timeFromMsIF( tin0S& tin0P , countT& time1P , sCountT& time2P , const count04T msP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34069.thirdC.timeFromMsIF!||
  static voidT timeFromSecondsIF( tin0S& tin0P , countT& time1P , sCountT& time2P , const countT sP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3406a.thirdC.timeFromSecondsIF!||

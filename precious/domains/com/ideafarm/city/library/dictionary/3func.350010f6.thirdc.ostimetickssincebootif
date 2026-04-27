@@ -10,9 +10,10 @@
 }
     #endif
 
-        return _brcRaw ;
-        BOSnOtIN( GetTickCount64() )
-        ZE( count04T , _brcRaw ) ;
+        return ticksSinceBoot ;
+
+        QueryPerformanceCounter( (LARGE_INTEGER*)&ticksSinceBoot ) ;
+        count04T ticksSinceBoot ;
 
     #elif defined( __NT__ )
         //U:

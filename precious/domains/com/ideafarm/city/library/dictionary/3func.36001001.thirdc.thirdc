@@ -67,6 +67,9 @@
             ZE( countT , timeE1 ) ;
             osTimeNowF( tin0P , ph->timeBoot1 , ph->timeBoot2 , 1 ) ;
             // TIME AT BOOT = TIME NOW - ELAPSED TIME SINCE BOOT
+
+            ph->ticksPerMs /= 1000 ;
+            QueryPerformanceFrequency( (LARGE_INTEGER*)&ph->ticksPerMs ) ;
         {
         if( ph && !ph->timeBoot1 && !ph->timeBoot2 ) //ASSUME: NO RACE.  SATISFIED IF CLOAK STARTS WOTH AND IT LAUNCHES ALL OTHER IFC PROCESSES
         homeS* ph = (homeS*)(byteT*)processGlobal4I.napHome ;
