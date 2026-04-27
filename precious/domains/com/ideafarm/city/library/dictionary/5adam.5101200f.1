@@ -21,7 +21,8 @@ DONE( tmWorkF )
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnGo1 , (byteT*)&timeN , sizeof timeN ) ;
 
             else                     timeN.time1 = 0x22 ;
-            if( nnMeInner == nnGo1 ) etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
+            if( nnMeInner == nnGo1 ) timeN.time1 = 0x33 ;
+            //if( nnMeInner == nnGo1 ) etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
             timeS timeN ;
         {
         else
@@ -167,7 +168,8 @@ CODEmINE:
                 sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)pTimeRecord , ( offt + 1 ) * sizeof( timeS ) ) ;
 
                 else                      pTimeRecord[ offt ].time1 = 0x22222222 ;
-                if( nnMeInnerP == nnGo1 ) etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
+                if( nnMeInnerP == nnGo1 ) pTimeRecord[ offt ].time1 = 0x33333333 ;
+                //if( nnMeInnerP == nnGo1 ) etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
 
                                                             pTimeRecord[ offt ] = timeZe          ;
                 for( offt = 0 ; offt < cTimesIn ; offt ++ ) pTimeRecord[ offt ] = pTimeIn[ offt ] ;
