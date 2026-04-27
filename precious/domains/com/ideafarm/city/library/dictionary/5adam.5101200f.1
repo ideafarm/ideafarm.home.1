@@ -32,7 +32,7 @@ DONE( tmWorkF )
         //else                     timeN.time1 = 0x22 ;
         //if( nnMeInner == nnGo1 ) timeN.time1 = 0x33 ;
 
-        etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 , 1 ) ;
+        etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
         timeS timeN ;
 
         ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
@@ -85,7 +85,7 @@ DONE( tmCatchF )
                 //else                      pTimeRecord[ offt ].time1 = 0x2222 ;
                 //if( nnMeInnerP == nnGo1 ) pTimeRecord[ offt ].time1 = 0x3333 ;
 
-                etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 , 1 ) ;
+                etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
                                                             pTimeRecord[ offt ] = timeZe          ;
                 for( offt = 0 ; offt < cTimesIn ; offt ++ ) pTimeRecord[ offt ] = pTimeIn[ offt ] ;
                 ZE( countT , offt ) ;
@@ -125,7 +125,7 @@ DONE( tmCatchF )
                     //else                      timeEnd.time1 = 0x22222222 ;
                     //if( nnMeInnerP == nnGo1 ) timeEnd.time1 = 0x33333333 ;
 
-                    etThread.osTimeNowF( tin0P , timeEnd.time1 , timeEnd.time2 , 1 ) ;
+                    etThread.osTimeNowF( tin0P , timeEnd.time1 , timeEnd.time2 ) ;
                     timeS timeEnd ;
                 {
                 else
