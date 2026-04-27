@@ -175,6 +175,11 @@ CODEmINE:
                 }
                     etThread.traceF( tin0P , T("time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
 
+                    }
+                        etThread.traceF( tin0P , tb4+TT(pTimeRecord[offt].time1,pTimeRecord[offt].time2) ) ;
+                    {
+                    for( countT offt = 0 ; offt < TIMESiNrECORD ; offt ++ )
+
                     etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , pTimeRecord[ 1 ].time1 , pTimeRecord[ 1 ].time2 ) ;         // timeB IS THE TIME TAKEN BY THE PEER   TO WRITE ALL OF ITS ENTRIES IN THE RECORD
                     sCountT timeB2 = pTimeRecord[ TIMESiNrECORD - 1 ].time2 ;
                     countT  timeB1 = pTimeRecord[ TIMESiNrECORD - 1 ].time1 ;
