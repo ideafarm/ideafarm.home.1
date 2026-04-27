@@ -35,7 +35,7 @@ DONE( tmWorkF )
         etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
         timeS timeN ;
 
-        ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
     {
     while( !ether )
     ZE( countT , idCycle ) ;
@@ -65,6 +65,9 @@ DONE( tmWorkF )
         ZE( nicNameC* , pNicNameMe ) ;
     {
     nicNameC nnMeInner ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ;
 
     _IO_
 {
