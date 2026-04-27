@@ -167,8 +167,8 @@ CODEmINE:
             }
                 sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)pTimeRecord , ( offt + 1 ) * sizeof( timeS ) ) ;
 
-                else                      pTimeRecord[ offt ].time1 = 0x22222222 ;
-                if( nnMeInnerP == nnGo1 ) pTimeRecord[ offt ].time1 = 0x33333333 ;
+                else                      pTimeRecord[ offt ].time1 = 0x2222 ;
+                if( nnMeInnerP == nnGo1 ) pTimeRecord[ offt ].time1 = 0x3333 ;
                 //if( nnMeInnerP == nnGo1 ) etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
 
                                                             pTimeRecord[ offt ] = timeZe          ;
@@ -182,6 +182,9 @@ CODEmINE:
                     etThread.traceF( tin0P , T("time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
 
                     etThread.traceF( tin0P , tb4+TT(timeEnd.time1,timeEnd.time2) , flTRACE_NOpREFIX ) ;
+
+
+
                     }
                         etThread.traceF( tin0P , tb4+TT(pTimeRecord[offt].time1,pTimeRecord[offt].time2) , flTRACE_NOpREFIX ) ;
                     {
@@ -195,7 +198,9 @@ CODEmINE:
                     sCountT timeA2 = timeEnd.time2 ;
                     countT  timeA1 = timeEnd.time1 ;
 
-                    etThread.osTimeNowF( tin0P , timeEnd.time1 , timeEnd.time2 ) ;
+                    else                      timeEnd.time1 = 0x22222222 ;
+                    if( nnMeInnerP == nnGo1 ) timeEnd.time1 = 0x33333333 ;
+                    //etThread.osTimeNowF( tin0P , timeEnd.time1 , timeEnd.time2 ) ;
                     timeS timeEnd ;
                 {
                 else
