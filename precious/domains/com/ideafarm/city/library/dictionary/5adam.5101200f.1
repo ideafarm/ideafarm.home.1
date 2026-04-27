@@ -19,20 +19,20 @@ DONE( tmWorkF )
     }
         }
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnGo1 , (byteT*)&timeN , sizeof timeN ) ;
-            etThread.traceF( tin0P , T("launching [time]:    ")+TT(timeN.time1,timeN.time2) , flTRACE_NOpREFIX ) ;
-
-            else                     timeN.time1 = 0x22 ;
-            if( nnMeInner == nnGo1 ) timeN.time1 = 0x33 ;
-            //if( nnMeInner == nnGo1 ) etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
-            timeS timeN ;
         {
         else
         }
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnDns1 , (byteT*)&timeN , sizeof timeN ) ;
-            etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
-            timeS timeN ;
         {
-        if( ( ++ idCycle ) % 2 )
+        if( nnMeInner == nnGo1 ) 
+        //if( ( ++ idCycle ) % 2 )
+
+        etThread.traceF( tin0P , T("launching [time]:    ")+TT(timeN.time1,timeN.time2) , flTRACE_NOpREFIX ) ;
+
+        else                     timeN.time1 = 0x22 ;
+        if( nnMeInner == nnGo1 ) timeN.time1 = 0x33 ;
+        //if( nnMeInner == nnGo1 ) etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
+        timeS timeN ;
 
         ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
     {
