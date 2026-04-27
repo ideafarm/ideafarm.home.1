@@ -106,7 +106,7 @@ DONE( tmCatchF )
                         sCountT timeEP2 = pTimeIn[ TIMESiNrECORD - 1 ].time2 ;
                         countT  timeEP1 = pTimeIn[ TIMESiNrECORD - 1 ].time1 ;
                     {
-                    if( !timeA1 && !timeA2 && !timeB1 && !timeB2 )
+                    if( timeA1 < TUCK && !timeA2 && timeB1 < TUCK && !timeB2 )
                     //etThread.traceF( tin0P , T("time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
 
                     //etThread.traceF( tin0P , tb4+TT(timeEnd.time1,timeEnd.time2) , flTRACE_NOpREFIX ) ;
