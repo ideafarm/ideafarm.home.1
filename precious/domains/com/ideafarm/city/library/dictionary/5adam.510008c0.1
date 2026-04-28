@@ -59,7 +59,7 @@ DONE( tmWorkF )
                     #endif
                         if( idPass == 1 )
                     #else
-                        if( bOpenBrowserWhenUpUp && bUpRouter1 && bUpRouter2 )
+                        if( bOpenBrowserWhenUpUp && bUpRouterLive )
                     #if !defined( DUMMYsUB )
 
                     }
@@ -75,7 +75,7 @@ DONE( tmWorkF )
                                             cEpochsNoSignature = EPOCHSnOsIGNATURE ;
                                             time1Signature = 0 ;
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just went DOWN, but the router1 channel is still up.":"    The router2 channel just went DOWN, and the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpRouter2 = 0 ;
+                                            bUpRouterLive = bUpRouter2 = 0 ;
                                         {
                                         if( bUpRouter2 && !bTrue )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router2) FAIL  [epochMeUseLate,idStompRouter2,cFail,rc]:    ")+TF2(epochMeUseLate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompRouter2Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
@@ -89,7 +89,7 @@ DONE( tmWorkF )
                                     }
                                         }
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router1 and router2 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpRouter2 = 1 ;
+                                            bUpRouterLive = bUpRouter2 = 1 ;
                                         {
                                         if( !bUpRouter2 )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router2) aok   [epochMeUseLate,idStompRouter2         ]:    ")+TF2(epochMeUseLate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
@@ -122,8 +122,7 @@ DONE( tmWorkF )
                             
                                 // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
                             {
-                            // ROUTER2
-
+                            else        // ROUTER2
                             }
                                 }
                                     CONoUTrAW( "]" ) ;
@@ -134,7 +133,7 @@ DONE( tmWorkF )
                                             cEpochsNoSignature = EPOCHSnOsIGNATURE ;
                                             time1Signature = 0 ;
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just went DOWN, but the router2 channel is still up.":"    The router1 channel just went DOWN, and the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpRouter1 = 0 ;
+                                            bUpRouterLive = bUpRouter1 = 0 ;
                                         {
                                         if( bUpRouter1 && bTrue )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router1) FAIL  [epochMeUseTrue,idStompRouter1,cFail,rc]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompRouter1Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
@@ -148,7 +147,7 @@ DONE( tmWorkF )
                                     }
                                         }
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router1 and router2 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpRouter1 = 1 ;
+                                            bUpRouterLive = bUpRouter1 = 1 ;
                                         {
                                         if( !bUpRouter1 )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router1) aok   [epochMeUseTrue,idStompRouter1         ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
@@ -181,7 +180,7 @@ DONE( tmWorkF )
 
                                 // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
                             {
-                            // ROUTER1
+                            if( bTrue )     // ROUTER1
 
                         #if !defined( DUMMYsUB )
                     {
@@ -193,9 +192,7 @@ DONE( tmWorkF )
                             ||
                             !( F(flagsMode) & flIDEAnETeXE_METERED )
                             ||
-                            !bUpRouter2
-                            ||
-                            !bUpRouter1
+                            !bUpRouterLive
                         (
                         &&
                         !( cSkipStomp && cSkipStomp -- )
@@ -263,7 +260,7 @@ DONE( tmWorkF )
                         //   
                         // WORST CASE: CURRENT TIME IS IN THE "LATE" PHASE AND THE LATE WEB SERVER (WEB2) IS JUST NOW COMING UP
                     {
-                    if( !bUpRouter1 || !bUpRouter2 )
+                    if( !bUpRouterLive )
                     boolT bChatter = !bKey ;
 
                     }
@@ -347,8 +344,9 @@ DONE( tmWorkF )
                 const countT time1LateBegin    = time1PerEpoch >> 2 ;
                 const countT time1PerEpoch     = 1 << BITSsHIFTiDEAnETePOCH ;
                 ZE( countT , idPass ) ;
-                ZE( boolT  , bUpRouter2 ) ;             //P:PERSONALITY: WILL NOT BE RESET IF STOMP FAILS WHILE  bTrue BECAUSE SUCH A FAILURE IS EXPECTED
-                ZE( boolT  , bUpRouter1 ) ;             //P:PERSONALITY: WILL NOT BE RESET IF STOMP FAILS WHILE !bTrue BECAUSE SUCH A FAILURE IS EXPECTED
+                ZE( boolT  , bUpRouterLive ) ;
+                ZE( boolT  , bUpRouter2    ) ;             //P:PERSONALITY: WILL NOT BE RESET IF STOMP FAILS WHILE  bTrue BECAUSE SUCH A FAILURE IS EXPECTED
+                ZE( boolT  , bUpRouter1    ) ;             //P:PERSONALITY: WILL NOT BE RESET IF STOMP FAILS WHILE !bTrue BECAUSE SUCH A FAILURE IS EXPECTED
                 countT cSkipStomp = TUCK >> 4 ;
                 countT cSkipPage  = TUCK >> 5 ;
                 ZE( countT , cStompRouter2Fail ) ;
