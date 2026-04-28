@@ -111,13 +111,22 @@ DONE( tmCatchF )
                         cErrorsAccumulated ++ ;
                         accumulatedErrors += timeE1 ;
 
-                        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , pTimeIn[ TIMESiNrECORD - 1 ].time1 , pTimeIn[ TIMESiNrECORD - 1 ].time2 ) ;
-                        sCountT timeE2 = timeEnd.time2 ;
-                        countT  timeE1 = timeEnd.time1 ;
+                        //etThread.osTimeSubtractF( tin0P , timeEP1 , timeEP2 , timeMeWhenHeSnapped1 , timeMeWhenHeSnapped2 ) ;
+                        //sCountT timeEP2 = pTimeIn[ TIMESiNrECORD - 1 ].time2 ;
+                        //countT  timeEP1 = pTimeIn[ TIMESiNrECORD - 1 ].time1 ;
 
-                        etThread.osTimeSubtractF( tin0P , timeEP1 , timeEP2 , pTimeIn[ TIMESiNrECORD - 2 ].time1 , pTimeIn[ TIMESiNrECORD - 2 ].time2 ) ;
-                        sCountT timeEP2 = pTimeIn[ TIMESiNrECORD - 1 ].time2 ;
-                        countT  timeEP1 = pTimeIn[ TIMESiNrECORD - 1 ].time1 ;
+                        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , pTimeIn[ TIMESiNrECORD - 1 ].time1 , pTimeIn[ TIMESiNrECORD - 1 ].time2 ) ;
+                        sCountT timeE2 = timeMeWhenHeSnapped1 ;
+                        countT  timeE1 = timeMeWhenHeSnapped1 ;
+
+                        sCountT timeMeWhenHeSnapped2 = ( timeEnd.time2 + pTimeIn[ TIMESiNrECORD - 2 ].time2 ) >> 1 ;        // ESTIMATE OF WHAT MY CLOCK SAID WHEN HIS CLOCK WAS SNAPPED
+                        countT  timeMeWhenHeSnapped1 = ( timeEnd.time1 + pTimeIn[ TIMESiNrECORD - 2 ].time1 ) >> 1 ;        // ESTIMATE OF WHAT MY CLOCK SAID WHEN HIS CLOCK WAS SNAPPED
+
+                        // ME:   pTimeIn[ TIMESiNrECORD - 4 ]
+                        //  he:  pTimeIn[ TIMESiNrECORD - 3 ]
+                        // ME:   pTimeIn[ TIMESiNrECORD - 2 ]
+                        //  he:  pTimeIn[ TIMESiNrECORD - 1 ]
+                        // ME:   timeEnd
                     {
                     if( timeA1 < TUCK && !timeA2 && timeB1 < TUCK && !timeB2 )
                     //etRock.traceF( tin0P , T("time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
