@@ -324,7 +324,11 @@ DONE( tmWorkF )
 
                     countT tockHeRemainingInEpochTrue = ( time1PerEpoch - time1HeIntoEpochTrue ) >> 0x10 ;
 
-                    //etRock.traceF( tin0P , T("[bTrue,time1PerEpoch,time1HeIntoEpochTrue]:    ")+T(bTrue?"TRUE    ":"LATE    ")+TF3(time1PerEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(time1HeIntoEpochTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+                    }
+                        etRock.traceF( tin0P , T("IdeaNet client key phase [bTrue,time1PerEpoch,time1HeIntoEpochTrue]:    ")+T(bTrue?"TRUE    ":"LATE    ")+TF3(time1PerEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(time1HeIntoEpochTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
+                        bTrueLath = bTrue ;
+                    {
+                    if( bTrueLath != bTrue )
                     bTrue = time1HeIntoEpochTrue > time1LateBegin && time1HeIntoEpochTrue < time1LateEnd ;                    //P:PERSONALITY: USE THE TRUE CHANNEL IFF (IF AND ONLY IF) NOT CLOSE TO THE TIME OF THE LATH OR THE NEXT CHANGE IN THE TRUE EPOCH ; THIS IS TO AVOID USING A ROUTER WHILE IT IS RELOADING ITS UFW FIREWALL RULES
                     countT time1HeIntoEpochTrue = timeN1 - ( ( timeN1 >> BITSsHIFTiDEAnETePOCH ) << BITSsHIFTiDEAnETePOCH ) ;
 
@@ -397,6 +401,7 @@ DONE( tmWorkF )
             if( bKey ) etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmServeHttpF , sgnDone_tmServeHttpF , CBsTACKmIN << 2 ) , (countT)&idStatusHttpService , (countT)&tIpv6NowRouter1 , (countT)&tIpv6NowRouter2 , (countT)&ipv6FieldsRouter1 , (countT)&ipv6FieldsRouter2 , (countT)&flagsMode , (countT)&flagsModeHttp , (countT)&bTrue ) ;
             flagsT flagsModeHttp = flMODEsERVER_CHATTY ;
             signC sgnDone_tmServeHttpF( tin0P , TAG( TAGiDnULL ) ) ;
+            ZE( boolT , bTrueLath ) ;
             ZE( boolT , bTrue ) ;
 
             ZE( countT , cTestRequestsPending ) ;
