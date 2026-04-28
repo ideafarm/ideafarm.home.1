@@ -1,4 +1,6 @@
 
+#define ifcIDaDAM_TIMEeRROR                                            ((countT)0x510008ee)
+
 #define CePOCHSfUDGE 4
 #define CePOCHSkEEP ( 2 + EPOCHSsIGNATUREmAX + EPOCHSaLLOWEDfORbGPpROPOGATION + CePOCHSfUDGE )
 
@@ -11795,7 +11797,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 
 // 20141208@2007: IdeaFarm (tm) Bundle:                 ifcIDaDAM_2GLASS2                     ifcIDaDAM_MEMBRANEgLASS                        ifcIDaDAM_WATCH ifcIDaDAM_HOMEfLAGS                        ifcIDaDAM_PISS ifcIDaDAM_CLOUD
 
-// 20221229@1416: IdeaFarm (tm) Bundle: ifcIDaDAM_CLOAK ifcIDaDAM_2GLASS2 ifcIDaDAM_HOMEfLAGS ifcIDaDAM_MEMBRANEgLASS ifcIDaDAM_PREPARElISTS ifcIDaDAM_WATCH                     ifcIDaDAM_WATCHiDLEcPU ifcIDaDAM_PISS ifcIDaDAM_CLOUD ifcIDaDAM_SNAPwORDS ifcIDaDAM_TIME ifcIDaDAM_ROOTmAILoUToLD ifcIDaDAM_ROOThTTPsERVER ifcIDaDAM_HEALaRCHIVES
+// 20221229@1416: IdeaFarm (tm) Bundle: ifcIDaDAM_CLOAK ifcIDaDAM_2GLASS2 ifcIDaDAM_HOMEfLAGS ifcIDaDAM_MEMBRANEgLASS ifcIDaDAM_PREPARElISTS ifcIDaDAM_WATCH                     ifcIDaDAM_WATCHiDLEcPU ifcIDaDAM_PISS ifcIDaDAM_CLOUD ifcIDaDAM_SNAPwORDS ifcIDaDAM_CALENDAR ifcIDaDAM_ROOTmAILoUToLD ifcIDaDAM_ROOThTTPsERVER ifcIDaDAM_HEALaRCHIVES
 
 //RETIRED 2011.02.14: #define ifcIDaDAM_CONSOLE                                               ((countT)0x510004fe)
                                                                             
@@ -11835,7 +11837,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_SOIXLoLDwORDdEFS                                     ((countT)0x51000509)
 #define ifcIDaDAM_MANGLEtABLE                                          ((countT)0x5100050a)
 #define ifcIDaDAM_SOIXLoLDiNTERPRETER                                  ((countT)0x5100050b)
-#define ifcIDaDAM_TIMEcARD                                             ((countT)0x5100050c)
+#define ifcIDaDAM_CALENDARcARD                                             ((countT)0x5100050c)
 #define ifcIDaDAM_HOMEfLAGS                                            ((countT)0x5100050e)
 #define ifcIDaDAM_SPACElOAD                                            ((countT)0x5100050f)
 #define ifcIDaDAM_3BANG                                                ((countT)0x51000511)
@@ -11881,7 +11883,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TOOLrPTeMAIL3                                        ((countT)0x510006f9)
 #define ifcIDaDAM_TOOLrPTeMAIL4                                        ((countT)0x510006fa)
 #define ifcIDaDAM_SNAPwORDS                                            ((countT)0x51000706)
-#define ifcIDaDAM_TIME                                                 ((countT)0x51000707)
+#define ifcIDaDAM_CALENDAR                                                 ((countT)0x51000707)
 #define ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK                            ((countT)0x51000741)
 #define ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER                            ((countT)0x51000742)
 #define ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1                         ((countT)0x51000743)

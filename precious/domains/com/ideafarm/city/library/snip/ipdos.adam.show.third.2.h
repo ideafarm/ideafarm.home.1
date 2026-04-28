@@ -28353,6 +28353,8 @@ code may use setIfZeAM on *(countT*)this
     count04T            osTicksAtCt ;
     countT              timeBoot1 ;
     sCountT             timeBoot2 ;
+    sCountT             meanTimeError1 ;             // WITHIN A DATACENTER, A REFERENCE HOST IS SELECTED, AND THIS VALUE IS OPTIONALLY SUBTRACTED FROM TIME VALUES CALCULATED ON EACH OTHER HOST
+    sCountT             meanTimeError2 ;             // WITHIN A DATACENTER, A REFERENCE HOST IS SELECTED, AND THIS VALUE IS OPTIONALLY SUBTRACTED FROM TIME VALUES CALCULATED ON EACH OTHER HOST
     grabC               grabTimeUnique ;
     countT              timeUniqueLath1 ;
     sCountT             timeUniqueLath2 ;

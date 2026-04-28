@@ -142,6 +142,11 @@ DONE( tmCatchF )
 
                 }
                     etRock.traceF( tin0P , T("mean error [tickLath,error]:    ")+TF3(tickLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+TF3(meanError,flFORMAT_NObIGITvALUES,8) , flTRACE_NOpREFIX ) ;
+                    ;
+                        : -1
+                        ? 0
+                    home.meanTimeError2 = meanError > 0
+                    home.meanTimeError1 = meanError ;
                     sCountT meanError = accumulatedErrors / cErrorsAccumulated ;
                 {
                 if( cErrorsAccumulated )
@@ -155,6 +160,7 @@ DONE( tmCatchF )
         {
     {
     while( !ether && !etThread )
+    homeS& home = homeS::homeIF() ;
     ZE( countT  , cErrorsAccumulated ) ;
     ZE( sCountT , accumulatedErrors ) ;
     ZE( countT  , tickLath ) ;
@@ -192,7 +198,7 @@ TASK( tmCatchF )
 
 #define DEBUGbIAS ( 0x50 )
 
-/*1*/WAKEhIDE( "doodle coherent time" )/*1*/
+/*1*/WAKEhIDE( "ifcIDaDAM_TIMEeRROR" )/*1*/
 /**/
 */
 /*
