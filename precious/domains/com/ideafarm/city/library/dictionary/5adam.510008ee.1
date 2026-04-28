@@ -146,6 +146,18 @@ DONE( tmCatchF )
         {
         if( !( cbi % sizeof( timeS ) ) )
 
+        //      
+        //         | 
+        //         | 000b4995.39c5ad71 ! GO1               | 5 ping pong GO1 eating
+        //         | 000b4995.39c5ad70 ! WH1               | 4 ping pong WH1 returning
+        //         | 000b4995.39c5ad3f ! GO1               | 3 ping pong GO1 returning
+        //         | 000b4995.39c5ad3f ! WH1               | 2 ping pong WH1 returning served
+        //         | 000b4995.39c5ad0d ! GO1               | 1 ping pong GO1 serving
+        //         | 
+        //        LISTING (2 LINES WITH IDENTICAL TIMESTAMPS REVERSED TO BE IN ORDER)
+        //      
+        // THIS IS WHAT I TRACE TO ENABLE VERIFICATION THAT meanError IS EFFECTIVE IN ELIMINATING ALMOST ALL OUT OF ORDER LINES IN TRACEMERGE OUTPUT
+
         timeS* pTimeIn = (timeS*)pbi ;
         sCatch.readF( tin0P , pbi , cbi , idpHe , nnHe ) ; ___( pbi ) ;
         nicNameC nnHe ;
