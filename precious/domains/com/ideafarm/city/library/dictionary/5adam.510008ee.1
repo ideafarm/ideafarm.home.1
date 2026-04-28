@@ -18,7 +18,7 @@ DONE( tmWorkF )
 }
     }
         }
-            ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
+            ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
 
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnWH1 , (byteT*)&timeN , sizeof timeN ) ;
             if( nnMeInner == nnGo1 ) etRock.traceF( tin0P , T("GO1 serving ping pong ball") ) ;
@@ -158,7 +158,7 @@ DONE( tmCatchF )
                 cErrorsAccumulated = accumulatedErrors = 0 ;
 
                 }
-                    etRock.traceF( tin0P , T("mean error [tickLath,error]:    ")+TF3(tickLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+TF3(meanError,flFORMAT_NObIGITvALUES,8) , flTRACE_NOpREFIX ) ;
+                    etRock.traceF( tin0P , T("mean error [tickLath,error]:    ")+TF3(tickLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+TF3(meanError,flFORMAT_NObIGITvALUES,8) ) ;
                     ;
                         : -1
                         ? 0
