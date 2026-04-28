@@ -5093,6 +5093,91 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200636.flTRIGGERaCTION END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200637.flMODEsERVER BEGIN
+
+
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*flMODEsERVER*//*1*/
+
+/*3*/
+#define flMODEsERVER_CHATTY           ((countT)0xe000012c)
+/*3*/
+#define flMODEsERVER_null    ((countT)0xe000002c)
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200637.flMODEsERVER END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200638.CePOCHSfUDGE BEGIN
+
+
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*CePOCHSfUDGE*//*1*/
+
+//U:: ADJUST CePOCHSfUDGE TO MINIMIZE IT WHILE NEVER GOING DOWN DURING "MAX SIGNATURE" (perTuck == TUCK) BURN-IN
+#define CePOCHSfUDGE 4
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200638.CePOCHSfUDGE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200639.CePOCHSkEEP BEGIN
+
+
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*CePOCHSkEEP*//*1*/
+
+// "2 +": TO HANDLE WORST CASE SCENARIO (DISCUSSED IN 8c0_)
+#define CePOCHSkEEP ( 2 + EPOCHSsIGNATUREmAX + EPOCHSaLLOWEDfORbGPpROPOGATION + CePOCHSfUDGE )
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200639.CePOCHSkEEP END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -28353,7 +28438,7 @@ code may use setIfZeAM on *(countT*)this
     count04T            osTicksAtCt ;
     countT              timeBoot1 ;
     sCountT             timeBoot2 ;
-    sCountT             meanTimeError1 ;             // WITHIN A DATACENTER, A REFERENCE HOST IS SELECTED, AND THIS VALUE IS OPTIONALLY SUBTRACTED FROM TIME VALUES CALCULATED ON EACH OTHER HOST
+    countT              meanTimeError1 ;             // WITHIN A DATACENTER, A REFERENCE HOST IS SELECTED, AND THIS VALUE IS OPTIONALLY SUBTRACTED FROM TIME VALUES CALCULATED ON EACH OTHER HOST
     sCountT             meanTimeError2 ;             // WITHIN A DATACENTER, A REFERENCE HOST IS SELECTED, AND THIS VALUE IS OPTIONALLY SUBTRACTED FROM TIME VALUES CALCULATED ON EACH OTHER HOST
     grabC               grabTimeUnique ;
     countT              timeUniqueLath1 ;
@@ -40245,6 +40330,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.serverInfo1S : 1snip.15000056.serverinfo1s END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.serverInfo2S : 1snip.15000057.serverinfo2s BEGIN
 
+
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -42245,6 +42331,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.httpServerC : 1snip.150000b7.httpserverc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.httpServerC_arg1S : 1snip.150000b8.httpserverc_arg1s BEGIN
+
 
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.

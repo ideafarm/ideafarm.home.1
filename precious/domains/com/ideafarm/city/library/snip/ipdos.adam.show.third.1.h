@@ -1,12 +1,4 @@
 
-#define ifcIDaDAM_TIMEeRROR                                            ((countT)0x510008ee)
-
-#define CePOCHSfUDGE 4
-#define CePOCHSkEEP ( 2 + EPOCHSsIGNATUREmAX + EPOCHSaLLOWEDfORbGPpROPOGATION + CePOCHSfUDGE )
-
-#define flMODEsERVER_CHATTY           0xe00001ff
-#define flMODEsERVER_null             0xe00000ff
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -11934,6 +11926,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_IDEAnETcONTROLrOUTER                                 ((countT)0x510008d7)
 #define ifcIDaDAM_IDEAnETgEIGERcOUNTER                                 ((countT)0x510008e2)
 #define ifcIDaDAM_EMAILsENDlATER                                       ((countT)0x510008ec)
+#define ifcIDaDAM_TIMEeRROR                                            ((countT)0x510008ee)
 #define ifcIDaDAM_STARTER1                                             ((countT)0x51001001)
 #define ifcIDaDAM_STARTER2                                             ((countT)0x51001002)
 #define ifcIDaDAM_STARTER3                                             ((countT)0x51001003)
