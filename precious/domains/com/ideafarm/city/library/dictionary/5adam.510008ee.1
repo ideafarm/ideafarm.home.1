@@ -21,6 +21,7 @@ DONE( tmWorkF )
             ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;
 
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnWH1 , (byteT*)&timeN , sizeof timeN ) ;
+            if( nnMeInner == nnGo1 ) etRock.traceF( tin0P , T("serving ping pong ball") ) ;
 
             etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
             timeS timeN ;
@@ -36,6 +37,7 @@ DONE( tmWorkF )
     {
     if( nnMeInner == nnWH1 )
 
+    nicNameC nnGo1 = socketC::nicNameIF( tin0P , etThread , T("10.0.3.1") ) ;                   // ARBITRARILY CHOSEN ; WILL CALL traceF SO THAT MERGED TRACE CAN SHOW BACK AND FORTH, TO TEST MY FUNCTION
     nicNameC nnWH1 = socketC::nicNameIF( tin0P , etThread , T("10.0.1.1") ) ;                   // REFERENCE HOST, CHOSEN BECAUSE IT IS PROTECTED AND RELATIVELY IDLE
 
     etThread.osThreadF( TaRG2cBsTACK( tmCatchF , CBsTACKmIN << 1 ) , (countT)&nnMeInner ) ;
@@ -83,6 +85,20 @@ DONE( tmCatchF )
                                                             pTimeRecord[ offt ] = timeZe          ;
                 for( offt = 0 ; offt < cTimesIn ; offt ++ ) pTimeRecord[ offt ] = pTimeIn[ offt ] ;
                 ZE( countT , offt ) ;
+
+                }
+                    if( nnMeInnerP == nnGo1 ) etRock.traceF( tin0P , T("GO1 returning ping pong ball") ) ;
+                {
+                else
+                }
+                    if( nnMeInnerP == nnWH1 ) etRock.traceF( tin0P , T("WH1 returning ping pong ball") ) ;
+                {
+                else if( cTimesIn % 2 )
+                }
+                    if( nnMeInnerP == nnWH1 ) etRock.traceF( tin0P , T("WH1 returning served ping pong ball") ) ;
+                {
+                if( cTimesIn == 1 )
+
                 countT cTimesIn = cbi / sizeof( timeS ) ;
             {
             else
@@ -123,7 +139,8 @@ DONE( tmCatchF )
                     etThread.osTimeNowF( tin0P , timeEnd.time1 , timeEnd.time2 ) ;
                     timeS timeEnd ;
                 {
-                if( nnMeInnerP != nnHe )
+                if( nnMeInnerP != nnHe  )
+                if( nnMeInnerP == nnGo1 ) etRock.traceF( tin0P , T("GO1 eating ping pong ball") ) ;
             {
             if( cbi == sizeof pTimeRecord )
         {
@@ -183,6 +200,8 @@ DONE( tmCatchF )
     if( ifcPORToLD2_CATCH != sCatch.bindF( tin0P , ifcPORToLD2_CATCH ) ) { BLAMMOiD( 0x33311333 ) ; }
     socketC sCatch( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
+    nicNameC nnGo1      = socketC::nicNameIF( tin0P , etThread , T("10.0.3.1") ) ;                   // ARBITRARILY CHOSEN ; WILL CALL traceF SO THAT MERGED TRACE CAN SHOW BACK AND FORTH, TO TEST MY FUNCTION
+    nicNameC nnWH1      = socketC::nicNameIF( tin0P , etThread , T("10.0.1.1") ) ;                   // REFERENCE HOST, CHOSEN BECAUSE IT IS PROTECTED AND RELATIVELY IDLE
     nicNameC nnMeInnerP = *(nicNameC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )

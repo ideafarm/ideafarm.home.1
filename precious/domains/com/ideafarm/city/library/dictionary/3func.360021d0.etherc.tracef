@@ -20,7 +20,12 @@
         ((tin12S&)tin0P).ptTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ] = end ;
 
         timeS end( timeEnd1 , timeEnd2 ) ;
-        osTimeNowF( tin0P , timeEnd1 , timeEnd2 ) ;
+
+        }
+            if( c_pHome ) osTimeSubtractF( tin0P , timeEnd1 , timeEnd2 , home.meanTimeError1 , home.meanTimeError2 ) ;
+                          osTimeNowF(      tin0P , timeEnd1 , timeEnd2 ) ;
+        {
+        if( c_this )
         ZE( sCountT , timeEnd2 ) ;
         ZE( countT  , timeEnd1 ) ;
     {
