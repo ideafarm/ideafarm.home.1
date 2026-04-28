@@ -22,7 +22,8 @@ DONE( tmWorkF )
 }
     }
         etThread.delF( tin0P , pstt1To ) ;
-        etThread.emailSendLaterF( tin0P , soulEmail ) ;
+        etThread.emailSendNowF( tin0P , soulEmail ) ;
+        etRock.traceF( tin0P , T("the IDEAnET gorilla is posting a BYE email") ) ;
         etThread.emailComposeF( tin0P , soulEmail , T("IDEAnET Notice: Gorilla is dying") , T("The IDEAnET gorilla process is ending.") , T("IDEAFARM.COM <factories@ideafarm.com>") , 0 , pstt1To ) ;
         etThread.strFuseSeparateF( tin0P , pstt1To , T("Tech Master <tech.master@ideafarm.com>") ) ;
         etThread.strMakeF( tin0P , LF , pstt1To , 0 , TUCK << 4 ) ; ___( pstt1To ) ;
@@ -214,7 +215,8 @@ DONE( tmWorkF )
 
                         }
                             etThread.delF( tin0P , pstt1To ) ;
-                            etThread.emailSendLaterF( tin0P , soulEmail ) ;
+                            etThread.emailSendNowF( tin0P , soulEmail ) ;
+                            etRock.traceF( tin0P , T("the IDEAnET live channel succeeded so gorilla is posting an UP email") ) ;
                             etThread.emailComposeF( tin0P , soulEmail , T("IDEAnET notice:  Both channels are now up") , T("A run of unexpected channel failures has ended.") , T("IDEAFARM.COM <factories@ideafarm.com>") , 0 , pstt1To ) ;
                             etThread.strFuseSeparateF( tin0P , pstt1To , T("Tech Master <tech.master@ideafarm.com>") ) ;
                             etThread.strMakeF( tin0P , LF , pstt1To , 0 , TUCK << 4 ) ; ___( pstt1To ) ;
@@ -230,7 +232,8 @@ DONE( tmWorkF )
                     }
                         }
                             etThread.delF( tin0P , pstt1To ) ;
-                            etThread.emailSendLaterF( tin0P , soulEmail ) ;
+                            etThread.emailSendNowF( tin0P , soulEmail ) ;
+                            etRock.traceF( tin0P , T("the IDEAnET live channel failed so gorilla is posting a DOWN email") ) ;
                             etThread.emailComposeF( tin0P , soulEmail , T("IDEAnET notice:  Unexpected stomp failure") , T("A channel (router1 or router2) failed when it was on duty.") , T("IDEAFARM.COM <factories@ideafarm.com>") , 0 , pstt1To ) ;
                             etThread.strFuseSeparateF( tin0P , pstt1To , T("Tech Master <tech.master@ideafarm.com>") ) ;
                             etThread.strMakeF( tin0P , LF , pstt1To , 0 , TUCK << 4 ) ; ___( pstt1To ) ;
@@ -478,14 +481,14 @@ DONE( tmWorkF )
 
     }
         etThread.delF( tin0P , pstt1To ) ;
-        etThread.emailSendLaterF( tin0P , soulEmail ) ;
+        etThread.emailSendNowF( tin0P , soulEmail ) ;
+        etRock.traceF( tin0P , T("IDEAnET gorilla is posting an AWAKENING email") ) ;
         etThread.emailComposeF( tin0P , soulEmail , T("IDEAnET notice: Gorilla is awakening") , T("The IDEAnET gorilla process is awakening.") , T("IDEAFARM.COM <factories@ideafarm.com>") , 0 , pstt1To ) ;
         etThread.strFuseSeparateF( tin0P , pstt1To , T("Tech Master <tech.master@ideafarm.com>") ) ;
         etThread.strMakeF( tin0P , LF , pstt1To , 0 , TUCK << 4 ) ; ___( pstt1To ) ;
         ZE( strokeS* , pstt1To ) ;
 
         soulC soulEmail( tin0P , etThread , TAG( TAGiDnULL ) ) ;
-        etRock.traceF( tin0P , T("!bKey so IDEAnET gorilla is posting email") ) ;
     {
     if( !bKey )
     ZE( boolT , bDownNoticeSent ) ;
