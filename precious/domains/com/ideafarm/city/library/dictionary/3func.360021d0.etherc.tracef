@@ -430,9 +430,6 @@
             boolT bTraceOk = c_pHome
 
             boolT bForceTrace = !!( F(flagsP) & flTRACE_FORCEnOsILENCE ) ;
-
-            countT c_pHome = (countT)&home ;
-            homeS& home = homeS::homeIF() ;
             _IO_
         {
         if( bTrace )
@@ -493,10 +490,17 @@
     ZE( countT  , timeMe1  ) ;
     ZE( boolT   , bEndTime ) ;
 
-    if( c_this ) osTimeNowF( tin0P , timeStart1 , timeStart2 ) ;
+    }
+        if( c_pHome ) osTimeSubtractF( tin0P , timeStart1 , timeStart2 , home.meanTimeError1 , home.meanTimeError2 ) ;
+                      osTimeNowF(      tin0P , timeStart1 , timeStart2 ) ;
+    {
+    if( c_this )
     ZE( sCountT , timeStart2 ) ;
     ZE( countT  , timeStart1 ) ;
     const countT c_this = (countT)this ;
+
+    countT c_pHome = (countT)&home ;
+    homeS& home = homeS::homeIF() ;
 
     const count04T cyclesStart = thirdC::cpuCyclesIF() ;
 {
