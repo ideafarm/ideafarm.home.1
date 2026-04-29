@@ -284,6 +284,7 @@ DONE( tmListApprovedAddressesF )
                     if( !bGorilla && idSubLever > idSubMax_new ) { BLAMMOiD( 0x77773333 ) ; }
                     boolT bGorilla = idSubLever == -1 ;
                     idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
+                    _IO_
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                 countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
@@ -292,6 +293,7 @@ DONE( tmListApprovedAddressesF )
                 etThread.newF( tin0P , LF , pnnAllOK_new , cnnAllOK_new ) ; ___( pnnAllOK_new ) ;
                 countT cnnAllOK_new = ( 1 + idSubMax_new ) * CePOCHSkEEP ;     // ROW 0 IS FOR idSub -1 (GO1 CLIENT KEY GORILLA); ROWS 1-S ARE FOR SUBSCRIBERS [1,S]
                 ZE( nicNameC* , pnnAllOK_new ) ;
+                _IO_
             {
             if( idSubMax_new )
 
@@ -300,10 +302,12 @@ DONE( tmListApprovedAddressesF )
                 }
                     if( idSubLever != -1 && idSubMax_new < idSubLever ) idSubMax_new = idSubLever ;
                     idSubLever = sw_pNnApprovedNewByIdSub.leverF( tin0P , idf ) ;
+                    _IO_
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                 countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
                 sw_pNnApprovedNewByIdSub.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                _IO_
             {
             ZE( countT , idSubMax_new ) ;
 
@@ -311,6 +315,7 @@ DONE( tmListApprovedAddressesF )
                 stNnApprovedUse.sinkF( tin0P , countTC() , nnWo , flSTACKsINK_UNIQUE ) ;
                 stNnApprovedNew >>                         nnWo ;
                 nicNameC nnWo ;
+                _IO_
             {
             while( stNnApprovedNew )
             etRock.traceF( tin0P , T("loading [stNnApprovedNew]:    ")+TF2((countT)stNnApprovedNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -351,6 +356,7 @@ DONE( tmListApprovedAddressesF )
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                 countT cFlavors = sw_pNnApprovedNewByIdSub.cFlavorsF( tin0P ) ;
                 sw_pNnApprovedNewByIdSub.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                _IO_
             {
             //CS:CODEsYNC: 510008e2 510008e2
 
