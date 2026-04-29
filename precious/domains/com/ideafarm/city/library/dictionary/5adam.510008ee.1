@@ -21,7 +21,7 @@ DONE( tmWorkF )
             ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
 
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnWH1 , (byteT*)&timeN , sizeof timeN ) ;
-            if( nnMeInner == nnGo1 ) etRock.traceF( tin0P , T("1 ping pong GO1 serving") ) ;
+            etRock.traceF( tin0P , T("ping pong 1 ")+tMe+T(" serving to WH1") ) ;
 
             etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
             timeS timeN ;
@@ -37,8 +37,32 @@ DONE( tmWorkF )
     {
     if( nnMeInner == nnWH1 )
 
-    nicNameC nnGo1 = socketC::nicNameIF( tin0P , etThread , T("10.0.3.1") ) ;                   // ARBITRARILY CHOSEN ; WILL CALL traceF SO THAT MERGED TRACE CAN SHOW BACK AND FORTH, TO TEST MY FUNCTION
-    nicNameC nnWH1 = socketC::nicNameIF( tin0P , etThread , T("10.0.1.1") ) ;                   // REFERENCE HOST, CHOSEN BECAUSE IT IS PROTECTED AND RELATIVELY IDLE
+    __Z( tMe.csF( tin0P ) ) ;
+    ) ;
+
+                            : ""
+                            ? "WEB2"
+                        : nnMeInner == nnWEB2
+                        ? "WEB1"
+                    : nnMeInner == nnWEB1
+                    ? "GO1"
+                : nnMeInner == nnGO1
+                ? "DNS1"
+            : nnMeInner == nnDNS1
+            ? "WH2"
+        : nnMeInner == nnWH2
+        ? "WH1"
+
+    TN( tMe , nnMeInner == nnWH1
+    //CS:CODEsYNC: 510008ee 510008ee
+
+    nicNameC nnWEB2 = socketC::nicNameIF( tin0P , etThread , T("10.0.5.2") ) ;
+    nicNameC nnWEB1 = socketC::nicNameIF( tin0P , etThread , T("10.0.5.1") ) ;
+    nicNameC nnGO1  = socketC::nicNameIF( tin0P , etThread , T("10.0.3.1") ) ;
+    nicNameC nnDNS1 = socketC::nicNameIF( tin0P , etThread , T("10.0.2.1") ) ;
+    nicNameC nnWH2  = socketC::nicNameIF( tin0P , etThread , T("10.0.1.2") ) ;
+    nicNameC nnWH1  = socketC::nicNameIF( tin0P , etThread , T("10.0.1.1") ) ;                   // REFERENCE HOST, CHOSEN BECAUSE IT IS PROTECTED AND RELATIVELY IDLE AND ALSO NUMERICALLY THE WO'TH
+    //CS:CODEsYNC: 510008ee 510008ee
 
     etThread.osThreadF( TaRG2cBsTACK( tmCatchF , CBsTACKmIN << 1 ) , (countT)&nnMeInner ) ;
     sThrow.bindF( tin0P ) ;
@@ -86,27 +110,18 @@ DONE( tmCatchF )
                 for( offt = 0 ; offt < cTimesIn ; offt ++ ) pTimeRecord[ offt ] = pTimeIn[ offt ] ;
                 ZE( countT , offt ) ;
 
-                }
-                    if( nnMeInnerP == nnGo1 ) etRock.traceF( tin0P , T("3 ping pong GO1 returning") ) ;
-                {
-                else
-                }
-                    if( nnMeInnerP == nnWH1 ) etRock.traceF( tin0P , T("4 ping pong WH1 returning") ) ;
-                {
-                else if( cTimesIn % 2 )
-                }
-                    if( nnMeInnerP == nnWH1 ) etRock.traceF( tin0P , T("2 ping pong WH1 returning served") ) ;
-                {
-                if( cTimesIn == 1 )
+                else                     etRock.traceF( tin0P , T("ping pong 3 ")+tMe+T(" returning"        ) ) ;
+                else if( cTimesIn  % 2 ) etRock.traceF( tin0P , T("ping pong 4 ")+tMe+T(" returning"        ) ) ;
+                     if( cTimesIn == 1 ) etRock.traceF( tin0P , T("ping pong 2 ")+tMe+T(" returning service") ) ;
 
                 countT cTimesIn = cbi / sizeof( timeS ) ;
             {
             else
             }
                 }
-                    //else etRock.traceF( tin0P , T("[timeA,timeB]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
+                    //else etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" [timeA,timeB]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
                     }
-                        //etRock.traceF( tin0P , T("[error,errorPeer]:    ")+TF2((sCountT)timeE1,flFORMAT_NObIGITvALUES)+tb4+TF2((sCountT)timeEP1,flFORMAT_NObIGITvALUES) , flTRACE_NOpREFIX ) ;
+                        //etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" [error,errorPeer]:    ")+TF2((sCountT)timeE1,flFORMAT_NObIGITvALUES)+tb4+TF2((sCountT)timeEP1,flFORMAT_NObIGITvALUES) , flTRACE_NOpREFIX ) ;
 
                         cErrorsAccumulated ++ ;
                         accumulatedErrors += timeE1 ;
@@ -129,11 +144,11 @@ DONE( tmCatchF )
                         // ME:   timeEnd
                     {
                     if( timeA1 < TUCK && !timeA2 && timeB1 < TUCK && !timeB2 )
-                    //etRock.traceF( tin0P , T("time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
+                    //etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
 
-                    //etRock.traceF( tin0P , tb4+TT(timeEnd.time1,timeEnd.time2) , flTRACE_NOpREFIX ) ;
+                    //etRock.traceF( tin0P , T("ping pong 5 ")+tMe+tb4+TT(timeEnd.time1,timeEnd.time2) , flTRACE_NOpREFIX ) ;
                     //}
-                    //    etRock.traceF( tin0P , tb4+TT(pTimeIn[offt].time1,pTimeIn[offt].time2) , flTRACE_NOpREFIX ) ;
+                    //    etRock.traceF( tin0P , T("ping pong 5 ")+tMe+tb4+TT(pTimeIn[offt].time1,pTimeIn[offt].time2) , flTRACE_NOpREFIX ) ;
                     //{
                     //for( countT offt = 0 ; offt < TIMESiNrECORD ; offt ++ )
 
@@ -149,7 +164,7 @@ DONE( tmCatchF )
                     timeS timeEnd ;
                 {
                 if( nnMeInnerP != nnHe  )
-                if( nnMeInnerP == nnGo1 ) etRock.traceF( tin0P , T("5 ping pong GO1 eating") ) ;
+                etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" eating") ) ;
             {
             if( cbi == sizeof pTimeRecord )
         {
@@ -179,7 +194,7 @@ DONE( tmCatchF )
                 cErrorsAccumulated = accumulatedErrors = 0 ;
 
                 }
-                    etRock.traceF( tin0P , T("mean error [tickLath,error]:    ")+TF3(tickLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+TF3(meanError,flFORMAT_NObIGITvALUES,8) ) ;
+                    etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" mean error [tickLath,error]:    ")+TF3(tickLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+TF3(meanError,flFORMAT_NObIGITvALUES,8) ) ;
                     ;
                         : -1
                         ? 0
@@ -221,8 +236,33 @@ DONE( tmCatchF )
     if( ifcPORToLD2_CATCH != sCatch.bindF( tin0P , ifcPORToLD2_CATCH ) ) { BLAMMOiD( 0x33311333 ) ; }
     socketC sCatch( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
-    nicNameC nnGo1      = socketC::nicNameIF( tin0P , etThread , T("10.0.3.1") ) ;                   // ARBITRARILY CHOSEN ; WILL CALL traceF SO THAT MERGED TRACE CAN SHOW BACK AND FORTH, TO TEST MY FUNCTION
-    nicNameC nnWH1      = socketC::nicNameIF( tin0P , etThread , T("10.0.1.1") ) ;                   // REFERENCE HOST, CHOSEN BECAUSE IT IS PROTECTED AND RELATIVELY IDLE
+    __Z( tMe.csF( tin0P ) ) ;
+    ) ;
+
+                            : ""
+                            ? "WEB2"
+                        : nnMeInnerP == nnWEB2
+                        ? "WEB1"
+                    : nnMeInnerP == nnWEB1
+                    ? "GO1"
+                : nnMeInnerP == nnGO1
+                ? "DNS1"
+            : nnMeInnerP == nnDNS1
+            ? "WH2"
+        : nnMeInnerP == nnWH2
+        ? "WH1"
+
+    TN( tMe , nnMeInnerP == nnWH1
+    //CS:CODEsYNC: 510008ee 510008ee
+
+    nicNameC nnWEB2 = socketC::nicNameIF( tin0P , etThread , T("10.0.5.2") ) ;
+    nicNameC nnWEB1 = socketC::nicNameIF( tin0P , etThread , T("10.0.5.1") ) ;
+    nicNameC nnGO1  = socketC::nicNameIF( tin0P , etThread , T("10.0.3.1") ) ;
+    nicNameC nnDNS1 = socketC::nicNameIF( tin0P , etThread , T("10.0.2.1") ) ;
+    nicNameC nnWH2  = socketC::nicNameIF( tin0P , etThread , T("10.0.1.2") ) ;
+    nicNameC nnWH1  = socketC::nicNameIF( tin0P , etThread , T("10.0.1.1") ) ;                   // REFERENCE HOST, CHOSEN BECAUSE IT IS PROTECTED AND RELATIVELY IDLE AND ALSO NUMERICALLY THE WO'TH
+    //CS:CODEsYNC: 510008ee 510008ee
+
     nicNameC nnMeInnerP = *(nicNameC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
