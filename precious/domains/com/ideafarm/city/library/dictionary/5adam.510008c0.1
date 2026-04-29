@@ -78,13 +78,14 @@ DONE( tmWorkF )
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just went DOWN, but the router1 channel is still up.":"    The router2 channel just went DOWN, and the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouterLive = bUpRouter2 = 0 ;
                                         {
-                                        if( bUpRouter2 && !bTrue )
+                                        if( bUpRouter2 && !bTrue && cStompRouter2Fail > 1 )              //P:PERSONALITY: I IGNORE A SINGLE ISOLATED FAILURE ; THE WO'TH STOMP WITH ANY IPv6 ADDRESS WILL ALWAYS/USUALLY FAIL
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router2) FAIL  [epochMeUseLate,idStompRouter2,cFail,rc]:    ")+TF2(epochMeUseLate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompRouter2Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                         CONoUTrAW( postPoop ) ;
                                         POOPRqUIET
                                         POOP.chatterF( tin0P , postPoop , sizeof postPoop ) ;
                                         osTextT postPoop[ TUCK ] ;
                                         countT rc = POOP ;
+                                        cStompRouter2Fail ++ ;
                                     {
                                     else
                                     }
@@ -94,6 +95,7 @@ DONE( tmWorkF )
                                         {
                                         if( !bUpRouter2 )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router2) aok   [epochMeUseLate,idStompRouter2         ]:    ")+TF2(epochMeUseLate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                                        cStompRouter2Fail = 0 ;
                                     {
                                     if( !POOP )
                                     ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 1 ) ; ___( posti ) ;
@@ -136,13 +138,14 @@ DONE( tmWorkF )
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just went DOWN, but the router2 channel is still up.":"    The router1 channel just went DOWN, and the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
                                             bUpRouterLive = bUpRouter1 = 0 ;
                                         {
-                                        if( bUpRouter1 && bTrue )
-                                        if( bChatter ) etRock.traceF( tin0P , T("stomp! (router1) FAIL  [epochMeUseTrue,idStompRouter1,cFail,rc]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompRouter1Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                                        if( bUpRouter1 && bTrue && cStompRouter1Fail > 1 )              //P:PERSONALITY: I IGNORE A SINGLE ISOLATED FAILURE ; THE WO'TH STOMP WITH ANY IPv6 ADDRESS WILL ALWAYS/USUALLY FAIL
+                                        if( bChatter ) etRock.traceF( tin0P , T("stomp! (router1) FAIL  [epochMeUseTrue,idStompRouter1,cFail,rc]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                         CONoUTrAW( postPoop ) ;
                                         POOPRqUIET
                                         POOP.chatterF( tin0P , postPoop , sizeof postPoop ) ;
                                         osTextT postPoop[ TUCK ] ;
                                         countT rc = POOP ;
+                                        cStompRouter1Fail ++ ;
                                     {
                                     else
                                     }
@@ -152,6 +155,7 @@ DONE( tmWorkF )
                                         {
                                         if( !bUpRouter1 )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router1) aok   [epochMeUseTrue,idStompRouter1         ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
+                                        cStompRouter1Fail = 0 ;
                                     {
                                     if( !POOP )
                                     ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 1 ) ; ___( posti ) ;
@@ -329,7 +333,7 @@ DONE( tmWorkF )
                         bTrueLath = bTrue ;
                     {
                     if( bTrueLath != bTrue )
-                    bTrue = time1HeIntoEpochTrue > time1LateBegin && time1HeIntoEpochTrue < time1LateEnd ;                    //P:PERSONALITY: USE THE TRUE CHANNEL IFF (IF AND ONLY IF) NOT CLOSE TO THE TIME OF THE LATH OR THE NEXT CHANGE IN THE TRUE EPOCH ; THIS IS TO AVOID USING A ROUTER WHILE IT IS RELOADING ITS UFW FIREWALL RULES
+                    bTrue = time1HeIntoEpochTrue > time1LateEnd && time1HeIntoEpochTrue < time1LateBegin ;                    //P:PERSONALITY: USE THE TRUE CHANNEL IFF (IF AND ONLY IF) NOT CLOSE TO THE TIME OF THE LATH OR THE NEXT CHANGE IN THE TRUE EPOCH ; THIS IS TO AVOID USING A ROUTER WHILE IT IS RELOADING ITS UFW FIREWALL RULES
                     countT time1HeIntoEpochTrue = timeN1 - ( ( timeN1 >> BITSsHIFTiDEAnETePOCH ) << BITSsHIFTiDEAnETePOCH ) ;
 
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
@@ -342,9 +346,9 @@ DONE( tmWorkF )
                 ZE( countT , cEpochsNoSignature ) ;
                 boolT bOpenBrowserWhenUpUp = bKey ;
                 ZE( countT , time1Signature ) ;
-                const countT time1LateEnd      = 3 * time1LateBegin ;
+                const countT time1LateBegin    = 3 * time1LateEnd ;
                 const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
-                const countT time1LateBegin    = time1PerEpoch >> 2 ;
+                const countT time1LateEnd      = time1PerEpoch >> 2 ;
                 const countT time1PerEpoch     = 1 << BITSsHIFTiDEAnETePOCH ;
                 ZE( countT , idPass ) ;
                 ZE( boolT  , bUpRouterLive ) ;
