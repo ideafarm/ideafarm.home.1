@@ -1,4 +1,4 @@
-@echo off
+@echo on
 
 if exist i:\tmp\*                   del i:\tmp\* /q
 
