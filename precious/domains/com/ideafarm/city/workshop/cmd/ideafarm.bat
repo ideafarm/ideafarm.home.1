@@ -11,14 +11,14 @@ rem param 1: if "path"    then "just set the path"
 rem param 1: if "ss"      then "skip drive search"
 rem param 1: if "nopause" then "don't pause for keypress"
 
+set iworkshop=%idrive%\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop
+
 if %1z == pathz echo just setting path
 if %1z == pathz goto :SETpATH
 
 set idrive=%~d0%
 echo IdeaFarm (tm) drive is: %idrive%
 %idrive%
-
-set iworkshop=%idrive%\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop
 
 if not exist %idrive%\tmp.ideafarm\* md %idrive%\tmp.ideafarm
 
