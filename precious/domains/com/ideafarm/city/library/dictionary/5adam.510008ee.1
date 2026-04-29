@@ -121,15 +121,15 @@ DONE( tmCatchF )
                 }
                     //else etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" [timeA,timeB]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) , flTRACE_NOpREFIX ) ;
                     }
-                        //etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" [error,errorPeer]:    ")+TF2((sCountT)timeE1,flFORMAT_NObIGITvALUES)+tb4+TF2((sCountT)timeEP1,flFORMAT_NObIGITvALUES) , flTRACE_NOpREFIX ) ;
+                        //etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" [error]:    ")+TF2(error,flFORMAT_NObIGITvALUES) , flTRACE_NOpREFIX ) ;
 
                         cErrorsAccumulated ++ ;
-                        accumulatedErrors += timeE1 ;
+                        accumulatedErrors += error ;
 
-                        //etThread.osTimeSubtractF( tin0P , timeEP1 , timeEP2 , timeMeWhenHeSnapped1 , timeMeWhenHeSnapped2 ) ;
-                        //sCountT timeEP2 = pTimeIn[ TIMESiNrECORD - 1 ].time2 ;
-                        //countT  timeEP1 = pTimeIn[ TIMESiNrECORD - 1 ].time1 ;
-
+                        ;
+                            : -timeE1
+                            ?  timeE1
+                        sCountT error = !timeE2
                         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , pTimeIn[ TIMESiNrECORD - 1 ].time1 , pTimeIn[ TIMESiNrECORD - 1 ].time2 ) ;
                         sCountT timeE2 = timeMeWhenHeSnapped1 ;
                         countT  timeE1 = timeMeWhenHeSnapped1 ;
