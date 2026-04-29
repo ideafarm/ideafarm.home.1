@@ -138,8 +138,8 @@ DONE( tmCatchF )
 
                             etRock.traceF( tin0P , T("ping pong 5 [time      HeSnapped]:     ")+tMe+tb4+TTF(pTimeIn[TIMESiNrECORD-1].time1,pTimeIn[TIMESiNrECORD-1].time2) ) ;
                             etRock.traceF( tin0P , T("ping pong 5 [timeMeWhenHeSnapped]:     ")+tMe+tb4+TTF(timeMeWhenHeSnapped1,timeMeWhenHeSnapped2) ) ;
-                            sCountT timeMeWhenHeSnapped2 = ( timeEat.time2 + pTimeIn[ TIMESiNrECORD - 2 ].time2 ) >> 1 ;        // ESTIMATE OF WHAT MY CLOCK SAID WHEN HIS CLOCK WAS SNAPPED
-                            countT  timeMeWhenHeSnapped1 = ( timeEat.time1 + pTimeIn[ TIMESiNrECORD - 2 ].time1 ) >> 1 ;        // ESTIMATE OF WHAT MY CLOCK SAID WHEN HIS CLOCK WAS SNAPPED
+                            sCountT timeMeWhenHeSnapped2 = (sCountT)( ( (count04T)timeEat.time2 + (count04T)pTimeIn[ TIMESiNrECORD - 2 ].time2 ) >> 1 ) ;        // ESTIMATE OF WHAT MY CLOCK SAID WHEN HIS CLOCK WAS SNAPPED
+                            countT  timeMeWhenHeSnapped1 =  (countT)( ( (count04T)timeEat.time1 + (count04T)pTimeIn[ TIMESiNrECORD - 2 ].time1 ) >> 1 ) ;        // ESTIMATE OF WHAT MY CLOCK SAID WHEN HIS CLOCK WAS SNAPPED
 
                             // ME:   pTimeIn[ TIMESiNrECORD - 4 ]
                             //  he:  pTimeIn[ TIMESiNrECORD - 3 ]
@@ -150,7 +150,7 @@ DONE( tmCatchF )
                         if( timeA1 < TUCK )
                         //etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) ) ;
 
-                        etRock.traceF( tin0P , T("ping pong 5 [eat,time]:     ")+tMe+tb01+TTF(timeEat.time1,timeEat.time2) ) ;
+                        etRock.traceF( tin0P , T("ping pong 5 [eat,time]:    ")+tMe+tb01+TTF(timeEat.time1,timeEat.time2) ) ;
                         }
                             etRock.traceF( tin0P , T("ping pong 5 [off,time]:    ")+tMe+tb4+TF3(offt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TTF(pTimeIn[offt].time1,pTimeIn[offt].time2) ) ;
                         {
