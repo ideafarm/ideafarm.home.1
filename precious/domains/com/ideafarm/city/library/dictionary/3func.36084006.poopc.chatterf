@@ -9,7 +9,12 @@
 
 }
     }
-        etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT | flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
+        etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS*)(const osTextT*)ostoSay , flagsUse ) ;
+
+        ;
+            : flTRACE_PARAMETERiSoStEXT
+            ? flTRACE_PARAMETERiSoStEXT | flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX
+        flagsT flagsUse = F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM
 
         else         { OStEXTC( ostoSay , idSubType , ' ' ) ; }
         if( postRc ) { OStEXTA( ostoSay , postRc          ) ; }
