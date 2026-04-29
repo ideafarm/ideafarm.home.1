@@ -86,6 +86,7 @@ DONE( tmWorkF )
                                         osTextT postPoop[ TUCK ] ;
                                         countT rc = POOP ;
                                         cStompRouter2Fail ++ ;
+                                        cStompRouterLiveFail ++ ;
                                     {
                                     else
                                     }
@@ -95,10 +96,10 @@ DONE( tmWorkF )
                                         {
                                         if( !bUpRouter2 )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router2) aok   [epochMeUseLate,idStompRouter2         ]:    ")+TF2(epochMeUseLate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
-                                        cStompRouter2Fail = 0 ;
+                                        cStompRouterLiveFail = cStompRouter2Fail = 0 ;
                                     {
                                     if( !POOP )
-                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 1 ) ; ___( posti ) ;
+                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TIMEsTOMPmAX ) ; ___( posti ) ;
                                     CONoUTrAW( "(" ) ;
                                     ZE( countT   , costi ) ;
                                     ZE( osTextT* , posti ) ;
@@ -108,6 +109,7 @@ DONE( tmWorkF )
                                 {
                                 IFsCRATCHoK
                                 cStompRouter2 ++ ;
+                                cStompRouterLive ++ ;
                             
                                 TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_USEdNS ? tRequestDomain : tRequestAddress ;
                             
@@ -146,6 +148,7 @@ DONE( tmWorkF )
                                         osTextT postPoop[ TUCK ] ;
                                         countT rc = POOP ;
                                         cStompRouter1Fail ++ ;
+                                        cStompRouterLiveFail ++ ;
                                     {
                                     else
                                     }
@@ -155,10 +158,10 @@ DONE( tmWorkF )
                                         {
                                         if( !bUpRouter1 )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router1) aok   [epochMeUseTrue,idStompRouter1         ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
-                                        cStompRouter1Fail = 0 ;
+                                        cStompRouterLiveFail = cStompRouter1Fail = 0 ;
                                     {
                                     if( !POOP )
-                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TOCK << 1 ) ; ___( posti ) ;
+                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TIMEsTOMPmAX ) ; ___( posti ) ;
                                     CONoUTrAW( "[" ) ;
                                     ZE( countT   , costi ) ;
                                     ZE( osTextT* , posti ) ;
@@ -168,6 +171,7 @@ DONE( tmWorkF )
                                 {
                                 IFsCRATCHoK
                                 cStompRouter1 ++ ;
+                                cStompRouterLive ++ ;
 
                                 TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_USEdNS ? tRequestDomain : tRequestAddress ;
 
@@ -247,7 +251,7 @@ DONE( tmWorkF )
 
                             bDownNoticeSent = 1 ;
                         {
-                        if( !bKey && !bDownNoticeSent )
+                        if( !bKey && !bDownNoticeSent && cStompRouterLiveFail > 1 )
 
                         //etRock.traceF( tin0P , TT(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                         bChatter       = 1 ;
@@ -356,8 +360,10 @@ DONE( tmWorkF )
                 ZE( boolT  , bUpRouter1    ) ;             //P:PERSONALITY: WILL NOT BE RESET IF STOMP FAILS WHILE !bTrue BECAUSE SUCH A FAILURE IS EXPECTED
                 countT cSkipStomp = TUCK >> 4 ;
                 countT cSkipPage  = TUCK >> 5 ;
+                ZE( countT , cStompRouterLiveFail ) ;
                 ZE( countT , cStompRouter2Fail ) ;
                 ZE( countT , cStompRouter1Fail ) ;
+                ZE( countT , cStompRouterLive  ) ;
                 ZE( countT , cStompRouter2     ) ;
                 ZE( countT , cStompRouter1     ) ;
 
@@ -495,7 +501,7 @@ DONE( tmWorkF )
         soulC soulEmail( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
     if( !bKey )
-    ZE( boolT , bDownNoticeSent ) ;
+    boolT bDownNoticeSent = 1 ;
 
     const boolT bKey = F(processGlobal2S::_processGlobal2I_IF()._thirdC_flagsProcessState) & flPROCESSsTATE_EXEcONTAINSbASEaNDaDAM ;
 
@@ -645,6 +651,8 @@ DONE( tmServeHttpF )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 )
 TASK( tmServeHttpF )
+
+#define TIMEsTOMPmAX ( TOCK << 1 )
 
 #define EPOCHSnOsIGNATURE ( EPOCHSsIGNATUREmAX + 3 )
 
