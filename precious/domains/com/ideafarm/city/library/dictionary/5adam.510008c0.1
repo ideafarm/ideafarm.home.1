@@ -9,7 +9,7 @@
                             
 REST
 
-//etRock.traceF( tin0P , T("\r\nA0\r\n") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+//etRock.traceF( tin0P , T("\r\nA0\r\n") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 sgnDone_tmWorkF.waitF( tin0P ) ;
 etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK >> 2 ) ) ;     //U::O: REPLACE "TICK >> 2" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
 signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
@@ -33,17 +33,17 @@ DONE( tmWorkF )
     {
     if( !bKey )
 
-    //etRock.traceF( tin0P , T("\r\nB0\r\n") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+    //etRock.traceF( tin0P , T("\r\nB0\r\n") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
         }
-            //etRock.traceF( tin0P , T("\r\nwaited for sgnDone_tmServeHttpF.") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+            //etRock.traceF( tin0P , T("\r\nwaited for sgnDone_tmServeHttpF.") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
             if( bKey ) sgnDone_tmServeHttpF.waitF( tin0P ) ;
-            //etRock.traceF( tin0P , T("\r\nwaiting for sgnDone_tmServeHttpF.") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+            //etRock.traceF( tin0P , T("\r\nwaiting for sgnDone_tmServeHttpF.") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
             
             }
                 FIREmYSELF
 
-                etRock.traceF( tin0P , T("\r\nI am no longer serving web pages.\r\n") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                etRock.traceF( tin0P , T("\r\nI am no longer serving web pages.\r\n") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
 
                 }
                     ++ s ; etRock.osSleepF( tin0P , TOCK >> 2 ) ;
@@ -383,7 +383,7 @@ DONE( tmWorkF )
 
                 }
                     }
-                        etRock.traceF( tin0P , T("I am ready to serve web pages (only to you).  Enter the 'b' command to begin.\r\n") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                        etRock.traceF( tin0P , T("I am ready to serve web pages (only to you).  Enter the 'b' command to begin.\r\n") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
                         bWoth = 0 ;
                     {
                     if( bWoth )
@@ -398,7 +398,7 @@ DONE( tmWorkF )
             {
             else
             }
-                etRock.traceF( tin0P , T("I cannot serve web pages, likely because there is already an http server running on this computer.") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+                etRock.traceF( tin0P , T("I cannot serve web pages, likely because there is already an http server running on this computer.") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
                 bAborted = 1 ;
             {
             if( idStatusHttpService > ifcIDsTATUShTTPsERVICE_READY )
@@ -422,7 +422,7 @@ DONE( tmWorkF )
             TN( tIpv6NowRouter2 , "" ) ;
             TN( tIpv6NowRouter1 , "" ) ;
             ZE( countT , idStatusHttpService ) ;
-            etRock.traceF( tin0P , T("\r\nPreparing to serve pages to you...\r\n") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+            etRock.traceF( tin0P , T("Preparing to serve pages to you...") , flagsTraceUse ) ;
         {
         if( !bQuitEarly )
         ZE( boolT , bAborted ) ;
@@ -523,7 +523,7 @@ osTextT postSoulSubDump[ TUCK << 4 ] ;
 
 DONE( tmHearF )
 }
-    //etRock.traceF( tin0P , T("\r\nD0\r\n") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+    //etRock.traceF( tin0P , T("\r\nD0\r\n") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
         etThread.delF( tin0P , psttUnwanted ) ;
         etThread.delF( tin0P , psttWanted   ) ;
@@ -618,9 +618,9 @@ TASK( tmHearF )
 
 DONE( tmServeHttpF )
 }
-    //etRock.traceF( tin0P , T("\r\nE0\r\n") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+    //etRock.traceF( tin0P , T("\r\nE0\r\n") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     //THREADmODE2rESTORE0( flagsSave )
-    //etRock.traceF( tin0P , T("\r\ntmServeHttpF cleaned up.") , flagsTraceUse |  flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
+    //etRock.traceF( tin0P , T("\r\ntmServeHttpF cleaned up.") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
     }
         //etRock.traceF( tin0P , T("\r\nE1\r\n") , flagsTraceUse | flTRACE_KEEPcRlF | flTRACE_NOcRlFaTbEGINNING ) ;
         //THREADmODE2oN0( flTHREADmODE2_UNLOCKpOOLiDENTITY )
