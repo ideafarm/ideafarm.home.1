@@ -126,11 +126,7 @@ DONE( tmCatchF )
                             accumulatedErrors += error ;
 
                             etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" [error]:    ")+TF2(error,flFORMAT_NObIGITvALUES) ) ;
-
-                            ;
-                                : -timeE1
-                                ?  timeE1
-                            sCountT error = !timeE2
+                            sCountT error = timeE1 ;
                             etRock.traceF( tin0P , T("ping pong 5 [error (subtraction)]:     ")+tMe+tb4+TTF(timeE1,timeE2) ) ;
                             etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , pTimeIn[ TIMESiNrECORD - 1 ].time1 , pTimeIn[ TIMESiNrECORD - 1 ].time2 ) ;
                             sCountT timeE2 = timeMeWhenHeSnapped2 ;
@@ -207,7 +203,7 @@ DONE( tmCatchF )
                     ;
                         : -1
                         ? 0
-                    home.meanTimeError2 = meanError > 0
+                    home.meanTimeError2 = meanError >= 0
                     home.meanTimeError1 = meanError ;
                     sCountT meanError = accumulatedErrors / cErrorsAccumulated ;
                 {
