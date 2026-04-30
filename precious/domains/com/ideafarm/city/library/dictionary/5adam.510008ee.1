@@ -103,18 +103,38 @@ DONE( tmCatchF )
         etThread.delF( tin0P , pbi ) ;
         }
             }
-                sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)pTimeRecord , ( offt + 1 ) * sizeof( timeS ) ) ;
+                }
+                    sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)pTimeRecord , ( offt + 1 ) * sizeof( timeS ) ) ;
 
-                etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
-                                                            pTimeRecord[ offt ] = timeZe          ;
-                for( offt = 0 ; offt < cTimesIn ; offt ++ ) pTimeRecord[ offt ] = pTimeIn[ offt ] ;
-                ZE( countT , offt ) ;
+                    etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
+                                                                pTimeRecord[ offt ] = timeZe          ;
+                    for( offt = 0 ; offt < cTimesIn ; offt ++ ) pTimeRecord[ offt ] = pTimeIn[ offt ] ;
+                    ZE( countT , offt ) ;
 
-                else                     etRock.traceF( tin0P , T("ping pong 3 ")+tMe+T(" returning"        ) ) ;
-                else if( cTimesIn  % 2 ) etRock.traceF( tin0P , T("ping pong 4 ")+tMe+T(" returning"        ) ) ;
-                     if( cTimesIn == 1 ) etRock.traceF( tin0P , T("ping pong 2 ")+tMe+T(" returning service") ) ;
+                    else                     etRock.traceF( tin0P , T("ping pong 3 ")+tMe+T(" returning to "        )+tHe ) ;
+                    else if( cTimesIn  % 2 ) etRock.traceF( tin0P , T("ping pong 4 ")+tMe+T(" returning to "        )+tHe ) ;
+                         if( cTimesIn == 1 ) etRock.traceF( tin0P , T("ping pong 2 ")+tMe+T(" returning service to ")+tHe ) ;
 
-                countT cTimesIn = cbi / sizeof( timeS ) ;
+                    countT cTimesIn = cbi / sizeof( timeS ) ;
+                {
+                if( tHe.csF( tin0P ) )
+
+                ) ;
+
+                                        : ""
+                                        ? "WEB2"
+                                    : nnHe == nnWEB2
+                                    ? "WEB1"
+                                : nnHe == nnWEB1
+                                ? "GO1"
+                            : nnHe == nnGO1
+                            ? "DNS1"
+                        : nnHe == nnDNS1
+                        ? "WH2"
+                    : nnHe == nnWH2
+                    ? "WH1"
+
+                TN( tHe , nnHe == nnWH1
             {
             else
             }
