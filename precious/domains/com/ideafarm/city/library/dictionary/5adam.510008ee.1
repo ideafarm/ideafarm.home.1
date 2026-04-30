@@ -144,15 +144,17 @@ DONE( tmCatchF )
                             // ME:   timeEat
                         {
                         if( timeA1 < TUCK )
-                        //etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" time to write all entries [origin,peer]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) ) ;
 
                         if( timeB1 > timeA1 ) { BLAMMOiD4( 0x33333333 , timeB1 , timeA1 , 0 ) ; }
-                        if( timeB2          ) { BLAMMOiD4( 0x22222222 , timeB2 , 0 , 0 ) ; }
+                        if( timeB2          ) { BLAMMOiD4( 0x22222222 , timeB2 , 0      , 0 ) ; }
+                        if( timeA2          ) { BLAMMOiD4( 0x11111111 , timeA2 , 0      , 0 ) ; }
+
+                        etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" time to write all entries [he]:    ")+TT(timeB1,timeB2) ) ;
                         etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , pTimeIn[ 1 ].time1 , pTimeIn[ 1 ].time2 ) ;         // timeB IS THE TIME TAKEN BY THE PEER TO WRITE ALL OF ITS ENTRIES IN THE RECORD
                         sCountT timeB2 = pTimeIn[ TIMESiNrECORD - 1 ].time2 ;
                         countT  timeB1 = pTimeIn[ TIMESiNrECORD - 1 ].time1 ;
 
-                        if( timeA2          ) { BLAMMOiD4( 0x11111111 , timeA2 , 0 , 0 ) ; }
+                        etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" time to write all entries [me]:    ")+TT(timeA1,timeA2) ) ;
                         etThread.osTimeSubtractF( tin0P , timeA1 , timeA2 , pTimeIn[ 0 ].time1 , pTimeIn[ 0 ].time2 ) ;         // timeA IS THE TIME TAKEN BY THE ORIGIN (ME) TO RECEIVE THE COMPLETED LIST OF PAIRS
                         sCountT timeA2 = timeEat.time2 ;
                         countT  timeA1 = timeEat.time1 ;
