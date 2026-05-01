@@ -195,6 +195,10 @@ DONE( tmCatchF )
                 etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" eating") ) ;
             {
             if( cbi == sizeof pTimeRecord )
+
+            swTallyAll ++ ;
+            swTallyNew ++ ;
+            nnHeLever = nnHe ;
         {
         if( !( cbi % sizeof( timeS ) ) )
 
@@ -231,6 +235,15 @@ DONE( tmCatchF )
                     sCountT meanError = accumulatedErrors / cErrorsAccumulated ;
                 {
                 if( cErrorsAccumulated )
+
+                swTallyNew.freeAllF( tin0P ) ;
+                }
+                    etRock.traceF( tin0P , T("caught [tallyAll,tallyNew,nnHe]:    ")+TF3(swTallyAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(swTallyNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+T(nnHeLever) ) ;
+                    nnHeLever = *(nicNameC*)swTallyAll.leverF( tin0P , idf ) ;
+                    _IO_
+                {
+                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                countT cFlavors = swTallyAll.cFlavorsF( tin0P ) ;
             {
             if( tick != tickLath )
 
@@ -241,6 +254,9 @@ DONE( tmCatchF )
         {
     {
     while( !ether && !etThread )
+    switchC swTallyAll( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , nnHeLever ) ;
+    switchC swTallyNew( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , nnHeLever ) ;
+    nicNameC nnHeLever ;
     homeS& home = homeS::homeIF() ;
     ZE( countT  , cErrorsAccumulated ) ;
     ZE( sCountT , accumulatedErrors ) ;
