@@ -140,7 +140,11 @@ DONE( tmCatchF )
             }
                 }
                     }
-                        //else etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" [timeA,timeB]:    ")+TT(timeA1,timeA2)+tb4+TT(timeB1,timeB2) ) ;
+                        }
+                            etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" ignoring record [timeB]:    ")+TT(timeB1,timeB2) ) ;
+                            etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" ignoring record [timeA]:    ")+TT(timeA1,timeA2) ) ;
+                        {
+                        else
                         }
                             cErrorsAccumulated ++ ;
                             accumulatedErrors += error ;
@@ -163,9 +167,13 @@ DONE( tmCatchF )
                             //  he:  pTimeIn[ TIMESiNrECORD - 1 ]
                             // ME:   timeEat
                         {
-                        if( timeB1 < timeA1 && timeA1 < TUCK )          // THEORETICALLY, timeB1 MUST BE < timeA1 ; BUT THIS EXPRESSION HAS BEEN OBSERVED TO BE FALSE (BY A TINY AMOUNT LESS THAN THE TIMEGRAIN), PRESUMABLY DUE TO THE TICKER ON EACH HOST BEING OUT OF PHASE WITH THE TICKER ON THE OTHER
+                        if( timeA1 < TUCK || cSlowRun > 4 )
 
-                        //PS:PERSONALITY: I IGNORE THE RECORD IF ITS ELAPSED TIME IS UNUSUALLY LONG OR IF THE RELATIVE TIMES AS MEASURED ARE IMPOSSIBLE OTHER THAN DUE TO TICKERS BEING OUT OF PHASE
+                        else                    cSlowRun = 0 ;
+                        if( timeA1 >= TUCK ) ++ cSlowRun     ;
+
+                        // THEORETICALLY, timeB1 MUST BE < timeA1 ; BUT THIS EXPRESSION HAS BEEN OBSERVED TO BE FALSE (BY A TINY AMOUNT LESS THAN THE TIMEGRAIN), PRESUMABLY DUE TO THE TICKER ON EACH HOST BEING OUT OF PHASE WITH THE TICKER ON THE OTHER
+                        // PS:PERSONALITY: I **USUALLY** IGNORE THE RECORD IF ITS ELAPSED TIME IS UNUSUALLY LONG , BUT TO AVOID BIAS, I DO NOT DISCARD IMPOSSIBLE RECORDS (IF THE RELATIVE TIMES AS MEASURED ARE IMPOSSIBLE OTHER THAN DUE TO TICKERS BEING OUT OF PHASE)
 
                         if( timeB2          ) { BLAMMOiD4( 0x22222222 , timeB2 , 0      , 0 ) ; }
                         if( timeA2          ) { BLAMMOiD4( 0x11111111 , timeA2 , 0      , 0 ) ; }
@@ -256,6 +264,7 @@ DONE( tmCatchF )
         {
     {
     while( !ether && !etThread )
+    ZE( countT , cSlowRun ) ;
     switchC swTallyAll( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , nnHeLever ) ;
     switchC swTallyNew( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , nnHeLever ) ;
     nicNameC nnHeLever ;
