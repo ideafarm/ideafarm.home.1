@@ -782,7 +782,10 @@ TASK( tmAddAddressF )
 
     const countT time1TrueMidpoint = time1PerEpoch >> 1 ;
 
-    swsIdBookIdSubByEmailP.sinkF( tin0P , countTC() , count2S( idBook , idSub ) ) ;
+    }
+        swsIdBookIdSubByEmailP.sinkF( tin0P , countTC() , count2S( idBook , idSub ) ) ;
+        _IO_
+    {
     psttlEmailP = tEmail ;
 
     countT idSub  = woSub.idSubF(  tin0P ) ;
