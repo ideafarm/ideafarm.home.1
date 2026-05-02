@@ -23,7 +23,7 @@ DONE( tmWorkF )
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnWH1 , (byteT*)&woServe , sizeof woServe ) ;
             etRock.traceF( tin0P , T("ping pong 1 ")+tMe+T(" serving {")+TF2(idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} to WH1") ) ;
 
-            serveS woServe( ++ idServe , timeN ) ;
+            serveS woServe( idServer , ++ idServe , timeN ) ;
             etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
             timeS timeN ;
         {
@@ -37,6 +37,24 @@ DONE( tmWorkF )
         etRock.traceF( tin0P , T("WH1 i am the time reference host playing ping pong with challengers") ) ;
     {
     if( nnMeInner == nnWH1 )
+
+    __Z( idServer ) ;
+    ;
+
+                            : 0
+                            ? 6
+                        : nnMeInner == nnWEB2
+                        ? 5
+                    : nnMeInner == nnWEB1
+                    ? 4
+                : nnMeInner == nnGO1
+                ? 3
+            : nnMeInner == nnDNS1
+            ? 2
+        : nnMeInner == nnWH2
+        ? 1
+
+    countT idServer = nnMeInner == nnWH1
 
     __Z( tMe.csF( tin0P ) ) ;
     ) ;
@@ -111,11 +129,11 @@ DONE( tmCatchF )
                                                                 woReturnOut.pTime[ offt ] = timeZe          ;
                     for( offt = 0 ; offt < cTimesIn ; offt ++ ) woReturnOut.pTime[ offt ] = woReturnIn.pTime[ offt ] ;
                     ZE( countT , offt ) ;
-                    returnS woReturnOut( woReturnIn.idServe ) ;
+                    returnS woReturnOut( woReturnIn.idServer , woReturnIn.idServe ) ;
 
-                    else                     etRock.traceF( tin0P , T("ping pong 3 ")+tMe+T(" boosting {")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} to "        )+tHe ) ;
-                    else if( cTimesIn  % 2 ) etRock.traceF( tin0P , T("ping pong 4 ")+tMe+T(" returning {")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} to "        )+tHe ) ;
-                         if( cTimesIn == 1 ) etRock.traceF( tin0P , T("ping pong 2 ")+tMe+T(" returning {")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} service to ")+tHe ) ;
+                    else                     etRock.traceF( tin0P , T("ping pong 3 ")+tMe+T(" boosting {" )+TF2(woReturnIn.idServer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDot+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} to "        )+tHe ) ;
+                    else if( cTimesIn  % 2 ) etRock.traceF( tin0P , T("ping pong 4 ")+tMe+T(" returning {")+TF2(woReturnIn.idServer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDot+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} to "        )+tHe ) ;
+                         if( cTimesIn == 1 ) etRock.traceF( tin0P , T("ping pong 2 ")+tMe+T(" returning {")+TF2(woReturnIn.idServer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDot+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} service to ")+tHe ) ;
 
                     countT cTimesIn = ( cbi - sizeof( countT ) ) / sizeof( timeS ) ;
                 {
@@ -202,7 +220,7 @@ DONE( tmCatchF )
                     timeS timeEat ;
                 {
                 if( nnMeInnerP != nnHe  )
-                etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" eating {")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("}") ) ;
+                etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" eating {")+TF2(woReturnIn.idServer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDot+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("}") ) ;
             {
             if( cbi == sizeof returnS )                         // IF THE GRAM CONTAINS A COMPLETE RECORD
 
@@ -210,7 +228,7 @@ DONE( tmCatchF )
             swTallyNew ++ ;
             nnHeLever = nnHe ;
         {
-        if( sizeof( countT ) == cbi % sizeof( timeS ) )         // IF THE GRAM CONTAINS idServe FOLLOWED BY AN INTEGRAL NUMBER OF timeS IMAGES
+        if( !( ( cbi - 2 * sizeof( countT ) ) % sizeof( timeS ) ) )         // IF THE GRAM CONTAINS idServe FOLLOWED BY AN INTEGRAL NUMBER OF timeS IMAGES
 
         //      
         //         | 
@@ -282,6 +300,7 @@ DONE( tmCatchF )
     ZE( sCountT , accumulatorSelf   ) ;
     TN( tSay , "" ) ; 
     TN( tb01 , "                " ) ;
+    TN( tDot , "." ) ;
     TN( tb4 , "    " ) ;
     const timeS timeZe ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
@@ -326,19 +345,21 @@ TASK( tmCatchF )
 
 ;
 }
-    inline returnS( countT idServeP ) : idServe( idServeP ) {}
+    inline returnS( countT idServerP ,countT idServeP ) : idServer( idServerP ) , idServe( idServeP ) {}
 
     timeS  pTime[ TIMESiNrECORD ] ;
-    countT idServe ;
+    countT idServe                ;
+    countT idServer               ;
 {
 struct returnS
 
 ;
 }
-    inline serveS( countT idServeP , timeS& timeServeP ) : idServe( idServeP ) , timeServe( timeServeP ) {}
+    inline serveS( countT idServerP , countT idServeP , timeS& timeServeP ) : idServer( idServerP ) , idServe( idServeP ) , timeServe( timeServeP ) {}
 
     timeS  timeServe ;
-    countT idServe ;
+    countT idServe   ;
+    countT idServer  ;
 {
 struct serveS
 
