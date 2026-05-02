@@ -124,7 +124,7 @@ DONE( tmCatchF )
         }
             }
                 }
-                    sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)&woReturnOut , sizeof( countT ) + ( cTimesIn + 1 ) * sizeof( timeS ) ) ;
+                    sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)&woReturnOut , 2 * sizeof( countT ) + ( cTimesIn + 1 ) * sizeof( timeS ) ) ;
 
                     etThread.osTimeNowF( tin0P ,                woReturnOut.pTime[ offt ].time1 , woReturnOut.pTime[ offt ].time2 ) ;
                                                                 woReturnOut.pTime[ offt ] = timeZe          ;
@@ -136,7 +136,7 @@ DONE( tmCatchF )
                     else if( cTimesIn  % 2 ) etRock.traceF( tin0P , T("ping pong 4 ")+tMe+T(" returning {")+TF2(woReturnIn.idServer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDot+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} to "        )+tHe ) ;
                          if( cTimesIn == 1 ) etRock.traceF( tin0P , T("ping pong 2 ")+tMe+T(" returning {")+TF2(woReturnIn.idServer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDot+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} service to ")+tHe ) ;
 
-                    countT cTimesIn = ( cbi - sizeof( countT ) ) / sizeof( timeS ) ;
+                    countT cTimesIn = ( cbi - 2 * sizeof( countT ) ) / sizeof( timeS ) ;
                 {
                 if( tHe.csF( tin0P ) )
 
