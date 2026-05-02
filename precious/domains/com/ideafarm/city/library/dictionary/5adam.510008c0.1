@@ -251,7 +251,9 @@ DONE( tmWorkF )
 
                             bDownNoticeSent = 1 ;
                         {
-                        if( !bKey && !bDownNoticeSent && cStompRouterLiveFail > 1 )
+                        if( !bKey && !bDownNoticeSent && cStompRouterLiveFail > 2 )
+
+                        // PS:PERSONALITY: THE WO'TH STOMP IN A NEW PHASE (E.G. THE WO'TH STOMP ON ROUTER1) IS EXPECTED TO FAIL ; THE LATH STOMP IN A PHASE HAS BEEN OBSERVED 20260502@1639 TO FAIL ; SO I REQUIRE AT LEAST 3 CONSECUTIVE FAILS TO REPORT "DOWN"
 
                         //etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(" reset tim1Signature to 0") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM | flTRACE_NOpREFIX ) ;
                         bChatter       = 1 ;
