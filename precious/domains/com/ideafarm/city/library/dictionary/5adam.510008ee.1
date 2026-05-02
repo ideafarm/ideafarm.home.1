@@ -21,7 +21,7 @@ DONE( tmWorkF )
             ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
 
             sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnWH1 , (byteT*)&woServe , sizeof woServe ) ;
-            etRock.traceF( tin0P , T("ping pong 1 ")+tMe+T(" serving ")+TF2(idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to WH1") ) ;
+            etRock.traceF( tin0P , T("ping pong 1 ")+tMe+T(" serving {")+TF2(idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} to WH1") ) ;
 
             serveS woServe( ++ idServe , timeN ) ;
             etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
@@ -113,9 +113,9 @@ DONE( tmCatchF )
                     ZE( countT , offt ) ;
                     returnS woReturnOut( woReturnIn.idServe ) ;
 
-                    else                     etRock.traceF( tin0P , T("ping pong 3 ")+tMe+T(" boosting ")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to "        )+tHe ) ;
-                    else if( cTimesIn  % 2 ) etRock.traceF( tin0P , T("ping pong 4 ")+tMe+T(" returning ")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to "        )+tHe ) ;
-                         if( cTimesIn == 1 ) etRock.traceF( tin0P , T("ping pong 2 ")+tMe+T(" returning ")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" service to ")+tHe ) ;
+                    else                     etRock.traceF( tin0P , T("ping pong 3 ")+tMe+T(" boosting {")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} to "        )+tHe ) ;
+                    else if( cTimesIn  % 2 ) etRock.traceF( tin0P , T("ping pong 4 ")+tMe+T(" returning {")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} to "        )+tHe ) ;
+                         if( cTimesIn == 1 ) etRock.traceF( tin0P , T("ping pong 2 ")+tMe+T(" returning {")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("} service to ")+tHe ) ;
 
                     countT cTimesIn = ( cbi - sizeof( countT ) ) / sizeof( timeS ) ;
                 {
@@ -202,7 +202,7 @@ DONE( tmCatchF )
                     timeS timeEat ;
                 {
                 if( nnMeInnerP != nnHe  )
-                etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" eating [idServe]:    ")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" eating {")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("}") ) ;
             {
             if( cbi == sizeof returnS )                         // IF THE GRAM CONTAINS A COMPLETE RECORD
 
