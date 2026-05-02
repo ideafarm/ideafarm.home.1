@@ -20,14 +20,15 @@ DONE( tmWorkF )
         }
             ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
 
-            sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnWH1 , (byteT*)&timeN , sizeof timeN ) ;
-            etRock.traceF( tin0P , T("ping pong 1 ")+tMe+T(" serving to WH1") ) ;
+            sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnWH1 , (byteT*)&woServe , sizeof woServe ) ;
+            etRock.traceF( tin0P , T("ping pong 1 ")+tMe+T(" serving ")+TF2(idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to WH1") ) ;
 
+            serveS woServe( ++ idServe , timeN ) ;
             etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
             timeS timeN ;
         {
         while( !ether )
-        ZE( countT , idCycle ) ;
+        ZE( countT , idServe ) ;
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     else
@@ -104,18 +105,19 @@ DONE( tmCatchF )
         }
             }
                 }
-                    sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)pTimeRecord , ( offt + 1 ) * sizeof( timeS ) ) ;
+                    sThrow.writeF( tin0P , ifcPORToLD2_CATCH , nnHe , (byteT*)woReturnOut.pTime , ( offt + 1 ) * sizeof( timeS ) ) ;
 
-                    etThread.osTimeNowF( tin0P ,                pTimeRecord[ offt ].time1 , pTimeRecord[ offt ].time2 ) ;
-                                                                pTimeRecord[ offt ] = timeZe          ;
-                    for( offt = 0 ; offt < cTimesIn ; offt ++ ) pTimeRecord[ offt ] = pTimeIn[ offt ] ;
+                    etThread.osTimeNowF( tin0P ,                woReturnOut.pTime[ offt ].time1 , woReturnOut.pTime[ offt ].time2 ) ;
+                                                                woReturnOut.pTime[ offt ] = timeZe          ;
+                    for( offt = 0 ; offt < cTimesIn ; offt ++ ) woReturnOut.pTime[ offt ] = woReturnIn.pTime[ offt ] ;
                     ZE( countT , offt ) ;
+                    returnS woReturnOut( woReturnIn.idServe ) ;
 
-                    else                     etRock.traceF( tin0P , T("ping pong 3 ")+tMe+T(" returning to "        )+tHe ) ;
-                    else if( cTimesIn  % 2 ) etRock.traceF( tin0P , T("ping pong 4 ")+tMe+T(" returning to "        )+tHe ) ;
-                         if( cTimesIn == 1 ) etRock.traceF( tin0P , T("ping pong 2 ")+tMe+T(" returning service to ")+tHe ) ;
+                    else                     etRock.traceF( tin0P , T("ping pong 3 ")+tMe+T(" returning ")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to "        )+tHe ) ;
+                    else if( cTimesIn  % 2 ) etRock.traceF( tin0P , T("ping pong 4 ")+tMe+T(" boosting ")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to "        )+tHe ) ;
+                         if( cTimesIn == 1 ) etRock.traceF( tin0P , T("ping pong 2 ")+tMe+T(" returning ")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" service to ")+tHe ) ;
 
-                    countT cTimesIn = cbi / sizeof( timeS ) ;
+                    countT cTimesIn = ( cbi - sizeof( countT ) ) / sizeof( timeS ) ;
                 {
                 if( tHe.csF( tin0P ) )
 
@@ -152,19 +154,19 @@ DONE( tmCatchF )
                             etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" [error]:    ")+TF2(error,flFORMAT_NObIGITvALUES) ) ;
                             sCountT error = timeE1 ;
                             etRock.traceF( tin0P , T("ping pong 5 [error (subtraction)]:     ")+tMe+tb4+TTF(timeE1,timeE2) ) ;
-                            etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , pTimeIn[ TIMESiNrECORD - 1 ].time1 , pTimeIn[ TIMESiNrECORD - 1 ].time2 ) ;
+                            etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , woReturnIn.pTime[ TIMESiNrECORD - 1 ].time1 , woReturnIn.pTime[ TIMESiNrECORD - 1 ].time2 ) ;
                             sCountT timeE2 = timeMeWhenHeSnapped2 ;
                             countT  timeE1 = timeMeWhenHeSnapped1 ;
 
-                            etRock.traceF( tin0P , T("ping pong 5 [time      HeSnapped]:     ")+tMe+tb4+TTF(pTimeIn[TIMESiNrECORD-1].time1,pTimeIn[TIMESiNrECORD-1].time2) ) ;
+                            etRock.traceF( tin0P , T("ping pong 5 [time      HeSnapped]:     ")+tMe+tb4+TTF(woReturnIn.pTime[TIMESiNrECORD-1].time1,woReturnIn.pTime[TIMESiNrECORD-1].time2) ) ;
                             etRock.traceF( tin0P , T("ping pong 5 [timeMeWhenHeSnapped]:     ")+tMe+tb4+TTF(timeMeWhenHeSnapped1,timeMeWhenHeSnapped2) ) ;
-                            sCountT timeMeWhenHeSnapped2 = (sCountT)( ( (count04T)timeEat.time2 + (count04T)pTimeIn[ TIMESiNrECORD - 2 ].time2 ) >> 1 ) ;        // ESTIMATE OF WHAT MY CLOCK SAID WHEN HIS CLOCK WAS SNAPPED
-                            countT  timeMeWhenHeSnapped1 =  (countT)( ( (count04T)timeEat.time1 + (count04T)pTimeIn[ TIMESiNrECORD - 2 ].time1 ) >> 1 ) ;        // ESTIMATE OF WHAT MY CLOCK SAID WHEN HIS CLOCK WAS SNAPPED
+                            sCountT timeMeWhenHeSnapped2 = (sCountT)( ( (count04T)timeEat.time2 + (count04T)woReturnIn.pTime[ TIMESiNrECORD - 2 ].time2 ) >> 1 ) ;        // ESTIMATE OF WHAT MY CLOCK SAID WHEN HIS CLOCK WAS SNAPPED
+                            countT  timeMeWhenHeSnapped1 =  (countT)( ( (count04T)timeEat.time1 + (count04T)woReturnIn.pTime[ TIMESiNrECORD - 2 ].time1 ) >> 1 ) ;        // ESTIMATE OF WHAT MY CLOCK SAID WHEN HIS CLOCK WAS SNAPPED
 
-                            // ME:   pTimeIn[ TIMESiNrECORD - 4 ]
-                            //  he:  pTimeIn[ TIMESiNrECORD - 3 ]
-                            // ME:   pTimeIn[ TIMESiNrECORD - 2 ]
-                            //  he:  pTimeIn[ TIMESiNrECORD - 1 ]
+                            // ME:   woReturnIn.pTime[ TIMESiNrECORD - 4 ]
+                            //  he:  woReturnIn.pTime[ TIMESiNrECORD - 3 ]
+                            // ME:   woReturnIn.pTime[ TIMESiNrECORD - 2 ]
+                            //  he:  woReturnIn.pTime[ TIMESiNrECORD - 1 ]
                             // ME:   timeEat
                         {
                         if( timeA1 < TUCK || cSlowRun > 4 )
@@ -175,40 +177,40 @@ DONE( tmCatchF )
                         // THEORETICALLY, timeB1 MUST BE < timeA1 ; BUT THIS EXPRESSION HAS BEEN OBSERVED TO BE FALSE (BY A TINY AMOUNT LESS THAN THE TIMEGRAIN), PRESUMABLY DUE TO THE TICKER ON EACH HOST BEING OUT OF PHASE WITH THE TICKER ON THE OTHER
                         // PS:PERSONALITY: I **USUALLY** IGNORE THE RECORD IF ITS ELAPSED TIME IS UNUSUALLY LONG , BUT TO AVOID BIAS, I DO NOT DISCARD IMPOSSIBLE RECORDS (IF THE RELATIVE TIMES AS MEASURED ARE IMPOSSIBLE OTHER THAN DUE TO TICKERS BEING OUT OF PHASE)
 
-                        if( timeB2          ) { BLAMMOiD4( 0x22222222 , timeB2 , 0      , 0 ) ; }
-                        if( timeA2          ) { BLAMMOiD4( 0x11111111 , timeA2 , 0      , 0 ) ; }
+                        if( timeB2 ) { BLAMMOiD4( 0x22222222 , timeB2 , 0      , 0 ) ; }
+                        if( timeA2 ) { BLAMMOiD4( 0x11111111 , timeA2 , 0      , 0 ) ; }
 
                         etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" time to write all entries [he]:    ")+TT(timeB1,timeB2) ) ;
-                        etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , pTimeIn[ 1 ].time1 , pTimeIn[ 1 ].time2 ) ;         // timeB IS THE TIME TAKEN BY THE PEER TO WRITE ALL OF ITS ENTRIES IN THE RECORD
-                        sCountT timeB2 = pTimeIn[ TIMESiNrECORD - 1 ].time2 ;
-                        countT  timeB1 = pTimeIn[ TIMESiNrECORD - 1 ].time1 ;
+                        etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , woReturnIn.pTime[ 1 ].time1 , woReturnIn.pTime[ 1 ].time2 ) ;         // timeB IS THE TIME TAKEN BY THE PEER TO WRITE ALL OF ITS ENTRIES IN THE RECORD
+                        sCountT timeB2 = woReturnIn.pTime[ TIMESiNrECORD - 1 ].time2 ;
+                        countT  timeB1 = woReturnIn.pTime[ TIMESiNrECORD - 1 ].time1 ;
 
                         etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" time to write all entries [me]:    ")+TT(timeA1,timeA2) ) ;
-                        etThread.osTimeSubtractF( tin0P , timeA1 , timeA2 , pTimeIn[ 0 ].time1 , pTimeIn[ 0 ].time2 ) ;         // timeA IS THE TIME TAKEN BY THE ORIGIN (ME) TO RECEIVE THE COMPLETED LIST OF PAIRS
+                        etThread.osTimeSubtractF( tin0P , timeA1 , timeA2 , woReturnIn.pTime[ 0 ].time1 , woReturnIn.pTime[ 0 ].time2 ) ;         // timeA IS THE TIME TAKEN BY THE ORIGIN (ME) TO RECEIVE THE COMPLETED LIST OF PAIRS
                         sCountT timeA2 = timeEat.time2 ;
                         countT  timeA1 = timeEat.time1 ;
 
                         etRock.traceF( tin0P , T("ping pong 5 [eat,time]:    ")+tMe+tb01+TTF(timeEat.time1,timeEat.time2) ) ;
                         }
-                            etRock.traceF( tin0P , T("ping pong 5 [off,time]:    ")+tMe+tb4+TF3(offt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TTF(pTimeIn[offt].time1,pTimeIn[offt].time2) ) ;
+                            etRock.traceF( tin0P , T("ping pong 5 [off,time]:    ")+tMe+tb4+TF3(offt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TTF(woReturnIn.pTime[offt].time1,woReturnIn.pTime[offt].time2) ) ;
                         {
                         for( countT offt = 0 ; offt < TIMESiNrECORD ; offt ++ )
                     {
-                    if( timeEat.time2 == pTimeIn[ 0 ].time2 )            // IF THE RECORD DOES NOT STRADDLE A DAY BOUNDARY
+                    if( timeEat.time2 == woReturnIn.pTime[ 0 ].time2 )            // IF THE RECORD DOES NOT STRADDLE A DAY BOUNDARY
 
                     etThread.osTimeNowF( tin0P , timeEat.time1 , timeEat.time2 ) ;
                     timeS timeEat ;
                 {
                 if( nnMeInnerP != nnHe  )
-                etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" eating") ) ;
+                etRock.traceF( tin0P , T("ping pong 5 ")+tMe+T(" eating [idServe]:    ")+TF2(woReturnIn.idServe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
-            if( cbi == sizeof pTimeRecord )
+            if( cbi == sizeof returnS )                         // IF THE GRAM CONTAINS A COMPLETE RECORD
 
             swTallyAll ++ ;
             swTallyNew ++ ;
             nnHeLever = nnHe ;
         {
-        if( !( cbi % sizeof( timeS ) ) )
+        if( sizeof( countT ) == cbi % sizeof( timeS ) )         // IF THE GRAM CONTAINS idServe FOLLOWED BY AN INTEGRAL NUMBER OF timeS IMAGES
 
         //      
         //         | 
@@ -222,7 +224,7 @@ DONE( tmCatchF )
         //      
         // THIS IS WHAT I TRACE TO ENABLE VERIFICATION THAT meanError IS EFFECTIVE IN ELIMINATING ALMOST ALL OUT OF ORDER LINES IN TRACEMERGE OUTPUT
 
-        timeS* pTimeIn = (timeS*)pbi ;
+        returnS& woReturnIn = *(returnS*)pbi ;
         sCatch.readF( tin0P , pbi , cbi , idpHe , nnHe ) ; ___( pbi ) ;
         nicNameC nnHe ;
         ZE( countT , idpHe ) ;
@@ -272,8 +274,6 @@ DONE( tmCatchF )
     ZE( countT  , cErrorsAccumulated ) ;
     ZE( sCountT , accumulatedErrors ) ;
     ZE( countT  , tickLath ) ;
-    thirdC::c_memsetIF( tin0P , (byteT*)pTimeRecord , sizeof pTimeRecord ) ;
-    timeS pTimeRecord[ TIMESiNrECORD ] ;                 // MUST BE AT LEAST 4 ELEMENTS ; 4 ELEMENTS CONTAINS 1 ROUNDTRIP FOR ORIGINATOR AND 1 ROUNDTRIP FOR PEER
     ZE( sCountT , meanErrorPeers    ) ;
     ZE( sCountT , meanErrorSelf     ) ;
     ZE( sCountT , cAccumulatedPeers ) ;
@@ -324,12 +324,26 @@ DONE( tmCatchF )
 if( pTaskP && pTaskP->c1 )
 TASK( tmCatchF )
 
+;
+}
+    inline returnS( countT idServeP ) : idServe( idServeP ) {}
+
+    timeS  pTime[ TIMESiNrECORD ] ;
+    countT idServe ;
+{
+struct returnS
+
+;
+}
+    inline serveS( countT idServeP , timeS& timeServeP ) : idServe( idServeP ) , timeServe( timeServeP ) {}
+
+    timeS  timeServe ;
+    countT idServe ;
+{
+struct serveS
+
 #define TIMESiNrECORD ( 0x4 )
-//B:#define TIMESiNrECORD ( 0x10 )
-//B:#define TIMESiNrECORD ( 0x20 )
-//B:#define TIMESiNrECORD ( 0x2 )
-//GGGG:#define TIMESiNrECORD ( 0x8 )
-//COHERENCE IS VERY SENSITIVE TO THIS SETTING AND THIS IS A MYSTERY WHY
+// MUST BE AT LEAST 4 ELEMENTS ; 4 ELEMENTS CONTAINS 1 ROUNDTRIP FOR ORIGINATOR AND 1 ROUNDTRIP FOR PEER
 //MUST BE EVEN, SO THAT THE ORIGIN WRITES THE WOTH AND THE PEER WRITES THE LATH
 
 #define DEBUGbIAS ( 0x50 )
