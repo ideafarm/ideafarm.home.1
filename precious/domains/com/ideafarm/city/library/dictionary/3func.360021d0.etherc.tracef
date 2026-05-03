@@ -336,6 +336,7 @@
                             countT  timeT1 = ((tin12S&)tin0P).ptTraceRawLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 ;
 
                                                                                          ((tin12S&)tin0P).ptTraceRawLath[    idDivertP - ifcIDtRACEdIVERT_min ] = startRaw ;
+                                                                                         ((tin12S&)tin0P).ptTraceLath[       idDivertP - ifcIDtRACEdIVERT_min ] = start    ;
 
                             osTimeSubtractF( tin0P , timeDeltaGross1 , timeDeltaGross2 , ((tin12S&)tin0P).ptTraceRawLath[    idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceRawLath[    idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
                             osTimeSubtractF( tin0P , timeDeltaNet1   , timeDeltaNet2   , ((tin12S&)tin0P).ptTraceRawEndLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceRawEndLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
@@ -515,6 +516,13 @@
     ZE( sCountT , timeMe2  ) ;
     ZE( countT  , timeMe1  ) ;
     ZE( boolT   , bEndTime ) ;
+
+const timeS* const ptDebugTraceRawEndLath = ((tin12S&)tin0P).ptTraceRawLath ;
+const timeS* const ptDebugTraceRawLath    = ((tin12S&)tin0P).ptTraceRawWoth ;
+const timeS* const ptDebugTraceRawWoth    = ((tin12S&)tin0P).ptTraceEndLath ;
+const timeS* const ptDebugTraceEndLath    = ((tin12S&)tin0P).ptTraceLath    ;
+const timeS* const ptDebugTraceLath       = ((tin12S&)tin0P).ptTraceLath    ;
+const timeS* const ptDebugTraceWoth       = ((tin12S&)tin0P).ptTraceWoth    ;
 
     }
         }
