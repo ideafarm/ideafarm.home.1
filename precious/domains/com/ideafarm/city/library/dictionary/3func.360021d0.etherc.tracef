@@ -212,25 +212,27 @@
                         OStEXTAK( ostoSay , " | " ) ;
                         while( costPad1 -- ) { OStEXTAK( ostoSay , " " ) ; }
                         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA(  ostoSay , ((tin123S&)tin0P).postThreadName ) ;
-                        OStEXTAK( ostoSay , " : " ) ;
+                        OStEXTAK( ostoSay , " > " ) ;
                         OStEXTC(  ostoSay , ((tin1S&)tin0P).glass.idThread , ' ' ) ;
-                        OStEXTAK( ostoSay , " + " ) ;
+                        OStEXTAK( ostoSay , " < " ) ;
                         OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idCell , ' ' ) ;
-                        OStEXTAK( ostoSay , " * " ) ;
+                        OStEXTAK( ostoSay , " + " ) ;
                         OStEXTA(  ostoSay , ostoCyclesDeltaNet ) ;
-                        OStEXTAK( ostoSay , " & " ) ;
+                        OStEXTAK( ostoSay , " * " ) ;
                         OStEXTA(  ostoSay , ostoCyclesDeltaGross ) ;
-                        OStEXTAK( ostoSay , " ^ " ) ;
+                        OStEXTAK( ostoSay , " & " ) ;
                         OStEXTA(  ostoSay , ostoTimeDeltaNet ) ;
-                        OStEXTAK( ostoSay , " % " ) ;
+                        OStEXTAK( ostoSay , " ^ " ) ;
                         OStEXTA(  ostoSay , ostoTimeDeltaGross ) ;
-                        OStEXTAK( ostoSay , " $ " ) ;
+                        OStEXTAK( ostoSay , " % " ) ;
                         OStEXTA(  ostoSay , ostoTimeThread ) ;
-                        OStEXTAK( ostoSay , " # " ) ;
+                        OStEXTAK( ostoSay , " $ " ) ;
                         while( costPad2 -- ) { OStEXTAK( ostoSay , " " ) ; }
                         OStEXTA(  ostoSay , postComputerLanName ) ;
-                        OStEXTAK( ostoSay , " @ " ) ;
+                        OStEXTAK( ostoSay , " # " ) ;
                         OStEXTA(  ostoSay , ostoCyclesThread ) ;        //PLACED HERE SO SORTING IS BETTER WHEN MULTIPLE LINES HAVE THE SAME ostoTimeNow VALUE (WILL ONLY WORK IF ALL OF THOSE LINES ARE FOR THE SAME THREAD)
+                        OStEXTAK( ostoSay , " @ " ) ;
+                        OStEXTA(  ostoSay , ostoError ) ;
                         OStEXTAK( ostoSay , " ! " ) ;
                         OStEXTA(  ostoSay , ostoTimeNowRaw ) ;
                         OStEXTAK( ostoSay , " ~ " ) ;
@@ -280,9 +282,9 @@
                             countT* pcCyclesWoth       = (countT*)&cyclesWoth       ;
                             countT* pcCyclesStart        = (countT*)&cyclesStart        ;
 
-                            count04T cyclesDeltaNet    = cyclesStart - cyclesEndLath  ;
-                            count04T cyclesDeltaGross  = cyclesStart - cyclesLath     ;
-                            count04T cyclesThread      = cyclesStart - cyclesWoth     ;
+                            count04T cyclesDeltaNet    = !cyclesDeltaGross ? 0 : cyclesStart - cyclesEndLath  ;     // 20260502@2112: W/O ANALYSIS, TO PREVENT NONZE NET WHEN GROSS IS 0
+                            count04T cyclesDeltaGross  =                         cyclesStart - cyclesLath     ;
+                            count04T cyclesThread      =                         cyclesStart - cyclesWoth     ;
 
                             count04T cyclesEndLath     = ((tin12S&)tin0P).pCyclesTraceEndLath[ idDivertP - ifcIDtRACEdIVERT_min ] ;
                             count04T cyclesLath        = ((tin12S&)tin0P).pCyclesTraceLath[    idDivertP - ifcIDtRACEdIVERT_min ] ;
@@ -322,6 +324,17 @@
                             OStEXTCF( ostoTimeThread , timeT1 , '0' ) ;
                             OStEXTAK( ostoTimeThread , "." ) ;
                             OStEXTCF( ostoTimeThread , timeT2 , '0' ) ;
+
+                            }
+                                OStEXTC(  ostoError , absolute , ' ' ) ;
+                                else                 { OStEXTAK( ostoError , "- " ) ; }
+                                if( timeError >= 0 ) { OStEXTAK( ostoError , "  " ) ; }
+
+                                ;
+                                    : -timeError
+                                    ?  timeError
+                                countT absolute = timeError >= 0
+                            {
 
                             OStEXTCF( ostoTimeNowRaw , ((tin12S&)tin0P).ptTraceRawLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , '0' ) ;
                             OStEXTAK( ostoTimeNowRaw , "." ) ;
@@ -381,6 +394,7 @@
                             OStEXTAK( ostoTimeDeltaNet   , "--------.--------" ) ;
                             OStEXTAK( ostoTimeDeltaGross , "--------.--------" ) ;
                             OStEXTAK( ostoTimeThread     , "--------.--------" ) ;
+                            OStEXTAK( ostoError          , "----------" ) ;
                             OStEXTAK( ostoTimeNowRaw     , "--------.--------" ) ;
                             OStEXTAK( ostoTimeNow        , "--------.--------" ) ;
                         {
@@ -389,6 +403,7 @@
                         OStEXT( ostoTimeDeltaNet   , TUCK >> 3 ) ;
                         OStEXT( ostoTimeDeltaGross , TUCK >> 3 ) ;
                         OStEXT( ostoTimeThread     , TUCK >> 3 ) ;
+                        OStEXT( ostoError          , TUCK >> 3 ) ;
                         OStEXT( ostoTimeNowRaw     , TUCK >> 3 ) ;
                         OStEXT( ostoTimeNow        , TUCK >> 3 ) ;
 
@@ -517,12 +532,7 @@
     ZE( countT  , timeMe1  ) ;
     ZE( boolT   , bEndTime ) ;
 
-const timeS* const ptDebugTraceRawEndLath = ((tin12S&)tin0P).ptTraceRawLath ;
-const timeS* const ptDebugTraceRawLath    = ((tin12S&)tin0P).ptTraceRawWoth ;
-const timeS* const ptDebugTraceRawWoth    = ((tin12S&)tin0P).ptTraceEndLath ;
-const timeS* const ptDebugTraceEndLath    = ((tin12S&)tin0P).ptTraceLath    ;
-const timeS* const ptDebugTraceLath       = ((tin12S&)tin0P).ptTraceLath    ;
-const timeS* const ptDebugTraceWoth       = ((tin12S&)tin0P).ptTraceWoth    ;
+    sCountT timeError = meanTimeError1 ;
 
     }
         }
