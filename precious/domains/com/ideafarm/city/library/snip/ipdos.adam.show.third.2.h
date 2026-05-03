@@ -29177,7 +29177,6 @@ struct bookMarkOldS
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin_part1_S : 1snip.150001c5.tin_part1_S END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin_part2_S : 1snip.150001c6.tin_part2_S BEGIN
-
 //
 // Copyright (c) 1992-2026 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -29199,6 +29198,9 @@ struct bookMarkOldS
     timeS       ptTraceWoth[         1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     timeS       ptTraceLath[         1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     timeS       ptTraceEndLath[      1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    timeS       ptTraceRawWoth[      1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    timeS       ptTraceRawLath[      1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    timeS       ptTraceRawEndLath[   1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     count04T    pCyclesTraceWoth[    1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     count04T    pCyclesTraceLath[    1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     count04T    pCyclesTraceEndLath[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
