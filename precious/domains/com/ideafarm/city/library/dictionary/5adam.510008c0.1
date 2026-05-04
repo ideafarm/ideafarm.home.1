@@ -76,9 +76,10 @@ DONE( tmWorkF )
                                             cEpochsNoSignature = EPOCHSnOsIGNATURE ;
                                             time1Signature = 0 ;
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just went DOWN, but the router1 channel is still up.":"    The router2 channel just went DOWN, and the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpRouterLive = bUpRouter2 = 0 ;
+                                            bUpRouter2 = 0 ;
+                                            if( bLive ) bUpRouterLive = 0 ;
                                         {
-                                        if( bUpRouter2 && !bTrue && cStompRouter2Fail > 1 )              //P:PERSONALITY: I IGNORE A SINGLE ISOLATED FAILURE ; THE WO'TH STOMP WITH ANY IPv6 ADDRESS WILL ALWAYS/USUALLY FAIL
+                                        if( bUpRouter2 && bLive )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router2) FAIL  [epochMeUseLate,idStompRouter2,cFail,rc]:    ")+TF2(epochMeUseLate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++cStompRouter2Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                         CONoUTrAW( postPoop ) ;
                                         POOPRqUIET
@@ -86,17 +87,19 @@ DONE( tmWorkF )
                                         osTextT postPoop[ TUCK ] ;
                                         countT rc = POOP ;
                                         cStompRouter2Fail ++ ;
-                                        cStompRouterLiveFail ++ ;
+                                        if( bLive ) cStompRouterLiveFail ++ ;
                                     {
                                     else
                                     }
                                         }
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter1?"    The router2 channel just came UP, so both router1 and router2 are up.":"    The router2 channel just came UP, but the router1 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpRouterLive = bUpRouter2 = 1 ;
+                                            bUpRouter2 = 1 ;
+                                            if( bLive ) bUpRouterLive = 1 ;
                                         {
                                         if( !bUpRouter2 )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router2) aok   [epochMeUseLate,idStompRouter2         ]:    ")+TF2(epochMeUseLate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
-                                        cStompRouterLiveFail = cStompRouter2Fail = 0 ;
+                                        cStompRouter2Fail = 0 ;
+                                        if( bLive ) cStompRouterLiveFail = 0 ;
                                     {
                                     if( !POOP )
                                     ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TIMEsTOMPmAX ) ; ___( posti ) ;
@@ -108,16 +111,14 @@ DONE( tmWorkF )
                                     _IO_
                                 {
                                 IFsCRATCHoK
-                                cStompRouter2 ++ ;
-                                cStompRouterLive ++ ;
                             
                                 TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_USEdNS ? tRequestDomain : tRequestAddress ;
                             
-                                TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowRouter2+T("//http/ideanet/router2/gorilla.html") ;
+                                TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowRouter2+tUrlPartGorillaRouter2Address+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDotHtml ;
                             
                                 ;
                             
-                                    +T(".ideanet.ideafarm.com//http/ideanet/router2/gorilla.html")
+                                    +tUrlPartGorillaRouter2Domain+TF2(cStompRouter2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDotHtml
                                     +TF3(ipv6FieldsRouter2.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
                                     +TF3(ipv6FieldsRouter2.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
                                     +TF3(ipv6FieldsRouter2.epoch      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
@@ -126,8 +127,12 @@ DONE( tmWorkF )
                                 TN( tRequestDomain , "" ) ; tRequestDomain =
                             
                                 // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
+                                cStompRouter2 ++ ;
+                                if( bLive ) cStompRouterLive ++ ;
+                                boolT bLive = !bTrue ;
                             {
-                            else        // ROUTER2
+                            // ROUTER2
+
                             }
                                 }
                                     CONoUTrAW( "]" ) ;
@@ -138,9 +143,10 @@ DONE( tmWorkF )
                                             cEpochsNoSignature = EPOCHSnOsIGNATURE ;
                                             time1Signature = 0 ;
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just went DOWN, but the router2 channel is still up.":"    The router1 channel just went DOWN, and the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpRouterLive = bUpRouter1 = 0 ;
+                                            bUpRouter1 = 0 ;
+                                            bUpRouterLive = 0 ;
                                         {
-                                        if( bUpRouter1 && bTrue && cStompRouter1Fail > 1 )              //P:PERSONALITY: I IGNORE A SINGLE ISOLATED FAILURE ; THE WO'TH STOMP WITH ANY IPv6 ADDRESS WILL ALWAYS/USUALLY FAIL
+                                        if( bUpRouter1 && bLive )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router1) FAIL  [epochMeUseTrue,idStompRouter1,cFail,rc]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1Fail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
                                         CONoUTrAW( postPoop ) ;
                                         POOPRqUIET
@@ -148,17 +154,19 @@ DONE( tmWorkF )
                                         osTextT postPoop[ TUCK ] ;
                                         countT rc = POOP ;
                                         cStompRouter1Fail ++ ;
-                                        cStompRouterLiveFail ++ ;
+                                        if( bLive ) cStompRouterLiveFail ++ ;
                                     {
                                     else
                                     }
                                         }
                                             etRock.traceF( tin0P , TTF(timeN1,timeN2)+T(bUpRouter2?"    The router1 channel just came UP, so both router1 and router2 are up.":"    The router1 channel just came UP, but the router2 channel is still down.") , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM|flTRACE_NOpREFIX ) ;
-                                            bUpRouterLive = bUpRouter1 = 1 ;
+                                            bUpRouter1 = 1 ;
+                                            if( bLive ) bUpRouterLive = 1 ;
                                         {
                                         if( !bUpRouter1 )
                                         if( bChatter ) etRock.traceF( tin0P , T("stomp! (router1) aok   [epochMeUseTrue,idStompRouter1         ]:    ")+TF2(epochMeUseTrue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_IGNOREpROCESSsTATEeXEcONTAINSbASEaNDaDAM ) ;
-                                        cStompRouterLiveFail = cStompRouter1Fail = 0 ;
+                                        cStompRouter1Fail = 0 ;
+                                        if( bLive ) cStompRouterLiveFail = 0 ;
                                     {
                                     if( !POOP )
                                     ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUse , 1 , TIMEsTOMPmAX ) ; ___( posti ) ;
@@ -170,16 +178,14 @@ DONE( tmWorkF )
                                     _IO_
                                 {
                                 IFsCRATCHoK
-                                cStompRouter1 ++ ;
-                                cStompRouterLive ++ ;
 
                                 TN( tUse , "" ) ; tUse = F(flagsMode) & flIDEAnETeXE_USEdNS ? tRequestDomain : tRequestAddress ;
 
-                                TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowRouter1+T("//http/ideanet/router1/gorilla.html") ;
+                                TN( tRequestAddress , "" ) ; tRequestAddress = tIpv6NowRouter1+tUrlPartGorillaRouter1Address+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDotHtml ;
 
                                 ;
 
-                                    +T(".ideanet.ideafarm.com//http/ideanet/router1/gorilla.html")
+                                    +tUrlPartGorillaRouter1Domain+TF2(cStompRouter1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDotHtml
                                     +TF3(ipv6FieldsRouter1.hostRandom ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
                                     +TF3(ipv6FieldsRouter1.idSub      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
                                     +TF3(ipv6FieldsRouter1.epoch      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tUnderScore
@@ -188,8 +194,11 @@ DONE( tmWorkF )
                                 TN( tRequestDomain , "" ) ; tRequestDomain =
 
                                 // THE FIELD VALUES IN THE DOMAIN NAME USE FOREIGN BIGIT ORDERING SO THAT EACH CAN BE EASILY COMPARED WITH THE nicNameC VALUE REPRESENTED IN 11:22:33:44:55:66:77:88 FORMAT
+                                cStompRouter1 ++ ;
+                                if( bLive ) cStompRouterLive ++ ;
+                                boolT bLive = bTrue ;
                             {
-                            if( bTrue )     // ROUTER1
+                            // ROUTER1
 
                         #if !defined( DUMMYsUB )
                     {
@@ -251,7 +260,7 @@ DONE( tmWorkF )
 
                             bDownNoticeSent = 1 ;
                         {
-                        if( !bKey && !bDownNoticeSent && cStompRouterLiveFail > 2 )
+                        if( !bKey && !bDownNoticeSent )
 
                         // PS:PERSONALITY: THE WO'TH STOMP IN A NEW PHASE (E.G. THE WO'TH STOMP ON ROUTER1) IS EXPECTED TO FAIL ; THE LATH STOMP IN A PHASE HAS BEEN OBSERVED 20260502@1639 TO FAIL ; SO I REQUIRE AT LEAST 3 CONSECUTIVE FAILS TO REPORT "DOWN"
 
@@ -380,6 +389,11 @@ DONE( tmWorkF )
                 ZE( countT , epochHeLateLath   ) ;
                 ZE( countT , epochHeTrueLath   ) ;
                 TN( tUnderScore , "_" ) ;
+                TN( tDotHtml , ".html" ) ;
+                TN( tUrlPartGorillaRouter2Address , "" ) ; tUrlPartGorillaRouter2Address = T("//http/ideanet/router2/gorilla.") ;
+                TN( tUrlPartGorillaRouter1Address , "" ) ; tUrlPartGorillaRouter1Address = T("//http/ideanet/router1/gorilla.") ;
+                TN( tUrlPartGorillaRouter2Domain  , "" ) ; tUrlPartGorillaRouter2Domain  = T(".ideanet.ideafarm.com//http/ideanet/router2/gorilla.") ;
+                TN( tUrlPartGorillaRouter1Domain  , "" ) ; tUrlPartGorillaRouter1Domain  = T(".ideanet.ideafarm.com//http/ideanet/router1/gorilla.") ;
                 TN( tb4 , "    " ) ;
                 TN( tb , " " ) ;
 
